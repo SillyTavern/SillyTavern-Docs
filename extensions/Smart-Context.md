@@ -1,3 +1,5 @@
+# Smart Context
+
 # What is it? 
 
 Smart Context is a SillyTavern extension that uses the [ChromaDB library](https://www.trychroma.com) to give your AI characters access to information that exists outside the normal chat history context limit.
