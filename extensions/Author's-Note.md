@@ -1,3 +1,5 @@
+#Author's Note
+
 # What is it?
 
 Author's Note is a powerful tool for customizing AI responses which inserts a section of text into the prompt at any position and at any frequency you desire.
