@@ -1,3 +1,5 @@
+# Expression Images
+
 ## What is it? 
 
 Expression images are images (aka 'sprites') of your AI character which are shown next to (or behind) the chat window. 
