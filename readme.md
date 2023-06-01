@@ -94,7 +94,11 @@ SillyTavern has an extensibility support, with some additional AI modules hosted
 * Stable Diffusion image generation (5 chat-related presets plus 'free mode')
 * Text-to-speech for AI response messages (via ElevenLabs, Silero, or the OS's System TTS)
 
-Full list of included extenisons and tutorials how to use them can be found on [Wiki](https://github.com/SillyTavern/SillyTavern/wiki).
+## Extensions
+
+SillyTavern has a wide array of UI extensions (plugins). They add additional functionality such as image generation, text-to-speech, etc.
+
+Some extensions require running SillyTavern Extras API. Learn more: [SillyTavern-extras](https://github.com/SillyTavern/SillyTavern-extras)
 
 ## UI/CSS/Quality of Life tweaks by RossAscends
 
