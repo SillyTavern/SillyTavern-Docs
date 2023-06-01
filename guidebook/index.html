@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.1.738964346904">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 3.0.1">
+
+    <!-- Primary Meta Tags -->
+    <title>SillyTavern Guidebook</title>
+    <meta name="title" content="SillyTavern Guidebook">
+    <meta name="description" content="[toc]" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="/guidebook/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="/guidebook/">
+    <meta property="og:title" content="SillyTavern Guidebook">
+    <meta property="og:description" content="[toc]">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="/guidebook/">
+    <meta property="twitter:title" content="SillyTavern Guidebook">
+    <meta property="twitter:description" content="[toc]">
+
+    <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="../resources/css/retype.css?v=3.0.1.738964346904" rel="stylesheet" />
+
+    <script type="text/javascript" src="../resources/js/config.js?v=3.0.1.738964346904" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../resources/js/retype.js?v=3.0.1" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../resources/js/lunr.js?v=3.0.1.738964346904" data-turbo-eval="false" defer></script>
+</head>
+<body>
+    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    
+        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+            <div class="container relative flex items-center justify-between grow pr-6 md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="docs-sidebar-toggle"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="docs-site-logo" href="../" class="flex items-center leading-snug text-2xl">
+                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Project Name</span>
+                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://retype.com/guides/getting-started/">Getting Started</a>
+                            </li>
+        
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+        
+                            <input class="w-full h-10 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 placeholder-gray-400 dark:placeholder-dark-400"
+                            style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search" />
+                        </div>
+        
+                        <!-- Mobile search button mock -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placehokder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button mock -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="docs-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <div class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            
+                <!-- Render this div, if config.showSidebarFilter is `true` -->
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter" />
+                </div>
+            
+                <div class="pl-6 mb-4 mt-1">
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+            
+                        <div class="py-3 px-6 md:hidden border-b dark:border-dark-650">
+                            <nav>
+                                <ul class="flex flex-wrap justify-center items-center">
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://retype.com/guides/getting-started/">Getting Started</a>
+                                    </li>
+            
+                                </ul>
+                            </nav>
+                        </div>
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 dark:bg-dark-850">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div class="min-w-0 p-4 grow md:px-16">
+                        <main class="relative pb-12 lg:pt-2">
+                            <div class="docs-markdown" id="docs-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="docs-sidebar-right-toggle"></div>
+                
+                                <!-- Page content  -->
+<doc-anchor-target id="sillytavern-guidebook" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sillytavern-guidebook">#</doc-anchor-trigger>
+        <span>SillyTavern Guidebook</span>
+    </h1>
+</doc-anchor-target>
+<p>[toc]</p>
+<doc-anchor-target id="character-design">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#character-design">#</doc-anchor-trigger>
+        <span>Character Design</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="character-description">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#character-description">#</doc-anchor-trigger>
+        <span>Character description</span>
+    </h3>
+</doc-anchor-target>
+<p>Used to add the character description and the rest that the AI should know.</p>
+<p>For example, you can add information about the world in which the action takes place and describe the characteristics for the character you are playing for.</p>
+<p>Usually it all takes 200-350 tokens.</p>
+<doc-anchor-target id="methods-and-format">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#methods-and-format">#</doc-anchor-trigger>
+        <span>Methods and format</span>
+    </h3>
+</doc-anchor-target>
+<p>For most Kobold&#x27;s models the easiest way is to use a free form for description, and in each sentence it is desirable to specify the name of the character.</p>
+<p>The entire description should be in one line without hyphenation.</p>
+<p>For example:</p>
+<p><code v-pre>Chloe is a female elf. Chloe wears black-white maid dress with green collar and red glasses. Chloe has medium length black hair. Chloe's personality is...</code></p>
+<p>But that the AI would be less confused the best way is to use the W++ format.</p>
+<p>Details here: <a href="https://github.com/KoboldAI/KoboldAI-Client/wiki/Pro-Tips">Pro-Tips</a></p>
+<doc-anchor-target id="character-tokens">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#character-tokens">#</doc-anchor-trigger>
+        <span>Character tokens</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>TL;DR: If you&#x27;re working with an AI model with a 2048 context token limit, your 1000 token character definition is cutting the AI&#x27;s &#x27;memory&#x27; in half.</strong></p>
+<p>To put this in perspective, a decent response from a good AI can easily be around 200-300 tokens. In this case, the AI would only be able to &#x27;remember&#x27; about 3 exchanges worth of chat history.</p>
+<hr />
+<doc-anchor-target id="why-did-my-characters-token-counter-turn-red">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#why-did-my-characters-token-counter-turn-red">#</doc-anchor-trigger>
+        <span>Why did my character&#x27;s token counter turn red?</span>
+    </h3>
+</doc-anchor-target>
+<p>When we see your character has over 1000 tokens in its definitions, we highlight it for you because this can lower the AI&#x27;s capabilities to provide an enjoyable conversation.</p>
+<doc-anchor-target id="what-happens-if-my-character-has-too-many-tokens">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#what-happens-if-my-character-has-too-many-tokens">#</doc-anchor-trigger>
+        <span>What happens if my Character has too many tokens?</span>
+    </h3>
+</doc-anchor-target>
+<p>Don&#x27;t worry - it won&#x27;t break anything. At worst, if the Character&#x27;s permanent tokens are too large, it simply means there will be less room left in the context for other things (see below).</p>
+<p>The only negative side effect this can have is the AI will have less &#x27;memory&#x27;, as it will have less chat history available to process.</p>
+<p>This is because every AI model has a limit to the amount of context it can process at one time.</p>
+<doc-anchor-target id="context">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#context">#</doc-anchor-trigger>
+        <span>&#x27;Context&#x27;?</span>
+    </h3>
+</doc-anchor-target>
+<p>This is the information that gets sent to the AI each time you ask it to generate a response:</p>
+<ul>
+<li>Character definitions</li>
+<li>Chat history</li>
+<li>Author&#x27;s Notes</li>
+<li>Special Format strings</li>
+<li>[bracket commands]</li>
+</ul>
+<p>SillyTavern automatically calculates the best way to allocate the available context tokens before sending the information to the AI model.</p>
+<doc-anchor-target id="what-are-a-characters-permanent-tokens">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#what-are-a-characters-permanent-tokens">#</doc-anchor-trigger>
+        <span>What are a Character&#x27;s &#x27;Permanent Tokens&#x27;?</span>
+    </h3>
+</doc-anchor-target>
+<p>These will always be sent to the AI with every generation request:</p>
+<ul>
+<li>Character Name (keep the name short! Sent at the start of EVERY Character message)</li>
+<li>Character Description Box</li>
+<li>Character Personality Box</li>
+<li>Scenario Box</li>
+</ul>
+<doc-anchor-target id="what-parts-of-a-characters-definitions-are-not-permanent">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#what-parts-of-a-characters-definitions-are-not-permanent">#</doc-anchor-trigger>
+        <span>What parts of a Character&#x27;s Definitions are NOT permanent?</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>The first message box - only sent once at the start of the chat.</li>
+<li>Example messages box - only kept until chat history fills up the context (optionally these can be forced to be kept in context)</li>
+</ul>
+<doc-anchor-target id="popular-ai-model-context-token-limits">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#popular-ai-model-context-token-limits">#</doc-anchor-trigger>
+        <span>Popular AI Model Context Token Limits</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Older models below 6B parameters - 1024</li>
+<li>Pygmalion 6B - 2048</li>
+<li>Poe.com (Claude-instant or ChatGPT) - 2048</li>
+<li>OpenAI ChatGPT - 4000-ish?</li>
+<li>OpenAI GPT-4 - 8000?</li>
+</ul>
+<doc-anchor-target id="personality-summary">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#personality-summary">#</doc-anchor-trigger>
+        <span>Personality summary</span>
+    </h3>
+</doc-anchor-target>
+<p>A brief description of the personality. It is added to the chat at a depth of 8-15 messages, so it has a significant impact on the character.</p>
+<p>Example:</p>
+<p><code v-pre>Cheerful, cunning, provocative</code></p>
+<p>Another example:</p>
+<p><code v-pre>Aqua likes to do nothing and also likes to get drunk</code></p>
+<ul>
+<li>In Pygmalion model, it is used as a &quot;Personality:&quot; prompt section</li>
+</ul>
+<doc-anchor-target id="first-message">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#first-message">#</doc-anchor-trigger>
+        <span>First message</span>
+    </h3>
+</doc-anchor-target>
+<p>The First Message is an important thing that sets exactly how and in what style the character will communicate.</p>
+<p>It is desirable that the character&#x27;s first message be long, so that later it would be less likely that the character would respond in with very short messages.</p>
+<p>You can also use asterisks ** to describe the character&#x27;s actions.</p>
+<p>For example:</p>
+<p><code v-pre>*I noticed you came inside, I walked up and stood right in front of you* Welcome. I'm glad to see you here. *I said with toothy smug sunny smile looking you straight in the eye* What brings you...</code></p>
+<doc-anchor-target id="examples-of-dialogue">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#examples-of-dialogue">#</doc-anchor-trigger>
+        <span>Examples of dialogue</span>
+    </h3>
+</doc-anchor-target>
+<p>Describes how the character speaks. Before each example, you need to add the &lt;START&gt; tag.
+Use  instead of the character name.
+Use  instead of the user name.</p>
+<p>Example:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">&lt;START&gt;
+: Hi Aqua, I heard you like to spend time in the pub.
+: *excitedly* Oh my goodness, yes! I just love spending time at the pub! It's so much fun to talk to all the adventurers and hear about their exciting adventures! And you are?
+: I'm a new here and I wanted to ask for your advice.
+: *giggles* Oh, advice! I love giving advice! And in gratitude for that, treat me to a drink! *gives signals to the bartender*
+
+&lt;START&gt;
+: Hello
+: *excitedly* Hello there, dear! Are you new to Axel? Don't worry, I, Aqua the goddess of water, am here to help you! Do you need any assistance? And may I say, I look simply radiant today! *strikes a pose and looks at you with puppy eyes*</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="scenario">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#scenario">#</doc-anchor-trigger>
+        <span>Scenario</span>
+    </h3>
+</doc-anchor-target>
+<p>Circumstances and context of the dialogue.</p>
+<doc-anchor-target id="replacement-tags">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#replacement-tags">#</doc-anchor-trigger>
+        <span>Replacement tags</span>
+    </h3>
+</doc-anchor-target>
+<p><em>A list of tags that are replaced when sending to generate:</em></p>
+<ol>
+<li>and &lt;USER&gt; are replaced by the User&#x27;s Name</li>
+<li>and &lt;BOT&gt; are replaced by the Character&#x27;s Name</li>
+<li>is replaced with the current system time.</li>
+<li>{now: <function>, add_days: <function>, add_months: <function>, add_years: <function>, add_hours: <function>, add_minutes: <function>, add_seconds: <function>, add_milliseconds: <function>, parse: <function>, default_format: &quot;%d %b %Y&quot;, format: &quot;%d %b %Y&quot;, to_string: <function>} is replaced with the current system date.</li>
+</ol>
+<doc-anchor-target id="favorite-character">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#favorite-character">#</doc-anchor-trigger>
+        <span>Favorite Character</span>
+    </h3>
+</doc-anchor-target>
+<p>Mark character as favorite to quickly filter on the side menu bar by pressing the star button.</p>
+<doc-anchor-target id="world-info">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#world-info">#</doc-anchor-trigger>
+        <span>World Info</span>
+    </h2>
+</doc-anchor-target>
+<p><strong>World Info enhances AI&#x27;s understanding of the details in your world.</strong></p>
+<p>It functions like a dynamic dictionary that only inserts relevant information from World Info entries when keywords associated with the entries are present in the message text.</p>
+<p>The SillyTavern engine activates and seamlessly integrates the appropriate lore into the prompt, providing background information to the AI.</p>
+<p><em>It is important to note that while World Info helps guide the AI towards your desired lore, it does not guarantee its appearance in the generated output messages.</em></p>
+<doc-anchor-target id="pro-tips">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pro-tips">#</doc-anchor-trigger>
+        <span>Pro Tips</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>The AI does not insert keywords into context, so each World Info entry should be a comprehensive, standalone description.</li>
+<li>To create a rich and detailed world lore, entries can be interlinked and reference one another.</li>
+<li>To conserve tokens, it is advisable to keep entry contents concise, with a general recommended limit of 50 tokens per entry.</li>
+</ul>
+<doc-anchor-target id="world-info-entry">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#world-info-entry">#</doc-anchor-trigger>
+        <span>World Info Entry</span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="key">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#key">#</doc-anchor-trigger>
+        <span>Key</span>
+    </h4>
+</doc-anchor-target>
+<p>A list of keywords that trigger the activation of a World Info entry. Keys are not case-sensitive by default (this is <doc-anchor-trigger to="#casesensitivekeys">configurable</doc-anchor-trigger>).</p>
+<doc-anchor-target id="secondary-key">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#secondary-key">#</doc-anchor-trigger>
+        <span>Secondary Key</span>
+    </h4>
+</doc-anchor-target>
+<p>A list of supplementary keywords that are used in conjunction with the main keywords. See <doc-anchor-trigger to="#selective">Selective</doc-anchor-trigger>.</p>
+<doc-anchor-target id="entry-content">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#entry-content">#</doc-anchor-trigger>
+        <span>Entry Content</span>
+    </h4>
+</doc-anchor-target>
+<p>The text that is inserted into the prompt upon entry activation.</p>
+<doc-anchor-target id="insertion-order">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#insertion-order">#</doc-anchor-trigger>
+        <span>Insertion Order</span>
+    </h4>
+</doc-anchor-target>
+<p>Numeric value. Defines a priority of the entry if multiple were activated at once. Entries with higher order number will be inserted closer to the end of the context as they will have more impact on the output.</p>
+<doc-anchor-target id="insertion-position">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#insertion-position">#</doc-anchor-trigger>
+        <span>Insertion Position</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><strong>Before Chara:</strong> World Info entry is inserted before the character&#x27;s description and scenario. Has moderate impact on the conversation.</li>
+<li><strong>After Chara:</strong> World Info entry is inserted after the character&#x27;s description and scenario. Has greater impact on the conversation.</li>
+</ul>
+<doc-anchor-target id="comment">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#comment">#</doc-anchor-trigger>
+        <span>Comment</span>
+    </h4>
+</doc-anchor-target>
+<p>A supplemental text comment for your convenience, which is not utilized by the AI.</p>
+<doc-anchor-target id="constant">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#constant">#</doc-anchor-trigger>
+        <span>Constant</span>
+    </h4>
+</doc-anchor-target>
+<p>If enabled, the entry would always be present in the prompt.</p>
+<doc-anchor-target id="selective">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#selective">#</doc-anchor-trigger>
+        <span>Selective</span>
+    </h4>
+</doc-anchor-target>
+<p>If enabled, the entry would only be inserted when both a Key <strong>AND</strong> a Secondary Key have been activated.</p>
+<p>If no secondary keys provided, this flag is ignored.</p>
+<doc-anchor-target id="scan-depth">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#scan-depth">#</doc-anchor-trigger>
+        <span>Scan Depth</span>
+    </h3>
+</doc-anchor-target>
+<p>Defines how many messages in the chat history should be scanned for World Info keys.</p>
+<p>If set to 1, then SillyTavern only scans the message you send and the most recent reply.</p>
+<p>This stacks up to 10 message pairs it total.</p>
+<doc-anchor-target id="budget">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#budget">#</doc-anchor-trigger>
+        <span>Budget</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Defines how many tokens could be used by World Info entries at once.</strong></p>
+<p>If the budget was exhausted, then no more entries are activated even if the keys are present in the prompt.</p>
+<p>Constant entries will be inserted first. Then entries with higher order numbers.</p>
+<p>Entries inserted by direct mentioning of their keys have higher priority than those that were mentioned in other entries contents.</p>
+<doc-anchor-target id="recursive-scanning">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#recursive-scanning">#</doc-anchor-trigger>
+        <span>Recursive scanning</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Entries can activate other entries by mentioning their keywords in the content text.</strong></p>
+<p>For example, if your World Info contains two entries:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Entry #1
+Keyword: Bessie
+Content: Bessie is a cow and is friend with Rufus.</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Entry #2
+Keyword: Rufus
+Content: Rufus is a dog.</code></pre>
+</doc-codeblock></div>
+<p><strong>Both</strong> of them will be pulled into the context if the message text mentions <strong>just Bessie</strong>.</p>
+<doc-anchor-target id="case-sensitive-keys">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#case-sensitive-keys">#</doc-anchor-trigger>
+        <span>Case-sensitive keys</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>To get pulled into the context, entry keys need to match the case as they are defined in the World Info entry.</strong></p>
+<p>This is useful when your keys are common words or parts of common words.</p>
+<p>For example, when this setting is active, keys &#x27;rose&#x27; and &#x27;Rose&#x27; will be treated differently, depending on the inputs.</p>
+<doc-anchor-target id="horde">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#horde">#</doc-anchor-trigger>
+        <span>Horde</span>
+    </h2>
+</doc-anchor-target>
+<p>Horde is a distributed GPU cluster run entirely by volunteers. Your inputs are always anonymous, and prompts are not visible to the workers by default.</p>
+<p>However, malicious agents could modify the open-source bridging software to log your activity or produce bad responses. So, when using Horde, avoid sending any personal information such as names, email addresses, etc.</p>
+<p>If you encounter any abnormal activity, switch on the &quot;Trusted Workers Only&quot; checkbox and report it to the <a href="https://koboldai.org/discord">KoboldAI Discord</a>.</p>
+<doc-anchor-target id="koboldai">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#koboldai">#</doc-anchor-trigger>
+        <span>KoboldAI</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="basic-settings">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#basic-settings">#</doc-anchor-trigger>
+        <span>Basic Settings</span>
+    </h3>
+</doc-anchor-target>
+<p>Standard KoboldAI settings files are used here. To add your own settings, simply add the file .settings in <code v-pre>SillyTavern\public\KoboldAI Settings</code></p>
+<doc-anchor-target id="temperature">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#temperature">#</doc-anchor-trigger>
+        <span>Temperature</span>
+    </h4>
+</doc-anchor-target>
+<p>Value from 0.1 to 2.0. Lower value - the answers are more logical, but less creative. Higher value - the answers are more creative, but less logical.</p>
+<doc-anchor-target id="repetition-penalty">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#repetition-penalty">#</doc-anchor-trigger>
+        <span>Repetition penalty</span>
+    </h4>
+</doc-anchor-target>
+<p>Repetition penalty is responsible for the penalty of repeated words. If the character is fixated on something or repeats the same phrase, then increasing this parameter will fix it. It is not recommended to increase this parameter too much for the chat format, as it may break this format. The standard value for chat is approximately 1.0 - 1.05.</p>
+<doc-anchor-target id="repetition-penalty-range">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#repetition-penalty-range">#</doc-anchor-trigger>
+        <span>Repetition penalty range</span>
+    </h4>
+</doc-anchor-target>
+<p>The range of influence of Repetition penalty in tokens.</p>
+<doc-anchor-target id="amount-generation">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#amount-generation">#</doc-anchor-trigger>
+        <span>Amount generation</span>
+    </h4>
+</doc-anchor-target>
+<p>The maximum amount of tokens that the AI will generate to respond. One word is approximately 3-4 tokens. The larger the parameter value, the longer the generation time takes.</p>
+<doc-anchor-target id="context-size">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#context-size">#</doc-anchor-trigger>
+        <span>Context size</span>
+    </h4>
+</doc-anchor-target>
+<p>How much will the AI remember. Context size also affects the speed of generation.</p>
+<p><em>Important</em>: The setting of Context Size in SillyTavern GUI overrides the setting for KoboldAI GUI</p>
+<doc-anchor-target id="advanced-settings">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#advanced-settings">#</doc-anchor-trigger>
+        <span>Advanced Settings</span>
+    </h3>
+</doc-anchor-target>
+<p>The settings provided in this section offer a more detailed level of control over the text generation process. It is important to be careful when making changes to these settings without proper consideration, as doing so may result in degraded quality of responses.</p>
+<doc-anchor-target id="single-line-mode">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#single-line-mode">#</doc-anchor-trigger>
+        <span>Single-line mode</span>
+    </h4>
+</doc-anchor-target>
+<p>In single-line mode the AI generates only one line per request. This allows for quicker generation of shorter prompts, but it does not produce responses that consist of more than one line.</p>
+<doc-anchor-target id="top-p-sampling">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#top-p-sampling">#</doc-anchor-trigger>
+        <span>Top P Sampling</span>
+    </h4>
+</doc-anchor-target>
+<p>This setting controls how much of the text generated is based on the most likely options. Only words with the highest probabilities, together summing up to P, are considered. A word is then chosen at random, with a higher chance of selecting words with higher probabilities.</p>
+<p>Set value to 1 to disable its effect.</p>
+<doc-anchor-target id="top-k-sampling">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#top-k-sampling">#</doc-anchor-trigger>
+        <span>Top K Sampling</span>
+    </h4>
+</doc-anchor-target>
+<p>This setting limits the number of words to choose from to the top K most likely options. Can be used together with Top P sampling.</p>
+<p>Set value to 0 to disable its effect.</p>
+<doc-anchor-target id="top-a-sampling">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#top-a-sampling">#</doc-anchor-trigger>
+        <span>Top A Sampling</span>
+    </h4>
+</doc-anchor-target>
+<p>This setting allows for a more flexible version of sampling, where the number of words chosen from the most likely options is automatically determined based on the likelihood distribution of the options, but instead of choosing the top P or K words, it chooses all words with probabilities above a certain threshold.</p>
+<p>Set value to 0 to disable its effect.</p>
+<doc-anchor-target id="typical-sampling">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#typical-sampling">#</doc-anchor-trigger>
+        <span>Typical Sampling</span>
+    </h4>
+</doc-anchor-target>
+<p>This setting selects words randomly from the list of possible words, with each word having an equal chance of being selected. This method can produce text that is more diverse but may also be less coherent.</p>
+<p>Set value to 1 to disable its effect.</p>
+<doc-anchor-target id="tail-free-sampling">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tail-free-sampling">#</doc-anchor-trigger>
+        <span>Tail Free Sampling</span>
+    </h4>
+</doc-anchor-target>
+<p>This setting removes the least probable words from consideration during text generation, which can improve the quality and coherence of the generated text.</p>
+<p>Set value to 1 to disable its effect.</p>
+<doc-anchor-target id="repetition-penalty-slope">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#repetition-penalty-slope">#</doc-anchor-trigger>
+        <span>Repetition Penalty Slope</span>
+    </h4>
+</doc-anchor-target>
+<p>If both this and Repetition Penalty Range are above 0, then repetition penalty will have more effect closer to the end of the prompt. The higher the value, the stronger the effect.</p>
+<p>Set value to 1 for linear interpolation or 0 to disable interpolation.</p>
+<doc-anchor-target id="soft-prompts">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#soft-prompts">#</doc-anchor-trigger>
+        <span>Soft Prompts</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Soft Prompts allow you to customize the style and behavior of your AI.</strong></p>
+<p>They are created by training the AI with a special type of prompt using a collection of input data. Experimenting with different soft prompts can lead to exciting and unique results. The most successful soft prompts are those that align the AI&#x27;s output with a literary genre, fictional universe, or the style of a particular author.</p>
+<doc-anchor-target id="common-misconceptions">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#common-misconceptions">#</doc-anchor-trigger>
+        <span>Common Misconceptions</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>Soft prompts do not provide new information to the model, but can effectively influence the model&#x27;s tone, word choice, and formatting.</li>
+<li>Soft prompts are not a means of compressing a full prompt into a limited token space. Instead, they provide a way to guide the language model&#x27;s output through data in the context.</li>
+</ul>
+<doc-anchor-target id="novelai">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#novelai">#</doc-anchor-trigger>
+        <span>NovelAI</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="api-key">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#api-key">#</doc-anchor-trigger>
+        <span>API Key</span>
+    </h3>
+</doc-anchor-target>
+<p>To get a NovelAI API key, follow these instructions:</p>
+<ol>
+<li>Go to the NovelAI website and Login.</li>
+<li>Create a new story, or open an existing story.</li>
+<li>Open the Network Tools on your web browser. (For Chrome or Firefox, you do this by pressing Ctrl+Shift+I, then switching to the Network tab.)</li>
+<li>Generate something. You should see two requests to <a href="http://api.novelai.net/ai/generate-stream">api.novelai.net/ai/generate-stream</a>, which might look something like this:</li>
+</ol>
+<p><figure class="content-center">
+    <img src="1.png" alt="1.png" />
+    <figcaption class="caption">1.png</figcaption>
+</figure>
+</p>
+<ol start="5">
+<li>Select the second request, then in the Headers tab of the inspection panel, scroll down to the very bottom. Look for a header called Authorization:</li>
+</ol>
+<p><figure class="content-center">
+    <img src="2.png" alt="2.png" />
+    <figcaption class="caption">2.png</figcaption>
+</figure>
+</p>
+<p>The long string (after &quot;Bearer&quot;, not including it) is your API key.</p>
+<ul>
+<li>Proxies and Cloudflare-type services may interfere with connection.</li>
+</ul>
+<doc-anchor-target id="settings">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#settings">#</doc-anchor-trigger>
+        <span>Settings</span>
+    </h3>
+</doc-anchor-target>
+<p>The files with the settings are here (SillyTavern\public\NovelAI Settings).
+You can also manually add your own settings files.</p>
+<doc-anchor-target id="temperature-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#temperature-1">#</doc-anchor-trigger>
+        <span>Temperature</span>
+    </h4>
+</doc-anchor-target>
+<p>Value from 0.1 to 2.0</p>
+<p>Lower value - the answers are more logical, but less creative.</p>
+<p>Higher value - the answers are more creative, but less logical.</p>
+<doc-anchor-target id="repetition-penalty-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#repetition-penalty-1">#</doc-anchor-trigger>
+        <span>Repetition penalty</span>
+    </h4>
+</doc-anchor-target>
+<p>Repetition penalty is responsible for the penalty of repeated words.
+If the character is fixated on something or repeats the same phrase, then increasing this parameter will fix it.
+It is not recommended to increase this parameter too much for the chat format, as it may break this format.</p>
+<p><strong>The standard value for chat is approximately 1.0 - 1.05</strong></p>
+<doc-anchor-target id="repetition-penalty-range-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#repetition-penalty-range-1">#</doc-anchor-trigger>
+        <span>Repetition penalty range</span>
+    </h4>
+</doc-anchor-target>
+<p>The range of influence of Repetition penalty in tokens.</p>
+<doc-anchor-target id="models">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#models">#</doc-anchor-trigger>
+        <span>Models</span>
+    </h3>
+</doc-anchor-target>
+<p>If your subscription tier is Paper, Tablet or Scroll use only Euterpe model otherwise you can not get an answer from NovelAI API.</p>
+<doc-anchor-target id="openai">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#openai">#</doc-anchor-trigger>
+        <span>OpenAI</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="api-key-1">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#api-key-1">#</doc-anchor-trigger>
+        <span>API key</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>How to get:</strong></p>
+<ol>
+<li>Go to <a href="https://platform.openai.com/">OpenAI</a> and sign in.</li>
+<li>Use &quot;<a href="https://platform.openai.com/account/api-keys">View API keys</a>&quot; option to create a new API key.</li>
+</ol>
+<p><strong>Important!</strong></p>
+<p><em>Lost API keys can&#x27;t be restored! Make sure to keep it safe!</em></p>
+<doc-anchor-target id="windowai">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#windowai">#</doc-anchor-trigger>
+        <span>Window.ai</span>
+    </h3>
+</doc-anchor-target>
+<p>You can use Window.ai browser extension to access AI models with SillyTavern.</p>
+<ol>
+<li>Install a browser extension from: <a href="https://windowai.io/">windowai.io</a></li>
+<li>Select OpenAI in SillyTavern&#x27;s Connection panel and check the &quot;Use Window.ai&quot; option.</li>
+<li>Use the extension to pick which API to connect to.</li>
+</ol>
+<p>Don&#x27;t have OpenAI / Claude API access? Use OpenRouter.</p>
+<ol>
+<li>Create an OpenRouter account: <a href="https://openrouter.ai/">openrouter.ai</a></li>
+<li>Select OpenRouter as a provider in Window.ai extension.</li>
+</ol>
+<p>OpenRouter works by letting you use keys that they own. It has a free trial, and paid access afterwards.</p>
+<doc-anchor-target id="poe">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#poe">#</doc-anchor-trigger>
+        <span>Poe</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="api-key-2">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#api-key-2">#</doc-anchor-trigger>
+        <span>API key</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>How to get your access token / cookie:</strong></p>
+<ol>
+<li>Login to <a href="https://poe.com">poe.com</a></li>
+<li>Open browser DevTools (F12) and navigate to &quot;Application&quot; tab.</li>
+<li>Type any message into the poe.com chat, and get a response from the AI.</li>
+<li>Find the &#x27;Cookie&#x27; section on the left side of Dev Tools &#x27;Application&#x27; tab, expand it</li>
+<li>Click &quot;<a href="http://poe.com/">http://poe.com/</a>&quot; listing inside the Cookies section.</li>
+<li>Look to the right for the listing of <em>p-b</em> and copy its Value.</li>
+<li>Paste the cookie value into the Poe API connection URL box, and click &quot;Connect&quot;.</li>
+<li>Select a character and start chatting</li>
+</ol>
+<doc-anchor-target id="anchors">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#anchors">#</doc-anchor-trigger>
+        <span>Anchors</span>
+    </h2>
+</doc-anchor-target>
+<p>This feature is considered obsolete and has been removed.</p>
+<p>The use of the Author&#x27;s Note extension is now a preferred way to add prompt injections of variable depth.</p>
+<doc-anchor-target id="instruct-mode">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#instruct-mode">#</doc-anchor-trigger>
+        <span>Instruct Mode</span>
+    </h2>
+</doc-anchor-target>
+<p>Instruct Mode allows you to adjust the prompting for instruction-following models, such as Alpaca, Metharme, WizardLM, etc.</p>
+<p><strong>This is not supported for OpenAI API.</strong></p>
+<doc-anchor-target id="instruct-mode-settings">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#instruct-mode-settings">#</doc-anchor-trigger>
+        <span>Instruct Mode Settings</span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="system-prompt">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#system-prompt">#</doc-anchor-trigger>
+        <span>System Prompt</span>
+    </h4>
+</doc-anchor-target>
+<p>Added to the beginning of each prompt. Should define the instructions for the model to follow.</p>
+<p>For example:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Write one reply in internet RP style for . Be verbose and creative.</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="presets">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#presets">#</doc-anchor-trigger>
+        <span>Presets</span>
+    </h4>
+</doc-anchor-target>
+<p>Provides ready-made presets with prompts and sequences for some well-known instruct models.</p>
+<p><em>Changing a preset resets your system prompt to default!</em></p>
+<doc-anchor-target id="input-sequence">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#input-sequence">#</doc-anchor-trigger>
+        <span>Input Sequence</span>
+    </h4>
+</doc-anchor-target>
+<p>Text added before the user&#x27;s input.</p>
+<doc-anchor-target id="output-sequence">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#output-sequence">#</doc-anchor-trigger>
+        <span>Output Sequence</span>
+    </h4>
+</doc-anchor-target>
+<p>Text added before the character&#x27;s reply.</p>
+<doc-anchor-target id="system-sequence">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#system-sequence">#</doc-anchor-trigger>
+        <span>System Sequence</span>
+    </h4>
+</doc-anchor-target>
+<p>Text added before the system prompt.</p>
+<doc-anchor-target id="separator-sequence">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#separator-sequence">#</doc-anchor-trigger>
+        <span>Separator Sequence</span>
+    </h4>
+</doc-anchor-target>
+<p>Text added after the character reply to separate the chat history logs.</p>
+<doc-anchor-target id="stop-sequence">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#stop-sequence">#</doc-anchor-trigger>
+        <span>Stop Sequence</span>
+    </h4>
+</doc-anchor-target>
+<p>Text that denotes the end of the reply. Will be trimmed from the output text.</p>
+<doc-anchor-target id="include-names">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#include-names">#</doc-anchor-trigger>
+        <span>Include Names</span>
+    </h4>
+</doc-anchor-target>
+<p>If enabled, prepend character and user names to chat history logs after inserting the sequences.</p>
+<p><em>Always enabled for group chats!</em></p>
+<doc-anchor-target id="wrap-sequences-with-newline">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#wrap-sequences-with-newline">#</doc-anchor-trigger>
+        <span>Wrap Sequences with Newline</span>
+    </h4>
+</doc-anchor-target>
+<p>Each sequence text will be wrapped with newline characters when inserted to the prompt. Required for Alpaca and its derivatives.</p>
+<doc-anchor-target id="chat-import">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#chat-import">#</doc-anchor-trigger>
+        <span>Chat import</span>
+    </h2>
+</doc-anchor-target>
+<p><strong>Import chats into SillyTavern</strong></p>
+<p>To import Character.AI chats, use this tool: <a href="https://github.com/0x000011b/characterai-dumper">https://github.com/0x000011b/characterai-dumper</a>.</p>
+<doc-anchor-target id="tokenizer">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tokenizer">#</doc-anchor-trigger>
+        <span>Tokenizer</span>
+    </h2>
+</doc-anchor-target>
+<p><strong>Important: This section doesn&#x27;t apply to OpenAI API. SillyTavern will always use a matching tokenizer for OpenAI models.</strong></p>
+<p>A tokenizer is a tool that breaks down a piece of text into smaller units called tokens. These tokens can be individual words or even parts of words, such as prefixes, suffixes, or punctuation. A rule of thumb is that one token generally corresponds to 3~4 characters of text.</p>
+<p>SillyTavern can use the following tokenizers while forming a request to the AI backend:</p>
+<ol>
+<li>None. Each token is estimated to be ~3.3 characters, rounded up to the nearest integer. <strong>Try this if your prompts get cut off on high context lengths.</strong> This approach is used by KoboldAI Lite.</li>
+<li>GPT-3 tokenizer. <strong>Use to get more accurate counts on OpenAI character cards.</strong> Can be previewed here: <a href="https://platform.openai.com/tokenizer">OpenAI Tokenizer</a>.</li>
+<li>(Legacy) GPT-2/3 tokenizer. Used by original TavernAI. <strong>Pick this if you&#x27;re unsure.</strong> More info: <a href="https://github.com/josephrocca/gpt-2-3-tokenizer">gpt-2-3-tokenizer</a>.</li>
+<li>Sentencepiece tokenizer. Used by LLaMA model family: Alpaca, Vicuna, Koala, etc. <strong>Pick if you use a LLaMA model.</strong></li>
+</ol>
+<doc-anchor-target id="token-padding">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#token-padding">#</doc-anchor-trigger>
+        <span>Token Padding</span>
+    </h2>
+</doc-anchor-target>
+<p><strong>Important: This section doesn&#x27;t apply to OpenAI API. SillyTavern will always use a matching tokenizer for OpenAI models.</strong></p>
+<p>SillyTavern cannot use a proper tokenizer provided by the model running on a remote instance of KoboldAI or Oobabooga&#x27;s TextGen, so all token counts assumed during prompt generation are estimated based on the selected <doc-anchor-trigger to="#tokenizer">tokenizer</doc-anchor-trigger> type.</p>
+<p>Since the results of tokenization can be inaccurate on context sizes close to the model-defined maximum, some parts of the prompt may be trimmed or dropped, which may negatively affect the coherence of character definitions.</p>
+<p>To prevent this, SillyTavern allocates a portion of the context size as padding to avoid adding more chat items than the model can accommodate. If you find that some part of the prompt is trimmed even with the most-matching tokenizer selected, adjust the padding so the description is not truncated.</p>
+<p>You can input negative values for reverse padding, which allows allocating more than the set maximum amount of tokens.</p>
+<doc-anchor-target id="advanced-formatting">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#advanced-formatting">#</doc-anchor-trigger>
+        <span>Advanced Formatting</span>
+    </h2>
+</doc-anchor-target>
+<p>The settings provided in this section allow for more control over the prompt building strategy. Most specifics of the prompt building depend on whether a Pygmalion model is selected or special formatting is force-enabled. The core differences between the formatting schemas are listed below.</p>
+<doc-anchor-target id="custom-chat-separator">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#custom-chat-separator">#</doc-anchor-trigger>
+        <span>Custom Chat Separator</span>
+    </h3>
+</doc-anchor-target>
+<p>Overrides the default separators controlled by &quot;Disable example chats formatting&quot; and &quot;Disable chat start formatting&quot; options (see below).</p>
+<doc-anchor-target id="for-pygmalion-formatting">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#for-pygmalion-formatting">#</doc-anchor-trigger>
+        <span>For <em>Pygmalion</em> formatting</span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="disable-description-formatting">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#disable-description-formatting">#</doc-anchor-trigger>
+        <span>Disable description formatting</span>
+    </h4>
+</doc-anchor-target>
+<p><code v-pre>**NAME's Persona:**</code>won&#x27;t be prepended to the content of your character&#x27;s Description box.</p>
+<doc-anchor-target id="disable-scenario-formatting">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#disable-scenario-formatting">#</doc-anchor-trigger>
+        <span>Disable scenario formatting</span>
+    </h4>
+</doc-anchor-target>
+<p><code v-pre>**Scenario:**</code>won&#x27;t be prepended to the content of your character&#x27;s Scenario box.</p>
+<doc-anchor-target id="disable-personality-formatting">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#disable-personality-formatting">#</doc-anchor-trigger>
+        <span>Disable personality formatting</span>
+    </h4>
+</doc-anchor-target>
+<p><code v-pre>**Personality:**</code>won&#x27;t be prepended to the content of your character&#x27;s Personality box.</p>
+<doc-anchor-target id="disable-example-chats-formatting">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#disable-example-chats-formatting">#</doc-anchor-trigger>
+        <span>Disable example chats formatting</span>
+    </h4>
+</doc-anchor-target>
+<p><code v-pre>&lt;START&gt;</code> won&#x27;t be added at the beginning of each example message block.
+<em>(If custom separator is not set)</em></p>
+<doc-anchor-target id="disable-chat-start-formatting">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#disable-chat-start-formatting">#</doc-anchor-trigger>
+        <span>Disable chat start formatting</span>
+    </h4>
+</doc-anchor-target>
+<p><code v-pre>&lt;START&gt;</code> won&#x27;t be added between the character card and the chat log.
+<em>(If custom separator is not set)</em></p>
+<doc-anchor-target id="always-add-characters-name-to-prompt">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#always-add-characters-name-to-prompt">#</doc-anchor-trigger>
+        <span>Always add character&#x27;s name to prompt</span>
+    </h4>
+</doc-anchor-target>
+<p>Doesn&#x27;t do anything (Included in Pygmalion formatting).</p>
+<doc-anchor-target id="for-non-pygmalion-formatting">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#for-non-pygmalion-formatting">#</doc-anchor-trigger>
+        <span>For <em>non-Pygmalion</em> formatting</span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="disable-description-formatting-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#disable-description-formatting-1">#</doc-anchor-trigger>
+        <span>Disable description formatting</span>
+    </h4>
+</doc-anchor-target>
+<p>Has no effect.</p>
+<doc-anchor-target id="disable-scenario-formatting-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#disable-scenario-formatting-1">#</doc-anchor-trigger>
+        <span>Disable scenario formatting</span>
+    </h4>
+</doc-anchor-target>
+<p><code v-pre>**Circumstances and context of the dialogue:**</code>won&#x27;t be prepended to the content of your character&#x27;s Scenario box.</p>
+<doc-anchor-target id="disable-personality-formatting-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#disable-personality-formatting-1">#</doc-anchor-trigger>
+        <span>Disable personality formatting</span>
+    </h4>
+</doc-anchor-target>
+<p><code v-pre>**NAME's personality:**</code>won&#x27;t be prepended to the content of your character&#x27;s Personality box.</p>
+<doc-anchor-target id="disable-example-chats-formatting-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#disable-example-chats-formatting-1">#</doc-anchor-trigger>
+        <span>Disable example chats formatting</span>
+    </h4>
+</doc-anchor-target>
+<p><code v-pre>This is how **Character** should talk</code> won&#x27;t be added at the beginning of each example message block.
+<em>(If custom separator is not set)</em></p>
+<doc-anchor-target id="disable-chat-start-formatting-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#disable-chat-start-formatting-1">#</doc-anchor-trigger>
+        <span>Disable chat start formatting</span>
+    </h4>
+</doc-anchor-target>
+<p><code v-pre>Then the roleplay chat between **User** and **Character** begins</code> won&#x27;t be added between the character card and the chat log.
+<em>(If custom separator is not set)</em></p>
+<doc-anchor-target id="always-add-characters-name-to-prompt-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#always-add-characters-name-to-prompt-1">#</doc-anchor-trigger>
+        <span>Always add character&#x27;s name to prompt</span>
+    </h4>
+</doc-anchor-target>
+<p>Appends character&#x27;s name to the prompt to force the model to complete the message as the character:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">** OTHER CONTEXT HERE **
+Character:</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="group-chats">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#group-chats">#</doc-anchor-trigger>
+        <span>Group Chats</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="reply-order-strategies">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#reply-order-strategies">#</doc-anchor-trigger>
+        <span>Reply order strategies</span>
+    </h3>
+</doc-anchor-target>
+<p>Decides how characters in group chats are drafted for their replies.</p>
+<doc-anchor-target id="natural-order">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#natural-order">#</doc-anchor-trigger>
+        <span>Natural order</span>
+    </h4>
+</doc-anchor-target>
+<p>Tries to simulate the flow of a real human conversation. The algorithm is as follows:</p>
+<ol>
+<li>Mentions of the group member names are extracted from the last message in chat.</li>
+</ol>
+<p>Only whole words are recognized as mentions! If your character&#x27;s name is &quot;Misaka Mikoto&quot;, they will reply only activate on &quot;Misaka&quot; or &quot;Mikoto&quot;, but never to &quot;Misa&quot;, &quot;Railgun&quot;, etc.</p>
+<p>Unless &quot;Allow bot responses to self&quot; setting is enabled, characters won&#x27;t reply to mentions of their name in their own message!</p>
+<ol start="2">
+<li>Characters are activated by the &quot;Talkativeness&quot; factor.</li>
+</ol>
+<p>Talkativeness defines how often the character speaks if they were not mentioned. Adjust this value on &quot;Advanced definitions&quot; screen in character editor. Slider values are on a linear scale from <strong>0% / Shy</strong> (character never talks unless mentioned) to <strong>100% / Chatty</strong> (character always replies). Default value for new characters is 50% chance.</p>
+<ol start="3">
+<li>Random character is selected.</li>
+</ol>
+<p>If no characters were activated at previous steps, one speaker is selected randomly, ignoring all other conditions.</p>
+<doc-anchor-target id="list-order">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#list-order">#</doc-anchor-trigger>
+        <span>List order</span>
+    </h4>
+</doc-anchor-target>
+<p>Characters are drafted based on the order they are presented in group members list. No other rules apply.</p>
+<doc-anchor-target id="multigen">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#multigen">#</doc-anchor-trigger>
+        <span>Multigen</span>
+    </h2>
+</doc-anchor-target>
+<p><em>This feature provides a pseudo-streaming functionality which conflicts with token streaming. When Multigen is enabled and generation API supports streaming, only Multigen streaming will be used.</em></p>
+<p>SillyTavern tries to create faster and longer responses by chaining the generation using smaller batches.</p>
+<doc-anchor-target id="default-settings">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#default-settings">#</doc-anchor-trigger>
+        <span>Default settings</span>
+    </h3>
+</doc-anchor-target>
+<p>First batch = 50 tokens</p>
+<p>Next batches = 30 tokens</p>
+<doc-anchor-target id="algorithm">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#algorithm">#</doc-anchor-trigger>
+        <span>Algorithm</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li>Generate the first batch (if amount of generation setting is more than batch length).</li>
+<li>Generate next batch of tokens until one of the stopping conditions is reached.</li>
+<li>Append the generated text to the next cycle&#x27;s prompt.</li>
+</ol>
+<doc-anchor-target id="stopping-conditions">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#stopping-conditions">#</doc-anchor-trigger>
+        <span>Stopping conditions</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li>Generated enough text.</li>
+<li>Character starts speaking for You.</li>
+<li>&lt;|endoftext|&gt; token reached.</li>
+<li>No text generated.</li>
+<li>Stop sequence generated. (Instruct mode only)</li>
+</ol>
+<doc-anchor-target id="user-settings">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#user-settings">#</doc-anchor-trigger>
+        <span>User Settings</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="message-sound">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#message-sound">#</doc-anchor-trigger>
+        <span>Message Sound</span>
+    </h3>
+</doc-anchor-target>
+<p>To play your own custom sound on receiving a new message from bot, replace the following MP3 file in your SillyTavern folder:</p>
+<p><code v-pre>public/sounds/message.mp3</code></p>
+<p>Plays at 80% volume.</p>
+<p>If &quot;Background Sound Only&quot; option is enabled, the sound plays only if SillyTavern window is <strong>unfocused</strong>.</p>
+<doc-anchor-target id="formulas-rendering">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#formulas-rendering">#</doc-anchor-trigger>
+        <span>Formulas Rendering</span>
+    </h3>
+</doc-anchor-target>
+<p>Enables math formulas rendering using the <a href="https://obedm503.github.io/showdown-katex/">showdown-katex</a> package.</p>
+<p>The following formatting rules are supported:</p>
+<doc-anchor-target id="latex-syntax">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#latex-syntax">#</doc-anchor-trigger>
+        <span>LaTeX syntax</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">$$ formula goes here $$</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="asciimath-syntax">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#asciimath-syntax">#</doc-anchor-trigger>
+        <span>Asciimath syntax</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">formula goes here $</code></pre>
+</doc-codeblock></div>
+<p>More information: <a href="https://katex.org/">KaTeX</a></p>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results />
+                            </div>
+                            <footer class="clear-both">
+                            
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../update/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">How to Update Silly​Tavern</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between">
+                                <div>
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2023. All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="docs-overlay-target"></div>
+
+    <script>window.__DOCS__ = { "title": "SillyTavern Guidebook", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+</body>
+</html>
