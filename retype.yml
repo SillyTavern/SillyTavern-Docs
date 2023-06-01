@@ -1,0 +1,17 @@
+input: .
+output: .retype
+url: docs.sillytavern.app
+branding: 
+  logo: static/logo.png
+  title: SillyTavern Documentation
+  label: 
+      
+links:
+- text: Github
+  link: https://github.com/SillyTavern/SillyTavern
+- text: Discord
+  link: https://discord.gg/sillytavern
+- text: Reddit
+  link: https://www.reddit.com/r/SillyTavernAI/   
+footer:
+  copyright: "&copy; Copyright {{ year }}. All rights reserved."
