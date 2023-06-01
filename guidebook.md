@@ -1,7 +1,5 @@
 # SillyTavern Guidebook
 
-[toc]
-
 ## Character Design
 
 ### Character description
