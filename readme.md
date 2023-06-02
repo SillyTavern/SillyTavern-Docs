@@ -9,7 +9,7 @@ SillyTavern originated as a modification of TavernAI 1.2.8 in February 2023, and
 ### Features
 
 * Mobile-friendly interface
-* Multi-API connectivity (KoboldAI/CPP, [AI Horde](https://horde.koboldai.net/), NovelAI, [Oobabooga's TextGen WebUI](https://github.com/oobabooga/text-generation-webui), OpenAI+proxies, [Poe.com](https://poe.com), WindowAI)
+* Multiple backend API connectivity ([KoboldAI](https://github.com/KoboldAI/KoboldAI-Client), [KoboldCPP](https://github.com/LostRuins/koboldcpp), [AI Horde](https://horde.koboldai.net/), [NovelAI](https://github.com/LostRuins/koboldcpp), [Oobabooga's TextGen WebUI](https://github.com/oobabooga/text-generation-webui), [OpenAI](https://chat.openai.com/)+proxies, [Poe.com](https://poe.com), [WindowAI](https://windowai.io))
 * Visual Novel-like Waifu Mode
 * Horde Stable Diffusion generation
 * TTS support (ElevenLabs, Silero, and built-in OS)
@@ -29,7 +29,7 @@ SillyTavern originated as a modification of TavernAI 1.2.8 in February 2023, and
 
 ### Extensions
 
-SillyTavern has an extensibility support, with some additional AI modules provided via [SillyTavern Extras API](https://github.com/SillyTavern/SillyTavern-extras)
+SillyTavern supports extensions/plugins:
 
 * Author's Note / Character Bias
 * Character emotional expressions
@@ -37,6 +37,8 @@ SillyTavern has an extensibility support, with some additional AI modules provid
 * Sending images to chat, and the AI interpreting the content.
 * Stable Diffusion image generation (5 chat-related presets plus 'free mode')
 * Text-to-speech for AI response messages (via ElevenLabs, Silero, or the OS's System TTS)
+
+Additional functionality can be added by using [SillyTavern Extras](https://github.com/SillyTavern/SillyTavern-extras).
 
 ### Screenshots
 
@@ -49,14 +51,7 @@ SillyTavern will run on virtually any device capable of running NodeJS v18.
 
 ### What do I need other than SillyTavern?
 
-You will need to have access to an AI system backend that can act as the roleplay character.
-Currently supported backend APIs are:
-
-* KoboldAI (either running locally or on Google Colab)
-* Oobabooga Textgeneration WebUI
-* OpenAPI API (GPT),
-* Poe.com (GPT, Claude-instant, Sage, etc)
-* WindowAI (GPT, Claude)
+SillyTavern is only a frontend interface, so you will need to have access to one of backend APIs listed above.
 
 ### How can I get in touch with the developers directly?
 
