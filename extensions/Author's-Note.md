@@ -10,7 +10,7 @@ The Author's Note can be found in the Options menu on the left side of the chat 
 
 | Options Menu | Author's Note Panel |
 ---------------|---------------------|
-|![opera_1B0hr5tVH5](https://github.com/SillyTavern/SillyTavern/assets/124905043/12a55c55-c176-4236-b1c2-39eb2850fe0f) | ![opera_gosQvxcJUz](https://github.com/SillyTavern/SillyTavern/assets/124905043/207c0549-8515-4b83-9c9a-a1fdd8153ea8)|
+|![](https://github.com/SillyTavern/SillyTavern/assets/124905043/12a55c55-c176-4236-b1c2-39eb2850fe0f) | ![](https://github.com/SillyTavern/SillyTavern/assets/124905043/207c0549-8515-4b83-9c9a-a1fdd8153ea8)|
 
 ### Configuring Author's Notes
 
@@ -68,6 +68,6 @@ This is useful for the Poe API, as the jailbreak is saved in a server-side cache
 
 #### As temporary World Info, Character Bias, or Instruct for non-Instruct models
 
-- `[{{char}} is in the library]`
-- `[{{user}} has a fresh wound to his leg, so won't be able to run away.]`
-- `[{{char}} cannot speak and must communicate using hand signals.]`
+- `[\{\{char\}\} is in the library]`
+- `[\{\{user\}\} has a fresh wound to his leg, so won't be able to run away.]`
+- `[\{\{char\}\} cannot speak and must communicate using hand signals.]`
