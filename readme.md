@@ -65,4 +65,4 @@ SillyTavern is only a frontend interface, so you will need to have access to one
 * We also welcome helpful and informed bug reports that use the templates provided in our GitHub.
 * We do not accept monetary donations for the project itself.
 * Cohee does not take donations.
-* RossAscends has a personal [Patreon](https://www.patreon.com/RossAscends).
+* RossAscends has a personal [Patreon](https://www.patreon.com/RossAscends) & [Kofi](https://ko-fi.com/rossascends)
