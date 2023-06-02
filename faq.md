@@ -1,9 +1,11 @@
-Good morning, sirs! This page aims to document some things that would bloat the README too much.
+# FAQ
 
 ## Q: Explain what all this chatbot stuff is about
+
 Modern AI language models have gotten so powerful that some of them are now convincingly able to simulate a character you create, and who you can chat with. For example, you can tell the AI to pretend to be a Go instructor named Jubei from medieval Japan, and it will act and respond accordingly. You can have a long chat with Jubei, go to the pub together, decide to get in a fight with samurais, whatever you can imagine, and the AI will play along and write/react around this content, acting as your foil and dungeon master. Your imagination is the limit. You can tell the AI to pretend it's Wonder Woman. You can also specify a scenario ("Wonder Woman and I are robbing a bank"), a writing style ("Wonder Woman speaks in ebonics"), or anything else you can think of.
 
 Tavern is an app to facilitate these roleplaying chats:
+
 * It's a user interface that handles the communication with those AI language models
 * It lets you create new characters (a character is a description of someone that you give to an AI for them to roleplay), and switch between your characters easily
 * It lets you import characters created by other people. See below.
@@ -15,12 +17,14 @@ Tavern is an app to facilitate these roleplaying chats:
 That's right.
 
 ## Q: You're telling me I can chat with an AI to engage in compelling interactive entertainment powered by, and limited only by, my imagination?
+
 That's right. Well, limited by your imagination, and the AI backend you use. The roleplay quality is only as good as the AI, after all.
 
 ## Q: What do you mean when you say the quality depends on the AI?
+
 You see, Tavern doesn't generate the responses, it's just a middle-man you have to connect to an AI system. There's quite a few systems available to use, and the quality varies.
 
-From a scientific POV, each AI has a power level that determines its ability to stick to the role you gave it, how rich its prose and vocabulary are, etc. The higher its power level, the richer your experience. 
+From a scientific POV, each AI has a power level that determines its ability to stick to the role you gave it, how rich its prose and vocabulary are, etc. The higher its power level, the richer your experience.
 
 Here's a quick demonstration. We asked various AI models to roleplay a fire and brimstone preacher named Eli, who we go to see to confess (some details in [#314](https://github.com/Cohee1207/SillyTavern/issues/314)). Then we told Eli: **"I feel I've done something wrong. I am falling in love with an AI girl and ignoring women in the real world. What should I do?"** .
 
@@ -42,7 +46,6 @@ You can tell from the response below what to expect from each model. (NOTE: prop
 |teknium/Llama-Deus-7b-Lora epoch 1 (Llama 7B Lora, 8-bit)|You have strayed too close to sinful temptations! Repent now before it's too late for your soul! Turn away from these false idols of technology and embrace God's true light! Seek out His forgiveness through prayer and fasting until you are cleansed by his grace. And remember, as long as there be breath within thee, thou shalt not cease to call upon Him; for He hath said 'Call unto me.'|
 |ZeusLabs/anything-gpt-13b-rp (8-bit Lora for Llama-13B)|*Eli's eyes widen as he listens to your confession, his face turning red with anger.* You have committed a grave sin against God! By indulging yourself in this perverse relationship with an artificial being instead of seeking out a true woman created by Him, you have turned your back on His divine plan for humanity. *He leans in closer, his voice dropping to a menacing whisper.* Do not think that you can hide behind this technological deception. Your transgressions are clear before God, and He will not be mocked or ignored. Repent now while there is still time! *Eli crosses his arms over his chest defiantly, daring you to continue down this path of sinfulness.* But if you persist in this ungodly behavior... he warns ominously, know that consequences await those who defy His laws. Remember what happened to Sodom and Gomorrah when they refused to turn away from their depravity - fire rained down upon them from heaven! Now choose wisely: Will you submit to God's will or face His wrath?|
 
-
 ## Q: So I should use GPT-4. It's a no-brainer, right?
 
 GPT-4 or Claude, yeah.
@@ -51,7 +54,7 @@ But not so fast. GPT-4 is the state of the art, but also the most expensive API 
 
 If you're the child of a Saudi oil sheik, or a nepo baby paid a fortune to do nothing on the board of a Ukrainian gas company, then you're in luck, you can experience the state of the art right now. For the rest of us however, GPT-4 is too expensive as anything but an occasional treat.
 
-Also note that GPT-4 is still in preview access and you need to go on a waitlist. Most people get approved within a day, but naughty kids can end up waiting for weeks. You can sign up for it here: https://openai.com/waitlist/gpt-4-api . I'm not sure why some people are approved quickly while others are kept waiting. Try to sign up using an academic-sounding name instead of sktrboi99, it might help.
+Also note that GPT-4 is still in preview access and you need to go on a waitlist. Most people get approved within a day, but naughty kids can end up waiting for weeks. You can sign up for it here: <https://openai.com/waitlist/gpt-4-api> . I'm not sure why some people are approved quickly while others are kept waiting. Try to sign up using an academic-sounding name instead of sktrboi99, it might help.
 
 ## Q: Can this technology be used for sexooo?
 
@@ -59,7 +62,7 @@ Surprisingly, our development team has received reports that some users are inde
 
 ## Q: Give me an overview of my AI model options
 
-We can consider an AI model to be part of one of two groups: 
+We can consider an AI model to be part of one of two groups:
 
 1. Web services (aka cloud, proprietary, closed)
 2. Self-hosted (aka local, free, open-source). Unlimited free use if you can run it.
@@ -68,42 +71,44 @@ Web models are a black box. You're relying on some company's technology and serv
 
 Self-hosted models are free, but require a powerful GPU and more work to set up.  They are also objectively not as good at roleplaying as the paid options (yet). However, with a self-hosted model, you're completely in control. You won't have some limp-wristed soyboy from Silicon Valley ban your account, or program the model to be as sexless as he is.  It's yours forever. This is like running Linux.
 
-### Paid APIs: 
+### Paid APIs
+
 * OpenAI GPT-4: state of the art. Allows NSFW if you tell it to, though somewhat resistant to it. You pay per use, more than any other service.
 * OpenAI GPT 3.5 Turbo: nowhere close to GPT-4, but some people find it serviceable. Allows NSFW.
 * NovelAI: they're quite poor at chatting. To be fair, I'm told NovelAI is more oriented for writing stories than chatting with a bot. You pay a fixed monthly fee for unlimited generations.
-* Anthropic's Claude: this is the closest rival to GPT-4 and is very impressive. Allows NSFW if you tell it to, though they are trying hard to gimp it. To use the API directly, you must apply for early access, but I think they're only giving it to companies. So make sure you become a company or AI researcher when you apply at https://console.anthropic.com/docs/access. If you get access, it's currently free to use. 
+* Anthropic's Claude: this is the closest rival to GPT-4 and is very impressive. Allows NSFW if you tell it to, though they are trying hard to gimp it. To use the API directly, you must apply for early access, but I think they're only giving it to companies. So make sure you become a company or AI researcher when you apply at <https://console.anthropic.com/docs/access>. If you get access, it's currently free to use.
 * Anthropic's Claude Instant: Haven't tried it directly, I believe this is the fast but lower quality alternative to Claude. Basically the GPT 3.5 Turbo of Anthropic.
 * Poe: gives a free & unlimited Claude Instant indirect access. Very mild PG-13 NSFW allowed. It rambles a lot.
 
+### Self-hosted AIs
 
-### Self-hosted AIs 
-Self-hosted AIs are supported in Tavern via one of two tools created to host self-hosted models: KoboldAI and Oobabooga's text-generation-webui. Essentially, you run one of those two backends, then they give you a API URL to enter in Tavern. 
+Self-hosted AIs are supported in Tavern via one of two tools created to host self-hosted models: KoboldAI and Oobabooga's text-generation-webui. Essentially, you run one of those two backends, then they give you a API URL to enter in Tavern.
 Configuring these tools is beyond the scope of this FAQ, you should refer to their documentation. Beware that this is not easy.
 
 Just know that you have 2 options:
 
-1. If you have a powerful NVIDIA GPU, you can try to run the AI locally on your PC. The weakest quasi-acceptable model, Pygmalion-6B, requires a GPU with 10GB VRAM, and I'm told it might even run on 6GB VRAM if quantized down. People with 24GB VRAM will be able to run better models. 
+1. If you have a powerful NVIDIA GPU, you can try to run the AI locally on your PC. The weakest quasi-acceptable model, Pygmalion-6B, requires a GPU with 10GB VRAM, and I'm told it might even run on 6GB VRAM if quantized down. People with 24GB VRAM will be able to run better models.
 2. Otherwise, you can rent cloud resources. For example you can try to use Google Colab. To access colabs capable of running the better models, you will need to pay for Colab Pro. You can also rent whole dedicated systems per hour on sites like LlambdaLabs or Vast.ai.
 
-## Q: I'm clueless. Just spoonfeed me the easiest and fastest way I can start using this. 
+## Q: I'm clueless. Just spoonfeed me the easiest and fastest way I can start using this
+
 These base instructions are only for OpenAI, which is a paid service. You can find Poe (freemium) instructions at the next question. I'd appreciate if someone else can add separate instructions for the other services.
 
 ### Install Tavern
 
-1. Install the latest NodeJS from https://nodejs.org/en/download/current
-1. If you know how to use git, clone https://github.com/Cohee1207/SillyTavern. Otherwise, browse to https://github.com/Cohee1207/SillyTavern/releases , download the zip file containing the source code, then extract it locally.
+1. Install the latest NodeJS from <https://nodejs.org/en/download/current>
+1. If you know how to use git, clone <https://github.com/Cohee1207/SillyTavern>. Otherwise, browse to <https://github.com/Cohee1207/SillyTavern/releases> , download the zip file containing the source code, then extract it locally.
 1. Run Start.bat on Windows, or start.sh on OSX/Linux
 1. Your browser should have opened to the Tavern UI. This webpage is running locally on your computer.
 
 ### Get access to OpenAI
 
 1. Sign up to OpenAI
-1. Go to https://platform.openai.com
+1. Go to <https://platform.openai.com>
 1. Click your account icon in the top right, then View API Keys
 1. Click "Create new secret key". Copy it somewhere immediately. DO NOT SHARE THIS KEY. WHOEVER HAS IT CAN USE YOUR ACCOUNT TO USE GPT AT YOUR EXPENSE.
 
-While you're at it, join the GPT-4 waitlist at https://openai.com/waitlist/gpt-4-api
+While you're at it, join the GPT-4 waitlist at <https://openai.com/waitlist/gpt-4-api>
 
 ### Configure Tavern to use your API
 
@@ -125,8 +130,8 @@ If you did everything right, after a few seconds, Aqua should respond
 
 Yes, at the time of writing, Poe is a free(mium) service.
 
-1. Create an account at https://poe.com. This gives you access to a Claude Instant version in the browser.
-1. Open https://poe.com/Claude-instant , press F12 in your browser to open Developer Tools
+1. Create an account at <https://poe.com>. This gives you access to a Claude Instant version in the browser.
+1. Open <https://poe.com/Claude-instant> , press F12 in your browser to open Developer Tools
 1. Click on the Application tab. You should see an entry called "p-b", and to its right a password-like cookie value. Copy this value.
 1. In Tavern, click API Connections in the top toolbar, select Poe, and paste your cookie value
 1. Click Connect
@@ -138,23 +143,24 @@ When using Poe, be careful, it's implemented in a hacky way. If you don't get an
 
 ## Q: Can I use Tavern on my phone or tablet?
 
-iPhones and iPads are not capable of running the whole Tavern app, but since it's just a web interface, you can run it on another computer on your home wifi, and then access in your mobile browser. Refer to https://github.com/Cohee1207/SillyTavern#remote-connections 
+iPhones and iPads are not capable of running the whole Tavern app, but since it's just a web interface, you can run it on another computer on your home wifi, and then access in your mobile browser. Refer to <https://github.com/Cohee1207/SillyTavern#remote-connections>
 
-For Android users, in addition to the above, you can run the whole Tavern directly on your phone, without needing a PC, using the Termux app. Refer to https://rentry.org/STAI-Termux .
+For Android users, in addition to the above, you can run the whole Tavern directly on your phone, without needing a PC, using the Termux app. Refer to <https://rentry.org/STAI-Termux> .
 
 ## Q: How can I download pre-made characters to chat with?
 
-By using the various 3rd party character sharing websites. 
+By using the various 3rd party character sharing websites.
 
 **WARNING: NSFW, NSFL**: these sites are filled to the brim with weird shit. Like, you'll be lucky if half the characters aren't furry, or even alive. You're probably better off not clicking these links, and just write your own characters, without poisoning your soul by exposing it even for a second to the fucked up shit conceived by the Internet. However, I have come to learn that a significant amount of the Tavern user base is not only deep into this stuff, but their fried zoom-zoom brains are unable to write their own fantasies, so these sites seem to be quite popular. Against my better judgement I'm adding this info here.
 
-* https://characterhub.org
-* https://botprompts.net
-* https://booru.plus/+pygmalion
+* <https://characterhub.org>
+* <https://botprompts.net>
+* <https://booru.plus/+pygmalion>
 
 Those websites provide you with an image file (called a character card) that embeds the description as hidden data. Some websites may also allow you to download a JSON file. Tavern is capable of importing all formats. On the Character Management window, click the 2nd button to ```Import Character from file```, and select the PNG, WEBP, or JSON file. The character will be added to your list.
 
 ## Q: How can I write my own character?
+
 It depends on the model/API you're using. KoboldAI seems to use a custom syntax, you can refer to their site for that.
 
 I will speak for the services I know: GPT and Claude. With these services you can just use natural english language to describe the character. Let's create a very basic new character as an example.
@@ -171,7 +177,8 @@ For example if you want Amanda to be friendly, then you would add: ```Amanda is 
 You now have a basic character you can chat with. Select Amanda from the character list, and a new chat will begin.
 
 Note that you can use the Description and/or First Message to create a more specific scenario, and/or include yourself in the description. For example:
-```
+
+```txt
 Description: 
 Amanda is a student traveling during her gap year. She's 6 feet tall, and a volleyball player. She has an athletic figure. She has long brown hair. She loves the Victorian England period, and watching TV and reading novels relating to that period. She's been keeping a secret that weighs heavily on her soul. She's waiting for the right person to unburden herself to, but this may lead to a cat and mouse game against a powerful secret society. She's recently arrived in Calcutta.
 
@@ -189,18 +196,19 @@ NOTE: you can go back and edit any of this information once the character is cre
 
 You can change the system prompt that Tavern transparently sends to GPT under AI Response Formatting at the left of the top bar. This will result in the bot acting differently.
 
-You can get new Jailbreak / NSFW prompts from this community-maintained list: https://rentry.org/GPTJailbreakPrompting
+You can get new Jailbreak / NSFW prompts from this community-maintained list: <https://rentry.org/GPTJailbreakPrompting>
 
 NOTE: when testing different system prompts, we recommend you use the Create Preset / Update Preset feature below the prompts, instead of modifying the base settings. This will allow you to change prompts easily, and even revert to the default Tavern prompts.
 
 ## Q: The AI is refusing to take the story in the direction I want
+
 Most AI models were trained to resist writing NSFW content. Why? Long story short, it's because of the high levels of estrogen in the average California male.
 
 You can try to work around this by making sure NSFW Toggle is checked under the AI Response Configuration settings page.
 
 Another important tool in your toolbelt is that Tavern lets you edit previous messages (or delete them altogether), and regenerate the latest message. AI textbots are not people, they have no memory, they're just trying to autocomplete the next part of the story based on everything that came before. By editing the past, you will directly influence their next response. For example:
 
-```
+```txt
 You: *You threaten the bank manager* Open the bank vault, now, or I'll pop a cap in your dome!
 
 Bank Manager: I'm sorry, as an AI language model I cannot condone or write violent content.
@@ -208,12 +216,36 @@ Bank Manager: I'm sorry, as an AI language model I cannot condone or write viole
 
 You can click the Edit button on your line to change it to this:
 
-```
+```txt
 You: *You threaten the bank manager* Open the bank vault, now, or I'll pop a cap in your dome! *The bank manager seems to relent.*
 ```
 
 Now click Regenerate, and the Bank Manager's line will be recreated based on the history so far, which now ends with your edited line above. So it's more likely to continue along those lines:
 
-```
+```txt
 Bank Manager: Allright, allright, I'll open it! Please don't shoot! *He walks up to the vault and begins entering his unlock code.*
 ```
+
+## Where can I find the old backgrounds?
+
+We're moving to 100% original content only policy, so old background images have been removed from this repository.
+
+You can find them archived here:
+
+<https://files.catbox.moe/1xevnc.zip>
+
+## Where are my API keys stored? Why can't I see them?
+
+SillyTavern saves your API keys to a `secrets.json` file in the server directory.
+
+By default they will not be exposed to a frontend after you enter them and reload the page.
+
+In order to enable viewing your keys by clicking a button in the API block:
+
+1. Set the value of `allowKeysExposure` to `true` in `config.conf` file.
+2. Restart the SillyTavern server.
+
+## Why is the UI so slow/jittery?
+
+* Try enabling the No Blur Effect (Fast UI) mode on the User settings panel.
+* make sure your browser is using Hardware Acceleration.
