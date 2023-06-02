@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.1.738982597978">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.1.738983204882">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.0.1">
@@ -21,20 +21,22 @@
     <meta property="og:url" content="https://docs.sillytavern.app/guidebook/">
     <meta property="og:title" content="SillyTavern Guidebook">
     <meta property="og:description" content="This page contains descriptions for many of SillyTavern's features and core concepts.">
+    <meta property="og:image" content="https://docs.sillytavern.app/static/nai-stream.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/guidebook/">
     <meta property="twitter:title" content="SillyTavern Guidebook">
     <meta property="twitter:description" content="This page contains descriptions for many of SillyTavern's features and core concepts.">
+    <meta property="twitter:image" content="https://docs.sillytavern.app/static/nai-stream.png">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../resources/css/retype.css?v=3.0.1.738982597978" rel="stylesheet" />
+    <link href="../resources/css/retype.css?v=3.0.1.738983204882" rel="stylesheet" />
 
-    <script type="text/javascript" src="../resources/js/config.js?v=3.0.1.738982597978" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../resources/js/config.js?v=3.0.1.738983204882" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../resources/js/retype.js?v=3.0.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../resources/js/lunr.js?v=3.0.1.738982597978" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../resources/js/lunr.js?v=3.0.1.738983204882" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -672,16 +674,16 @@ Content: Rufus is a dog.</code></pre>
 <li>Generate something. You should see two requests to <a href="http://api.novelai.net/ai/generate-stream">api.novelai.net/ai/generate-stream</a>, which might look something like this:</li>
 </ol>
 <p><figure class="content-center">
-    <img src="1.png" alt="1.png" />
-    <figcaption class="caption">1.png</figcaption>
+    <img src="../static/nai-stream.png" alt="" />
+    <figcaption class="caption"></figcaption>
 </figure>
 </p>
 <ol start="5">
 <li>Select the second request, then in the Headers tab of the inspection panel, scroll down to the very bottom. Look for a header called Authorization:</li>
 </ol>
 <p><figure class="content-center">
-    <img src="2.png" alt="2.png" />
-    <figcaption class="caption">2.png</figcaption>
+    <img src="../static/nai-key.png" alt="" />
+    <figcaption class="caption"></figcaption>
 </figure>
 </p>
 <p>The long string (after &quot;Bearer&quot;, not including it) is your API key.</p>
