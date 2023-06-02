@@ -3,38 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.1.738983204882">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.1.738983427588">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.0.1">
 
     <!-- Primary Meta Tags -->
-    <title>How to Update SillyTavern</title>
-    <meta name="title" content="How to Update SillyTavern">
-    <meta name="description" content="This is not an installation guide. If you need installation instructions, look here: https://docs.alpindale." />
+    <title>Remote connections</title>
+    <meta name="title" content="Remote connections">
+    <meta name="description" content="Most often this is for people who want to use SillyTavern on their mobile phones while their PC runs the ST server on the same wifi network." />
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.sillytavern.app/update/" />
+    <link rel="canonical" href="https://docs.sillytavern.app/usage/remoteconnections/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.sillytavern.app/update/">
-    <meta property="og:title" content="How to Update SillyTavern">
-    <meta property="og:description" content="This is not an installation guide. If you need installation instructions, look here: https://docs.alpindale.">
+    <meta property="og:url" content="https://docs.sillytavern.app/usage/remoteconnections/">
+    <meta property="og:title" content="Remote connections">
+    <meta property="og:description" content="Most often this is for people who want to use SillyTavern on their mobile phones while their PC runs the ST server on the same wifi network.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.sillytavern.app/update/">
-    <meta property="twitter:title" content="How to Update SillyTavern">
-    <meta property="twitter:description" content="This is not an installation guide. If you need installation instructions, look here: https://docs.alpindale.">
+    <meta property="twitter:url" content="https://docs.sillytavern.app/usage/remoteconnections/">
+    <meta property="twitter:title" content="Remote connections">
+    <meta property="twitter:description" content="Most often this is for people who want to use SillyTavern on their mobile phones while their PC runs the ST server on the same wifi network.">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../resources/css/retype.css?v=3.0.1.738983204882" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=3.0.1.738983427588" rel="stylesheet" />
 
-    <script type="text/javascript" src="../resources/js/config.js?v=3.0.1.738983204882" data-turbo-eval="false" defer></script>
-    <script type="text/javascript" src="../resources/js/retype.js?v=3.0.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../resources/js/lunr.js?v=3.0.1.738983204882" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.1.738983427588" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/retype.js?v=3.0.1" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.1.738983427588" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -64,10 +64,10 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../" class="flex items-center leading-snug text-xl">
+                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
                             <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                                <img class="max-h-10 dark:hidden md:inline-block" src="../static/logo.png">
-                                <img class="max-h-10 hidden dark:inline-block" src="../static/logo.png">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo.png">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png">
                             </span>
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                         </a>
@@ -197,91 +197,88 @@
                                 <div id="docs-sidebar-right-toggle"></div>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="how-to-update-sillytavern" class="break-words">
+<doc-anchor-target id="remote-connections" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-update-sillytavern">#</doc-anchor-trigger>
-        <span>How to Update SillyTavern</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#remote-connections">#</doc-anchor-trigger>
+        <span>Remote connections</span>
     </h1>
 </doc-anchor-target>
-<p>This is not an installation guide. If you need installation instructions, look here:
-<a href="https://docs.alpindale.dev/pygmalion-extras/sillytavern/#installation">https://docs.alpindale.dev/pygmalion-extras/sillytavern/#installation</a></p>
-<p>(This guide assumes you have already installed SillyTavern once and know how to run it on your OS.)</p>
-<p>(A plain text copy of this file is also present inside SillyTavern&#x27;s base install folder.)</p>
-<hr />
-<doc-anchor-target id="linuxtermux">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#linuxtermux">#</doc-anchor-trigger>
-        <span>Linux/Termux</span>
-    </h2>
-</doc-anchor-target>
-<p>You definitely installed via git, so just &#x27;git pull&#x27; inside the SillyTavern directory.</p>
-<hr />
-<doc-anchor-target id="windowsmacos">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#windowsmacos">#</doc-anchor-trigger>
-        <span>Windows/MacOS</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="method-1---git">
+<p>Most often this is for people who want to use SillyTavern on their mobile phones while their PC runs the ST server on the same wifi network.</p>
+<p>However, it can be used to allow remote connections from anywhere as well.</p>
+<p><strong>IMPORTANT: SillyTavern is a single-user program, so anyone who logs in will be able to see all characters and chats, and be able to change any settings inside the UI.</strong></p>
+<doc-anchor-target id="1-managing-whitelisted-ips">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#method-1---git">#</doc-anchor-trigger>
-        <span>Method 1 - GIT</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-managing-whitelisted-ips">#</doc-anchor-trigger>
+        <span>1. Managing whitelisted IPs</span>
     </h3>
 </doc-anchor-target>
-<p>We always recommend users install using &#x27;git&#x27;. Here&#x27;s why:</p>
-<p>When you have installed via &#x27;git clone&#x27;, all you have to do to update is type &#x27;git pull&#x27; in a command line in the ST folder.
-Alternatively, if the command prompt gives you problems (and you have GitHub Desktop installed), you can use the &#x27;Repository&#x27; menu and select &#x27;Pull&#x27;.
-The updates are applied automatically and safely.</p>
-<doc-anchor-target id="method-2---zip">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#method-2---zip">#</doc-anchor-trigger>
-        <span>Method 2 - ZIP</span>
-    </h3>
-</doc-anchor-target>
-<p>If you insist on installing via a zip, here is the tedious process for doing the update:</p>
-<ol>
-<li><p>Download the new release zip.</p>
-</li>
-<li><p>Unzip it into a folder OUTSIDE of your current ST installation.</p>
-</li>
-<li><p>Do the usual setup procedure for your OS to install NodeJS requirements.</p>
-</li>
-<li><p>Copy the following files/folders as necessary(*) from your old ST installation:</p>
-</li>
-</ol>
-<p>(*) &#x27;As necessary&#x27; = &quot;If you made any custom content related to those folders&quot;.
-None of the folders are mandatory, so only copy what you need.</p>
-<doc-anchor-target id="nb-do-not-copy-the-entire-public-folder">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#nb-do-not-copy-the-entire-public-folder">#</doc-anchor-trigger>
-        <span>NB: DO NOT COPY THE ENTIRE /PUBLIC/ FOLDER</span>
-    </h4>
-</doc-anchor-target>
-<p>Doing so could break the new install and prevent new features from being present.</p>
+<ul>
+<li>Create a new text file inside your SillyTavern base install folder called <code v-pre>whitelist.txt</code>.</li>
+<li>Open the file in a text editor, add a list of IPs you want to be allowed to connect.</li>
+</ul>
+<p><em>Both indidivual IPs, and wildcard IP ranges are accepted. Examples:</em></p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<div class="codeblock-title">plaintext</div>
-<pre class="language-none"><code v-pre class="language-none">Backgrounds
-Characters
-Chats
-Groups
-Group chats
-KoboldAI Settings
-NovelAI Settings
-OpenAI Settings
-TextGen Settings (textgen = ooba)
-Themes
-User Avatars
-Worlds
-settings.json</code></pre>
+<pre class="language-none"><code v-pre class="language-none">192.168.0.1
+192.168.0.20</code></pre>
 </doc-codeblock></div>
-<ol start="5">
-<li><p>Once those folders/files are copied, Paste them into the /Public/ folder of the new install.</p>
-</li>
-<li><p>Start SillyTavern once again with the method appropriate to your OS, and pray you got it right.</p>
-</li>
-<li><p>If everything shows up, you can safely delete the old ST folder.</p>
-</li>
-</ol>
+<p>or</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">192.168.0.*</code></pre>
+</doc-codeblock></div>
+<p>(the above wildcard IP range will allow any device on the local network to connect)</p>
+<p>CIDR masks are also accepted (eg. 10.0.0.0/24).</p>
+<ul>
+<li>Save the <code v-pre>whitelist.txt</code> file.</li>
+<li>Restart your TAI server.</li>
+</ul>
+<p>Now devices which have the IP specified in the file will be able to connect.</p>
+<p><em>Note: <code v-pre>config.conf</code> also has a <code v-pre>whitelist</code> array, which you can use in the same way, but this array will be ignored if <code v-pre>whitelist.txt</code> exists.</em></p>
+<doc-anchor-target id="2-getting-the-ip-for-the-st-host-machine">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-getting-the-ip-for-the-st-host-machine">#</doc-anchor-trigger>
+        <span>2. Getting the IP for the ST host machine</span>
+    </h3>
+</doc-anchor-target>
+<p>After the whitelist has been setup, you&#x27;ll need the IP of the ST-hosting device.</p>
+<p>If the ST-hosting device is on the same wifi network, you will use the ST-host&#x27;s internal wifi IP:</p>
+<ul>
+<li>For Windows: windows button &gt; type <code v-pre>cmd.exe</code> in the search bar &gt; type <code v-pre>ipconfig</code> in the console, hit Enter &gt; look for <code v-pre>IPv4</code> listing.</li>
+</ul>
+<p>If you (or someone else) wants to connect to your hosted ST while not being on the same network, you will need the public IP of your ST-hosting device.</p>
+<ul>
+<li>While using the ST-hosting device, access <a href="https://whatismyipaddress.com/">this page</a> and look for for <code v-pre>IPv4</code>. This is what you would use to connect from the remote device.</li>
+</ul>
+<doc-anchor-target id="3-connect-the-remote-device-to-the-st-host-machine">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-connect-the-remote-device-to-the-st-host-machine">#</doc-anchor-trigger>
+        <span>3. Connect the remote device to the ST host machine</span>
+    </h3>
+</doc-anchor-target>
+<p>Whatever IP you ended up with for your situation, you will put that IP address and port number into the remote device&#x27;s web browser.</p>
+<p>A typical address for an ST host on the same wifi network would look like:</p>
+<p><code v-pre>http://192.168.0.5:8000</code></p>
+<p>Use http:// NOT https://</p>
+<doc-anchor-target id="opening-your-st-to-all-ips">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#opening-your-st-to-all-ips">#</doc-anchor-trigger>
+        <span>Opening your ST to all IPs</span>
+    </h3>
+</doc-anchor-target>
+<p>We do not recommend doing this, but you can open <code v-pre>config.conf</code> and change <code v-pre>whitelist</code> to <code v-pre>false</code>.</p>
+<p>You must remove (or rename) <code v-pre>whitelist.txt</code> in the SillyTavern base install folder, if it exists.</p>
+<p>This is usually an insecure practice, so we require you to set a username and password when you do this.</p>
+<p>The username and password are set in <code v-pre>config.conf</code>.</p>
+<p>After restarting your ST server, any device will be able to connect to it, regardless of their IP as long as they know the username and password.</p>
+<doc-anchor-target id="still-unable-to-connect">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#still-unable-to-connect">#</doc-anchor-trigger>
+        <span>Still Unable To Connect?</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Create an inbound/outbound firewall rule for the port found in <code v-pre>config.conf</code>. Do NOT mistake this for portforwarding on your router, otherwise someone could find your chat logs and that&#x27;s a big no-no.</li>
+<li>Enable the Private Network profile type in Settings &gt; Network and Internet &gt; Ethernet. This is VERY important for Windows 11, otherwise you would be unable to connect even with the aforementioned firewall rules.</li>
+</ul>
 
                                 
                                 <!-- Required only on API pages -->
@@ -291,20 +288,20 @@ settings.json</code></pre>
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../hotkeys/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../usage/update/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Hot​Keys</span>
+                                                <span class="block mt-1">How to Update Silly​Tavern</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../licensecredits/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../usage/guidebook/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">License and credits</span>
+                                                <span class="block mt-1">Silly​Tavern Guidebook</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -348,6 +345,6 @@ settings.json</code></pre>
 
     <div id="docs-overlay-target"></div>
 
-    <script>window.__DOCS__ = { "title": "How to Update SillyTavern", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+    <script>window.__DOCS__ = { "title": "Remote connections", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
 </body>
 </html>
