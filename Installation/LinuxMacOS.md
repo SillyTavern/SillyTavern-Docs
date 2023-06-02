@@ -8,7 +8,7 @@ For MacOS all of these will be done in a Terminal.
 - for Main Branch: `git clone https://github.com/SillyTavern/SillyTavern -b main`
 - for Dev Branch: `git clone https://github.com/SillyTavern/SillyTavern -b dev`
 
-3. Run the `start.sh` script
+3. Run the `start.sh` script with one of these commands:
 
 - `./start.sh`
 - `bash start.sh`

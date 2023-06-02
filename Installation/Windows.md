@@ -1,7 +1,5 @@
 # Windows Installation
 
-*NOTE: This software is intended for local install purposes, and has not been thoroughly tested on a colab or other cloud notebook service.*
-
 > **Warning**
 
 > DO NOT INSTALL INTO ANY WINDOWS CONTROLLED FOLDER (Program Files, System32, etc).
@@ -19,6 +17,7 @@ Easy to follow guide with pretty pictures:
   4. Browse to or Create a folder that is not controlled or monitored by Windows. (ex: C:\MySpecialFolder\)
   5. Open a Command Prompt inside that folder by clicking in the 'Address Bar' at the top, typing `cmd`, and pressing Enter.
   6. Once the black box (Command Prompt) pops up, type ONE of the following into it and press Enter:
+
     - for Main Branch: `git clone https://github.com/Cohee1207/SillyTavern -b main`
 
     - for Dev Branch: `git clone https://github.com/Cohee1207/SillyTavern -b dev`

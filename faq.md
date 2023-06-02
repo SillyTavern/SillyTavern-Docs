@@ -12,17 +12,9 @@ Tavern is an app to facilitate these roleplaying chats:
 * It will keep your chat history with a character, allowing you to resume at any time, start a new chat, review old chats, etc
 * In the background, it does the needful to prepare the AI for your character roleplay. Specifically, it will send a system prompt (instructions for the AI) that primes the AI to follow certain rules that make for a good chat session. Optionally, it can also try to allow the roleplay to go into an "adult" direction.
 
-## Q: Whoa, slow down there, egghead. Are you telling me I can use this computer thingie to talk to some robot?
-
-That's right.
-
-## Q: You're telling me I can chat with an AI to engage in compelling interactive entertainment powered by, and limited only by, my imagination?
-
-That's right. Well, limited by your imagination, and the AI backend you use. The roleplay quality is only as good as the AI, after all.
-
 ## Q: What do you mean when you say the quality depends on the AI?
 
-You see, Tavern doesn't generate the responses, it's just a middle-man you have to connect to an AI system. There's quite a few systems available to use, and the quality varies.
+SillyTavern doesn't generate the responses. It's just a middle-man that connects to an AI system. There's quite a few systems available to use, and the quality varies.
 
 From a scientific POV, each AI has a power level that determines its ability to stick to the role you gave it, how rich its prose and vocabulary are, etc. The higher its power level, the richer your experience.
 

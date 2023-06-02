@@ -1,5 +1,7 @@
 # HotKeys
 
+**Hotkeys are disabled for mobile devices**
+
 * Up = Edit last message in chat
 * Ctrl+Up = Edit last USER message in chat
 * Left = swipe left

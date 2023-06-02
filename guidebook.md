@@ -1,5 +1,7 @@
 # SillyTavern Guidebook
 
+This page contains descriptions for many of SillyTavern's features and core concepts.
+
 ## Character Design
 
 ### Character description
@@ -407,7 +409,7 @@ Don't have OpenAI / Claude API access? Use OpenRouter.
 1. Create an OpenRouter account: [openrouter.ai](https://openrouter.ai/)
 2. Select OpenRouter as a provider in Window.ai extension.
 
-OpenRouter works by letting you use keys that they own. It has a free trial, and paid access afterwards. 
+OpenRouter works by letting you use keys that they own. It has a free trial, and paid access afterwards.
 
 ## Poe
 
