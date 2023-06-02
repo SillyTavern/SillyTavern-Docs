@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.1.738981369920">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.1.738982597978">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.0.1">
@@ -32,11 +32,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.0.1.738981369920" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=3.0.1.738982597978" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.1.738981369920" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.1.738982597978" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=3.0.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.1.738981369920" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.1.738982597978" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -206,25 +206,25 @@
     </h1>
 </doc-anchor-target>
 <doc-anchor-target id="what-is-it">
-    <h2>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#what-is-it">#</doc-anchor-trigger>
         <span>What is it?</span>
-    </h2>
+    </h3>
 </doc-anchor-target>
 <p>Expression images are images (aka &#x27;sprites&#x27;) of your AI character which are shown next to (or behind) the chat window.</p>
 <p>Expression images do not require Extras to work.</p>
 <p>However, having Extras running with the <code v-pre>classify</code> module enabled allows the Expressions to change automatically based on the sentiment expressed in the AI&#x27;s most recent chat response.</p>
 <doc-anchor-target id="setup-instructions-offline-mode-without-extras">
-    <h2>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#setup-instructions-offline-mode-without-extras">#</doc-anchor-trigger>
         <span>Setup Instructions (Offline Mode without Extras)</span>
-    </h2>
+    </h3>
 </doc-anchor-target>
 <ol>
 <li><p>Open the Extensions Panel and expand the &#x27;Expression images&#x27; section. You will see a grid of image placeholders.
 <figure class="content-center">
-    <img src="https://github.com/SillyTavern/SillyTavern/assets/124905043/a6883961-d15d-4998-9a28-8d0333d65f29" alt="ST-ExpressionDrawer" />
-    <figcaption class="caption">ST-ExpressionDrawer</figcaption>
+    <img src="https://github.com/SillyTavern/SillyTavern/assets/124905043/a6883961-d15d-4998-9a28-8d0333d65f29" alt="Expression Drawer" />
+    <figcaption class="caption">Expression Drawer</figcaption>
 </figure>
 </p>
 </li>
@@ -234,10 +234,10 @@
 </li>
 </ol>
 <doc-anchor-target id="setup-instructions-with-extras">
-    <h2>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#setup-instructions-with-extras">#</doc-anchor-trigger>
         <span>Setup Instructions (with Extras)</span>
-    </h2>
+    </h3>
 </doc-anchor-target>
 <ol>
 <li><p>Have Extras installed and running with the <code v-pre>classify</code> module enabled: <code v-pre>python server.py --enable-modules=classify</code></p>
@@ -248,51 +248,51 @@
 </li>
 </ol>
 <doc-anchor-target id="how-does-the-classify-module-work">
-    <h2>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#how-does-the-classify-module-work">#</doc-anchor-trigger>
         <span>How does the classify module work?</span>
-    </h2>
+    </h3>
 </doc-anchor-target>
 <p>The classify module uses a small &#x27;sentiment parsing&#x27; model that runs on the SillyTavern Extras host machine (eg. on your PC, or on the colab machine). This model takes the new output from the AI and detects what kind of sentiment, or emotion, the text is expressing. While multiple sentiments may be expressed in a single message, the model only picks the most likely one and returns that back to the Extras server. The Extras server then displays the image that is associated with that sentiment.</p>
 <doc-anchor-target id="what-image-formats-are-supported-for-expressions">
-    <h2>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#what-image-formats-are-supported-for-expressions">#</doc-anchor-trigger>
         <span>What image formats are supported for Expressions?</span>
-    </h2>
+    </h3>
 </doc-anchor-target>
 <p>Any image format is allowed, including webp and animated gifs.</p>
 <p>The most common format is a PNG file with a transparent background.</p>
 <doc-anchor-target id="using-the-default-expressions">
-    <h2>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#using-the-default-expressions">#</doc-anchor-trigger>
         <span>Using the &#x27;default expressions&#x27;</span>
-    </h2>
+    </h3>
 </doc-anchor-target>
 <p><em>(This feature will only activate if Extras is running. There is no way to manually display default expression images.)</em></p>
 <p><figure class="content-center">
-    <img src="https://github.com/SillyTavern/SillyTavern/assets/124905043/07438380-7547-43e3-b10d-da2f2bac26a7" alt="opera_xTyIQ3xsI7" />
-    <figcaption class="caption">opera_xTyIQ3xsI7</figcaption>
+    <img src="https://github.com/SillyTavern/SillyTavern/assets/124905043/07438380-7547-43e3-b10d-da2f2bac26a7" alt="Use Default Expressions" />
+    <figcaption class="caption">Use Default Expressions</figcaption>
 </figure>
 </p>
 <p>If you don&#x27;t have custom expression images for a character, you can use the built-in default expressions which are included with the base SillyTavern installation. These are simple emoji style images. Just click the checkbox at the bottom of the Expression images section inside the Extension panel. Default expressions will work alongside any available custom Expressions, and will display in cases when your custom image set is any missing images for a particular emotion.</p>
 <doc-anchor-target id="importing-an-expression-images-zip-file">
-    <h2>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#importing-an-expression-images-zip-file">#</doc-anchor-trigger>
         <span>Importing an Expression images zip file</span>
-    </h2>
+    </h3>
 </doc-anchor-target>
 <p>Using the &#x27;import ZIP&#x27; button, you can import a zip file which contains a collection of expression images, and those images will automatically be added into the correct folder for your <strong>currently selected character</strong>. The zip file must have a flat internal structure (no subfolders) and the individual images should be named correctly. Importing a zip will not automatically rename any images to make them match the emotions.</p>
 <doc-anchor-target id="limitations">
-    <h2>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#limitations">#</doc-anchor-trigger>
         <span>Limitations</span>
-    </h2>
+    </h3>
 </doc-anchor-target>
 <doc-anchor-target id="display-names-not-character-card-filenames-dictate-which-image-set-is-used">
-    <h3>
+    <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#display-names-not-character-card-filenames-dictate-which-image-set-is-used">#</doc-anchor-trigger>
-        <span>Display names (not character card filenames) dictate which image set is used.</span>
-    </h3>
+        <span>Display names (not character card filenames) dictate which image set is used</span>
+    </h4>
 </doc-anchor-target>
 <p>If you have more than one character with the same display name, they will both use the same set of expression images.</p>
 <p>If you want a different image set to be used for each version of the same-named character, you must change the display name of one of them, and provide the alternate expression images in a folder with the new display name.</p>
