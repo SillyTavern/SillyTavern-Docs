@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.1.738980580416">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.1.738981369920">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.0.1">
@@ -30,11 +30,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.0.1.738980580416" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=3.0.1.738981369920" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.1.738980580416" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.1.738981369920" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=3.0.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.1.738980580416" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.1.738981369920" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -205,9 +205,13 @@
 </doc-anchor-target>
 <p><em>NOTE: This software is intended for local install purposes, and has not been thoroughly tested on a colab or other cloud notebook service.</em></p>
 <blockquote>
-<p><strong>Warning</strong>
-DO NOT INSTALL INTO ANY WINDOWS CONTROLLED FOLDER (Program Files, System32, etc).
-DO NOT RUN START.BAT WITH ADMIN PERMISSIONS</p>
+<p><strong>Warning</strong></p>
+</blockquote>
+<blockquote>
+<p>DO NOT INSTALL INTO ANY WINDOWS CONTROLLED FOLDER (Program Files, System32, etc).</p>
+</blockquote>
+<blockquote>
+<p>DO NOT RUN START.BAT WITH ADMIN PERMISSIONS</p>
 </blockquote>
 <doc-anchor-target id="installing-via-git-recommended-for-easy-updating">
     <h2>
@@ -226,9 +230,11 @@ DO NOT RUN START.BAT WITH ADMIN PERMISSIONS</p>
 <li>Once the black box (Command Prompt) pops up, type ONE of the following into it and press Enter:</li>
 </ol>
 <ul>
-<li>for Main Branch: <code v-pre>git clone https://github.com/Cohee1207/SillyTavern -b main</code>
-- for Dev Branch: <code v-pre>git clone https://github.com/Cohee1207/SillyTavern -b dev</code></li>
+<li>for Main Branch: <code v-pre>git clone https://github.com/Cohee1207/SillyTavern -b main</code></li>
 </ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">- for Dev Branch: `git clone https://github.com/Cohee1207/SillyTavern -b dev`</code></pre>
+</doc-codeblock></div>
 <ol start="7">
 <li>Once everything is cloned, double click <code v-pre>Start.bat</code> to make NodeJS install its requirements.</li>
 <li>The server will then start, and SillyTavern will popup in your browser.</li>
