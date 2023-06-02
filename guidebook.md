@@ -344,11 +344,11 @@ To get a NovelAI API key, follow these instructions:
 3. Open the Network Tools on your web browser. (For Chrome or Firefox, you do this by pressing Ctrl+Shift+I, then switching to the Network tab.)
 4. Generate something. You should see two requests to [api.novelai.net/ai/generate-stream](http://api.novelai.net/ai/generate-stream), which might look something like this:
 
-![1.png](1.png)
+![](/static/nai-stream.png)
 
 5. Select the second request, then in the Headers tab of the inspection panel, scroll down to the very bottom. Look for a header called Authorization:
 
-![2.png](2.png)
+![](/static/nai-key.png)
 
 The long string (after "Bearer", not including it) is your API key.
 

@@ -6,7 +6,7 @@ Brought to you by Cohee, RossAscends, and the SillyTavern community, SillyTavern
 
 SillyTavern originated as a modification of TavernAI 1.2.8 in February 2023, and has since added many cutting edge features not present in the original TavernAI.
 
-## Features
+### Features
 
 * Mobile-friendly interface
 * Multi-API connectivity (KoboldAI/CPP, [AI Horde](https://horde.koboldai.net/), NovelAI, [Oobabooga's TextGen WebUI](https://github.com/oobabooga/text-generation-webui), OpenAI+proxies, [Poe.com](https://poe.com), WindowAI)
@@ -27,7 +27,7 @@ SillyTavern originated as a modification of TavernAI 1.2.8 in February 2023, and
 * Soft prompts via KoboldAI
 * webp character card interoperability (PNG is still the internal format)
 
-## Extensions
+### Extensions
 
 SillyTavern has an extensibility support, with some additional AI modules provided via [SillyTavern Extras API](https://github.com/SillyTavern/SillyTavern-extras)
 
@@ -38,16 +38,16 @@ SillyTavern has an extensibility support, with some additional AI modules provid
 * Stable Diffusion image generation (5 chat-related presets plus 'free mode')
 * Text-to-speech for AI response messages (via ElevenLabs, Silero, or the OS's System TTS)
 
-## Screenshots
+### Screenshots
 
 ![](https://user-images.githubusercontent.com/18619528/228649245-8061c60f-63dc-488e-9325-f151b7a3ec2d.png)
 ![](https://user-images.githubusercontent.com/18619528/228649856-fbdeef05-d727-4d5a-be80-266cbbc6b811.png)
 
-## Installation Requirements
+### Installation Requirements
 
 SillyTavern will run on virtually any device capable of running NodeJS v18.
 
-## What do I need other than SillyTavern?
+### What do I need other than SillyTavern?
 
 You will need to have access to an AI system backend that can act as the roleplay character.
 Currently supported backend APIs are:
@@ -58,13 +58,13 @@ Currently supported backend APIs are:
 * Poe.com (GPT, Claude-instant, Sage, etc)
 * WindowAI (GPT, Claude)
 
-## How can I get in touch with the developers directly?
+### How can I get in touch with the developers directly?
 
 * Discord: Cohee#1207 or RossAscends#1779
 * Reddit: /u/RossAscends or /u/sillylossy
 * [Post a GitHub issue](https://github.com/Cohee1207/SillyTavern/issues)
 
-## I like your project! How do I contribute?
+### I like your project! How do I contribute?
 
 * We welcome pull requests!
 * We also welcome helpful and informed bug reports that use the templates provided in our GitHub.
