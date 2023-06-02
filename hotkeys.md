@@ -8,5 +8,5 @@
 * Enter (with chat bar selected) = send your message to AI
 * Ctrl+Enter = Regenerate the last AI response
 * Escape
-  * (while editing message AND Message Edit AutoSave is enabled) = close edit box.
-  * Escape (while an AI message is generating or streaming) = stop the generation immediately.
+  * *(while editing message AND Message Edit AutoSave is enabled)* = close edit box.
+  * *(while an AI message is generating or streaming)* = stop the generation immediately.

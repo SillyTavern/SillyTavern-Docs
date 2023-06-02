@@ -6,7 +6,7 @@ However, it can be used to allow remote connections from anywhere as well.
 
 **IMPORTANT: SillyTavern is a single-user program, so anyone who logs in will be able to see all characters and chats, and be able to change any settings inside the UI.**
 
-## 1. Managing whitelisted IPs
+### 1. Managing whitelisted IPs
 
 * Create a new text file inside your SillyTavern base install folder called `whitelist.txt`.
 * Open the file in a text editor, add a list of IPs you want to be allowed to connect.

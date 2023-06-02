@@ -8,7 +8,6 @@ GNU Affero General Public License for more details.**
 * TAI Base by Humi: Unknown license
 * Cohee's modifications and derived code: AGPL v3
 * RossAscends' additions: AGPL v3
-
 * Portions of CncAnon's TavernAITurbo mod: Unknown license
 * Waifu Mode inspired by the work of PepperTaco (<https://github.com/peppertaco/Tavern/>)
 * Thanks to Pygmalion University for being awesome testers and suggesting cool features!
