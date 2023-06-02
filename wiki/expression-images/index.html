@@ -9,24 +9,26 @@
     <meta name="generator" content="Retype 3.0.1">
 
     <!-- Primary Meta Tags -->
-    <title>Android(Termux) Installation</title>
-    <meta name="title" content="Android(Termux) Installation">
-    <meta name="description" content="SillyTavern can be run natively on Android phones using Termux." />
+    <title>Expression Images</title>
+    <meta name="title" content="Expression Images">
+    <meta name="description" content="Expression images are images (aka 'sprites') of your AI character which are shown next to (or behind) the chat window." />
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.sillytavern.app/installation/android-(termux)/" />
+    <link rel="canonical" href="https://docs.sillytavern.app/wiki/expression-images/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.sillytavern.app/installation/android-(termux)/">
-    <meta property="og:title" content="Android(Termux) Installation">
-    <meta property="og:description" content="SillyTavern can be run natively on Android phones using Termux.">
+    <meta property="og:url" content="https://docs.sillytavern.app/wiki/expression-images/">
+    <meta property="og:title" content="Expression Images">
+    <meta property="og:description" content="Expression images are images (aka 'sprites') of your AI character which are shown next to (or behind) the chat window.">
+    <meta property="og:image" content="https://github.com/SillyTavern/SillyTavern/assets/124905043/a6883961-d15d-4998-9a28-8d0333d65f29">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.sillytavern.app/installation/android-(termux)/">
-    <meta property="twitter:title" content="Android(Termux) Installation">
-    <meta property="twitter:description" content="SillyTavern can be run natively on Android phones using Termux.">
+    <meta property="twitter:url" content="https://docs.sillytavern.app/wiki/expression-images/">
+    <meta property="twitter:title" content="Expression Images">
+    <meta property="twitter:description" content="Expression images are images (aka 'sprites') of your AI character which are shown next to (or behind) the chat window.">
+    <meta property="twitter:image" content="https://github.com/SillyTavern/SillyTavern/assets/124905043/a6883961-d15d-4998-9a28-8d0333d65f29">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -197,16 +199,103 @@
                                 <div id="docs-sidebar-right-toggle"></div>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="androidtermux-installation" class="break-words">
+<doc-anchor-target id="expression-images" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#androidtermux-installation">#</doc-anchor-trigger>
-        <span>Android(Termux) Installation</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#expression-images">#</doc-anchor-trigger>
+        <span>Expression Images</span>
     </h1>
 </doc-anchor-target>
-<p>SillyTavern can be run natively on Android phones using Termux.</p>
-<p>Please refer to this guide by ArroganceComplex#2659:</p>
-<p><a href="https://rentry.org/STAI-Termux">https://rentry.org/STAI-Termux</a></p>
-<p><strong>.webp character cards import/export is not supported in Termux. Use either JSON or PNG formats instead.</strong></p>
+<doc-anchor-target id="what-is-it">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#what-is-it">#</doc-anchor-trigger>
+        <span>What is it?</span>
+    </h2>
+</doc-anchor-target>
+<p>Expression images are images (aka &#x27;sprites&#x27;) of your AI character which are shown next to (or behind) the chat window.</p>
+<p>Expression images do not require Extras to work.</p>
+<p>However, having Extras running with the <code v-pre>classify</code> module enabled allows the Expressions to change automatically based on the sentiment expressed in the AI&#x27;s most recent chat response.</p>
+<doc-anchor-target id="setup-instructions-offline-mode-without-extras">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#setup-instructions-offline-mode-without-extras">#</doc-anchor-trigger>
+        <span>Setup Instructions (Offline Mode without Extras)</span>
+    </h2>
+</doc-anchor-target>
+<ol>
+<li><p>Open the Extensions Panel and expand the &#x27;Expression images&#x27; section. You will see a grid of image placeholders.
+<figure class="content-center">
+    <img src="https://github.com/SillyTavern/SillyTavern/assets/124905043/a6883961-d15d-4998-9a28-8d0333d65f29" alt="ST-ExpressionDrawer" />
+    <figcaption class="caption">ST-ExpressionDrawer</figcaption>
+</figure>
+</p>
+</li>
+<li><p>Click the &#x27;import&#x27; button at the top left of each image in the grid, and select the image you want to apply to that emotion. This will save the image with the correct filename inside the <code v-pre>/public/characters/(character_name_here)/</code> folder.</p>
+</li>
+<li><p>To show the image in your SillyTavern window, click the image in the grid after it has been uploaded.</p>
+</li>
+</ol>
+<doc-anchor-target id="setup-instructions-with-extras">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#setup-instructions-with-extras">#</doc-anchor-trigger>
+        <span>Setup Instructions (with Extras)</span>
+    </h2>
+</doc-anchor-target>
+<ol>
+<li><p>Have Extras installed and running with the <code v-pre>classify</code> module enabled: <code v-pre>python server.py --enable-modules=classify</code></p>
+</li>
+<li><p>Import the expression images the same way as mentioned above.</p>
+</li>
+<li><p>The appropriate expression image will display automatically whenever the AI sends you a response.</p>
+</li>
+</ol>
+<doc-anchor-target id="how-does-the-classify-module-work">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-does-the-classify-module-work">#</doc-anchor-trigger>
+        <span>How does the classify module work?</span>
+    </h2>
+</doc-anchor-target>
+<p>The classify module uses a small &#x27;sentiment parsing&#x27; model that runs on the SillyTavern Extras host machine (eg. on your PC, or on the colab machine). This model takes the new output from the AI and detects what kind of sentiment, or emotion, the text is expressing. While multiple sentiments may be expressed in a single message, the model only picks the most likely one and returns that back to the Extras server. The Extras server then displays the image that is associated with that sentiment.</p>
+<doc-anchor-target id="what-image-formats-are-supported-for-expressions">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#what-image-formats-are-supported-for-expressions">#</doc-anchor-trigger>
+        <span>What image formats are supported for Expressions?</span>
+    </h2>
+</doc-anchor-target>
+<p>Any image format is allowed, including webp and animated gifs.</p>
+<p>The most common format is a PNG file with a transparent background.</p>
+<doc-anchor-target id="using-the-default-expressions">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#using-the-default-expressions">#</doc-anchor-trigger>
+        <span>Using the &#x27;default expressions&#x27;</span>
+    </h2>
+</doc-anchor-target>
+<p><em>(This feature will only activate if Extras is running. There is no way to manually display default expression images.)</em></p>
+<p><figure class="content-center">
+    <img src="https://github.com/SillyTavern/SillyTavern/assets/124905043/07438380-7547-43e3-b10d-da2f2bac26a7" alt="opera_xTyIQ3xsI7" />
+    <figcaption class="caption">opera_xTyIQ3xsI7</figcaption>
+</figure>
+</p>
+<p>If you don&#x27;t have custom expression images for a character, you can use the built-in default expressions which are included with the base SillyTavern installation. These are simple emoji style images. Just click the checkbox at the bottom of the Expression images section inside the Extension panel. Default expressions will work alongside any available custom Expressions, and will display in cases when your custom image set is any missing images for a particular emotion.</p>
+<doc-anchor-target id="importing-an-expression-images-zip-file">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#importing-an-expression-images-zip-file">#</doc-anchor-trigger>
+        <span>Importing an Expression images zip file</span>
+    </h2>
+</doc-anchor-target>
+<p>Using the &#x27;import ZIP&#x27; button, you can import a zip file which contains a collection of expression images, and those images will automatically be added into the correct folder for your <strong>currently selected character</strong>. The zip file must have a flat internal structure (no subfolders) and the individual images should be named correctly. Importing a zip will not automatically rename any images to make them match the emotions.</p>
+<doc-anchor-target id="limitations">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#limitations">#</doc-anchor-trigger>
+        <span>Limitations</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="display-names-not-character-card-filenames-dictate-which-image-set-is-used">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#display-names-not-character-card-filenames-dictate-which-image-set-is-used">#</doc-anchor-trigger>
+        <span>Display names (not character card filenames) dictate which image set is used.</span>
+    </h3>
+</doc-anchor-target>
+<p>If you have more than one character with the same display name, they will both use the same set of expression images.</p>
+<p>If you want a different image set to be used for each version of the same-named character, you must change the display name of one of them, and provide the alternate expression images in a folder with the new display name.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -216,20 +305,20 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../extensions/smart-context/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../usage/guidebook/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Smart Context</span>
+                                                <span class="block mt-1">Silly​Tavern Guidebook</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../installation/linuxmacos/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../wiki/extensions/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Linux/Mac​OS Install</span>
+                                                <span class="block mt-1">Extensions</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -273,6 +362,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script>window.__DOCS__ = { "title": "Android(Termux) Installation", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+    <script>window.__DOCS__ = { "title": "Expression Images", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
 </body>
 </html>
