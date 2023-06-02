@@ -13,6 +13,9 @@ This is not an installation guide. If you need installation instructions, look h
 
 You definitely installed via git, so just 'git pull' inside the SillyTavern directory.
 
+- `cd SillyTavern`
+- `./start.sh` or `bash start.sh`
+
 ----
 
 ## Windows/MacOS
@@ -21,7 +24,7 @@ You definitely installed via git, so just 'git pull' inside the SillyTavern dire
 
 We always recommend users install using 'git'. Here's why:
 
-When you have installed via 'git clone', all you have to do to update is type 'git pull' in a command line in the ST folder.
+When you have installed via 'git clone', all you have to do to update is type 'git pull' [in a command line in the ST folder](https://www.google.com/search?q=how+to+open+command+prompt+in+a+folder).
 Alternatively, if the command prompt gives you problems (and you have GitHub Desktop installed), you can use the 'Repository' menu and select 'Pull'.
 The updates are applied automatically and safely.
 
