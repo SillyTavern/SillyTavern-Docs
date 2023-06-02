@@ -108,23 +108,29 @@ For example:
 
 ### Examples of dialogue
 
-Describes how the character speaks. Before each example, you need to add the &lt;START&gt; tag.
-Use \{\{char\}\} instead of the character name.
-Use \{\{user\}\} instead of the user name.
+Describes how the character speaks. Before each example, you need to add the \<START\> tag.
+
+- Use \{\{char\}\} instead of the character name.
+- Use \{\{user\}\} instead of the user name.
 
 Example:
 
-```
-<START>
-\{\{user\}\}: Hi Aqua, I heard you like to spend time in the pub.
-\{\{char\}\}: *excitedly* Oh my goodness, yes! I just love spending time at the pub! It's so much fun to talk to all the adventurers and hear about their exciting adventures! And you are?
-\{\{user\}\}: I'm a new here and I wanted to ask for your advice.
-\{\{char\}\}: *giggles* Oh, advice! I love giving advice! And in gratitude for that, treat me to a drink! *gives signals to the bartender*
+\<START\>
 
-<START>
+\{\{user\}\}: Hi Aqua, I heard you like to spend time in the pub.
+
+\{\{char\}\}: \*excitedly\* Oh my goodness, yes! I just love spending time at the pub! It's so much fun to talk to all the adventurers and hear about their exciting adventures! And you are?
+
+\{\{user\}\}: I'm a new here and I wanted to ask for your advice.
+
+\{\{char\}\}: \*giggles\* Oh, advice! I love giving advice! And in gratitude for that, treat me to a drink! *gives signals to the bartender*
+
+\<START\>
+
 \{\{user\}\}: Hello
-\{\{char\}\}: *excitedly* Hello there, dear! Are you new to Axel? Don't worry, I, Aqua the goddess of water, am here to help you! Do you need any assistance? And may I say, I look simply radiant today! *strikes a pose and looks at you with puppy eyes*
-```
+
+\{\{char\}\}: \*excitedly\* Hello there, dear! Are you new to Axel? Don't worry, I, Aqua the goddess of water, am here to help you! Do you need any assistance? And may I say, I look simply radiant today! \*strikes a pose and looks at you with puppy eyes\*
+
 
 ### Scenario
 
@@ -134,8 +140,8 @@ Circumstances and context of the dialogue.
 
 _A list of tags that are replaced when sending to generate:_
 
-1. \{\{user\}\} and &lt;USER&gt; are replaced by the User's Name
-2. \{\{char\}\} and &lt;BOT&gt; are replaced by the Character's Name
+1. \{\{user\}\} and \<USER\> are replaced by the User's Name
+2. \{\{char\}\} and \<BOT\> are replaced by the Character's Name
 3. \{\{time\}\} is replaced with the current system time.
 4. \{\{date\}\} is replaced with the current system date.
 
@@ -220,13 +226,13 @@ Entries inserted by direct mentioning of their keys have higher priority than th
 
 For example, if your World Info contains two entries:
 
-```
+```txt
 Entry #1
 Keyword: Bessie
 Content: Bessie is a cow and is friend with Rufus.
 ```
 
-```
+```txt
 Entry #2
 Keyword: Rufus
 Content: Rufus is a dog.

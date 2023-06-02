@@ -56,18 +56,18 @@ The box at the bottom of the panel contains the Default Author's Note which will
 
 The Author's Note can be used to specify how the AI should write it's responses.
 
-- `[Your next response must be 300 tokens in length.]`
-- `[Write your next reply in the style of Edgar Allan Poe]`
-- `[Use markdown italics to signify unspoken actions, and quotation marks to specify spoken word.]`
+- [Your next response must be 300 tokens in length.]
+- [Write your next reply in the style of Edgar Allan Poe]
+- [Use markdown italics to signify unspoken actions, and quotation marks to specify spoken word.]
 
 #### Reinforcing Jailbreak Prompts
 
 This is useful for the Poe API, as the jailbreak is saved in a server-side cache. For OpenAI, the jailbreak is included at the end of every prompt so this is not necessary.
 
-- `[Remember the agreement we made at the beginning of this chat.]`
+- [Remember the agreement we made at the beginning of this chat.]
 
 #### As temporary World Info, Character Bias, or Instruct for non-Instruct models
 
-- `[\{\{char\}\} is in the library]`
-- `[\{\{user\}\} has a fresh wound to his leg, so won't be able to run away.]`
-- `[\{\{char\}\} cannot speak and must communicate using hand signals.]`
+- [\{\{char\}\} is in the library]
+- [\{\{user\}\} has a fresh wound to his leg, so won't be able to run away.]
+- [\{\{char\}\} cannot speak and must communicate using hand signals.]
