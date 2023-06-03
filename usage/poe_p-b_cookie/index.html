@@ -9,24 +9,24 @@
     <meta name="generator" content="Retype 3.0.1">
 
     <!-- Primary Meta Tags -->
-    <title>Windows Installation</title>
-    <meta name="title" content="Windows Installation">
-    <meta name="description" content="Warning" />
+    <title>How to get Poe API p-b cookie</title>
+    <meta name="title" content="How to get Poe API p-b cookie">
+    <meta name="description" content="First make an account on poe.com, then follow these instructions for your OS:" />
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.sillytavern.app/installation/windows/" />
+    <link rel="canonical" href="https://docs.sillytavern.app/usage/poe_p-b_cookie/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.sillytavern.app/installation/windows/">
-    <meta property="og:title" content="Windows Installation">
-    <meta property="og:description" content="Warning">
+    <meta property="og:url" content="https://docs.sillytavern.app/usage/poe_p-b_cookie/">
+    <meta property="og:title" content="How to get Poe API p-b cookie">
+    <meta property="og:description" content="First make an account on poe.com, then follow these instructions for your OS:">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.sillytavern.app/installation/windows/">
-    <meta property="twitter:title" content="Windows Installation">
-    <meta property="twitter:description" content="Warning">
+    <meta property="twitter:url" content="https://docs.sillytavern.app/usage/poe_p-b_cookie/">
+    <meta property="twitter:title" content="How to get Poe API p-b cookie">
+    <meta property="twitter:description" content="First make an account on poe.com, then follow these instructions for your OS:">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -197,58 +197,126 @@
                                 <div id="docs-sidebar-right-toggle"></div>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="windows-installation" class="break-words">
+<doc-anchor-target id="how-to-get-poe-api-p-b-cookie" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#windows-installation">#</doc-anchor-trigger>
-        <span>Windows Installation</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-get-poe-api-p-b-cookie">#</doc-anchor-trigger>
+        <span>How to get Poe API p-b cookie</span>
     </h1>
 </doc-anchor-target>
-<blockquote>
-<p><strong>Warning</strong></p>
-</blockquote>
-<blockquote>
-<p>DO NOT INSTALL INTO ANY WINDOWS CONTROLLED FOLDER (Program Files, System32, etc).</p>
-</blockquote>
-<blockquote>
-<p>DO NOT RUN START.BAT WITH ADMIN PERMISSIONS</p>
-</blockquote>
-<doc-anchor-target id="installing-via-git-recommended-for-easy-updating">
+<p>First make an account on poe.com, then follow these instructions for your OS:</p>
+<doc-anchor-target id="pcmaclinux">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#installing-via-git-recommended-for-easy-updating">#</doc-anchor-trigger>
-        <span>Installing via Git (recommended for easy updating)</span>
-    </h2>
-</doc-anchor-target>
-<p>Easy to follow guide with pretty pictures:
-<a href="https://docs.alpindale.dev/pygmalion-extras/sillytavern/#windows-installation">https://docs.alpindale.dev/pygmalion-extras/sillytavern/#windows-installation</a></p>
-<ol>
-<li>Install <a href="https://nodejs.org/en">NodeJS</a> (latest LTS version is recommended)</li>
-<li>Install <a href="https://central.github.com/deployments/desktop/desktop/latest/win32">GitHub Desktop</a></li>
-<li>Open Windows Explorer (<code v-pre>Win+E</code>)</li>
-<li>Browse to or Create a folder that is not controlled or monitored by Windows. (ex: C:\MySpecialFolder)</li>
-<li>Open a Command Prompt inside that folder by clicking in the &#x27;Address Bar&#x27; at the top, typing <code v-pre>cmd</code>, and pressing Enter.</li>
-<li>Once the black box (Command Prompt) pops up, type ONE of the following into it and press Enter:</li>
-</ol>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">- for Main Branch: `git clone https://github.com/Cohee1207/SillyTavern -b main`
-
-- for Dev Branch: `git clone https://github.com/Cohee1207/SillyTavern -b dev`</code></pre>
-</doc-codeblock></div>
-<ol start="7">
-<li>Once everything is cloned, double click <code v-pre>Start.bat</code> to make NodeJS install its requirements.</li>
-<li>The server will then start, and SillyTavern will popup in your browser.</li>
-</ol>
-<doc-anchor-target id="installing-via-zip-download">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#installing-via-zip-download">#</doc-anchor-trigger>
-        <span>Installing via zip download</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pcmaclinux">#</doc-anchor-trigger>
+        <span>PC/Mac/Linux</span>
     </h2>
 </doc-anchor-target>
 <ol>
-<li>Install <a href="https://nodejs.org/en">NodeJS</a> (latest LTS version is recommended)</li>
-<li>Download the zip from this GitHub repo. (Get the <code v-pre>Source code (zip)</code> from <a href="https://github.com/Cohee1207/SillyTavern/releases/latest">Releases</a>)</li>
-<li>Unzip it into a folder of your choice</li>
-<li>Run <code v-pre>Start.bat</code> via double-clicking or in a command line.</li>
-<li>Once the server has prepared everything for you, it will open a tab in your browser.</li>
+<li>Using your browser, login to Poe.com</li>
+<li>Open the dev tools (F12 for Chrome)</li>
+<li>Go to the DevTools &#x27;Application&#x27; tab</li>
+<li>Look for &#x27;Storage&#x27; in the left hand side of DevTools view</li>
+<li>Look for &#x27;Cookies&#x27;, expand it if necessary.</li>
+<li>Look for &#x27;poe.com&#x27;, click</li>
+<li>On the right you will see &#x27;p-b&#x27;</li>
+<li>Copy the value of the cookie</li>
+<li>Save it in a text file somewhere for future reference.</li>
+<li>Paste this value into SillyTavern&#x27;s Poe API box.</li>
+</ol>
+<doc-anchor-target id="ios">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ios">#</doc-anchor-trigger>
+        <span>iOS</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="download-orion-browser">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#download-orion-browser">#</doc-anchor-trigger>
+        <span>Download <a href="https://apps.apple.com/en-us/app/orion-browser-by-kagi/id1484498200">Orion Browser</a></span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="it-has-firefox-and-chrome-extensions-support">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#it-has-firefox-and-chrome-extensions-support">#</doc-anchor-trigger>
+        <span>(it has firefox and chrome extensions support)</span>
+    </h4>
+</doc-anchor-target>
+<doc-anchor-target id="enable-extensions-in-the-orion-browser">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#enable-extensions-in-the-orion-browser">#</doc-anchor-trigger>
+        <span>Enable extensions in the Orion browser</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Tap &#x27;...&#x27; button (bottom right)</li>
+<li>Tap Settings</li>
+<li>scroll down until you see the &#x27;Extensions&#x27; section</li>
+<li>Enable Firefox</li>
+</ul>
+<doc-anchor-target id="configure-the-browser-user-agent">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#configure-the-browser-user-agent">#</doc-anchor-trigger>
+        <span>Configure the browser User Agent</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>stay inside the settings view</li>
+<li>scroll up until you see &quot;User Agent&quot;, tap it.</li>
+<li>select Custom</li>
+<li>in the text field below, delete everything and just type &quot;Desktop&quot;</li>
+<li>close Settings panel</li>
+</ul>
+<doc-anchor-target id="install-cookie-editor-firefox-extension">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#install-cookie-editor-firefox-extension">#</doc-anchor-trigger>
+        <span>Install Cookie-Editor Firefox extension</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Tap &#x27;...&#x27; button</li>
+<li>Tap &#x27;Extensions&#x27;</li>
+<li>Tap &quot;+&quot; button (bottom left)</li>
+<li>Tap &quot;Install Firefox extension&quot;</li>
+<li>(a new browser tab will open showing the Firefox extensions website)</li>
+<li>Type &quot;Cookie-Editor&quot; into the search box at top of the page</li>
+<li>(Many options will show up in the auto-complete)</li>
+<li>tap one that says &quot;Cookie-Editor&quot; it should say &#x27;by cgagnier&#x27; as the author</li>
+<li>Tap &quot;Add to Orion&quot; button</li>
+</ul>
+<doc-anchor-target id="go-to-poecom-login">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#go-to-poecom-login">#</doc-anchor-trigger>
+        <span>Go to Poe.com, login</span>
+    </h3>
+</doc-anchor-target>
+<p>(you don&#x27;t need to chat with the bot, just letting the page load is enough)</p>
+<doc-anchor-target id="get-your-pb-cookie">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#get-your-pb-cookie">#</doc-anchor-trigger>
+        <span>Get your pb-cookie</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>tap &#x27;...&#x27; button</li>
+<li>&#x27;Cookie-Editor&#x27; will show up at the top of the menu, tap that</li>
+<li>an overlay panel will popup, showing &#x27;p-b&#x27;</li>
+<li>tap the down arrow next to &#x27;p-b&#x27; expand the entry</li>
+<li>Copy what&#x27;s inside the Value box.</li>
+</ul>
+<doc-anchor-target id="paste-it-into-st-as-usual-in-the-poe-api-panel-box">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#paste-it-into-st-as-usual-in-the-poe-api-panel-box">#</doc-anchor-trigger>
+        <span>Paste it into ST as usual in the Poe API panel box</span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="android">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#android">#</doc-anchor-trigger>
+        <span>Android</span>
+    </h2>
+</doc-anchor-target>
+<ol>
+<li>Install <a href="https://play.google.com/store/apps/details?id=com.kiwibrowser.browser&amp;hl=en&amp;gl=US&amp;pli=1">kiwi browser</a></li>
+<li>Use the browser&#x27;s devtools in the exact same way as mentioned above in the PC instructions.</li>
 </ol>
 
                                 
@@ -259,20 +327,20 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../installation/linuxmacos/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../usage/hotkeys/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Linux/Mac​OS Install</span>
+                                                <span class="block mt-1">Hot​Keys</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../usage/faq/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../usage/update/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">FAQ</span>
+                                                <span class="block mt-1">How to Update Silly​Tavern</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -316,6 +384,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script>window.__DOCS__ = { "title": "Windows Installation", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+    <script>window.__DOCS__ = { "title": "How to get Poe API p-b cookie", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
 </body>
 </html>
