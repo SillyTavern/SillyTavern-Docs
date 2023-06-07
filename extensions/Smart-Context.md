@@ -27,7 +27,7 @@ ERROR: Could not build wheels for hnswlib, which is required to install pyprojec
 
 Installing chromadb package requires one of the following:
 
-- Have Visual C++ build tools installed: https://visualstudio.microsoft.com/visual-cpp-build-tools/
+- Have Visual C++ build tools installed: <https://visualstudio.microsoft.com/visual-cpp-build-tools/>
 - Installing hnswlib from conda: `conda install -c conda-forge hnswlib`
 
 ***
@@ -134,13 +134,13 @@ This can be helpful if you find inaccurate memories have been stored (such as ch
 
 #### What happens to the databases when I'm done chatting? Can I save them?
 
-Smart Context databases are cleared and automatically rebuilt each time the Extras server is restarted.
+For locally installed Extras servers, Smart Context saves the databases. There is no need to save them manually in usual use cases.
+
+For colab users, the databases are wiped when the extras server shuts down. Use the export button to save the database as a JSON file, and import it next time you want to use it.
 
 **Usually there is no need to save Smart Context databases.**
 
-If you injected text files into the database for your chat, you will need to do so again.
-
-Currently we have an Import/Export feature, which should allow you to save the chat's DB and use it again at a later date.
+Currently we have an Import/Export feature, which allows you to save the chat's DB and use it again at a later date.
 
 #### Can I make one big database for all of my chats to reference?
 
