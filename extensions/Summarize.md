@@ -26,14 +26,14 @@ Once Summarize is enabled, it will show up in ST's Extensions panel list.
 
 ![Summarize Config Panel](https://files.catbox.moe/s774f8.png)
 
-- **Summary contents box** - this displays the current summary. Summary is updated and embedded into the chat file's metadata for every message recieved from the AI.
-- **Restore previous state** - Replaces the current summaryt with the summary from the previous message. This is useful if the summarizer does a poor job at any given point.
-- **Stop summarization updates checkbox** - check this to prevent the summary from being automatically updated. This is useful if you want to provide a custom summary of  your own, or to effectively disable the summary by clearing the box and stopping udpates.
-- **Buffer length** - This is the number of tokens the model should consider as 'recent events'. Each time the Summarize model begins to create a new summary, this buffer is filled first and given priority.
-- **Summary length** - The total length of the finished summary (what you see in the box).
+- **Summary Contents Box** - this displays the current summary. Summary is updated and embedded into the chat file's metadata for every message recieved from the AI.
+- **Restore Previous State** - Replaces the current summaryt with the summary from the previous message. This is useful if the summarizer does a poor job at any given point.
+- **Stop Summarization Updates checkbox** - check this to prevent the summary from being automatically updated. This is useful if you want to provide a custom summary of  your own, or to effectively disable the summary by clearing the box and stopping udpates.
+- **Buffer Length** - This is the amount of chat context to be summarized, including the previous message's sumnmary. Limited to 1024 tokens.
+- **Summary Length** - The desired total length of the finished summary (what you see in the box). The summary will not always match this length, but the model will be encouraged to write enough to fill it.
 - **Temperature** - determines how creative the summary model is in writing the summary. higher values will produce more variation in the summary, at potential risk of inaccuracy.
-- **Repetition penalty** - high numbers here will help reduce the amount of repetitious phrases in the summary.
-- **Length penalty** - higher numbers here will prevent the summary from growing too long. helps encourage the summary model to use shorter phrases.
+- **Repetition Penalty** - high numbers here will help reduce the amount of repetitious phrases in the summary. 1.15-1.2 are good values.
+- **Length Preference** - values below `1` will pressure the AI to create shorter summarize, and values over `1` will encentive the AI to create longer summaries.
 
 ### Changing Summary Model
 
