@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.739463619352">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.739464469818">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.0.3">
@@ -21,20 +21,22 @@
     <meta property="og:url" content="https://docs.sillytavern.app/usage/poe_p-b_cookie/">
     <meta property="og:title" content="How to get Poe API p-b cookie">
     <meta property="og:description" content="First make an account on poe.com, then follow these instructions for your OS:">
+    <meta property="og:image" content="https://files.catbox.moe/ul4o78.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/usage/poe_p-b_cookie/">
     <meta property="twitter:title" content="How to get Poe API p-b cookie">
     <meta property="twitter:description" content="First make an account on poe.com, then follow these instructions for your OS:">
+    <meta property="twitter:image" content="https://files.catbox.moe/ul4o78.png">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.0.3.739463619352" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=3.0.3.739464469818" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.739463619352" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.739464469818" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=3.0.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.739463619352" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.739464469818" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -210,17 +212,23 @@
         <span>PC/Mac/Linux</span>
     </h2>
 </doc-anchor-target>
+<p><figure class="content-center">
+    <img src="https://files.catbox.moe/ul4o78.png" alt="DevTools View for p-b Cookie Acquisition" />
+    <figcaption class="caption">DevTools View for p-b Cookie Acquisition</figcaption>
+</figure>
+</p>
 <ol>
 <li>Using your browser, login to Poe.com</li>
 <li>Open the dev tools (F12 for Chrome)</li>
 <li>At the top of the DevTools view you will see a list of tabs, beginning with <code v-pre>Elements</code>.</li>
 <li>Depending on the width of your screen, some other tabs might be visible after <code v-pre>Elements</code>, but to the right you will see a <code v-pre>&gt;&gt;</code> button.</li>
 <li>Click the <code v-pre>&gt;&gt;</code> button and select &#x27;Application&#x27;.</li>
-<li>Look for &#x27;Storage&#x27; in the left hand side of DevTools Application view</li>
-<li>Look for &#x27;Cookies&#x27;, expand it if necessary.</li>
-<li>Look for &#x27;poe.com&#x27;, click</li>
-<li>On the right you will see &#x27;p-b&#x27;</li>
-<li>Copy the value of the cookie</li>
+<li>Look for <code v-pre>Storage</code> in the left hand side of DevTools Application view</li>
+<li>Inside the Storage section, look for <code v-pre>Cookies</code>.</li>
+<li>If you see nothing listed inside the Cookies section, <code v-pre>expand the section bt clicking the triangle to the left</code>.</li>
+<li>Inside the expanded &#x27;Cookies&#x27; section, you will see &#x27;poe.com&#x27; listed. Click it.</li>
+<li>On the right side you will see <code v-pre>p-b</code>. Click it to select that cookie.</li>
+<li>Copy the value of the cookie. It will be a long string of letters and numbers.</li>
 <li>Save it in a text file somewhere for future reference.</li>
 <li>Paste this value into SillyTavern&#x27;s Poe API box.</li>
 </ol>
