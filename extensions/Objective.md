@@ -56,6 +56,6 @@ WARNING: setting Task Check Frequency to 1 will double your API calls to the LLM
 
 Increasing the setting will slow down the pace for completing tasks, allowing more room for roleplaying the task. It may also make it harder for the AI to determine the task as completed if too high. 
 
+### Manual Task Check
 
-
-
+If you want to manually trigger the AI to check for task completion, click on the Extras Extension button (the magic wand next to where you type messages) and select Manual Task Check
