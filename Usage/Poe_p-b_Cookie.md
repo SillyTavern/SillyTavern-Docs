@@ -4,18 +4,21 @@ First make an account on poe.com, then follow these instructions for your OS:
 
 ## PC/Mac/Linux
 
+![DevTools View for p-b Cookie Acquisition](https://files.catbox.moe/ul4o78.png)
+
 1. Using your browser, login to Poe.com
 2. Open the dev tools (F12 for Chrome)
 3. At the top of the DevTools view you will see a list of tabs, beginning with `Elements`.
 4. Depending on the width of your screen, some other tabs might be visible after `Elements`, but to the right you will see a `>>` button.
 5. Click the `>>` button and select 'Application'.
-6. Look for 'Storage' in the left hand side of DevTools Application view
-7. Look for 'Cookies', expand it if necessary.
-8. Look for 'poe.com', click
-9. On the right you will see 'p-b'
-10. Copy the value of the cookie
-11. Save it in a text file somewhere for future reference.
-12. Paste this value into SillyTavern's Poe API box.
+6. Look for `Storage` in the left hand side of DevTools Application view
+7. Inside the Storage section, look for `Cookies`.
+8. If you see nothing listed inside the Cookies section, `expand the section bt clicking the triangle to the left`.
+9. Inside the expanded 'Cookies' section, you will see 'poe.com' listed. Click it.
+10. On the right side you will see `p-b`. Click it to select that cookie.
+11. Copy the value of the cookie. It will be a long string of letters and numbers.
+12. Save it in a text file somewhere for future reference.
+13. Paste this value into SillyTavern's Poe API box.
 
 ## iOS
 
