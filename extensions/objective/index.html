@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.739449646339">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.739451618308">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.0.3">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Objective</title>
     <meta name="title" content="Objective">
-    <meta name="description" content="Objective is a basic implementation of an Autonomous AI Agent for SillyTavern, which is a fancy way of saying an extension that provides an AI with a..." />
+    <meta name="description" content="The Objective extension lets the user specify an Objective for the AI to strive towards during the chat." />
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/extensions/objective/" />
@@ -20,21 +20,23 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/extensions/objective/">
     <meta property="og:title" content="Objective">
-    <meta property="og:description" content="Objective is a basic implementation of an Autonomous AI Agent for SillyTavern, which is a fancy way of saying an extension that provides an AI with a...">
+    <meta property="og:description" content="The Objective extension lets the user specify an Objective for the AI to strive towards during the chat.">
+    <meta property="og:image" content="https://files.catbox.moe/kg9xfa.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/extensions/objective/">
     <meta property="twitter:title" content="Objective">
-    <meta property="twitter:description" content="Objective is a basic implementation of an Autonomous AI Agent for SillyTavern, which is a fancy way of saying an extension that provides an AI with a...">
+    <meta property="twitter:description" content="The Objective extension lets the user specify an Objective for the AI to strive towards during the chat.">
+    <meta property="twitter:image" content="https://files.catbox.moe/kg9xfa.png">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.0.3.739449646339" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=3.0.3.739451618308" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.739449646339" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.739451618308" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=3.0.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.739449646339" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.739451618308" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -209,38 +211,59 @@
         <span>What is it?</span>
     </h3>
 </doc-anchor-target>
-<p>Objective is a basic implementation of an Autonomous AI Agent for SillyTavern, which is a fancy way of saying an extension that provides an AI with a given objective, having it create a task list to achieve the objective, and then letting it run through each task executing and then marking it completed when done.</p>
-<p>This differs from adding static direction through prompting in that it adds sequential and paced directives for the AI to follow without user intervention. It gives a more genuine autonomous purpose for the AI to follow.</p>
+<p>The Objective extension lets the user specify an Objective for the AI to strive towards during the chat. This objective is broken down into step-by-step tasks. The completion status of each task in the list will be checked at certain intervals.</p>
+<p>This differs from adding static direction through prompting in that it adds sequential and paced directives for the AI to follow without user intervention. It gives a more genuine experience of the AI autonomously striving to reach a goal.</p>
 <doc-anchor-target id="common-use-cases">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#common-use-cases">#</doc-anchor-trigger>
         <span>Common Use Cases</span>
     </h3>
 </doc-anchor-target>
-<p>Your imagination is the limit, you can give the AI any objective you wish and it will plan out how to achieve it. Have it plan how to slay a demon, rob a temple, throw a lavish party, or emotionally heal all your psychological problems. Ok, maybe not that last one.</p>
+<p>Your imagination is the limit, you can give the AI any objective you wish and it will plan out how to achieve it. You can ask it to plan how to slay a demon, rob a temple, throw a lavish party, or even take over the world.</p>
+<p><figure class="content-center">
+    <img src="https://files.catbox.moe/kg9xfa.png" alt="Objective Settings Panel" />
+    <figcaption class="caption">Objective Settings Panel</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="configuration">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#configuration">#</doc-anchor-trigger>
+        <span>Configuration</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><p>The extension is found in the Extensions menu under Objective.</p>
+</li>
+<li><p>Type an objective into the top text box, then click on <code v-pre>Auto-Generate Tasks</code>. This sends a request to the connected API and asks it to provide  a list of tasks which match the objective you have typed in.</p>
+</li>
+</ul>
+<p><em>Note: Clicking Auto-Generate Tasks will delete all existing tasks before adding new ones.</em></p>
+<ul>
+<li><p>Upon receiving the response from the AI, a list of tasks will be created automatically in the space below the Objective input box.</p>
+</li>
+<li><p>At the bottom of the panel are two boxes: <code v-pre>Position in Chat</code> and <code v-pre>Task Check Frequency</code></p>
+<ul>
+<li><code v-pre>Position in Chat</code> - This is how &#x27;deep&#x27; in the chat section of the prompt you want the current task to be inserted. The lower the number, the more attention the AI will give to the task. Setting to 0 will make the task the primary thing in the AI&#x27;s mind. Setting at high values will put the task in the background and allow the AI to focus on the conversation at hand, but setting it too high may cause the AI to never &#x27;get around&#x27; to the task at all.</li>
+<li><code v-pre>Task Check Frequency</code> - This is how often you want the AI to check if the task has been completed. If it is set to <code v-pre>3</code>, the AI will be asked if the current task has been completed every 3rd message.</li>
+</ul>
+</li>
+</ul>
+<p><strong>WARNING: Task Checking happens in a separate API request. Setting Task Check Frequency to 1 will double your API calls to the LLM service. Be careful with this if you are using a paid service.</strong></p>
 <doc-anchor-target id="usage">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#usage">#</doc-anchor-trigger>
         <span>Usage</span>
     </h3>
 </doc-anchor-target>
-<p>The extension is found in the Extensions menu under Objective. For typical usage, you will enter in an objective into the top text box, then click on Auto-Generate Tasks. This sends a request to the AI model you have configured and tasks will be populated once the AI responds. That&#x27;s it, you can start roleplaying with the AI from there.</p>
-<p>Note: Clicking Auto-Generate Tasks will delete all existing tasks if any exists.</p>
-<doc-anchor-target id="tasks">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tasks">#</doc-anchor-trigger>
-        <span>Tasks</span>
-    </h3>
-</doc-anchor-target>
-<p>Tasks are typically managed automatically by the AI. Given an objective, the AI will create the tasks, roleplay through completing the current task, check the chat history periodically for completion, mark the task as complete, and move onto the next task.</p>
-<p>Tasks can also be fully managed by the user as well, allowing for manual create, update, delete, and completion of tasks.</p>
+<p>By default the Objective extension will keep track of all tasks and their respective completion status automatically.</p>
+<p>The User can also manually create, update, delete, and complete tasks at any time.</p>
 <doc-anchor-target id="current-task-selection">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#current-task-selection">#</doc-anchor-trigger>
         <span>Current Task Selection</span>
     </h4>
 </doc-anchor-target>
-<p>The current task will always be the highest task that is not completed. Any manual updates to tasks will trigger a check for what the current task should be. So if you add a task above a bunch of completed tasks, it will be set as the current task. Once it&#x27;s completed, the next completed tasks will be skipped and the next incomplete task will be selected.</p>
+<p>The current task will always be the first listed incomplete task. Any manual updates to tasks will trigger a check for what the current task should be. So if you add a task above a bunch of completed tasks, it will be set as the current task. Once it&#x27;s completed, previously completed tasks will be skipped and the next incomplete task will be selected as &#x27;Current&#x27;.</p>
 <doc-anchor-target id="manually-complete-tasks">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#manually-complete-tasks">#</doc-anchor-trigger>
@@ -248,56 +271,40 @@
     </h4>
 </doc-anchor-target>
 <p>You can manually toggle the completion status of a task by clicking the checkbox next to it. This will set the next incomplete task to be selected.</p>
+<p><figure class="content-center">
+    <img src="https://files.catbox.moe/h5xpnj.png" alt="Manual Task Check" />
+    <figcaption class="caption">Manual Task Check</figcaption>
+</figure>
+</p>
 <doc-anchor-target id="manually-add-tasks">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#manually-add-tasks">#</doc-anchor-trigger>
         <span>Manually Add Tasks</span>
     </h4>
 </doc-anchor-target>
-<p>When no tasks are present, an Add Task button is visible, allowing you to manually create the first task. Once one or more tasks are present, to add a task, click the &#x27;+&#x27; button to the right of any task to insert a new task after it.</p>
+<p>When no tasks are present, an <code v-pre>Add Task</code> button is visible, allowing you to manually create the first task.</p>
+<p>If other tasks are already present, click the <code v-pre>+</code> button to the right of any task to insert a new task after it.</p>
 <doc-anchor-target id="delete-tasks">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#delete-tasks">#</doc-anchor-trigger>
         <span>Delete Tasks</span>
     </h4>
 </doc-anchor-target>
-<p>Click the red &#x27;x&#x27; to delete an existing task. The next incomplete task will be selected as the current task automatically.</p>
+<p>Click the red <code v-pre>x</code> to delete an existing task. The next incomplete task will be selected as the current task automatically.</p>
 <doc-anchor-target id="hiding-tasks">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#hiding-tasks">#</doc-anchor-trigger>
         <span>Hiding Tasks</span>
     </h4>
 </doc-anchor-target>
-<p>Some people like a good mystery to make the roleplay more fun. Enable &#x27;Hide Tasks&#x27; to shroud the AI&#x27;s intentions in mystery. The option simply hides the tasks from the user, nothing else.</p>
-<doc-anchor-target id="configuration">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#configuration">#</doc-anchor-trigger>
-        <span>Configuration</span>
-    </h3>
-</doc-anchor-target>
-<doc-anchor-target id="position-in-chat">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#position-in-chat">#</doc-anchor-trigger>
-        <span>Position in Chat</span>
-    </h4>
-</doc-anchor-target>
-<p>This sets the location of the current task in the prompt. A value of 0 will place the current task at the bottom of the prompt, causing the AI to really focus on the task. A higher value will allow the AI to focus more on the context of the conversation, since it is higher in the prompt, giving a looser focus on the Task. Set this too high and the AI may never get around to the task.</p>
-<doc-anchor-target id="task-check-frequency">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#task-check-frequency">#</doc-anchor-trigger>
-        <span>Task Check Frequency</span>
-    </h4>
-</doc-anchor-target>
-<p>The AI will check the conversation periodically to see if the task was completed. The frequency of this check is configurable. Setting to 0 will disable automatic checks. Setting to 1 will check for completion every time a message is received. Setting to 5 will check every 5 messages received.</p>
-<p>WARNING: setting Task Check Frequency to 1 will double your API calls to the LLM model. If you&#x27;re using a paid model, then this will cost more.</p>
-<p>Increasing the setting will slow down the pace for completing tasks, allowing more room for roleplaying the task. It may also make it harder for the AI to determine the task as completed if too high.</p>
+<p>If you want to remain unaware of what tasks the AI is attempting to complete, check the <code v-pre>Hide Tasks</code> box to hide the task list and make the AI&#x27;s intentions a mystery. For 100% mysteriousness, do this before clicking <code v-pre>Auto-Generate Tasks</code>!</p>
 <doc-anchor-target id="manual-task-check">
-    <h3>
+    <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#manual-task-check">#</doc-anchor-trigger>
         <span>Manual Task Check</span>
-    </h3>
+    </h4>
 </doc-anchor-target>
-<p>If you want to manually trigger the AI to check for task completion, click on the Extras Extension button (the magic wand next to where you type messages) and select Manual Task Check</p>
+<p>If you want to manually trigger the AI to check for task completion, click on the Extras Extension button (the <code v-pre>magic wand</code> on the right side of the chat input bar) and select <code v-pre>Manual Task Check</code>.</p>
 
                                 
                                 <!-- Required only on API pages -->
