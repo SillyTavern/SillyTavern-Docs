@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.739451952000">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.739452924572">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.0.3">
@@ -32,11 +32,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.0.3.739451952000" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=3.0.3.739452924572" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.739451952000" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.739452924572" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=3.0.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.739451952000" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.739452924572" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -250,14 +250,14 @@
 </figure>
 </p>
 <ul>
-<li><strong>Summary contents box</strong> - this displays the current summary. Summary is updated and embedded into the chat file&#x27;s metadata for every message recieved from the AI.</li>
-<li><strong>Restore previous state</strong> - Replaces the current summaryt with the summary from the previous message. This is useful if the summarizer does a poor job at any given point.</li>
-<li><strong>Stop summarization updates checkbox</strong> - check this to prevent the summary from being automatically updated. This is useful if you want to provide a custom summary of  your own, or to effectively disable the summary by clearing the box and stopping udpates.</li>
-<li><strong>Buffer length</strong> - This is the number of tokens the model should consider as &#x27;recent events&#x27;. Each time the Summarize model begins to create a new summary, this buffer is filled first and given priority.</li>
-<li><strong>Summary length</strong> - The total length of the finished summary (what you see in the box).</li>
+<li><strong>Summary Contents Box</strong> - this displays the current summary. Summary is updated and embedded into the chat file&#x27;s metadata for every message recieved from the AI.</li>
+<li><strong>Restore Previous State</strong> - Replaces the current summaryt with the summary from the previous message. This is useful if the summarizer does a poor job at any given point.</li>
+<li><strong>Stop Summarization Updates checkbox</strong> - check this to prevent the summary from being automatically updated. This is useful if you want to provide a custom summary of  your own, or to effectively disable the summary by clearing the box and stopping udpates.</li>
+<li><strong>Buffer Length</strong> - This is the amount of chat context to be summarized, including the previous message&#x27;s sumnmary. Limited to 1024 tokens.</li>
+<li><strong>Summary Length</strong> - The desired total length of the finished summary (what you see in the box). The summary will not always match this length, but the model will be encouraged to write enough to fill it.</li>
 <li><strong>Temperature</strong> - determines how creative the summary model is in writing the summary. higher values will produce more variation in the summary, at potential risk of inaccuracy.</li>
-<li><strong>Repetition penalty</strong> - high numbers here will help reduce the amount of repetitious phrases in the summary.</li>
-<li><strong>Length penalty</strong> - higher numbers here will prevent the summary from growing too long. helps encourage the summary model to use shorter phrases.</li>
+<li><strong>Repetition Penalty</strong> - high numbers here will help reduce the amount of repetitious phrases in the summary. 1.15-1.2 are good values.</li>
+<li><strong>Length Preference</strong> - values below <code v-pre>1</code> will pressure the AI to create shorter summarize, and values over <code v-pre>1</code> will encentive the AI to create longer summaries.</li>
 </ul>
 <doc-anchor-target id="changing-summary-model">
     <h3>
