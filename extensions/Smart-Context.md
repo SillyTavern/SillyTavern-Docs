@@ -19,6 +19,17 @@ Smart Context automatically takes the entire history of the chat file and puts i
 3. Install requirements-complete.txt for Extras (even if you did it once before in a prior install).
 4. run Extras with the chromadb module enabled: `python server.py --enable-modules=chromadb`
 
+#### Getting an error when installing ChromaDB?
+
+```
+ERROR: Could not build wheels for hnswlib, which is required to install pyproject.toml-based projects
+```
+
+Installing chromadb package requires one of the following:
+
+- Have Visual C++ build tools installed: https://visualstudio.microsoft.com/visual-cpp-build-tools/
+- Installing hnswlib from conda: `conda install -c conda-forge hnswlib`
+
 ***
 
 ### Configuration
