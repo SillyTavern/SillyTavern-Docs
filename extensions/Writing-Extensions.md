@@ -1,8 +1,8 @@
-# Writing Extensions for SillyTavern
+# Writing Extensions
 
-Plugins extend the functionality of SillyTavern by hooking into its events and API.
+Plugins extend the functionality of SillyTavern by hooking into its events and API. You can easily create your own extensions.
 
-## manifest.json
+### manifest.json
 
 Every extension must have a folder in `public/scripts/extensions` and have a manifest.json file which contains metadata about the plugin and a JS script file.
 
@@ -22,7 +22,7 @@ Every extension must have a folder in `public/scripts/extensions` and have a man
 
 The display_name, js and author fields are required.
 
-## Using getContext
+### Using getContext
 
 The getContext() function gives you access to the SillyTavern context:
 
@@ -38,7 +38,7 @@ context.groups; // Group list
 
 Use this to interact with the main app state.
 
-## Importing from other files
+### Importing from other files
 
 You can import variables and functions from other JS files.
 
@@ -54,7 +54,7 @@ function handleMessage(data) {
 }
 ```
 
-## Registering slash commands
+### Registering slash commands
 
 Use `registerSlashCommand()` to register a new slash command:
 
@@ -68,7 +68,7 @@ function commandFunction(args) {
 }
 ```
 
-## Listening for event types
+### Listening for event types
 
 Use eventSource.on() to listen for events:
 
@@ -88,7 +88,7 @@ Main event types are:
 * `MESSAGE_SENT`
 * `CHAT_CHANGED`
 
-## Do Extras request
+### Do Extras request
 
 The `doExtrasFetch()` function allows you to make requests to your SillyTavern Extra server.
 
