@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.739451618308">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.739451952000">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.0.3">
@@ -32,11 +32,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.0.3.739451618308" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=3.0.3.739451952000" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.739451618308" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.739451952000" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=3.0.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.739451618308" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.739451952000" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -239,7 +239,7 @@
 </ul>
 <p><em>Note: Clicking Auto-Generate Tasks will delete all existing tasks before adding new ones.</em></p>
 <ul>
-<li><p>Upon receiving the response from the AI, a list of tasks will be created automatically in the space below the Objective input box.</p>
+<li><p>Upon receiving the response from the AI, a list of tasks will be created automatically in the space below the Objective input box. Tasks can be edited after creation.</p>
 </li>
 <li><p>At the bottom of the panel are two boxes: <code v-pre>Position in Chat</code> and <code v-pre>Task Check Frequency</code></p>
 <ul>
@@ -270,7 +270,14 @@
         <span>Manually Complete Tasks</span>
     </h4>
 </doc-anchor-target>
-<p>You can manually toggle the completion status of a task by clicking the checkbox next to it. This will set the next incomplete task to be selected.</p>
+<p>You can manually toggle the completion status of a task by <code v-pre>clicking the checkbox</code> next to it. This will set the next incomplete task to be selected.</p>
+<doc-anchor-target id="manual-task-check">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#manual-task-check">#</doc-anchor-trigger>
+        <span>Manual Task Check</span>
+    </h4>
+</doc-anchor-target>
+<p>If you want to manually trigger the AI to check for task completion, click on the Extras Extension button (the <code v-pre>magic wand</code> on the right side of the chat input bar) and select <code v-pre>Manual Task Check</code>.</p>
 <p><figure class="content-center">
     <img src="https://files.catbox.moe/h5xpnj.png" alt="Manual Task Check" />
     <figcaption class="caption">Manual Task Check</figcaption>
@@ -298,13 +305,6 @@
     </h4>
 </doc-anchor-target>
 <p>If you want to remain unaware of what tasks the AI is attempting to complete, check the <code v-pre>Hide Tasks</code> box to hide the task list and make the AI&#x27;s intentions a mystery. For 100% mysteriousness, do this before clicking <code v-pre>Auto-Generate Tasks</code>!</p>
-<doc-anchor-target id="manual-task-check">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#manual-task-check">#</doc-anchor-trigger>
-        <span>Manual Task Check</span>
-    </h4>
-</doc-anchor-target>
-<p>If you want to manually trigger the AI to check for task completion, click on the Extras Extension button (the <code v-pre>magic wand</code> on the right side of the chat input bar) and select <code v-pre>Manual Task Check</code>.</p>
 
                                 
                                 <!-- Required only on API pages -->
