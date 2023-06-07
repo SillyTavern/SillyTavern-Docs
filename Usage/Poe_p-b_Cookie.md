@@ -6,14 +6,16 @@ First make an account on poe.com, then follow these instructions for your OS:
 
 1. Using your browser, login to Poe.com
 2. Open the dev tools (F12 for Chrome)
-3. Go to the DevTools 'Application' tab
-4. Look for 'Storage' in the left hand side of DevTools view
-5. Look for 'Cookies', expand it if necessary.
-6. Look for 'poe.com', click
-7. On the right you will see 'p-b'
-8. Copy the value of the cookie
-9. Save it in a text file somewhere for future reference.
-10. Paste this value into SillyTavern's Poe API box.
+3. At the top of the DevTools view you will see a list of tabs, beginning with `Elements`.
+4. Depending on the width of your screen, some other tabs might be visible after `Elements`, but to the right you will see a `>>` button.
+5. Click the `>>` button and select 'Application'.
+6. Look for 'Storage' in the left hand side of DevTools Application view
+7. Look for 'Cookies', expand it if necessary.
+8. Look for 'poe.com', click
+9. On the right you will see 'p-b'
+10. Copy the value of the cookie
+11. Save it in a text file somewhere for future reference.
+12. Paste this value into SillyTavern's Poe API box.
 
 ## iOS
 
