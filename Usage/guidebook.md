@@ -510,6 +510,8 @@ SillyTavern can use the following tokenizers while forming a request to the AI b
 2. GPT-3 tokenizer. **Use to get more accurate counts on OpenAI character cards.** Can be previewed here: [OpenAI Tokenizer](https://platform.openai.com/tokenizer).
 3. (Legacy) GPT-2/3 tokenizer. Used by original TavernAI. **Pick this if you're unsure.** More info: [gpt-2-3-tokenizer](https://github.com/josephrocca/gpt-2-3-tokenizer).
 4. Sentencepiece tokenizer. Used by LLaMA model family: Alpaca, Vicuna, Koala, etc. **Pick if you use a LLaMA model.**
+5. NerdStash tokenizer. Used by NovelAI's Krake model. **Pick if you use the Krake model.**
+6. NerdStash v2 tokenizer. Used by NovelAI's Clio model. **Pick if you use the Clio model.**
 
 ## Token Padding
 
