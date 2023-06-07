@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.739453469258">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.739453562212">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.0.3">
@@ -32,11 +32,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.0.3.739453469258" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=3.0.3.739453562212" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.739453469258" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.739453562212" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=3.0.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.739453469258" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.739453562212" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -233,6 +233,20 @@
 <li>Install requirements-complete.txt for Extras (even if you did it once before in a prior install).</li>
 <li>run Extras with the chromadb module enabled: <code v-pre>python server.py --enable-modules=chromadb</code></li>
 </ol>
+<doc-anchor-target id="getting-an-error-when-installing-chromadb">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#getting-an-error-when-installing-chromadb">#</doc-anchor-trigger>
+        <span>Getting an error when installing ChromaDB?</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">ERROR: Could not build wheels for hnswlib, which is required to install pyproject.toml-based projects</code></pre>
+</doc-codeblock></div>
+<p>Installing chromadb package requires one of the following:</p>
+<ul>
+<li>Have Visual C++ build tools installed: <a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/">https://visualstudio.microsoft.com/visual-cpp-build-tools/</a></li>
+<li>Installing hnswlib from conda: <code v-pre>conda install -c conda-forge hnswlib</code></li>
+</ul>
 <hr />
 <doc-anchor-target id="configuration">
     <h3>
