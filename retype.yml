@@ -5,6 +5,8 @@ branding:
   logo: static/logo.png
   title: SillyTavern Documentation
   label: 
+edit:
+  repo: "https://github.com/SillyTavern/SillyTavern-Docs/edit"
       
 links:
 - text: Github
