@@ -22,7 +22,7 @@ You must specify a list of module names to be run in the `--enable-modules` comm
 * There are some folks in the community having success running Extras on their phones via Ubuntu on Termux.
 * However, Extras was not made with mobile support in mind.
 * No support will be provided for people running Extras on their Android devices.
-* Direct all your questions to the creator of the guide instead.
+* Direct all your questions to the creator of the guide linked below instead.
 
 #### ❗ This is UNSUPPORTED
 

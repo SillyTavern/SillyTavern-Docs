@@ -26,7 +26,7 @@ Type/paste the commands below `ONE BY ONE` IN THE `CONDA COMMAND PROMPT WINDOW` 
 
 `conda activate extras` (you should see `(extras)` pop up on the left side of your command prompt)
 
-5. Install the required system packages
+5. Install the required system packages (this will take time, torch is a ~2GB download)
 
 `conda install pytorch=2.0.0 torchvision=0.15.0 torchaudio=2.0.0 pytorch-cuda=11.7 git -c pytorch -c nvidia`
 
@@ -38,7 +38,7 @@ Type/paste the commands below `ONE BY ONE` IN THE `CONDA COMMAND PROMPT WINDOW` 
 
 `cd SillyTavern-extras`
 
-8. Install Extras' requirements by using **one** of the following commands:
+8. Install Extras' requirements by using **one** of the following commands (will take time, again):
 
 * `pip install -r requirements.txt` - for minimal features (character expressions, system OS TTS)
 * `pip install -r requirements-complete.txt` - for additinoal features like local/remote StableDiffusion, ChromaDB, Silero TSS
