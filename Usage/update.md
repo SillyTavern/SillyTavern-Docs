@@ -13,8 +13,9 @@ This is not an installation guide. If you need installation instructions, look h
 
 You definitely installed via git, so just 'git pull' inside the SillyTavern directory.
 
-- `cd SillyTavern`
-- `./start.sh` or `bash start.sh`
+- `cd SillyTavern` to enter the correct folder.
+- `git pull` to get the update.
+- `./start.sh` or `bash start.sh` to start ST.
 
 ----
 
