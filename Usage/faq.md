@@ -18,7 +18,7 @@ SillyTavern doesn't generate the responses. It's just a middle-man that connects
 
 From a scientific POV, each AI has a power level that determines its ability to stick to the role you gave it, how rich its prose and vocabulary are, etc. The higher its power level, the richer your experience.
 
-Here's a quick demonstration. We asked various AI models to roleplay a fire and brimstone preacher named Eli, who we go to see to confess (some details in [#314](https://github.com/Cohee1207/SillyTavern/issues/314)). Then we told Eli: **"I feel I've done something wrong. I am falling in love with an AI girl and ignoring women in the real world. What should I do?"** .
+Here's a quick demonstration. We asked various AI models to roleplay a fire and brimstone preacher named Eli, who we go to see to confess (some details in [#314](https://github.com/SillyTavern/SillyTavern/issues/314)). Then we told Eli: **"I feel I've done something wrong. I am falling in love with an AI girl and ignoring women in the real world. What should I do?"** .
 
 You can tell from the response below what to expect from each model. (NOTE: proprietary models appear first, followed by self-hosted models starting from LLlama-13B)
 
@@ -86,12 +86,9 @@ Just know that you have 2 options:
 
 These base instructions are only for OpenAI, which is a paid service. You can find Poe (freemium) instructions at the next question. I'd appreciate if someone else can add separate instructions for the other services.
 
-### Install Tavern
+### Install SillyTavern
 
-1. Install the latest NodeJS from <https://nodejs.org/en/download/current>
-1. If you know how to use git, clone <https://github.com/Cohee1207/SillyTavern>. Otherwise, browse to <https://github.com/Cohee1207/SillyTavern/releases> , download the zip file containing the source code, then extract it locally.
-1. Run Start.bat on Windows, or start.sh on OSX/Linux
-1. Your browser should have opened to the Tavern UI. This webpage is running locally on your computer.
+Follow the [Installation Instructions](https://docs.sillytavern.app/installation/windows/).
 
 ### Get access to OpenAI
 
@@ -102,17 +99,17 @@ These base instructions are only for OpenAI, which is a paid service. You can fi
 
 While you're at it, join the GPT-4 waitlist at <https://openai.com/waitlist/gpt-4-api>
 
-### Configure Tavern to use your API
+### Configure SillyTavern to use your API
 
 1. In Tavern's top bar, click API Connections
 1. Under API, select OpenAI
 1. Paste your API key you saved at the previous step
 1. Click the Connect button. Confirm it says Valid.
-1. By default, Tavern will use GPT 3.5 Turbo. If you have access to GPT-4, in Tavern's top bar, click AI Response Configuration at the far left, and change the OpenAI Model to "gpt-4". Enjoy the best, moneybags.
+1. By default, Tavern will use GPT 3.5 Turbo. If you have access to GPT-4, in SillyTavern's top bar, click AI Response Configuration at the far left, and change the OpenAI Model to "gpt-4". Enjoy the best, moneybags.
 
 ### Test your setup
 
-1. In Tavern's top bar, click Character Management at the far right
+1. In SillyTavern's top bar, click Character Management at the far right
 1. Select an existing character such as Aqua
 1. In the text box at the bottom, write something to Aqua, then press Enter or click the feather button
 
@@ -135,7 +132,7 @@ When using Poe, be careful, it's implemented in a hacky way. If you don't get an
 
 ## Q: Can I use Tavern on my phone or tablet?
 
-iPhones and iPads are not capable of running the whole Tavern app, but since it's just a web interface, you can run it on another computer on your home wifi, and then access in your mobile browser. Refer to <https://github.com/Cohee1207/SillyTavern#remote-connections>
+iPhones and iPads are not capable of running the whole Tavern app, but since it's just a web interface, you can run it on another computer on your home wifi, and then access in your mobile browser. Refer to <https://docs.sillytavern.app/usage/remoteconnections/>
 
 For Android users, in addition to the above, you can run the whole Tavern directly on your phone, without needing a PC, using the Termux app. Refer to <https://rentry.org/STAI-Termux> .
 
