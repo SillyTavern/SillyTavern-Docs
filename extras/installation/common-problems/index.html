@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.739571753210">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.739572488503">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.0.3">
@@ -30,11 +30,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.0.3.739571753210" rel="stylesheet" />
+    <link href="../../../resources/css/retype.css?v=3.0.3.739572488503" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../../resources/js/config.js?v=3.0.3.739571753210" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../../resources/js/config.js?v=3.0.3.739572488503" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../../resources/js/retype.js?v=3.0.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=3.0.3.739571753210" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=3.0.3.739572488503" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -218,6 +218,26 @@
 <li>Install Visual C++ build tools: <a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/">https://visualstudio.microsoft.com/visual-cpp-build-tools/</a></li>
 <li>Install the <code v-pre>hnswlib</code> package with conda: <code v-pre>conda install -c conda-forge hnswlib</code></li>
 </ul>
+<hr />
+<doc-anchor-target id="error-when-installing-python-requirements-on-mac">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#error-when-installing-python-requirements-on-mac">#</doc-anchor-trigger>
+        <span>Error when installing Python requirements on Mac</span>
+    </h3>
+</doc-anchor-target>
+<blockquote>
+<p>ERROR: No matching distribution found for torch==2.0.0+cu117</p>
+</blockquote>
+<p>Mac does not support CUDA, so torch packages should be installed without CUDA support:</p>
+<ol>
+<li>Open requirements.txt and requirements-complete.txt files with a Text Editor app.</li>
+<li>Remove all <code v-pre>+cu117</code> parts from the package versions.</li>
+</ol>
+<p>Example:</p>
+<p>torch<mark>2.0.0+cu117 =&gt; torch</mark>2.0.0</p>
+<ol start="3">
+<li>Run <code v-pre>pip install -r requirements.txt</code> again (change to <code v-pre>requirements-complete.txt</code> if needed.</li>
+</ol>
 <hr />
 <doc-anchor-target id="missing-modules">
     <h3>
