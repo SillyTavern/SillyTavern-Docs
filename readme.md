@@ -6,6 +6,12 @@ Brought to you by Cohee, RossAscends, and the SillyTavern community, SillyTavern
 
 SillyTavern originated as a modification of TavernAI 1.2.8 in February 2023, and has since added many cutting edge features not present in the original TavernAI.
 
+### Screenshots
+
+| ![Chat](https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/f750387b-b923-4561-85cf-b86b14e39afd) | ![Waifu mode](https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/a3d0d020-25a1-4c06-9342-972e43b1ad93) |
+|:---:|:---:|
+| ![VN Mode](https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/772d7c7a-0f41-4138-b155-d86b61bf2cce) | ![Backgrounds](https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/e3df8fcc-edfe-4a5d-8ac6-9462181aad4c) |
+
 ### Branches
 
 SillyTavern is being developed using a two-branch system to ensure a smooth experience for all users.
@@ -47,10 +53,12 @@ SillyTavern supports extensions/plugins:
 
 Additional functionality can be added by using [SillyTavern Extras](https://github.com/SillyTavern/SillyTavern-extras).
 
+<!-- 
 ### Screenshots
 
 ![](https://user-images.githubusercontent.com/18619528/228649245-8061c60f-63dc-488e-9325-f151b7a3ec2d.png)
 ![](https://user-images.githubusercontent.com/18619528/228649856-fbdeef05-d727-4d5a-be80-266cbbc6b811.png)
+-->
 
 ### Installation Requirements
 
