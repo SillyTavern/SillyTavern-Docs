@@ -25,9 +25,20 @@ You definitely installed via git, so just 'git pull' inside the SillyTavern dire
 
 We always recommend users install using 'git'. Here's why:
 
-When you have installed via 'git clone', all you have to do to update is type 'git pull' [in a command line in the ST folder](https://www.google.com/search?q=how+to+open+command+prompt+in+a+folder).
-Alternatively, if the command prompt gives you problems (and you have GitHub Desktop installed), you can use the 'Repository' menu and select 'Pull'.
+When you have installed via `git clone`, all you have to do to update is type `git pull` [in a command line in the ST folder](https://www.google.com/search?q=how+to+open+command+prompt+in+a+folder).
+Alternatively, if the command prompt gives you problems (and you have GitHub Desktop installed), you can use the `Repository` menu and select `Pull`.
+
 The updates are applied automatically and safely.
+
+#### "Help I originally installed via Zip and now want to convert to Git install"
+
+You have chosen a wise path.
+
+Since your installation was done via Zip, you will need to make a new install using git.
+
+Thankfully we have [instructions](https://docs.sillytavern.app/installation/windows/) on how to do so.
+
+Once you have used git to install a NEW SillyTavern into a DIFFERENT folder, come back to this page and proceed to **Step 4** of the 'Zip Update' instructions below.
 
 ### Method 2 - ZIP
 
@@ -42,7 +53,7 @@ If you insist on installing via a zip, here is the tedious process for doing the
   (*) 'As necessary' = "If you made any custom content related to those folders".
   None of the folders are mandatory, so only copy what you need.
 
-#### NB: DO NOT COPY THE ENTIRE /PUBLIC/ FOLDER
+### NOTE: DO NOT COPY THE ENTIRE /PUBLIC/ FOLDER
 
   Doing so could break the new install and prevent new features from being present.
 
