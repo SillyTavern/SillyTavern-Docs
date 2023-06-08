@@ -2,6 +2,16 @@
 
 This page lists common questions and problems encountered while installing SillyTavern Extras.
 
+### Extras server can't connect to AUTOMATIC1111's Stable Diffusion Web UI
+
+> Could not connect to remote SD backend at http://127.0.0.1:7860! Disabling SD module...
+
+**Make sure webui-user.bat that you start Stable Diffusion with contains --api command line option in the COMMANDLINE_ARGS variable.**
+
+Find and replace that line in your "webui-user.bat": `set COMMANDLINE_ARGS=--api`
+
+If the API mode is disabled for SD Web UI, Extras server won't be able to make a connection and you won't be able to generate images!
+
 ### hnswlib wheel building error when installing ChromaDB
 
 > ERROR: Could not build wheels for hnswlib, which is required to install pyproject.toml-based projects
