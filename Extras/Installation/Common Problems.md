@@ -12,6 +12,16 @@ Find and replace that line in your "webui-user.bat": `set COMMANDLINE_ARGS=--api
 
 If the API mode is disabled for SD Web UI, Extras server won't be able to make a connection and you won't be able to generate images!
 
+#### Still doesn't work?
+
+Ensure that you start everything in the proper order, waiting for every program to finish loading before proceeding to the next step:
+
+1. Stable Diffusion Web UI
+2. SillyTavern Extras
+3. SillyTavern
+
+Extras server can't reconnect to the Stable Diffusion API if it was loaded after.
+
 ### hnswlib wheel building error when installing ChromaDB
 
 > ERROR: Could not build wheels for hnswlib, which is required to install pyproject.toml-based projects
@@ -31,7 +41,7 @@ Mac does not support CUDA, so torch packages should be installed without CUDA su
 
 1. Open requirements.txt and requirements-complete.txt files with a Text Editor app.
 2. Remove all `+cu117` parts from the package versions. Example: `torch==2.0.0+cu117` => `torch==2.0.0`
-3. Run `pip install -r requirements.txt` again (change to `requirements-complete.txt` if needed.
+3. Run `pip install -r requirements.txt` again (change to `requirements-complete.txt` if needed).
 
 ---
 
