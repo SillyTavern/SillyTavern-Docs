@@ -1,11 +1,11 @@
 # How to Update SillyTavern
 
-This is not an installation guide. If you need installation instructions, look here:
-<https://docs.alpindale.dev/pygmalion-extras/sillytavern/#installation>
+Find your OS below and follow the instructions to update ST.
 
 (This guide assumes you have already installed SillyTavern once and know how to run it on your OS.)
 
-(A plain text copy of this file is also present inside SillyTavern's base install folder.)
+This is not an installation guide. If you need installation instructions, look here:
+<https://docs.alpindale.dev/pygmalion-extras/sillytavern/#installation>
 
 ----
 
@@ -60,6 +60,7 @@ Themes
 User Avatars
 Worlds
 settings.json
+secrets.json
 ```
   
 5. Once those folders/files are copied, Paste them into the /Public/ folder of the new install.
