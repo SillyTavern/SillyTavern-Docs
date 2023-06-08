@@ -1,5 +1,7 @@
 # Extras Install Common Problems
 
+This page lists common questions and problems encountered while installing SillyTavern Extras.
+
 ### hnswlib wheel building error when installing ChromaDB
 
 > ERROR: Could not build wheels for hnswlib, which is required to install pyproject.toml-based projects

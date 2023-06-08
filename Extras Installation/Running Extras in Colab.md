@@ -1,5 +1,7 @@
 # Running Extras via Colab
 
+Instructions to run the SillyTavern Extras Colab.
+
 * Open the [Official Extras Colab](https://colab.research.google.com/github/Cohee1207/SillyTavern/blob/main/colab/GPU.ipynb)
 * Select the desired "Extra" options
 * Click the Start button on the left (looks likel a triangle 'play' button)

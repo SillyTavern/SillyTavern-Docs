@@ -1,5 +1,7 @@
 # Extras Installation
 
+This page contains instructions for installing SillyTavern Extras on your local device.
+
 ## Installation Methods
 
 ### MiniConda (recommended)
