@@ -4,8 +4,7 @@ Find your OS below and follow the instructions to update ST.
 
 (This guide assumes you have already installed SillyTavern once and know how to run it on your OS.)
 
-This is not an installation guide. If you need installation instructions, look here:
-<https://docs.alpindale.dev/pygmalion-extras/sillytavern/#installation>
+This is not an installation guide. If you need installation instructions, go to the Installation page for your OS (can be found in site navigation).
 
 ----
 
