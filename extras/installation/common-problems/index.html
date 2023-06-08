@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.739573048758">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.739573350763">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.0.3">
@@ -30,11 +30,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.0.3.739573048758" rel="stylesheet" />
+    <link href="../../../resources/css/retype.css?v=3.0.3.739573350763" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../../resources/js/config.js?v=3.0.3.739573048758" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../../resources/js/config.js?v=3.0.3.739573350763" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../../resources/js/retype.js?v=3.0.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=3.0.3.739573048758" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=3.0.3.739573350763" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -204,6 +204,18 @@
     </h1>
 </doc-anchor-target>
 <p>This page lists common questions and problems encountered while installing SillyTavern Extras.</p>
+<doc-anchor-target id="extras-server-cant-connect-to-automatic1111s-stable-diffusion-web-ui">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#extras-server-cant-connect-to-automatic1111s-stable-diffusion-web-ui">#</doc-anchor-trigger>
+        <span>Extras server can&#x27;t connect to AUTOMATIC1111&#x27;s Stable Diffusion Web UI</span>
+    </h3>
+</doc-anchor-target>
+<blockquote>
+<p>Could not connect to remote SD backend at <a href="http://127.0.0.1:7860">http://127.0.0.1:7860</a>! Disabling SD module...</p>
+</blockquote>
+<p><strong>Make sure webui-user.bat that you start Stable Diffusion with contains --api command line option in the COMMANDLINE_ARGS variable.</strong></p>
+<p>Find and replace that line in your &quot;webui-user.bat&quot;: <code v-pre>set COMMANDLINE_ARGS=--api</code></p>
+<p>If the API mode is disabled for SD Web UI, Extras server won&#x27;t be able to make a connection and you won&#x27;t be able to generate images!</p>
 <doc-anchor-target id="hnswlib-wheel-building-error-when-installing-chromadb">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#hnswlib-wheel-building-error-when-installing-chromadb">#</doc-anchor-trigger>
