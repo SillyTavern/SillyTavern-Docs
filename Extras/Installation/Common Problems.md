@@ -10,6 +10,8 @@ This page lists common questions and problems encountered while installing Silly
 
 Find and replace that line in your "webui-user.bat": `set COMMANDLINE_ARGS=--api`
 
+![How it shoud look](https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/a823d134-14fb-40c6-b3f1-2e174e7b1172)
+
 If the API mode is disabled for SD Web UI, Extras server won't be able to make a connection and you won't be able to generate images!
 
 #### Still doesn't work?
