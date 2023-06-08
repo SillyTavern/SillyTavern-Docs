@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.739559678591">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.739561098556">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.0.3">
@@ -30,11 +30,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.0.3.739559678591" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=3.0.3.739561098556" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.739559678591" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.739561098556" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=3.0.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.739559678591" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.739561098556" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -217,16 +217,15 @@
 </doc-anchor-target>
 <p>This method is recommended because Conda makes a &#x27;virtual environment&#x27; for the Extras requirement packages to live inside, so they do not affect your system-wide Python setup.</p>
 <ol>
-<li><p>Install Miniconda: <a href="https://docs.conda.io/en/latest/miniconda.html">https://docs.conda.io/en/latest/miniconda.html</a>
-<em>(Important!) Read how to use Conda: <a href="https://conda.io/projects/conda/en/latest/user-guide/getting-started.html">https://conda.io/projects/conda/en/latest/user-guide/getting-started.html</a></em></p>
-</li>
-<li><p>Install git: <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a>
-<em>(Chads who installed SillyTavern with git to begin with can skip this step!)</em></p>
-</li>
+<li>Install <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a></li>
 </ol>
+<p><em>(Important!) Read <a href="https://conda.io/projects/conda/en/latest/user-guide/getting-started.html">how to use Conda</a></em></p>
+<ol start="2">
+<li>Install <a href="https://git-scm.com/downloads">git</a></li>
+</ol>
+<p><em>(Chads who installed SillyTavern with git to begin with can skip this step!)</em></p>
 <p>After you have both of them installed...</p>
-<p>Execute the commands below <strong>ONE BY ONE</strong> IN THE <code v-pre>CONDA COMMAND PROMPT WINDOW</code>.**</p>
-<p><strong>NB: TYPE/PASTE EACH COMMAND INTO THE PROMPT, HIT ENTER AND WAIT FOR IT TO FINISH!</strong></p>
+<p>Type/paste the commands below <code v-pre>ONE BY ONE</code> IN THE <code v-pre>CONDA COMMAND PROMPT WINDOW</code> and hit <code v-pre>Enter</code> after each one.</p>
 <ol start="3">
 <li>Create a new Conda environment (let&#x27;s call it <code v-pre>extras</code>):</li>
 </ol>
@@ -254,7 +253,7 @@
 <li><code v-pre>pip install -r requirements.txt</code> - for minimal features (character expressions, system OS TTS)</li>
 <li><code v-pre>pip install -r requirements-complete.txt</code> - for additinoal features like local/remote StableDiffusion, ChromaDB, Silero TSS</li>
 </ul>
-<p>See the &#x27;Common Problems&#x27; page if you get errors at this step!</p>
+<p>See the <a href="https://docs.sillytavern.app/extras-installation/common-problems/">Common Problems</a> page if you get errors at this step!</p>
 <ol start="9">
 <li>See below &#x27;Running Extras After Install&#x27;</li>
 </ol>
@@ -291,9 +290,9 @@
     </h3>
 </doc-anchor-target>
 <ol>
-<li>Open the file called &#x60;config.conf(located in ST&#x27;s base install folder) in a text editor</li>
-<li>Look for the line that reads &quot;<code v-pre>const enableExtensions</code>&quot;.</li>
-<li>Make sure that line has &quot;<code v-pre>= true</code>&quot;, and not &quot;<code v-pre>= false</code>&quot;.</li>
+<li>Open the file called <code v-pre>config.conf</code>in a text editor. The file is located in ST&#x27;s base install folder.</li>
+<li>Look for the line that reads <code v-pre>const enableExtensions</code>.</li>
+<li>Make sure that line has <code v-pre>= true</code>, and not <code v-pre>= false</code>.</li>
 </ol>
 <doc-anchor-target id="decide-which-module-to-use">
     <h3>
@@ -303,9 +302,9 @@
 </doc-anchor-target>
 <p>(This only needs to be done once)</p>
 <ul>
-<li>When you start the Extras server, you must do so with a python command.</li>
+<li>Extras is always started with a Python command line.</li>
 <li><code v-pre>python server.py</code> is the bare minimum, but it does not enable any useful modules.</li>
-<li>to enable modules you must use the <code v-pre>--enable-modules=</code> argument, with a list of module names separated by commas.</li>
+<li>to enable modules you must use the <code v-pre>--enable-modules=</code> modifier, with a comma-separated list of module names</li>
 </ul>
 <p>Example: <code v-pre>python server.py --enable-modules=caption,summarize,classify</code></p>
 <p>This would enable Image Captioning, Chat Summary, and live updating Character Expressions.</p>
@@ -362,16 +361,20 @@
 <li>Decide which modules you want to add to your Python command line.</li>
 <li>They will be used in the next step.</li>
 </ul>
-<p><strong>NOTE: There must be <code v-pre>no spaces at all in the module list!</code></strong></p>
+<p><strong>NOTE: There must be <code v-pre>no spaces at all in your Python command's module list!</code></strong></p>
 <doc-anchor-target id="startextras-server">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#startextras-server">#</doc-anchor-trigger>
         <span>StartExtras Server</span>
     </h3>
 </doc-anchor-target>
+<p>While still in your command prompt window inside the Extras installation folder...</p>
 <ol>
-<li>While still in your command prompt window: <code v-pre>python server.py --enable-modules=YOUR,SELECTED,MODULE,LIST,HERE</code></li>
-<li>The Extras server will load up, and after a while it will show you a URL at the end. On local installs, this defaults to <code v-pre>http://localhost:5100</code>.</li>
+<li>Make sure your conda environment is active (if you used the Conda install method)</li>
+<li>Type <code v-pre>activate extras</code> if the environment was not active.</li>
+<li>Type <code v-pre>python server.py --enable-modules=YOUR,SELECTED,MODULE,LIST,HERE</code></li>
+<li>Extras server will load.</li>
+<li>After a while it will show you a URL at the end. For local installs, this defaults to <code v-pre>http://localhost:5100</code>.</li>
 <li>Copy the API URL.</li>
 </ol>
 <doc-anchor-target id="connect-st-to-the-extras-server">
@@ -381,7 +384,7 @@
     </h3>
 </doc-anchor-target>
 <ol>
-<li>Start your SillyTavern server</li>
+<li>Start your SillyTavern server, and view the SillyTavern interface in your browser.</li>
 <li>Open the Extensions panel (via the &#x27;Stacked Blocks&#x27; icon at the top of the page)</li>
 <li>Paste the API URL into the input box.</li>
 <li>Click <code v-pre>Connect</code>.</li>
@@ -406,16 +409,19 @@
 <li>Paste the following code into it:</li>
 </ol>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">cd C:\_your_\_Extras_\_folder_\_path_\
+<pre class="language-none"><code v-pre class="language-none">cd C:\_your_\_full_\_Extras_\_folder_\_path_\
 call activate extras
-python server.py --enable-modules=classify,summarize,sd,chromadb,silero-tts,edge-tts --listen
+python server.py --enable-modules=YOUR,SELECTED,MODULE,LIST,HERE,WITH,NO,SPACES
 deactivate
 pause</code></pre>
 </doc-codeblock></div>
 <ol start="6">
-<li>Save the file with a new name <code v-pre>STExtras.bat</code></li>
+<li>Replace the placeholder folder path with your actual Extras install folder path.</li>
+<li>Replace the python command line with your actual command line</li>
+<li>Save the file with a new name <code v-pre>STExtras.bat</code> (Use <code v-pre>File</code> &gt;&gt; <code v-pre>Save As</code> in most text editors)</li>
 </ol>
 <p>You can now simply double click on this .bat file to easily start Extras.</p>
+<p>If you ever want to change the module list (or any other command line modifiers for the extras server), simply edit the python command inside the .bat file.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -429,7 +435,7 @@ pause</code></pre>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Common Problems with Extras Installation</span>
+                                                <span class="block mt-1">Extras Install Common Problems</span>
                                             </span>
                                         </a>
                                     </div>
