@@ -6,17 +6,17 @@
 
 This method is recommended because Conda makes a 'virtual environment' for the Extras requirement packages to live inside, so they do not affect your system-wide Python setup.
 
-1. Install Miniconda: <https://docs.conda.io/en/latest/miniconda.html>
-_(Important!) Read how to use Conda: <https://conda.io/projects/conda/en/latest/user-guide/getting-started.html>_
+1. Install [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
 
-2. Install git: <https://git-scm.com/downloads>
+_(Important!) Read [how to use Conda](https://conda.io/projects/conda/en/latest/user-guide/getting-started.html)_
+
+2. Install [git](https://git-scm.com/downloads)
+
 _(Chads who installed SillyTavern with git to begin with can skip this step!)_
 
 After you have both of them installed...
 
-Execute the commands below **ONE BY ONE** IN THE `CONDA COMMAND PROMPT WINDOW`.**
-
-**NB: TYPE/PASTE EACH COMMAND INTO THE PROMPT, HIT ENTER AND WAIT FOR IT TO FINISH!**
+Type/paste the commands below `ONE BY ONE` IN THE `CONDA COMMAND PROMPT WINDOW` and hit `Enter` after each one.
 
 3. Create a new Conda environment (let's call it `extras`):
 
@@ -43,7 +43,7 @@ Execute the commands below **ONE BY ONE** IN THE `CONDA COMMAND PROMPT WINDOW`.*
 * `pip install -r requirements.txt` - for minimal features (character expressions, system OS TTS)
 * `pip install -r requirements-complete.txt` - for additinoal features like local/remote StableDiffusion, ChromaDB, Silero TSS
 
-See the 'Common Problems' page if you get errors at this step!
+See the [Common Problems](https://docs.sillytavern.app/extras-installation/common-problems/) page if you get errors at this step!
 
 9. See below 'Running Extras After Install'
 
@@ -71,17 +71,17 @@ If this is your first time touching anything Python-related, that should not be 
 
 ### Confirm extensions are enabled
 
-1. Open the file called `config.conf(located in ST's base install folder) in a text editor
-2. Look for the line that reads "`const enableExtensions`".
-3. Make sure that line has "`= true`", and not "`= false`".
+1. Open the file called `config.conf`in a text editor. The file is located in ST's base install folder.
+2. Look for the line that reads `const enableExtensions`.
+3. Make sure that line has `= true`, and not `= false`.
 
 ### Decide which module to use
 
 (This only needs to be done once)
 
-* When you start the Extras server, you must do so with a python command.
+* Extras is always started with a Python command line.
 * `python server.py` is the bare minimum, but it does not enable any useful modules.
-* to enable modules you must use the `--enable-modules=` argument, with a list of module names separated by commas.
+* to enable modules you must use the `--enable-modules=` modifier, with a comma-separated list of module names
 
 Example: `python server.py --enable-modules=caption,summarize,classify`
 
@@ -102,17 +102,22 @@ Below is a table that describes each module.
 * Decide which modules you want to add to your Python command line.
 * They will be used in the next step.
 
-**NOTE: There must be `no spaces at all in the module list!`**
+**NOTE: There must be `no spaces at all in your Python command's module list!`**
 
 ### StartExtras Server
 
-1. While still in your command prompt window: `python server.py --enable-modules=YOUR,SELECTED,MODULE,LIST,HERE`
-2. The Extras server will load up, and after a while it will show you a URL at the end. On local installs, this defaults to `http://localhost:5100`.
-3. Copy the API URL.
+While still in your command prompt window inside the Extras installation folder...
+
+1. Make sure your conda environment is active (if you used the Conda install method)
+2. Type `activate extras` if the environment was not active.
+3. Type `python server.py --enable-modules=YOUR,SELECTED,MODULE,LIST,HERE`
+4. Extras server will load.
+5. After a while it will show you a URL at the end. For local installs, this defaults to `http://localhost:5100`.
+6. Copy the API URL.
 
 ### Connect ST to the Extras server
 
-1. Start your SillyTavern server
+1. Start your SillyTavern server, and view the SillyTavern interface in your browser.
 2. Open the Extensions panel (via the 'Stacked Blocks' icon at the top of the page)
 3. Paste the API URL into the input box.
 4. Click `Connect`.
@@ -136,13 +141,17 @@ This is Optional and only applies to Windows, but something similar should be po
 5. Paste the following code into it:
 
 ```
-cd C:\_your_\_Extras_\_folder_\_path_\
+cd C:\_your_\_full_\_Extras_\_folder_\_path_\
 call activate extras
-python server.py --enable-modules=classify,summarize,sd,chromadb,silero-tts,edge-tts --listen
+python server.py --enable-modules=YOUR,SELECTED,MODULE,LIST,HERE,WITH,NO,SPACES
 deactivate
 pause
 ```
 
-6. Save the file with a new name `STExtras.bat`
+6. Replace the placeholder folder path with your actual Extras install folder path.
+7. Replace the python command line with your actual command line
+8. Save the file with a new name `STExtras.bat` (Use `File` >> `Save As` in most text editors)
 
 You can now simply double click on this .bat file to easily start Extras.
+
+If you ever want to change the module list (or any other command line modifiers for the extras server), simply edit the python command inside the .bat file.
