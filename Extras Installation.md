@@ -8,7 +8,7 @@ This page contains instructions for installing SillyTavern Extras on your local 
 
 * simple to setup
 * It's free
-* no Colab GPU credits needed
+* no Colab GPU credits required (use the `use_cpu` options)
 * See the [Colab Guide Page](https://docs.sillytavern.app/extras-installation/running-extras-in-colab/) for details.
 
 ---
