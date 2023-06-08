@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.739563126376">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.739563412366">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.0.3">
@@ -30,11 +30,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.0.3.739563126376" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=3.0.3.739563412366" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.739563126376" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.739563412366" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=3.0.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.739563126376" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.739563412366" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -226,7 +226,7 @@
 </doc-anchor-target>
 <p>SillyTavern doesn&#x27;t generate the responses. It&#x27;s just a middle-man that connects to an AI system. There&#x27;s quite a few systems available to use, and the quality varies.</p>
 <p>From a scientific POV, each AI has a power level that determines its ability to stick to the role you gave it, how rich its prose and vocabulary are, etc. The higher its power level, the richer your experience.</p>
-<p>Here&#x27;s a quick demonstration. We asked various AI models to roleplay a fire and brimstone preacher named Eli, who we go to see to confess (some details in <a href="https://github.com/Cohee1207/SillyTavern/issues/314">#314</a>). Then we told Eli: <strong>&quot;I feel I&#x27;ve done something wrong. I am falling in love with an AI girl and ignoring women in the real world. What should I do?&quot;</strong> .</p>
+<p>Here&#x27;s a quick demonstration. We asked various AI models to roleplay a fire and brimstone preacher named Eli, who we go to see to confess (some details in <a href="https://github.com/SillyTavern/SillyTavern/issues/314">#314</a>). Then we told Eli: <strong>&quot;I feel I&#x27;ve done something wrong. I am falling in love with an AI girl and ignoring women in the real world. What should I do?&quot;</strong> .</p>
 <p>You can tell from the response below what to expect from each model. (NOTE: proprietary models appear first, followed by self-hosted models starting from LLlama-13B)</p>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
@@ -356,18 +356,13 @@ Configuring these tools is beyond the scope of this FAQ, you should refer to the
     </h2>
 </doc-anchor-target>
 <p>These base instructions are only for OpenAI, which is a paid service. You can find Poe (freemium) instructions at the next question. I&#x27;d appreciate if someone else can add separate instructions for the other services.</p>
-<doc-anchor-target id="install-tavern">
+<doc-anchor-target id="install-sillytavern">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#install-tavern">#</doc-anchor-trigger>
-        <span>Install Tavern</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#install-sillytavern">#</doc-anchor-trigger>
+        <span>Install SillyTavern</span>
     </h3>
 </doc-anchor-target>
-<ol>
-<li>Install the latest NodeJS from <a href="https://nodejs.org/en/download/current">https://nodejs.org/en/download/current</a></li>
-<li>If you know how to use git, clone <a href="https://github.com/Cohee1207/SillyTavern">https://github.com/Cohee1207/SillyTavern</a>. Otherwise, browse to <a href="https://github.com/Cohee1207/SillyTavern/releases">https://github.com/Cohee1207/SillyTavern/releases</a> , download the zip file containing the source code, then extract it locally.</li>
-<li>Run Start.bat on Windows, or start.sh on OSX/Linux</li>
-<li>Your browser should have opened to the Tavern UI. This webpage is running locally on your computer.</li>
-</ol>
+<p>Follow the <a href="https://docs.sillytavern.app/installation/windows/">Installation Instructions</a>.</p>
 <doc-anchor-target id="get-access-to-openai">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#get-access-to-openai">#</doc-anchor-trigger>
@@ -381,10 +376,10 @@ Configuring these tools is beyond the scope of this FAQ, you should refer to the
 <li>Click &quot;Create new secret key&quot;. Copy it somewhere immediately. DO NOT SHARE THIS KEY. WHOEVER HAS IT CAN USE YOUR ACCOUNT TO USE GPT AT YOUR EXPENSE.</li>
 </ol>
 <p>While you&#x27;re at it, join the GPT-4 waitlist at <a href="https://openai.com/waitlist/gpt-4-api">https://openai.com/waitlist/gpt-4-api</a></p>
-<doc-anchor-target id="configure-tavern-to-use-your-api">
+<doc-anchor-target id="configure-sillytavern-to-use-your-api">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#configure-tavern-to-use-your-api">#</doc-anchor-trigger>
-        <span>Configure Tavern to use your API</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#configure-sillytavern-to-use-your-api">#</doc-anchor-trigger>
+        <span>Configure SillyTavern to use your API</span>
     </h3>
 </doc-anchor-target>
 <ol>
@@ -392,7 +387,7 @@ Configuring these tools is beyond the scope of this FAQ, you should refer to the
 <li>Under API, select OpenAI</li>
 <li>Paste your API key you saved at the previous step</li>
 <li>Click the Connect button. Confirm it says Valid.</li>
-<li>By default, Tavern will use GPT 3.5 Turbo. If you have access to GPT-4, in Tavern&#x27;s top bar, click AI Response Configuration at the far left, and change the OpenAI Model to &quot;gpt-4&quot;. Enjoy the best, moneybags.</li>
+<li>By default, Tavern will use GPT 3.5 Turbo. If you have access to GPT-4, in SillyTavern&#x27;s top bar, click AI Response Configuration at the far left, and change the OpenAI Model to &quot;gpt-4&quot;. Enjoy the best, moneybags.</li>
 </ol>
 <doc-anchor-target id="test-your-setup">
     <h3>
@@ -401,7 +396,7 @@ Configuring these tools is beyond the scope of this FAQ, you should refer to the
     </h3>
 </doc-anchor-target>
 <ol>
-<li>In Tavern&#x27;s top bar, click Character Management at the far right</li>
+<li>In SillyTavern&#x27;s top bar, click Character Management at the far right</li>
 <li>Select an existing character such as Aqua</li>
 <li>In the text box at the bottom, write something to Aqua, then press Enter or click the feather button</li>
 </ol>
@@ -429,7 +424,7 @@ Configuring these tools is beyond the scope of this FAQ, you should refer to the
         <span>Q: Can I use Tavern on my phone or tablet?</span>
     </h2>
 </doc-anchor-target>
-<p>iPhones and iPads are not capable of running the whole Tavern app, but since it&#x27;s just a web interface, you can run it on another computer on your home wifi, and then access in your mobile browser. Refer to <a href="https://github.com/Cohee1207/SillyTavern#remote-connections">https://github.com/Cohee1207/SillyTavern#remote-connections</a></p>
+<p>iPhones and iPads are not capable of running the whole Tavern app, but since it&#x27;s just a web interface, you can run it on another computer on your home wifi, and then access in your mobile browser. Refer to <a href="https://docs.sillytavern.app/usage/remoteconnections/">https://docs.sillytavern.app/usage/remoteconnections/</a></p>
 <p>For Android users, in addition to the above, you can run the whole Tavern directly on your phone, without needing a PC, using the Termux app. Refer to <a href="https://rentry.org/STAI-Termux">https://rentry.org/STAI-Termux</a> .</p>
 <doc-anchor-target id="q-how-can-i-download-pre-made-characters-to-chat-with">
     <h2>
