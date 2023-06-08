@@ -248,6 +248,12 @@ This is useful when your keys are common words or parts of common words.
 
 For example, when this setting is active, keys 'rose' and 'Rose' will be treated differently, depending on the inputs.
 
+### Match whole words
+
+Entries with keys containing only one word will be matched only if the entire word is present in the search text.
+
+For example, if the setting is enabled and the entry key is "king", then text such as "long live the king" would be matched, but "it's not to my liking" wouldn't.
+
 ## Horde
 
 Horde is a distributed GPU cluster run entirely by volunteers. Your inputs are always anonymous, and prompts are not visible to the workers by default.
