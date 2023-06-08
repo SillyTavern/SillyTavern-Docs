@@ -54,7 +54,7 @@ Type/paste the commands below `ONE BY ONE` IN THE `CONDA COMMAND PROMPT WINDOW` 
 8. Install Extras' requirements by using **one** of the following commands (will take time, again):
 
 * `pip install -r requirements.txt` - for minimal features (character expressions, system OS TTS)
-* `pip install -r requirements-complete.txt` - for additinoal features like local/remote StableDiffusion, ChromaDB, Silero TSS
+* `pip install -r requirements-complete.txt` - for additinoal features like local/remote Stable Diffusion, ChromaDB, Silero TSS
 
 See the [Common Problems](https://docs.sillytavern.app/extras/installation/common-problems/) page if you get errors at this step!
 
@@ -117,7 +117,7 @@ Below is a table that describes each module.
 
 **NOTE: There must be `no spaces at all in your Python command's module list!`**
 
-### StartExtras Server
+### Start Extras Server
 
 While still in your command prompt window inside the Extras installation folder...
 
