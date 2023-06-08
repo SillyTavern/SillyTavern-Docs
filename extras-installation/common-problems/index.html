@@ -9,32 +9,32 @@
     <meta name="generator" content="Retype 3.0.3">
 
     <!-- Primary Meta Tags -->
-    <title>License and credits</title>
-    <meta name="title" content="License and credits">
-    <meta name="description" content="This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or..." />
+    <title>Common Problems with Extras Installation</title>
+    <meta name="title" content="Common Problems with Extras Installation">
+    <meta name="description" content="ERROR: Could not build wheels for hnswlib, which is required to install pyproject.toml-based projects" />
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.sillytavern.app/licensecredits/" />
+    <link rel="canonical" href="https://docs.sillytavern.app/extras-installation/common-problems/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.sillytavern.app/licensecredits/">
-    <meta property="og:title" content="License and credits">
-    <meta property="og:description" content="This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or...">
+    <meta property="og:url" content="https://docs.sillytavern.app/extras-installation/common-problems/">
+    <meta property="og:title" content="Common Problems with Extras Installation">
+    <meta property="og:description" content="ERROR: Could not build wheels for hnswlib, which is required to install pyproject.toml-based projects">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.sillytavern.app/licensecredits/">
-    <meta property="twitter:title" content="License and credits">
-    <meta property="twitter:description" content="This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or...">
+    <meta property="twitter:url" content="https://docs.sillytavern.app/extras-installation/common-problems/">
+    <meta property="twitter:title" content="Common Problems with Extras Installation">
+    <meta property="twitter:description" content="ERROR: Could not build wheels for hnswlib, which is required to install pyproject.toml-based projects">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../resources/css/retype.css?v=3.0.3.739559678591" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=3.0.3.739559678591" rel="stylesheet" />
 
-    <script type="text/javascript" src="../resources/js/config.js?v=3.0.3.739559678591" data-turbo-eval="false" defer></script>
-    <script type="text/javascript" src="../resources/js/retype.js?v=3.0.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../resources/js/lunr.js?v=3.0.3.739559678591" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.739559678591" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/retype.js?v=3.0.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.739559678591" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -64,10 +64,10 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../" class="flex items-center leading-snug text-xl">
+                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
                             <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                                <img class="max-h-10 dark:hidden md:inline-block" src="../static/logo.png">
-                                <img class="max-h-10 hidden dark:inline-block" src="../static/logo.png">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo.png">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png">
                             </span>
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                         </a>
@@ -197,32 +197,54 @@
                                 <div id="docs-sidebar-right-toggle"></div>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="license-and-credits" class="break-words">
+<doc-anchor-target id="common-problems-with-extras-installation" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#license-and-credits">#</doc-anchor-trigger>
-        <span>License and credits</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#common-problems-with-extras-installation">#</doc-anchor-trigger>
+        <span>Common Problems with Extras Installation</span>
     </h1>
 </doc-anchor-target>
-<p><strong>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</strong></p>
-<p><strong>See the GNU Affero General Public License for more details.</strong></p>
+<doc-anchor-target id="getting-an-error-when-installing-from-requirements-completetxt">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#getting-an-error-when-installing-from-requirements-completetxt">#</doc-anchor-trigger>
+        <span>Getting an error when installing from requirements-complete.txt?</span>
+    </h3>
+</doc-anchor-target>
+<blockquote>
+<p>ERROR: Could not build wheels for hnswlib, which is required to install pyproject.toml-based projects</p>
+</blockquote>
+<p>Before installing the ChromaDB module you must first do one of the following:</p>
 <ul>
-<li>TAI Base by Humi: Unknown license</li>
-<li>Cohee&#x27;s modifications and derived code: AGPL v3</li>
-<li>RossAscends&#x27; additions: AGPL v3</li>
-<li>Portions of CncAnon&#x27;s TavernAITurbo mod: Unknown license</li>
-<li>Waifu Mode inspired by the work of PepperTaco (<a href="https://github.com/peppertaco/Tavern/">https://github.com/peppertaco/Tavern/</a>)</li>
-<li>Thanks to Pygmalion University for being awesome testers and suggesting cool features!</li>
-<li>Thanks to oobabooga for compiling presets for TextGen</li>
-<li>poe-api client adapted from <a href="https://github.com/ading2210/poe-api">https://github.com/ading2210/poe-api</a> (GPL v3)</li>
-<li>GraphQL files for poe: <a href="https://github.com/muharamdani/poe">https://github.com/muharamdani/poe</a> (ISC License)</li>
-<li>KoboldAI Presets from KAI Lite: <a href="https://lite.koboldai.net/">https://lite.koboldai.net/</a></li>
-<li>Noto Sans font by Google (OFL license)</li>
-<li>Icon theme by Font Awesome <a href="https://fontawesome.com">https://fontawesome.com</a> (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)</li>
-<li>AI Horde client library by ZeldaFan0225: <a href="https://github.com/ZeldaFan0225/ai_horde">https://github.com/ZeldaFan0225/ai_horde</a></li>
-<li>Linux startup script by AlpinDale</li>
-<li>Thanks paniphons for providing a FAQ document</li>
-<li>TTS and Objective extensions by Ouoertheo</li>
+<li>Install Visual C++ build tools: <a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/">https://visualstudio.microsoft.com/visual-cpp-build-tools/</a></li>
 </ul>
+<p>OR</p>
+<ul>
+<li>Install <code v-pre>hnswlib</code> with conda: <code v-pre>conda install -c conda-forge hnswlib</code></li>
+</ul>
+<hr />
+<doc-anchor-target id="missing-modules">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#missing-modules">#</doc-anchor-trigger>
+        <span>Missing modules?</span>
+    </h3>
+</doc-anchor-target>
+<p>You must specify a list of module names to be run in the <code v-pre>--enable-modules</code> command (<code v-pre>caption</code> provided as an example). See <doc-anchor-trigger to="#modules">Modules</doc-anchor-trigger> section.</p>
+<doc-anchor-target id="what-about-mobile-android-termux">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#what-about-mobile-android-termux">#</doc-anchor-trigger>
+        <span>What about mobile/Android/Termux? <span class="docs-emoji">&#x1F914;</span></span>
+    </h3>
+</doc-anchor-target>
+<p>There are some folks in the community having success running Extras on their phones via Ubuntu on Termux.</p>
+<doc-anchor-target id="this-is-unsupported">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#this-is-unsupported">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x2757;</span> This is UNSUPPORTED</span>
+    </h4>
+</doc-anchor-target>
+<p>However, Extras was not made with mobile support in mind.
+No support will be provided for people running Extras on their Android devices.
+Direct all your questions to the creator of the guide instead.</p>
+<p><a href="https://rentry.org/STAI-Termux#downloading-and-running-tai-extras">https://rentry.org/STAI-Termux#downloading-and-running-tai-extras</a></p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -232,16 +254,23 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../usage/guidebook/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../extensions/writing-extensions/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Silly​Tavern Guidebook</span>
+                                                <span class="block mt-1">Writing Extensions</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../extras-installation/installation/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">Extras Installation</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
                                     </div>
                                 </nav>
                             </footer>
@@ -282,6 +311,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script>window.__DOCS__ = { "title": "License and credits", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+    <script>window.__DOCS__ = { "title": "Common Problems with Extras Installation", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
 </body>
 </html>

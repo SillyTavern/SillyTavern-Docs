@@ -9,32 +9,32 @@
     <meta name="generator" content="Retype 3.0.3">
 
     <!-- Primary Meta Tags -->
-    <title>License and credits</title>
-    <meta name="title" content="License and credits">
-    <meta name="description" content="This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or..." />
+    <title>Extras Installation</title>
+    <meta name="title" content="Extras Installation">
+    <meta name="description" content="This method is recommended because Conda makes a 'virtual environment' for the Extras requirement packages to live inside, so they do not affect your..." />
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.sillytavern.app/licensecredits/" />
+    <link rel="canonical" href="https://docs.sillytavern.app/extras-installation/installation/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.sillytavern.app/licensecredits/">
-    <meta property="og:title" content="License and credits">
-    <meta property="og:description" content="This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or...">
+    <meta property="og:url" content="https://docs.sillytavern.app/extras-installation/installation/">
+    <meta property="og:title" content="Extras Installation">
+    <meta property="og:description" content="This method is recommended because Conda makes a 'virtual environment' for the Extras requirement packages to live inside, so they do not affect your...">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.sillytavern.app/licensecredits/">
-    <meta property="twitter:title" content="License and credits">
-    <meta property="twitter:description" content="This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or...">
+    <meta property="twitter:url" content="https://docs.sillytavern.app/extras-installation/installation/">
+    <meta property="twitter:title" content="Extras Installation">
+    <meta property="twitter:description" content="This method is recommended because Conda makes a 'virtual environment' for the Extras requirement packages to live inside, so they do not affect your...">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../resources/css/retype.css?v=3.0.3.739559678591" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=3.0.3.739559678591" rel="stylesheet" />
 
-    <script type="text/javascript" src="../resources/js/config.js?v=3.0.3.739559678591" data-turbo-eval="false" defer></script>
-    <script type="text/javascript" src="../resources/js/retype.js?v=3.0.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../resources/js/lunr.js?v=3.0.3.739559678591" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.739559678591" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/retype.js?v=3.0.3" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.739559678591" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -64,10 +64,10 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../" class="flex items-center leading-snug text-xl">
+                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
                             <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                                <img class="max-h-10 dark:hidden md:inline-block" src="../static/logo.png">
-                                <img class="max-h-10 hidden dark:inline-block" src="../static/logo.png">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo.png">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png">
                             </span>
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                         </a>
@@ -197,32 +197,225 @@
                                 <div id="docs-sidebar-right-toggle"></div>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="license-and-credits" class="break-words">
+<doc-anchor-target id="extras-installation" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#license-and-credits">#</doc-anchor-trigger>
-        <span>License and credits</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#extras-installation">#</doc-anchor-trigger>
+        <span>Extras Installation</span>
     </h1>
 </doc-anchor-target>
-<p><strong>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</strong></p>
-<p><strong>See the GNU Affero General Public License for more details.</strong></p>
+<doc-anchor-target id="installation-methods">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#installation-methods">#</doc-anchor-trigger>
+        <span>Installation Methods</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="miniconda-recommended">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#miniconda-recommended">#</doc-anchor-trigger>
+        <span>MiniConda (recommended)</span>
+    </h3>
+</doc-anchor-target>
+<p>This method is recommended because Conda makes a &#x27;virtual environment&#x27; for the Extras requirement packages to live inside, so they do not affect your system-wide Python setup.</p>
+<ol>
+<li><p>Install Miniconda: <a href="https://docs.conda.io/en/latest/miniconda.html">https://docs.conda.io/en/latest/miniconda.html</a>
+<em>(Important!) Read how to use Conda: <a href="https://conda.io/projects/conda/en/latest/user-guide/getting-started.html">https://conda.io/projects/conda/en/latest/user-guide/getting-started.html</a></em></p>
+</li>
+<li><p>Install git: <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a>
+<em>(Chads who installed SillyTavern with git to begin with can skip this step!)</em></p>
+</li>
+</ol>
+<p>After you have both of them installed...</p>
+<p>Execute the commands below <strong>ONE BY ONE</strong> IN THE <code v-pre>CONDA COMMAND PROMPT WINDOW</code>.**</p>
+<p><strong>NB: TYPE/PASTE EACH COMMAND INTO THE PROMPT, HIT ENTER AND WAIT FOR IT TO FINISH!</strong></p>
+<ol start="3">
+<li>Create a new Conda environment (let&#x27;s call it <code v-pre>extras</code>):</li>
+</ol>
+<p><code v-pre>conda create -n extras</code></p>
+<ol start="4">
+<li>Activate the new environment</li>
+</ol>
+<p><code v-pre>conda activate extras</code> (you should see <code v-pre>(extras)</code> pop up on the left side of your command prompt)</p>
+<ol start="5">
+<li>Install the required system packages</li>
+</ol>
+<p><code v-pre>conda install pytorch=2.0.0 torchvision=0.15.0 torchaudio=2.0.0 pytorch-cuda=11.7 git -c pytorch -c nvidia</code></p>
+<ol start="6">
+<li>Clone the Extras GitHub repo</li>
+</ol>
+<p><code v-pre>git clone https://github.com/Cohee1207/SillyTavern-extras</code></p>
+<ol start="7">
+<li>Navigate to your cloned Extras repo</li>
+</ol>
+<p><code v-pre>cd SillyTavern-extras</code></p>
+<ol start="8">
+<li>Install Extras&#x27; requirements by using <strong>one</strong> of the following commands:</li>
+</ol>
 <ul>
-<li>TAI Base by Humi: Unknown license</li>
-<li>Cohee&#x27;s modifications and derived code: AGPL v3</li>
-<li>RossAscends&#x27; additions: AGPL v3</li>
-<li>Portions of CncAnon&#x27;s TavernAITurbo mod: Unknown license</li>
-<li>Waifu Mode inspired by the work of PepperTaco (<a href="https://github.com/peppertaco/Tavern/">https://github.com/peppertaco/Tavern/</a>)</li>
-<li>Thanks to Pygmalion University for being awesome testers and suggesting cool features!</li>
-<li>Thanks to oobabooga for compiling presets for TextGen</li>
-<li>poe-api client adapted from <a href="https://github.com/ading2210/poe-api">https://github.com/ading2210/poe-api</a> (GPL v3)</li>
-<li>GraphQL files for poe: <a href="https://github.com/muharamdani/poe">https://github.com/muharamdani/poe</a> (ISC License)</li>
-<li>KoboldAI Presets from KAI Lite: <a href="https://lite.koboldai.net/">https://lite.koboldai.net/</a></li>
-<li>Noto Sans font by Google (OFL license)</li>
-<li>Icon theme by Font Awesome <a href="https://fontawesome.com">https://fontawesome.com</a> (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)</li>
-<li>AI Horde client library by ZeldaFan0225: <a href="https://github.com/ZeldaFan0225/ai_horde">https://github.com/ZeldaFan0225/ai_horde</a></li>
-<li>Linux startup script by AlpinDale</li>
-<li>Thanks paniphons for providing a FAQ document</li>
-<li>TTS and Objective extensions by Ouoertheo</li>
+<li><code v-pre>pip install -r requirements.txt</code> - for minimal features (character expressions, system OS TTS)</li>
+<li><code v-pre>pip install -r requirements-complete.txt</code> - for additinoal features like local/remote StableDiffusion, ChromaDB, Silero TSS</li>
 </ul>
+<p>See the &#x27;Common Problems&#x27; page if you get errors at this step!</p>
+<ol start="9">
+<li>See below &#x27;Running Extras After Install&#x27;</li>
+</ol>
+<hr />
+<doc-anchor-target id="system-wide-installation">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#system-wide-installation">#</doc-anchor-trigger>
+        <span>System-Wide Installation</span>
+    </h3>
+</doc-anchor-target>
+<p>This is easier, but will affect your system-wide Python installation.</p>
+<p>This can cause conflicts if you work with many Python programs that have different requirements.</p>
+<p>If this is your first time touching anything Python-related, that should not be a problem.</p>
+<ol>
+<li>Install Python 3.10: <a href="https://www.python.org/downloads/release/python-31010/">https://www.python.org/downloads/release/python-31010/</a></li>
+<li>Install git: <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></li>
+<li>Open a command prompt window and go to a folder in which you have complete access permissions.</li>
+<li>Clone the repo: <code v-pre>git clone https://github.com/Cohee1207/SillyTavern-extras</code>, hit Enter.</li>
+<li>After the clone has finished, type <code v-pre>cd SillyTavern-extras</code>, hit Enter.</li>
+<li>Type <code v-pre>python -m pip install -r requirements.txt</code></li>
+<li>See below &#x27;Running Extras After Install&#x27;</li>
+</ol>
+<hr />
+<doc-anchor-target id="running-extras-after-install">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#running-extras-after-install">#</doc-anchor-trigger>
+        <span>Running Extras After Install</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="confirm-extensions-are-enabled">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#confirm-extensions-are-enabled">#</doc-anchor-trigger>
+        <span>Confirm extensions are enabled</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li>Open the file called &#x60;config.conf(located in ST&#x27;s base install folder) in a text editor</li>
+<li>Look for the line that reads &quot;<code v-pre>const enableExtensions</code>&quot;.</li>
+<li>Make sure that line has &quot;<code v-pre>= true</code>&quot;, and not &quot;<code v-pre>= false</code>&quot;.</li>
+</ol>
+<doc-anchor-target id="decide-which-module-to-use">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#decide-which-module-to-use">#</doc-anchor-trigger>
+        <span>Decide which module to use</span>
+    </h3>
+</doc-anchor-target>
+<p>(This only needs to be done once)</p>
+<ul>
+<li>When you start the Extras server, you must do so with a python command.</li>
+<li><code v-pre>python server.py</code> is the bare minimum, but it does not enable any useful modules.</li>
+<li>to enable modules you must use the <code v-pre>--enable-modules=</code> argument, with a list of module names separated by commas.</li>
+</ul>
+<p>Example: <code v-pre>python server.py --enable-modules=caption,summarize,classify</code></p>
+<p>This would enable Image Captioning, Chat Summary, and live updating Character Expressions.</p>
+<p>Below is a table that describes each module.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Included in default requirements.txt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>caption</code></td>
+<td>Image captioning</td>
+<td><span class="docs-emoji">&#x2714;&#xFE0F;</span> Yes</td>
+</tr>
+<tr>
+<td><code v-pre>summarize</code></td>
+<td>Text summarization</td>
+<td><span class="docs-emoji">&#x2714;&#xFE0F;</span> Yes</td>
+</tr>
+<tr>
+<td><code v-pre>classify</code></td>
+<td>Text sentiment classification</td>
+<td><span class="docs-emoji">&#x2714;&#xFE0F;</span> Yes</td>
+</tr>
+<tr>
+<td><code v-pre>sd</code></td>
+<td>Stable Diffusion image generation</td>
+<td><span class="docs-emoji">&#x274C;</span> No (<span class="docs-emoji">&#x2714;&#xFE0F;</span> remote)</td>
+</tr>
+<tr>
+<td><code v-pre>silero-tts</code></td>
+<td><a href="https://github.com/ouoertheo/silero-api-server">Silero TTS server</a></td>
+<td><span class="docs-emoji">&#x274C;</span> No</td>
+</tr>
+<tr>
+<td><code v-pre>edge-tts</code></td>
+<td><a href="https://github.com/rany2/edge-tts">Microsoft Edge TTS client</a></td>
+<td><span class="docs-emoji">&#x2714;&#xFE0F;</span> Yes</td>
+</tr>
+<tr>
+<td><code v-pre>chromadb</code></td>
+<td>Infinity context server</td>
+<td><span class="docs-emoji">&#x274C;</span> No</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>Decide which modules you want to add to your Python command line.</li>
+<li>They will be used in the next step.</li>
+</ul>
+<p><strong>NOTE: There must be <code v-pre>no spaces at all in the module list!</code></strong></p>
+<doc-anchor-target id="startextras-server">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#startextras-server">#</doc-anchor-trigger>
+        <span>StartExtras Server</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li>While still in your command prompt window: <code v-pre>python server.py --enable-modules=YOUR,SELECTED,MODULE,LIST,HERE</code></li>
+<li>The Extras server will load up, and after a while it will show you a URL at the end. On local installs, this defaults to <code v-pre>http://localhost:5100</code>.</li>
+<li>Copy the API URL.</li>
+</ol>
+<doc-anchor-target id="connect-st-to-the-extras-server">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#connect-st-to-the-extras-server">#</doc-anchor-trigger>
+        <span>Connect ST to the Extras server</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li>Start your SillyTavern server</li>
+<li>Open the Extensions panel (via the &#x27;Stacked Blocks&#x27; icon at the top of the page)</li>
+<li>Paste the API URL into the input box.</li>
+<li>Click <code v-pre>Connect</code>.</li>
+</ol>
+<p>To run Extras again, simply activate the environment and run these commands in a command prompt.</p>
+<p><code v-pre>conda activate extras</code>, Hit Enter.
+<code v-pre>python server.py</code>, Hit Enter.</p>
+<p>Be sure to the additional options for server.py (see below) that your setup requires.</p>
+<doc-anchor-target id="make-a-bat-file-for-easy-startup">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#make-a-bat-file-for-easy-startup">#</doc-anchor-trigger>
+        <span>Make a .bat File for Easy Startup</span>
+    </h2>
+</doc-anchor-target>
+<p>This is Optional and only applies to Windows, but something similar should be possible on MacOS.</p>
+<ol>
+<li>View your Windows Desktop</li>
+<li>Right click, select <code v-pre>New</code>, and then click <code v-pre>Text Document</code></li>
+<li>A new file will appear on your Desktop, asking for a name.</li>
+<li>Name the file <code v-pre>STExtras.txt</code></li>
+<li>Open the newly created file in a text editor.</li>
+<li>Paste the following code into it:</li>
+</ol>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">cd C:\_your_\_Extras_\_folder_\_path_\
+call activate extras
+python server.py --enable-modules=classify,summarize,sd,chromadb,silero-tts,edge-tts --listen
+deactivate
+pause</code></pre>
+</doc-codeblock></div>
+<ol start="6">
+<li>Save the file with a new name <code v-pre>STExtras.bat</code></li>
+</ol>
+<p>You can now simply double click on this .bat file to easily start Extras.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -232,16 +425,23 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../usage/guidebook/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../extras-installation/common-problems/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Silly​Tavern Guidebook</span>
+                                                <span class="block mt-1">Common Problems with Extras Installation</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../extras-installation/running-extras-in-colab/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">Running Extras via Colab</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
                                     </div>
                                 </nav>
                             </footer>
@@ -282,6 +482,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script>window.__DOCS__ = { "title": "License and credits", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+    <script>window.__DOCS__ = { "title": "Extras Installation", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
 </body>
 </html>
