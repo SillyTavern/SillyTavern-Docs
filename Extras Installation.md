@@ -2,9 +2,16 @@
 
 This page contains instructions for installing SillyTavern Extras on your local device.
 
-##### NOTE: Extras can be run simply, for free, with no GPU credits by using the [Official Extras Colab](https://colab.research.google.com/github/Cohee1207/SillyTavern/blob/main/colab/GPU.ipynb)
+---
 
-##### We even have [a guide page](https://docs.sillytavern.app/extras-installation/running-extras-in-colab/) for it
+#### NOTE: Use the [Official Extras Colab](https://colab.research.google.com/github/Cohee1207/SillyTavern/blob/main/colab/GPU.ipynb)
+
+* simple to setup
+* It's free
+* no Colab GPU credits needed
+* See the [Colab Guide Page](https://docs.sillytavern.app/extras-installation/running-extras-in-colab/) for details.
+
+---
 
 ## Installation Methods
 
