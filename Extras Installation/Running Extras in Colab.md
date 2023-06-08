@@ -1,0 +1,12 @@
+# Running Extras via Colab
+
+* Open the [Official Extras Colab](https://colab.research.google.com/github/Cohee1207/SillyTavern/blob/main/colab/GPU.ipynb)
+* Select the desired "Extra" options
+* Click the Start button on the left (looks likel a triangle 'play' button)
+* Wait for it to finish loading everything
+* Look for `### SillyTavern Extensions LINK ###` at the bottom of the output.
+* Copy the API URL link that is listed under that line. (**NOT the 'localhost' URL, use the other one**)
+* Start SillyTavern with extensions support: (set `enableExtensions` to `true` in your `config.conf` if necessary)
+* Navigate to SillyTavern's Extensions menu
+* Paste the API URL into the box at the top.
+* Click "Connect"
