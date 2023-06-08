@@ -9,7 +9,7 @@ This page contains instructions for installing SillyTavern Extras on your local 
 * simple to setup
 * It's free
 * no Colab GPU credits required (use the `use_cpu` options)
-* See the [Colab Guide Page](https://docs.sillytavern.app/extras-installation/running-extras-in-colab/) for details.
+* See the [Colab Guide Page](https://docs.sillytavern.app/extras/installation/running-extras-in-colab/) for details.
 
 ---
 
@@ -56,7 +56,7 @@ Type/paste the commands below `ONE BY ONE` IN THE `CONDA COMMAND PROMPT WINDOW` 
 * `pip install -r requirements.txt` - for minimal features (character expressions, system OS TTS)
 * `pip install -r requirements-complete.txt` - for additinoal features like local/remote StableDiffusion, ChromaDB, Silero TSS
 
-See the [Common Problems](https://docs.sillytavern.app/extras-installation/common-problems/) page if you get errors at this step!
+See the [Common Problems](https://docs.sillytavern.app/extras/installation/common-problems/) page if you get errors at this step!
 
 9. See below 'Running Extras After Install'
 
