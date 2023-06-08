@@ -15,7 +15,8 @@ Before installing the ChromaDB module you must first do `one of the following`:
 
 ### Missing modules?
 
-You must specify a list of module names to be run in the `--enable-modules` command (`caption` provided as an example). See [Modules](https://docs.sillytavern.app/extras-installation/installation/#decide-which-module-to-use) section.
+* You must specify a list of module names in your python commandline, with the `--enable-modules` modifier.
+* See [Modules](https://docs.sillytavern.app/extras/installation/#decide-which-module-to-use) section.
 
 ---
 
