@@ -1,3 +1,6 @@
+---
+order: 25
+---
 # How to get Poe API p-b cookie
 
 First make an account on poe.com, then follow these instructions for your OS:

@@ -1,3 +1,6 @@
+---
+order: 50
+---
 # SillyTavern Guidebook
 
 This page contains descriptions for many of SillyTavern's features and core concepts.
@@ -110,8 +113,8 @@ For example:
 
 Describes how the character speaks. Before each example, you need to add the \<START\> tag.
 
-- Use \{\{char\}\} instead of the character name.
-- Use \{\{user\}\} instead of the user name.
+* Use \{\{char\}\} instead of the character name.
+* Use \{\{user\}\} instead of the user name.
 
 Example:
 
@@ -131,14 +134,13 @@ Example:
 
 \{\{char\}\}: \*excitedly\* Hello there, dear! Are you new to Axel? Don't worry, I, Aqua the goddess of water, am here to help you! Do you need any assistance? And may I say, I look simply radiant today! \*strikes a pose and looks at you with puppy eyes\*
 
-
 ### Scenario
 
 Circumstances and context of the dialogue.
 
 ### Replacement tags
 
-_A list of tags that are replaced when sending to generate:_
+*A list of tags that are replaced when sending to generate:*
 
 1. \{\{user\}\} and \<USER\> are replaced by the User's Name
 2. \{\{char\}\} and \<BOT\> are replaced by the Character's Name
@@ -157,7 +159,7 @@ It functions like a dynamic dictionary that only inserts relevant information fr
 
 The SillyTavern engine activates and seamlessly integrates the appropriate lore into the prompt, providing background information to the AI.
 
-_It is important to note that while World Info helps guide the AI towards your desired lore, it does not guarantee its appearance in the generated output messages._
+*It is important to note that while World Info helps guide the AI towards your desired lore, it does not guarantee its appearance in the generated output messages.*
 
 ### Pro Tips
 
@@ -288,7 +290,7 @@ The maximum amount of tokens that the AI will generate to respond. One word is a
 
 How much will the AI remember. Context size also affects the speed of generation.
 
-_Important_: The setting of Context Size in SillyTavern GUI overrides the setting for KoboldAI GUI
+*Important*: The setting of Context Size in SillyTavern GUI overrides the setting for KoboldAI GUI
 
 ### Advanced Settings
 
@@ -406,7 +408,7 @@ If your subscription tier is Paper, Tablet or Scroll use only Euterpe model othe
 
 **Important!**
 
-_Lost API keys can't be restored! Make sure to keep it safe!_
+*Lost API keys can't be restored! Make sure to keep it safe!*
 
 ### Window.ai
 
@@ -434,7 +436,7 @@ OpenRouter works by letting you use keys that they own. It has a free trial, and
 3. Type any message into the poe.com chat, and get a response from the AI.
 4. Find the 'Cookie' section on the left side of Dev Tools 'Application' tab, expand it
 5. Click "<http://poe.com/>" listing inside the Cookies section.
-6. Look to the right for the listing of _p-b_ and copy its Value.
+6. Look to the right for the listing of *p-b* and copy its Value.
 7. Paste the cookie value into the Poe API connection URL box, and click "Connect".
 8. Select a character and start chatting
 
@@ -466,7 +468,7 @@ Write one reply in internet RP style for \{\{char\}\}. Be verbose and creative.
 
 Provides ready-made presets with prompts and sequences for some well-known instruct models.
 
-_Changing a preset resets your system prompt to default!_
+*Changing a preset resets your system prompt to default!*
 
 #### Input Sequence
 
@@ -492,7 +494,7 @@ Text that denotes the end of the reply. Will be trimmed from the output text.
 
 If enabled, prepend character and user names to chat history logs after inserting the sequences.
 
-_Always enabled for group chats!_
+*Always enabled for group chats!*
 
 #### Wrap Sequences with Newline
 
@@ -539,7 +541,7 @@ The settings provided in this section allow for more control over the prompt bui
 
 Overrides the default separators controlled by "Disable example chats formatting" and "Disable chat start formatting" options (see below).
 
-### For _Pygmalion_ formatting
+### For *Pygmalion* formatting
 
 #### Disable description formatting
 
@@ -556,18 +558,18 @@ Overrides the default separators controlled by "Disable example chats formatting
 #### Disable example chats formatting
 
 `<START>` won't be added at the beginning of each example message block.
-_(If custom separator is not set)_
+*(If custom separator is not set)*
 
 #### Disable chat start formatting
 
 `<START>` won't be added between the character card and the chat log.
-_(If custom separator is not set)_
+*(If custom separator is not set)*
 
 #### Always add character's name to prompt
 
 Doesn't do anything (Included in Pygmalion formatting).
 
-### For _non-Pygmalion_ formatting
+### For *non-Pygmalion* formatting
 
 #### Disable description formatting
 
@@ -584,12 +586,12 @@ Has no effect.
 #### Disable example chats formatting
 
 `This is how **Character** should talk` won't be added at the beginning of each example message block.
-_(If custom separator is not set)_
+*(If custom separator is not set)*
 
 #### Disable chat start formatting
 
 `Then the roleplay chat between **User** and **Character** begins` won't be added between the character card and the chat log.
-_(If custom separator is not set)_
+*(If custom separator is not set)*
 
 #### Always add character's name to prompt
 
@@ -630,7 +632,7 @@ Characters are drafted based on the order they are presented in group members li
 
 ## Multigen
 
-_This feature provides a pseudo-streaming functionality which conflicts with token streaming. When Multigen is enabled and generation API supports streaming, only Multigen streaming will be used._
+*This feature provides a pseudo-streaming functionality which conflicts with token streaming. When Multigen is enabled and generation API supports streaming, only Multigen streaming will be used.*
 
 SillyTavern tries to create faster and longer responses by chaining the generation using smaller batches.
 

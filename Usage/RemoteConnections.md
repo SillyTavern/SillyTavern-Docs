@@ -1,3 +1,8 @@
+---
+label: Sample
+layout: page
+order: 24
+---
 # Remote connections
 
 Most often this is for people who want to use SillyTavern on their mobile phones while their PC runs the ST server on the same wifi network.

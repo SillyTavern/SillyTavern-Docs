@@ -1,3 +1,6 @@
+---
+order: 5
+---
 # Linux/MacOS Install
 
 For MacOS all of these will be done in a Terminal.

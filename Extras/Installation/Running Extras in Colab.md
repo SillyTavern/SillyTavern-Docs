@@ -1,3 +1,7 @@
+---
+label: Extras via Colab
+order: 100
+---
 # Running Extras via Colab
 
 Instructions to run the SillyTavern Extras Colab.

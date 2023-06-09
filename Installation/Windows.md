@@ -1,3 +1,6 @@
+---
+order: 10
+---
 # Windows Installation
 
 > **Warning**
