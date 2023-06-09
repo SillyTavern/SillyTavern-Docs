@@ -1,6 +1,5 @@
 ---
-label: Sample
-layout: page
+icon: rss
 order: 24
 ---
 # Remote connections

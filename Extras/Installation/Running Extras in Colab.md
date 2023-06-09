@@ -1,6 +1,7 @@
 ---
 label: Extras via Colab
 order: 100
+icon: cloud
 ---
 # Running Extras via Colab
 

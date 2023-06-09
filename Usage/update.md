@@ -1,3 +1,8 @@
+---
+order: 99
+icon: repo-pull
+---
+
 # How to Update SillyTavern
 
 Find your OS below and follow the instructions to update ST.

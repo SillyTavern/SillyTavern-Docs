@@ -1,5 +1,6 @@
 ---
 order: 50
+icon: book
 ---
 # SillyTavern Guidebook
 
