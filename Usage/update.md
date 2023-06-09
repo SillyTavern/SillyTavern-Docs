@@ -25,6 +25,10 @@ You definitely installed via git, so just 'git pull' inside the SillyTavern dire
 
 ## Windows/MacOS
 
+>First try using the `UpdateAndStart.bat` which is located in your SillyTavern installation base folder.
+
+If that fails, come back here and continue reading.
+
 ### Method 1 - GIT
 
 We always recommend users install using 'git'. Here's why:
