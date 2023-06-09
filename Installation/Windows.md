@@ -7,8 +7,9 @@ label: Windows
 
 !!!warning
 DO NOT INSTALL INTO ANY WINDOWS CONTROLLED FOLDER (Program Files, System32, etc).
-DO NOT RUN START.BAT WITH ADMIN PERMISSIONS
 
+DO NOT RUN START.BAT WITH ADMIN PERMISSIONS
+!!!
 
 ## Installing via Git (recommended for easy updating)
 
