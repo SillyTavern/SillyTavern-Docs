@@ -15,7 +15,7 @@ Local installation of Extras can be difficult or impossible on your OS (especial
 * Simple to setup
 * Free to use
 * No Colab GPU credits required (use the `use_cpu` options)
-* See the [Colab Guide Page](https://docs.sillytavern.app/extras/installation/running-extras-in-colab/) for details.
+* See the [Colab Guide Page](https://docs.sillytavern.app/extras/running-extras-in-colab/) for details.
 
 ---
 
