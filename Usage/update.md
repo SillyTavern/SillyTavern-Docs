@@ -57,7 +57,7 @@ If you insist on installing via a zip, here is the tedious process for doing the
   (*) 'As necessary' = "If you made any custom content related to those folders".
   None of the folders are mandatory, so only copy what you need.
 
-### NOTE: DO NOT COPY THE ENTIRE /PUBLIC/ FOLDER
+#### NOTE: DO NOT COPY THE ENTIRE /PUBLIC/ FOLDER
 
   Doing so could break the new install and prevent new features from being present.
 
@@ -83,3 +83,13 @@ secrets.json
 6. Start SillyTavern once again with the method appropriate to your OS, and pray you got it right.
 
 7. If everything shows up, you can safely delete the old ST folder.
+
+### Common Update Problems
+
+#### File changes prevent git pull
+
+- If you change SillyTavern system files, `git pull` may not work.
+- Sometimes an update may require us to change an important file, which can cause the same problem.
+- Usually it is `config.conf` or `package-lock.json`.
+- In this case you can try moving the file to a different folder (or deleting the file) and then do `git pull`.
+- Another solution is using `git pull --rebase --autostash`

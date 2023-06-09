@@ -12,9 +12,6 @@ label: Windows
 
 ## Installing via Git (recommended for easy updating)
 
-Easy to follow guide with pretty pictures:
-<https://docs.alpindale.dev/pygmalion-extras/sillytavern/#windows-installation>
-
   1. Install [NodeJS](https://nodejs.org/en) (latest LTS version is recommended)
   2. Install [GitHub Desktop](https://central.github.com/deployments/desktop/desktop/latest/win32)
   3. Open Windows Explorer (`Win+E`)
