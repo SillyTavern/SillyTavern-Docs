@@ -1,5 +1,6 @@
 ---
 icon: gear
+label: Local Installation
 ---
 
 # Extras Installation
@@ -7,12 +8,13 @@ icon: gear
 This page contains instructions for installing SillyTavern Extras on your local device.
 
 ---
+Local installation of Extras can be difficult or impossible on your OS (especially Termux).
 
-#### NOTE: Use the [Official Extras Colab](https://colab.research.google.com/github/Cohee1207/SillyTavern/blob/main/colab/GPU.ipynb)
+#### Use the [Official Extras Colab](https://colab.research.google.com/github/Cohee1207/SillyTavern/blob/main/colab/GPU.ipynb)
 
-* simple to setup
-* It's free
-* no Colab GPU credits required (use the `use_cpu` options)
+* Simple to setup
+* Free to use
+* No Colab GPU credits required (use the `use_cpu` options)
 * See the [Colab Guide Page](https://docs.sillytavern.app/extras/installation/running-extras-in-colab/) for details.
 
 ---
