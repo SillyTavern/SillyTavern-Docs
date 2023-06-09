@@ -1,5 +1,6 @@
 ---
 order: 10
+label: Windows
 ---
 # Windows Installation
 

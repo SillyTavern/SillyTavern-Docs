@@ -1,3 +1,4 @@
 order: 30
-icon: ":magic_wand:"
+icon: zap
 expanded: true
+label: Installation

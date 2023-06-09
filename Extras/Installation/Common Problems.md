@@ -1,10 +1,14 @@
+---
+label: Common Problems
+icon: warning
+---
 # Extras Install Common Problems
 
 This page lists common questions and problems encountered while installing SillyTavern Extras.
 
 ### Extras server can't connect to AUTOMATIC1111's Stable Diffusion Web UI
 
-> Could not connect to remote SD backend at http://127.0.0.1:7860! Disabling SD module...
+> Could not connect to remote SD backend at <http://127.0.0.1:7860>! Disabling SD module...
 
 **Make sure webui-user.bat that you start Stable Diffusion with contains --api command line option in the COMMANDLINE_ARGS variable.**
 
@@ -35,9 +39,9 @@ Before installing the ChromaDB module you must first do `one of the following`:
 
 ---
 
-### Error when installing Python requirements on Mac 
+### Error when installing Python requirements on Mac
 
-> ERROR: No matching distribution found for torch==2.0.0+cu117 
+> ERROR: No matching distribution found for torch==2.0.0+cu117
 
 Mac does not support CUDA, so torch packages should be installed without CUDA support:
 

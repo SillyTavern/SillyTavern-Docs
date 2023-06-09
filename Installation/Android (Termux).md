@@ -1,3 +1,6 @@
+---
+label: Android (Termux)
+---
 # Android(Termux) Installation
 
 SillyTavern can be run natively on Android phones using Termux.

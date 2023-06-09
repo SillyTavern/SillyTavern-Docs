@@ -1,6 +1,5 @@
 ---
-icon: command-palette
-
+icon: file-added
 ---
 
 # Writing Extensions

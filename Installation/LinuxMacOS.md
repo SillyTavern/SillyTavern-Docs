@@ -1,4 +1,5 @@
 ---
+label: MacOS & Linux
 order: 5
 ---
 # Linux/MacOS Install
