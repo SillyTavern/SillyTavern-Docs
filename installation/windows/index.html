@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.739641219579">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.739712849575">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.0.3">
@@ -24,20 +24,22 @@
     <meta property="og:url" content="https://docs.sillytavern.app/installation/windows/">
     <meta property="og:title" content="Windows Installation">
     <meta property="og:description" content="DO NOT INSTALL INTO ANY WINDOWS CONTROLLED FOLDER (Program Files, System32, etc).">
+    <meta property="og:image" content="https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/fae5d105-449a-4e4a-b679-238347647054">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/installation/windows/">
     <meta property="twitter:title" content="Windows Installation">
     <meta property="twitter:description" content="DO NOT INSTALL INTO ANY WINDOWS CONTROLLED FOLDER (Program Files, System32, etc).">
+    <meta property="twitter:image" content="https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/fae5d105-449a-4e4a-b679-238347647054">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.0.3.739641219579" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=3.0.3.739712849575" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.739641219579" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.739712849575" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=3.0.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.739641219579" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.739712849575" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -223,15 +225,42 @@
         </div>
     </div>
 </div>
-<doc-anchor-target id="installing-via-git-recommended-for-easy-updating">
+<doc-anchor-target id="installing-via-github-desktop-easiest">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#installing-via-git-recommended-for-easy-updating">#</doc-anchor-trigger>
-        <span>Installing via Git (recommended for easy updating)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#installing-via-github-desktop-easiest">#</doc-anchor-trigger>
+        <span>Installing via GitHub Desktop (easiest)</span>
     </h2>
 </doc-anchor-target>
 <ol>
 <li>Install <a href="https://nodejs.org/en">NodeJS</a> (latest LTS version is recommended)</li>
 <li>Install <a href="https://central.github.com/deployments/desktop/desktop/latest/win32">GitHub Desktop</a></li>
+<li>After installing GitHub Desktop, click on <code v-pre>Clone a repository from the internet....</code> (Note that you <strong>do NOT need</strong> to create an account for this step)</li>
+</ol>
+<p><img src="https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/fae5d105-449a-4e4a-b679-238347647054" alt="image" /></p>
+<ol start="4">
+<li>On the menu, go into the URL tab, enter this URL <code v-pre>https://github.com/SillyTavern/SillyTavern</code> and click Clone. You can change the Local path to change where SillyTavern is going to be downloaded.</li>
+</ol>
+<p><img src="https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/6bdded9b-e182-4cac-89ff-e4727dbb97b2" alt="image" /></p>
+<ol start="6">
+<li>To open SillyTavern, just go into the folder where you cloned the repository, and double click on the start.bat file. By default, the repository will be cloned here: <code v-pre>C:\Users[Your Account Name]\Documents\GitHub\SillyTavern</code></li>
+</ol>
+<p><img src="https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/a77b8bc2-72a9-42a9-8aa9-1ed89f9bbf35" alt="image" /></p>
+<ol start="6">
+<li>If everything is working, the CMD should look like this and a SillyTavern tab should be open in your browser:</li>
+</ol>
+<p><img src="https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/d9da4608-94cd-447c-bde2-7f0f9de1c2eb" alt="image" /></p>
+<ol start="7">
+<li>Connect to any of the supported APIs and start chatting!</li>
+</ol>
+<doc-anchor-target id="installing-via-git">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#installing-via-git">#</doc-anchor-trigger>
+        <span>Installing via Git</span>
+    </h2>
+</doc-anchor-target>
+<ol>
+<li>Install <a href="https://nodejs.org/en">NodeJS</a> (latest LTS version is recommended)</li>
+<li>Install <a href="https://gitforwindows.org/">Git for Windows</a></li>
 <li>Open Windows Explorer (<code v-pre>Win+E</code>)</li>
 <li>Browse to or Create a folder that is not controlled or monitored by Windows. (ex: C:\MySpecialFolder)</li>
 <li>Open a Command Prompt inside that folder by clicking in the &#x27;Address Bar&#x27; at the top, typing <code v-pre>cmd</code>, and pressing Enter.</li>
