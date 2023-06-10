@@ -18,5 +18,6 @@ Instructions to run the SillyTavern Extras Colab.
 * Copy the API URL link that is listed under that line. (**DO NOT copy the 'localhost' URL, use the other one**)
 * Start SillyTavern with extensions support: (set `enableExtensions` to `true` in your `config.conf` if necessary)
 * Navigate to SillyTavern's Extensions menu (click the 'stacked blocks' icon at the top of the page).
-* Paste the API URL into the box at the top.
+* Paste the API URL into the box at the top. (**NOT the API Key box**)
+* Make sure the API Key box is completely empty when using the official colab.
 * Click "Connect"

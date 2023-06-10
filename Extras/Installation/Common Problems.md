@@ -58,6 +58,15 @@ Mac does not support CUDA, so torch packages should be installed without CUDA su
 
 ---
 
+### What is the API Key box for?
+
+* The API Key box in SillyTavern's Extensions panel is only used when you have:
+  * created a text file named `api_key.txt` in your Extras install folder, which contains your chosen Extras 'password'.
+  * started extras with the `--secure` commandline argument.
+* This makes the Extras API 'password locked', so only users who have that key in their API Key box can access it.
+* This is mainly useful for people who want to make their own public public deployment of Extras (colab, etc).
+* Users running Extras on their own PC for personal use should not type anything into the API Key box.
+
 ### What about mobile/Android/Termux? 🤔
 
 * There are some folks in the community having success running Extras on their phones via Ubuntu on Termux.
