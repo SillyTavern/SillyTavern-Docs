@@ -2,7 +2,9 @@
 order: 25
 icon: dependabot
 ---
-# How to get Poe API p-b cookie
+# Poe (p-b cookie)
+
+Instructions for connecting SillyTavern to Poe.com AI bots.
 
 First make an account on poe.com, then follow these instructions for your OS:
 

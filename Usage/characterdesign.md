@@ -1,6 +1,6 @@
-## Character Design
+# Character Design
 
-### Character description
+### Character Description
 
 Used to add the character description and the rest that the AI should know.
 

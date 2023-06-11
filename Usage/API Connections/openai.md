@@ -1,4 +1,4 @@
-## OpenAI
+# OpenAI
 
 ### API key
 

@@ -1,4 +1,6 @@
-## Horde
+# KoboldAI & Horde
+
+## Kobold Horde
 
 Horde is a distributed GPU cluster run entirely by volunteers. Your inputs are always anonymous, and prompts are not visible to the workers by default.
 

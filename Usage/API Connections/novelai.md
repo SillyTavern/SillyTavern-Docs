@@ -1,4 +1,4 @@
-## NovelAI
+# NovelAI
 
 ### API Key
 
