@@ -1,4 +1,4 @@
-## World Info
+# World Info
 
 **World Info enhances AI's understanding of the details in your world.**
 
