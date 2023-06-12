@@ -6,6 +6,18 @@ icon: warning
 
 This page lists common questions and problems encountered while installing SillyTavern Extras.
 
+---
+Local installation of Extras can be difficult or impossible on your OS (especially Termux).
+
+#### Use the [Official Extras Colab](https://colab.research.google.com/github/Cohee1207/SillyTavern/blob/main/colab/GPU.ipynb)
+
+* Simple to setup
+* Free to use
+* No Colab GPU credits required (use the `use_cpu` options)
+* See the [Colab Guide Page](https://docs.sillytavern.app/extras/running-extras-in-colab/) for details.
+
+---
+
 ### Extras server can't connect to AUTOMATIC1111's Stable Diffusion Web UI
 
 > Could not connect to remote SD backend at <http://127.0.0.1:7860>! Disabling SD module...
