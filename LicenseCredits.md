@@ -20,3 +20,7 @@
 * Linux startup script by AlpinDale
 * Thanks paniphons for providing a FAQ document
 * TTS and Objective extensions by Ouoertheo
+
+## Feel your name is missing here?
+
+Open a Pull Request by using the "Edit this page" link so we could properly credit you and your contributions!
