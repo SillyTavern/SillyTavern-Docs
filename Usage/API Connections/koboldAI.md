@@ -1,14 +1,4 @@
-# KoboldAI & Horde
-
-## Kobold Horde
-
-Horde is a distributed GPU cluster run entirely by volunteers. Your inputs are always anonymous, and prompts are not visible to the workers by default.
-
-However, malicious agents could modify the open-source bridging software to log your activity or produce bad responses. So, when using Horde, avoid sending any personal information such as names, email addresses, etc.
-
-If you encounter any abnormal activity, switch on the "Trusted Workers Only" checkbox and report it to the [KoboldAI Discord](https://koboldai.org/discord).
-
-## KoboldAI
+# KoboldAI
 
 ### Basic Settings
 
