@@ -8,7 +8,7 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 - These LLM APIs can be run on your PC.
 - They are free to use and have no content filter.
 - installation process can be complex (**SillyTavern dev team does not provide support for this**)
-- require downloading LLM models which can be 10-50GB each.
+- requires separate download of LLM models which can be 10-50GB each.
 - Most models are not as powerful as cloud LLM APIs.
 
 ### KoboldAI
@@ -34,7 +34,7 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 - at the mercy of the Worker in terms of generation wait times, AI settings, and available models
 - [website](https://horde.koboldai.net)
 
-### Oobabooga TextGeneration WeuUI
+### Oobabooga TextGeneration WebUI
 
 - similar functionality as KoboldAI, but also has streaming and a Gradio interface
 - [GitHub](https://horde.koboldai.net)
