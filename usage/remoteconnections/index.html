@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.739978081812">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.740015372944">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.0.3">
@@ -33,11 +33,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.0.3.739978081812" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=3.0.3.740015372944" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.739978081812" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.740015372944" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=3.0.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.739978081812" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.740015372944" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -217,25 +217,42 @@
 </doc-anchor-target>
 <ul>
 <li>Create a new text file inside your SillyTavern base install folder called <code v-pre>whitelist.txt</code>.</li>
-<li>Open the file in a text editor, add a list of IPs you want to be allowed to connect.</li>
+<li>Open the file in a text editor, add a list of IPs you want to be allowed to connect.
+<ul>
+<li>Each IP must be on its own line.</li>
+<li><strong>127.0.0.1 MUST be included in the list, or you will not be able to connect on the host machine</strong></li>
+<li>Indidivual IPs, and wildcard (*) IP ranges are accepted.</li>
+<li>CIDR masks are also accepted (eg. 10.0.0.0/24).</li>
 </ul>
-<p><em>Both indidivual IPs, and wildcard IP ranges are accepted. Examples:</em></p>
+</li>
+</ul>
+<p>Examples:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">192.168.0.1
-192.168.0.20</code></pre>
-</doc-codeblock></div>
-<p>or</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">192.168.0.*</code></pre>
+192.168.0.20
+
+//or simply
+
+192.168.*.*</code></pre>
 </doc-codeblock></div>
 <p>(the above wildcard IP range will allow any device on the local network to connect)</p>
-<p>CIDR masks are also accepted (eg. 10.0.0.0/24).</p>
+<doc-anchor-target id="general-purpose-whitelisttxt">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#general-purpose-whitelisttxt">#</doc-anchor-trigger>
+        <span>General Purpose whitelist.txt</span>
+    </h4>
+</doc-anchor-target>
+<p>Copy and paste this exactly:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">192.168.*.*
+127.0.0.1</code></pre>
+</doc-codeblock></div>
+<p>This will allow any device on the same network as the host machine, as well as the host machine itself, to connect to ST.</p>
 <ul>
 <li>Save the <code v-pre>whitelist.txt</code> file.</li>
-<li>Restart your TAI server.</li>
+<li><strong>Restart your SillyTavern server.</strong></li>
 </ul>
-<p>Now devices which have the IP specified in the file will be able to connect.</p>
-<p><em>Note: <code v-pre>config.conf</code> also has a <code v-pre>whitelist</code> array, which you can use in the same way, but this array will be ignored if <code v-pre>whitelist.txt</code> exists.</em></p>
+<p><em>Note: <code v-pre>config.conf</code> also has a <code v-pre>whitelist</code> array, which you can use in the same way, but this array will be ignored if <code v-pre>whitelist.txt</code> exists. We do not reccomend using the config.conf IP list, because using whitelist.txt is easier</em></p>
 <doc-anchor-target id="2-getting-the-ip-for-the-st-host-machine">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#2-getting-the-ip-for-the-st-host-machine">#</doc-anchor-trigger>
