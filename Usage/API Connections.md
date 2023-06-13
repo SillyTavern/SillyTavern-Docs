@@ -8,7 +8,7 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 - These LLM APIs can be run on your PC.
 - They are free to use and have no content filter.
 - installation process can be complex (**SillyTavern dev team does not provide support for this**)
-- requires separate download of LLM models which can be 10-50GB each.
+- requires separate download of LLM models from [HuggingFace](https://huggingface.co/models?other=LLM) which can be 10-50GB each.
 - Most models are not as powerful as cloud LLM APIs.
 
 ### KoboldAI
@@ -18,7 +18,9 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 - requires large amounts of VRAM in your GPU (6-24GB, depending on the LLM model)
 - models limited to 2k context
 - No streaming
-- [GitHub](https://github.com/KoboldAI/KoboldAI-Client)
+- popular KoboldAI versions:
+  - [Henky's United](https://github.com/henk717/KoboldAI)
+  - [0cc4m's 4bit-supporting United](https://github.com/0cc4m/KoboldAI)
 
 ### KoboldCPP
 
@@ -37,7 +39,10 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 ### Oobabooga TextGeneration WebUI
 
 - similar functionality as KoboldAI, but also has streaming and a Gradio interface
-- [GitHub](https://horde.koboldai.net)
+- supports a wider range of model types than KoboldAI (4-bit & 8-bit quantized models)
+- one-click installers available
+- regular updates, which can sometimes breaki compatibilty with SillyTavern
+- [GitHub](https://github.com/oobabooga/text-generation-webui#one-click-installers)
 
 ## Cloud LLM APIs
 
@@ -49,18 +54,20 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 
 - No content filter
 - Paid subscription required
+- the most capable model, Clio, is only accessible on their highest paid account tier.
 - [Setup Instructions](https://docs.sillytavern.app/usage/api-connections/novelai/)
 
 ### ChatGPT (by OpenAI)
 
 - easy to setup and acquire an API key, 4k 8k, 32k context models available.
-- free trial requires a valid phone number, and then required to pre-pay for use credits
+- free trial requires a valid phone number
+- after freetrial, all useage is charged monthly.
 - writing style for roleplay can be repetitive and predictable
 - [Setup Instructions](https://docs.sillytavern.app/usage/api-connections/openai/)
 
 ### Claude (by Anthropic)
 
-- Reccomended for users who want creative unique writing style
+- Reccomended for users who want their AI chats to have a creative, unique writing style
 - 4k, 8k, 100k context models available
 - strongst content filter of all APIs (as of June 2023)
 - limited access to most models
@@ -69,11 +76,12 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 
 ### Poe.com (by Quora)
 
-- Eeccommended API for new users who lack tech savviness.
+- Recommended for users who lack tech savviness, powerful PCs, or money, but still want to use a capable cloud LLM.
 - free use of OpenAI's ChatGPT 3.5 turbo (4k) and Anthropic's Claude-instant (5.5k)
 - paid account can access more models such as ChatGPT 4 and Claude 100k
 - customizable bots allow for behavior and character profile to be set on the website
 - somewhat tedious initial setup process
+- SillyTavern's connection to Poe API is unnofficial and could be disabled by Quora at any time
 - [SillyTavern + Poe Setup Guide](https://docs.sillytavern.app/usage/api-connections/poe/)
 
 ### WindowAI/OpenRouter
