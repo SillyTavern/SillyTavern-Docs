@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.739972651032">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.739972811366">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.0.3">
@@ -33,11 +33,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.0.3.739972651032" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=3.0.3.739972811366" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.739972651032" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.739972811366" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=3.0.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.739972651032" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.739972811366" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -232,8 +232,8 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 <li>gives the most direct control of the AI&#x27;s generation settings</li>
 <li>requires large amounts of VRAM in your GPU (6-24GB, depending on the LLM model)</li>
 <li>models limited to 2k context</li>
-<li>No streaming
-<a href="https://github.com/KoboldAI/KoboldAI-Client">GitHub</a></li>
+<li>No streaming</li>
+<li><a href="https://github.com/KoboldAI/KoboldAI-Client">GitHub</a></li>
 </ul>
 <doc-anchor-target id="koboldcpp">
     <h3>
@@ -244,8 +244,8 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 <ul>
 <li>same functonality as KoboldAI, but uses your CPU and RAM instead of GPU</li>
 <li>very simple to setup on Windows (must be compiled from source on MacOS and Linux)</li>
-<li>slower than GPU APIs
-<a href="https://github.com/LostRuins/koboldcpp">GitHub</a></li>
+<li>slower than GPU APIs</li>
+<li><a href="https://github.com/LostRuins/koboldcpp">GitHub</a></li>
 </ul>
 <doc-anchor-target id="kobold-horde">
     <h3>
@@ -256,8 +256,8 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 <ul>
 <li>SillyTavern can access this API out of the box with no additional settings required.</li>
 <li>it uses the GPU of individual volunteers (Horde Workers) to process responses for your chat inputs</li>
-<li>at the mercy of the Worker in terms of generation wait times, AI settings, and available models
-<a href="https://horde.koboldai.net">website</a></li>
+<li>at the mercy of the Worker in terms of generation wait times, AI settings, and available models</li>
+<li><a href="https://horde.koboldai.net">website</a></li>
 </ul>
 <doc-anchor-target id="oobabooga-textgeneration-weuui">
     <h3>
@@ -266,8 +266,8 @@ Below is a description of their respective strengths, weaknesses, and use cases.
     </h3>
 </doc-anchor-target>
 <ul>
-<li>similar functionality as KoboldAI, but also has streaming and a Gradio interface
-<a href="https://horde.koboldai.net">GitHub</a></li>
+<li>similar functionality as KoboldAI, but also has streaming and a Gradio interface</li>
+<li><a href="https://horde.koboldai.net">GitHub</a></li>
 </ul>
 <doc-anchor-target id="cloud-llm-apis">
     <h2>
@@ -288,8 +288,8 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 </doc-anchor-target>
 <ul>
 <li>No content filter</li>
-<li>Paid subscription required
-<a href="https://docs.sillytavern.app/usage/api-connections/novelai/">Setup Instructions</a></li>
+<li>Paid subscription required</li>
+<li><a href="https://docs.sillytavern.app/usage/api-connections/novelai/">Setup Instructions</a></li>
 </ul>
 <doc-anchor-target id="chatgpt-by-openai">
     <h3>
@@ -300,8 +300,8 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 <ul>
 <li>easy to setup and acquire an API key, 4k 8k, 32k context models available.</li>
 <li>free trial requires a valid phone number, and then required to pre-pay for use credits</li>
-<li>writing style for roleplay can be repetitive and predictable
-<a href="https://docs.sillytavern.app/usage/api-connections/openai/">Setup Instructions</a></li>
+<li>writing style for roleplay can be repetitive and predictable</li>
+<li><a href="https://docs.sillytavern.app/usage/api-connections/openai/">Setup Instructions</a></li>
 </ul>
 <doc-anchor-target id="claude-by-anthropic">
     <h3>
@@ -314,8 +314,8 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 <li>4k, 8k, 100k context models available</li>
 <li>strongst content filter of all APIs (as of June 2023)</li>
 <li>limited access to most models</li>
-<li>currently not accepting new account creation; on a wait list (June 2023)
-<a href="https://www.anthropic.com/index/introducing-claude">website</a></li>
+<li>currently not accepting new account creation; on a wait list (June 2023)</li>
+<li><a href="https://www.anthropic.com/index/introducing-claude">website</a></li>
 </ul>
 <doc-anchor-target id="poecom-by-quora">
     <h3>
@@ -328,8 +328,8 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 <li>free use of OpenAI&#x27;s ChatGPT 3.5 turbo (4k) and Anthropic&#x27;s Claude-instant (5.5k)</li>
 <li>paid account can access more models such as ChatGPT 4 and Claude 100k</li>
 <li>customizable bots allow for behavior and character profile to be set on the website</li>
-<li>somewhat tedious initial setup process
-<a href="https://docs.sillytavern.app/usage/api-connections/poe/">SillyTavern + Poe Setup Guide</a></li>
+<li>somewhat tedious initial setup process</li>
+<li><a href="https://docs.sillytavern.app/usage/api-connections/poe/">SillyTavern + Poe Setup Guide</a></li>
 </ul>
 <doc-anchor-target id="windowaiopenrouter">
     <h3>
@@ -341,8 +341,8 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 <li>this browser extension allows you to connect to the abovementioned cloud LLMs</li>
 <li>use your own ChatGPT/Claude API key with WindowAI</li>
 <li>use OpenRouter to pay to use their API keys instead</li>
-<li>useful if you don&#x27;t want to create individual accounts on each service
-<a href="https://windowai.io">website</a> and <a href="https://openrouter.ai">website</a></li>
+<li>useful if you don&#x27;t want to create individual accounts on each service</li>
+<li><a href="https://windowai.io">website</a> and <a href="https://openrouter.ai">website</a></li>
 </ul>
 
                                 
