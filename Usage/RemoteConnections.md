@@ -14,30 +14,39 @@ However, it can be used to allow remote connections from anywhere as well.
 
 * Create a new text file inside your SillyTavern base install folder called `whitelist.txt`.
 * Open the file in a text editor, add a list of IPs you want to be allowed to connect.
+  * Each IP must be on its own line.
+  * **127.0.0.1 MUST be included in the list, or you will not be able to connect on the host machine**
+  * Indidivual IPs, and wildcard (*) IP ranges are accepted.
+  * CIDR masks are also accepted (eg. 10.0.0.0/24).
 
-*Both indidivual IPs, and wildcard IP ranges are accepted. Examples:*
+Examples:
 
 ```txt
 192.168.0.1
 192.168.0.20
-```
 
-or
+//or simply
 
-```txt
-192.168.0.*
+192.168.*.*
 ```
 
 (the above wildcard IP range will allow any device on the local network to connect)
 
-CIDR masks are also accepted (eg. 10.0.0.0/24).
+#### General Purpose whitelist.txt
+
+Copy and paste this exactly:
+
+```txt
+192.168.*.*
+127.0.0.1
+```
+
+This will allow any device on the same network as the host machine, as well as the host machine itself, to connect to ST.
 
 * Save the `whitelist.txt` file.
-* Restart your TAI server.
+* **Restart your SillyTavern server.**
 
-Now devices which have the IP specified in the file will be able to connect.
-
-*Note: `config.conf` also has a `whitelist` array, which you can use in the same way, but this array will be ignored if `whitelist.txt` exists.*
+*Note: `config.conf` also has a `whitelist` array, which you can use in the same way, but this array will be ignored if `whitelist.txt` exists. We do not reccomend using the config.conf IP list, because using whitelist.txt is easier*
 
 ### 2. Getting the IP for the ST host machine
 
