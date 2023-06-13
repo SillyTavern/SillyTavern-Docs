@@ -18,26 +18,26 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 - requires large amounts of VRAM in your GPU (6-24GB, depending on the LLM model)
 - models limited to 2k context
 - No streaming
-[GitHub](https://github.com/KoboldAI/KoboldAI-Client)
+- [GitHub](https://github.com/KoboldAI/KoboldAI-Client)
 
 ### KoboldCPP
 
 - same functonality as KoboldAI, but uses your CPU and RAM instead of GPU
 - very simple to setup on Windows (must be compiled from source on MacOS and Linux)
 - slower than GPU APIs
-[GitHub](https://github.com/LostRuins/koboldcpp)
+- [GitHub](https://github.com/LostRuins/koboldcpp)
 
 ### Kobold Horde
 
 - SillyTavern can access this API out of the box with no additional settings required.
 - it uses the GPU of individual volunteers (Horde Workers) to process responses for your chat inputs
 - at the mercy of the Worker in terms of generation wait times, AI settings, and available models
-[website](https://horde.koboldai.net)
+- [website](https://horde.koboldai.net)
 
 ### Oobabooga TextGeneration WeuUI
 
 - similar functionality as KoboldAI, but also has streaming and a Gradio interface
-[GitHub](https://horde.koboldai.net)
+- [GitHub](https://horde.koboldai.net)
 
 ## Cloud LLM APIs
 
@@ -49,14 +49,14 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 
 - No content filter
 - Paid subscription required
-[Setup Instructions](https://docs.sillytavern.app/usage/api-connections/novelai/)
+- [Setup Instructions](https://docs.sillytavern.app/usage/api-connections/novelai/)
 
 ### ChatGPT (by OpenAI)
 
 - easy to setup and acquire an API key, 4k 8k, 32k context models available.
 - free trial requires a valid phone number, and then required to pre-pay for use credits
 - writing style for roleplay can be repetitive and predictable
-[Setup Instructions](https://docs.sillytavern.app/usage/api-connections/openai/)
+- [Setup Instructions](https://docs.sillytavern.app/usage/api-connections/openai/)
 
 ### Claude (by Anthropic)
 
@@ -65,7 +65,7 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 - strongst content filter of all APIs (as of June 2023)
 - limited access to most models
 - currently not accepting new account creation; on a wait list (June 2023)
-[website](https://www.anthropic.com/index/introducing-claude)
+- [website](https://www.anthropic.com/index/introducing-claude)
 
 ### Poe.com (by Quora)
 
@@ -74,7 +74,7 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 - paid account can access more models such as ChatGPT 4 and Claude 100k
 - customizable bots allow for behavior and character profile to be set on the website
 - somewhat tedious initial setup process
-[SillyTavern + Poe Setup Guide](https://docs.sillytavern.app/usage/api-connections/poe/)
+- [SillyTavern + Poe Setup Guide](https://docs.sillytavern.app/usage/api-connections/poe/)
 
 ### WindowAI/OpenRouter
 
@@ -82,4 +82,4 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 - use your own ChatGPT/Claude API key with WindowAI
 - use OpenRouter to pay to use their API keys instead
 - useful if you don't want to create individual accounts on each service
-[website](https://windowai.io) and [website](https://openrouter.ai)
+- [website](https://windowai.io) and [website](https://openrouter.ai)
