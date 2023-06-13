@@ -22,13 +22,15 @@ To help reduce this problem, SillyTavern has built in the following feature:
 
 ## Setup
 
-- SillyTavern is able to connect with Horde out of the box with not additional setup required.
-  - Just select 'Kobold Horde' from the API dropdown selector in the ST API panel.
-- By default, your SillyTavern instance will act like a 'guest account' on the Horde, and by given low priority.
+- SillyTavern is able to connect with Horde out of the box with no additional setup required.
+- Just select 'Kobold Horde' from the API dropdown selector in the ST API panel.
+- By default, your SillyTavern instance will act like a 'guest account' on the Horde, and be given low priority.
 - This means you will probably have to wait a long time to get a reply.
 - To reduce wait times:
-  1. Make an account on the Horde website
-  2. Add your Horde account ID into the SillyTavern Horde API Key box
+  - Make an account on the Horde website.
+  - Add your Horde account ID into the SillyTavern Horde API Key box.
+- Select one or more models from the Model Selector at the bottom of the panel.
+- Begin chatting.
 
   ![ST Kobold Horde API Connection Panel](https://files.catbox.moe/mtajd1.png)
 
