@@ -4,7 +4,6 @@ label: Windows
 ---
 # Windows Installation
 
-
 !!!warning
 DO NOT INSTALL INTO ANY WINDOWS CONTROLLED FOLDER (Program Files, System32, etc).
 
@@ -27,11 +26,11 @@ DO NOT RUN START.BAT WITH ADMIN PERMISSIONS
 
   ![image](https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/a77b8bc2-72a9-42a9-8aa9-1ed89f9bbf35)
 
-  6. If everything is working, the CMD should look like this and a SillyTavern tab should be open in your browser:
+  7. If everything is working, the CMD should look like this and a SillyTavern tab should be open in your browser:
 
   ![image](https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/d9da4608-94cd-447c-bde2-7f0f9de1c2eb)
 
-  7. Connect to any of the supported APIs and start chatting!
+  8. Connect to any of the supported APIs and start chatting!
 
 ## Installing via Git
 
@@ -41,8 +40,10 @@ DO NOT RUN START.BAT WITH ADMIN PERMISSIONS
   4. Browse to or Create a folder that is not controlled or monitored by Windows. (ex: C:\MySpecialFolder\)
   5. Open a Command Prompt inside that folder by clicking in the 'Address Bar' at the top, typing `cmd`, and pressing Enter.
   6. Once the black box (Command Prompt) pops up, type ONE of the following into it and press Enter:
-  - for Main Branch: `git clone https://github.com/SillyTavern/SillyTavern -b main`
-  - for Dev Branch: `git clone https://github.com/SillyTavern/SillyTavern -b dev`
+
+- for Main Branch: `git clone https://github.com/SillyTavern/SillyTavern -b main`
+- for Dev Branch: `git clone https://github.com/SillyTavern/SillyTavern -b dev`
+
   7. Once everything is cloned, double click `Start.bat` to make NodeJS install its requirements.
   8. The server will then start, and SillyTavern will popup in your browser.
 
