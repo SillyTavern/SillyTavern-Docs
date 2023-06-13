@@ -8,7 +8,9 @@
   - log your activity (IP, input prompts, AI responses)
   - produce bad or offensive responses
 
-> When using Horde **never send** any personal information such as names, email addresses, etc.
+!!!warning
+When using Horde **never send** any personal information such as names, email addresses, etc.
+!!!
 
 Switching on on the "Trusted Workers Only" checkbox will help avoid this problem entirely, but will result in less available Workers.
 
