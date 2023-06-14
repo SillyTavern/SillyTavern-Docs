@@ -13,7 +13,7 @@ Instructions to run the SillyTavern Extras Colab.
   * this will make Stable Diffusion slower, but everything else will run normally
 * Click the Start button on the left (looks like a triangle 'play' button)
 * Wait for it to finish loading everything
-* Look for `### SillyTavern Extensions LINK ###` at the bottom of the output.
+* Look for `trycloudflare.com` link at the bottom of the output. Ignore the localhost link, it won't work (we tried!).
 * It will start with the text `Running on`
 * Copy the API URL link that is listed under that line. (**DO NOT copy the 'localhost' URL, use the other one**)
 * Start SillyTavern with extensions support: (set `enableExtensions` to `true` in your `config.conf` if necessary)
