@@ -2,7 +2,7 @@ input: .
 output: .retype
 url: docs.sillytavern.app
 meta:
-  title: "| docs.ST.app"
+  title: " | docs.ST.app"
 branding: 
   logo: static/logo.png
   title: SillyTavern Documentation
