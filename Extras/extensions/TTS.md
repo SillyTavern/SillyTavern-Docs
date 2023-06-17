@@ -27,7 +27,7 @@ Used to select which TTS service you want to use.
 - *having both "only narrate quotes" and "ignore asterisks" checkboxes both checked will result in the TTS only reading "quotes" which are not in asterisks, and ignoring everything else.*
 - **Narrate only the translated text** - this will make the TTS only narrate the translated text.
 
-[Logic Chart for Narration Filters](https://files.catbox.moe/2y48qr.png)
+![Logic Chart for Narration Filters](https://files.catbox.moe/2y48qr.png)
 
 #### Voice Map
 
