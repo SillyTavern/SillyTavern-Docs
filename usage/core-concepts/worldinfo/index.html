@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.740398070035">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.740444995209">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.0.3">
@@ -14,7 +14,7 @@
     <!-- Primary Meta Tags -->
     <title>World Info | docs.ST.app</title>
     <meta name="title" content="World Info | docs.ST.app">
-    <meta name="description" content="World Info enhances AI's understanding of the details in your world." />
+    <meta name="description" content="World Info (also known as Lorebooks or Memory Books) enhances AI's understanding of the details in your world." />
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/usage/core-concepts/worldinfo/" />
@@ -23,21 +23,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/usage/core-concepts/worldinfo/">
     <meta property="og:title" content="World Info | docs.ST.app">
-    <meta property="og:description" content="World Info enhances AI's understanding of the details in your world.">
+    <meta property="og:description" content="World Info (also known as Lorebooks or Memory Books) enhances AI's understanding of the details in your world.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/usage/core-concepts/worldinfo/">
     <meta property="twitter:title" content="World Info | docs.ST.app">
-    <meta property="twitter:description" content="World Info enhances AI's understanding of the details in your world.">
+    <meta property="twitter:description" content="World Info (also known as Lorebooks or Memory Books) enhances AI's understanding of the details in your world.">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.0.3.740398070035" rel="stylesheet" />
+    <link href="../../../resources/css/retype.css?v=3.0.3.740444995209" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../../resources/js/config.js?v=3.0.3.740398070035" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../../resources/js/config.js?v=3.0.3.740444995209" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../../resources/js/retype.js?v=3.0.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=3.0.3.740398070035" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=3.0.3.740444995209" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -206,10 +206,10 @@
         <span>World Info</span>
     </h1>
 </doc-anchor-target>
-<p><strong>World Info enhances AI&#x27;s understanding of the details in your world.</strong></p>
+<p><strong>World Info (also known as Lorebooks or Memory Books) enhances AI&#x27;s understanding of the details in your world.</strong></p>
 <p>It functions like a dynamic dictionary that only inserts relevant information from World Info entries when keywords associated with the entries are present in the message text.</p>
 <p>The SillyTavern engine activates and seamlessly integrates the appropriate lore into the prompt, providing background information to the AI.</p>
-<p><em>It is important to note that while World Info helps guide the AI towards your desired lore, it does not guarantee its appearance in the generated output messages.</em></p>
+<p><em>It is important to note that while World Info helps guide the AI toward your desired lore, it does not guarantee its appearance in the generated output messages.</em></p>
 <doc-anchor-target id="pro-tips">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#pro-tips">#</doc-anchor-trigger>
@@ -218,9 +218,45 @@
 </doc-anchor-target>
 <ul>
 <li>The AI does not insert keywords into context, so each World Info entry should be a comprehensive, standalone description.</li>
-<li>To create a rich and detailed world lore, entries can be interlinked and reference one another.</li>
-<li>To conserve tokens, it is advisable to keep entry contents concise, with a general recommended limit of 50 tokens per entry.</li>
+<li>To create rich and detailed world lore, entries can be interlinked and reference one another.</li>
+<li>To conserve tokens, it is advisable to keep entry contents concise, with a generally recommended limit of 50 tokens per entry.</li>
 </ul>
+<doc-anchor-target id="character-lore">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#character-lore">#</doc-anchor-trigger>
+        <span>Character Lore</span>
+    </h2>
+</doc-anchor-target>
+<p>Optionally, one World Info file could be assigned to a character to serve as a dedicated lore source across all chats with that character (including groups).</p>
+<p>To do that, navigate to a Character Management panel and click a globe button, then pick World Info from a dropdown list and click &quot;Ok&quot;.</p>
+<doc-anchor-target id="character-lore-insertion-strategy">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#character-lore-insertion-strategy">#</doc-anchor-trigger>
+        <span>Character Lore Insertion Strategy</span>
+    </h3>
+</doc-anchor-target>
+<p>When generating an AI reply, entries from the character World Info will be combined with the entries from a global World Info selector using one of the following strategies:</p>
+<doc-anchor-target id="sorted-evenly-default">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sorted-evenly-default">#</doc-anchor-trigger>
+        <span>Sorted Evenly (default)</span>
+    </h4>
+</doc-anchor-target>
+<p>All entries will be sorted according to their Insertion Order as if they a part of one big file, ignoring the source.</p>
+<doc-anchor-target id="character-lore-first">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#character-lore-first">#</doc-anchor-trigger>
+        <span>Character Lore First</span>
+    </h4>
+</doc-anchor-target>
+<p>Entries from the Character World Info would be included first by their Insertion Order, then entries from the Global World Info.</p>
+<doc-anchor-target id="global-lore-first">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#global-lore-first">#</doc-anchor-trigger>
+        <span>Global Lore First</span>
+    </h4>
+</doc-anchor-target>
+<p>Entries from the Global World Info Info would be included first by their Insertion Order, then entries from the Character World Info.</p>
 <doc-anchor-target id="world-info-entry">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#world-info-entry">#</doc-anchor-trigger>
@@ -254,7 +290,7 @@
         <span>Insertion Order</span>
     </h4>
 </doc-anchor-target>
-<p>Numeric value. Defines a priority of the entry if multiple were activated at once. Entries with higher order number will be inserted closer to the end of the context as they will have more impact on the output.</p>
+<p>Numeric value. Defines a priority of the entry if multiple were activated at once. Entries with higher order numbers will be inserted closer to the end of the context as they will have more impact on the output.</p>
 <doc-anchor-target id="insertion-position">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#insertion-position">#</doc-anchor-trigger>
@@ -262,8 +298,8 @@
     </h4>
 </doc-anchor-target>
 <ul>
-<li><strong>Before Chara:</strong> World Info entry is inserted before the character&#x27;s description and scenario. Has moderate impact on the conversation.</li>
-<li><strong>After Chara:</strong> World Info entry is inserted after the character&#x27;s description and scenario. Has greater impact on the conversation.</li>
+<li><strong>Before Chara:</strong> World Info entry is inserted before the character&#x27;s description and scenario. Has a moderate impact on the conversation.</li>
+<li><strong>After Chara:</strong> World Info entry is inserted after the character&#x27;s description and scenario. Has a greater impact on the conversation.</li>
 </ul>
 <doc-anchor-target id="comment">
     <h4>
@@ -286,7 +322,7 @@
     </h4>
 </doc-anchor-target>
 <p>If enabled, the entry would only be inserted when both a Key <strong>AND</strong> a Secondary Key have been activated.</p>
-<p>If no secondary keys provided, this flag is ignored.</p>
+<p>If no secondary keys are provided, this flag is ignored.</p>
 <doc-anchor-target id="scan-depth">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#scan-depth">#</doc-anchor-trigger>
@@ -295,7 +331,7 @@
 </doc-anchor-target>
 <p>Defines how many messages in the chat history should be scanned for World Info keys.</p>
 <p>If set to 1, then SillyTavern only scans the message you send and the most recent reply.</p>
-<p>This stacks up to 10 message pairs it total.</p>
+<p>This stacks up to 10 message pairs in total.</p>
 <doc-anchor-target id="budget">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#budget">#</doc-anchor-trigger>
@@ -305,7 +341,7 @@
 <p><strong>Defines how many tokens could be used by World Info entries at once.</strong></p>
 <p>If the budget was exhausted, then no more entries are activated even if the keys are present in the prompt.</p>
 <p>Constant entries will be inserted first. Then entries with higher order numbers.</p>
-<p>Entries inserted by direct mentioning of their keys have higher priority than those that were mentioned in other entries contents.</p>
+<p>Entries inserted by direct mentioning their keys have higher priority than those that were mentioned in other entries&#x27; contents.</p>
 <doc-anchor-target id="recursive-scanning">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#recursive-scanning">#</doc-anchor-trigger>
@@ -317,7 +353,7 @@
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">Entry #1
 Keyword: Bessie
-Content: Bessie is a cow and is friend with Rufus.</code></pre>
+Content: Bessie is a cow and is friends with Rufus.</code></pre>
 </doc-codeblock></div>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">Entry #2
