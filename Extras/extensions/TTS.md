@@ -1,6 +1,6 @@
 # TTS
 
-SillyTavern has a wdie range of TTS options. This page explains the setup and use.
+SillyTavern has a wide range of TTS options. This page explains the setup and use.
 
 ### What is it?
 
