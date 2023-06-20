@@ -16,8 +16,8 @@ SillyTavern originated as a modification of TavernAI 1.2.8 in February 2023, and
 
 SillyTavern is being developed using a two-branch system to ensure a smooth experience for all users.
 
-* main -🌟 **Recommended for most users.** This is the most stable and recommended branch, updated only when major releases are pushed. It's suitable for the majority of users. 
-* dev - ⚠️ **Not recommended for casual use.** This branch has the latest features, but be cautious as it may break at any time. Only for power users and enthusiasts. 
+* main -🌟 **Recommended for most users.** This is the most stable and recommended branch, updated only when major releases are pushed. It's suitable for the majority of users.
+* dev - ⚠️ **Not recommended for casual use.** This branch has the latest features, but be cautious as it may break at any time. Only for power users and enthusiasts.
 
 ### Features
 
@@ -62,7 +62,8 @@ Additional functionality can be added by using [SillyTavern Extras](https://gith
 
 ### Installation Requirements
 
-SillyTavern will run on virtually any device capable of running NodeJS v18.
+* SillyTavern will run on virtually any device capable of running NodeJS v18.
+* NOTE: due to the above requirement, **SillyTavern will not run on Windows 7.**
 
 ### What do I need other than SillyTavern?
 
