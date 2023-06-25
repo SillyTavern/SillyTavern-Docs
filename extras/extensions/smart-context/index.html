@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.741021734177">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.741025961141">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.0.3">
@@ -35,11 +35,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.0.3.741021734177" rel="stylesheet" />
+    <link href="../../../resources/css/retype.css?v=3.0.3.741025961141" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../../resources/js/config.js?v=3.0.3.741021734177" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../../resources/js/config.js?v=3.0.3.741025961141" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../../resources/js/retype.js?v=3.0.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=3.0.3.741021734177" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=3.0.3.741025961141" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -260,7 +260,7 @@
 <p>Once Smart Context is enabled, you should configure it in the SillyTavern UI.
 Smart Context configuration can be done from within the Extensions menu <img src="https://github.com/SillyTavern/SillyTavern/assets/124905043/4545037e-dff8-4373-9513-cddb69780be1" alt="STExtensionMenuIcon" /></p>
 <p><figure class="content-center">
-    <img src="https://github.com/SillyTavern/SillyTavern/assets/124905043/86261cef-15eb-42e1-b3e5-5fe07cdf6190" alt="Smart Context Config Panel" />
+    <img src="https://files.catbox.moe/32qexu.png" alt="Smart Context Config Panel" />
     <figcaption class="caption">Smart Context Config Panel</figcaption>
 </figure>
 </p>
@@ -272,14 +272,24 @@ Smart Context configuration can be done from within the Extensions menu <img src
 <li>Injection Strategy</li>
 </ul>
 <hr />
-<doc-anchor-target id="chat-history-preservation">
+<doc-anchor-target id="smartcontext-only-starts-after-10-mesages-are-in-the-chat-history">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#chat-history-preservation">#</doc-anchor-trigger>
-        <span>Chat History Preservation</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#smartcontext-only-starts-after-10-mesages-are-in-the-chat-history">#</doc-anchor-trigger>
+        <span>SmartContext only starts after 10 mesages are in the chat history</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>At the start of a new chat, ChromaDB is inactive.</li>
+<li>Once the chat has accumulated 10 messages, it will begin recording all messages into the database, and recalling messages as needed.</li>
+</ul>
+<doc-anchor-target id="chat-history-preservation-kept-mesages">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#chat-history-preservation-kept-mesages">#</doc-anchor-trigger>
+        <span>Chat History Preservation (&#x27;kept mesages&#x27;)</span>
     </h4>
 </doc-anchor-target>
 <p>By default, ChromaDB will keep as many recent natural chat history messages as specified in the slider.
-Any messages beyond this amount will be removed, and if &#x27;memories&#x27; exist in the database they will be added in place of the older chat history messages (see Strategy below).</p>
+Any messages beyond this amount will be removed from your sent prompt, and if &#x27;memories&#x27; exist in the database they will be added in place of the older chat history messages (see Strategy below).</p>
 <hr />
 <doc-anchor-target id="memory-injection-amount">
     <h4>
@@ -298,10 +308,10 @@ If you send an input related to &#x27;dogs&#x27; and only one other message in t
     </h4>
 </doc-anchor-target>
 <p>This is the maximum length allowed for each injected &#x27;memory&#x27;.
-This is in CHARACTERS (not tokens).
+This is in <strong>CHARACTERS</strong> (not tokens).
 If set too small, the memory could be cut off midway.</p>
 <p>Example:</p>
-<p><code v-pre>Ross: I really like dogs with long fur and fluffy tails. I dislike dogs with short fur and short tails.</code></p>
+<p><code v-pre>Ross: I like dogs with long fur and fluffy tails. I dislike dogs with short fur and short tails.</code></p>
 <p>This database &#x27;memory&#x27; is 103 characters long, so you would need to set the slider to at least <code v-pre>103</code> in order to pull it entirely into the context.</p>
 <p>If the slider is less than 103, the message would be cut off and injected like that.</p>
 <hr />
@@ -344,6 +354,25 @@ This means the &#x27;kept messages&#x27; sliders is effectively disabled.</p>
 <ul>
 <li>because no chat items are being removed/replaced, there is a higher chance you will overflow your context limit.</li>
 <li>because the memories exist very close to the end of the prompt they can have TOO MUCH effect on the AI&#x27;s response.</li>
+</ul>
+<doc-anchor-target id="use--strategy">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#use--strategy">#</doc-anchor-trigger>
+        <span>Use % Strategy</span>
+    </h4>
+</doc-anchor-target>
+<p>Note: This is not compatible with the &#x27;Add to Bottom&#x27; strategy, which does not remove any messages at all.</p>
+<p>While using the &#x27;Replace Oldest History&#x27; strategy, checking this box will enable the slider for selecting a percentage of the in-context chat history to replace with SmartContext memories. It will also disable the two sliders for manually selecting the number of messages.</p>
+<p>This strategy automatically calculates a percentage of the chat history to be replaced with SmartContext memories, instead of a fixed number of messages.</p>
+<p>Advantage</p>
+<ul>
+<li>easier than manually calculating the number of messages yourself</li>
+<li>adjusts with the available context size, applying the same percentage to small and large prompt spaces</li>
+</ul>
+<p>Disadvantage</p>
+<ul>
+<li>calculations for how much history to remove can be slightly innacurate as they are based on estimated tokens per message</li>
+<li>it rounds the number of messages to remove to the nearest number divisible by 5 (0, 5, 10, 15, 20, etc), so it is not as fine grained as manual numeric selection.</li>
 </ul>
 <hr />
 <doc-anchor-target id="using-smart-context">
