@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.740645845309">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.741019594104">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.0.3">
@@ -35,11 +35,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.0.3.740645845309" rel="stylesheet" />
+    <link href="../../../resources/css/retype.css?v=3.0.3.741019594104" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../../resources/js/config.js?v=3.0.3.740645845309" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../../resources/js/config.js?v=3.0.3.741019594104" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../../resources/js/retype.js?v=3.0.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=3.0.3.740645845309" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=3.0.3.741019594104" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -250,6 +250,16 @@
 <li><p>The appropriate expression image will display automatically whenever the AI sends you a response.</p>
 </li>
 </ol>
+<doc-anchor-target id="how-do-i-get-more-expression-options">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-do-i-get-more-expression-options">#</doc-anchor-trigger>
+        <span>How do I get more expression options?</span>
+    </h3>
+</doc-anchor-target>
+<p>By default we use a classification model with 6 options <a href="https://huggingface.co/nateraw/bert-base-uncased-emotion">nateraw/bert-base-uncased-emotion</a></p>
+<p>There is also a model with 28 options: <a href="https://huggingface.co/joeddav/distilbert-base-uncased-go-emotions-student">: joeddav/distilbert-base-uncased-go-emotions-student</a></p>
+<p>To use this model you need to change your Extras command line to include the following argument (with a space before and after):</p>
+<p><code v-pre>--classification-model=joeddav/distilbert-base-uncased-go-emotions-student</code></p>
 <doc-anchor-target id="how-does-the-classify-module-work">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#how-does-the-classify-module-work">#</doc-anchor-trigger>
