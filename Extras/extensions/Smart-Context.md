@@ -114,6 +114,22 @@ Disadvantage
 - because no chat items are being removed/replaced, there is a higher chance you will overflow your context limit.
 - because the memories exist very close to the end of the prompt they can have TOO MUCH effect on the AI's response.
 
+#### Custom Depth
+
+This strategy leaves the chat history in its natural state and adds 'memories' at the depth you determine within the template you specify.
+This means the 'kept messages' slider is effectively disabled.
+The custom injection message should include the `{{memories}}` template word which is where all queried memories will be placed.
+
+Advantage
+
+- flexibility to experiment with memory placement 
+- customizable introductions to memory within context
+
+Disadvantage
+
+- because no chat items are being removed/replaced, there is a higher chance you will overflow your context limit.
+
+
 #### Use % Strategy
 
 Note: This is not compatible with the 'Add to Bottom' strategy, which does not remove any messages at all.
@@ -133,6 +149,18 @@ Disadvantage
 - it rounds the number of messages to remove to the nearest number divisible by 5 (0, 5, 10, 15, 20, etc), so it is not as fine grained as manual numeric selection.
 
 ***
+
+### Memory Recall Strategy
+
+#### Recall only from this chat
+
+This is the default behavior of smart-context and pulls 'memories' only from the ChromaDB collection for this specific chat.
+
+#### Recall from all character chats
+
+This is an experimental behavior of smart-context which pulls 'memories' from all ChromaDB collections for the selected character.
+Hypothetically this should allow for the development of a more robust memory set spanning many interactions. 
+Reccomended that this be used with 'Add to Bottom' or 'Custom Depth' strategies and 'kept messages' set to a low number so that ChromaDB will pull from memory sooner.
 
 ### Using Smart Context
 
