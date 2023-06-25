@@ -4,7 +4,7 @@
 
 Brought to you by Cohee, RossAscends, and the SillyTavern community, SillyTavern is a local-install interface that allows you to interact with text generation AIs (LLMs) to chat and roleplay with custom characters.
 
-SillyTavern originated as a modification of TavernAI 1.2.8 in February 2023, and has since added many cutting edge features not present in the original TavernAI.
+SillyTavern originated as a modification of TavernAI 1.2.8 in February 2023, and has since added many cutting-edge features not present in the original TavernAI.
 
 ### Screenshots
 
@@ -67,7 +67,7 @@ Additional functionality can be added by using [SillyTavern Extras](https://gith
 
 ### What do I need other than SillyTavern?
 
-SillyTavern is only a frontend interface, so you will need to have access to one of backend APIs listed above.
+SillyTavern is only a frontend interface, so you will need to have access to one of the backend APIs listed above.
 
 ### How can I get in touch with the developers directly?
 
