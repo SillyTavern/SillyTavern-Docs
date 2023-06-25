@@ -37,7 +37,7 @@ Installing chromadb package requires one of the following:
 Once Smart Context is enabled, you should configure it in the SillyTavern UI.
 Smart Context configuration can be done from within the Extensions menu ![STExtensionMenuIcon](https://github.com/SillyTavern/SillyTavern/assets/124905043/4545037e-dff8-4373-9513-cddb69780be1)
 
-![Smart Context Config Panel](https://github.com/SillyTavern/SillyTavern/assets/124905043/86261cef-15eb-42e1-b3e5-5fe07cdf6190)
+![Smart Context Config Panel](https://files.catbox.moe/32qexu.png)
 
 There are 4 main concepts to be aware of:
 
@@ -48,10 +48,15 @@ There are 4 main concepts to be aware of:
 
 ***
 
-#### Chat History Preservation
+#### SmartContext only starts after 10 mesages are in the chat history
+
+- At the start of a new chat, ChromaDB is inactive.
+- Once the chat has accumulated 10 messages, it will begin recording all messages into the database, and recalling messages as needed.
+
+#### Chat History Preservation ('kept mesages')
 
 By default, ChromaDB will keep as many recent natural chat history messages as specified in the slider.
-Any messages beyond this amount will be removed, and if 'memories' exist in the database they will be added in place of the older chat history messages (see Strategy below).
+Any messages beyond this amount will be removed from your sent prompt, and if 'memories' exist in the database they will be added in place of the older chat history messages (see Strategy below).
 
 ***
 
@@ -66,12 +71,12 @@ If you send an input related to 'dogs' and only one other message in the DB is r
 #### Individual Memory Length
 
 This is the maximum length allowed for each injected 'memory'.
-This is in CHARACTERS (not tokens).
+This is in **CHARACTERS** (not tokens).
 If set too small, the memory could be cut off midway.
 
 Example:
 
-`Ross: I really like dogs with long fur and fluffy tails. I dislike dogs with short fur and short tails.`
+`Ross: I like dogs with long fur and fluffy tails. I dislike dogs with short fur and short tails.`
 
 This database 'memory' is 103 characters long, so you would need to set the slider to at least `103` in order to pull it entirely into the context.
 
@@ -108,6 +113,24 @@ Disadvantage
 
 - because no chat items are being removed/replaced, there is a higher chance you will overflow your context limit.
 - because the memories exist very close to the end of the prompt they can have TOO MUCH effect on the AI's response.
+
+#### Use % Strategy
+
+Note: This is not compatible with the 'Add to Bottom' strategy, which does not remove any messages at all.
+
+While using the 'Replace Oldest History' strategy, checking this box will enable the slider for selecting a percentage of the in-context chat history to replace with SmartContext memories. It will also disable the two sliders for manually selecting the number of messages.
+
+This strategy automatically calculates a percentage of the chat history to be replaced with SmartContext memories, instead of a fixed number of messages.
+
+Advantage
+
+- easier than manually calculating the number of messages yourself
+- adjusts with the available context size, applying the same percentage to small and large prompt spaces
+
+Disadvantage
+
+- calculations for how much history to remove can be slightly innacurate as they are based on estimated tokens per message
+- it rounds the number of messages to remove to the nearest number divisible by 5 (0, 5, 10, 15, 20, etc), so it is not as fine grained as manual numeric selection.
 
 ***
 
