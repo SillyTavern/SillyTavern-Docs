@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.741132299119">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.741134112134">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.0.3">
@@ -33,11 +33,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.0.3.741132299119" rel="stylesheet" />
+    <link href="../../../resources/css/retype.css?v=3.0.3.741134112134" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../../resources/js/config.js?v=3.0.3.741132299119" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../../resources/js/config.js?v=3.0.3.741134112134" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../../resources/js/retype.js?v=3.0.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=3.0.3.741132299119" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=3.0.3.741134112134" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -237,10 +237,10 @@ create a unique identity for the character you play in your chats or identify yo
 </doc-anchor-target>
 <p>The contents of this field represent any specific information that you want to bind to the selected persona.
 It could be any kind of description of your user character: mental and physical traits, age, occupation, etc.
-Here you can also use replacement macros like {{user}}, {{char}}, and others.</p>
-<p>If defined, the Persona Description will be inserted into the AI prompt in one of the predefined places:</p>
+Here you can also use replacement macros like {{user}}, {{char}}, and other supported parameters.</p>
+<p>If defined, the Persona Description will be inserted into the AI prompt in one of the chosen places:</p>
 <ol>
-<li>Before the character card (before the Description box contents).</li>
+<li>Before the character card (before the Description box contents). This is the default position.</li>
 <li>After the character card (after the Scenario box contents).</li>
 <li>Top of an Author&#x27;s Note (if Author&#x27;s Note is not disabled).</li>
 <li>Bottom of an Author&#x27;s Note (if Author&#x27;s Note is not disabled).</li>
@@ -265,7 +265,7 @@ If the currently selected persona is different from the locked one, it will be a
 <li>Open a chat (either group or individual).</li>
 <li>Select a desired persona by clicking on its avatar.</li>
 <li>Click the lock icon in the buttons row next to a name input.</li>
-<li>To revert this action, click the unlock icon. Then persona won&#x27;t be changed automatically.</li>
+<li>To revert this action, click the unlock icon. Then persona won&#x27;t be changed automatically when the chat is reopened.</li>
 </ol>
 <p>Alternatively, you could use /lock and /unlock slash commands to achieve the same result.</p>
 <doc-anchor-target id="default-persona">
@@ -274,7 +274,7 @@ If the currently selected persona is different from the locked one, it will be a
         <span>Default persona</span>
     </h2>
 </doc-anchor-target>
-<p>You can select one persona to be your preferred default identity, selecting automatically for all new chats and chats when a persona is not locked.
+<p>You can select one persona to be your preferred default identity, selecting it automatically for all new chats and chats where a persona is not locked.
 The default persona is represented by a yellow outline on the Persona Management panel.</p>
 <ul>
 <li>To set persona as a default, hover (tap on mobile) over the persona avatar and click the top-right &quot;crown&quot; button, then confirm your action.</li>
@@ -287,12 +287,12 @@ The default persona is represented by a yellow outline on the Persona Management
     </h2>
 </doc-anchor-target>
 <ol>
-<li>Switching user personas in chat does not automatically change the attribution of previously sent user messages. That way it is possible to role play as multiple user characters at once.</li>
+<li>Switching user personas in chat does not automatically change the attribution of previously sent user messages. That way it is possible to role-play as multiple user characters at once.</li>
 <li>You can attribute all user-sent messages in the currently open chat to a currently selected persona by clicking
 the &quot;sync&quot; button on the Persona Management panel or by using the /sync slash command.</li>
 <li>To change the persona image without deleting it, hover over the avatar on the Persona Management panel and click the bottom-left button.
 Then choose a new image and it will be replaced, preserving your set description and chat lock states.</li>
-<li>To quickly change a persona while in chat without opening the Persona Management panel, user /persona slash command. For example, <code v-pre>/persona Blaze</code>.</li>
+<li>To quickly change a persona while in chat without opening the Persona Management panel, use the /persona slash command. For example, <code v-pre>/persona Blaze</code>.</li>
 </ol>
 
                                 
