@@ -21,7 +21,7 @@ To create a persona:
 
 The contents of this field represent any specific information that you want to bind to the selected persona.
 It could be any kind of description of your user character: mental and physical traits, age, occupation, etc.
-Here you can also use replacement macros like `{{user}}`, `{{char}}`, and others.
+Here you can also use replacement macros like \{\{user\}\}, \{\{char\}\}, and others.
 
 If defined, the Persona Description will be inserted into the AI prompt in one of the predefined places:
 
