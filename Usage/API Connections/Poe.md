@@ -22,9 +22,9 @@ First make an account on poe.com, then follow these instructions for your OS:
 8. If you see nothing listed inside the Cookies section, `expand the section bt clicking the triangle to the left`.
 9. Inside the expanded 'Cookies' section, you will see 'poe.com' listed. Click it.
 10. On the right side you will see `p-b`. Click it to select that cookie.
-11. Copy the value of the cookie. It will be a long string of letters and numbers.
+11. Copy the value of the cookie. It will be a long string of letters and numbers. **Make sure to copy all of it**
 12. Save it in a text file somewhere for future reference.
-13. Paste this value into SillyTavern's Poe API box.
+13. Paste this value into SillyTavern's Poe API box. **Make sure thre are no spaces before or after the cookie value in the box**
 
 ## iOS
 
