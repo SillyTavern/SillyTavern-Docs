@@ -1,4 +1,9 @@
-# OpenAI
+# Chat Completions
+
+Chat completion APIs include OpenAI, Claude, and PaLM.
+WindowAI & OpenRouter allows connection to these as well.
+
+## OpenAI
 
 ### API key
 
@@ -11,17 +16,33 @@
 
 *Lost API keys can't be restored! Make sure to keep it safe!*
 
-### Window.ai
+## Claude
 
-You can use Window.ai browser extension to access AI models with SillyTavern.
+If you have access to Anthropic's Claude API:
 
-1. Install a browser extension from: [windowai.io](https://windowai.io/)
-2. Select OpenAI in SillyTavern's Connection panel and check the "Use Window.ai" option.
-3. Use the extension to pick which API to connect to.
+- select 'Claude' for 'Chat Completion Source'
+- Input your API key
+- Click connect.
 
-Don't have OpenAI / Claude API access? Use OpenRouter.
+## WindowAI / OpenRouter
 
-1. Create an OpenRouter account: [openrouter.ai](https://openrouter.ai/)
-2. Select OpenRouter as a provider in Window.ai extension.
+OpenRouter works by letting you use keys that they own, or your own keys.
 
-OpenRouter works by letting you use keys that they own. It has a free trial, and paid access afterwards.
+It has a free trial, and paid access afterwards.
+
+Don't have access to OpenAI / Claude APIs due to geolocking or waitlists? Use OpenRouter.
+
+- [OpenRouter Pricing Details](https://openrouter.ai/docs)
+- Create an OpenRouter account: [openrouter.ai](https://openrouter.ai/)
+
+![OpenRouter-ConnectionPanel](https://files.catbox.moe/jpbbkf.png)
+
+From top to down (see image above):
+
+1. Select 'Chat Completion' API
+2. Select Window / OpenRouter source
+3. Check "Use OpenRouter directly" box
+4. Click "Authorize" to get a key
+5. Select a model and click "Connect"
+
+[WindowAI](https://windowai.io) is a browser extension by the makers of OpenRouter that allows control of your OpenRouter connection for any enabled site or webapp.
