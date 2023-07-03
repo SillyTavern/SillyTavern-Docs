@@ -46,4 +46,4 @@ The range of influence of Repetition penalty in tokens.
 
 ### Models
 
-If your subscription tier is Paper, Tablet or Scroll use only Euterpe model otherwise you can not get an answer from NovelAI API.
+Select whichever model you like, but you will only be able to get responses from models available to your subscription tier.

@@ -54,7 +54,6 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 
 - No content filter
 - Paid subscription required
-- the most capable model, Clio, is only accessible on their highest paid account tier.
 - [Setup Instructions](https://docs.sillytavern.app/usage/api-connections/novelai/)
 
 ### ChatGPT (by OpenAI)
