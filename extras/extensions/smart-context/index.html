@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.741727179741">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.741732546117">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.0.3">
@@ -35,11 +35,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.0.3.741727179741" rel="stylesheet" />
+    <link href="../../../resources/css/retype.css?v=3.0.3.741732546117" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../../resources/js/config.js?v=3.0.3.741727179741" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../../resources/js/config.js?v=3.0.3.741732546117" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../../resources/js/retype.js?v=3.0.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=3.0.3.741727179741" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=3.0.3.741732546117" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -355,6 +355,24 @@ This means the &#x27;kept messages&#x27; sliders is effectively disabled.</p>
 <li>because no chat items are being removed/replaced, there is a higher chance you will overflow your context limit.</li>
 <li>because the memories exist very close to the end of the prompt they can have TOO MUCH effect on the AI&#x27;s response.</li>
 </ul>
+<doc-anchor-target id="custom-depth">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#custom-depth">#</doc-anchor-trigger>
+        <span>Custom Depth</span>
+    </h4>
+</doc-anchor-target>
+<p>This strategy leaves the chat history in its natural state and adds &#x27;memories&#x27; at the depth you determine within the template you specify.
+This means the &#x27;kept messages&#x27; slider is effectively disabled.
+The custom injection message should include the &#x60;&#x60; template word which is where all queried memories will be placed.</p>
+<p>Advantage</p>
+<ul>
+<li>flexibility to experiment with memory placement</li>
+<li>customizable introductions to memory within context</li>
+</ul>
+<p>Disadvantage</p>
+<ul>
+<li>because no chat items are being removed/replaced, there is a higher chance you will overflow your context limit.</li>
+</ul>
 <doc-anchor-target id="use--strategy">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#use--strategy">#</doc-anchor-trigger>
@@ -375,6 +393,28 @@ This means the &#x27;kept messages&#x27; sliders is effectively disabled.</p>
 <li>it rounds the number of messages to remove to the nearest number divisible by 5 (0, 5, 10, 15, 20, etc), so it is not as fine grained as manual numeric selection.</li>
 </ul>
 <hr />
+<doc-anchor-target id="memory-recall-strategy">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#memory-recall-strategy">#</doc-anchor-trigger>
+        <span>Memory Recall Strategy</span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="recall-only-from-this-chat">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#recall-only-from-this-chat">#</doc-anchor-trigger>
+        <span>Recall only from this chat</span>
+    </h4>
+</doc-anchor-target>
+<p>This is the default behavior of smart-context and pulls &#x27;memories&#x27; only from the ChromaDB collection for this specific chat.</p>
+<doc-anchor-target id="recall-from-all-character-chats">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#recall-from-all-character-chats">#</doc-anchor-trigger>
+        <span>Recall from all character chats</span>
+    </h4>
+</doc-anchor-target>
+<p>This is an experimental behavior of smart-context which pulls &#x27;memories&#x27; from all ChromaDB collections for the selected character.
+Hypothetically this should allow for the development of a more robust memory set spanning many interactions.
+Reccomended that this be used with &#x27;Add to Bottom&#x27; or &#x27;Custom Depth&#x27; strategies and &#x27;kept messages&#x27; set to a low number so that ChromaDB will pull from memory sooner.</p>
 <doc-anchor-target id="using-smart-context">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#using-smart-context">#</doc-anchor-trigger>
