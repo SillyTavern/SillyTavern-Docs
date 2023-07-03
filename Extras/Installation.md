@@ -161,9 +161,9 @@ This is Optional and only applies to Windows, but something similar should be po
 
 ```
 cd C:\_your_\_full_\_Extras_\_folder_\_path_\
-call activate extras
+call conda activate extras
 python server.py --enable-modules=YOUR,SELECTED,MODULE,LIST,HERE,WITH,NO,SPACES
-deactivate
+call conda deactivate
 pause
 ```
 
