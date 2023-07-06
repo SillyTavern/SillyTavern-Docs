@@ -6,7 +6,7 @@ Used to add the character description and the rest that the AI should know.
 
 For example, you can add information about the world in which the action takes place and describe the characteristics of the character you are playing for.
 
-It could be any of any length (be it 200 or 2000 tokens) and formatted in any style (free text, W++, conversation style, etc) and could span any length.
+It could be any of any length (be it 200 or 2000 tokens) and formatted in any style (free text, W++, conversation style, etc).
 
 ### Methods and format
 
