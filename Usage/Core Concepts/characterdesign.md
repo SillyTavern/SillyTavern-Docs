@@ -2,11 +2,11 @@
 
 ### Character Description
 
-Used to add the character description and the rest that the AI should know.
+Used to add the character description and the rest that the AI should know. This will always be present in the prompt, so all the important facts should be included here.
 
 For example, you can add information about the world in which the action takes place and describe the characteristics of the character you are playing for.
 
-It could be any of any length (be it 200 or 2000 tokens) and formatted in any style (free text, W++, conversation style, etc).
+It could be of any length (be it 200 or 2000 tokens) and formatted in any style (free text, W++, conversation style, etc).
 
 ### Methods and format
 
@@ -132,7 +132,7 @@ Circumstances and context of the dialogue.
 3. \{\{time\}\} is replaced with the current system time.
 4. \{\{date\}\} is replaced with the current system date.
 5. \{\{idle_duration\}\} inserts a humanized string of the time range since the last user message was sent (examples: 4 hours, 1 day).
-6. \{\{random:(args)\}\} returns a random item from the list. (e.g. \{\{random:1,2,3,4\}\} will return 1 of the 4 numbers at random. Works with text lists too.
+6. \{\{random:(args)\}\} returns a random item from the list. (e.g. \{\{random:1,2,3,4\}\} will return 1 of the 4 numbers at random). Works with text lists too.
 
 ### Favorite Character
 
