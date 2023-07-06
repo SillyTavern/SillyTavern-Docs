@@ -78,17 +78,12 @@ These will always be sent to the AI with every generation request:
 
 ### Personality summary
 
-A brief description of the personality. It is added to the chat at a depth of 8-15 messages, so it has a significant impact on the character.
+A brief description of the personality.
 
-Example:
+Examples:
 
-`Cheerful, cunning, provocative`
-
-Another example:
-
-`Aqua likes to do nothing and also likes to get drunk`
-
-* In Pygmalion model, it is used as a "Personality:" prompt section
+* `Cheerful, cunning, provocative`
+* `Aqua likes to do nothing and also likes to get drunk`
 
 ### First message
 
