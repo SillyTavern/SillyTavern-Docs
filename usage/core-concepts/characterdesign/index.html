@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.741982204753">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.741983003421">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.0.3">
@@ -33,11 +33,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.0.3.741982204753" rel="stylesheet" />
+    <link href="../../../resources/css/retype.css?v=3.0.3.741983003421" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../../resources/js/config.js?v=3.0.3.741982204753" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../../resources/js/config.js?v=3.0.3.741983003421" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../../resources/js/retype.js?v=3.0.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=3.0.3.741982204753" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=3.0.3.741983003421" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -213,20 +213,21 @@
     </h3>
 </doc-anchor-target>
 <p>Used to add the character description and the rest that the AI should know.</p>
-<p>For example, you can add information about the world in which the action takes place and describe the characteristics for the character you are playing for.</p>
-<p>Usually it all takes 200-350 tokens.</p>
+<p>For example, you can add information about the world in which the action takes place and describe the characteristics of the character you are playing for.</p>
+<p>It could be any of any length (be it 200 or 2000 tokens) and formatted in any style (free text, W++, conversation style, etc) and could span any length.</p>
 <doc-anchor-target id="methods-and-format">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#methods-and-format">#</doc-anchor-trigger>
         <span>Methods and format</span>
     </h3>
 </doc-anchor-target>
-<p>For most Kobold&#x27;s models the easiest way is to use a free form for description, and in each sentence it is desirable to specify the name of the character.</p>
-<p>The entire description should be in one line without hyphenation.</p>
-<p>For example:</p>
-<p><code v-pre>Chloe is a female elf. Chloe wears black-white maid dress with green collar and red glasses. Chloe has medium length black hair. Chloe's personality is...</code></p>
-<p>But that the AI would be less confused the best way is to use the W++ format.</p>
-<p>Details here: <a href="https://github.com/KoboldAI/KoboldAI-Client/wiki/Pro-Tips">Pro-Tips</a></p>
+<p>Methods of character formatting is a complicated topic beyond the scope of this documentation page.</p>
+<p>Recommended guides that were tested with or rely on SillyTavern&#x27;s features:</p>
+<ul>
+<li>AliCat&#x27;s Ali:Chat guide: <a href="https://rentry.co/alichat">https://rentry.co/alichat</a></li>
+<li>kingbri&#x27;s minimalistic guide: <a href="https://rentry.co/kingbri-chara-guide">https://rentry.co/kingbri-chara-guide</a></li>
+<li>Kuma&#x27;s W++ guide: <a href="https://rentry.co/WPP_For_Dummies">https://rentry.co/WPP_For_Dummies</a></li>
+</ul>
 <doc-anchor-target id="character-tokens">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#character-tokens">#</doc-anchor-trigger>
@@ -242,7 +243,7 @@
         <span>Why did my character&#x27;s token counter turn red?</span>
     </h3>
 </doc-anchor-target>
-<p>When we see your character has over 1000 tokens in its definitions, we highlight it for you because this can lower the AI&#x27;s capabilities to provide an enjoyable conversation.</p>
+<p>When we see your character has over half of the model-defined context length of tokens in its definitions, we highlight it for you because this can lower the AI&#x27;s capabilities to provide an enjoyable conversation.</p>
 <doc-anchor-target id="what-happens-if-my-character-has-too-many-tokens">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#what-happens-if-my-character-has-too-many-tokens">#</doc-anchor-trigger>
@@ -298,10 +299,11 @@
 </doc-anchor-target>
 <ul>
 <li>Older models below 6B parameters - 1024</li>
-<li>Pygmalion 6B - 2048</li>
-<li>Poe.com (Claude-instant or ChatGPT) - 2048</li>
-<li>OpenAI ChatGPT - 4000-ish?</li>
-<li>OpenAI GPT-4 - 8000?</li>
+<li>Pygmalion 6B, LLaMA models (stock) - 2048</li>
+<li>Poe.com (Claude-instant or ChatGPT) - 2048 by default, but could be unlocked with the use of chunked prompting (the actual limit varies per bot)</li>
+<li>OpenAI ChatGPT (3.5 Turbo) - 4096 or 16k</li>
+<li>OpenAI GPT-4 - 8192 or 32k</li>
+<li>Anthropic&#x27;s Claude - 7500 or 100k</li>
 </ul>
 <doc-anchor-target id="personality-summary">
     <h3>
@@ -322,10 +324,10 @@
     </h3>
 </doc-anchor-target>
 <p>The First Message is an important thing that sets exactly how and in what style the character will communicate.</p>
-<p>It is desirable that the character&#x27;s first message be long, so that later it would be less likely that the character would respond in with very short messages.</p>
+<p>The character&#x27;s first message should be long so that later it would be less likely that the character would respond with very short messages.</p>
 <p>You can also use asterisks ** to describe the character&#x27;s actions.</p>
 <p>For example:</p>
-<p><code v-pre>*I noticed you came inside, I walked up and stood right in front of you* Welcome. I'm glad to see you here. *I said with toothy smug sunny smile looking you straight in the eye* What brings you...</code></p>
+<p><code v-pre>*I noticed you came inside, I walked up and stood right in front of you* Welcome. I'm glad to see you here. *I said with a toothy smug sunny smile looking you straight in the eye* What brings you...</code></p>
 <doc-anchor-target id="examples-of-dialogue">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#examples-of-dialogue">#</doc-anchor-trigger>
@@ -341,7 +343,7 @@
 <p>&lt;START&gt;</p>
 <p>{{user}}: Hi Aqua, I heard you like to spend time in the pub.</p>
 <p>{{char}}: *excitedly* Oh my goodness, yes! I just love spending time at the pub! It&#x27;s so much fun to talk to all the adventurers and hear about their exciting adventures! And you are?</p>
-<p>{{user}}: I&#x27;m a new here and I wanted to ask for your advice.</p>
+<p>{{user}}: I&#x27;m new here and I wanted to ask for your advice.</p>
 <p>{{char}}: *giggles* Oh, advice! I love giving advice! And in gratitude for that, treat me to a drink! <em>gives signals to the bartender</em></p>
 <p>&lt;START&gt;</p>
 <p>{{user}}: Hello</p>
@@ -353,10 +355,10 @@
     </h3>
 </doc-anchor-target>
 <p>Circumstances and context of the dialogue.</p>
-<doc-anchor-target id="replacement-tags">
+<doc-anchor-target id="replacement-tags-macros">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#replacement-tags">#</doc-anchor-trigger>
-        <span>Replacement tags</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#replacement-tags-macros">#</doc-anchor-trigger>
+        <span>Replacement tags (macros)</span>
     </h3>
 </doc-anchor-target>
 <p><em>A list of tags that are replaced when sending to generate:</em></p>
@@ -365,6 +367,8 @@
 <li>{{char}} and &lt;BOT&gt; are replaced by the Character&#x27;s Name</li>
 <li>{{time}} is replaced with the current system time.</li>
 <li>{{date}} is replaced with the current system date.</li>
+<li>{{idle_duration}} inserts a humanized string of the time range since the last user message was sent (examples: 4 hours, 1 day).</li>
+<li>{{random:(args)}} returns a random item from the list. (e.g. {{random:1,2,3,4}} will return 1 of the 4 numbers at random. Works with text lists too.</li>
 </ol>
 <doc-anchor-target id="favorite-character">
     <h3>
@@ -372,7 +376,7 @@
         <span>Favorite Character</span>
     </h3>
 </doc-anchor-target>
-<p>Mark character as favorite to quickly filter on the side menu bar by pressing the star button.</p>
+<p>Mark the character as a favorite to quickly filter on the side menu bar by pressing the &quot;star&quot; button.</p>
 
                                 
                                 <!-- Required only on API pages -->
