@@ -4,23 +4,19 @@
 
 Used to add the character description and the rest that the AI should know.
 
-For example, you can add information about the world in which the action takes place and describe the characteristics for the character you are playing for.
+For example, you can add information about the world in which the action takes place and describe the characteristics of the character you are playing for.
 
-Usually it all takes 200-350 tokens.
+It could be any of any length (be it 200 or 2000 tokens) and formatted in any style (free text, W++, conversation style, etc) and could span any length.
 
 ### Methods and format
 
-For most Kobold's models the easiest way is to use a free form for description, and in each sentence it is desirable to specify the name of the character.
+Methods of character formatting is a complicated topic beyond the scope of this documentation page.
 
-The entire description should be in one line without hyphenation.
+Recommended guides that were tested with or rely on SillyTavern's features:
 
-For example:
-
-`Chloe is a female elf. Chloe wears black-white maid dress with green collar and red glasses. Chloe has medium length black hair. Chloe's personality is...`
-
-But that the AI would be less confused the best way is to use the W++ format.
-
-Details here: [Pro-Tips](https://github.com/KoboldAI/KoboldAI-Client/wiki/Pro-Tips)
+* AliCat's Ali:Chat guide: https://rentry.co/alichat
+* kingbri's minimalistic guide: https://rentry.co/kingbri-chara-guide
+* Kuma's W++ guide: https://rentry.co/WPP_For_Dummies
 
 ### Character tokens
 
@@ -32,7 +28,7 @@ To put this in perspective, a decent response from a good AI can easily be aroun
 
 ### Why did my character's token counter turn red?
 
-When we see your character has over 1000 tokens in its definitions, we highlight it for you because this can lower the AI's capabilities to provide an enjoyable conversation.
+When we see your character has over half of the model-defined context length of tokens in its definitions, we highlight it for you because this can lower the AI's capabilities to provide an enjoyable conversation.
 
 ### What happens if my Character has too many tokens?
 
@@ -71,10 +67,11 @@ These will always be sent to the AI with every generation request:
 ### Popular AI Model Context Token Limits
 
 * Older models below 6B parameters - 1024
-* Pygmalion 6B - 2048
-* Poe.com (Claude-instant or ChatGPT) - 2048
-* OpenAI ChatGPT - 4000-ish?
-* OpenAI GPT-4 - 8000?
+* Pygmalion 6B, LLaMA models (stock) - 2048
+* Poe.com (Claude-instant or ChatGPT) - 2048 by default, but could be unlocked with the use of chunked prompting (the actual limit varies per bot)
+* OpenAI ChatGPT (3.5 Turbo) - 4096 or 16k
+* OpenAI GPT-4 - 8192 or 32k
+* Anthropic's Claude - 7500 or 100k
 
 ### Personality summary
 
@@ -89,13 +86,13 @@ Examples:
 
 The First Message is an important thing that sets exactly how and in what style the character will communicate.
 
-It is desirable that the character's first message be long, so that later it would be less likely that the character would respond in with very short messages.
+The character's first message should be long so that later it would be less likely that the character would respond with very short messages.
 
 You can also use asterisks ** to describe the character's actions.
 
 For example:
 
-`*I noticed you came inside, I walked up and stood right in front of you* Welcome. I'm glad to see you here. *I said with toothy smug sunny smile looking you straight in the eye* What brings you...`
+`*I noticed you came inside, I walked up and stood right in front of you* Welcome. I'm glad to see you here. *I said with a toothy smug sunny smile looking you straight in the eye* What brings you...`
 
 ### Examples of dialogue
 
@@ -112,7 +109,7 @@ Example:
 
 \{\{char\}\}: \*excitedly\* Oh my goodness, yes! I just love spending time at the pub! It's so much fun to talk to all the adventurers and hear about their exciting adventures! And you are?
 
-\{\{user\}\}: I'm a new here and I wanted to ask for your advice.
+\{\{user\}\}: I'm new here and I wanted to ask for your advice.
 
 \{\{char\}\}: \*giggles\* Oh, advice! I love giving advice! And in gratitude for that, treat me to a drink! *gives signals to the bartender*
 
@@ -126,7 +123,7 @@ Example:
 
 Circumstances and context of the dialogue.
 
-### Replacement tags
+### Replacement tags (macros)
 
 *A list of tags that are replaced when sending to generate:*
 
@@ -134,7 +131,9 @@ Circumstances and context of the dialogue.
 2. \{\{char\}\} and \<BOT\> are replaced by the Character's Name
 3. \{\{time\}\} is replaced with the current system time.
 4. \{\{date\}\} is replaced with the current system date.
+5. \{\{idle_duration\}\} inserts a humanized string of the time range since the last user message was sent (examples: 4 hours, 1 day).
+6. \{\{random:(args)\}\} returns a random item from the list. (e.g. \{\{random:1,2,3,4\}\} will return 1 of the 4 numbers at random. Works with text lists too.
 
 ### Favorite Character
 
-Mark character as favorite to quickly filter on the side menu bar by pressing the star button.
+Mark the character as a favorite to quickly filter on the side menu bar by pressing the "star" button.
