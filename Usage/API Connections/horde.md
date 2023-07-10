@@ -12,7 +12,7 @@
 When using Horde **never send** any personal information such as names, email addresses, etc.
 !!!
 
-Switching on the "Trusted Workers Only" checkbox will help avoid this problem entirely, but will result in fewer available Workers.
+Switching on the "Trusted Workers Only" checkbox will limit the selection of available workers to only those who have been hosting on Horde for a while and are generally considered trusted. But they could still be seeing prompts, for example by hosting using unaccounted software.
 
 To help reduce this problem, SillyTavern has built in the following feature:
 
