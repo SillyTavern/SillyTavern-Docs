@@ -5,7 +5,7 @@
 - Kobold Horde is a crowdsourced, distributed GPU cluster run entirely by volunteers.
 - By default, your inputs are anonymously sent and responses can not seen by the person running the Horde Worker.
 - However, since it is an open-sourced program, Malicious Workers could modify the code to:
-  - log your activity (IP, input prompts, AI responses)
+  - log your activity (input prompts, AI responses)
   - produce bad or offensive responses
 
 !!!warning
