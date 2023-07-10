@@ -30,7 +30,7 @@ To help reduce this problem, SillyTavern has built in the following feature:
 - This means you will probably have to wait a long time to get a reply.
 - To reduce wait times:
   - Make an account on the Horde website.
-  - Add your Horde account ID into the SillyTavern Horde API Key box.
+  - Add your Horde key into the SillyTavern Horde API Key box.
 - Select one or more models from the Model Selector at the bottom of the panel.
 - Begin chatting.
 
