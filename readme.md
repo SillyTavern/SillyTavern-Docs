@@ -37,7 +37,6 @@ SillyTavern is being developed using a two-branch system to ensure a smooth expe
 * Swipes
 * Group chats: multi-bot rooms for characters to talk to you or each other
 * Chat bookmarks / branching
-* Soft prompts via KoboldAI
 * webp character card interoperability (PNG is still the internal format)
 
 ### Extensions
