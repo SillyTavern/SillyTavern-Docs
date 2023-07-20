@@ -1,3 +1,6 @@
+---
+order: 10
+---
 # Chat Completions
 
 Chat completion APIs include OpenAI, Claude, and PaLM.
