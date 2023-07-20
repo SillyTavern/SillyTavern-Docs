@@ -73,16 +73,6 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 - currently not accepting new account creation; on a wait list (June 2023)
 - [website](https://www.anthropic.com/index/introducing-claude)
 
-### Poe.com (by Quora)
-
-- Recommended for users who lack tech savviness, powerful PCs, or money, but still want to use a capable cloud LLM.
-- free use of OpenAI's ChatGPT 3.5 turbo (4k) and Anthropic's Claude-instant (5.5k)
-- paid account can access more models such as ChatGPT 4 and Claude 100k
-- customizable bots allow for behavior and character profile to be set on the website
-- somewhat tedious initial setup process
-- SillyTavern's connection to Poe API is unnofficial and could be disabled by Quora at any time
-- [SillyTavern + Poe Setup Guide](https://docs.sillytavern.app/usage/api-connections/poe/)
-
 ### WindowAI/OpenRouter
 
 - this browser extension allows you to connect to the abovementioned cloud LLMs
