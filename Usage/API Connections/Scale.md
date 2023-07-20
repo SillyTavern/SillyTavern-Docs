@@ -16,7 +16,7 @@ Currently, Scale doesn't support token streaming and configuring parameters like
 ```
 Complete the next response in this fictional roleplay chat.
 
-{{ input }}
+\{\{ input \}\}
 ```
 
 - Configure the model parameters.
