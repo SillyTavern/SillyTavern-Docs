@@ -13,11 +13,10 @@ Currently, Scale doesn't support token streaming and configuring parameters like
 - Create a "Variant", which sets the parameters (system prompt, model, temperature, response token limit, etc)
 - Select a proper language model to be deployed (GPT-4 is recommended)
 - Replace the contents of the "User" section of the prompt with the following:
-```
-Complete the next response in this fictional roleplay chat.
 
-\{\{ input \}\}
-```
+>Complete the next response in this fictional roleplay chat.
+>
+>\{\{ input \}\}
 
 - Configure the model parameters.
   - **Model:** GPT-4
