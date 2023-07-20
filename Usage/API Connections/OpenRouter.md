@@ -2,9 +2,9 @@
 
 Don't have access to OpenAI / Claude APIs due to geolocking or waitlists? Use OpenRouter.
 
-OpenRouter works by letting you use keys they own to access models like GPT-4 and Claude 2 in one service.
+OpenRouter works by letting you use keys they own to access models like GPT-4 and Claude 2, all in one service with a shared credit pool.
 
-It has a free trial (about $1) and paid access afterward. Some models have free access with limited context size.
+It has a free trial (about $1) and paid access afterward.  No subscription or monthly bill - you pay for what you actually use. Some models have free access with a limited context size.
 
 - [OpenRouter Pricing Details](https://openrouter.ai/docs)
 - Create an OpenRouter account: [openrouter.ai](https://openrouter.ai/)
