@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.742315753782">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.743150125938">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.0.3">
@@ -33,11 +33,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.0.3.742315753782" rel="stylesheet" />
+    <link href="../../../resources/css/retype.css?v=3.0.3.743150125938" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../../resources/js/config.js?v=3.0.3.742315753782" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../../resources/js/config.js?v=3.0.3.743150125938" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../../resources/js/retype.js?v=3.0.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=3.0.3.742315753782" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=3.0.3.743150125938" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -366,6 +366,7 @@
 <li>{{user}} and &lt;USER&gt; are replaced by the User&#x27;s Name</li>
 <li>{{char}} and &lt;BOT&gt; are replaced by the Character&#x27;s Name</li>
 <li>{{time}} is replaced with the current system time.</li>
+<li>{{time_UTC±X}} is replaced with the current time in the specified UTC offset (timezone). {e.g. {{time_UTC-4}} for the time in UTC-04:00, for UTC+02:00 use {{time_UTC+2}}.</li>
 <li>{{date}} is replaced with the current system date.</li>
 <li>{{idle_duration}} inserts a humanized string of the time range since the last user message was sent (examples: 4 hours, 1 day).</li>
 <li>{{random:(args)}} returns a random item from the list. (e.g. {{random:1,2,3,4}} will return 1 of the 4 numbers at random). Works with text lists too.</li>
