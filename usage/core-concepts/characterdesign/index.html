@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.743198260015">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.743198643129">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.0.3">
@@ -33,11 +33,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.0.3.743198260015" rel="stylesheet" />
+    <link href="../../../resources/css/retype.css?v=3.0.3.743198643129" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../../resources/js/config.js?v=3.0.3.743198260015" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../../resources/js/config.js?v=3.0.3.743198643129" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../../resources/js/retype.js?v=3.0.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=3.0.3.743198260015" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../../resources/js/lunr.js?v=3.0.3.743198643129" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -299,11 +299,11 @@
 </doc-anchor-target>
 <ul>
 <li>Older models below 6B parameters - 1024</li>
-<li>Pygmalion 6B, LLaMA models (stock) - 2048</li>
-<li>Poe.com (Claude-instant or ChatGPT) - 2048 by default, but could be unlocked with the use of chunked prompting (the actual limit varies per bot)</li>
+<li>Pygmalion 6B, LLaMA 1 models (stock) - 2048</li>
+<li>LLaMA 2 and its finetunes - 4096</li>
 <li>OpenAI ChatGPT (3.5 Turbo) - 4096 or 16k</li>
 <li>OpenAI GPT-4 - 8192 or 32k</li>
-<li>Anthropic&#x27;s Claude - 7500 or 100k</li>
+<li>Anthropic&#x27;s Claude - 8000 (older versions) or 100k (Claude 2)</li>
 </ul>
 <doc-anchor-target id="personality-summary">
     <h3>
@@ -370,6 +370,7 @@
 <li>{{date}} is replaced with the current system date.</li>
 <li>{{idle_duration}} inserts a humanized string of the time range since the last user message was sent (examples: 4 hours, 1 day).</li>
 <li>{{random:(args)}} returns a random item from the list. (e.g. {{random:1,2,3,4}} will return 1 of the 4 numbers at random). Works with text lists too.</li>
+<li>{{roll:(formula)}} generates a random value and returns it using the provided dice formula using D&amp;D dice syntax: XdY+Z. For example, {\roll:d6}} will generate a random value in the 1-6 range (standard six-sided dice).</li>
 </ol>
 <doc-anchor-target id="favorite-character">
     <h3>
