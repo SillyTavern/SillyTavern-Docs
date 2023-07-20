@@ -13,8 +13,6 @@
 * Waifu Mode inspired by the work of PepperTaco (<https://github.com/peppertaco/Tavern/>)
 * Thanks to Pygmalion University for being awesome testers and suggesting cool features!
 * Thanks to oobabooga for compiling presets for TextGen
-* poe-api client adapted from <https://github.com/ading2210/poe-api> (GPL v3)
-* GraphQL files for poe: <https://github.com/muharamdani/poe> (ISC License)
 * KoboldAI Presets from KAI Lite: <https://lite.koboldai.net/>
 * Noto Sans font by Google (OFL license)
 * Icon theme by Font Awesome <https://fontawesome.com> (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
