@@ -8,7 +8,7 @@ SillyTavern is being developed using a multi-branch system to ensure a smooth ex
 
 ## What happened to the main and dev?
 
-The git commit history was squashed to the state of release 1.9.0. We now 
+The git commit history was squashed to the state of release 1.9.0.
 
 Old branches were carrying the long legacy of bad git practices and large binary files once present in the repository.
 Every git clone would download and store a lot of unnecessary files, creating a network and disk load.
