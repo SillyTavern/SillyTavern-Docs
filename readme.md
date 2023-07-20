@@ -22,7 +22,7 @@ SillyTavern is being developed using a two-branch system to ensure a smooth expe
 ### Features
 
 * Mobile-friendly interface
-* Multiple backend API connectivity ([KoboldAI](https://github.com/KoboldAI/KoboldAI-Client), [KoboldCPP](https://github.com/LostRuins/koboldcpp), [AI Horde](https://horde.koboldai.net/), [NovelAI](https://github.com/LostRuins/koboldcpp), [Oobabooga's TextGen WebUI](https://github.com/oobabooga/text-generation-webui), [OpenAI](https://chat.openai.com/)+proxies, [Poe.com](https://poe.com), [WindowAI](https://windowai.io))
+* Multiple backend API connectivity ([KoboldAI](https://github.com/KoboldAI/KoboldAI-Client), [KoboldCPP](https://github.com/LostRuins/koboldcpp), [AI Horde](https://horde.koboldai.net/), [NovelAI](https://github.com/LostRuins/koboldcpp), [Oobabooga's TextGen WebUI](https://github.com/oobabooga/text-generation-webui), [OpenAI](https://chat.openai.com/)+proxies, [WindowAI](https://windowai.io), [OpenRouter](https://openrouter.ai/))
 * Visual Novel-like Waifu Mode
 * Horde Stable Diffusion generation
 * TTS support (ElevenLabs, Silero, and built-in OS)
