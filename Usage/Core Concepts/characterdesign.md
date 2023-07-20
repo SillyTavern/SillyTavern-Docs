@@ -130,9 +130,10 @@ Circumstances and context of the dialogue.
 1. \{\{user\}\} and \<USER\> are replaced by the User's Name
 2. \{\{char\}\} and \<BOT\> are replaced by the Character's Name
 3. \{\{time\}\} is replaced with the current system time.
-4. \{\{date\}\} is replaced with the current system date.
-5. \{\{idle_duration\}\} inserts a humanized string of the time range since the last user message was sent (examples: 4 hours, 1 day).
-6. \{\{random:(args)\}\} returns a random item from the list. (e.g. \{\{random:1,2,3,4\}\} will return 1 of the 4 numbers at random). Works with text lists too.
+4. \{\{time_UTC±X\}\} is replaced with the current time in the specified UTC offset (timezone). {e.g. \{\{time_UTC\-4\}\} for the time in UTC-04:00, for UTC+02:00 use \{\{time_UTC\+2\}\}.
+5. \{\{date\}\} is replaced with the current system date.
+6. \{\{idle_duration\}\} inserts a humanized string of the time range since the last user message was sent (examples: 4 hours, 1 day).
+7. \{\{random:(args)\}\} returns a random item from the list. (e.g. \{\{random:1,2,3,4\}\} will return 1 of the 4 numbers at random). Works with text lists too.
 
 ### Favorite Character
 
