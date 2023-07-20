@@ -67,11 +67,11 @@ These will always be sent to the AI with every generation request:
 ### Popular AI Model Context Token Limits
 
 * Older models below 6B parameters - 1024
-* Pygmalion 6B, LLaMA models (stock) - 2048
-* Poe.com (Claude-instant or ChatGPT) - 2048 by default, but could be unlocked with the use of chunked prompting (the actual limit varies per bot)
+* Pygmalion 6B, LLaMA 1 models (stock) - 2048
+* LLaMA 2 and its finetunes - 4096
 * OpenAI ChatGPT (3.5 Turbo) - 4096 or 16k
 * OpenAI GPT-4 - 8192 or 32k
-* Anthropic's Claude - 7500 or 100k
+* Anthropic's Claude - 8000 (older versions) or 100k (Claude 2)
 
 ### Personality summary
 
@@ -134,6 +134,7 @@ Circumstances and context of the dialogue.
 5. \{\{date\}\} is replaced with the current system date.
 6. \{\{idle_duration\}\} inserts a humanized string of the time range since the last user message was sent (examples: 4 hours, 1 day).
 7. \{\{random:(args)\}\} returns a random item from the list. (e.g. \{\{random:1,2,3,4\}\} will return 1 of the 4 numbers at random). Works with text lists too.
+8. \{\{roll:(formula)\}\} generates a random value and returns it using the provided dice formula using D&D dice syntax: XdY+Z. For example, \{\roll:d6\}\} will generate a random value in the 1-6 range (standard six-sided dice).
 
 ### Favorite Character
 
