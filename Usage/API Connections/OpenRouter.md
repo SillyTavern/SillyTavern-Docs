@@ -1,3 +1,6 @@
+---
+order: 20
+---
 # OpenRouter
 
 Don't have access to OpenAI / Claude APIs due to geolocking or waitlists? Use OpenRouter.
