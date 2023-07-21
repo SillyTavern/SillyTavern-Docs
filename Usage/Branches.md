@@ -34,6 +34,18 @@ Not sure of which files to back up? See the list here: [How to Update SillyTaver
 5. Type `npm install` and then `npm run start` to test that everything behaves correctly.
 6. Enjoy! Restore your data from a backup if needed.
 
+### fatal: invalid reference: release
+
+This may happen if you cloned just a single branch from an old remote (before migration to the organization repo). To fix this, you need to add and fetch a branch from a new remote:
+
+```
+git remote add st http://github.com/SillyTavern/SillyTavern
+git fetch st
+git checkout -t st/release
+```
+
+Then proceed from step 5.
+
 ### ZIP installs
 
 Nothing changes for you. Just download the branch/release ZIP like usual.
