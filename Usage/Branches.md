@@ -19,6 +19,8 @@ If you contributed to the SillyTavern development and want to see yourself credi
 
 ## How to migrate to a new branch if I use main/dev?
 
+_**It is recommended to do a fresh install.**_ However, if you wish to use an existing copy of SillyTavern, please follow the instructions below.
+
 **IMPORTANT!** Before doing anything, make *a complete backup* of your installation. You may *lose your data* in the process, so don't ignore this warning.
 
 ### git installs
