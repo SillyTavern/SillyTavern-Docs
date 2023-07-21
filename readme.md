@@ -16,8 +16,10 @@ SillyTavern originated as a modification of TavernAI 1.2.8 in February 2023, and
 
 SillyTavern is being developed using a two-branch system to ensure a smooth experience for all users.
 
-* main -🌟 **Recommended for most users.** This is the most stable and recommended branch, updated only when major releases are pushed. It's suitable for the majority of users.
-* dev - ⚠️ **Not recommended for casual use.** This branch has the latest features, but be cautious as it may break at any time. Only for power users and enthusiasts.
+* release -🌟 **Recommended for most users.** This is the most stable and recommended branch, updated only when major releases are pushed. It's suitable for the majority of users.
+* staging - ⚠️ **Not recommended for casual use.** This branch has the latest features, but be cautious as it may break at any time. Only for power users and enthusiasts.
+
+Learn more [here](https://docs.sillytavern.app/usage/branches/).
 
 ### Features
 
