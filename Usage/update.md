@@ -79,10 +79,10 @@ Themes
 User Avatars
 Worlds
 settings.json
-secrets.json
+secrets.json <---- this one is in the base folder, not /public/
 ```
   
-5. Once those folders/files are copied, Paste them into the /Public/ folder of the new install.
+5. Once those folders/files are copied, Paste them into the /Public/ folder (with secrets.json going into the base folder) of the new install.
 
 6. Start SillyTavern once again with the method appropriate to your OS, and pray you got it right.
 
