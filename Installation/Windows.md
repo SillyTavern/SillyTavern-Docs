@@ -9,7 +9,7 @@ DO NOT INSTALL INTO ANY WINDOWS CONTROLLED FOLDER (Program Files, System32, etc)
 
 DO NOT RUN START.BAT WITH ADMIN PERMISSIONS
 
-INSTALLATION ON WINDOWS 7 IS IMPOSSIBLE AS IT CANNOT RUN NODEJS 18.16
+INSTALLATION ON WINDOWS 7 IS IMPOSSIBLE AS IT CAN NOT RUN NODEJS 18.16
 !!!
 
 ## Installing via GitHub Desktop (easiest)
@@ -47,8 +47,8 @@ INSTALLATION ON WINDOWS 7 IS IMPOSSIBLE AS IT CANNOT RUN NODEJS 18.16
   5. Open a Command Prompt inside that folder by clicking in the 'Address Bar' at the top, typing `cmd`, and pressing Enter.
   6. Once the black box (Command Prompt) pops up, type ONE of the following into it and press Enter:
 
-- for Main Branch: `git clone https://github.com/SillyTavern/SillyTavern -b main`
-- for Dev Branch: `git clone https://github.com/SillyTavern/SillyTavern -b dev`
+- for Release Branch: `git clone https://github.com/SillyTavern/SillyTavern -b release`
+- for Staging Branch: `git clone https://github.com/SillyTavern/SillyTavern -b staging`
 
   7. Once everything is cloned, double click `Start.bat` to make NodeJS install its requirements.
   8. The server will then start, and SillyTavern will popup in your browser.
