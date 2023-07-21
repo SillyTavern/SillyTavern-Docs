@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.743275938381">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.0.3.743280885760">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.0.3">
@@ -33,11 +33,11 @@
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.0.3.743275938381" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=3.0.3.743280885760" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.743275938381" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=3.0.3.743280885760" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=3.0.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.743275938381" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=3.0.3.743280885760" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -253,6 +253,19 @@ If you contributed to the SillyTavern development and want to see yourself credi
 <li>Type <code v-pre>npm install</code> and then <code v-pre>npm run start</code> to test that everything behaves correctly.</li>
 <li>Enjoy! Restore your data from a backup if needed.</li>
 </ol>
+<doc-anchor-target id="fatal-invalid-reference-release">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#fatal-invalid-reference-release">#</doc-anchor-trigger>
+        <span>fatal: invalid reference: release</span>
+    </h3>
+</doc-anchor-target>
+<p>This may happen if you cloned just a single branch from an old remote (before migration to the organization repo). To fix this, you need to add and fetch a branch from a new remote:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">git remote add st http://github.com/SillyTavern/SillyTavern
+git fetch st
+git checkout -t st/release</code></pre>
+</doc-codeblock></div>
+<p>Then proceed from step 5.</p>
 <doc-anchor-target id="zip-installs">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#zip-installs">#</doc-anchor-trigger>
