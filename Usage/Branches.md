@@ -31,8 +31,9 @@ Not sure of which files to back up? See the list here: [How to Update SillyTaver
 2. Type `git fetch` and then `git pull` to pull the updates.
 3. (You may lose your settings. Have you made a backup?) Type `git reset --hard` to reset the repository to its original state.
 4. Type `git switch staging` or `git switch release` to switch to `staging` or `release` branch respectively.
-5. Type `npm install` and then `npm run start` to test that everything behaves correctly.
-6. Enjoy!
+5. Restore your data from a backup.
+6. Type `npm install` and then `npm run start` to test that everything behaves correctly.
+7. Enjoy!
 
 ### ZIP installs
 
