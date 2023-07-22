@@ -12,7 +12,6 @@ Instructions to run the SillyTavern Extras Colab.
 * select `use_cpu` to run Extras without requiring GPU credit
   * this will make Stable Diffusion slower, but everything else will run normally
 * Not required, but recommended: select the `secure` option to generate the API key to protect your shared instance.
-* API key will appear in the colab's console output, for example: `Your API key is fee2f3f559`
 * Click the Start button on the left (looks like a triangle 'play' button)
 * Wait for it to finish loading everything
 * Look for the `trycloudflare.com` link at the bottom of the output. Ignore the localhost link, it won't work (we tried!).
@@ -23,4 +22,5 @@ Instructions to run the SillyTavern Extras Colab.
 * Paste the API URL into the box at the top. (**NOT the API Key box**)
 * If you have NOT enabled the `secure` option, make sure the API Key box is completely empty when using the official colab.
 * If you have enabled the `secure` option, paste the generated API key into the API Key box.
+* API key will appear in the colab's console output, for example: `Your API key is fee2f3f559`
 * Click "Connect"
