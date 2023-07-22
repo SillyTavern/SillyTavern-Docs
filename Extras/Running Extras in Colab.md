@@ -7,7 +7,7 @@ icon: cloud
 
 Instructions to run the SillyTavern Extras Colab.
 
-* Open the [Official Extras Colab](https://colab.research.google.com/github/Cohee1207/SillyTavern/blob/main/colab/GPU.ipynb)
+* Open the [Official Extras Colab](https://colab.research.google.com/github/Cohee1207/SillyTavern/blob/release/colab/GPU.ipynb)
 * Select the desired "Extra" options
 * select `use_cpu` to run Extras without requiring GPU credit
   * this will make Stable Diffusion slower, but everything else will run normally
