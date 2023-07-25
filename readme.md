@@ -29,6 +29,7 @@ Learn more [here](https://docs.sillytavern.app/usage/branches/).
 * Horde Stable Diffusion generation
 * TTS support (ElevenLabs, Silero, and built-in OS)
 * WorldInfo (lorebooks)
+* Author's Note / Character Bias
 * Customizable colors, backgrounds, avatar styles, and UI panel placement
 * Notification sound for AI responses
 * Export chats as .txt files
@@ -45,7 +46,6 @@ Learn more [here](https://docs.sillytavern.app/usage/branches/).
 
 SillyTavern supports extensions/plugins:
 
-* Author's Note / Character Bias
 * Character emotional expressions
 * Auto-Summary of the chat history
 * Sending images to chat, and the AI interpreting the content.
