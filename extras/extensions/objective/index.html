@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.1.0.743670650050">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.1.0.743939898894">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.1.0">
@@ -35,11 +35,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.1.0.743670650050" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.1.0.743939898894" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.1.0.743670650050" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.1.0.743939898894" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.1.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.1.0.743670650050" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.1.0.743939898894" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -212,7 +212,7 @@
         <span>What is it?</span>
     </h3>
 </doc-anchor-target>
-<p>The Objective extension lets the user specify an Objective for the AI to strive towards during the chat. This objective is broken down into step-by-step tasks. The completion status of each task in the list will be checked at certain intervals.</p>
+<p>The Objective extension lets the user specify an Objective for the AI to strive towards during the chat. This objective is broken down into step-by-step tasks. Tasks may be branched, where child tasks can be created automatically or manually. This gives the ability to create complex task trees. The completion status of each task in the list will be checked at certain intervals.</p>
 <p>This differs from adding static direction through prompting in that it adds sequential and paced directives for the AI to follow without user intervention. It gives a more genuine experience of the AI autonomously striving to reach a goal.</p>
 <doc-anchor-target id="common-use-cases">
     <h3>
@@ -238,7 +238,7 @@
 <li><p>Type an objective into the top text box, then click on <code v-pre>Auto-Generate Tasks</code>. This sends a request to the connected API and asks it to provide  a list of tasks which match the objective you have typed in.</p>
 </li>
 </ul>
-<p><em>Note: Clicking Auto-Generate Tasks will delete all existing tasks before adding new ones.</em></p>
+<p><em>Note: Clicking Auto-Generate Tasks will delete all existing tasks for the currently selected Objective before adding new ones.</em></p>
 <ul>
 <li><p>Upon receiving the response from the AI, a list of tasks will be created automatically in the space below the Objective input box. Tasks can be edited after creation.</p>
 </li>
@@ -248,6 +248,21 @@
 <li><code v-pre>Task Check Frequency</code> - This is how often you want the AI to check if the task has been completed. If it is set to <code v-pre>3</code>, the AI will be asked if the current task has been completed every 3rd message.</li>
 </ul>
 </li>
+<li><p>Objectives, tasks, and their descriptions are saved in real-time to the current chat session. Custom prompts are saved globally.</p>
+</li>
+</ul>
+<doc-anchor-target id="custom-prompts">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#custom-prompts">#</doc-anchor-trigger>
+        <span>Custom Prompts</span>
+    </h3>
+</doc-anchor-target>
+<p>You can customize the prompts sent to the LLM to generate tasks, check task completion, and for prompt injection. Editing prompts will save them for the current session. Custom prompts can be saved and loaded for persistence.</p>
+<ul>
+<li>Click Edit Prompts to open the prompt editor window. You can edit your prompts as desired.</li>
+<li>To save prompts, enter a name and click Save Prompt.</li>
+<li>To load prompts, select the prompt from the dropdown list.</li>
+<li>To delete a saved prompt, select it from the dropdown list and click Delete Prompt</li>
 </ul>
 <p><strong>WARNING: Task Checking happens in a separate API request. Setting Task Check Frequency to 1 will double your API calls to the LLM service. Be careful with this if you are using a paid service.</strong></p>
 <doc-anchor-target id="usage">
@@ -265,6 +280,15 @@
     </h4>
 </doc-anchor-target>
 <p>The current task will always be the first listed incomplete task. Any manual updates to tasks will trigger a check for what the current task should be. So if you add a task above a bunch of completed tasks, it will be set as the current task. Once it&#x27;s completed, previously completed tasks will be skipped and the next incomplete task will be selected as &#x27;Current&#x27;.</p>
+<p>When using parent/child tasks in a task tree, tasks are selected depth-first, meaning all child tasks will be selected in order first, then continue down the list of tasks for the current Objective/Task.</p>
+<doc-anchor-target id="branch-tasks">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#branch-tasks">#</doc-anchor-trigger>
+        <span>Branch Tasks</span>
+    </h4>
+</doc-anchor-target>
+<p>Click the Branch Task button to set the current task as an Objective where you can auto generate or manually create tasks as child tasks. You can continue to turn any child task into an Objective and keep generating to your hearts content.</p>
+<p>Marking a parent task as complete will cause the extension to skip all subtasks. When all child tasks are complete, the parent task will be marked as complete</p>
 <doc-anchor-target id="manually-complete-tasks">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#manually-complete-tasks">#</doc-anchor-trigger>
@@ -299,6 +323,7 @@
     </h4>
 </doc-anchor-target>
 <p>Click the red <code v-pre>x</code> to delete an existing task. The next incomplete task will be selected as the current task automatically.</p>
+<p>Deleting a task with child tasks will delete all child tasks and their descendants.</p>
 <doc-anchor-target id="hiding-tasks">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#hiding-tasks">#</doc-anchor-trigger>
