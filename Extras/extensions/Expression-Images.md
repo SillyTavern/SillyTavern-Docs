@@ -25,6 +25,16 @@ However, having Extras running with the `classify` module enabled allows the Exp
 
 3. The appropriate expression image will display automatically whenever the AI sends you a response.
 
+### How do I get more expression options?
+
+By default we use a classification model with 6 options [nateraw/bert-base-uncased-emotion](https://huggingface.co/nateraw/bert-base-uncased-emotion)
+
+There is also a model with 28 options: [: joeddav/distilbert-base-uncased-go-emotions-student](https://huggingface.co/joeddav/distilbert-base-uncased-go-emotions-student)
+
+To use this model you need to change your Extras command line to include the following argument (with a space before and after):
+
+`--classification-model=joeddav/distilbert-base-uncased-go-emotions-student`
+
 ### How does the classify module work?
 
 The classify module uses a small 'sentiment parsing' model that runs on the SillyTavern Extras host machine (eg. on your PC, or on the colab machine). This model takes the new output from the AI and detects what kind of sentiment, or emotion, the text is expressing. While multiple sentiments may be expressed in a single message, the model only picks the most likely one and returns that back to the Extras server. The Extras server then displays the image that is associated with that sentiment.

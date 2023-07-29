@@ -1,3 +1,6 @@
+---
+icon: key-asterisk
+---
 # HotKeys
 
 **Hotkeys are disabled for mobile devices**

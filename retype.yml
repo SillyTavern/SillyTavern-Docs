@@ -1,11 +1,17 @@
 input: .
 output: .retype
 url: docs.sillytavern.app
+meta:
+  title: " | docs.ST.app"
 branding: 
   logo: static/logo.png
   title: SillyTavern Documentation
   label: 
-      
+edit:
+  repo: "https://github.com/SillyTavern/SillyTavern-Docs/edit"
+integrations:
+  googleAnalytics:
+    id: G-0NTJMWH0TW1
 links:
 - text: Github
   link: https://github.com/SillyTavern/SillyTavern

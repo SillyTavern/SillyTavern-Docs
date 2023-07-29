@@ -1,3 +1,7 @@
+---
+icon: file-added
+---
+
 # Writing Extensions
 
 Plugins extend the functionality of SillyTavern by hooking into its events and API. You can easily create your own extensions.
@@ -116,16 +120,15 @@ const apiResult = await doExtrasFetch(url, {
 
 The doExtrasFetch() function:
 
-- Adds the Authorization and Bypass-Tunnel-Reminder headers
-- Handles fetching the result
-- Returns the result (the response object)
+* Adds the Authorization and Bypass-Tunnel-Reminder headers
+* Handles fetching the result
+* Returns the result (the response object)
 
 This makes it easy to call your Extra's API from your plugin.
 
 You can specify:
 
-- The request method: GET, POST, etc.
-- Additional headers
-- The body for POST requests
-- And any other fetch options
-
+* The request method: GET, POST, etc.
+* Additional headers
+* The body for POST requests
+* And any other fetch options

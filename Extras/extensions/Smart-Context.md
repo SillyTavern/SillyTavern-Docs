@@ -27,7 +27,7 @@ ERROR: Could not build wheels for hnswlib, which is required to install pyprojec
 
 Installing chromadb package requires one of the following:
 
-- Have Visual C++ build tools installed: https://visualstudio.microsoft.com/visual-cpp-build-tools/
+- Have Visual C++ build tools installed: <https://visualstudio.microsoft.com/visual-cpp-build-tools/>
 - Installing hnswlib from conda: `conda install -c conda-forge hnswlib`
 
 ***
@@ -37,7 +37,7 @@ Installing chromadb package requires one of the following:
 Once Smart Context is enabled, you should configure it in the SillyTavern UI.
 Smart Context configuration can be done from within the Extensions menu ![STExtensionMenuIcon](https://github.com/SillyTavern/SillyTavern/assets/124905043/4545037e-dff8-4373-9513-cddb69780be1)
 
-![Smart Context Config Panel](https://github.com/SillyTavern/SillyTavern/assets/124905043/86261cef-15eb-42e1-b3e5-5fe07cdf6190)
+![Smart Context Config Panel](https://files.catbox.moe/32qexu.png)
 
 There are 4 main concepts to be aware of:
 
@@ -48,10 +48,15 @@ There are 4 main concepts to be aware of:
 
 ***
 
-#### Chat History Preservation
+#### SmartContext only starts after 10 mesages are in the chat history
+
+- At the start of a new chat, ChromaDB is inactive.
+- Once the chat has accumulated 10 messages, it will begin recording all messages into the database, and recalling messages as needed.
+
+#### Chat History Preservation ('kept mesages')
 
 By default, ChromaDB will keep as many recent natural chat history messages as specified in the slider.
-Any messages beyond this amount will be removed, and if 'memories' exist in the database they will be added in place of the older chat history messages (see Strategy below).
+Any messages beyond this amount will be removed from your sent prompt, and if 'memories' exist in the database they will be added in place of the older chat history messages (see Strategy below).
 
 ***
 
@@ -66,12 +71,12 @@ If you send an input related to 'dogs' and only one other message in the DB is r
 #### Individual Memory Length
 
 This is the maximum length allowed for each injected 'memory'.
-This is in CHARACTERS (not tokens).
+This is in **CHARACTERS** (not tokens).
 If set too small, the memory could be cut off midway.
 
 Example:
 
-`Ross: I really like dogs with long fur and fluffy tails. I dislike dogs with short fur and short tails.`
+`Ross: I like dogs with long fur and fluffy tails. I dislike dogs with short fur and short tails.`
 
 This database 'memory' is 103 characters long, so you would need to set the slider to at least `103` in order to pull it entirely into the context.
 
@@ -109,7 +114,53 @@ Disadvantage
 - because no chat items are being removed/replaced, there is a higher chance you will overflow your context limit.
 - because the memories exist very close to the end of the prompt they can have TOO MUCH effect on the AI's response.
 
+#### Custom Depth
+
+This strategy leaves the chat history in its natural state and adds 'memories' at the depth you determine within the template you specify.
+This means the 'kept messages' slider is effectively disabled.
+The custom injection message should include the `{{memories}}` template word which is where all queried memories will be placed.
+
+Advantage
+
+- flexibility to experiment with memory placement 
+- customizable introductions to memory within context
+
+Disadvantage
+
+- because no chat items are being removed/replaced, there is a higher chance you will overflow your context limit.
+
+
+#### Use % Strategy
+
+Note: This is not compatible with the 'Add to Bottom' strategy, which does not remove any messages at all.
+
+While using the 'Replace Oldest History' strategy, checking this box will enable the slider for selecting a percentage of the in-context chat history to replace with SmartContext memories. It will also disable the two sliders for manually selecting the number of messages.
+
+This strategy automatically calculates a percentage of the chat history to be replaced with SmartContext memories, instead of a fixed number of messages.
+
+Advantage
+
+- easier than manually calculating the number of messages yourself
+- adjusts with the available context size, applying the same percentage to small and large prompt spaces
+
+Disadvantage
+
+- calculations for how much history to remove can be slightly innacurate as they are based on estimated tokens per message
+- it rounds the number of messages to remove to the nearest number divisible by 5 (0, 5, 10, 15, 20, etc), so it is not as fine grained as manual numeric selection.
+
 ***
+
+### Memory Recall Strategy
+
+#### Recall only from this chat
+
+This is the default behavior of smart-context and pulls 'memories' only from the ChromaDB collection for this specific chat.
+
+#### Recall from all character chats
+
+This is an experimental behavior of smart-context which pulls 'memories' from all ChromaDB collections for the selected character.
+Hypothetically this should allow for the development of a more robust memory set spanning many interactions. 
+Reccomended that this be used with 'Add to Bottom' or 'Custom Depth' strategies and 'kept messages' set to a low number so that ChromaDB will pull from memory sooner.
 
 ### Using Smart Context
 
@@ -134,13 +185,13 @@ This can be helpful if you find inaccurate memories have been stored (such as ch
 
 #### What happens to the databases when I'm done chatting? Can I save them?
 
-Smart Context databases are cleared and automatically rebuilt each time the Extras server is restarted.
+For locally installed Extras servers, Smart Context saves the databases. There is no need to save them manually in usual use cases.
+
+For colab users, the databases are wiped when the extras server shuts down. Use the export button to save the database as a JSON file, and import it next time you want to use it.
 
 **Usually there is no need to save Smart Context databases.**
 
-If you injected text files into the database for your chat, you will need to do so again.
-
-Currently we have an Import/Export feature, which should allow you to save the chat's DB and use it again at a later date.
+Currently we have an Import/Export feature, which allows you to save the chat's DB and use it again at a later date.
 
 #### Can I make one big database for all of my chats to reference?
 
