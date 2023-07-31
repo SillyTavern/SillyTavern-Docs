@@ -19,21 +19,17 @@ The ifacialmocap_puppeteer requires an iOS device that is capable of computing b
 
 ### How to use
 You must launch extras with the following modules for live2d to work: classify and live2d!
-classify is required for handling of the live2d.png file.
+classify is required for handling of the live2d.png file. Additionally you may also use --live2d-gpu to load the blend models into GPU memory and make the animations 10x faster. It is highly recommended to use gpu acceleration! By default once the program starts it will load a default image SillyTavern-extras\live2d\tha3\images\lambda_00.png. You can verify it is working by going to http://localhost:5100/api/live2d/result_feed or YOUR EXT URL:PORT/api/live2d/result_feed. 
 
-Additionally you may also use --live2d-gpu to load the blend models into GPU memory and make the animations 10x faster. It is highly recommended to use gpu acceleration!
+-Once the server has started goto the Extension API tab and connect. Then simply select a character card to load. (--enable-modules=classify,live2d --live2d-gpu in server.py)
 
-By default once the program starts it will load a default image SillyTavern-extras\live2d\tha3\images\lambda_00.png. You can verify it is working by going to http://localhost:5100/api/live2d/result_feed or YOUR EXT URL:PORT/api/live2d/result_feed. 
+-Now select the Character Expressions, if you check the image type live2d box the script will replace your current character expression with the result of YOUR EXT URL:PORT/api/live2d/result_feed unchecking the box SHOULD return the image back to the orginal expression, however sometimes you have to send a new message to the chat to "reload" the image.
 
-    -Once the server has started goto the Extension API tab and connect. Then simply select a character card to load. (--enable-modules=classify,live2d --live2d-gpu in server.py)
+-If you do not have a live2d.png file in the character directory it will simply show either the default image or the last character card that had a live2d.png file. The animation source image is changed when the character card is changed. 
 
-    -Now select the Character Expressions, if you check the image type live2d box the script will replace your current character expression with the result of YOUR EXT URL:PORT/api/live2d/result_feed unchecking the box SHOULD return the image back to the orginal expression, however sometimes you have to send a new message to the chat to "reload" the image.
+-Now open the character expressions scroll down to the live2d image and upload an image file that meets the requirements in the section below called "Contraints on Input Images".
 
-    -If you do not have a live2d.png file in the character directory it will simply show either the default image or the last character card that had a live2d.png file. The animation source image is changed when the character card is changed. 
-
-    -Now open the character expressions scroll down to the live2d image and upload an image file that meets the requirements in the section below called "Contraints on Input Images".
-
-    -Then check and uncheck the Live2d box to reload the character. IF the image is funny looking it is probably because it is not transparent / has no alpha layer. Otherwise follow the instructions and teamplate below. 
+-Then check and uncheck the Live2d box to reload the character. IF the image is funny looking it is probably because it is not transparent / has no alpha layer. Otherwise follow the instructions and teamplate below. 
 
 ### Contraints on Input Images
 In order for the system to work well, the input image must obey the following constraints:
