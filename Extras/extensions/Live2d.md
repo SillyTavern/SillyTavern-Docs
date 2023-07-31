@@ -3,8 +3,9 @@
 ### What is it?
 A implementation of Talking Head Anime 3 Demo for AITuber. It possesses the following features:
 
--Generates random Live 2D-like motion actions from a single static image.
--Lip-syncs to the sound output from any TTS output.
+    -Generates random Live 2D-like motion actions from a single static image.
+
+    -Lip-syncs to the sound output from any TTS output.
 
 This extentsion contains the orginal demo programs for the Talking Head(?) Anime from a Single Image 3: Now the Body Too project. As the name implies, the project allows you to animate anime characters, and you only need a single image of that character to do so. There are two demo programs:
 
@@ -22,17 +23,17 @@ classify is required for handling of the live2d.png file.
 
 Additionally you may also use --live2d-gpu to load the blend models into GPU memory and make the animations 10x faster. It is highly recommended to use gpu acceleration!
 
-By default once the program starts it will load a default image SillyTavern-extras\live2d\tha3\images\lambda_00.png. You can verify it is working by going to http://localhost:5100/api/live2d/result_feed or <YOUR EXT URL>:<PORT>/api/live2d/result_feed. 
+By default once the program starts it will load a default image SillyTavern-extras\live2d\tha3\images\lambda_00.png. You can verify it is working by going to http://localhost:5100/api/live2d/result_feed or YOUR EXT URL:PORT/api/live2d/result_feed. 
 
-Once the server has started goto the Extension API tab and connect. Then simply select a character card to load. 
+    1. Once the server has started goto the Extension API tab and connect. Then simply select a character card to load. (--enable-modules=classify,live2d --live2d-gpu in server.py)
 
-Now select the Character Expressions, if you check the image type live2d box the script will replace your current character expression with the result of <YOUR EXT URL>:<PORT>/api/live2d/result_feed unchecking the box SHOULD return the image back to the orginal expression, hwoever sometimes you have to send a new message to the chat to "reload" the image.
+    2. Now select the Character Expressions, if you check the image type live2d box the script will replace your current character expression with the result of YOUR EXT URL:PORT/api/live2d/result_feed unchecking the box SHOULD return the image back to the orginal expression, however sometimes you have to send a new message to the chat to "reload" the image.
 
-If you do not have a live2d.png file in the character directory it will simply show either the default image or the last character card that had a live2d.png file. The animation source image is changed when the character card is changed. 
+    3. If you do not have a live2d.png file in the character directory it will simply show either the default image or the last character card that had a live2d.png file. The animation source image is changed when the character card is changed. 
 
-Now open the character expressions scroll down to the live2d image and upload an image file that meets the requirements in the section below called "Contraints on Input Images".
+    4. Now open the character expressions scroll down to the live2d image and upload an image file that meets the requirements in the section below called "Contraints on Input Images".
 
-Then check and uncheck the Live2d box to reload the character. IF the image is funny looking it is probably because it is not transparent / has no alpha layer. Otherwise follow the instructions and teamplate below. 
+    5. Then check and uncheck the Live2d box to reload the character. IF the image is funny looking it is probably because it is not transparent / has no alpha layer. Otherwise follow the instructions and teamplate below. 
 
 ### Contraints on Input Images
 In order for the system to work well, the input image must obey the following constraints:
