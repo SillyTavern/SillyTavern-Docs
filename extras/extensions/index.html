@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.1.0.743991128030">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.1.0.744181375329">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.1.0">
@@ -35,11 +35,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.1.0.743991128030" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.1.0.744181375329" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.1.0.743991128030" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.1.0.744181375329" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.1.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.1.0.743991128030" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.1.0.744181375329" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -261,7 +261,7 @@
 </tr>
 <tr>
 <td>Text-to-Speech</td>
-<td>AI-generated voice will read back character messages on demand, or automatically read new messages they arrive. Supports ElevenLabs, Silero, and your device&#x27;s TTS service.</td>
+<td>AI-generated voice will read back character messages on demand, or automatically read new messages they arrive. Supports ElevenLabs, Silero, Coqui-TTS, and your device&#x27;s TTS service.</td>
 <td>None</td>
 <td><img style="max-width:200px" alt="image" src="https://files.catbox.moe/o3wxkk.png"></td>
 </tr>
@@ -282,6 +282,12 @@
 <td><strong>What it doesn&#x27;t do:</strong> Magically increase your context size.<br><strong>What it does:</strong> Optimizes the arrangement of your message history within the context space for more effective use.<br><br>Imagine two variables:<br>X: How many original chat messages to keep<br>Y: Maximum number of ChromaDB &#x27;memories&#x27; to inject<br><br>When the chat reaches the threshold of X messages, additional messages will no longer be included in the context chronologically. Instead, they will be selected from the history based on their similarity to your recent inputs (limited to a maximum of Y), which should provide more relevant information than simply disregarding past messages. Adjust these values according to your average number of in-context entries for optimal performance.</td>
 <td><code v-pre>chromadb</code></td>
 <td>Pending</td>
+</tr>
+<tr>
+<td>Live2d</td>
+<td>An implementation of <a href="https://github.com/miketako3/talking-head-anime-3-demo-for-aituber">https://github.com/miketako3/talking-head-anime-3-demo-for-aituber</a> for Silly Tavern. Uses an expression called live2d.png in the expressions folder of the character for loading. The image must meet specfic requirements, see screenshot.</td>
+<td><code v-pre>live2d</code></td>
+<td><img style="max-width:200px" alt="image" src="https://github.com/miketako3/talking-head-anime-3-demo-for-aituber/blob/main/docs/input_spec.png?raw=true"></td>
 </tr>
 </tbody>
 </table>
