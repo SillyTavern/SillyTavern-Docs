@@ -2,22 +2,19 @@
 
 ### API Key
 
-To get a NovelAI API key, follow these instructions:
+To get your NovelAI API key, follow these steps:
 
-1. Go to the NovelAI website and Login.
-2. Create a new story, or open an existing story.
-3. Open the Network Tools on your web browser. (For Chrome or Firefox, you do this by pressing Ctrl+Shift+I, then switching to the Network tab.)
-4. Generate something. You should see two requests to [api.novelai.net/ai/generate-stream](http://api.novelai.net/ai/generate-stream), which might look something like this:
+1. Select the gear icon at the top of the left sidebar.
+ ![image](https://github.com/SillyTavern/SillyTavern-Docs/assets/55552572/e0c70838-9775-4dc4-bf07-3daf895de67c)
 
-![](/static/nai-stream.png)
+2. Select "Account" under "User Settings".
+![image](https://github.com/SillyTavern/SillyTavern-Docs/assets/55552572/71af84bf-3800-4e22-bfe9-9f84f302451a)
 
-5. Select the second request, then in the Headers tab of the inspection panel, scroll down to the very bottom. Look for a header called Authorization:
+3. Select "Get Persistent API Token".
+![image](https://github.com/SillyTavern/SillyTavern-Docs/assets/55552572/5ca0ff03-a75c-4bea-ba7f-2db951aab194)
 
-![](/static/nai-key.png)
-
-The long string (after "Bearer", not including it) is your API key.
-
-* Proxies and Cloudflare-type services may interfere with connection.
+4. Select the copy icon to copy your NovelAI API token to the clipboard. 
+![image](https://github.com/SillyTavern/SillyTavern-Docs/assets/55552572/2765446e-42b2-4027-8ee5-0bbb48aef9c0)
 
 ### Settings
 
