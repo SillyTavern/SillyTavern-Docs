@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.1.0.744401061239">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.1.0.744462320008">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.1.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.1.0.744401061239" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.1.0.744462320008" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.1.0.744401061239" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.1.0.744462320008" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.1.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.1.0.744401061239" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.1.0.744462320008" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -324,14 +324,29 @@ Character:</code></pre>
 </doc-anchor-target>
 <p><strong>Important: This section doesn&#x27;t apply to OpenAI API. SillyTavern will always use a matching tokenizer for OpenAI models.</strong></p>
 <p>A tokenizer is a tool that breaks down a piece of text into smaller units called tokens. These tokens can be individual words or even parts of words, such as prefixes, suffixes, or punctuation. A rule of thumb is that one token generally corresponds to 3~4 characters of text.</p>
-<p>SillyTavern can use the following tokenizers while forming a request to the AI backend:</p>
+<p>SillyTavern provides a &quot;Best match&quot; option that tries to match the tokenizer using the following rules depending on the API provider used.</p>
+<p>Text Completion APIs <strong>(overridable)</strong>:</p>
+<ol>
+<li>NovelAI Krake/Euterpe: GPT-2/3 tokenizer.</li>
+<li>NovelAI Clio: NerdStash tokenizer.</li>
+<li>NovelAI Kayra: NerdStash v2 tokenizer.</li>
+<li>TextGen / KoboldAI / AI Horde: LLaMA tokenizer.</li>
+</ol>
+<p>If you get inaccurate results or wish to experiment, you can set an <em>override tokenizer</em> for SillyTavern to use while forming a request to the AI backend:</p>
 <ol>
 <li>None. Each token is estimated to be ~3.3 characters, rounded up to the nearest integer. <strong>Try this if your prompts get cut off on high context lengths.</strong> This approach is used by KoboldAI Lite.</li>
-<li>GPT-3 tokenizer. <strong>Use to get more accurate counts on OpenAI character cards.</strong> Can be previewed here: <a href="https://platform.openai.com/tokenizer">OpenAI Tokenizer</a>.</li>
+<li>GPT-3 tokenizer. <strong>Used by pre-Turbo OpenAI models (ada, babbage, curie, davinci).</strong> Can be previewed here: <a href="https://platform.openai.com/tokenizer">OpenAI Tokenizer</a>.</li>
 <li>(Legacy) GPT-2/3 tokenizer. Used by original TavernAI. <strong>Pick this if you&#x27;re unsure.</strong> More info: <a href="https://github.com/josephrocca/gpt-2-3-tokenizer">gpt-2-3-tokenizer</a>.</li>
-<li>Sentencepiece tokenizer. Used by LLaMA model family: Alpaca, Vicuna, Koala, etc. <strong>Pick if you use a LLaMA model.</strong></li>
-<li>NerdStash tokenizer. Used by NovelAI&#x27;s Krake model. <strong>Pick if you use the Krake model.</strong></li>
-<li>NerdStash v2 tokenizer. Used by NovelAI&#x27;s Clio model. <strong>Pick if you use the Clio model.</strong></li>
+<li>LLaMA tokenizer. Used by LLaMA 1/2 models family: Vicuna, Hermes, Airoboros, etc. <strong>Pick if you use a LLaMA 1/2 model.</strong></li>
+<li>NerdStash tokenizer. Used by NovelAI&#x27;s Clio model. <strong>Pick if you use the Clio model.</strong></li>
+<li>NerdStash v2 tokenizer. Used by NovelAI&#x27;s Kayra model. <strong>Pick if you use the Kayra model.</strong></li>
+<li>API tokenizer. Queries the generation API to get the token count directly from the model. Only supported by Oobabooga&#x27;s TextGen. <strong>Pick if you use the latest version of TextGen API.</strong></li>
+</ol>
+<p>Chat Completion APIs <strong>(non-overridable)</strong>:</p>
+<ol>
+<li>OpenAI / Claude / OpenRouter / Window: model-dependant tokenizer via <a href="https://github.com/openai/tiktoken">tiktoken</a>.</li>
+<li>Scale API: GPT-4 tokenizer.</li>
+<li>Fallback tokenizer (for proxies): GPT-3.5 turbo tokenizer.</li>
 </ol>
 <doc-anchor-target id="token-padding">
     <h3>
