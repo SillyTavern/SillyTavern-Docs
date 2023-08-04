@@ -66,7 +66,7 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 
 ### Claude (by Anthropic)
 
-- Reccomended for users who want their AI chats to have a creative, unique writing style
+- Recommended for users who want their AI chats to have a creative, unique writing style
 - 4k, 8k, 100k context models available
 - strongst content filter of all APIs (as of June 2023)
 - limited access to most models
@@ -80,3 +80,11 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 - use OpenRouter to pay to use their API keys instead
 - useful if you don't want to create individual accounts on each service
 - [website](https://windowai.io) and [website](https://openrouter.ai)
+
+### Mancer AI
+
+- Service that hosts unconstrained models, no need to jailbreak.
+- Uses 'credits' to pay for tokens on various models. Free credits refill daily.
+- Does not log prompts by default, but you can enable it to get credit discounts on tokens.
+- Uses an API similar to `Oobabooga TextGeneration WebUI`, see [Mancer docs](https://mancer.tech/docs/clients/#sampling-parameters) for details.
+- [website](https://mancer.tech/), [SillyTavern Setup Instructions](https://mancer.tech/docs/clients/sillytavern/)
