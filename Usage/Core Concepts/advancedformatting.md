@@ -69,8 +69,6 @@ Character:
 
 ### Tokenizer
 
-**Important: This section doesn't apply to OpenAI API. SillyTavern will always use a matching tokenizer for OpenAI models.**
-
 A tokenizer is a tool that breaks down a piece of text into smaller units called tokens. These tokens can be individual words or even parts of words, such as prefixes, suffixes, or punctuation. A rule of thumb is that one token generally corresponds to 3~4 characters of text.
 
 SillyTavern provides a "Best match" option that tries to match the tokenizer using the following rules depending on the API provider used.
