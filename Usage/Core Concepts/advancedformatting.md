@@ -73,14 +73,28 @@ Character:
 
 A tokenizer is a tool that breaks down a piece of text into smaller units called tokens. These tokens can be individual words or even parts of words, such as prefixes, suffixes, or punctuation. A rule of thumb is that one token generally corresponds to 3~4 characters of text.
 
-SillyTavern can use the following tokenizers while forming a request to the AI backend:
+SillyTavern provides a "Best match" option that tries to match the tokenizer using the following rules depending on the API provider used.
+
+Text Completion APIs **(overridable)**:
+1. NovelAI Krake/Euterpe: GPT-2/3 tokenizer.
+2. NovelAI Clio: NerdStash tokenizer.
+3. NovelAI Kayra: NerdStash v2 tokenizer.
+4. TextGen / KoboldAI / AI Horde: LLaMA tokenizer.
+
+If you get inaccurate results or wish to experiment, you can set an *override tokenizer* for SillyTavern to use while forming a request to the AI backend:
 
 1. None. Each token is estimated to be ~3.3 characters, rounded up to the nearest integer. **Try this if your prompts get cut off on high context lengths.** This approach is used by KoboldAI Lite.
-2. GPT-3 tokenizer. **Use to get more accurate counts on OpenAI character cards.** Can be previewed here: [OpenAI Tokenizer](https://platform.openai.com/tokenizer).
+2. GPT-3 tokenizer. **Used by pre-Turbo OpenAI models (ada, babbage, curie, davinci).** Can be previewed here: [OpenAI Tokenizer](https://platform.openai.com/tokenizer).
 3. (Legacy) GPT-2/3 tokenizer. Used by original TavernAI. **Pick this if you're unsure.** More info: [gpt-2-3-tokenizer](https://github.com/josephrocca/gpt-2-3-tokenizer).
-4. Sentencepiece tokenizer. Used by LLaMA model family: Alpaca, Vicuna, Koala, etc. **Pick if you use a LLaMA model.**
-5. NerdStash tokenizer. Used by NovelAI's Krake model. **Pick if you use the Krake model.**
-6. NerdStash v2 tokenizer. Used by NovelAI's Clio model. **Pick if you use the Clio model.**
+4. LLaMA tokenizer. Used by LLaMA 1/2 models family: Vicuna, Hermes, Airoboros, etc. **Pick if you use a LLaMA 1/2 model.**
+5. NerdStash tokenizer. Used by NovelAI's Clio model. **Pick if you use the Clio model.**
+6. NerdStash v2 tokenizer. Used by NovelAI's Kayra model. **Pick if you use the Kayra model.**
+7. API tokenizer. Queries the generation API to get the token count directly from the model. Only supported by Oobabooga's TextGen. **Pick if you use the latest version of TextGen API.**
+
+Chat Completion APIs **(non-overridable)**:
+1. OpenAI / Claude / OpenRouter / Window: model-dependant tokenizer via [tiktoken](https://github.com/openai/tiktoken).
+2. Scale API: GPT-4 tokenizer.
+3. Fallback tokenizer (for proxies): GPT-3.5 turbo tokenizer.
 
 ### Token Padding
 
