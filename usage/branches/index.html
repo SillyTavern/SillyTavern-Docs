@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.1.0.744543854676">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.1.0.744565599232">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.1.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.1.0.744543854676" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.1.0.744565599232" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.1.0.744543854676" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.1.0.744565599232" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.1.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.1.0.744543854676" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.1.0.744565599232" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -246,8 +246,16 @@ If you contributed to the SillyTavern development and want to see yourself credi
 <ol>
 <li>Open a terminal prompt (cmd, PowerShell, Termux, etc) in your SillyTavern installation folder.</li>
 <li>Type <code v-pre>git fetch</code> and then <code v-pre>git pull</code> to pull the updates.</li>
-<li>(You may lose your settings. Have you made a backup?) Type <code v-pre>git reset --hard</code> to reset the repository to its original state.</li>
-<li>Type <code v-pre>git switch staging</code> or <code v-pre>git switch release</code> to switch to <code v-pre>staging</code> or <code v-pre>release</code> branch respectively.</li>
+<li>You may lose your settings. Have you made a backup? <code v-pre>git switch release</code> or <code v-pre>git switch staging</code> will change your branch, respectively</li>
+<li>Skip to next item if you have no errors. You may have something like:
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">error: Your local changes to the following files would be overwritten by checkout:
+     config.conf
+     public/css/bg_load.css
+     public/settings.json</code></pre>
+</doc-codeblock></div>
+You will see a list of files effected. If you do not care about those settings files being replaced <code v-pre>git switch -f release</code> or <code v-pre>git switch -f staging</code> will set your branch.
+If you do care to save those changes restore from backup.</li>
 <li>Type <code v-pre>npm install</code> and then <code v-pre>npm run start</code> to test that everything behaves correctly.</li>
 <li>Enjoy! Restore your data from a backup if needed.</li>
 </ol>
