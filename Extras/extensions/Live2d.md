@@ -1,4 +1,4 @@
-# Live2d
+# talkinghead
 
 ### What is it?
 A implementation of Talking Head Anime 3 Demo for AITuber. It possesses the following features:
@@ -18,18 +18,18 @@ You can use either CPU or GPU Modes (CPU is default). However in CPU mode expect
 The ifacialmocap_puppeteer requires an iOS device that is capable of computing blend shape parameters from a video feed. This means that the device must be able to run iOS 11.0 or higher and must have a TrueDepth front-facing camera. (See this page for more info.) In other words, if you have the iPhone X or something better, you should be all set.
 
 ### How to use
-You must launch extras with the following modules for live2d to work: classify and live2d!
-classify is required for handling of the live2d.png file. Additionally you may also use --live2d-gpu to load the blend models into GPU memory and make the animations 10x faster. It is highly recommended to use gpu acceleration! By default once the program starts it will load a default image SillyTavern-extras\live2d\tha3\images\lambda_00.png. You can verify it is working by going to http://localhost:5100/api/live2d/result_feed or YOUR EXT URL:PORT/api/live2d/result_feed. 
+You must launch extras with the following modules for talkinghead to work: classify and talkinghead!
+classify is required for handling of the talkinghead.png file. Additionally you may also use --talkinghead-gpu to load the blend models into GPU memory and make the animations 10x faster. It is highly recommended to use gpu acceleration! By default once the program starts it will load a default image SillyTavern-extras\talkinghead\tha3\images\lambda_00.png. You can verify it is working by going to http://localhost:5100/api/talkinghead/result_feed or YOUR EXT URL:PORT/api/talkinghead/result_feed. 
 
--Once the server has started goto the Extension API tab and connect. Then simply select a character card to load. (--enable-modules=classify,live2d --live2d-gpu in server.py)
+-Once the server has started goto the Extension API tab and connect. Then simply select a character card to load. (--enable-modules=classify,talkinghead --talkinghead-gpu in server.py)
 
--Now select the Character Expressions, if you check the image type live2d box the script will replace your current character expression with the result of YOUR EXT URL:PORT/api/live2d/result_feed unchecking the box SHOULD return the image back to the orginal expression, however sometimes you have to send a new message to the chat to "reload" the image.
+-Now select the Character Expressions, if you check the image type talkinghead box the script will replace your current character expression with the result of YOUR EXT URL:PORT/api/talkinghead/result_feed unchecking the box SHOULD return the image back to the orginal expression, however sometimes you have to send a new message to the chat to "reload" the image.
 
--If you do not have a live2d.png file in the character directory it will simply show either the default image or the last character card that had a live2d.png file. The animation source image is changed when the character card is changed. 
+-If you do not have a talkinghead.png file in the character directory it will simply show either the default image or the last character card that had a talkinghead.png file. The animation source image is changed when the character card is changed. 
 
--Now open the character expressions scroll down to the live2d image and upload an image file that meets the requirements in the section below called "Contraints on Input Images".
+-Now open the character expressions scroll down to the talkinghead image and upload an image file that meets the requirements in the section below called "Contraints on Input Images".
 
--Then check and uncheck the Live2d box to reload the character. IF the image is funny looking it is probably because it is not transparent / has no alpha layer. Otherwise follow the instructions and teamplate below. 
+-Then check and uncheck the talkinghead box to reload the character. IF the image is funny looking it is probably because it is not transparent / has no alpha layer. Otherwise follow the instructions and teamplate below. 
 
 ### Contraints on Input Images
 In order for the system to work well, the input image must obey the following constraints:
@@ -75,7 +75,7 @@ One way to do so is to install Anaconda and run the following commands in your s
 > conda install matplotlib
 
 ### Additional Blend Models
-There is only one (lightest) model included, if you want the additional blend models you need to download the model files from https://www.dropbox.com/s/y7b8jl4n2euv8xe/talking-head-anime-3-models.zip?dl=0 and unzip it to the SillyTavern-extras\live2d\tha3\models folder. In the end, the data folder should look like:
+There is only one (lightest) model included, if you want the additional blend models you need to download the model files from https://www.dropbox.com/s/y7b8jl4n2euv8xe/talking-head-anime-3-models.zip?dl=0 and unzip it to the SillyTavern-extras\talkinghead\tha3\models folder. In the end, the data folder should look like:
 
 + tha3
   + models
