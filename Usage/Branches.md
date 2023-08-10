@@ -29,10 +29,18 @@ Not sure of which files to back up? See the list here: [How to Update SillyTaver
 
 1. Open a terminal prompt (cmd, PowerShell, Termux, etc) in your SillyTavern installation folder.
 2. Type `git fetch` and then `git pull` to pull the updates.
-3. (You may lose your settings. Have you made a backup?) Type `git reset --hard` to reset the repository to its original state.
-4. Type `git switch staging` or `git switch release` to switch to `staging` or `release` branch respectively.
-5. Type `npm install` and then `npm run start` to test that everything behaves correctly.
-6. Enjoy! Restore your data from a backup if needed.
+3. You may lose your settings. Have you made a backup? `git switch release` or `git switch staging` will change your branch, respectively 
+4. Skip to next item if you have no errors. You may have something like:
+   ```
+   error: Your local changes to the following files would be overwritten by checkout:
+        config.conf
+        public/css/bg_load.css
+        public/settings.json
+   ```
+   You will see a list of files effected. If you do not care about those settings files being replaced `git switch -f release` or `git switch -f staging` will set your branch.
+   If you do care to save those changes restore from backup.
+7. Type `npm install` and then `npm run start` to test that everything behaves correctly.
+8. Enjoy! Restore your data from a backup if needed.
 
 ### fatal: invalid reference: release
 
