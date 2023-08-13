@@ -10,7 +10,7 @@ However, having Extras running with the `classify` module enabled allows the Exp
 
 ### Setup Instructions (Offline Mode without Extras)
 
-1. Open the Extensions Panel and expand the 'Expression images' section. You will see a grid of image placeholders.
+1. Open the Extensions Panel and expand the 'Expression images' section (the section will only show up when you have a character selected). You will see a grid of image placeholders.
 ![Expression Drawer](https://github.com/SillyTavern/SillyTavern/assets/124905043/a6883961-d15d-4998-9a28-8d0333d65f29)
 
 2. Click the 'import' button at the top left of each image in the grid, and select the image you want to apply to that emotion. This will save the image with the correct filename inside the `/public/characters/(character_name_here)/` folder.
