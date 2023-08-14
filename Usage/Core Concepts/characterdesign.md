@@ -72,7 +72,7 @@ These will always be sent to the AI with every generation request:
 * OpenAI ChatGPT (3.5 Turbo) - 4096 or 16k
 * OpenAI GPT-4 - 8192 or 32k
 * Anthropic's Claude - 8000 (older versions) or 100k (Claude 2)
-* NovelAI - 8192 (Kayra, opus tier; Clio, all tiers), 6144 (Kayra, scroll tier), or 3072 (Kayra, tablet tier)
+* NovelAI - 8192 (Kayra, Opus tier; Clio, all tiers), 6144 (Kayra, Scroll tier), or 3072 (Kayra, Tablet tier)
 
 ### Personality summary
 
