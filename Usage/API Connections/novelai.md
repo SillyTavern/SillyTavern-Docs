@@ -23,23 +23,18 @@ You can also manually add your own settings files.
 
 #### Temperature
 
-Value from 0.1 to 2.0
-
-Lower value - the answers are more logical, but less creative.
-
-Higher value - the answers are more creative, but less logical.
+* Lower value - the answers are more logical, but less creative.
+* Higher value - the answers are more creative, but less logical.
 
 #### Repetition penalty
 
-Repetition penalty is responsible for the penalty of repeated words.
-If the character is fixated on something or repeats the same phrase, then increasing this parameter will fix it.
-It is not recommended to increase this parameter too much for the chat format, as it may break this format.
-
-**The standard value for chat is approximately 1.0 - 1.05**
+Higher values make the output less repetitive.
+If the character is fixated on something or repeats the same phrase, then increasing this parameter will (likely) fix it.
+It is not recommended to increase this parameter too much as it may break the outputs.
 
 #### Repetition penalty range
 
-The range of influence of Repetition penalty in tokens.
+How many tokens from the last generated token will be considered repeated if they appear in the output.
 
 ### Models
 
