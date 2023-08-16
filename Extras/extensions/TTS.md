@@ -90,6 +90,8 @@ The directory should look like this:
 
 One first load of this model and voice bark will clone the voice and create a .npz file, this is needed for faster TTS.
 
+### RVC
+
 #### RVC Setup
 
 PREREQUISITES:
@@ -117,11 +119,13 @@ python server.py --enable-modules=rvc
 Automatically install and launch Mangio-RVC: https://github.com/deffcolony/rvc-easy-menu
 
 1. Choose a location where you want to git clone the repo because RVC will install in the same location where you launch the script:
-`git clone https://github.com/deffcolony/rvc-easy-menu.git`
-2. Open RVC-Launcher.bat
-3. Choose 1 since you want to install RVC.
-4. When 7-zip pops up just, click install because it's a requirement for the 7z package that will get extracted automatically.
-5. After installation when the menu returns choose 2 to open WebUI for Voice Training.
+```
+git clone https://github.com/deffcolony/rvc-easy-menu.git
+```
+3. Open RVC-Launcher.bat
+4. Choose 1 since you want to install RVC.
+5. When 7-zip pops up just, click install because it's a requirement for the 7z package that will get extracted automatically.
+6. After installation when the menu returns choose 2 to open WebUI for Voice Training.
 
 ##### Mangio-RVC - Train a voice model
 
