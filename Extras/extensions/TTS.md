@@ -29,7 +29,15 @@ Used to select which TTS service you want to use.
 - *having both "only narrate quotes" and "ignore asterisks" checkboxes both checked will result in the TTS only reading "quotes" which are not in asterisks, and ignoring everything else.*
 - **Narrate only the translated text** - this will make the TTS only narrate the translated text.
 
-![Logic Chart for Narration Filters](https://files.catbox.moe/2y48qr.png)
+Given the example text: `*Cohee approaches you with a faint "nya"* "Good evening, senpai", she says.`
+Here's a table showing how the text will be modified based on the boolean states of **Ignore \*text, even "quotes", inside asterisks\*** and **Only narrate "quotes"**:
+
+| **Ignore \*text, even "quotes", inside asterisks\*** 	| **Only narrate "quotes"**	| **Output**                                                                   |
+| :---------------------------------------------------- | :------------------------ | :--------------------------------------------------------------------------- | 
+| Disabled                                              |	Disabled	                 | Cohee approaches you with a faint "nya" "Good evening, senpai", she says.    |
+| Disabled                                              | Enabled	                  | "nya"... "Good evening, senpai"                                              |
+| Enabled	                                              | Disabled	                 | "Good evening, senpai", she says.                                            |
+| Enabled	                                              | Enabled	                  | "Good evening, senpai"                                                       |
 
 #### Sliders
 
