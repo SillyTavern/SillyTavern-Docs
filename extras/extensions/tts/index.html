@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.1.0.745514804591">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.1.0.745517853788">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.1.0">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.1.0.745514804591" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.1.0.745517853788" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.1.0.745514804591" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.1.0.745517853788" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.1.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.1.0.745514804591" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.1.0.745514804591" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.1.0.745517853788" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.1.0.745517853788" defer></script>
 
     <Style>
         a {
@@ -396,6 +396,51 @@ or
 <li>Go to <strong>Extensions --&gt; TTS</strong> and enable it</li>
 <li>Select TTS Provider: <strong>Coqui</strong> or your other preferred provider, but not <strong>System</strong> - RVC doesn&#x27;t work with it. <strong>ElevenLabs</strong> is not recommended since it has its own voice cloning capabilities</li>
 <li>Enable <strong>Auto Generation</strong></li>
+</ol>
+<doc-anchor-target id="train-your-own-rvc-model">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#train-your-own-rvc-model">#</doc-anchor-trigger>
+        <span>Train your own RVC model</span>
+    </h4>
+</doc-anchor-target>
+<doc-anchor-target id="rvc-easy-menu-by-deffcolony-only-for-windows">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#rvc-easy-menu-by-deffcolony-only-for-windows">#</doc-anchor-trigger>
+        <span>RVC Easy Menu by Deffcolony (only for Windows).</span>
+    </h5>
+</doc-anchor-target>
+<p>Automatically install and launch Mangio-RVC: <a href="https://github.com/deffcolony/rvc-easy-menu">https://github.com/deffcolony/rvc-easy-menu</a></p>
+<ol>
+<li>Choose a location where you want to git clone the repo because RVC will install in the same location where you launch the script:
+<code v-pre>git clone https://github.com/deffcolony/rvc-easy-menu.git</code></li>
+<li>Open RVC-Launcher.bat</li>
+<li>Choose 1 since you want to install RVC.</li>
+<li>When 7-zip pops up just, click install because it&#x27;s a requirement for the 7z package that will get extracted automatically.</li>
+<li>After installation when the menu returns choose 2 to open WebUI for Voice Training.</li>
+</ol>
+<doc-anchor-target id="mangio-rvc---train-a-voice-model">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mangio-rvc---train-a-voice-model">#</doc-anchor-trigger>
+        <span>Mangio-RVC - Train a voice model</span>
+    </h5>
+</doc-anchor-target>
+<p>Dataset preparation:</p>
+<ol>
+<li>Put the voice you want to train in the <code v-pre>datasets</code> folder.</li>
+<li>Make sure there is NO BACKGROUND NOISE in the audio file; only raw voice!</li>
+<li>The output quality will be better the longer the audio.</li>
+</ol>
+<p>In the WebUI:</p>
+<ol>
+<li>Click on the training tab</li>
+<li>Enter the experiment name, for example, <code v-pre>my-epic-voice-model</code></li>
+<li>Set version to v2</li>
+<li>Click on &quot;Process data&quot;</li>
+<li>Click on &quot;Feature extraction&quot;</li>
+<li>Set &quot;Save frequency&quot; to 50</li>
+<li>Set &quot;Total training epochs&quot; to 300</li>
+<li>Click on &quot;Train feature index&quot;</li>
+<li>Click on &quot;Train model&quot;</li>
 </ol>
 
                                 
