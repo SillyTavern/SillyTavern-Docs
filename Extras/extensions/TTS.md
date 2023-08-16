@@ -89,14 +89,14 @@ PREREQUISITES:
 - `sillytavern-extras`: Switch to the `neo` branch
 - `sillytavern`: Switch to the `staging` branch
 
-1. In a file browser navigate to **\SillyTavern-extras\data\models\rvc** then import **.pth** and **.index** into the RVC folder
+1. In a file browser navigate to **\SillyTavern-extras\data\models\rvc**, create a subfolder and put **.pth** and **.index** into the created folder
 2. Install requirements with: `pip install -r requirements-rvc.txt`
 3. Run SillyTavern-extras with an RVC module enabled (add other models and parameters if needed):
 ```yaml
 python server.py --enable-modules=rvc
 ```
 4. In SillyTavern, go to **Extensions --> RVC** and enable it
-5. Setup a Voice map for RVC: read the instructions for TTS above, but instead of TTS voices, use RVC **.pth** file names
+5. Setup a Voice map for RVC: read the instructions for TTS above, but instead of TTS voices, use RVC model folder names
 6. Select pitch extraction: **rmvpe**
 7. Go to **Extensions --> TTS** and enable it
 8. Select TTS Provider: **Coqui** or your other preferred provider, but not **System** - RVC doesn't work with it. **ElevenLabs** is not recommended since it has its own voice cloning capabilities
