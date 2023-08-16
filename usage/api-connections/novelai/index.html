@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.1.0.745518472278">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.1.0.745526374153">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.1.0">
@@ -35,11 +35,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.1.0.745518472278" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.1.0.745526374153" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.1.0.745518472278" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.1.0.745526374153" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.1.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.1.0.745518472278" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.1.0.745526374153" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -253,26 +253,26 @@ You can also manually add your own settings files.</p>
         <span>Temperature</span>
     </h4>
 </doc-anchor-target>
-<p>Value from 0.1 to 2.0</p>
-<p>Lower value - the answers are more logical, but less creative.</p>
-<p>Higher value - the answers are more creative, but less logical.</p>
+<ul>
+<li>Lower value - the answers are more logical, but less creative.</li>
+<li>Higher value - the answers are more creative, but less logical.</li>
+</ul>
 <doc-anchor-target id="repetition-penalty">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#repetition-penalty">#</doc-anchor-trigger>
         <span>Repetition penalty</span>
     </h4>
 </doc-anchor-target>
-<p>Repetition penalty is responsible for the penalty of repeated words.
-If the character is fixated on something or repeats the same phrase, then increasing this parameter will fix it.
-It is not recommended to increase this parameter too much for the chat format, as it may break this format.</p>
-<p><strong>The standard value for chat is approximately 1.0 - 1.05</strong></p>
+<p>Higher values make the output less repetitive.
+If the character is fixated on something or repeats the same phrase, then increasing this parameter will (likely) fix it.
+It is not recommended to increase this parameter too much as it may break the outputs.</p>
 <doc-anchor-target id="repetition-penalty-range">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#repetition-penalty-range">#</doc-anchor-trigger>
         <span>Repetition penalty range</span>
     </h4>
 </doc-anchor-target>
-<p>The range of influence of Repetition penalty in tokens.</p>
+<p>How many tokens from the last generated token will be considered repeated if they appear in the output.</p>
 <doc-anchor-target id="models">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#models">#</doc-anchor-trigger>
