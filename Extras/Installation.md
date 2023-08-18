@@ -47,11 +47,11 @@ Type/paste the commands below `ONE BY ONE` IN THE `CONDA COMMAND PROMPT WINDOW` 
 
 5. Install the required system packages (this will take time, torch is a ~2GB download)
 
-`conda install pytorch=2.0.0 torchvision=0.15.0 torchaudio=2.0.0 pytorch-cuda=11.7 git -c pytorch -c nvidia`
+`conda install python=3.11 git`
 
 6. Clone the Extras GitHub repo
 
-`git clone https://github.com/Cohee1207/SillyTavern-extras`
+`git clone https://github.com/SillyTavern/SillyTavern-extras`
 
 7. Navigate to your cloned Extras repo
 
@@ -60,7 +60,7 @@ Type/paste the commands below `ONE BY ONE` IN THE `CONDA COMMAND PROMPT WINDOW` 
 8. Install Extras' requirements by using **one** of the following commands (will take time, again):
 
 * `pip install -r requirements.txt` - for minimal features (character expressions, system OS TTS)
-* `pip install -r requirements-complete.txt` - for additinoal features like local/remote Stable Diffusion, ChromaDB, Silero TSS
+* `pip install -r requirements-complete.txt` - for additional features like local/remote Stable Diffusion, ChromaDB, Silero TSS
 
 See the [Common Problems](https://docs.sillytavern.app/extras/installation/common-problems/) page if you get errors at this step!
 
@@ -79,7 +79,7 @@ If this is your first time touching anything Python-related, that should not be 
 1. Install Python 3.10: <https://www.python.org/downloads/release/python-31010/>
 2. Install git: <https://git-scm.com/downloads>
 3. Open a command prompt window and go to a folder in which you have complete access permissions.
-4. Clone the repo: `git clone https://github.com/Cohee1207/SillyTavern-extras`, hit Enter.
+4. Clone the repo: `git clone https://github.com/SillyTavern/SillyTavern-extras`, hit Enter.
 5. After the clone has finished, type `cd SillyTavern-extras`, hit Enter.
 6. Type `python -m pip install -r requirements.txt`
 7. See below 'Running Extras After Install'
