@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.1.0.745702160514">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.1.0.745772183715">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.1.0">
@@ -14,7 +14,7 @@
     <!-- Primary Meta Tags -->
     <title>Advanced Formatting | docs.ST.app</title>
     <meta name="title" content="Advanced Formatting | docs.ST.app">
-    <meta name="description" content="The settings provided in this section allow for more control over the prompt building strategy.">
+    <meta name="description" content="The settings provided in this section allow for more control over the prompt-building strategy.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/usage/core-concepts/advancedformatting/">
@@ -23,21 +23,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/usage/core-concepts/advancedformatting/">
     <meta property="og:title" content="Advanced Formatting | docs.ST.app">
-    <meta property="og:description" content="The settings provided in this section allow for more control over the prompt building strategy.">
+    <meta property="og:description" content="The settings provided in this section allow for more control over the prompt-building strategy.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/usage/core-concepts/advancedformatting/">
     <meta property="twitter:title" content="Advanced Formatting | docs.ST.app">
-    <meta property="twitter:description" content="The settings provided in this section allow for more control over the prompt building strategy.">
+    <meta property="twitter:description" content="The settings provided in this section allow for more control over the prompt-building strategy.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.1.0.745702160514" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.1.0.745772183715" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.1.0.745702160514" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.1.0.745772183715" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.1.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.1.0.745702160514" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.1.0.745772183715" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -204,114 +204,53 @@
         <span>Advanced Formatting</span>
     </h1>
 </doc-anchor-target>
-<p>The settings provided in this section allow for more control over the prompt building strategy. Most specifics of the prompt building depend on whether a Pygmalion model is selected or special formatting is force-enabled. The core differences between the formatting schemas are listed below.</p>
-<doc-anchor-target id="custom-chat-separator">
+<p>The settings provided in this section allow for more control over the prompt-building strategy. Most specifics of the prompt building depend on whether a Pygmalion model is selected or special formatting is force-enabled. The core differences between the formatting schemas are listed below.</p>
+<doc-anchor-target id="context-template">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#custom-chat-separator">#</doc-anchor-trigger>
-        <span>Custom Chat Separator</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#context-template">#</doc-anchor-trigger>
+        <span>Context Template</span>
     </h3>
 </doc-anchor-target>
-<p>Overrides the default separators controlled by &quot;Disable example chats formatting&quot; and &quot;Disable chat start formatting&quot; options (see below).</p>
-<doc-anchor-target id="for-pygmalion-formatting">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#for-pygmalion-formatting">#</doc-anchor-trigger>
-        <span>For <em>Pygmalion</em> formatting</span>
-    </h3>
-</doc-anchor-target>
-<doc-anchor-target id="disable-description-formatting">
+<p><strong>Most of the settings here do not apply to Chat Completions APIs as they are governed by the prompt manager system instead.</strong></p>
+<p>Usually, AI models require to provide the character data to them in some specific way. SillyTavern includes a list of pre-made conversion rules for different models, but you may customize them however you like.</p>
+<doc-anchor-target id="story-string">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#disable-description-formatting">#</doc-anchor-trigger>
-        <span>Disable description formatting</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#story-string">#</doc-anchor-trigger>
+        <span>Story string</span>
     </h4>
 </doc-anchor-target>
-<p><code v-pre>**NAME's Persona:**</code>won&#x27;t be prepended to the content of your character&#x27;s Description box.</p>
-<doc-anchor-target id="disable-scenario-formatting">
+<p>This field is a template for pre-chat character data (known internally as a story string).
+This is the main way to format your character card for text completion and instruct models.</p>
+<p>The template supports Handlebars syntax and any custom text injections or formatting. See the language reference here: <a href="https://handlebarsjs.com/guide/">https://handlebarsjs.com/guide/</a></p>
+<p>We provide the following parameters to the Handlebars evaluator (wrap them into double-curly braces):</p>
+<ol>
+<li><code v-pre>description</code> - character&#x27;s Description</li>
+<li><code v-pre>scenario</code> - character&#x27;s Scenario</li>
+<li><code v-pre>personality</code> - character&#x27;s Personality</li>
+<li><code v-pre>char</code> - character&#x27;s name</li>
+<li><code v-pre>user</code> - selected persona name</li>
+</ol>
+<doc-anchor-target id="example-separator">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#disable-scenario-formatting">#</doc-anchor-trigger>
-        <span>Disable scenario formatting</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-separator">#</doc-anchor-trigger>
+        <span>Example Separator</span>
     </h4>
 </doc-anchor-target>
-<p><code v-pre>**Scenario:**</code>won&#x27;t be prepended to the content of your character&#x27;s Scenario box.</p>
-<doc-anchor-target id="disable-personality-formatting">
+<p>Used as a block header and a separator between the example dialogue blocks. Any instance of <code v-pre>&lt;START&gt;</code> tags in the example dialogues will be replaced with the contents of this field.</p>
+<doc-anchor-target id="chat-start">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#disable-personality-formatting">#</doc-anchor-trigger>
-        <span>Disable personality formatting</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#chat-start">#</doc-anchor-trigger>
+        <span>Chat Start</span>
     </h4>
 </doc-anchor-target>
-<p><code v-pre>**Personality:**</code>won&#x27;t be prepended to the content of your character&#x27;s Personality box.</p>
-<doc-anchor-target id="disable-example-chats-formatting">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#disable-example-chats-formatting">#</doc-anchor-trigger>
-        <span>Disable example chats formatting</span>
-    </h4>
-</doc-anchor-target>
-<p><code v-pre>&lt;START&gt;</code> won&#x27;t be added at the beginning of each example message block.
-<em>(If custom separator is not set)</em></p>
-<doc-anchor-target id="disable-chat-start-formatting">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#disable-chat-start-formatting">#</doc-anchor-trigger>
-        <span>Disable chat start formatting</span>
-    </h4>
-</doc-anchor-target>
-<p><code v-pre>&lt;START&gt;</code> won&#x27;t be added between the character card and the chat log.
-<em>(If custom separator is not set)</em></p>
+<p>Inserted as a separator after the rendered story string and after the example dialogues blocks, but before the first message in context.</p>
 <doc-anchor-target id="always-add-characters-name-to-prompt">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#always-add-characters-name-to-prompt">#</doc-anchor-trigger>
         <span>Always add character&#x27;s name to prompt</span>
     </h4>
 </doc-anchor-target>
-<p>Doesn&#x27;t do anything (Included in Pygmalion formatting).</p>
-<doc-anchor-target id="for-non-pygmalion-formatting">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#for-non-pygmalion-formatting">#</doc-anchor-trigger>
-        <span>For <em>non-Pygmalion</em> formatting</span>
-    </h3>
-</doc-anchor-target>
-<doc-anchor-target id="disable-description-formatting-1">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#disable-description-formatting-1">#</doc-anchor-trigger>
-        <span>Disable description formatting</span>
-    </h4>
-</doc-anchor-target>
-<p>Has no effect.</p>
-<doc-anchor-target id="disable-scenario-formatting-1">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#disable-scenario-formatting-1">#</doc-anchor-trigger>
-        <span>Disable scenario formatting</span>
-    </h4>
-</doc-anchor-target>
-<p><code v-pre>**Circumstances and context of the dialogue:**</code>won&#x27;t be prepended to the content of your character&#x27;s Scenario box.</p>
-<doc-anchor-target id="disable-personality-formatting-1">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#disable-personality-formatting-1">#</doc-anchor-trigger>
-        <span>Disable personality formatting</span>
-    </h4>
-</doc-anchor-target>
-<p><code v-pre>**NAME's personality:**</code>won&#x27;t be prepended to the content of your character&#x27;s Personality box.</p>
-<doc-anchor-target id="disable-example-chats-formatting-1">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#disable-example-chats-formatting-1">#</doc-anchor-trigger>
-        <span>Disable example chats formatting</span>
-    </h4>
-</doc-anchor-target>
-<p><code v-pre>This is how **Character** should talk</code> won&#x27;t be added at the beginning of each example message block.
-<em>(If custom separator is not set)</em></p>
-<doc-anchor-target id="disable-chat-start-formatting-1">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#disable-chat-start-formatting-1">#</doc-anchor-trigger>
-        <span>Disable chat start formatting</span>
-    </h4>
-</doc-anchor-target>
-<p><code v-pre>Then the roleplay chat between **User** and **Character** begins</code> won&#x27;t be added between the character card and the chat log.
-<em>(If custom separator is not set)</em></p>
-<doc-anchor-target id="always-add-characters-name-to-prompt-1">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#always-add-characters-name-to-prompt-1">#</doc-anchor-trigger>
-        <span>Always add character&#x27;s name to prompt</span>
-    </h4>
-</doc-anchor-target>
-<p>Appends character&#x27;s name to the prompt to force the model to complete the message as the character:</p>
+<p>Appends the character&#x27;s name to the prompt to force the model to complete the message as the character:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">** OTHER CONTEXT HERE **
 Character:</code></pre>
@@ -364,7 +303,7 @@ Character:</code></pre>
         <span>Multigen</span>
     </h3>
 </doc-anchor-target>
-<p><em>This feature provides a pseudo-streaming functionality which conflicts with token streaming. When Multigen is enabled and generation API supports streaming, only Multigen streaming will be used.</em></p>
+<p><em>This feature provides a pseudo-streaming functionality that conflicts with token streaming. When Multigen is enabled and generation API supports streaming, only Multigen streaming will be used.</em></p>
 <p>SillyTavern tries to create faster and longer responses by chaining the generation using smaller batches.</p>
 <doc-anchor-target id="default-settings">
     <h4>
@@ -381,8 +320,8 @@ Character:</code></pre>
     </h4>
 </doc-anchor-target>
 <ol>
-<li>Generate the first batch (if amount of generation setting is more than batch length).</li>
-<li>Generate next batch of tokens until one of the stopping conditions is reached.</li>
+<li>Generate the first batch (if the amount of generation setting is more than batch length).</li>
+<li>Generate the next batch of tokens until one of the stopping conditions is reached.</li>
 <li>Append the generated text to the next cycle&#x27;s prompt.</li>
 </ol>
 <doc-anchor-target id="stopping-conditions">
