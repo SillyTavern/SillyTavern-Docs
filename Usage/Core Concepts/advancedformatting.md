@@ -1,66 +1,40 @@
 # Advanced Formatting
 
-The settings provided in this section allow for more control over the prompt building strategy. Most specifics of the prompt building depend on whether a Pygmalion model is selected or special formatting is force-enabled. The core differences between the formatting schemas are listed below.
+The settings provided in this section allow for more control over the prompt-building strategy. Most specifics of the prompt building depend on whether a Pygmalion model is selected or special formatting is force-enabled. The core differences between the formatting schemas are listed below.
 
-### Custom Chat Separator
 
-Overrides the default separators controlled by "Disable example chats formatting" and "Disable chat start formatting" options (see below).
+### Context Template
 
-### For *Pygmalion* formatting
+**Most of the settings here do not apply to Chat Completions APIs as they are governed by the prompt manager system instead.**
 
-#### Disable description formatting
+Usually, AI models require to provide the character data to them in some specific way. SillyTavern includes a list of pre-made conversion rules for different models, but you may customize them however you like.
 
-`**NAME's Persona:**`won't be prepended to the content of your character's Description box.
+#### Story string
 
-#### Disable scenario formatting
+This field is a template for pre-chat character data (known internally as a story string).
+This is the main way to format your character card for text completion and instruct models.
 
-`**Scenario:**`won't be prepended to the content of your character's Scenario box.
+The template supports Handlebars syntax and any custom text injections or formatting. See the language reference here: https://handlebarsjs.com/guide/
 
-#### Disable personality formatting
+We provide the following parameters to the Handlebars evaluator (wrap them into double-curly braces):
 
-`**Personality:**`won't be prepended to the content of your character's Personality box.
+1. `description` - character's Description
+2. `scenario` - character's Scenario
+3. `personality` - character's Personality
+4. `char` - character's name
+5. `user` - selected persona name
 
-#### Disable example chats formatting
+#### Example Separator
 
-`<START>` won't be added at the beginning of each example message block.
-*(If custom separator is not set)*
+Used as a block header and a separator between the example dialogue blocks. Any instance of `<START>` tags in the example dialogues will be replaced with the contents of this field.
 
-#### Disable chat start formatting
+#### Chat Start
 
-`<START>` won't be added between the character card and the chat log.
-*(If custom separator is not set)*
-
-#### Always add character's name to prompt
-
-Doesn't do anything (Included in Pygmalion formatting).
-
-### For *non-Pygmalion* formatting
-
-#### Disable description formatting
-
-Has no effect.
-
-#### Disable scenario formatting
-
-`**Circumstances and context of the dialogue:**`won't be prepended to the content of your character's Scenario box.
-
-#### Disable personality formatting
-
-`**NAME's personality:**`won't be prepended to the content of your character's Personality box.
-
-#### Disable example chats formatting
-
-`This is how **Character** should talk` won't be added at the beginning of each example message block.
-*(If custom separator is not set)*
-
-#### Disable chat start formatting
-
-`Then the roleplay chat between **User** and **Character** begins` won't be added between the character card and the chat log.
-*(If custom separator is not set)*
+Inserted as a separator after the rendered story string and after the example dialogues blocks, but before the first message in context.
 
 #### Always add character's name to prompt
 
-Appends character's name to the prompt to force the model to complete the message as the character:
+Appends the character's name to the prompt to force the model to complete the message as the character:
 
 ```
 ** OTHER CONTEXT HERE **
@@ -108,7 +82,7 @@ You can input negative values for reverse padding, which allows allocating more 
 
 ### Multigen
 
-*This feature provides a pseudo-streaming functionality which conflicts with token streaming. When Multigen is enabled and generation API supports streaming, only Multigen streaming will be used.*
+*This feature provides a pseudo-streaming functionality that conflicts with token streaming. When Multigen is enabled and generation API supports streaming, only Multigen streaming will be used.*
 
 SillyTavern tries to create faster and longer responses by chaining the generation using smaller batches.
 
@@ -120,8 +94,8 @@ Next batches = 30 tokens
 
 #### Algorithm
 
-1. Generate the first batch (if amount of generation setting is more than batch length).
-2. Generate next batch of tokens until one of the stopping conditions is reached.
+1. Generate the first batch (if the amount of generation setting is more than batch length).
+2. Generate the next batch of tokens until one of the stopping conditions is reached.
 3. Append the generated text to the next cycle's prompt.
 
 #### Stopping conditions
