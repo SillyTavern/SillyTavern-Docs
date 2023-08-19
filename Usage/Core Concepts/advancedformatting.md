@@ -1,6 +1,6 @@
 # Advanced Formatting
 
-The settings provided in this section allow for more control over the prompt-building strategy. Most specifics of the prompt building depend on whether a Pygmalion model is selected or special formatting is force-enabled. The core differences between the formatting schemas are listed below.
+The settings provided in this section allow for more control over the prompt-building strategy.
 
 
 ### Context Template
