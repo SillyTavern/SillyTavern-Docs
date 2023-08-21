@@ -2,7 +2,7 @@
 
 Instruct Mode allows you to adjust the prompting for instruction-following models, such as Alpaca, Metharme, WizardLM, etc.
 
-**This is not supported for OpenAI API.**
+**This is not supported for Chat Completions API.**
 
 ### Instruct Mode Settings
 
@@ -20,7 +20,19 @@ Write one reply in internet RP style for \{\{char\}\}. Be verbose and creative.
 
 Provides ready-made presets with prompts and sequences for some well-known instruct models.
 
-*Changing a preset resets your system prompt to default!*
+*Changing a preset resets your system prompt to default! Don't forget to save your preset if you made any changes that you don't want to lose.*
+
+#### Activation Regex
+
+If defined as a valid regular expression, when connected to a model and its name matches this regex, will automatically select this preset.
+
+Instruct mode needs to be enabled prior. Only the first regex match across presets will be selected (evaluated alphabetically). 
+
+#### Default preset (heart icon)
+
+If toggled, connecting to a model will automatically select this preset if no other presets were triggered by the regex match.
+
+Instruct mode needs to be enabled prior. Only one preset can be marked as default.
 
 #### Input Sequence
 
@@ -29,6 +41,10 @@ Text added before the user's input.
 #### Output Sequence
 
 Text added before the character's reply.
+
+#### Last Sequence
+
+Text added to the last line of the prompt. If not defined, the Output Sequence will be used in its place.
 
 #### System Sequence
 
@@ -44,10 +60,14 @@ Text that denotes the end of the reply. Will be trimmed from the output text.
 
 #### Include Names
 
-If enabled, prepend character and user names to chat history logs after inserting the sequences.
+If enabled, prepend characters and user names to chat history logs after inserting the sequences.
 
-*Always enabled for group chats!*
+*Automatically enabled for group chats and messages sent using personas, unless **Force for Groups and Personas** setting is unchecked!*
+
+#### Replace Macro in Sequences
+
+If enabled, known \{\{substitutions\}\} will be replaced if defined in Input or Output sequences.
 
 #### Wrap Sequences with Newline
 
-Each sequence text will be wrapped with newline characters when inserted to the prompt. Required for Alpaca and its derivatives.
+Each sequence text will be wrapped with newline characters when inserted into the prompt. Required for Alpaca and its derivatives.
