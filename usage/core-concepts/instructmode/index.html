@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.1.0.745892255001">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.1.0.745931371098">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.1.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.1.0.745892255001" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.1.0.745931371098" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.1.0.745892255001" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.1.0.745931371098" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.1.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.1.0.745892255001" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.1.0.745931371098" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -218,11 +218,11 @@
         <span>System Prompt</span>
     </h4>
 </doc-anchor-target>
-<p>Added to the beginning of each prompt. Should define the instructions for the model to follow.</p>
+<p>Added to the beginning of each prompt. Should define the instructions for the model to follow. Supports substitutions via any of the supported {{macro}} parameters.</p>
 <p>For example:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">Write one reply in internet RP style for \{\{char\}\}. Be verbose and creative.</code></pre>
-</doc-codeblock></div>
+<blockquote>
+<p>Write one reply in internet RP style for {{char}}. Be verbose and creative.</p>
+</blockquote>
 <doc-anchor-target id="presets">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#presets">#</doc-anchor-trigger>
@@ -230,7 +230,7 @@
     </h4>
 </doc-anchor-target>
 <p>Provides ready-made presets with prompts and sequences for some well-known instruct models.</p>
-<p><em>Changing a preset resets your system prompt to default! Don&#x27;t forget to save your preset if you made any changes that you don&#x27;t want to lose.</em></p>
+<p><em>Changing a preset resets your system prompt to default! Don&#x27;t forget to save your preset if you made any changes you don&#x27;t want to lose.</em></p>
 <doc-anchor-target id="activation-regex">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#activation-regex">#</doc-anchor-trigger>
@@ -238,14 +238,14 @@
     </h4>
 </doc-anchor-target>
 <p>If defined as a valid regular expression, when connected to a model and its name matches this regex, will automatically select this preset.</p>
-<p>Instruct mode needs to be enabled prior. Only the first regex match across presets will be selected (evaluated alphabetically).</p>
+<p>Instruct mode needs to be enabled prior. Only the first regex match across presets will be selected (evaluated in alphabetical order).</p>
 <doc-anchor-target id="default-preset-heart-icon">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#default-preset-heart-icon">#</doc-anchor-trigger>
         <span>Default preset (heart icon)</span>
     </h4>
 </doc-anchor-target>
-<p>If toggled, connecting to a model will automatically select this preset if no other presets were triggered by the regex match.</p>
+<p>If toggled, connecting to an API will automatically select this preset if no other presets were triggered by the regex match.</p>
 <p>Instruct mode needs to be enabled prior. Only one preset can be marked as default.</p>
 <doc-anchor-target id="input-sequence">
     <h4>
@@ -303,7 +303,7 @@
         <span>Replace Macro in Sequences</span>
     </h4>
 </doc-anchor-target>
-<p>If enabled, known {{substitutions}} will be replaced if defined in Input or Output sequences.</p>
+<p>If enabled, known {{macro}} substitutions will be replaced if defined in Input or Output sequences.</p>
 <doc-anchor-target id="wrap-sequences-with-newline">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#wrap-sequences-with-newline">#</doc-anchor-trigger>
