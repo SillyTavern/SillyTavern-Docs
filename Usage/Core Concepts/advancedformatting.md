@@ -21,8 +21,12 @@ We provide the following parameters to the Handlebars evaluator (wrap them into 
 1. `description` - character's Description
 2. `scenario` - character's Scenario
 3. `personality` - character's Personality
-4. `char` - character's name
-5. `user` - selected persona name
+4. `system` - [instruct mode] system prompt OR character's main prompt override (if exists and "Prefer Char. Prompt" is enabled in User Settings)
+5. `persona` - selected persona description
+6. `char` - character's name
+7. `user` - selected persona name
+
+**WARNING*: If some of the above parameters are missing from the story string template, they are not going to be sent in the prompt at all.
 
 #### Example Separator
 
