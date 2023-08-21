@@ -183,7 +183,7 @@ You can change the system prompt that SillyTavern transparently sends to GPT und
 
 You can get new Jailbreak / NSFW prompts from this community-maintained list: <https://rentry.org/GPTJailbreakPrompting>
 
-NOTE: when testing different system prompts, we recommend you use the Create Preset / Update Preset feature below the prompts, instead of modifying the base settings. This will allow you to change prompts easily, and even revert to the default SillyTavern prompts.
+NOTE: When testing different system prompts, we recommend you use the Create Preset / Update Preset feature below the prompts, instead of modifying the base settings. This will allow you to change prompts easily, and even revert to the default SillyTavern prompts.
 
 ## The AI is refusing to take the story in the direction I want
 
@@ -208,7 +208,7 @@ You: *You threaten the bank manager* Open the bank vault, now, or I'll pop a cap
 Now click Regenerate, and the Bank Manager's line will be recreated based on the history so far, which now ends with your edited line above. So it's more likely to continue along those lines:
 
 ```txt
-Bank Manager: Allright, allright, I'll open it! Please don't shoot! *He walks up to the vault and begins entering his unlock code.*
+Bank Manager: Alright, alright, I'll open it! Please don't shoot! *He walks up to the vault and begins entering his unlock code.*
 ```
 
 ## Where can I find the old backgrounds?
@@ -263,6 +263,6 @@ This is mostly only a problem for models like ChatGPT or Claude. The same strate
 
 This should be handled in the `Author's Note` with a combination of phrases like:
 
-* {{char}}'s responses shall only be passive and reactive to {{user}}'s actions.
-* Your next response shall be solely from the POV of {{char}}.
-* You are never allowed to dictate actions of speech for {{user}}
+* \{\{char\}\}'s responses shall only be passive and reactive to \{\{user\}\}'s actions.
+* Your next response shall be solely from the POV of \{\{char\}\}.
+* You are never allowed to dictate actions of speech for \{\{user\}\}
