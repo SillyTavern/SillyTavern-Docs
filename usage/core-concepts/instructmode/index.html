@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.1.0.745891496006">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.1.0.745892255001">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.1.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.1.0.745891496006" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.1.0.745892255001" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.1.0.745891496006" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.1.0.745892255001" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.1.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.1.0.745891496006" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.1.0.745892255001" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -205,7 +205,7 @@
     </h1>
 </doc-anchor-target>
 <p>Instruct Mode allows you to adjust the prompting for instruction-following models, such as Alpaca, Metharme, WizardLM, etc.</p>
-<p><strong>This is not supported for OpenAI API.</strong></p>
+<p><strong>This is not supported for Chat Completions API.</strong></p>
 <doc-anchor-target id="instruct-mode-settings">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#instruct-mode-settings">#</doc-anchor-trigger>
@@ -230,7 +230,23 @@
     </h4>
 </doc-anchor-target>
 <p>Provides ready-made presets with prompts and sequences for some well-known instruct models.</p>
-<p><em>Changing a preset resets your system prompt to default!</em></p>
+<p><em>Changing a preset resets your system prompt to default! Don&#x27;t forget to save your preset if you made any changes that you don&#x27;t want to lose.</em></p>
+<doc-anchor-target id="activation-regex">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#activation-regex">#</doc-anchor-trigger>
+        <span>Activation Regex</span>
+    </h4>
+</doc-anchor-target>
+<p>If defined as a valid regular expression, when connected to a model and its name matches this regex, will automatically select this preset.</p>
+<p>Instruct mode needs to be enabled prior. Only the first regex match across presets will be selected (evaluated alphabetically).</p>
+<doc-anchor-target id="default-preset-heart-icon">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#default-preset-heart-icon">#</doc-anchor-trigger>
+        <span>Default preset (heart icon)</span>
+    </h4>
+</doc-anchor-target>
+<p>If toggled, connecting to a model will automatically select this preset if no other presets were triggered by the regex match.</p>
+<p>Instruct mode needs to be enabled prior. Only one preset can be marked as default.</p>
 <doc-anchor-target id="input-sequence">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#input-sequence">#</doc-anchor-trigger>
@@ -245,6 +261,13 @@
     </h4>
 </doc-anchor-target>
 <p>Text added before the character&#x27;s reply.</p>
+<doc-anchor-target id="last-sequence">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#last-sequence">#</doc-anchor-trigger>
+        <span>Last Sequence</span>
+    </h4>
+</doc-anchor-target>
+<p>Text added to the last line of the prompt. If not defined, the Output Sequence will be used in its place.</p>
 <doc-anchor-target id="system-sequence">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#system-sequence">#</doc-anchor-trigger>
@@ -272,15 +295,22 @@
         <span>Include Names</span>
     </h4>
 </doc-anchor-target>
-<p>If enabled, prepend character and user names to chat history logs after inserting the sequences.</p>
-<p><em>Always enabled for group chats!</em></p>
+<p>If enabled, prepend characters and user names to chat history logs after inserting the sequences.</p>
+<p><em>Automatically enabled for group chats and messages sent using personas, unless <strong>Force for Groups and Personas</strong> setting is unchecked!</em></p>
+<doc-anchor-target id="replace-macro-in-sequences">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#replace-macro-in-sequences">#</doc-anchor-trigger>
+        <span>Replace Macro in Sequences</span>
+    </h4>
+</doc-anchor-target>
+<p>If enabled, known {{substitutions}} will be replaced if defined in Input or Output sequences.</p>
 <doc-anchor-target id="wrap-sequences-with-newline">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#wrap-sequences-with-newline">#</doc-anchor-trigger>
         <span>Wrap Sequences with Newline</span>
     </h4>
 </doc-anchor-target>
-<p>Each sequence text will be wrapped with newline characters when inserted to the prompt. Required for Alpaca and its derivatives.</p>
+<p>Each sequence text will be wrapped with newline characters when inserted into the prompt. Required for Alpaca and its derivatives.</p>
 
                                 
                                 <!-- Required only on API pages -->
