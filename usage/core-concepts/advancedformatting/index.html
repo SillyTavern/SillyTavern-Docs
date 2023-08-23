@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.1.0.745974167311">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.1.0.746141723321">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.1.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.1.0.745974167311" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.1.0.746141723321" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.1.0.745974167311" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.1.0.746141723321" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.1.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.1.0.745974167311" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.1.0.746141723321" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -231,8 +231,10 @@ This is the main way to format your character card for text completion and instr
 <li><code v-pre>persona</code> - selected persona description</li>
 <li><code v-pre>char</code> - character&#x27;s name</li>
 <li><code v-pre>user</code> - selected persona name</li>
+<li><code v-pre>wiBefore</code> or <code v-pre>loreBefore</code> - combined activated World Info entries with Position set to &quot;Before Char Defs&quot;</li>
+<li><code v-pre>wiAfter</code> or <code v-pre>loreAfter</code> - combined activated World Info entries with Position set to &quot;After Char Defs&quot;</li>
 </ol>
-<p>*<em>WARNING</em>: If some of the above parameters are missing from the story string template, they are not going to be sent in the prompt at all.</p>
+<p><strong>WARNING</strong>: If some of the above parameters are missing from the story string template, they are not going to be sent in the prompt at all.</p>
 <doc-anchor-target id="example-separator">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#example-separator">#</doc-anchor-trigger>
