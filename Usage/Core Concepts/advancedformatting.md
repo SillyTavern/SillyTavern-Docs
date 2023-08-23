@@ -25,8 +25,10 @@ We provide the following parameters to the Handlebars evaluator (wrap them into 
 5. `persona` - selected persona description
 6. `char` - character's name
 7. `user` - selected persona name
+8. `wiBefore` or `loreBefore` - combined activated World Info entries with Position set to "Before Char Defs"
+9. `wiAfter` or `loreAfter` - combined activated World Info entries with Position set to "After Char Defs"
 
-**WARNING*: If some of the above parameters are missing from the story string template, they are not going to be sent in the prompt at all.
+**WARNING**: If some of the above parameters are missing from the story string template, they are not going to be sent in the prompt at all.
 
 #### Example Separator
 
