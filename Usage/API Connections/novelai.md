@@ -21,6 +21,17 @@ To get your NovelAI API key, follow these steps:
 The files with the settings are here (SillyTavern\public\NovelAI Settings).
 You can also manually add your own settings files.
 
+#### Response Length
+
+How much text you want to generate per message. Note that NovelAI has a limit of 150 tokens per response. 
+
+#### Context Size
+
+How many tokens of the chat are kept in the context at any given time. How large the maximum context size you can use depends on the model and your subscription tier:
+- Kayra (tablet) - 3072 tokens
+- Kayra (scroll) - 6144 tokens
+- Kayra (opus) and Clio (all tiers) - 8192 tokens
+
 #### Temperature
 
 * Lower value - the answers are more logical, but less creative.
@@ -38,4 +49,8 @@ How many tokens from the last generated token will be considered repeated if the
 
 ### Models
 
-Select whichever model you like, but you will only be able to get responses from models available to your subscription tier.
+Use Kayra.
+
+Clio is not a bad model, but not as powerful as Kayra and Clio's speed advantage over Kayra is insignificant. On tablet and scroll tier, Clio has a larger context size than Kayra, but trading that off against better coherence/prose quality from Kayra is rarely worth it. 
+
+Euterpe and Krake are available, but NovelAI considers them legacy models and doesn't recommend their use anymore. 
