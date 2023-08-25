@@ -6,10 +6,10 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.1.0.746141723321">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.2.0.746263064089">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.1.0">
+    <meta name="generator" content="Retype 3.2.0">
 
     <!-- Primary Meta Tags -->
     <title>NovelAI | docs.ST.app</title>
@@ -35,11 +35,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.1.0.746141723321" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.2.0.746263064089" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.1.0.746141723321" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.1.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.1.0.746141723321" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.2.0.746263064089" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.2.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.2.0.746263064089" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -239,6 +239,15 @@
 </p>
 </li>
 </ol>
+<doc-anchor-target id="models">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#models">#</doc-anchor-trigger>
+        <span>Models</span>
+    </h3>
+</doc-anchor-target>
+<p>You should use Kayra.</p>
+<p>Clio is not a bad model, but not as powerful as Kayra. Clio&#x27;s speed advantage is insignificant. On NovelAI&#x27;s tablet and scroll tiers, Clio does have a larger context size than Kayra, but trading that off against better coherence/prose quality from Kayra is unlikely to be worth it.</p>
+<p>Krake and Euterpe aren&#x27;t recommended - NovelAI even refers to them as legacy models.</p>
 <doc-anchor-target id="settings">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#settings">#</doc-anchor-trigger>
@@ -247,6 +256,25 @@
 </doc-anchor-target>
 <p>The files with the settings are here (SillyTavern\public\NovelAI Settings).
 You can also manually add your own settings files.</p>
+<doc-anchor-target id="response-length">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#response-length">#</doc-anchor-trigger>
+        <span>Response Length</span>
+    </h4>
+</doc-anchor-target>
+<p>How much text you want to generate per message. Note that NovelAI has a limit of 150 tokens per response.</p>
+<doc-anchor-target id="context-size">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#context-size">#</doc-anchor-trigger>
+        <span>Context Size</span>
+    </h4>
+</doc-anchor-target>
+<p>How many tokens of the chat are kept in the context at any given time. How large the maximum context size you can use depends on the model and your subscription tier:</p>
+<ul>
+<li>Kayra (tablet) - 3072 tokens</li>
+<li>Kayra (scroll) - 6144 tokens</li>
+<li>Kayra (opus) and Clio (all tiers) - 8192 tokens</li>
+</ul>
 <doc-anchor-target id="temperature">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#temperature">#</doc-anchor-trigger>
@@ -273,13 +301,27 @@ It is not recommended to increase this parameter too much as it may break the ou
     </h4>
 </doc-anchor-target>
 <p>How many tokens from the last generated token will be considered repeated if they appear in the output.</p>
-<doc-anchor-target id="models">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#models">#</doc-anchor-trigger>
-        <span>Models</span>
-    </h3>
+<doc-anchor-target id="preamble">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#preamble">#</doc-anchor-trigger>
+        <span>Preamble</span>
+    </h4>
 </doc-anchor-target>
-<p>Select whichever model you like, but you will only be able to get responses from models available to your subscription tier.</p>
+<p>Text that is inserted right above the chat to modify the writing style. The recommended format is a list of short tags, like &quot;[ Style: chat, detailed, sensory ]&quot;.</p>
+<doc-anchor-target id="top-p">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#top-p">#</doc-anchor-trigger>
+        <span>Top P</span>
+    </h4>
+</doc-anchor-target>
+<p>Limits the token pool to however many tokens it takes for their probabilities to add up to p. A lower number is more consistent, but less creative.</p>
+<doc-anchor-target id="top-k">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#top-k">#</doc-anchor-trigger>
+        <span>Top K</span>
+    </h4>
+</doc-anchor-target>
+<p>Limits the token pool to the k most likely tokens. A lower number is more consistent, but less creative.</p>
 
                                 
                                 <!-- Required only on API pages -->
