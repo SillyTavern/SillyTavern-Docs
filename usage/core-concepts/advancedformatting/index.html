@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.2.0.746263064089">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.2.0.746310916296">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.2.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.2.0.746263064089" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.2.0.746310916296" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.2.0.746263064089" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.2.0.746310916296" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.2.0.746263064089" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.2.0.746310916296" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -302,6 +302,20 @@ Character:</code></pre>
 <p>Since the results of tokenization can be inaccurate on context sizes close to the model-defined maximum, some parts of the prompt may be trimmed or dropped, which may negatively affect the coherence of character definitions.</p>
 <p>To prevent this, SillyTavern allocates a portion of the context size as padding to avoid adding more chat items than the model can accommodate. If you find that some part of the prompt is trimmed even with the most-matching tokenizer selected, adjust the padding so the description is not truncated.</p>
 <p>You can input negative values for reverse padding, which allows allocating more than the set maximum amount of tokens.</p>
+<doc-anchor-target id="custom-stopping-strings">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#custom-stopping-strings">#</doc-anchor-trigger>
+        <span>Custom Stopping Strings</span>
+    </h2>
+</doc-anchor-target>
+<p>Accepts a JSON-serialized array of stopping strings. Example: <code v-pre>[&quot;\n&quot;, &quot;\nUser:&quot;, &quot;\nChar:&quot;]</code>. If you&#x27;re unsure about the formatting, use an <a href="https://jsonlint.com/">online JSON validator</a>.</p>
+<p>Supported APIs:</p>
+<ol>
+<li>KoboldAI (versions 1.2.2 and higher)</li>
+<li>oobabooga&#x27;s Text Generation WebUI</li>
+<li>NovelAI</li>
+<li>OpenAI, including via OpenRouter (max 4 strings)</li>
+</ol>
 <doc-anchor-target id="multigen">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#multigen">#</doc-anchor-trigger>
@@ -337,7 +351,7 @@ Character:</code></pre>
 </doc-anchor-target>
 <ol>
 <li>Generated enough text.</li>
-<li>Character starts speaking for You.</li>
+<li>The character starts speaking for You.</li>
 <li>&lt;|endoftext|&gt; token reached.</li>
 <li>No text generated.</li>
 <li>Stop sequence generated. (Instruct mode only)</li>
