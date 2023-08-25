@@ -86,6 +86,17 @@ To prevent this, SillyTavern allocates a portion of the context size as padding 
 
 You can input negative values for reverse padding, which allows allocating more than the set maximum amount of tokens.
 
+## Custom Stopping Strings
+
+Accepts a JSON-serialized array of stopping strings. Example: `["\n", "\nUser:", "\nChar:"]`. If you're unsure about the formatting, use an [online JSON validator](https://jsonlint.com/).
+
+Supported APIs:
+
+1. KoboldAI (versions 1.2.2 and higher)
+2. oobabooga's Text Generation WebUI
+3. NovelAI
+4. OpenAI, including via OpenRouter (max 4 strings)
+
 ### Multigen
 
 *This feature provides a pseudo-streaming functionality that conflicts with token streaming. When Multigen is enabled and generation API supports streaming, only Multigen streaming will be used.*
@@ -107,7 +118,7 @@ Next batches = 30 tokens
 #### Stopping conditions
 
 1. Generated enough text.
-2. Character starts speaking for You.
+2. The character starts speaking for You.
 3. &lt;|endoftext|&gt; token reached.
 4. No text generated.
 5. Stop sequence generated. (Instruct mode only)
