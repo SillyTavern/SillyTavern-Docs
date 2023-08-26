@@ -24,6 +24,17 @@ python server.py --enable-modules=rvc
 8. Select TTS Provider: **Coqui** or your other preferred provider, but not **System** - RVC doesn't work with it. **ElevenLabs** is not recommended since it has its own voice cloning capabilities
 9. Enable **Auto Generation**
 
+### Expression-based dynamic voice
+1. In the folder of your RVC model have a different .pth/.index file for each classify expression:
+- basic expressions: anger, fear, joy, love, sadness, surprise
+- can handle more depending on the classify model used
+- If no pth file exist for the message expression the first pth file found will be used
+2. Enable both rvc and classify module
+```yaml
+python server.py --enable-modules=rvc,classify
+```
+3. The rest is same as using RVC module alone (see above).
+
 ## Train your own RVC model
 
 ### RVC Easy Menu by Deffcolony (only for Windows).
