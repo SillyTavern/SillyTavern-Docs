@@ -26,7 +26,12 @@ python server.py --enable-modules=rvc
 
 ### Expression-based dynamic voice
 1. In the folder of your RVC model have a different .pth/.index file for each classify expression:
-- basic expressions: anger, fear, joy, love, sadness, surprise
+- basic expressions are anger, fear, joy, love, sadness, surprise, in the voice folder you would have:
+    - anger.pth
+    - anger.index
+    - fear.pth
+    - fear.index
+    - etc
 - can handle more depending on the classify model used
 - If no pth file exist for the message expression the first pth file found will be used
 2. Enable both rvc and classify module
