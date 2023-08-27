@@ -6,15 +6,15 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.2.0.746310916296">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.2.0.746489306597">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.2.0">
 
     <!-- Primary Meta Tags -->
-    <title>RVC | docs.ST.app</title>
-    <meta name="title" content="RVC | docs.ST.app">
-    <meta name="description" content="RVC stands for Realtime Voice Cloning. This technique allows transferring voice features from one audio clip to another, essentially making it speak...">
+    <title>Realtime Voice Cloning (RVC) Tutorial | docs.ST.app</title>
+    <meta name="title" content="Realtime Voice Cloning (RVC) Tutorial | docs.ST.app">
+    <meta name="description" content="This guide will walk you through using RVC, a technique that allows transferring voice features from one audio clip to another, enabling voices to...">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/extras/extensions/rvc/">
@@ -22,23 +22,23 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/extras/extensions/rvc/">
-    <meta property="og:title" content="RVC | docs.ST.app">
-    <meta property="og:description" content="RVC stands for Realtime Voice Cloning. This technique allows transferring voice features from one audio clip to another, essentially making it speak...">
+    <meta property="og:title" content="Realtime Voice Cloning (RVC) Tutorial | docs.ST.app">
+    <meta property="og:description" content="This guide will walk you through using RVC, a technique that allows transferring voice features from one audio clip to another, enabling voices to...">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/extras/extensions/rvc/">
-    <meta property="twitter:title" content="RVC | docs.ST.app">
-    <meta property="twitter:description" content="RVC stands for Realtime Voice Cloning. This technique allows transferring voice features from one audio clip to another, essentially making it speak...">
+    <meta property="twitter:title" content="Realtime Voice Cloning (RVC) Tutorial | docs.ST.app">
+    <meta property="twitter:description" content="This guide will walk you through using RVC, a technique that allows transferring voice features from one audio clip to another, enabling voices to...">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.2.0.746310916296" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.2.0.746489306597" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.2.0.746310916296" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.2.0.746489306597" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.2.0.746310916296" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.2.0.746310916296" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.2.0.746489306597" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.2.0.746489306597" defer></script>
 
     <Style>
         a {
@@ -199,89 +199,194 @@
                                 <div id="docs-sidebar-right-toggle"></div>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="rvc" class="break-words">
+<doc-anchor-target id="realtime-voice-cloning-rvc-tutorial" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#rvc">#</doc-anchor-trigger>
-        <span>RVC</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#realtime-voice-cloning-rvc-tutorial">#</doc-anchor-trigger>
+        <span>Realtime Voice Cloning (RVC) Tutorial</span>
     </h1>
 </doc-anchor-target>
-<p>RVC stands for Realtime Voice Cloning. This technique allows transferring voice features from one audio clip to another, essentially making it speak in a different voice.</p>
-<p>Have you ever seen popular &quot;Presidents Play X&quot; videos? Yes, that was RVC too. You can make your SillyTavern characters speak any voice (anime/movie/your own) using the RVC Extra module.</p>
+<p>This guide will walk you through using RVC, a technique that allows transferring voice features from one audio clip to another, enabling voices to speak in different tones and styles.</p>
+<p>Ever enjoyed those famous &quot;Presidents Play X&quot; videos? They were created using RVC. With the RVC Extra module, you can make your SillyTavern characters speak in any voice you desire, be it anime, movie, or even your own unique voice.</p>
 <doc-anchor-target id="rvc-setup">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#rvc-setup">#</doc-anchor-trigger>
         <span>RVC Setup</span>
     </h2>
 </doc-anchor-target>
-<p>PREREQUISITES:</p>
+<doc-anchor-target id="prerequisites">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#prerequisites">#</doc-anchor-trigger>
+        <span>Prerequisites</span>
+    </h3>
+</doc-anchor-target>
+<p>Before you begin, ensure you&#x27;ve met the following prerequisites:</p>
 <ul>
-<li><code v-pre>sillytavern-extras</code>: Switch to the <code v-pre>neo</code> branch</li>
-<li><code v-pre>sillytavern</code>: Switch to the <code v-pre>staging</code> branch</li>
+<li>Switch to the <code v-pre>neo</code> branch in <code v-pre>sillytavern-extras</code>.</li>
+<li>Switch to the <code v-pre>staging</code> branch in <code v-pre>sillytavern</code>.</li>
 </ul>
+<doc-anchor-target id="step-by-step-setup">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-by-step-setup">#</doc-anchor-trigger>
+        <span>Step-by-Step Setup</span>
+    </h3>
+</doc-anchor-target>
 <ol>
-<li>In a file browser navigate to <strong>\SillyTavern-extras\data\models\rvc</strong>, create a subfolder and put <strong>.pth</strong> and <strong>.index</strong> into the created folder</li>
-<li>Install requirements with: <code v-pre>pip install -r requirements-rvc.txt</code></li>
-<li>Run SillyTavern-extras with an RVC module enabled (add other models and parameters if needed):</li>
-</ol>
+<li><p><strong>Prepare RVC Model Files</strong>:</p>
+<ul>
+<li>In a file browser, Navigate to: <code v-pre>\SillyTavern-extras\data\models\rvc</code></li>
+<li>Create a subfolder and place the <code v-pre>.pth</code> and <code v-pre>.index</code> files into it.</li>
+</ul>
+</li>
+<li><p><strong>Install Requirements</strong>:</p>
+<ul>
+<li>Install the necessary requirements using the command: <code v-pre>pip install -r requirements-rvc.txt</code>.</li>
+</ul>
+</li>
+<li><p><strong>Run SillyTavern-Extras</strong>:</p>
+<ul>
+<li>Launch SillyTavern-extras with the RVC module enabled:
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-yaml"><code v-pre class="language-yaml">python server.py --enable-modules=rvc</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">python server.py --enable-modules=rvc</code></pre>
 </doc-codeblock></div>
-<ol start="4">
-<li>In SillyTavern, go to <strong>Extensions --&gt; RVC</strong> and enable it</li>
-<li>Setup a Voice map for RVC: read the instructions for TTS above, but instead of TTS voices, use RVC model folder names</li>
-<li>Select pitch extraction: <strong>rmvpe</strong></li>
-<li>Go to <strong>Extensions --&gt; TTS</strong> and enable it</li>
-<li>Select TTS Provider: <strong>Coqui</strong> or your other preferred provider, but not <strong>System</strong> - RVC doesn&#x27;t work with it. <strong>ElevenLabs</strong> is not recommended since it has its own voice cloning capabilities</li>
-<li>Enable <strong>Auto Generation</strong></li>
+</li>
+</ul>
+</li>
+<li><p><strong>Configure RVC in SillyTavern</strong>:</p>
+<ul>
+<li>In SillyTavern, navigate to <strong>Extensions</strong> &gt; <strong>RVC</strong> and enable it.</li>
+</ul>
+</li>
+<li><p><strong>Set Up Voice Map</strong>:</p>
+<ul>
+<li>Create a Voice map for RVC. Follow the TTS instructions above, but use RVC model folder names.</li>
+</ul>
+</li>
+<li><p><strong>Select Pitch Extraction</strong>:</p>
+<ul>
+<li>Choose &quot;rmvpe&quot; as the pitch extraction method.</li>
+<li>If you have trouble with &quot;rmvpe&quot; try other methods.</li>
+</ul>
+</li>
+<li><p><strong>Enable TTS</strong>:</p>
+<ul>
+<li>Navigate to <strong>Extensions</strong> &gt; <strong>TTS</strong> and enable it.</li>
+<li>Choose a TTS Provider (e.g., <strong>Coqui</strong>) – not <strong>System</strong> as RVC doesn&#x27;t work with it. Avoid using <strong>ElevenLabs</strong> with RVC.</li>
+</ul>
+</li>
+<li><p><strong>Enable Auto Generation</strong>:</p>
+<ul>
+<li>Enable <strong>Auto Generation</strong> in TTS settings.</li>
+</ul>
+</li>
+</ol>
+<doc-anchor-target id="expression-based-dynamic-voice">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#expression-based-dynamic-voice">#</doc-anchor-trigger>
+        <span>Expression-Based Dynamic Voice</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li><p><strong>Configure RVC Models</strong>:</p>
+<ul>
+<li>In your RVC model folder, have separate <code v-pre>.pth</code> and <code v-pre>.index</code> files for each classified expression (e.g., anger, fear, joy, love, sadness, surprise).</li>
+</ul>
+</li>
+<li><p><strong>Enable Modules</strong>:</p>
+<ul>
+<li>Enable both RVC and classify modules:
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">python server.py --enable-modules=rvc,classify</code></pre>
+</doc-codeblock></div>
+</li>
+</ul>
+</li>
+<li><p><strong>Use RVC Module</strong>:</p>
+<ul>
+<li>The remaining setup is similar to using the RVC module alone (as explained above).</li>
+</ul>
+</li>
 </ol>
 <doc-anchor-target id="train-your-own-rvc-model">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#train-your-own-rvc-model">#</doc-anchor-trigger>
-        <span>Train your own RVC model</span>
+        <span>Train Your Own RVC Model</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="rvc-easy-menu-by-deffcolony-only-for-windows">
+<doc-anchor-target id="using-rvc-easy-menu-by-deffcolony-windows-only">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#rvc-easy-menu-by-deffcolony-only-for-windows">#</doc-anchor-trigger>
-        <span>RVC Easy Menu by Deffcolony (only for Windows).</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#using-rvc-easy-menu-by-deffcolony-windows-only">#</doc-anchor-trigger>
+        <span>Using RVC Easy Menu by Deffcolony (Windows Only)</span>
     </h3>
 </doc-anchor-target>
 <p>Automatically install and launch Mangio-RVC: <a href="https://github.com/deffcolony/rvc-easy-menu">https://github.com/deffcolony/rvc-easy-menu</a></p>
 <ol>
-<li>Choose a location where you want to git clone the repo because RVC will install in the same location where you launch the script:</li>
-</ol>
+<li><p><strong>Clone Repository</strong>:</p>
+<ul>
+<li>Clone the repository to your desired location:
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">git clone https://github.com/deffcolony/rvc-easy-menu.git</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">git clone https://github.com/deffcolony/rvc-easy-menu.git</code></pre>
 </doc-codeblock></div>
-<ol start="3">
-<li>Open RVC-Launcher.bat</li>
-<li>Choose 1 since you want to install RVC.</li>
-<li>When 7-zip pops up just, click install because it&#x27;s a requirement for the 7z package that will get extracted automatically.</li>
-<li>After installation when the menu returns choose 2 to open WebUI for Voice Training.</li>
+</li>
+</ul>
+</li>
+<li><p><strong>Launch RVC-Launcher.bat</strong>:</p>
+<ul>
+<li>Open the <code v-pre>RVC-Launcher.bat</code> file.</li>
+<li>Choose option 1 to install RVC.</li>
+</ul>
+</li>
+<li><p><strong>Complete Installation</strong>:</p>
+<ul>
+<li>When prompted, install required packages and dependencies.</li>
+</ul>
+</li>
+<li><p><strong>Open WebUI for Voice Training</strong>:</p>
+<ul>
+<li>After installation, choose option 2 to open the WebUI for voice training.</li>
+</ul>
+</li>
 </ol>
-<doc-anchor-target id="mangio-rvc---train-a-voice-model">
+<doc-anchor-target id="mangio-rvc-training-a-voice-model">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#mangio-rvc---train-a-voice-model">#</doc-anchor-trigger>
-        <span>Mangio-RVC - Train a voice model</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mangio-rvc-training-a-voice-model">#</doc-anchor-trigger>
+        <span>Mangio-RVC: Training a Voice Model</span>
     </h3>
 </doc-anchor-target>
-<p>Dataset preparation:</p>
+<p><strong>Dataset Preparation</strong>:</p>
 <ol>
-<li>Put the voice you want to train in the <code v-pre>datasets</code> folder.</li>
-<li>Make sure there is NO BACKGROUND NOISE in the audio file; only raw voice!</li>
-<li>The output quality will be better the longer the audio.</li>
+<li><strong>Prepare Audio</strong>:
+<ul>
+<li>Place the audio you want to train in the <code v-pre>datasets</code> folder.</li>
+<li>Ensure the audio is free of background noise – only raw voice is needed.</li>
+<li>Longer audio makes a better output quality.</li>
+</ul>
+</li>
 </ol>
-<p>In the WebUI:</p>
+<p><strong>WebUI Training</strong>:</p>
 <ol>
-<li>Click on the training tab</li>
-<li>Enter the experiment name, for example, <code v-pre>my-epic-voice-model</code></li>
-<li>Set version to v2</li>
-<li>Click on &quot;Process data&quot;</li>
-<li>Click on &quot;Feature extraction&quot;</li>
-<li>Set &quot;Save frequency&quot; to 50</li>
-<li>Set &quot;Total training epochs&quot; to 300</li>
-<li>Click on &quot;Train feature index&quot;</li>
-<li>Click on &quot;Train model&quot;</li>
+<li><p><strong>Access Training Tab</strong>:</p>
+<ul>
+<li>Click on the training tab in the WebUI.</li>
+</ul>
+</li>
+<li><p><strong>Configure Experiment</strong>:</p>
+<ul>
+<li>Enter an experiment name (e.g., <code v-pre>my-epic-voice-model</code>).</li>
+<li>Set version to v2.</li>
+</ul>
+</li>
+<li><p><strong>Process Data and Extract Features</strong>:</p>
+<ul>
+<li>Click &quot;Process data&quot; and &quot;Feature extraction&quot;.</li>
+<li>Set &quot;Save frequency&quot; to 50.</li>
+</ul>
+</li>
+<li><p><strong>Training Parameters</strong>:</p>
+<ul>
+<li>Set &quot;Total training epochs&quot; to 300.</li>
+<li>Click &quot;Train feature index&quot; and &quot;Train model&quot;.</li>
+</ul>
+</li>
 </ol>
 
                                 
@@ -355,6 +460,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "RVC", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Realtime Voice Cloning (RVC) Tutorial", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false }</script>
 </body>
 </html>
