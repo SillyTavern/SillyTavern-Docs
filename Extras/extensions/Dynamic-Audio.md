@@ -1,58 +1,69 @@
 # Dynamic Audio
 
-To use officially suported assets go into 
+This guide will walk you through setting up and customizing dynamic audio assets for your SillyTavern experience.
+
+## Prerequisites
+
+Before you begin, ensure you've met the following prerequisites:
+
+- Make sure you're on the `staging` branch of `sillytavern`.
 
 ## Dynamic Audio Setup (Browser)
 
-PREREQUISITES:
+1. **Connect to the Assets Repository**:
+   - Launch SillyTavern and navigate to **Extensions** > **Assets**.
+   - Click on the "Connect" button to establish a connection to the official assets repository.
+   - Download the desired audio assets, such as background music (BGM) or ambient sounds, that correspond to the backgrounds you intend to use.
 
-- `sillytavern`: Switch to the `staging` branch
-1. In SillyTavern, go to **Extensions --> Assets** and connect to the official assets repository by clicking on the connect button.
-2. Click to download the desired audio assets like BGM or ambients corresponding to the background you want to use.
-3. In SillyTavern, go to **Extensions --> Dynamic Audio** enable the extension and unmute the BGM and ambient, set the volume as you see fit.
-4. (optional) You can change the cooldown timer (in seconds) between bgm update.
-    - Increase it if you feel that bgm change to much in group chat or when using character custom bgm with emotion detection.
+2. **Enable Dynamic Audio Extension**:
+   - In SillyTavern, go to **Extensions** > **Dynamic Audio**.
+   - Enable the extension and adjust the volume of BGM and ambient sounds to your preference.
+   - *(Optional)* Adjust the cooldown timer (in seconds) between BGM updates. Increase it if you find the BGM changes too frequently in group chats or when using character-specific BGM with emotion detection.
 
-## Import music for character
+## Importing Music for Characters
 
-1. Go to the characters folder and select your character:
-    - example: \SillyTavern\public\characters\Seraphina
-2. Make a folder called bgm
-3. Inside the bgm folder you can import your music for emotions (It does support more audio extensions like .ogg .wav)
-    - anger_0.mp3
-    - fear_0.mp3
-    - joy_0.mp3
-    - love_0.mp3
-    - sad_0.mp3
-    - surprise_0.mp3
-    - neutral_0.mp3
+To set up custom music for your characters' emotions, follow these steps:
 
-4. You can import more music but count up the numbers like:
-    - neutral_1.mp3
-    - neutral_2.mp3
-    - neutral_3.mp3
+1. **Navigate to Character Folder**:
+   - Go to the characters folder, e.g., `\SillyTavern\public\characters\Seraphina`.
 
-A random neutral will play as default when no emotion is detected. Emotion are detected the same way as for updating sprites see https://docs.sillytavern.app/extras/extensions/expression-images/
+2. **Create BGM Folder**:
+   - Inside the character folder, create a subfolder named `bgm`.
 
-## Change default bgm music
-When the character has no custom bgm in its folder you will hear a default music as fallback. You can change this:
+3. **Import Emotion Music**:
+   - Within the `bgm` folder, import the music files for each emotion. Supported audio extensions include `.mp3`, `.ogg`, and `.wav`.
+   - Naming convention: `[emotion]_[number].mp3`, e.g., `anger_0.mp3`, `joy_0.mp3`.
 
-Go to the following folder:
+4. **Multiple Tracks for Emotions**:
+   - You can import multiple tracks for the same emotion by incrementing the number, e.g., `neutral_1.mp3`, `neutral_2.mp3`.
 
-\SillyTavern\public\assets\bgm
+5. **Default Music Selection**:
+   - When no emotion is detected, a random neutral track will play as the default. Emotions are detected similarly to updating sprites; refer to the [expression images documentation](https://docs.sillytavern.app/extras/extensions/expression-images/) for details.
 
-You will see the official audio assets you downloaded using the assets extension.
-You can replace or add any other music you want (Supports .mp3 .ogg .wav).
-One of them will play randomly when there is no bgm found for the current character speaker (solo or group chat).
+## Changing Default BGM Music
 
-## Change ambient
-Go to the following folder:
+If a character doesn't have custom BGM in their folder, a default track will play. Here's how you can change it:
 
-\SillyTavern\public\assets\ambient
+1. **Navigate to BGM Folder**:
+   - Go to the following folder: `\SillyTavern\public\assets\bgm`.
 
-The ambient audio will play when a background name correspond to the audio file name with spaces replaced by "-" for example:
+2. **Replace/Add Music**:
+   - Replace or add music files (`.mp3`, `.ogg`, `.wav`) to this folder.
+   - These are the official audio assets downloaded using the assets extension.
+   - One of these tracks will play randomly when no character-specific BGM is found (solo or group chat).
 
-- "bedroom-clean.mp3" is for "bedroom clean.jpg" background
-- "cityscape-medieval-market.mp3" is for "cityscape medieval market.jpg" background
+## Changing Ambient Sounds
 
-You can add your own ambient for any custom or existing background by following this patern.
+Ambient sounds add depth to your scenes. Here's how you can customize them:
+
+1. **Navigate to Ambient Folder**:
+   - Go to the following folder: `\SillyTavern\public\assets\ambient`.
+
+2. **File Naming Convention**:
+   - Ambient audio filenames correspond to background image filenames, replacing spaces with dashes.
+   - Example: `"bedroom-clean.mp3"` corresponds to the "bedroom clean.jpg" background.
+
+3. **Custom Ambients**:
+   - You can add your own ambient sounds for custom or existing backgrounds by following the same naming pattern.
+
+Thank you for following this guide! Your SillyTavern experience is now enriched with dynamic audio.
