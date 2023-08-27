@@ -1,61 +1,70 @@
 # Speech Recognition
 
-Speech recognition transcribe your voice into text.
+This guide will walk you through setting up speech recognition to transcribe your voice into text within SillyTavern.
+
+## Prerequisites
+
+Before you begin, ensure you've met the following prerequisites:
+
+- Make sure you're on the `staging` branch of `sillytavern`.
 
 ## Speech Recognition Setup (Browser)
 
-PREREQUISITES:
+1. **Prepare Model Files**:
+   - In a file browser, navigate to `\SillyTavern-extras\data\models\rvc`.
+   - Create a subfolder and place the `.pth` and `.index` files into the created folder.
 
-- `sillytavern`: Switch to the `staging` branch
+2. **Configure SillyTavern**:
+   - Launch SillyTavern and go to **Extensions** > **Speech Recognition**.
+   - Select "Browser" from the dropdown options.
+   - If your browser doesn't support voice recognition, an error popup will appear.
 
-1. In a file browser navigate to **\SillyTavern-extras\data\models\rvc**, create a subfolder and put **.pth** and **.index** into the created folder.
-2. In SillyTavern, go to **Extensions --> Speech Recognition** and select "Browser" from the drop down options.
-- If your browser do not support voice recognition you will see an error popup, see other method below in this case.
-3. Select the "Message Mode" you want from:
-- Append: your message will be appended to the current user message text area.
-- Replace: your message will replace the current user message in the text area.
-- Auto send: your message will automatically be sent once end of talk is detected.
-4. (optional) Setup phrases mapping, can be used as vocal shortcut.
-- by adding "command delete = /del2" for example you can have the "/del2" command replace your voice message whenever "command delete" is detected in your voice message.
-- Can be usefull when combine with auto send mode for full voice control.
-- Need to be enabled by click the check box "enable messages mapping".
-5. Choose the language you want to speak (not every browser handle every language, try and see).
-6. To start recording click on the mic button on the right of the message area next to send button, click again to stop recording (it may stop on itself if it detect no more voice).
+3. **Select Message Mode**:
+   - Choose the "Message Mode" you want:
+     - **Append**: Your message will be appended to the current user message text area.
+     - **Replace**: Your message will replace the current user message in the text area.
+     - **Auto send**: Your message will automatically be sent once the end of speech is detected.
+
+4. **Enable Message Mapping** *(Optional)*:
+   - Setup phrases mapping for vocal shortcuts.
+   - For instance, by adding "command delete = /del2", the "/del2" command will replace your voice message when "command delete" is detected.
+   - Useful when combined with auto send mode for full voice control. Enable this by checking "Enable messages mapping".
+
+5. **Select Language**:
+   - Choose the language you want to speak (Note: not every browser supports all languages).
+
+6. **Recording**:
+   - To start recording, click the microphone button to the right of the message area next to the send button. Click again to stop recording. Recording may stop automatically if no voice is detected.
 
 ## Speech Recognition Setup (Whisper/Vosk)
 
-PREREQUISITES:
+1. **Enable Provider**:
+   - Switch to the `neo` branch in `sillytavern-extras`.
+   - Enable the desired speech recognition provider on the extras server using the following command:
+     ```shell
+     python server.py --enable-modules=whisper-stt
+     ```
+     or
+     ```shell
+     python server.py --enable-modules=vosk-stt
+     ```
 
-- `sillytavern-extras`: Switch to the `neo` branch
-- `sillytavern`: Switch to the `staging` branch
-
-1. Enable the desired speech recognition provider on extras server.
-```yaml
-python server.py --enable-modules=whisper-stt
-```
-```yaml
-python server.py --enable-modules=vosk-stt
-```
-2. In ST the settings are the same as for the "Browser" provider see above (beside the language option).
-- Power user tips: you can use a custom model to be used by adding the option "--stt-vosk-model-path" or "--stt-whisper-model-path" with the path to the model.
-Example:
-```yaml
-python server.py --enable-modules=whisper-stt --stt-whisper-model-path=path/to/whispermodel
-```
+2. **Configure SillyTavern**:
+   - In SillyTavern, the settings are similar to the "Browser" provider setup (except for language).
+   - You can also use a custom model by adding the option `--stt-vosk-model-path` or `--stt-whisper-model-path` with the path to the model.
 
 ## Speech Recognition Setup (Streaming)
 
-PREREQUISITES:
+1. **Enable Provider**:
+   - Switch to the `neo` branch in `sillytavern-extras`.
+   - Enable the streaming speech recognition module with the following command:
+     ```shell
+     python server.py --enable-modules=streaming-stt
+     ```
 
-- `sillytavern-extras`: Switch to the `neo` branch
-- `sillytavern`: Switch to the `staging` branch
-- This setup perform voice recording from the machine `sillytavern-extras` is running on.
+2. **Configure SillyTavern**:
+   - (Optional) Specify a custom Whisper model as in the Whisper setup above.
+   - (Optional but recommended) Set up trigger words in SillyTavern. Only messages starting with these trigger words will be sent to SillyTavern as actual messages. This prevents random speech or noise from being transcribed. Enable this with the checkbox.
+   - Other settings are similar to other providers.
 
-1. Enable the module using the following option.
-```yaml
-python server.py --enable-modules=streaming-stt
-```
-
-2. (optional) you can specify a custom whisper model to be used as in Whisper setup above.
-3. (optional) But strongly advised, setup some trigger words in ST. Only the messages starting with those trigger words will be sent to ST as actual message. Allow to avoid anything you say or noise to be transcripted as message. Need to be enable with the checkbox.
-4. Other settings are the same as other providers.
+You're now ready to transcribe your voice into text using speech recognition in SillyTavern.
