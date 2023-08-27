@@ -1,60 +1,108 @@
-# RVC
+# Realtime Voice Cloning (RVC) Tutorial
 
-RVC stands for Realtime Voice Cloning. This technique allows transferring voice features from one audio clip to another, essentially making it speak in a different voice.
+This guide will walk you through using RVC, a technique that allows transferring voice features from one audio clip to another, enabling voices to speak in different tones and styles.
 
-Have you ever seen popular "Presidents Play X" videos? Yes, that was RVC too. You can make your SillyTavern characters speak any voice (anime/movie/your own) using the RVC Extra module.
+Ever enjoyed those famous "Presidents Play X" videos? They were created using RVC. With the RVC Extra module, you can make your SillyTavern characters speak in any voice you desire, be it anime, movie, or even your own unique voice.
 
 ## RVC Setup
 
-PREREQUISITES:
+### Prerequisites
 
-- `sillytavern-extras`: Switch to the `neo` branch
-- `sillytavern`: Switch to the `staging` branch
+Before you begin, ensure you've met the following prerequisites:
 
-1. In a file browser navigate to **\SillyTavern-extras\data\models\rvc**, create a subfolder and put **.pth** and **.index** into the created folder
-2. Install requirements with: `pip install -r requirements-rvc.txt`
-3. Run SillyTavern-extras with an RVC module enabled (add other models and parameters if needed):
-```yaml
-python server.py --enable-modules=rvc
-```
-4. In SillyTavern, go to **Extensions --> RVC** and enable it
-5. Setup a Voice map for RVC: read the instructions for TTS above, but instead of TTS voices, use RVC model folder names
-6. Select pitch extraction: **rmvpe**
-7. Go to **Extensions --> TTS** and enable it
-8. Select TTS Provider: **Coqui** or your other preferred provider, but not **System** - RVC doesn't work with it. **ElevenLabs** is not recommended since it has its own voice cloning capabilities
-9. Enable **Auto Generation**
+- Switch to the `neo` branch in `sillytavern-extras`.
+- Switch to the `staging` branch in `sillytavern`.
 
-## Train your own RVC model
+### Step-by-Step Setup
 
-### RVC Easy Menu by Deffcolony (only for Windows).
+1. **Prepare RVC Model Files**:
+   - In a file browser, Navigate to: `\SillyTavern-extras\data\models\rvc` 
+   - Create a subfolder and place the `.pth` and `.index` files into it.
+
+2. **Install Requirements**:
+   - Install the necessary requirements using the command: `pip install -r requirements-rvc.txt`.
+
+3. **Run SillyTavern-Extras**:
+   - Launch SillyTavern-extras with the RVC module enabled:
+     ```shell
+     python server.py --enable-modules=rvc
+     ```
+
+4. **Configure RVC in SillyTavern**:
+   - In SillyTavern, navigate to **Extensions** > **RVC** and enable it.
+
+5. **Set Up Voice Map**:
+   - Create a Voice map for RVC. Follow the TTS instructions above, but use RVC model folder names.
+
+6. **Select Pitch Extraction**:
+   - Choose "rmvpe" as the pitch extraction method.
+   - If you have trouble with "rmvpe" try other methods.
+
+7. **Enable TTS**:
+   - Navigate to **Extensions** > **TTS** and enable it.
+   - Choose a TTS Provider (e.g., **Coqui**) – not **System** as RVC doesn't work with it. Avoid using **ElevenLabs** with RVC.
+
+8. **Enable Auto Generation**:
+   - Enable **Auto Generation** in TTS settings.
+
+### Expression-Based Dynamic Voice
+
+1. **Configure RVC Models**:
+   - In your RVC model folder, have separate `.pth` and `.index` files for each classified expression (e.g., anger, fear, joy, love, sadness, surprise).
+
+2. **Enable Modules**:
+   - Enable both RVC and classify modules:
+     ```shell
+     python server.py --enable-modules=rvc,classify
+     ```
+
+3. **Use RVC Module**:
+   - The remaining setup is similar to using the RVC module alone (as explained above).
+
+## Train Your Own RVC Model
+
+### Using RVC Easy Menu by Deffcolony (Windows Only)
 
 Automatically install and launch Mangio-RVC: https://github.com/deffcolony/rvc-easy-menu
 
-1. Choose a location where you want to git clone the repo because RVC will install in the same location where you launch the script:
-```
-git clone https://github.com/deffcolony/rvc-easy-menu.git
-```
-3. Open RVC-Launcher.bat
-4. Choose 1 since you want to install RVC.
-5. When 7-zip pops up just, click install because it's a requirement for the 7z package that will get extracted automatically.
-6. After installation when the menu returns choose 2 to open WebUI for Voice Training.
+1. **Clone Repository**:
+   - Clone the repository to your desired location:
+     ```shell
+     git clone https://github.com/deffcolony/rvc-easy-menu.git
+     ```
 
-### Mangio-RVC - Train a voice model
+2. **Launch RVC-Launcher.bat**:
+   - Open the `RVC-Launcher.bat` file.
+   - Choose option 1 to install RVC.
 
-Dataset preparation:
+3. **Complete Installation**:
+   - When prompted, install required packages and dependencies.
 
-1. Put the voice you want to train in the `datasets` folder.
-2. Make sure there is NO BACKGROUND NOISE in the audio file; only raw voice!
-3. The output quality will be better the longer the audio.
+4. **Open WebUI for Voice Training**:
+   - After installation, choose option 2 to open the WebUI for voice training.
 
-In the WebUI:
+### Mangio-RVC: Training a Voice Model
 
-1. Click on the training tab
-2. Enter the experiment name, for example, `my-epic-voice-model`
-3. Set version to v2
-4. Click on "Process data"
-5. Click on "Feature extraction"
-6. Set "Save frequency" to 50
-7. Set "Total training epochs" to 300
-8. Click on "Train feature index"
-9. Click on "Train model"
+**Dataset Preparation**:
+
+1. **Prepare Audio**:
+   - Place the audio you want to train in the `datasets` folder.
+   - Ensure the audio is free of background noise – only raw voice is needed.
+   - Longer audio makes a better output quality.
+
+**WebUI Training**:
+
+1. **Access Training Tab**:
+   - Click on the training tab in the WebUI.
+
+2. **Configure Experiment**:
+   - Enter an experiment name (e.g., `my-epic-voice-model`).
+   - Set version to v2.
+
+3. **Process Data and Extract Features**:
+   - Click "Process data" and "Feature extraction".
+   - Set "Save frequency" to 50.
+
+4. **Training Parameters**:
+   - Set "Total training epochs" to 300.
+   - Click "Train feature index" and "Train model".
