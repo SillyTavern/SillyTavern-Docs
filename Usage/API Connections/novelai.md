@@ -66,3 +66,62 @@ Limits the token pool to however many tokens it takes for their probabilities to
 #### Top K
 
 Limits the token pool to the k most likely tokens. A lower number is more consistent, but less creative. 
+
+### Tips and FAQs for using NovelAI with SillyTavern
+
+There are a lot of common problems and questions that come up when switching to NovelAI from another ST backend API. The difference comes down to whath the models are trained for: most likely, you've used an OpenAI or Anthropic model (or a local model made to resemble those), which is built around following the user's instructions. NovelAI's models are built purely around text completion: instead of taking your input as a message and formulating a response, NAI's models attempt to continue the output. Due to this difference, a lot of tips and common knowledge that work for other APIs won't work for NAI. 
+
+#### Tweaking settings for NovelAI
+
+Under Advanced Formatting (the A icon):
+- Set "Context Template" to "NovelAI"
+- Set "Tokenizer" to "NerdStash v2"
+- Check "Always add character's name to prompt"
+- Check "Remove Empty New Lines from Output"
+- Uncheck the "Enabled" box under "Instruct Mode"
+
+Under User Settings (the person with a gear)
+- Turn on "Swipes" (Not NAI specific, but it's so useful you should just do it)
+
+#### Which module should I use?
+
+Probably No Module. Prose Augmenter is useful if you want a character to speak in a more flowery manner, but be careful not to overdo it. Text Adventure might be useful for a text adventure style card/story. 
+
+#### Not the instruct module?
+
+You can invoke the instruct module when you need it. Create a newline in your message, and put your instructions in curly brackets like this: `{ CharName is offended by that seemingly innocuous statement }` (the spaces are _required_ between the text and the brackets). Doing that will automatically switch the AI into the instruct module for a short time. You don't want to use the instruct module all the time because it tends to produce less creative output than the other modules, just when you need to guide the AI strongly in a particular direction.
+
+#### Why do my responses keep getting cut off?
+
+NovelAI limits response length to ~150 tokens total, even if you set the slider higher than that. When it reaches the number of tokens in the slider or 150, whichever is lower, it will generate up to 20 more tokens, looking for a stop sequence or the end of a sentence, so there's an effective limit of 170 tokens for a response, at which point it will just stop, causing it to cut off. 
+
+If it cuts off, you can select the continue option (in the three-line menu to the left of the text box) to get the character to continue their response. 
+
+If the responses you want are more than 170 tokens, you can work around the limit like this:
+
+- Set the response length to whatever large number you want
+- Under Advanced Formatting, enable Multigen
+- Set the "first chunk" and "next chunks" values to 150
+
+This sacrifices text streaming, but will chain together multiple generations to give you longer responses. 
+
+#### How do I get the bot to write longer responses?
+
+Read the above about responses getting cut off. That will help to make sure that responses aren't cut off prematurely by running into the limit of generation length. 
+
+If your responses aren't getting cut off but are still too short, it's likely you're dealing with "garbage in, garbage out" - if you give the model bad examples, it will produce bad output. If the character card has no example dialogue or short example dialogue and the messages you send to the bot are short, the model will pick up on that, take it as the accepted way to do things and the responses will be short. So, write longer example dialogue and longer messages to the bot. (You can always use NovelAI to write some example dialogue for you rather than doing it yourself.)
+
+#### How do I get the bot to stop talking for me?
+
+- Check that the character card's first message and example dialogue don't include the character taking actions for you - if they do, then rewrite them to get rid of it acting for you
+- Make sure that "Always add character's name to prompt" is checked
+- Make sure that you're currently using the same user persona as the rest of the chat - if you changed user personas and didn't change back (or don't have a persona locked to that chat), the usual rules to stop generating for you will fail
+- Add `["\n{{user}}:", "\n{{user}}: "]` to Custom Stopping Strings (shouldn't be necessary, but sometimes helps)
+
+#### Why isn't my character responding?
+
+A lot of things can cause this, so we need to look in a few places:
+
+- Make sure that "Always add character's name to prompt" is checked in Advanced Formatting
+- Check to make sure there aren't any errors coming from the API - while you can use SillyTavern with the NAI free trial, once it runs out, you'll just get errors
+- Check what you have in "Custom Stopping Strings" - if those are being generated at the start of the response, it might be cut off prematurely
