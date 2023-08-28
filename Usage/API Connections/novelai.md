@@ -36,14 +36,14 @@ How much text you want to generate per message. Note that NovelAI has a limit of
 #### Context Size
 
 How many tokens of the chat are kept in the context at any given time. How large the maximum context size you can use depends on the model and your subscription tier:
-- Kayra (tablet) - 3072 tokens
-- Kayra (scroll) - 6144 tokens
-- Kayra (opus) and Clio (all tiers) - 8192 tokens
+- Kayra (Tablet) - 3072 tokens
+- Kayra (Scroll) - 6144 tokens
+- Kayra (Opus) and Clio (all tiers) - 8192 tokens
 
 #### Temperature
 
-* Lower value - the answers are more logical, but less creative.
-* Higher value - the answers are more creative, but less logical.
+* Lower value - the answers are more logical but less creative.
+* Higher value - the answers are more creative but less logical.
 
 #### Repetition penalty
 
@@ -61,15 +61,15 @@ Text that is inserted right above the chat to modify the writing style. The reco
 
 #### Top P
 
-Limits the token pool to however many tokens it takes for their probabilities to add up to p. A lower number is more consistent, but less creative. 
+Limits the token pool to however many tokens it takes for their probabilities to add up to p. A lower number is more consistent but less creative. 
 
 #### Top K
 
-Limits the token pool to the k most likely tokens. A lower number is more consistent, but less creative. 
+Limits the token pool to the k most likely tokens. A lower number is more consistent but less creative. 
 
 ### Tips and FAQs for using NovelAI with SillyTavern
 
-There are a lot of common problems and questions that come up when switching to NovelAI from another ST backend API. The difference comes down to whath the models are trained for: most likely, you've used an OpenAI or Anthropic model (or a local model made to resemble those), which is built around following the user's instructions. NovelAI's models are built purely around text completion: instead of taking your input as a message and formulating a response, NAI's models attempt to continue the incoming prompt. Due to this difference, a lot of tips and common knowledge that work for other APIs won't work for NAI. 
+There are a lot of common problems and questions that come up when switching to NovelAI from another ST backend API. The difference comes down to what the models are trained for. Most likely, you've used an OpenAI or Anthropic model (or a local model made to resemble those), which is built around following the user's instructions. NovelAI's models are built purely around text completion: instead of taking your input as a message and formulating a response, NAI's models attempt to continue the incoming prompt. Due to this difference, a lot of tips and common knowledge that work for other APIs won't work for NAI. 
 
 #### Tweaking settings for NovelAI
 
@@ -113,10 +113,10 @@ If your responses aren't getting cut off but are still too short, it's likely yo
 
 #### How do I get the bot to stop talking for me?
 
-- Check that the character card's first message and example dialogue doesn't include the character taking actions for you - if they do, then rewrite them to get rid of it acting for you
+- Check that the character card's first message and example dialogue don't include the character taking actions for you - if they do, then rewrite them to get rid of it acting for you
 - Make sure that "Always add character's name to prompt" is checked
 - Make sure that you're currently using the same user persona as the rest of the chat. If you changed user personas and didn't change back (or don't have a persona locked to that chat), the usual rules to stop generating for you will fail
-- Add `["\n{{user}}:", "\n{{user}}:"]` to Custom Stopping Strings (shouldn't be necessary, but sometimes helps)
+- Add ["\n\{\{user\}\}:"] to Custom Stopping Strings (shouldn't be necessary, but sometimes helps)
 
 #### Why isn't my character responding?
 
