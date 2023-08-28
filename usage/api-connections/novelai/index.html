@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.2.0.746489306597">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.2.0.746571276620">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.2.0">
@@ -35,11 +35,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.2.0.746489306597" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.2.0.746571276620" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.2.0.746489306597" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.2.0.746571276620" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.2.0.746489306597" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.2.0.746571276620" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -322,6 +322,92 @@ It is not recommended to increase this parameter too much as it may break the ou
     </h4>
 </doc-anchor-target>
 <p>Limits the token pool to the k most likely tokens. A lower number is more consistent, but less creative.</p>
+<doc-anchor-target id="tips-and-faqs-for-using-novelai-with-sillytavern">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tips-and-faqs-for-using-novelai-with-sillytavern">#</doc-anchor-trigger>
+        <span>Tips and FAQs for using NovelAI with SillyTavern</span>
+    </h3>
+</doc-anchor-target>
+<p>There are a lot of common problems and questions that come up when switching to NovelAI from another ST backend API. The difference comes down to whath the models are trained for: most likely, you&#x27;ve used an OpenAI or Anthropic model (or a local model made to resemble those), which is built around following the user&#x27;s instructions. NovelAI&#x27;s models are built purely around text completion: instead of taking your input as a message and formulating a response, NAI&#x27;s models attempt to continue the incoming prompt. Due to this difference, a lot of tips and common knowledge that work for other APIs won&#x27;t work for NAI.</p>
+<doc-anchor-target id="tweaking-settings-for-novelai">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tweaking-settings-for-novelai">#</doc-anchor-trigger>
+        <span>Tweaking settings for NovelAI</span>
+    </h4>
+</doc-anchor-target>
+<p>Under Advanced Formatting (the A icon):</p>
+<ul>
+<li>Set &quot;Context Template&quot; to &quot;NovelAI&quot;</li>
+<li>Set &quot;Tokenizer&quot; to &quot;NerdStash v2&quot;</li>
+<li>Check &quot;Always add character&#x27;s name to prompt&quot;</li>
+<li>Check &quot;Remove Empty New Lines from Output&quot;</li>
+<li>Uncheck the &quot;Enabled&quot; box under &quot;Instruct Mode&quot;</li>
+</ul>
+<p>Under User Settings (the person with a gear)</p>
+<ul>
+<li>Turn on &quot;Swipes&quot; (Not NAI specific, but it&#x27;s so useful you should just do it)</li>
+</ul>
+<doc-anchor-target id="which-module-should-i-use">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#which-module-should-i-use">#</doc-anchor-trigger>
+        <span>Which module should I use?</span>
+    </h4>
+</doc-anchor-target>
+<p>Probably No Module. Prose Augmenter is useful if you want a character to speak in a more flowery manner, but be careful not to overdo it. Text Adventure might be useful for a text adventure style card/story.</p>
+<doc-anchor-target id="not-the-instruct-module">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#not-the-instruct-module">#</doc-anchor-trigger>
+        <span>Not the instruct module?</span>
+    </h4>
+</doc-anchor-target>
+<p>You can invoke the Instruct module when you need it. Create a newline in your message, and put your instructions in curly brackets like this: <code v-pre>{ CharName is offended by that seemingly innocuous statement }</code> (the spaces are <em>required</em> between the text and the brackets). Doing that will automatically switch the AI into the Instruct module for a short time. You don&#x27;t want to use the Instruct module all the time because it tends to produce less creative output than the other modules, just when you need to guide the AI strongly in a particular direction.</p>
+<doc-anchor-target id="why-do-my-responses-keep-getting-cut-off">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#why-do-my-responses-keep-getting-cut-off">#</doc-anchor-trigger>
+        <span>Why do my responses keep getting cut off?</span>
+    </h4>
+</doc-anchor-target>
+<p>NovelAI limits response length to ~150 tokens total, even if you set the slider higher than that. When it reaches the number of tokens in the slider or 150, whichever is lower, it will generate up to 20 more tokens, looking for a stop sequence or the end of a sentence, so there&#x27;s an effective limit of 170 tokens for a response, at which point it will just stop, causing it to cut off.</p>
+<p>If it cuts off, you can select the continue option (in the three-line menu to the left of the text box) to get the character to continue their response. Or</p>
+<p>If the responses you want are more than 170 tokens, you can work around the limit like this:</p>
+<ul>
+<li>Set the response length to whatever large number you want</li>
+<li>Under Advanced Formatting, enable Multigen</li>
+<li>Set the &quot;first chunk&quot; and &quot;next chunks&quot; values to 150</li>
+</ul>
+<p>This sacrifices text streaming, but will chain together multiple generations to give you longer responses.</p>
+<doc-anchor-target id="how-do-i-get-the-bot-to-write-longer-responses">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-do-i-get-the-bot-to-write-longer-responses">#</doc-anchor-trigger>
+        <span>How do I get the bot to write longer responses?</span>
+    </h4>
+</doc-anchor-target>
+<p>Read the above about responses getting cut off. That will help to make sure that responses aren&#x27;t cut off prematurely by running into the limit of generation length.</p>
+<p>If your responses aren&#x27;t getting cut off but are still too short, it&#x27;s likely you&#x27;re dealing with &quot;garbage in, garbage out&quot; - if you give the model bad examples, it will produce bad output. If the character card has no example dialogue or short example dialogue and the messages you send to the bot are short, the model will pick up on that, take it as the accepted way to do things and the responses will be short. So, write longer example dialogue and longer messages to the bot. (You can always use NovelAI to write some example dialogue for you rather than doing it yourself.)</p>
+<doc-anchor-target id="how-do-i-get-the-bot-to-stop-talking-for-me">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-do-i-get-the-bot-to-stop-talking-for-me">#</doc-anchor-trigger>
+        <span>How do I get the bot to stop talking for me?</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>Check that the character card&#x27;s first message and example dialogue doesn&#x27;t include the character taking actions for you - if they do, then rewrite them to get rid of it acting for you</li>
+<li>Make sure that &quot;Always add character&#x27;s name to prompt&quot; is checked</li>
+<li>Make sure that you&#x27;re currently using the same user persona as the rest of the chat. If you changed user personas and didn&#x27;t change back (or don&#x27;t have a persona locked to that chat), the usual rules to stop generating for you will fail</li>
+<li>Add <code v-pre>[&quot;\n:&quot;, &quot;\n:&quot;]</code> to Custom Stopping Strings (shouldn&#x27;t be necessary, but sometimes helps)</li>
+</ul>
+<doc-anchor-target id="why-isnt-my-character-responding">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#why-isnt-my-character-responding">#</doc-anchor-trigger>
+        <span>Why isn&#x27;t my character responding?</span>
+    </h4>
+</doc-anchor-target>
+<p>A lot of things can cause this, so we need to look in a few places:</p>
+<ul>
+<li>Make sure that &quot;Always add character&#x27;s name to prompt&quot; is checked in Advanced Formatting</li>
+<li>Check to make sure there aren&#x27;t any errors coming from the API. While you can use SillyTavern with the NAI free trial, once it runs out, you&#x27;ll just get errors</li>
+<li>Check what you have in &quot;Custom Stopping Strings&quot; - if those are being generated at the start of the response, it might be cut off prematurely</li>
+</ul>
 
                                 
                                 <!-- Required only on API pages -->
