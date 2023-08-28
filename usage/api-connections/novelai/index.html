@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.2.0.746575660354">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.2.0.746579033975">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.2.0">
@@ -35,11 +35,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.2.0.746575660354" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.2.0.746579033975" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.2.0.746575660354" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.2.0.746579033975" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.2.0.746575660354" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.2.0.746579033975" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -271,9 +271,9 @@ You can also manually add your own settings files.</p>
 </doc-anchor-target>
 <p>How many tokens of the chat are kept in the context at any given time. How large the maximum context size you can use depends on the model and your subscription tier:</p>
 <ul>
-<li>Kayra (tablet) - 3072 tokens</li>
-<li>Kayra (scroll) - 6144 tokens</li>
-<li>Kayra (opus) and Clio (all tiers) - 8192 tokens</li>
+<li>Kayra (Tablet) - 3072 tokens</li>
+<li>Kayra (Scroll) - 6144 tokens</li>
+<li>Kayra (Opus) and Clio (all tiers) - 8192 tokens</li>
 </ul>
 <doc-anchor-target id="temperature">
     <h4>
@@ -282,8 +282,8 @@ You can also manually add your own settings files.</p>
     </h4>
 </doc-anchor-target>
 <ul>
-<li>Lower value - the answers are more logical, but less creative.</li>
-<li>Higher value - the answers are more creative, but less logical.</li>
+<li>Lower value - the answers are more logical but less creative.</li>
+<li>Higher value - the answers are more creative but less logical.</li>
 </ul>
 <doc-anchor-target id="repetition-penalty">
     <h4>
@@ -314,21 +314,21 @@ It is not recommended to increase this parameter too much as it may break the ou
         <span>Top P</span>
     </h4>
 </doc-anchor-target>
-<p>Limits the token pool to however many tokens it takes for their probabilities to add up to p. A lower number is more consistent, but less creative.</p>
+<p>Limits the token pool to however many tokens it takes for their probabilities to add up to p. A lower number is more consistent but less creative.</p>
 <doc-anchor-target id="top-k">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#top-k">#</doc-anchor-trigger>
         <span>Top K</span>
     </h4>
 </doc-anchor-target>
-<p>Limits the token pool to the k most likely tokens. A lower number is more consistent, but less creative.</p>
+<p>Limits the token pool to the k most likely tokens. A lower number is more consistent but less creative.</p>
 <doc-anchor-target id="tips-and-faqs-for-using-novelai-with-sillytavern">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#tips-and-faqs-for-using-novelai-with-sillytavern">#</doc-anchor-trigger>
         <span>Tips and FAQs for using NovelAI with SillyTavern</span>
     </h3>
 </doc-anchor-target>
-<p>There are a lot of common problems and questions that come up when switching to NovelAI from another ST backend API. The difference comes down to whath the models are trained for: most likely, you&#x27;ve used an OpenAI or Anthropic model (or a local model made to resemble those), which is built around following the user&#x27;s instructions. NovelAI&#x27;s models are built purely around text completion: instead of taking your input as a message and formulating a response, NAI&#x27;s models attempt to continue the incoming prompt. Due to this difference, a lot of tips and common knowledge that work for other APIs won&#x27;t work for NAI.</p>
+<p>There are a lot of common problems and questions that come up when switching to NovelAI from another ST backend API. The difference comes down to what the models are trained for. Most likely, you&#x27;ve used an OpenAI or Anthropic model (or a local model made to resemble those), which is built around following the user&#x27;s instructions. NovelAI&#x27;s models are built purely around text completion: instead of taking your input as a message and formulating a response, NAI&#x27;s models attempt to continue the incoming prompt. Due to this difference, a lot of tips and common knowledge that work for other APIs won&#x27;t work for NAI.</p>
 <doc-anchor-target id="tweaking-settings-for-novelai">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#tweaking-settings-for-novelai">#</doc-anchor-trigger>
@@ -391,10 +391,10 @@ It is not recommended to increase this parameter too much as it may break the ou
     </h4>
 </doc-anchor-target>
 <ul>
-<li>Check that the character card&#x27;s first message and example dialogue doesn&#x27;t include the character taking actions for you - if they do, then rewrite them to get rid of it acting for you</li>
+<li>Check that the character card&#x27;s first message and example dialogue don&#x27;t include the character taking actions for you - if they do, then rewrite them to get rid of it acting for you</li>
 <li>Make sure that &quot;Always add character&#x27;s name to prompt&quot; is checked</li>
 <li>Make sure that you&#x27;re currently using the same user persona as the rest of the chat. If you changed user personas and didn&#x27;t change back (or don&#x27;t have a persona locked to that chat), the usual rules to stop generating for you will fail</li>
-<li>Add <code v-pre>[&quot;\n:&quot;, &quot;\n:&quot;]</code> to Custom Stopping Strings (shouldn&#x27;t be necessary, but sometimes helps)</li>
+<li>Add [&quot;\n{{user}}:&quot;] to Custom Stopping Strings (shouldn&#x27;t be necessary, but sometimes helps)</li>
 </ul>
 <doc-anchor-target id="why-isnt-my-character-responding">
     <h4>
