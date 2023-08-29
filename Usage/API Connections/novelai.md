@@ -48,7 +48,7 @@ How many tokens of the chat are kept in the context at any given time. How large
 #### Repetition penalty
 
 Higher values make the output less repetitive.
-If the character is fixated on something or repeats the same phrase, then increasing this parameter will (likely) fix it.
+If the character is fixated on something or repeats the same phrase, then increasing this parameter can help fix it.
 It is not recommended to increase this parameter too much as it may break the outputs.
 
 #### Repetition penalty range
@@ -125,3 +125,22 @@ A lot of things can cause this, so we need to look in a few places:
 - Make sure that "Always add character's name to prompt" is checked in Advanced Formatting
 - Check to make sure there aren't any errors coming from the API. While you can use SillyTavern with the NAI free trial, once it runs out, you'll just get errors
 - Check what you have in "Custom Stopping Strings" - if those are being generated at the start of the response, it might be cut off prematurely
+
+#### How should I use Author's Note?
+
+In general, you probably shouldn't. It's inserted very close to the end of the context, and with NAI's models, it frequently overpowers everything else in the context. It's mostly an artifact from older, weaker models where it was more necessary. 
+
+#### How do I do a scene break/time jump?
+
+Put the following as a system message or on newlines at the start of your next message:
+```
+***
+[ 2 days later ]
+```
+
+Then put in the rest of your message on the next line. The bracketed text can be a time jump, a new location, or anything else. The "***" (hilariously named a "dinkus") tells the AI that the scene has changed, and the bracketed text gives that more context.
+
+#### The AI is keeps repeating specific words/phrases, what do I do? 
+
+As mentioned above, you can push the repetition penalty slider up a bit more, though pushing it too far can make the output incoherent. 
+To more thoroughly fix the problem, go back through the context, especially recent messages, and delete the repeated word/phrase. Removing it from the context gives the AI less reason to start saying it in the first place. 
