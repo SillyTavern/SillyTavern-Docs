@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.2.0.746579033975">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.2.0.746654727204">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.2.0">
@@ -35,11 +35,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.2.0.746579033975" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.2.0.746654727204" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.2.0.746579033975" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.2.0.746654727204" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.2.0.746579033975" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.2.0.746654727204" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -292,7 +292,7 @@ You can also manually add your own settings files.</p>
     </h4>
 </doc-anchor-target>
 <p>Higher values make the output less repetitive.
-If the character is fixated on something or repeats the same phrase, then increasing this parameter will (likely) fix it.
+If the character is fixated on something or repeats the same phrase, then increasing this parameter can help fix it.
 It is not recommended to increase this parameter too much as it may break the outputs.</p>
 <doc-anchor-target id="repetition-penalty-range">
     <h4>
@@ -408,6 +408,33 @@ It is not recommended to increase this parameter too much as it may break the ou
 <li>Check to make sure there aren&#x27;t any errors coming from the API. While you can use SillyTavern with the NAI free trial, once it runs out, you&#x27;ll just get errors</li>
 <li>Check what you have in &quot;Custom Stopping Strings&quot; - if those are being generated at the start of the response, it might be cut off prematurely</li>
 </ul>
+<doc-anchor-target id="how-should-i-use-authors-note">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-should-i-use-authors-note">#</doc-anchor-trigger>
+        <span>How should I use Author&#x27;s Note?</span>
+    </h4>
+</doc-anchor-target>
+<p>In general, you probably shouldn&#x27;t. It&#x27;s inserted very close to the end of the context, and with NAI&#x27;s models, it frequently overpowers everything else in the context. It&#x27;s mostly an artifact from older, weaker models where it was more necessary.</p>
+<doc-anchor-target id="how-do-i-do-a-scene-breaktime-jump">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-do-i-do-a-scene-breaktime-jump">#</doc-anchor-trigger>
+        <span>How do I do a scene break/time jump?</span>
+    </h4>
+</doc-anchor-target>
+<p>Put the following as a system message or on newlines at the start of your next message:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">***
+[ 2 days later ]</code></pre>
+</doc-codeblock></div>
+<p>Then put in the rest of your message on the next line. The bracketed text can be a time jump, a new location, or anything else. The &quot;***&quot; (hilariously named a &quot;dinkus&quot;) tells the AI that the scene has changed, and the bracketed text gives that more context.</p>
+<doc-anchor-target id="the-ai-is-keeps-repeating-specific-wordsphrases-what-do-i-do">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-ai-is-keeps-repeating-specific-wordsphrases-what-do-i-do">#</doc-anchor-trigger>
+        <span>The AI is keeps repeating specific words/phrases, what do I do?</span>
+    </h4>
+</doc-anchor-target>
+<p>As mentioned above, you can push the repetition penalty slider up a bit more, though pushing it too far can make the output incoherent.
+To more thoroughly fix the problem, go back through the context, especially recent messages, and delete the repeated word/phrase. Removing it from the context gives the AI less reason to start saying it in the first place.</p>
 
                                 
                                 <!-- Required only on API pages -->
