@@ -12,6 +12,10 @@ Before you begin, ensure you've met the following prerequisites:
 
 - Switch to the `neo` branch in `sillytavern-extras`.
 - Switch to the `staging` branch in `sillytavern`.
+- Make sure you have `ffmpeg` binary in your PATH environment variable. This tool is used to convert incoming audio.
+   - Download the build here: https://www.gyan.dev/ffmpeg/builds/
+   - Or use the winget command in the PowerShell prompt: `winget install ffmpeg`
+   - How to modify PATH variable: https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/
 
 ### Step-by-Step Setup
 
