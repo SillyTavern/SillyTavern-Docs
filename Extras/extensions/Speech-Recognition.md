@@ -1,6 +1,6 @@
 # Speech Recognition
 
-this guide will walk you through setting up speech recognition to transcribe your voice into text within SillyTavern.
+This guide will walk you through setting up speech recognition to transcribe your voice into text within SillyTavern.
 
 ## Speech Recognition Setup (Browser)
 
