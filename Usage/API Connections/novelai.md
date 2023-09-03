@@ -128,7 +128,7 @@ Description:
 Attributes:
 ```
 
-Not all of these are necessary, and some are redundant (for example, Personality, Mind, and Mental all mean basically the same thing), but these have been tested and work well with NovelAI's models. Fill in whichever ones are relevant to your character. The attributes should be written in lower case and separated by commas, no need for quotes around the words. For example:
+"Type: character" is there to tell the AI that this is describing a character (as opposed to a location, object, or other type of thing). The rest of the attributes are optional, and some are redundant (for example, Personality, Mind, and Mental all mean basically the same thing), but these have been tested and work well with NovelAI's models. Fill in whichever ones are relevant to your character. The attributes should be written in lower case and separated by commas, no need for quotes around the words. For example:
 
 ```
 Skills: lockpicking, stealth, running away very fast
