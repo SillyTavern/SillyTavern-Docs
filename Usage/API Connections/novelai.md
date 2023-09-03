@@ -134,7 +134,9 @@ Not all of these are necessary, and some are redundant (for example, Personality
 Skills: lockpicking, stealth, running away very fast
 ```
 
-Here's an example card, made for NovelAI, that uses a combination of attributes and prose for the character description: [Valka](/static/Valka.png)
+Here's an example card, made for NovelAI, that uses a combination of attributes and prose for the character description:
+
+<a href="https://docs.sillytavern.app/static/valka.png"><img src="https://docs.sillytavern.app/static/valka.png" style="width:200px;height:300px;"></a>
 
 
 These methods are recommended because they're present in NovelAI's training data, so they specifically work well with the model. 
