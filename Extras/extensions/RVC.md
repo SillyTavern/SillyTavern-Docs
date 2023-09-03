@@ -10,8 +10,10 @@ Ever enjoyed those famous "Presidents Play X" videos? They were created using RV
 
 Before you begin, ensure you've met the following prerequisites:
 
-- Switch to the `neo` branch in `sillytavern-extras`.
-- Switch to the `staging` branch in `sillytavern`.
+- Make sure you have `ffmpeg` binary in your PATH environment variable. This tool is used to convert incoming audio.
+   - (Recommended way) Use the winget command in the PowerShell prompt: `winget install ffmpeg`
+   - Or download the build here: https://www.gyan.dev/ffmpeg/builds/ 
+   - How to modify PATH variable: https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/
 
 ### Step-by-Step Setup
 
