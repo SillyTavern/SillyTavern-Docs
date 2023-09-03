@@ -6,10 +6,10 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.2.0.746856298857">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.3.0.747064252756">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.2.0">
+    <meta name="generator" content="Retype 3.3.0">
 
     <!-- Primary Meta Tags -->
     <title>Speech Recognition | docs.ST.app</title>
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.2.0.746856298857" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.3.0.747064252756" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.2.0.746856298857" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.2.0.746856298857" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.2.0.746856298857" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.3.0.747064252756" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.3.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.3.0.747064252756" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.3.0.747064252756" defer></script>
 
     <Style>
         a {
@@ -197,7 +197,6 @@
                             <div class="docs-markdown" id="docs-content">
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
-                
                                 <!-- Page content  -->
 <doc-anchor-target id="speech-recognition" class="break-words">
     <h1>
@@ -206,16 +205,6 @@
     </h1>
 </doc-anchor-target>
 <p>This guide will walk you through setting up speech recognition to transcribe your voice into text within SillyTavern.</p>
-<doc-anchor-target id="prerequisites">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#prerequisites">#</doc-anchor-trigger>
-        <span>Prerequisites</span>
-    </h2>
-</doc-anchor-target>
-<p>Before you begin, ensure you&#x27;ve met the following prerequisites:</p>
-<ul>
-<li>Make sure you&#x27;re on the <code v-pre>staging</code> branch of <code v-pre>sillytavern</code>.</li>
-</ul>
 <doc-anchor-target id="speech-recognition-setup-browser">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#speech-recognition-setup-browser">#</doc-anchor-trigger>
@@ -223,12 +212,6 @@
     </h2>
 </doc-anchor-target>
 <ol>
-<li><p><strong>Prepare Model Files</strong>:</p>
-<ul>
-<li>In a file browser, navigate to <code v-pre>\SillyTavern-extras\data\models\rvc</code>.</li>
-<li>Create a subfolder and place the <code v-pre>.pth</code> and <code v-pre>.index</code> files into the created folder.</li>
-</ul>
-</li>
 <li><p><strong>Configure SillyTavern</strong>:</p>
 <ul>
 <li>Launch SillyTavern and go to <strong>Extensions</strong> &gt; <strong>Speech Recognition</strong>.</li>
@@ -274,7 +257,6 @@
 <ol>
 <li><p><strong>Enable Provider</strong>:</p>
 <ul>
-<li>Switch to the <code v-pre>neo</code> branch in <code v-pre>sillytavern-extras</code>.</li>
 <li>Enable the desired speech recognition provider on the extras server using the following command:
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">python server.py --enable-modules=whisper-stt</code></pre>
@@ -284,12 +266,14 @@ or
 <pre class="language-bash"><code v-pre class="language-bash">python server.py --enable-modules=vosk-stt</code></pre>
 </doc-codeblock></div>
 </li>
+<li>You can also use a custom model by adding the option <code v-pre>--stt-vosk-model-path</code> or <code v-pre>--stt-whisper-model-path</code> with the path to the model.</li>
 </ul>
 </li>
 <li><p><strong>Configure SillyTavern</strong>:</p>
 <ul>
-<li>In SillyTavern, the settings are similar to the &quot;Browser&quot; provider setup (except for language).</li>
-<li>You can also use a custom model by adding the option <code v-pre>--stt-vosk-model-path</code> or <code v-pre>--stt-whisper-model-path</code> with the path to the model.</li>
+<li>Launch SillyTavern and go to <strong>Extensions</strong> &gt; <strong>Speech Recognition</strong>.</li>
+<li>Select &quot;Vosk&quot; or &quot;Whisper&quot; from the dropdown options (whisper is more accurate).</li>
+<li>The settings are similar to the &quot;Browser&quot; provider setup (except for language) see above.</li>
 </ul>
 </li>
 </ol>
@@ -302,8 +286,7 @@ or
 <ol>
 <li><p><strong>Enable Provider</strong>:</p>
 <ul>
-<li>Switch to the <code v-pre>neo</code> branch in <code v-pre>sillytavern-extras</code>.</li>
-<li>Enable the streaming speech recognition module with the following command:
+<li>Enable the streaming speech recognition module on Sillytavern-extras with the following command:
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">python server.py --enable-modules=streaming-stt</code></pre>
 </doc-codeblock></div>
@@ -313,7 +296,7 @@ or
 <li><p><strong>Configure SillyTavern</strong>:</p>
 <ul>
 <li>(Optional) Specify a custom Whisper model as in the Whisper setup above.</li>
-<li>(Optional but recommended) Set up trigger words in SillyTavern. Only messages starting with these trigger words will be sent to SillyTavern as actual messages. This prevents random speech or noise from being transcribed. Enable this with the checkbox.</li>
+<li>(Optional but recommended) Set up trigger words in SillyTavern. Only messages starting with these trigger words will be sent to SillyTavern as actual messages. This prevents random speech or noise from being transcribed. Enable this with the checkbox. The trigger words can be included/excluded from the actual message using a checkbox.</li>
 <li>Other settings are similar to other providers.</li>
 </ul>
 </li>

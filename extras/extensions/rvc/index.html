@@ -6,10 +6,10 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.2.0.746856298857">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.3.0.747064252756">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.2.0">
+    <meta name="generator" content="Retype 3.3.0">
 
     <!-- Primary Meta Tags -->
     <title>Realtime Voice Cloning (RVC) Tutorial | docs.ST.app</title>
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.2.0.746856298857" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.3.0.747064252756" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.2.0.746856298857" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.2.0.746856298857" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.2.0.746856298857" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.3.0.747064252756" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.3.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.3.0.747064252756" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.3.0.747064252756" defer></script>
 
     <Style>
         a {
@@ -197,7 +197,6 @@
                             <div class="docs-markdown" id="docs-content">
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
-                
                                 <!-- Page content  -->
 <doc-anchor-target id="realtime-voice-cloning-rvc-tutorial" class="break-words">
     <h1>
@@ -221,8 +220,6 @@
 </doc-anchor-target>
 <p>Before you begin, ensure you&#x27;ve met the following prerequisites:</p>
 <ul>
-<li>Switch to the <code v-pre>neo</code> branch in <code v-pre>sillytavern-extras</code>.</li>
-<li>Switch to the <code v-pre>staging</code> branch in <code v-pre>sillytavern</code>.</li>
 <li>Make sure you have <code v-pre>ffmpeg</code> binary in your PATH environment variable. This tool is used to convert incoming audio.
 <ul>
 <li>(Recommended way) Use the winget command in the PowerShell prompt: <code v-pre>winget install ffmpeg</code></li>
