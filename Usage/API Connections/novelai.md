@@ -5,7 +5,7 @@
 To get your NovelAI API key, follow these steps:
 
 1. Select the gear icon at the top of the left sidebar.
- ![image](https://github.com/SillyTavern/SillyTavern-Docs/assets/55552572/e0c70838-9775-4dc4-bf07-3daf895de67c)
+![image](https://github.com/SillyTavern/SillyTavern-Docs/assets/55552572/e0c70838-9775-4dc4-bf07-3daf895de67c)
 
 2. Select "Account" under "User Settings".
 ![image](https://github.com/SillyTavern/SillyTavern-Docs/assets/55552572/71af84bf-3800-4e22-bfe9-9f84f302451a)
@@ -134,7 +134,8 @@ Not all of these are necessary, and some are redundant (for example, Personality
 Skills: lockpicking, stealth, running away very fast
 ```
 
-Here's an example card 
+Here's an example card, made for NovelAI, that uses a combination of attributes and prose for the character description: ![Valka](https://github.com/SillyTavern/SillyTavern-Docs/static/Valka.png)
+
 
 These methods are recommended because they're present in NovelAI's training data, so they specifically work well with the model. 
 
