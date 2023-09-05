@@ -18,6 +18,12 @@ Local installation of Extras can be difficult or impossible on your OS (especial
 
 ---
 
+### Error: Could not import the 'talkinghead' module on Linux
+
+It requires the installation of an additional package because it's not installed automatically due to incompatibility with Colab. Run this after you install other requirements:
+
+`pip install wxpython==4.2.1`
+
 ### Extras server can't connect to AUTOMATIC1111's Stable Diffusion Web UI
 
 > Could not connect to remote SD backend at <http://127.0.0.1:7860>! Disabling SD module...
