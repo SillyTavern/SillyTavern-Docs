@@ -76,7 +76,7 @@ This can cause conflicts if you work with many Python programs that have differe
 
 If this is your first time touching anything Python-related, that should not be a problem.
 
-1. Install Python 3.10: <https://www.python.org/downloads/release/python-31010/>
+1. Install Python 3.11: <https://www.python.org/downloads/release/python-3115/>
 2. Install git: <https://git-scm.com/downloads>
 3. Open a command prompt window and go to a folder in which you have complete access permissions.
 4. Clone the repo: `git clone https://github.com/SillyTavern/SillyTavern-extras`, hit Enter.
