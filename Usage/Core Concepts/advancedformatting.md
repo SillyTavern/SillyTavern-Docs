@@ -54,20 +54,18 @@ A tokenizer is a tool that breaks down a piece of text into smaller units called
 SillyTavern provides a "Best match" option that tries to match the tokenizer using the following rules depending on the API provider used.
 
 Text Completion APIs **(overridable)**:
-1. NovelAI Krake/Euterpe: GPT-2/3 tokenizer.
 2. NovelAI Clio: NerdStash tokenizer.
 3. NovelAI Kayra: NerdStash v2 tokenizer.
 4. TextGen / KoboldAI / AI Horde: LLaMA tokenizer.
+5. Koboldcpp: model API tokenizer.
 
 If you get inaccurate results or wish to experiment, you can set an *override tokenizer* for SillyTavern to use while forming a request to the AI backend:
 
 1. None. Each token is estimated to be ~3.3 characters, rounded up to the nearest integer. **Try this if your prompts get cut off on high context lengths.** This approach is used by KoboldAI Lite.
-2. GPT-3 tokenizer. **Used by pre-Turbo OpenAI models (ada, babbage, curie, davinci).** Can be previewed here: [OpenAI Tokenizer](https://platform.openai.com/tokenizer).
-3. (Legacy) GPT-2/3 tokenizer. Used by original TavernAI. **Pick this if you're unsure.** More info: [gpt-2-3-tokenizer](https://github.com/josephrocca/gpt-2-3-tokenizer).
-4. LLaMA tokenizer. Used by LLaMA 1/2 models family: Vicuna, Hermes, Airoboros, etc. **Pick if you use a LLaMA 1/2 model.**
-5. NerdStash tokenizer. Used by NovelAI's Clio model. **Pick if you use the Clio model.**
-6. NerdStash v2 tokenizer. Used by NovelAI's Kayra model. **Pick if you use the Kayra model.**
-7. API tokenizer. Queries the generation API to get the token count directly from the model. Only supported by Oobabooga's TextGen. **Pick if you use the latest version of TextGen API.**
+2. LLaMA tokenizer. Used by LLaMA 1/2 models family: Vicuna, Hermes, Airoboros, etc. **Pick if you use a LLaMA 1/2 model.**
+3. NerdStash tokenizer. Used by NovelAI's Clio model. **Pick if you use the Clio model.**
+4. NerdStash v2 tokenizer. Used by NovelAI's Kayra model. **Pick if you use the Kayra model.**
+5. API tokenizer. Queries the generation API to get the token count directly from the model. Only supported by Oobabooga's TextGen. **Pick if you use the latest version of TextGen API.**
 
 Chat Completion APIs **(non-overridable)**:
 1. OpenAI / Claude / OpenRouter / Window: model-dependant tokenizer via [tiktoken](https://github.com/openai/tiktoken).
@@ -76,7 +74,7 @@ Chat Completion APIs **(non-overridable)**:
 
 ### Token Padding
 
-**Important: This section doesn't apply to OpenAI API. SillyTavern will always use a matching tokenizer for OpenAI models.**
+**Important: This section doesn't apply to Chat Completions API. SillyTavern will always use a matching tokenizer for these models.**
 
 SillyTavern cannot use a proper tokenizer provided by the model running on a remote instance of KoboldAI or Oobabooga's TextGen, so all token counts assumed during prompt generation are estimated based on the selected [tokenizer](#tokenizer) type.
 
