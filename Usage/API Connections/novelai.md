@@ -22,8 +22,6 @@ You should use Kayra.
 
 Clio is not a bad model, but not as powerful as Kayra. Clio's speed advantage is insignificant. On NovelAI's tablet and scroll tiers, Clio does have a larger context size than Kayra, but trading that off against better coherence/prose quality from Kayra is unlikely to be worth it.
 
-Krake and Euterpe aren't recommended - NovelAI even refers to them as legacy models. 
-
 ## Settings
 
 The files with the settings are here (SillyTavern\public\NovelAI Settings).
