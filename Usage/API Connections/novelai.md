@@ -132,12 +132,14 @@ Attributes:
 Skills: lockpicking, stealth, running away very fast
 ```
 
-Here's an example card, made for NovelAI, that uses a combination of attributes and prose for the character description:
+These methods are recommended because they're present in NovelAI's training data, so they specifically work well with the model. 
+
+#### Example cards
+
+Here are a couple of example card, made for NovelAI, that show off different ways of creating cards specifically for NovelAI. The first card, Valka, uses the attributes method for the character description, while Eris, the second card, uses prose descriptions, along with a large amount of example dialogue. 
 
 <a href="https://docs.sillytavern.app/static/valka.png"><img src="https://docs.sillytavern.app/static/valka.png" style="width:200px;height:300px;"></a>
-
-
-These methods are recommended because they're present in NovelAI's training data, so they specifically work well with the model. 
+<a href="https://docs.sillytavern.app/static/Eris v1_0.png"><img src="https://docs.sillytavern.app/static/Eris v1_0.png" style="width:200px;height:300px;"></a>
 
 #### What not to do
 
