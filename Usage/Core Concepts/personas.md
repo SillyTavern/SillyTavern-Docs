@@ -14,7 +14,7 @@ To create a persona:
 1. Open the Persona Management panel (smiley face icon) in the top bar.
 2. Upload a user avatar, select an existing avatar, or create a blank persona with a dummy image ("Blank" button).
 3. Hover (tap on mobile) over the image and pick the top-left option ("Bind a name to that avatar").
-4. Input a desired name into the popup window. Confirm by clicking an "Ok" button.
+4. Input a desired name into the popup window. Confirm by clicking an "OK" button.
 5. The avatar now represents a Persona. Click on the avatar to select it, and this will also automatically update the user name.
 
 ## Persona Description
@@ -25,10 +25,9 @@ Here you can also use replacement macros like \{\{user\}\}, \{\{char\}\}, and ot
 
 If defined, the Persona Description will be inserted into the AI prompt in one of the chosen places:
 
-1. Before the character card (before the Description box contents). This is the default position.
-2. After the character card (after the Scenario box contents).
-3. Top of an Author's Note (if Author's Note is not disabled).
-4. Bottom of an Author's Note (if Author's Note is not disabled).
+1. In Prompt Manager (Chat Completions API) or Story String (other APIs). This is the default position.
+2. Top of an Author's Note (if Author's Note is not disabled).
+3. Bottom of an Author's Note (if Author's Note is not disabled).
 
 **However, keep in mind that picking a persona when you have set user description on an unbound avatar will not keep your changes.**
 

@@ -56,8 +56,12 @@ Numeric value. Defines a priority of the entry if multiple were activated at onc
 
 #### Insertion Position
 
-* **Before Chara:** World Info entry is inserted before the character's description and scenario. Has a moderate impact on the conversation.
-* **After Chara:** World Info entry is inserted after the character's description and scenario. Has a greater impact on the conversation.
+* **Before Char Defs:** World Info entry is inserted before the character's description and scenario. Has a moderate impact on the conversation.
+* **After Char Defs:** World Info entry is inserted after the character's description and scenario. Has a greater impact on the conversation.
+* **Top of AN:** World Info entry is inserted at the top of Author's Note content. Has a variable impact depending on the Author's Note position.
+* **Bottom of AN:** World Info entry is inserted at the bottom of Author's Note content. Has a variable impact depending on the Author's Note position.
+
+If your Author's Note is disabled (Insertion Frequency = 0), World Info entries in A/N positions will be ignored!
 
 #### Comment
 
@@ -73,6 +77,16 @@ If enabled, the entry would only be inserted when both a Key **AND** a Secondary
 
 If no secondary keys are provided, this flag is ignored.
 
+#### Probability
+
+This value acts like an additional filter that adds a chance for the entry NOT to be inserted when it is activated by any means (constant, primary key, recursion).
+
+1. Probability = 100 means that the entry will be inserted on every activation.
+2. Probability = 50 means that the entry will be inserted with a 1:1 chance.
+3. Probability = 0 means that the entry will NOT be inserted (essentially disabling it).
+
+Use this to create random events in your chats. For example, every message could have a 1% chance of waking up an Elder God if its name is mentioned in the message.
+
 ### Scan Depth
 
 Defines how many messages in the chat history should be scanned for World Info keys.
@@ -85,11 +99,11 @@ This stacks up to 10 message pairs in total.
 
 **Defines how many tokens could be used by World Info entries at once.**
 
-If the budget was exhausted, then no more entries are activated even if the keys are present in the prompt.
+If the budget is exhausted, then no more entries are activated even if the keys are present in the prompt.
 
 Constant entries will be inserted first. Then entries with higher order numbers.
 
-Entries inserted by direct mentioning their keys have higher priority than those that were mentioned in other entries' contents.
+Entries inserted by directly mentioning their keys have higher priority than those that were mentioned in other entries' contents.
 
 ### Recursive scanning
 
