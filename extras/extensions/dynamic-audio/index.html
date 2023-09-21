@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.748625496872">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.748625516517">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.748625496872" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.748625516517" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.748625496872" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.748625516517" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.748625496872" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.748625516517" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -231,8 +231,15 @@
 <li><p><strong>Enable Dynamic Audio Extension</strong>:</p>
 <ul>
 <li>In SillyTavern, go to <strong>Extensions</strong> &gt; <strong>Dynamic Audio</strong>.</li>
-<li>Enable the extension and adjust the volume of BGM and ambient sounds to your preference.</li>
-<li><em>(Optional)</em> Adjust the cooldown timer (in seconds) between BGM updates. Increase it if you find the BGM changes too frequently in group chats or when using character-specific BGM with emotion detection.</li>
+<li>Enable the extension, unmute and adjust the volume of BGM and ambient sounds to your preference.</li>
+<li>When bgm end another one will play randomly, click on loop button to keep current bgm playing</li>
+<li>Click on roll button to pick another bgm randomly</li>
+</ul>
+</li>
+<li><p><strong>Expression based BGM</strong>:</p>
+<ul>
+<li>Enable expression BGM switch if you want bgm to follow character expression (require bgm in character folder see below).</li>
+<li>Adjust the cooldown timer (in seconds) between BGM updates. Increase it if you find the BGM changes too frequently in group chats or when using character-specific BGM with emotion detection.</li>
 </ul>
 </li>
 </ol>
@@ -309,6 +316,7 @@
 <ul>
 <li>Ambient audio filenames correspond to background image filenames, replacing spaces with dashes.</li>
 <li>Example: <code v-pre>&quot;bedroom-clean.mp3&quot;</code> corresponds to the &quot;bedroom clean.jpg&quot; background.</li>
+<li>If the lock button is unlock the audio file corresponding to the background will play. Activating lock will keep current ambient playing.</li>
 </ul>
 </li>
 <li><p><strong>Custom Ambients</strong>:</p>
