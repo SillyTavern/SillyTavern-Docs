@@ -86,11 +86,11 @@ Green-Active-Writer - (CFG) Similar to Writer's Daemon, but with high CFG
 
 PilotFish - (CFG) Made for lore-heavy creative writing.
 
-Pro_Writer - N/A
+Pro_Writer - Mimic the pacing and feel of best-selling fiction
 
 Stelenes - More likely to choose reasonable alternatives. Variety on retries.
 
-Tea_Time - N/A
+Tea_Time - It gets good when it gets going.
 
 Tesseract - (CFG) Maintains style and quality.
 
