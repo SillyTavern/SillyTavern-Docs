@@ -9,6 +9,7 @@
 * RossAscends' additions: AGPL v3
 * Portions of CncAnon's TavernAITurbo mod: Unknown license
 * kingbri's various commits and suggestions (<https://github.com/bdashore3>)
+* city_unit's extensions and various QoL features (<https://github.com/city-unit>)
 * Waifu Mode inspired by the work of PepperTaco (<https://github.com/peppertaco/Tavern/>)
 * Thanks to Pygmalion University for being awesome testers and suggesting cool features!
 * Thanks to oobabooga for compiling presets for TextGen
