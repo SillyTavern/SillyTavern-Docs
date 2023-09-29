@@ -137,6 +137,7 @@ Circumstances and context of the dialogue.
 7. \{\{idle_duration\}\} inserts a humanized string of the time range since the last user message was sent (examples: 4 hours, 1 day).
 8. \{\{random:(args)\}\} returns a random item from the list. (e.g. \{\{random:1,2,3,4\}\} will return 1 of the 4 numbers at random). Works with text lists too.
 9. \{\{roll:(formula)\}\} generates a random value and returns it using the provided dice formula using D&D dice syntax: XdY+Z. For example, \{\{roll:d6\}\} will generate a random value in the 1-6 range (standard six-sided dice).
+10. \{\{bias "text here"\}\} sets a behavioral bias for the AI until the next user input. Quotes around the text are important.
 
 ### Favorite Character
 
