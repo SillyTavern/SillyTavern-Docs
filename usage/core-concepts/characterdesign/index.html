@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.748730186921">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.749304250827">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.748730186921" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.749304250827" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.748730186921" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.749304250827" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.748730186921" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.749304250827" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -370,6 +370,7 @@
 <li>{{idle_duration}} inserts a humanized string of the time range since the last user message was sent (examples: 4 hours, 1 day).</li>
 <li>{{random:(args)}} returns a random item from the list. (e.g. {{random:1,2,3,4}} will return 1 of the 4 numbers at random). Works with text lists too.</li>
 <li>{{roll:(formula)}} generates a random value and returns it using the provided dice formula using D&amp;D dice syntax: XdY+Z. For example, {{roll:d6}} will generate a random value in the 1-6 range (standard six-sided dice).</li>
+<li>{{bias &quot;text here&quot;}} sets a behavioral bias for the AI until the next user input. Quotes around the text are important.</li>
 </ol>
 <doc-anchor-target id="favorite-character">
     <h3>
