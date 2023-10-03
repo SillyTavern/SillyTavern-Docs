@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.749479631593">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.749668113925">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.749479631593" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.749668113925" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.749479631593" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.749668113925" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.749479631593" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.749668113925" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -205,7 +205,13 @@
 </doc-anchor-target>
 <p>Most often this is for people who want to use SillyTavern on their mobile phones while their PC runs the ST server on the same wifi network.</p>
 <p>However, it can be used to allow remote connections from anywhere as well.</p>
-<p><strong>IMPORTANT: SillyTavern is a single-user program, so anyone who logs in will be able to see all characters and chats, and be able to change any settings inside the UI.</strong></p>
+<p><strong>IMPORTANT:</strong> SillyTavern is a single-user program, so anyone who logs in will be able to see all characters and chats, and be able to change any settings inside the UI. <doc-anchor-trigger to="#HTTPBasicAuthentication">Basic Authentication</doc-anchor-trigger> allows for requesting authorization before access to ST is granted, however the single-user principle still applies.</p>
+<doc-anchor-target id="whitelist">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#whitelist">#</doc-anchor-trigger>
+        <span>Whitelist</span>
+    </h2>
+</doc-anchor-target>
 <doc-anchor-target id="1-managing-whitelisted-ips">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#1-managing-whitelisted-ips">#</doc-anchor-trigger>
@@ -218,7 +224,7 @@
 <ul>
 <li>Each IP must be on its own line.</li>
 <li><strong>127.0.0.1 MUST be included in the list, or you will not be able to connect on the host machine</strong></li>
-<li>Indidivual IPs, and wildcard (*) IP ranges are accepted.</li>
+<li>Individual IPs, and wildcard (*) IP ranges are accepted.</li>
 <li>CIDR masks are also accepted (eg. 10.0.0.0/24).</li>
 </ul>
 </li>
@@ -296,6 +302,49 @@
 <li>Create an inbound/outbound firewall rule for the port found in <code v-pre>config.conf</code>. Do NOT mistake this for portforwarding on your router, otherwise someone could find your chat logs and that&#x27;s a big no-no.</li>
 <li>Enable the Private Network profile type in Settings &gt; Network and Internet &gt; Ethernet. This is VERY important for Windows 11, otherwise you would be unable to connect even with the aforementioned firewall rules.</li>
 </ul>
+<doc-anchor-target id="http-basic-authentication">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#http-basic-authentication">#</doc-anchor-trigger>
+        <span><span id="HTTPBasicAuthentication">HTTP Basic Authentication</span></span>
+    </h2>
+</doc-anchor-target>
+<p>The server will ask for username and password whenever a client connects via HTTP.</p>
+<p>To enable HTTP BA, Open <code v-pre>config.conf</code> in the SillyTavern base directory and search for <code v-pre>basicAuthMode</code> Set basicAuthMode to true and set username and password. Note: config.conf will only exist if ST has been executed before at least once.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">const basicAuthMode = true
+const basicAuthUser = {username: &quot;MyUsername&quot;, password: &quot;MyPassword&quot;}; </code></pre>
+</doc-codeblock></div>
+<p>Save the file and restart SillyTavern if it was already running. You should be prompted for username and password when connecting to your ST. Both username and password are transmitted in plain text. If you are concerned about this, you can serve ST via HTTPS.</p>
+<doc-anchor-target id="https">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#https">#</doc-anchor-trigger>
+        <span>HTTPS</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="start-sillytavern-with-tlsssl">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#start-sillytavern-with-tlsssl">#</doc-anchor-trigger>
+        <span>Start SillyTavern with TLS/SSL</span>
+    </h3>
+</doc-anchor-target>
+<p>To encrypt traffic from and to your ST instance, start the server with the <code v-pre>--ssl</code> flag.</p>
+<p>Example:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">node server.js --ssl</code></pre>
+</doc-codeblock></div>
+<p>As per default, ST will search for your certificates inside the /cert folder. If your files are located elsewhere, you can use the <code v-pre>--keyPath</code> and <code v-pre>--certPath</code> arguments.</p>
+<p>Example:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">node server.js --ssl --keyPath /home/user/certificates/privkey.pem --certPath /home/user/certificates/cert.pem</code></pre>
+</doc-codeblock></div>
+<p>The user you&#x27;re running SillyTavern with requires read permissions on the certificate files.</p>
+<doc-anchor-target id="how-to-get-a-certificate">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-get-a-certificate">#</doc-anchor-trigger>
+        <span>How to get a certificate</span>
+    </h3>
+</doc-anchor-target>
+<p>The simplest, quickest way to get a certificate is by using <a href="https://letsencrypt.org/getting-started/">certbot</a>.</p>
 
                                 
                                 <!-- Required only on API pages -->
