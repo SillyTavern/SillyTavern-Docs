@@ -99,4 +99,27 @@ const basicAuthMode = true
 const basicAuthUser = {username: "MyUsername", password: "MyPassword"}; 
 ```
 
-Save the file and restart SillyTavern if it was already running. You should be prompted for username and password when connecting to your ST.
+Save the file and restart SillyTavern if it was already running. You should be prompted for username and password when connecting to your ST. Both username and password are transmitted in plain text. If you are concerned about this, you can serve ST via HTTPS.
+
+## HTTPS
+
+### Start SillyTavern with TLS/SSL
+
+To encrypt traffic from and to your ST instance, start the server with the `--ssl` flag. 
+
+Example:
+```
+node server.js --ssl
+```
+As per default, ST will search for your certificates inside the /cert folder. If your files are located elsewhere, you can use the `--keyPath` and `--certPath` arguments.
+
+Example:
+```
+node server.js --ssl --keyPath /home/user/certificates/privkey.pem --certPath /home/user/certificates/cert.pem
+```
+
+The user you're running SillyTavern with requires read permissions on the certificate files.
+
+### How to get a certificate
+
+The simplest, quickest way to get a certificate is by using [certbot](https://letsencrypt.org/getting-started/).
