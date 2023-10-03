@@ -89,7 +89,7 @@ After restarting your ST server, any device will be able to connect to it, regar
 * Create an inbound/outbound firewall rule for the port found in `config.conf`. Do NOT mistake this for portforwarding on your router, otherwise someone could find your chat logs and that's a big no-no.
 * Enable the Private Network profile type in Settings > Network and Internet > Ethernet. This is VERY important for Windows 11, otherwise you would be unable to connect even with the aforementioned firewall rules.
 
-## <a id="HTTPBasicAuthentication">HTTP Basic Authentication</a>
+## <span id="HTTPBasicAuthentication">HTTP Basic Authentication</span>
 
 The server will ask for username and password whenever a client connects via HTTP. 
 
