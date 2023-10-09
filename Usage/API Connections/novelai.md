@@ -65,6 +65,50 @@ Limits the token pool to however many tokens it takes for their probabilities to
 
 Limits the token pool to the k most likely tokens. A lower number is more consistent but less creative. 
 
+## Preset Descriptions
+This is, according to Novel AI, what the default presets are good for.
+
+### Kayra
+
+Asper - For creative writing. Expect unexpected twists.
+
+Blended-Coffee - (CFG) Fresh Coffee with some CFG mixed in.
+
+Blook - (CFG) Tends towards simple, concise but varied language.
+
+Carefree - A good All-rounder
+
+CosmicCube - (CFG) A solid, sensible baseline. Tweak randomness to preference.
+
+Fresh-Coffee - Keeps things on track. Handles instruct well. 
+
+Green-Active-Writer - (CFG) Similar to Writer's Daemon, but with high CFG
+
+PilotFish - (CFG) Made for lore-heavy creative writing.
+
+Pro_Writer - Mimic the pacing and feel of best-selling fiction
+
+Stelenes - More likely to choose reasonable alternatives. Variety on retries.
+
+Tea_Time - It gets good when it gets going.
+
+Tesseract - (CFG) Maintains style and quality.
+
+Writers-Daemon - Extremely imaginative, sometimes too much.
+
+
+### Clio
+
+Edgewise - Handles a variety of generation styles well
+
+Fresh Coffee - Keeps things on track.
+
+Long-Press - Intended for creative prose.
+
+Talker Chat - Designed for chat style generation.
+
+Vingt-Un - A good all-around default with a bent towards prose.
+
 ## Tips and FAQs for using NovelAI with SillyTavern
 
 There are a lot of common problems and questions that come up when switching to NovelAI from another ST backend API. The difference comes down to what the models are trained for. Most likely, you've used an OpenAI or Anthropic model (or a local model made to resemble those), which is built around following the user's instructions. NovelAI's models are built purely around text completion: instead of taking your input as a message and formulating a response, NAI's models attempt to continue the incoming prompt. Due to this difference, a lot of tips and common knowledge that work for other APIs won't work for NAI. 

@@ -8,7 +8,9 @@ Most often this is for people who want to use SillyTavern on their mobile phones
 
 However, it can be used to allow remote connections from anywhere as well.
 
-**IMPORTANT: SillyTavern is a single-user program, so anyone who logs in will be able to see all characters and chats, and be able to change any settings inside the UI.**
+**IMPORTANT:** SillyTavern is a single-user program, so anyone who logs in will be able to see all characters and chats, and be able to change any settings inside the UI. [Basic Authentication](#HTTPBasicAuthentication) allows for requesting authorization before access to ST is granted, however the single-user principle still applies.
+
+## Whitelist
 
 ### 1. Managing whitelisted IPs
 
@@ -16,7 +18,7 @@ However, it can be used to allow remote connections from anywhere as well.
 * Open the file in a text editor, add a list of IPs you want to be allowed to connect.
   * Each IP must be on its own line.
   * **127.0.0.1 MUST be included in the list, or you will not be able to connect on the host machine**
-  * Indidivual IPs, and wildcard (*) IP ranges are accepted.
+  * Individual IPs, and wildcard (*) IP ranges are accepted.
   * CIDR masks are also accepted (eg. 10.0.0.0/24).
 
 Examples:
@@ -86,3 +88,38 @@ After restarting your ST server, any device will be able to connect to it, regar
 
 * Create an inbound/outbound firewall rule for the port found in `config.conf`. Do NOT mistake this for portforwarding on your router, otherwise someone could find your chat logs and that's a big no-no.
 * Enable the Private Network profile type in Settings > Network and Internet > Ethernet. This is VERY important for Windows 11, otherwise you would be unable to connect even with the aforementioned firewall rules.
+
+## <span id="HTTPBasicAuthentication">HTTP Basic Authentication</span>
+
+The server will ask for username and password whenever a client connects via HTTP. 
+
+To enable HTTP BA, Open `config.conf` in the SillyTavern base directory and search for `basicAuthMode` Set basicAuthMode to true and set username and password. Note: config.conf will only exist if ST has been executed before at least once.
+```
+const basicAuthMode = true
+const basicAuthUser = {username: "MyUsername", password: "MyPassword"}; 
+```
+
+Save the file and restart SillyTavern if it was already running. You should be prompted for username and password when connecting to your ST. Both username and password are transmitted in plain text. If you are concerned about this, you can serve ST via HTTPS.
+
+## HTTPS
+
+### Start SillyTavern with TLS/SSL
+
+To encrypt traffic from and to your ST instance, start the server with the `--ssl` flag. 
+
+Example:
+```
+node server.js --ssl
+```
+As per default, ST will search for your certificates inside the /cert folder. If your files are located elsewhere, you can use the `--keyPath` and `--certPath` arguments.
+
+Example:
+```
+node server.js --ssl --keyPath /home/user/certificates/privkey.pem --certPath /home/user/certificates/cert.pem
+```
+
+The user you're running SillyTavern with requires read permissions on the certificate files.
+
+### How to get a certificate
+
+The simplest, quickest way to get a certificate is by using [certbot](https://letsencrypt.org/getting-started/).

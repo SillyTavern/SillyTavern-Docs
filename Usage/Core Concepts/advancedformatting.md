@@ -94,29 +94,3 @@ Supported APIs:
 2. oobabooga's Text Generation WebUI
 3. NovelAI
 4. OpenAI, including via OpenRouter (max 4 strings)
-
-### Multigen
-
-*This feature provides a pseudo-streaming functionality that conflicts with token streaming. When Multigen is enabled and generation API supports streaming, only Multigen streaming will be used.*
-
-SillyTavern tries to create faster and longer responses by chaining the generation using smaller batches.
-
-#### Default settings
-
-First batch = 50 tokens
-
-Next batches = 30 tokens
-
-#### Algorithm
-
-1. Generate the first batch (if the amount of generation setting is more than batch length).
-2. Generate the next batch of tokens until one of the stopping conditions is reached.
-3. Append the generated text to the next cycle's prompt.
-
-#### Stopping conditions
-
-1. Generated enough text.
-2. The character starts speaking for You.
-3. &lt;|endoftext|&gt; token reached.
-4. No text generated.
-5. Stop sequence generated. (Instruct mode only)
