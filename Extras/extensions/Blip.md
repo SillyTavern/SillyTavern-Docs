@@ -57,4 +57,7 @@ You can save a profile for each character:
    - Or put file directly into: `\SillyTavern\public\assets\blip`.
    - Enable the checkbox to force to wait entire file is played before playing again if needed.
 
+# Remarks
+- Blip animation can only start when full message is received, don't use streaming mode.
+
 Thank you for following this guide! Your SillyTavern experience is now enriched with text animation and blip voices.
