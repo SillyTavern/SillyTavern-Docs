@@ -18,10 +18,11 @@ Smart Context automatically takes the entire history of the chat file and puts i
 
 ### Setup Instructions
 
-1. Update SillyTavern to at least main branch version 1.6.0.
-2. Install or Update [Extras](https://github.com/SillyTavern/SillyTavern-extras) to the latest version.
-3. Install requirements-complete.txt for Extras (even if you did it once before in a prior install).
-4. run Extras with the chromadb module enabled: `python server.py --enable-modules=chromadb`
+1. Update SillyTavern to at least version 1.10.6.
+2. Install the "Smart Context" extension from the "Download Extensions & Assets" menu in the Extensions panel (stacked blocks icon).
+3. Install or Update [Extras](https://github.com/SillyTavern/SillyTavern-extras) to the latest version. Alternatively, use the [Colab notebook](https://colab.research.google.com/github/SillyTavern/SillyTavern/blob/release/colab/GPU.ipynb).
+4. *Local installs only:* Install requirements-complete.txt for Extras (even if you did it once before in a prior install).
+5. Run Extras with the chromadb module enabled: `python server.py --enable-modules=chromadb`
 
 #### Getting an error when installing ChromaDB?
 
