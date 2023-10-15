@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.750716381350">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.750716595140">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -14,7 +14,7 @@
     <!-- Primary Meta Tags -->
     <title>talkinghead | docs.ST.app</title>
     <meta name="title" content="talkinghead | docs.ST.app">
-    <meta name="description" content="A implementation of Talking Head Anime 3 Demo for AITuber. It possesses the following features:">
+    <meta name="description" content="An implementation of Talking Head Anime 3 Demo for AITuber. It possesses the following features:">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/extras/extensions/talkinghead/">
@@ -23,21 +23,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/extras/extensions/talkinghead/">
     <meta property="og:title" content="talkinghead | docs.ST.app">
-    <meta property="og:description" content="A implementation of Talking Head Anime 3 Demo for AITuber. It possesses the following features:">
+    <meta property="og:description" content="An implementation of Talking Head Anime 3 Demo for AITuber. It possesses the following features:">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/extras/extensions/talkinghead/">
     <meta property="twitter:title" content="talkinghead | docs.ST.app">
-    <meta property="twitter:description" content="A implementation of Talking Head Anime 3 Demo for AITuber. It possesses the following features:">
+    <meta property="twitter:description" content="An implementation of Talking Head Anime 3 Demo for AITuber. It possesses the following features:">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.750716381350" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.750716595140" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.750716381350" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.750716595140" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.750716381350" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.750716595140" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -209,14 +209,13 @@
         <span>What is it?</span>
     </h3>
 </doc-anchor-target>
-<p>A implementation of Talking Head Anime 3 Demo for AITuber. It possesses the following features:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">-Generates random Live 2D-like motion actions from a single static image.
-
--Lip-syncs to the sound output from any TTS output.</code></pre>
-</doc-codeblock></div>
-<p>This extentsion contains the orginal demo programs for the Talking Head(?) Anime from a Single Image 3: Now the Body Too project. As the name implies, the project allows you to animate anime characters, and you only need a single image of that character to do so. There are two demo programs:</p>
-<p>The manual_poser lets you manipulate a character&#x27;s facial expression, head rotation, body rotation, and chest expansion due to breathing through a graphical user interface, so you can save them as default expressions IE Happy, sad, joy etc.
+<p>An implementation of Talking Head Anime 3 Demo for AITuber. It possesses the following features:</p>
+<ul>
+<li>Generates random Live 2D-like motion actions from a single static image.</li>
+<li>Lip-syncs to the sound output from any TTS output.</li>
+</ul>
+<p>This extension contains the original demo programs for the Talking Head(?) Anime from a Single Image 3: Now the Body Too project. As the name implies, the project allows you to animate anime characters, and you only need a single image of that character to do so. There are two demo programs:</p>
+<p>The manual_poser lets you manipulate a character&#x27;s facial expression, head rotation, body rotation, and chest expansion due to breathing through a graphical user interface, so you can save them as default expressions IE Happy, sad, joy, etc.
 ifacialmocap_puppeteer lets you transfer your facial motion to an anime character.</p>
 <doc-anchor-target id="hardware-requirements">
     <h3>
@@ -224,7 +223,7 @@ ifacialmocap_puppeteer lets you transfer your facial motion to an anime characte
         <span>Hardware Requirements</span>
     </h3>
 </doc-anchor-target>
-<p>You can use either CPU or GPU Modes (CPU is default). However in CPU mode expect about 1 FPS and in GPU mode on an RTX3060 i am getting about 9-10 FPS.</p>
+<p>You can use either CPU or GPU Modes (CPU is default). However, in CPU mode expect about 1 FPS, and in GPU mode on an RTX3060 I am getting about 9-10 FPS.</p>
 <p>The ifacialmocap_puppeteer requires an iOS device that is capable of computing blend shape parameters from a video feed. This means that the device must be able to run iOS 11.0 or higher and must have a TrueDepth front-facing camera. (See this page for more info.) In other words, if you have the iPhone X or something better, you should be all set.</p>
 <doc-anchor-target id="how-to-use">
     <h3>
@@ -232,21 +231,28 @@ ifacialmocap_puppeteer lets you transfer your facial motion to an anime characte
         <span>How to use</span>
     </h3>
 </doc-anchor-target>
-<p>You must launch extras with the following modules for talkinghead to work: classify and talkinghead!
-classify is required for handling of the talkinghead.png file. Additionally you may also use --talkinghead-gpu to load the blend models into GPU memory and make the animations 10x faster. It is highly recommended to use gpu acceleration! By default once the program starts it will load a default image SillyTavern-extras\talkinghead\tha3\images\lambda_00.png. You can verify it is working by going to http://localhost:5100/api/talkinghead/result_feed or YOUR EXT URL:PORT/api/talkinghead/result_feed.</p>
-<p>-Once the server has started goto the Extension API tab and connect. Then simply select a character card to load. (--enable-modules=classify,talkinghead --talkinghead-gpu in server.py)</p>
-<p>-Now select the Character Expressions, if you check the image type talkinghead box the script will replace your current character expression with the result of YOUR EXT URL:PORT/api/talkinghead/result_feed unchecking the box SHOULD return the image back to the orginal expression, however sometimes you have to send a new message to the chat to &quot;reload&quot; the image.</p>
-<p>-If you do not have a talkinghead.png file in the character directory it will simply show either the default image or the last character card that had a talkinghead.png file. The animation source image is changed when the character card is changed.</p>
-<p>-Now open the character expressions scroll down to the talkinghead image and upload an image file that meets the requirements in the section below called &quot;Contraints on Input Images&quot;.</p>
-<p>-Then check and uncheck the talkinghead box to reload the character. IF the image is funny looking it is probably because it is not transparent / has no alpha layer. Otherwise follow the instructions and teamplate below.</p>
-<doc-anchor-target id="contraints-on-input-images">
+<p>You must launch extras with the following modules for talkinghead to work: <code v-pre>classify</code> and <code v-pre>talkinghead</code>!
+classify is required for the handling of the talkinghead.png file. Additionally, you may also use <code v-pre>--talkinghead-gpu</code> to load the blend models into GPU memory and make the animations 10x faster. It is highly recommended to use GPU acceleration! By default, once the program starts it will load a default image SillyTavern-extras\talkinghead\tha3\images\lambda_00.png. You can verify it is working by going to http://localhost:5100/api/talkinghead/result_feed or <code v-pre>YOUR EXT URL:PORT/api/talkinghead/result_feed</code>.</p>
+<ul>
+<li><p>Once the server has started go to the Extension API tab and connect. Then simply select a character card to load. (<code v-pre>--enable-modules=classify,talkinghead --talkinghead-gpu</code> when starting server.py)</p>
+</li>
+<li><p>Now select the Character Expressions, if you check the image type talkinghead box the script will replace your current character expression with the result of <code v-pre>YOUR EXT URL:PORT/api/talkinghead/result_feed</code> unchecking the box SHOULD return the image back to the original expression, however sometimes you have to send a new message to the chat to &quot;reload&quot; the image.</p>
+</li>
+<li><p>If you do not have a talkinghead.png file in the character directory it will simply show either the default image or the last character card that had a talkinghead.png file. The animation source image is changed when the character card is changed.</p>
+</li>
+<li><p>Now open the character expressions scroll down to the talkinghead image and upload an image file that meets the requirements in the section below called &quot;Constraints on Input Images&quot;.</p>
+</li>
+<li><p>Then check and uncheck the talkinghead box to reload the character. If the image is funny looking it is probably because it is not transparent / has no alpha layer. Otherwise, follow the instructions and template below.</p>
+</li>
+</ul>
+<doc-anchor-target id="constraints-on-input-images">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#contraints-on-input-images">#</doc-anchor-trigger>
-        <span>Contraints on Input Images</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#constraints-on-input-images">#</doc-anchor-trigger>
+        <span>Constraints on Input Images</span>
     </h3>
 </doc-anchor-target>
 <p>In order for the system to work well, the input image must obey the following constraints:</p>
-<p>It should be of resolution 512 x 512. (If the program receives an input image of any other size, they will resize the image to this resolution and also output at this resolution.)
+<p>It should be of resolution 512 x 512. (If the program receives an input image of any other size, it will resize the image to this resolution and also output at this resolution.)
 It must have an alpha channel.
 It must contain only one humanoid character.
 The character should be standing upright and facing forward.
@@ -267,12 +273,15 @@ The alpha channels of all pixels that do not belong to the character (i.e., back
     </h3>
 </doc-anchor-target>
 <p>In addition to the base feature (app.py), both manual_poser and ifacialmocap_puppeteer are available as desktop applications. To run them, you need to set up an environment for running programs written in the Python language. The environment needs to have the following software packages:</p>
-<p>Python &gt;= 3.8
-PyTorch &gt;= 1.11.0 with CUDA support
-SciPY &gt;= 1.7.3
-wxPython &gt;= 4.1.1
-Matplotlib &gt;= 3.5.1
-One way to do so is to install Anaconda and run the following commands in your shell:</p>
+<ul>
+<li>Python &gt;= 3.8</li>
+<li>PyTorch &gt;= 1.11.0 with CUDA support</li>
+<li>SciPY &gt;= 1.7.3</li>
+<li>wxPython &gt;= 4.1.1</li>
+<li>Matplotlib &gt;= 3.5.1</li>
+<li></li>
+</ul>
+<p>One way to do so is to install Anaconda and run the following commands in your shell:</p>
 <blockquote>
 <p>conda create -n talking-head-anime-3-demo python=3.8
 conda activate talking-head-anime-3-demo
