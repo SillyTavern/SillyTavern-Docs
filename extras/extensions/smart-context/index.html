@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.750604763767">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.750715919689">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -35,11 +35,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.750604763767" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.750715919689" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.750604763767" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.750715919689" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.750604763767" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.750715919689" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -244,10 +244,11 @@
     </h3>
 </doc-anchor-target>
 <ol>
-<li>Update SillyTavern to at least main branch version 1.6.0.</li>
-<li>Install or Update <a href="https://github.com/SillyTavern/SillyTavern-extras">Extras</a> to the latest version.</li>
-<li>Install requirements-complete.txt for Extras (even if you did it once before in a prior install).</li>
-<li>run Extras with the chromadb module enabled: <code v-pre>python server.py --enable-modules=chromadb</code></li>
+<li>Update SillyTavern to at least version 1.10.6.</li>
+<li>Install the &quot;Smart Context&quot; extension from the &quot;Download Extensions &amp; Assets&quot; menu in the Extensions panel (stacked blocks icon).</li>
+<li>Install or Update <a href="https://github.com/SillyTavern/SillyTavern-extras">Extras</a> to the latest version. Alternatively, use the <a href="https://colab.research.google.com/github/SillyTavern/SillyTavern/blob/release/colab/GPU.ipynb">Colab notebook</a>.</li>
+<li><em>Local installs only:</em> Install requirements-complete.txt for Extras (even if you did it once before in a prior install).</li>
+<li>Run Extras with the chromadb module enabled: <code v-pre>python server.py --enable-modules=chromadb</code></li>
 </ol>
 <doc-anchor-target id="getting-an-error-when-installing-chromadb">
     <h4>
