@@ -57,7 +57,7 @@ In addition to the base feature (app.py), both manual_poser and ifacialmocap_pup
 * SciPY >= 1.7.3
 * wxPython >= 4.1.1
 * Matplotlib >= 3.5.1
-* 
+
 One way to do so is to install Anaconda and run the following commands in your shell:
 
 > conda create -n talking-head-anime-3-demo python=3.8
