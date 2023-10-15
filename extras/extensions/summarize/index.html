@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.750716616063">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.750725125994">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -35,11 +35,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.750716616063" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.750725125994" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.750716616063" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.750725125994" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.750716616063" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.750725125994" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -250,14 +250,14 @@
 </figure>
 </p>
 <ul>
-<li><strong>Summary Contents Box</strong> - this displays the current summary. Summary is updated and embedded into the chat file&#x27;s metadata for every message recieved from the AI.</li>
-<li><strong>Restore Previous State</strong> - Replaces the current summaryt with the summary from the previous message. This is useful if the summarizer does a poor job at any given point.</li>
-<li><strong>Stop Summarization Updates checkbox</strong> - check this to prevent the summary from being automatically updated. This is useful if you want to provide a custom summary of  your own, or to effectively disable the summary by clearing the box and stopping udpates.</li>
-<li><strong>Chat to Summarize buffer length</strong> - This is the amount of chat context to be summarized, including the previous message&#x27;s sumnmary. Limited to 1024 tokens.</li>
+<li><strong>Summary Contents Box</strong> - this displays the current summary. Summary is updated and embedded into the chat file&#x27;s metadata for every message received from the AI.</li>
+<li><strong>Restore Previous State</strong> - Replaces the current summary with the summary from the previous message. This is useful if the summarizer does a poor job at any given point.</li>
+<li><strong>Stop Summarization Updates checkbox</strong> - check this to prevent the summary from being automatically updated. This is useful if you want to provide a custom summary of  your own, or to effectively disable the summary by clearing the box and stopping updates.</li>
+<li><strong>Chat to Summarize buffer length</strong> - This is the amount of chat context to be summarized, including the previous message&#x27;s summary. Limited to 1024 tokens.</li>
 <li><strong>Summary Output Length</strong> - The desired total length of the finished summary (what you see in the box). The summary will not always match this length, but the model will be encouraged to write enough to fill it.</li>
-<li><strong>Temperature</strong> - determines how creative the summary model is in writing the summary. higher values will produce more variation in the summary, at potential risk of inaccuracy.</li>
+<li><strong>Temperature</strong> - determines how creative the summary model is in writing the summary. Higher values will produce more variation in the summary, at potential risk of inaccuracy.</li>
 <li><strong>Repetition Penalty</strong> - high numbers here will help reduce the amount of repetitious phrases in the summary. 1.15-1.2 are good values.</li>
-<li><strong>Length Preference</strong> - values below <code v-pre>1</code> will pressure the AI to create shorter summarize, and values over <code v-pre>1</code> will encentive the AI to create longer summaries.</li>
+<li><strong>Length Preference</strong> - values below <code v-pre>1</code> will pressure the AI to create shorter summarize, and values over <code v-pre>1</code> will incentivize the AI to create longer summaries.</li>
 </ul>
 <doc-anchor-target id="changing-summary-model">
     <h3>
@@ -269,14 +269,14 @@
 <p>This can be changed by using the command line argument <code v-pre>--summarization-model=(###Hugging-Face-Model-URL-Here###)</code></p>
 <p>A known alternate Summarize model is <code v-pre>Qiliang/bart-large-cnn-samsum-ElectrifAi_v10</code>.</p>
 <hr>
-<doc-anchor-target id="useage-notes">
+<doc-anchor-target id="usage-notes">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#useage-notes">#</doc-anchor-trigger>
-        <span>Useage Notes</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#usage-notes">#</doc-anchor-trigger>
+        <span>Usage Notes</span>
     </h3>
 </doc-anchor-target>
 <ol>
-<li>Sumamry does not begin working until the chat has continued long enough that all chat messages are no longer able to fit into the context window.</li>
+<li>Summary does not begin working until the chat has continued long enough that all chat messages are no longer able to fit into the context window.</li>
 <li>Summaries are saved individually as metadata for each message in the chat file.</li>
 <li>Deleting a message from the chat will effectively remove its summary as well.</li>
 </ol>
