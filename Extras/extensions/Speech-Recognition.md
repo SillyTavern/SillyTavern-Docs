@@ -6,7 +6,7 @@ This guide will walk you through setting up speech recognition to transcribe you
 
 Before you begin, ensure you've met the following prerequisites:
 
-- Make sure you're on the latest staging branch of SillyTavern.
+- Make sure you're on the latest `staging` branch of SillyTavern.
 - Install the "Speech Recognition" extension from the "Download Extensions & Assets" menu in the Extensions panel (stacked blocks icon).
 
 ## Speech Recognition Setup (Browser)
