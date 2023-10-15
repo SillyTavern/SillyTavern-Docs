@@ -10,6 +10,7 @@ Ever enjoyed those famous "Presidents Play X" videos? They were created using RV
 
 Before you begin, ensure you've met the following prerequisites:
 
+- Install the "RVC" extension from the "Download Extensions & Assets" menu in the Extensions panel (stacked blocks icon).
 - Make sure you have `ffmpeg` binary in your PATH environment variable. This tool is used to convert incoming audio.
    - Use the Toolbox in Launcher.bat script to install ffmpeg automatically: https://github.com/SillyTavern/SillyTavern-Launcher/blob/main/Launcher.bat
    - Or download the build here: https://www.gyan.dev/ffmpeg/builds/ 
