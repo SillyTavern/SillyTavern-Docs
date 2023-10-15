@@ -6,6 +6,13 @@ The Objective extension lets the user specify an Objective for the AI to strive 
 
 This differs from adding static direction through prompting in that it adds sequential and paced directives for the AI to follow without user intervention. It gives a more genuine experience of the AI autonomously striving to reach a goal.
 
+### Prerequisites
+
+Before you begin, ensure you've met the following prerequisites:
+
+- Make sure you're on the latest `staging` branch of SillyTavern.
+- Install the "Objective" extension from the "Download Extensions & Assets" menu in the Extensions panel (stacked blocks icon).
+
 ### Common Use Cases
 
 Your imagination is the limit, you can give the AI any objective you wish and it will plan out how to achieve it. You can ask it to plan how to slay a demon, rob a temple, throw a lavish party, or even take over the world.
