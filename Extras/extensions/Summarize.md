@@ -2,7 +2,7 @@
 
 ### What is it?
 
-After the AI sends back a message, the Summarize extension looks through the chat history and then uses an AI summarization model that runs on the Extras host machine to create a dynamic summary of events. This summary is then sent along with every user input afterwards.
+After the AI sends back a message, the Summarize extension looks through the chat history and then uses an AI summarization model that runs on the Extras host machine to create a dynamic summary of events. This summary is then sent along with every user input afterward.
 
 ### How is that useful?
 
@@ -26,14 +26,14 @@ Once Summarize is enabled, it will show up in ST's Extensions panel list.
 
 ![Summarize Config Panel](https://files.catbox.moe/9ow1l9.png)
 
-- **Summary Contents Box** - this displays the current summary. Summary is updated and embedded into the chat file's metadata for every message received from the AI.
+- **Summary Contents Box** - this displays the current summary. The summary is updated and embedded into the chat file's metadata for every message received from the AI.
 - **Restore Previous State** - Replaces the current summary with the summary from the previous message. This is useful if the summarizer does a poor job at any given point.
-- **Stop Summarization Updates checkbox** - check this to prevent the summary from being automatically updated. This is useful if you want to provide a custom summary of  your own, or to effectively disable the summary by clearing the box and stopping updates.
+- **Stop Summarization Updates checkbox** - check this to prevent the summary from being automatically updated. This is useful if you want to provide a custom summary of your own or to effectively disable the summary by clearing the box and stopping updates.
 - **Chat to Summarize buffer length** - This is the amount of chat context to be summarized, including the previous message's summary. Limited to 1024 tokens.
 - **Summary Output Length** - The desired total length of the finished summary (what you see in the box). The summary will not always match this length, but the model will be encouraged to write enough to fill it.
 - **Temperature** - determines how creative the summary model is in writing the summary. Higher values will produce more variation in the summary, at potential risk of inaccuracy.
 - **Repetition Penalty** - high numbers here will help reduce the amount of repetitious phrases in the summary. 1.15-1.2 are good values.
-- **Length Preference** - values below `1` will pressure the AI to create shorter summarize, and values over `1` will incentivize the AI to create longer summaries.
+- **Length Preference** - values below `1` will pressure the AI to create shorter summaries, and values over `1` will incentivize the AI to create longer summaries.
 
 ### Changing Summary Model
 
