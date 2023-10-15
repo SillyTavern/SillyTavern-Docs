@@ -6,8 +6,8 @@ This guide will walk you through setting up and customizing blip extension for y
 
 Before you begin, ensure you've met the following prerequisites:
 
-- Make sure you're on the `staging` branch of `sillytavern`.
-- Go into Assets extension menu and install blip extension
+- Make sure you're on the latest `staging` branch of SillyTavern.
+- Install the "Blip" extension from the "Download Extensions & Assets" menu in the Extensions panel (stacked blocks icon).
 
 ## Blip global settings
 
