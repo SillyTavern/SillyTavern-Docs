@@ -6,7 +6,8 @@ This guide will walk you through setting up and customizing dynamic audio assets
 
 Before you begin, ensure you've met the following prerequisites:
 
-- Make sure you're on the `staging` branch of `sillytavern`.
+- Make sure you're on the latest `staging` branch of SillyTavern.
+- Install the "Dynamic Audio" extension from the "Download Extensions & Assets" menu in the Extensions panel (stacked blocks icon).
 
 ## Dynamic Audio Setup (Browser)
 
