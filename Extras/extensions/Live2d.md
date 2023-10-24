@@ -14,7 +14,7 @@ Before you begin, ensure you've met the following prerequisites:
 
     ![Asset folder example](https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/example_asset_folder.png)
 
-    - A Live2D model folder should include all necessary components for the Live2D model, such as expressions, motions, textures, sounds, and settings files. Notably the `***model.json` file must be at the root of the Live2D model folder for the model to be detected by the extension. In this example the `shizuku` live2d model folder may look like this:
+    - A Live2D model folder should include all necessary components for the Live2D model, such as expressions, motions, textures, sounds, and settings files. Notably the `***.model.json` file must be at the root of the Live2D model folder for the model to be detected by the extension. In this example the `shizuku` live2d model folder may look like this:
 
     ![Live2d model folder example](https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/example_live2d_model_folder.png)
 
