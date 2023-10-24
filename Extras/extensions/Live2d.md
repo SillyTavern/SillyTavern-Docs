@@ -1,150 +1,165 @@
-# Extension-live2d
+# SillyTavern Live2D Extension Setup Guide
 
-This guide will walk you through setting up and customizing Live2D extension for your SillyTavern experience. This extension allow to use a Live2D animated model for your character.You can customize several interactions depending on the model capacities.
+This guide will walk you through the process of setting up and customizing the Live2D extension for your SillyTavern experience. This extension allows you to use Live2D animated models for your character, providing a dynamic and interactive element to your virtual character.
 
 ## Prerequisites
 
 Before you begin, ensure you've met the following prerequisites:
 
-- Make sure you're on the latest `staging` branch of SillyTavern.
-- Install the "Live2d" extension from the "Download Extensions & Assets" menu in the Extensions panel (stacked blocks icon).
-- Put your live2d model folder into /public/assets/live2d folder. Should look like this:
+1. **Branch Selection**: Make sure you're using the latest `staging` branch of SillyTavern to access the latest features and updates.
 
-![Asset folder example](https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/example_asset_folder.png)
+2. **Extension Installation**: Install the "Live2D" extension from the "Download Extensions & Assets" menu in the Extensions panel (represented by the stacked blocks icon).
 
-- The model folder must include everything needed by the live2d model: expressions/motions/texture/sounds and settings file. This is the content of "shizuku" folder in this example:
+3. **Model Folder Placement**: Place your Live2D model folders into the `/public/assets/live2d` directory. A properly organized `live2d` assets folder might look like this:
 
-![Live2d model folder example](https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/example_live2d_model_folder.png)
+    ![Asset folder example](https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/example_asset_folder.png)
 
-### Remarks
-- The models can also be put into the character folder for example in /public/characters/Shizuku/live2d/. But those models will only be accessible for this character.
+    - A Live2D model folder should include all necessary components for the Live2D model, such as expressions, motions, textures, sounds, and settings files. Notably the `***model.json` file must be at the root of the Live2D model folder for the model to be detected by the extension. In this example the `shizuku` live2d model folder may look like this:
 
-# Extension settings
+    ![Live2d model folder example](https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/example_live2d_model_folder.png)
+
+    - Note: Models can also be placed in character-specific folders, such as `/public/characters/Shizuku/live2d/`. However, models in character folders will only be accessible for that specific character.
+
+## Extension Settings
+
+The Live2D extension offers various settings to customize the behavior of your animated model. Here are the key settings:
 
 ![UI global settings](https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/ui_global.png)
 
-## Global settings
+### Global Settings
 
 1. **Enabled**:
-   - Enable checkbox to activate the extension.
-   - Disable the extension if you wanna move normal sprites in group chat and enable again.
+   - Enable this checkbox to activate the extension, allowing your Live2D model to interact within SillyTavern.
+   - You can disable the extension if you want to use normal sprites only.
+   - You can disable the extension when you want to move normal sprites in a group chat and enable it again when you're ready to use Live2D models.
 
-2. **Follow cursor**:
-   - Enable checkbox to make live2d model follow your cursor (if the model handle it).
+2. **Follow Cursor**:
+   - Enable this checkbox to make the Live2D model follow your cursor, provided that the model supports this feature.
 
-3. **Auto-send interaction**:
-   - Enable checkbox to automatically request character when clicking on area with mapped message (see hit areas section).
+3. **Auto-send Interaction**:
+   - Enable this checkbox to automatically trigger character interactions when you click on areas with mapped messages (refer to the hit areas section for details).
 
-## Debug settings
 
-1. **Reset model before animation**
-   - Enable checkbox to reload the model before any animation. Will force the animation to start, allow spamming click. May be needed by some model where animations end in a state not compatible with the start of other animations.
+## Debug Settings
 
-2. **Show model frames**
-   - Enable checkbox to show the model frame, make it easier to know where to click to drag the model around. Also show the hit area if there is any, overing mouse shows hit area name.
+These settings help you control the behavior and visibility of your Live2D model for debugging purposes.
 
-## Character selection
+1. **Reset Model Before Animation**:
+   - Enable this checkbox to reload the model before any animation. This forces the animation to start and allows you to spam clicks if necessary. Some models may require this to ensure that animations begin from a compatible state.
 
-1. **Refresh button**
-    - Click the refresh button to reload the list of character in current chat.
+2. **Show Model Frames**:
+   - Enable this checkbox to display the model frame, making it easier to identify where to click to drag the model around. It also shows the hit area, if available. Hovering over a hit area will shows its name.
 
-2. **Select character**
-    - Use the drop down list to select a character you want to assign a live2d model to.
+3. **Reload button**
+    - Click this button to reload every live2d model. Use it in case something glitch.
 
-3. **Remove button**
-    - Click this button and confirm if you want to delete all assigned model of a character.
+## Character Selection
 
-## Model selection
+These settings allow you to manage characters and assign Live2D models to them.
+
+1. **Refresh Button**:
+   - Click the refresh button to update the list of characters in the current chat.
+
+2. **Select Character**:
+   - Use the drop-down list to choose a character to assign a Live2D model to.
+
+3. **Remove Button**:
+   - Click this button to delete all assigned models for a character. A confirmation prompt will appear to confirm the deletion.
+
+## Model Selection
 
 ![UI model list](https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/ui_model_list.png)
 
-1. **Refresh button**
-    - Click the refresh button if your live2d model does not show in the list.
+1. **Refresh Button**:
+   - Click the refresh button if your Live2D model does not appear in the list.
 
-2. **Select model**
-    - Select a model from the list to assign it at the selected character
-    - It can be a model stored in the asset folder or in the current character folder.
-    - The list show the model folder name, if its asset or char origin and the name of the detected model setting file
-    - It's possible that some model have different version in the same model folder, just try the different model file.
+2. **Select Model**:
+   - Choose a model from the list to assign it to the selected character.
+   - The model can be located in the asset folder or the current character's folder.
+   - The list displays the model folder name, its origin (asset or character), and the name of the detected model setting file.
+   - Note that some model folders may contain different versions of the same model. You can try different model files to see which one works best.
+   - Selecting none will use normal sprites if there is any
+   - Settings are saved per character and model
 
-## Model settings
+## Model Settings
 
 ![UI model settings](https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/ui_model_settings.png)
 
-1. **Model scale**
-    - Use the slider to change the model smaller or bigger.
+1. **Model Scale**:
+   - Use the slider to adjust the size of the model, making it larger or smaller.
 
-2. **Model center X offset**
-    - Use the slider to change the model horizontal position relative to window center.
+2. **Model Center X Offset**:
+   - Use the slider to change the horizontal position of the model relative to the window center.
 
-3. **Model center Y offset**
-    - Use the slider to change the model vertical position relative to window center.
+3. **Model Center Y Offset**:
+   - Use the slider to adjust the vertical position of the model relative to the window center.
+
 
 ### Remarks
-    - The settings are saved and carry over different chats.
-    - You can also drag the model with your mouse and those settings will be updated and saved.
-    - Use those ui settings to bring you model back on screen if you somehow made it out of view. Also check the show frame checkbox to see clearly where you can click to drag the model.
+- The settings are saved and carry over different chats.
+- You can also drag the model with your mouse, and those settings will be updated and saved.
+- Use these UI settings to bring your model back on the screen if you somehow made it out of view. Also, check the "Show frame" checkbox to see clearly where you can click to drag the model.
 
 ## Model Talk
 
 ![UI model talk](https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/ui_model_talk.png)
 
 1. **Param mouth open Y id**
-    - Select from the list the id of the paramater corresponding to the model mouth Y value. Not all model have one and name vary from model to model. Usually something like "PARAM_MOUTH_OPEN_Y" or "ParamMouthOpenY". Check the model when selecting an element of the list it will try to run the speak animation, if the mouth move you got it!
+    - Select from the list the ID of the parameter corresponding to the model's mouth Y value. Not all models have one, and names may vary from model to model. Usually something like "PARAM_MOUTH_OPEN_Y" or "ParamMouthOpenY". Check the model when selecting an element from the list; it will try to run the speak animation. If the mouth moves, you got it!
 
 2. **Mouth movement speed**
-    - Adjust the slider to chagne the movement speed of the mouth animation.
+    - Adjust the slider to change the movement speed of the mouth animation.
 
 3. **Time per character**
-    - Set the time duration of each character, the duration of the animation talk will be this time multiplied by the size of the message.
+    - Set the time duration of each character. The duration of the talk animation will be this time multiplied by the number of characters of the message.
 
 ### Remarks
-    - This mouth animation does not work on every model and every animations. Even if your model has animation where the mouth move does not mean the mouth animation can be controled by this extension. If nothing show in the parameter list your model is probably made with a too old version of live2d to access the parameters properly.
+- This mouth animation does not work on every model and every animation. Even if your model has animations where the mouth moves, it does not mean the mouth animation can be controlled by this extension. If nothing shows in the parameter list, your model is probably made with a too old version of Live2D to access the parameters properly.
 
 ## Model Animations
 
-![UI model animations](https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/ui_model_animations.png)
+![UI model talk](https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/ui_model_animations.png)
 
 1. **Starter animation**
-    - Select an expression and motion from the lists that will play when starting a chat with the character. You can also add a delay during wich the model will be invisible if you need to hide the character during some time to achieve perfect effect.
+    - Select an expression and motion from the lists that will play when starting a chat with the character. You can also add a delay during which the model will be invisible if you need to hide the character for some time to achieve a perfect effect.
 
 2. **Default animation**
-    - Select and expression and motion from the list that will play when the character send a message. Used a fallback animation when using classify expression extension.
+    - Select an expression and motion from the list that will play when the character sends a message. Use a fallback animation when using the classify expression extension.
 
 ### Remarks
-- Animation will play when you select one in the lists.
-- use the replay button to replay the selected animation.
-- Some model have expression defines as motions.
-- If nothing show in the lists, it's probable your model setting file have no expression/motion defined.
+- Animations will play when you select one in the lists.
+- Use the replay button to replay the selected animation.
+- Some models have expressions defined as motions.
+- If nothing shows in the lists, it's probable your model's setting file has no expressions/motions defined.
 
-## Hit areas mapping 
+## Hit areas mapping
 
-![UI model hit frames](https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/ui_model_hit_frames.png)
+![UI model talk](https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/ui_model_hit_frames.png)
 
 1. **Default click animation**
-    - select an expression and motion from the list that will plays when you click on the model. You can also set a message that will be send a user message.
+    - Select an expression and motion from the list that will play when you click on the model. You can also set a message that will be sent as a user message.
 
 2. **Hit areas**
-    - If the model have hit areas they will be listed and you can assign an animation/message to each of them.
+    - If the model has hit areas, they will be listed, and you can assign an animation/message to each of them.
+
 
 ### Remarks
-    - Some model have no hit area but default click is detected for all.
-    - Default click will trigger if you click on a hit area with nothing mapped or if clicking outside of any hit area
-    - Hit are have priority defined in the model, for example "mouth" is inside "head", if it does not behave properly it's the model file fault.
-    - For some model animation need to finish before starting another one, use the debug checkbox if you wanna force the refresh and spam animations.
+- Some models have no hit areas, but the default click is detected for all.
+- The default click will trigger if you click on a hit area with nothing mapped or if clicking outside of any hit area.
+- Hit areas have priority defined in the model; for example, "mouth" is inside "head." If it does not behave properly, it may be due to the model file.
+- For some models, animations need to finish before starting another one. Use the debug checkbox if you want to force the refresh and spam animations.
 
-## Classified expressions mapping
+## Classified Expressions Mapping
 
-![UI model classify](https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/ui_model_classify.png)
+![UI model talk](https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/ui_model_classify.png)
 
 1. **Requirements**
-    - Need to use the classify expression extension.
-    - Otherwise will fallback to default animation
+    - Requires the use of the classify expression extension; otherwise, it will fallback to the default animation.
 
 2. **Mapping**
-    - For each detected emotion by the classify extension you can assign an expression/motion animation.
+    - For each detected emotion by the classify extension, you can assign an expression/motion animation.
 
 ### Remarks
-    - If the previous animation did not finished when new message is received it's possible the new animation will not play. It's dependant of the live2d model. Use the debug checkbox to force the animation to play.
+- If the previous animation did not finish when a new message is received, it's possible that the new animation will not play. This behavior is dependent on the Live2D model. Use the debug checkbox if you want to force the animation to play.
 
-Thank you for following this guide! Your SillyTavern experience is now enriched with animated and interactive live2d models.
+Thank you for following this guide! Your SillyTavern experience is now enriched with animated and interactive Live2D models.
