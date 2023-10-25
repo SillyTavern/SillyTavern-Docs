@@ -26,36 +26,38 @@ If no characters were activated at previous steps, one speaker is selected rando
 
 Characters are drafted based on the order they are presented in the group members list. No other rules apply.
 
-### Mute Character
+### Other Group Chat menu options
+
+#### Mute Character
 
 The struck-out speech bubble icon next to the character avatar in the group chat menu can disable or enable replies from a particular character in the chat.
 
-### Force Talk
+#### Force Talk
 
 The speech bubble icon icon next to the character avatar in the group chat menu will trigger a reply from a particular character. 
 
-### Auto-mode
+#### Auto-mode
 
 While auto-mode is enabled, the group chat will follow the reply order and trigger responses without user interaction. Auto-mode turn is triggered after a 5-second delay when the last drafted character sends its message. When the user starts typing into the send message text area, the auto-mode will be disabled, but already queued generations are not stopped automatically.
 
-### Allow Self Responses
+#### Allow Self Responses
 
 Will allow consecutive replies from the character who sent the latest message of each turn if they happen to be triggered due to being self-mentioned when the Natural Order is selected.
 
-### Group Chat Scenario Override
+#### Group Chat Scenario Override
 
 Will override any selected scenarios for the existing characters.
 
-### Peek Character Definitions
+#### Peek Character Definitions
 
 Clicking on the character card icon next to the avatar in the group chat menu will quickly navigate to the usual character definitions screen. Any changes made here will be saved to the card itself.
 
 To return back to the group chat, click the Group Name title link.
 
-### Member Management
+#### Member Management
 
 Any of your existing characters can be added, removed, muted, or re-ordered within the group chat. By default, a new member is added to the top of the group members list and then can be re-ordered using the arrow icons.
 
-### Group Chat pop-out
+#### Group Chat pop-out
 
 The group chat menu pop-out can be activated by clicking on the icon next to the "Current Members" field. This creates a pop-out of the group chat menu. By enabling MovingUI from user settings, this menu can resized and dragged to any position within the interface and functions just like the regular group chat menu.
