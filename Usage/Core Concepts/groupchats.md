@@ -34,7 +34,7 @@ The struck-out speech bubble icon next to the character avatar in the group chat
 
 #### Force Talk
 
-The speech bubble icon icon next to the character avatar in the group chat menu will trigger a reply from a particular character. 
+The speech bubble icon next to the character avatar in the group chat menu will trigger a reply only from a particular character, bypassing the reply order strategy. It will work even if the group member is muted.
 
 #### Auto-mode
 
