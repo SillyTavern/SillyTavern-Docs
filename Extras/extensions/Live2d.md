@@ -48,10 +48,10 @@ These settings help you control the behavior and visibility of your Live2D model
    - Enable this checkbox to reload the model before any animation. This forces the animation to start and allows you to spam clicks if necessary. Some models may require this to ensure that animations begin from a compatible state.
 
 2. **Show Model Frames**:
-   - Enable this checkbox to display the model frame, making it easier to identify where to click to drag the model around. It also shows the hit area, if available. Hovering over a hit area will shows its name.
+   - Enable this checkbox to display the model frame, making it easier to identify where to click to drag the model around. It also shows the hit area, if available. Hovering over a hit area will show its name.
 
 3. **Reload button**
-    - Click this button to reload every live2d model. Use it in case something glitch.
+    - Click this button to reload every live2d model. Use it in case something glitches.
 
 ## Character Selection
 
@@ -145,16 +145,16 @@ These settings allow you to manage characters and assign Live2D models to them.
 
 ### Remarks
 - Some models have no hit areas, but the default click is detected for all.
-- The default click will trigger if you click on a hit area with nothing mapped or if clicking outside of any hit area.
+- The default click will trigger if you click on a hit area with nothing mapped or if you click outside of any hit area.
 - Hit areas have priority defined in the model; for example, "mouth" is inside "head." If it does not behave properly, it may be due to the model file.
-- For some models, animations need to finish before starting another one. Use the debug checkbox if you want to force the refresh and spam animations.
+- For some models, animations need to be finished before starting another one. Use the debug checkbox if you want to force the refresh and spam animations.
 
 ## Classified Expressions Mapping
 
 ![UI model talk](https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/ui_model_classify.png)
 
 1. **Requirements**
-    - Requires the use of the classify expression extension; otherwise, it will fallback to the default animation.
+    - Requires the use of the classify expression extension; otherwise, it will fall back to the default animation.
 
 2. **Mapping**
     - For each detected emotion by the classify extension, you can assign an expression/motion animation.
