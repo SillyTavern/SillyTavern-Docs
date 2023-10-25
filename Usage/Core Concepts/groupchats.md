@@ -38,7 +38,7 @@ The speech bubble icon icon next to the character avatar in the group chat menu 
 
 #### Auto-mode
 
-While auto-mode is enabled, the group chat will follow the reply order and trigger responses without user interaction. Auto-mode turn is triggered after a 5-second delay when the last drafted character sends its message. When the user starts typing into the send message text area, the auto-mode will be disabled, but already queued generations are not stopped automatically.
+While auto-mode is enabled, the group chat will follow the reply order and trigger the message generation without user interaction. The next auto-mode turn is triggered after a 5-second delay when the last drafted character sends its message. When the user starts typing into the send message text area, the auto-mode will be disabled, but already queued generations are not stopped automatically.
 
 #### Allow Self Responses
 
