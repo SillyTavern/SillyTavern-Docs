@@ -64,11 +64,11 @@ While auto-mode is enabled, the group chat will follow the reply order and trigg
 
 #### Allow Self Responses
 
-Will allow consecutive replies from the character who sent the latest message of each turn if they happen to be triggered due to being self-mentioned when the Natural Order is selected.
+Will allow consecutive replies from the character who sent the latest message of each turn if they happen to be triggered due to being self-mentioned when the Natural Order is selected. Has no effect on List order.
 
 #### Group Chat Scenario Override
 
-Will override any selected scenarios for the existing characters.
+All group members will use the entered scenario text instead of what is specified in their character cards. Branched chats inherit the scenario override from their parent and can be changed individually after that.
 
 #### Peek Character Definitions
 
