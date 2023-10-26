@@ -26,6 +26,28 @@ If no characters were activated at previous steps, one speaker is selected rando
 
 Characters are drafted based on the order they are presented in the group members list. No other rules apply.
 
+### Group generation handling mode
+
+This setting decides how to handle the character information of the group chat members. No matter the choice, the group chat history is always shared between all the members.
+
+#### Swap character cards
+
+Default mode. Every time the message is generated, only the character card information of the active speaker is included in the context.
+
+#### Join character cards
+
+The information of all of the group members (excluding muted if they aren't the current speaker) is combined into one in their list order. This can help in cases when altering large chunks of the context is undesirable, e.g. with llama.cpp.
+
+The following fields are being combined:
+
+1. Description
+2. Scenario, if not overridden for the chat
+3. Personality
+4. Message examples
+5. Character notes / Depth prompts
+
+**Important!** Please be aware that due to how the typical character card is structured, the use of this mode can lead to unexpected behavior, including but not limited to: characters being confused about themselves, having merged personalities, uncertain traits, etc.
+
 ### Other Group Chat menu options
 
 #### Mute Character
