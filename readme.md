@@ -1,6 +1,6 @@
 # What is SillyTavern?
 
-![](https://github.com/Cohee1207/SillyTavern/assets/18619528/8c41a061-7f72-4d2b-9d54-e6d058209e7b)
+![SillyTavern Banner](https://github.com/SillyTavern/SillyTavern/assets/18619528/c2be4c3f-aada-4f64-87a3-ae35a68b61a4)
 
 Brought to you by Cohee, RossAscends, and the SillyTavern community, SillyTavern is a local-install interface that allows you to interact with text generation AIs (LLMs) to chat and roleplay with custom characters.
 
