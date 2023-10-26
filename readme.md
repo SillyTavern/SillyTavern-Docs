@@ -6,6 +6,10 @@ Brought to you by Cohee, RossAscends, and the SillyTavern community, SillyTavern
 
 SillyTavern originated as a modification of TavernAI 1.2.8 in February 2023, and has since added many cutting-edge features not present in the original TavernAI.
 
+### Missing extensions after the update?
+
+Since the 1.10.6 release version, most of the previously built-in extensions have been converted to downloadable add-ons. You can download them via the built-in "Download Extensions and Assets" menu in the extensions panel (stacked blocks icon in the top bar).
+
 ### Screenshots
 
 | ![Chat](https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/f750387b-b923-4561-85cf-b86b14e39afd) | ![Waifu mode](https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/a3d0d020-25a1-4c06-9342-972e43b1ad93) |
