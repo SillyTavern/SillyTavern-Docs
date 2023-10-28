@@ -1,6 +1,6 @@
 # What is SillyTavern?
 
-![SillyTavern - LLM Frontend for Power Users](https://github.com/SillyTavern/SillyTavern/assets/18619528/c2be4c3f-aada-4f64-87a3-ae35a68b61a4)
+![SillyTavern - LLM Frontend for Power Users](https://docs.sillytavern.app/static/banner.jpg)
 
 Brought to you by Cohee, RossAscends, and the SillyTavern community, SillyTavern is a local-install interface that allows you to interact with text generation AIs (LLMs) to chat and roleplay with custom characters.
 
@@ -12,9 +12,9 @@ Since the 1.10.6 release version, most of the previously built-in extensions hav
 
 ### Screenshots
 
-| ![Chat](https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/f750387b-b923-4561-85cf-b86b14e39afd) | ![Waifu mode](https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/a3d0d020-25a1-4c06-9342-972e43b1ad93) |
+| ![Chat](https://docs.sillytavern.app/static/screenshot1.jpg) | ![Waifu mode](https://docs.sillytavern.app/static/screenshot2.jpg) |
 |:---:|:---:|
-| ![VN Mode](https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/772d7c7a-0f41-4138-b155-d86b61bf2cce) | ![Backgrounds](https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/e3df8fcc-edfe-4a5d-8ac6-9462181aad4c) |
+| ![VN Mode](https://docs.sillytavern.app/static/screenshot3.jpg) | ![Backgrounds](https://docs.sillytavern.app/static/screenshot4.jpg) |
 
 ### Branches
 
