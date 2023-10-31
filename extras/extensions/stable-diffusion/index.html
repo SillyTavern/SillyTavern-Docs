@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.752108203441">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.752109981321">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -14,7 +14,7 @@
     <!-- Primary Meta Tags -->
     <title>Stable Diffusion | docs.ST.app</title>
     <meta name="title" content="Stable Diffusion | docs.ST.app">
-    <meta name="description" content="Use local or cloud-based Stable Diffusion WebUI API to generate images. The free mode is also supported via ">
+    <meta name="description" content="Use local or cloud-based Stable Diffusion APIs to generate images. The free mode is also supported via the ">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/extras/extensions/stable-diffusion/">
@@ -23,21 +23,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/extras/extensions/stable-diffusion/">
     <meta property="og:title" content="Stable Diffusion | docs.ST.app">
-    <meta property="og:description" content="Use local or cloud-based Stable Diffusion WebUI API to generate images. The free mode is also supported via ">
+    <meta property="og:description" content="Use local or cloud-based Stable Diffusion APIs to generate images. The free mode is also supported via the ">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/extras/extensions/stable-diffusion/">
     <meta property="twitter:title" content="Stable Diffusion | docs.ST.app">
-    <meta property="twitter:description" content="Use local or cloud-based Stable Diffusion WebUI API to generate images. The free mode is also supported via ">
+    <meta property="twitter:description" content="Use local or cloud-based Stable Diffusion APIs to generate images. The free mode is also supported via the ">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.752108203441" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.752109981321" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.752108203441" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.752109981321" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.752108203441" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.752109981321" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -203,9 +203,84 @@
         <span>Stable Diffusion</span>
     </h1>
 </doc-anchor-target>
-<p>Use local or cloud-based Stable Diffusion WebUI API to generate images.
-The free mode is also supported via <code v-pre>/sd (anything_here_)</code> command in the chat input bar.
+<p>Use local or cloud-based Stable Diffusion APIs to generate images.
+The free mode is also supported via the <code v-pre>/sd (anything_here)</code> command in the chat input bar.
 Most common Stable Diffusion generation settings are customizable within the SillyTavern UI.</p>
+<doc-anchor-target id="generation-modes">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#generation-modes">#</doc-anchor-trigger>
+        <span>Generation modes</span>
+    </h2>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th style="text-align: left;">Wand menu item</th>
+<th style="text-align: left;">Slash command argument</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Remarks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">&quot;Yourself&quot;</td>
+<td style="text-align: left;"><code v-pre>you</code></td>
+<td style="text-align: left;">A full-body portrait of the current character.</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;">&quot;Your Face&quot;</td>
+<td style="text-align: left;"><code v-pre>face</code></td>
+<td style="text-align: left;">A close-up portrait of the current character.</td>
+<td style="text-align: left;">Forces a portrait aspect ratio.</td>
+</tr>
+<tr>
+<td style="text-align: left;">&quot;Me&quot;</td>
+<td style="text-align: left;"><code v-pre>me</code></td>
+<td style="text-align: left;">A portrait of the user persona.</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;">&quot;The Whole Story&quot;</td>
+<td style="text-align: left;"><code v-pre>scene</code></td>
+<td style="text-align: left;">A visual recap of the chat events.</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;">&quot;The Last Message&quot;</td>
+<td style="text-align: left;"><code v-pre>last</code></td>
+<td style="text-align: left;">A visual recap of the last chat message.</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;">&quot;Raw Last Message&quot;</td>
+<td style="text-align: left;"><code v-pre>raw_last</code></td>
+<td style="text-align: left;">Last message used as a prompt verbatim.</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;">&quot;Background&quot;</td>
+<td style="text-align: left;"><code v-pre>background</code></td>
+<td style="text-align: left;">A chat background based on story context.</td>
+<td style="text-align: left;">Forces a wide landscape aspect ratio.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="how-to-generate-an-image">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-generate-an-image">#</doc-anchor-trigger>
+        <span>How to generate an image</span>
+    </h2>
+</doc-anchor-target>
+<ol>
+<li>Use the &quot;Stable Diffusion&quot; item in the extensions context menu (wand).</li>
+<li>Type a <code v-pre>/sd (argument)</code> slash command with an argument from the Generation modes table. Anything else would trigger a &quot;free mode&quot; to make SD generate whatever you prompted. Example: <code v-pre>/sd apple tree</code> would generate a picture of an apple tree.</li>
+<li>Look for a paintbrush icon in the context actions for chat messages. This will force the &quot;Raw Message&quot; mode for the selected message.</li>
+</ol>
+<p>Every generation mode besides raw message and free mode will trigger a prompt generation using your currently selected main generation API to convert chat context into the SD prompt.
+You can configure the instruction template for generating prompts for every generation mode using the &quot;SD Prompt Templates&quot; settings drawer in the extensions panel.</p>
 <doc-anchor-target id="supported-sources">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#supported-sources">#</doc-anchor-trigger>
@@ -225,6 +300,13 @@ Most common Stable Diffusion generation settings are customizable within the Sil
         <span>Options</span>
     </h2>
 </doc-anchor-target>
+<doc-anchor-target id="edit-prompts-before-generation">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#edit-prompts-before-generation">#</doc-anchor-trigger>
+        <span>Edit prompts before generation</span>
+    </h3>
+</doc-anchor-target>
+<p>Allow to edit the automatically generated prompts manually before sending them to the Stable Diffusion API.</p>
 <doc-anchor-target id="auto-enhance-prompts">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#auto-enhance-prompts">#</doc-anchor-trigger>
@@ -233,6 +315,48 @@ Most common Stable Diffusion generation settings are customizable within the Sil
 </doc-anchor-target>
 <p>This option uses an additional GPT-2 text generation model to add more details to the prompt generated by the main API.
 Works best for SDXL image models. It may not work well with other models, and it is recommended to manually edit prompts in this case.</p>
+<doc-anchor-target id="common-prompt-prefix">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#common-prompt-prefix">#</doc-anchor-trigger>
+        <span>Common prompt prefix</span>
+    </h2>
+</doc-anchor-target>
+<p>Added before every generated or free-mode prompt. Commonly used for setting the overall style of the picture.</p>
+<p>Example: <code v-pre>best quality, anime lineart</code>.</p>
+<p><strong>Pro tip:</strong> Use <code v-pre>{prompt}</code> macro to specify where exactly the generated prompt will be inserted.</p>
+<doc-anchor-target id="negative-prompt">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#negative-prompt">#</doc-anchor-trigger>
+        <span>Negative prompt</span>
+    </h2>
+</doc-anchor-target>
+<p>Characteristics of the image you don&#x27;t want to be present in the output.</p>
+<p>Example: <code v-pre>bad quality, watermark</code>.</p>
+<doc-anchor-target id="character-specific-prompt-prefix">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#character-specific-prompt-prefix">#</doc-anchor-trigger>
+        <span>Character-specific prompt prefix</span>
+    </h2>
+</doc-anchor-target>
+<p>Any characteristics that describe the currently selected character. Will be added after a common prefix.</p>
+<p>Example: <code v-pre>female, green eyes, brown hair, pink shirt</code>.</p>
+<p>Limitations:</p>
+<ol>
+<li>Works only in 1-to-1 chats. Will not be used in groups.</li>
+<li>Won&#x27;t be used for backgrounds and free mode generations.</li>
+</ol>
+<p><strong>Pro tip:</strong> If supported by the generation source, you can also use LoRAs/embeddings here, for example: <code v-pre>&lt;lora:DonaldDuck:1&gt;</code>.</p>
+<doc-anchor-target id="styles">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#styles">#</doc-anchor-trigger>
+        <span>Styles</span>
+    </h2>
+</doc-anchor-target>
+<p>Use this to quickly save and restore your favorite style/quality presets quickly them later or when switching between models. The following is included in the Style preset:</p>
+<ol>
+<li>Common Prompt Prefix</li>
+<li>Negative Prompt</li>
+</ol>
 
                                 
                                 <!-- Required only on API pages -->
