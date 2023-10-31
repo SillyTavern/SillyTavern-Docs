@@ -1,4 +1,4 @@
-# Realtime Voice Cloning (RVC) Tutorial
+# Realtime Voice Cloning (RVC)
 
 This guide will walk you through using RVC, a technique that allows transferring voice features from one audio clip to another, enabling voices to speak in different tones and styles.
 
