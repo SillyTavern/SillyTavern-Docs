@@ -72,7 +72,7 @@ Limitations:
 
 ## Styles
 
-Use this to quickly save and restore your favorite style/quality presets quickly them later or when switching between models. The following is included in the Style preset:
+Use this to quickly save and restore your favorite style/quality presets to use them later or when switching between models. The following is included in the Style preset:
 
 1. Common Prompt Prefix
 2. Negative Prompt
