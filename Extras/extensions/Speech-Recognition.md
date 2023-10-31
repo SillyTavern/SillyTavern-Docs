@@ -8,6 +8,7 @@ Before you begin, ensure you've met the following prerequisites:
 
 - Make sure you're on the latest `staging` branch of SillyTavern.
 - Install the "Speech Recognition" extension from the "Download Extensions & Assets" menu in the Extensions panel (stacked blocks icon).
+- Have ffmpeg binary installed. See https://docs.sillytavern.app/extras/extensions/rvc/#rvc-setup 
 
 ## Speech Recognition Setup (Browser)
 
