@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.752110286430">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.752188233172">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.752110286430" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.752188233172" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.752110286430" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.752188233172" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.752110286430" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.752188233172" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -307,6 +307,33 @@ You can configure the instruction template for generating prompts for every gene
     </h3>
 </doc-anchor-target>
 <p>Allow to edit the automatically generated prompts manually before sending them to the Stable Diffusion API.</p>
+<doc-anchor-target id="interactive-mode">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#interactive-mode">#</doc-anchor-trigger>
+        <span>Interactive mode</span>
+    </h3>
+</doc-anchor-target>
+<p>Allows to trigger an image generation instead of text as a reply to a user message that follows the special pattern:</p>
+<ol>
+<li>Contains one of the following words: send, mail, imagine, generate, make, create, draw, paint, render</li>
+<li>Followed by one of the following words: pic, picture, image, drawing, painting, photo, photograph</li>
+<li>Followed by a target subject of image generation, could be optionally preceded by phrases like &quot;of a&quot;.</li>
+</ol>
+<p>Examples of valid requests and captured subjects:</p>
+<ul>
+<li><code v-pre>Can you please send me a picture of a cat</code> =&gt; <code v-pre>cat</code></li>
+<li><code v-pre>Generate a picture of the Eiffel tower</code> =&gt; <code v-pre>Eiffel tower</code></li>
+<li><code v-pre>Let's draw a painting of Mona Lisa</code> =&gt; <code v-pre>Mona Lisa</code></li>
+</ul>
+<p>Some special subjects trigger a predefined generation mode:</p>
+<ul>
+<li>&#x27;you, &#x27;yourself&#x27; =&gt; &quot;Yourself&quot;</li>
+<li>&#x27;your face&#x27;, &#x27;your portrait&#x27;, &#x27;your selfie&#x27; =&gt; &quot;Your Face&quot;</li>
+<li>&#x27;me&#x27;, &#x27;myself&#x27; =&gt; &quot;Me&quot;</li>
+<li>&#x27;story&#x27;, &#x27;scenario&#x27;, &#x27;whole story&#x27; =&gt; &quot;The Whole Story&quot;</li>
+<li>&#x27;last message&#x27; =&gt; &quot;The Last Message&quot;</li>
+<li>&#x27;background&#x27;, &#x27;scene background&#x27;, &#x27;scene&#x27;, &#x27;scenery&#x27;, &#x27;surroundings&#x27;, &#x27;environment&#x27; =&gt; &quot;Background&quot;</li>
+</ul>
 <doc-anchor-target id="auto-enhance-prompts">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#auto-enhance-prompts">#</doc-anchor-trigger>
