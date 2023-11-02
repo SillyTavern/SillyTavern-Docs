@@ -2,7 +2,7 @@
 
 Instruct Mode allows you to adjust the prompting for instruction-following models, such as Alpaca, Metharme, WizardLM, etc.
 
-**This is not supported for Chat Completions API.**
+**This is not supported for Chat Completions API, except for OpenRouter for Llama 2 models with the "Force Instruct Mode formatting" override enabled.**
 
 ### Instruct Mode Settings
 
