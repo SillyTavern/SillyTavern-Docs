@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.752411632393">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.752411842240">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.752411632393" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.752411842240" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.752411632393" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.752411842240" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.752411632393" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.752411842240" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -210,104 +210,6 @@
     </h3>
 </doc-anchor-target>
 <p>Standard KoboldAI settings files are used here. To add your own settings, simply add the file .settings in <code v-pre>SillyTavern\public\KoboldAI Settings</code></p>
-<doc-anchor-target id="temperature">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#temperature">#</doc-anchor-trigger>
-        <span>Temperature</span>
-    </h4>
-</doc-anchor-target>
-<p>Value from 0.1 to 2.0. Lower value - the answers are more logical, but less creative. Higher value - the answers are more creative, but less logical.</p>
-<doc-anchor-target id="repetition-penalty">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#repetition-penalty">#</doc-anchor-trigger>
-        <span>Repetition penalty</span>
-    </h4>
-</doc-anchor-target>
-<p>Repetition penalty is responsible for the penalty of repeated words. If the character is fixated on something or repeats the same phrase, then increasing this parameter will fix it. It is not recommended to increase this parameter too much for the chat format, as it may break this format. The standard value for chat is approximately 1.0 - 1.05.</p>
-<doc-anchor-target id="repetition-penalty-range">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#repetition-penalty-range">#</doc-anchor-trigger>
-        <span>Repetition penalty range</span>
-    </h4>
-</doc-anchor-target>
-<p>The range of influence of Repetition penalty in tokens.</p>
-<doc-anchor-target id="amount-generation">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#amount-generation">#</doc-anchor-trigger>
-        <span>Amount generation</span>
-    </h4>
-</doc-anchor-target>
-<p>The maximum amount of tokens that the AI will generate to respond. One word is approximately 3-4 tokens. The larger the parameter value, the longer the generation time takes.</p>
-<doc-anchor-target id="context-size">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#context-size">#</doc-anchor-trigger>
-        <span>Context size</span>
-    </h4>
-</doc-anchor-target>
-<p>How much will the AI remember. Context size also affects the speed of generation.</p>
-<p><em>Important</em>: The setting of Context Size in SillyTavern GUI overrides the setting for KoboldAI GUI</p>
-<doc-anchor-target id="advanced-settings">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#advanced-settings">#</doc-anchor-trigger>
-        <span>Advanced Settings</span>
-    </h3>
-</doc-anchor-target>
-<p>The settings provided in this section offer a more detailed level of control over the text generation process. It is important to be careful when making changes to these settings without proper consideration, as doing so may result in degraded quality of responses.</p>
-<doc-anchor-target id="single-line-mode">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#single-line-mode">#</doc-anchor-trigger>
-        <span>Single-line mode</span>
-    </h4>
-</doc-anchor-target>
-<p>In single-line mode the AI generates only one line per request. This allows for quicker generation of shorter prompts, but it does not produce responses that consist of more than one line.</p>
-<doc-anchor-target id="top-p-sampling">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#top-p-sampling">#</doc-anchor-trigger>
-        <span>Top P Sampling</span>
-    </h4>
-</doc-anchor-target>
-<p>This setting controls how much of the text generated is based on the most likely options. Only words with the highest probabilities, together summing up to P, are considered. A word is then chosen at random, with a higher chance of selecting words with higher probabilities.</p>
-<p>Set value to 1 to disable its effect.</p>
-<doc-anchor-target id="top-k-sampling">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#top-k-sampling">#</doc-anchor-trigger>
-        <span>Top K Sampling</span>
-    </h4>
-</doc-anchor-target>
-<p>This setting limits the number of words to choose from to the top K most likely options. Can be used together with Top P sampling.</p>
-<p>Set value to 0 to disable its effect.</p>
-<doc-anchor-target id="top-a-sampling">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#top-a-sampling">#</doc-anchor-trigger>
-        <span>Top A Sampling</span>
-    </h4>
-</doc-anchor-target>
-<p>This setting allows for a more flexible version of sampling, where the number of words chosen from the most likely options is automatically determined based on the likelihood distribution of the options, but instead of choosing the top P or K words, it chooses all words with probabilities above a certain threshold.</p>
-<p>Set value to 0 to disable its effect.</p>
-<doc-anchor-target id="typical-sampling">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#typical-sampling">#</doc-anchor-trigger>
-        <span>Typical Sampling</span>
-    </h4>
-</doc-anchor-target>
-<p>This setting selects words randomly from the list of possible words, with each word having an equal chance of being selected. This method can produce text that is more diverse but may also be less coherent.</p>
-<p>Set value to 1 to disable its effect.</p>
-<doc-anchor-target id="tail-free-sampling">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tail-free-sampling">#</doc-anchor-trigger>
-        <span>Tail Free Sampling</span>
-    </h4>
-</doc-anchor-target>
-<p>This setting removes the least probable words from consideration during text generation, which can improve the quality and coherence of the generated text.</p>
-<p>Set value to 1 to disable its effect.</p>
-<doc-anchor-target id="repetition-penalty-slope">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#repetition-penalty-slope">#</doc-anchor-trigger>
-        <span>Repetition Penalty Slope</span>
-    </h4>
-</doc-anchor-target>
-<p>If both this and Repetition Penalty Range are above 0, then repetition penalty will have more effect closer to the end of the prompt. The higher the value, the stronger the effect.</p>
-<p>Set value to 1 for linear interpolation or 0 to disable interpolation.</p>
 <doc-anchor-target id="soft-prompts">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#soft-prompts">#</doc-anchor-trigger>
