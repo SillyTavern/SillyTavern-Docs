@@ -34,36 +34,14 @@ How much text you want to generate per message. Note that NovelAI has a limit of
 ### Context Size
 
 How many tokens of the chat are kept in the context at any given time. How large the maximum context size you can use depends on the model and your subscription tier:
+
 - Kayra (Tablet) - 3072 tokens
 - Kayra (Scroll) - 6144 tokens
 - Kayra (Opus) and Clio (all tiers) - 8192 tokens
 
-### Temperature
-
-* Lower value - the answers are more logical but less creative.
-* Higher value - the answers are more creative but less logical.
-
-### Repetition penalty
-
-Higher values make the output less repetitive.
-If the character is fixated on something or repeats the same phrase, then increasing this parameter can help fix it.
-It is not recommended to increase this parameter too much as it may break the outputs.
-
-### Repetition penalty range
-
-How many tokens from the last generated token will be considered repeated if they appear in the output.
-
 ### Preamble
 
 Text that is inserted right above the chat to modify the writing style. The recommended format is a list of short tags, like "[ Style: chat, detailed, sensory ]". 
-
-### Top P
-
-Limits the token pool to however many tokens it takes for their probabilities to add up to p. A lower number is more consistent but less creative. 
-
-### Top K
-
-Limits the token pool to the k most likely tokens. A lower number is more consistent but less creative. 
 
 ## Preset Descriptions
 This is, according to Novel AI, what the default presets are good for.
