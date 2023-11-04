@@ -41,11 +41,13 @@ Higher values make the output less repetitive.
 If the character is fixated on something or repeats the same phrase, then increasing this parameter can help fix it.
 It is not recommended to increase this parameter too much as it may break the outputs.
 
+Set the value to 1 to disable its effect.
+
 ### Repetition Penalty Range
 
 How many tokens from the last generated token will be considered repeated if they appear in the output.
 
-#### Repetition Penalty Slope
+### Repetition Penalty Slope
 
 If both this and the Repetition Penalty Range are above 0, then the repetition penalty will have more effect closer to the end of the prompt. The higher the value, the stronger the effect.
 
