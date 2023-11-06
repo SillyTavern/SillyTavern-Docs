@@ -53,10 +53,11 @@ A tokenizer is a tool that breaks down a piece of text into smaller units called
 SillyTavern provides a "Best match" option that tries to match the tokenizer using the following rules depending on the API provider used.
 
 Text Completion APIs **(overridable)**:
-2. NovelAI Clio: NerdStash tokenizer.
-3. NovelAI Kayra: NerdStash v2 tokenizer.
-4. TextGen / KoboldAI / AI Horde: LLaMA tokenizer.
-5. Koboldcpp: model API tokenizer.
+
+1. NovelAI Clio: NerdStash tokenizer.
+2. NovelAI Kayra: NerdStash v2 tokenizer.
+3. TextGen / KoboldAI / AI Horde: LLaMA tokenizer.
+4. Koboldcpp: model API tokenizer.
 
 If you get inaccurate results or wish to experiment, you can set an *override tokenizer* for SillyTavern to use while forming a request to the AI backend:
 
@@ -91,8 +92,9 @@ Accepts a JSON-serialized array of stopping strings. Example: `["\n", "\nUser:",
 Supported APIs:
 
 1. KoboldAI (versions 1.2.2 and higher) or KoboldCpp
-2. oobabooga's Text Generation WebUI / Mancer / Aphrodite
-3. NovelAI
-4. OpenAI, including via OpenRouter (max 4 strings)
-5. Claude
-6. Google PaLM
+2. AI Horde
+3. oobabooga's Text Generation WebUI / Mancer / Aphrodite
+4. NovelAI
+5. OpenAI, including via OpenRouter (max 4 strings)
+6. Claude
+7. Google PaLM
