@@ -69,9 +69,13 @@ If you get inaccurate results or wish to experiment, you can set an *override to
 6. API tokenizer. Queries the generation API to get the token count directly from the model. Only supported by Oobabooga's TextGen. **Pick if you use the latest version of TextGen API.**
 
 Chat Completion APIs **(non-overridable)**:
-1. OpenAI / Claude / OpenRouter / Window: model-dependant tokenizer via [tiktoken](https://github.com/openai/tiktoken).
-2. Scale API: GPT-4 tokenizer.
-3. Fallback tokenizer (for proxies): GPT-3.5 turbo tokenizer.
+
+1. GPT via OpenAI / OpenRouter / Window: model-dependant tokenizer via [tiktoken](https://github.com/openai/tiktoken).
+2. Claude: Model-dependant tokenizer via [WebTokenizers](https://github.com/mlc-ai/tokenizers-cpp).
+3. OpenRouter: Llama and Mistral tokenizers for their respective models.
+4. Scale API: GPT-4 tokenizer.
+5. AI21 API: GPT-3.5 turbo (default, fast) or API tokenizer (if toggled on, can cause slowdowns!).
+6. Fallback tokenizer (for proxies): GPT-3.5 turbo tokenizer.
 
 ### Token Padding
 
