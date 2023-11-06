@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.752412399421">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.752585167434">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.752412399421" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.752585167434" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.752412399421" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.752585167434" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.752412399421" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.752585167434" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -211,7 +211,7 @@
     </h3>
 </doc-anchor-target>
 <p><strong>Most of the settings here do not apply to Chat Completions APIs as they are governed by the prompt manager system instead.</strong></p>
-<p>Usually, AI models require to provide the character data to them in some specific way. SillyTavern includes a list of pre-made conversion rules for different models, but you may customize them however you like.</p>
+<p>Usually, AI models require you to provide the character data to them in some specific way. SillyTavern includes a list of pre-made conversion rules for different models, but you may customize them however you like.</p>
 <doc-anchor-target id="story-string">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#story-string">#</doc-anchor-trigger>
@@ -278,6 +278,7 @@ Character:</code></pre>
 <li>LLaMA tokenizer. Used by LLaMA 1/2 models family: Vicuna, Hermes, Airoboros, etc. <strong>Pick if you use a LLaMA 1/2 model.</strong></li>
 <li>NerdStash tokenizer. Used by NovelAI&#x27;s Clio model. <strong>Pick if you use the Clio model.</strong></li>
 <li>NerdStash v2 tokenizer. Used by NovelAI&#x27;s Kayra model. <strong>Pick if you use the Kayra model.</strong></li>
+<li>Mistral tokenizer. Used by Mistral models family and their finetunes. <strong>Pick if you use a Mistral model.</strong></li>
 <li>API tokenizer. Queries the generation API to get the token count directly from the model. Only supported by Oobabooga&#x27;s TextGen. <strong>Pick if you use the latest version of TextGen API.</strong></li>
 </ol>
 <p>Chat Completion APIs <strong>(non-overridable)</strong>:</p>
@@ -306,10 +307,12 @@ Character:</code></pre>
 <p>Accepts a JSON-serialized array of stopping strings. Example: <code v-pre>[&quot;\n&quot;, &quot;\nUser:&quot;, &quot;\nChar:&quot;]</code>. If you&#x27;re unsure about the formatting, use an <a href="https://jsonlint.com/">online JSON validator</a>.</p>
 <p>Supported APIs:</p>
 <ol>
-<li>KoboldAI (versions 1.2.2 and higher)</li>
-<li>oobabooga&#x27;s Text Generation WebUI</li>
+<li>KoboldAI (versions 1.2.2 and higher) or KoboldCpp</li>
+<li>oobabooga&#x27;s Text Generation WebUI / Mancer / Aphrodite</li>
 <li>NovelAI</li>
 <li>OpenAI, including via OpenRouter (max 4 strings)</li>
+<li>Claude</li>
+<li>Google PaLM</li>
 </ol>
 
                                 
