@@ -2,12 +2,11 @@
 
 The settings provided in this section allow for more control over the prompt-building strategy.
 
-
 ### Context Template
 
 **Most of the settings here do not apply to Chat Completions APIs as they are governed by the prompt manager system instead.**
 
-Usually, AI models require to provide the character data to them in some specific way. SillyTavern includes a list of pre-made conversion rules for different models, but you may customize them however you like.
+Usually, AI models require you to provide the character data to them in some specific way. SillyTavern includes a list of pre-made conversion rules for different models, but you may customize them however you like.
 
 #### Story string
 
@@ -65,7 +64,8 @@ If you get inaccurate results or wish to experiment, you can set an *override to
 2. LLaMA tokenizer. Used by LLaMA 1/2 models family: Vicuna, Hermes, Airoboros, etc. **Pick if you use a LLaMA 1/2 model.**
 3. NerdStash tokenizer. Used by NovelAI's Clio model. **Pick if you use the Clio model.**
 4. NerdStash v2 tokenizer. Used by NovelAI's Kayra model. **Pick if you use the Kayra model.**
-5. API tokenizer. Queries the generation API to get the token count directly from the model. Only supported by Oobabooga's TextGen. **Pick if you use the latest version of TextGen API.**
+5. Mistral tokenizer. Used by Mistral models family and their finetunes. **Pick if you use a Mistral model.**
+6. API tokenizer. Queries the generation API to get the token count directly from the model. Only supported by Oobabooga's TextGen. **Pick if you use the latest version of TextGen API.**
 
 Chat Completion APIs **(non-overridable)**:
 1. OpenAI / Claude / OpenRouter / Window: model-dependant tokenizer via [tiktoken](https://github.com/openai/tiktoken).
@@ -90,7 +90,9 @@ Accepts a JSON-serialized array of stopping strings. Example: `["\n", "\nUser:",
 
 Supported APIs:
 
-1. KoboldAI (versions 1.2.2 and higher)
-2. oobabooga's Text Generation WebUI
+1. KoboldAI (versions 1.2.2 and higher) or KoboldCpp
+2. oobabooga's Text Generation WebUI / Mancer / Aphrodite
 3. NovelAI
 4. OpenAI, including via OpenRouter (max 4 strings)
+5. Claude
+6. Google PaLM
