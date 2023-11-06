@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.752585167434">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.752585233588">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.752585167434" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.752585233588" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.752585167434" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.752585233588" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.752585167434" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.752585233588" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -267,11 +267,13 @@ Character:</code></pre>
 </doc-anchor-target>
 <p>A tokenizer is a tool that breaks down a piece of text into smaller units called tokens. These tokens can be individual words or even parts of words, such as prefixes, suffixes, or punctuation. A rule of thumb is that one token generally corresponds to 3~4 characters of text.</p>
 <p>SillyTavern provides a &quot;Best match&quot; option that tries to match the tokenizer using the following rules depending on the API provider used.</p>
-<p>Text Completion APIs <strong>(overridable)</strong>:
-2. NovelAI Clio: NerdStash tokenizer.
-3. NovelAI Kayra: NerdStash v2 tokenizer.
-4. TextGen / KoboldAI / AI Horde: LLaMA tokenizer.
-5. Koboldcpp: model API tokenizer.</p>
+<p>Text Completion APIs <strong>(overridable)</strong>:</p>
+<ol>
+<li>NovelAI Clio: NerdStash tokenizer.</li>
+<li>NovelAI Kayra: NerdStash v2 tokenizer.</li>
+<li>TextGen / KoboldAI / AI Horde: LLaMA tokenizer.</li>
+<li>Koboldcpp: model API tokenizer.</li>
+</ol>
 <p>If you get inaccurate results or wish to experiment, you can set an <em>override tokenizer</em> for SillyTavern to use while forming a request to the AI backend:</p>
 <ol>
 <li>None. Each token is estimated to be ~3.3 characters, rounded up to the nearest integer. <strong>Try this if your prompts get cut off on high context lengths.</strong> This approach is used by KoboldAI Lite.</li>
@@ -308,6 +310,7 @@ Character:</code></pre>
 <p>Supported APIs:</p>
 <ol>
 <li>KoboldAI (versions 1.2.2 and higher) or KoboldCpp</li>
+<li>AI Horde</li>
 <li>oobabooga&#x27;s Text Generation WebUI / Mancer / Aphrodite</li>
 <li>NovelAI</li>
 <li>OpenAI, including via OpenRouter (max 4 strings)</li>
