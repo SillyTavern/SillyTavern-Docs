@@ -1,5 +1,7 @@
 # Stable Diffusion
 
+## Image Generation plugin
+
 Use local or cloud-based Stable Diffusion APIs to generate images.
 The free mode is also supported via the `/sd (anything_here)` command in the chat input bar.
 Most common Stable Diffusion generation settings are customizable within the SillyTavern UI.
@@ -18,7 +20,7 @@ Most common Stable Diffusion generation settings are customizable within the Sil
 
 ## How to generate an image
 
-1. Use the "Stable Diffusion" item in the extensions context menu (wand).
+1. Use the "Image Generation" item in the extensions context menu (wand).
 2. Type a `/sd (argument)` slash command with an argument from the Generation modes table. Anything else would trigger a "free mode" to make SD generate whatever you prompted. Example: `/sd apple tree` would generate a picture of an apple tree.
 3. Look for a paintbrush icon in the context actions for chat messages. This will force the "Raw Message" mode for the selected message.
 
@@ -31,6 +33,7 @@ You can configure the instruction template for generating prompts for every gene
 * [NovelAI Diffusion](https://novelai.net/). Requires an active subscription.
 * [Stable Diffusion WebUI / AUTOMATIC1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
 * [SD.Next / vladmandic](https://github.com/vladmandic/automatic)
+* [OpenAI DALL-E 2/3](https://platform.openai.com/).
 * [SillyTavern Extras](https://github.com/SillyTavern/SillyTavern-Extras) (will be deprecated in future)
 
 ## Options
