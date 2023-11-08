@@ -44,6 +44,16 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 - regular updates, which can sometimes breaki compatibilty with SillyTavern
 - [GitHub](https://github.com/oobabooga/text-generation-webui#one-click-installers)
 
+**Correct Way to Connect SillyTavern to Ooba's new OpenAI API**
+
+1. Disable `api` flag (right side of Ooba UI's Session tab)
+2. Disable api extension (left side of the Session tab)
+3. Enable openai extension (install the `extensions/openai/requirements.txt` file if needed)
+4. Connect ST to localhost:5000 without checking hte 'Legacy API' box
+
+*If you leave the api extension (or use the `--api` flag) you will get port conflicts and won't be able to connect to the OAI API from ST.*
+*You can, however, change the port manually with the `--api_port` flag when running your windows_start.bat file*
+
 ## Cloud LLM APIs
 
 - These LLM APIs are run as cloud services, and require no resources on your PC
