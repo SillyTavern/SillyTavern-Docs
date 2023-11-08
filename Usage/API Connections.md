@@ -52,6 +52,7 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 4. Connect ST to localhost:5000 without checking hte 'Legacy API' box
 
 *If you leave the api extension (or use the `--api` flag) you will get port conflicts and won't be able to connect to the OAI API from ST.*
+
 *You can, however, change the port manually with the `--api_port` flag when running your windows_start.bat file*
 
 ## Cloud LLM APIs
