@@ -49,7 +49,7 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 1. Disable `api` flag (right side of Ooba UI's Session tab)
 2. Disable api extension (left side of the Session tab)
 3. Enable openai extension (install the `extensions/openai/requirements.txt` file if needed)
-4. Connect ST to localhost:5000 without checking hte 'Legacy API' box
+4. Connect ST to <http://localhost:5000/> (by default) without checking the 'Legacy API' box
 
 *If you leave the api extension (or use the `--api` flag) you will get port conflicts and won't be able to connect to the OAI API from ST.*
 
