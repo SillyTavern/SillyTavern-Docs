@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.752748822845">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.752771306134">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.752748822845" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.752771306134" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.752748822845" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.752771306134" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.752748822845" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.752771306134" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -274,6 +274,15 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 <li>regular updates, which can sometimes breaki compatibilty with SillyTavern</li>
 <li><a href="https://github.com/oobabooga/text-generation-webui#one-click-installers">GitHub</a></li>
 </ul>
+<p><strong>Correct Way to Connect SillyTavern to Ooba&#x27;s new OpenAI API</strong></p>
+<ol>
+<li>Disable <code v-pre>api</code> flag (right side of Ooba UI&#x27;s Session tab)</li>
+<li>Disable api extension (left side of the Session tab)</li>
+<li>Enable openai extension (install the <code v-pre>extensions/openai/requirements.txt</code> file if needed)</li>
+<li>Connect ST to localhost:5000 without checking hte &#x27;Legacy API&#x27; box</li>
+</ol>
+<p><em>If you leave the api extension (or use the <code v-pre>--api</code> flag) you will get port conflicts and won&#x27;t be able to connect to the OAI API from ST.</em>
+<em>You can, however, change the port manually with the <code v-pre>--api_port</code> flag when running your windows_start.bat file</em></p>
 <doc-anchor-target id="cloud-llm-apis">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#cloud-llm-apis">#</doc-anchor-trigger>
