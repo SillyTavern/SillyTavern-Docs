@@ -1,9 +1,10 @@
 ---
 icon: key-asterisk
 ---
+
 # HotKeys
 
-**Hotkeys are disabled for mobile devices**
+**For the most up-to-date list of HotKeys that will work in your SillyTavern instance, use the `/help hotkeys` slash command in any chat.**
 
 * Up = Edit last message in chat
 * Ctrl+Up = Edit last USER message in chat
@@ -15,3 +16,5 @@ icon: key-asterisk
 * Escape
   * *(while editing message AND Message Edit AutoSave is enabled)* = close edit box.
   * *(while an AI message is generating or streaming)* = stop the generation immediately.
+
+**Hotkeys are disabled for mobile devices**
