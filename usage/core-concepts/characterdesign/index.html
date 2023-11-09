@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.752771441262">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.752876747455">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.752771441262" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.752876747455" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.752771441262" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.752876747455" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.752771441262" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.752876747455" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -333,7 +333,7 @@
         <span>Examples of dialogue</span>
     </h3>
 </doc-anchor-target>
-<p>Describes how the character speaks. Before each example, you need to add the &lt;START&gt; tag.</p>
+<p>Describes how the character speaks. Before each example, you need to add the &lt;START&gt; tag. The blocks of examples dialogue are only inserted if there&#x27;s a free space in the context for them and pushed out of context block by block. &lt;START&gt; will not be present in the prompt as it is just a marker - it will be instead replaced with &quot;Example Separator&quot; from Advanced Formatting for Text Completion APIs and contents of the &quot;New Example Chat&quot; utility prompt for Chat Completion APIs.</p>
 <ul>
 <li>Use {{char}} instead of the character name.</li>
 <li>Use {{user}} instead of the user name.</li>
@@ -360,14 +360,25 @@
         <span>Replacement tags (macros)</span>
     </h3>
 </doc-anchor-target>
-<p><em>A list of tags that are replaced when sending to generate:</em></p>
+<p><strong>This list may be incomplete. Use the <code v-pre>/help macros</code> slash command in SillyTavern chat to get the list of macros that work in your instance.</strong></p>
+<p>A list of tags that are replaced when sending to generate:</p>
 <ol>
-<li>{{user}} and &lt;USER&gt; are replaced by the User&#x27;s Name</li>
-<li>{{char}} and &lt;BOT&gt; are replaced by the Character&#x27;s Name</li>
+<li>{{user}} and &lt;USER&gt; =&gt; User&#x27;s Name.</li>
+<li>{{char}} and &lt;BOT&gt; =&gt; Character&#x27;s Name.</li>
+<li>{{description}} =&gt; Character&#x27;s Description.</li>
+<li>{{scenario}} =&gt; Character&#x27;s Scenario or chat scenario override (if set).</li>
+<li>{\personality}} =&gt; Character&#x27;s Personality.</li>
+<li>{{persona}} =&gt; User&#x27;s Persona description.</li>
+<li>{{mesExamples}} =&gt; Character&#x27;s Examples of Dialogue (unaltered and unsplit).</li>
+<li>{{lastMessageId}} =&gt; last chat message ID.</li>
 <li>{{original}} can be used in Prompt Overrides fields (Main Prompt and Jailbreak) to include the respective default prompt from the system settings. Applied to Chat Completion APIs and Instruct mode only.</li>
-<li>{{time}} is replaced with the current system time.</li>
-<li>{{time_UTC±X}} is replaced with the current time in the specified UTC offset (timezone). {e.g. {{time_UTC-4}} for the time in UTC-04:00, for UTC+02:00 use {{time_UTC+2}}.</li>
-<li>{{date}} is replaced with the current system date.</li>
+<li>{{time}} =&gt; current system time.</li>
+<li>{{time_UTC±X}} =&gt; current time in the specified UTC offset (timezone), e.g. for UTC+02:00 use {{time_UTC+2}}.</li>
+<li>{{date}} =&gt; current system date.</li>
+<li>{{input}} =&gt; contents of the user input bar.</li>
+<li>{{weekday}} =&gt; the current weekday</li>
+<li>{{isotime}} =&gt; the current ISO date (YYYY-MM-DD)</li>
+<li>{{isodate}} =&gt; the current ISO time (24-hour clock)</li>
 <li>{{idle_duration}} inserts a humanized string of the time range since the last user message was sent (examples: 4 hours, 1 day).</li>
 <li>{{random:(args)}} returns a random item from the list. (e.g. {{random:1,2,3,4}} will return 1 of the 4 numbers at random). Works with text lists too.</li>
 <li>{{roll:(formula)}} generates a random value and returns it using the provided dice formula using D&amp;D dice syntax: XdY+Z. For example, {{roll:d6}} will generate a random value in the 1-6 range (standard six-sided dice).</li>
