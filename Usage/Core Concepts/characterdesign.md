@@ -98,7 +98,7 @@ For example:
 
 ### Examples of dialogue
 
-Describes how the character speaks. Before each example, you need to add the \<START\> tag.
+Describes how the character speaks. Before each example, you need to add the \<START\> tag. The blocks of examples dialogue are only inserted if there's a free space in the context for them and pushed out of context block by block. \<START\> will not be present in the prompt as it is just a marker - it will be instead replaced with "Example Separator" from Advanced Formatting for Text Completion APIs and contents of the "New Example Chat" utility prompt for Chat Completion APIs.
 
 * Use \{\{char\}\} instead of the character name.
 * Use \{\{user\}\} instead of the user name.
@@ -127,19 +127,31 @@ Circumstances and context of the dialogue.
 
 ### Replacement tags (macros)
 
-*A list of tags that are replaced when sending to generate:*
+**This list may be incomplete. Use the `/help macros` slash command in SillyTavern chat to get the list of macros that work in your instance.**
 
-1. \{\{user\}\} and \<USER\> are replaced by the User's Name
-2. \{\{char\}\} and \<BOT\> are replaced by the Character's Name
-3. \{\{original\}\} can be used in Prompt Overrides fields (Main Prompt and Jailbreak) to include the respective default prompt from the system settings. Applied to Chat Completion APIs and Instruct mode only.
-4. \{\{time\}\} is replaced with the current system time.
-5. \{\{time_UTC±X\}\} is replaced with the current time in the specified UTC offset (timezone). {e.g. \{\{time_UTC\-4\}\} for the time in UTC-04:00, for UTC+02:00 use \{\{time_UTC\+2\}\}.
-6. \{\{date\}\} is replaced with the current system date.
-7. \{\{idle_duration\}\} inserts a humanized string of the time range since the last user message was sent (examples: 4 hours, 1 day).
-8. \{\{random:(args)\}\} returns a random item from the list. (e.g. \{\{random:1,2,3,4\}\} will return 1 of the 4 numbers at random). Works with text lists too.
-9. \{\{roll:(formula)\}\} generates a random value and returns it using the provided dice formula using D&D dice syntax: XdY+Z. For example, \{\{roll:d6\}\} will generate a random value in the 1-6 range (standard six-sided dice).
-10. \{\{bias "text here"\}\} sets a behavioral bias for the AI until the next user input. Quotes around the text are important.
-11. \{\{// (note)\}\} allows to leave a note that will be replaced with blank content. Not visible for the AI.
+A list of tags that are replaced when sending to generate:
+
+1. \{\{user\}\} and \<USER\> => User's Name.
+2. \{\{char\}\} and \<BOT\> => Character's Name.
+3. \{\{description\}\} => Character's Description.
+4. \{\{scenario\}\} => Character's Scenario or chat scenario override (if set).
+5. \{\personality\}\} => Character's Personality.
+6. \{\{persona\}\} => User's Persona description.
+7. \{\{mesExamples\}\} => Character's Examples of Dialogue (unaltered and unsplit).
+8. \{\{lastMessageId\}\} => last chat message ID.
+9. \{\{original\}\} can be used in Prompt Overrides fields (Main Prompt and Jailbreak) to include the respective default prompt from the system settings. Applied to Chat Completion APIs and Instruct mode only.
+10. \{\{time\}\} => current system time.
+11. \{\{time_UTC±X\}\} => current time in the specified UTC offset (timezone), e.g. for UTC+02:00 use \{\{time_UTC\+2\}\}.
+12. \{\{date\}\} => current system date.
+13. \{\{input\}\} => contents of the user input bar.
+14. \{\{weekday\}\} => the current weekday
+15. \{\{isotime\}\} => the current ISO date (YYYY-MM-DD)
+16. \{\{isodate\}\} => the current ISO time (24-hour clock)
+17. \{\{idle_duration\}\} inserts a humanized string of the time range since the last user message was sent (examples: 4 hours, 1 day).
+18. \{\{random:(args)\}\} returns a random item from the list. (e.g. \{\{random:1,2,3,4\}\} will return 1 of the 4 numbers at random). Works with text lists too.
+19. \{\{roll:(formula)\}\} generates a random value and returns it using the provided dice formula using D&D dice syntax: XdY+Z. For example, \{\{roll:d6\}\} will generate a random value in the 1-6 range (standard six-sided dice).
+20. \{\{bias "text here"\}\} sets a behavioral bias for the AI until the next user input. Quotes around the text are important.
+21. \{\{// (note)\}\} allows to leave a note that will be replaced with blank content. Not visible for the AI.
 
 ### Favorite Character
 
