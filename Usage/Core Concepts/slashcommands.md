@@ -1,11 +1,16 @@
 # Slash commands
 
+!!! warning
+**This is not an exhaustive list as it is updated rarely.**
+For the most up-to-date list of commands that will work in your instance, use the `/help slash` chat command in any SillyTavern chat.
+!!!
+
 - /help – displays this help message (aliases: /?)
 - /name (name) – sets user name and persona avatar (if set) (aliases: /persona)
 - /sync – syncs user name in user-attributed messages in the current chat
 - /bind – binds/unbinds a persona (name and avatar) to the current chat
-- /bg (filename) – sets a background according to filename, partial names allowed, will set the first one alphabetically if multiple files begin with the provided argument string (aliases: /background)
-- /sendas – sends message as a specific character.
+- /bg (filename) – sets a background according to the filename, partial names allowed, will set the first one alphabetically if multiple files begin with the provided argument string (aliases: /background)
+- /sendas – sends a message as a specific character.
 
 Example:
 
