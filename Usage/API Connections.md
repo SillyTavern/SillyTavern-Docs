@@ -50,6 +50,7 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 2. Disable api extension (left side of the Session tab)
 3. Enable openai extension (install the `extensions/openai/requirements.txt` file if needed)
 4. Connect ST to <http://localhost:5000/> (by default) without checking the 'Legacy API' box
+5. If it still doesn't connect, edit CMD_FLAGS.txt in Ooba's folder, add `--extensions openai` flag and remove `--api`. Restart Ooba's server and try again.
 
 *If you leave the api extension (or use the `--api` flag) you will get port conflicts and won't be able to connect to the OAI API from ST.*
 
