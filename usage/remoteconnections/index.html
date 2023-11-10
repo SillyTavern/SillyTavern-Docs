@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.752935413099">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.752962838849">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.752935413099" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.752962838849" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.752935413099" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.752962838849" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.752935413099" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.752962838849" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -287,7 +287,7 @@
         <span>Opening your ST to all IPs</span>
     </h3>
 </doc-anchor-target>
-<p>We do not recommend doing this, but you can open <code v-pre>config.conf</code> and change <code v-pre>whitelist</code> to <code v-pre>false</code>.</p>
+<p>We do not recommend doing this, but you can open <code v-pre>config.conf</code> and change <code v-pre>whitelistMode</code> to <code v-pre>false</code>.</p>
 <p>You must remove (or rename) <code v-pre>whitelist.txt</code> in the SillyTavern base install folder, if it exists.</p>
 <p>This is usually an insecure practice, so we require you to set a username and password when you do this.</p>
 <p>The username and password are set in <code v-pre>config.conf</code>.</p>
@@ -299,8 +299,8 @@
     </h3>
 </doc-anchor-target>
 <ul>
-<li>Create an inbound/outbound firewall rule for the port found in <code v-pre>config.conf</code>. Do NOT mistake this for portforwarding on your router, otherwise someone could find your chat logs and that&#x27;s a big no-no.</li>
-<li>Enable the Private Network profile type in Settings &gt; Network and Internet &gt; Ethernet. This is VERY important for Windows 11, otherwise you would be unable to connect even with the aforementioned firewall rules.</li>
+<li>Create an inbound/outbound firewall rule for the port found in <code v-pre>config.conf</code>. Do NOT mistake this for port forwarding on your router, otherwise, someone could find your chat logs and that&#x27;s a big no-no.</li>
+<li>Enable the Private Network profile type in Settings &gt; Network and Internet &gt; Ethernet. This is VERY important for Windows 11, otherwise, you would be unable to connect even with the aforementioned firewall rules.</li>
 </ul>
 <doc-anchor-target id="http-basic-authentication">
     <h2>
