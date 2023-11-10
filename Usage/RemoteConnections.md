@@ -74,7 +74,7 @@ Use http:// NOT https://
 
 ### Opening your ST to all IPs
 
-We do not recommend doing this, but you can open `config.conf` and change `whitelist` to `false`.
+We do not recommend doing this, but you can open `config.conf` and change `whitelistMode` to `false`.
 
 You must remove (or rename) `whitelist.txt` in the SillyTavern base install folder, if it exists.
 
@@ -86,8 +86,8 @@ After restarting your ST server, any device will be able to connect to it, regar
 
 ### Still Unable To Connect?
 
-* Create an inbound/outbound firewall rule for the port found in `config.conf`. Do NOT mistake this for portforwarding on your router, otherwise someone could find your chat logs and that's a big no-no.
-* Enable the Private Network profile type in Settings > Network and Internet > Ethernet. This is VERY important for Windows 11, otherwise you would be unable to connect even with the aforementioned firewall rules.
+* Create an inbound/outbound firewall rule for the port found in `config.conf`. Do NOT mistake this for port forwarding on your router, otherwise, someone could find your chat logs and that's a big no-no.
+* Enable the Private Network profile type in Settings > Network and Internet > Ethernet. This is VERY important for Windows 11, otherwise, you would be unable to connect even with the aforementioned firewall rules.
 
 ## <span id="HTTPBasicAuthentication">HTTP Basic Authentication</span>
 
