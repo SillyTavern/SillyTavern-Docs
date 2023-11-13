@@ -41,20 +41,16 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 - similar functionality as KoboldAI, but also has streaming and a Gradio interface
 - supports a wider range of model types than KoboldAI (4-bit & 8-bit quantized models)
 - one-click installers available
-- regular updates, which can sometimes breaki compatibilty with SillyTavern
+- regular updates, which can sometimes break compatibility with SillyTavern
 - [GitHub](https://github.com/oobabooga/text-generation-webui#one-click-installers)
 
 **Correct Way to Connect SillyTavern to Ooba's new OpenAI API**
 
-1. Disable `api` flag (right side of Ooba UI's Session tab)
-2. Disable api extension (left side of the Session tab)
-3. Enable openai extension (install the `extensions/openai/requirements.txt` file if needed)
-4. Connect ST to <http://localhost:5000/> (by default) without checking the 'Legacy API' box
-5. If it still doesn't connect, edit CMD_FLAGS.txt in Ooba's folder, add `--extensions openai` flag and remove `--api`. Restart Ooba's server and try again.
+1. Make sure you're on the latest update of Oobabooga's TextGen (as of Nov 14th, 2023).
+2. Edit the CMD_FLAGS.txt file, and add the `--api` flag there. Then restart Ooba's server.
+3. Connect ST to <http://localhost:5000/> (by default) without checking the 'Legacy API' box. You may remove the `/v1` postfix from the URL Ooba's console provides you.
 
-*If you leave the api extension (or use the `--api` flag) you will get port conflicts and won't be able to connect to the OAI API from ST.*
-
-*You can, however, change the port manually with the `--api_port` flag when running your windows_start.bat file*
+*You can change the API hosting port with the `--api-port 5001` flag, where 5001 is your custom port.*
 
 ## Cloud LLM APIs
 
