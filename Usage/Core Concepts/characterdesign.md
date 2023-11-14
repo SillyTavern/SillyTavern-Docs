@@ -132,26 +132,28 @@ Circumstances and context of the dialogue.
 A list of tags that are replaced when sending to generate:
 
 1. \{\{user\}\} and \<USER\> => User's Name.
-2. \{\{char\}\} and \<BOT\> => Character's Name.
-3. \{\{description\}\} => Character's Description.
-4. \{\{scenario\}\} => Character's Scenario or chat scenario override (if set).
-5. \{\personality\}\} => Character's Personality.
-6. \{\{persona\}\} => User's Persona description.
-7. \{\{mesExamples\}\} => Character's Examples of Dialogue (unaltered and unsplit).
-8. \{\{lastMessageId\}\} => last chat message ID.
-9. \{\{original\}\} can be used in Prompt Overrides fields (Main Prompt and Jailbreak) to include the respective default prompt from the system settings. Applied to Chat Completion APIs and Instruct mode only.
-10. \{\{time\}\} => current system time.
-11. \{\{time_UTC±X\}\} => current time in the specified UTC offset (timezone), e.g. for UTC+02:00 use \{\{time_UTC\+2\}\}.
-12. \{\{date\}\} => current system date.
-13. \{\{input\}\} => contents of the user input bar.
-14. \{\{weekday\}\} => the current weekday
-15. \{\{isotime\}\} => the current ISO date (YYYY-MM-DD)
-16. \{\{isodate\}\} => the current ISO time (24-hour clock)
-17. \{\{idle_duration\}\} inserts a humanized string of the time range since the last user message was sent (examples: 4 hours, 1 day).
-18. \{\{random:(args)\}\} returns a random item from the list. (e.g. \{\{random:1,2,3,4\}\} will return 1 of the 4 numbers at random). Works with text lists too.
-19. \{\{roll:(formula)\}\} generates a random value and returns it using the provided dice formula using D&D dice syntax: XdY+Z. For example, \{\{roll:d6\}\} will generate a random value in the 1-6 range (standard six-sided dice).
-20. \{\{bias "text here"\}\} sets a behavioral bias for the AI until the next user input. Quotes around the text are important.
-21. \{\{// (note)\}\} allows to leave a note that will be replaced with blank content. Not visible for the AI.
+2. \{\{charPrompt\}\} => Character's Main Prompt override
+3. \{\{charJailbreak\}\} => Character's Jailbreak Prompt override
+4. \{\{char\}\} and \<BOT\> => Character's Name.
+5. \{\{description\}\} => Character's Description.
+6. \{\{scenario\}\} => Character's Scenario or chat scenario override (if set).
+7. \{\{personality\}\} => Character's Personality.
+8. \{\{persona\}\} => User's Persona description.
+9. \{\{mesExamples\}\} => Character's Examples of Dialogue (unaltered and unsplit).
+10. \{\{lastMessageId\}\} => last chat message ID.
+11. \{\{original\}\} can be used in Prompt Overrides fields (Main Prompt and Jailbreak) to include the respective default prompt from the system settings. Applied to Chat Completion APIs and Instruct mode only.
+12. \{\{time\}\} => current system time.
+13. \{\{time_UTC±X\}\} => current time in the specified UTC offset (timezone), e.g. for UTC+02:00 use \{\{time_UTC\+2\}\}.
+14. \{\{date\}\} => current system date.
+15. \{\{input\}\} => contents of the user input bar.
+16. \{\{weekday\}\} => the current weekday
+17. \{\{isotime\}\} => the current ISO date (YYYY-MM-DD)
+18. \{\{isodate\}\} => the current ISO time (24-hour clock)
+19. \{\{idle_duration\}\} inserts a humanized string of the time range since the last user message was sent (examples: 4 hours, 1 day).
+20. \{\{random:(args)\}\} returns a random item from the list. (e.g. \{\{random:1,2,3,4\}\} will return 1 of the 4 numbers at random). Works with text lists too.
+21. \{\{roll:(formula)\}\} generates a random value and returns it using the provided dice formula using D&D dice syntax: XdY+Z. For example, \{\{roll:d6\}\} will generate a random value in the 1-6 range (standard six-sided dice).
+22. \{\{bias "text here"\}\} sets a behavioral bias for the AI until the next user input. Quotes around the text are important.
+23. \{\{// (note)\}\} allows to leave a note that will be replaced with blank content. Not visible for the AI.
 
 ### Favorite Character
 
