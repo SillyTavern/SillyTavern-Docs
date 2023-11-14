@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.753230616368">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.753310591081">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.753230616368" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.753310591081" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.753230616368" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.753310591081" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.753230616368" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.753310591081" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -364,10 +364,12 @@
 <p>A list of tags that are replaced when sending to generate:</p>
 <ol>
 <li>{{user}} and &lt;USER&gt; =&gt; User&#x27;s Name.</li>
+<li>{{charPrompt}} =&gt; Character&#x27;s Main Prompt override</li>
+<li>{{charJailbreak}} =&gt; Character&#x27;s Jailbreak Prompt override</li>
 <li>{{char}} and &lt;BOT&gt; =&gt; Character&#x27;s Name.</li>
 <li>{{description}} =&gt; Character&#x27;s Description.</li>
 <li>{{scenario}} =&gt; Character&#x27;s Scenario or chat scenario override (if set).</li>
-<li>{\personality}} =&gt; Character&#x27;s Personality.</li>
+<li>{{personality}} =&gt; Character&#x27;s Personality.</li>
 <li>{{persona}} =&gt; User&#x27;s Persona description.</li>
 <li>{{mesExamples}} =&gt; Character&#x27;s Examples of Dialogue (unaltered and unsplit).</li>
 <li>{{lastMessageId}} =&gt; last chat message ID.</li>
