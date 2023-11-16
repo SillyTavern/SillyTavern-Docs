@@ -45,7 +45,7 @@ Type/paste the commands below `ONE BY ONE` IN THE `CONDA COMMAND PROMPT WINDOW` 
 
 `conda activate extras` (you should see `(extras)` pop up on the left side of your command prompt)
 
-5. Install the required system packages (this will take time, torch is a ~2GB download)
+5. Install the required system packages (this will take some time)
 
 `conda install python=3.11 git`
 
