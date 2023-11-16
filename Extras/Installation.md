@@ -10,7 +10,7 @@ This page contains instructions for installing SillyTavern Extras on your local 
 ---
 Local installation of Extras can be difficult or impossible on your OS (especially Termux).
 
-#### Use the [Official Extras Colab](https://colab.research.google.com/github/Cohee1207/SillyTavern/blob/main/colab/GPU.ipynb)
+#### Use the [Official Extras Colab](https://colab.research.google.com/github/SillyTavern/SillyTavern/blob/release/colab/GPU.ipynb)
 
 * Simple to setup
 * Free to use
