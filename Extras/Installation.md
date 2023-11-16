@@ -59,8 +59,9 @@ Type/paste the commands below `ONE BY ONE` IN THE `CONDA COMMAND PROMPT WINDOW` 
 
 8. Install Extras' requirements by using **one** of the following commands (will take time, again):
 
-* `pip install -r requirements.txt` - for minimal features (character expressions, system OS TTS)
-* `pip install -r requirements-complete.txt` - for additional features like local/remote Stable Diffusion, ChromaDB, Silero TSS
+* `pip install -r requirements.txt` - for basic features
+* `pip install -r requirements-rvc.txt` - for real-time voice cloning
+* `pip install -r requirements-coqui.txt` - for Coqui TTS (not recommended)
 
 See the [Common Problems](https://docs.sillytavern.app/extras/installation/common-problems/) page if you get errors at this step!
 
@@ -108,15 +109,17 @@ This would enable Image Captioning, Chat Summary, and live updating Character Ex
 
 Below is a table that describes each module.
 
-| Name        | Description                       | Included in default requirements.txt       |
-| ----------- | --------------------------------- | ------ |
-| `caption`   | Image captioning                  | ✔️ Yes        |
-| `summarize` | Text summarization                | ✔️ Yes    |
-| `classify`  | Text sentiment classification     | ✔️ Yes      |
-| `sd`        | Stable Diffusion image generation | :x: No (✔️ remote)      |
-| `silero-tts`       | [Silero TTS server](https://github.com/ouoertheo/silero-api-server) | :x: No |
-| `edge-tts` | [Microsoft Edge TTS client](https://github.com/rany2/edge-tts) | ✔️ Yes |
-| `chromadb`  | Infinity context server           | :x: No |
+| Name        | Description                       |
+| ----------- | --------------------------------- |
+| `caption`   | Image captioning                  |
+| `summarize` | Text summarization                |
+| `classify`  | Text sentiment classification     |
+| `sd`        | Stable Diffusion image generation |
+| `silero-tts`| [Silero TTS server](https://github.com/ouoertheo/silero-api-server) |
+| `edge-tts`  | [Microsoft Edge TTS client](https://github.com/rany2/edge-tts) |
+| `chromadb`  | Vector storage server           |
+| `coqui-tts` | Coqui TTS                       |
+| `rvc`       | Real-time voice cloning         |
 
 * Decide which modules you want to add to your Python command line.
 * They will be used in the next step.
@@ -128,9 +131,9 @@ Below is a table that describes each module.
 While still in your command prompt window inside the Extras installation folder...
 
 1. Make sure your conda environment is active (if you used the Conda install method)
-2. Type `activate extras` if the environment was not active.
+2. Type `activate extras` if the environment is not active.
 3. Type `python server.py --enable-modules=YOUR,SELECTED,MODULE,LIST,HERE`
-4. Extras server will load.
+4. The extras server will load.
 5. After a while it will show you a URL at the end. For local installs, this defaults to `http://localhost:5100`.
 6. Copy the API URL.
 
@@ -153,7 +156,7 @@ Be sure to the additional options for server.py (see below) that your setup requ
 This is Optional and only applies to Windows, but something similar should be possible on MacOS.
 
 1. View your Windows Desktop
-2. Right click, select `New`, and then click `Text Document`
+2. Right-click, select `New`, and then click `Text Document`
 3. A new file will appear on your Desktop, asking for a name.
 4. Name the file `STExtras.txt`
 4. Open the newly created file in a text editor.
@@ -171,6 +174,6 @@ pause
 7. Replace the python command line with your actual command line
 8. Save the file with a new name `STExtras.bat` (Use `File` >> `Save As` in most text editors)
 
-You can now simply double click on this .bat file to easily start Extras.
+You can now simply double-click on this .bat file to easily start Extras.
 
 If you ever want to change the module list (or any other command line modifiers for the extras server), simply edit the python command inside the .bat file.
