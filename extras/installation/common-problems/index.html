@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.753453224030">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.753453406984">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -35,11 +35,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.753453224030" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.753453406984" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.753453224030" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.753453406984" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.753453224030" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.753453406984" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -228,7 +228,7 @@
     </h3>
 </doc-anchor-target>
 <p>It requires the installation of an additional package because it&#x27;s not installed automatically due to incompatibility with Colab. Run this after you install other requirements:</p>
-<p><code v-pre>pip install wxpython==4.2.1</code></p>
+<p><code v-pre>pip install wxpython</code></p>
 <doc-anchor-target id="extras-server-cant-connect-to-automatic1111s-stable-diffusion-web-ui">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#extras-server-cant-connect-to-automatic1111s-stable-diffusion-web-ui">#</doc-anchor-trigger>
@@ -245,7 +245,7 @@
     <figcaption class="caption">How it shoud look</figcaption>
 </figure>
 </p>
-<p>If the API mode is disabled for SD Web UI, Extras server won&#x27;t be able to make a connection and you won&#x27;t be able to generate images!</p>
+<p>If the API mode is disabled for SD Web UI, the Extras server won&#x27;t be able to make a connection and you won&#x27;t be able to generate images!</p>
 <doc-anchor-target id="still-doesnt-work">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#still-doesnt-work">#</doc-anchor-trigger>
@@ -258,7 +258,7 @@
 <li>SillyTavern Extras</li>
 <li>SillyTavern</li>
 </ol>
-<p>Extras server can&#x27;t reconnect to the Stable Diffusion API if it was loaded after.</p>
+<p>The extras server can&#x27;t reconnect to the Stable Diffusion API if it was loaded after.</p>
 <doc-anchor-target id="hnswlib-wheel-building-error-when-installing-chromadb">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#hnswlib-wheel-building-error-when-installing-chromadb">#</doc-anchor-trigger>
@@ -283,12 +283,8 @@
 <blockquote>
 <p>ERROR: No matching distribution found for torch==2.0.0+cu117</p>
 </blockquote>
-<p>Mac does not support CUDA, so torch packages should be installed without CUDA support:</p>
-<ol>
-<li>Open requirements.txt and requirements-complete.txt files with a Text Editor app.</li>
-<li>Remove all <code v-pre>+cu117</code> parts from the package versions. Example: <code v-pre>torch==2.0.0+cu117</code> =&gt; <code v-pre>torch==2.0.0</code></li>
-<li>Run <code v-pre>pip install -r requirements.txt</code> again (change to <code v-pre>requirements-complete.txt</code> if needed).</li>
-</ol>
+<p>Mac does not support CUDA, so torch packages should be installed without CUDA support.</p>
+<p>Install the requirements using the <code v-pre>requirements-silicon.txt</code> file instead.</p>
 <hr>
 <doc-anchor-target id="missing-modules">
     <h3>
@@ -297,7 +293,7 @@
     </h3>
 </doc-anchor-target>
 <ul>
-<li>You must specify a list of module names in your python commandline, with the <code v-pre>--enable-modules</code> modifier.</li>
+<li>You must specify a list of module names in your Python command line, with the <code v-pre>--enable-modules</code> modifier.</li>
 <li>See <a href="https://docs.sillytavern.app/extras/installation/#decide-which-module-to-use">Modules</a> section.</li>
 </ul>
 <hr>
@@ -315,7 +311,7 @@
 </ul>
 </li>
 <li>This makes the Extras API &#x27;password locked&#x27;, so only users who have that key in their API Key box can access it.</li>
-<li>This is mainly useful for people who want to make their own public public deployment of Extras (colab, etc).</li>
+<li>This is mainly useful for people who want to make their own public deployment of Extras (colab, etc).</li>
 <li>Users running Extras on their own PC for personal use should not type anything into the API Key box.</li>
 </ul>
 <doc-anchor-target id="what-about-mobile-android-termux">
@@ -326,7 +322,7 @@
 </doc-anchor-target>
 <ul>
 <li>There are some folks in the community having success running Extras on their phones via Ubuntu on Termux.</li>
-<li>However, Extras was not made with mobile support in mind.</li>
+<li>However, Extras were not made with mobile support in mind.</li>
 <li>No support will be provided for people running Extras on their Android devices.</li>
 <li>Direct all your questions to the creator of the guide linked below instead.</li>
 </ul>
