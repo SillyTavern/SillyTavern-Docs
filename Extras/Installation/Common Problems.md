@@ -22,7 +22,7 @@ Local installation of Extras can be difficult or impossible on your OS (especial
 
 It requires the installation of an additional package because it's not installed automatically due to incompatibility with Colab. Run this after you install other requirements:
 
-`pip install wxpython==4.2.1`
+`pip install wxpython`
 
 ### Extras server can't connect to AUTOMATIC1111's Stable Diffusion Web UI
 
@@ -34,7 +34,7 @@ Find and replace that line in your "webui-user.bat": `set COMMANDLINE_ARGS=--api
 
 ![How it shoud look](https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/a823d134-14fb-40c6-b3f1-2e174e7b1172)
 
-If the API mode is disabled for SD Web UI, Extras server won't be able to make a connection and you won't be able to generate images!
+If the API mode is disabled for SD Web UI, the Extras server won't be able to make a connection and you won't be able to generate images!
 
 #### Still doesn't work?
 
@@ -44,7 +44,7 @@ Ensure that you start everything in the proper order, waiting for every program 
 2. SillyTavern Extras
 3. SillyTavern
 
-Extras server can't reconnect to the Stable Diffusion API if it was loaded after.
+The extras server can't reconnect to the Stable Diffusion API if it was loaded after.
 
 ### hnswlib wheel building error when installing ChromaDB
 
@@ -61,17 +61,15 @@ Before installing the ChromaDB module you must first do `one of the following`:
 
 > ERROR: No matching distribution found for torch==2.0.0+cu117
 
-Mac does not support CUDA, so torch packages should be installed without CUDA support:
+Mac does not support CUDA, so torch packages should be installed without CUDA support.
 
-1. Open requirements.txt and requirements-complete.txt files with a Text Editor app.
-2. Remove all `+cu117` parts from the package versions. Example: `torch==2.0.0+cu117` => `torch==2.0.0`
-3. Run `pip install -r requirements.txt` again (change to `requirements-complete.txt` if needed).
+Install the requirements using the `requirements-silicon.txt` file instead.
 
 ---
 
 ### Missing modules?
 
-* You must specify a list of module names in your python commandline, with the `--enable-modules` modifier.
+* You must specify a list of module names in your Python command line, with the `--enable-modules` modifier.
 * See [Modules](https://docs.sillytavern.app/extras/installation/#decide-which-module-to-use) section.
 
 ---
@@ -82,13 +80,13 @@ Mac does not support CUDA, so torch packages should be installed without CUDA su
   * created a text file named `api_key.txt` in your Extras install folder, which contains your chosen Extras 'password'.
   * started extras with the `--secure` commandline argument.
 * This makes the Extras API 'password locked', so only users who have that key in their API Key box can access it.
-* This is mainly useful for people who want to make their own public public deployment of Extras (colab, etc).
+* This is mainly useful for people who want to make their own public deployment of Extras (colab, etc).
 * Users running Extras on their own PC for personal use should not type anything into the API Key box.
 
 ### What about mobile/Android/Termux? 🤔
 
 * There are some folks in the community having success running Extras on their phones via Ubuntu on Termux.
-* However, Extras was not made with mobile support in mind.
+* However, Extras were not made with mobile support in mind.
 * No support will be provided for people running Extras on their Android devices.
 * Direct all your questions to the creator of the guide linked below instead.
 
