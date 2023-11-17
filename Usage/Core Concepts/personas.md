@@ -12,7 +12,7 @@ create a unique identity for the character you play in your chats or identify yo
 To create a persona:
 
 1. Open the Persona Management panel (smiley face icon) in the top bar.
-2. Upload a user avatar, select an existing avatar, or create a blank persona with a dummy image ("Blank" button).
+2. Upload a user avatar, select an existing avatar, or create a blank persona with a dummy image ("Create" button).
 3. Hover (tap on mobile) over the image and pick the top-left option ("Bind a name to that avatar").
 4. Input a desired name into the popup window. Confirm by clicking an "OK" button.
 5. The avatar now represents a Persona. Click on the avatar to select it, and this will also automatically update the user name.
@@ -63,3 +63,4 @@ the "sync" button on the Persona Management panel or by using the /sync slash co
 3. To change the persona image without deleting it, hover over the avatar on the Persona Management panel and click the bottom-left button.
 Then choose a new image and it will be replaced, preserving your set description and chat lock states.
 4. To quickly change a persona while in chat without opening the Persona Management panel, use the /persona slash command. For example, `/persona Blaze`.
+5. You can do backups of your Personas and restore them using the previously saved file if needed. Look for the "Backup" and "Restore" buttons in the Persona Management panel.
