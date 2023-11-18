@@ -12,8 +12,21 @@ DO NOT RUN START.BAT WITH ADMIN PERMISSIONS
 INSTALLATION ON WINDOWS 7 IS IMPOSSIBLE AS IT CAN NOT RUN NODEJS 18.16
 !!!
 
+## Installing via Git
+  1. Install [NodeJS](https://nodejs.org/en) (latest LTS version is recommended)
+  2. Install [Git for Windows](https://gitforwindows.org/)
+  3. Open Windows Explorer (`Win+E`)
+  4. Browse to or Create a folder that is not controlled or monitored by Windows. (ex: C:\MySpecialFolder\)
+  5. Open a Command Prompt inside that folder by clicking in the 'Address Bar' at the top, typing `cmd`, and pressing Enter.
+  6. Once the black box (Command Prompt) pops up, type ONE of the following into it and press Enter:
+
+- for Release Branch: `git clone https://github.com/SillyTavern/SillyTavern -b release`
+- for Staging Branch: `git clone https://github.com/SillyTavern/SillyTavern -b staging`
+
+  7. Once everything is cloned, double-click `Start.bat` to make NodeJS install its requirements.
+  8. The server will then start, and SillyTavern will pop up in your browser.
+
 ## Installing via SillyTavern Launcher
-### For Windows users:
  1. Install [Git for Windows](https://gitforwindows.org/)
  2. Open Windows Explorer (`Win+E`) and make or choose a folder where you wanna install the launcher to
  3. Open a Command Prompt inside that folder by clicking in the 'Address Bar' at the top, typing `cmd`, and pressing Enter.
@@ -46,21 +59,6 @@ INSTALLATION ON WINDOWS 7 IS IMPOSSIBLE AS IT CAN NOT RUN NODEJS 18.16
   ![image](https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/d9da4608-94cd-447c-bde2-7f0f9de1c2eb)
 
   10. Connect to any of the [supported APIs](https://docs.sillytavern.app/usage/api-connections/) and start chatting!
-
-## Installing via Git
-
-  1. Install [NodeJS](https://nodejs.org/en) (latest LTS version is recommended)
-  2. Install [Git for Windows](https://gitforwindows.org/)
-  3. Open Windows Explorer (`Win+E`)
-  4. Browse to or Create a folder that is not controlled or monitored by Windows. (ex: C:\MySpecialFolder\)
-  5. Open a Command Prompt inside that folder by clicking in the 'Address Bar' at the top, typing `cmd`, and pressing Enter.
-  6. Once the black box (Command Prompt) pops up, type ONE of the following into it and press Enter:
-
-- for Release Branch: `git clone https://github.com/SillyTavern/SillyTavern -b release`
-- for Staging Branch: `git clone https://github.com/SillyTavern/SillyTavern -b staging`
-
-  7. Once everything is cloned, double-click `Start.bat` to make NodeJS install its requirements.
-  8. The server will then start, and SillyTavern will pop up in your browser.
 
 ## Installing via ZIP download (discouraged)
 
