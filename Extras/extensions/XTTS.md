@@ -29,7 +29,7 @@ C:\xtts
 It's completely independent of Extras API and would use a separate environment.
 
 **Very important:** Don't install the following requirements to your Extras environment or system Python.
-It will break your other packages, do unnecessary downgrades, and do other nasty things.
+It will break your other packages, do unnecessary downgrades, etc.
 
 The following instruction is provided using Miniconda, but you can also do it with venv (not covered here).
 Open the Anaconda command prompt and follow the instructions line by line.
