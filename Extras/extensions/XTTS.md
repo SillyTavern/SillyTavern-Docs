@@ -53,17 +53,20 @@ conda activate xtts
 ```
 conda install python=3.10
 ```
-5. Install the XTTS server with its requirements. This can take some time.
-The following line installs PyTorch with GPU acceleration support (CUDA).
+5. Install the XTTS server with its requirements.
+```
+pip install xtts-api-server
+```
+6. Install PyTorch. This can take some time. The following line installs PyTorch with GPU acceleration support (CUDA).
 If you want to use just the CPU inference, drop the last part that starts with `--index-url`.
 ```
-pip install xtts-api-server torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 ```
-6. Start the XTTS server on the default host and port: <http://localhost:8020>
+7. Start the XTTS server on the default host and port: <http://localhost:8020>
 ```
 python -m xtts_api_server
 ```
-7. During your first startup, the model will be downloaded (about ~2 GB).
+8. During your first startup, the model will be downloaded (about ~2 GB).
 Don't forget to read the legal notice from Coqui AI very carefully. Lol, I'm kidding, just hit "y" again.
 
 ### Connecting to SillyTavern
