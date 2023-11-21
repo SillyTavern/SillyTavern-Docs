@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.753911218201">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.753913119524">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.753911218201" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.753913119524" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.753911218201" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.753913119524" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.753911218201" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.753913119524" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -270,20 +270,25 @@ Open the Anaconda command prompt and follow the instructions line by line.</p>
 <pre class="language-none"><code v-pre class="language-none">conda install python=3.10</code></pre>
 </doc-codeblock></div>
 <ol start="5">
-<li>Install the XTTS server with its requirements. This can take some time.
-The following line installs PyTorch with GPU acceleration support (CUDA).
+<li>Install the XTTS server with its requirements.</li>
+</ol>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">pip install xtts-api-server</code></pre>
+</doc-codeblock></div>
+<ol start="6">
+<li>Install PyTorch. This can take some time. The following line installs PyTorch with GPU acceleration support (CUDA).
 If you want to use just the CPU inference, drop the last part that starts with <code v-pre>--index-url</code>.</li>
 </ol>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">pip install xtts-api-server torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118</code></pre>
+<pre class="language-none"><code v-pre class="language-none">pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118</code></pre>
 </doc-codeblock></div>
-<ol start="6">
+<ol start="7">
 <li>Start the XTTS server on the default host and port: <a href="http://localhost:8020">http://localhost:8020</a></li>
 </ol>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">python -m xtts_api_server</code></pre>
 </doc-codeblock></div>
-<ol start="7">
+<ol start="8">
 <li>During your first startup, the model will be downloaded (about ~2 GB).
 Don&#x27;t forget to read the legal notice from Coqui AI very carefully. Lol, I&#x27;m kidding, just hit &quot;y&quot; again.</li>
 </ol>
