@@ -76,7 +76,7 @@ Don't forget to read the legal notice from Coqui AI very carefully. Lol, I'm kid
 3. Verify that the provider endpoint points to <http://localhost:8020> and "Available voices" shows a list of your voice samples.
 4. Pick any character and set a mapping between the voice sample and the character.
 If the characters list is empty, hit "Reload" a couple of times.
-5. Configure the rest of your TTS settings according to your preferences.
+5. Configure the rest of the TTS settings according to your preferences.
 
 ### You're all set now!
 
@@ -85,7 +85,7 @@ from your speakers. The generation takes some time and it's not real-time even o
 
 ### How to restart the TTS server?
 
-Just do steps 1, 3 and 6 from the installation instruction.
+Just do steps 1, 3 and 7 from the installation instruction.
 
 ### Android??
 
