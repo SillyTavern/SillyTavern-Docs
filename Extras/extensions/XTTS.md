@@ -83,3 +83,9 @@ from your speakers. The generation takes some time and it's not real-time even o
 ### How to restart the TTS server?
 
 Just do steps 1, 3 and 6 from the installation instruction.
+
+### Android??
+
+Unlikely, it can't run apps that require PyTorch without some arcane black magic that we don't provide support for. You can try it out at your own risk, but no support will be provided if you face any problems.
+
+Your best solution is to host the TTS API on your PC over the local network, just don't forget to specify the host and port to listen on - see [README](https://github.com/daswer123/xtts-api-server/blob/main/README.md).
