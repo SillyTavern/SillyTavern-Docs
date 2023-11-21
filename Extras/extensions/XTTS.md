@@ -24,7 +24,7 @@ C:\xtts
 
 ## Installing 
 
-[daswer123](https://github.com/daswer123) made an API server that runs the XTTSv2 model on your computer.
+[daswer123](https://github.com/daswer123) made an API server that runs the XTTSv2 model on your computer and connects to SillyTavern's TTS extension.
 
 It's completely independent of Extras API and would use a separate environment.
 
