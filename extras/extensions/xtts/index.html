@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.753910370159">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.753910620124">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.753910370159" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.753910620124" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.753910370159" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.753910620124" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.753910370159" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.753910620124" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -316,6 +316,14 @@ from your speakers. The generation takes some time and it&#x27;s not real-time e
     </h3>
 </doc-anchor-target>
 <p>Just do steps 1, 3 and 6 from the installation instruction.</p>
+<doc-anchor-target id="android">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#android">#</doc-anchor-trigger>
+        <span>Android??</span>
+    </h3>
+</doc-anchor-target>
+<p>Unlikely, it can&#x27;t run apps that require PyTorch without some arcane black magic that we don&#x27;t provide support for. You can try it out at your own risk, but no support will be provided if you face any problems.</p>
+<p>Your best solution is to host the TTS API on your PC over the local network, just don&#x27;t forget to specify the host and port to listen on - see <a href="https://github.com/daswer123/xtts-api-server/blob/main/README.md">README</a>.</p>
 
                                 
                                 <!-- Required only on API pages -->
