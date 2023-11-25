@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754270161317">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754271686198">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.754270161317" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.754271686198" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754270161317" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754271686198" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754270161317" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754271686198" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -437,7 +437,19 @@ This example will get you 3 last messages in the chat:</p>
         <span>Flow control - loops</span>
     </h2>
 </doc-anchor-target>
-<p>Under construction.</p>
+<p>If you need to run some command in a loop until a certain condition is met, use the <code v-pre>/while</code> command.</p>
+<p><code v-pre>/while left=valueA right=valueB rule=operation guard=on &quot;commands&quot;</code></p>
+<p>On each step of the loop it compares the value of variable A with the value of variable B, and if the condition yields true, then executes any valid slash command enclosed in quotes, otherwise exists the loop. This command doesn&#x27;t write anything to the output pipe.</p>
+<p><strong>The set of available boolean comparisons, handing of variables, literal values and subcommands is the same as for <code v-pre>/if</code> command.</strong></p>
+<p>The optional <code v-pre>guard</code> named argument (<code v-pre>on</code> by default) is used to protect against endless loops, limiting the number of iterations to 100.
+To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
+<p>This example adds 1 to the value of &quot;i&quot; until it reaches 10, then outputs the resulting value (10 in this case).</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">/setvar key=i 0 |
+/while left=i right=10 rule=lt &quot;/addvar key=i 1&quot; |
+/echo {{getvar::i}} |
+/flushvar i</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="quick-replies-script-library-and-auto-execution">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#quick-replies-script-library-and-auto-execution">#</doc-anchor-trigger>
