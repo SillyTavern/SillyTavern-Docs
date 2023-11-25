@@ -66,18 +66,24 @@ If you insist on installing via a zip, here is the tedious process for doing the
   Doing so could break the new install and prevent new features from being present.
 
 ```plaintext
+Assets
 Backgrounds
 Characters
 Chats
+Context
 Groups
 Group chats
+Instruct
+movingUI
 KoboldAI Settings
 NovelAI Settings
 OpenAI Settings
+QuickReplies
 TextGen Settings (textgen = ooba)
 Themes
 User Avatars
 Worlds
+User
 settings.json
 secrets.json <---- this one is in the base folder, not /public/
 ```
