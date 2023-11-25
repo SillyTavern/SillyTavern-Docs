@@ -194,7 +194,25 @@ This example will get you 3 last messages in the chat:
 
 ## Flow control - loops
 
-Under construction.
+If you need to run some command in a loop until a certain condition is met, use the `/while` command.
+
+`/while left=valueA right=valueB rule=operation guard=on "commands"`
+
+On each step of the loop it compares the value of variable A with the value of variable B, and if the condition yields true, then executes any valid slash command enclosed in quotes, otherwise exists the loop. This command doesn't write anything to the output pipe.
+
+**The set of available boolean comparisons, handing of variables, literal values and subcommands is the same as for `/if` command.**
+
+The optional `guard` named argument (`on` by default) is used to protect against endless loops, limiting the number of iterations to 100.
+To disable and allow endless loops, set `guard=off`.
+
+This example adds 1 to the value of "i" until it reaches 10, then outputs the resulting value (10 in this case).
+
+```
+/setvar key=i 0 |
+/while left=i right=10 rule=lt "/addvar key=i 1" |
+/echo {{getvar::i}} |
+/flushvar i
+```
 
 ## Quick Replies: script library and auto-execution
 
