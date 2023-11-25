@@ -1,5 +1,5 @@
 ---
-icon: file-symlink
+icon: file-symlink-file
 ---
 
 # STscript Language Reference
@@ -22,6 +22,9 @@ To run your first script, open any SillyTavern chat and type the following into 
 ```
 /pass Hello, World! | /echo
 ```
+
+| <img width="300" alt="image" src="https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/9845caa2-5b83-4ba3-bb34-af02d4d05de5"> |
+| -- |
 
 You should the message in the toast on top of the screen. Now let's break it down bit by bit.
 
@@ -48,6 +51,9 @@ Now let's add a little bit of interactivity to the script. We will accept the in
 
 1. The `/input` command is used to display an input box with the prompt specified in the unnamed argument and then writes the output to the pipe.
 2. Because `/echo` already has an unnamed argument that sets the template for the output, we use the `{{pipe}}` macro to specify a place where the pipe value will be rendered.
+
+| <img width="300" alt="image" src="https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/04fcc602-d8e0-42a9-ae06-f16613799047"> | <img width="300" alt="image" src="https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/323b4034-f6fa-4a06-b259-6ecd36733cb1"> |
+| -- | -- |
 
 ## Flow control - conditionals
 
