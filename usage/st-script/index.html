@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754250067933">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754250291894">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -14,7 +14,7 @@
     <!-- Primary Meta Tags -->
     <title>STscript Language Reference | docs.ST.app</title>
     <meta name="title" content="STscript Language Reference | docs.ST.app">
-    <meta name="description" content="It's a simple yet powerful scripting language that allows to expand the functionality of SillyTavern without serious coding, allowing you to:">
+    <meta name="description" content="It's a simple yet powerful scripting language that allows you to expand the functionality of SillyTavern without serious coding, allowing you to:">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/usage/st-script/">
@@ -23,21 +23,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/usage/st-script/">
     <meta property="og:title" content="STscript Language Reference | docs.ST.app">
-    <meta property="og:description" content="It's a simple yet powerful scripting language that allows to expand the functionality of SillyTavern without serious coding, allowing you to:">
+    <meta property="og:description" content="It's a simple yet powerful scripting language that allows you to expand the functionality of SillyTavern without serious coding, allowing you to:">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/usage/st-script/">
     <meta property="twitter:title" content="STscript Language Reference | docs.ST.app">
-    <meta property="twitter:description" content="It's a simple yet powerful scripting language that allows to expand the functionality of SillyTavern without serious coding, allowing you to:">
+    <meta property="twitter:description" content="It's a simple yet powerful scripting language that allows you to expand the functionality of SillyTavern without serious coding, allowing you to:">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.754250067933" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.754250291894" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754250067933" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754250291894" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754250067933" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754250291894" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -209,13 +209,13 @@
         <span>What is STscript?</span>
     </h2>
 </doc-anchor-target>
-<p>It&#x27;s a simple yet powerful scripting language that allows to expand the functionality of SillyTavern without serious coding, allowing you to:</p>
+<p>It&#x27;s a simple yet powerful scripting language that allows you to expand the functionality of SillyTavern without serious coding, allowing you to:</p>
 <ul>
 <li>Create mini-games or speed run challenges</li>
 <li>Build AI-powered chat insights</li>
 <li>Unleash your creativity and share with others</li>
 </ul>
-<p>STscript is built using the slash commands engine, utilizing command batching, data piping, macros and variables.
+<p>STscript is built using the slash commands engine, utilizing command batching, data piping, macros, and variables.
 These concepts are going to be described in the following document.</p>
 <doc-anchor-target id="hello-world">
     <h2>
@@ -227,12 +227,12 @@ These concepts are going to be described in the following document.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">/pass Hello, World! | /echo</code></pre>
 </doc-codeblock></div>
-<p>You should the message in the toast on top of the screen. Now let&#x27;s break down bit by bit.</p>
-<p>A script a batch of commands, each one starting with the slash, with or without named and unnamed arguments, and terminated with the command separator character: <code v-pre>|</code>.</p>
+<p>You should the message in the toast on top of the screen. Now let&#x27;s break it down bit by bit.</p>
+<p>A script is a batch of commands, each one starting with the slash, with or without named and unnamed arguments, and terminated with the command separator character: <code v-pre>|</code>.</p>
 <p>Commands are executed sequentially, one after another, and transfer data between each other.</p>
 <ol>
-<li><code v-pre>/pass</code> command accepts a constant value of &quot;Hello, World!&quot; as an unnamed argument and writes it to the pipe.</li>
-<li><code v-pre>/echo</code> command receives the value through the pipe from the previous command and displays it as a toast notification.</li>
+<li>The <code v-pre>/pass</code> command accepts a constant value of &quot;Hello, World!&quot; as an unnamed argument and writes it to the pipe.</li>
+<li>The <code v-pre>/echo</code> command receives the value through the pipe from the previous command and displays it as a toast notification.</li>
 </ol>
 <p>As constant unnamed arguments and pipes are interchangeable, we could rewrite this script simply as:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -244,12 +244,12 @@ These concepts are going to be described in the following document.</p>
         <span>User input</span>
     </h2>
 </doc-anchor-target>
-<p>Now let&#x27;s add a little bit of interactivity into the script. We will accept the input value from the user and the display it in the notification.</p>
+<p>Now let&#x27;s add a little bit of interactivity to the script. We will accept the input value from the user and display it in the notification.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">/input Enter your name | /echo Hello, my name is {{pipe}}</code></pre>
 </doc-codeblock></div>
 <ol>
-<li><code v-pre>/input</code> command is used to display an input box with the prompt specified in the unnamed argument, and the writes the output to the pipe.</li>
+<li>The <code v-pre>/input</code> command is used to display an input box with the prompt specified in the unnamed argument and then writes the output to the pipe.</li>
 <li>Because <code v-pre>/echo</code> already has an unnamed argument that sets the template for the output, we use the <code v-pre>{{pipe}}</code> macro to specify a place where the pipe value will be rendered.</li>
 </ol>
 <doc-anchor-target id="flow-control---conditionals">
@@ -258,7 +258,7 @@ These concepts are going to be described in the following document.</p>
         <span>Flow control - conditionals</span>
     </h2>
 </doc-anchor-target>
-<p>You can use <code v-pre>/if</code> command to create conditional expressions that branch the execution based on the defined rules.</p>
+<p>You can use the <code v-pre>/if</code> command to create conditional expressions that branch the execution based on the defined rules.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">/input What's your favorite drink? | /if left={{pipe}} right=&quot;black tea&quot; rule=eq else=&quot;/echo You shall not pass \| /abort&quot; &quot;/echo Welcome to the club, \{\{user\}\}&quot;</code></pre>
 </doc-codeblock></div>
@@ -290,7 +290,7 @@ These concepts are going to be described in the following document.</p>
         <span>Boolean operations</span>
     </h3>
 </doc-anchor-target>
-<p>Supported rules for boolean comparison are following. An operation applied to the operands results in either true or false value.</p>
+<p>Supported rules for boolean comparison are the following. An operation applied to the operands results in either a true or false value.</p>
 <ol>
 <li><code v-pre>eq</code> (equals) =&gt; A = B</li>
 <li><code v-pre>neq</code> (not equals) =&gt; A != B</li>
@@ -311,9 +311,9 @@ These concepts are going to be described in the following document.</p>
 <p>A subcommand is a string containing a list of slash commands to execute.</p>
 <ol>
 <li>To use command batching in subcommands, the command separator character should be escaped like this: <code v-pre>\|</code>.</li>
-<li>Since macro values are executed when the conditional in entered, not when the subcommand is executed, macro could be additionally escaped to delay their evaluation to the subcommand execution time: <code v-pre>\{\{\macro\}\}</code>.</li>
+<li>Since macro values are executed when the conditional is entered, not when the subcommand is executed, a macro could be additionally escaped to delay their evaluation to the subcommand execution time: <code v-pre>\{\{\macro\}\}</code>.</li>
 <li>The result of the subcommands execution is piped to the command after <code v-pre>/if</code>.</li>
-<li><code v-pre>/abort</code> command interrupts the script execution when encountered.</li>
+<li>The <code v-pre>/abort</code> command interrupts the script execution when encountered.</li>
 </ol>
 <doc-anchor-target id="variables">
     <h2>
@@ -329,15 +329,15 @@ These concepts are going to be described in the following document.</p>
 <ol>
 <li><code v-pre>/getvar name</code> or <code v-pre>{{getvar::name}}</code> - gets the value of the local variable.</li>
 <li><code v-pre>/setvar key=name value</code> or <code v-pre>{{setvar::name::value}}</code> - sets the value of the local variable.</li>
-<li><code v-pre>/addvar key=name increment</code> or <code v-pre>{{addvar::name::increment}}</code> - adds the <code v-pre>increment</code> to the value of local variable.</li>
+<li><code v-pre>/addvar key=name increment</code> or <code v-pre>{{addvar::name::increment}}</code> - adds the <code v-pre>increment</code> to the value of the local variable.</li>
 <li><code v-pre>/getglobalvar name</code> or <code v-pre>{{getglobalvar::name}}</code> - gets the value of the global variable.</li>
 <li><code v-pre>/setglobalvar key=name</code> or <code v-pre>{{setglobalvar::name::value}}</code> - sets the value of the global variable.</li>
-<li><code v-pre>/addglobalvar key=name</code> or <code v-pre>{{addglobalvar::name:increment}}</code> - adds the <code v-pre>increment</code> to the value of global variable.</li>
+<li><code v-pre>/addglobalvar key=name</code> or <code v-pre>{{addglobalvar::name:increment}}</code> - adds the <code v-pre>increment</code> to the value of the global variable.</li>
 <li><code v-pre>/flushvar name</code> - deletes the value of the local variable.</li>
 <li><code v-pre>/flushglobalvar name</code> - deletes the value of the global variable.</li>
 </ol>
-<p>The default value of previously undefined variables is empty string, or zero of it is first used in <code v-pre>/addvar</code> command.</p>
-<p>Increment in the <code v-pre>/addvar</code> command performs an addition or subtraction of the value if it can be converted to a number, or does the string concatenation otherwise.</p>
+<p>The default value of previously undefined variables is an empty string, or a zero of it is first used in the <code v-pre>/addvar</code> command.</p>
+<p>Increment in the <code v-pre>/addvar</code> command performs an addition or subtraction of the value if it can be converted to a number, or otherwise does the string concatenation.</p>
 <p>All slash commands for variable manipulation write the resulting value into the pipe for the next command to use.</p>
 <p>Now, let&#x27;s consider the following example:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -345,7 +345,7 @@ These concepts are going to be described in the following document.</p>
 </doc-codeblock></div>
 <ol>
 <li>The value of the user input is saved in the local variable named <code v-pre>SDinput</code>.</li>
-<li>The <code v-pre>getvar</code> macros is used to display the value in the <code v-pre>/echo</code> command.</li>
+<li>The <code v-pre>getvar</code> macro is used to display the value in the <code v-pre>/echo</code> command.</li>
 <li>The <code v-pre>getvar</code> command is used to retrieve the value of the variable and pass it through the pipe.</li>
 <li>The value is passed to the <code v-pre>/imagine</code> command (provided by the Image Generation plugin) to be used as its input prompt.</li>
 </ol>
