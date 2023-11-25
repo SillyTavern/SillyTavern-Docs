@@ -171,6 +171,9 @@ Generated text is then passed though the pipe to the next command and can be sav
 /popup <h3>Cthulhu says:</h3><div>{{pipe}}</div>
 ```
 
+| <img alt="image" src="https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/f771f364-8c90-42fa-8822-ee3862e275ce"> |
+| -- |
+
 ### Access chat messages
 
 You can access messages in the currently selected chat using the `/messages names=on/off` command.
