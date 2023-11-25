@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754269529785">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754270161317">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -14,7 +14,7 @@
     <!-- Primary Meta Tags -->
     <title>STscript Language Reference | docs.ST.app</title>
     <meta name="title" content="STscript Language Reference | docs.ST.app">
-    <meta name="description" content="It's a simple yet powerful scripting language that allows you to expand the functionality of SillyTavern without serious coding, allowing you to:">
+    <meta name="description" content="It's a simple yet powerful scripting language that could be used to expand the functionality of SillyTavern without serious coding, allowing you to:">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/usage/st-script/">
@@ -23,21 +23,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/usage/st-script/">
     <meta property="og:title" content="STscript Language Reference | docs.ST.app">
-    <meta property="og:description" content="It's a simple yet powerful scripting language that allows you to expand the functionality of SillyTavern without serious coding, allowing you to:">
+    <meta property="og:description" content="It's a simple yet powerful scripting language that could be used to expand the functionality of SillyTavern without serious coding, allowing you to:">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/usage/st-script/">
     <meta property="twitter:title" content="STscript Language Reference | docs.ST.app">
-    <meta property="twitter:description" content="It's a simple yet powerful scripting language that allows you to expand the functionality of SillyTavern without serious coding, allowing you to:">
+    <meta property="twitter:description" content="It's a simple yet powerful scripting language that could be used to expand the functionality of SillyTavern without serious coding, allowing you to:">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.754269529785" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.754270161317" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754269529785" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754270161317" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754269529785" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754270161317" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -209,7 +209,7 @@
         <span>What is STscript?</span>
     </h2>
 </doc-anchor-target>
-<p>It&#x27;s a simple yet powerful scripting language that allows you to expand the functionality of SillyTavern without serious coding, allowing you to:</p>
+<p>It&#x27;s a simple yet powerful scripting language that could be used to expand the functionality of SillyTavern without serious coding, allowing you to:</p>
 <ul>
 <li>Create mini-games or speed run challenges</li>
 <li>Build AI-powered chat insights</li>
@@ -271,6 +271,17 @@ These concepts are going to be described in the following document.</p>
 </thead>
 </table>
 </div>
+<doc-anchor-target id="other-inputoutput-commands">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#other-inputoutput-commands">#</doc-anchor-trigger>
+        <span>Other input/output commands</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><code v-pre>/popup (text)</code> -- shows a blocking popup, supports lite HTML formatting, e.g: <code v-pre>/popup &lt;font color=red&gt;I'm red!&lt;/font&gt;</code>.</li>
+<li><code v-pre>/setinput (text)</code> -- replaces the contents of the user input bar with the provided text.</li>
+<li><code v-pre>/speak voice=&quot;name&quot; (text)</code> -- narrates the text using the selected TTS engine and the character name from the voice map, e.g. <code v-pre>/speak name=&quot;Donald Duck&quot; Quack!</code>.</li>
+</ul>
 <doc-anchor-target id="flow-control---conditionals">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#flow-control---conditionals">#</doc-anchor-trigger>
@@ -279,7 +290,8 @@ These concepts are going to be described in the following document.</p>
 </doc-anchor-target>
 <p>You can use the <code v-pre>/if</code> command to create conditional expressions that branch the execution based on the defined rules.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">/input What's your favorite drink? | /if left={{pipe}} right=&quot;black tea&quot; rule=eq else=&quot;/echo You shall not pass \| /abort&quot; &quot;/echo Welcome to the club, \{\{user\}\}&quot;</code></pre>
+<pre class="language-none"><code v-pre class="language-none">/input What's your favorite drink? |
+/if left={{pipe}} right=&quot;black tea&quot; rule=eq else=&quot;/echo You shall not pass \| /abort&quot; &quot;/echo Welcome to the club, \{\{user\}\}&quot;</code></pre>
 </doc-codeblock></div>
 <p>This script evaluates the user input against a required value and displays different messages, depending on the input value.</p>
 <doc-anchor-target id="arguments-for-if">
@@ -346,21 +358,25 @@ These concepts are going to be described in the following document.</p>
 <li>Global variables - saved to the settings.json and exist everywhere across the app.</li>
 </ul>
 <ol>
-<li><code v-pre>/getvar name</code> or <code v-pre>{{getvar::name}}</code> - gets the value of the local variable.</li>
-<li><code v-pre>/setvar key=name value</code> or <code v-pre>{{setvar::name::value}}</code> - sets the value of the local variable.</li>
-<li><code v-pre>/addvar key=name increment</code> or <code v-pre>{{addvar::name::increment}}</code> - adds the <code v-pre>increment</code> to the value of the local variable.</li>
-<li><code v-pre>/getglobalvar name</code> or <code v-pre>{{getglobalvar::name}}</code> - gets the value of the global variable.</li>
-<li><code v-pre>/setglobalvar key=name</code> or <code v-pre>{{setglobalvar::name::value}}</code> - sets the value of the global variable.</li>
-<li><code v-pre>/addglobalvar key=name</code> or <code v-pre>{{addglobalvar::name:increment}}</code> - adds the <code v-pre>increment</code> to the value of the global variable.</li>
-<li><code v-pre>/flushvar name</code> - deletes the value of the local variable.</li>
-<li><code v-pre>/flushglobalvar name</code> - deletes the value of the global variable.</li>
+<li><code v-pre>/getvar name</code> or <code v-pre>{{getvar::name}}</code> -- gets the value of the local variable.</li>
+<li><code v-pre>/setvar key=name value</code> or <code v-pre>{{setvar::name::value}}</code> -- sets the value of the local variable.</li>
+<li><code v-pre>/addvar key=name increment</code> or <code v-pre>{{addvar::name::increment}}</code> -- adds the <code v-pre>increment</code> to the value of the local variable.</li>
+<li><code v-pre>/getglobalvar name</code> or <code v-pre>{{getglobalvar::name}}</code> -- gets the value of the global variable.</li>
+<li><code v-pre>/setglobalvar key=name</code> or <code v-pre>{{setglobalvar::name::value}}</code> -- sets the value of the global variable.</li>
+<li><code v-pre>/addglobalvar key=name</code> or <code v-pre>{{addglobalvar::name:increment}}</code> -- adds the <code v-pre>increment</code> to the value of the global variable.</li>
+<li><code v-pre>/flushvar name</code> -- deletes the value of the local variable.</li>
+<li><code v-pre>/flushglobalvar name</code> -- deletes the value of the global variable.</li>
 </ol>
 <p>The default value of previously undefined variables is an empty string, or a zero of it is first used in the <code v-pre>/addvar</code> command.</p>
 <p>Increment in the <code v-pre>/addvar</code> command performs an addition or subtraction of the value if it can be converted to a number, or otherwise does the string concatenation.</p>
 <p>All slash commands for variable manipulation write the resulting value into the pipe for the next command to use.</p>
 <p>Now, let&#x27;s consider the following example:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">/input What do you want to generate? | /setvar key=SDinput | /echo Requesting an image of {{getvar::SDinput}} | /getvar SDinput | /imagine</code></pre>
+<pre class="language-none"><code v-pre class="language-none">/input What do you want to generate? |
+/setvar key=SDinput |
+/echo Requesting an image of {{getvar::SDinput}} |
+/getvar SDinput |
+/imagine</code></pre>
 </doc-codeblock></div>
 <ol>
 <li>The value of the user input is saved in the local variable named <code v-pre>SDinput</code>.</li>
@@ -375,7 +391,46 @@ These concepts are going to be described in the following document.</p>
         <span>Using the LLM</span>
     </h2>
 </doc-anchor-target>
-<p>Under construction.</p>
+<p>Scripts can make requests to your currently connected LLM using the following commands:</p>
+<ul>
+<li><code v-pre>/gen (prompt)</code> -- generates text using the provided prompt for the selected character and including chat messages.</li>
+<li><code v-pre>/genraw (prompt)</code> -- generates text using just the provided prompt, ignoring the current character and chat.</li>
+</ul>
+<doc-anchor-target id="arguments-for-gen-and-genraw">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#arguments-for-gen-and-genraw">#</doc-anchor-trigger>
+        <span>Arguments for <code v-pre>/gen</code> and <code v-pre>/genraw</code></span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><code v-pre>lock</code> -- can be <code v-pre>on</code> or <code v-pre>off</code>. Specifies whether a user input should be blocked while the generation is in progress. Default: <code v-pre>off</code>.</li>
+<li><code v-pre>stop</code> -- JSON-serialized array of strings. Adds a custom stop string (if the API supports it) just for this generation. Default: none.</li>
+<li><code v-pre>instruct</code> (only <code v-pre>/genraw</code>) -- can be <code v-pre>on</code> or <code v-pre>off</code>. Allows to use instruct formatting on the input prompt. Set to <code v-pre>off</code> to force pure prompts. Default: <code v-pre>on</code>.</li>
+</ul>
+<p>Generated text is then passed though the pipe to the next command and can be saved to a variable or displaced using the I/O capabilities:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">/genraw Write a funny message from Cthulhu about taking over the world. Use emojis. |
+/popup &lt;h3&gt;Cthulhu says:&lt;/h3&gt;&lt;div&gt;{{pipe}}&lt;/div&gt;</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="access-chat-messages">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#access-chat-messages">#</doc-anchor-trigger>
+        <span>Access chat messages</span>
+    </h3>
+</doc-anchor-target>
+<p>You can access messages in the currently selected chat using the <code v-pre>/messages names=on/off</code> command.
+The <code v-pre>names</code> argument is used to specify whether you want to include character names or not, default: <code v-pre>on</code>.</p>
+<p>In unnamed argument it accepts a message index or inclusive range in the <code v-pre>start-finish</code> format. Ranges are inclusive!</p>
+<p>If the range is unsatisfiable, i.e. invalid index or more messages than exist are requested, then an empty string is returned.</p>
+<p>If you want to know the index of the latest message, use <code v-pre>{{lastMessageId}}</code> macro, and <code v-pre>{{lastMessage}}</code> will get you the message itself.</p>
+<p>To calculate the start index for a range, for example when you need to get last N message, use variable subtraction.
+This example will get you 3 last messages in the chat:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">/setvar key=start {{lastMessageId}} |
+/addvar key=start -2 |
+/messages names=off {{getvar::start}}-{{lastMessageId}} |
+/setinput</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="flow-control---loops">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#flow-control---loops">#</doc-anchor-trigger>
@@ -397,6 +452,30 @@ These concepts are going to be described in the following document.</p>
     </h2>
 </doc-anchor-target>
 <p>Under construction.</p>
+<doc-anchor-target id="more-examples">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#more-examples">#</doc-anchor-trigger>
+        <span>More examples</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="generate-chat-summary-by-ikaridevgit">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#generate-chat-summary-by-ikaridevgit">#</doc-anchor-trigger>
+        <span>Generate chat summary (by @IkariDevGIT)</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">/setvar key=tmp |
+/messages 0-{{lastMessageId}} |
+/setvar key=s1 |
+/echo Generating, please wait... |
+/genraw lock=on instruct=off ### Instruct:{{newline}}Summarize the most important facts and events that have happened in the chat given to you in the Input header. Limit the summary to 100 words or less. Your response should include nothing but the summary.{{newline}}{{newline}}### Input:{{newline}}{{getvar::s1}}{{newline}}{{newline}}### Response:{{newline}}The chat summary:{{newline}} |
+/setvar key=tmp |
+/echo Done! |
+/setinput {{getvar::tmp}} |
+/flushvar tmp |
+/flushvar s1</code></pre>
+</doc-codeblock></div>
 
                                 
                                 <!-- Required only on API pages -->
