@@ -6,7 +6,7 @@ icon: file-symlink-file
 
 ## What is STscript?
 
-It's a simple yet powerful scripting language that allows you to expand the functionality of SillyTavern without serious coding, allowing you to:
+It's a simple yet powerful scripting language that could be used to expand the functionality of SillyTavern without serious coding, allowing you to:
 
 - Create mini-games or speed run challenges
 - Build AI-powered chat insights
@@ -55,12 +55,19 @@ Now let's add a little bit of interactivity to the script. We will accept the in
 | <img alt="image" src="https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/04fcc602-d8e0-42a9-ae06-f16613799047"> | <img alt="image" src="https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/323b4034-f6fa-4a06-b259-6ecd36733cb1"> |
 | -- | -- |
 
+### Other input/output commands
+
+- `/popup (text)` -- shows a blocking popup, supports lite HTML formatting, e.g: `/popup <font color=red>I'm red!</font>`.
+- `/setinput (text)` -- replaces the contents of the user input bar with the provided text.
+- `/speak voice="name" (text)` -- narrates the text using the selected TTS engine and the character name from the voice map, e.g. `/speak name="Donald Duck" Quack!`.
+
 ## Flow control - conditionals
 
 You can use the `/if` command to create conditional expressions that branch the execution based on the defined rules.
 
 ```
-/input What's your favorite drink? | /if left={{pipe}} right="black tea" rule=eq else="/echo You shall not pass \| /abort" "/echo Welcome to the club, \{\{user\}\}"
+/input What's your favorite drink? |
+/if left={{pipe}} right="black tea" rule=eq else="/echo You shall not pass \| /abort" "/echo Welcome to the club, \{\{user\}\}"
 ```
 
 This script evaluates the user input against a required value and displays different messages, depending on the input value.
@@ -112,14 +119,14 @@ Variables are used to store and manipulate data in scripts, using either command
 - Local variables - saved to the metadata of the current chat, and unique to it.
 - Global variables - saved to the settings.json and exist everywhere across the app.
 
-1. `/getvar name` or `{{getvar::name}}` - gets the value of the local variable.
-2. `/setvar key=name value` or `{{setvar::name::value}}` - sets the value of the local variable.
-3. `/addvar key=name increment` or `{{addvar::name::increment}}` - adds the `increment` to the value of the local variable.
-4. `/getglobalvar name` or `{{getglobalvar::name}}` - gets the value of the global variable.
-5. `/setglobalvar key=name` or `{{setglobalvar::name::value}}` - sets the value of the global variable.
-6. `/addglobalvar key=name` or `{{addglobalvar::name:increment}}` - adds the `increment` to the value of the global variable.
-7. `/flushvar name` - deletes the value of the local variable.
-8. `/flushglobalvar name` - deletes the value of the global variable.
+1. `/getvar name` or `{{getvar::name}}` -- gets the value of the local variable.
+2. `/setvar key=name value` or `{{setvar::name::value}}` -- sets the value of the local variable.
+3. `/addvar key=name increment` or `{{addvar::name::increment}}` -- adds the `increment` to the value of the local variable.
+4. `/getglobalvar name` or `{{getglobalvar::name}}` -- gets the value of the global variable.
+5. `/setglobalvar key=name` or `{{setglobalvar::name::value}}` -- sets the value of the global variable.
+6. `/addglobalvar key=name` or `{{addglobalvar::name:increment}}` -- adds the `increment` to the value of the global variable.
+7. `/flushvar name` -- deletes the value of the local variable.
+8. `/flushglobalvar name` -- deletes the value of the global variable.
 
 The default value of previously undefined variables is an empty string, or a zero of it is first used in the `/addvar` command.
 
@@ -130,7 +137,11 @@ All slash commands for variable manipulation write the resulting value into the 
 Now, let's consider the following example:
 
 ```
-/input What do you want to generate? | /setvar key=SDinput | /echo Requesting an image of {{getvar::SDinput}} | /getvar SDinput | /imagine
+/input What do you want to generate? |
+/setvar key=SDinput |
+/echo Requesting an image of {{getvar::SDinput}} |
+/getvar SDinput |
+/imagine
 ```
 
 1. The value of the user input is saved in the local variable named `SDinput`.
@@ -142,7 +153,44 @@ Since the variables are saved and not flushed between the script executions, you
 
 ## Using the LLM
 
-Under construction.
+Scripts can make requests to your currently connected LLM using the following commands:
+
+- `/gen (prompt)` -- generates text using the provided prompt for the selected character and including chat messages.
+- `/genraw (prompt)` -- generates text using just the provided prompt, ignoring the current character and chat.
+
+### Arguments for `/gen` and `/genraw`
+
+- `lock` -- can be `on` or `off`. Specifies whether a user input should be blocked while the generation is in progress. Default: `off`.
+- `stop` -- JSON-serialized array of strings. Adds a custom stop string (if the API supports it) just for this generation. Default: none.
+- `instruct` (only `/genraw`) -- can be `on` or `off`. Allows to use instruct formatting on the input prompt. Set to `off` to force pure prompts. Default: `on`.
+
+Generated text is then passed though the pipe to the next command and can be saved to a variable or displaced using the I/O capabilities:
+
+```
+/genraw Write a funny message from Cthulhu about taking over the world. Use emojis. |
+/popup <h3>Cthulhu says:</h3><div>{{pipe}}</div>
+```
+
+### Access chat messages
+
+You can access messages in the currently selected chat using the `/messages names=on/off` command.
+The `names` argument is used to specify whether you want to include character names or not, default: `on`.
+
+In unnamed argument it accepts a message index or inclusive range in the `start-finish` format. Ranges are inclusive!
+
+If the range is unsatisfiable, i.e. invalid index or more messages than exist are requested, then an empty string is returned.
+
+If you want to know the index of the latest message, use `{{lastMessageId}}` macro, and `{{lastMessage}}` will get you the message itself.
+
+To calculate the start index for a range, for example when you need to get last N message, use variable subtraction. 
+This example will get you 3 last messages in the chat:
+
+```
+/setvar key=start {{lastMessageId}} |
+/addvar key=start -2 |
+/messages names=off {{getvar::start}}-{{lastMessageId}} |
+/setinput
+```
 
 ## Flow control - loops
 
@@ -155,3 +203,20 @@ Under construction.
 ## Calling procedures
 
 Under construction.
+
+## More examples
+
+### Generate chat summary (by @IkariDevGIT)
+
+```
+/setvar key=tmp |
+/messages 0-{{lastMessageId}} |
+/setvar key=s1 |
+/echo Generating, please wait... |
+/genraw lock=on instruct=off ### Instruct:{{newline}}Summarize the most important facts and events that have happened in the chat given to you in the Input header. Limit the summary to 100 words or less. Your response should include nothing but the summary.{{newline}}{{newline}}### Input:{{newline}}{{getvar::s1}}{{newline}}{{newline}}### Response:{{newline}}The chat summary:{{newline}} |
+/setvar key=tmp |
+/echo Done! |
+/setinput {{getvar::tmp}} |
+/flushvar tmp |
+/flushvar s1
+```
