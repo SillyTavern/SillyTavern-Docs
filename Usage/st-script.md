@@ -203,6 +203,8 @@ If you need to run some command in a loop until a certain condition is met, use 
 
 On each step of the loop it compares the value of variable A with the value of variable B, and if the condition yields true, then executes any valid slash command enclosed in quotes, otherwise exists the loop. This command doesn't write anything to the output pipe.
 
+### Arguments for `/while`
+
 **The set of available boolean comparisons, handing of variables, literal values and subcommands is the same as for `/if` command.**
 
 The optional `guard` named argument (`on` by default) is used to protect against endless loops, limiting the number of iterations to 100.
@@ -219,7 +221,57 @@ This example adds 1 to the value of "i" until it reaches 10, then outputs the re
 
 ## Quick Replies: script library and auto-execution
 
-Under construction.
+Quick Replies is a built-in SillyTavern extension that provides an easy way to store and execute your scripts.
+
+### Configuring Quick Replies
+
+In order to get started, enable open the extensions panel (stacked blocks icon), expand the Quick Replies menu.
+
+Quick Replies are disabled by default, you need to enable them first. Then you will see a bar appearing above your chat input bar.
+
+You can set the displayed button text label (we recommend using emojis for brevity) and the script that will be executed when you click the button.
+
+The number of buttons is controlled by the **Number of slots** settings (max = 100), adjust it according to your needs and click "Apply" when done.
+
+**Inject user input automatically** recommended to be disabled when using STscript, otherwise it may interfere with your inputs, use `{{input}}` macro to get the current value of the input bar in scripts instead.
+
+**Quick Reply presets** allow to have multiple sets of predefined Quick Replies and switch between manually or by using the `/qrset (name of set)` command.
+Don't forget to click "Update" before switching to a different set to write your changes to the currently used preset!
+
+### Manual execution
+
+Now you can add your first script to the library. Pick any free slot (or create one) and paste this into the right box, and type "Click me" into the left box to set the label:
+
+```
+/addvar key=clicks 1 |
+/if left=clicks right=5 rule=eq else="/echo Keep going..." "/echo You did it!  \| /flushvar clicks"
+```
+
+Then click 5 times on the button that appeared above the chat bar.
+Every click increments the variable `clicks` by one and displays a different message the value equals 5 and resets the variable.
+
+### Automatic execution
+
+Open the modal menu by clicking the `⋮` button for the created command.
+
+In this menu you can do the following:
+
+- Hide the button from the chat bar, making it accessible only for auto-execution.
+- Enable automatic execution on one or more of the following conditions:
+  * App startup
+  * Sending a user message to the chat
+  * Receiving an AI message in the chat
+  * Opening a character or group chat
+
+Commands are executed automatically only if the Quick Replies extension is enabled.
+
+For example, you can display a message after sending five user messages by adding the following script and setting it to auto-execute on user message.
+
+```
+/addvar key=usercounter 1 |
+/echo You've sent {{pipe}} messages. |
+/if a=usercounter b=5 rule=gte "/echo Game over! \| /flushvar usercounter"
+```
 
 ## Calling procedures
 
