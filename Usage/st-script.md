@@ -235,7 +235,7 @@ In order to get started, enable open the extensions panel (stacked blocks icon),
 | -- |
 
 
-Quick Replies are disabled by default, you need to enable them first. Then you will see a bar appearing above your chat input bar.
+**Quick Replies are disabled by default, you need to enable them first.** Then you will see a bar appearing above your chat input bar.
 
 You can set the displayed button text label (we recommend using emojis for brevity) and the script that will be executed when you click the button.
 
@@ -286,7 +286,21 @@ For example, you can display a message after sending five user messages by addin
 
 ## Calling procedures
 
-Under construction.
+A `/run` command can call scripts defined in the Quick Replies by their label, basically providing the ability to define procedures and return results from them. This allows to have reusable script blocks that other scripts could reference. The last result from the procedure's pipe is passed to the next command after it.
+
+`/run ScriptLabel`
+
+Let's create two Quick Replies:
+
+| Label      | Command                                                  |
+| :--------- | :------------------------------------------------------- |
+| GetRandom  | `/pass {{roll:d100}}`                                    |
+| GetMessage | `/run GetRandom \| /echo Your lucky number is: {{pipe}}` |
+
+Clicking on `GetMessage` button will call `GetRandom` that will resolve the `{{roll}}` macro pass the number to the caller, displaying it to the user.
+
+- Procedures do not accept named or unnamed arguments, but can reference the same variables as the caller.
+- Avoid recursion when calling procedures as it may produce the "call stack exceeded" error if handled unadvisedly.
 
 ## More examples
 
