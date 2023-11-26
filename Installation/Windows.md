@@ -59,11 +59,3 @@ INSTALLATION ON WINDOWS 7 IS IMPOSSIBLE AS IT CAN NOT RUN NODEJS 18.16
   ![image](https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/d9da4608-94cd-447c-bde2-7f0f9de1c2eb)
 
   10. Connect to any of the [supported APIs](https://docs.sillytavern.app/usage/api-connections/) and start chatting!
-
-## Installing via ZIP download (discouraged)
-
-  1. Install [NodeJS](https://nodejs.org/en) (latest LTS version is recommended)
-  2. Download the zip from this GitHub repo. (Get the `Source code (zip)` from [Releases](https://github.com/SillyTavern/SillyTavern/releases/latest))
-  3. Unzip it into a folder of your choice
-  4. Run `Start.bat` via double-clicking or in a command line.
-  5. Once the server has prepared everything for you, it will open a tab in your browser.
