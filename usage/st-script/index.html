@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754326841228">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754327372560">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.754326841228" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.754327372560" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754326841228" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754327372560" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754326841228" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754327372560" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -483,7 +483,7 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 <p>You can access messages in the currently selected chat using the <code v-pre>/messages</code> command.</p>
 <p><code v-pre>/messages names=on/off start-finish</code></p>
 <p>The <code v-pre>names</code> argument is used to specify whether you want to include character names or not, default: <code v-pre>on</code>.</p>
-<p>In an unnamed argument, it accepts a message index or inclusive range in the <code v-pre>start-finish</code> format. Ranges are inclusive!</p>
+<p>In an unnamed argument, it accepts a message index or range in the <code v-pre>start-finish</code> format. Ranges are inclusive!</p>
 <p>If the range is unsatisfiable, i.e. invalid index or more messages than exist are requested, then an empty string is returned.</p>
 <p>Messages that are hidden from prompt (denoted by the ghost icon) are excluded from the output.</p>
 <p>If you want to know the index of the latest message, use the <code v-pre>{{lastMessageId}}</code> macro, and <code v-pre>{{lastMessage}}</code> will get you the message itself.</p>
@@ -508,6 +508,21 @@ This example will get you 3 last messages in the chat:</p>
 <li><code v-pre>/sys (text)</code> — adds a message from the neutral narrator which doesn&#x27;t belong to user nor character. The displayed name is purely cosmetic and can be customized with the <code v-pre>/sysname</code> command.</li>
 <li><code v-pre>/comment (text)</code> — adds a hidden comment that is displayed in the chat but is not visible to the prompt.</li>
 <li><code v-pre>/addswipe (text)</code> — adds a swipe to the last character message. Can&#x27;t add a swipe to user or hidden messages.</li>
+<li><code v-pre>/hide (message id or range)</code> — hides one or several messages from the prompt based on the provided message index or inclusive range in the <code v-pre>start-finish</code> format.</li>
+<li><code v-pre>/unhide (message id or range)</code> — returns one or several messages to the prompt based on the provided message index or inclusive range in the <code v-pre>start-finish</code> format.</li>
+</ol>
+<doc-anchor-target id="delete-messages">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#delete-messages">#</doc-anchor-trigger>
+        <span>Delete messages</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>These commands are potentially destructive and have no &quot;undo&quot; function. Check the /backups/ folder if you accidentally deleted something important.</strong></p>
+<ol>
+<li><code v-pre>/cut (message id or range)</code> — cuts one or several messages from the chat based on the provided message index or inclusive range in the <code v-pre>start-finish</code> format.</li>
+<li><code v-pre>/del (number)</code> — deletes last N messages from the chat.</li>
+<li><code v-pre>/delswipe (1-based swipe id)</code> — deletes a swipe from the last character message based on the provided 1-based swipe ID.</li>
+<li><code v-pre>/delname (character name)</code> — deletes all messages in the current chat that belong to a character with the specified name.</li>
 </ol>
 <doc-anchor-target id="text-manipulation">
     <h2>
