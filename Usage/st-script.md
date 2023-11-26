@@ -231,7 +231,7 @@ You can access messages in the currently selected chat using the `/messages` com
 
 The `names` argument is used to specify whether you want to include character names or not, default: `on`.
 
-In an unnamed argument, it accepts a message index or inclusive range in the `start-finish` format. Ranges are inclusive!
+In an unnamed argument, it accepts a message index or range in the `start-finish` format. Ranges are inclusive!
 
 If the range is unsatisfiable, i.e. invalid index or more messages than exist are requested, then an empty string is returned.
 
@@ -258,6 +258,17 @@ A script can send message as either user, character, persona, neutral narrator o
 3. `/sys (text)` — adds a message from the neutral narrator which doesn't belong to user nor character. The displayed name is purely cosmetic and can be customized with the `/sysname` command.
 4. `/comment (text)` — adds a hidden comment that is displayed in the chat but is not visible to the prompt.
 5. `/addswipe (text)` — adds a swipe to the last character message. Can't add a swipe to user or hidden messages.
+6. `/hide (message id or range)` — hides one or several messages from the prompt based on the provided message index or inclusive range in the `start-finish` format.
+7. `/unhide (message id or range)` — returns one or several messages to the prompt based on the provided message index or inclusive range in the `start-finish` format.
+
+### Delete messages
+
+**These commands are potentially destructive and have no "undo" function. Check the /backups/ folder if you accidentally deleted something important.**
+
+1. `/cut (message id or range)` — cuts one or several messages from the chat based on the provided message index or inclusive range in the `start-finish` format.
+2. `/del (number)` — deletes last N messages from the chat.
+3. `/delswipe (1-based swipe id)` — deletes a swipe from the last character message based on the provided 1-based swipe ID.
+4. `/delname (character name)` — deletes all messages in the current chat that belong to a character with the specified name.
 
 ## Text manipulation
 
