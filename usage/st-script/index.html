@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754271948665">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754272310741">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.754271948665" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.754272310741" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754271948665" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754272310741" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754271948665" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754272310741" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -278,9 +278,9 @@ These concepts are going to be described in the following document.</p>
     </h3>
 </doc-anchor-target>
 <ul>
-<li><code v-pre>/popup (text)</code> -- shows a blocking popup, supports lite HTML formatting, e.g: <code v-pre>/popup &lt;font color=red&gt;I'm red!&lt;/font&gt;</code>.</li>
-<li><code v-pre>/setinput (text)</code> -- replaces the contents of the user input bar with the provided text.</li>
-<li><code v-pre>/speak voice=&quot;name&quot; (text)</code> -- narrates the text using the selected TTS engine and the character name from the voice map, e.g. <code v-pre>/speak name=&quot;Donald Duck&quot; Quack!</code>.</li>
+<li><code v-pre>/popup (text)</code> — shows a blocking popup, supports lite HTML formatting, e.g: <code v-pre>/popup &lt;font color=red&gt;I'm red!&lt;/font&gt;</code>.</li>
+<li><code v-pre>/setinput (text)</code> — replaces the contents of the user input bar with the provided text.</li>
+<li><code v-pre>/speak voice=&quot;name&quot; (text)</code> — narrates the text using the selected TTS engine and the character name from the voice map, e.g. <code v-pre>/speak name=&quot;Donald Duck&quot; Quack!</code>.</li>
 </ul>
 <doc-anchor-target id="flow-control---conditionals">
     <h2>
@@ -358,14 +358,14 @@ These concepts are going to be described in the following document.</p>
 <li>Global variables - saved to the settings.json and exist everywhere across the app.</li>
 </ul>
 <ol>
-<li><code v-pre>/getvar name</code> or <code v-pre>{{getvar::name}}</code> -- gets the value of the local variable.</li>
-<li><code v-pre>/setvar key=name value</code> or <code v-pre>{{setvar::name::value}}</code> -- sets the value of the local variable.</li>
-<li><code v-pre>/addvar key=name increment</code> or <code v-pre>{{addvar::name::increment}}</code> -- adds the <code v-pre>increment</code> to the value of the local variable.</li>
-<li><code v-pre>/getglobalvar name</code> or <code v-pre>{{getglobalvar::name}}</code> -- gets the value of the global variable.</li>
-<li><code v-pre>/setglobalvar key=name</code> or <code v-pre>{{setglobalvar::name::value}}</code> -- sets the value of the global variable.</li>
-<li><code v-pre>/addglobalvar key=name</code> or <code v-pre>{{addglobalvar::name:increment}}</code> -- adds the <code v-pre>increment</code> to the value of the global variable.</li>
-<li><code v-pre>/flushvar name</code> -- deletes the value of the local variable.</li>
-<li><code v-pre>/flushglobalvar name</code> -- deletes the value of the global variable.</li>
+<li><code v-pre>/getvar name</code> or <code v-pre>{{getvar::name}}</code> — gets the value of the local variable.</li>
+<li><code v-pre>/setvar key=name value</code> or <code v-pre>{{setvar::name::value}}</code> — sets the value of the local variable.</li>
+<li><code v-pre>/addvar key=name increment</code> or <code v-pre>{{addvar::name::increment}}</code> — adds the <code v-pre>increment</code> to the value of the local variable.</li>
+<li><code v-pre>/getglobalvar name</code> or <code v-pre>{{getglobalvar::name}}</code> — gets the value of the global variable.</li>
+<li><code v-pre>/setglobalvar key=name</code> or <code v-pre>{{setglobalvar::name::value}}</code> — sets the value of the global variable.</li>
+<li><code v-pre>/addglobalvar key=name</code> or <code v-pre>{{addglobalvar::name:increment}}</code> — adds the <code v-pre>increment</code> to the value of the global variable.</li>
+<li><code v-pre>/flushvar name</code> — deletes the value of the local variable.</li>
+<li><code v-pre>/flushglobalvar name</code> — deletes the value of the global variable.</li>
 </ol>
 <p>The default value of previously undefined variables is an empty string, or a zero of it is first used in the <code v-pre>/addvar</code> command.</p>
 <p>Increment in the <code v-pre>/addvar</code> command performs an addition or subtraction of the value if it can be converted to a number, or otherwise does the string concatenation.</p>
@@ -393,8 +393,8 @@ These concepts are going to be described in the following document.</p>
 </doc-anchor-target>
 <p>Scripts can make requests to your currently connected LLM using the following commands:</p>
 <ul>
-<li><code v-pre>/gen (prompt)</code> -- generates text using the provided prompt for the selected character and including chat messages.</li>
-<li><code v-pre>/genraw (prompt)</code> -- generates text using just the provided prompt, ignoring the current character and chat.</li>
+<li><code v-pre>/gen (prompt)</code> — generates text using the provided prompt for the selected character and including chat messages.</li>
+<li><code v-pre>/genraw (prompt)</code> — generates text using just the provided prompt, ignoring the current character and chat.</li>
 </ul>
 <doc-anchor-target id="arguments-for-gen-and-genraw">
     <h3>
@@ -403,9 +403,9 @@ These concepts are going to be described in the following document.</p>
     </h3>
 </doc-anchor-target>
 <ul>
-<li><code v-pre>lock</code> -- can be <code v-pre>on</code> or <code v-pre>off</code>. Specifies whether a user input should be blocked while the generation is in progress. Default: <code v-pre>off</code>.</li>
-<li><code v-pre>stop</code> -- JSON-serialized array of strings. Adds a custom stop string (if the API supports it) just for this generation. Default: none.</li>
-<li><code v-pre>instruct</code> (only <code v-pre>/genraw</code>) -- can be <code v-pre>on</code> or <code v-pre>off</code>. Allows to use instruct formatting on the input prompt. Set to <code v-pre>off</code> to force pure prompts. Default: <code v-pre>on</code>.</li>
+<li><code v-pre>lock</code> — can be <code v-pre>on</code> or <code v-pre>off</code>. Specifies whether a user input should be blocked while the generation is in progress. Default: <code v-pre>off</code>.</li>
+<li><code v-pre>stop</code> — JSON-serialized array of strings. Adds a custom stop string (if the API supports it) just for this generation. Default: none.</li>
+<li><code v-pre>instruct</code> (only <code v-pre>/genraw</code>) — can be <code v-pre>on</code> or <code v-pre>off</code>. Allows to use instruct formatting on the input prompt. Set to <code v-pre>off</code> to force pure prompts. Default: <code v-pre>on</code>.</li>
 </ul>
 <p>Generated text is then passed though the pipe to the next command and can be saved to a variable or displaced using the I/O capabilities:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
