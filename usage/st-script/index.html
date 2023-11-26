@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754327372560">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754327474977">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.754327372560" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.754327474977" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754327372560" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754327474977" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754327372560" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754327474977" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -504,7 +504,7 @@ This example will get you 3 last messages in the chat:</p>
 <p>A script can send message as either user, character, persona, neutral narrator or add comments.</p>
 <ol>
 <li><code v-pre>/send (text)</code> — adds a message as the currently selected persona.</li>
-<li><code v-pre>/sendas name=charname (text)</code> — adds a messages as any character, matching by their name. Use <code v-pre>{{char}}</code> macro to send as the current character.</li>
+<li><code v-pre>/sendas name=charname (text)</code> — adds a messages as any character, matching by their name. <code v-pre>name</code> argument is required. Use <code v-pre>{{char}}</code> macro to send as the current character.</li>
 <li><code v-pre>/sys (text)</code> — adds a message from the neutral narrator which doesn&#x27;t belong to user nor character. The displayed name is purely cosmetic and can be customized with the <code v-pre>/sysname</code> command.</li>
 <li><code v-pre>/comment (text)</code> — adds a hidden comment that is displayed in the chat but is not visible to the prompt.</li>
 <li><code v-pre>/addswipe (text)</code> — adds a swipe to the last character message. Can&#x27;t add a swipe to user or hidden messages.</li>
