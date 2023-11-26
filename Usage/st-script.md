@@ -57,9 +57,9 @@ Now let's add a little bit of interactivity to the script. We will accept the in
 
 ### Other input/output commands
 
-- `/popup (text)` -- shows a blocking popup, supports lite HTML formatting, e.g: `/popup <font color=red>I'm red!</font>`.
-- `/setinput (text)` -- replaces the contents of the user input bar with the provided text.
-- `/speak voice="name" (text)` -- narrates the text using the selected TTS engine and the character name from the voice map, e.g. `/speak name="Donald Duck" Quack!`.
+- `/popup (text)` — shows a blocking popup, supports lite HTML formatting, e.g: `/popup <font color=red>I'm red!</font>`.
+- `/setinput (text)` — replaces the contents of the user input bar with the provided text.
+- `/speak voice="name" (text)` — narrates the text using the selected TTS engine and the character name from the voice map, e.g. `/speak name="Donald Duck" Quack!`.
 
 ## Flow control - conditionals
 
@@ -119,14 +119,14 @@ Variables are used to store and manipulate data in scripts, using either command
 - Local variables - saved to the metadata of the current chat, and unique to it.
 - Global variables - saved to the settings.json and exist everywhere across the app.
 
-1. `/getvar name` or `{{getvar::name}}` -- gets the value of the local variable.
-2. `/setvar key=name value` or `{{setvar::name::value}}` -- sets the value of the local variable.
-3. `/addvar key=name increment` or `{{addvar::name::increment}}` -- adds the `increment` to the value of the local variable.
-4. `/getglobalvar name` or `{{getglobalvar::name}}` -- gets the value of the global variable.
-5. `/setglobalvar key=name` or `{{setglobalvar::name::value}}` -- sets the value of the global variable.
-6. `/addglobalvar key=name` or `{{addglobalvar::name:increment}}` -- adds the `increment` to the value of the global variable.
-7. `/flushvar name` -- deletes the value of the local variable.
-8. `/flushglobalvar name` -- deletes the value of the global variable.
+1. `/getvar name` or `{{getvar::name}}` — gets the value of the local variable.
+2. `/setvar key=name value` or `{{setvar::name::value}}` — sets the value of the local variable.
+3. `/addvar key=name increment` or `{{addvar::name::increment}}` — adds the `increment` to the value of the local variable.
+4. `/getglobalvar name` or `{{getglobalvar::name}}` — gets the value of the global variable.
+5. `/setglobalvar key=name` or `{{setglobalvar::name::value}}` — sets the value of the global variable.
+6. `/addglobalvar key=name` or `{{addglobalvar::name:increment}}` — adds the `increment` to the value of the global variable.
+7. `/flushvar name` — deletes the value of the local variable.
+8. `/flushglobalvar name` — deletes the value of the global variable.
 
 The default value of previously undefined variables is an empty string, or a zero of it is first used in the `/addvar` command.
 
@@ -155,14 +155,14 @@ Since the variables are saved and not flushed between the script executions, you
 
 Scripts can make requests to your currently connected LLM using the following commands:
 
-- `/gen (prompt)` -- generates text using the provided prompt for the selected character and including chat messages.
-- `/genraw (prompt)` -- generates text using just the provided prompt, ignoring the current character and chat.
+- `/gen (prompt)` — generates text using the provided prompt for the selected character and including chat messages.
+- `/genraw (prompt)` — generates text using just the provided prompt, ignoring the current character and chat.
 
 ### Arguments for `/gen` and `/genraw`
 
-- `lock` -- can be `on` or `off`. Specifies whether a user input should be blocked while the generation is in progress. Default: `off`.
-- `stop` -- JSON-serialized array of strings. Adds a custom stop string (if the API supports it) just for this generation. Default: none.
-- `instruct` (only `/genraw`) -- can be `on` or `off`. Allows to use instruct formatting on the input prompt. Set to `off` to force pure prompts. Default: `on`.
+- `lock` — can be `on` or `off`. Specifies whether a user input should be blocked while the generation is in progress. Default: `off`.
+- `stop` — JSON-serialized array of strings. Adds a custom stop string (if the API supports it) just for this generation. Default: none.
+- `instruct` (only `/genraw`) — can be `on` or `off`. Allows to use instruct formatting on the input prompt. Set to `off` to force pure prompts. Default: `on`.
 
 Generated text is then passed though the pipe to the next command and can be saved to a variable or displaced using the I/O capabilities:
 
