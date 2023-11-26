@@ -72,8 +72,8 @@ Now let's add a little bit of interactivity to the script. We will accept the in
 
 Variables are used to store and manipulate data in scripts, using either commands or macros. The variables could be one of the following types:
 
-- Local variables - saved to the metadata of the current chat, and unique to it.
-- Global variables - saved to the settings.json and exist everywhere across the app.
+- Local variables — saved to the metadata of the current chat, and unique to it.
+- Global variables — saved to the settings.json and exist everywhere across the app.
 
 1. `/getvar name` or `{{getvar::name}}` — gets the value of the local variable.
 2. `/setvar key=name value` or `{{setvar::name::value}}` — sets the value of the local variable.
@@ -88,7 +88,8 @@ The default value of previously undefined variables is an empty string, or a zer
 
 Increment in the `/addvar` command performs an addition or subtraction of the value if it can be converted to a number, or otherwise does the string concatenation.
 
-All slash commands for variable manipulation write the resulting value into the pipe for the next command to use.
+All *slash commands* for variable manipulation write the resulting value into the pipe for the next command to use.
+For *macros*, only "get" type macro returns the value, "add" and "set" are replaced with an empty string instead.
 
 Now, let's consider the following example:
 
@@ -188,16 +189,18 @@ This example adds 1 to the value of `i` until it reaches 10, then outputs the re
 
 ## Using the LLM
 
-Scripts can make requests to your currently connected LLM using the following commands:
+Scripts can make requests to your currently connected LLM API using the following commands:
 
 - `/gen (prompt)` — generates text using the provided prompt for the selected character and including chat messages.
 - `/genraw (prompt)` — generates text using just the provided prompt, ignoring the current character and chat.
+
+`/genraw lock=on/off stop=[] instruct=on/off (prompt)`
 
 ### Arguments for `/gen` and `/genraw`
 
 - `lock` — can be `on` or `off`. Specifies whether a user input should be blocked while the generation is in progress. Default: `off`.
 - `stop` — JSON-serialized array of strings. Adds a custom stop string (if the API supports it) just for this generation. Default: none.
-- `instruct` (only `/genraw`) — can be `on` or `off`. Allows to use instruct formatting on the input prompt. Set to `off` to force pure prompts. Default: `on`.
+- `instruct` (only `/genraw`) — can be `on` or `off`. Allows to use instruct formatting on the input prompt (if instruct mode is enabled and the API supports it). Set to `off` to force pure prompts. Default: `on`.
 
 The generated text is then passed through the pipe to the next command and can be saved to a variable or displaced using the I/O capabilities:
 
