@@ -39,7 +39,7 @@ Commands are executed sequentially, one after another, and transfer data between
 1. The `/pass` command accepts a constant value of "Hello, World!" as an unnamed argument and writes it to the pipe.
 2. The `/echo` command receives the value through the pipe from the previous command and displays it as a toast notification.
 
->  To see a list of all available commands, type `/help slash` into the chat.
+> **Hint:** To see a list of all available commands, type `/help slash` into the chat.
 
 As constant unnamed arguments and pipes are interchangeable, we could rewrite this script simply as:
 
