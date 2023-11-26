@@ -15,7 +15,7 @@ It's a simple yet powerful scripting language that could be used to expand the f
 STscript is built using the slash commands engine, utilizing command batching, data piping, macros, and variables.
 These concepts are going to be described in the following document.
 
-**Security precaution**
+### Security precaution
 
 With great power comes great responsibility. Be careful and always inspect the scripts before executing them.
 
@@ -163,6 +163,14 @@ A subcommand is a string containing a list of slash commands to execute.
 3. The result of the subcommands execution is piped to the command after `/if`.
 4. The `/abort` command interrupts the script execution when encountered.
 
+`/if` commands can be used as a ternary operator.
+The following example will pass a "true" string to the next command the variable `a` equals 5, and "false" string otherwise.
+
+```
+/if left=a right=5 rule=eq else="/pass false" "/pass true" |
+/echo
+```
+
 ## Flow control - loops
 
 If you need to run some command in a loop until a certain condition is met, use the `/while` command.
@@ -214,6 +222,8 @@ The generated text is then passed through the pipe to the next command and can b
 
 ## Access chat messages
 
+### Read messages
+
 You can access messages in the currently selected chat using the `/messages` command.
 
 `/messages names=on/off start-finish`
@@ -223,6 +233,8 @@ The `names` argument is used to specify whether you want to include character na
 In an unnamed argument, it accepts a message index or inclusive range in the `start-finish` format. Ranges are inclusive!
 
 If the range is unsatisfiable, i.e. invalid index or more messages than exist are requested, then an empty string is returned.
+
+Messages that are hidden from prompt (denoted by the ghost icon) are excluded from the output.
 
 If you want to know the index of the latest message, use the `{{lastMessageId}}` macro, and `{{lastMessage}}` will get you the message itself.
 
@@ -235,6 +247,40 @@ This example will get you 3 last messages in the chat:
 /messages names=off {{getvar::start}}-{{lastMessageId}} |
 /setinput
 ```
+
+### Send messages
+
+A script can send message as either user, character, persona, neutral narrator or add comments.
+
+1. `/send (text)` — adds a message as the currently selected persona.
+2. `/sendas name=charname (text)` — adds a messages as any character, matching by their name. Use `{{char}}` macro to send as the current character.
+3. `/sys (text)` — adds a message from the neutral narrator which doesn't belong to user nor character. The displayed name is purely cosmetic and can be customized with the `/sysname` command.
+4. `/comment (text)` — adds a hidden comment that is displayed in the chat but is not visible to the prompt.
+5. `/addswipe (text)` — adds a swipe to the last character message. Can't add a swipe to user or hidden messages.
+
+## Text manipulation
+
+There's a variety of useful text manipulation utility commands to be used in various script scenarios.
+
+1. `/trimtokens` — trims the input to the specified number of text tokens from start or from end and outputs the result to the pipe.
+2. `/trimstart` — trims the input to the start of the first complete sentence and outputs the result to the pipe.
+3. `/trimend` — trims the input to the end of the last complete sentence and outputs the result to the pipe.
+4. `/fuzzy` — performs a fuzzy matching of the input text to the list of string, outputting the best string match to the pipe.
+
+### Arguments for `/trimtokens`
+
+`/trimtokens limit=number direction=start/end (input)`
+
+1. `direction` sets the direction for trimming, can be either `start` or `end`. Default: `end`.
+2. `limit` sets the amount of tokens to left in the output. Can also specify a variable name containing the number. **Required argument.**
+3. Unnamed argument is the input text to be trimmed.
+
+### Arguments for `/fuzzy`
+
+`/fuzzy list=["candidate1","candidate2"] (input)`
+
+1. `list` is a JSON serialized array of strings containing the candidates. Can also specify a variable name containing the list. **Required argument.**
+2. Unnamed argument is the input text to be matched. Output is one of the candidates matching the input most closely.
 
 ## Quick Replies: script library and auto-execution
 
