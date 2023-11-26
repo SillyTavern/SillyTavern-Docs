@@ -322,7 +322,7 @@ Let's create two Quick Replies:
 ```
 ***
 
-Clicking on the `GetMessage` button will call the `GetRandom` as procedure which will resolve the `{{roll}}` macro and pass the number to the caller, displaying it to the user.
+Clicking on the `GetMessage` button will call the `GetRandom` procedure which will resolve the `{{roll}}` macro and pass the number to the caller, displaying it to the user.
 
 - Procedures do not accept named or unnamed arguments, but can reference the same variables as the caller.
 - Avoid recursion when calling procedures as it may produce the "call stack exceeded" error if handled unadvisedly.
