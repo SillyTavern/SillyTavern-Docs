@@ -65,6 +65,10 @@ Now let's add a little bit of interactivity to the script. We will accept the in
 
 You can use the `/if` command to create conditional expressions that branch the execution based on the defined rules.
 
+`/if left=valueA right=valueB rule=comparison else="(command on false)" "(command on true)"`
+
+Let's review the following example:
+
 ```
 /input What's your favorite drink? |
 /if left={{pipe}} right="black tea" rule=eq else="/echo You shall not pass \| /abort" "/echo Welcome to the club, \{\{user\}\}"
@@ -210,7 +214,7 @@ On each step of the loop it compares the value of variable A with the value of v
 The optional `guard` named argument (`on` by default) is used to protect against endless loops, limiting the number of iterations to 100.
 To disable and allow endless loops, set `guard=off`.
 
-This example adds 1 to the value of "i" until it reaches 10, then outputs the resulting value (10 in this case).
+This example adds 1 to the value of `i` until it reaches 10, then outputs the resulting value (10 in this case).
 
 ```
 /setvar key=i 0 |
