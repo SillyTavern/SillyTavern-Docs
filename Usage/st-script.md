@@ -183,13 +183,13 @@ The generated text is then passed through the pipe to the next command and can b
 You can access messages in the currently selected chat using the `/messages names=on/off` command.
 The `names` argument is used to specify whether you want to include character names or not, default: `on`.
 
-In unnamed argument it accepts a message index or inclusive range in the `start-finish` format. Ranges are inclusive!
+In an unnamed argument, it accepts a message index or inclusive range in the `start-finish` format. Ranges are inclusive!
 
 If the range is unsatisfiable, i.e. invalid index or more messages than exist are requested, then an empty string is returned.
 
-If you want to know the index of the latest message, use `{{lastMessageId}}` macro, and `{{lastMessage}}` will get you the message itself.
+If you want to know the index of the latest message, use the `{{lastMessageId}}` macro, and `{{lastMessage}}` will get you the message itself.
 
-To calculate the start index for a range, for example when you need to get last N message, use variable subtraction. 
+To calculate the start index for a range, for example, when you need to get the last N messages, use variable subtraction. 
 This example will get you 3 last messages in the chat:
 
 ```
@@ -233,7 +233,6 @@ In order to get started, enable open the extensions panel (stacked blocks icon),
 
 | <img alt="image" height="300px" src="https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/7f02e1c3-138e-4347-8c16-ebc07c818c28"> |
 | -- |
-
 
 **Quick Replies are disabled by default, you need to enable them first.** Then you will see a bar appearing above your chat input bar.
 
@@ -292,12 +291,12 @@ A `/run` command can call scripts defined in the Quick Replies by their label, b
 
 Let's create two Quick Replies:
 
-| Label      | Command                                                  |
-| :--------- | :------------------------------------------------------- |
-| GetRandom  | `/pass {{roll:d100}}`                                    |
-| GetMessage | `/run GetRandom \| /echo Your lucky number is: {{pipe}}` |
+| Label      | Command                                                |
+| :--------- | :----------------------------------------------------- |
+| GetRandom  | /pass {{roll:d100}}                                    |
+| GetMessage | /run GetRandom | /echo Your lucky number is: {{pipe}}  |
 
-Clicking on `GetMessage` button will call `GetRandom` that will resolve the `{{roll}}` macro pass the number to the caller, displaying it to the user.
+Clicking on the `GetMessage` button will call `GetRandom` which will resolve the `{{roll}}` macro and pass the number to the caller, displaying it to the user.
 
 - Procedures do not accept named or unnamed arguments, but can reference the same variables as the caller.
 - Avoid recursion when calling procedures as it may produce the "call stack exceeded" error if handled unadvisedly.
