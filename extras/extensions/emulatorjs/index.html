@@ -12,24 +12,24 @@
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>World Info | docs.ST.app</title>
-    <meta name="title" content="World Info | docs.ST.app">
-    <meta name="description" content="World Info (also known as Lorebooks or Memory Books) enhances AI's understanding of the details in your world.">
+    <title>EmulatorJS | docs.ST.app</title>
+    <meta name="title" content="EmulatorJS | docs.ST.app">
+    <meta name="description" content="This extension allows you to play retro console games right from the SillyTavern chat.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.sillytavern.app/usage/core-concepts/worldinfo/">
+    <link rel="canonical" href="https://docs.sillytavern.app/extras/extensions/emulatorjs/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.sillytavern.app/usage/core-concepts/worldinfo/">
-    <meta property="og:title" content="World Info | docs.ST.app">
-    <meta property="og:description" content="World Info (also known as Lorebooks or Memory Books) enhances AI's understanding of the details in your world.">
+    <meta property="og:url" content="https://docs.sillytavern.app/extras/extensions/emulatorjs/">
+    <meta property="og:title" content="EmulatorJS | docs.ST.app">
+    <meta property="og:description" content="This extension allows you to play retro console games right from the SillyTavern chat.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.sillytavern.app/usage/core-concepts/worldinfo/">
-    <meta property="twitter:title" content="World Info | docs.ST.app">
-    <meta property="twitter:description" content="World Info (also known as Lorebooks or Memory Books) enhances AI's understanding of the details in your world.">
+    <meta property="twitter:url" content="https://docs.sillytavern.app/extras/extensions/emulatorjs/">
+    <meta property="twitter:title" content="EmulatorJS | docs.ST.app">
+    <meta property="twitter:description" content="This extension allows you to play retro console games right from the SillyTavern chat.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -197,209 +197,117 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="world-info" class="break-words">
+<doc-anchor-target id="emulatorjs" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#world-info">#</doc-anchor-trigger>
-        <span>World Info</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#emulatorjs">#</doc-anchor-trigger>
+        <span>EmulatorJS</span>
     </h1>
 </doc-anchor-target>
-<p><strong>World Info (also known as Lorebooks or Memory Books) enhances AI&#x27;s understanding of the details in your world.</strong></p>
-<p>It functions like a dynamic dictionary that only inserts relevant information from World Info entries when keywords associated with the entries are present in the message text.</p>
-<p>The SillyTavern engine activates and seamlessly integrates the appropriate lore into the prompt, providing background information to the AI.</p>
-<p><em>It is important to note that while World Info helps guide the AI toward your desired lore, it does not guarantee its appearance in the generated output messages.</em></p>
-<doc-anchor-target id="pro-tips">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#pro-tips">#</doc-anchor-trigger>
-        <span>Pro Tips</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li>The AI does not insert keywords into context, so each World Info entry should be a comprehensive, standalone description.</li>
-<li>To create rich and detailed world lore, entries can be interlinked and reference one another.</li>
-<li>To conserve tokens, it is advisable to keep entry contents concise, with a generally recommended limit of 50 tokens per entry.</li>
-</ul>
-<doc-anchor-target id="further-reading">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#further-reading">#</doc-anchor-trigger>
-        <span>Further reading</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li><a href="https://rentry.co/world-info-encyclopedia">World Info Encyclopedia</a>: Exhaustive in-depth guide to World Info and Lorebooks. By kingbri, Alicat, Trappu.</li>
-</ul>
-<doc-anchor-target id="character-lore">
+<p>This extension allows you to play retro console games right from the SillyTavern chat.</p>
+<doc-anchor-target id="installation">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#character-lore">#</doc-anchor-trigger>
-        <span>Character Lore</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#installation">#</doc-anchor-trigger>
+        <span>Installation</span>
     </h2>
 </doc-anchor-target>
-<p>Optionally, one World Info file could be assigned to a character to serve as a dedicated lore source across all chats with that character (including groups).</p>
-<p>To do that, navigate to a Character Management panel and click a globe button, then pick World Info from a dropdown list and click &quot;Ok&quot;.</p>
-<doc-anchor-target id="character-lore-insertion-strategy">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#character-lore-insertion-strategy">#</doc-anchor-trigger>
-        <span>Character Lore Insertion Strategy</span>
-    </h3>
-</doc-anchor-target>
-<p>When generating an AI reply, entries from the character World Info will be combined with the entries from a global World Info selector using one of the following strategies:</p>
-<doc-anchor-target id="sorted-evenly-default">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#sorted-evenly-default">#</doc-anchor-trigger>
-        <span>Sorted Evenly (default)</span>
-    </h4>
-</doc-anchor-target>
-<p>All entries will be sorted according to their Insertion Order as if they a part of one big file, ignoring the source.</p>
-<doc-anchor-target id="character-lore-first">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#character-lore-first">#</doc-anchor-trigger>
-        <span>Character Lore First</span>
-    </h4>
-</doc-anchor-target>
-<p>Entries from the Character World Info would be included first by their Insertion Order, then entries from the Global World Info.</p>
-<doc-anchor-target id="global-lore-first">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#global-lore-first">#</doc-anchor-trigger>
-        <span>Global Lore First</span>
-    </h4>
-</doc-anchor-target>
-<p>Entries from the Global World Info Info would be included first by their Insertion Order, then entries from the Character World Info.</p>
-<doc-anchor-target id="world-info-entry">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#world-info-entry">#</doc-anchor-trigger>
-        <span>World Info Entry</span>
-    </h3>
-</doc-anchor-target>
-<doc-anchor-target id="key">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#key">#</doc-anchor-trigger>
-        <span>Key</span>
-    </h4>
-</doc-anchor-target>
-<p>A list of keywords that trigger the activation of a World Info entry. Keys are not case-sensitive by default (this is <doc-anchor-trigger to="#casesensitivekeys">configurable</doc-anchor-trigger>).</p>
-<doc-anchor-target id="secondary-key">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#secondary-key">#</doc-anchor-trigger>
-        <span>Secondary Key</span>
-    </h4>
-</doc-anchor-target>
-<p>A list of supplementary keywords that are used in conjunction with the main keywords. See <doc-anchor-trigger to="#selective">Selective</doc-anchor-trigger>.</p>
-<doc-anchor-target id="entry-content">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#entry-content">#</doc-anchor-trigger>
-        <span>Entry Content</span>
-    </h4>
-</doc-anchor-target>
-<p>The text that is inserted into the prompt upon entry activation.</p>
-<doc-anchor-target id="insertion-order">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#insertion-order">#</doc-anchor-trigger>
-        <span>Insertion Order</span>
-    </h4>
-</doc-anchor-target>
-<p>Numeric value. Defines a priority of the entry if multiple were activated at once. Entries with higher order numbers will be inserted closer to the end of the context as they will have more impact on the output.</p>
-<doc-anchor-target id="insertion-position">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#insertion-position">#</doc-anchor-trigger>
-        <span>Insertion Position</span>
-    </h4>
+<p><strong>Prerequisites:</strong></p>
+<ul>
+<li>Latest release version of SillyTavern.</li>
+<li>ROM files downloaded from the net. You can find them <a href="https://archive.org/details/no-intro-2021">anywhere</a>.</li>
+</ul>
+<p><strong>How to install:</strong></p>
+<ol>
+<li>Install using SillyTavern&#x27;s extensions downloader.</li>
+<li>Or use this link: <code v-pre>https://github.com/Cohee1207/SillyTavern-EmulatorJS</code></li>
+</ol>
+<doc-anchor-target id="usage">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#usage">#</doc-anchor-trigger>
+        <span>Usage</span>
+    </h2>
 </doc-anchor-target>
 <ul>
-<li><strong>Before Char Defs:</strong> World Info entry is inserted before the character&#x27;s description and scenario. Has a moderate impact on the conversation.</li>
-<li><strong>After Char Defs:</strong> World Info entry is inserted after the character&#x27;s description and scenario. Has a greater impact on the conversation.</li>
-<li><strong>Top of AN:</strong> World Info entry is inserted at the top of Author&#x27;s Note content. Has a variable impact depending on the Author&#x27;s Note position.</li>
-<li><strong>Bottom of AN:</strong> World Info entry is inserted at the bottom of Author&#x27;s Note content. Has a variable impact depending on the Author&#x27;s Note position.</li>
+<li>Open the &quot;EmulatorJS&quot; extension menu.</li>
+<li>Click &quot;Add ROM file&quot;. ROMs are saved to your browser storage and not stored on server.</li>
+<li>Select the game file to add. Input the name and core (if it wasn&#x27;t auto-detected). If the core requires a BIOS file, add it too.</li>
+<li>Click the &quot;Play&quot; button in the list or launch via the wand menu.</li>
+<li>You can customize controls and other settings in the emulator frame after launching the game.</li>
+<li>Use save/load state functions if you need to take a break.</li>
 </ul>
-<p>If your Author&#x27;s Note is disabled (Insertion Frequency = 0), World Info entries in A/N positions will be ignored!</p>
-<doc-anchor-target id="comment">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#comment">#</doc-anchor-trigger>
-        <span>Comment</span>
-    </h4>
+<p>Check the EmulatorJS docs to see the list of available cores and their requirements: <a href="https://emulatorjs.org/docs/Systems.html">Systems</a>.</p>
+<doc-anchor-target id="comments-mode">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#comments-mode">#</doc-anchor-trigger>
+        <span>Comments mode</span>
+    </h2>
 </doc-anchor-target>
-<p>A supplemental text comment for your convenience, which is not utilized by the AI.</p>
-<doc-anchor-target id="constant">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#constant">#</doc-anchor-trigger>
-        <span>Constant</span>
-    </h4>
+<p>With the power of multimodal models such as GPT-4 Vision, your AI bots can see your game play and provide witty in-character comments.</p>
+<doc-anchor-target id="requirements">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#requirements">#</doc-anchor-trigger>
+        <span>Requirements</span>
+    </h3>
 </doc-anchor-target>
-<p>If enabled, the entry would always be present in the prompt.</p>
-<doc-anchor-target id="selective">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#selective">#</doc-anchor-trigger>
-        <span>Selective</span>
-    </h4>
-</doc-anchor-target>
-<p>If enabled, the entry would only be inserted when both a Key <strong>AND</strong> a Secondary Key have been activated.</p>
-<p>If no secondary keys are provided, this flag is ignored.</p>
-<doc-anchor-target id="probability">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#probability">#</doc-anchor-trigger>
-        <span>Probability</span>
-    </h4>
-</doc-anchor-target>
-<p>This value acts like an additional filter that adds a chance for the entry NOT to be inserted when it is activated by any means (constant, primary key, recursion).</p>
 <ol>
-<li>Probability = 100 means that the entry will be inserted on every activation.</li>
-<li>Probability = 50 means that the entry will be inserted with a 1:1 chance.</li>
-<li>Probability = 0 means that the entry will NOT be inserted (essentially disabling it).</li>
+<li>A browser that supports <a href="https://developer.mozilla.org/en-US/docs/Web/API/ImageCapture#browser_compatibility">ImageCapture</a>. Tested on desktop Chrome. Firefox requires to enable it with config. Safari won&#x27;t work.</li>
+<li>Image inlining mode is recommended. Requires OpenAI or OpenRouter API key with &quot;gpt-4-vision&quot; as the selected model.</li>
+<li>If image inlining is disabled, make sure that &quot;Image Captioning&quot; extension is enabled, then select the &quot;Multimodal&quot; captioning source:</li>
 </ol>
-<p>Use this to create random events in your chats. For example, every message could have a 1% chance of waking up an Elder God if its name is mentioned in the message.</p>
-<doc-anchor-target id="scan-depth">
+<ul>
+<li>OpenAI API with access to the &quot;gpt-4-vision&quot; model.</li>
+<li>OpenRouter API with compatible model.</li>
+</ul>
+<doc-anchor-target id="how-to-enable-comments">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#scan-depth">#</doc-anchor-trigger>
-        <span>Scan Depth</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-enable-comments">#</doc-anchor-trigger>
+        <span>How to enable comments</span>
     </h3>
 </doc-anchor-target>
-<p>Defines how many messages in the chat history should be scanned for World Info keys.</p>
-<p>If set to 1, then SillyTavern only scans the message you send and the most recent reply.</p>
-<p>This stacks up to 10 message pairs in total.</p>
-<doc-anchor-target id="budget">
+<ol>
+<li>Make sure you set the interval of providing comments in the EmulatorJS extension settings. This setting defines how often the character is queried for comments using a snap of your current gameplay. A value of 0 indicates that no comments are provided.</li>
+<li>Select a character chat and launch the game. For the best performance, make sure that the ROM file is properly named so that AI can have more background context.</li>
+<li>Start playing as you normally would. The vision model will be queried periodically to write a comment based on the latest screenshot it &quot;sees&quot;.</li>
+</ol>
+<doc-anchor-target id="settings">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#budget">#</doc-anchor-trigger>
-        <span>Budget</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#settings">#</doc-anchor-trigger>
+        <span>Settings</span>
     </h3>
 </doc-anchor-target>
-<p><strong>Defines how many tokens could be used by World Info entries at once.</strong></p>
-<p>If the budget is exhausted, then no more entries are activated even if the keys are present in the prompt.</p>
-<p>Constant entries will be inserted first. Then entries with higher order numbers.</p>
-<p>Entries inserted by directly mentioning their keys have higher priority than those that were mentioned in other entries&#x27; contents.</p>
-<doc-anchor-target id="recursive-scanning">
+<ol>
+<li>Caption template - a prompt used to describe the in-game screenshot. <code v-pre>and</code> additional macro are supported.</li>
+<li>Comment template - a prompt used to write a comment based on the generated caption. <code v-pre>, </code>, <code v-pre>additional macro are supported. For image inlining mode,</code> is replaced with <code v-pre>see included image</code>.</li>
+<li>Force captions - will force the use of multimodal captioning even if image inlining is supported and enabled.</li>
+</ol>
+<doc-anchor-target id="why-im-not-seeing-any-comments">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#recursive-scanning">#</doc-anchor-trigger>
-        <span>Recursive scanning</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#why-im-not-seeing-any-comments">#</doc-anchor-trigger>
+        <span>Why I&#x27;m not seeing any comments?</span>
     </h3>
 </doc-anchor-target>
-<p><strong>Entries can activate other entries by mentioning their keywords in the content text.</strong></p>
-<p>For example, if your World Info contains two entries:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">Entry #1
-Keyword: Bessie
-Content: Bessie is a cow and is friends with Rufus.</code></pre>
-</doc-codeblock></div>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">Entry #2
-Keyword: Rufus
-Content: Rufus is a dog.</code></pre>
-</doc-codeblock></div>
-<p><strong>Both</strong> of them will be pulled into the context if the message text mentions <strong>just Bessie</strong>.</p>
-<doc-anchor-target id="case-sensitive-keys">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#case-sensitive-keys">#</doc-anchor-trigger>
-        <span>Case-sensitive keys</span>
-    </h3>
+<p>Comments are temporarily paused (interval step skipped) if:</p>
+<ol>
+<li>Emulator is paused (with a pause button, not in-game).</li>
+<li>The browser window is out of focus.</li>
+<li>The user input area is not empty. This is to let you type your reply in peace.</li>
+<li>Another reply generation is currently in progress.</li>
+<li>TTS voice is being read aloud. Comment is held off (20 seconds maximum) until it finishes, but not skipped.</li>
+</ol>
+<p>Other common issues:</p>
+<ol>
+<li>Make sure you&#x27;ve set a commenting interval before launching the game.</li>
+<li>Make sure you have set an OpenAI key and there are no errors in the ST server console.</li>
+</ol>
+<p>Still doesn&#x27;t work? Send us your browser debug console logs (press F12).</p>
+<doc-anchor-target id="credits">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#credits">#</doc-anchor-trigger>
+        <span>Credits</span>
+    </h2>
 </doc-anchor-target>
-<p><strong>To get pulled into the context, entry keys need to match the case as they are defined in the World Info entry.</strong></p>
-<p>This is useful when your keys are common words or parts of common words.</p>
-<p>For example, when this setting is active, keys &#x27;rose&#x27; and &#x27;Rose&#x27; will be treated differently, depending on the inputs.</p>
-<doc-anchor-target id="match-whole-words">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#match-whole-words">#</doc-anchor-trigger>
-        <span>Match whole words</span>
-    </h3>
-</doc-anchor-target>
-<p>Entries with keys containing only one word will be matched only if the entire word is present in the search text.</p>
-<p>For example, if the setting is enabled and the entry key is &quot;king&quot;, then text such as &quot;long live the king&quot; would be matched, but &quot;it&#x27;s not to my liking&quot; wouldn&#x27;t.</p>
+<ul>
+<li>EmulatorJS engine (GPLv3): <a href="https://github.com/EmulatorJS/EmulatorJS">https://github.com/EmulatorJS/EmulatorJS</a></li>
+</ul>
 
                                 
                                 <!-- Required only on API pages -->
@@ -407,7 +315,7 @@ Content: Rufus is a dog.</code></pre>
                             </div>
                             <footer class="clear-both">
                                 <div class="flex flex-wrap items-center justify-between mt-14">
-                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/SillyTavern/SillyTavern-Docs/edit/main/Usage/Core Concepts/worldinfo.md" target="_blank" rel="noopener">
+                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/SillyTavern/SillyTavern-Docs/edit/main/Extras/extensions/EmulatorJS.md" target="_blank" rel="noopener">
                                         <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         <span>Edit this page</span>
                                     </a>
@@ -415,20 +323,20 @@ Content: Rufus is a dog.</code></pre>
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/core-concepts/uicustomization/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../extras/extensions/dynamic-audio/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">UI Customization</span>
+                                                <span class="block mt-1">Dynamic Audio</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/branches/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../extras/extensions/expression-images/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Branches</span>
+                                                <span class="block mt-1">Expression Images</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -472,6 +380,6 @@ Content: Rufus is a dog.</code></pre>
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "World Info", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "EmulatorJS", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
