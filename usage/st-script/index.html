@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754276008718">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754280089205">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.754276008718" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.754280089205" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754276008718" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754280089205" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754276008718" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754280089205" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -217,6 +217,8 @@
 </ul>
 <p>STscript is built using the slash commands engine, utilizing command batching, data piping, macros, and variables.
 These concepts are going to be described in the following document.</p>
+<p><strong>Security precaution</strong></p>
+<p>With great power comes great responsibility. Be careful and always inspect the scripts before executing them.</p>
 <doc-anchor-target id="hello-world">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#hello-world">#</doc-anchor-trigger>
@@ -243,6 +245,9 @@ These concepts are going to be described in the following document.</p>
 <li>The <code v-pre>/pass</code> command accepts a constant value of &quot;Hello, World!&quot; as an unnamed argument and writes it to the pipe.</li>
 <li>The <code v-pre>/echo</code> command receives the value through the pipe from the previous command and displays it as a toast notification.</li>
 </ol>
+<blockquote>
+<p>To see a list of all available commands, type <code v-pre>/help slash</code> into the chat.</p>
+</blockquote>
 <p>As constant unnamed arguments and pipes are interchangeable, we could rewrite this script simply as:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">/echo Hello, World!</code></pre>
@@ -255,7 +260,8 @@ These concepts are going to be described in the following document.</p>
 </doc-anchor-target>
 <p>Now let&#x27;s add a little bit of interactivity to the script. We will accept the input value from the user and display it in the notification.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">/input Enter your name | /echo Hello, my name is {{pipe}}</code></pre>
+<pre class="language-none"><code v-pre class="language-none">/input Enter your name |
+/echo Hello, my name is {{pipe}}</code></pre>
 </doc-codeblock></div>
 <ol>
 <li>The <code v-pre>/input</code> command is used to display an input box with the prompt specified in the unnamed argument and then writes the output to the pipe.</li>
@@ -282,6 +288,45 @@ These concepts are going to be described in the following document.</p>
 <li><code v-pre>/setinput (text)</code> — replaces the contents of the user input bar with the provided text.</li>
 <li><code v-pre>/speak voice=&quot;name&quot; (text)</code> — narrates the text using the selected TTS engine and the character name from the voice map, e.g. <code v-pre>/speak name=&quot;Donald Duck&quot; Quack!</code>.</li>
 </ul>
+<doc-anchor-target id="variables">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#variables">#</doc-anchor-trigger>
+        <span>Variables</span>
+    </h2>
+</doc-anchor-target>
+<p>Variables are used to store and manipulate data in scripts, using either commands or macros. The variables could be one of the following types:</p>
+<ul>
+<li>Local variables - saved to the metadata of the current chat, and unique to it.</li>
+<li>Global variables - saved to the settings.json and exist everywhere across the app.</li>
+</ul>
+<ol>
+<li><code v-pre>/getvar name</code> or <code v-pre>{{getvar::name}}</code> — gets the value of the local variable.</li>
+<li><code v-pre>/setvar key=name value</code> or <code v-pre>{{setvar::name::value}}</code> — sets the value of the local variable.</li>
+<li><code v-pre>/addvar key=name increment</code> or <code v-pre>{{addvar::name::increment}}</code> — adds the <code v-pre>increment</code> to the value of the local variable.</li>
+<li><code v-pre>/getglobalvar name</code> or <code v-pre>{{getglobalvar::name}}</code> — gets the value of the global variable.</li>
+<li><code v-pre>/setglobalvar key=name</code> or <code v-pre>{{setglobalvar::name::value}}</code> — sets the value of the global variable.</li>
+<li><code v-pre>/addglobalvar key=name</code> or <code v-pre>{{addglobalvar::name:increment}}</code> — adds the <code v-pre>increment</code> to the value of the global variable.</li>
+<li><code v-pre>/flushvar name</code> — deletes the value of the local variable.</li>
+<li><code v-pre>/flushglobalvar name</code> — deletes the value of the global variable.</li>
+</ol>
+<p>The default value of previously undefined variables is an empty string, or a zero of it is first used in the <code v-pre>/addvar</code> command.</p>
+<p>Increment in the <code v-pre>/addvar</code> command performs an addition or subtraction of the value if it can be converted to a number, or otherwise does the string concatenation.</p>
+<p>All slash commands for variable manipulation write the resulting value into the pipe for the next command to use.</p>
+<p>Now, let&#x27;s consider the following example:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">/input What do you want to generate? |
+/setvar key=SDinput |
+/echo Requesting an image of {{getvar::SDinput}} |
+/getvar SDinput |
+/imagine</code></pre>
+</doc-codeblock></div>
+<ol>
+<li>The value of the user input is saved in the local variable named <code v-pre>SDinput</code>.</li>
+<li>The <code v-pre>getvar</code> macro is used to display the value in the <code v-pre>/echo</code> command.</li>
+<li>The <code v-pre>getvar</code> command is used to retrieve the value of the variable and pass it through the pipe.</li>
+<li>The value is passed to the <code v-pre>/imagine</code> command (provided by the Image Generation plugin) to be used as its input prompt.</li>
+</ol>
+<p>Since the variables are saved and not flushed between the script executions, you can reference the variable in other scripts and via macros, and it will resolve to the same value as during the execution of the example script. To guarantee that the value will be discarded, add the <code v-pre>/flushvar</code> command to the script.</p>
 <doc-anchor-target id="flow-control---conditionals">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#flow-control---conditionals">#</doc-anchor-trigger>
@@ -332,8 +377,8 @@ These concepts are going to be described in the following document.</p>
 <li><code v-pre>lte</code> (less than or equals) =&gt; A &lt;= B</li>
 <li><code v-pre>gte</code> (greater than or equals) =&gt; A &gt;= B</li>
 <li><code v-pre>not</code> (unary negation) =&gt; !A</li>
-<li><code v-pre>in</code> (includes substring) =&gt; A includes B</li>
-<li><code v-pre>nin</code> (not includes substring) =&gt; A not includes B</li>
+<li><code v-pre>in</code> (includes substring) =&gt; A includes B, case insensitive</li>
+<li><code v-pre>nin</code> (not includes substring) =&gt; A not includes B, case insensitive</li>
 </ol>
 <doc-anchor-target id="subcommands">
     <h3>
@@ -348,45 +393,31 @@ These concepts are going to be described in the following document.</p>
 <li>The result of the subcommands execution is piped to the command after <code v-pre>/if</code>.</li>
 <li>The <code v-pre>/abort</code> command interrupts the script execution when encountered.</li>
 </ol>
-<doc-anchor-target id="variables">
+<doc-anchor-target id="flow-control---loops">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#variables">#</doc-anchor-trigger>
-        <span>Variables</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#flow-control---loops">#</doc-anchor-trigger>
+        <span>Flow control - loops</span>
     </h2>
 </doc-anchor-target>
-<p>Variables are used to store and manipulate data in scripts, using either commands or macros. The variables could be one of the following types:</p>
-<ul>
-<li>Local variables - saved to the metadata of the current chat, and unique to it.</li>
-<li>Global variables - saved to the settings.json and exist everywhere across the app.</li>
-</ul>
-<ol>
-<li><code v-pre>/getvar name</code> or <code v-pre>{{getvar::name}}</code> — gets the value of the local variable.</li>
-<li><code v-pre>/setvar key=name value</code> or <code v-pre>{{setvar::name::value}}</code> — sets the value of the local variable.</li>
-<li><code v-pre>/addvar key=name increment</code> or <code v-pre>{{addvar::name::increment}}</code> — adds the <code v-pre>increment</code> to the value of the local variable.</li>
-<li><code v-pre>/getglobalvar name</code> or <code v-pre>{{getglobalvar::name}}</code> — gets the value of the global variable.</li>
-<li><code v-pre>/setglobalvar key=name</code> or <code v-pre>{{setglobalvar::name::value}}</code> — sets the value of the global variable.</li>
-<li><code v-pre>/addglobalvar key=name</code> or <code v-pre>{{addglobalvar::name:increment}}</code> — adds the <code v-pre>increment</code> to the value of the global variable.</li>
-<li><code v-pre>/flushvar name</code> — deletes the value of the local variable.</li>
-<li><code v-pre>/flushglobalvar name</code> — deletes the value of the global variable.</li>
-</ol>
-<p>The default value of previously undefined variables is an empty string, or a zero of it is first used in the <code v-pre>/addvar</code> command.</p>
-<p>Increment in the <code v-pre>/addvar</code> command performs an addition or subtraction of the value if it can be converted to a number, or otherwise does the string concatenation.</p>
-<p>All slash commands for variable manipulation write the resulting value into the pipe for the next command to use.</p>
-<p>Now, let&#x27;s consider the following example:</p>
+<p>If you need to run some command in a loop until a certain condition is met, use the <code v-pre>/while</code> command.</p>
+<p><code v-pre>/while left=valueA right=valueB rule=operation guard=on &quot;commands&quot;</code></p>
+<p>On each step of the loop it compares the value of variable A with the value of variable B, and if the condition yields true, then executes any valid slash command enclosed in quotes, otherwise exists the loop. This command doesn&#x27;t write anything to the output pipe.</p>
+<doc-anchor-target id="arguments-for-while">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#arguments-for-while">#</doc-anchor-trigger>
+        <span>Arguments for <code v-pre>/while</code></span>
+    </h3>
+</doc-anchor-target>
+<p><strong>The set of available boolean comparisons, handing of variables, literal values, and subcommands is the same as for the <code v-pre>/if</code> command.</strong></p>
+<p>The optional <code v-pre>guard</code> named argument (<code v-pre>on</code> by default) is used to protect against endless loops, limiting the number of iterations to 100.
+To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
+<p>This example adds 1 to the value of <code v-pre>i</code> until it reaches 10, then outputs the resulting value (10 in this case).</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">/input What do you want to generate? |
-/setvar key=SDinput |
-/echo Requesting an image of {{getvar::SDinput}} |
-/getvar SDinput |
-/imagine</code></pre>
+<pre class="language-none"><code v-pre class="language-none">/setvar key=i 0 |
+/while left=i right=10 rule=lt &quot;/addvar key=i 1&quot; |
+/echo {{getvar::i}} |
+/flushvar i</code></pre>
 </doc-codeblock></div>
-<ol>
-<li>The value of the user input is saved in the local variable named <code v-pre>SDinput</code>.</li>
-<li>The <code v-pre>getvar</code> macro is used to display the value in the <code v-pre>/echo</code> command.</li>
-<li>The <code v-pre>getvar</code> command is used to retrieve the value of the variable and pass it through the pipe.</li>
-<li>The value is passed to the <code v-pre>/imagine</code> command (provided by the Image Generation plugin) to be used as its input prompt.</li>
-</ol>
-<p>Since the variables are saved and not flushed between the script executions, you can reference the variable in other scripts and via macros, and it will resolve to the same value as during the execution of the example script. To guarantee that the value will be discarded, add the <code v-pre>/flushvar</code> command to the script.</p>
 <doc-anchor-target id="using-the-llm">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#using-the-llm">#</doc-anchor-trigger>
@@ -424,13 +455,14 @@ These concepts are going to be described in the following document.</p>
 </table>
 </div>
 <doc-anchor-target id="access-chat-messages">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#access-chat-messages">#</doc-anchor-trigger>
         <span>Access chat messages</span>
-    </h3>
+    </h2>
 </doc-anchor-target>
-<p>You can access messages in the currently selected chat using the <code v-pre>/messages names=on/off</code> command.
-The <code v-pre>names</code> argument is used to specify whether you want to include character names or not, default: <code v-pre>on</code>.</p>
+<p>You can access messages in the currently selected chat using the <code v-pre>/messages</code> command.</p>
+<p><code v-pre>/messages names=on/off start-finish</code></p>
+<p>The <code v-pre>names</code> argument is used to specify whether you want to include character names or not, default: <code v-pre>on</code>.</p>
 <p>In an unnamed argument, it accepts a message index or inclusive range in the <code v-pre>start-finish</code> format. Ranges are inclusive!</p>
 <p>If the range is unsatisfiable, i.e. invalid index or more messages than exist are requested, then an empty string is returned.</p>
 <p>If you want to know the index of the latest message, use the <code v-pre>{{lastMessageId}}</code> macro, and <code v-pre>{{lastMessage}}</code> will get you the message itself.</p>
@@ -441,31 +473,6 @@ This example will get you 3 last messages in the chat:</p>
 /addvar key=start -2 |
 /messages names=off {{getvar::start}}-{{lastMessageId}} |
 /setinput</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="flow-control---loops">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#flow-control---loops">#</doc-anchor-trigger>
-        <span>Flow control - loops</span>
-    </h2>
-</doc-anchor-target>
-<p>If you need to run some command in a loop until a certain condition is met, use the <code v-pre>/while</code> command.</p>
-<p><code v-pre>/while left=valueA right=valueB rule=operation guard=on &quot;commands&quot;</code></p>
-<p>On each step of the loop it compares the value of variable A with the value of variable B, and if the condition yields true, then executes any valid slash command enclosed in quotes, otherwise exists the loop. This command doesn&#x27;t write anything to the output pipe.</p>
-<doc-anchor-target id="arguments-for-while">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#arguments-for-while">#</doc-anchor-trigger>
-        <span>Arguments for <code v-pre>/while</code></span>
-    </h3>
-</doc-anchor-target>
-<p><strong>The set of available boolean comparisons, handing of variables, literal values, and subcommands is the same as for the <code v-pre>/if</code> command.</strong></p>
-<p>The optional <code v-pre>guard</code> named argument (<code v-pre>on</code> by default) is used to protect against endless loops, limiting the number of iterations to 100.
-To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
-<p>This example adds 1 to the value of <code v-pre>i</code> until it reaches 10, then outputs the resulting value (10 in this case).</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">/setvar key=i 0 |
-/while left=i right=10 rule=lt &quot;/addvar key=i 1&quot; |
-/echo {{getvar::i}} |
-/flushvar i</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="quick-replies-script-library-and-auto-execution">
     <h2>
@@ -502,13 +509,13 @@ Don&#x27;t forget to click &quot;Update&quot; before switching to a different se
         <span>Manual execution</span>
     </h3>
 </doc-anchor-target>
-<p>Now you can add your first script to the library. Pick any free slot (or create one), then paste this into the right box, and type &quot;Click me&quot; into the left box to set the label:</p>
+<p>Now you can add your first script to the library. Pick any free slot (or create one), type &quot;Click me&quot; into the left box to set the label, then paste this into the right box:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">/addvar key=clicks 1 |
 /if left=clicks right=5 rule=eq else=&quot;/echo Keep going...&quot; &quot;/echo You did it!  \| /flushvar clicks&quot;</code></pre>
 </doc-codeblock></div>
 <p>Then click 5 times on the button that appeared above the chat bar.
-Every click increments the variable <code v-pre>clicks</code> by one and displays a different message the value equals 5 and resets the variable.</p>
+Every click increments the variable <code v-pre>clicks</code> by one and displays a different message when the value equals 5 and resets the variable.</p>
 <doc-anchor-target id="automatic-execution">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#automatic-execution">#</doc-anchor-trigger>
@@ -542,7 +549,7 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">/addvar key=usercounter 1 |
 /echo You've sent {{pipe}} messages. |
-/if a=usercounter b=5 rule=gte &quot;/echo Game over! \| /flushvar usercounter&quot;</code></pre>
+/if left=usercounter right=5 rule=gte &quot;/echo Game over! \| /flushvar usercounter&quot;</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="calling-procedures">
     <h2>
@@ -553,30 +560,22 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
 <p>A <code v-pre>/run</code> command can call scripts defined in the Quick Replies by their label, basically providing the ability to define procedures and return results from them. This allows to have reusable script blocks that other scripts could reference. The last result from the procedure&#x27;s pipe is passed to the next command after it.</p>
 <p><code v-pre>/run ScriptLabel</code></p>
 <p>Let&#x27;s create two Quick Replies:</p>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th style="text-align: left;">Label</th>
-<th style="text-align: left;">Command</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">GetRandom</td>
-<td style="text-align: left;">/pass {{roll:d100}}</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align: left;">GetMessage</td>
-<td style="text-align: left;">/run GetRandom</td>
-<td>/echo Your lucky number is: {{pipe}}</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>Clicking on the <code v-pre>GetMessage</code> button will call <code v-pre>GetRandom</code> which will resolve the <code v-pre>{{roll}}</code> macro and pass the number to the caller, displaying it to the user.</p>
+<hr>
+<p><strong>Label:</strong></p>
+<p><code v-pre>GetRandom</code></p>
+<p><strong>Command:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">/pass {{roll:d100}}</code></pre>
+</doc-codeblock></div>
+<hr>
+<p><strong>Label:</strong></p>
+<p><code v-pre>GetMessage</code></p>
+<p><strong>Command:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">/run GetRandom | /echo Your lucky number is: {{pipe}}</code></pre>
+</doc-codeblock></div>
+<hr>
+<p>Clicking on the <code v-pre>GetMessage</code> button will call the <code v-pre>GetRandom</code> as procedure which will resolve the <code v-pre>{{roll}}</code> macro and pass the number to the caller, displaying it to the user.</p>
 <ul>
 <li>Procedures do not accept named or unnamed arguments, but can reference the same variables as the caller.</li>
 <li>Avoid recursion when calling procedures as it may produce the &quot;call stack exceeded&quot; error if handled unadvisedly.</li>
