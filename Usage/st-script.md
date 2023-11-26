@@ -409,7 +409,7 @@ Clicking on the `GetMessage` button will call the `GetRandom` procedure which wi
 ### Buttons popup usage
 
 ```
-/setglobalvar key=genders ["boy", "girl", "attack helicopter"] |
+/setglobalvar key=genders ["boy", "girl", "other"] |
 /buttons labels=genders Who are you? |
 /echo You picked: {{pipe}}
 ```
