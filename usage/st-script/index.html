@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754327474977">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754327627374">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.754327474977" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.754327627374" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754327474977" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754327627374" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754327474977" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754327627374" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -292,7 +292,7 @@ These concepts are going to be described in the following document.</p>
 <li><code v-pre>/popup (text)</code> — shows a blocking popup, supports lite HTML formatting, e.g: <code v-pre>/popup &lt;font color=red&gt;I'm red!&lt;/font&gt;</code>.</li>
 <li><code v-pre>/setinput (text)</code> — replaces the contents of the user input bar with the provided text.</li>
 <li><code v-pre>/speak voice=&quot;name&quot; (text)</code> — narrates the text using the selected TTS engine and the character name from the voice map, e.g. <code v-pre>/speak name=&quot;Donald Duck&quot; Quack!</code>.</li>
-<li><code v-pre>/buttons labels=[&quot;a&quot;,&quot;b&quot;] (text)</code> — shows a blocking popup with the specified text and button labels. <code v-pre>labels</code> must be a JSON-serialized array of strings or a variable name containing such array. Returns the clicked button label into the pipe or empty string if canceled. The text supports lite HTML formatting.</li>
+<li><code v-pre>/buttons labels=[&quot;a&quot;,&quot;b&quot;] (text)</code> — shows a blocking popup with the specified text and button labels. <code v-pre>labels</code> must be a JSON-serialized array of strings or a variable name containing such an array. Returns the clicked button label into the pipe or empty string if canceled. The text supports lite HTML formatting.</li>
 </ul>
 <doc-anchor-target id="variables">
     <h2>
@@ -318,7 +318,7 @@ These concepts are going to be described in the following document.</p>
 <p>The default value of previously undefined variables is an empty string, or a zero of it is first used in the <code v-pre>/addvar</code> command.</p>
 <p>Increment in the <code v-pre>/addvar</code> command performs an addition or subtraction of the value if it can be converted to a number, or otherwise does the string concatenation.</p>
 <p>All <em>slash commands</em> for variable manipulation write the resulting value into the pipe for the next command to use.
-For <em>macros</em>, only &quot;get&quot; type macro returns the value, &quot;add&quot; and &quot;set&quot; are replaced with an empty string instead.</p>
+For <em>macros</em>, only the &quot;get&quot; type macro returns the value, &quot;add&quot; and &quot;set&quot; are replaced with an empty string instead.</p>
 <p>Now, let&#x27;s consider the following example:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">/input What do you want to generate? |
@@ -401,7 +401,7 @@ For <em>macros</em>, only &quot;get&quot; type macro returns the value, &quot;ad
 <li>The <code v-pre>/abort</code> command interrupts the script execution when encountered.</li>
 </ol>
 <p><code v-pre>/if</code> commands can be used as a ternary operator.
-The following example will pass a &quot;true&quot; string to the next command the variable <code v-pre>a</code> equals 5, and &quot;false&quot; string otherwise.</p>
+The following example will pass a &quot;true&quot; string to the next command the variable <code v-pre>a</code> equals 5, and a &quot;false&quot; string otherwise.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">/if left=a right=5 rule=eq else=&quot;/pass false&quot; &quot;/pass true&quot; |
 /echo</code></pre>
@@ -484,8 +484,8 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 <p><code v-pre>/messages names=on/off start-finish</code></p>
 <p>The <code v-pre>names</code> argument is used to specify whether you want to include character names or not, default: <code v-pre>on</code>.</p>
 <p>In an unnamed argument, it accepts a message index or range in the <code v-pre>start-finish</code> format. Ranges are inclusive!</p>
-<p>If the range is unsatisfiable, i.e. invalid index or more messages than exist are requested, then an empty string is returned.</p>
-<p>Messages that are hidden from prompt (denoted by the ghost icon) are excluded from the output.</p>
+<p>If the range is unsatisfiable, i.e. an invalid index or more messages than exist are requested, then an empty string is returned.</p>
+<p>Messages that are hidden from the prompt (denoted by the ghost icon) are excluded from the output.</p>
 <p>If you want to know the index of the latest message, use the <code v-pre>{{lastMessageId}}</code> macro, and <code v-pre>{{lastMessage}}</code> will get you the message itself.</p>
 <p>To calculate the start index for a range, for example, when you need to get the last N messages, use variable subtraction.
 This example will get you 3 last messages in the chat:</p>
@@ -501,13 +501,13 @@ This example will get you 3 last messages in the chat:</p>
         <span>Send messages</span>
     </h3>
 </doc-anchor-target>
-<p>A script can send message as either user, character, persona, neutral narrator or add comments.</p>
+<p>A script can send messages as either a user, character, persona, neutral narrator, or add comments.</p>
 <ol>
 <li><code v-pre>/send (text)</code> — adds a message as the currently selected persona.</li>
-<li><code v-pre>/sendas name=charname (text)</code> — adds a messages as any character, matching by their name. <code v-pre>name</code> argument is required. Use <code v-pre>{{char}}</code> macro to send as the current character.</li>
-<li><code v-pre>/sys (text)</code> — adds a message from the neutral narrator which doesn&#x27;t belong to user nor character. The displayed name is purely cosmetic and can be customized with the <code v-pre>/sysname</code> command.</li>
+<li><code v-pre>/sendas name=charname (text)</code> — adds a message as any character, matching by their name. <code v-pre>name</code> argument is required. Use the <code v-pre>{{char}}</code> macro to send as the current character.</li>
+<li><code v-pre>/sys (text)</code> — adds a message from the neutral narrator that doesn&#x27;t belong to the user or character. The displayed name is purely cosmetic and can be customized with the <code v-pre>/sysname</code> command.</li>
 <li><code v-pre>/comment (text)</code> — adds a hidden comment that is displayed in the chat but is not visible to the prompt.</li>
-<li><code v-pre>/addswipe (text)</code> — adds a swipe to the last character message. Can&#x27;t add a swipe to user or hidden messages.</li>
+<li><code v-pre>/addswipe (text)</code> — adds a swipe to the last character message. Can&#x27;t add a swipe to the user or hidden messages.</li>
 <li><code v-pre>/hide (message id or range)</code> — hides one or several messages from the prompt based on the provided message index or inclusive range in the <code v-pre>start-finish</code> format.</li>
 <li><code v-pre>/unhide (message id or range)</code> — returns one or several messages to the prompt based on the provided message index or inclusive range in the <code v-pre>start-finish</code> format.</li>
 </ol>
@@ -532,10 +532,10 @@ This example will get you 3 last messages in the chat:</p>
 </doc-anchor-target>
 <p>There&#x27;s a variety of useful text manipulation utility commands to be used in various script scenarios.</p>
 <ol>
-<li><code v-pre>/trimtokens</code> — trims the input to the specified number of text tokens from start or from end and outputs the result to the pipe.</li>
+<li><code v-pre>/trimtokens</code> — trims the input to the specified number of text tokens from the start or from the end and outputs the result to the pipe.</li>
 <li><code v-pre>/trimstart</code> — trims the input to the start of the first complete sentence and outputs the result to the pipe.</li>
 <li><code v-pre>/trimend</code> — trims the input to the end of the last complete sentence and outputs the result to the pipe.</li>
-<li><code v-pre>/fuzzy</code> — performs a fuzzy matching of the input text to the list of string, outputting the best string match to the pipe.</li>
+<li><code v-pre>/fuzzy</code> — performs fuzzy matching of the input text to the list of strings, outputting the best string match to the pipe.</li>
 </ol>
 <doc-anchor-target id="arguments-for-trimtokens">
     <h3>
@@ -545,7 +545,7 @@ This example will get you 3 last messages in the chat:</p>
 </doc-anchor-target>
 <p><code v-pre>/trimtokens limit=number direction=start/end (input)</code></p>
 <ol>
-<li><code v-pre>direction</code> sets the direction for trimming, can be either <code v-pre>start</code> or <code v-pre>end</code>. Default: <code v-pre>end</code>.</li>
+<li><code v-pre>direction</code> sets the direction for trimming, which can be either <code v-pre>start</code> or <code v-pre>end</code>. Default: <code v-pre>end</code>.</li>
 <li><code v-pre>limit</code> sets the amount of tokens to left in the output. Can also specify a variable name containing the number. <strong>Required argument.</strong></li>
 <li>Unnamed argument is the input text to be trimmed.</li>
 </ol>
