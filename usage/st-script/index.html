@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754280420880">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754280945323">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.754280420880" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.754280945323" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754280420880" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754280945323" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754280420880" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754280945323" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -296,8 +296,8 @@ These concepts are going to be described in the following document.</p>
 </doc-anchor-target>
 <p>Variables are used to store and manipulate data in scripts, using either commands or macros. The variables could be one of the following types:</p>
 <ul>
-<li>Local variables - saved to the metadata of the current chat, and unique to it.</li>
-<li>Global variables - saved to the settings.json and exist everywhere across the app.</li>
+<li>Local variables — saved to the metadata of the current chat, and unique to it.</li>
+<li>Global variables — saved to the settings.json and exist everywhere across the app.</li>
 </ul>
 <ol>
 <li><code v-pre>/getvar name</code> or <code v-pre>{{getvar::name}}</code> — gets the value of the local variable.</li>
@@ -311,7 +311,8 @@ These concepts are going to be described in the following document.</p>
 </ol>
 <p>The default value of previously undefined variables is an empty string, or a zero of it is first used in the <code v-pre>/addvar</code> command.</p>
 <p>Increment in the <code v-pre>/addvar</code> command performs an addition or subtraction of the value if it can be converted to a number, or otherwise does the string concatenation.</p>
-<p>All slash commands for variable manipulation write the resulting value into the pipe for the next command to use.</p>
+<p>All <em>slash commands</em> for variable manipulation write the resulting value into the pipe for the next command to use.
+For <em>macros</em>, only &quot;get&quot; type macro returns the value, &quot;add&quot; and &quot;set&quot; are replaced with an empty string instead.</p>
 <p>Now, let&#x27;s consider the following example:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">/input What do you want to generate? |
@@ -424,11 +425,12 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
         <span>Using the LLM</span>
     </h2>
 </doc-anchor-target>
-<p>Scripts can make requests to your currently connected LLM using the following commands:</p>
+<p>Scripts can make requests to your currently connected LLM API using the following commands:</p>
 <ul>
 <li><code v-pre>/gen (prompt)</code> — generates text using the provided prompt for the selected character and including chat messages.</li>
 <li><code v-pre>/genraw (prompt)</code> — generates text using just the provided prompt, ignoring the current character and chat.</li>
 </ul>
+<p><code v-pre>/genraw lock=on/off stop=[] instruct=on/off (prompt)</code></p>
 <doc-anchor-target id="arguments-for-gen-and-genraw">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#arguments-for-gen-and-genraw">#</doc-anchor-trigger>
@@ -438,7 +440,7 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 <ul>
 <li><code v-pre>lock</code> — can be <code v-pre>on</code> or <code v-pre>off</code>. Specifies whether a user input should be blocked while the generation is in progress. Default: <code v-pre>off</code>.</li>
 <li><code v-pre>stop</code> — JSON-serialized array of strings. Adds a custom stop string (if the API supports it) just for this generation. Default: none.</li>
-<li><code v-pre>instruct</code> (only <code v-pre>/genraw</code>) — can be <code v-pre>on</code> or <code v-pre>off</code>. Allows to use instruct formatting on the input prompt. Set to <code v-pre>off</code> to force pure prompts. Default: <code v-pre>on</code>.</li>
+<li><code v-pre>instruct</code> (only <code v-pre>/genraw</code>) — can be <code v-pre>on</code> or <code v-pre>off</code>. Allows to use instruct formatting on the input prompt (if instruct mode is enabled and the API supports it). Set to <code v-pre>off</code> to force pure prompts. Default: <code v-pre>on</code>.</li>
 </ul>
 <p>The generated text is then passed through the pipe to the next command and can be saved to a variable or displaced using the I/O capabilities:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
