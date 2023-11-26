@@ -164,7 +164,7 @@ Scripts can make requests to your currently connected LLM using the following co
 - `stop` — JSON-serialized array of strings. Adds a custom stop string (if the API supports it) just for this generation. Default: none.
 - `instruct` (only `/genraw`) — can be `on` or `off`. Allows to use instruct formatting on the input prompt. Set to `off` to force pure prompts. Default: `on`.
 
-Generated text is then passed though the pipe to the next command and can be saved to a variable or displaced using the I/O capabilities:
+The generated text is then passed through the pipe to the next command and can be saved to a variable or displaced using the I/O capabilities:
 
 ```
 /genraw Write a funny message from Cthulhu about taking over the world. Use emojis. |
@@ -205,7 +205,7 @@ On each step of the loop it compares the value of variable A with the value of v
 
 ### Arguments for `/while`
 
-**The set of available boolean comparisons, handing of variables, literal values and subcommands is the same as for `/if` command.**
+**The set of available boolean comparisons, handing of variables, literal values, and subcommands is the same as for the `/if` command.**
 
 The optional `guard` named argument (`on` by default) is used to protect against endless loops, limiting the number of iterations to 100.
 To disable and allow endless loops, set `guard=off`.
@@ -225,7 +225,11 @@ Quick Replies is a built-in SillyTavern extension that provides an easy way to s
 
 ### Configuring Quick Replies
 
-In order to get started, enable open the extensions panel (stacked blocks icon), expand the Quick Replies menu.
+In order to get started, enable open the extensions panel (stacked blocks icon), and expand the Quick Replies menu.
+
+| <img alt="image" height="300px" src="https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/7f02e1c3-138e-4347-8c16-ebc07c818c28"> |
+| -- |
+
 
 Quick Replies are disabled by default, you need to enable them first. Then you will see a bar appearing above your chat input bar.
 
@@ -233,14 +237,14 @@ You can set the displayed button text label (we recommend using emojis for brevi
 
 The number of buttons is controlled by the **Number of slots** settings (max = 100), adjust it according to your needs and click "Apply" when done.
 
-**Inject user input automatically** recommended to be disabled when using STscript, otherwise it may interfere with your inputs, use `{{input}}` macro to get the current value of the input bar in scripts instead.
+**Inject user input automatically** recommended to be disabled when using STscript, otherwise it may interfere with your inputs, use the `{{input}}` macro to get the current value of the input bar in scripts instead.
 
 **Quick Reply presets** allow to have multiple sets of predefined Quick Replies and switch between manually or by using the `/qrset (name of set)` command.
 Don't forget to click "Update" before switching to a different set to write your changes to the currently used preset!
 
 ### Manual execution
 
-Now you can add your first script to the library. Pick any free slot (or create one) and paste this into the right box, and type "Click me" into the left box to set the label:
+Now you can add your first script to the library. Pick any free slot (or create one), then paste this into the right box, and type "Click me" into the left box to set the label:
 
 ```
 /addvar key=clicks 1 |
@@ -254,6 +258,9 @@ Every click increments the variable `clicks` by one and displays a different mes
 
 Open the modal menu by clicking the `⋮` button for the created command.
 
+| <img alt="image" height="300px" src="https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/ba8c9ef7-8c8e-445b-94c1-ea71767fa01d"> |
+| -- |
+
 In this menu you can do the following:
 
 - Hide the button from the chat bar, making it accessible only for auto-execution.
@@ -265,7 +272,7 @@ In this menu you can do the following:
 
 Commands are executed automatically only if the Quick Replies extension is enabled.
 
-For example, you can display a message after sending five user messages by adding the following script and setting it to auto-execute on user message.
+For example, you can display a message after sending five user messages by adding the following script and setting it to auto-execute on the user message.
 
 ```
 /addvar key=usercounter 1 |
