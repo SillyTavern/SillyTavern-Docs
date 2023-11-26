@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754274412108">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754274853290">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.754274412108" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.754274853290" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754274412108" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754274853290" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754274412108" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754274853290" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -407,7 +407,7 @@ These concepts are going to be described in the following document.</p>
 <li><code v-pre>stop</code> — JSON-serialized array of strings. Adds a custom stop string (if the API supports it) just for this generation. Default: none.</li>
 <li><code v-pre>instruct</code> (only <code v-pre>/genraw</code>) — can be <code v-pre>on</code> or <code v-pre>off</code>. Allows to use instruct formatting on the input prompt. Set to <code v-pre>off</code> to force pure prompts. Default: <code v-pre>on</code>.</li>
 </ul>
-<p>Generated text is then passed though the pipe to the next command and can be saved to a variable or displaced using the I/O capabilities:</p>
+<p>The generated text is then passed through the pipe to the next command and can be saved to a variable or displaced using the I/O capabilities:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">/genraw Write a funny message from Cthulhu about taking over the world. Use emojis. |
 /popup &lt;h3&gt;Cthulhu says:&lt;/h3&gt;&lt;div&gt;{{pipe}}&lt;/div&gt;</code></pre>
@@ -455,7 +455,7 @@ This example will get you 3 last messages in the chat:</p>
         <span>Arguments for <code v-pre>/while</code></span>
     </h3>
 </doc-anchor-target>
-<p><strong>The set of available boolean comparisons, handing of variables, literal values and subcommands is the same as for <code v-pre>/if</code> command.</strong></p>
+<p><strong>The set of available boolean comparisons, handing of variables, literal values, and subcommands is the same as for the <code v-pre>/if</code> command.</strong></p>
 <p>The optional <code v-pre>guard</code> named argument (<code v-pre>on</code> by default) is used to protect against endless loops, limiting the number of iterations to 100.
 To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 <p>This example adds 1 to the value of &quot;i&quot; until it reaches 10, then outputs the resulting value (10 in this case).</p>
@@ -478,11 +478,20 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
         <span>Configuring Quick Replies</span>
     </h3>
 </doc-anchor-target>
-<p>In order to get started, enable open the extensions panel (stacked blocks icon), expand the Quick Replies menu.</p>
+<p>In order to get started, enable open the extensions panel (stacked blocks icon), and expand the Quick Replies menu.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th><img alt="image" height="300px" src="https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/7f02e1c3-138e-4347-8c16-ebc07c818c28"></th>
+</tr>
+</thead>
+</table>
+</div>
 <p>Quick Replies are disabled by default, you need to enable them first. Then you will see a bar appearing above your chat input bar.</p>
 <p>You can set the displayed button text label (we recommend using emojis for brevity) and the script that will be executed when you click the button.</p>
 <p>The number of buttons is controlled by the <strong>Number of slots</strong> settings (max = 100), adjust it according to your needs and click &quot;Apply&quot; when done.</p>
-<p><strong>Inject user input automatically</strong> recommended to be disabled when using STscript, otherwise it may interfere with your inputs, use <code v-pre>{{input}}</code> macro to get the current value of the input bar in scripts instead.</p>
+<p><strong>Inject user input automatically</strong> recommended to be disabled when using STscript, otherwise it may interfere with your inputs, use the <code v-pre>{{input}}</code> macro to get the current value of the input bar in scripts instead.</p>
 <p><strong>Quick Reply presets</strong> allow to have multiple sets of predefined Quick Replies and switch between manually or by using the <code v-pre>/qrset (name of set)</code> command.
 Don&#x27;t forget to click &quot;Update&quot; before switching to a different set to write your changes to the currently used preset!</p>
 <doc-anchor-target id="manual-execution">
@@ -491,7 +500,7 @@ Don&#x27;t forget to click &quot;Update&quot; before switching to a different se
         <span>Manual execution</span>
     </h3>
 </doc-anchor-target>
-<p>Now you can add your first script to the library. Pick any free slot (or create one) and paste this into the right box, and type &quot;Click me&quot; into the left box to set the label:</p>
+<p>Now you can add your first script to the library. Pick any free slot (or create one), then paste this into the right box, and type &quot;Click me&quot; into the left box to set the label:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">/addvar key=clicks 1 |
 /if left=clicks right=5 rule=eq else=&quot;/echo Keep going...&quot; &quot;/echo You did it!  \| /flushvar clicks&quot;</code></pre>
@@ -505,6 +514,15 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
     </h3>
 </doc-anchor-target>
 <p>Open the modal menu by clicking the <code v-pre>⋮</code> button for the created command.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th><img alt="image" height="300px" src="https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/ba8c9ef7-8c8e-445b-94c1-ea71767fa01d"></th>
+</tr>
+</thead>
+</table>
+</div>
 <p>In this menu you can do the following:</p>
 <ul>
 <li>Hide the button from the chat bar, making it accessible only for auto-execution.</li>
@@ -518,7 +536,7 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
 </li>
 </ul>
 <p>Commands are executed automatically only if the Quick Replies extension is enabled.</p>
-<p>For example, you can display a message after sending five user messages by adding the following script and setting it to auto-execute on user message.</p>
+<p>For example, you can display a message after sending five user messages by adding the following script and setting it to auto-execute on the user message.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">/addvar key=usercounter 1 |
 /echo You've sent {{pipe}} messages. |
