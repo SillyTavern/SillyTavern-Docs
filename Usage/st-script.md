@@ -67,7 +67,7 @@ Now let's add a little bit of interactivity to the script. We will accept the in
 - `/popup (text)` — shows a blocking popup, supports lite HTML formatting, e.g: `/popup <font color=red>I'm red!</font>`.
 - `/setinput (text)` — replaces the contents of the user input bar with the provided text.
 - `/speak voice="name" (text)` — narrates the text using the selected TTS engine and the character name from the voice map, e.g. `/speak name="Donald Duck" Quack!`.
-- `/buttons labels=["a","b"] (text)` — shows a blocking popup with the specified text and button labels. `labels` must be a JSON-serialized array of strings or a variable name containing such array. Returns the clicked button label into the pipe or empty string if canceled. The text supports lite HTML formatting.
+- `/buttons labels=["a","b"] (text)` — shows a blocking popup with the specified text and button labels. `labels` must be a JSON-serialized array of strings or a variable name containing such an array. Returns the clicked button label into the pipe or empty string if canceled. The text supports lite HTML formatting.
 
 ## Variables
 
@@ -90,7 +90,7 @@ The default value of previously undefined variables is an empty string, or a zer
 Increment in the `/addvar` command performs an addition or subtraction of the value if it can be converted to a number, or otherwise does the string concatenation.
 
 All *slash commands* for variable manipulation write the resulting value into the pipe for the next command to use.
-For *macros*, only "get" type macro returns the value, "add" and "set" are replaced with an empty string instead.
+For *macros*, only the "get" type macro returns the value, "add" and "set" are replaced with an empty string instead.
 
 Now, let's consider the following example:
 
@@ -165,7 +165,7 @@ A subcommand is a string containing a list of slash commands to execute.
 4. The `/abort` command interrupts the script execution when encountered.
 
 `/if` commands can be used as a ternary operator.
-The following example will pass a "true" string to the next command the variable `a` equals 5, and "false" string otherwise.
+The following example will pass a "true" string to the next command the variable `a` equals 5, and a "false" string otherwise.
 
 ```
 /if left=a right=5 rule=eq else="/pass false" "/pass true" |
@@ -233,9 +233,9 @@ The `names` argument is used to specify whether you want to include character na
 
 In an unnamed argument, it accepts a message index or range in the `start-finish` format. Ranges are inclusive!
 
-If the range is unsatisfiable, i.e. invalid index or more messages than exist are requested, then an empty string is returned.
+If the range is unsatisfiable, i.e. an invalid index or more messages than exist are requested, then an empty string is returned.
 
-Messages that are hidden from prompt (denoted by the ghost icon) are excluded from the output.
+Messages that are hidden from the prompt (denoted by the ghost icon) are excluded from the output.
 
 If you want to know the index of the latest message, use the `{{lastMessageId}}` macro, and `{{lastMessage}}` will get you the message itself.
 
@@ -251,13 +251,13 @@ This example will get you 3 last messages in the chat:
 
 ### Send messages
 
-A script can send message as either user, character, persona, neutral narrator or add comments.
+A script can send messages as either a user, character, persona, neutral narrator, or add comments.
 
 1. `/send (text)` — adds a message as the currently selected persona.
-2. `/sendas name=charname (text)` — adds a messages as any character, matching by their name. `name` argument is required. Use `{{char}}` macro to send as the current character.
-3. `/sys (text)` — adds a message from the neutral narrator which doesn't belong to user nor character. The displayed name is purely cosmetic and can be customized with the `/sysname` command.
+2. `/sendas name=charname (text)` — adds a message as any character, matching by their name. `name` argument is required. Use the `{{char}}` macro to send as the current character.
+3. `/sys (text)` — adds a message from the neutral narrator that doesn't belong to the user or character. The displayed name is purely cosmetic and can be customized with the `/sysname` command.
 4. `/comment (text)` — adds a hidden comment that is displayed in the chat but is not visible to the prompt.
-5. `/addswipe (text)` — adds a swipe to the last character message. Can't add a swipe to user or hidden messages.
+5. `/addswipe (text)` — adds a swipe to the last character message. Can't add a swipe to the user or hidden messages.
 6. `/hide (message id or range)` — hides one or several messages from the prompt based on the provided message index or inclusive range in the `start-finish` format.
 7. `/unhide (message id or range)` — returns one or several messages to the prompt based on the provided message index or inclusive range in the `start-finish` format.
 
@@ -274,16 +274,16 @@ A script can send message as either user, character, persona, neutral narrator o
 
 There's a variety of useful text manipulation utility commands to be used in various script scenarios.
 
-1. `/trimtokens` — trims the input to the specified number of text tokens from start or from end and outputs the result to the pipe.
+1. `/trimtokens` — trims the input to the specified number of text tokens from the start or from the end and outputs the result to the pipe.
 2. `/trimstart` — trims the input to the start of the first complete sentence and outputs the result to the pipe.
 3. `/trimend` — trims the input to the end of the last complete sentence and outputs the result to the pipe.
-4. `/fuzzy` — performs a fuzzy matching of the input text to the list of string, outputting the best string match to the pipe.
+4. `/fuzzy` — performs fuzzy matching of the input text to the list of strings, outputting the best string match to the pipe.
 
 ### Arguments for `/trimtokens`
 
 `/trimtokens limit=number direction=start/end (input)`
 
-1. `direction` sets the direction for trimming, can be either `start` or `end`. Default: `end`.
+1. `direction` sets the direction for trimming, which can be either `start` or `end`. Default: `end`.
 2. `limit` sets the amount of tokens to left in the output. Can also specify a variable name containing the number. **Required argument.**
 3. Unnamed argument is the input text to be trimmed.
 
