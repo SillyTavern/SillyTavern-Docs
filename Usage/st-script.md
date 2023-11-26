@@ -67,6 +67,7 @@ Now let's add a little bit of interactivity to the script. We will accept the in
 - `/popup (text)` — shows a blocking popup, supports lite HTML formatting, e.g: `/popup <font color=red>I'm red!</font>`.
 - `/setinput (text)` — replaces the contents of the user input bar with the provided text.
 - `/speak voice="name" (text)` — narrates the text using the selected TTS engine and the character name from the voice map, e.g. `/speak name="Donald Duck" Quack!`.
+- `/buttons labels=["a","b"] (text)` — shows a blocking popup with the specified text and button labels. `labels` must be a JSON-serialized array of strings or a variable name containing such array. Returns the clicked button label into the pipe or empty string if canceled. The text supports lite HTML formatting.
 
 ## Variables
 
@@ -279,7 +280,7 @@ There's a variety of useful text manipulation utility commands to be used in var
 
 `/fuzzy list=["candidate1","candidate2"] (input)`
 
-1. `list` is a JSON serialized array of strings containing the candidates. Can also specify a variable name containing the list. **Required argument.**
+1. `list` is a JSON-serialized array of strings containing the candidates. Can also specify a variable name containing the list. **Required argument.**
 2. Unnamed argument is the input text to be matched. Output is one of the candidates matching the input most closely.
 
 ## Quick Replies: script library and auto-execution
@@ -391,4 +392,12 @@ Clicking on the `GetMessage` button will call the `GetRandom` procedure which wi
 /setinput {{getvar::tmp}} |
 /flushvar tmp |
 /flushvar s1
+```
+
+### Buttons popup usage
+
+```
+/setglobalvar key=genders ["boy", "girl", "attack helicopter"] |
+/buttons labels=genders Who are you? |
+/echo You picked: {{pipe}}
 ```
