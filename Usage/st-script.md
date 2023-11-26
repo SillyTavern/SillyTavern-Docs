@@ -254,7 +254,7 @@ This example will get you 3 last messages in the chat:
 A script can send message as either user, character, persona, neutral narrator or add comments.
 
 1. `/send (text)` — adds a message as the currently selected persona.
-2. `/sendas name=charname (text)` — adds a messages as any character, matching by their name. Use `{{char}}` macro to send as the current character.
+2. `/sendas name=charname (text)` — adds a messages as any character, matching by their name. `name` argument is required. Use `{{char}}` macro to send as the current character.
 3. `/sys (text)` — adds a message from the neutral narrator which doesn't belong to user nor character. The displayed name is purely cosmetic and can be customized with the `/sysname` command.
 4. `/comment (text)` — adds a hidden comment that is displayed in the chat but is not visible to the prompt.
 5. `/addswipe (text)` — adds a swipe to the last character message. Can't add a swipe to user or hidden messages.
