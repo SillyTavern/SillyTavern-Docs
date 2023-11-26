@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754274884221">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754275825458">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.754274884221" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.754275825458" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754274884221" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754275825458" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754274884221" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754275825458" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -490,7 +490,7 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 </thead>
 </table>
 </div>
-<p>Quick Replies are disabled by default, you need to enable them first. Then you will see a bar appearing above your chat input bar.</p>
+<p><strong>Quick Replies are disabled by default, you need to enable them first.</strong> Then you will see a bar appearing above your chat input bar.</p>
 <p>You can set the displayed button text label (we recommend using emojis for brevity) and the script that will be executed when you click the button.</p>
 <p>The number of buttons is controlled by the <strong>Number of slots</strong> settings (max = 100), adjust it according to your needs and click &quot;Apply&quot; when done.</p>
 <p><strong>Inject user input automatically</strong> recommended to be disabled when using STscript, otherwise it may interfere with your inputs, use the <code v-pre>{{input}}</code> macro to get the current value of the input bar in scripts instead.</p>
@@ -550,7 +550,34 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
         <span>Calling procedures</span>
     </h2>
 </doc-anchor-target>
-<p>Under construction.</p>
+<p>A <code v-pre>/run</code> command can call scripts defined in the Quick Replies by their label, basically providing the ability to define procedures and return results from them. This allows to have reusable script blocks that other scripts could reference. The last result from the procedure&#x27;s pipe is passed to the next command after it.</p>
+<p><code v-pre>/run ScriptLabel</code></p>
+<p>Let&#x27;s create two Quick Replies:</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th style="text-align: left;">Label</th>
+<th style="text-align: left;">Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">GetRandom</td>
+<td style="text-align: left;"><code v-pre>/pass {{roll:d100}}</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">GetMessage</td>
+<td style="text-align: left;"><code v-pre>/run GetRandom \| /echo Your lucky number is: {{pipe}}</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Clicking on <code v-pre>GetMessage</code> button will call <code v-pre>GetRandom</code> that will resolve the <code v-pre>{{roll}}</code> macro pass the number to the caller, displaying it to the user.</p>
+<ul>
+<li>Procedures do not accept named or unnamed arguments, but can reference the same variables as the caller.</li>
+<li>Avoid recursion when calling procedures as it may produce the &quot;call stack exceeded&quot; error if handled unadvisedly.</li>
+</ul>
 <doc-anchor-target id="more-examples">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#more-examples">#</doc-anchor-trigger>
