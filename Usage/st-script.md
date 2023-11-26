@@ -269,6 +269,7 @@ A script can send messages as either a user, character, persona, neutral narrato
 2. `/del (number)` — deletes last N messages from the chat.
 3. `/delswipe (1-based swipe id)` — deletes a swipe from the last character message based on the provided 1-based swipe ID.
 4. `/delname (character name)` — deletes all messages in the current chat that belong to a character with the specified name.
+5. `/delchat` — deletes the current chat.
 
 ## Text manipulation
 
