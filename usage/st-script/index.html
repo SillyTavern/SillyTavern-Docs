@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754275825458">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754276008718">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.754275825458" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.754276008718" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754275825458" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754276008718" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754275825458" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754276008718" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -431,10 +431,10 @@ These concepts are going to be described in the following document.</p>
 </doc-anchor-target>
 <p>You can access messages in the currently selected chat using the <code v-pre>/messages names=on/off</code> command.
 The <code v-pre>names</code> argument is used to specify whether you want to include character names or not, default: <code v-pre>on</code>.</p>
-<p>In unnamed argument it accepts a message index or inclusive range in the <code v-pre>start-finish</code> format. Ranges are inclusive!</p>
+<p>In an unnamed argument, it accepts a message index or inclusive range in the <code v-pre>start-finish</code> format. Ranges are inclusive!</p>
 <p>If the range is unsatisfiable, i.e. invalid index or more messages than exist are requested, then an empty string is returned.</p>
-<p>If you want to know the index of the latest message, use <code v-pre>{{lastMessageId}}</code> macro, and <code v-pre>{{lastMessage}}</code> will get you the message itself.</p>
-<p>To calculate the start index for a range, for example when you need to get last N message, use variable subtraction.
+<p>If you want to know the index of the latest message, use the <code v-pre>{{lastMessageId}}</code> macro, and <code v-pre>{{lastMessage}}</code> will get you the message itself.</p>
+<p>To calculate the start index for a range, for example, when you need to get the last N messages, use variable subtraction.
 This example will get you 3 last messages in the chat:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">/setvar key=start {{lastMessageId}} |
@@ -559,21 +559,24 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
 <tr>
 <th style="text-align: left;">Label</th>
 <th style="text-align: left;">Command</th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: left;">GetRandom</td>
-<td style="text-align: left;"><code v-pre>/pass {{roll:d100}}</code></td>
+<td style="text-align: left;">/pass {{roll:d100}}</td>
+<td></td>
 </tr>
 <tr>
 <td style="text-align: left;">GetMessage</td>
-<td style="text-align: left;"><code v-pre>/run GetRandom \| /echo Your lucky number is: {{pipe}}</code></td>
+<td style="text-align: left;">/run GetRandom</td>
+<td>/echo Your lucky number is: {{pipe}}</td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>Clicking on <code v-pre>GetMessage</code> button will call <code v-pre>GetRandom</code> that will resolve the <code v-pre>{{roll}}</code> macro pass the number to the caller, displaying it to the user.</p>
+<p>Clicking on the <code v-pre>GetMessage</code> button will call <code v-pre>GetRandom</code> which will resolve the <code v-pre>{{roll}}</code> macro and pass the number to the caller, displaying it to the user.</p>
 <ul>
 <li>Procedures do not accept named or unnamed arguments, but can reference the same variables as the caller.</li>
 <li>Avoid recursion when calling procedures as it may produce the &quot;call stack exceeded&quot; error if handled unadvisedly.</li>
