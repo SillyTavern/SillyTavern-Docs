@@ -26,6 +26,7 @@ We provide the following parameters to the Handlebars evaluator (wrap them into 
 7. `user` - selected persona name
 8. `wiBefore` or `loreBefore` - combined activated World Info entries with Position set to "Before Char Defs"
 9. `wiAfter` or `loreAfter` - combined activated World Info entries with Position set to "After Char Defs"
+10. `mesExamples` - (optional) character's Example Dialogues, instruct-formatted with separator. Set "Example Messages Behavior" to "Never include examples" to avoid duplication.
 
 **WARNING**: If some of the above parameters are missing from the story string template, they are not going to be sent in the prompt at all.
 
