@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754272310741">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754274412108">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.754272310741" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.754274412108" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754272310741" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754274412108" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754272310741" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754274412108" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -449,6 +449,12 @@ This example will get you 3 last messages in the chat:</p>
 <p>If you need to run some command in a loop until a certain condition is met, use the <code v-pre>/while</code> command.</p>
 <p><code v-pre>/while left=valueA right=valueB rule=operation guard=on &quot;commands&quot;</code></p>
 <p>On each step of the loop it compares the value of variable A with the value of variable B, and if the condition yields true, then executes any valid slash command enclosed in quotes, otherwise exists the loop. This command doesn&#x27;t write anything to the output pipe.</p>
+<doc-anchor-target id="arguments-for-while">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#arguments-for-while">#</doc-anchor-trigger>
+        <span>Arguments for <code v-pre>/while</code></span>
+    </h3>
+</doc-anchor-target>
 <p><strong>The set of available boolean comparisons, handing of variables, literal values and subcommands is the same as for <code v-pre>/if</code> command.</strong></p>
 <p>The optional <code v-pre>guard</code> named argument (<code v-pre>on</code> by default) is used to protect against endless loops, limiting the number of iterations to 100.
 To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
@@ -465,7 +471,59 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
         <span>Quick Replies: script library and auto-execution</span>
     </h2>
 </doc-anchor-target>
-<p>Under construction.</p>
+<p>Quick Replies is a built-in SillyTavern extension that provides an easy way to store and execute your scripts.</p>
+<doc-anchor-target id="configuring-quick-replies">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#configuring-quick-replies">#</doc-anchor-trigger>
+        <span>Configuring Quick Replies</span>
+    </h3>
+</doc-anchor-target>
+<p>In order to get started, enable open the extensions panel (stacked blocks icon), expand the Quick Replies menu.</p>
+<p>Quick Replies are disabled by default, you need to enable them first. Then you will see a bar appearing above your chat input bar.</p>
+<p>You can set the displayed button text label (we recommend using emojis for brevity) and the script that will be executed when you click the button.</p>
+<p>The number of buttons is controlled by the <strong>Number of slots</strong> settings (max = 100), adjust it according to your needs and click &quot;Apply&quot; when done.</p>
+<p><strong>Inject user input automatically</strong> recommended to be disabled when using STscript, otherwise it may interfere with your inputs, use <code v-pre>{{input}}</code> macro to get the current value of the input bar in scripts instead.</p>
+<p><strong>Quick Reply presets</strong> allow to have multiple sets of predefined Quick Replies and switch between manually or by using the <code v-pre>/qrset (name of set)</code> command.
+Don&#x27;t forget to click &quot;Update&quot; before switching to a different set to write your changes to the currently used preset!</p>
+<doc-anchor-target id="manual-execution">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#manual-execution">#</doc-anchor-trigger>
+        <span>Manual execution</span>
+    </h3>
+</doc-anchor-target>
+<p>Now you can add your first script to the library. Pick any free slot (or create one) and paste this into the right box, and type &quot;Click me&quot; into the left box to set the label:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">/addvar key=clicks 1 |
+/if left=clicks right=5 rule=eq else=&quot;/echo Keep going...&quot; &quot;/echo You did it!  \| /flushvar clicks&quot;</code></pre>
+</doc-codeblock></div>
+<p>Then click 5 times on the button that appeared above the chat bar.
+Every click increments the variable <code v-pre>clicks</code> by one and displays a different message the value equals 5 and resets the variable.</p>
+<doc-anchor-target id="automatic-execution">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#automatic-execution">#</doc-anchor-trigger>
+        <span>Automatic execution</span>
+    </h3>
+</doc-anchor-target>
+<p>Open the modal menu by clicking the <code v-pre>⋮</code> button for the created command.</p>
+<p>In this menu you can do the following:</p>
+<ul>
+<li>Hide the button from the chat bar, making it accessible only for auto-execution.</li>
+<li>Enable automatic execution on one or more of the following conditions:
+<ul>
+<li>App startup</li>
+<li>Sending a user message to the chat</li>
+<li>Receiving an AI message in the chat</li>
+<li>Opening a character or group chat</li>
+</ul>
+</li>
+</ul>
+<p>Commands are executed automatically only if the Quick Replies extension is enabled.</p>
+<p>For example, you can display a message after sending five user messages by adding the following script and setting it to auto-execute on user message.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">/addvar key=usercounter 1 |
+/echo You've sent {{pipe}} messages. |
+/if a=usercounter b=5 rule=gte &quot;/echo Game over! \| /flushvar usercounter&quot;</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="calling-procedures">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#calling-procedures">#</doc-anchor-trigger>
