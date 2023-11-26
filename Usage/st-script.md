@@ -15,6 +15,10 @@ It's a simple yet powerful scripting language that could be used to expand the f
 STscript is built using the slash commands engine, utilizing command batching, data piping, macros, and variables.
 These concepts are going to be described in the following document.
 
+**Security precaution**
+
+With great power comes great responsibility. Be careful and always inspect the scripts before executing them.
+
 ## Hello, World!
 
 To run your first script, open any SillyTavern chat and type the following into the chat input bar:
@@ -35,6 +39,8 @@ Commands are executed sequentially, one after another, and transfer data between
 1. The `/pass` command accepts a constant value of "Hello, World!" as an unnamed argument and writes it to the pipe.
 2. The `/echo` command receives the value through the pipe from the previous command and displays it as a toast notification.
 
+>  To see a list of all available commands, type `/help slash` into the chat.
+
 As constant unnamed arguments and pipes are interchangeable, we could rewrite this script simply as:
 
 ```
@@ -46,7 +52,8 @@ As constant unnamed arguments and pipes are interchangeable, we could rewrite th
 Now let's add a little bit of interactivity to the script. We will accept the input value from the user and display it in the notification.
 
 ```
-/input Enter your name | /echo Hello, my name is {{pipe}}
+/input Enter your name |
+/echo Hello, my name is {{pipe}}
 ```
 
 1. The `/input` command is used to display an input box with the prompt specified in the unnamed argument and then writes the output to the pipe.
@@ -60,6 +67,45 @@ Now let's add a little bit of interactivity to the script. We will accept the in
 - `/popup (text)` — shows a blocking popup, supports lite HTML formatting, e.g: `/popup <font color=red>I'm red!</font>`.
 - `/setinput (text)` — replaces the contents of the user input bar with the provided text.
 - `/speak voice="name" (text)` — narrates the text using the selected TTS engine and the character name from the voice map, e.g. `/speak name="Donald Duck" Quack!`.
+
+## Variables
+
+Variables are used to store and manipulate data in scripts, using either commands or macros. The variables could be one of the following types:
+
+- Local variables - saved to the metadata of the current chat, and unique to it.
+- Global variables - saved to the settings.json and exist everywhere across the app.
+
+1. `/getvar name` or `{{getvar::name}}` — gets the value of the local variable.
+2. `/setvar key=name value` or `{{setvar::name::value}}` — sets the value of the local variable.
+3. `/addvar key=name increment` or `{{addvar::name::increment}}` — adds the `increment` to the value of the local variable.
+4. `/getglobalvar name` or `{{getglobalvar::name}}` — gets the value of the global variable.
+5. `/setglobalvar key=name` or `{{setglobalvar::name::value}}` — sets the value of the global variable.
+6. `/addglobalvar key=name` or `{{addglobalvar::name:increment}}` — adds the `increment` to the value of the global variable.
+7. `/flushvar name` — deletes the value of the local variable.
+8. `/flushglobalvar name` — deletes the value of the global variable.
+
+The default value of previously undefined variables is an empty string, or a zero of it is first used in the `/addvar` command.
+
+Increment in the `/addvar` command performs an addition or subtraction of the value if it can be converted to a number, or otherwise does the string concatenation.
+
+All slash commands for variable manipulation write the resulting value into the pipe for the next command to use.
+
+Now, let's consider the following example:
+
+```
+/input What do you want to generate? |
+/setvar key=SDinput |
+/echo Requesting an image of {{getvar::SDinput}} |
+/getvar SDinput |
+/imagine
+```
+
+1. The value of the user input is saved in the local variable named `SDinput`.
+2. The `getvar` macro is used to display the value in the `/echo` command.
+3. The `getvar` command is used to retrieve the value of the variable and pass it through the pipe.
+4. The value is passed to the `/imagine` command (provided by the Image Generation plugin) to be used as its input prompt.
+
+Since the variables are saved and not flushed between the script executions, you can reference the variable in other scripts and via macros, and it will resolve to the same value as during the execution of the example script. To guarantee that the value will be discarded, add the `/flushvar` command to the script.
 
 ## Flow control - conditionals
 
@@ -104,8 +150,8 @@ Supported rules for boolean comparison are the following. An operation applied t
 5. `lte` (less than or equals) => A <= B
 6. `gte` (greater than or equals) => A >= B
 7. `not` (unary negation) => !A
-8. `in` (includes substring) => A includes B
-9. `nin` (not includes substring) => A not includes B
+8. `in` (includes substring) => A includes B, case insensitive
+9. `nin` (not includes substring) => A not includes B, case insensitive
 
 ### Subcommands
 
@@ -116,44 +162,29 @@ A subcommand is a string containing a list of slash commands to execute.
 3. The result of the subcommands execution is piped to the command after `/if`.
 4. The `/abort` command interrupts the script execution when encountered.
 
-## Variables
+## Flow control - loops
 
-Variables are used to store and manipulate data in scripts, using either commands or macros. The variables could be one of the following types:
+If you need to run some command in a loop until a certain condition is met, use the `/while` command.
 
-- Local variables - saved to the metadata of the current chat, and unique to it.
-- Global variables - saved to the settings.json and exist everywhere across the app.
+`/while left=valueA right=valueB rule=operation guard=on "commands"`
 
-1. `/getvar name` or `{{getvar::name}}` — gets the value of the local variable.
-2. `/setvar key=name value` or `{{setvar::name::value}}` — sets the value of the local variable.
-3. `/addvar key=name increment` or `{{addvar::name::increment}}` — adds the `increment` to the value of the local variable.
-4. `/getglobalvar name` or `{{getglobalvar::name}}` — gets the value of the global variable.
-5. `/setglobalvar key=name` or `{{setglobalvar::name::value}}` — sets the value of the global variable.
-6. `/addglobalvar key=name` or `{{addglobalvar::name:increment}}` — adds the `increment` to the value of the global variable.
-7. `/flushvar name` — deletes the value of the local variable.
-8. `/flushglobalvar name` — deletes the value of the global variable.
+On each step of the loop it compares the value of variable A with the value of variable B, and if the condition yields true, then executes any valid slash command enclosed in quotes, otherwise exists the loop. This command doesn't write anything to the output pipe.
 
-The default value of previously undefined variables is an empty string, or a zero of it is first used in the `/addvar` command.
+### Arguments for `/while`
 
-Increment in the `/addvar` command performs an addition or subtraction of the value if it can be converted to a number, or otherwise does the string concatenation.
+**The set of available boolean comparisons, handing of variables, literal values, and subcommands is the same as for the `/if` command.**
 
-All slash commands for variable manipulation write the resulting value into the pipe for the next command to use.
+The optional `guard` named argument (`on` by default) is used to protect against endless loops, limiting the number of iterations to 100.
+To disable and allow endless loops, set `guard=off`.
 
-Now, let's consider the following example:
+This example adds 1 to the value of `i` until it reaches 10, then outputs the resulting value (10 in this case).
 
 ```
-/input What do you want to generate? |
-/setvar key=SDinput |
-/echo Requesting an image of {{getvar::SDinput}} |
-/getvar SDinput |
-/imagine
+/setvar key=i 0 |
+/while left=i right=10 rule=lt "/addvar key=i 1" |
+/echo {{getvar::i}} |
+/flushvar i
 ```
-
-1. The value of the user input is saved in the local variable named `SDinput`.
-2. The `getvar` macro is used to display the value in the `/echo` command.
-3. The `getvar` command is used to retrieve the value of the variable and pass it through the pipe.
-4. The value is passed to the `/imagine` command (provided by the Image Generation plugin) to be used as its input prompt.
-
-Since the variables are saved and not flushed between the script executions, you can reference the variable in other scripts and via macros, and it will resolve to the same value as during the execution of the example script. To guarantee that the value will be discarded, add the `/flushvar` command to the script.
 
 ## Using the LLM
 
@@ -178,9 +209,12 @@ The generated text is then passed through the pipe to the next command and can b
 | <img alt="image" src="https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/f771f364-8c90-42fa-8822-ee3862e275ce"> |
 | -- |
 
-### Access chat messages
+## Access chat messages
 
-You can access messages in the currently selected chat using the `/messages names=on/off` command.
+You can access messages in the currently selected chat using the `/messages` command.
+
+`/messages names=on/off start-finish`
+
 The `names` argument is used to specify whether you want to include character names or not, default: `on`.
 
 In an unnamed argument, it accepts a message index or inclusive range in the `start-finish` format. Ranges are inclusive!
@@ -189,7 +223,7 @@ If the range is unsatisfiable, i.e. invalid index or more messages than exist ar
 
 If you want to know the index of the latest message, use the `{{lastMessageId}}` macro, and `{{lastMessage}}` will get you the message itself.
 
-To calculate the start index for a range, for example, when you need to get the last N messages, use variable subtraction. 
+To calculate the start index for a range, for example, when you need to get the last N messages, use variable subtraction.
 This example will get you 3 last messages in the chat:
 
 ```
@@ -197,30 +231,6 @@ This example will get you 3 last messages in the chat:
 /addvar key=start -2 |
 /messages names=off {{getvar::start}}-{{lastMessageId}} |
 /setinput
-```
-
-## Flow control - loops
-
-If you need to run some command in a loop until a certain condition is met, use the `/while` command.
-
-`/while left=valueA right=valueB rule=operation guard=on "commands"`
-
-On each step of the loop it compares the value of variable A with the value of variable B, and if the condition yields true, then executes any valid slash command enclosed in quotes, otherwise exists the loop. This command doesn't write anything to the output pipe.
-
-### Arguments for `/while`
-
-**The set of available boolean comparisons, handing of variables, literal values, and subcommands is the same as for the `/if` command.**
-
-The optional `guard` named argument (`on` by default) is used to protect against endless loops, limiting the number of iterations to 100.
-To disable and allow endless loops, set `guard=off`.
-
-This example adds 1 to the value of `i` until it reaches 10, then outputs the resulting value (10 in this case).
-
-```
-/setvar key=i 0 |
-/while left=i right=10 rule=lt "/addvar key=i 1" |
-/echo {{getvar::i}} |
-/flushvar i
 ```
 
 ## Quick Replies: script library and auto-execution
@@ -247,7 +257,7 @@ Don't forget to click "Update" before switching to a different set to write your
 
 ### Manual execution
 
-Now you can add your first script to the library. Pick any free slot (or create one), then paste this into the right box, and type "Click me" into the left box to set the label:
+Now you can add your first script to the library. Pick any free slot (or create one), type "Click me" into the left box to set the label, then paste this into the right box:
 
 ```
 /addvar key=clicks 1 |
@@ -255,7 +265,7 @@ Now you can add your first script to the library. Pick any free slot (or create 
 ```
 
 Then click 5 times on the button that appeared above the chat bar.
-Every click increments the variable `clicks` by one and displays a different message the value equals 5 and resets the variable.
+Every click increments the variable `clicks` by one and displays a different message when the value equals 5 and resets the variable.
 
 ### Automatic execution
 
@@ -280,7 +290,7 @@ For example, you can display a message after sending five user messages by addin
 ```
 /addvar key=usercounter 1 |
 /echo You've sent {{pipe}} messages. |
-/if a=usercounter b=5 rule=gte "/echo Game over! \| /flushvar usercounter"
+/if left=usercounter right=5 rule=gte "/echo Game over! \| /flushvar usercounter"
 ```
 
 ## Calling procedures
@@ -291,12 +301,28 @@ A `/run` command can call scripts defined in the Quick Replies by their label, b
 
 Let's create two Quick Replies:
 
-| Label      | Command                                                |
-| :--------- | :----------------------------------------------------- |
-| GetRandom  | /pass {{roll:d100}}                                    |
-| GetMessage | /run GetRandom | /echo Your lucky number is: {{pipe}}  |
+***
+**Label:**
 
-Clicking on the `GetMessage` button will call `GetRandom` which will resolve the `{{roll}}` macro and pass the number to the caller, displaying it to the user.
+`GetRandom`
+
+**Command:**
+
+```
+/pass {{roll:d100}}
+```
+***
+**Label:**
+
+`GetMessage`
+
+**Command:**
+```
+/run GetRandom | /echo Your lucky number is: {{pipe}}
+```
+***
+
+Clicking on the `GetMessage` button will call the `GetRandom` as procedure which will resolve the `{{roll}}` macro and pass the number to the caller, displaying it to the user.
 
 - Procedures do not accept named or unnamed arguments, but can reference the same variables as the caller.
 - Avoid recursion when calling procedures as it may produce the "call stack exceeded" error if handled unadvisedly.
