@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754414565182">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754423539015">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.754414565182" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.754423539015" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754414565182" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754423539015" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754414565182" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754423539015" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -444,6 +444,7 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 <ul>
 <li><code v-pre>/gen (prompt)</code> — generates text using the provided prompt for the selected character and including chat messages.</li>
 <li><code v-pre>/genraw (prompt)</code> — generates text using just the provided prompt, ignoring the current character and chat.</li>
+<li><code v-pre>/trigger</code> — triggers a normal generation (equivalent to clicking a &quot;Send&quot; button). If in group chat, you can optionally provide a 1-based group member index or a character name to have them reply, otherwise triggers a group round according to the group settings.</li>
 </ul>
 <p><code v-pre>/genraw lock=on/off stop=[] instruct=on/off (prompt)</code></p>
 <doc-anchor-target id="arguments-for-gen-and-genraw">
@@ -514,6 +515,11 @@ This example will get you 3 last messages in the chat:</p>
 <li><code v-pre>/hide (message id or range)</code> — hides one or several messages from the prompt based on the provided message index or inclusive range in the <code v-pre>start-finish</code> format.</li>
 <li><code v-pre>/unhide (message id or range)</code> — returns one or several messages to the prompt based on the provided message index or inclusive range in the <code v-pre>start-finish</code> format.</li>
 </ol>
+<p><code v-pre>/send</code>, <code v-pre>/sendas</code>, <code v-pre>/sys</code>, and <code v-pre>/comment</code> commands optionally accept a named argument <code v-pre>at</code> with a zero-based numeric value (or a variable name that contains such a value) that specifies an exact position of message insertion. By default new messages are inserted at the end of the chat log.</p>
+<p>This will insert a user message at the beginning of the conversation history:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">/send at=0 Hi, I use Linux.</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="delete-messages">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#delete-messages">#</doc-anchor-trigger>
