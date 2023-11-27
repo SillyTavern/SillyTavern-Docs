@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754423704929">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754428548640">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.754423704929" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.754428548640" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754423704929" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754428548640" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754423704929" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754428548640" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -433,6 +433,53 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 /while left=i right=10 rule=lt &quot;/addvar key=i 1&quot; |
 /echo {{getvar::i}} |
 /flushvar i</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="math-operations">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#math-operations">#</doc-anchor-trigger>
+        <span>Math operations</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>All of the following operations accept a series of numbers or variable names and output the result to the pipe.</li>
+<li>Invalid operations (such as division by zero), and operations that result in a NaN value or infinity return zero.</li>
+<li>Multiplication and addition accept an unlimited number of arguments separated by spaces.</li>
+<li>Subtraction, division, exponentiation, and modulo accept two arguments separated by spaces.</li>
+<li>Sine, cosine, natural logarithm, absolute value, and rounding accept one argument.</li>
+</ul>
+<p><strong>List of operations:</strong></p>
+<ol>
+<li><code v-pre>/add (a b c d)</code> – performs an addition of the set of values, e.g. <code v-pre>/add 10 i 30 j</code></li>
+<li><code v-pre>/mul (a b c d)</code> – performs a multiplication of the set of values, e.g. <code v-pre>/mul 10 i 30 j</code></li>
+<li><code v-pre>/sub (a b)</code> – performs a subtraction of two values, e.g. <code v-pre>/sub i 5</code></li>
+<li><code v-pre>/div (a b)</code> – performs a division of two values, e.g. <code v-pre>/div 10 i</code></li>
+<li><code v-pre>/mod (a b)</code> – performs a modulo operation of two values, e.g. <code v-pre>/mod i 2</code></li>
+<li><code v-pre>/pow (a b)</code> – performs a power operation of two values, e.g. <code v-pre>/pow i 2</code></li>
+<li><code v-pre>/sin (a)</code> – performs a sine operation of a value, e.g. <code v-pre>/sin i</code></li>
+<li><code v-pre>/cos (a)</code> – performs a cosine operation of a value, e.g. <code v-pre>/cos i</code></li>
+<li><code v-pre>/log (a)</code> – performs a natural logarithm operation of a value, e.g. <code v-pre>/log i</code></li>
+<li><code v-pre>/abs (a)</code> – performs an absolute value operation of a value, e.g. <code v-pre>/abs -10</code></li>
+<li><code v-pre>/round (a)</code> – performs a rounding to the nearest integer operation of a value, e.g. <code v-pre>/round 3.14</code></li>
+</ol>
+<p>Example: get an area of a circle with a radius of 50.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">/setglobalvar key=PI 3.1415 |
+/setvar key=r 50 |
+/mul r r PI |
+/round |
+/echo Circle area: {{pipe}}</code></pre>
+</doc-codeblock></div>
+<p>Example: calculate a factorial of 5.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">/setvar key=input 5 |
+/setvar key=i 1 |
+/setvar key=product 1 |
+/while left=i right=input rule=lte &quot;/mul product i \| /setvar key=product \| /addvar key=i 1&quot; |
+/getvar product |
+/echo Factorial of {{getvar::input}}: {{pipe}} |
+/flushvar input |
+/flushvar i |
+/flushvar product</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="using-the-llm">
     <h2>
