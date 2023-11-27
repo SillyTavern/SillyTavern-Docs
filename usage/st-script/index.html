@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754423539015">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754423704929">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.754423539015" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.754423704929" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754423539015" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754423704929" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754423539015" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754423704929" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -486,11 +486,13 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 </doc-anchor-target>
 <p>You can access messages in the currently selected chat using the <code v-pre>/messages</code> command.</p>
 <p><code v-pre>/messages names=on/off start-finish</code></p>
-<p>The <code v-pre>names</code> argument is used to specify whether you want to include character names or not, default: <code v-pre>on</code>.</p>
-<p>In an unnamed argument, it accepts a message index or range in the <code v-pre>start-finish</code> format. Ranges are inclusive!</p>
-<p>If the range is unsatisfiable, i.e. an invalid index or more messages than exist are requested, then an empty string is returned.</p>
-<p>Messages that are hidden from the prompt (denoted by the ghost icon) are excluded from the output.</p>
-<p>If you want to know the index of the latest message, use the <code v-pre>{{lastMessageId}}</code> macro, and <code v-pre>{{lastMessage}}</code> will get you the message itself.</p>
+<ul>
+<li>The <code v-pre>names</code> argument is used to specify whether you want to include character names or not, default: <code v-pre>on</code>.</li>
+<li>In an unnamed argument, it accepts a message index or range in the <code v-pre>start-finish</code> format. Ranges are inclusive!</li>
+<li>If the range is unsatisfiable, i.e. an invalid index or more messages than exist are requested, then an empty string is returned.</li>
+<li>Messages that are hidden from the prompt (denoted by the ghost icon) are excluded from the output.</li>
+<li>If you want to know the index of the latest message, use the <code v-pre>{{lastMessageId}}</code> macro, and <code v-pre>{{lastMessage}}</code> will get you the message itself.</li>
+</ul>
 <p>To calculate the start index for a range, for example, when you need to get the last N messages, use variable subtraction.
 This example will get you 3 last messages in the chat:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
