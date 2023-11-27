@@ -204,6 +204,7 @@ Scripts can make requests to your currently connected LLM API using the followin
 
 - `/gen (prompt)` — generates text using the provided prompt for the selected character and including chat messages.
 - `/genraw (prompt)` — generates text using just the provided prompt, ignoring the current character and chat.
+- `/trigger` — triggers a normal generation (equivalent to clicking a "Send" button). If in group chat, you can optionally provide a 1-based group member index or a character name to have them reply, otherwise triggers a group round according to the group settings. 
 
 `/genraw lock=on/off stop=[] instruct=on/off (prompt)`
 
@@ -262,6 +263,14 @@ A script can send messages as either a user, character, persona, neutral narrato
 5. `/addswipe (text)` — adds a swipe to the last character message. Can't add a swipe to the user or hidden messages.
 6. `/hide (message id or range)` — hides one or several messages from the prompt based on the provided message index or inclusive range in the `start-finish` format.
 7. `/unhide (message id or range)` — returns one or several messages to the prompt based on the provided message index or inclusive range in the `start-finish` format.
+
+`/send`, `/sendas`, `/sys`, and `/comment` commands optionally accept a named argument `at` with a zero-based numeric value (or a variable name that contains such a value) that specifies an exact position of message insertion. By default new messages are inserted at the end of the chat log.
+
+This will insert a user message at the beginning of the conversation history:
+
+```
+/send at=0 Hi, I use Linux.
+```
 
 ### Delete messages
 
