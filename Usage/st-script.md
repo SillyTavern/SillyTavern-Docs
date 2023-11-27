@@ -471,9 +471,11 @@ Clicking on the `GetMessage` button will call the `GetRandom` procedure which wi
 
 > **Hint**: Set value of `fib_no` to the desired number
 
+```
 /setvar key=fib_no 5 |
 /pow 5 0.5 | /setglobalvar key=SQRT5 |
 /setglobalvar key=PHI 1.618033 |
 /pow PHI fib_no | /div {{pipe}} SQRT5 |
 /round |
 /echo {{getvar::fib_no}}th Fibonacci's number is: {{pipe}}
+```
