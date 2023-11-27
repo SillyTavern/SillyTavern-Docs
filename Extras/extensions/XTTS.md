@@ -11,7 +11,7 @@ Fear not, this stunning groundbreaking technology is already available at your l
 1. Latest `staging` branch of SillyTavern.
 2. [Miniconda](https://docs.conda.io/projects/miniconda/en/latest/miniconda-install.html) installed.
 3. (Windows) [Visual C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/) installed.
-4. WAV files with voice clips to clone from (~10 seconds per file).
+4. WAV files with voice clips to clone from (~10 seconds per file). File requirements: PCM, Mono, 22050Hz, 16-bit (convert via Audacity).
 5. Create a folder with "speakers" and "output" subfolders. Put WAV files into "speakers".
 
 Example folder structure:
