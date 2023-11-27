@@ -220,7 +220,7 @@ This example adds 1 to the value of `i` until it reaches 10, then outputs the re
 10. `/abs (a)` – performs an absolute value operation of a value, e.g. `/abs -10`
 11. `/round (a)` – performs a rounding to the nearest integer operation of a value, e.g. `/round 3.14`
 
-Example: get an area of a circle with a radius of 50.
+### Example 1: get an area of a circle with a radius of 50.
 
 ```
 /setglobalvar key=PI 3.1415 |
@@ -230,7 +230,7 @@ Example: get an area of a circle with a radius of 50.
 /echo Circle area: {{pipe}}
 ```
 
-Example: calculate a factorial of 5.
+### Example 2: calculate a factorial of 5.
 
 ```
 /setvar key=input 5 |
@@ -466,3 +466,14 @@ Clicking on the `GetMessage` button will call the `GetRandom` procedure which wi
 /buttons labels=genders Who are you? |
 /echo You picked: {{pipe}}
 ```
+
+### Get Nth Fibonacci's number (using Binet's approximation)
+
+> **Hint**: Set value of `fib_no` to the desired number
+
+/setvar key=fib_no 5 |
+/pow 5 0.5 | /setglobalvar key=SQRT5 |
+/setglobalvar key=PHI 1.618033 |
+/pow PHI fib_no | /div {{pipe}} SQRT5 |
+/round |
+/echo {{getvar::fib_no}}th Fibonacci's number is: {{pipe}}
