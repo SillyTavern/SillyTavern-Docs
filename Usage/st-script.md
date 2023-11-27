@@ -198,6 +198,52 @@ This example adds 1 to the value of `i` until it reaches 10, then outputs the re
 /flushvar i
 ```
 
+## Math operations
+
+- All of the following operations accept a series of numbers or variable names and output the result to the pipe.
+- Invalid operations (such as division by zero), and operations that result in a NaN value or infinity return zero.
+- Multiplication and addition accept an unlimited number of arguments separated by spaces.
+- Subtraction, division, exponentiation, and modulo accept two arguments separated by spaces.
+- Sine, cosine, natural logarithm, absolute value, and rounding accept one argument.
+
+**List of operations:**
+
+1. `/add (a b c d)` – performs an addition of the set of values, e.g. `/add 10 i 30 j`
+2. `/mul (a b c d)` – performs a multiplication of the set of values, e.g. `/mul 10 i 30 j`
+3. `/sub (a b)` – performs a subtraction of two values, e.g. `/sub i 5`
+4. `/div (a b)` – performs a division of two values, e.g. `/div 10 i`
+5. `/mod (a b)` – performs a modulo operation of two values, e.g. `/mod i 2`
+6. `/pow (a b)` – performs a power operation of two values, e.g. `/pow i 2`
+7. `/sin (a)` – performs a sine operation of a value, e.g. `/sin i`
+8. `/cos (a)` – performs a cosine operation of a value, e.g. `/cos i`
+9. `/log (a)` – performs a natural logarithm operation of a value, e.g. `/log i`
+10. `/abs (a)` – performs an absolute value operation of a value, e.g. `/abs -10`
+11. `/round (a)` – performs a rounding to the nearest integer operation of a value, e.g. `/round 3.14`
+
+Example: get an area of a circle with a radius of 50.
+
+```
+/setglobalvar key=PI 3.1415 |
+/setvar key=r 50 |
+/mul r r PI |
+/round |
+/echo Circle area: {{pipe}}
+```
+
+Example: calculate a factorial of 5.
+
+```
+/setvar key=input 5 |
+/setvar key=i 1 |
+/setvar key=product 1 |
+/while left=i right=input rule=lte "/mul product i \| /setvar key=product \| /addvar key=i 1" |
+/getvar product |
+/echo Factorial of {{getvar::input}}: {{pipe}} |
+/flushvar input |
+/flushvar i |
+/flushvar product
+```
+
 ## Using the LLM
 
 Scripts can make requests to your currently connected LLM API using the following commands:
