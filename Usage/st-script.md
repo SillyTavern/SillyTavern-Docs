@@ -232,15 +232,11 @@ You can access messages in the currently selected chat using the `/messages` com
 
 `/messages names=on/off start-finish`
 
-The `names` argument is used to specify whether you want to include character names or not, default: `on`.
-
-In an unnamed argument, it accepts a message index or range in the `start-finish` format. Ranges are inclusive!
-
-If the range is unsatisfiable, i.e. an invalid index or more messages than exist are requested, then an empty string is returned.
-
-Messages that are hidden from the prompt (denoted by the ghost icon) are excluded from the output.
-
-If you want to know the index of the latest message, use the `{{lastMessageId}}` macro, and `{{lastMessage}}` will get you the message itself.
+- The `names` argument is used to specify whether you want to include character names or not, default: `on`.
+- In an unnamed argument, it accepts a message index or range in the `start-finish` format. Ranges are inclusive!
+- If the range is unsatisfiable, i.e. an invalid index or more messages than exist are requested, then an empty string is returned.
+- Messages that are hidden from the prompt (denoted by the ghost icon) are excluded from the output.
+- If you want to know the index of the latest message, use the `{{lastMessageId}}` macro, and `{{lastMessage}}` will get you the message itself.
 
 To calculate the start index for a range, for example, when you need to get the last N messages, use variable subtraction.
 This example will get you 3 last messages in the chat:
