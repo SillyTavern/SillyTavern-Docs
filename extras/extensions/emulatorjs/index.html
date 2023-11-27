@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754410302942">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754414086261">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.754410302942" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.754414086261" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.754410302942" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.754414086261" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.754410302942" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.754414086261" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -228,7 +228,7 @@
 </doc-anchor-target>
 <ul>
 <li>Open the &quot;EmulatorJS&quot; extension menu.</li>
-<li>Click &quot;Add ROM file&quot;. ROMs are saved to your browser storage and not stored on server.</li>
+<li>Click &quot;Add ROM file&quot;. ROMs are saved to your browser storage and not stored on a server.</li>
 <li>Select the game file to add. Input the name and core (if it wasn&#x27;t auto-detected). If the core requires a BIOS file, add it too.</li>
 <li>Click the &quot;Play&quot; button in the list or launch via the wand menu.</li>
 <li>You can customize controls and other settings in the emulator frame after launching the game.</li>
@@ -241,7 +241,7 @@
         <span>Comments mode</span>
     </h2>
 </doc-anchor-target>
-<p>With the power of multimodal models such as GPT-4 Vision, your AI bots can see your game play and provide witty in-character comments.</p>
+<p>With the power of multimodal models such as GPT-4 Vision, your AI bots can see your gameplay and provide witty in-character comments.</p>
 <doc-anchor-target id="requirements">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#requirements">#</doc-anchor-trigger>
@@ -251,7 +251,7 @@
 <ol>
 <li>A browser that supports <a href="https://developer.mozilla.org/en-US/docs/Web/API/ImageCapture#browser_compatibility">ImageCapture</a>. Tested on desktop Chrome. Firefox requires to enable it with config. Safari won&#x27;t work.</li>
 <li>Image inlining mode is recommended. Requires OpenAI or OpenRouter API key with &quot;gpt-4-vision&quot; as the selected model.</li>
-<li>If image inlining is disabled, make sure that &quot;Image Captioning&quot; extension is enabled, then select the &quot;Multimodal&quot; captioning source:</li>
+<li>If image inlining is disabled, make sure that the &quot;Image Captioning&quot; extension is enabled, then select the &quot;Multimodal&quot; captioning source:</li>
 </ol>
 <ul>
 <li>OpenAI API with access to the &quot;gpt-4-vision&quot; model.</li>
@@ -275,8 +275,8 @@
     </h3>
 </doc-anchor-target>
 <ol>
-<li>Caption template - a prompt used to describe the in-game screenshot. <code v-pre>and</code> additional macro are supported.</li>
-<li>Comment template - a prompt used to write a comment based on the generated caption. <code v-pre>, </code>, <code v-pre>additional macro are supported. For image inlining mode,</code> is replaced with <code v-pre>see included image</code>.</li>
+<li>Caption template - a prompt used to describe the in-game screenshot. {{game}} and {{core}} additional macro are supported.</li>
+<li>Comment template - a prompt used to write a comment based on the generated caption. {{game}}, {{core}}, {{caption}} additional macro are supported. For image inlining mode, {{caption}} is replaced with <code v-pre>see included image</code>.</li>
 <li>Force captions - will force the use of multimodal captioning even if image inlining is supported and enabled.</li>
 </ol>
 <doc-anchor-target id="why-im-not-seeing-any-comments">
