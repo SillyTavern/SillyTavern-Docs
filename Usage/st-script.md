@@ -87,12 +87,11 @@ Variables are used to store and manipulate data in scripts, using either command
 7. `/flushvar name` — deletes the value of the local variable.
 8. `/flushglobalvar name` — deletes the value of the global variable.
 
-The default value of previously undefined variables is an empty string, or a zero of it is first used in the `/addvar` command.
-
-Increment in the `/addvar` command performs an addition or subtraction of the value if it can be converted to a number, or otherwise does the string concatenation.
-
-All *slash commands* for variable manipulation write the resulting value into the pipe for the next command to use.
-For *macros*, only the "get" type macro returns the value, "add" and "set" are replaced with an empty string instead.
+- The default value of previously undefined variables is an empty string, or a zero of it is first used in the `/addvar` command.
+- Increment in the `/addvar` command performs an addition or subtraction of the value if both increment and the variable value can be converted to a number, or otherwise does the string concatenation.
+- If a command argument accepts a variable name and both local and global variables exist with the same name, then the *local variable* takes priority.
+- All *slash commands* for variable manipulation write the resulting value into the pipe for the next command to use.
+- For *macros*, only the "get" type macro returns the value, "add" and "set" are replaced with an empty string instead.
 
 Now, let's consider the following example:
 
@@ -202,23 +201,26 @@ This example adds 1 to the value of `i` until it reaches 10, then outputs the re
 
 - All of the following operations accept a series of numbers or variable names and output the result to the pipe.
 - Invalid operations (such as division by zero), and operations that result in a NaN value or infinity return zero.
-- Multiplication and addition accept an unlimited number of arguments separated by spaces.
+- Multiplication, addition, minimum and maximum accept an unlimited number of arguments separated by spaces.
 - Subtraction, division, exponentiation, and modulo accept two arguments separated by spaces.
-- Sine, cosine, natural logarithm, absolute value, and rounding accept one argument.
+- Sine, cosine, natural logarithm, square root, absolute value, and rounding accept one argument.
 
 **List of operations:**
 
 1. `/add (a b c d)` – performs an addition of the set of values, e.g. `/add 10 i 30 j`
 2. `/mul (a b c d)` – performs a multiplication of the set of values, e.g. `/mul 10 i 30 j`
-3. `/sub (a b)` – performs a subtraction of two values, e.g. `/sub i 5`
-4. `/div (a b)` – performs a division of two values, e.g. `/div 10 i`
-5. `/mod (a b)` – performs a modulo operation of two values, e.g. `/mod i 2`
-6. `/pow (a b)` – performs a power operation of two values, e.g. `/pow i 2`
-7. `/sin (a)` – performs a sine operation of a value, e.g. `/sin i`
-8. `/cos (a)` – performs a cosine operation of a value, e.g. `/cos i`
-9. `/log (a)` – performs a natural logarithm operation of a value, e.g. `/log i`
-10. `/abs (a)` – performs an absolute value operation of a value, e.g. `/abs -10`
-11. `/round (a)` – performs a rounding to the nearest integer operation of a value, e.g. `/round 3.14`
+3. `/max (a b c d)` – returns a maximum from the set of values, e.g. `/max 1 0 4 k`
+4. `/min (a b c d)` – return a minimum from the set of values, e.g. `/min 5 4 i 2`
+5. `/sub (a b)` – performs a subtraction of two values, e.g. `/sub i 5`
+6. `/div (a b)` – performs a division of two values, e.g. `/div 10 i`
+7. `/mod (a b)` – performs a modulo operation of two values, e.g. `/mod i 2`
+8. `/pow (a b)` – performs a power operation of two values, e.g. `/pow i 2`
+9. `/sin (a)` – performs a sine operation of a value, e.g. `/sin i`
+10. `/cos (a)` – performs a cosine operation of a value, e.g. `/cos i`
+11. `/log (a)` – performs a natural logarithm operation of a value, e.g. `/log i`
+12. `/abs (a)` – performs an absolute value operation of a value, e.g. `/abs -10`
+13. `/sqrt (a)`– performs a square root operation of a value, e.g. `/sqrt 9`
+14. `/round (a)` – performs a rounding to the nearest integer operation of a value, e.g. `/round 3.14`
 
 ### Example 1: get an area of a circle with a radius of 50.
 
@@ -250,11 +252,11 @@ Scripts can make requests to your currently connected LLM API using the followin
 
 - `/gen (prompt)` — generates text using the provided prompt for the selected character and including chat messages.
 - `/genraw (prompt)` — generates text using just the provided prompt, ignoring the current character and chat.
-- `/trigger` — triggers a normal generation (equivalent to clicking a "Send" button). If in group chat, you can optionally provide a 1-based group member index or a character name to have them reply, otherwise triggers a group round according to the group settings. 
-
-`/genraw lock=on/off stop=[] instruct=on/off (prompt)`
+- `/trigger` — triggers a normal generation (equivalent to clicking a "Send" button). If in group chat, you can optionally provide a 1-based group member index or a character name to have them reply, otherwise triggers a group round according to the group settings.
 
 ### Arguments for `/gen` and `/genraw`
+
+`/genraw lock=on/off stop=[] instruct=on/off (prompt)`
 
 - `lock` — can be `on` or `off`. Specifies whether a user input should be blocked while the generation is in progress. Default: `off`.
 - `stop` — JSON-serialized array of strings. Adds a custom stop string (if the API supports it) just for this generation. Default: none.
@@ -269,6 +271,30 @@ The generated text is then passed through the pipe to the next command and can b
 
 | <img alt="image" src="https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/f771f364-8c90-42fa-8822-ee3862e275ce"> |
 | -- |
+
+## Prompt injections
+
+Scripts can add custom LLM prompt injections, making it essentially an equivalent of unlimited Author's Notes.
+
+- `/inject (text)` — inserts any text into the normal LLM prompt for the current chat, requires a unique identifier. Saved to chat metadata.
+- `/listinjects` — shows a list of all prompt injections added by scripts for the current chat in a system message.
+- `/flushinjects` — deletes all prompt injections added by scripts for the current chat.
+- `/note (text)` — sets the Author's Note value for the current chat. Saved to chat metadata.
+- `/interval` — sets the Author's Note insertion interval for the current chat.
+- `/depth` — sets the Author's Note insertion depth for in-chat position.
+- `/position`  — sets the Author's Note position for the current chat.
+
+### Arguments for `/inject`
+
+`/inject id=IdGoesHere position=chat depth=4 My prompt injection`
+
+- `id` — an identifier string or a reference to variable. Consequent calls of `/inject` with the same ID will overwrite previous text injection. **Required argument.**
+- `position` — sets a position for the injection. Default: `after`. Possible values:
+  - `after` - after main prompt.
+  - `before` - before main prompt.
+  - `chat` - in-chat.
+- `depth` —
+- Unnamed argument is a text to be injected. Empty string will unset the previous value for the provided identifier.
 
 ## Access chat messages
 
@@ -441,6 +467,28 @@ Clicking on the `GetMessage` button will call the `GetRandom` procedure which wi
 
 - Procedures do not accept named or unnamed arguments, but can reference the same variables as the caller.
 - Avoid recursion when calling procedures as it may produce the "call stack exceeded" error if handled unadvisedly.
+
+## UI interaction
+
+Scripts can also interact with SillyTavern's UI: navigate through the chats or change styling parameters.
+
+### Character navigation
+
+1. `/random` — opens a chat with the random character.
+2. `/go (name)` — opens a chat with the character of specified name. First searches for the exact name match, then by a prefix, then by a substring.
+
+### UI styling
+
+1. `/bubble` — sets the message style to the "bubble chat" style.
+2. `/flat` — sets the message style to the "flat chat" style.
+3. `/single` — sets the message style to the "single document" style.
+4. `/movingui (name)` — activates a MovingUI preset by name.
+5. `/resetui` — resets the MovingUI panels state to their original positions.
+6. `/panels` — toggles the UI panels visibility: top bar, left and right drawers.
+6. `/bg (name)` — finds and sets a background using fuzzy names matching. Respects the chat background lock state.
+7. `/lockbg` — locks the background image for the current chat.
+8. `/unlockbg` — unlocks the background image for the current chat.
+
 
 ## More examples
 
