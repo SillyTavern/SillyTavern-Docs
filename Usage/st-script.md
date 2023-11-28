@@ -87,7 +87,7 @@ Variables are used to store and manipulate data in scripts, using either command
 7. `/flushvar name` — deletes the value of the local variable.
 8. `/flushglobalvar name` — deletes the value of the global variable.
 
-- The default value of previously undefined variables is an empty string, or a zero of it is first used in the `/addvar` command.
+- The default value of previously undefined variables is an empty string or a zero of it is first used in the `/addvar` command.
 - Increment in the `/addvar` command performs an addition or subtraction of the value if both increment and the variable value can be converted to a number, or otherwise does the string concatenation.
 - If a command argument accepts a variable name and both local and global variables exist with the same name, then the *local variable* takes priority.
 - All *slash commands* for variable manipulation write the resulting value into the pipe for the next command to use.
@@ -276,25 +276,25 @@ The generated text is then passed through the pipe to the next command and can b
 
 Scripts can add custom LLM prompt injections, making it essentially an equivalent of unlimited Author's Notes.
 
-- `/inject (text)` — inserts any text into the normal LLM prompt for the current chat, requires a unique identifier. Saved to chat metadata.
+- `/inject (text)` — inserts any text into the normal LLM prompt for the current chat, and requires a unique identifier. Saved to chat metadata.
 - `/listinjects` — shows a list of all prompt injections added by scripts for the current chat in a system message.
 - `/flushinjects` — deletes all prompt injections added by scripts for the current chat.
 - `/note (text)` — sets the Author's Note value for the current chat. Saved to chat metadata.
 - `/interval` — sets the Author's Note insertion interval for the current chat.
-- `/depth` — sets the Author's Note insertion depth for in-chat position.
+- `/depth` — sets the Author's Note insertion depth for the in-chat position.
 - `/position`  — sets the Author's Note position for the current chat.
 
 ### Arguments for `/inject`
 
 `/inject id=IdGoesHere position=chat depth=4 My prompt injection`
 
-- `id` — an identifier string or a reference to variable. Consequent calls of `/inject` with the same ID will overwrite previous text injection. **Required argument.**
+- `id` — an identifier string or a reference to a variable. Consequent calls of `/inject` with the same ID will overwrite the previous text injection. **Required argument.**
 - `position` — sets a position for the injection. Default: `after`. Possible values:
-  - `after` - after main prompt.
-  - `before` - before main prompt.
-  - `chat` - in-chat.
-- `depth` —
-- Unnamed argument is a text to be injected. Empty string will unset the previous value for the provided identifier.
+  - `after`: after the main prompt.
+  - `before`: before main prompt.
+  - `chat`: in-chat.
+- `depth` — sets an injection depth for the in-chat position. 0 means insertion after the last message, 1 - before the last message, etc. Default: 4.
+- Unnamed argument is a text to be injected. An empty string will unset the previous value for the provided identifier.
 
 ## Access chat messages
 
