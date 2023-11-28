@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754446611738">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754476692411">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.754446611738" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.754476692411" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754446611738" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754476692411" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754446611738" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754476692411" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -319,7 +319,7 @@ These concepts are going to be described in the following document.</p>
 <li><code v-pre>/flushglobalvar name</code> — deletes the value of the global variable.</li>
 </ol>
 <ul>
-<li>The default value of previously undefined variables is an empty string, or a zero of it is first used in the <code v-pre>/addvar</code> command.</li>
+<li>The default value of previously undefined variables is an empty string or a zero of it is first used in the <code v-pre>/addvar</code> command.</li>
 <li>Increment in the <code v-pre>/addvar</code> command performs an addition or subtraction of the value if both increment and the variable value can be converted to a number, or otherwise does the string concatenation.</li>
 <li>If a command argument accepts a variable name and both local and global variables exist with the same name, then the <em>local variable</em> takes priority.</li>
 <li>All <em>slash commands</em> for variable manipulation write the resulting value into the pipe for the next command to use.</li>
@@ -543,12 +543,12 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 </doc-anchor-target>
 <p>Scripts can add custom LLM prompt injections, making it essentially an equivalent of unlimited Author&#x27;s Notes.</p>
 <ul>
-<li><code v-pre>/inject (text)</code> — inserts any text into the normal LLM prompt for the current chat, requires a unique identifier. Saved to chat metadata.</li>
+<li><code v-pre>/inject (text)</code> — inserts any text into the normal LLM prompt for the current chat, and requires a unique identifier. Saved to chat metadata.</li>
 <li><code v-pre>/listinjects</code> — shows a list of all prompt injections added by scripts for the current chat in a system message.</li>
 <li><code v-pre>/flushinjects</code> — deletes all prompt injections added by scripts for the current chat.</li>
 <li><code v-pre>/note (text)</code> — sets the Author&#x27;s Note value for the current chat. Saved to chat metadata.</li>
 <li><code v-pre>/interval</code> — sets the Author&#x27;s Note insertion interval for the current chat.</li>
-<li><code v-pre>/depth</code> — sets the Author&#x27;s Note insertion depth for in-chat position.</li>
+<li><code v-pre>/depth</code> — sets the Author&#x27;s Note insertion depth for the in-chat position.</li>
 <li><code v-pre>/position</code>  — sets the Author&#x27;s Note position for the current chat.</li>
 </ul>
 <doc-anchor-target id="arguments-for-inject">
@@ -559,16 +559,16 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 </doc-anchor-target>
 <p><code v-pre>/inject id=IdGoesHere position=chat depth=4 My prompt injection</code></p>
 <ul>
-<li><code v-pre>id</code> — an identifier string or a reference to variable. Consequent calls of <code v-pre>/inject</code> with the same ID will overwrite previous text injection. <strong>Required argument.</strong></li>
+<li><code v-pre>id</code> — an identifier string or a reference to a variable. Consequent calls of <code v-pre>/inject</code> with the same ID will overwrite the previous text injection. <strong>Required argument.</strong></li>
 <li><code v-pre>position</code> — sets a position for the injection. Default: <code v-pre>after</code>. Possible values:
 <ul>
-<li><code v-pre>after</code> - after main prompt.</li>
-<li><code v-pre>before</code> - before main prompt.</li>
-<li><code v-pre>chat</code> - in-chat.</li>
+<li><code v-pre>after</code>: after the main prompt.</li>
+<li><code v-pre>before</code>: before main prompt.</li>
+<li><code v-pre>chat</code>: in-chat.</li>
 </ul>
 </li>
-<li><code v-pre>depth</code> —</li>
-<li>Unnamed argument is a text to be injected. Empty string will unset the previous value for the provided identifier.</li>
+<li><code v-pre>depth</code> — sets an injection depth for the in-chat position. 0 means insertion after the last message, 1 - before the last message, etc. Default: 4.</li>
+<li>Unnamed argument is a text to be injected. An empty string will unset the previous value for the provided identifier.</li>
 </ul>
 <doc-anchor-target id="access-chat-messages">
     <h2>
