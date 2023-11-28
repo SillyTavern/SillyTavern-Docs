@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754429479062">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754446611738">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.754429479062" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.754446611738" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754429479062" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754446611738" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754429479062" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754446611738" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -318,10 +318,13 @@ These concepts are going to be described in the following document.</p>
 <li><code v-pre>/flushvar name</code> — deletes the value of the local variable.</li>
 <li><code v-pre>/flushglobalvar name</code> — deletes the value of the global variable.</li>
 </ol>
-<p>The default value of previously undefined variables is an empty string, or a zero of it is first used in the <code v-pre>/addvar</code> command.</p>
-<p>Increment in the <code v-pre>/addvar</code> command performs an addition or subtraction of the value if it can be converted to a number, or otherwise does the string concatenation.</p>
-<p>All <em>slash commands</em> for variable manipulation write the resulting value into the pipe for the next command to use.
-For <em>macros</em>, only the &quot;get&quot; type macro returns the value, &quot;add&quot; and &quot;set&quot; are replaced with an empty string instead.</p>
+<ul>
+<li>The default value of previously undefined variables is an empty string, or a zero of it is first used in the <code v-pre>/addvar</code> command.</li>
+<li>Increment in the <code v-pre>/addvar</code> command performs an addition or subtraction of the value if both increment and the variable value can be converted to a number, or otherwise does the string concatenation.</li>
+<li>If a command argument accepts a variable name and both local and global variables exist with the same name, then the <em>local variable</em> takes priority.</li>
+<li>All <em>slash commands</em> for variable manipulation write the resulting value into the pipe for the next command to use.</li>
+<li>For <em>macros</em>, only the &quot;get&quot; type macro returns the value, &quot;add&quot; and &quot;set&quot; are replaced with an empty string instead.</li>
+</ul>
 <p>Now, let&#x27;s consider the following example:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">/input What do you want to generate? |
@@ -443,14 +446,16 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 <ul>
 <li>All of the following operations accept a series of numbers or variable names and output the result to the pipe.</li>
 <li>Invalid operations (such as division by zero), and operations that result in a NaN value or infinity return zero.</li>
-<li>Multiplication and addition accept an unlimited number of arguments separated by spaces.</li>
+<li>Multiplication, addition, minimum and maximum accept an unlimited number of arguments separated by spaces.</li>
 <li>Subtraction, division, exponentiation, and modulo accept two arguments separated by spaces.</li>
-<li>Sine, cosine, natural logarithm, absolute value, and rounding accept one argument.</li>
+<li>Sine, cosine, natural logarithm, square root, absolute value, and rounding accept one argument.</li>
 </ul>
 <p><strong>List of operations:</strong></p>
 <ol>
 <li><code v-pre>/add (a b c d)</code> – performs an addition of the set of values, e.g. <code v-pre>/add 10 i 30 j</code></li>
 <li><code v-pre>/mul (a b c d)</code> – performs a multiplication of the set of values, e.g. <code v-pre>/mul 10 i 30 j</code></li>
+<li><code v-pre>/max (a b c d)</code> – returns a maximum from the set of values, e.g. <code v-pre>/max 1 0 4 k</code></li>
+<li><code v-pre>/min (a b c d)</code> – return a minimum from the set of values, e.g. <code v-pre>/min 5 4 i 2</code></li>
 <li><code v-pre>/sub (a b)</code> – performs a subtraction of two values, e.g. <code v-pre>/sub i 5</code></li>
 <li><code v-pre>/div (a b)</code> – performs a division of two values, e.g. <code v-pre>/div 10 i</code></li>
 <li><code v-pre>/mod (a b)</code> – performs a modulo operation of two values, e.g. <code v-pre>/mod i 2</code></li>
@@ -459,6 +464,7 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 <li><code v-pre>/cos (a)</code> – performs a cosine operation of a value, e.g. <code v-pre>/cos i</code></li>
 <li><code v-pre>/log (a)</code> – performs a natural logarithm operation of a value, e.g. <code v-pre>/log i</code></li>
 <li><code v-pre>/abs (a)</code> – performs an absolute value operation of a value, e.g. <code v-pre>/abs -10</code></li>
+<li><code v-pre>/sqrt (a)</code>– performs a square root operation of a value, e.g. <code v-pre>/sqrt 9</code></li>
 <li><code v-pre>/round (a)</code> – performs a rounding to the nearest integer operation of a value, e.g. <code v-pre>/round 3.14</code></li>
 </ol>
 <doc-anchor-target id="example-1-get-an-area-of-a-circle-with-a-radius-of-50">
@@ -503,13 +509,13 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 <li><code v-pre>/genraw (prompt)</code> — generates text using just the provided prompt, ignoring the current character and chat.</li>
 <li><code v-pre>/trigger</code> — triggers a normal generation (equivalent to clicking a &quot;Send&quot; button). If in group chat, you can optionally provide a 1-based group member index or a character name to have them reply, otherwise triggers a group round according to the group settings.</li>
 </ul>
-<p><code v-pre>/genraw lock=on/off stop=[] instruct=on/off (prompt)</code></p>
 <doc-anchor-target id="arguments-for-gen-and-genraw">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#arguments-for-gen-and-genraw">#</doc-anchor-trigger>
         <span>Arguments for <code v-pre>/gen</code> and <code v-pre>/genraw</code></span>
     </h3>
 </doc-anchor-target>
+<p><code v-pre>/genraw lock=on/off stop=[] instruct=on/off (prompt)</code></p>
 <ul>
 <li><code v-pre>lock</code> — can be <code v-pre>on</code> or <code v-pre>off</code>. Specifies whether a user input should be blocked while the generation is in progress. Default: <code v-pre>off</code>.</li>
 <li><code v-pre>stop</code> — JSON-serialized array of strings. Adds a custom stop string (if the API supports it) just for this generation. Default: none.</li>
@@ -529,6 +535,41 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 </thead>
 </table>
 </div>
+<doc-anchor-target id="prompt-injections">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#prompt-injections">#</doc-anchor-trigger>
+        <span>Prompt injections</span>
+    </h2>
+</doc-anchor-target>
+<p>Scripts can add custom LLM prompt injections, making it essentially an equivalent of unlimited Author&#x27;s Notes.</p>
+<ul>
+<li><code v-pre>/inject (text)</code> — inserts any text into the normal LLM prompt for the current chat, requires a unique identifier. Saved to chat metadata.</li>
+<li><code v-pre>/listinjects</code> — shows a list of all prompt injections added by scripts for the current chat in a system message.</li>
+<li><code v-pre>/flushinjects</code> — deletes all prompt injections added by scripts for the current chat.</li>
+<li><code v-pre>/note (text)</code> — sets the Author&#x27;s Note value for the current chat. Saved to chat metadata.</li>
+<li><code v-pre>/interval</code> — sets the Author&#x27;s Note insertion interval for the current chat.</li>
+<li><code v-pre>/depth</code> — sets the Author&#x27;s Note insertion depth for in-chat position.</li>
+<li><code v-pre>/position</code>  — sets the Author&#x27;s Note position for the current chat.</li>
+</ul>
+<doc-anchor-target id="arguments-for-inject">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#arguments-for-inject">#</doc-anchor-trigger>
+        <span>Arguments for <code v-pre>/inject</code></span>
+    </h3>
+</doc-anchor-target>
+<p><code v-pre>/inject id=IdGoesHere position=chat depth=4 My prompt injection</code></p>
+<ul>
+<li><code v-pre>id</code> — an identifier string or a reference to variable. Consequent calls of <code v-pre>/inject</code> with the same ID will overwrite previous text injection. <strong>Required argument.</strong></li>
+<li><code v-pre>position</code> — sets a position for the injection. Default: <code v-pre>after</code>. Possible values:
+<ul>
+<li><code v-pre>after</code> - after main prompt.</li>
+<li><code v-pre>before</code> - before main prompt.</li>
+<li><code v-pre>chat</code> - in-chat.</li>
+</ul>
+</li>
+<li><code v-pre>depth</code> —</li>
+<li>Unnamed argument is a text to be injected. Empty string will unset the previous value for the provided identifier.</li>
+</ul>
 <doc-anchor-target id="access-chat-messages">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#access-chat-messages">#</doc-anchor-trigger>
@@ -735,6 +776,40 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
 <li>Procedures do not accept named or unnamed arguments, but can reference the same variables as the caller.</li>
 <li>Avoid recursion when calling procedures as it may produce the &quot;call stack exceeded&quot; error if handled unadvisedly.</li>
 </ul>
+<doc-anchor-target id="ui-interaction">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ui-interaction">#</doc-anchor-trigger>
+        <span>UI interaction</span>
+    </h2>
+</doc-anchor-target>
+<p>Scripts can also interact with SillyTavern&#x27;s UI: navigate through the chats or change styling parameters.</p>
+<doc-anchor-target id="character-navigation">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#character-navigation">#</doc-anchor-trigger>
+        <span>Character navigation</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li><code v-pre>/random</code> — opens a chat with the random character.</li>
+<li><code v-pre>/go (name)</code> — opens a chat with the character of specified name. First searches for the exact name match, then by a prefix, then by a substring.</li>
+</ol>
+<doc-anchor-target id="ui-styling">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ui-styling">#</doc-anchor-trigger>
+        <span>UI styling</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li><code v-pre>/bubble</code> — sets the message style to the &quot;bubble chat&quot; style.</li>
+<li><code v-pre>/flat</code> — sets the message style to the &quot;flat chat&quot; style.</li>
+<li><code v-pre>/single</code> — sets the message style to the &quot;single document&quot; style.</li>
+<li><code v-pre>/movingui (name)</code> — activates a MovingUI preset by name.</li>
+<li><code v-pre>/resetui</code> — resets the MovingUI panels state to their original positions.</li>
+<li><code v-pre>/panels</code> — toggles the UI panels visibility: top bar, left and right drawers.</li>
+<li><code v-pre>/bg (name)</code> — finds and sets a background using fuzzy names matching. Respects the chat background lock state.</li>
+<li><code v-pre>/lockbg</code> — locks the background image for the current chat.</li>
+<li><code v-pre>/unlockbg</code> — unlocks the background image for the current chat.</li>
+</ol>
 <doc-anchor-target id="more-examples">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#more-examples">#</doc-anchor-trigger>
