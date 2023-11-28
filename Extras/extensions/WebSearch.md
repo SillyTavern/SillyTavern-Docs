@@ -1,6 +1,18 @@
 # Web Search
 
-Add Google web search results to LLM prompts (requires SerpApi key).
+Adds web search results to LLM prompts.
+
+## Available sources
+
+### Extras API
+
+Requires a `websearch` module and Chrome/Firefox web browser installed on the host machine.
+
+Supports Google and DuckDuckGo engines.
+
+### SerpApi
+
+Requires SerpApi key and provides access to Google search.
 
 Get the key here: https://serpapi.com/dashboard
 
@@ -8,7 +20,7 @@ Get the key here: https://serpapi.com/dashboard
 
 1. Make sure you use the latest version of SillyTavern.
 2. Install the extension via the "Download Extensions & Assets" menu in SillyTavern.
-3. Open the "Web Search" extension settings, set your API key, and enable the extension.
+3. Open the "Web Search" extension settings, set your API key or connect to Extras, and enable the extension.
 4. The web search results will be added to the prompt organically as you chat. **Only user messages trigger the search.**
 5. Optionally, configure the settings to your liking.
 
@@ -27,9 +39,16 @@ Get the key here: https://serpapi.com/dashboard
 Search results from the latest query will stay included in the prompt until the next valid query is found.
 If you want to ask additional questions without accidentally triggering the search, start your message with a period.
 
-What can be included in the search result?
+### What can be included in the search result?
+
+#### SerpApi
 
 1. Answer box. Direct answer to the question.
 2. Knowledge graph. Encyclopedic knowledge about the topic.
 3. Page snippets (max 10). Relevant extracts from the web pages.
 4. Relevant questions (max 10). Questions and answers to similar topics.
+
+#### Extras API
+
+1. Google - answer box, knowledge graph, page snippets.
+2. DuckDuckGo - page snippets.
