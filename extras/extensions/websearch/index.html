@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754476692411">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754523618663">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -14,7 +14,7 @@
     <!-- Primary Meta Tags -->
     <title>Web Search | docs.ST.app</title>
     <meta name="title" content="Web Search | docs.ST.app">
-    <meta name="description" content="Add Google web search results to LLM prompts (requires SerpApi key).">
+    <meta name="description" content="Adds web search results to LLM prompts.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/extras/extensions/websearch/">
@@ -23,21 +23,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/extras/extensions/websearch/">
     <meta property="og:title" content="Web Search | docs.ST.app">
-    <meta property="og:description" content="Add Google web search results to LLM prompts (requires SerpApi key).">
+    <meta property="og:description" content="Adds web search results to LLM prompts.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/extras/extensions/websearch/">
     <meta property="twitter:title" content="Web Search | docs.ST.app">
-    <meta property="twitter:description" content="Add Google web search results to LLM prompts (requires SerpApi key).">
+    <meta property="twitter:description" content="Adds web search results to LLM prompts.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.754476692411" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.754523618663" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.754476692411" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.754523618663" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.754476692411" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.754523618663" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -203,7 +203,28 @@
         <span>Web Search</span>
     </h1>
 </doc-anchor-target>
-<p>Add Google web search results to LLM prompts (requires SerpApi key).</p>
+<p>Adds web search results to LLM prompts.</p>
+<doc-anchor-target id="available-sources">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#available-sources">#</doc-anchor-trigger>
+        <span>Available sources</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="extras-api">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#extras-api">#</doc-anchor-trigger>
+        <span>Extras API</span>
+    </h3>
+</doc-anchor-target>
+<p>Requires a <code v-pre>websearch</code> module and Chrome/Firefox web browser installed on the host machine.</p>
+<p>Supports Google and DuckDuckGo engines.</p>
+<doc-anchor-target id="serpapi">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#serpapi">#</doc-anchor-trigger>
+        <span>SerpApi</span>
+    </h3>
+</doc-anchor-target>
+<p>Requires SerpApi key and provides access to Google search.</p>
 <p>Get the key here: <a href="https://serpapi.com/dashboard">https://serpapi.com/dashboard</a></p>
 <doc-anchor-target id="how-to-use">
     <h2>
@@ -214,7 +235,7 @@
 <ol>
 <li>Make sure you use the latest version of SillyTavern.</li>
 <li>Install the extension via the &quot;Download Extensions &amp; Assets&quot; menu in SillyTavern.</li>
-<li>Open the &quot;Web Search&quot; extension settings, set your API key, and enable the extension.</li>
+<li>Open the &quot;Web Search&quot; extension settings, set your API key or connect to Extras, and enable the extension.</li>
 <li>The web search results will be added to the prompt organically as you chat. <strong>Only user messages trigger the search.</strong></li>
 <li>Optionally, configure the settings to your liking.</li>
 </ol>
@@ -241,12 +262,33 @@
 </doc-anchor-target>
 <p>Search results from the latest query will stay included in the prompt until the next valid query is found.
 If you want to ask additional questions without accidentally triggering the search, start your message with a period.</p>
-<p>What can be included in the search result?</p>
+<doc-anchor-target id="what-can-be-included-in-the-search-result">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#what-can-be-included-in-the-search-result">#</doc-anchor-trigger>
+        <span>What can be included in the search result?</span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="serpapi-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#serpapi-1">#</doc-anchor-trigger>
+        <span>SerpApi</span>
+    </h4>
+</doc-anchor-target>
 <ol>
 <li>Answer box. Direct answer to the question.</li>
 <li>Knowledge graph. Encyclopedic knowledge about the topic.</li>
 <li>Page snippets (max 10). Relevant extracts from the web pages.</li>
 <li>Relevant questions (max 10). Questions and answers to similar topics.</li>
+</ol>
+<doc-anchor-target id="extras-api-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#extras-api-1">#</doc-anchor-trigger>
+        <span>Extras API</span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li>Google - answer box, knowledge graph, page snippets.</li>
+<li>DuckDuckGo - page snippets.</li>
 </ol>
 
                                 
