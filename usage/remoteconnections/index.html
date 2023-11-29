@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754607381916">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754614774451">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.754607381916" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.754614774451" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754607381916" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754614774451" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754607381916" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754614774451" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -255,7 +255,7 @@
 <li>Save the <code v-pre>whitelist.txt</code> file.</li>
 <li><strong>Restart your SillyTavern server.</strong></li>
 </ul>
-<p><em>Note: <code v-pre>config.conf</code> also has a <code v-pre>whitelist</code> array, which you can use in the same way, but this array will be ignored if <code v-pre>whitelist.txt</code> exists. We do not reccomend using the config.conf IP list, because using whitelist.txt is easier</em></p>
+<p><em>Note: <code v-pre>config.yaml</code> also has a <code v-pre>whitelist</code> array, which you can use in the same way, but this array will be ignored if <code v-pre>whitelist.txt</code> exists. We do not recommend using the config.yaml IP list, because using whitelist.txt is easier</em></p>
 <doc-anchor-target id="2-getting-the-ip-for-the-st-host-machine">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#2-getting-the-ip-for-the-st-host-machine">#</doc-anchor-trigger>
@@ -287,10 +287,10 @@
         <span>Opening your ST to all IPs</span>
     </h3>
 </doc-anchor-target>
-<p>We do not recommend doing this, but you can open <code v-pre>config.conf</code> and change <code v-pre>whitelistMode</code> to <code v-pre>false</code>.</p>
+<p>We do not recommend doing this, but you can open <code v-pre>config.yaml</code> and change <code v-pre>whitelistMode</code> to <code v-pre>false</code>.</p>
 <p>You must remove (or rename) <code v-pre>whitelist.txt</code> in the SillyTavern base install folder, if it exists.</p>
 <p>This is usually an insecure practice, so we require you to set a username and password when you do this.</p>
-<p>The username and password are set in <code v-pre>config.conf</code>.</p>
+<p>The username and password are set in <code v-pre>config.yaml</code>.</p>
 <p>After restarting your ST server, any device will be able to connect to it, regardless of their IP as long as they know the username and password.</p>
 <doc-anchor-target id="still-unable-to-connect">
     <h3>
@@ -299,7 +299,7 @@
     </h3>
 </doc-anchor-target>
 <ul>
-<li>Create an inbound/outbound firewall rule for the port found in <code v-pre>config.conf</code>. Do NOT mistake this for port forwarding on your router, otherwise, someone could find your chat logs and that&#x27;s a big no-no.</li>
+<li>Create an inbound/outbound firewall rule for the port found in <code v-pre>config.yaml</code>. Do NOT mistake this for port forwarding on your router, otherwise, someone could find your chat logs and that&#x27;s a big no-no.</li>
 <li>Enable the Private Network profile type in Settings &gt; Network and Internet &gt; Ethernet. This is VERY important for Windows 11, otherwise, you would be unable to connect even with the aforementioned firewall rules.</li>
 </ul>
 <doc-anchor-target id="http-basic-authentication">
@@ -309,10 +309,12 @@
     </h2>
 </doc-anchor-target>
 <p>The server will ask for username and password whenever a client connects via HTTP.</p>
-<p>To enable HTTP BA, Open <code v-pre>config.conf</code> in the SillyTavern base directory and search for <code v-pre>basicAuthMode</code> Set basicAuthMode to true and set username and password. Note: config.conf will only exist if ST has been executed before at least once.</p>
+<p>To enable HTTP BA, Open <code v-pre>config.yaml</code> in the SillyTavern base directory and search for <code v-pre>basicAuthMode</code> Set basicAuthMode to true and set username and password. Note: config.yaml will only exist if ST has been executed before at least once.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">const basicAuthMode = true
-const basicAuthUser = {username: &quot;MyUsername&quot;, password: &quot;MyPassword&quot;}; </code></pre>
+<pre class="language-none"><code v-pre class="language-none">basicAuthMode: true
+basicAuthUser:
+  - username: &quot;MyUsername&quot;
+  - password: &quot;MyPassword&quot;</code></pre>
 </doc-codeblock></div>
 <p>Save the file and restart SillyTavern if it was already running. You should be prompted for username and password when connecting to your ST. Both username and password are transmitted in plain text. If you are concerned about this, you can serve ST via HTTPS.</p>
 <doc-anchor-target id="https">
