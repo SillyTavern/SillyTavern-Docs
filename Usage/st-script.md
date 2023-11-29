@@ -475,7 +475,7 @@ Scripts can also interact with SillyTavern's UI: navigate through the chats or c
 ### Character navigation
 
 1. `/random` — opens a chat with the random character.
-2. `/go (name)` — opens a chat with the character of specified name. First searches for the exact name match, then by a prefix, then by a substring.
+2. `/go (name)` — opens a chat with the character of the specified name. First, searches for the exact name match, then by a prefix, then by a substring.
 
 ### UI styling
 
@@ -485,21 +485,22 @@ Scripts can also interact with SillyTavern's UI: navigate through the chats or c
 4. `/movingui (name)` — activates a MovingUI preset by name.
 5. `/resetui` — resets the MovingUI panels state to their original positions.
 6. `/panels` — toggles the UI panels visibility: top bar, left and right drawers.
-6. `/bg (name)` — finds and sets a background using fuzzy names matching. Respects the chat background lock state.
+6. `/bg (name)` — finds and sets a background using fuzzy names matching. Respect the chat background lock state.
 7. `/lockbg` — locks the background image for the current chat.
 8. `/unlockbg` — unlocks the background image for the current chat.
-
 
 ## More examples
 
 ### Generate chat summary (by @IkariDevGIT)
 
 ```
+/setglobalvar key=summaryPrompt Summarize the most important facts and events that have happened in the chat given to you in the Input header. Limit the summary to 100 words or less. Your response should include nothing but the summary. |
 /setvar key=tmp |
 /messages 0-{{lastMessageId}} |
+/trimtokens limit=3000 direction=end |
 /setvar key=s1 |
 /echo Generating, please wait... |
-/genraw lock=on instruct=off ### Instruct:{{newline}}Summarize the most important facts and events that have happened in the chat given to you in the Input header. Limit the summary to 100 words or less. Your response should include nothing but the summary.{{newline}}{{newline}}### Input:{{newline}}{{getvar::s1}}{{newline}}{{newline}}### Response:{{newline}}The chat summary:{{newline}} |
+/genraw lock=on instruct=off {{instructInput}}{{newline}}{{getglobalvar::summaryPrompt}}{{newline}}{{newline}}{{instructInput}}{{newline}}{{getvar::s1}}{{newline}}{{newline}}{{instructOutput}}{{newline}}The chat summary:{{newline}} |
 /setvar key=tmp |
 /echo Done! |
 /setinput {{getvar::tmp}} |
@@ -515,7 +516,7 @@ Scripts can also interact with SillyTavern's UI: navigate through the chats or c
 /echo You picked: {{pipe}}
 ```
 
-### Get Nth Fibonacci's number (using Binet's approximation)
+### Get Nth Fibonacci's number (using Binet's formula)
 
 > **Hint**: Set value of `fib_no` to the desired number
 
