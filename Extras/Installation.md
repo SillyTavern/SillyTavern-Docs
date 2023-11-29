@@ -91,9 +91,9 @@ If this is your first time touching anything Python-related, that should not be 
 
 ### Confirm extensions are enabled
 
-1. Open the file called `config.conf`in a text editor. The file is located in ST's base install folder.
-2. Look for the line that reads `const enableExtensions`.
-3. Make sure that line has `= true`, and not `= false`.
+1. Open the file called `config.yaml`in a text editor. The file is located in ST's base install folder.
+2. Look for the line that reads `enableExtensions`.
+3. Make sure that line has `true`, and not `false`.
 
 ### Decide which module to use
 

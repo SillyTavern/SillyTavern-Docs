@@ -87,7 +87,7 @@ User
 settings.json
 secrets.json <---- this one is in the base folder, not /public/
 ```
-  
+
 5. Once those folders/files are copied, Paste them into the /Public/ folder (with secrets.json going into the base folder) of the new install.
 
 6. Start SillyTavern once again with the method appropriate to your OS, and pray you got it right.
@@ -100,6 +100,6 @@ secrets.json <---- this one is in the base folder, not /public/
 
 - If you change SillyTavern system files, `git pull` may not work.
 - Sometimes an update may require us to change an important file, which can cause the same problem.
-- Usually it is `config.conf` or `package-lock.json`.
+- Usually it is default preset files or `package-lock.json`.
 - In this case you can try moving the file to a different folder (or deleting the file) and then do `git pull`.
 - Another solution is using `git pull --rebase --autostash`

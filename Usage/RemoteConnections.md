@@ -48,7 +48,7 @@ This will allow any device on the same network as the host machine, as well as t
 * Save the `whitelist.txt` file.
 * **Restart your SillyTavern server.**
 
-*Note: `config.conf` also has a `whitelist` array, which you can use in the same way, but this array will be ignored if `whitelist.txt` exists. We do not reccomend using the config.conf IP list, because using whitelist.txt is easier*
+*Note: `config.yaml` also has a `whitelist` array, which you can use in the same way, but this array will be ignored if `whitelist.txt` exists. We do not recommend using the config.yaml IP list, because using whitelist.txt is easier*
 
 ### 2. Getting the IP for the ST host machine
 
@@ -74,29 +74,31 @@ Use http:// NOT https://
 
 ### Opening your ST to all IPs
 
-We do not recommend doing this, but you can open `config.conf` and change `whitelistMode` to `false`.
+We do not recommend doing this, but you can open `config.yaml` and change `whitelistMode` to `false`.
 
 You must remove (or rename) `whitelist.txt` in the SillyTavern base install folder, if it exists.
 
 This is usually an insecure practice, so we require you to set a username and password when you do this.
 
-The username and password are set in `config.conf`.
+The username and password are set in `config.yaml`.
 
 After restarting your ST server, any device will be able to connect to it, regardless of their IP as long as they know the username and password.
 
 ### Still Unable To Connect?
 
-* Create an inbound/outbound firewall rule for the port found in `config.conf`. Do NOT mistake this for port forwarding on your router, otherwise, someone could find your chat logs and that's a big no-no.
+* Create an inbound/outbound firewall rule for the port found in `config.yaml`. Do NOT mistake this for port forwarding on your router, otherwise, someone could find your chat logs and that's a big no-no.
 * Enable the Private Network profile type in Settings > Network and Internet > Ethernet. This is VERY important for Windows 11, otherwise, you would be unable to connect even with the aforementioned firewall rules.
 
 ## <span id="HTTPBasicAuthentication">HTTP Basic Authentication</span>
 
-The server will ask for username and password whenever a client connects via HTTP. 
+The server will ask for username and password whenever a client connects via HTTP.
 
-To enable HTTP BA, Open `config.conf` in the SillyTavern base directory and search for `basicAuthMode` Set basicAuthMode to true and set username and password. Note: config.conf will only exist if ST has been executed before at least once.
+To enable HTTP BA, Open `config.yaml` in the SillyTavern base directory and search for `basicAuthMode` Set basicAuthMode to true and set username and password. Note: config.yaml will only exist if ST has been executed before at least once.
 ```
-const basicAuthMode = true
-const basicAuthUser = {username: "MyUsername", password: "MyPassword"}; 
+basicAuthMode: true
+basicAuthUser:
+  - username: "MyUsername"
+  - password: "MyPassword"
 ```
 
 Save the file and restart SillyTavern if it was already running. You should be prompted for username and password when connecting to your ST. Both username and password are transmitted in plain text. If you are concerned about this, you can serve ST via HTTPS.
@@ -105,7 +107,7 @@ Save the file and restart SillyTavern if it was already running. You should be p
 
 ### Start SillyTavern with TLS/SSL
 
-To encrypt traffic from and to your ST instance, start the server with the `--ssl` flag. 
+To encrypt traffic from and to your ST instance, start the server with the `--ssl` flag.
 
 Example:
 ```

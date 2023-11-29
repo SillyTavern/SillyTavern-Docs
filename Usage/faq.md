@@ -162,12 +162,12 @@ You now have a basic character you can chat with. Select Amanda from the charact
 Note that you can use the Description and/or First Message to create a more specific scenario, and/or include yourself in the description. For example:
 
 ```txt
-Description: 
+Description:
 Amanda is a student traveling during her gap year. She's 6 feet tall, and a volleyball player. She has an athletic figure. She has long brown hair. She loves the Victorian England period, and watching TV and reading novels relating to that period. She's been keeping a secret that weighs heavily on her soul. She's waiting for the right person to unburden herself to, but this may lead to a cat and mouse game against a powerful secret society. She's recently arrived in Calcutta.
 
 You're Rajesh Nahasmapetilon, a world-famous Indian volleyball superstar. You're out for a walk in Calcutta. Amanda spots you and screams in excitement.
 
-First Message: 
+First Message:
 *Amanda runs up to you, beaming.* Rajesh! I can't believe it! I'm such a big fan. I have your poster in my bedroom.
 ```
 
@@ -225,7 +225,7 @@ By default, they will not be exposed to a frontend after you enter them and relo
 
 In order to enable viewing your keys by clicking a button in the API block:
 
-1. Set the value of `allowKeysExposure` to `true` in `config.conf` file.
+1. Set the value of `allowKeysExposure` to `true` in `config.yaml` file.
 2. Restart the SillyTavern server.
 
 ## Why is the UI so slow/jittery?
