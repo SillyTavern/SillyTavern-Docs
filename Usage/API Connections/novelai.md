@@ -175,7 +175,7 @@ For most other formats, since they are usually ways of listing out different cha
 
 ### Which module should I use?
 
-Probably No Module. Prose Augmenter is useful if you want a character to speak in a more flowery manner, but be careful not to overdo it. Text Adventure might be useful for a text adventure style card/story. 
+Probably No Module. Prose Augmenter is useful if you want a character to speak in a more flowery manner, but be careful not to overdo it. Text Adventure might be useful for a text adventure-style card/story. 
 
 ### Not the instruct module?
 
@@ -189,11 +189,11 @@ If it cuts off, you can select the continue option (in the three-line menu to th
 
 If you regularly want responses longer than 170 tokens, you can work around the limit like this:
 
-- Set the response length to whatever large number you want
-- Under Advanced Formatting, enable Multigen
-- Set the "first chunk" and "next chunks" values to 150
+- Keep the response length at 150 tokens.
+- Under Advanced Formatting, enable Auto-continue.
+- Set the "Target length" to the desired length.
 
-This sacrifices text streaming, but will chain together multiple generations to give you longer responses. 
+This will chain together multiple generations to give you longer messages but doesn't guarantee that the reply will be 100% of the desired length if the model decides to stop.
 
 ### How do I get the bot to write longer responses?
 
@@ -203,7 +203,7 @@ If your responses aren't getting cut off but are still too short, it's likely yo
 
 ### How do I get the bot to stop talking for me?
 
-- Check that the character card's first message and example dialogue don't include the character taking actions for you - if they do, then rewrite them to get rid of it acting for you
+- Check that the character card's first message and example dialogue doesn't include the character taking actions for you - if they do, then rewrite them to get rid of it acting for you
 - Make sure that "Always add character's name to prompt" is checked
 - Make sure that you're currently using the same user persona as the rest of the chat. If you changed user personas and didn't change back (or don't have a persona locked to that chat), the usual rules to stop generating for you will fail
 - Add ["\n\{\{user\}\}:"] to Custom Stopping Strings (shouldn't be necessary, but sometimes helps)
@@ -216,7 +216,7 @@ A lot of things can cause this, so we need to look in a few places:
 - Check to make sure there aren't any errors coming from the API. While you can use SillyTavern with the NAI free trial, once it runs out, you'll just get errors
 - Check what you have in "Custom Stopping Strings" - if those are being generated at the start of the response, it might be cut off prematurely
 
-### How should I use Author's Note?
+### How should I use the Author's Note?
 
 In general, you probably shouldn't. It's inserted very close to the end of the context, and with NAI's models, it frequently overpowers everything else in the context. It's mostly an artifact from older, weaker models where it was more necessary. 
 
@@ -228,7 +228,7 @@ Put the following as a system message or on newlines at the start of your next m
 [ 2 days later ]
 ```
 
-Then put in the rest of your message on the next line. The bracketed text can be a time jump, a new location, or anything else. The "***" (hilariously named a "dinkus") tells the AI that the scene has changed, and the bracketed text gives that more context.
+Then put the rest of your message on the next line. The bracketed text can be a time jump, a new location, or anything else. The "***" (hilariously named a "dinkus") tells the AI that the scene has changed, and the bracketed text gives that more context.
 
 ### The AI keeps repeating specific words/phrases, what do I do? 
 
