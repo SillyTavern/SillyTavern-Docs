@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754680625781">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754690347649">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -35,11 +35,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.754680625781" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.754690347649" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.754680625781" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.754690347649" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.754680625781" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.754690347649" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -422,7 +422,7 @@ Attributes:</code></pre>
         <span>Which module should I use?</span>
     </h3>
 </doc-anchor-target>
-<p>Probably No Module. Prose Augmenter is useful if you want a character to speak in a more flowery manner, but be careful not to overdo it. Text Adventure might be useful for a text adventure style card/story.</p>
+<p>Probably No Module. Prose Augmenter is useful if you want a character to speak in a more flowery manner, but be careful not to overdo it. Text Adventure might be useful for a text adventure-style card/story.</p>
 <doc-anchor-target id="not-the-instruct-module">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#not-the-instruct-module">#</doc-anchor-trigger>
@@ -440,11 +440,11 @@ Attributes:</code></pre>
 <p>If it cuts off, you can select the continue option (in the three-line menu to the left of the text box) to get the character to continue their response.</p>
 <p>If you regularly want responses longer than 170 tokens, you can work around the limit like this:</p>
 <ul>
-<li>Set the response length to whatever large number you want</li>
-<li>Under Advanced Formatting, enable Multigen</li>
-<li>Set the &quot;first chunk&quot; and &quot;next chunks&quot; values to 150</li>
+<li>Keep the response length at 150 tokens.</li>
+<li>Under Advanced Formatting, enable Auto-continue.</li>
+<li>Set the &quot;Target length&quot; to the desired length.</li>
 </ul>
-<p>This sacrifices text streaming, but will chain together multiple generations to give you longer responses.</p>
+<p>This will chain together multiple generations to give you longer messages but doesn&#x27;t guarantee that the reply will be 100% of the desired length if the model decides to stop.</p>
 <doc-anchor-target id="how-do-i-get-the-bot-to-write-longer-responses">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#how-do-i-get-the-bot-to-write-longer-responses">#</doc-anchor-trigger>
@@ -460,7 +460,7 @@ Attributes:</code></pre>
     </h3>
 </doc-anchor-target>
 <ul>
-<li>Check that the character card&#x27;s first message and example dialogue don&#x27;t include the character taking actions for you - if they do, then rewrite them to get rid of it acting for you</li>
+<li>Check that the character card&#x27;s first message and example dialogue doesn&#x27;t include the character taking actions for you - if they do, then rewrite them to get rid of it acting for you</li>
 <li>Make sure that &quot;Always add character&#x27;s name to prompt&quot; is checked</li>
 <li>Make sure that you&#x27;re currently using the same user persona as the rest of the chat. If you changed user personas and didn&#x27;t change back (or don&#x27;t have a persona locked to that chat), the usual rules to stop generating for you will fail</li>
 <li>Add [&quot;\n{{user}}:&quot;] to Custom Stopping Strings (shouldn&#x27;t be necessary, but sometimes helps)</li>
@@ -477,10 +477,10 @@ Attributes:</code></pre>
 <li>Check to make sure there aren&#x27;t any errors coming from the API. While you can use SillyTavern with the NAI free trial, once it runs out, you&#x27;ll just get errors</li>
 <li>Check what you have in &quot;Custom Stopping Strings&quot; - if those are being generated at the start of the response, it might be cut off prematurely</li>
 </ul>
-<doc-anchor-target id="how-should-i-use-authors-note">
+<doc-anchor-target id="how-should-i-use-the-authors-note">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-should-i-use-authors-note">#</doc-anchor-trigger>
-        <span>How should I use Author&#x27;s Note?</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-should-i-use-the-authors-note">#</doc-anchor-trigger>
+        <span>How should I use the Author&#x27;s Note?</span>
     </h3>
 </doc-anchor-target>
 <p>In general, you probably shouldn&#x27;t. It&#x27;s inserted very close to the end of the context, and with NAI&#x27;s models, it frequently overpowers everything else in the context. It&#x27;s mostly an artifact from older, weaker models where it was more necessary.</p>
@@ -495,7 +495,7 @@ Attributes:</code></pre>
 <pre class="language-none"><code v-pre class="language-none">***
 [ 2 days later ]</code></pre>
 </doc-codeblock></div>
-<p>Then put in the rest of your message on the next line. The bracketed text can be a time jump, a new location, or anything else. The &quot;***&quot; (hilariously named a &quot;dinkus&quot;) tells the AI that the scene has changed, and the bracketed text gives that more context.</p>
+<p>Then put the rest of your message on the next line. The bracketed text can be a time jump, a new location, or anything else. The &quot;***&quot; (hilariously named a &quot;dinkus&quot;) tells the AI that the scene has changed, and the bracketed text gives that more context.</p>
 <doc-anchor-target id="the-ai-keeps-repeating-specific-wordsphrases-what-do-i-do">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#the-ai-keeps-repeating-specific-wordsphrases-what-do-i-do">#</doc-anchor-trigger>
