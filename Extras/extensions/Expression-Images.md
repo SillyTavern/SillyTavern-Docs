@@ -38,9 +38,17 @@ The `classify` module uses a small 'sentiment parsing' model that runs on the Si
 2. Import the expression images the same way as mentioned above.
 3. The appropriate expression image will display automatically whenever the AI sends you a response.
 
-#### How do I get more expression options?
+### How do I get more expression options?
 
-Local classification defaults to 28 possible image labels.
+#### Local
+
+Local classification defaults to 28 possible image labels: [Cohee/distilbert-base-uncased-go-emotions-onnx](https://huggingface.co/Cohee/distilbert-base-uncased-go-emotions-onnx)
+
+To use the 6-option classification model, open the `config.yaml` file with a text editor and change the value of the `classificationModel` variable to [Cohee/bert-base-uncased-emotion-onnx](https://huggingface.co/Cohee/bert-base-uncased-emotion-onnx)
+
+After that, restart the ST server to redownload the model. To revert it, change the value in `config.yaml` again.
+
+#### Extras API
 
 Extras API uses a classification model with 6 options by default: [nateraw/bert-base-uncased-emotion](https://huggingface.co/nateraw/bert-base-uncased-emotion)
 
