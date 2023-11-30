@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754614774451">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754680625781">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -35,11 +35,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.754614774451" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.754680625781" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.754614774451" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.754680625781" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.754614774451" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.754680625781" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -274,12 +274,26 @@
 <li>The appropriate expression image will display automatically whenever the AI sends you a response.</li>
 </ol>
 <doc-anchor-target id="how-do-i-get-more-expression-options">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#how-do-i-get-more-expression-options">#</doc-anchor-trigger>
         <span>How do I get more expression options?</span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="local">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#local">#</doc-anchor-trigger>
+        <span>Local</span>
     </h4>
 </doc-anchor-target>
-<p>Local classification defaults to 28 possible image labels.</p>
+<p>Local classification defaults to 28 possible image labels: <a href="https://huggingface.co/Cohee/distilbert-base-uncased-go-emotions-onnx">Cohee/distilbert-base-uncased-go-emotions-onnx</a></p>
+<p>To use the 6-option classification model, open the <code v-pre>config.yaml</code> file with a text editor and change the value of the <code v-pre>classificationModel</code> variable to <a href="https://huggingface.co/Cohee/bert-base-uncased-emotion-onnx">Cohee/bert-base-uncased-emotion-onnx</a></p>
+<p>After that, restart the ST server to redownload the model. To revert it, change the value in <code v-pre>config.yaml</code> again.</p>
+<doc-anchor-target id="extras-api">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#extras-api">#</doc-anchor-trigger>
+        <span>Extras API</span>
+    </h4>
+</doc-anchor-target>
 <p>Extras API uses a classification model with 6 options by default: <a href="https://huggingface.co/nateraw/bert-base-uncased-emotion">nateraw/bert-base-uncased-emotion</a></p>
 <p>There is also a model with 28 options: <a href="https://huggingface.co/joeddav/distilbert-base-uncased-go-emotions-student">joeddav/distilbert-base-uncased-go-emotions-student</a></p>
 <p>To use this model you need to change your Extras command line to include the following argument (with a space before and after):</p>
