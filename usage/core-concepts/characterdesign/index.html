@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754704548248">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754706655107">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.754704548248" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.754706655107" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.754704548248" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.754706655107" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.754704548248" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.754706655107" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -386,6 +386,48 @@
 <li>{{roll:(formula)}} generates a random value and returns it using the provided dice formula using D&amp;D dice syntax: XdY+Z. For example, {{roll:d6}} will generate a random value in the 1-6 range (standard six-sided dice).</li>
 <li>{{bias &quot;text here&quot;}} sets a behavioral bias for the AI until the next user input. Quotes around the text are important.</li>
 <li>{{// (note)}} allows to leave a note that will be replaced with blank content. Not visible for the AI.</li>
+</ol>
+<doc-anchor-target id="instruct-mode-and-context-template-macros">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#instruct-mode-and-context-template-macros">#</doc-anchor-trigger>
+        <span>Instruct Mode and Context Template Macros:</span>
+    </h4>
+</doc-anchor-target>
+<p>(enabled in the Advanced Formatting settings)</p>
+<ol>
+<li>{{exampleSeparator}} – context template example dialogues separator</li>
+<li>{{chatStart}} – context template chat start line</li>
+<li>{{instructSystem}} – instruct system prompt</li>
+<li>{{instructSystemPrefix}} – instruct system prompt prefix sequence</li>
+<li>{{instructSystemSuffix}} – instruct system prompt suffix sequence</li>
+<li>{{instructInput}} – instruct user input sequence</li>
+<li>{{instructOutput}} – instruct assistant output sequence</li>
+<li>{{instructFirstOutput}} – instruct assistant first output sequence</li>
+<li>{{instructLastOutput}} – instruct assistant last output sequence</li>
+<li>{{instructSeparator}} – instruct turn separator sequence</li>
+<li>{{instructStop}} – instruct stop sequence</li>
+</ol>
+<doc-anchor-target id="chat-variables-macros">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#chat-variables-macros">#</doc-anchor-trigger>
+        <span>Chat variables Macros:</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>Local variables = unique to the current chat</li>
+<li>Global variables = works in any chat for any character</li>
+</ul>
+<ol>
+<li>{{getvar::name}} – replaced with the value of the local variable &quot;name&quot;</li>
+<li>{{setvar::name::value}} – replaced with empty string, sets the local variable &quot;name&quot; to &quot;value&quot;</li>
+<li>{{addvar::name::increment}} – replaced with empty strings, adds a numeric value of &quot;increment&quot; to the local variable &quot;name&quot;</li>
+<li>{{incvar::name}} – replaced with the result of the increment of value of the variable &quot;name&quot; by 1</li>
+<li>{{decvar::name}} – replaced with the result of the decrement of value of the variable &quot;name&quot; by 1</li>
+<li>{{getglobalvar::name}} – replaced with the value of the global variable &quot;name&quot;</li>
+<li>{{setglobalvar::name::value}} – replaced with empty string, sets the global variable &quot;name&quot; to &quot;value&quot;</li>
+<li>{{addglobalvar::name::value}} – replaced with empty string, adds a numeric value of &quot;increment&quot; to the global variable &quot;name&quot;</li>
+<li>{{incglobalvar::name}} – replaced with the result of the increment of value of the global variable &quot;name&quot; by 1</li>
+<li>{{decglobalvar::name}} – replaced with the result of the decrement of value of the global variable &quot;name&quot; by 1</li>
 </ol>
 <doc-anchor-target id="favorite-character">
     <h3>
