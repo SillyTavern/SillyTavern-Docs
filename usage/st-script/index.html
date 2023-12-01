@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754706655107">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.754777200386">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.754706655107" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.754777200386" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754706655107" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.754777200386" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754706655107" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.754777200386" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -649,8 +649,96 @@ This example will get you 3 last messages in the chat:</p>
 <li><code v-pre>/getchatbook</code> – gets a name of the chat-bound World Info file or create a new one if was unbound, and pass it down the pipe.</li>
 <li><code v-pre>/findentry file=bookName field=fieldName [text]</code> – finds a UID of the record from the specified file (or a variable pointing to a file name) using fuzzy matching of a field value with the provided text (default field: <code v-pre>key</code>) and passes the UID down the pipe, e.g. <code v-pre>/findentry file=chatLore field=key Shadowfang</code>.</li>
 <li><code v-pre>/getentryfield file=bookName field=field [UID]</code> – gets a field value (default field: <code v-pre>content</code>) of the record with the UID from the specified World Info file (or a variable pointing to a file name) and passes the value down the pipe, e.g. <code v-pre>/getentryfield file=chatLore field=content 123</code>.</li>
+<li><code v-pre>/setentryfield file=bookName uid=UID field=field [text]</code> – sets a field value (default field: <code v-pre>content</code>) of the record with the UID (or a variable pointing to UID) from the specified World Info file (or a variable pointing to a file name). To set multiple values for key fields, use a comma-delimited list as a text value, e.g. <code v-pre>/setentryfield file=chatLore uid=123 field=key Shadowfang,sword,weapon</code>.</li>
 <li><code v-pre>/createentry file=bookName key=keyValue [content text]</code> – creates a new record in the specified file  (or a variable pointing to a file name) with the key and content (both of these arguments are <em>optional</em>) and passes the UID down the pipe, e.g. <code v-pre>/createentry file=chatLore key=Shadowfang The sword of the king</code>.</li>
 </ol>
+<doc-anchor-target id="valid-entry-fields">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#valid-entry-fields">#</doc-anchor-trigger>
+        <span>Valid entry fields</span>
+    </h3>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th style="text-align: left;">Field</th>
+<th style="text-align: left;">UI element</th>
+<th style="text-align: left;">Value type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code v-pre>content</code></td>
+<td style="text-align: left;">Content</td>
+<td style="text-align: left;">String</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>comment</code></td>
+<td style="text-align: left;">Title / Memo</td>
+<td style="text-align: left;">String</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>key</code></td>
+<td style="text-align: left;">Primary Keywords</td>
+<td style="text-align: left;">List of strings</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>keysecondary</code></td>
+<td style="text-align: left;">Optional Filter</td>
+<td style="text-align: left;">List of strings</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>constant</code></td>
+<td style="text-align: left;">Constant Status</td>
+<td style="text-align: left;">Boolean (1/0)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>disable</code></td>
+<td style="text-align: left;">Disabled Status</td>
+<td style="text-align: left;">Boolean (1/0)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>order</code></td>
+<td style="text-align: left;">Order</td>
+<td style="text-align: left;">Number</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>selectiveLogic</code></td>
+<td style="text-align: left;">Logic</td>
+<td style="text-align: left;">0 = AND, 1 = NOT</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>excludeRecursion</code></td>
+<td style="text-align: left;">Non-recursable</td>
+<td style="text-align: left;">Boolean (1/0)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>probability</code></td>
+<td style="text-align: left;">Trigger%</td>
+<td style="text-align: left;">Number (0-100)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>depth</code></td>
+<td style="text-align: left;">Depth</td>
+<td style="text-align: left;">Number (0-999)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code v-pre>position</code></td>
+<td style="text-align: left;">Position</td>
+<td style="text-align: left;">(see below)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Position values</strong></p>
+<ul>
+<li>0 = before main prompt</li>
+<li>1 = after main prompt</li>
+<li>2 = top of Author&#x27;s Note</li>
+<li>3 = bottom of Author&#x27;s Note</li>
+<li>4 = in-chat at depth</li>
+</ul>
 <doc-anchor-target id="example-1-read-a-content-from-the-chat-lorebook-by-key">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#example-1-read-a-content-from-the-chat-lorebook-by-key">#</doc-anchor-trigger>
@@ -673,6 +761,23 @@ This example will get you 3 last messages in the chat:</p>
 <pre class="language-none"><code v-pre class="language-none">/getchatbook | /setvar key=chatLore |
 /createentry file=chatLore key=&quot;Milla&quot; Milla Basset is a friend of Lilac and Carol. She is a hush basset puppy who possesses the power of alchemy. |
 /echo</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="example-3-expand-an-existing-lorebook-entry-with-new-information-from-the-chat">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-3-expand-an-existing-lorebook-entry-with-new-information-from-the-chat">#</doc-anchor-trigger>
+        <span>Example 3: Expand an existing lorebook entry with new information from the chat</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">/getchatbook | /setvar key=chatLore |
+/findentry file=chatLore field=key Milla |
+/setvar key=millaUid |
+/getentryfield file=chatLore field=content |
+/setvar key=millaContent |
+/gen lock=on Tell me more about Milla Basset based on the provided conversation history. Incorporate existing information into your reply: {{getvar::millaContent}} |
+/setvar key=millaContent |
+/echo New content: {{pipe}} |
+/setentryfield file=chatLore uid=millaUid field=content {{getvar::millaContent}}</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="text-manipulation">
     <h2>
@@ -817,6 +922,22 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
 <li>Procedures do not accept named or unnamed arguments, but can reference the same variables as the caller.</li>
 <li>Avoid recursion when calling procedures as it may produce the &quot;call stack exceeded&quot; error if handled unadvisedly.</li>
 </ul>
+<doc-anchor-target id="extension-commands">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#extension-commands">#</doc-anchor-trigger>
+        <span>Extension commands</span>
+    </h2>
+</doc-anchor-target>
+<p>SillyTavern extensions (both built-in, downloadable and third-party) can add their own slash command. Below is just an example of the capabilities in the official extensions. The list may be incomplete, make sure to check <code v-pre>/help slash</code> for the most complete list of available commands.</p>
+<ol>
+<li><code v-pre>/websearch (query)</code> — searches snippets of the web pages online for the specified query and returns the result into the pipe. Provided by the Web Search extension.</li>
+<li><code v-pre>/imagine (prompt)</code> — generates an image using the provided prompt. Provided by the Image Generation extension.</li>
+<li><code v-pre>/emote (sprite)</code> — sets a sprite for the active character by fuzzy matching its name. Provided by the Character Expressions extension.</li>
+<li><code v-pre>/costume (subfolder)</code> — sets a sprite set override for the active character. Provided by the Character Expressions extension.</li>
+<li><code v-pre>/music (name)</code> — force changes a played background music file by its name. Provided by the Dynamic Audio extension.</li>
+<li><code v-pre>/ambient (name)</code> — force changes a played ambient sound file by its name. Provided by the Dynamic Audio extension.</li>
+<li><code v-pre>/roll (dice formula)</code> — adds a hidden message to the chat with the result of a dice roll. Provided by the D&amp;D Dice extension.</li>
+</ol>
 <doc-anchor-target id="ui-interaction">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#ui-interaction">#</doc-anchor-trigger>
