@@ -28,10 +28,10 @@ Learn more [here](https://docs.sillytavern.app/usage/branches/).
 ### Features
 
 * Mobile-friendly interface
-* Multiple backend API connectivity ([KoboldAI](https://github.com/KoboldAI/KoboldAI-Client), [KoboldCPP](https://github.com/LostRuins/koboldcpp), [AI Horde](https://horde.koboldai.net/), [NovelAI](https://github.com/LostRuins/koboldcpp), [Oobabooga's TextGen WebUI](https://github.com/oobabooga/text-generation-webui), [OpenAI](https://chat.openai.com/)+proxies, [WindowAI](https://windowai.io), [OpenRouter](https://openrouter.ai/))
+* Multiple backend API connectivity ([KoboldAI](https://github.com/KoboldAI/KoboldAI-Client), [KoboldCPP](https://github.com/LostRuins/koboldcpp), [AI Horde](https://horde.koboldai.net/), [NovelAI](https://github.com/LostRuins/koboldcpp), [Oobabooga's TextGen WebUI](https://github.com/oobabooga/text-generation-webui), [OpenAI](https://chat.openai.com/), [WindowAI](https://windowai.io), [OpenRouter](https://openrouter.ai/))
 * Visual Novel-like Waifu Mode
 * Horde Stable Diffusion generation
-* TTS support (ElevenLabs, Silero, and built-in OS)
+* TTS support (ElevenLabs, Silero, etc.)
 * WorldInfo (lorebooks)
 * Author's Note / Character Bias
 * Customizable colors, backgrounds, avatar styles, and UI panel placement
@@ -44,7 +44,6 @@ Learn more [here](https://docs.sillytavern.app/usage/branches/).
 * Swipes
 * Group chats: multi-bot rooms for characters to talk to you or each other
 * Chat bookmarks / branching
-* webp character card interoperability (PNG is still the internal format)
 
 ### Extensions
 
