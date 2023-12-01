@@ -155,6 +155,38 @@ A list of tags that are replaced when sending to generate:
 22. \{\{bias "text here"\}\} sets a behavioral bias for the AI until the next user input. Quotes around the text are important.
 23. \{\{// (note)\}\} allows to leave a note that will be replaced with blank content. Not visible for the AI.
 
+#### Instruct Mode and Context Template Macros:
+
+(enabled in the Advanced Formatting settings)
+
+1. \{\{exampleSeparator\}\} – context template example dialogues separator
+2. \{\{chatStart\}\} – context template chat start line
+3. \{\{instructSystem\}\} – instruct system prompt
+4. \{\{instructSystemPrefix\}\} – instruct system prompt prefix sequence
+5. \{\{instructSystemSuffix\}\} – instruct system prompt suffix sequence
+6. \{\{instructInput\}\} – instruct user input sequence
+7. \{\{instructOutput\}\} – instruct assistant output sequence
+8. \{\{instructFirstOutput\}\} – instruct assistant first output sequence
+9. \{\{instructLastOutput\}\} – instruct assistant last output sequence
+10. \{\{instructSeparator\}\} – instruct turn separator sequence
+11. \{\{instructStop\}\} – instruct stop sequence
+
+#### Chat variables Macros:
+
+- Local variables = unique to the current chat
+- Global variables = works in any chat for any character
+
+1. \{\{getvar::name\}\} – replaced with the value of the local variable "name"
+2. \{\{setvar::name::value\}\} – replaced with empty string, sets the local variable "name" to "value"
+3. \{\{addvar::name::increment\}\} – replaced with empty strings, adds a numeric value of "increment" to the local variable "name"
+4. \{\{incvar::name\}\} – replaced with the result of the increment of value of the variable "name" by 1
+5. \{\{decvar::name\}\} – replaced with the result of the decrement of value of the variable "name" by 1
+6. \{\{getglobalvar::name\}\} – replaced with the value of the global variable "name"
+7. \{\{setglobalvar::name::value\}\} – replaced with empty string, sets the global variable "name" to "value"
+8. \{\{addglobalvar::name::value\}\} – replaced with empty string, adds a numeric value of "increment" to the global variable "name"
+9. \{\{incglobalvar::name\}\} – replaced with the result of the increment of value of the global variable "name" by 1
+10. \{\{decglobalvar::name\}\} – replaced with the result of the decrement of value of the global variable "name" by 1
+
 ### Favorite Character
 
 Mark the character as a favorite to quickly filter on the side menu bar by pressing the "star" button.

@@ -81,17 +81,21 @@ Variables are used to store and manipulate data in scripts, using either command
 1. `/getvar name` or `{{getvar::name}}` — gets the value of the local variable.
 2. `/setvar key=name value` or `{{setvar::name::value}}` — sets the value of the local variable.
 3. `/addvar key=name increment` or `{{addvar::name::increment}}` — adds the `increment` to the value of the local variable.
-4. `/getglobalvar name` or `{{getglobalvar::name}}` — gets the value of the global variable.
-5. `/setglobalvar key=name` or `{{setglobalvar::name::value}}` — sets the value of the global variable.
-6. `/addglobalvar key=name` or `{{addglobalvar::name:increment}}` — adds the `increment` to the value of the global variable.
-7. `/flushvar name` — deletes the value of the local variable.
-8. `/flushglobalvar name` — deletes the value of the global variable.
+4. `/incvar name` or `{{incvar::name}}` — increments a value of the local variable by 1.
+5. `/decvar name` or `{{decvar::name}}` — decrements a value of the local variable by 1.
+6. `/getglobalvar name` or `{{getglobalvar::name}}` — gets the value of the global variable.
+7. `/setglobalvar key=name` or `{{setglobalvar::name::value}}` — sets the value of the global variable.
+8. `/addglobalvar key=name` or `{{addglobalvar::name:increment}}` — adds the `increment` to the value of the global variable.
+9. `/incglobalvar name` or `{{incglobalvar::name}}` — increments a value of the global variable by 1.
+10. `/decglobalvar name` or `{{decglobalvar::name}}` — decrements a value of the global variable by 1.
+11. `/flushvar name` — deletes the value of the local variable.
+12. `/flushglobalvar name` — deletes the value of the global variable.
 
-- The default value of previously undefined variables is an empty string or a zero of it is first used in the `/addvar` command.
+- The default value of previously undefined variables is an empty string or a zero of it is first used in the `/addvar`, `/incvar`, `/decvar` command.
 - Increment in the `/addvar` command performs an addition or subtraction of the value if both increment and the variable value can be converted to a number, or otherwise does the string concatenation.
 - If a command argument accepts a variable name and both local and global variables exist with the same name, then the *local variable* takes priority.
 - All *slash commands* for variable manipulation write the resulting value into the pipe for the next command to use.
-- For *macros*, only the "get" type macro returns the value, "add" and "set" are replaced with an empty string instead.
+- For *macros*, only the "get", "inc", and "dec" type macro returns the value, "add" and "set" are replaced with an empty string instead.
 
 Now, let's consider the following example:
 
@@ -350,6 +354,32 @@ This will insert a user message at the beginning of the conversation history:
 4. `/delname (character name)` — deletes all messages in the current chat that belong to a character with the specified name.
 5. `/delchat` — deletes the current chat.
 
+## World Info commands
+
+World Info (also known as Lorebook) is a highly utilitarian tool for dynamically inserting data into the prompt. See the dedicated page for more detailed explanation: [World Info](https://docs.sillytavern.app/usage/core-concepts/worldinfo/).
+
+1. `/getchatbook` – gets a name of the chat-bound World Info file or create a new one if was unbound, and pass it down the pipe.
+2. `/findentry file=bookName field=fieldName [text]` – finds a UID of the record from the specified file (or a variable pointing to a file name) using fuzzy matching of a field value with the provided text (default field: `key`) and passes the UID down the pipe, e.g. `/findentry file=chatLore field=key Shadowfang`.
+3. `/getentryfield file=bookName field=field [UID]` – gets a field value (default field: `content`) of the record with the UID from the specified World Info file (or a variable pointing to a file name) and passes the value down the pipe, e.g. `/getentryfield file=chatLore field=content 123`.
+4. `/createentry file=bookName key=keyValue [content text]` – creates a new record in the specified file  (or a variable pointing to a file name) with the key and content (both of these arguments are *optional*) and passes the UID down the pipe, e.g. `/createentry file=chatLore key=Shadowfang The sword of the king`.
+
+### Example 1: Read a content from the chat lorebook by key
+
+```
+/getchatbook | /setvar key=chatLore |
+/findentry file=chatLore field=key Shadowfang |
+/getentryfield file=chatLore field=key |
+/echo
+```
+
+### Example 2: Create a chat lorebook entry with key and content
+
+```
+/getchatbook | /setvar key=chatLore |
+/createentry file=chatLore key="Milla" Milla Basset is a friend of Lilac and Carol. She is a hush basset puppy who possesses the power of alchemy. |
+/echo
+```
+
 ## Text manipulation
 
 There's a variety of useful text manipulation utility commands to be used in various script scenarios.
@@ -358,6 +388,7 @@ There's a variety of useful text manipulation utility commands to be used in var
 2. `/trimstart` — trims the input to the start of the first complete sentence and outputs the result to the pipe.
 3. `/trimend` — trims the input to the end of the last complete sentence and outputs the result to the pipe.
 4. `/fuzzy` — performs fuzzy matching of the input text to the list of strings, outputting the best string match to the pipe.
+5. `/regex name=scriptName [text]` — executes a regex script from the Regex extension for the specified text. The script must be enabled.
 
 ### Arguments for `/trimtokens`
 
