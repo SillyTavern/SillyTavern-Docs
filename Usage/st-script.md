@@ -361,7 +361,33 @@ World Info (also known as Lorebook) is a highly utilitarian tool for dynamically
 1. `/getchatbook` – gets a name of the chat-bound World Info file or create a new one if was unbound, and pass it down the pipe.
 2. `/findentry file=bookName field=fieldName [text]` – finds a UID of the record from the specified file (or a variable pointing to a file name) using fuzzy matching of a field value with the provided text (default field: `key`) and passes the UID down the pipe, e.g. `/findentry file=chatLore field=key Shadowfang`.
 3. `/getentryfield file=bookName field=field [UID]` – gets a field value (default field: `content`) of the record with the UID from the specified World Info file (or a variable pointing to a file name) and passes the value down the pipe, e.g. `/getentryfield file=chatLore field=content 123`.
+4. `/setentryfield file=bookName uid=UID field=field [text]` – sets a field value (default field: `content`) of the record with the UID (or a variable pointing to UID) from the specified World Info file (or a variable pointing to a file name). To set multiple values for key fields, use a comma-delimited list as a text value, e.g. `/setentryfield file=chatLore uid=123 field=key Shadowfang,sword,weapon`.
 4. `/createentry file=bookName key=keyValue [content text]` – creates a new record in the specified file  (or a variable pointing to a file name) with the key and content (both of these arguments are *optional*) and passes the UID down the pipe, e.g. `/createentry file=chatLore key=Shadowfang The sword of the king`.
+
+### Valid entry fields
+
+| Field              | UI element       | Value type       |
+| :----------------- | :--------------- | :--------------- |
+| `content`          | Content          | String           |
+| `comment`          | Title / Memo     | String           |
+| `key`              | Primary Keywords | List of strings  |
+| `keysecondary`     | Optional Filter  | List of strings  |
+| `constant`         | Constant Status  | Boolean (1/0)    |
+| `disable`          | Disabled Status  | Boolean (1/0)    |
+| `order`            | Order            | Number           |
+| `selectiveLogic`   | Logic            | 0 = AND, 1 = NOT |
+| `excludeRecursion` | Non-recursable   | Boolean (1/0)    |
+| `probability`      | Trigger%         | Number (0-100)   |
+| `depth`            | Depth            | Number (0-999)   |
+| `position`         | Position         | (see below)      |
+
+**Position values**
+
+- 0 = before main prompt
+- 1 = after main prompt
+- 2 = top of Author's Note
+- 3 = bottom of Author's Note
+- 4 = in-chat at depth
 
 ### Example 1: Read a content from the chat lorebook by key
 
@@ -378,6 +404,20 @@ World Info (also known as Lorebook) is a highly utilitarian tool for dynamically
 /getchatbook | /setvar key=chatLore |
 /createentry file=chatLore key="Milla" Milla Basset is a friend of Lilac and Carol. She is a hush basset puppy who possesses the power of alchemy. |
 /echo
+```
+
+### Example 3: Expand an existing lorebook entry with new information from the chat
+
+```
+/getchatbook | /setvar key=chatLore |
+/findentry file=chatLore field=key Milla |
+/setvar key=millaUid |
+/getentryfield file=chatLore field=content |
+/setvar key=millaContent |
+/gen lock=on Tell me more about Milla Basset based on the provided conversation history. Incorporate existing information into your reply: {{getvar::millaContent}} |
+/setvar key=millaContent |
+/echo New content: {{pipe}} |
+/setentryfield file=chatLore uid=millaUid field=content {{getvar::millaContent}}
 ```
 
 ## Text manipulation
@@ -498,6 +538,18 @@ Clicking on the `GetMessage` button will call the `GetRandom` procedure which wi
 
 - Procedures do not accept named or unnamed arguments, but can reference the same variables as the caller.
 - Avoid recursion when calling procedures as it may produce the "call stack exceeded" error if handled unadvisedly.
+
+## Extension commands
+
+SillyTavern extensions (both built-in, downloadable and third-party) can add their own slash command. Below is just an example of the capabilities in the official extensions. The list may be incomplete, make sure to check `/help slash` for the most complete list of available commands.
+
+1. `/websearch (query)` — searches snippets of the web pages online for the specified query and returns the result into the pipe. Provided by the Web Search extension.
+2. `/imagine (prompt)` — generates an image using the provided prompt. Provided by the Image Generation extension.
+3. `/emote (sprite)` — sets a sprite for the active character by fuzzy matching its name. Provided by the Character Expressions extension.
+4. `/costume (subfolder)` — sets a sprite set override for the active character. Provided by the Character Expressions extension.
+5. `/music (name)` — force changes a played background music file by its name. Provided by the Dynamic Audio extension.
+6. `/ambient (name)` — force changes a played ambient sound file by its name. Provided by the Dynamic Audio extension.
+7. `/roll (dice formula)` — adds a hidden message to the chat with the result of a dice roll. Provided by the D&D Dice extension.
 
 ## UI interaction
 
