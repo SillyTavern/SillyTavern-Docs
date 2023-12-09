@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.755460915294">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.755465925120">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.755460915294" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.755465925120" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.755460915294" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.755465925120" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.755460915294" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.755465925120" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -297,6 +297,40 @@ These concepts are going to be described in the following document.</p>
 <li><code v-pre>/speak voice=&quot;name&quot; (text)</code> — narrates the text using the selected TTS engine and the character name from the voice map, e.g. <code v-pre>/speak name=&quot;Donald Duck&quot; Quack!</code>.</li>
 <li><code v-pre>/buttons labels=[&quot;a&quot;,&quot;b&quot;] (text)</code> — shows a blocking popup with the specified text and button labels. <code v-pre>labels</code> must be a JSON-serialized array of strings or a variable name containing such an array. Returns the clicked button label into the pipe or empty string if canceled. The text supports lite HTML formatting.</li>
 </ul>
+<doc-anchor-target id="arguments-for-popup-and-input">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#arguments-for-popup-and-input">#</doc-anchor-trigger>
+        <span>Arguments for <code v-pre>/popup</code> and <code v-pre>/input</code></span>
+    </h4>
+</doc-anchor-target>
+<p><code v-pre>/popup</code> and <code v-pre>/input</code> support the following additional named arguments:</p>
+<ul>
+<li><code v-pre>large=on/off</code> - increases the vertical size of the popup. Default: <code v-pre>off</code>.</li>
+<li><code v-pre>wide=on/off</code> - increases the horizontal size of the popup. Default: <code v-pre>off</code>.</li>
+<li><code v-pre>okButton=string</code> - adds ability to customize the text on the &quot;Ok&quot; button. Default: <code v-pre>Ok</code>.</li>
+<li><code v-pre>rows=number</code> - (only for <code v-pre>/input</code>) increases the size of the input control. Default: 1.</li>
+</ul>
+<p>Example:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">/popup large=on wide=on okButton=&quot;Accept&quot; Please accept our terms and conditions....</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="arguments-for-echo">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#arguments-for-echo">#</doc-anchor-trigger>
+        <span>Arguments for <code v-pre>/echo</code></span>
+    </h4>
+</doc-anchor-target>
+<p><code v-pre>/echo</code> supports the following values for the additional <code v-pre>severity</code> argument that sets the style of the displayed message.</p>
+<ul>
+<li><code v-pre>warning</code></li>
+<li><code v-pre>error</code></li>
+<li><code v-pre>info</code> (default)</li>
+<li><code v-pre>success</code></li>
+</ul>
+<p>Example:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">/echo severity=error Something really bad happened.</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="variables">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#variables">#</doc-anchor-trigger>
@@ -344,6 +378,29 @@ These concepts are going to be described in the following document.</p>
 <li>The value is passed to the <code v-pre>/imagine</code> command (provided by the Image Generation plugin) to be used as its input prompt.</li>
 </ol>
 <p>Since the variables are saved and not flushed between the script executions, you can reference the variable in other scripts and via macros, and it will resolve to the same value as during the execution of the example script. To guarantee that the value will be discarded, add the <code v-pre>/flushvar</code> command to the script.</p>
+<doc-anchor-target id="arrays-and-objects">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#arrays-and-objects">#</doc-anchor-trigger>
+        <span>Arrays and objects</span>
+    </h3>
+</doc-anchor-target>
+<p>Variable values can contain JSON-serialized arrays or key-value pairs (objects).</p>
+<p>Examples:</p>
+<ul>
+<li>Array: <code v-pre>[&quot;apple&quot;,&quot;banana&quot;,&quot;orange&quot;]</code></li>
+<li>Object: <code v-pre>{&quot;fruits&quot;:[&quot;apple&quot;,&quot;banana&quot;,&quot;orange&quot;]}</code></li>
+</ul>
+<p>The following modifications can be applied to commands to work with these variables:</p>
+<ul>
+<li><code v-pre>/len</code> commands gets a number of items in the array.</li>
+<li><code v-pre>index=number/string</code> named argument can be added <code v-pre>/getvar</code> or <code v-pre>/setvar</code> and their global counterparts to get or set sub-values by either a zero-based index for arrays or a string key for objects.
+<ul>
+<li>If a numeric index is used on a nonexistent variable, the variable will be created as an empty array <code v-pre>[]</code>.</li>
+<li>If a string index is used on a nonexistent variable, the variable will be created as an empty object <code v-pre>{}</code>.</li>
+</ul>
+</li>
+<li><code v-pre>/addvar</code> and <code v-pre>/addglobalvar</code> commands support pushing a new value to array-typed variables.</li>
+</ul>
 <doc-anchor-target id="flow-control---conditionals">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#flow-control---conditionals">#</doc-anchor-trigger>
