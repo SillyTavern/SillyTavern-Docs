@@ -95,9 +95,9 @@ There are a lot of common problems and questions that come up when switching to 
 
 Under Advanced Formatting (the A icon):
 - Set "Context Template" to "NovelAI"
-- Set "Tokenizer" to "NerdStash v2"
+- Set "Tokenizer" to "Best match"
 - Check "Always add character's name to prompt"
-- Check "Remove Empty New Lines from Output"
+- Check "Collapse Consecutive Newlines"
 - Uncheck the "Enabled" box under "Instruct Mode"
 
 Under User Settings (the person with a gear)
