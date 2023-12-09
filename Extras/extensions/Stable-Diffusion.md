@@ -34,6 +34,7 @@ You can configure the instruction template for generating prompts for every gene
 * [Stable Diffusion WebUI / AUTOMATIC1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
 * [SD.Next / vladmandic](https://github.com/vladmandic/automatic)
 * [OpenAI DALL-E 2/3](https://platform.openai.com/).
+* [ComfyUI](https://github.com/comfyanonymous/ComfyUI). Requires a workflow JSON file.
 * [SillyTavern Extras](https://github.com/SillyTavern/SillyTavern-Extras) (will be deprecated in future)
 
 ## Options
