@@ -141,6 +141,9 @@ A list of tags that are replaced when sending to generate:
 8. \{\{persona\}\} => User's Persona description.
 9. \{\{mesExamples\}\} => Character's Examples of Dialogue (unaltered and unsplit).
 10. \{\{lastMessageId\}\} => last chat message ID.
+11. \{\{lastMessage\}\} => last chat message text.
+12. \{\{currentSwipeId\}\} => 1-based ID of the currently displayed last message swipe.
+13. \{\{lastSwipeId\}\} => number of swipes in the last chat message.
 11. \{\{original\}\} can be used in Prompt Overrides fields (Main Prompt and Jailbreak) to include the respective default prompt from the system settings. Applied to Chat Completion APIs and Instruct mode only.
 12. \{\{time\}\} => current system time.
 13. \{\{time_UTC±X\}\} => current time in the specified UTC offset (timezone), e.g. for UTC+02:00 use \{\{time_UTC\+2\}\}.
@@ -170,6 +173,7 @@ A list of tags that are replaced when sending to generate:
 9. \{\{instructLastOutput\}\} – instruct assistant last output sequence
 10. \{\{instructSeparator\}\} – instruct turn separator sequence
 11. \{\{instructStop\}\} – instruct stop sequence
+12. \{\{maxPrompt\}\} - max size of the prompt in tokens (context length reduced by response length)
 
 #### Chat variables Macros:
 

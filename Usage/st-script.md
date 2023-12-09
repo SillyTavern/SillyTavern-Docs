@@ -71,6 +71,33 @@ Now let's add a little bit of interactivity to the script. We will accept the in
 - `/speak voice="name" (text)` — narrates the text using the selected TTS engine and the character name from the voice map, e.g. `/speak name="Donald Duck" Quack!`.
 - `/buttons labels=["a","b"] (text)` — shows a blocking popup with the specified text and button labels. `labels` must be a JSON-serialized array of strings or a variable name containing such an array. Returns the clicked button label into the pipe or empty string if canceled. The text supports lite HTML formatting.
 
+#### Arguments for `/popup` and `/input`
+
+`/popup` and `/input` support the following additional named arguments:
+- `large=on/off` - increases the vertical size of the popup. Default: `off`.
+- `wide=on/off` - increases the horizontal size of the popup. Default: `off`.
+- `okButton=string` - adds ability to customize the text on the "Ok" button. Default: `Ok`.
+- `rows=number` - (only for `/input`) increases the size of the input control. Default: 1.
+
+Example:
+```
+/popup large=on wide=on okButton="Accept" Please accept our terms and conditions....
+```
+
+#### Arguments for `/echo`
+
+`/echo` supports the following values for the additional `severity` argument that sets the style of the displayed message.
+  - `warning`
+  - `error`
+  - `info` (default)
+  - `success`
+
+Example:
+
+```
+/echo severity=error Something really bad happened.
+```
+
 ## Variables
 
 Variables are used to store and manipulate data in scripts, using either commands or macros. The variables could be one of the following types:
@@ -113,6 +140,22 @@ Now, let's consider the following example:
 4. The value is passed to the `/imagine` command (provided by the Image Generation plugin) to be used as its input prompt.
 
 Since the variables are saved and not flushed between the script executions, you can reference the variable in other scripts and via macros, and it will resolve to the same value as during the execution of the example script. To guarantee that the value will be discarded, add the `/flushvar` command to the script.
+
+### Arrays and objects
+
+Variable values can contain JSON-serialized arrays or key-value pairs (objects).
+
+Examples:
+- Array: `["apple","banana","orange"]`
+- Object: `{"fruits":["apple","banana","orange"]}`
+
+The following modifications can be applied to commands to work with these variables:
+
+- `/len` commands gets a number of items in the array.
+- `index=number/string` named argument can be added `/getvar` or `/setvar` and their global counterparts to get or set sub-values by either a zero-based index for arrays or a string key for objects.
+  - If a numeric index is used on a nonexistent variable, the variable will be created as an empty array `[]`.
+  - If a string index is used on a nonexistent variable, the variable will be created as an empty object `{}`.
+- `/addvar` and `/addglobalvar` commands support pushing a new value to array-typed variables.
 
 ## Flow control - conditionals
 
