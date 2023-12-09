@@ -494,6 +494,7 @@ In this menu you can do the following:
   * Sending a user message to the chat
   * Receiving an AI message in the chat
   * Opening a character or group chat
+  * Provide a custom tool-tip for the quick reply (text displayed when hovering over the quick reply in your UI)
 
 Commands are executed automatically only if the Quick Replies extension is enabled.
 
@@ -538,6 +539,14 @@ Clicking on the `GetMessage` button will call the `GetRandom` procedure which wi
 
 - Procedures do not accept named or unnamed arguments, but can reference the same variables as the caller.
 - Avoid recursion when calling procedures as it may produce the "call stack exceeded" error if handled unadvisedly.
+
+### Calling procedures from a different Quick Reply preset
+
+You can call a procedure from a different quick reply preset using the `a.b` syntax, where a = QR preset name and b = QR label name
+
+`/run QRpreset1.QRlabel1`
+
+By default, the system will first look for a quick reply label `a.b`, so if one of your labels is literally "QRpreset1.QRlabel1" it will try to run that. If no such label is found, it will search for a QR preset name "QRpreset1" with a QR labelled "QRlabel1".
 
 ## Extension commands
 
