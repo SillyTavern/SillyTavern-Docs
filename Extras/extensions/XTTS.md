@@ -55,7 +55,7 @@ conda install python=3.10
 ```
 5. Install the XTTS server with its requirements.
 ```
-pip install xtts-api-server
+pip install xtts-api-server pydub
 ```
 6. Install PyTorch. This can take some time. The following line installs PyTorch with GPU acceleration support (CUDA).
 If you want to use just the CPU inference, drop the last part that starts with `--index-url`.
