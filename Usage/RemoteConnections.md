@@ -4,11 +4,18 @@ order: 24
 ---
 # Remote connections
 
-Most often this is for people who want to use SillyTavern on their mobile phones while their PC runs the ST server on the same wifi network.
+Most often this is for people who want to use SillyTavern on their mobile phones while their PC runs the ST server within the same wifi network.
 
 However, it can be used to allow remote connections from anywhere as well.
 
-**IMPORTANT:** SillyTavern is a single-user program, so anyone who logs in will be able to see all characters and chats, and be able to change any settings inside the UI. [Basic Authentication](#HTTPBasicAuthentication) allows for requesting authorization before access to ST is granted, however the single-user principle still applies.
+By default, ST server only accepts local connections. In order to allow remote connections, set the parameter `listen` within `config.yaml` to `true`:
+```yaml
+# Listen for incoming connections
+listen: true
+```
+After activating the remote connection listening, you **MUST** turn on at least one of the restriction methods listed below as well, or ST server will refuse to start up.
+
+**NOTE:** SillyTavern is a single-user program, so anyone who logs in will be able to see all characters and chats, and be able to change any settings inside the UI. [Basic Authentication](#HTTPBasicAuthentication) allows for requesting authorization before access to ST is granted, however the single-user principle still applies.
 
 ## Whitelist
 
@@ -48,7 +55,7 @@ This will allow any device on the same network as the host machine, as well as t
 * Save the `whitelist.txt` file.
 * **Restart your SillyTavern server.**
 
-*Note: `config.yaml` also has a `whitelist` array, which you can use in the same way, but this array will be ignored if `whitelist.txt` exists. We do not recommend using the config.yaml IP list, because using whitelist.txt is easier*
+*Note: `config.yaml` also has a `whitelist` array, which you can use in the same way, but this array will be ignored if `whitelist.txt` exists. We do not recommend using the `config.yaml` IP list, because using `whitelist.txt` is easier*
 
 ### 2. Getting the IP for the ST host machine
 
@@ -93,8 +100,8 @@ After restarting your ST server, any device will be able to connect to it, regar
 
 The server will ask for username and password whenever a client connects via HTTP.
 
-To enable HTTP BA, Open `config.yaml` in the SillyTavern base directory and search for `basicAuthMode` Set basicAuthMode to true and set username and password. Note: config.yaml will only exist if ST has been executed before at least once.
-```
+To enable HTTP BA, Open `config.yaml` in the SillyTavern base directory and search for `basicAuthMode` Set basicAuthMode to true and set username and password. Note: `config.yaml` will only exist if ST has been executed before at least once.
+```yaml
 basicAuthMode: true
 basicAuthUser:
   - username: "MyUsername"
