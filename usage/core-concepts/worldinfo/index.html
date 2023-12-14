@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.755828320216">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.755883037371">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.755828320216" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.755883037371" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.755828320216" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.755883037371" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.755828320216" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.755883037371" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -276,13 +276,13 @@
     </h4>
 </doc-anchor-target>
 <p>A list of keywords that trigger the activation of a World Info entry. Keys are not case-sensitive by default (this is <doc-anchor-trigger to="#casesensitivekeys">configurable</doc-anchor-trigger>).</p>
-<doc-anchor-target id="secondary-key">
+<doc-anchor-target id="optional-filter">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#secondary-key">#</doc-anchor-trigger>
-        <span>Secondary Key</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#optional-filter">#</doc-anchor-trigger>
+        <span>Optional Filter</span>
     </h4>
 </doc-anchor-target>
-<p>A list of supplementary keywords that are used in conjunction with the main keywords. See <doc-anchor-trigger to="#selective">Selective</doc-anchor-trigger>.</p>
+<p>A list of supplementary keywords that are used in conjunction with the main keywords. See <doc-anchor-trigger to="#optionalfilter">Optional Filter</doc-anchor-trigger>.</p>
 <doc-anchor-target id="entry-content">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#entry-content">#</doc-anchor-trigger>
@@ -308,6 +308,7 @@
 <li><strong>After Char Defs:</strong> World Info entry is inserted after the character&#x27;s description and scenario. Has a greater impact on the conversation.</li>
 <li><strong>Top of AN:</strong> World Info entry is inserted at the top of Author&#x27;s Note content. Has a variable impact depending on the Author&#x27;s Note position.</li>
 <li><strong>Bottom of AN:</strong> World Info entry is inserted at the bottom of Author&#x27;s Note content. Has a variable impact depending on the Author&#x27;s Note position.</li>
+<li><strong>@ D:</strong>: World Info entry is inserted at a specific depth in the chat (Depth 0 being the bottom of the prompt).</li>
 </ul>
 <p>If your Author&#x27;s Note is disabled (Insertion Frequency = 0), World Info entries in A/N positions will be ignored!</p>
 <doc-anchor-target id="comment">
@@ -317,21 +318,31 @@
     </h4>
 </doc-anchor-target>
 <p>A supplemental text comment for your convenience, which is not utilized by the AI.</p>
-<doc-anchor-target id="constant">
+<doc-anchor-target id="status">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#constant">#</doc-anchor-trigger>
-        <span>Constant</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#status">#</doc-anchor-trigger>
+        <span>Status</span>
     </h4>
 </doc-anchor-target>
-<p>If enabled, the entry would always be present in the prompt.</p>
-<doc-anchor-target id="selective">
+<ol>
+<li>Blue = The entry would always be present in the prompt.</li>
+<li>Green = The entry will be triggered only in the presence of the keyword.</li>
+<li>Red Cross = Entry is disabled.</li>
+</ol>
+<doc-anchor-target id="optional-filter-1">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#selective">#</doc-anchor-trigger>
-        <span>Selective</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#optional-filter-1">#</doc-anchor-trigger>
+        <span>Optional Filter</span>
     </h4>
 </doc-anchor-target>
-<p>If enabled, the entry would only be inserted when both a Key <strong>AND</strong> a Secondary Key have been activated.</p>
-<p>If no secondary keys are provided, this flag is ignored.</p>
+<p>Comma-separated list of additional keywords in conjunction with the primary key.
+If no arguments are provided, this flag is ignored.
+Supports logic for AND ANY, NOT ANY, or NOT ALL</p>
+<ol>
+<li>AND ANY = Activates the entry only if the primary key and Any one of the optional filter keys are in scanned context.</li>
+<li>NOT ANY = Activates the entry only if the primary key and None of the optional filter keys are in scanned context.</li>
+<li>NOT ALL = Prevents activation of the entry despite primary key trigger, if all of the optional filters are in scanned context.</li>
+</ol>
 <doc-anchor-target id="probability">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#probability">#</doc-anchor-trigger>
@@ -345,6 +356,13 @@
 <li>Probability = 0 means that the entry will NOT be inserted (essentially disabling it).</li>
 </ol>
 <p>Use this to create random events in your chats. For example, every message could have a 1% chance of waking up an Elder God if its name is mentioned in the message.</p>
+<doc-anchor-target id="activation-settings">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#activation-settings">#</doc-anchor-trigger>
+        <span>Activation Settings</span>
+    </h2>
+</doc-anchor-target>
+<p>Collapsible menu at the top of the World Info screen.</p>
 <doc-anchor-target id="scan-depth">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#scan-depth">#</doc-anchor-trigger>
@@ -354,16 +372,31 @@
 <p>Defines how many messages in the chat history should be scanned for World Info keys.</p>
 <p>If set to 1, then SillyTavern only scans the message you send and the most recent reply.</p>
 <p>This stacks up to 10 message pairs in total.</p>
-<doc-anchor-target id="budget">
+<doc-anchor-target id="context---budget">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#budget">#</doc-anchor-trigger>
-        <span>Budget</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#context---budget">#</doc-anchor-trigger>
+        <span>Context % / Budget</span>
     </h3>
 </doc-anchor-target>
-<p><strong>Defines how many tokens could be used by World Info entries at once.</strong></p>
+<p><strong>Defines how many tokens could be used by World Info entries at once.</strong>
+You can define a threshold relative to your API&#x27;s max-context settings (Context %) or an objective token threshold (Budget)</p>
 <p>If the budget is exhausted, then no more entries are activated even if the keys are present in the prompt.</p>
 <p>Constant entries will be inserted first. Then entries with higher order numbers.</p>
 <p>Entries inserted by directly mentioning their keys have higher priority than those that were mentioned in other entries&#x27; contents.</p>
+<doc-anchor-target id="min-activations">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#min-activations">#</doc-anchor-trigger>
+        <span>Min Activations</span>
+    </h3>
+</doc-anchor-target>
+<p>Minimum Activations: If set to a non-zero value, this will disregard the limitation of &quot;scan-depth&quot;, seeking all of the chat log backward from the latest message for keywords until as many entries as specified in min activations have been triggered. This will still be limited by the Max Depth setting or your overall Budget cap.</p>
+<doc-anchor-target id="max-depth">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#max-depth">#</doc-anchor-trigger>
+        <span>Max Depth</span>
+    </h3>
+</doc-anchor-target>
+<p>Maximum Depth to scan for when using the Min Activations setting.</p>
 <doc-anchor-target id="recursive-scanning">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#recursive-scanning">#</doc-anchor-trigger>
@@ -398,8 +431,15 @@ Content: Rufus is a dog.</code></pre>
         <span>Match whole words</span>
     </h3>
 </doc-anchor-target>
-<p>Entries with keys containing only one word will be matched only if the entire word is present in the search text.</p>
+<p>Entries with keys containing only one word will be matched only if the entire word is present in the search text. Enabled by default.</p>
 <p>For example, if the setting is enabled and the entry key is &quot;king&quot;, then text such as &quot;long live the king&quot; would be matched, but &quot;it&#x27;s not to my liking&quot; wouldn&#x27;t.</p>
+<doc-anchor-target id="alert-on-overflow">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#alert-on-overflow">#</doc-anchor-trigger>
+        <span>Alert on overflow</span>
+    </h3>
+</doc-anchor-target>
+<p>Generate an alert if your world info is greater than the allocated token budget.</p>
 
                                 
                                 <!-- Required only on API pages -->
