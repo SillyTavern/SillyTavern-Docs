@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.755883037371">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.755883120459">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -14,7 +14,7 @@
     <!-- Primary Meta Tags -->
     <title>Remote connections | docs.ST.app</title>
     <meta name="title" content="Remote connections | docs.ST.app">
-    <meta name="description" content="Most often this is for people who want to use SillyTavern on their mobile phones while their PC runs the ST server on the same wifi network.">
+    <meta name="description" content="Most often this is for people who want to use SillyTavern on their mobile phones while their PC runs the ST server within the same wifi network.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/usage/remoteconnections/">
@@ -23,21 +23,22 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/usage/remoteconnections/">
     <meta property="og:title" content="Remote connections | docs.ST.app">
-    <meta property="og:description" content="Most often this is for people who want to use SillyTavern on their mobile phones while their PC runs the ST server on the same wifi network.">
+    <meta property="og:description" content="Most often this is for people who want to use SillyTavern on their mobile phones while their PC runs the ST server within the same wifi network.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/usage/remoteconnections/">
     <meta property="twitter:title" content="Remote connections | docs.ST.app">
-    <meta property="twitter:description" content="Most often this is for people who want to use SillyTavern on their mobile phones while their PC runs the ST server on the same wifi network.">
+    <meta property="twitter:description" content="Most often this is for people who want to use SillyTavern on their mobile phones while their PC runs the ST server within the same wifi network.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.755883037371" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.755883120459" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.755883037371" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.755883120459" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.755883037371" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.755883120459" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.755883120459" defer></script>
 
     <Style>
         a {
@@ -203,9 +204,15 @@
         <span>Remote connections</span>
     </h1>
 </doc-anchor-target>
-<p>Most often this is for people who want to use SillyTavern on their mobile phones while their PC runs the ST server on the same wifi network.</p>
+<p>Most often this is for people who want to use SillyTavern on their mobile phones while their PC runs the ST server within the same wifi network.</p>
 <p>However, it can be used to allow remote connections from anywhere as well.</p>
-<p><strong>IMPORTANT:</strong> SillyTavern is a single-user program, so anyone who logs in will be able to see all characters and chats, and be able to change any settings inside the UI. <doc-anchor-trigger to="#HTTPBasicAuthentication">Basic Authentication</doc-anchor-trigger> allows for requesting authorization before access to ST is granted, however the single-user principle still applies.</p>
+<p>By default, ST server only accepts local connections. In order to allow remote connections, set the parameter <code v-pre>listen</code> within <code v-pre>config.yaml</code> to <code v-pre>true</code>:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-yaml"><code v-pre class="language-yaml"># Listen for incoming connections
+listen: true</code></pre>
+</doc-codeblock></div>
+<p>After activating the remote connection listening, you <strong>MUST</strong> turn on at least one of the restriction methods listed below as well, or ST server will refuse to start up.</p>
+<p><strong>NOTE:</strong> SillyTavern is a single-user program, so anyone who logs in will be able to see all characters and chats, and be able to change any settings inside the UI. <doc-anchor-trigger to="#HTTPBasicAuthentication">Basic Authentication</doc-anchor-trigger> allows for requesting authorization before access to ST is granted, however the single-user principle still applies.</p>
 <doc-anchor-target id="whitelist">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#whitelist">#</doc-anchor-trigger>
@@ -255,7 +262,7 @@
 <li>Save the <code v-pre>whitelist.txt</code> file.</li>
 <li><strong>Restart your SillyTavern server.</strong></li>
 </ul>
-<p><em>Note: <code v-pre>config.yaml</code> also has a <code v-pre>whitelist</code> array, which you can use in the same way, but this array will be ignored if <code v-pre>whitelist.txt</code> exists. We do not recommend using the config.yaml IP list, because using whitelist.txt is easier</em></p>
+<p><em>Note: <code v-pre>config.yaml</code> also has a <code v-pre>whitelist</code> array, which you can use in the same way, but this array will be ignored if <code v-pre>whitelist.txt</code> exists. We do not recommend using the <code v-pre>config.yaml</code> IP list, because using <code v-pre>whitelist.txt</code> is easier</em></p>
 <doc-anchor-target id="2-getting-the-ip-for-the-st-host-machine">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#2-getting-the-ip-for-the-st-host-machine">#</doc-anchor-trigger>
@@ -309,9 +316,9 @@
     </h2>
 </doc-anchor-target>
 <p>The server will ask for username and password whenever a client connects via HTTP.</p>
-<p>To enable HTTP BA, Open <code v-pre>config.yaml</code> in the SillyTavern base directory and search for <code v-pre>basicAuthMode</code> Set basicAuthMode to true and set username and password. Note: config.yaml will only exist if ST has been executed before at least once.</p>
+<p>To enable HTTP BA, Open <code v-pre>config.yaml</code> in the SillyTavern base directory and search for <code v-pre>basicAuthMode</code> Set basicAuthMode to true and set username and password. Note: <code v-pre>config.yaml</code> will only exist if ST has been executed before at least once.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">basicAuthMode: true
+<pre class="language-yaml"><code v-pre class="language-yaml">basicAuthMode: true
 basicAuthUser:
   - username: &quot;MyUsername&quot;
   - password: &quot;MyPassword&quot;</code></pre>
@@ -419,6 +426,6 @@ basicAuthUser:
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Remote connections", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Remote connections", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
