@@ -72,6 +72,8 @@ If your Author's Note is disabled (Insertion Frequency = 0), World Info entries 
 
 A text field for your convenience to label your entries, which is not utilized by the AI or any of the trigger logics.
 
+If empty, can be backfilled using the entries' first key by clicking on the "Fill empty memos" button.
+
 #### Status
 
 1. Blue = The entry would always be present in the prompt.
