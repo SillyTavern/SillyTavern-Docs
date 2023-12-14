@@ -44,11 +44,11 @@ Entries from the Global World Info Info would be included first by their Inserti
 
 #### Key
 
-A list of keywords that trigger the activation of a World Info entry. Keys are not case-sensitive by default (this is [configurable](#casesensitivekeys)).
+A list of keywords that trigger the activation of a World Info entry. Keys are not case-sensitive by default (this is [configurable](#case-sensitive-keys)).
 
 #### Optional Filter
 
-A list of supplementary keywords that are used in conjunction with the main keywords. See [Optional Filter](optional-filter-1).
+A list of supplementary keywords that are used in conjunction with the main keywords. See [Optional Filter](#optional-filter-1).
 
 #### Entry Content
 
