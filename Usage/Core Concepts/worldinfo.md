@@ -75,19 +75,18 @@ A supplemental text comment for your convenience, which is not utilized by the A
 #### Status
 
 1. Blue = The entry would always be present in the prompt.
-2. Green = The entry will be trigerred only on the presence of the keyword.
+2. Green = The entry will be triggered only in the presence of the keyword.
 3. Red Cross = Entry is disabled.
 
 #### Optional Filter
 
-Comma separated list of additional key words in conjunction with the primary key.
+Comma-separated list of additional keywords in conjunction with the primary key.
 If no arguments are provided, this flag is ignored.
 Supports logic for AND ANY, NOT ANY, or NOT ALL
 
 1. AND ANY = Activates the entry only if the primary key and Any one of the optional filter keys are in scanned context.
 2. NOT ANY = Activates the entry only if the primary key and None of the optional filter keys are in scanned context.
-1. NOT ALL = Prevents activation of the entry despite primary key trigger, if all of the optional filters are in scanned context.
-
+3. NOT ALL = Prevents activation of the entry despite primary key trigger, if all of the optional filters are in scanned context.
 
 #### Probability
 
@@ -114,8 +113,7 @@ This stacks up to 10 message pairs in total.
 ### Context % / Budget
 
 **Defines how many tokens could be used by World Info entries at once.**
-You can define a threshold relative to your API's max-context settings (C
-ontext %) or an objective token threshold (Budget)
+You can define a threshold relative to your API's max-context settings (Context %) or an objective token threshold (Budget)
 
 If the budget is exhausted, then no more entries are activated even if the keys are present in the prompt.
 
@@ -125,7 +123,7 @@ Entries inserted by directly mentioning their keys have higher priority than tho
 
 ### Min Activations
 
-Minimum Activations: If set to a non-zero value, this will disregard the limitation of "scan-depth", seeking all of the chat history backwards from the latest message for keywords until it as many entries as specfied in min activations have been triggered. This will still be limited by the Max Depth setting or your overall Budget cap.
+Minimum Activations: If set to a non-zero value, this will disregard the limitation of "scan-depth", seeking all of the chat log backward from the latest message for keywords until as many entries as specified in min activations have been triggered. This will still be limited by the Max Depth setting or your overall Budget cap.
 
 ### Max Depth
 
