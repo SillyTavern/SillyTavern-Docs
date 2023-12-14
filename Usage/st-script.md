@@ -268,6 +268,7 @@ This example adds 1 to the value of `i` until it reaches 10, then outputs the re
 12. `/abs (a)` – performs an absolute value operation of a value, e.g. `/abs -10`
 13. `/sqrt (a)`– performs a square root operation of a value, e.g. `/sqrt 9`
 14. `/round (a)` – performs a rounding to the nearest integer operation of a value, e.g. `/round 3.14`
+15. `/rand (from=number=0 to=number=1)` – returns a random number between from and to, e.g. `/rand` or `/rand 10` or `/rand from=5 to=10`. Ranges are inclusive. The returned value will contain a fractional part. Use `/round` to get an integral value, e.g. `/rand from=1 to=10 | /round | /echo`.
 
 ### Example 1: get an area of a circle with a radius of 50.
 
@@ -590,6 +591,72 @@ You can call a procedure from a different quick reply preset using the `a.b` syn
 `/run QRpreset1.QRlabel1`
 
 By default, the system will first look for a quick reply label `a.b`, so if one of your labels is literally "QRpreset1.QRlabel1" it will try to run that. If no such label is found, it will search for a QR preset name "QRpreset1" with a QR labelled "QRlabel1".
+
+### Quick Replies management commands
+
+#### Create Quick Reply
+
+* `/qr-create (arguments, [message])` – creates a new Quick Reply, example: `/qr-create set=MyPreset label=MyButton /echo 123`
+
+Arguments:
+- `label`    - string - text on the button, e.g., `label=MyButton`
+- `set`      - string - name of the QR set, e.g., `set=PresetName1`
+- `hidden`   - bool   - whether the button should be hidden, e.g., `hidden=true`
+- `startup`  - bool   - auto execute on app startup, e.g., `startup=true`
+- `user`     - bool   - auto execute on user message, e.g., `user=true`
+- `bot`      - bool   - auto execute on AI message, e.g., `bot=true`
+- `load`     - bool   - auto execute on chat load, e.g., `load=true`
+- `title`    - bool   - title / tooltip to be shown on button, e.g., `title="My Fancy Button"`
+
+#### Delete Quick Reply
+
+* `/qr-delete (set=string [label])` – deletes Quick Reply
+
+#### Update Quick Reply
+
+* `/qr-update (arguments, [message])` – updates Quick Reply, example: `/qr-update set=MyPreset label=MyButton newlabel=MyRenamedButton /echo 123`
+
+Arguments:
+- `newlabel` - string - new text fort the button, e.g. `newlabel=MyRenamedButton`
+- `label`    - string - text on the button, e.g., `label=MyButton`
+- `set`      - string - name of the QR set, e.g., `set=PresetName1`
+- `hidden`   - bool   - whether the button should be hidden, e.g., `hidden=true`
+- `startup`  - bool   - auto execute on app startup, e.g., `startup=true`
+- `user`     - bool   - auto execute on user message, e.g., `user=true`
+- `bot`      - bool   - auto execute on AI message, e.g., `bot=true`
+- `load`     - bool   - auto execute on chat load, e.g., `load=true`
+- `title`    - bool   - title / tooltip to be shown on button, e.g., `title="My Fancy Button"`
+
+#### Create or update QR preset
+
+* `/qr-presetupdate (arguments [label])` or `/qr-presetadd (arguments [label])`
+
+Arguments:
+- `enabled` - bool - enable or disable the preset
+- `nosend`  - bool - disable send / insert in user input (invalid for slash commands)
+- `before`  - bool - place QR before user input
+- `slots`   - int  - number of slots
+- `inject`  - bool - inject user input automatically (if disabled use `{{input}}`)
+
+Create a new preset (overrides existing ones), example: `/qr-presetadd slots=3 MyNewPreset`
+
+#### Add QR context menu
+
+* `/qr-contextadd (set=string label=string chain=bool [preset name])` – add context menu preset to a QR, example: `/qr-contextadd set=MyPreset label=MyButton chain=true MyOtherPreset`
+
+#### Remove all context menus
+
+* `/qr-contextclear (set=string [label])` – remove all context menu presets from a QR, example: `/qr-contextclear set=MyPreset MyButton`
+
+#### Remove one context menu
+
+* `/qr-contextdel (set=string label=string [preset name])` – remove context menu preset from a QR, example: `/qr-contextdel set=MyPreset label=MyButton MyOtherPreset`
+
+### Quick Reply value escaping
+
+`|{}` can be escaped with backslash in the QR message / command.
+
+For example, use `/qr-create label=MyButton /getvar myvar \| /echo \{\{pipe\}\}` to create a QR that calls `/getvar myvar | /echo {{pipe}}`.
 
 ## Extension commands
 
