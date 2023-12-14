@@ -44,11 +44,11 @@ Entries from the Global World Info Info would be included first by their Inserti
 
 #### Key
 
-A list of keywords that trigger the activation of a World Info entry. Keys are not case-sensitive by default (this is [configurable](#casesensitivekeys)).
+A list of keywords that trigger the activation of a World Info entry. Keys are not case-sensitive by default (this is [configurable](#case-sensitive-keys)).
 
 #### Optional Filter
 
-A list of supplementary keywords that are used in conjunction with the main keywords. See [Optional Filter](#optionalfilter).
+A list of supplementary keywords that are used in conjunction with the main keywords. See [Optional Filter](#optional-filter-1).
 
 #### Entry Content
 
@@ -109,8 +109,6 @@ Collapsible menu at the top of the World Info screen.
 Defines how many messages in the chat history should be scanned for World Info keys.
 
 If set to 1, then SillyTavern only scans the message you send and the most recent reply.
-
-This stacks up to 10 message pairs in total.
 
 ### Context % / Budget
 
