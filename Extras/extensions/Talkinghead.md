@@ -92,7 +92,7 @@ There is only one (lightest) model included, if you want the additional blend mo
           :
       - two_algo_face_body_rotator.pt
 
-The model files are distributed with the Creative Commons Attribution 4.0 International License, which means that you can use them for commercial purposes. However, Pramook Khungurn. Talking Head(?) Anime from a Single Image 3: Now the Body Too. http://pkhungurn.github.io/talking-head-anime-3/, is the creator.
+The model files are distributed with the Creative Commons Attribution 4.0 International License, which means that you can use them for commercial purposes. However, Pramook Khungurn. Talking Head(?) Anime from a Single Image 3: Now the Body Too. <https://github.com/pkhungurn/talking-head-anime-3-demo>, is the creator.
 
 ### Running the manual_poser Desktop Application
 Open a shell. Change your working directory to the repository's root directory. Then, run:
