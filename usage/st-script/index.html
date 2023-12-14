@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.755886352271">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.755911782127">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.755886352271" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.755911782127" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.755886352271" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.755911782127" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.755886352271" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.755911782127" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -527,6 +527,7 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 <li><code v-pre>/abs (a)</code> – performs an absolute value operation of a value, e.g. <code v-pre>/abs -10</code></li>
 <li><code v-pre>/sqrt (a)</code>– performs a square root operation of a value, e.g. <code v-pre>/sqrt 9</code></li>
 <li><code v-pre>/round (a)</code> – performs a rounding to the nearest integer operation of a value, e.g. <code v-pre>/round 3.14</code></li>
+<li><code v-pre>/rand (from=number=0 to=number=1)</code> – returns a random number between from and to, e.g. <code v-pre>/rand</code> or <code v-pre>/rand 10</code> or <code v-pre>/rand from=5 to=10</code>. Ranges are inclusive. The returned value will contain a fractional part. Use <code v-pre>/round</code> to get an integral value, e.g. <code v-pre>/rand from=1 to=10 | /round | /echo</code>.</li>
 </ol>
 <doc-anchor-target id="example-1-get-an-area-of-a-circle-with-a-radius-of-50">
     <h3>
@@ -989,6 +990,115 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
 <p>You can call a procedure from a different quick reply preset using the <code v-pre>a.b</code> syntax, where a = QR preset name and b = QR label name</p>
 <p><code v-pre>/run QRpreset1.QRlabel1</code></p>
 <p>By default, the system will first look for a quick reply label <code v-pre>a.b</code>, so if one of your labels is literally &quot;QRpreset1.QRlabel1&quot; it will try to run that. If no such label is found, it will search for a QR preset name &quot;QRpreset1&quot; with a QR labelled &quot;QRlabel1&quot;.</p>
+<doc-anchor-target id="quick-replies-management-commands">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#quick-replies-management-commands">#</doc-anchor-trigger>
+        <span>Quick Replies management commands</span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="create-quick-reply">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#create-quick-reply">#</doc-anchor-trigger>
+        <span>Create Quick Reply</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><code v-pre>/qr-create (arguments, [message])</code> – creates a new Quick Reply, example: <code v-pre>/qr-create set=MyPreset label=MyButton /echo 123</code></li>
+</ul>
+<p>Arguments:</p>
+<ul>
+<li><code v-pre>label</code>    - string - text on the button, e.g., <code v-pre>label=MyButton</code></li>
+<li><code v-pre>set</code>      - string - name of the QR set, e.g., <code v-pre>set=PresetName1</code></li>
+<li><code v-pre>hidden</code>   - bool   - whether the button should be hidden, e.g., <code v-pre>hidden=true</code></li>
+<li><code v-pre>startup</code>  - bool   - auto execute on app startup, e.g., <code v-pre>startup=true</code></li>
+<li><code v-pre>user</code>     - bool   - auto execute on user message, e.g., <code v-pre>user=true</code></li>
+<li><code v-pre>bot</code>      - bool   - auto execute on AI message, e.g., <code v-pre>bot=true</code></li>
+<li><code v-pre>load</code>     - bool   - auto execute on chat load, e.g., <code v-pre>load=true</code></li>
+<li><code v-pre>title</code>    - bool   - title / tooltip to be shown on button, e.g., <code v-pre>title=&quot;My Fancy Button&quot;</code></li>
+</ul>
+<doc-anchor-target id="delete-quick-reply">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#delete-quick-reply">#</doc-anchor-trigger>
+        <span>Delete Quick Reply</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><code v-pre>/qr-delete (set=string [label])</code> – deletes Quick Reply</li>
+</ul>
+<doc-anchor-target id="update-quick-reply">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#update-quick-reply">#</doc-anchor-trigger>
+        <span>Update Quick Reply</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><code v-pre>/qr-update (arguments, [message])</code> – updates Quick Reply, example: <code v-pre>/qr-update set=MyPreset label=MyButton newlabel=MyRenamedButton /echo 123</code></li>
+</ul>
+<p>Arguments:</p>
+<ul>
+<li><code v-pre>newlabel</code> - string - new text fort the button, e.g. <code v-pre>newlabel=MyRenamedButton</code></li>
+<li><code v-pre>label</code>    - string - text on the button, e.g., <code v-pre>label=MyButton</code></li>
+<li><code v-pre>set</code>      - string - name of the QR set, e.g., <code v-pre>set=PresetName1</code></li>
+<li><code v-pre>hidden</code>   - bool   - whether the button should be hidden, e.g., <code v-pre>hidden=true</code></li>
+<li><code v-pre>startup</code>  - bool   - auto execute on app startup, e.g., <code v-pre>startup=true</code></li>
+<li><code v-pre>user</code>     - bool   - auto execute on user message, e.g., <code v-pre>user=true</code></li>
+<li><code v-pre>bot</code>      - bool   - auto execute on AI message, e.g., <code v-pre>bot=true</code></li>
+<li><code v-pre>load</code>     - bool   - auto execute on chat load, e.g., <code v-pre>load=true</code></li>
+<li><code v-pre>title</code>    - bool   - title / tooltip to be shown on button, e.g., <code v-pre>title=&quot;My Fancy Button&quot;</code></li>
+</ul>
+<doc-anchor-target id="create-or-update-qr-preset">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#create-or-update-qr-preset">#</doc-anchor-trigger>
+        <span>Create or update QR preset</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><code v-pre>/qr-presetupdate (arguments [label])</code> or <code v-pre>/qr-presetadd (arguments [label])</code></li>
+</ul>
+<p>Arguments:</p>
+<ul>
+<li><code v-pre>enabled</code> - bool - enable or disable the preset</li>
+<li><code v-pre>nosend</code>  - bool - disable send / insert in user input (invalid for slash commands)</li>
+<li><code v-pre>before</code>  - bool - place QR before user input</li>
+<li><code v-pre>slots</code>   - int  - number of slots</li>
+<li><code v-pre>inject</code>  - bool - inject user input automatically (if disabled use <code v-pre>{{input}}</code>)</li>
+</ul>
+<p>Create a new preset (overrides existing ones), example: <code v-pre>/qr-presetadd slots=3 MyNewPreset</code></p>
+<doc-anchor-target id="add-qr-context-menu">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#add-qr-context-menu">#</doc-anchor-trigger>
+        <span>Add QR context menu</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><code v-pre>/qr-contextadd (set=string label=string chain=bool [preset name])</code> – add context menu preset to a QR, example: <code v-pre>/qr-contextadd set=MyPreset label=MyButton chain=true MyOtherPreset</code></li>
+</ul>
+<doc-anchor-target id="remove-all-context-menus">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#remove-all-context-menus">#</doc-anchor-trigger>
+        <span>Remove all context menus</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><code v-pre>/qr-contextclear (set=string [label])</code> – remove all context menu presets from a QR, example: <code v-pre>/qr-contextclear set=MyPreset MyButton</code></li>
+</ul>
+<doc-anchor-target id="remove-one-context-menu">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#remove-one-context-menu">#</doc-anchor-trigger>
+        <span>Remove one context menu</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><code v-pre>/qr-contextdel (set=string label=string [preset name])</code> – remove context menu preset from a QR, example: <code v-pre>/qr-contextdel set=MyPreset label=MyButton MyOtherPreset</code></li>
+</ul>
+<doc-anchor-target id="quick-reply-value-escaping">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#quick-reply-value-escaping">#</doc-anchor-trigger>
+        <span>Quick Reply value escaping</span>
+    </h3>
+</doc-anchor-target>
+<p><code v-pre>|{}</code> can be escaped with backslash in the QR message / command.</p>
+<p>For example, use <code v-pre>/qr-create label=MyButton /getvar myvar \| /echo \{\{pipe\}\}</code> to create a QR that calls <code v-pre>/getvar myvar | /echo {{pipe}}</code>.</p>
 <doc-anchor-target id="extension-commands">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#extension-commands">#</doc-anchor-trigger>
