@@ -46,9 +46,9 @@ Entries from the Global World Info Info would be included first by their Inserti
 
 A list of keywords that trigger the activation of a World Info entry. Keys are not case-sensitive by default (this is [configurable](#casesensitivekeys)).
 
-#### Secondary Key
+#### Optional Filter
 
-A list of supplementary keywords that are used in conjunction with the main keywords. See [Selective](#selective).
+A list of supplementary keywords that are used in conjunction with the main keywords. See [Optional Filter](#optionalfilter).
 
 #### Entry Content
 
@@ -64,6 +64,7 @@ Numeric value. Defines a priority of the entry if multiple were activated at onc
 * **After Char Defs:** World Info entry is inserted after the character's description and scenario. Has a greater impact on the conversation.
 * **Top of AN:** World Info entry is inserted at the top of Author's Note content. Has a variable impact depending on the Author's Note position.
 * **Bottom of AN:** World Info entry is inserted at the bottom of Author's Note content. Has a variable impact depending on the Author's Note position.
+* **@ D:**: World Info entry is inserted at a specific depth in the chat (Depth 0 being the bottom of the prompt).
 
 If your Author's Note is disabled (Insertion Frequency = 0), World Info entries in A/N positions will be ignored!
 
@@ -71,15 +72,22 @@ If your Author's Note is disabled (Insertion Frequency = 0), World Info entries 
 
 A supplemental text comment for your convenience, which is not utilized by the AI.
 
-#### Constant
+#### Status
 
-If enabled, the entry would always be present in the prompt.
+1. Blue = The entry would always be present in the prompt.
+2. Green = The entry will be trigerred only on the presence of the keyword.
+3. 
 
-#### Selective
+#### Optional Filter
 
-If enabled, the entry would only be inserted when both a Key **AND** a Secondary Key have been activated.
+Comma separated list of additional key words in conjunction with the primary key.
+If no arguments are provided, this flag is ignored.
+Supports logic for AND ANY, NOT ANY, or NOT ALL
 
-If no secondary keys are provided, this flag is ignored.
+1. AND ANY = Activates the entry only if the primary key and Any one of the optional filter keys are in scanned context.
+2. NOT ANY = Activates the entry only if the primary key and None of the optional filter keys are in scanned context.
+1. NOT ALL = Prevents activation of the entry despite primary key trigger, if all of the optional filters are in scanned context.
+
 
 #### Probability
 
@@ -91,6 +99,10 @@ This value acts like an additional filter that adds a chance for the entry NOT t
 
 Use this to create random events in your chats. For example, every message could have a 1% chance of waking up an Elder God if its name is mentioned in the message.
 
+## Activation Settings
+
+Collapsible menu at the top of the World Info screen.
+
 ### Scan Depth
 
 Defines how many messages in the chat history should be scanned for World Info keys.
@@ -99,15 +111,25 @@ If set to 1, then SillyTavern only scans the message you send and the most recen
 
 This stacks up to 10 message pairs in total.
 
-### Budget
+### Context % / Budget
 
 **Defines how many tokens could be used by World Info entries at once.**
+You can define a threshold relative to your API's max-context settings (C
+ontext %) or an objective token threshold (Budget)
 
 If the budget is exhausted, then no more entries are activated even if the keys are present in the prompt.
 
 Constant entries will be inserted first. Then entries with higher order numbers.
 
 Entries inserted by directly mentioning their keys have higher priority than those that were mentioned in other entries' contents.
+
+### Min Activations
+
+Minimum Activations: If set to a non-zero value, this will disregard the limitation of "scan-depth", seeking all of the chat history backwards from the latest message for keywords until it as many entries as specfied in min activations have been triggered. This will still be limited by the Max Depth setting or your overall Budget cap.
+
+### Max Depth
+
+Maximum Depth to scan for when using the Min Activations setting.
 
 ### Recursive scanning
 
@@ -139,6 +161,10 @@ For example, when this setting is active, keys 'rose' and 'Rose' will be treated
 
 ### Match whole words
 
-Entries with keys containing only one word will be matched only if the entire word is present in the search text.
+Entries with keys containing only one word will be matched only if the entire word is present in the search text. Enabled by default.
 
 For example, if the setting is enabled and the entry key is "king", then text such as "long live the king" would be matched, but "it's not to my liking" wouldn't.
+
+### Alert on overflow
+
+Generate an alert if your world info is greater than the allocated token budget.
