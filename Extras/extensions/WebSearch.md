@@ -39,6 +39,8 @@ Get the key here: https://serpapi.com/dashboard
 Search results from the latest query will stay included in the prompt until the next valid query is found.
 If you want to ask additional questions without accidentally triggering the search, start your message with a period.
 
+To discard all previous queries from processing, start the user message with an exclamation mark, for example a user message `!Now let's talk about...` will discard this and every message above it.
+
 ### What can be included in the search result?
 
 #### SerpApi

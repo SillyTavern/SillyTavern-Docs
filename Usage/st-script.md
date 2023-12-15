@@ -268,7 +268,7 @@ This example adds 1 to the value of `i` until it reaches 10, then outputs the re
 12. `/abs (a)` – performs an absolute value operation of a value, e.g. `/abs -10`
 13. `/sqrt (a)`– performs a square root operation of a value, e.g. `/sqrt 9`
 14. `/round (a)` – performs a rounding to the nearest integer operation of a value, e.g. `/round 3.14`
-15. `/rand (from=number=0 to=number=1)` – returns a random number between from and to, e.g. `/rand` or `/rand 10` or `/rand from=5 to=10`. Ranges are inclusive. The returned value will contain a fractional part. Use `/round` to get an integral value, e.g. `/rand from=1 to=10 | /round | /echo`.
+15. `/rand (round=round|ceil|floor from=number=0 to=number=1)` – returns a random number between from and to, e.g. `/rand` or `/rand 10` or `/rand from=5 to=10`. Ranges are inclusive. The returned value will contain a fractional part. Use `round` named argument to get an integral value, e.g. `/rand round=ceil` to round up, `round=floor` to round down, and `round=round` to round to nearest.
 
 ### Example 1: get an area of a circle with a radius of 50.
 
