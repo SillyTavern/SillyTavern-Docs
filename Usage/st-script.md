@@ -243,6 +243,13 @@ This example adds 1 to the value of `i` until it reaches 10, then outputs the re
 /echo {{getvar::i}} |
 /flushvar i
 ```
+### Arguments for `/times`
+
+Runs a subcommand a specified number of times.
+
+`/times (repeats) "(command)"` – any valid slash command enclosed in quotes repeats a number of times, e.g. `/setvar key=i 1 | /times 5 "/addvar key=i 1"` adds 1 to the value of "i" 5 times.
+- {{timesIndex}} is replaced with the iteration number (zero-based), e.g. `/times 4 "/echo {{timesIndex}}"` echoes the numbers 0 through 4.
+- Loops are limited to 100 iterations by default, pass `guard=off` to disable.
 
 ## Math operations
 
