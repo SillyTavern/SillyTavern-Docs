@@ -1,3 +1,7 @@
+---
+icon: server
+---
+
 # Server Plugins
 
 These plugins allow adding functionality that is impossible to achieve using UI extensions alone, such as creating new API endpoints or using Node.JS packages that are not available in a browser environment.
