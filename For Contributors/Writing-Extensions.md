@@ -2,9 +2,9 @@
 icon: file-added
 ---
 
-# Writing Extensions
+# UI Extensions
 
-Plugins extend the functionality of SillyTavern by hooking into its events and API. You can easily create your own extensions.
+UI extensions expand the functionality of SillyTavern by hooking into its events and API. You can easily create your own extensions.
 
 Want to contribute your extensions to the [official repository](https://github.com/SillyTavern/SillyTavern-Content)? Contact us!
 
