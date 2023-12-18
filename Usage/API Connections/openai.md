@@ -23,8 +23,8 @@ WindowAI & OpenRouter allows connection to these as well.
 
 If you have access to Anthropic's Claude API:
 
-- select 'Claude' for 'Chat Completion Source'
-- Input your API key
+- Select 'Claude' for 'Chat Completion Source'.
+- Input your API key.
 - Click connect.
 
 ## Proxy
@@ -43,17 +43,17 @@ Examples of backends which implement this API are:
 
 This feature is accessed by:
 
-- Selecting 'OpenAI' for 'Chat Completion Source'
-- Leaving the details like API key empty
-- Opening the 'AI Response Configuration' tab and scrolling down to the 'OpenAI / Claude Reverse Proxy' section
+- Selecting 'OpenAI' for 'Chat Completion Source'.
+- Leaving the details like API key empty.
+- Opening the 'AI Response Configuration' tab and scrolling down to the 'OpenAI / Claude Reverse Proxy' section.
 
 In there, you may enter the proxy/custom endpoint and optionally an API key under 'Proxy Password'.
 TabbyAPI provides you with an API key you have to use.
 
 Back in the 'AI Connections' tab, you can find two optional checkboxes labeled:
 
-- Bypass API status check 
-- Show "External" models (provided by API)
+- Bypass API status check.
+- Show "External" models (provided by API).
 
 Checking 'Bypass API status check' tells SillyTavern to stop alerting you about a non-functioning API endpoint.
 Check this if your API endpoint works, but SillyTavern keeps warning you anyway.
