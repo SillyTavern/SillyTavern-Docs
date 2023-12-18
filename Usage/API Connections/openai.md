@@ -29,6 +29,11 @@ If you have access to Anthropic's Claude API:
 
 ## Proxy
 
+!!!warning
+It is important to note that we do not provide support for possible issues that you may have!
+We do not guarantee a compatibility with every possible API endpoint!
+!!!
+
 !!!
 If your intent is to use this proxy feature to use a local endpoint, like TabbyAPI, Oobabooga, Aphrodite, or any like those, you might want to check out the[built-in endpoints for those](https://docs.sillytavern.app/usage/api-connections/) instead.  
 This proxy feature is mainly intended for use with other cloud services that expose an OpenAI compatible API chat completion endpoint, such as Microsoft Azure.
