@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.756319280699">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.756320661378">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.756319280699" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.756320661378" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.756319280699" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.756320661378" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.756319280699" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.756320661378" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -313,6 +313,19 @@ secrets.json &lt;---- this one is in the base folder, not /public/</code></pre>
         <span>Common Update Problems</span>
     </h3>
 </doc-anchor-target>
+<doc-anchor-target id="there-are-unresolved-conflicts-in-the-working-directory">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#there-are-unresolved-conflicts-in-the-working-directory">#</doc-anchor-trigger>
+        <span>&quot;There are unresolved conflicts in the working directory.&quot;</span>
+    </h4>
+</doc-anchor-target>
+<p>This means that you&#x27;ve modified default files that have been changed in the remote repository (such as setting presets).</p>
+<p>To fix this, run this in the terminal. Use cautiously, as it can be destructive. Make sure to have a backup if needed.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">git merge --abort
+git reset --hard
+git pull --rebase --autostash</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="file-changes-prevent-git-pull">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#file-changes-prevent-git-pull">#</doc-anchor-trigger>
@@ -326,6 +339,29 @@ secrets.json &lt;---- this one is in the base folder, not /public/</code></pre>
 <li>In this case you can try moving the file to a different folder (or deleting the file) and then do <code v-pre>git pull</code>.</li>
 <li>Another solution is using <code v-pre>git pull --rebase --autostash</code></li>
 </ul>
+<doc-anchor-target id="error-cannot-find-module--when-starting-the-server">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#error-cannot-find-module--when-starting-the-server">#</doc-anchor-trigger>
+        <span>Error: Cannot find module &quot;***&quot; when starting the server</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>This means that SillyTavern added a new npm package requirement.</li>
+<li>Run <code v-pre>npm install</code> in the SillyTavern directory to fix this. Provided Start.bat and start.sh scripts will do that automatically.</li>
+<li>Didn&#x27;t help? Remove the node_modules folder</li>
+</ul>
+<p><strong>Windows</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">rmdir /s /q node_modules
+npm cache clean --force
+npm install</code></pre>
+</doc-codeblock></div>
+<p><strong>Unix/Linux</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">rm -rf node_modules
+npm cache clean --force
+npm install</code></pre>
+</doc-codeblock></div>
 
                                 
                                 <!-- Required only on API pages -->
