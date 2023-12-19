@@ -89,7 +89,7 @@ No wonder Betty's replies are so awful. Our OpenOrca-OpenChat template has an aw
 
 Let's see how we can fix this.
 
-### 3. How do we create a new more correct instruction style in Silly?
+### 3. How do we create a new more correct instruction style?
 
 Our objective is to turn ST's default prompt into something that follows OpenChat 3.5's instruct style, and additionally provide a better system prompt. I'm writing a gradual walkthrough so you can apply this approach to any future model you encounter and be able to do it yourself, but if you want the final solution, just skip to the end.
 
