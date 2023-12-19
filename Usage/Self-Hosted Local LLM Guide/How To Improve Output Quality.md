@@ -6,7 +6,7 @@ So you chatted with the bot and it kind of sucks. Maybe it's a bad model. Maybe 
 
 This should be common sense. We used a 7B model in our guide, but if your hardware can handle larger models, you should be using larger models like 13B and you will get better output. At the time of writing, I was unable to find a 13B or higher variant of openhermes-2.5-mistral, but this advice applies to many other models, of which there are multiple sizes.
 
-Additionally, as long as you have free RAM/VRAM capacity, if you can run a higher quantization (e.g. q5 or q8 instead of q4), then this will also produce better results.
+Additionally, as long as you have free RAM/VRAM capacity to run a higher quantization (e.g. q5 or q8 instead of q4), then this will also produce better results.
 
 ## Adjust SillyTavern's instruction prompting
 
