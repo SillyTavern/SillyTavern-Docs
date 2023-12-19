@@ -95,6 +95,17 @@ secrets.json <---- this one is in the base folder, not /public/
 7. If everything shows up, you can safely delete the old ST folder.
 
 ### Common Update Problems
+#### "There are unresolved conflicts in the working directory."
+
+This means that you've modified default files that have been changed in the remote repository (such as setting presets).
+
+To fix this, run this in the terminal. Use cautiously, as it can be destructive. Make sure to have a backup if needed.
+
+```
+git merge --abort
+git reset --hard
+git pull --rebase --autostash
+```
 
 #### File changes prevent git pull
 
@@ -103,3 +114,23 @@ secrets.json <---- this one is in the base folder, not /public/
 - Usually it is default preset files or `package-lock.json`.
 - In this case you can try moving the file to a different folder (or deleting the file) and then do `git pull`.
 - Another solution is using `git pull --rebase --autostash`
+
+#### Error: Cannot find module "***" when starting the server
+
+- This means that SillyTavern added a new npm package requirement.
+- Run `npm install` in the SillyTavern directory to fix this. Provided Start.bat and start.sh scripts will do that automatically.
+- Didn't help? Remove the node_modules folder
+
+**Windows**
+```
+rmdir /s /q node_modules
+npm cache clean --force
+npm install
+```
+
+**Unix/Linux**
+```
+rm -rf node_modules
+npm cache clean --force
+npm install
+```
