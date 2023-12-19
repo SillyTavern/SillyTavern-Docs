@@ -117,4 +117,4 @@ Congrats, you should now have a working local LLM.
 
 So you chatted with the bot and it kind of sucks. Maybe it's a bad model. Maybe you're incapable of running better models and this is as good as it gets. But maybe you can fix her.
 
-Read on in the next guide, [How To Improve Output Quality](How To Improve Output Quality)
+Read on in the next guide, [How To Improve Output Quality](https://docs.sillytavern.app/usage/local-llm-guide/how-to-improve-output-quality/)
