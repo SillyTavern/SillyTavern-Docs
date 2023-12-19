@@ -1,5 +1,5 @@
 ---
-order: 101
+order: 103
 ---
 
 # Self-hosted AI models
