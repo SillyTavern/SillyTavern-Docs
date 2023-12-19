@@ -35,7 +35,7 @@ We do not guarantee compatibility with every possible API endpoint!
 !!!
 
 !!!
-If you intend to use this proxy feature to use a local endpoint, like TabbyAPI, Oobabooga, Aphrodite, or any like those, you might want to check out the [built-in endpoints for those](https://docs.sillytavern.app/usage/api-connections/) instead. This proxy feature is mainly intended for use with other services and programs that expose an OpenAI-compatible API chat completion endpoint.
+If you intend to use this proxy feature to use a local endpoint, like TabbyAPI, Oobabooga, Aphrodite, or any like those, you might want to check out the [built-in compatibility for those](https://docs.sillytavern.app/usage/api-connections/) instead. This proxy feature is mainly intended for use with other services and programs that expose an OpenAI-compatible API Chat Completion endpoint.
 Most Text Completion APIs support far greater customization options than OpenAI's standards allow for. These greater customization options, such as the Min-P sampler, may be worthwhile for SillyTavern users to check out, which can greatly improve the quality of generations.
 !!!
 
@@ -49,6 +49,7 @@ Examples of backends which implement this API are:
 
 This feature is accessed by:
 
+- Switching to the 'Chat Completion' API type.
 - Selecting 'OpenAI' for 'Chat Completion Source'.
 - Leaving the details like the API key empty.
 - Opening the 'AI Response Configuration' tab and scrolling down to the 'OpenAI / Claude Reverse Proxy' section.
