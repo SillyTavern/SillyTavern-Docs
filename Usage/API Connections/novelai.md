@@ -1,5 +1,7 @@
 # NovelAI
 
+NovelAI is a paid subscription service that allows unlimited monthly access to their high-quality in-house text generation, image generation, and text-to-speech models. Register an account here to get started: <https://novelai.net/>
+
 ## API Key
 
 To get your NovelAI API key, follow these steps:
@@ -48,44 +50,27 @@ This is, according to Novel AI, what the default presets are good for.
 
 ### Kayra
 
-Asper - For creative writing. Expect unexpected twists.
-
-Blended-Coffee - (CFG) Fresh Coffee with some CFG mixed in.
-
-Blook - (CFG) Tends towards simple, concise but varied language.
-
-Carefree - A good All-rounder
-
-CosmicCube - (CFG) A solid, sensible baseline. Tweak randomness to preference.
-
-Fresh-Coffee - Keeps things on track. Handles instruct well. 
-
-Green-Active-Writer - (CFG) Similar to Writer's Daemon, but with high CFG
-
-PilotFish - (CFG) Made for lore-heavy creative writing.
-
-Pro_Writer - Mimic the pacing and feel of best-selling fiction
-
-Stelenes - More likely to choose reasonable alternatives. Variety on retries.
-
-Tea_Time - It gets good when it gets going.
-
-Tesseract - (CFG) Maintains style and quality.
-
-Writers-Daemon - Extremely imaginative, sometimes too much.
-
+* Asper - For creative writing. Expect unexpected twists.
+* Blended-Coffee - (CFG) Fresh Coffee with some CFG mixed in.
+* Blook - (CFG) Tends towards simple, concise but varied language.
+* Carefree - A good All-rounder
+* CosmicCube - (CFG) A solid, sensible baseline. Tweak randomness to preference.
+* Fresh-Coffee - Keeps things on track. Handles instruct well.  
+* Green-Active-Writer - (CFG) Similar to Writer's Daemon, but with high CFG
+* PilotFish - (CFG) Made for lore-heavy creative writing.
+* Pro_Writer - Mimic the pacing and feel of best-selling fiction
+* Stelenes - More likely to choose reasonable alternatives. Variety on retries.
+* Tea_Time - It gets good when it gets going.
+* Tesseract - (CFG) Maintains style and quality.
+* Writers-Daemon - Extremely imaginative, sometimes too much.
 
 ### Clio
 
-Edgewise - Handles a variety of generation styles well
-
-Fresh Coffee - Keeps things on track.
-
-Long-Press - Intended for creative prose.
-
-Talker Chat - Designed for chat style generation.
-
-Vingt-Un - A good all-around default with a bent towards prose.
+* Edgewise - Handles a variety of generation styles well
+* Fresh Coffee - Keeps things on track.
+* Long-Press - Intended for creative prose.
+* Talker Chat - Designed for chat style generation.
+* Vingt-Un - A good all-around default with a bent towards prose.
 
 ## Tips and FAQs for using NovelAI with SillyTavern
 
