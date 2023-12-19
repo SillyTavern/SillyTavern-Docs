@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.756313540935">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.756313887926">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.756313540935" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.756313887926" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.756313540935" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.756313887926" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.756313540935" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.756313887926" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -255,7 +255,7 @@ WindowAI &amp; OpenRouter allows connection to these as well.</p>
         </div>
         <div class="pr-5 ml-3 w-full">
 <p>It is important to note that we do not provide support for possible issues that you may have!
-We do not guarantee a compatibility with every possible API endpoint!</p>
+We do not guarantee compatibility with every possible API endpoint!</p>
         </div>
     </div>
 </div>
@@ -272,34 +272,37 @@ We do not guarantee a compatibility with every possible API endpoint!</p>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>If your intent is to use this proxy feature to use a local endpoint, like TabbyAPI, Oobabooga, Aphrodite, or any like those, you might want to check out the<a href="https://docs.sillytavern.app/usage/api-connections/">built-in endpoints for those</a> instead.<br />
-This proxy feature is mainly intended for use with other cloud services that expose an OpenAI compatible API chat completion endpoint, such as Microsoft Azure.</p>
-<p>Most local APIs support far greater customization options than OpenAI&#x27;s standards allow for.
-These greater customization options may be worthwhile for SillyTavern users to check out, such as the Min-P sampler, which can greatly improve the quality of generations.</p>
+<p>If you intend to use this proxy feature to use a local endpoint, like TabbyAPI, Oobabooga, Aphrodite, or any like those, you might want to check out the <a href="https://docs.sillytavern.app/usage/api-connections/">built-in endpoints for those</a> instead. This proxy feature is mainly intended for use with other services and programs that expose an OpenAI-compatible API chat completion endpoint.</p>
+<p>Most Text Completion APIs support far greater customization options than OpenAI&#x27;s standards allow for. These greater customization options, such as the Min-P sampler, may be worthwhile for SillyTavern users to check out, which can greatly improve the quality of generations.</p>
         </div>
     </div>
 </div>
-<p>It is possible to configure a proxy/alternative endpoint for OpenAI&#x27;s backend.
-This custom endpoint can be used to connect to alternative chat completion APIs that support the generic OpenAI chat completion API.
-Examples of backends which implement this API are:</p>
+<p>It is possible to configure a proxy/alternative endpoint for OpenAI&#x27;s backend. This custom endpoint can connect to alternative Chat Completion APIs that support the generic OpenAI API schema.</p>
+<p>Examples of backends which implement this API are:</p>
+<ul>
+<li><a href="https://lmstudio.ai/">LM Studio</a></li>
+<li><a href="https://litellm.ai/">LiteLLM</a></li>
+<li><a href="https://localai.io/">LocalAI</a></li>
+</ul>
 <p>This feature is accessed by:</p>
 <ul>
 <li>Selecting &#x27;OpenAI&#x27; for &#x27;Chat Completion Source&#x27;.</li>
-<li>Leaving the details like API key empty.</li>
+<li>Leaving the details like the API key empty.</li>
 <li>Opening the &#x27;AI Response Configuration&#x27; tab and scrolling down to the &#x27;OpenAI / Claude Reverse Proxy&#x27; section.</li>
 </ul>
-<p>In there, you may enter the proxy/custom endpoint and optionally an API key under &#x27;Proxy Password&#x27;.
-TabbyAPI provides you with an API key you have to use.</p>
+<p>There you may enter the proxy/custom endpoint and optionally an API key under &#x27;Proxy Password&#x27; if needed.
+For example, TabbyAPI provides you with an API key you have to use.</p>
 <p>Back in the &#x27;AI Connections&#x27; tab, you can find two optional checkboxes labeled:</p>
 <ul>
 <li>Bypass API status check.</li>
 <li>Show &quot;External&quot; models (provided by API).</li>
 </ul>
-<p>Checking &#x27;Bypass API status check&#x27; tells SillyTavern to stop alerting you about a non-functioning API endpoint.
-Check this if your API endpoint works, but SillyTavern keeps warning you anyway.</p>
-<p>Checking &#x27;Show &quot;External&quot; models (provided by API)&#x27; will show the external available models provided by your custom API endpoint in the dropdown.
-This allows you to select different API models right from SillyTavern without having to go into your custom app and change the model.
-<strong>This feature not required for custom API endpoints to work</strong> and might not be available on every backend.</p>
+<p>Checking &#x27;Bypass API status check&#x27; tells SillyTavern to stop alerting you about a non-functioning API endpoint. Check this if your API endpoint works, but SillyTavern keeps warning you anyway.</p>
+<blockquote>
+<p><strong>Hint:</strong> If it doesn&#x27;t work, try adding <code v-pre>/v1</code> at the end of the endpoint URL!</p>
+</blockquote>
+<p>Checking &#x27;Show &quot;External&quot; models (provided by API)&#x27; will show the external available models as reported by your custom API endpoint in the dropdown (scroll down past OpenAI&#x27;s models). This allows you to select different API models right from SillyTavern without having to go into your custom app and change the model.</p>
+<p><strong>This feature is not required for custom API endpoints to work</strong> and might not be available on every backend.</p>
 
                                 
                                 <!-- Required only on API pages -->
