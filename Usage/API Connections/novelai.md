@@ -7,16 +7,16 @@ NovelAI is a paid subscription service that allows unlimited monthly access to t
 To get your NovelAI API key, follow these steps:
 
 1. Select the gear icon at the top of the left sidebar.
-![image](https://github.com/SillyTavern/SillyTavern-Docs/assets/55552572/e0c70838-9775-4dc4-bf07-3daf895de67c)
+![Left Sidebar](https://github.com/SillyTavern/SillyTavern-Docs/assets/55552572/e0c70838-9775-4dc4-bf07-3daf895de67c)
 
 2. Select "Account" under "User Settings".
-![image](https://github.com/SillyTavern/SillyTavern-Docs/assets/55552572/71af84bf-3800-4e22-bfe9-9f84f302451a)
+![User Settings](https://github.com/SillyTavern/SillyTavern-Docs/assets/55552572/71af84bf-3800-4e22-bfe9-9f84f302451a)
 
 3. Select "Get Persistent API Token".
-![image](https://github.com/SillyTavern/SillyTavern-Docs/assets/55552572/5ca0ff03-a75c-4bea-ba7f-2db951aab194)
+![Account](https://github.com/SillyTavern/SillyTavern-Docs/assets/55552572/5ca0ff03-a75c-4bea-ba7f-2db951aab194)
 
 4. Select the copy icon to copy your NovelAI API token to the clipboard. 
-![image](https://github.com/SillyTavern/SillyTavern-Docs/assets/55552572/2765446e-42b2-4027-8ee5-0bbb48aef9c0)
+![Persistent API Token](https://github.com/SillyTavern/SillyTavern-Docs/assets/55552572/2765446e-42b2-4027-8ee5-0bbb48aef9c0)
 
 ## Models
 
@@ -143,7 +143,7 @@ These methods are recommended because they're present in NovelAI's training data
 
 #### Example cards
 
-Here are a couple of example card, made for NovelAI, that show off different ways of creating cards specifically for NovelAI. The first card, Valka, uses the attributes method for the character description, while Eris, the second card, uses prose descriptions, along with a large amount of example dialogue. 
+Here are a couple of example cards, made for NovelAI, that show off different ways of creating cards specifically for NovelAI. The first card, Valka, uses the attributes method for the character description, while Eris, the second card, uses prose descriptions, along with a large amount of example dialogue. 
 
 <div style="display:flex;gap:2em;">
 <a href="https://docs.sillytavern.app/static/valka.png"><img src="https://docs.sillytavern.app/static/valka.png" style="width:200px;height:300px;"></a>
@@ -152,7 +152,7 @@ Here are a couple of example card, made for NovelAI, that show off different way
 
 #### What not to do
 
-Most of the existing character card formats are a poor fit for NovelAI. They'll give you some results, even some good ones, but they have a lot of problems. W++ is one of the biggest offenders, where it doesn't resemble anything that NovelAI's models were trained on, and its constant use of brackets/braces/quotes eat up a ton of tokens, bloating the size of the cards with no real benefit. 
+Most of the existing character card formats are a poor fit for NovelAI. They'll give you some results, even some good ones, but they have a lot of problems. W++ is one of the biggest offenders, where it doesn't resemble anything that NovelAI's models were trained on, and its constant use of brackets/braces/quotes eats up a ton of tokens, bloating the size of the cards with no real benefit. 
 
 Of the existing formats that aren't baked into NovelAI, AliChat is the one most likely to work, as it relies on using example messages to get across both information about the character and their voice at the same time, in the format of the type of message that you want the AI to output. 
 
@@ -188,7 +188,7 @@ If your responses aren't getting cut off but are still too short, it's likely yo
 
 ### How do I get the bot to stop talking for me?
 
-- Check that the character card's first message and example dialogue doesn't include the character taking actions for you - if they do, then rewrite them to get rid of it acting for you
+- Check that the character card's first message and example dialogue don't include the character taking actions for you - if they do, then rewrite them to get rid of it acting for you
 - Make sure that "Always add character's name to prompt" is checked
 - Make sure that you're currently using the same user persona as the rest of the chat. If you changed user personas and didn't change back (or don't have a persona locked to that chat), the usual rules to stop generating for you will fail
 - Add ["\n\{\{user\}\}:"] to Custom Stopping Strings (shouldn't be necessary, but sometimes helps)
