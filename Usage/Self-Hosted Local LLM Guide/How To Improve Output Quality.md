@@ -21,7 +21,7 @@ Your objective is to make SillyTavern adhere to the instruction style. To unders
 
 1. What instruction style does the model expect?
 2. Is SillyTavern using the correct instruction style?
-3. If not, how do we create a new more correct instruction style in Silly?
+3. If not, how do we create a new more correct instruction style in ST?
 
 ### Initial preparation
 
