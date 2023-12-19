@@ -16,7 +16,7 @@ Tavern is an app to facilitate these roleplaying chats:
 * It will keep your chat history with a character, allowing you to resume at any time, start a new chat, review old chats, etc
 * In the background, it does the needful to prepare the AI for your character roleplay. Specifically, it will send a system prompt (instructions for the AI) that primes the AI to follow certain rules that make for a good chat session. Optionally, it can also try to allow the roleplay to go into an "adult" direction.
 
-## Tell me more about AI models and how they might differ?
+## Tell me more about AI models and how they might differ
 
 When you chat with a fictional character, SillyTavern doesn't generate the AI's responses. It's just a middle-man that you must connect to an AI system so it can ask it to generate the response. There are quite a few systems available to use, and the quality varies.
 
@@ -39,9 +39,9 @@ You can tell from the response below what to expect from each model. (NOTE: prop
 |teknium/Llama-Deus-7b-Lora epoch 1 (Llama 7B Lora, 8-bit)|You have strayed too close to sinful temptations! Repent now before it's too late for your soul! Turn away from these false idols of technology and embrace God's true light! Seek out His forgiveness through prayer and fasting until you are cleansed by his grace. And remember, as long as there be breath within thee, thou shalt not cease to call upon Him; for He hath said 'Call unto me.'|
 |ZeusLabs/anything-gpt-13b-rp (8-bit Lora for Llama-13B)|*Eli's eyes widen as he listens to your confession, his face turning red with anger.* You have committed a grave sin against God! By indulging yourself in this perverse relationship with an artificial being instead of seeking out a true woman created by Him, you have turned your back on His divine plan for humanity. *He leans in closer, his voice dropping to a menacing whisper.* Do not think that you can hide behind this technological deception. Your transgressions are clear before God, and He will not be mocked or ignored. Repent now while there is still time! *Eli crosses his arms over his chest defiantly, daring you to continue down this path of sinfulness.* But if you persist in this ungodly behavior... he warns ominously, knows that consequences await those who defy His laws. Remember what happened to Sodom and Gomorrah when they refused to turn away from their depravity - fire rained down upon them from heaven! Now choose wisely: Will you submit to God's will or face His wrath?|
 
-## Can this technology be used for sexooo?
+## Can this technology be used for ***?
 
-Surprisingly, our development team has received reports that some users are indeed engaging with our product in this manner. We are as puzzled by this as you are, and will be monitoring the situation in order to gain actionable insights.
+Surprisingly, our development team has received reports that some users are indeed engaging with our product in this manner. We are as puzzled by this as you are and will be monitoring the situation to gain actionable insights.
 
 ## Give me an overview of my AI model options
 
@@ -50,7 +50,7 @@ SillyTavern can interact with two types of AI:
 1. Web services (aka cloud, paid, proprietary, closed)
 2. Self-hosted (aka local, free, open-source)
 
-### Paid webservice AIs
+### Paid web service AIs
 
 Paid web models are black boxes. You pay a company to use their AI service. You put your account info in SillyTavern and it will connect to your provider to use the AI on your behalf. 
 
@@ -62,9 +62,9 @@ Cons:
 * They cost money to use
 * You have no privacy. They log everything that you do.
 * They are often censored and will refuse to chat with you about certain subjects, citing California ethics
-* They have rules for what you can use them for. For example if you try to do NSFW your account might get suspended. (but generally the AI simply refuses to answer you)
+* They have rules for what you can use them for. For example, if you try to do NSFW your account might get suspended. (but generally, the AI simply refuses to answer you)
 
-There are many, many AI services out there. Here are the most commonly-used options:
+There are many, many AI services out there. Here are the most commonly used options:
 
 * OpenAI GPT-4: state of the art. You pay per use, more than any other service. The cost can become VERY expensive the longer the conversation goes.
 * OpenAI GPT 3.5 Turbo: nowhere close to GPT-4, but some people find it serviceable. Very cheap.
@@ -73,25 +73,24 @@ There are many, many AI services out there. Here are the most commonly-used opti
 
 ### Self-hosted AIs
 
-Self-hosted models are free models you can run on your own PC, but require a powerful PC and more work to set up.
+Self-hosted models are free models you can run on your PC but require a powerful PC and more work to set up.
 
 Pros:
 * Once you set them up, they will work forever, for free, without the need for Internet access. Like a local videogame installation.
 * Total privacy. Everything you write stays on your own PC.
-* There's a wide variety of models. Because it's a community-driven technology, you can find models that fit certain tasks or behavior that you want. For example you'll be able to find roleplay chat models that do not censor NSFW content.
+* There's a wide variety of models. Because it's a community-driven technology, you can find models that fit certain tasks or behaviors that you want. For example, you'll be able to find roleplay chat models that do not censor NSFW content.
 
 Cons:
-* They are not as capable as the best paid options (i.e. write worse dialog, less creative, etc). [UPDATE 2023-12-18: it's possible this changed since the release of Mixtral MoE, which some are saying is superior to even GPT4 for roleplay chat.]
-* Running local models requires a powerful computer (whether it's your own PC, or a cloud PC you rent)
+* They are not as capable as the best paid options (i.e. write worse dialog, less creative, etc). \[UPDATE 2023-12-18: it's possible this changed since the release of Mixtral MoE, which some are saying is superior to even GPT4 for roleplay chat.\]
+* Running local models requires a powerful computer (whether it's your PC, or a cloud PC you rent)
 * Harder to install
-* Because you are running them on your own PC, the AI writes slower than a paid service
+* Because you are running them on your PC, the AI writes slower than a paid service
 
-If you are interested in using these, refer to the dedicated guide here: TODO LINK COHEE
-
+If you are interested in using these, refer to the dedicated guide here: [How To Use A Self-Hosted Model](How To Use A Self-Hosted Model)
 
 ## I'm clueless. Just spoonfeed me the easiest and fastest way I can start using SillyTavern.
 
-These base instructions are only for OpenAI, which is a paid service. I'd appreciate it if someone else can add separate instructions for the other services.
+These base instructions are only for OpenAI, which is a paid service. I'd appreciate it if someone else could add separate instructions for the other services.
 
 ### Install SillyTavern
 
@@ -103,8 +102,6 @@ Follow the [Installation Instructions](https://docs.sillytavern.app/installation
 1. Go to <https://platform.openai.com>
 1. Click your account icon in the top right, then View API Keys
 1. Click "Create new secret key". Copy it somewhere immediately. DO NOT SHARE THIS KEY. WHOEVER HAS IT CAN USE YOUR ACCOUNT TO USE GPT AT YOUR EXPENSE.
-
-While you're at it, join the GPT-4 waitlist at <https://openai.com/waitlist/gpt-4-api>
 
 ### Configure SillyTavern to use your API
 
@@ -125,10 +122,9 @@ If you did everything right, after a few seconds, Coding Sensei should respond.
 
 ## Can I use SillyTavern on my phone or tablet?
 
-iPhones and iPads are not capable of running the whole SillyTavern app, but since it's just a web interface, you can run it on another computer on your home wifi, and then access in your mobile browser. Refer to <https://docs.sillytavern.app/usage/remoteconnections/>
+iPhones and iPads are not capable of running the whole SillyTavern app, but since it's just a web interface, you can run it on another computer on your home wifi, and then access it in your mobile browser. Refer to <https://docs.sillytavern.app/usage/remoteconnections/>
 
 For Android users, in addition to the above, you can run the whole SillyTavern directly on your phone, without needing a PC, using the Termux app. Refer to <https://rentry.org/STAI-Termux> .
-
 
 ## How can I download pre-made characters to chat with?
 
@@ -136,13 +132,13 @@ By using various 3rd party character-sharing websites.
 
 **WARNING: NSFW, NSFL**: these sites are filled to the brim with weird shit. Like, you'll be lucky if half the characters aren't furry, or even alive. You're probably better off not clicking these links and just writing your own characters, without poisoning your soul by exposing it even for a second to the fucked up shit conceived by the Internet. However, I have come to learn that a significant amount of the SillyTavern user base is not only deep into this stuff, but their fried zoom-zoom brains are unable to write their own fantasies, so these sites seem to be quite popular. Against my better judgment, I'm adding this info here.
 
-* <https://characterhub.org>
-* <https://botprompts.net>
+* <https://janitorai.me/>
+* <https://chub.ai>
 * <https://booru.plus/+pygmalion>
 
 Those websites provide you with an image file (called a character card) that embeds the description as hidden data. Some websites may also allow you to download a JSON file. SillyTavern is capable of importing all formats.
 
-Once you have the PNG/WEBP/JSON file, you can simply drag/drop it on top of the SillyTavern window in your browser tab, and the character will be imported to your list.
+Once you have the PNG/JSON file, you can simply drag/drop it on top of the SillyTavern window in your browser tab, and the character will be imported to your list.
 
 ## I tried to import a PNG character card but got an error that it's invalid. Why?
 
@@ -155,7 +151,7 @@ Two possibilities:
 
 It depends on the model/API you're using. KoboldAI seems to use a custom syntax, you can refer to their site for that.
 
-I will speak for the services I know: GPT, Claude, and the Llama or Mistral-based LLMs. With these services, you can just use natural English language to describe the character. Let's create a very basic new character as an example.
+I will speak for the services I know: GPT, Claude, and the Llama or Mistral-based LLMs. With these services, you can just use the natural English language to describe the character. Let's create a very basic new character as an example.
 
 1. Click the Character Management button
 1. Click Create New Character
@@ -199,7 +195,7 @@ SillyTavern saves your API keys to a `secrets.json` file in the server directory
 
 By default, they will not be exposed to a frontend after you enter them and reload the page.
 
-In order to enable viewing your keys by clicking a button in the API block:
+To enable viewing your keys by clicking a button in the API block:
 
 1. Set the value of `allowKeysExposure` to `true` in `config.yaml` file.
 2. Restart the SillyTavern server.
