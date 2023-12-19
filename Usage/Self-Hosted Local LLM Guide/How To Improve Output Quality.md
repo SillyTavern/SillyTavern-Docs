@@ -180,9 +180,11 @@ GPT4 Correct Assistant: I understand, and I will do this.<|end_of_turn|>
 GPT4 Correct User: Excellent. The scenario will begin with your next reply.<|end_of_turn|>
 ```
 
-We just added ```Description of {{char}}: {{description}}<|end_of_turn|>``` to our system prompt. So although our StoryString no longer sends the description, we send our system prompt, and our system prompt includes the description, so it's all good.
+We just added ```Description of {{char}}: {{description}}<|end_of_turn|>``` to our system prompt. So although our Story String no longer sends the description, we send our system prompt, and our system prompt includes the description, so it's all good.
 
-(Note that we also removed several other things such as scenario, personality, etc. None of my characters use these optional fields so I didn't bother covering them. You can do the same fix for those. You could write something in the system prompt like this e.g. scenario: "If the following scenario definition is not empty, follow the scenario: SCENARIO DEFINITION: [{{scenario}}].)
+(Note that we also removed several other things such as scenario, personality, etc. None of my characters use these optional fields so I didn't bother covering them. You can do the same fix for those. You could write something in the system prompt like this e.g. scenario: "If the following scenario definition is not empty, follow the scenario: SCENARIO DEFINITION: `{{scenario}}`.)
+
+If you use persona descriptions or World Info, you *must* add their macro placeholders to the system prompt or story string, otherwise they will NOT be sent to a model. See [Advanced Formatting](https://docs.sillytavern.app/usage/core-concepts/advancedformatting/) for a more in-depth explanation.
 
 ### Conclusion
 
