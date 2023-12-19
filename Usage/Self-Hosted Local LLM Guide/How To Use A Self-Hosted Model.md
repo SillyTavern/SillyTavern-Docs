@@ -1,6 +1,5 @@
 ---
 order: 101
-icon: question
 ---
 
 # Self-hosted AI models
