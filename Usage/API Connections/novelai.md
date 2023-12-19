@@ -2,6 +2,8 @@
 
 NovelAI is a paid subscription service that allows unlimited monthly access to their high-quality in-house text generation, image generation, and text-to-speech models. Register an account here to get started: <https://novelai.net/>
 
+You will get only *50 generations* for free to evaluate the model. When the **"Not eligible for this model"** error appears, this means that you've exhausted your trial period and need to subscribe to a paid plan.
+
 ## API Key
 
 To get your NovelAI API key, follow these steps:
