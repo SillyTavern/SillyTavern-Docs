@@ -1,7 +1,8 @@
 ---
 label: Common Problems
-icon: warning
+icon: bug
 ---
+
 # Extras Install Common Problems
 
 This page lists common questions and problems encountered while installing SillyTavern Extras.
