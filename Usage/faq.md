@@ -86,7 +86,7 @@ Cons:
 * Harder to install
 * Because you are running them on your PC, the AI writes slower than a paid service
 
-If you are interested in using these, refer to the dedicated guide here: [How To Use A Self-Hosted Model](How To Use A Self-Hosted Model)
+If you are interested in using these, refer to the dedicated guide here: [How To Use A Self-Hosted Model](https://docs.sillytavern.app/usage/local-llm-guide/how-to-use-a-self-hosted-model/)
 
 ## I'm clueless. Just spoonfeed me the easiest and fastest way I can start using SillyTavern.
 
