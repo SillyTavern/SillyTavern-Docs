@@ -1,3 +1,7 @@
+---
+icon: git-branch
+---
+
 ## Branches
 
 SillyTavern is being developed using a multi-branch system to ensure a smooth experience for all users.
