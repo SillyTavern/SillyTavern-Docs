@@ -36,7 +36,8 @@ Before you begin, ensure you've met the following prerequisites:
      ```shell
      python server.py --enable-modules=rvc,silero-tts
      ```
- 
+     Optionally, you may wish to run RVC on your GPU if you have a capable one, by adding ```--cuda``` to the startup command. Based on a quick test, VRAM usage was 3.4GB for narrating 50 tokens (~36 words), and 7.6GB for 200 tokens (~150 words).
+
 5. **Configure RVC in SillyTavern**:
    - In SillyTavern, navigate to **Extensions** > **RVC** and enable it.
 
