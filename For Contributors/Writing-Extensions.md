@@ -12,8 +12,8 @@ Want to contribute your extensions to the [official repository](https://github.c
 
 See live examples of simple SillyTavern extensions:
 
-1. https://github.com/city-unit/st-extension-example - basic extension template. Showcases manifest creation, local script imports, adding a settings UI panel, and persistent extension settings usage.
-2. https://github.com/SillyTavern/Extension-Variables - very simple plugin. Demonstrates the capabilities of chat metadata and handlebars custom macros.
+* https://github.com/city-unit/st-extension-example - basic extension template. Showcases manifest creation, local script imports, adding a settings UI panel, and persistent extension settings usage.
+
 
 ### manifest.json
 
@@ -28,7 +28,7 @@ Every extension must have a folder in `public/scripts/extensions` and have a man
     "js": "index.js", // Main JS file
     "css": "style.css", // Optional CSS file
     "author": "Your name",
-    "version": "1.0.0", 
+    "version": "1.0.0",
     "homePage": "https://github.com/your/plugin",
     "auto_update": true // If the extension should auto-update when the version of the ST package changes
 }
