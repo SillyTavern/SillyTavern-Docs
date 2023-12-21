@@ -4,6 +4,8 @@ This guide will walk you through using RVC, a technique that allows transferring
 
 Ever enjoyed those famous "Presidents Play X" videos? They were created using RVC. With the RVC Extra module, you can make your SillyTavern characters speak in any voice you desire, be it anime, movie, or even your own unique voice.
 
+RVC is NOT TTS: it's more like speech-to-speech. It takes an audio clip as its input. In the background, what RVC does is work in tandem with SillyTavern-extras's TTS module: it waits for TTS to generate an audio file (which TTS would've done regardless of whether you use RVC or not), then RVC will perform a second pass that takes the TTS audio file and transforms it into the cloned voice from your RVC configuration.
+
 ## RVC Setup
 
 ### Prerequisites
@@ -15,38 +17,41 @@ Before you begin, ensure you've met the following prerequisites:
    - Use the Toolbox in Launcher.bat script to install ffmpeg automatically: https://github.com/SillyTavern/SillyTavern-Launcher/blob/main/Launcher.bat
    - Or download the build here: https://www.gyan.dev/ffmpeg/builds/ 
    - How to modify PATH variable: https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/
+   - To test whether you did things correctly, open a command prompt and run ```ffmpeg```. It should print the ffmpeg version and info.
 
 ### Step-by-Step Setup
 
 1. **Prepare RVC Model Files**:
    - In a file browser, Navigate to: `\SillyTavern-extras\data\models\rvc` 
-   - Create a subfolder and place the `.pth` and `.index` files into it.
+   - Create a subfolder like 'Betty' and place the `.pth` and `.index` files into it. (Hint: you can download voice files from https://voice-models.com, make sure the voice name says it's RVPME.)
 
 2. **Install Requirements**:
    - Install the necessary requirements using the command: `pip install -r requirements-rvc.txt`.
 
-3. **Run SillyTavern-Extras**:
-   - Launch SillyTavern-extras with the RVC module enabled:
-     ```shell
-     python server.py --enable-modules=rvc
-     ```
+3. **Make sure TTS is enabled and works**
+   - RVC depends on TTS, you need to enable a TTS module. Refer to our TTS guide for how. Your TTS has to be already working properly and narrating your chats before you try to add RVC to the mix!
 
-4. **Configure RVC in SillyTavern**:
+4. **Run SillyTavern-extras with RVC enabled**:
+   - Launch SillyTavern-extras with the RVC module enabled. This example invocation assumes you used Silero TTS which comes pre-installed with SillyTavern-extras:
+     ```shell
+     python server.py --enable-modules=rvc,silero-tts
+     ```
+ 
+5. **Configure RVC in SillyTavern**:
    - In SillyTavern, navigate to **Extensions** > **RVC** and enable it.
 
-5. **Set Up Voice Map**:
-   - Create a Voice map for RVC. Follow the TTS instructions above, but use RVC model folder names.
+6. **Set Up Voice Map**:
+   - Create a Voice map for RVC. Set your Character to your desired SillyTavern character name, and set Voice to the RVC folder you created at step 1, then click Apply. If you did things correctly, the Voice Map will show something like 'Betty:MyVoice(rvpme)'.
 
-6. **Select Pitch Extraction**:
+7. **Select Pitch Extraction**:
    - Choose "rmvpe" as the pitch extraction method.
    - If you have trouble with "rmvpe" try other methods.
 
-7. **Enable TTS**:
-   - Navigate to **Extensions** > **TTS** and enable it.
-   - Choose a TTS Provider (e.g., **Coqui**) – not **System** as RVC doesn't work with it. Avoid using **ElevenLabs** with RVC.
-
-8. **Enable Auto Generation**:
-   - Enable **Auto Generation** in TTS settings.
+8. **(Optional) Configure RVC to save your generations to file**:
+   - If for testing or troubleshooting purposes you wish to save the generated RVC audio, add ```--rvc-save-file``` to your startup command. This will save the last generation under SillyTavern-extrasdata/tmp/rvc_output.wav:
+   ```shell
+   python server.py --enable-modules=rvc,silero-tts --rvc-save-file
+   ```
 
 ### Expression-Based Dynamic Voice
 
