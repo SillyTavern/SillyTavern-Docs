@@ -130,16 +130,6 @@ For Android users, in addition to the above, you can run the whole SillyTavern d
 
 By using various 3rd party character-sharing websites.
 
-**WARNING: NSFW, NSFL**: these sites are filled to the brim with weird shit. Like, you'll be lucky if half the characters aren't furry, or even alive. You're probably better off not clicking these links and just writing your own characters, without poisoning your soul by exposing it even for a second to the fucked up shit conceived by the Internet. However, I have come to learn that a significant amount of the SillyTavern user base is not only deep into this stuff, but their fried zoom-zoom brains are unable to write their own fantasies, so these sites seem to be quite popular. Against my better judgment, I'm adding this info here.
-
-* <https://janitorai.me/>
-* <https://chub.ai>
-* <https://booru.plus/+pygmalion>
-
-Those websites provide you with an image file (called a character card) that embeds the description as hidden data. Some websites may also allow you to download a JSON file. SillyTavern is capable of importing all formats.
-
-Once you have the PNG/JSON file, you can simply drag/drop it on top of the SillyTavern window in your browser tab, and the character will be imported to your list.
-
 ## I tried to import a PNG character card but got an error that it's invalid. Why?
 
 Two possibilities:
