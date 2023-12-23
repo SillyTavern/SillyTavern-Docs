@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.756505312686">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.756667285612">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.756505312686" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.756667285612" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.756505312686" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.756667285612" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.756505312686" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.756505312686" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.756667285612" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.756667285612" defer></script>
 
     <Style>
         a {
@@ -204,7 +204,7 @@
         <span>Server Plugins</span>
     </h1>
 </doc-anchor-target>
-<p>These plugins allow adding functionality that is impossible to achieve using UI extensions alone, such as creating new API endpoints or using Node.JS packages that are not available in a browser environment.</p>
+<p>These plugins allow adding functionality that is impossible to achieve using UI extensions alone, such as creating new API endpoints or using Node.JS packages that are unavailable in a browser environment.</p>
 <p>Plugins are contained in the <code v-pre>plugins</code> directory of SillyTavern and loaded on server startup, but <em>only</em> if <code v-pre>enableServerPlugins</code> is set to true in the <code v-pre>config.yaml</code> file.</p>
 <blockquote>
 <p><strong>Plugins are not sandboxed, be careful what you install and run!</strong></p>
@@ -221,22 +221,39 @@
         <span>Files</span>
     </h3>
 </doc-anchor-target>
-<p>An executable JavaScript file with &quot;.js&quot; (for CommonJS modules) or &quot;.mjs&quot; (for ES modules) extension containing a module that exports an <code v-pre>init</code> function that accepts an Express app instance as an argument and returns a Promise.</p>
+<p>An executable JavaScript file with &quot;.js&quot; (for CommonJS modules) or &quot;.mjs&quot; (for ES modules) extension containing a module that exports an <code v-pre>init</code> function that accepts an Express router (created specifically for your plugin) as an argument and returns a Promise.</p>
+<p>The module should also export an <code v-pre>info</code> object containing the information about the plugin (<code v-pre>id</code>, <code v-pre>name</code>, and <code v-pre>description</code> strings). This will provide the information about the plugin to the loader.</p>
+<p>You can register routes via the router that will be registered under the <code v-pre>/api/plugins/{id}/{route}</code> path. For example <code v-pre>router.get('/foo')</code> for plugin <code v-pre>example</code> will produce a route like this: <code v-pre>/api/plugins/example/foo</code>.</p>
+<p>A plugin could also <em>optionally</em> export an <code v-pre>exit</code> function that performs clean-up on shutting down the server. It should have no arguments and must return a Promise.</p>
 <p>See below for a &quot;Hello world!&quot; plugin example:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-javascript"><code v-pre class="language-javascript">/**
  * Initialize plugin.
- * @param {import('express').Express} app Express app
+ * @param {import('express').Router} router Express router
  * @returns {Promise&lt;any&gt;} Promise that resolves when plugin is initialized
  */
 async function init(app) {
     // Do initialization here...
+    router.get('/foo', req, res, function () {
+       res.send('bar');
+    });
     console.log('Example plugin loaded!');
     return Promise.resolve(app);
 }
 
+async function exit() {
+    // Do some clean-up here...
+    return Promise.resolve();
+}
+
 module.exports = {
     init,
+    exit,
+    info: {
+        id: 'example',
+        name: 'Example',
+        description: 'My cool plugin!',
+    },
 };</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="directories">
@@ -251,7 +268,7 @@ module.exports = {
 <li><code v-pre>index.js</code> file for CommonJS modules.</li>
 <li><code v-pre>index.mjs</code> file for ES modules.</li>
 </ol>
-<p>A resulting file must export an <code v-pre>init</code> function with the same requirements as for individual files.</p>
+<p>A resulting file must export an <code v-pre>init</code> function and <code v-pre>info</code> object with the same requirements as for individual files.</p>
 <p>It is preferable to use a bundler (such as Webpack or Browserify) that will package all of the requirements into one file. Make sure to set &quot;Node&quot; as a build target.</p>
 <p>Example of a directory plugin (with <code v-pre>index.js</code> file): <a href="https://github.com/Cohee1207/SillyTavern-DiscordRichPresence-Server">https://github.com/Cohee1207/SillyTavern-DiscordRichPresence-Server</a></p>
 
