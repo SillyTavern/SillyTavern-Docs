@@ -6,7 +6,7 @@ icon: server
 
 These plugins allow adding functionality that is impossible to achieve using UI extensions alone, such as creating new API endpoints or using Node.JS packages that are unavailable in a browser environment.
 
-Plugins are contained in the `plugins` directory of SillyTavern and loaded on server startup, but *only* if `enableServerPlugins` is set to true in the `config.yaml` file.
+Plugins are contained in the `plugins` directory of SillyTavern and loaded on server startup, but *only* if `enableServerPlugins` is set to `true` in the `config.yaml` file.
 
 > **Plugins are not sandboxed, be careful what you install and run!**
 
