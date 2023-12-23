@@ -30,13 +30,13 @@ See below for a "Hello world!" plugin example:
  * @param {import('express').Router} router Express router
  * @returns {Promise<any>} Promise that resolves when plugin is initialized
  */
-async function init(app) {
+async function init(router) {
     // Do initialization here...
     router.get('/foo', req, res, function () {
        res.send('bar');
     });
     console.log('Example plugin loaded!');
-    return Promise.resolve(app);
+    return Promise.resolve();
 }
 
 async function exit() {
