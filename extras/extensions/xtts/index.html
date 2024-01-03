@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.756685344853">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.757626052569">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.756685344853" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.757626052569" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.756685344853" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.757626052569" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.756685344853" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.757626052569" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -314,6 +314,30 @@ If the characters list is empty, hit &quot;Reload&quot; a couple of times.</li>
 </doc-anchor-target>
 <p>Click on the bullhorn icon in the context actions menu for any message and hear the beautiful cloned voice emanating
 from your speakers. The generation takes some time and it&#x27;s not real-time even on high-end RTX GPUs.</p>
+<doc-anchor-target id="streaming">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#streaming">#</doc-anchor-trigger>
+        <span>Streaming?</span>
+    </h3>
+</doc-anchor-target>
+<p>It&#x27;s possible to use HTTP streaming with the latest version of the XTTS server to get the chunks of generated audio as soon as it is available!</p>
+<blockquote>
+<p><strong>This doesn&#x27;t work with RVC!</strong></p>
+</blockquote>
+<p>The audio will still be generated (assuming you&#x27;re using the latest version of the RVC extension!) and converted, <em>but not streamed</em> as RVC requires to have the full audio file before initiating the conversion. Streamed RVC is still being investigated...</p>
+<ol>
+<li>Update to the latest <code v-pre>staging</code> branch of SillyTavern.</li>
+<li>Update the XTTS server to the latest version.</li>
+</ol>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">conda activate xtts
+pip install xtts-api-server --upgrade</code></pre>
+</doc-codeblock></div>
+<ol start="3">
+<li>Start and connect XTTS to ST as usual.</li>
+<li>Enable the &quot;Streaming&quot; XTTS extension setting in SillyTavern.</li>
+</ol>
+<p><strong>Choppy audio?</strong> Try increasing the &quot;chunk size&quot; setting.</p>
 <doc-anchor-target id="how-to-restart-the-tts-server">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-restart-the-tts-server">#</doc-anchor-trigger>
@@ -372,7 +396,7 @@ from your speakers. The generation takes some time and it&#x27;s not real-time e
                                     <ul class="flex flex-wrap items-center text-sm">
                                     </ul>
                                 </div>
-                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2023. All rights reserved.</p></div>
+                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2024. All rights reserved.</p></div>
                             </footer>
                         </div>
                     </div>
