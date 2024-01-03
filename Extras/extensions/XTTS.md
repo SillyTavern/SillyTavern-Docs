@@ -87,9 +87,11 @@ from your speakers. The generation takes some time and it's not real-time even o
 
 It's possible to use HTTP streaming with the latest version of the XTTS server to get the chunks of generated audio as soon as it is available!
 
-> **This doesn't work with RVC!**
+#### This doesn't work with RVC!
 
-The audio will still be generated (assuming you're using the latest version of the RVC extension!) and converted, *but not streamed* as RVC requires to have the full audio file before initiating the conversion. Streamed RVC is still being investigated...
+The audio will still be generated (assuming you're using the latest version of the RVC extension) and converted, *but not streamed* as RVC requires to have the full audio file before initiating the conversion. Streamed RVC is still being investigated...
+
+#### How to get streaming support?
 
 1. Update to the latest `staging` branch of SillyTavern.
 2. Update the XTTS server to the latest version.
@@ -100,7 +102,9 @@ pip install xtts-api-server --upgrade
 3. Start and connect XTTS to ST as usual.
 4. Enable the "Streaming" XTTS extension setting in SillyTavern.
 
-**Choppy audio?** Try increasing the "chunk size" setting.
+### Choppy audio?
+
+Try increasing the "chunk size" setting.
 
 For reference: with a chunk size of 200, RTX 3090 can produce uninterrupted audio at the cost of slightly increased audio latency.
 
