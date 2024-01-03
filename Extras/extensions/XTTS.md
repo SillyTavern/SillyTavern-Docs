@@ -102,6 +102,8 @@ pip install xtts-api-server --upgrade
 
 **Choppy audio?** Try increasing the "chunk size" setting.
 
+For reference: with a chunk size of 200, RTX 3090 can produce uninterrupted audio at the cost of slightly increased audio latency.
+
 ### How to restart the TTS server?
 
 Just do steps 1, 3 and 7 from the installation instruction.
