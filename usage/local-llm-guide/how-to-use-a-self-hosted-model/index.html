@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.758853694419">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.759176910334">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.758853694419" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.759176910334" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.758853694419" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.759176910334" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.758853694419" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.759176910334" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -203,12 +203,6 @@
         <span>Self-hosted AI models</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="update-2023-12-18-after-this-guide-was-written-feedback-came-that-the-newly-released-mixtral-moe-8x7b-model-is-far-superior-to-any-self-hosted-model-that-came-before-it-including-any-larger-model-it-can-do-higher-quality-chat-role-playing-than-even-gpt4-can-everything-taught-in-this-guide-is-still-valid-but-if-you-have-the-hardware-to-run-a-mixtral-model-then-be-sure-to-use-that-model">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#update-2023-12-18-after-this-guide-was-written-feedback-came-that-the-newly-released-mixtral-moe-8x7b-model-is-far-superior-to-any-self-hosted-model-that-came-before-it-including-any-larger-model-it-can-do-higher-quality-chat-role-playing-than-even-gpt4-can-everything-taught-in-this-guide-is-still-valid-but-if-you-have-the-hardware-to-run-a-mixtral-model-then-be-sure-to-use-that-model">#</doc-anchor-trigger>
-        <span>[UPDATE 2023-12-18] After this guide was written, feedback came that the newly-released Mixtral MoE 8x7B model is far superior to any self-hosted model that came before it, including any larger model. It can do higher-quality chat role-playing than even GPT4 can. Everything taught in this guide is still valid, but if you have the hardware to run a Mixtral model, then be sure to use that model!</span>
-    </h4>
-</doc-anchor-target>
 <doc-anchor-target id="intro">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#intro">#</doc-anchor-trigger>
@@ -227,29 +221,66 @@
 <li>There are thousands of free LLMs you can download from the Internet, similar to how Stable Diffusion has tons of models you can get to generate images.</li>
 <li>Running an unmodified LLM requires a monster GPU with a ton of VRAM (GPU memory). More than you will ever have.</li>
 <li>It is possible to reduce VRAM requirements by compressing the model using quantization techniques, such as GPTQ or AWQ. This makes the model somewhat less capable, but greatly reduces the VRAM requirements to run it. Suddenly, this allowed people with gaming GPUs like a 3080 to run a 13B model. Even though it&#x27;s not as good as the unquantized model, it&#x27;s still good.</li>
-<li>There also exists a model format and quantization called GGUF (previously GGML). This allows you to use a LLM without a GPU at all. It will only use CPU and RAM. This is much slower (probably 15 times) than running the LLM on a GPU using GPTQ/AWQ, especially during the prompt processing, but the model&#x27;s ability is just as good. The GGUF creator then optimized it further and made it so that you&#x27;re able to offload parts of the model to your GPU. This means if your GPU doesn&#x27;t have enough VRAM to run a GPTQ/AWQ model, you can still have your GPU assist the CPU with the limited VRAM it has, and their combined forces can run the LLM at a faster speed than if you&#x27;d used CPU alone (but still way slower than GPU).</li>
-<li>There are different sizes of models, named based on the number of parameters they were trained with. You will see names like 7B, 13B, 30B, 70B, etc. You can think of these as the brain size of the model. A 13B model will be more capable than the 7B from the same family of models: they were trained on the same data, but the bigger brain can retain the knowledge better and think more coherently. Bigger models also require more VRAM if using GPTQ/AWQ models, and more RAM if using GGUF models.</li>
-<li>There are several degrees of quantization (8-bit, 5-bit, 4-bit, etc). The lower you go, the more the model degrades, but the lower the hardware requirements. So even on bad hardware, you might be able to run a 4-bit version of your desired model. There&#x27;s even 3-bit and 2-bit quantization but at this point, you&#x27;re beating a dead horse.</li>
+<li>It gets better: there also exists a model format and quantization called GGUF (previously GGML) which has become the format of choice for normal people without monster GPUs. This allows you to use a LLM without a GPU at all. It will only use CPU and RAM. This is much slower (probably 15 times) than running the LLM on a GPU using GPTQ/AWQ, especially during the prompt processing, but the model&#x27;s ability is just as good. The GGUF creator then optimized GGUF further by adding a configuration option that allows people with a gaming-grade GPU to offload parts of the model to the GPU, allowing them to run part of the model at GPU speed (note that this doesn&#x27;t reduce RAM requirements, it only improves your generation speed).</li>
+<li>There are different sizes of models, named based on the number of parameters they were trained with. You will see names like 7B, 13B, 30B, 70B, etc. You can think of these as the brain size of the model. A 13B model will be more capable than the 7B from the same family of models: they were trained on the same data, but the bigger brain can retain the knowledge better and think more coherently. Bigger models also require more VRAM/RAM.</li>
+<li>There are several degrees of quantization (8-bit, 5-bit, 4-bit, etc). The lower you go, the more the model degrades, but the lower the hardware requirements. So even on bad hardware, you might be able to run a 4-bit version of your desired model. There&#x27;s even 3-bit and 2-bit quantization but at this point, you&#x27;re beating a dead horse. There&#x27;s also a further quantization subtypes named k_s, k_m, k_l, etc. k_m is better than k_s but requires more resources.</li>
+<li>The context size (how long your conversation can become without the model dropping parts of it) also affects VRAM/RAM requirements. Thankfully, this is a configurable setting, allowing you to use a smaller context to reduce VRAM/RAM requirements. (Note: the context size of Llama2-based models is 4k. Mistral is typically 8k, but some variants are higher. Don&#x27;t set it higher than you need to.)</li>
 <li>Sometime in 2023, NVIDIA changed their GPU driver so that if you need more VRAM than your GPU has, instead of the task crashing, it will begin using regular RAM as a fallback. This will ruin the writing speed of the LLM, but the model will still work and give the same quality of output. Thankfully, this behavior <a href="https://nvidia.custhelp.com/app/answers/detail/a_id/5490">can be disabled</a>.</li>
-<li>Misc note: the context size of Llama2-based models is 4k. Mistral is typically 8k, but some models are higher.</li>
 </ul>
 <p>Given all of the above, the hardware requirements and performance vary completely depending on the family of model, the type of model, the size of the model, the quantization method, etc.</p>
-<p>TL;DR: Here are some general rules for the popular Llama-based models:</p>
-<p>4-bit quantized GPU models (GPTQ):</p>
-<ul>
-<li>7B models need 6GB VRAM</li>
-<li>13B needs 10GB VRAM</li>
-<li>30B needs 20GB VRAM</li>
-</ul>
-<p>4-bit quantized CPU models (GGUF):</p>
-<ul>
-<li>7B needs 8GB RAM</li>
-<li>13B needs 11GB RAM</li>
-<li>30B needs 23GB RAM</li>
-</ul>
-<p>(but keep in mind your OS and tools need RAM too, so don&#x27;t be trying a 13B model if you only have 12GB RAM)</p>
-<p>Remember, you want to run the largest, least quantized model that can fit in your hardware specs. You WILL have to experiment using some trial-and-error.</p>
-<p>[UPDATE 2023-12-18: to run Mixtral MoE models, preliminary reports say you need 8GB VRAM and 26GB RAM for a 4-bit Q_M quantized GGUF model, run in split CPU/GPU mode with 7 layers offloaded to the GPU. This achieves 6 tokens/sec. If you have more concrete info, please update this page.]</p>
+<doc-anchor-target id="model-size-calculator">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#model-size-calculator">#</doc-anchor-trigger>
+        <span>Model size calculator</span>
+    </h4>
+</doc-anchor-target>
+<p>If you have a Google account, you can use <a href="https://docs.google.com/spreadsheets/d/15kq0aBYQS6cv_P75AiBtgYVg7j2Ejfa5YRs8SKLl9js/edit#gid=0">Nyx&#x27;s Model Size Calculator</a> to know how much RAM/VRAM you need. You will need to click File -&gt; Make A Copy in order to be able to select different settings in the dropdown. This requires knowing what is the base of the model you&#x27;re trying to use (Llama2 13B, Mistral 7B, etc), which is usually documented on the model card. You will learn where to find this information later in this guide.</p>
+<p>Remember, you want to run the largest, least quantized model that can fit in your memory, i.e. without causing <a href="https://serverfault.com/a/48487">disk swapping</a>.</p>
+<p>For those without a Google account, here&#x27;s some reference memory requirements for the most popular model bases.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Model</th>
+<th>Memory requirements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Llama2 7B Q4_K_M with 4096 context</td>
+<td>5.1 GB</td>
+</tr>
+<tr>
+<td>Llama2 13B Q4_K_M with 2048 context</td>
+<td>9.6 GB</td>
+</tr>
+<tr>
+<td>Llama2 13B Q4_K_M with 4096 context</td>
+<td>11.3 GB</td>
+</tr>
+<tr>
+<td>Llama2 13B Q6_K with 4096 context</td>
+<td>14.2 GB</td>
+</tr>
+<tr>
+<td>Mistral 7B Q4_K_M with 8192 context</td>
+<td>5.7 GB</td>
+</tr>
+<tr>
+<td>Mistral 7B Q4_K_M with 4096 context</td>
+<td>5 GB</td>
+</tr>
+<tr>
+<td>Mixtral 8x7B Q4_K_M with 32768 context</td>
+<td>34.4 GB</td>
+</tr>
+<tr>
+<td>Mixtral 8x7B Q4_K_M with 4096 context</td>
+<td>29.1 GB</td>
+</tr>
+</tbody>
+</table>
+</div>
 <doc-anchor-target id="downloading-a-llm">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#downloading-a-llm">#</doc-anchor-trigger>
@@ -261,6 +292,7 @@
 <ul>
 <li>You might not need all of them! For GGUF, you just need the .gguf model file (usually 4-11GB). If you find multiple large files, it&#x27;s usually all different quantizations of the same model, you only need to pick one.</li>
 <li>For .safetensors files (which can be GPTQ or AWQ or HF quantized or unquantized), if you see a number sequence in the filename like model-00001-of-00003.safetensors, then you need all 3 of those .safetensors files + all the other files in the repository (tokenizer, configs, etc.) to get the full model.</li>
+<li>As of January 2024, Mixtral MOE 8x7B is widely considered the state of the art for local LLMs. If you have the 32GB of RAM to run it, definitely try it.</li>
 </ul>
 <doc-anchor-target id="walkthrough-for-downloading-openhermes-25-mistral-7b-gguf">
     <h3>
@@ -268,10 +300,10 @@
         <span>Walkthrough for downloading OpenHermes-2.5-Mistral-7B-GGUF</span>
     </h3>
 </doc-anchor-target>
-<p>We will use the OpenHermes-2.5-Mistral-7B-GGUF model for the rest of this guide. Based on my experiments, this is the best model I could find for chat/roleplaying, it has an 8k context size, and there are even 16k context variants.</p>
+<p>We will use the OpenHermes-2.5-Mistral-7B-GGUF model for the rest of this guide.</p>
 <ul>
 <li>Go to <a href="https://huggingface.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF">https://huggingface.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF</a></li>
-<li>Click &#x27;Files and versions&#x27;. You will see a listing of several files. These are all the same model but offered in different quantization options. Click the file &#x27;openhermes-2.5-mistral-7b.Q4_K_S.gguf&#x27;, which gives us a 4-bit quantization.</li>
+<li>Click &#x27;Files and versions&#x27;. You will see a listing of several files. These are all the same model but offered in different quantization options. Click the file &#x27;openhermes-2.5-mistral-7b.Q4_K_M.gguf&#x27;, which gives us a 4-bit quantization.</li>
 <li>Click the &#x27;download&#x27; button. Your download should start.</li>
 </ul>
 <doc-anchor-target id="how-to-identify-the-type-of-model">
@@ -287,7 +319,6 @@
 <li>Filename is pytorch-***.bin: same as above, but this is an older model file format that allows the model to execute arbitrary Python script when the model is loaded, and is considered unsafe. You can still use it if you trust the model creator, or are desperate, but pick .safetensors if you have the option.</li>
 <li>config.json exists? Look if it has a quant_method.</li>
 <li>q4 means 4-bit quantization, q5 is 5-bit quantization, etc</li>
-<li>There&#x27;s a further quantization subtype called k_s or k_m. k_m is better than k_s but requires more resources.</li>
 <li>You see a number like -16k? That&#x27;s an increased context size (i.e. how long your conversation can get before the model forgets the beginning of your chat)! Note that higher context sizes require more VRAM.</li>
 </ul>
 <doc-anchor-target id="installing-a-llm-server-oobagooba-or-koboldai">
@@ -310,7 +341,7 @@
 <li>Run start_windows.bat or whatever your OS is</li>
 <li>When asked, select your GPU type. Even if you intend to use GGUF/CPU, if your GPU is in the list, select it now, because it will give you the option to use a speed optimization later called GPU sharding (without having to reinstall from scratch). If you have no gaming-grade dGPU (NVIDIA, AMD), select None.</li>
 <li>Wait for the installation to finish</li>
-<li>Place openhermes-2.5-mistral-7b.Q4_K_S.gguf in text-generation-webui/models</li>
+<li>Place openhermes-2.5-mistral-7b.Q4_K_M.gguf in text-generation-webui/models</li>
 <li>Open text-generation-webui/CMD_FLAGS.txt, delete everything inside and write: --api</li>
 <li>Restart oobagooba</li>
 <li>Visit <a href="http://127.0.0.1:5000/docs">http://127.0.0.1:5000/docs</a>. Does it load a FastAPI page? If not, you messed up somewhere.</li>
@@ -325,6 +356,7 @@
 <li>Open <a href="http://127.0.0.1:7860/">http://127.0.0.1:7860/</a> in your browser</li>
 <li>Click the Model tab</li>
 <li>In the dropdown, select our OpenHermes model. It should have automatically selected the llama.cpp loader.</li>
+<li>(Optional) We mentioned &#x27;GPU offload&#x27; several times earlier: that&#x27;s the n-gpu-layers setting on this page. If you want to use it, set a value before loading the model. As a basic reference, setting it to 30 uses just under 6GB VRAM for 13B and lower models. (it varies with model architecture and size)</li>
 <li>Click Load</li>
 </ol>
 <p>Notice on the right side it said &quot;It seems to be an instruction-following model with template ChatML&quot;. Don&#x27;t take this as gospel! Ooba is incapable of guessing how the fine-tuners of a model trained it. Knowing this will come into play later when trying to optimize the writing quality in SillyTavern.</p>
