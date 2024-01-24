@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.759176910334">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.759428254439">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.759176910334" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.759428254439" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.759176910334" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.759428254439" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.759176910334" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.759428254439" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -370,8 +370,15 @@ Supports logic for AND ANY, NOT ANY, or NOT ALL</p>
         <span>Scan Depth</span>
     </h3>
 </doc-anchor-target>
+<blockquote>
+<p>Can be overridden on an entry level.</p>
+</blockquote>
 <p>Defines how many messages in the chat history should be scanned for World Info keys.</p>
-<p>If set to 1, then SillyTavern only scans the message you send and the most recent reply.</p>
+<ul>
+<li>If set to 0, then only recursed entries and Author&#x27;s Note are evaluated.</li>
+<li>If set to 1, then SillyTavern only scans the last message.</li>
+<li>2 = two last messages, etc.</li>
+</ul>
 <doc-anchor-target id="context---budget">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#context---budget">#</doc-anchor-trigger>
@@ -422,6 +429,9 @@ Content: Rufus is a dog.</code></pre>
         <span>Case-sensitive keys</span>
     </h3>
 </doc-anchor-target>
+<blockquote>
+<p>Can be overridden on an entry level.</p>
+</blockquote>
 <p><strong>To get pulled into the context, entry keys need to match the case as they are defined in the World Info entry.</strong></p>
 <p>This is useful when your keys are common words or parts of common words.</p>
 <p>For example, when this setting is active, keys &#x27;rose&#x27; and &#x27;Rose&#x27; will be treated differently, depending on the inputs.</p>
@@ -431,6 +441,9 @@ Content: Rufus is a dog.</code></pre>
         <span>Match whole words</span>
     </h3>
 </doc-anchor-target>
+<blockquote>
+<p>Can be overridden on an entry level.</p>
+</blockquote>
 <p>Entries with keys containing only one word will be matched only if the entire word is present in the search text. Enabled by default.</p>
 <p>For example, if the setting is enabled and the entry key is &quot;king&quot;, then text such as &quot;long live the king&quot; would be matched, but &quot;it&#x27;s not to my liking&quot; wouldn&#x27;t.</p>
 <doc-anchor-target id="alert-on-overflow">
