@@ -431,7 +431,7 @@ World Info (also known as Lorebook) is a highly utilitarian tool for dynamically
 | `probability`      | Trigger%         | Number (0-100)   |
 | `depth`            | Depth            | Number (0-999)   |
 | `position`         | Position         | (see below)      |
-| `scanDepth`        | Scan Depth       | Number (0-1000)  |
+| `scanDepth`        | Scan Depth       | Number (0-100)  |
 | `caseSensitive`    | Case-Sensitive   | Boolean (1/0)    |
 | `matchWholeWords`  | Match Whole Words | Boolean (1/0)   |
 
