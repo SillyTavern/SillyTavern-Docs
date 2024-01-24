@@ -63,7 +63,7 @@ If both backticks and trigger phrases search activation are used, backticks have
 
 To discard all previous queries from processing, start the user message with an exclamation mark, for example, a user message `!Now let's talk about...` will discard this and every message above it.
 
-This extension also provides a `/websearch` slash command to use in STscript. More info here: https://docs.sillytavern.app/usage/st-script/
+This extension also provides a `/websearch` slash command to use in STscript. More info here: [STscript Language Reference](https://docs.sillytavern.app/usage/st-script/)
 
 ```
 /websearch (links=on|off snippets=on|off [query]) – performs a web search query. Use named arguments to specify what to return - page snippets (default: on), full parsed pages (default: off) or both.
