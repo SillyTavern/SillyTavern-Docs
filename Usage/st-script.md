@@ -431,6 +431,9 @@ World Info (also known as Lorebook) is a highly utilitarian tool for dynamically
 | `probability`      | Trigger%         | Number (0-100)   |
 | `depth`            | Depth            | Number (0-999)   |
 | `position`         | Position         | (see below)      |
+| `scanDepth`        | Scan Depth       | Number (0-1000)  |
+| `caseSensitive`    | Case-Sensitive   | Boolean (1/0)    |
+| `matchWholeWords`  | Match Whole Words | Boolean (1/0)   |
 
 **Position values**
 
@@ -545,6 +548,7 @@ In this menu you can do the following:
   * Sending a user message to the chat
   * Receiving an AI message in the chat
   * Opening a character or group chat
+  * Triggering a reply from a group member
   * Provide a custom tool-tip for the quick reply (text displayed when hovering over the quick reply in your UI)
 
 Commands are executed automatically only if the Quick Replies extension is enabled.
