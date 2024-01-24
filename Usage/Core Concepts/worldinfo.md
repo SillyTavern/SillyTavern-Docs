@@ -106,9 +106,13 @@ Collapsible menu at the top of the World Info screen.
 
 ### Scan Depth
 
+> Can be overridden on an entry level.
+
 Defines how many messages in the chat history should be scanned for World Info keys.
 
-If set to 1, then SillyTavern only scans the message you send and the most recent reply.
+* If set to 0, then only recursed entries and Author's Note are evaluated.
+* If set to 1, then SillyTavern only scans the last message.
+* 2 = two last messages, etc.
 
 ### Context % / Budget
 
@@ -151,6 +155,8 @@ Content: Rufus is a dog.
 
 ### Case-sensitive keys
 
+> Can be overridden on an entry level.
+
 **To get pulled into the context, entry keys need to match the case as they are defined in the World Info entry.**
 
 This is useful when your keys are common words or parts of common words.
@@ -158,6 +164,8 @@ This is useful when your keys are common words or parts of common words.
 For example, when this setting is active, keys 'rose' and 'Rose' will be treated differently, depending on the inputs.
 
 ### Match whole words
+
+> Can be overridden on an entry level.
 
 Entries with keys containing only one word will be matched only if the entire word is present in the search text. Enabled by default.
 
