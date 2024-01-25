@@ -1,4 +1,4 @@
-# SillyTavern VRM Extension Setup Guide
+# VRM
 
 This guide will walk you through the process of setting up and customizing the VRM extension for your SillyTavern experience. This extension allows you to use VRM animated models for your character, providing a dynamic and interactive element to your virtual character.
 
