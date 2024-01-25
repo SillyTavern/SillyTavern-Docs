@@ -200,7 +200,7 @@ If your animation file are named in the following way they will be mapped automa
     "rightFoot": "assets/vrm/animation/hitarea_foot",
     "leftFoot": "assets/vrm/animation/hitarea_foot"
 
-Thank you for following this guide! Your SillyTavern experience is now enriched with animated and interactive Live2D models.
+Thank you for following this guide! Your SillyTavern experience is now enriched with animated and interactive 3D models.
 
 ## Remarks
     - The VRM model loaded by this extension are the .vrm files not the .vroid files.
