@@ -18,7 +18,7 @@ This is a complex subject, so I'll stick to the essentials and generalize.
 * It gets better: there also exists a model format and quantization called GGUF (previously GGML) which has become the format of choice for normal people without monster GPUs. This allows you to use a LLM without a GPU at all. It will only use CPU and RAM. This is much slower (probably 15 times) than running the LLM on a GPU using GPTQ/AWQ, especially during the prompt processing, but the model's ability is just as good. The GGUF creator then optimized GGUF further by adding a configuration option that allows people with a gaming-grade GPU to offload parts of the model to the GPU, allowing them to run part of the model at GPU speed (note that this doesn't reduce RAM requirements, it only improves your generation speed).
 * There are different sizes of models, named based on the number of parameters they were trained with. You will see names like 7B, 13B, 30B, 70B, etc. You can think of these as the brain size of the model. A 13B model will be more capable than the 7B from the same family of models: they were trained on the same data, but the bigger brain can retain the knowledge better and think more coherently. Bigger models also require more VRAM/RAM.
 * There are several degrees of quantization (8-bit, 5-bit, 4-bit, etc). The lower you go, the more the model degrades, but the lower the hardware requirements. So even on bad hardware, you might be able to run a 4-bit version of your desired model. There's even 3-bit and 2-bit quantization but at this point, you're beating a dead horse. There's also a further quantization subtypes named k_s, k_m, k_l, etc. k_m is better than k_s but requires more resources.
-* The context size (how long your conversation can become without the model dropping parts of it) also affects VRAM/RAM requirements. Thankfully, this is a configurable setting, allowing you to use a smaller context to reduce VRAM/RAM requirements. (Note: the context size of Llama2-based models is 4k. Mistral is typically 8k, but some variants are higher. Don't set it higher than you need to.)
+* The context size (how long your conversation can become without the model dropping parts of it) also affects VRAM/RAM requirements. Thankfully, this is a configurable setting, allowing you to use a smaller context to reduce VRAM/RAM requirements. (Note: the context size of Llama2-based models is 4k. Mistral is advertised as 8k, but it's 4k in practice.)
 * Sometime in 2023, NVIDIA changed their GPU driver so that if you need more VRAM than your GPU has, instead of the task crashing, it will begin using regular RAM as a fallback. This will ruin the writing speed of the LLM, but the model will still work and give the same quality of output. Thankfully, this behavior [can be disabled](https://nvidia.custhelp.com/app/answers/detail/a_id/5490).
 
 Given all of the above, the hardware requirements and performance vary completely depending on the family of model, the type of model, the size of the model, the quantization method, etc.
@@ -49,14 +49,14 @@ On a given model's page, you will find a whole bunch of files.
 
 * You might not need all of them! For GGUF, you just need the .gguf model file (usually 4-11GB). If you find multiple large files, it's usually all different quantizations of the same model, you only need to pick one. 
 * For .safetensors files (which can be GPTQ or AWQ or HF quantized or unquantized), if you see a number sequence in the filename like model-00001-of-00003.safetensors, then you need all 3 of those .safetensors files + all the other files in the repository (tokenizer, configs, etc.) to get the full model.
-* As of January 2024, Mixtral MOE 8x7B is widely considered the state of the art for local LLMs. If you have the 32GB of RAM to run it, definitely try it.
+* As of January 2024, Mixtral MOE 8x7B is widely considered the state of the art for local LLMs. If you have the 32GB of RAM to run it, definitely try it. If you have less than 32GB of RAM, then use Kunoichi-DPO-v2-7B, which despite its size is stellar out of the gate.
 
-### Walkthrough for downloading OpenHermes-2.5-Mistral-7B-GGUF
+### Walkthrough for downloading Kunoichi-DPO-v2-7B
 
-We will use the OpenHermes-2.5-Mistral-7B-GGUF model for the rest of this guide.
+We will use the Kunoichi-DPO-v2-7B model for the rest of this guide. It's an excellent model based on Mistral 7B, that only requires 7GB RAM, and punches far above its weight. Note: Kunoichi uses Alpaca prompting.
 
-* Go to <https://huggingface.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF>
-* Click 'Files and versions'. You will see a listing of several files. These are all the same model but offered in different quantization options. Click the file 'openhermes-2.5-mistral-7b.Q4_K_M.gguf', which gives us a 4-bit quantization.
+* Go to <https://huggingface.co/brittlewis12/Kunoichi-DPO-v2-7B-GGUF>
+* Click 'Files and versions'. You will see a listing of several files. These are all the same model but offered in different quantization options. Click the file 'kunoichi-dpo-v2-7b.Q6_K.gguf', which gives us a 6-bit quantization.
 * Click the 'download' button. Your download should start.
 
 ### How to identify the type of model
@@ -84,7 +84,7 @@ Here's a more correct/dummy proof installation procedure:
 2. Run start_windows.bat or whatever your OS is
 3. When asked, select your GPU type. Even if you intend to use GGUF/CPU, if your GPU is in the list, select it now, because it will give you the option to use a speed optimization later called GPU sharding (without having to reinstall from scratch). If you have no gaming-grade dGPU (NVIDIA, AMD), select None.
 4. Wait for the installation to finish
-5. Place openhermes-2.5-mistral-7b.Q4_K_M.gguf in text-generation-webui/models
+5. Place kunoichi-dpo-v2-7b.Q6_K.gguf in text-generation-webui/models
 6. Open text-generation-webui/CMD_FLAGS.txt, delete everything inside and write: --api
 7. Restart oobagooba
 8. Visit <http://127.0.0.1:5000/docs>. Does it load a FastAPI page? If not, you messed up somewhere.
@@ -93,11 +93,10 @@ Here's a more correct/dummy proof installation procedure:
 
 1. Open <http://127.0.0.1:7860/> in your browser
 2. Click the Model tab
-3. In the dropdown, select our OpenHermes model. It should have automatically selected the llama.cpp loader.
+3. In the dropdown, select our Kunoichi DPO v2  model. It should have automatically selected the llama.cpp loader.
 4. (Optional) We mentioned 'GPU offload' several times earlier: that's the n-gpu-layers setting on this page. If you want to use it, set a value before loading the model. As a basic reference, setting it to 30 uses just under 6GB VRAM for 13B and lower models. (it varies with model architecture and size)
 5. Click Load
 
-Notice on the right side it said "It seems to be an instruction-following model with template ChatML". Don't take this as gospel! Ooba is incapable of guessing how the fine-tuners of a model trained it. Knowing this will come into play later when trying to optimize the writing quality in SillyTavern.
 
 ### Configuring SillyTavern to talk to Oobagooba
 
@@ -105,7 +104,7 @@ Notice on the right side it said "It seems to be an instruction-following model 
 2. Set API to Text Completion
 3. Set API Type to Default (Oobagooba)
 4. Set server URL to <http://127.0.0.1:5000/>
-5. Click Connect. It should connect successfully and detect TheBloke_OpenHermes-2.5-Mistral-7B-GGUF as the model.
+5. Click Connect. It should connect successfully and detect kunoichi-dpo-v2-7b.Q6_K.gguf as the model.
 6. Chat with a character to test that it works
 
 ## Conclusion
