@@ -12,8 +12,8 @@ create a unique identity for the character you play in your chats or identify yo
 To create a persona:
 
 1. Open the Persona Management panel (smiley face icon) in the top bar.
-2. Upload a user avatar, select an existing avatar, or create a blank persona with a dummy image ("Create" button).
-3. Hover (tap on mobile) over the image and pick the top-left option ("Bind a name to that avatar").
+2. Select an existing avatar, or create a blank persona with a dummy image ("Create" button).
+3. Find the persona in the list and pick the leftmost context action button ("Bind a name to that avatar").
 4. Input a desired name into the popup window. Confirm by clicking an "OK" button.
 5. The avatar now represents a Persona. Click on the avatar to select it, and this will also automatically update the user name.
 
@@ -25,7 +25,7 @@ Here you can also use replacement macros like \{\{user\}\}, \{\{char\}\}, and ot
 
 If defined, the Persona Description will be inserted into the AI prompt in one of the chosen places:
 
-1. In Prompt Manager (Chat Completions API) or Story String (other APIs). This is the default position.
+1. In Prompt Manager (Chat Completion API) or Story String (other APIs). This is the default position.
 2. Top of an Author's Note (if Author's Note is not disabled).
 3. Bottom of an Author's Note (if Author's Note is not disabled).
 
@@ -36,7 +36,7 @@ To permanently save the user description, bind the currently selected avatar to 
 ## Persona locking
 
 One chosen persona could be locked to the currently open individual or group chats.
-If the currently selected persona is different from the locked one, it will be automatically selected when you open that chat.
+If the currently selected persona differs from the locked one, it will be automatically selected when you open that chat.
 
 ### To lock a persona
 
@@ -49,10 +49,10 @@ Alternatively, you could use /lock and /unlock slash commands to achieve the sam
 
 ## Default persona
 
-You can select one persona to be your preferred default identity, selecting it automatically for all new chats and chats where a persona is not locked.
+You can select one persona as your preferred default identity, automatically selecting it for all new chats and chats where a persona is not locked.
 The default persona is represented by a yellow outline on the Persona Management panel. 
 
-* To set persona as a default, hover (tap on mobile) over the persona avatar and click the top-right "crown" button, then confirm your action.
+* To set persona as a default, click the "crown" button in the persona block, then confirm your action.
 * To undo this action and unset the default persona, click the "crown" button again.
 
 ## Pro Tips
