@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.759979637530">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.760014817356">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.759979637530" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.760014817356" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.759979637530" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.760014817356" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.759979637530" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.760014817356" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -224,7 +224,7 @@
 <li>It gets better: there also exists a model format and quantization called GGUF (previously GGML) which has become the format of choice for normal people without monster GPUs. This allows you to use a LLM without a GPU at all. It will only use CPU and RAM. This is much slower (probably 15 times) than running the LLM on a GPU using GPTQ/AWQ, especially during the prompt processing, but the model&#x27;s ability is just as good. The GGUF creator then optimized GGUF further by adding a configuration option that allows people with a gaming-grade GPU to offload parts of the model to the GPU, allowing them to run part of the model at GPU speed (note that this doesn&#x27;t reduce RAM requirements, it only improves your generation speed).</li>
 <li>There are different sizes of models, named based on the number of parameters they were trained with. You will see names like 7B, 13B, 30B, 70B, etc. You can think of these as the brain size of the model. A 13B model will be more capable than the 7B from the same family of models: they were trained on the same data, but the bigger brain can retain the knowledge better and think more coherently. Bigger models also require more VRAM/RAM.</li>
 <li>There are several degrees of quantization (8-bit, 5-bit, 4-bit, etc). The lower you go, the more the model degrades, but the lower the hardware requirements. So even on bad hardware, you might be able to run a 4-bit version of your desired model. There&#x27;s even 3-bit and 2-bit quantization but at this point, you&#x27;re beating a dead horse. There&#x27;s also a further quantization subtypes named k_s, k_m, k_l, etc. k_m is better than k_s but requires more resources.</li>
-<li>The context size (how long your conversation can become without the model dropping parts of it) also affects VRAM/RAM requirements. Thankfully, this is a configurable setting, allowing you to use a smaller context to reduce VRAM/RAM requirements. (Note: the context size of Llama2-based models is 4k. Mistral is typically 8k, but some variants are higher. Don&#x27;t set it higher than you need to.)</li>
+<li>The context size (how long your conversation can become without the model dropping parts of it) also affects VRAM/RAM requirements. Thankfully, this is a configurable setting, allowing you to use a smaller context to reduce VRAM/RAM requirements. (Note: the context size of Llama2-based models is 4k. Mistral is advertised as 8k, but it&#x27;s 4k in practice.)</li>
 <li>Sometime in 2023, NVIDIA changed their GPU driver so that if you need more VRAM than your GPU has, instead of the task crashing, it will begin using regular RAM as a fallback. This will ruin the writing speed of the LLM, but the model will still work and give the same quality of output. Thankfully, this behavior <a href="https://nvidia.custhelp.com/app/answers/detail/a_id/5490">can be disabled</a>.</li>
 </ul>
 <p>Given all of the above, the hardware requirements and performance vary completely depending on the family of model, the type of model, the size of the model, the quantization method, etc.</p>
@@ -292,18 +292,18 @@
 <ul>
 <li>You might not need all of them! For GGUF, you just need the .gguf model file (usually 4-11GB). If you find multiple large files, it&#x27;s usually all different quantizations of the same model, you only need to pick one.</li>
 <li>For .safetensors files (which can be GPTQ or AWQ or HF quantized or unquantized), if you see a number sequence in the filename like model-00001-of-00003.safetensors, then you need all 3 of those .safetensors files + all the other files in the repository (tokenizer, configs, etc.) to get the full model.</li>
-<li>As of January 2024, Mixtral MOE 8x7B is widely considered the state of the art for local LLMs. If you have the 32GB of RAM to run it, definitely try it.</li>
+<li>As of January 2024, Mixtral MOE 8x7B is widely considered the state of the art for local LLMs. If you have the 32GB of RAM to run it, definitely try it. If you have less than 32GB of RAM, then use Kunoichi-DPO-v2-7B, which despite its size is stellar out of the gate.</li>
 </ul>
-<doc-anchor-target id="walkthrough-for-downloading-openhermes-25-mistral-7b-gguf">
+<doc-anchor-target id="walkthrough-for-downloading-kunoichi-dpo-v2-7b">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#walkthrough-for-downloading-openhermes-25-mistral-7b-gguf">#</doc-anchor-trigger>
-        <span>Walkthrough for downloading OpenHermes-2.5-Mistral-7B-GGUF</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#walkthrough-for-downloading-kunoichi-dpo-v2-7b">#</doc-anchor-trigger>
+        <span>Walkthrough for downloading Kunoichi-DPO-v2-7B</span>
     </h3>
 </doc-anchor-target>
-<p>We will use the OpenHermes-2.5-Mistral-7B-GGUF model for the rest of this guide.</p>
+<p>We will use the Kunoichi-DPO-v2-7B model for the rest of this guide. It&#x27;s an excellent model based on Mistral 7B, that only requires 7GB RAM, and punches far above its weight. Note: Kunoichi uses Alpaca prompting.</p>
 <ul>
-<li>Go to <a href="https://huggingface.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF">https://huggingface.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF</a></li>
-<li>Click &#x27;Files and versions&#x27;. You will see a listing of several files. These are all the same model but offered in different quantization options. Click the file &#x27;openhermes-2.5-mistral-7b.Q4_K_M.gguf&#x27;, which gives us a 4-bit quantization.</li>
+<li>Go to <a href="https://huggingface.co/brittlewis12/Kunoichi-DPO-v2-7B-GGUF">https://huggingface.co/brittlewis12/Kunoichi-DPO-v2-7B-GGUF</a></li>
+<li>Click &#x27;Files and versions&#x27;. You will see a listing of several files. These are all the same model but offered in different quantization options. Click the file &#x27;kunoichi-dpo-v2-7b.Q6_K.gguf&#x27;, which gives us a 6-bit quantization.</li>
 <li>Click the &#x27;download&#x27; button. Your download should start.</li>
 </ul>
 <doc-anchor-target id="how-to-identify-the-type-of-model">
@@ -341,7 +341,7 @@
 <li>Run start_windows.bat or whatever your OS is</li>
 <li>When asked, select your GPU type. Even if you intend to use GGUF/CPU, if your GPU is in the list, select it now, because it will give you the option to use a speed optimization later called GPU sharding (without having to reinstall from scratch). If you have no gaming-grade dGPU (NVIDIA, AMD), select None.</li>
 <li>Wait for the installation to finish</li>
-<li>Place openhermes-2.5-mistral-7b.Q4_K_M.gguf in text-generation-webui/models</li>
+<li>Place kunoichi-dpo-v2-7b.Q6_K.gguf in text-generation-webui/models</li>
 <li>Open text-generation-webui/CMD_FLAGS.txt, delete everything inside and write: --api</li>
 <li>Restart oobagooba</li>
 <li>Visit <a href="http://127.0.0.1:5000/docs">http://127.0.0.1:5000/docs</a>. Does it load a FastAPI page? If not, you messed up somewhere.</li>
@@ -355,11 +355,10 @@
 <ol>
 <li>Open <a href="http://127.0.0.1:7860/">http://127.0.0.1:7860/</a> in your browser</li>
 <li>Click the Model tab</li>
-<li>In the dropdown, select our OpenHermes model. It should have automatically selected the llama.cpp loader.</li>
+<li>In the dropdown, select our Kunoichi DPO v2  model. It should have automatically selected the llama.cpp loader.</li>
 <li>(Optional) We mentioned &#x27;GPU offload&#x27; several times earlier: that&#x27;s the n-gpu-layers setting on this page. If you want to use it, set a value before loading the model. As a basic reference, setting it to 30 uses just under 6GB VRAM for 13B and lower models. (it varies with model architecture and size)</li>
 <li>Click Load</li>
 </ol>
-<p>Notice on the right side it said &quot;It seems to be an instruction-following model with template ChatML&quot;. Don&#x27;t take this as gospel! Ooba is incapable of guessing how the fine-tuners of a model trained it. Knowing this will come into play later when trying to optimize the writing quality in SillyTavern.</p>
 <doc-anchor-target id="configuring-sillytavern-to-talk-to-oobagooba">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#configuring-sillytavern-to-talk-to-oobagooba">#</doc-anchor-trigger>
@@ -371,7 +370,7 @@
 <li>Set API to Text Completion</li>
 <li>Set API Type to Default (Oobagooba)</li>
 <li>Set server URL to <a href="http://127.0.0.1:5000/">http://127.0.0.1:5000/</a></li>
-<li>Click Connect. It should connect successfully and detect TheBloke_OpenHermes-2.5-Mistral-7B-GGUF as the model.</li>
+<li>Click Connect. It should connect successfully and detect kunoichi-dpo-v2-7b.Q6_K.gguf as the model.</li>
 <li>Chat with a character to test that it works</li>
 </ol>
 <doc-anchor-target id="conclusion">
