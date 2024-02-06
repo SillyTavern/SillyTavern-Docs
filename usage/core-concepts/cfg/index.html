@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.760014817356">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.760577281300">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -35,11 +35,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.760014817356" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.760577281300" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.760014817356" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.760577281300" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.760014817356" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.760577281300" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -206,7 +206,7 @@
     </h1>
 </doc-anchor-target>
 <p>Page written by: kingbri</p>
-<p>Contributors: kingbri, Guillaume &quot;Vermeille&quot; Sanchez, Alicat</p>
+<p>Contributors: kingbri, Guillaume &quot;Vermeille&quot; Sanchez, AliCat</p>
 <doc-anchor-target id="what-is-it">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#what-is-it">#</doc-anchor-trigger>
@@ -220,7 +220,7 @@
         <span>Supported Backend APIs</span>
     </h3>
 </doc-anchor-target>
-<p>Currently the supported backends are oobabooga&#x27;s textgen WebUI and NovelAI. NovelAI has their own documentation for CFG that you can read <a href="https://docs.novelai.net/text/cfg.html">here</a></p>
+<p>Currently, the supported backends are oobabooga&#x27;s textgen WebUI, NovelAI, and TabbyAPI. NovelAI has its own documentation for CFG that you can read <a href="https://docs.novelai.net/text/cfg.html">here</a></p>
 <p>WARNING: CFG increases vram usage due to ingesting more than 1 prompt! If your GPU memory runs out while generating a prompt with CFG on, consider reducing your context size, using a lesser parameter model, or turning off CFG entirely.</p>
 <hr>
 <doc-anchor-target id="configuration">
@@ -278,7 +278,7 @@
 </figure>
 </p>
 <p>The main change is that character CFG is removed and a checkbox called <code v-pre>Use Character CFG Scales</code> is present in the chat CFG dropdown. This allows for the current character&#x27;s guidance scale to be used instead of whatever the chat CFG scale is set to.</p>
-<p>The main utility for this feature is to alter the scale based on each character&#x27;s individual needs.</p>
+<p>The main utility of this feature is to alter the scale based on each character&#x27;s individual needs.</p>
 <p>In addition, checking the <code v-pre>Character Negatives</code> box in prompt cascading will append the independent character negative prompts along with the chat ones (if enabled).</p>
 <hr>
 <doc-anchor-target id="concepts">
@@ -293,7 +293,7 @@
         <span>Isn&#x27;t this in Stable Diffusion?</span>
     </h3>
 </doc-anchor-target>
-<p>Yes and no. CFG with LLMs works in a different way than what one might be used to in Stable Diffusion. LLM based CFG works on the principle of &quot;prompt mixing&quot;. The CFG formula takes a positive and negative prompt, then mixes the <em>differences</em> between them. From there, a combined prompt is sent and a response is generated!</p>
+<p>Yes and no. CFG with LLMs works in a different way than what one might be used to in Stable Diffusion. LLM-based CFG works on the principle of &quot;prompt mixing&quot;. The CFG formula takes a positive and negative prompt, then mixes the <em>differences</em> between them. From there, a combined prompt is sent and a response is generated!</p>
 <p>Here&#x27;s an illustration to help visualize this concept. The red represents the negative prompt, the blue represents the neutral prompt, and the purple represents the mixed result that&#x27;s interpreted. All the white space is the same across all 3 prompts, so those are not used for CFG mixing.</p>
 <p><figure class="content-center">
     <img src="https://files.catbox.moe/ql9v1j.png" alt="stcfgdiagrampng">
@@ -337,7 +337,7 @@
         <span>But...</span>
     </h3>
 </doc-anchor-target>
-<p>These are just <strong>loose guidelines</strong> from experience with one specific character format. There are many other ways to create prompts that you should experiment with. Feel free to share your thoughts to other users!</p>
+<p>These are just <strong>loose guidelines</strong> from experience with one specific character format. There are many other ways to create prompts that you should experiment with. Feel free to share your thoughts with other users!</p>
 <doc-anchor-target id="guidance-scale">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#guidance-scale">#</doc-anchor-trigger>
