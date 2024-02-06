@@ -2,7 +2,7 @@
 
 Page written by: kingbri
 
-Contributors: kingbri, Guillaume "Vermeille" Sanchez, Alicat
+Contributors: kingbri, Guillaume "Vermeille" Sanchez, AliCat
 
 ## What is it?
 
@@ -10,7 +10,7 @@ CFG, or classifier-free guidance is a method that's used to help make parts of a
 
 ### Supported Backend APIs
 
-Currently the supported backends are oobabooga's textgen WebUI and NovelAI. NovelAI has their own documentation for CFG that you can read [here](https://docs.novelai.net/text/cfg.html)
+Currently, the supported backends are oobabooga's textgen WebUI, NovelAI, and TabbyAPI. NovelAI has its own documentation for CFG that you can read [here](https://docs.novelai.net/text/cfg.html)
 
 WARNING: CFG increases vram usage due to ingesting more than 1 prompt! If your GPU memory runs out while generating a prompt with CFG on, consider reducing your context size, using a lesser parameter model, or turning off CFG entirely.
 
@@ -51,7 +51,7 @@ In group chats, the CFG scale panel looks like this:
 
 The main change is that character CFG is removed and a checkbox called `Use Character CFG Scales` is present in the chat CFG dropdown. This allows for the current character's guidance scale to be used instead of whatever the chat CFG scale is set to.
 
-The main utility for this feature is to alter the scale based on each character's individual needs.
+The main utility of this feature is to alter the scale based on each character's individual needs.
 
 In addition, checking the `Character Negatives` box in prompt cascading will append the independent character negative prompts along with the chat ones (if enabled).
 
@@ -61,7 +61,7 @@ In addition, checking the `Character Negatives` box in prompt cascading will app
 
 ### Isn't this in Stable Diffusion?
 
-Yes and no. CFG with LLMs works in a different way than what one might be used to in Stable Diffusion. LLM based CFG works on the principle of "prompt mixing". The CFG formula takes a positive and negative prompt, then mixes the *differences* between them. From there, a combined prompt is sent and a response is generated!
+Yes and no. CFG with LLMs works in a different way than what one might be used to in Stable Diffusion. LLM-based CFG works on the principle of "prompt mixing". The CFG formula takes a positive and negative prompt, then mixes the *differences* between them. From there, a combined prompt is sent and a response is generated!
 
 Here's an illustration to help visualize this concept. The red represents the negative prompt, the blue represents the neutral prompt, and the purple represents the mixed result that's interpreted. All the white space is the same across all 3 prompts, so those are not used for CFG mixing.
 
@@ -94,7 +94,7 @@ I went over this in the previous section, but I'd like to touch on this a bit mo
 
 ### But...
 
-These are just **loose guidelines** from experience with one specific character format. There are many other ways to create prompts that you should experiment with. Feel free to share your thoughts to other users!
+These are just **loose guidelines** from experience with one specific character format. There are many other ways to create prompts that you should experiment with. Feel free to share your thoughts with other users!
 
 ### Guidance Scale
 
