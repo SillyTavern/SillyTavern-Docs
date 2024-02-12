@@ -73,6 +73,12 @@ Works best for SDXL image models. It may not work well with other models, and it
 
 Default GPT-2 model: [Cohee/fooocus_expansion-onnx](https://huggingface.co/Cohee/fooocus_expansion-onnx)
 
+### Snap auto-adjusted resolutions
+
+Snap image generation requests with a forced aspect ratio (portraits, backgrounds) to the nearest known resolution, while trying to preserve the absolute pixel counts. Refer to the "Resolution" dropdown for the list of possible options.
+
+**Recommended for SDXL models**.
+
 ## Common prompt prefix
 
 Added before every generated or free-mode prompt. Commonly used for setting the overall style of the picture.
