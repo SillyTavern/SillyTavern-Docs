@@ -104,8 +104,7 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 
 ### OpenRouter
 
-- This browser extension allows you to connect to the abovementioned cloud LLMs
-- Use your own ChatGPT/Claude API key with WindowAI
+- WindowAI browser extension allows you to connect to the abovementioned cloud LLMs with your own API key
 - Use OpenRouter to pay to use their API keys instead
 - Useful if you don't want to create individual accounts on each service
-- [website](https://windowai.io) and [website](https://openrouter.ai)
+- [WindowAI website](https://windowai.io) and [OpenRouter website](https://openrouter.ai)
