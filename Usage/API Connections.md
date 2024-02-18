@@ -30,7 +30,7 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 
 - Easy-to-use API with CPU offloading (helpful for low VRAM users) and streaming
 - Runs from a single .exe file on Windows (must be compiled from source on MacOS and Linux)
-- Supports GGML, GGUF, and FP16 models
+- Supports GGUF/GGML models
 - Slower than GPU-only loaders such as AutoGPTQ and Exllama/v2
 - [GitHub](https://github.com/LostRuins/koboldcpp)
 
@@ -60,7 +60,7 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 
 ## Cloud LLM APIs
 
-- These LLM APIs are run as cloud services, and require no resources on your PC
+- These LLM APIs are run as cloud services and require no resources on your PC
 - They are stronger/smarter than most local LLMs
 - However they all have content filtering of varying degrees, and most require payment
 
@@ -68,17 +68,17 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 
 - Recommended for users who want their AI chats to have a creative, unique writing style
 - 4k, 8k, 100k context models available
-- Strongst content filter of all APIs (as of June 2023)
+- Strongest content filter of all APIs (as of June 2023)
 - Limited access to most models
-- Currently not accepting new account creation; on a wait list (June 2023)
-- [website](https://www.anthropic.com/index/introducing-claude)
+- Currently not accepting new account creation; on a waitlist (June 2023)
+- [Website](https://www.anthropic.com/index/introducing-claude)
 
 ### Kobold Horde
 
 - SillyTavern can access this API out of the box with no additional settings required
 - Uses the GPU of individual volunteers (Horde Workers) to process responses for your chat inputs
 - At the mercy of the Worker in terms of generation wait times, AI settings, and available models
-- [website](https://horde.koboldai.net)
+- [Website](https://horde.koboldai.net)
 
 ### Mancer AI
 
@@ -86,7 +86,7 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 - Uses 'credits' to pay for tokens on various models. Free credits refill daily.
 - Does not log prompts by default, but you can enable it to get credit discounts on tokens.
 - Uses an API similar to `Oobabooga TextGeneration WebUI`, see [Mancer docs](https://mancer.tech/docs/clients/#sampling-parameters) for details.
-- [website](https://mancer.tech/), [SillyTavern Setup Instructions](https://mancer.tech/docs/clients/sillytavern/)
+- [Website](https://mancer.tech/), [SillyTavern Setup Instructions](https://mancer.tech/docs/clients/sillytavern/)
 
 ### NovelAI
 
@@ -96,9 +96,9 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 
 ### OpenAI (ChatGPT)
 
-- Easy to setup and acquire an API key, 4k 8k, 32k context models available
+- Easy to set up and acquire an API key, 4k-128k context models available
 - Free trial requires a valid phone number
-- After freetrial, all useage is charged monthly
+- After the trial, all usage is charged monthly
 - Writing style for roleplay can be repetitive and predictable
 - [Setup Instructions](https://docs.sillytavern.app/usage/api-connections/openai/)
 
