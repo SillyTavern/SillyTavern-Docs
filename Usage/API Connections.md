@@ -30,6 +30,7 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 
 - Easy-to-use API with CPU offloading (helpful for low VRAM users) and streaming
 - Runs from a single .exe file on Windows (must be compiled from source on MacOS and Linux)
+- Supports GGML, GGUF, and FP16 models
 - Slower than GPU-only loaders such as AutoGPTQ and Exllama/v2
 - [GitHub](https://github.com/LostRuins/koboldcpp)
 
