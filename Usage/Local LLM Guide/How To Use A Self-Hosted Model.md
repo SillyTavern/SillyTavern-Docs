@@ -57,13 +57,13 @@ Good model uploaders like TheBloke give descriptive names. But if they don't:
 * q4 means 4-bit quantization, q5 is 5-bit quantization, etc
 * You see a number like -16k? That's an increased context size (i.e. how long your conversation can get before the model forgets the beginning of your chat)! Note that higher context sizes require more VRAM.
 
-## Installing an LLM server: Oobagooba or KoboldAI
+## Installing an LLM server: Oobabooga or KoboldAI
 
-With the LLM now on your PC, we need to download a tool that will act as a middle-man between SillyTavern and the model: it will load the model, and expose its functionality as a local HTTP web API that SillyTavern can talk to, the same way that SillyTavern talks with paid webservices like OpenAI GPT or Claude. The tool you use should be either KoboldAI or Oobagooba (or other compatible tools). 
+With the LLM now on your PC, we need to download a tool that will act as a middle-man between SillyTavern and the model: it will load the model, and expose its functionality as a local HTTP web API that SillyTavern can talk to, the same way that SillyTavern talks with paid webservices like OpenAI GPT or Claude. The tool you use should be either KoboldAI or Oobabooga (or other compatible tools). 
 
-The rest of this guide will continue using Oobagooba, but these tools should be considered equivalent.
+The rest of this guide will continue using Oobabooga, but these tools should be considered equivalent.
 
-### Installing Oobagooba
+### Installing Oobabooga
 
 Here's a more correct/dummy proof installation procedure:
 
@@ -73,10 +73,10 @@ Here's a more correct/dummy proof installation procedure:
 4. Wait for the installation to finish
 5. Place kunoichi-dpo-v2-7b.Q6_K.gguf in text-generation-webui/models
 6. Open text-generation-webui/CMD_FLAGS.txt, delete everything inside and write: --api
-7. Restart oobagooba
+7. Restart Oobabooga
 8. Visit <http://127.0.0.1:5000/docs>. Does it load a FastAPI page? If not, you messed up somewhere.
 
-### Loading our model in Oobagooba
+### Loading our model in Oobabooga
 
 1. Open <http://127.0.0.1:7860/> in your browser
 2. Click the Model tab
@@ -85,11 +85,11 @@ Here's a more correct/dummy proof installation procedure:
 5. Click Load
 
 
-### Configuring SillyTavern to talk to Oobagooba
+### Configuring SillyTavern to talk to Oobabooga
 
 1. Click API Connections (2nd button in the top bar)
 2. Set API to Text Completion
-3. Set API Type to Default (Oobagooba)
+3. Set API Type to Default (Oobabooga)
 4. Set server URL to <http://127.0.0.1:5000/>
 5. Click Connect. It should connect successfully and detect kunoichi-dpo-v2-7b.Q6_K.gguf as the model.
 6. Chat with a character to test that it works
