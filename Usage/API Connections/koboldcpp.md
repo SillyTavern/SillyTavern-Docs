@@ -49,7 +49,8 @@ I have 12 GB of VRAM, and only 2 GB of VRAM is being used for context, so I have
 Now do your own math using the model, context size, and VRAM for your system, and restart KoboldCPP:
 * If you're smart, you clicked `Save` before, and now you can load your previous configuration with `Load`. Otherwise, select the same settings you chose before.
 * Change the `GPU Layers` to your new, VRAM-optimized number (12 layers in my case).
-* (Optional) Click `Save` again and launch KoboldCPP.
+* (Optional) Click `Save` again.
+
 You should now see something like this:
 ```
 llm_load_tensors: offloading 12 repeating layers to GPU
