@@ -8,7 +8,7 @@ This guide assumes you're using Windows.
 * Under the `Quick Launch` tab, select the model and your preferred `Context Size`.
 * Select `Use CuBLAS` and make sure the yellow text next to `GPU ID` matches your GPU.
 * Do not tick `Low VRAM`, even if you have low VRAM.
-* Untick `Use QuantMatMul (mmq)`.
+* Unless you have an Nvidia 10-series or older GPU, untick `Use QuantMatMul (mmq)`.
 * `GPU Layers` should have been populated when you loaded your model. Leave it there for now.
 * Under the `Hardware` tab, tick `High Priority`.
 * (Optional) Click `Save` so you don't have to configure KoboldCPP on every launch.
