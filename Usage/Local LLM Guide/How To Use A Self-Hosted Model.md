@@ -15,7 +15,7 @@ This is a complex subject, so I'll stick to the essentials and generalize.
 * There are thousands of free LLMs you can download from the Internet, similar to how Stable Diffusion has tons of models you can get to generate images.
 * Running an unmodified LLM requires a monster GPU with a ton of VRAM (GPU memory). More than you will ever have.
 * It is possible to reduce VRAM requirements by compressing the model using quantization techniques, such as GPTQ or AWQ. This makes the model somewhat less capable, but greatly reduces the VRAM requirements to run it. Suddenly, this allowed people with gaming GPUs like a 3080 to run a 13B model. Even though it's not as good as the unquantized model, it's still good.
-* It gets better: there also exists a model format and quantization called GGUF (previously GGML) which has become the format of choice for normal people without monster GPUs. This allows you to use a LLM without a GPU at all. It will only use CPU and RAM. This is much slower (probably 15 times) than running the LLM on a GPU using GPTQ/AWQ, especially during the prompt processing, but the model's ability is just as good. The GGUF creator then optimized GGUF further by adding a configuration option that allows people with a gaming-grade GPU to offload parts of the model to the GPU, allowing them to run part of the model at GPU speed (note that this doesn't reduce RAM requirements, it only improves your generation speed).
+* It gets better: there also exists a model format and quantization called GGUF (previously GGML) which has become the format of choice for normal people without monster GPUs. This allows you to use an LLM without a GPU at all. It will only use CPU and RAM. This is much slower (probably 15 times) than running the LLM on a GPU using GPTQ/AWQ, especially during the prompt processing, but the model's ability is just as good. The GGUF creator then optimized GGUF further by adding a configuration option that allows people with a gaming-grade GPU to offload parts of the model to the GPU, allowing them to run part of the model at GPU speed (note that this doesn't reduce RAM requirements, it only improves your generation speed).
 * There are different sizes of models, named based on the number of parameters they were trained with. You will see names like 7B, 13B, 30B, 70B, etc. You can think of these as the brain size of the model. A 13B model will be more capable than the 7B from the same family of models: they were trained on the same data, but the bigger brain can retain the knowledge better and think more coherently. Bigger models also require more VRAM/RAM.
 * There are several degrees of quantization (8-bit, 5-bit, 4-bit, etc). The lower you go, the more the model degrades, but the lower the hardware requirements. So even on bad hardware, you might be able to run a 4-bit version of your desired model. There's even 3-bit and 2-bit quantization but at this point, you're beating a dead horse. There's also a further quantization subtypes named k_s, k_m, k_l, etc. k_m is better than k_s but requires more resources.
 * The context size (how long your conversation can become without the model dropping parts of it) also affects VRAM/RAM requirements. Thankfully, this is a configurable setting, allowing you to use a smaller context to reduce VRAM/RAM requirements. (Note: the context size of Llama2-based models is 4k. Mistral is advertised as 8k, but it's 4k in practice.)
@@ -24,26 +24,13 @@ This is a complex subject, so I'll stick to the essentials and generalize.
 Given all of the above, the hardware requirements and performance vary completely depending on the family of model, the type of model, the size of the model, the quantization method, etc.
 
 #### Model size calculator
-If you have a Google account, you can use [Nyx's Model Size Calculator](https://docs.google.com/spreadsheets/d/15kq0aBYQS6cv_P75AiBtgYVg7j2Ejfa5YRs8SKLl9js/edit#gid=0) to know how much RAM/VRAM you need. You will need to click File -> Make A Copy in order to be able to select different settings in the dropdown. This requires knowing what is the base of the model you're trying to use (Llama2 13B, Mistral 7B, etc), which is usually documented on the model card. You will learn where to find this information later in this guide.
+You can use [Nyx's Model Size Calculator](https://huggingface.co/spaces/NyxKrage/LLM-Model-VRAM-Calculator) to determine how much RAM/VRAM you need.
 
 Remember, you want to run the largest, least quantized model that can fit in your memory, i.e. without causing [disk swapping](https://serverfault.com/a/48487).
 
-For those without a Google account, here's some reference memory requirements for the most popular model bases. 
+## Downloading an LLM
 
-Model | Memory requirements
----|---
-Llama2 7B Q4_K_M with 4096 context | 5.1 GB
-Llama2 13B Q4_K_M with 2048 context | 9.6 GB
-Llama2 13B Q4_K_M with 4096 context | 11.3 GB
-Llama2 13B Q6_K with 4096 context | 14.2 GB
-Mistral 7B Q4_K_M with 8192 context | 5.7 GB
-Mistral 7B Q4_K_M with 4096 context | 5 GB
-Mixtral 8x7B Q4_K_M with 32768 context | 34.4 GB
-Mixtral 8x7B Q4_K_M with 4096 context | 29.1 GB
-
-## Downloading a LLM
-
-To get started, you will need to download a LLM. The most common place to find and download LLMs is on HuggingFace. There are thousands of models available. A good way to find models is to check TheBloke's account page: <https://huggingface.co/TheBloke>. He's a one-man army dedicated to converting every model to GGUF. If you don't want GGUF, he links the original model page where you might find other formats for that same model.
+To get started, you will need to download an LLM. The most common place to find and download LLMs is on HuggingFace. There are thousands of models available. A good way to find models is to check TheBloke's account page: <https://huggingface.co/TheBloke>. He's a one-man army dedicated to converting every model to GGUF. If you don't want GGUF, he links the original model page where you might find other formats for that same model.
 
 On a given model's page, you will find a whole bunch of files. 
 
@@ -70,7 +57,7 @@ Good model uploaders like TheBloke give descriptive names. But if they don't:
 * q4 means 4-bit quantization, q5 is 5-bit quantization, etc
 * You see a number like -16k? That's an increased context size (i.e. how long your conversation can get before the model forgets the beginning of your chat)! Note that higher context sizes require more VRAM.
 
-## Installing a LLM server: Oobagooba or KoboldAI
+## Installing an LLM server: Oobagooba or KoboldAI
 
 With the LLM now on your PC, we need to download a tool that will act as a middle-man between SillyTavern and the model: it will load the model, and expose its functionality as a local HTTP web API that SillyTavern can talk to, the same way that SillyTavern talks with paid webservices like OpenAI GPT or Claude. The tool you use should be either KoboldAI or Oobagooba (or other compatible tools). 
 
