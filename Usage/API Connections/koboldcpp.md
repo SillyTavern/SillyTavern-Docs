@@ -1,5 +1,5 @@
 # KoboldCPP
-This [VRAM Calculator](https://huggingface.co/spaces/NyxKrage/LLM-Model-VRAM-Calculator) will tell you approximately how much RAM/VRAM your model requires.
+This [VRAM Calculator](https://huggingface.co/spaces/NyxKrage/LLM-Model-VRAM-Calculator) by Nyx will tell you approximately how much RAM/VRAM your model requires.
 ## Nvidia GPU Quickstart
 This guide assumes you're using Windows.
 * Download the latest release: https://github.com/LostRuins/koboldcpp/releases
@@ -65,3 +65,5 @@ llama_kv_cache_init:      CUDA0 KV buffer size =   771.75 MiB
 KoboldCPP is using about 11.5 GB of my 12 GB VRAM. This should perform a lot better than the settings generated automatically by KoboldCPP.
 
 **Congratulations! You're (actually) done!**
+
+For a more in-depth look at KoboldCPP settings, check out Kalmomaze's [Simple Llama + SillyTavern Setup Guide](https://rentry.org/llama_v2_sillytavern).
