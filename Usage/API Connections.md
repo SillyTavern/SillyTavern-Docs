@@ -26,7 +26,7 @@ Below is a description of their respective strengths, weaknesses, and use cases.
   - [Henky's United](https://github.com/henk717/KoboldAI)
   - [0cc4m's 4bit-supporting United](https://github.com/0cc4m/KoboldAI)
 
-### KoboldCPP
+### KoboldCpp
 
 - Easy-to-use API with CPU offloading (helpful for low VRAM users) and streaming
 - Runs from a single .exe file on Windows (must be compiled from source on MacOS and Linux)
