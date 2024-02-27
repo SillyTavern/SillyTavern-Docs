@@ -60,7 +60,7 @@ Selects tokens randomly from the list of possible tokens, with each token having
 Set the value to 1 to disable its effect.
 
 ### Min P
-Limits the token pool by cutting off low-probability tokens based on the lowest token's probability to the top token. Produces more coherent responses but can also worsen repetition if set too high.
+Limits the token pool by cutting off low-probability tokens relative to the top token. Produces more coherent responses but can also worsen repetition if set too high.
 - Works best at low values such as `0.1-0.01`, but can be set higher with a high `Temperature`. For example: `Temperature: 5, Min P: 0.5`
 
 Set the value to 0 to disable its effect.
@@ -76,9 +76,8 @@ This setting removes the least probable tokens from consideration during text ge
 Set the value to 1 to disable its effect.
 
 ### Smoothing Factor
-Increases the likelihood of high-probability tokens while decreasing the likelihood of low-probability tokens using a sigmoid function. Aims to produce more creative responses regardless of `Temperature`.
+Increases the likelihood of high-probability tokens while decreasing the likelihood of low-probability tokens using a quadratic transformation. Aims to produce more creative responses regardless of `Temperature`.
 - Works best without truncation samplers such as `Top K`, `Top P`, `Min P`, etc.
-- According to the creator, the lower the `Temperature`, the higher you'll be able to turn up the smoothing factor. For `Temperature: 1`, the smoothing factor should be `2.5-7.5`.
 
 Set the value to 0 to disable its effect.
 
