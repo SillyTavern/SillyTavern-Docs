@@ -7,7 +7,10 @@ This [VRAM Calculator](https://huggingface.co/spaces/NyxKrage/LLM-Model-VRAM-Cal
 This guide assumes you're using Windows.
 * Download the latest release: https://github.com/LostRuins/koboldcpp/releases
 * Launch KoboldCpp. You may see a pop-up from Microsoft Defender, click `Run Anyway`.
-* As of version 1.58, KoboldCpp should look [like this](https://files.catbox.moe/z1vmly.png).
+* As of version 1.58, KoboldCpp should look like this:
+
+![KoboldCpp 1.58](https://files.catbox.moe/z1vmly.png)
+
 * Under the `Quick Launch` tab, select the model and your preferred `Context Size`.
 * Select `Use CuBLAS` and make sure the yellow text next to `GPU ID` matches your GPU.
 * Do not tick `Low VRAM`, even if you have low VRAM.
