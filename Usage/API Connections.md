@@ -86,7 +86,7 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 - Uses 'credits' to pay for tokens on various models. Free credits refill daily.
 - Does not log prompts by default, but you can enable it to get credit discounts on tokens.
 - Uses an API similar to `Oobabooga TextGeneration WebUI`, see [Mancer docs](https://mancer.tech/docs/clients/#sampling-parameters) for details.
-- [Website](https://mancer.tech/), [SillyTavern Setup Instructions](https://mancer.tech/docs/clients/sillytavern/)
+- [Website](https://mancer.tech/), [Setup Instructions](https://docs.sillytavern.app/usage/api-connections/mancer/)
 
 ### NovelAI
 

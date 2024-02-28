@@ -1,8 +1,8 @@
 # KoboldCpp
-
-KoboldCpp is an easy-to-use API for GGML and GGUF models. It's a single self contained distributable from Concedo that builds off llama.cpp.
+KoboldCpp is a self-contained API for GGML and GGUF models.
 
 This [VRAM Calculator](https://huggingface.co/spaces/NyxKrage/LLM-Model-VRAM-Calculator) by Nyx will tell you approximately how much RAM/VRAM your model requires.
+
 ## Nvidia GPU Quickstart
 This guide assumes you're using Windows.
 * Download the latest release: https://github.com/LostRuins/koboldcpp/releases
@@ -14,7 +14,7 @@ This guide assumes you're using Windows.
 * Unless you have an Nvidia 10-series or older GPU, untick `Use QuantMatMul (mmq)`.
 * `GPU Layers` should have been populated when you loaded your model. Leave it there for now.
 * Under the `Hardware` tab, tick `High Priority`.
-* (Optional) Click `Save` so you don't have to configure KoboldCpp on every launch.
+* Click `Save` so you don't have to configure KoboldCpp on every launch.
 * Click `Launch` and wait for the model to load.
 
 You should see something like this:
@@ -33,7 +33,6 @@ You can now connect to KoboldCpp within SillyTavern with `http://localhost:5001`
 Kind of.
 
 ### GPU Layers
-
 KoboldCpp is working, but you can improve performance by ensuring that as many layers as possible are offloaded to the GPU. You should see something like this in the terminal:
 ```
 llm_load_tensors: offloading 9 repeating layers to GPU
@@ -52,7 +51,7 @@ I have 12 GB of VRAM, and only 2 GB of VRAM is being used for context, so I have
 Now do your own math using the model, context size, and VRAM for your system, and restart KoboldCpp:
 * If you're smart, you clicked `Save` before, and now you can load your previous configuration with `Load`. Otherwise, select the same settings you chose before.
 * Change the `GPU Layers` to your new, VRAM-optimized number (12 layers in my case).
-* (Optional) Click `Save` again.
+* Click `Save` to save your updated configuration.
 
 You should now see something like this:
 ```
