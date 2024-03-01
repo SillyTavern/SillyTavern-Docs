@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.762119758495">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.762623749836">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -35,11 +35,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="resources/css/retype.css?v=3.5.0.762119758495" rel="stylesheet">
+    <link href="resources/css/retype.css?v=3.5.0.762623749836" rel="stylesheet">
 
-    <script data-cfasync="false" src="resources/js/config.js?v=3.5.0.762119758495" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="resources/js/config.js?v=3.5.0.762623749836" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="resources/js/lunr.js?v=3.5.0.762119758495" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="resources/js/lunr.js?v=3.5.0.762623749836" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -219,6 +219,20 @@
     </h3>
 </doc-anchor-target>
 <p>Since the 1.10.6 release version, most of the previously built-in extensions have been converted to downloadable add-ons. You can download them via the built-in &quot;Download Extensions and Assets&quot; menu in the extensions panel (stacked blocks icon in the top bar).</p>
+<doc-anchor-target id="having-unstyled-underscores-instead-of-italics">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#having-unstyled-underscores-instead-of-italics">#</doc-anchor-trigger>
+        <span>Having unstyled underscores instead of italics?</span>
+    </h3>
+</doc-anchor-target>
+<p>Since the 1.11.6 release version, the handling of underscores in Markdown text processing was changed. The asterisk italics formatting will continue working as expected.</p>
+<p>Now double or triple underscores can be used for representing underlined text. Text surrounded by a single underscore is no longer interpreted as italics but left unformatted.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">__underlined text__
+___underlined text___
+_text with a literal underscore to either side_</code></pre>
+</doc-codeblock></div>
+<p>To revert to the old behavior, please import and enable the following Regex script: <a href="https://github.com/SillyTavern/SillyTavern/files/14463077/underscore_italics.json">underscore_italics.json</a></p>
 <doc-anchor-target id="screenshots">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#screenshots">#</doc-anchor-trigger>
