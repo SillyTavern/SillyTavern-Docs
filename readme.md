@@ -10,6 +10,20 @@ SillyTavern originated as a modification of TavernAI 1.2.8 in February 2023, and
 
 Since the 1.10.6 release version, most of the previously built-in extensions have been converted to downloadable add-ons. You can download them via the built-in "Download Extensions and Assets" menu in the extensions panel (stacked blocks icon in the top bar).
 
+### Having unstyled underscores instead of italics?
+
+Since the 1.11.6 release version, the handling of underscores in Markdown text processing was changed. The asterisk italics formatting will continue working as expected.
+
+Now double or triple underscores can be used for representing underlined text. Text surrounded by a single underscore is no longer interpreted as italics but left unformatted.
+
+```
+__underlined text__
+___underlined text___
+_text with a literal underscore to either side_
+```
+
+To revert to the old behavior, please import and enable the following Regex script: [underscore_italics.json](https://github.com/SillyTavern/SillyTavern/files/14463077/underscore_italics.json)
+
 ### Screenshots
 
 | ![Chat](https://docs.sillytavern.app/static/screenshot1.jpg) | ![Waifu mode](https://docs.sillytavern.app/static/screenshot2.jpg) |
