@@ -9,4 +9,13 @@ Please refer to this guide by ArroganceComplex#2659:
 
 <https://rentry.org/STAI-Termux>
 
-**.webp character cards import/export is not supported in Termux. Use either JSON or PNG formats instead.**
+## Common errors
+
+### Unsupported platform: android arm LEtime-web
+32-bit Android requires an external dependency that can't be installed with npm.
+
+Use the following command to install it:
+
+`pkg install esbuild`
+
+Then run the steps from the guide.
