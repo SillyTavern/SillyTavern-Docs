@@ -73,6 +73,14 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 - Currently not accepting new account creation; on a waitlist (June 2023)
 - [Website](https://www.anthropic.com/index/introducing-claude)
 
+### DreamGen
+
+- Uncensored models without filters tuned for steerable AI role-play and story-writing
+- Free monthly credits, as well as paid subscription
+- Models ranging from 7B to 70B
+- [Setup Instructions](/usage/api-connections/DreamGen/)
+
+
 ### Kobold Horde
 
 - SillyTavern can access this API out of the box with no additional settings required
