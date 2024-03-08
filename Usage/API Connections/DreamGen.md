@@ -1,6 +1,6 @@
 # DreamGen
 
-DreamGen is an app and an API for AI powered role-playing and story-writing. They have a free tier, as well as paid subscription that allows unlimited monthly access to their high-quality in-house text generation models made specifically for the purpose of steerable AI role-playing and story-writing. Create an account to get started: <https://dreamgen.com/>.
+DreamGen is an app and an API for AI-powered role-playing and story-writing. They have a free tier, as well as a paid subscription that allows unlimited monthly access to their high-quality in-house text generation models made specifically for the purpose of steerable AI role-playing and story-writing. Create an account to get started: <https://dreamgen.com/>.
 
 The (free) credits reset at the start of each calendar month. See [pricing](https://dreamgen.com/pricing) to see the credit cost for each model and [usage](https://dreamgen.com/account/usage) to see your remaining credits.
 
@@ -47,7 +47,7 @@ These settings try to stick to the DreamGen format as closely as possible but du
 DreamGen supports:
 
 -   "Temperature", "Top P", "Top K" and "Min P"
--   "Presence Penalty", "Frequency Penalty" (without range) and "Repetition Penalty"
+-   "Presence Penalty", "Frequency Penalty" and "Repetition Penalty" (without range)
 -   "Min Length" -- lets you force the model to generate at least `min(min_length, max_tokens)` tokens
 
 Good starting values might be:
@@ -58,11 +58,11 @@ Good starting values might be:
 
 ## Tips for Formatting
 
-The DreamGen models differ from the regular instruction following models like OpenAI's ChatGPT.
+The DreamGen models differ from the regular instruction-following models like OpenAI's ChatGPT.
 
-The models were fine-tuned for the task of writing a role-play or a story based on provided description which typically consists of plot description, style description, characters, locations, lore, etc. The models can also be *steered* in the middle of the role-play, making you the director, telling the characters what they should do or how the plot should unfold.
+The models were fine-tuned for the task of writing a role-play or a story based on the provided description which typically consists of plot description, style description, characters, locations, lore, etc. The models can also be *steered* in the middle of the role-play, making you the director, telling the characters what they should do or how the plot should unfold.
 
-A well formatted **system prompt** message would look like this:
+A well-formatted **system prompt** message would look like this:
 
 ```
 You are an intelligent, skilled, versatile writer.
@@ -160,9 +160,9 @@ This is an edit of the popular Seraphina card that's built into SillyTavern by d
 
 <a href="/static/dreamgen/cards/Seraphina.png"><img src="/static/dreamgen/cards/Seraphina.png" style="width:200px;border-radius:10px;" alt="Seraphina"></a>
 
-#### Lara Lightfoot
+#### Lara Lightland
 
-This is an edit of the Lara Lightfoot card by Deffcolony.
+This is an edit of the Lara Lightland card by Deffcolony.
 
 <a href="/static/dreamgen/cards/LaraLightland.png"><img src="/static/dreamgen/cards/LaraLightland.png" style="width:200px;border-radius:10px;" alt="Lara Lightland"></a>
 
@@ -176,7 +176,7 @@ You have several options:
 -   Change the `Min Length` in the Completion Settings.
 -   Add `Last Output Sequence` similar to the following in the Advanced Formatting settings under Instruct Mode:
 
-Here's an example `Last Output Sequence` that might help making the model respond in a more verbose way:
+Here's an example of the `Last Output Sequence` that might help make the model respond in a more verbose way:
 
 {%{
 
@@ -194,7 +194,7 @@ You can change the text within to something more suitable for your scenario or c
 
 ### How can I stop the model from repeating itself? 
 
-You can try increasing "Repetition Penalty" in the Completion Settings or rephrase the part of the context that's getting repeated.
+You can try increasing "Repetition Penalty" in the Completion Settings or rephrasing the part of the context that's getting repeated.
 
 ### How can I steer the role-play?
 
