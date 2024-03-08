@@ -4,81 +4,86 @@ icon: sliders
 ---
 
 # Common Settings
-
 These settings control the sampling process when generating text using a language model. The meaning of these settings is universal for all the supported backends.
 
 ## Context Settings
 
-### Context (tokens)
-
-Controls how much will the language model remember. Every model has its context size limit.
-
-Context comprises character information, system prompts, chat history, etc.
-To see a composition of the context after generating the message, click on the "Prompt Itemization" message option (expand the "..." menu and click on the lined square icon).
-
-A dotted line (orange color in the default UI theme) that appears in the chat denotes the last chat message being sent to the API.
-The things outside of the context range don't exist for the model and are not considered during the generation.
-
 ### Response (tokens)
+The maximum number of tokens that the API will generate to respond.
+- The higher the response length, the longer it will take to generate the response.
+- If supported by the API, you can enable `Streaming` to display the response bit by bit as it is being generated.
+- When `Streaming` is off, responses will be displayed all at once when they are complete.
 
-The maximum amount of tokens that the API will generate to respond. The larger the parameter value, the longer the generation time takes. 
-
-If supported by the API, you can also enable Streaming mode to display the response bit by bit as it is generated.
-When Streaming is off, responses will be displayed all at once when they are complete.
+### Context (tokens)
+The maximum number of tokens that SillyTavern will send to the API as the prompt, minus the response length.
+- Context comprises character information, system prompts, chat history, etc.
+- A dotted line between messages denotes the context range for the chat. Messages above that line are not sent to the AI.
+- To see a composition of the context after generating the message, click on the `Prompt Itemization` message option (expand the `...` menu and click on the lined square icon).
 
 ## Sampler Parameters
 
 ### Temperature
-
 Controls the randomness of the generated text. 
-
-* Lower value - the answers are more logical but less creative.
-* Higher value - the answers are more creative but less logical.
+- Lower value: responses are more logical but less creative.
+- Higher value: responses are more creative but less logical.
 
 ### Repetition Penalty
-
-Higher values make the output less repetitive.
-If the character is fixated on something or repeats the same phrase, then increasing this parameter can help fix it.
-It is not recommended to increase this parameter too much as it may break the outputs.
-
-Set the value to 1 to disable its effect.
-
-### Repetition Penalty Range
-
-How many tokens from the last generated token will be considered repeated if they appear in the output.
-
-### Repetition Penalty Slope
-
-If both this and the Repetition Penalty Range are above 0, then the repetition penalty will have more effect closer to the end of the prompt. The higher the value, the stronger the effect.
-
-Set the value to 1 for linear interpolation or 0 to disable interpolation.
-
-### Top P
-
-Limits the token pool to however many tokens it takes for their probabilities to add up to P. A lower number is more consistent but less creative.
+Attempts to curb repetition by penalizing tokens based on how often they occur in the context.
+- Sometimes, if the character is fixated on something or repeats the same phrase, increasing this parameter can help.
+- This parameter will break responses if set too high. It's best not to go above `1.15` unless you know what you're doing.
 
 Set the value to 1 to disable its effect.
+
+#### Repetition Penalty Range
+How many tokens from the last generated token will be considered for the repetition penalty. This can break responses if set too high, as common words like "the, a, and," etc. will be penalized the most.
+
+Set the value to 0 to disable its effect.
+
+#### Repetition Penalty Slope
+If both this and `Repetition Penalty Range` are above 0, the repetition penalty will have a greater effect at the end of the prompt. The higher the value, the stronger the effect.
+
+Set the value to 0 to disable its effect.
 
 ### Top K
-
 Limits the token pool to the K most likely tokens. A lower number is more consistent but less creative.
 
 Set the value to 0 to disable its effect.
 
-### Top A
+### Top P
+Limits the token pool to however many tokens it takes for their probabilities to add up to P. A lower number is more consistent but less creative.
 
-This setting allows for a more flexible version of sampling, where the number of words chosen from the most likely options is automatically determined based on the likelihood distribution of the options, but instead of choosing the top P or K words, it chooses all words with probabilities above a certain threshold.
+Set the value to 1 to disable its effect.
+
+### Typical P
+Selects tokens randomly from the list of possible tokens, with each token having an equal chance of being selected. Produces responses that are more diverse but may also be less coherent.
+
+Set the value to 1 to disable its effect.
+
+### Min P
+Limits the token pool by cutting off low-probability tokens relative to the top token. Produces more coherent responses but can also worsen repetition if set too high.
+- Works best at low values such as `0.1-0.01`, but can be set higher with a high `Temperature`. For example: `Temperature: 5, Min P: 0.5`
 
 Set the value to 0 to disable its effect.
 
-### Typical Sampling
+### Top A
+The number of tokens chosen from the most likely options is automatically determined based on the likelihood distribution of the options, but instead of choosing the `Top P` or `Top K` tokens, it chooses all tokens with probabilities above a certain threshold.
 
-This setting selects words randomly from the list of possible words, with each word having an equal chance of being selected. This method can produce text that is more diverse but may also be less coherent.
-
-Set the value to 1 to disable its effect.
+Set the value to 0 to disable its effect.
 
 ### Tail Free Sampling
-
-This setting removes the least probable words from consideration during text generation, which can improve the quality and coherence of the generated text.
+This setting removes the least probable tokens from consideration during text generation, which can improve the quality and coherence of the generated text.
 
 Set the value to 1 to disable its effect.
+
+### Smoothing Factor
+Increases the likelihood of high-probability tokens while decreasing the likelihood of low-probability tokens using a quadratic transformation. Aims to produce more creative responses regardless of `Temperature`.
+- Works best without truncation samplers such as `Top K`, `Top P`, `Min P`, etc.
+
+Set the value to 0 to disable its effect.
+
+### Dynamic Temperature
+Scales temperature dynamically based on the likelihood of the top token. Aims to produce more creative outputs without sacrificing coherency.
+- Accepts a temperature range from minimum to maximum. For example: `Minimum Temp: 0.75` and `Minimum Temp: 1.25`
+- `Exponent` applies an exponential curve based on the top token.
+
+Untick to disable its effect.
