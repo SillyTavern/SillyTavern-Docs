@@ -2,7 +2,7 @@
 
 DreamGen is an app and an API for AI powered role-playing and story-writing. They have a free tier, as well as paid subscription that allows unlimited monthly access to their high-quality in-house text generation models made specifically for the purpose of steerable AI role-playing and story-writing. Create an account to get started: <https://dreamgen.com/>.
 
-The (free) credits reset at the start of each calendar month. See [pricing](https://dreamgen.com/pricing) to see the credit cost for each model and [usage](https://dreagen.com/account/usage) to see your remaining credits.
+The (free) credits reset at the start of each calendar month. See [pricing](https://dreamgen.com/pricing) to see the credit cost for each model and [usage](https://dreamgen.com/account/usage) to see your remaining credits.
 
 ## Connecting to DreamGen
 
