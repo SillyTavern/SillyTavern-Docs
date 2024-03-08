@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.763240881856">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.763242264015">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.763240881856" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.763242264015" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.763240881856" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.763242264015" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.763240881856" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.763242264015" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -210,26 +210,30 @@
         <span>Context Settings</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="context-tokens">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#context-tokens">#</doc-anchor-trigger>
-        <span>Context (tokens)</span>
-    </h3>
-</doc-anchor-target>
-<p>Controls how much will the language model remember. Every model has its context size limit.</p>
-<p>Context comprises character information, system prompts, chat history, etc.
-To see a composition of the context after generating the message, click on the &quot;Prompt Itemization&quot; message option (expand the &quot;...&quot; menu and click on the lined square icon).</p>
-<p>A dotted line (orange color in the default UI theme) that appears in the chat denotes the last chat message being sent to the API.
-The things outside of the context range don&#x27;t exist for the model and are not considered during the generation.</p>
 <doc-anchor-target id="response-tokens">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#response-tokens">#</doc-anchor-trigger>
         <span>Response (tokens)</span>
     </h3>
 </doc-anchor-target>
-<p>The maximum amount of tokens that the API will generate to respond. The larger the parameter value, the longer the generation time takes.</p>
-<p>If supported by the API, you can also enable Streaming mode to display the response bit by bit as it is generated.
-When Streaming is off, responses will be displayed all at once when they are complete.</p>
+<p>The maximum number of tokens that the API will generate to respond.</p>
+<ul>
+<li>The higher the response length, the longer it will take to generate the response.</li>
+<li>If supported by the API, you can enable <code v-pre>Streaming</code> to display the response bit by bit as it is being generated.</li>
+<li>When <code v-pre>Streaming</code> is off, responses will be displayed all at once when they are complete.</li>
+</ul>
+<doc-anchor-target id="context-tokens">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#context-tokens">#</doc-anchor-trigger>
+        <span>Context (tokens)</span>
+    </h3>
+</doc-anchor-target>
+<p>The maximum number of tokens that SillyTavern will send to the API as the prompt, minus the response length.</p>
+<ul>
+<li>Context comprises character information, system prompts, chat history, etc.</li>
+<li>A dotted line between messages denotes the context range for the chat. Messages above that line are not sent to the AI.</li>
+<li>To see a composition of the context after generating the message, click on the <code v-pre>Prompt Itemization</code> message option (expand the <code v-pre>...</code> menu and click on the lined square icon).</li>
+</ul>
 <doc-anchor-target id="sampler-parameters">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#sampler-parameters">#</doc-anchor-trigger>
@@ -244,8 +248,8 @@ When Streaming is off, responses will be displayed all at once when they are com
 </doc-anchor-target>
 <p>Controls the randomness of the generated text.</p>
 <ul>
-<li>Lower value - the answers are more logical but less creative.</li>
-<li>Higher value - the answers are more creative but less logical.</li>
+<li>Lower value: responses are more logical but less creative.</li>
+<li>Higher value: responses are more creative but less logical.</li>
 </ul>
 <doc-anchor-target id="repetition-penalty">
     <h3>
@@ -253,33 +257,28 @@ When Streaming is off, responses will be displayed all at once when they are com
         <span>Repetition Penalty</span>
     </h3>
 </doc-anchor-target>
-<p>Higher values make the output less repetitive.
-If the character is fixated on something or repeats the same phrase, then increasing this parameter can help fix it.
-It is not recommended to increase this parameter too much as it may break the outputs.</p>
+<p>Attempts to curb repetition by penalizing tokens based on how often they occur in the context.</p>
+<ul>
+<li>Sometimes, if the character is fixated on something or repeats the same phrase, increasing this parameter can help.</li>
+<li>This parameter will break responses if set too high. It&#x27;s best not to go above <code v-pre>1.15</code> unless you know what you&#x27;re doing.</li>
+</ul>
 <p>Set the value to 1 to disable its effect.</p>
 <doc-anchor-target id="repetition-penalty-range">
-    <h3>
+    <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#repetition-penalty-range">#</doc-anchor-trigger>
         <span>Repetition Penalty Range</span>
-    </h3>
+    </h4>
 </doc-anchor-target>
-<p>How many tokens from the last generated token will be considered repeated if they appear in the output.</p>
+<p>How many tokens from the last generated token will be considered for the repetition penalty. This can break responses if set too high, as common words like &quot;the, a, and,&quot; etc. will be penalized the most.</p>
+<p>Set the value to 0 to disable its effect.</p>
 <doc-anchor-target id="repetition-penalty-slope">
-    <h3>
+    <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#repetition-penalty-slope">#</doc-anchor-trigger>
         <span>Repetition Penalty Slope</span>
-    </h3>
+    </h4>
 </doc-anchor-target>
-<p>If both this and the Repetition Penalty Range are above 0, then the repetition penalty will have more effect closer to the end of the prompt. The higher the value, the stronger the effect.</p>
-<p>Set the value to 1 for linear interpolation or 0 to disable interpolation.</p>
-<doc-anchor-target id="top-p">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#top-p">#</doc-anchor-trigger>
-        <span>Top P</span>
-    </h3>
-</doc-anchor-target>
-<p>Limits the token pool to however many tokens it takes for their probabilities to add up to P. A lower number is more consistent but less creative.</p>
-<p>Set the value to 1 to disable its effect.</p>
+<p>If both this and <code v-pre>Repetition Penalty Range</code> are above 0, the repetition penalty will have a greater effect at the end of the prompt. The higher the value, the stronger the effect.</p>
+<p>Set the value to 0 to disable its effect.</p>
 <doc-anchor-target id="top-k">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#top-k">#</doc-anchor-trigger>
@@ -288,30 +287,72 @@ It is not recommended to increase this parameter too much as it may break the ou
 </doc-anchor-target>
 <p>Limits the token pool to the K most likely tokens. A lower number is more consistent but less creative.</p>
 <p>Set the value to 0 to disable its effect.</p>
+<doc-anchor-target id="top-p">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#top-p">#</doc-anchor-trigger>
+        <span>Top P</span>
+    </h3>
+</doc-anchor-target>
+<p>Limits the token pool to however many tokens it takes for their probabilities to add up to P. A lower number is more consistent but less creative.</p>
+<p>Set the value to 1 to disable its effect.</p>
+<doc-anchor-target id="typical-p">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#typical-p">#</doc-anchor-trigger>
+        <span>Typical P</span>
+    </h3>
+</doc-anchor-target>
+<p>Selects tokens randomly from the list of possible tokens, with each token having an equal chance of being selected. Produces responses that are more diverse but may also be less coherent.</p>
+<p>Set the value to 1 to disable its effect.</p>
+<doc-anchor-target id="min-p">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#min-p">#</doc-anchor-trigger>
+        <span>Min P</span>
+    </h3>
+</doc-anchor-target>
+<p>Limits the token pool by cutting off low-probability tokens relative to the top token. Produces more coherent responses but can also worsen repetition if set too high.</p>
+<ul>
+<li>Works best at low values such as <code v-pre>0.1-0.01</code>, but can be set higher with a high <code v-pre>Temperature</code>. For example: <code v-pre>Temperature: 5, Min P: 0.5</code></li>
+</ul>
+<p>Set the value to 0 to disable its effect.</p>
 <doc-anchor-target id="top-a">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#top-a">#</doc-anchor-trigger>
         <span>Top A</span>
     </h3>
 </doc-anchor-target>
-<p>This setting allows for a more flexible version of sampling, where the number of words chosen from the most likely options is automatically determined based on the likelihood distribution of the options, but instead of choosing the top P or K words, it chooses all words with probabilities above a certain threshold.</p>
+<p>The number of tokens chosen from the most likely options is automatically determined based on the likelihood distribution of the options, but instead of choosing the <code v-pre>Top P</code> or <code v-pre>Top K</code> tokens, it chooses all tokens with probabilities above a certain threshold.</p>
 <p>Set the value to 0 to disable its effect.</p>
-<doc-anchor-target id="typical-sampling">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#typical-sampling">#</doc-anchor-trigger>
-        <span>Typical Sampling</span>
-    </h3>
-</doc-anchor-target>
-<p>This setting selects words randomly from the list of possible words, with each word having an equal chance of being selected. This method can produce text that is more diverse but may also be less coherent.</p>
-<p>Set the value to 1 to disable its effect.</p>
 <doc-anchor-target id="tail-free-sampling">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#tail-free-sampling">#</doc-anchor-trigger>
         <span>Tail Free Sampling</span>
     </h3>
 </doc-anchor-target>
-<p>This setting removes the least probable words from consideration during text generation, which can improve the quality and coherence of the generated text.</p>
+<p>This setting removes the least probable tokens from consideration during text generation, which can improve the quality and coherence of the generated text.</p>
 <p>Set the value to 1 to disable its effect.</p>
+<doc-anchor-target id="smoothing-factor">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#smoothing-factor">#</doc-anchor-trigger>
+        <span>Smoothing Factor</span>
+    </h3>
+</doc-anchor-target>
+<p>Increases the likelihood of high-probability tokens while decreasing the likelihood of low-probability tokens using a quadratic transformation. Aims to produce more creative responses regardless of <code v-pre>Temperature</code>.</p>
+<ul>
+<li>Works best without truncation samplers such as <code v-pre>Top K</code>, <code v-pre>Top P</code>, <code v-pre>Min P</code>, etc.</li>
+</ul>
+<p>Set the value to 0 to disable its effect.</p>
+<doc-anchor-target id="dynamic-temperature">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#dynamic-temperature">#</doc-anchor-trigger>
+        <span>Dynamic Temperature</span>
+    </h3>
+</doc-anchor-target>
+<p>Scales temperature dynamically based on the likelihood of the top token. Aims to produce more creative outputs without sacrificing coherency.</p>
+<ul>
+<li>Accepts a temperature range from minimum to maximum. For example: <code v-pre>Minimum Temp: 0.75</code> and <code v-pre>Minimum Temp: 1.25</code></li>
+<li><code v-pre>Exponent</code> applies an exponential curve based on the top token.</li>
+</ul>
+<p>Untick to disable its effect.</p>
 
                                 
                                 <!-- Required only on API pages -->
