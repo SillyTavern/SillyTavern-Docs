@@ -10,8 +10,8 @@ The (free) credits reset at the start of each calendar month. See [pricing](http
 
 Go to the [DreamGen API keys](https://dreamgen.com/account/api-keys) page and click the "New API Key" button. Make sure the API Key is copied into your clipboard.
 
-![Create New DreamGen API key](/static/dreamgen/dreamgen_api_keys_new.webp)
-![Copy DreamGen API key](/static/dreamgen/dreamgen_api_keys_copy.webp)
+![Create New DreamGen API key](/static/dreamgen/dreamgen_api_keys_new.jpg)
+![Copy DreamGen API key](/static/dreamgen/dreamgen_api_keys_copy.jpg)
 
 ### Connect
 
@@ -21,7 +21,7 @@ Go to the [DreamGen API keys](https://dreamgen.com/account/api-keys) page and cl
 4. Enter the API key
 5. (optional) Pick a model
 
-![Connecting to DreamGen](/static/dreamgen/dreamgen_st_connection.webp)
+![Connecting to DreamGen](/static/dreamgen/dreamgen_st_connection.jpg)
 
 ## Models
 
@@ -39,8 +39,8 @@ These settings try to stick to the DreamGen format as closely as possible but du
 3. **Enable "Instruct Mode".**
 4. Under "Instruct Mode Presets" pick `DreamGen Role-Play V1`.
 
-![DreamGen context settings](/static/dreamgen/dreamgen_st_context_settings.webp)
-![DreamGen instruct settings](/static/dreamgen/dreamgen_st_instruct_settings.webp)
+![DreamGen context settings](/static/dreamgen/dreamgen_st_context_settings.jpg)
+![DreamGen instruct settings](/static/dreamgen/dreamgen_st_instruct_settings.jpg)
 
 ## Completion Settings
 
