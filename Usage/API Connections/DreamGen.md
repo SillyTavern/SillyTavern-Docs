@@ -158,13 +158,21 @@ Here are a couple of example cards, adapted for DreamGen, that take into account
 
 This is an edit of the popular Seraphina card that's built into SillyTavern by default.
 
-<a href="/static/dreamgen/cards/Seraphina.png"><img src="/static/dreamgen/cards/Seraphina.png" style="width:200px;border-radius:10px;" alt="Seraphina"></a>
+<div style="width:200px;">
+
+[![Seraphina](/static/dreamgen/cards/Seraphina.png)](/static/dreamgen/cards/Seraphina.png)
+
+</div>
 
 #### Lara Lightland
 
 This is an edit of the Lara Lightland card by Deffcolony.
 
-<a href="/static/dreamgen/cards/LaraLightland.png"><img src="/static/dreamgen/cards/LaraLightland.png" style="width:200px;border-radius:10px;" alt="Lara Lightland"></a>
+<div style="width:200px;">
+
+[![Lara Lightland](/static/dreamgen/cards/LaraLightland.png)](/static/dreamgen/cards/LaraLightland.png)
+
+</div>
 
 ## FAQ
 
