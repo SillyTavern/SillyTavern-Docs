@@ -24,7 +24,7 @@ Provides ready-made presets with prompts and sequences for some well-known instr
 
 If defined as a valid regular expression, when connected to a model and its name matches this regex, will automatically select this preset.
 
-Instruct mode needs to be enabled prior. Only the first regex match across presets will be selected (evaluated in alphabetical order). 
+Instruct mode needs to be enabled prior. Only the first regex match across presets will be selected (evaluated in alphabetical order).
 
 #### Default preset (heart icon)
 
@@ -65,6 +65,8 @@ If enabled, prepend characters and user names to chat history logs after inserti
 #### Replace Macro in Sequences
 
 If enabled, known \{\{macro\}\} substitutions will be replaced if defined in Input or Output sequences.
+
+Also, a special `{{name}}` macro can be used in Input and Output sequences to reference the actual name attached to a message (rather than a currently active `{{char}}` or `{{user}}`), which can be helpful when using group chats or /sendas command. If the name can't be determined, "System" is used as a fallback placeholder.
 
 #### Wrap Sequences with Newline
 

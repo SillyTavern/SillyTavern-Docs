@@ -38,6 +38,20 @@ Used as a block header and a separator between the example dialogue blocks. Any 
 
 Inserted as a separator after the rendered story string and after the example dialogues blocks, but before the first message in context.
 
+### Use as Stop Strings
+
+Adds "Example Separator" and "Chat Start" to the list of stop strings.
+
+Helpful if the model tends to hallucinate or leak whole blocks of example dialogue preceded by the separator.
+
+### Allow Jailbreak
+
+Includes Jailbreak at the end of the prompt, formatted as the last user message.
+
+The jailbreak prompt should be defined in the character card and "Prefer Char. Jailbreak" setting should be enabled.
+
+Should be used with care, as placing instructions low in the context can lead to degraded quality of the outputs of smaller models.
+
 #### Always add character's name to prompt
 
 Appends the character's name to the prompt to force the model to complete the message as the character:
