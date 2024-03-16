@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.763934812524">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.763935059212">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.763934812524" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.763935059212" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.763934812524" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.763935059212" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.763934812524" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.763934812524" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.763935059212" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.763935059212" defer></script>
 
     <Style>
         a {
@@ -227,27 +227,39 @@
 <li><a href="https://github.com/Cohee1207/Extension-ReactTemplate">https://github.com/Cohee1207/Extension-ReactTemplate</a> - template repository of a barebone extension using React and Webpack.</li>
 </ul>
 <doc-anchor-target id="manifestjson">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#manifestjson">#</doc-anchor-trigger>
         <span>manifest.json</span>
-    </h3>
+    </h2>
 </doc-anchor-target>
 <p>Every extension must have a folder in <code v-pre>public/scripts/extensions</code> and have a manifest.json file which contains metadata about the plugin and a JS script file.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-javascript"><code v-pre class="language-javascript">{
     &quot;display_name&quot;: &quot;The name of the plugin&quot;,
     &quot;loading_order&quot;: 1, // Optional. Higher number loads later
-    &quot;requires&quot;: [], // Required Extras modules dependencies
+    &quot;requires&quot;: [], // Required Extras modules dependencies.
     &quot;optional&quot;: [], // Optional Extras dependencies
     &quot;js&quot;: &quot;index.js&quot;, // Main JS file
-    &quot;css&quot;: &quot;style.css&quot;, // Optional CSS file
+    &quot;css&quot;: &quot;style.css&quot;, // (Optional) CSS file
     &quot;author&quot;: &quot;Your name&quot;,
     &quot;version&quot;: &quot;1.0.0&quot;,
     &quot;homePage&quot;: &quot;https://github.com/your/plugin&quot;,
     &quot;auto_update&quot;: true // If the extension should auto-update when the version of the ST package changes
 }</code></pre>
 </doc-codeblock></div>
-<p>The display_name, js and author fields are required.</p>
+<p>The <code v-pre>display_name</code>, <code v-pre>js</code>, and <code v-pre>author</code> fields are required.</p>
+<p>Downloadable extensions are installed into the <code v-pre>public/scripts/extensions/third-party</code> folder.</p>
+<doc-anchor-target id="requires-vs-optional">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#requires-vs-optional">#</doc-anchor-trigger>
+        <span><code v-pre>requires</code> vs <code v-pre>optional</code></span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><code v-pre>requires</code> - extension could be installed, but will not be loaded until the user connects to the Extras API that provides all of the specified modules.</li>
+<li><code v-pre>optional</code> - extension could be installed and will always be loaded, but any of the missing Extras API modules will be highlighted in the &quot;Manage extensions&quot; menu.</li>
+</ul>
+<p>To check which modules are currently provided by the connected Extras API, import the <code v-pre>modules</code> array from <code v-pre>scripts/extensions.js</code>.</p>
 <doc-anchor-target id="using-getcontext">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#using-getcontext">#</doc-anchor-trigger>
