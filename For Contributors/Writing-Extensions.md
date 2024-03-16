@@ -14,6 +14,11 @@ See live examples of simple SillyTavern extensions:
 
 * https://github.com/city-unit/st-extension-example - basic extension template. Showcases manifest creation, local script imports, adding a settings UI panel, and persistent extension settings usage.
 
+## Bundling
+
+Extensions can also utilize bundling to isolate themselves from the rest of the modules and use any dependencies from NPM, including UI frameworks like Vue, React, etc.
+
+* https://github.com/Cohee1207/Extension-ReactTemplate - template repository of a barebone extension using React and Webpack.
 
 ### manifest.json
 
