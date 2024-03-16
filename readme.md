@@ -28,7 +28,7 @@ Learn more [here](https://docs.sillytavern.app/usage/branches/).
 ### Features
 
 * Mobile-friendly interface
-* Multiple backend API connectivity ([KoboldAI](https://github.com/KoboldAI/KoboldAI-Client), [KoboldCpp](https://github.com/LostRuins/koboldcpp), [AI Horde](https://horde.koboldai.net/), [NovelAI](https://github.com/LostRuins/koboldcpp), [Oobabooga's TextGen WebUI](https://github.com/oobabooga/text-generation-webui), [OpenAI](https://chat.openai.com/), [WindowAI](https://windowai.io), [OpenRouter](https://openrouter.ai/), [TabbyAPI](https://github.com/theroyallab/tabbyAPI))
+* Multiple backend API connectivity ([KoboldAI](https://github.com/KoboldAI/KoboldAI-Client), [KoboldCpp](https://github.com/LostRuins/koboldcpp), [AI Horde](https://horde.koboldai.net/), [NovelAI](https://github.com/LostRuins/koboldcpp), [Oobabooga's TextGen WebUI](https://github.com/oobabooga/text-generation-webui), [OpenAI](https://chat.openai.com/), [WindowAI](https://windowai.io), [OpenRouter](https://openrouter.ai/), [TabbyAPI](https://github.com/theroyallab/tabbyAPI), and many more...). See [API connections](https://docs.sillytavern.app/usage/api-connections/).
 * Visual Novel-like Waifu Mode
 * Horde Stable Diffusion generation
 * TTS support (ElevenLabs, Silero, etc.)
