@@ -20,18 +20,19 @@ Extensions can also utilize bundling to isolate themselves from the rest of the 
 
 * https://github.com/Cohee1207/Extension-ReactTemplate - template repository of a barebone extension using React and Webpack.
 
-### manifest.json
+## manifest.json
 
 Every extension must have a folder in `public/scripts/extensions` and have a manifest.json file which contains metadata about the plugin and a JS script file.
+
 
 ```js
 {
     "display_name": "The name of the plugin",
     "loading_order": 1, // Optional. Higher number loads later
-    "requires": [], // Required Extras modules dependencies
+    "requires": [], // Required Extras modules dependencies.
     "optional": [], // Optional Extras dependencies
     "js": "index.js", // Main JS file
-    "css": "style.css", // Optional CSS file
+    "css": "style.css", // (Optional) CSS file
     "author": "Your name",
     "version": "1.0.0",
     "homePage": "https://github.com/your/plugin",
@@ -39,7 +40,16 @@ Every extension must have a folder in `public/scripts/extensions` and have a man
 }
 ```
 
-The display_name, js and author fields are required.
+The `display_name`, `js`, and `author` fields are required.
+
+Downloadable extensions are installed into the `public/scripts/extensions/third-party` folder.
+
+#### `requires` vs `optional`
+
+* `requires` - extension could be installed, but will not be loaded until the user connects to the Extras API that provides all of the specified modules.
+* `optional` - extension could be installed and will always be loaded, but any of the missing Extras API modules will be highlighted in the "Manage extensions" menu.
+
+To check which modules are currently provided by the connected Extras API, import the `modules` array from `scripts/extensions.js`.
 
 ### Using getContext
 
