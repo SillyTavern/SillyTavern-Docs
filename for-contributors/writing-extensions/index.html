@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.763935059212">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.763935967435">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.763935059212" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.763935967435" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.763935059212" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.763935967435" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.763935059212" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.763935059212" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.763935967435" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.763935967435" defer></script>
 
     <Style>
         a {
@@ -277,13 +277,14 @@ context.groups; // Group list
 // And many more...</code></pre>
 </doc-codeblock></div>
 <p>Use this to interact with the main app state.</p>
+<p>You can also use a globally defined window object: <code v-pre>SillyTavern.getContext()</code>.</p>
 <doc-anchor-target id="importing-from-other-files">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#importing-from-other-files">#</doc-anchor-trigger>
         <span>Importing from other files</span>
     </h3>
 </doc-anchor-target>
-<p>You can import variables and functions from other JS files.</p>
+<p>Unless you&#x27;re building a bundled extension, you can import variables and functions from other JS files.</p>
 <p>For example, this code snipped will generate a reply from the currently selected API in the background:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-javascript"><code v-pre class="language-javascript">import { generateQuietPrompt } from &quot;../../../script.js&quot;;
@@ -294,6 +295,14 @@ function handleMessage(data) {
     // ...
 }</code></pre>
 </doc-codeblock></div>
+<doc-anchor-target id="important-note">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#important-note">#</doc-anchor-trigger>
+        <span>Important note</span>
+    </h3>
+</doc-anchor-target>
+<p>Using imports from SillyTavern code is unreliable and can break at any time if the internal structure of ST&#x27;s modules changes. <code v-pre>getContext</code> provides a more stable API.</p>
+<p>If you&#x27;re missing any of the functions/properties in <code v-pre>getContext</code>, please get in touch with the developers or send us a Pull Request!</p>
 <doc-anchor-target id="registering-slash-commands">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#registering-slash-commands">#</doc-anchor-trigger>
@@ -306,10 +315,33 @@ function handleMessage(data) {
 
 registerSlashCommand(&quot;commandname&quot;, commandFunction, [&quot;alias&quot;], &quot;Description shown in /help&quot;, true, true);
 
-function commandFunction(args) {
+function commandFunction(namedArgs, unnamedArgs) {
     // Command logic
 }</code></pre>
 </doc-codeblock></div>
+<p>Example of command execution:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">/commandname namedArgument=value Unnamed argument</code></pre>
+</doc-codeblock></div>
+<p>Arguments explanation:</p>
+<ol>
+<li><code v-pre>command</code> - the main command name. It will be used in autocompletion and help commands.</li>
+<li><code v-pre>callback</code> - a function that will be executed when the command is triggered. A callback function can accept two arguments:</li>
+</ol>
+<ul>
+<li><code v-pre>namedArgs</code> - an object with named arguments</li>
+<li><code v-pre>unnamedArgs</code> - a string containing the unnamed argument</li>
+</ul>
+<ol start="3">
+<li><code v-pre>aliases</code> - an array of alias strings. The command can be called using any of the aliases, but they won&#x27;t be shown in the autocomplete but will be listed in the help command.</li>
+<li><code v-pre>helpString</code> - a string that will be displayed when the <code v-pre>/help slash</code> command is called. Must describe what your command does and which arguments it accepts. May contain HTML markup.</li>
+<li><code v-pre>interruptsGeneration</code> - if the command is executed from the user input area, the message generation will be interrupted. Default: <code v-pre>false</code>.</li>
+<li><code v-pre>purgeFromMessage</code> - if the command is executed from the user input area, it will be purged from the input text area when the command finishes executing. Default: <code v-pre>true</code>.</li>
+</ol>
+<p>All registered commands can be used in <a href="https://docs.sillytavern.app/usage/st-script/">STscript</a> in any possible way.</p>
+<blockquote>
+<p>In rare circumstances, the unnamed command argument can also receive a number so be sure to type check or convert if you expect a concrete type!</p>
+</blockquote>
 <doc-anchor-target id="listening-to-event-types">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#listening-to-event-types">#</doc-anchor-trigger>
@@ -332,7 +364,7 @@ function handleIncomingMessage(data) {
 <li><code v-pre>MESSAGE_SENT</code></li>
 <li><code v-pre>CHAT_CHANGED</code></li>
 </ul>
-<p>The rest can be found <a href="https://github.com/SillyTavern/SillyTavern/blob/release/public/script.js#L268">here</a>.</p>
+<p>The rest can be found <a href="https://github.com/SillyTavern/SillyTavern/blob/release/public/script.js#L364">here</a>.</p>
 <doc-anchor-target id="do-extras-request">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#do-extras-request">#</doc-anchor-trigger>
