@@ -67,9 +67,11 @@ context.groups; // Group list
 
 Use this to interact with the main app state.
 
+You can also use a globally defined window object: `SillyTavern.getContext()`.
+
 ### Importing from other files
 
-You can import variables and functions from other JS files.
+Unless you're building a bundled extension, you can import variables and functions from other JS files.
 
 For example, this code snipped will generate a reply from the currently selected API in the background:
 
@@ -83,6 +85,12 @@ function handleMessage(data) {
 }
 ```
 
+### Important note
+
+Using imports from SillyTavern code is unreliable and can break at any time if the internal structure of ST's modules changes. `getContext` provides a more stable API.
+
+If you're missing any of the functions/properties in `getContext`, please get in touch with the developers or send us a Pull Request!
+
 ### Registering slash commands
 
 Use `registerSlashCommand()` to register a new slash command:
@@ -92,10 +100,30 @@ import { registerSlashCommand } from "../../slash-commands.js";
 
 registerSlashCommand("commandname", commandFunction, ["alias"], "Description shown in /help", true, true);
 
-function commandFunction(args) {
+function commandFunction(namedArgs, unnamedArgs) {
     // Command logic
 }
 ```
+
+Example of command execution:
+```
+/commandname namedArgument=value Unnamed argument
+```
+
+Arguments explanation:
+
+1. `command` - the main command name. It will be used in autocompletion and help commands.
+2. `callback` - a function that will be executed when the command is triggered. A callback function can accept two arguments:
+  * `namedArgs` - an object with named arguments
+  * `unnamedArgs` - a string containing the unnamed argument
+3. `aliases` - an array of alias strings. The command can be called using any of the aliases, but they won't be shown in the autocomplete but will be listed in the help command.
+4. `helpString` - a string that will be displayed when the `/help slash` command is called. Must describe what your command does and which arguments it accepts. May contain HTML markup.
+5. `interruptsGeneration` - if the command is executed from the user input area, the message generation will be interrupted. Default: `false`.
+6. `purgeFromMessage` - if the command is executed from the user input area, it will be purged from the input text area when the command finishes executing. Default: `true`.
+
+All registered commands can be used in [STscript](https://docs.sillytavern.app/usage/st-script/) in any possible way.
+
+> In rare circumstances, the unnamed command argument can also receive a number so be sure to type check or convert if you expect a concrete type!
 
 ### Listening to event types
 
@@ -117,7 +145,7 @@ The main event types are:
 * `MESSAGE_SENT`
 * `CHAT_CHANGED`
 
-The rest can be found [here](https://github.com/SillyTavern/SillyTavern/blob/release/public/script.js#L268).
+The rest can be found [here](https://github.com/SillyTavern/SillyTavern/blob/release/public/script.js#L364).
 
 ### Do Extras request
 
