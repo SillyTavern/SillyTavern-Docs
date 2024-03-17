@@ -1,6 +1,6 @@
 # World Info
 
-**World Info (also known as Lorebooks or Memory Books) enhances AI's understanding of the details in your world.**
+**World Info (also known as Lorebooks or Memory Books) enhances AI's understanding of the details in your fictional world.**
 
 It functions like a dynamic dictionary that only inserts relevant information from World Info entries when keywords associated with the entries are present in the message text.
 
