@@ -13,7 +13,7 @@ The SillyTavern engine activates and seamlessly integrates the appropriate lore 
 * The AI does not insert keywords into context, so each World Info entry should be a comprehensive, standalone description.
 * To create rich and detailed world lore, entries can be interlinked and reference one another.
 * To conserve tokens, it is advisable to keep entry contents concise.
-* World Info engine is a very powerful prompt management tool. Don't fixate on adding character lore alone, feel free to experiment.
+* The World Info engine is a very powerful prompt management tool. Don't fixate on adding character lore alone, feel free to experiment.
 
 ### Further reading
 
@@ -88,8 +88,9 @@ If no arguments are provided, this flag is ignored.
 Supports logic for AND ANY, NOT ANY, or NOT ALL
 
 1. AND ANY = Activates the entry only if the primary key and Any one of the optional filter keys are in scanned context.
-2. NOT ANY = Activates the entry only if the primary key and None of the optional filter keys are in scanned context.
-3. NOT ALL = Prevents activation of the entry despite primary key trigger, if all of the optional filters are in scanned context.
+2. ANY ALL = Activates the entry only if the primary key and ALL of the optional filter keys are present.
+3. NOT ANY = Activates the entry only if the primary key and None of the optional filter keys are in scanned context.
+4. NOT ALL = Prevents activation of the entry despite primary key trigger, if all of the optional filters are in scanned context.
 
 #### Probability
 
@@ -100,6 +101,18 @@ This value acts like an additional filter that adds a chance for the entry NOT t
 3. Probability = 0 means that the entry will NOT be inserted (essentially disabling it).
 
 Use this to create random events in your chats. For example, every message could have a 1% chance of waking up an Elder God if its name is mentioned in the message.
+
+#### Inclusion Group
+
+If multiple entries having the same group label were activated, only one will be inserted into the prompt. Entries are selected based on their Trigger% chance. The higher the number - the higher the probability.
+
+**Grouped entries don't use Trigger% for the likelihood of their activation, only to determine the selection winner.**
+
+#### Automation ID
+
+Allows to integrate World Info entries with [STscripts](https://docs.sillytavern.app/usage/st-script/) from Quick Replies extension. If both the quick reply command and the WI entry have the same Automation ID, the command will be executed automatically when the entry with a matching ID is activated.
+
+The script command will run only once if multiple entries with the same Automation ID are activated.
 
 ## Activation Settings
 
@@ -174,4 +187,4 @@ For example, if the setting is enabled and the entry key is "king", then text su
 
 ### Alert on overflow
 
-Generate an alert if your world info is greater than the allocated token budget.
+Shows an alert if the activated World Info exceeds the allocated token budget.
