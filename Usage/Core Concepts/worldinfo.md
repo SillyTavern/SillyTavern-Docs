@@ -13,6 +13,7 @@ The SillyTavern engine activates and seamlessly integrates the appropriate lore 
 * The AI does not insert keywords into context, so each World Info entry should be a comprehensive, standalone description.
 * To create rich and detailed world lore, entries can be interlinked and reference one another.
 * To conserve tokens, it is advisable to keep entry contents concise.
+* World Info engine is a very powerful prompt management tool. Don't fixate on adding character lore alone, feel free to experiment.
 
 ### Further reading
 
