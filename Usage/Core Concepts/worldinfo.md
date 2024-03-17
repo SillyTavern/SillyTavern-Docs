@@ -12,7 +12,7 @@ The SillyTavern engine activates and seamlessly integrates the appropriate lore 
 
 * The AI does not insert keywords into context, so each World Info entry should be a comprehensive, standalone description.
 * To create rich and detailed world lore, entries can be interlinked and reference one another.
-* To conserve tokens, it is advisable to keep entry contents concise, with a generally recommended limit of 50 tokens per entry.
+* To conserve tokens, it is advisable to keep entry contents concise.
 
 ### Further reading
 
