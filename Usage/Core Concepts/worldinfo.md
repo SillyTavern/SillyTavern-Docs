@@ -88,7 +88,7 @@ If no arguments are provided, this flag is ignored.
 Supports logic for AND ANY, NOT ANY, or NOT ALL
 
 1. AND ANY = Activates the entry only if the primary key and Any one of the optional filter keys are in scanned context.
-2. ANY ALL = Activates the entry only if the primary key and ALL of the optional filter keys are present.
+2. AND ALL = Activates the entry only if the primary key and ALL of the optional filter keys are present.
 3. NOT ANY = Activates the entry only if the primary key and None of the optional filter keys are in scanned context.
 4. NOT ALL = Prevents activation of the entry despite primary key trigger, if all of the optional filters are in scanned context.
 
