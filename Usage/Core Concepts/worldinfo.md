@@ -66,6 +66,9 @@ Numeric value. Defines a priority of the entry if multiple were activated at onc
 * **Top of AN:** World Info entry is inserted at the top of Author's Note content. Has a variable impact depending on the Author's Note position.
 * **Bottom of AN:** World Info entry is inserted at the bottom of Author's Note content. Has a variable impact depending on the Author's Note position.
 * **@ D:** World Info entry is inserted at a specific depth in the chat (Depth 0 being the bottom of the prompt).
+    - ⚙️ - as a system role message
+    - 👤 - as a user role message
+    - 🤖 - as an assistant role message
 
 If your Author's Note is disabled (Insertion Frequency = 0), World Info entries in A/N positions will be ignored!
 
