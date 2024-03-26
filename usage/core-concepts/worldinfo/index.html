@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.764769198002">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.764769293744">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.764769198002" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.764769293744" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.764769198002" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.764769293744" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.764769198002" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.764769293744" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -309,7 +309,13 @@
 <li><strong>After Char Defs:</strong> World Info entry is inserted after the character&#x27;s description and scenario. Has a greater impact on the conversation.</li>
 <li><strong>Top of AN:</strong> World Info entry is inserted at the top of Author&#x27;s Note content. Has a variable impact depending on the Author&#x27;s Note position.</li>
 <li><strong>Bottom of AN:</strong> World Info entry is inserted at the bottom of Author&#x27;s Note content. Has a variable impact depending on the Author&#x27;s Note position.</li>
-<li><strong>@ D:</strong> World Info entry is inserted at a specific depth in the chat (Depth 0 being the bottom of the prompt).</li>
+<li><strong>@ D:</strong> World Info entry is inserted at a specific depth in the chat (Depth 0 being the bottom of the prompt).
+<ul>
+<li><span class="docs-emoji">&#x2699;&#xFE0F;</span> - as a system role message</li>
+<li><span class="docs-emoji">&#x1F464;</span> - as a user role message</li>
+<li><span class="docs-emoji">&#x1F916;</span> - as an assistant role message</li>
+</ul>
+</li>
 </ul>
 <p>If your Author&#x27;s Note is disabled (Insertion Frequency = 0), World Info entries in A/N positions will be ignored!</p>
 <doc-anchor-target id="entry-title--memo">
