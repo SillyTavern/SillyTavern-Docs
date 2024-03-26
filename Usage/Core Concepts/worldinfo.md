@@ -80,9 +80,9 @@ If empty, can be backfilled using the entries' first key by clicking on the "Fil
 
 #### Status
 
-1. Blue = The entry would always be present in the prompt.
-2. Green = The entry will be triggered only in the presence of the keyword.
-3. Red Cross = Entry is disabled.
+1. 🔵 (Blue Circle) = The entry would always be present in the prompt.
+2. 🟢 (Green Circle) = The entry will be triggered only in the presence of the keyword.
+3. ❌ (Red Cross) = Entry is disabled.
 
 #### Optional Filter
 
