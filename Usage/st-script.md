@@ -507,7 +507,7 @@ Quick Replies is a built-in SillyTavern extension that provides an easy way to s
 
 In order to get started, enable open the extensions panel (stacked blocks icon), and expand the Quick Replies menu.
 
-<div style="display:flex;height:500px;justify-content:center">
+<div style="display:flex;justify-content:center">
 
 ![Quick Reply](/static/scripts/quick-reply.png)
 

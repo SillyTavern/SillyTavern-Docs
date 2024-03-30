@@ -147,7 +147,7 @@ These methods are recommended because they're present in NovelAI's training data
 
 Here are a couple of example cards, made for NovelAI, that show off different ways of creating cards specifically for NovelAI. The first card, Valka, uses the attributes method for the character description, while Eris, the second card, uses prose descriptions, along with a large amount of example dialogue. 
 
-<div style="display:flex;gap:2em;height:300px;justify-content:center">
+<div style="display:flex;gap:2em;justify-content:center">
 
 [![Valka](/static/valka.png)](/static/valka.png)
 
