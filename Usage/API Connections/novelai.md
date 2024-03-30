@@ -9,16 +9,16 @@ You will get only *50 generations* for free to evaluate the model. When the **"N
 To get your NovelAI API key, follow these steps:
 
 1. Select the gear icon at the top of the left sidebar.
-![Left Sidebar](https://github.com/SillyTavern/SillyTavern-Docs/assets/55552572/e0c70838-9775-4dc4-bf07-3daf895de67c)
+![Left Sidebar](/static/novel-side.png)
 
 2. Select "Account" under "User Settings".
-![User Settings](https://github.com/SillyTavern/SillyTavern-Docs/assets/55552572/71af84bf-3800-4e22-bfe9-9f84f302451a)
+![User Settings](/static/novel-user.png)
 
 3. Select "Get Persistent API Token".
-![Account](https://github.com/SillyTavern/SillyTavern-Docs/assets/55552572/5ca0ff03-a75c-4bea-ba7f-2db951aab194)
+![Account](/static/novel-account.png)
 
 4. Select the copy icon to copy your NovelAI API token to the clipboard. 
-![Persistent API Token](https://github.com/SillyTavern/SillyTavern-Docs/assets/55552572/2765446e-42b2-4027-8ee5-0bbb48aef9c0)
+![Persistent API Token](/static/novel-token.png)
 
 ## Models
 

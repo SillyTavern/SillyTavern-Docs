@@ -16,7 +16,7 @@ Before you begin, ensure you've met the following prerequisites:
 
 The VRM extension offers various settings to customize the behavior of your animated model. Here are the key settings:
 
-![UI global settings](https://raw.githubusercontent.com/SillyTavern/Extension-VRM/main/readme_img/ui_global.png)
+![UI global settings](/static/extensions/vrm-global.png)
 
 ### Global Settings
 
@@ -60,7 +60,7 @@ The VRM extension offers various settings to customize the behavior of your anim
 
 ### Scene Settings
 
-![UI scene settings](https://raw.githubusercontent.com/SillyTavern/Extension-VRM/main/readme_img/ui_scene.png)
+![UI scene settings](/static/extensions/vrm-scene.png)
 
 1. **Light Color**
     - Set the color of the light in the 3d scene. Click on the reset button to set it back to the default white color. Depending on your browser you can use a color picker, for example you can color pick the color of your background image to add more immersion.
@@ -68,7 +68,7 @@ The VRM extension offers various settings to customize the behavior of your anim
 2. **Light intensity**
     - Set the light intensity in percent using the slider. Click on the reset button to set it back to the default value of 100%. VRM model can react differently to light depending on the baked shaders into the model, play with the value and see how it goes.
 
-![UI model settings](https://raw.githubusercontent.com/SillyTavern/Extension-VRM/main/readme_img/ui_model.png)
+![UI model settings](/static/extensions/vrm-model.png)
 
 ## Character Selection
 
@@ -112,13 +112,13 @@ These settings allow you to manage characters and assign VRM models to them.
     - You can also drag the model with your mouse, and those settings will be updated and saved. Left click and hold to drag a model around the screen. Middle mouse Click and hold to rotate the model or use shift-left click. Use mouse wheel with cursor on the model to scale it up or down or use ctrl+left click.
     - Use these UI settings to bring your model back on the screen if you somehow made it out of view. Also, check the "Show frame" checkbox to see clearly where you can click to drag the model.
 
-![UI hitboxes settings](https://raw.githubusercontent.com/SillyTavern/Extension-VRM/main/readme_img/ui_hitboxes.png)
+![UI hitboxes settings](/static/extensions/vrm-hitboxes.png)
 
 ## Hitboxes mapping
 
     - Depending on the model bones definition some hitboxes area can be generated, they will be listed in this part of the ui, and you can assign an expression/animation/message to each of them that will trigger when you click the area.
 
-![UI classify settings](https://raw.githubusercontent.com/SillyTavern/Extension-VRM/main/readme_img/ui_classify.png)
+![UI classify settings](/static/extensions/vrm-classify.png)
 
 ## Classified Expressions Mapping
 

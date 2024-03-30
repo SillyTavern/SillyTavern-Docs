@@ -12,7 +12,7 @@ It has a free trial (about $1) and paid access afterward.  No subscription or mo
 - [OpenRouter Pricing Details](https://openrouter.ai/docs)
 - Create an OpenRouter account: [openrouter.ai](https://openrouter.ai/)
 
-![OpenRouter-ConnectionPanel](https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/f832aa74-5fd1-426f-aeb5-fd10af7f31d9)
+![OpenRouter-ConnectionPanel](/static/openrouter-connection.png)
 
 From top to down (see image above):
 

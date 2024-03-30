@@ -10,7 +10,7 @@ The Author's Note can be found in the Options menu on the left side of the chat 
 
 | Options Menu | Author's Note Panel |
 ---------------|---------------------|
-|![](https://github.com/SillyTavern/SillyTavern/assets/124905043/12a55c55-c176-4236-b1c2-39eb2850fe0f) | ![](https://github.com/SillyTavern/SillyTavern/assets/124905043/207c0549-8515-4b83-9c9a-a1fdd8153ea8)|
+|![](/static/extensions/note-menu.png) | ![](/static/extensions/note-panel.png)|
 
 ### Configuring Author's Notes
 

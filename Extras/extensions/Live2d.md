@@ -12,11 +12,11 @@ Before you begin, ensure you've met the following prerequisites:
 
 3. **Model Folder Placement**: Place your Live2D model folders into the `/public/assets/live2d` directory. A properly organized `live2d` assets folder might look like this:
 
-    ![Asset folder example](https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/example_asset_folder.png)
+    ![Asset folder example](/static/extensions/live2d-folder.png)
 
     - A Live2D model folder should include all necessary components for the Live2D model, such as expressions, motions, textures, sounds, and settings files. Notably the `***.model.json` file must be at the root of the Live2D model folder for the model to be detected by the extension. In this example the `shizuku` live2d model folder may look like this:
 
-    ![Live2d model folder example](https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/example_live2d_model_folder.png)
+    ![Live2d model folder example](/static/extensions/live2d-model.png)
 
     - Note: Models can also be placed in character-specific folders, such as `/public/characters/Shizuku/live2d/`. However, models in character folders will only be accessible for that specific character.
 
@@ -24,7 +24,7 @@ Before you begin, ensure you've met the following prerequisites:
 
 The Live2D extension offers various settings to customize the behavior of your animated model. Here are the key settings:
 
-![UI global settings](https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/ui_global.png)
+![UI global settings](/static/extensions/live2d-global.png)
 
 ### Global Settings
 
@@ -68,7 +68,7 @@ These settings allow you to manage characters and assign Live2D models to them.
 
 ## Model Selection
 
-![UI model list](https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/ui_model_list.png)
+![UI model list](/static/extensions/live2d-list.png)
 
 1. **Refresh Button**:
    - Click the refresh button if your Live2D model does not appear in the list.
@@ -83,7 +83,7 @@ These settings allow you to manage characters and assign Live2D models to them.
 
 ## Model Settings
 
-![UI model settings](https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/ui_model_settings.png)
+![UI model settings](/static/extensions/live2d-settings.png)
 
 1. **Model Scale**:
    - Use the slider to adjust the size of the model, making it larger or smaller.
@@ -102,7 +102,7 @@ These settings allow you to manage characters and assign Live2D models to them.
 
 ## Model Talk
 
-![UI model talk](https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/ui_model_talk.png)
+![UI model talk](/static/extensions/live2d-talk.png)
 
 1. **Param mouth open Y id**
     - Select from the list the ID of the parameter corresponding to the model's mouth Y value. Not all models have one, and names may vary from model to model. Usually something like "PARAM_MOUTH_OPEN_Y" or "ParamMouthOpenY". Check the model when selecting an element from the list; it will try to run the speak animation. If the mouth moves, you got it!
@@ -118,7 +118,7 @@ These settings allow you to manage characters and assign Live2D models to them.
 
 ## Model Animations
 
-![UI model talk](https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/ui_model_animations.png)
+![UI model animations](/static/extensions/live2d-animations.png)
 
 1. **Starter animation**
     - Select an expression and motion from the lists that will play when starting a chat with the character. You can also add a delay during which the model will be invisible if you need to hide the character for some time to achieve a perfect effect.
@@ -134,7 +134,7 @@ These settings allow you to manage characters and assign Live2D models to them.
 
 ## Hit areas mapping
 
-![UI model talk](https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/ui_model_hit_frames.png)
+![UI model mapping](/static/extensions/live2d-mapping.png)
 
 1. **Default click animation**
     - Select an expression and motion from the list that will play when you click on the model. You can also set a message that will be sent as a user message.
@@ -151,7 +151,7 @@ These settings allow you to manage characters and assign Live2D models to them.
 
 ## Classified Expressions Mapping
 
-![UI model talk](https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/ui_model_classify.png)
+![UI model classify](/static/extensions/live2d-classify.png)
 
 1. **Requirements**
     - Requires the use of the classify expression extension; otherwise, it will fall back to the default animation.

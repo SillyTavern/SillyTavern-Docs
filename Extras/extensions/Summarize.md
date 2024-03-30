@@ -22,7 +22,7 @@ Summarize helps the AI remain aware of the general developments of a long chat.
 ### Configuration
 
 Once Summarize is enabled, it will show up in ST's Extensions panel list.
-![STExtensionMenuIcon](https://github.com/SillyTavern/SillyTavern/assets/124905043/4545037e-dff8-4373-9513-cddb69780be1)
+![STExtensionMenuIcon](/static/extensions/menu-icon.png)
 
 ![Summarize Config Panel](/static/extensions/summarize.png)
 

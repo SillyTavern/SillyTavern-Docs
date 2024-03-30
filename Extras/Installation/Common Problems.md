@@ -33,7 +33,7 @@ It requires the installation of an additional package because it's not installed
 
 Find and replace that line in your "webui-user.bat": `set COMMANDLINE_ARGS=--api`
 
-![How it shoud look](https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/a823d134-14fb-40c6-b3f1-2e174e7b1172)
+![How it shoud look](/static/extensions/sd-user.png)
 
 If the API mode is disabled for SD Web UI, the Extras server won't be able to make a connection and you won't be able to generate images!
 

@@ -9,7 +9,7 @@ Expression images can use a classification model running alongside SillyTavern's
 ### Setup Instructions (Offline Mode without Extras)
 
 1. Open the Extensions Panel and expand the 'Expression images' section. If you have the character chat open, you will see a grid of image placeholders.
-![Expression Drawer](https://github.com/SillyTavern/SillyTavern/assets/124905043/a6883961-d15d-4998-9a28-8d0333d65f29)
+![Expression Drawer](/static/extensions/expression-drawer.png)
 
 2. Click the 'import' button at the top left of each image in the grid, and select the image you want to apply to that emotion. This will save the image with the correct filename inside the `/public/characters/(character_name_here)/` folder.
 
@@ -68,7 +68,7 @@ The most common format is a PNG file with a transparent background.
 
 *(This feature will only activate if local classification is enabled or with Extras API connected. There is no way to manually display default expression images.)*
 
-![Use Default Expressions](https://github.com/SillyTavern/SillyTavern/assets/124905043/07438380-7547-43e3-b10d-da2f2bac26a7)
+![Use Default Expressions](/static/extensions/expression-default.png)
 
 If you don't have custom expression images for a character, you can use the built-in default expressions which are included with the base SillyTavern installation. These are simple emoji-style images. Just click the checkbox at the top of the Expression images section inside the Extension panel. Default expressions will work alongside any available custom Expressions, and will display in cases when your custom image set has any missing images for a particular emotion.
 
