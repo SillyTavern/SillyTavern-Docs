@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.765129015615">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.765132969073">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -14,7 +14,7 @@
     <!-- Primary Meta Tags -->
     <title>Instruct Mode | docs.ST.app</title>
     <meta name="title" content="Instruct Mode | docs.ST.app">
-    <meta name="description" content="Instruct Mode allows you to adjust the prompting for instruction-following models, such as Alpaca, Metharme, WizardLM, etc.">
+    <meta name="description" content="Instruct Mode allows you to adjust the prompting for instruction-following models trained on various prompt formats, such as Alpaca, ChatML, Llama2,...">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/usage/core-concepts/instructmode/">
@@ -23,21 +23,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/usage/core-concepts/instructmode/">
     <meta property="og:title" content="Instruct Mode | docs.ST.app">
-    <meta property="og:description" content="Instruct Mode allows you to adjust the prompting for instruction-following models, such as Alpaca, Metharme, WizardLM, etc.">
+    <meta property="og:description" content="Instruct Mode allows you to adjust the prompting for instruction-following models trained on various prompt formats, such as Alpaca, ChatML, Llama2,...">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/usage/core-concepts/instructmode/">
     <meta property="twitter:title" content="Instruct Mode | docs.ST.app">
-    <meta property="twitter:description" content="Instruct Mode allows you to adjust the prompting for instruction-following models, such as Alpaca, Metharme, WizardLM, etc.">
+    <meta property="twitter:description" content="Instruct Mode allows you to adjust the prompting for instruction-following models trained on various prompt formats, such as Alpaca, ChatML, Llama2,...">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.765129015615" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.765132969073" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.765129015615" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.765132969073" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.765129015615" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.765132969073" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -203,91 +203,99 @@
         <span>Instruct Mode</span>
     </h1>
 </doc-anchor-target>
-<p>Instruct Mode allows you to adjust the prompting for instruction-following models, such as Alpaca, Metharme, WizardLM, etc.</p>
-<p><strong>This is not supported for Chat Completions API, except for OpenRouter for Llama 2 models with the &quot;Force Instruct Mode formatting&quot; override enabled.</strong></p>
-<doc-anchor-target id="instruct-mode-settings">
+<p>Instruct Mode allows you to adjust the prompting for instruction-following models trained on various prompt formats, such as Alpaca, ChatML, Llama2, etc.</p>
+<doc-anchor-target id="api-support">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#api-support">#</doc-anchor-trigger>
+        <span>API support</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="text-completion-api">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#instruct-mode-settings">#</doc-anchor-trigger>
-        <span>Instruct Mode Settings</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#text-completion-api">#</doc-anchor-trigger>
+        <span>Text Completion API</span>
     </h3>
 </doc-anchor-target>
-<doc-anchor-target id="system-prompt">
+<p>Fully supported. This includes:</p>
+<ul>
+<li>All of the sources under Text Completion</li>
+<li>KoboldAI Classic</li>
+<li>AI Horde</li>
+</ul>
+<doc-anchor-target id="choosing-a-formatting">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#system-prompt">#</doc-anchor-trigger>
-        <span>System Prompt</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#choosing-a-formatting">#</doc-anchor-trigger>
+        <span>Choosing a formatting</span>
     </h4>
 </doc-anchor-target>
-<p>Added to the beginning of each prompt. Should define the instructions for the model to follow. Supports substitutions via any of the supported {{macro}} parameters.</p>
-<p>For example:</p>
-<blockquote>
-<p>Write one reply in internet RP style for {{char}}. Be verbose and creative.</p>
-</blockquote>
+<p>A chosen instruct template must match the expectations of an actual model that is running on a backend.</p>
+<p>This is usually reflected in a model card on HuggingFace, and some even provide SillyTavern-compatible JSON files.</p>
+<p>Example: <a href="https://huggingface.co/NeverSleep/Noromaid-13b-v0.1.1#prompt-template-custom-format-or-alpaca">NeverSleep/Noromaid-13b-v0.1.1</a></p>
+<doc-anchor-target id="chat-completion-api-openai-claude-etc">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#chat-completion-api-openai-claude-etc">#</doc-anchor-trigger>
+        <span>Chat Completion API (OpenAI, Claude, etc)</span>
+    </h3>
+</doc-anchor-target>
+<p>This is not supported <strong>(and not needed)</strong> for Chat Completion APIs. They use an entirely different prompt builder.</p>
+<p>Exception: OpenRouter with instruct override enabled. This is a legacy setting and will eventually be removed.</p>
+<doc-anchor-target id="novelai">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#novelai">#</doc-anchor-trigger>
+        <span>NovelAI</span>
+    </h3>
+</doc-anchor-target>
+<p>While <em>technically</em> supported for NovelAI, none of their models were trained to understand instruct formatting. Kayra and Clio use special a instruct module that is activated <em>automatically</em> when an instruction wrapped in curly braces is encountered in chat messages, so using Instruct Mode for the entire prompt will lead to <strong>degraded quality</strong> of the outputs.</p>
+<p>Here&#x27;s an example that auto-activates the instruct module for NovelAI:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">User: { Write a happy song about Nintendo Switch. }</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="instruct-mode-settings">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#instruct-mode-settings">#</doc-anchor-trigger>
+        <span>Instruct Mode Settings</span>
+    </h2>
+</doc-anchor-target>
 <doc-anchor-target id="presets">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#presets">#</doc-anchor-trigger>
         <span>Presets</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <p>Provides ready-made presets with prompts and sequences for some well-known instruct models.</p>
 <p><em>Changing a preset resets your system prompt to default! Don&#x27;t forget to save your preset if you made any changes you don&#x27;t want to lose.</em></p>
-<doc-anchor-target id="activation-regex">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#activation-regex">#</doc-anchor-trigger>
-        <span>Activation Regex</span>
-    </h4>
-</doc-anchor-target>
-<p>If defined as a valid regular expression, when connected to a model and its name matches this regex, will automatically select this preset.</p>
-<p>Instruct mode needs to be enabled prior. Only the first regex match across presets will be selected (evaluated in alphabetical order).</p>
 <doc-anchor-target id="default-preset-heart-icon">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#default-preset-heart-icon">#</doc-anchor-trigger>
         <span>Default preset (heart icon)</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <p>If toggled, connecting to an API will automatically select this preset if no other presets were triggered by the regex match.</p>
 <p>Instruct mode needs to be enabled prior. Only one preset can be marked as default.</p>
-<doc-anchor-target id="input-sequence">
+<doc-anchor-target id="activation-regex">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#activation-regex">#</doc-anchor-trigger>
+        <span>Activation Regex</span>
+    </h3>
+</doc-anchor-target>
+<p>If defined as a valid regular expression, when connected to a model and its name matches this regex, will automatically select this preset.</p>
+<p>Instruct mode needs to be enabled prior. Only the first regex match across presets will be selected (evaluated in alphabetical order).</p>
+<doc-anchor-target id="wrap-sequences-with-newline">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#input-sequence">#</doc-anchor-trigger>
-        <span>Input Sequence</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#wrap-sequences-with-newline">#</doc-anchor-trigger>
+        <span>Wrap Sequences with Newline</span>
     </h4>
 </doc-anchor-target>
-<p>Text added before the user&#x27;s input.</p>
-<doc-anchor-target id="output-sequence">
+<p>Each sequence text will be wrapped with newline characters when inserted into the prompt. Required for Alpaca and its derivatives.</p>
+<p>Disable if you want to have a full control over line terminators.</p>
+<doc-anchor-target id="replace-macro-in-sequences">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#output-sequence">#</doc-anchor-trigger>
-        <span>Output Sequence</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#replace-macro-in-sequences">#</doc-anchor-trigger>
+        <span>Replace Macro in Sequences</span>
     </h4>
 </doc-anchor-target>
-<p>Text added before the character&#x27;s reply.</p>
-<doc-anchor-target id="last-sequence">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#last-sequence">#</doc-anchor-trigger>
-        <span>Last Sequence</span>
-    </h4>
-</doc-anchor-target>
-<p>Text added to the last line of the prompt. If not defined, the Output Sequence will be used in its place.</p>
-<doc-anchor-target id="system-sequence">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#system-sequence">#</doc-anchor-trigger>
-        <span>System Sequence</span>
-    </h4>
-</doc-anchor-target>
-<p>Text added before the system prompt.</p>
-<doc-anchor-target id="separator-sequence">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#separator-sequence">#</doc-anchor-trigger>
-        <span>Separator Sequence</span>
-    </h4>
-</doc-anchor-target>
-<p>Text added after the character reply to separate the chat history logs.</p>
-<doc-anchor-target id="stop-sequence">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#stop-sequence">#</doc-anchor-trigger>
-        <span>Stop Sequence</span>
-    </h4>
-</doc-anchor-target>
-<p>Text that denotes the end of the reply. Will be trimmed from the output text.</p>
+<p>If enabled, known {{macro}} substitutions will be replaced if defined in Message wrapping sequences.</p>
+<p>Also, a special <code v-pre>macro can be used in Message sequences to reference the actual name attached to a message (rather than a currently active</code> or &#x60;&#x60;), which can be helpful when using group chats or /sendas command. If the name can&#x27;t be determined, &quot;System&quot; is used as a fallback placeholder.</p>
 <doc-anchor-target id="include-names">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#include-names">#</doc-anchor-trigger>
@@ -296,21 +304,140 @@
 </doc-anchor-target>
 <p>If enabled, prepend characters and user names to chat history logs after inserting the sequences.</p>
 <p><em>Automatically enabled for group chats and messages sent using personas, unless <strong>Force for Groups and Personas</strong> setting is unchecked!</em></p>
-<doc-anchor-target id="replace-macro-in-sequences">
+<doc-anchor-target id="system-prompt">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#system-prompt">#</doc-anchor-trigger>
+        <span>System Prompt</span>
+    </h3>
+</doc-anchor-target>
+<p>Usually added to the beginning of each prompt. Should define the instructions for the model to follow. Supports substitutions via any of the supported {{macro}} parameters.</p>
+<p>For example:</p>
+<blockquote>
+<p>Write one reply in internet RP style for {{char}}. Be verbose and creative.</p>
+</blockquote>
+<doc-anchor-target id="sequences-system-prompt-wrapping">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sequences-system-prompt-wrapping">#</doc-anchor-trigger>
+        <span>Sequences: System Prompt Wrapping</span>
+    </h3>
+</doc-anchor-target>
+<p>Define how the System Prompt will be wrapped.</p>
+<doc-anchor-target id="system-prompt-prefix">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#replace-macro-in-sequences">#</doc-anchor-trigger>
-        <span>Replace Macro in Sequences</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#system-prompt-prefix">#</doc-anchor-trigger>
+        <span>System Prompt Prefix</span>
     </h4>
 </doc-anchor-target>
-<p>If enabled, known {{macro}} substitutions will be replaced if defined in Input or Output sequences.</p>
-<p>Also, a special <code v-pre>macro can be used in Input and Output sequences to reference the actual name attached to a message (rather than a currently active</code> or &#x60;&#x60;), which can be helpful when using group chats or /sendas command. If the name can&#x27;t be determined, &quot;System&quot; is used as a fallback placeholder.</p>
-<doc-anchor-target id="wrap-sequences-with-newline">
+<p>Inserted before a System prompt.</p>
+<doc-anchor-target id="system-prompt-suffix">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#wrap-sequences-with-newline">#</doc-anchor-trigger>
-        <span>Wrap Sequences with Newline</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#system-prompt-suffix">#</doc-anchor-trigger>
+        <span>System Prompt Suffix</span>
     </h4>
 </doc-anchor-target>
-<p>Each sequence text will be wrapped with newline characters when inserted into the prompt. Required for Alpaca and its derivatives.</p>
+<p>Inserted after a System prompt.</p>
+<p><strong>Important:</strong> this applies <em>only</em> to the System Prompt itself, <em>not</em> the entire Story String! If you want to wrap the Story String, add these sequences to the Story String template in the Context Template section.</p>
+<doc-anchor-target id="sequences-chat-messages-wrapping">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sequences-chat-messages-wrapping">#</doc-anchor-trigger>
+        <span>Sequences: Chat Messages Wrapping</span>
+    </h3>
+</doc-anchor-target>
+<p>These settings define how messages belonging to different roles will be wrapped upon building a prompt.</p>
+<p>All prefix sequences will also be automatically used as stopping strings.</p>
+<doc-anchor-target id="user-message-prefix">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#user-message-prefix">#</doc-anchor-trigger>
+        <span>User Message Prefix</span>
+    </h4>
+</doc-anchor-target>
+<p>Inserted before a User message and as a last prompt line when impersonating.</p>
+<doc-anchor-target id="user-message-suffix">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#user-message-suffix">#</doc-anchor-trigger>
+        <span>User Message Suffix</span>
+    </h4>
+</doc-anchor-target>
+<p>Inserted after a User message.</p>
+<doc-anchor-target id="assistant-message-prefix">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#assistant-message-prefix">#</doc-anchor-trigger>
+        <span>Assistant Message Prefix</span>
+    </h4>
+</doc-anchor-target>
+<p>Inserted before an Assistant message and as a last prompt line when generating an AI reply.</p>
+<doc-anchor-target id="assistant-message-suffix">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#assistant-message-suffix">#</doc-anchor-trigger>
+        <span>Assistant Message Suffix</span>
+    </h4>
+</doc-anchor-target>
+<p>Inserted after an Assistant message</p>
+<doc-anchor-target id="system-message-prefix">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#system-message-prefix">#</doc-anchor-trigger>
+        <span>System Message Prefix</span>
+    </h4>
+</doc-anchor-target>
+<p>Inserted before a System (added by slash commands or extensions) message.</p>
+<doc-anchor-target id="system-message-suffix">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#system-message-suffix">#</doc-anchor-trigger>
+        <span>System Message Suffix</span>
+    </h4>
+</doc-anchor-target>
+<p>Inserted after a System message.</p>
+<doc-anchor-target id="system-same-as-user">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#system-same-as-user">#</doc-anchor-trigger>
+        <span>System same as User</span>
+    </h4>
+</doc-anchor-target>
+<p>If checked true, System messages will be using User role message sequences.</p>
+<p>Otherwise, System messages use their own sequences (if not empty) or will not any wrapping at all (if empty).</p>
+<doc-anchor-target id="misc-sequences">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#misc-sequences">#</doc-anchor-trigger>
+        <span>Misc. Sequences</span>
+    </h3>
+</doc-anchor-target>
+<p>Various advanced configuration for finer tuning of the prompt building</p>
+<doc-anchor-target id="first-assistant-prefix">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#first-assistant-prefix">#</doc-anchor-trigger>
+        <span>First Assistant Prefix</span>
+    </h4>
+</doc-anchor-target>
+<p>Inserted before the first Assistant&#x27;s message.</p>
+<blockquote>
+<p>Only the first message of the <strong>chat history</strong> counts, not the message that actually goes into the prompt first!</p>
+</blockquote>
+<doc-anchor-target id="last-assistant-prefix">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#last-assistant-prefix">#</doc-anchor-trigger>
+        <span>Last Assistant Prefix</span>
+    </h4>
+</doc-anchor-target>
+<p>Inserted before the last Assistant&#x27;s message or as a last prompt line when generating an AI reply.</p>
+<blockquote>
+<p>Not used when generating text in a background (e.g. Stable Diffusion prompts or Summaries). Regular Assistant Prefix will be used instead.</p>
+</blockquote>
+<doc-anchor-target id="user-filler-message">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#user-filler-message">#</doc-anchor-trigger>
+        <span>User Filler Message</span>
+    </h4>
+</doc-anchor-target>
+<p>Will be inserted at the start of the chat history if it doesn&#x27;t start with a User message.</p>
+<p><strong>Use case:</strong> when an instruct format <em>strictly requires</em> prompts to be user-first and have messages with alternating roles only, examples: Llama 2 Chat, Mistral Instruct.</p>
+<doc-anchor-target id="stop-sequence">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#stop-sequence">#</doc-anchor-trigger>
+        <span>Stop Sequence</span>
+    </h4>
+</doc-anchor-target>
+<p>Text that denotes the end of the reply. Also sent as a stopping string to the backend API.</p>
+<p>If a stop sequence is generated, everything past it will be removed from the output (including the sequence itself).</p>
 
                                 
                                 <!-- Required only on API pages -->
