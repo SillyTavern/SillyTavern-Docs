@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.764770378432">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.765125818532">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -24,20 +24,22 @@
     <meta property="og:url" content="https://docs.sillytavern.app/usage/st-script/">
     <meta property="og:title" content="STscript Language Reference | docs.ST.app">
     <meta property="og:description" content="It's a simple yet powerful scripting language that could be used to expand the functionality of SillyTavern without serious coding, allowing you to:">
+    <meta property="og:image" content="https://docs.sillytavern.app/static/scripts/hello-world.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/usage/st-script/">
     <meta property="twitter:title" content="STscript Language Reference | docs.ST.app">
     <meta property="twitter:description" content="It's a simple yet powerful scripting language that could be used to expand the functionality of SillyTavern without serious coding, allowing you to:">
+    <meta property="twitter:image" content="https://docs.sillytavern.app/static/scripts/hello-world.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.764770378432" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.765125818532" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.764770378432" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.765125818532" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.764770378432" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.765125818532" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -241,7 +243,7 @@ These concepts are going to be described in the following document.</p>
 <table class="comfortable">
 <thead>
 <tr>
-<th><img alt="image" src="https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/9845caa2-5b83-4ba3-bb34-af02d4d05de5"></th>
+<th><img src="../../static/scripts/hello-world.png" alt="Hello World" /></th>
 </tr>
 </thead>
 </table>
@@ -279,8 +281,8 @@ These concepts are going to be described in the following document.</p>
 <table class="comfortable">
 <thead>
 <tr>
-<th><img alt="image" src="https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/04fcc602-d8e0-42a9-ae06-f16613799047"></th>
-<th><img alt="image" src="https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/323b4034-f6fa-4a06-b259-6ecd36733cb1"></th>
+<th><img src="../../static/scripts/slim-input.png" alt="Slim Shady Input" /></th>
+<th><img src="../../static/scripts/slim-output.png" alt="Slim Shady Output" /></th>
 </tr>
 </thead>
 </table>
@@ -604,7 +606,7 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 <table class="comfortable">
 <thead>
 <tr>
-<th><img alt="image" src="https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/f771f364-8c90-42fa-8822-ee3862e275ce"></th>
+<th><img src="../../static/scripts/cthulhu-says.png" alt="Cthulhu Says" /></th>
 </tr>
 </thead>
 </table>
@@ -915,14 +917,12 @@ This example will get you 3 last messages in the chat:</p>
     </h3>
 </doc-anchor-target>
 <p>In order to get started, enable open the extensions panel (stacked blocks icon), and expand the Quick Replies menu.</p>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th><img alt="image" height="300px" src="https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/7f02e1c3-138e-4347-8c16-ebc07c818c28"></th>
-</tr>
-</thead>
-</table>
+<div style="display:flex;height:500px;justify-content:center">
+<p><figure class="content-center">
+    <img src="../../static/scripts/quick-reply.png" alt="Quick Reply">
+    <figcaption class="caption">Quick Reply</figcaption>
+</figure>
+</p>
 </div>
 <p><strong>Quick Replies are disabled by default, you need to enable them first.</strong> Then you will see a bar appearing above your chat input bar.</p>
 <p>You can set the displayed button text label (we recommend using emojis for brevity) and the script that will be executed when you click the button.</p>
@@ -954,13 +954,14 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
 <table class="comfortable">
 <thead>
 <tr>
-<th><img alt="image" height="300px" src="https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/ba8c9ef7-8c8e-445b-94c1-ea71767fa01d"></th>
+<th><img src="../../static/scripts/autoexecute.png" alt="Automatic execution" /></th>
 </tr>
 </thead>
 </table>
 </div>
 <p>In this menu you can do the following:</p>
 <ul>
+<li>Edit the script in a convenient full screen editor</li>
 <li>Hide the button from the chat bar, making it accessible only for auto-execution.</li>
 <li>Enable automatic execution on one or more of the following conditions:
 <ul>
@@ -969,9 +970,11 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
 <li>Receiving an AI message in the chat</li>
 <li>Opening a character or group chat</li>
 <li>Triggering a reply from a group member</li>
-<li>Provide a custom tool-tip for the quick reply (text displayed when hovering over the quick reply in your UI)</li>
+<li>Activating a World Info entry using the same Automation ID</li>
 </ul>
 </li>
+<li>Provide a custom tool-tip for the quick reply (text displayed when hovering over the quick reply in your UI)</li>
+<li>Execute the script for test purposes</li>
 </ul>
 <p>Commands are executed automatically only if the Quick Replies extension is enabled.</p>
 <p>For example, you can display a message after sending five user messages by adding the following script and setting it to auto-execute on the user message.</p>
