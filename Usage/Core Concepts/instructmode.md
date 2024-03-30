@@ -60,13 +60,13 @@ Instruct mode needs to be enabled prior. Only the first regex match across prese
 
 Each sequence text will be wrapped with newline characters when inserted into the prompt. Required for Alpaca and its derivatives.
 
-Disable if you want to have a full control over line terminators.
+Disable if you want to have full control over line terminators.
 
 #### Replace Macro in Sequences
 
 If enabled, known \{\{macro\}\} substitutions will be replaced if defined in Message wrapping sequences.
 
-Also, a special `{{name}}` macro can be used in Message sequences to reference the actual name attached to a message (rather than a currently active `{{char}}` or `{{user}}`), which can be helpful when using group chats or /sendas command. If the name can't be determined, "System" is used as a fallback placeholder.
+Also, a special \{\{name\}\} macro can be used in Message sequences to reference the actual name attached to a message (rather than a currently active \{\{char\}\} or \{\{user\}\}), which can be helpful when using group chats or /sendas command. If the name can't be determined, "System" is used as a fallback placeholder.
 
 #### Include Names
 
