@@ -316,6 +316,7 @@ Scripts can make requests to your currently connected LLM API using the followin
 - `lock` — can be `on` or `off`. Specifies whether a user input should be blocked while the generation is in progress. Default: `off`.
 - `stop` — JSON-serialized array of strings. Adds a custom stop string (if the API supports it) just for this generation. Default: none.
 - `instruct` (only `/genraw`) — can be `on` or `off`. Allows to use instruct formatting on the input prompt (if instruct mode is enabled and the API supports it). Set to `off` to force pure prompts. Default: `on`.
+- `as` (for Text Completion APIs) — can be `system` (default) or `char`. Defines how the last prompt line will be formatted. `char` will use a character name, `system` will use no or neutral name.
 
 The generated text is then passed through the pipe to the next command and can be saved to a variable or displaced using the I/O capabilities:
 

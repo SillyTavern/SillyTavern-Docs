@@ -28,6 +28,8 @@ We provide the following parameters to the Handlebars evaluator (wrap them into 
 9. `wiAfter` or `loreAfter` - combined activated World Info entries with Position set to "After Char Defs"
 10. `mesExamples` - (optional) character's Example Dialogues, instruct-formatted with separator. Set "Example Messages Behavior" to "Never include examples" to avoid duplication.
 
+A special `{{trim}}` macro is supported to remove any newlines that surround it. Use it in case you want some part of text NOT be separated with a newline from the previous line (_spaces **are not** trimmed_).
+
 **WARNING**: If some of the above parameters are missing from the story string template, they are not going to be sent in the prompt at all.
 
 #### Example Separator
@@ -71,8 +73,9 @@ Text Completion APIs **(overridable)**:
 
 1. NovelAI Clio: NerdStash tokenizer.
 2. NovelAI Kayra: NerdStash v2 tokenizer.
-3. TextGen / KoboldAI / AI Horde: LLaMA tokenizer.
-4. Koboldcpp: model API tokenizer.
+3. Text Completion: API tokenizer (if supported) or LLaMA tokenizer.
+4. KoboldAI Classic / AI Horde: LLaMA tokenizer.
+5. Koboldcpp: model API tokenizer.
 
 If you get inaccurate results or wish to experiment, you can set an *override tokenizer* for SillyTavern to use while forming a request to the AI backend:
 
@@ -81,7 +84,8 @@ If you get inaccurate results or wish to experiment, you can set an *override to
 3. NerdStash tokenizer. Used by NovelAI's Clio model. **Pick if you use the Clio model.**
 4. NerdStash v2 tokenizer. Used by NovelAI's Kayra model. **Pick if you use the Kayra model.**
 5. Mistral tokenizer. Used by Mistral models family and their finetunes. **Pick if you use a Mistral model.**
-6. API tokenizer. Queries the generation API to get the token count directly from the model. Only supported by Oobabooga's TextGen. **Pick if you use the latest version of TextGen API.**
+6. Yi tokenized. User by Yi models. **Pick if you use a Yi model.**
+7. API tokenizer. Queries the generation API to get the token count directly from the model. Known backends to support: Text Generation WebUI (ooba), koboldcpp, TabbyAPI, Aphrodite API. **Pick if you use a supported backend.**
 
 Chat Completion APIs **(non-overridable)**:
 
@@ -112,8 +116,8 @@ Supported APIs:
 
 1. KoboldAI (versions 1.2.2 and higher) or KoboldCpp
 2. AI Horde
-3. oobabooga's Text Generation WebUI / Mancer / Aphrodite
+3. Text Completion APIs: Text Generation WebUI (ooba), Tabby, Aphrodite, Mancer, TogetherAI, Ollama, etc.
 4. NovelAI
 5. OpenAI, including via OpenRouter (max 4 strings)
 6. Claude
-7. Google PaLM
+7. Google MakerSuite

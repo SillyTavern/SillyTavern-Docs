@@ -1,60 +1,72 @@
 # Instruct Mode
 
-Instruct Mode allows you to adjust the prompting for instruction-following models, such as Alpaca, Metharme, WizardLM, etc.
+Instruct Mode allows you to adjust the prompting for instruction-following models trained on various prompt formats, such as Alpaca, ChatML, Llama2, etc.
 
-**This is not supported for Chat Completions API, except for OpenRouter for Llama 2 models with the "Force Instruct Mode formatting" override enabled.**
+## API support
 
-### Instruct Mode Settings
+### Text Completion API
 
-#### System Prompt
+Fully supported. This includes:
 
-Added to the beginning of each prompt. Should define the instructions for the model to follow. Supports substitutions via any of the supported \{\{macro\}\} parameters.
+* All of the sources under Text Completion
+* KoboldAI Classic 
+* AI Horde
 
-For example:
+#### Choosing a formatting
 
-> Write one reply in internet RP style for \{\{char\}\}. Be verbose and creative.
+A chosen instruct template must match the expectations of an actual model that is running on a backend.
 
-#### Presets
+This is usually reflected in a model card on HuggingFace, and some even provide SillyTavern-compatible JSON files.
+
+Example: [NeverSleep/Noromaid-13b-v0.1.1](https://huggingface.co/NeverSleep/Noromaid-13b-v0.1.1#prompt-template-custom-format-or-alpaca)
+
+### Chat Completion API (OpenAI, Claude, etc)
+
+This is not supported **(and not needed)** for Chat Completion APIs. They use an entirely different prompt builder.
+
+Exception: OpenRouter with instruct override enabled. This is a legacy setting and will eventually be removed.
+
+### NovelAI 
+
+While *technically* supported for NovelAI, none of their models were trained to understand instruct formatting. Kayra and Clio use special a instruct module that is activated *automatically* when an instruction wrapped in curly braces is encountered in chat messages, so using Instruct Mode for the entire prompt will lead to **degraded quality** of the outputs.
+
+Here's an example that auto-activates the instruct module for NovelAI:
+
+```
+User: { Write a happy song about Nintendo Switch. }
+```
+
+## Instruct Mode Settings
+
+### Presets
 
 Provides ready-made presets with prompts and sequences for some well-known instruct models.
 
 *Changing a preset resets your system prompt to default! Don't forget to save your preset if you made any changes you don't want to lose.*
 
-#### Activation Regex
-
-If defined as a valid regular expression, when connected to a model and its name matches this regex, will automatically select this preset.
-
-Instruct mode needs to be enabled prior. Only the first regex match across presets will be selected (evaluated in alphabetical order).
-
-#### Default preset (heart icon)
+### Default preset (heart icon)
 
 If toggled, connecting to an API will automatically select this preset if no other presets were triggered by the regex match.
 
 Instruct mode needs to be enabled prior. Only one preset can be marked as default.
 
-#### Input Sequence
+### Activation Regex
 
-Text added before the user's input.
+If defined as a valid regular expression, when connected to a model and its name matches this regex, will automatically select this preset.
 
-#### Output Sequence
+Instruct mode needs to be enabled prior. Only the first regex match across presets will be selected (evaluated in alphabetical order).
 
-Text added before the character's reply.
+#### Wrap Sequences with Newline
 
-#### Last Sequence
+Each sequence text will be wrapped with newline characters when inserted into the prompt. Required for Alpaca and its derivatives.
 
-Text added to the last line of the prompt. If not defined, the Output Sequence will be used in its place.
+Disable if you want to have a full control over line terminators.
 
-#### System Sequence
+#### Replace Macro in Sequences
 
-Text added before the system prompt.
+If enabled, known \{\{macro\}\} substitutions will be replaced if defined in Message wrapping sequences.
 
-#### Separator Sequence
-
-Text added after the character reply to separate the chat history logs.
-
-#### Stop Sequence
-
-Text that denotes the end of the reply. Will be trimmed from the output text.
+Also, a special `{{name}}` macro can be used in Message sequences to reference the actual name attached to a message (rather than a currently active `{{char}}` or `{{user}}`), which can be helpful when using group chats or /sendas command. If the name can't be determined, "System" is used as a fallback placeholder.
 
 #### Include Names
 
@@ -62,12 +74,88 @@ If enabled, prepend characters and user names to chat history logs after inserti
 
 *Automatically enabled for group chats and messages sent using personas, unless **Force for Groups and Personas** setting is unchecked!*
 
-#### Replace Macro in Sequences
+### System Prompt
 
-If enabled, known \{\{macro\}\} substitutions will be replaced if defined in Input or Output sequences.
+Usually added to the beginning of each prompt. Should define the instructions for the model to follow. Supports substitutions via any of the supported \{\{macro\}\} parameters.
 
-Also, a special `{{name}}` macro can be used in Input and Output sequences to reference the actual name attached to a message (rather than a currently active `{{char}}` or `{{user}}`), which can be helpful when using group chats or /sendas command. If the name can't be determined, "System" is used as a fallback placeholder.
+For example:
 
-#### Wrap Sequences with Newline
+> Write one reply in internet RP style for \{\{char\}\}. Be verbose and creative.
 
-Each sequence text will be wrapped with newline characters when inserted into the prompt. Required for Alpaca and its derivatives.
+### Sequences: System Prompt Wrapping
+
+Define how the System Prompt will be wrapped.
+
+#### System Prompt Prefix
+
+Inserted before a System prompt.
+
+#### System Prompt Suffix
+
+Inserted after a System prompt.
+
+**Important:** this applies *only* to the System Prompt itself, *not* the entire Story String! If you want to wrap the Story String, add these sequences to the Story String template in the Context Template section.
+
+### Sequences: Chat Messages Wrapping
+
+These settings define how messages belonging to different roles will be wrapped upon building a prompt.
+
+All prefix sequences will also be automatically used as stopping strings.
+
+#### User Message Prefix
+
+Inserted before a User message and as a last prompt line when impersonating.
+
+#### User Message Suffix
+
+Inserted after a User message.
+
+#### Assistant Message Prefix
+
+Inserted before an Assistant message and as a last prompt line when generating an AI reply.
+
+#### Assistant Message Suffix
+
+Inserted after an Assistant message
+
+#### System Message Prefix
+
+Inserted before a System (added by slash commands or extensions) message.
+
+#### System Message Suffix
+
+Inserted after a System message.
+
+#### System same as User
+
+If checked true, System messages will be using User role message sequences.
+
+Otherwise, System messages use their own sequences (if not empty) or will not any wrapping at all (if empty).
+
+### Misc. Sequences
+
+Various advanced configuration for finer tuning of the prompt building
+
+#### First Assistant Prefix
+
+Inserted before the first Assistant's message.
+
+> Only the first message of the **chat history** counts, not the message that actually goes into the prompt first!
+
+#### Last Assistant Prefix
+
+Inserted before the last Assistant's message or as a last prompt line when generating an AI reply.
+
+> Not used when generating text in a background (e.g. Stable Diffusion prompts or Summaries). Regular Assistant Prefix will be used instead.
+
+#### User Filler Message
+
+Will be inserted at the start of the chat history if it doesn't start with a User message.
+
+**Use case:** when an instruct format *strictly requires* prompts to be user-first and have messages with alternating roles only, examples: Llama 2 Chat, Mistral Instruct.
+
+#### Stop Sequence
+
+Text that denotes the end of the reply. Also sent as a stopping string to the backend API.
+
+If a stop sequence is generated, everything past it will be removed from the output (including the sequence itself).
