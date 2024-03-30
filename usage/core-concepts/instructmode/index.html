@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.765137202251">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.765150403693">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.765137202251" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.765150403693" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.765137202251" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.765150403693" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.765137202251" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.765150403693" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -294,8 +294,8 @@
         <span>Replace Macro in Sequences</span>
     </h4>
 </doc-anchor-target>
-<p>If enabled, known {{macro}} substitutions will be replaced if defined in Message wrapping sequences.</p>
-<p>Also, a special {{name}} macro can be used in Message sequences to reference the actual name attached to a message (rather than a currently active {{char}} or {{user}}), which can be helpful when using group chats or /sendas command. If the name can&#x27;t be determined, &quot;System&quot; is used as a fallback placeholder.</p>
+<p>If enabled, known {{macro}} substitutions will be replaced if defined in message wrapping sequences.</p>
+<p>Also, a special {{name}} macro can be used in message prefixes to reference the actual name attached to a message (rather than a currently active {{char}} or {{user}}), which can be helpful when using group chats or /sendas command. If the name can&#x27;t be determined, &quot;System&quot; is used as a fallback placeholder.</p>
 <doc-anchor-target id="include-names">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#include-names">#</doc-anchor-trigger>
@@ -303,7 +303,7 @@
     </h4>
 </doc-anchor-target>
 <p>If enabled, prepend characters and user names to chat history logs after inserting the sequences.</p>
-<p><em>Automatically enabled for group chats and messages sent using personas, unless <strong>Force for Groups and Personas</strong> setting is unchecked!</em></p>
+<p><em>Automatically enabled for group chats and messages sent using personas, unless the <strong>Force for Groups and Personas</strong> setting is unchecked!</em></p>
 <doc-anchor-target id="system-prompt">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#system-prompt">#</doc-anchor-trigger>
@@ -394,14 +394,14 @@
     </h4>
 </doc-anchor-target>
 <p>If checked true, System messages will be using User role message sequences.</p>
-<p>Otherwise, System messages use their own sequences (if not empty) or will not any wrapping at all (if empty).</p>
+<p>Otherwise, System messages use their own sequences (if not empty) or will not do any wrapping at all (if empty).</p>
 <doc-anchor-target id="misc-sequences">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#misc-sequences">#</doc-anchor-trigger>
         <span>Misc. Sequences</span>
     </h3>
 </doc-anchor-target>
-<p>Various advanced configuration for finer tuning of the prompt building</p>
+<p>Various advanced configurations for finer tuning of the prompt building</p>
 <doc-anchor-target id="first-assistant-prefix">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#first-assistant-prefix">#</doc-anchor-trigger>
