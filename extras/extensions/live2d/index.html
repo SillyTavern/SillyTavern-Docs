@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.765128298255">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.765129015615">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -24,22 +24,22 @@
     <meta property="og:url" content="https://docs.sillytavern.app/extras/extensions/live2d/">
     <meta property="og:title" content="Live2D | docs.ST.app">
     <meta property="og:description" content="This guide will walk you through the process of setting up and customizing the Live2D extension for your SillyTavern experience.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/example_asset_folder.png">
+    <meta property="og:image" content="https://docs.sillytavern.app/static/extensions/live2d-folder.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/extras/extensions/live2d/">
     <meta property="twitter:title" content="Live2D | docs.ST.app">
     <meta property="twitter:description" content="This guide will walk you through the process of setting up and customizing the Live2D extension for your SillyTavern experience.">
-    <meta property="twitter:image" content="https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/example_asset_folder.png">
+    <meta property="twitter:image" content="https://docs.sillytavern.app/static/extensions/live2d-folder.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.765128298255" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.765129015615" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.765128298255" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.765129015615" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.765128298255" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.765129015615" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -219,11 +219,11 @@
 <li><p><strong>Extension Installation</strong>: Install the &quot;Live2D&quot; extension from the &quot;Download Extensions &amp; Assets&quot; menu in the Extensions panel (represented by the stacked blocks icon).</p>
 </li>
 <li><p><strong>Model Folder Placement</strong>: Place your Live2D model folders into the <code v-pre>/public/assets/live2d</code> directory. A properly organized <code v-pre>live2d</code> assets folder might look like this:</p>
-<p><img src="https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/example_asset_folder.png" alt="Asset folder example" /></p>
+<p><img src="../../../static/extensions/live2d-folder.png" alt="Asset folder example" /></p>
 <ul>
 <li>A Live2D model folder should include all necessary components for the Live2D model, such as expressions, motions, textures, sounds, and settings files. Notably the <code v-pre>***.model.json</code> file must be at the root of the Live2D model folder for the model to be detected by the extension. In this example the <code v-pre>shizuku</code> live2d model folder may look like this:</li>
 </ul>
-<p><img src="https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/example_live2d_model_folder.png" alt="Live2d model folder example" /></p>
+<p><img src="../../../static/extensions/live2d-model.png" alt="Live2d model folder example" /></p>
 <ul>
 <li>Note: Models can also be placed in character-specific folders, such as <code v-pre>/public/characters/Shizuku/live2d/</code>. However, models in character folders will only be accessible for that specific character.</li>
 </ul>
@@ -237,7 +237,7 @@
 </doc-anchor-target>
 <p>The Live2D extension offers various settings to customize the behavior of your animated model. Here are the key settings:</p>
 <p><figure class="content-center">
-    <img src="https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/ui_global.png" alt="UI global settings">
+    <img src="../../../static/extensions/live2d-global.png" alt="UI global settings">
     <figcaption class="caption">UI global settings</figcaption>
 </figure>
 </p>
@@ -321,7 +321,7 @@
     </h2>
 </doc-anchor-target>
 <p><figure class="content-center">
-    <img src="https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/ui_model_list.png" alt="UI model list">
+    <img src="../../../static/extensions/live2d-list.png" alt="UI model list">
     <figcaption class="caption">UI model list</figcaption>
 </figure>
 </p>
@@ -349,7 +349,7 @@
     </h2>
 </doc-anchor-target>
 <p><figure class="content-center">
-    <img src="https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/ui_model_settings.png" alt="UI model settings">
+    <img src="../../../static/extensions/live2d-settings.png" alt="UI model settings">
     <figcaption class="caption">UI model settings</figcaption>
 </figure>
 </p>
@@ -388,7 +388,7 @@
     </h2>
 </doc-anchor-target>
 <p><figure class="content-center">
-    <img src="https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/ui_model_talk.png" alt="UI model talk">
+    <img src="../../../static/extensions/live2d-talk.png" alt="UI model talk">
     <figcaption class="caption">UI model talk</figcaption>
 </figure>
 </p>
@@ -425,8 +425,8 @@
     </h2>
 </doc-anchor-target>
 <p><figure class="content-center">
-    <img src="https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/ui_model_animations.png" alt="UI model talk">
-    <figcaption class="caption">UI model talk</figcaption>
+    <img src="../../../static/extensions/live2d-animations.png" alt="UI model animations">
+    <figcaption class="caption">UI model animations</figcaption>
 </figure>
 </p>
 <ol>
@@ -460,8 +460,8 @@
     </h2>
 </doc-anchor-target>
 <p><figure class="content-center">
-    <img src="https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/ui_model_hit_frames.png" alt="UI model talk">
-    <figcaption class="caption">UI model talk</figcaption>
+    <img src="../../../static/extensions/live2d-mapping.png" alt="UI model mapping">
+    <figcaption class="caption">UI model mapping</figcaption>
 </figure>
 </p>
 <ol>
@@ -495,8 +495,8 @@
     </h2>
 </doc-anchor-target>
 <p><figure class="content-center">
-    <img src="https://raw.githubusercontent.com/SillyTavern/Extension-Live2d/main/readme_img/ui_model_classify.png" alt="UI model talk">
-    <figcaption class="caption">UI model talk</figcaption>
+    <img src="../../../static/extensions/live2d-classify.png" alt="UI model classify">
+    <figcaption class="caption">UI model classify</figcaption>
 </figure>
 </p>
 <ol>
