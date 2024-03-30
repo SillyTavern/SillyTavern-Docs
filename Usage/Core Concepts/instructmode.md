@@ -64,15 +64,15 @@ Disable if you want to have full control over line terminators.
 
 #### Replace Macro in Sequences
 
-If enabled, known \{\{macro\}\} substitutions will be replaced if defined in Message wrapping sequences.
+If enabled, known \{\{macro\}\} substitutions will be replaced if defined in message wrapping sequences.
 
-Also, a special \{\{name\}\} macro can be used in Message sequences to reference the actual name attached to a message (rather than a currently active \{\{char\}\} or \{\{user\}\}), which can be helpful when using group chats or /sendas command. If the name can't be determined, "System" is used as a fallback placeholder.
+Also, a special \{\{name\}\} macro can be used in message prefixes to reference the actual name attached to a message (rather than a currently active \{\{char\}\} or \{\{user\}\}), which can be helpful when using group chats or /sendas command. If the name can't be determined, "System" is used as a fallback placeholder.
 
 #### Include Names
 
 If enabled, prepend characters and user names to chat history logs after inserting the sequences.
 
-*Automatically enabled for group chats and messages sent using personas, unless **Force for Groups and Personas** setting is unchecked!*
+*Automatically enabled for group chats and messages sent using personas, unless the **Force for Groups and Personas** setting is unchecked!*
 
 ### System Prompt
 
@@ -130,11 +130,11 @@ Inserted after a System message.
 
 If checked true, System messages will be using User role message sequences.
 
-Otherwise, System messages use their own sequences (if not empty) or will not any wrapping at all (if empty).
+Otherwise, System messages use their own sequences (if not empty) or will not do any wrapping at all (if empty).
 
 ### Misc. Sequences
 
-Various advanced configuration for finer tuning of the prompt building
+Various advanced configurations for finer tuning of the prompt building
 
 #### First Assistant Prefix
 
