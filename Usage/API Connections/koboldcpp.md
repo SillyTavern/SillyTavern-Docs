@@ -9,7 +9,7 @@ This guide assumes you're using Windows.
 * Launch KoboldCpp. You may see a pop-up from Microsoft Defender, click `Run Anyway`.
 * As of version 1.58, KoboldCpp should look like this:
 
-![KoboldCpp 1.58](https://files.catbox.moe/z1vmly.png)
+![KoboldCpp 1.58](/static/koboldcpp.png)
 
 * Under the `Quick Launch` tab, select the model and your preferred `Context Size`.
 * Select `Use CuBLAS` and make sure the yellow text next to `GPU ID` matches your GPU.

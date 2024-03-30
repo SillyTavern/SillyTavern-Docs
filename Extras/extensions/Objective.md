@@ -17,7 +17,7 @@ Before you begin, ensure you've met the following prerequisites:
 
 Your imagination is the limit, you can give the AI any objective you wish and it will plan out how to achieve it. You can ask it to plan how to slay a demon, rob a temple, throw a lavish party, or even take over the world.
 
-![Objective Settings Panel](https://files.catbox.moe/kg9xfa.png)
+![Objective Settings Panel](/static/extensions/objective-panel.png)
 
 ### Configuration
 
@@ -72,7 +72,7 @@ You can manually toggle the completion status of a task by `clicking the checkbo
 
 If you want to manually trigger the AI to check for task completion, click on the Extras Extension button (the `magic wand` on the right side of the chat input bar) and select `Manual Task Check`.
 
-![Manual Task Check](https://files.catbox.moe/h5xpnj.png)
+![Manual Task Check](/static/extensions/task-check.png)
 
 #### Manually Add Tasks
 

@@ -20,11 +20,11 @@ WARNING: CFG increases vram usage due to ingesting more than 1 prompt! If your G
 
 Accessing CFG settings are the same as accessing Author's note:
 
-![CFGhamburgermenupng](https://files.catbox.moe/xdv2c0.png)
+![CFGhamburgermenupng](/static/cfg-hamburger.png)
 
 And here's what the CFG panel looks like:
 
-![CFGchatpanelpng](https://files.catbox.moe/0njwho.png)
+![CFGchatpanelpng](/static/cfg-panel.png)
 
 There are four dropdowns in the CFG panel:
 
@@ -47,7 +47,7 @@ NOTE: If the guidance scale is set to 1, nothing will be sent since that's when 
 
 In group chats, the CFG scale panel looks like this:
 
-![CFGpanelgcpng](https://files.catbox.moe/jkcjgs.png)
+![CFGpanelgcpng](/static/cfg-groups.png)
 
 The main change is that character CFG is removed and a checkbox called `Use Character CFG Scales` is present in the chat CFG dropdown. This allows for the current character's guidance scale to be used instead of whatever the chat CFG scale is set to.
 
@@ -65,7 +65,7 @@ Yes and no. CFG with LLMs works in a different way than what one might be used t
 
 Here's an illustration to help visualize this concept. The red represents the negative prompt, the blue represents the neutral prompt, and the purple represents the mixed result that's interpreted. All the white space is the same across all 3 prompts, so those are not used for CFG mixing.
 
-![stcfgdiagrampng](https://files.catbox.moe/ql9v1j.png)
+![stcfgdiagrampng](/static/cfg-diagram.png)
 
 If you want to know more about CFG and LLMs, Vermifuge's original paper is located here. I'd suggest giving it a read/listen:
 

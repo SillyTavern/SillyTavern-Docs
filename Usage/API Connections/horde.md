@@ -20,7 +20,7 @@ To help reduce this problem, SillyTavern has built in the following feature:
 - This information can be seen by hovering your mouse cursor over the chat item (see image below).
 - If you believe you received a malicious response, you can pass this information to the Horde admin on the [Kobold Discord](https://koboldai.org/discord) for review and possible disciplinary action against that Worker.
 
-![Horde Worker Info Popup](https://files.catbox.moe/kw657j.png)
+![Horde Worker Info Popup](/static/horde-worker.png)
 
 ## Setup
 
@@ -29,7 +29,7 @@ To help reduce this problem, SillyTavern has built in the following feature:
 - Select one or more Models ('AI brains' for the characters) from the Model Selector at the bottom of the panel.
 - Select a character and begin chatting.
 
-  ![ST Kobold Horde API Connection Panel](https://files.catbox.moe/mtajd1.png)
+  ![ST Kobold Horde API Connection Panel](/static/horde-config.png)
 
 !!!warning
 By default, your SillyTavern instance connects to the Horde's low priority 'guest account'.

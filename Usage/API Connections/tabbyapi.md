@@ -8,14 +8,14 @@ A FastAPI based application that allows for generating text using an LLM using t
 2. [Create your config.yml](https://github.com/theroyallab/tabbyAPI/wiki/2.-Configuration) to set your model path, default model, sequence length, etc. You can ignore most (if not all) of these settings if you want.
 3. Launch TabbyAPI. If it worked, you should see something like this:
 
-![TabbyAPI terminal](https://files.catbox.moe/l3uwso.png)
+![TabbyAPI terminal](/static/tabby-terminal.png)
 
 3. Under the Text Completion API in SillyTavern, select TabbyAPI.
 4. Copy your API key from the TabbyAPI terminal into `Tabby API key` and make sure your `API URL` is correct (it should be `http://127.0.0.1:5000` by default).
 
 If you did everything correctly, you should see something like this in SillyTavern:
 
-![TabbyAPI SillyTavern](https://files.catbox.moe/r8b6yd.png)
+![TabbyAPI SillyTavern](/static/tabby-config.png)
 
 You can now chat using TabbyAPI!
 
@@ -25,12 +25,12 @@ The developers of TabbyAPI created an official extension to load/unload models d
 2. Copy `https://raw.githubusercontent.com/theroyallab/ST-repo/main/index.json` into Assets URL and click the plug button to the right.
 3. You should see something like this. Click the download button next to Tabby Loader.
 
-![Tabby Loader](https://files.catbox.moe/31i38d.png)
+![Tabby Loader](/static/tabby-assets.png)
 
 4. If the installation was successful, you should see a green pop-up message at the top of your screen. Under the extensions tab, navigate to TabbyAPI Loader and copy your admin key from the TabbyAPI terminal into Admin Key.
 5. Click the refresh button next to Model Select. When you click on the textbox just below it, you should see all of the models in your model directory.
 
-![Tabby Loader Extension](https://files.catbox.moe/ad3mv6.png)
+![Tabby Loader Extension](/static/tabby-loader.png)
 
 You can now load and unload your models directly from SillyTavern!
 

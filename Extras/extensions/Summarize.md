@@ -24,7 +24,7 @@ Summarize helps the AI remain aware of the general developments of a long chat.
 Once Summarize is enabled, it will show up in ST's Extensions panel list.
 ![STExtensionMenuIcon](https://github.com/SillyTavern/SillyTavern/assets/124905043/4545037e-dff8-4373-9513-cddb69780be1)
 
-![Summarize Config Panel](https://files.catbox.moe/9ow1l9.png)
+![Summarize Config Panel](/static/extensions/summarize.png)
 
 - **Summary Contents Box** - this displays the current summary. The summary is updated and embedded into the chat file's metadata for every message received from the AI.
 - **Restore Previous State** - Replaces the current summary with the summary from the previous message. This is useful if the summarizer does a poor job at any given point.

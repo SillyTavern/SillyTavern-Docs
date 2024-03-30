@@ -42,7 +42,7 @@ Installing chromadb package requires one of the following:
 Once Smart Context is enabled, you should configure it in the SillyTavern UI.
 Smart Context configuration can be done from within the Extensions menu ![STExtensionMenuIcon](https://github.com/SillyTavern/SillyTavern/assets/124905043/4545037e-dff8-4373-9513-cddb69780be1)
 
-![Smart Context Config Panel](https://files.catbox.moe/32qexu.png)
+![Smart Context Config Panel](/static/extensions/smart-context.png)
 
 There are 4 main concepts to be aware of:
 
