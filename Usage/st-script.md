@@ -29,7 +29,7 @@ To run your first script, open any SillyTavern chat and type the following into 
 /pass Hello, World! | /echo
 ```
 
-| <img alt="image" src="https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/9845caa2-5b83-4ba3-bb34-af02d4d05de5"> |
+| ![Hello World](/static/scripts/hello-world.png) |
 | -- |
 
 You should the message in the toast on top of the screen. Now let's break it down bit by bit.
@@ -61,7 +61,7 @@ Now let's add a little bit of interactivity to the script. We will accept the in
 1. The `/input` command is used to display an input box with the prompt specified in the unnamed argument and then writes the output to the pipe.
 2. Because `/echo` already has an unnamed argument that sets the template for the output, we use the `{{pipe}}` macro to specify a place where the pipe value will be rendered.
 
-| <img alt="image" src="https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/04fcc602-d8e0-42a9-ae06-f16613799047"> | <img alt="image" src="https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/323b4034-f6fa-4a06-b259-6ecd36733cb1"> |
+| ![Slim Shady Input](/static/scripts/slim-input.png) | ![Slim Shady Output](/static/scripts/slim-output.png) |
 | -- | -- |
 
 ### Other input/output commands
@@ -324,7 +324,7 @@ The generated text is then passed through the pipe to the next command and can b
 /popup <h3>Cthulhu says:</h3><div>{{pipe}}</div>
 ```
 
-| <img alt="image" src="https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/f771f364-8c90-42fa-8822-ee3862e275ce"> |
+| ![Cthulhu Says](/static/scripts/cthulhu-says.png) |
 | -- |
 
 ## Prompt injections
@@ -507,8 +507,11 @@ Quick Replies is a built-in SillyTavern extension that provides an easy way to s
 
 In order to get started, enable open the extensions panel (stacked blocks icon), and expand the Quick Replies menu.
 
-| <img alt="image" height="300px" src="https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/7f02e1c3-138e-4347-8c16-ebc07c818c28"> |
-| -- |
+<div style="display:flex;height:500px;justify-content:center">
+
+![Quick Reply](/static/scripts/quick-reply.png)
+
+</div>
 
 **Quick Replies are disabled by default, you need to enable them first.** Then you will see a bar appearing above your chat input bar.
 
@@ -537,11 +540,12 @@ Every click increments the variable `clicks` by one and displays a different mes
 
 Open the modal menu by clicking the `⋮` button for the created command.
 
-| <img alt="image" height="300px" src="https://github.com/SillyTavern/SillyTavern-Docs/assets/18619528/ba8c9ef7-8c8e-445b-94c1-ea71767fa01d"> |
+| ![Automatic execution](/static/scripts/autoexecute.png) |
 | -- |
 
 In this menu you can do the following:
 
+- Edit the script in a convenient full screen editor
 - Hide the button from the chat bar, making it accessible only for auto-execution.
 - Enable automatic execution on one or more of the following conditions:
   * App startup
@@ -549,7 +553,9 @@ In this menu you can do the following:
   * Receiving an AI message in the chat
   * Opening a character or group chat
   * Triggering a reply from a group member
-  * Provide a custom tool-tip for the quick reply (text displayed when hovering over the quick reply in your UI)
+  * Activating a World Info entry using the same Automation ID
+- Provide a custom tool-tip for the quick reply (text displayed when hovering over the quick reply in your UI)
+- Execute the script for test purposes
 
 Commands are executed automatically only if the Quick Replies extension is enabled.
 

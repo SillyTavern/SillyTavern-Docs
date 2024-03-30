@@ -44,7 +44,7 @@ The character's hands should be below and far from the head.
 The head of the character should roughly be contained in the 128 x 128 box in the middle of the top half of the image.
 The alpha channels of all pixels that do not belong to the character (i.e., background pixels) must be 0.
 
-<img alt="image" src="https://github.com/miketako3/talking-head-anime-3-demo-for-aituber/blob/main/docs/input_spec.png?raw=true">
+![Input Constraints](/static/input_spec.png)
 
 ### ADVANCED SECTION
 
