@@ -98,7 +98,7 @@ After restarting your ST server, any device will be able to connect to it, regar
 
 ## <span id="HTTPBasicAuthentication">HTTP Basic Authentication</span>
 
-The server will ask for username and password whenever a client connects via HTTP.
+The server will ask for username and password whenever a client connects via HTTP. **This only works if the Remote connections (listen: true) are enabled.**
 
 To enable HTTP BA, Open `config.yaml` in the SillyTavern base directory and search for `basicAuthMode` Set basicAuthMode to true and set username and password. Note: `config.yaml` will only exist if ST has been executed before at least once.
 ```yaml
