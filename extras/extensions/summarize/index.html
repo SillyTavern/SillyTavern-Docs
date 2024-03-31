@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.765195570897">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.765238526454">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -14,7 +14,7 @@
     <!-- Primary Meta Tags -->
     <title>Summarize | docs.ST.app</title>
     <meta name="title" content="Summarize | docs.ST.app">
-    <meta name="description" content="After the AI sends back a message, the Summarize extension looks through the chat history and then uses an AI summarization model that runs on the...">
+    <meta name="description" content="This extension allows you to create, store, and utilize automatically generated summaries based on the events happening in your chats.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/extras/extensions/summarize/">
@@ -23,23 +23,23 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/extras/extensions/summarize/">
     <meta property="og:title" content="Summarize | docs.ST.app">
-    <meta property="og:description" content="After the AI sends back a message, the Summarize extension looks through the chat history and then uses an AI summarization model that runs on the...">
-    <meta property="og:image" content="https://docs.sillytavern.app/static/extensions/menu-icon.png">
+    <meta property="og:description" content="This extension allows you to create, store, and utilize automatically generated summaries based on the events happening in your chats.">
+    <meta property="og:image" content="https://docs.sillytavern.app/static/extensions/summarize.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/extras/extensions/summarize/">
     <meta property="twitter:title" content="Summarize | docs.ST.app">
-    <meta property="twitter:description" content="After the AI sends back a message, the Summarize extension looks through the chat history and then uses an AI summarization model that runs on the...">
-    <meta property="twitter:image" content="https://docs.sillytavern.app/static/extensions/menu-icon.png">
+    <meta property="twitter:description" content="This extension allows you to create, store, and utilize automatically generated summaries based on the events happening in your chats.">
+    <meta property="twitter:image" content="https://docs.sillytavern.app/static/extensions/summarize.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.765195570897" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.765238526454" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.765195570897" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.765238526454" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.765195570897" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.765238526454" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -206,80 +206,131 @@
     </h1>
 </doc-anchor-target>
 <doc-anchor-target id="what-is-it">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#what-is-it">#</doc-anchor-trigger>
         <span>What is it?</span>
-    </h3>
+    </h2>
 </doc-anchor-target>
-<p>After the AI sends back a message, the Summarize extension looks through the chat history and then uses an AI summarization model that runs on the Extras host machine to create a dynamic summary of events. This summary is then sent along with every user input afterward.</p>
-<doc-anchor-target id="how-is-that-useful">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-is-that-useful">#</doc-anchor-trigger>
-        <span>How is that useful?</span>
-    </h3>
+<p>This extension allows you to create, store, and utilize automatically generated summaries based on the events happening in your chats. Summarization can help with outlining general details of what is happening in the story, which <em>could</em> be interpreted as a long-term memory, but take that statement with a grain of salt. Since the summaries are generated by language models, the outputs may lose some important details or contain hallucinations, so you&#x27;re always advised to keep track of the summary state and correct it manually if needed.</p>
+<doc-anchor-target id="common-configuration">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#common-configuration">#</doc-anchor-trigger>
+        <span>Common configuration</span>
+    </h2>
 </doc-anchor-target>
-<p>Summarize helps the AI remain aware of the general developments of a long chat.</p>
-<hr>
-<doc-anchor-target id="setup-instructions">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#setup-instructions">#</doc-anchor-trigger>
-        <span>Setup Instructions</span>
-    </h3>
-</doc-anchor-target>
-<p><em>Summarize <strong>requires</strong> the Extras server to run. It has no offline mode.</em></p>
-<ol>
-<li>Install or Update <a href="https://github.com/SillyTavern/SillyTavern-extras">Extras</a> to the latest version.</li>
-<li>Run Extras with the <code v-pre>summarize</code> module enabled: <code v-pre>python server.py --enable-modules=summarize</code></li>
-</ol>
-<hr>
-<doc-anchor-target id="configuration">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#configuration">#</doc-anchor-trigger>
-        <span>Configuration</span>
-    </h3>
-</doc-anchor-target>
-<p>Once Summarize is enabled, it will show up in ST&#x27;s Extensions panel list.
-<figure class="content-center">
-    <img src="../../../static/extensions/menu-icon.png" alt="STExtensionMenuIcon">
-    <figcaption class="caption">STExtensionMenuIcon</figcaption>
-</figure>
-</p>
+<p>The summarization extension is installed in SillyTavern by default, thus it will show up in ST&#x27;s Extensions panel (stacked cubes icon) list like this:</p>
 <p><figure class="content-center">
     <img src="../../../static/extensions/summarize.png" alt="Summarize Config Panel">
     <figcaption class="caption">Summarize Config Panel</figcaption>
 </figure>
 </p>
 <ul>
-<li><strong>Summary Contents Box</strong> - this displays the current summary. The summary is updated and embedded into the chat file&#x27;s metadata for every message received from the AI.</li>
-<li><strong>Restore Previous State</strong> - Replaces the current summary with the summary from the previous message. This is useful if the summarizer does a poor job at any given point.</li>
-<li><strong>Stop Summarization Updates checkbox</strong> - check this to prevent the summary from being automatically updated. This is useful if you want to provide a custom summary of your own or to effectively disable the summary by clearing the box and stopping updates.</li>
-<li><strong>Chat to Summarize buffer length</strong> - This is the amount of chat context to be summarized, including the previous message&#x27;s summary. Limited to 1024 tokens.</li>
-<li><strong>Summary Output Length</strong> - The desired total length of the finished summary (what you see in the box). The summary will not always match this length, but the model will be encouraged to write enough to fill it.</li>
-<li><strong>Temperature</strong> - determines how creative the summary model is in writing the summary. Higher values will produce more variation in the summary, at potential risk of inaccuracy.</li>
-<li><strong>Repetition Penalty</strong> - high numbers here will help reduce the amount of repetitious phrases in the summary. 1.15-1.2 are good values.</li>
-<li><strong>Length Preference</strong> - values below <code v-pre>1</code> will pressure the AI to create shorter summaries, and values over <code v-pre>1</code> will incentivize the AI to create longer summaries.</li>
+<li><strong>Current summary</strong> - displays and provides an ability to modify the current summary. The summary is updated and embedded into the chat file&#x27;s metadata for the message that was the last in context when the summary was generated. Deleting or editing a message from the chat that has a summary attached to it, will revert the state to the last valid summary.</li>
+<li><strong>Restore Previous</strong> - removes the current summary, rolling it back to the previous state. This is useful if the summarizer does a poor job at any given point.</li>
+<li><strong>Pause</strong> - check this to prevent the summary from being automatically updated. This is useful if you want to provide a custom summary of your own or to effectively disable the summary by clearing the box and stopping updates.</li>
+<li><strong>Popup window</strong> - allows to detach the summary into a movable UI panel on the sidebar. Useful for the desktop layout to easily have access to summarization settings without having to navigate through the extensions menu.</li>
 </ul>
-<doc-anchor-target id="changing-summary-model">
+<doc-anchor-target id="supported-summary-sources">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#supported-summary-sources">#</doc-anchor-trigger>
+        <span>Supported summary sources</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="main-api">
     <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#main-api">#</doc-anchor-trigger>
+        <span>Main API</span>
+    </h3>
+</doc-anchor-target>
+<p>Summarization will be powered by your currently selected AI backend, model and settings. This method requires no additional setup, just a working API connection.</p>
+<p>This option has the following sub-modes that differ depending on how the summary prompt is built:</p>
+<ol>
+<li>Raw, blocking. The summary will be generated using nothing but the summarization prompt and the chat history. Subsequent prompts will also include the previous summary with messages that were sent after the summary was generated (see example). This mode can (and will) generate prompts that have a lot of variability between them, so it is not recommended to use it with backends that have slow prompt processing times, such as llama.cpp and its derivatives.</li>
+<li>Raw, non-blocking. Same as above, but the chat generation will not be blocked during the summary generation. Not every backend supports simultaneous requests, so switch to blocking mode if summarization fails.</li>
+<li>Classic, blocking. The summarization prompt will be sent at the end of your usual generation prompt, as a neutral system instruction, not omitting the character card, main prompt, example dialogues and other parts of chat prompts. This usually results in prompts that play nicely with reusing processed prompts, so it is recommended to use with llama.cpp and its siblings.</li>
+</ol>
+<doc-anchor-target id="summary-settings-explained">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#summary-settings-explained">#</doc-anchor-trigger>
+        <span>Summary Settings explained</span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li><strong>Summary Prompt</strong> - defines the prompt that will used for creating a summary. May include any of the known macros, as well as a special {{words}} macro (see below).</li>
+<li><strong>Target summary length (words)</strong> - defines the value of the {{words}} macro that can be inserted into the Summary Prompt. This setting is completely optional and has no effect at all if the macro is not used.</li>
+<li><strong>API response length (tokens)</strong> - allows to set an override API response length for generating summaries that are different from the globally set value.</li>
+<li><strong>Max messages per request <em>(raw modes only)</em></strong> - set to limit the maximum number of messages that will be included in one summarization prompt. <code v-pre>0</code> means no explicit limitation, but the resulting number of messages to summarize will still depend on the maximum context size, calculated using the formula: <code v-pre>max summary buffer = context size - summarization prompt - previous summary - response length</code>. Use this when you want to get more focused summaries on models with large context sizes.
+5 <strong>No WI/AN</strong> - omit World Info and Author&#x27;s Note from text to be summarized. Only has an effect when using the Classic prompt builder. The Raw prompt builder always omits WI/AN.</li>
+<li><strong>Update every X messages</strong> - sets the interval at which the summary is generated. <code v-pre>0</code> means that the automatic summarization is disabled, but you can still trigger it manually by clicking the &quot;Summarize now&quot; button. This should be adjusted based on how quickly the prompt buffer entirely fills with chat messages. Ideally, you&#x27;d want to have the first summary generated when the messages are starting to get dropped out of the prompt.</li>
+<li><strong>Update every X words</strong> - same as above, but using words (not tokens!) instead of messages, theoretically can be a more accurate measurement due to how unpredictable the contents of chat messages usually are, but your mileage may vary.</li>
+</ol>
+<p>If both &quot;Update every&quot; sliders are set to a non-zero value, then both will trigger summary updates at their respective intervals, depending on what happens first.</p>
+<p>If you&#x27;re unsure about the interval settings, you can click the &quot;magic wand&quot; button above the &quot;Update every&quot; sliders to try and guess the optimal values based on some simple heuristics. A brief description of the algorithm is as follows:</p>
+<ol>
+<li>Calculate token and word counts for all chat messages</li>
+<li>Determine target summary length based on desired prompt words</li>
+<li>Calculate the maximum number of messages that can fit in the prompt based on the average message length</li>
+<li>If &quot;Max messages&quot; is set, adjust the average to account for messages that don&#x27;t fit the summary limit</li>
+<li>Round down the adjusted average messages per prompt to a multiple of 5</li>
+</ol>
+<doc-anchor-target id="example-prompts">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-prompts">#</doc-anchor-trigger>
+        <span>Example prompts</span>
+    </h4>
+</doc-anchor-target>
+<p><strong>Raw prompt</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">System:
+[Summarization prompt]
+
+Previous summary.
+
+User:
+Message foo.
+
+Char:
+Message bar.</code></pre>
+</doc-codeblock></div>
+<p><strong>Classic prompt</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">[Main prompt]
+
+[Character card]
+
+[Example dialogues]
+
+User:
+Message foo.
+
+Char:
+Message bar.
+
+System:
+[Summarization prompt]</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="extras-api">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#extras-api">#</doc-anchor-trigger>
+        <span>Extras API</span>
+    </h3>
+</doc-anchor-target>
+<p>Extras server with the <code v-pre>summarize</code> module could run an auxiliary summarization model (BART).</p>
+<p>It has a very small context size (~1024 tokens), so its ability to handle large summaries is quite limited.</p>
+<p>To configure the Extras summary source, do the following:</p>
+<ol>
+<li>Install or Update <a href="https://github.com/SillyTavern/SillyTavern-extras">Extras</a> to the latest version.</li>
+<li>Run Extras with the <code v-pre>summarize</code> module enabled: <code v-pre>python server.py --enable-modules=summarize</code></li>
+</ol>
+<doc-anchor-target id="changing-summary-model">
+    <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#changing-summary-model">#</doc-anchor-trigger>
         <span>Changing Summary Model</span>
-    </h3>
+    </h4>
 </doc-anchor-target>
 <p>By default, Summarize uses the <a href="https://huggingface.co/Qiliang/bart-large-cnn-samsum-ChatGPT_v3">Qiliang/bart-large-cnn-samsum-ChatGPT_v3</a> model for summarization purposes.</p>
 <p>This can be changed by using the command line argument <code v-pre>--summarization-model=(###Hugging-Face-Model-URL-Here###)</code></p>
 <p>A known alternate Summarize model is <code v-pre>Qiliang/bart-large-cnn-samsum-ElectrifAi_v10</code>.</p>
-<hr>
-<doc-anchor-target id="usage-notes">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#usage-notes">#</doc-anchor-trigger>
-        <span>Usage Notes</span>
-    </h3>
-</doc-anchor-target>
-<ol>
-<li>Summary does not begin working until the chat has continued long enough that all chat messages are no longer able to fit into the context window.</li>
-<li>Summaries are saved individually as metadata for each message in the chat file.</li>
-<li>Deleting a message from the chat will effectively remove its summary as well.</li>
-</ol>
 
                                 
                                 <!-- Required only on API pages -->
