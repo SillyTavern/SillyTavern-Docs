@@ -28,7 +28,7 @@ We provide the following parameters to the Handlebars evaluator (wrap them into 
 9. `wiAfter` or `loreAfter` - combined activated World Info entries with Position set to "After Char Defs"
 10. `mesExamples` - (optional) character's Example Dialogues, instruct-formatted with separator. Set "Example Messages Behavior" to "Never include examples" to avoid duplication.
 
-A special `{{trim}}` macro is supported to remove any newlines that surround it. Use it in case you want some part of text NOT be separated with a newline from the previous line (_spaces **are not** trimmed_).
+A special \{\{trim\}\} macro is supported to remove any newlines that surround it. Use it in case you want some part of text NOT be separated with a newline from the previous line (_spaces **are not** trimmed_).
 
 **WARNING**: If some of the above parameters are missing from the story string template, they are not going to be sent in the prompt at all.
 
