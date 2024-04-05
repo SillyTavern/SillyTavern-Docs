@@ -127,7 +127,7 @@ Circumstances and context of the dialogue.
 
 ### Replacement tags (macros)
 
-**This list may be incomplete. Use the `/help macros` slash command in SillyTavern chat to get the list of macros that work in your instance.**
+**This list may be incomplete or outdated. Use the `/help macros` slash command in any SillyTavern chat to get the list of macros that work in your instance.**
 
 A list of tags that are replaced when sending to generate:
 
@@ -142,8 +142,10 @@ A list of tags that are replaced when sending to generate:
 9. \{\{mesExamples\}\} => Character's Examples of Dialogue (unaltered and unsplit).
 10. \{\{lastMessageId\}\} => last chat message ID.
 11. \{\{lastMessage\}\} => last chat message text.
-12. \{\{currentSwipeId\}\} => 1-based ID of the currently displayed last message swipe.
-13. \{\{lastSwipeId\}\} => number of swipes in the last chat message.
+12. \{\{lastCharMessage\}\} => last chat message sent by character.
+13. \{\{lastUserMessage\}\} => last chat message sent by user.
+14. \{\{currentSwipeId\}\} => 1-based ID of the currently displayed last message swipe.
+15. \{\{lastSwipeId\}\} => number of swipes in the last chat message.
 11. \{\{original\}\} can be used in Prompt Overrides fields (Main Prompt and Jailbreak) to include the respective default prompt from the system settings. Applied to Chat Completion APIs and Instruct mode only.
 12. \{\{time\}\} => current system time.
 13. \{\{time_UTC±X\}\} => current time in the specified UTC offset (timezone), e.g. for UTC+02:00 use \{\{time_UTC\+2\}\}.
@@ -154,9 +156,11 @@ A list of tags that are replaced when sending to generate:
 18. \{\{isodate\}\} => the current ISO time (24-hour clock)
 19. \{\{idle_duration\}\} inserts a humanized string of the time range since the last user message was sent (examples: 4 hours, 1 day).
 20. \{\{random:(args)\}\} returns a random item from the list. (e.g. \{\{random:1,2,3,4\}\} will return 1 of the 4 numbers at random). Works with text lists too.
-21. \{\{roll:(formula)\}\} generates a random value and returns it using the provided dice formula using D&D dice syntax: XdY+Z. For example, \{\{roll:d6\}\} will generate a random value in the 1-6 range (standard six-sided dice).
-22. \{\{bias "text here"\}\} sets a behavioral bias for the AI until the next user input. Quotes around the text are important.
-23. \{\{// (note)\}\} allows to leave a note that will be replaced with blank content. Not visible for the AI.
+21. \{\{random::arg1::arg2\}\} => alternate syntax for random that supports commas in its arguments.
+22. \{\{pick::(args)\}\} => alternative to random, but the selected argument is stable on subsequent evaluations in the current chat if the source string remains unchanged.
+23. \{\{roll:(formula)\}\} generates a random value and returns it using the provided dice formula using D&D dice syntax: XdY+Z. For example, \{\{roll:d6\}\} will generate a random value in the 1-6 range (standard six-sided dice).
+24. \{\{bias "text here"\}\} sets a behavioral bias for the AI until the next user input. Quotes around the text are important.
+25. \{\{// (note)\}\} allows to leave a note that will be replaced with blank content. Not visible for the AI.
 
 #### Instruct Mode and Context Template Macros:
 
@@ -164,16 +168,21 @@ A list of tags that are replaced when sending to generate:
 
 1. \{\{exampleSeparator\}\} – context template example dialogues separator
 2. \{\{chatStart\}\} – context template chat start line
-3. \{\{instructSystem\}\} – instruct system prompt
-4. \{\{instructSystemPrefix\}\} – instruct system prompt prefix sequence
-5. \{\{instructSystemSuffix\}\} – instruct system prompt suffix sequence
-6. \{\{instructInput\}\} – instruct user input sequence
-7. \{\{instructOutput\}\} – instruct assistant output sequence
-8. \{\{instructFirstOutput\}\} – instruct assistant first output sequence
-9. \{\{instructLastOutput\}\} – instruct assistant last output sequence
-10. \{\{instructSeparator\}\} – instruct turn separator sequence
-11. \{\{instructStop\}\} – instruct stop sequence
-12. \{\{maxPrompt\}\} - max size of the prompt in tokens (context length reduced by response length)
+3. \{\{instructSystemPrompt\}\} – instruct system prompt
+4. \{\{instructSystemPromptPrefix\}\} – system prompt prefix sequence
+5. \{\{instructSystemPromptSuffix\}\} – system prompt suffix sequence
+6. \{\{instructUserPrefix\}\} – user message prefix sequence
+7. \{\{instructAssistantPrefix\}\} – assistant message prefix sequence
+8. \{\{instructSystemPrefix\}\} – system message prefix sequence
+9. \{\{instructUserSuffix\}\} – user message suffix sequence
+10. \{\{instructAssistantSuffix\}\} – assistant message suffix sequence
+11. \{\{instructSystemSuffix\}\} – system message suffix sequence
+12. \{\{instructFirstAssistantPrefix\}\} – assistant first output sequence
+13. \{\{instructLastAssistantPrefix\}\} – assistant last output sequence
+14. \{\{instructSystemInstructionPrefix\}\} – system instruction prefix sequence
+15. \{\{instructUserFiller\}\} – user filler message text
+16. \{\{instructStop\}\} – instruct stop sequence
+17. \{\{maxPrompt\}\} - max size of the prompt in tokens (context length reduced by response length)
 
 #### Chat variables Macros:
 
