@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.765500661100">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.765666188675">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.765500661100" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.765666188675" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.765500661100" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.765666188675" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.765500661100" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.765666188675" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -360,7 +360,7 @@
         <span>Replacement tags (macros)</span>
     </h3>
 </doc-anchor-target>
-<p><strong>This list may be incomplete. Use the <code v-pre>/help macros</code> slash command in SillyTavern chat to get the list of macros that work in your instance.</strong></p>
+<p><strong>This list may be incomplete or outdated. Use the <code v-pre>/help macros</code> slash command in any SillyTavern chat to get the list of macros that work in your instance.</strong></p>
 <p>A list of tags that are replaced when sending to generate:</p>
 <ol>
 <li>{{user}} and &lt;USER&gt; =&gt; User&#x27;s Name.</li>
@@ -374,6 +374,8 @@
 <li>{{mesExamples}} =&gt; Character&#x27;s Examples of Dialogue (unaltered and unsplit).</li>
 <li>{{lastMessageId}} =&gt; last chat message ID.</li>
 <li>{{lastMessage}} =&gt; last chat message text.</li>
+<li>{{lastCharMessage}} =&gt; last chat message sent by character.</li>
+<li>{{lastUserMessage}} =&gt; last chat message sent by user.</li>
 <li>{{currentSwipeId}} =&gt; 1-based ID of the currently displayed last message swipe.</li>
 <li>{{lastSwipeId}} =&gt; number of swipes in the last chat message.</li>
 <li>{{original}} can be used in Prompt Overrides fields (Main Prompt and Jailbreak) to include the respective default prompt from the system settings. Applied to Chat Completion APIs and Instruct mode only.</li>
@@ -386,6 +388,8 @@
 <li>{{isodate}} =&gt; the current ISO time (24-hour clock)</li>
 <li>{{idle_duration}} inserts a humanized string of the time range since the last user message was sent (examples: 4 hours, 1 day).</li>
 <li>{{random:(args)}} returns a random item from the list. (e.g. {{random:1,2,3,4}} will return 1 of the 4 numbers at random). Works with text lists too.</li>
+<li>{{random::arg1::arg2}} =&gt; alternate syntax for random that supports commas in its arguments.</li>
+<li>{{pick::(args)}} =&gt; alternative to random, but the selected argument is stable on subsequent evaluations in the current chat if the source string remains unchanged.</li>
 <li>{{roll:(formula)}} generates a random value and returns it using the provided dice formula using D&amp;D dice syntax: XdY+Z. For example, {{roll:d6}} will generate a random value in the 1-6 range (standard six-sided dice).</li>
 <li>{{bias &quot;text here&quot;}} sets a behavioral bias for the AI until the next user input. Quotes around the text are important.</li>
 <li>{{// (note)}} allows to leave a note that will be replaced with blank content. Not visible for the AI.</li>
@@ -400,14 +404,19 @@
 <ol>
 <li>{{exampleSeparator}} – context template example dialogues separator</li>
 <li>{{chatStart}} – context template chat start line</li>
-<li>{{instructSystem}} – instruct system prompt</li>
-<li>{{instructSystemPrefix}} – instruct system prompt prefix sequence</li>
-<li>{{instructSystemSuffix}} – instruct system prompt suffix sequence</li>
-<li>{{instructInput}} – instruct user input sequence</li>
-<li>{{instructOutput}} – instruct assistant output sequence</li>
-<li>{{instructFirstOutput}} – instruct assistant first output sequence</li>
-<li>{{instructLastOutput}} – instruct assistant last output sequence</li>
-<li>{{instructSeparator}} – instruct turn separator sequence</li>
+<li>{{instructSystemPrompt}} – instruct system prompt</li>
+<li>{{instructSystemPromptPrefix}} – system prompt prefix sequence</li>
+<li>{{instructSystemPromptSuffix}} – system prompt suffix sequence</li>
+<li>{{instructUserPrefix}} – user message prefix sequence</li>
+<li>{{instructAssistantPrefix}} – assistant message prefix sequence</li>
+<li>{{instructSystemPrefix}} – system message prefix sequence</li>
+<li>{{instructUserSuffix}} – user message suffix sequence</li>
+<li>{{instructAssistantSuffix}} – assistant message suffix sequence</li>
+<li>{{instructSystemSuffix}} – system message suffix sequence</li>
+<li>{{instructFirstAssistantPrefix}} – assistant first output sequence</li>
+<li>{{instructLastAssistantPrefix}} – assistant last output sequence</li>
+<li>{{instructSystemInstructionPrefix}} – system instruction prefix sequence</li>
+<li>{{instructUserFiller}} – user filler message text</li>
 <li>{{instructStop}} – instruct stop sequence</li>
 <li>{{maxPrompt}} - max size of the prompt in tokens (context length reduced by response length)</li>
 </ol>
