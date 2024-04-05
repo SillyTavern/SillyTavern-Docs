@@ -146,7 +146,11 @@ Inserted before the first Assistant's message.
 
 Inserted before the last Assistant's message or as a last prompt line when generating an AI reply.
 
-> Not used when generating text in a background (e.g. Stable Diffusion prompts or Summaries). Regular Assistant Prefix will be used instead.
+> Not used when generating text in a background (e.g. Stable Diffusion prompts or Summaries). System Instruction Prefix or Regular Assistant Prefix will be used instead.
+
+#### System Instruction Prefix
+
+Inserted as a last prompt line when generating neutral/system text in a background (e.g. Stable Diffusion prompts or Summaries).
 
 #### User Filler Message
 
