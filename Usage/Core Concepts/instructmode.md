@@ -28,7 +28,7 @@ Exception: OpenRouter with instruct override enabled. This is a legacy setting a
 
 ### NovelAI 
 
-While *technically* supported for NovelAI, none of their models were trained to understand instruct formatting. Kayra and Clio use special a instruct module that is activated *automatically* when an instruction wrapped in curly braces is encountered in chat messages, so using Instruct Mode for the entire prompt will lead to **degraded quality** of the outputs.
+While *technically* supported for NovelAI, none of their models were trained to understand instruct formatting. Kayra uses a special instruct module that is activated *automatically* when an instruction wrapped in curly braces is encountered in chat messages, so using Instruct Mode for the entire prompt will lead to **degraded quality** of the outputs.
 
 Here's an example that auto-activates the instruct module for NovelAI:
 
