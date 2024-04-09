@@ -28,21 +28,28 @@ Every extension must have a folder in `public/scripts/extensions` and have a man
 ```js
 {
     "display_name": "The name of the plugin",
-    "loading_order": 1, // Optional. Higher number loads later
-    "requires": [], // Required Extras modules dependencies.
-    "optional": [], // Optional Extras dependencies
-    "js": "index.js", // Main JS file
-    "css": "style.css", // (Optional) CSS file
+    "loading_order": 1,
+    "requires": [],
+    "optional": [],
+    "js": "index.js",
+    "css": "style.css",
     "author": "Your name",
     "version": "1.0.0",
     "homePage": "https://github.com/your/plugin",
-    "auto_update": true // If the extension should auto-update when the version of the ST package changes
+    "auto_update": true
 }
 ```
 
-The `display_name`, `js`, and `author` fields are required.
+* `display_name` is required. Displays in the "Manage Extensions" menu.
+* `loading_order` is optional. Higher number loads later.
+* `requires` specifies the required Extras modules dependencies. An extension won't be loaded unless the connected Extras API provides all of them.
+* `optional` specifies the optional Extras dependencies.
+* `js` is the main JS file reference, and is required.
+* `css` is an optional style file reference.
+* `author` is required. It should contain the name or contact info of the author(s).
+* `auto_update` is set to true if the extension should auto-update when the version of the ST package changes.
 
-Downloadable extensions are installed into the `public/scripts/extensions/third-party` folder.
+Downloadable extensions are mounted into the `public/scripts/extensions/third-party` folder, so relative imports should be used based on that. Be careful about where you create your extension during development if you plan on installing it from your GitHub which overwrites the content in the `third-party` folder.
 
 #### `requires` vs `optional`
 
