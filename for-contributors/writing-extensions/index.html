@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.765739271475">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.765964881423">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.765739271475" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.765964881423" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.765739271475" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.765964881423" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.765739271475" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.765739271475" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.765964881423" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.765964881423" defer></script>
 
     <Style>
         a {
@@ -236,19 +236,28 @@
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-javascript"><code v-pre class="language-javascript">{
     &quot;display_name&quot;: &quot;The name of the plugin&quot;,
-    &quot;loading_order&quot;: 1, // Optional. Higher number loads later
-    &quot;requires&quot;: [], // Required Extras modules dependencies.
-    &quot;optional&quot;: [], // Optional Extras dependencies
-    &quot;js&quot;: &quot;index.js&quot;, // Main JS file
-    &quot;css&quot;: &quot;style.css&quot;, // (Optional) CSS file
+    &quot;loading_order&quot;: 1,
+    &quot;requires&quot;: [],
+    &quot;optional&quot;: [],
+    &quot;js&quot;: &quot;index.js&quot;,
+    &quot;css&quot;: &quot;style.css&quot;,
     &quot;author&quot;: &quot;Your name&quot;,
     &quot;version&quot;: &quot;1.0.0&quot;,
     &quot;homePage&quot;: &quot;https://github.com/your/plugin&quot;,
-    &quot;auto_update&quot;: true // If the extension should auto-update when the version of the ST package changes
+    &quot;auto_update&quot;: true
 }</code></pre>
 </doc-codeblock></div>
-<p>The <code v-pre>display_name</code>, <code v-pre>js</code>, and <code v-pre>author</code> fields are required.</p>
-<p>Downloadable extensions are installed into the <code v-pre>public/scripts/extensions/third-party</code> folder.</p>
+<ul>
+<li><code v-pre>display_name</code> is required. Displays in the &quot;Manage Extensions&quot; menu.</li>
+<li><code v-pre>loading_order</code> is optional. Higher number loads later.</li>
+<li><code v-pre>requires</code> specifies the required Extras modules dependencies. An extension won&#x27;t be loaded unless the connected Extras API provides all of them.</li>
+<li><code v-pre>optional</code> specifies the optional Extras dependencies.</li>
+<li><code v-pre>js</code> is the main JS file reference, and is required.</li>
+<li><code v-pre>css</code> is an optional style file reference.</li>
+<li><code v-pre>author</code> is required. It should contain the name or contact info of the author(s).</li>
+<li><code v-pre>auto_update</code> is set to true if the extension should auto-update when the version of the ST package changes.</li>
+</ul>
+<p>Downloadable extensions are mounted into the <code v-pre>public/scripts/extensions/third-party</code> folder, so relative imports should be used based on that. Be careful about where you create your extension during development if you plan on installing it from your GitHub which overwrites the content in the <code v-pre>third-party</code> folder.</p>
 <doc-anchor-target id="requires-vs-optional">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#requires-vs-optional">#</doc-anchor-trigger>
