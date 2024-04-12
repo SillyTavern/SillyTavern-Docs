@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.765964881423">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766258729866">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -35,11 +35,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.765964881423" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.766258729866" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.765964881423" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.766258729866" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.765964881423" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.766258729866" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -229,6 +229,8 @@
 <li><strong>Restore Previous</strong> - removes the current summary, rolling it back to the previous state. This is useful if the summarizer does a poor job at any given point.</li>
 <li><strong>Pause</strong> - check this to prevent the summary from being automatically updated. This is useful if you want to provide a custom summary of your own or to effectively disable the summary by clearing the box and stopping updates.</li>
 <li><strong>Popup window</strong> - allows to detach the summary into a movable UI panel on the sidebar. Useful for the desktop layout to easily have access to summarization settings without having to navigate through the extensions menu.</li>
+<li><strong>Injection Template</strong> - defines how the summary will be wrapped when being inserted into regular chat prompts. A special {{summary}} macro should be used to denote the exact location of the current summary state in the prompt injection text.</li>
+<li><strong>Injection Position</strong> - sets the location of the prompt injection. The options are the same as for Author&#x27;s Notes: before or after the main prompt, or in-chat at designated depth.</li>
 </ul>
 <doc-anchor-target id="supported-summary-sources">
     <h2>
@@ -264,7 +266,7 @@
 <li><strong>Update every X messages</strong> - sets the interval at which the summary is generated. <code v-pre>0</code> means that the automatic summarization is disabled, but you can still trigger it manually by clicking the &quot;Summarize now&quot; button. This should be adjusted based on how quickly the prompt buffer entirely fills with chat messages. Ideally, you&#x27;d want to have the first summary generated when the messages are starting to get dropped out of the prompt.</li>
 <li><strong>Update every X words</strong> - same as above, but using words (not tokens!) instead of messages, theoretically can be a more accurate measurement due to how unpredictable the contents of chat messages usually are, but your mileage may vary.</li>
 </ol>
-<p>If both &quot;Update every&quot; sliders are set to a non-zero value, then both will trigger summary updates at their respective intervals, depending on what happens first.</p>
+<p>If both &quot;Update every&quot; sliders are set to a non-zero value, then both will trigger summary updates at their respective intervals, depending on what happens first. It is strongly advised to update these values accordingly when you switch to another model that has differing context sizes, otherwise, the summary generation may trigger too often, or never at all.</p>
 <p>If you&#x27;re unsure about the interval settings, you can click the &quot;magic wand&quot; button above the &quot;Update every&quot; sliders to try and guess the optimal values based on some simple heuristics. A brief description of the algorithm is as follows:</p>
 <ol>
 <li>Calculate token and word counts for all chat messages</li>
