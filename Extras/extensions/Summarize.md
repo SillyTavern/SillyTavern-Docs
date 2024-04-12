@@ -14,6 +14,8 @@ The summarization extension is installed in SillyTavern by default, thus it will
 - **Restore Previous** - removes the current summary, rolling it back to the previous state. This is useful if the summarizer does a poor job at any given point.
 - **Pause** - check this to prevent the summary from being automatically updated. This is useful if you want to provide a custom summary of your own or to effectively disable the summary by clearing the box and stopping updates.
 - **Popup window** - allows to detach the summary into a movable UI panel on the sidebar. Useful for the desktop layout to easily have access to summarization settings without having to navigate through the extensions menu.
+- **Injection Template** - defines how the summary will be wrapped when being inserted into regular chat prompts. A special \{\{summary\}\} macro should be used to denote the exact location of the current summary state in the prompt injection text.
+- **Injection Position** - sets the location of the prompt injection. The options are the same as for Author's Notes: before or after the main prompt, or in-chat at designated depth.
 
 ## Supported summary sources
 
@@ -37,7 +39,7 @@ This option has the following sub-modes that differ depending on how the summary
 6. **Update every X messages** - sets the interval at which the summary is generated. `0` means that the automatic summarization is disabled, but you can still trigger it manually by clicking the "Summarize now" button. This should be adjusted based on how quickly the prompt buffer entirely fills with chat messages. Ideally, you'd want to have the first summary generated when the messages are starting to get dropped out of the prompt.
 7. **Update every X words** - same as above, but using words (not tokens!) instead of messages, theoretically can be a more accurate measurement due to how unpredictable the contents of chat messages usually are, but your mileage may vary.
 
-If both "Update every" sliders are set to a non-zero value, then both will trigger summary updates at their respective intervals, depending on what happens first.
+If both "Update every" sliders are set to a non-zero value, then both will trigger summary updates at their respective intervals, depending on what happens first. It is strongly advised to update these values accordingly when you switch to another model that has differing context sizes, otherwise, the summary generation may trigger too often, or never at all.
 
 If you're unsure about the interval settings, you can click the "magic wand" button above the "Update every" sliders to try and guess the optimal values based on some simple heuristics. A brief description of the algorithm is as follows:
 
