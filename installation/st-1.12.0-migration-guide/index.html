@@ -6,14 +6,14 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766258729866">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766264033031">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>SillyTavern 1.12.0 Migration guide | docs.ST.app</title>
-    <meta name="title" content="SillyTavern 1.12.0 Migration guide | docs.ST.app">
+    <title>SillyTavern 1.12.0 Migration Guide | docs.ST.app</title>
+    <meta name="title" content="SillyTavern 1.12.0 Migration Guide | docs.ST.app">
     <meta name="description" content="This content describes a pre-release version and is subject to change.">
 
     <!-- Canonical -->
@@ -22,23 +22,23 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/installation/st-1.12.0-migration-guide/">
-    <meta property="og:title" content="SillyTavern 1.12.0 Migration guide | docs.ST.app">
+    <meta property="og:title" content="SillyTavern 1.12.0 Migration Guide | docs.ST.app">
     <meta property="og:description" content="This content describes a pre-release version and is subject to change.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/installation/st-1.12.0-migration-guide/">
-    <meta property="twitter:title" content="SillyTavern 1.12.0 Migration guide | docs.ST.app">
+    <meta property="twitter:title" content="SillyTavern 1.12.0 Migration Guide | docs.ST.app">
     <meta property="twitter:description" content="This content describes a pre-release version and is subject to change.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.766258729866" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.766264033031" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.766258729866" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.766264033031" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.766258729866" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.766258729866" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.766264033031" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.766264033031" defer></script>
 
     <Style>
         a {
@@ -201,7 +201,7 @@
 <doc-anchor-target id="sillytavern-1120-migration-guide" class="break-words">
     <h1>
         <doc-anchor-trigger class="header-anchor-trigger" to="#sillytavern-1120-migration-guide">#</doc-anchor-trigger>
-        <span>SillyTavern 1.12.0 Migration guide</span>
+        <span>SillyTavern 1.12.0 Migration Guide</span>
     </h1>
 </doc-anchor-target>
 <blockquote>
@@ -407,7 +407,112 @@ npm run start -- --dataRoot=&quot;/Users/harry/ST-Data&quot;</code></pre>
         <span>Users</span>
     </h2>
 </doc-anchor-target>
-<p>Under construction.</p>
+<p>1.12.0 adds a (completely optional) ability to create a multi-user setup on the same server, allowing multiple users to use their own fully isolated SillyTavern instances even at the same time. User accounts can also be password-protected for an additional layer of privacy.</p>
+<blockquote>
+<p>While we tried to applied most of the well-known security practices, this still doesn&#x27;t make SillyTavern server secure enough to expose it to the public internet.</p>
+</blockquote>
+<p><strong>NEVER HOST ANY INSTANCES TO THE OPEN INTERNET WITHOUT ENSURING PROPER SECURITY MEASURES FIRST.</strong></p>
+<p><strong>WE ARE NOT RESPONSIBLE FOR ANY DAMAGE OR LOSSES IN CASES OF UNAUTHORIZED ACCESS DUE TO IMPROPER OR INADEQUATE SECURITY IMPLEMENTATION.</strong></p>
+<doc-anchor-target id="configuration">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#configuration">#</doc-anchor-trigger>
+        <span>Configuration</span>
+    </h3>
+</doc-anchor-target>
+<p>To enable and use the multi-user mode, edit the <code v-pre>config.yaml</code> file:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-yaml"><code v-pre class="language-yaml"># Enable multi-user mode
+enableUserAccounts: true
+# Enable discreet login mode: hides user list on the login screen
+enableDiscreetLogin: true</code></pre>
+</doc-codeblock></div>
+<ol>
+<li>When the user account setting is disabled, a <code v-pre>default-user</code> fallback admin account is utilized for storing the user data.</li>
+<li>When the discreet login setting is disabled, a list of active users is displayed on the login screen. If enabled, a user must enter their handle manually.</li>
+</ol>
+<blockquote>
+<p>You can&#x27;t <em>delete</em> the <code v-pre>default-user</code> account from the users list because it is used for serving the user data in case if <code v-pre>enableUserAccounts</code> is set to <code v-pre>false</code>. But you can <em>disable</em> it to hide it from the list and disallow logins.</p>
+</blockquote>
+<doc-anchor-target id="user-handles">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#user-handles">#</doc-anchor-trigger>
+        <span>User handles</span>
+    </h3>
+</doc-anchor-target>
+<p>A handle is the unique identifier of a user. It can consist only of lowercase letters, numbers, and dashes.</p>
+<p>A path to the user data directory assumes using the following pattern: <code v-pre>%DATA_ROOT%/%USER_HANDLE%</code>.</p>
+<p>Examples of valid user handles:</p>
+<ul>
+<li>default-user</li>
+<li>juan555</li>
+<li>flux-the-cat</li>
+<li>cool-guy1337</li>
+</ul>
+<doc-anchor-target id="user-roles">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#user-roles">#</doc-anchor-trigger>
+        <span>User roles</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Admin</strong> - can manage (create, delete, modify) other users.</li>
+<li><strong>User</strong> - can&#x27;t manage other users.</li>
+</ul>
+<p>Except for having admin panel access, both user roles are functionally identical and can use a full range of SillyTavern features without any restrictions. An implementation of user permissions is TBD.</p>
+<p>All user accounts are created as regular users first, and then could be promoted to admins if needed.</p>
+<doc-anchor-target id="login-screen">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#login-screen">#</doc-anchor-trigger>
+        <span>Login screen</span>
+    </h3>
+</doc-anchor-target>
+<p>There you can select a user account to use. Has two styles, depending on the <code v-pre>enableDiscreetLogin</code> config value.</p>
+<p>The login screen is bypassed and not displayed when you have only one active user and it is not password protected.</p>
+<doc-anchor-target id="user-profile">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#user-profile">#</doc-anchor-trigger>
+        <span>User profile</span>
+    </h3>
+</doc-anchor-target>
+<p>You can access an account self-management menu using an &quot;Account&quot; button under the &quot;User settings&quot; panel in the top menu bar.</p>
+<ol>
+<li>Display name - used in the login screen, can be changed. Does not correlate with personas - you can still use as many personas as you want.</li>
+<li>Profile picture - used in the login screen. The picture is taken from the default persona picture if set, or the last used persona otherwise.</li>
+<li>Password - a lock icon reflects the account protection status (open lock = no password). A password can be set, changed, or removed using the &quot;Change Password&quot; button.</li>
+<li>Settings Snapshots - access and review the backups of your <code v-pre>settings.json</code> file, with the ability to create or restore snapshots.</li>
+<li>Download Backup - download an archive of your user data folder.</li>
+<li>Reset Settings - reset factory default settings, while leaving other data (character, chats) intact.</li>
+</ol>
+<doc-anchor-target id="password-recovery">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#password-recovery">#</doc-anchor-trigger>
+        <span>Password recovery</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li>A password can be recovered from a login screen. You need access to the server console to get a one-time recovery code (consisting of 4 digits).</li>
+<li>Alternatively, you can use a utility script in the SillyTavern server to reset a password by providing the user handle.</li>
+</ol>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Usage: node recover.js [account] (password)
+Example: node recover.js admin SecurePassword</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="security-checklist">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#security-checklist">#</doc-anchor-trigger>
+        <span>Security checklist</span>
+    </h3>
+</doc-anchor-target>
+<p>This is just a recommendation. Please consult a web application security specialist before making your ST instance live.</p>
+<ol>
+<li>Keep your operating system and runtime software like Node.js updated. This will ensure that your system is up-to-date with the latest security patches and fixes which can help prevent potential vulnerabilities.</li>
+<li>Use a whitelist and a network firewall. Only allow trusted IP ranges to access the server.</li>
+<li>Enable basic authentication. It acts as a &quot;master password&quot; before you can proceed to the front-end app.</li>
+<li>Never leave admin accounts passwordless. A server will warn you upon the startup if you have any unprotected admin accounts.</li>
+<li>Use the discreet login setting outside of the local network. This will hide the user list from any potential outsiders.</li>
+<li>Check the access logs often. They are written to the server console and the <code v-pre>access.log</code> file and provide information on incoming connections, such as IP address and user agent.</li>
+<li>Configure HTTPS. For a localhost server, you can generate and use a self-signed certificate. Otherwise, you may need to deploy a proxying web server like <a href="https://caddyserver.com/docs/getting-started">Caddy</a>.</li>
+</ol>
 
                                 
                                 <!-- Required only on API pages -->
@@ -480,6 +585,6 @@ npm run start -- --dataRoot=&quot;/Users/harry/ST-Data&quot;</code></pre>
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "SillyTavern 1.12.0 Migration guide", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "SillyTavern 1.12.0 Migration Guide", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
