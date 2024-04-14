@@ -42,7 +42,7 @@ The default data root path is `./data`, which means the `data` directory in the 
 
 #### **IMPORTANT!** Before we begin
 
-1. Set the data root *before* first running the server after pulling an update. Run `npm install` for the `config.yaml` to populate with a new value, or pass a console argument.
+1. Set the data root _before_ first running the server after pulling an update. Run `npm install` for the `config.yaml` to populate with a new value, or pass a console argument.
 2. All data will be migrated into a `default-user` account. See more on [Users](#users) below.
 
 #### Containerless (bare metal) installs
@@ -59,9 +59,9 @@ Migrating the data in Docker volumes is a bit trickier but pretty straightforwar
 
 ```yaml
 volumes:
-  - "./config:/home/node/app/config"
-  - "./data:/home/node/app/data"
- ```
+    - "./config:/home/node/app/config"
+    - "./data:/home/node/app/data"
+```
 
 **Step 2.** Move everything but the `config.yaml` file from the `config` volume into the `default-user` subdirectory of the `data` volume.
 
@@ -123,7 +123,7 @@ enableDiscreetLogin: true
 1. When the user account setting is disabled, a `default-user` fallback admin account is utilized for storing the user data.
 2. When the discreet login setting is disabled, a list of active users is displayed on the login screen. If enabled, a user must enter their handle manually.
 
-> You can't *delete* the `default-user` account from the users list because it is used for serving the user data in case if `enableUserAccounts` is set to `false`. But you can *disable* it to hide it from the list and disallow logins.
+> You can't _delete_ the `default-user` account from the users list because it is used for serving the user data in case if `enableUserAccounts` is set to `false`. But you can _disable_ it to hide it from the list and disallow logins.
 
 ### User handles
 
@@ -133,15 +133,15 @@ A path to the user data directory assumes using the following pattern: `%DATA_RO
 
 Examples of valid user handles:
 
-* default-user
-* juan555
-* flux-the-cat
-* cool-guy1337
+-   default-user
+-   juan555
+-   flux-the-cat
+-   cool-guy1337
 
 ### User roles
 
-* **Admin** - can manage (create, delete, modify) other users.
-* **User** - can't manage other users.
+-   **Admin** - can manage (create, delete, modify) other users.
+-   **User** - can't manage other users.
 
 Except for having admin panel access, both user roles are functionally identical and can use a full range of SillyTavern features without any restrictions. An implementation of user permissions is TBD.
 
@@ -181,8 +181,8 @@ This is just a recommendation. Please consult a web application security special
 1. Keep your operating system and runtime software like Node.js updated. This will ensure that your system is up-to-date with the latest security patches and fixes which can help prevent potential vulnerabilities.
 2. Use a whitelist and a network firewall. Only allow trusted IP ranges to access the server.
 3. Enable basic authentication. It acts as a "master password" before you can proceed to the front-end app.
-4. Alternatively, configure external authentication. A known service for that is [authentik](https://goauthentik.io/).
+4. Alternatively, configure external authentication. A few known services for are [Authelia](https://authelia.com) or [Authentik](https://goauthentik.io/).
 5. Never leave admin accounts passwordless. A server will warn you upon the startup if you have any unprotected admin accounts.
 6. Use the discreet login setting outside of the local network. This will hide the user list from any potential outsiders.
 7. Check the access logs often. They are written to the server console and the `access.log` file and provide information on incoming connections, such as IP address and user agent.
-8. Configure HTTPS. For a localhost server, you can generate and use a self-signed certificate. Otherwise, you may need to deploy a proxying web server like [Caddy](https://caddyserver.com/docs/getting-started).
+8. Configure HTTPS. For a localhost server, you can generate and use a self-signed certificate. Otherwise, you may need to deploy a proxying web server like [Traefik](https://traefik.io/traefik/) or [Caddy](https://caddyserver.com/docs/getting-started). Refer to our [Reverse Proxy](../Usage/ST%20Reverse%20Proxy%20Guide.md) guide on setting this up.
