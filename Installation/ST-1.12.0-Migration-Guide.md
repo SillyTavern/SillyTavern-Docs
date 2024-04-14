@@ -186,3 +186,6 @@ This is just a recommendation. Please consult a web application security special
 6. Use the discreet login setting outside of the local network. This will hide the user list from any potential outsiders.
 7. Check the access logs often. They are written to the server console and the `access.log` file and provide information on incoming connections, such as IP address and user agent.
 8. Configure HTTPS. For a localhost server, you can generate and use a self-signed certificate. Otherwise, you may need to deploy a proxying web server like [Caddy](https://caddyserver.com/docs/getting-started).
+
+Find more on secure proxying in the following guide: [Reverse Proxying SillyTavern
+](https://docs.sillytavern.app/usage/st-reverse-proxy-guide/)
