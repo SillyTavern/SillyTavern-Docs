@@ -180,9 +180,9 @@ This is just a recommendation. Please consult a web application security special
 
 1. Keep your operating system and runtime software like Node.js updated. This will ensure that your system is up-to-date with the latest security patches and fixes which can help prevent potential vulnerabilities.
 2. Use a whitelist and a network firewall. Only allow trusted IP ranges to access the server.
-3a. Enable basic authentication. It acts as a "master password" before you can proceed to the front-end app.
-3b. Configure external authentication. A known service for that is [authentik](https://goauthentik.io/).
-4. Never leave admin accounts passwordless. A server will warn you upon the startup if you have any unprotected admin accounts.
-5. Use the discreet login setting outside of the local network. This will hide the user list from any potential outsiders.
-6. Check the access logs often. They are written to the server console and the `access.log` file and provide information on incoming connections, such as IP address and user agent.
-7. Configure HTTPS. For a localhost server, you can generate and use a self-signed certificate. Otherwise, you may need to deploy a proxying web server like [Caddy](https://caddyserver.com/docs/getting-started).
+3. Enable basic authentication. It acts as a "master password" before you can proceed to the front-end app.
+4. Alternatively, configure external authentication. A known service for that is [authentik](https://goauthentik.io/).
+5. Never leave admin accounts passwordless. A server will warn you upon the startup if you have any unprotected admin accounts.
+6. Use the discreet login setting outside of the local network. This will hide the user list from any potential outsiders.
+7. Check the access logs often. They are written to the server console and the `access.log` file and provide information on incoming connections, such as IP address and user agent.
+8. Configure HTTPS. For a localhost server, you can generate and use a self-signed certificate. Otherwise, you may need to deploy a proxying web server like [Caddy](https://caddyserver.com/docs/getting-started).
