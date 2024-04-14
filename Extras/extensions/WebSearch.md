@@ -4,6 +4,14 @@ Adds web search results to LLM prompts.
 
 ## Available sources
 
+### Selenium Plugin
+
+Requires an official server plugin to be installed and enabled.
+
+See [SillyTavern-WebSearch-Selenium](https://github.com/SillyTavern/SillyTavern-WebSearch-Selenium) for more details.
+
+Supports Google and DuckDuckGo engines.
+
 ### Extras API
 
 Requires a `websearch` module and Chrome/Firefox web browser installed on the host machine.
@@ -80,7 +88,7 @@ Example: /websearch links=off snippets=on how to make a sandwich
 3. Page snippets (max 10). Relevant extracts from the web pages.
 4. Relevant questions (max 10). Questions and answers to similar topics.
 
-#### Extras API
+#### Selenium Plugin and Extras API
 
 1. Google - answer box, knowledge graph, page snippets.
 2. DuckDuckGo - page snippets.
