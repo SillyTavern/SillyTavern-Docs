@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766447783326">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766447833825">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.766447783326" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.766447833825" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.766447783326" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.766447833825" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.766447783326" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.766447783326" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.766447833825" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.766447833825" defer></script>
 
     <Style>
         a {
@@ -506,9 +506,9 @@ Example: node recover.js admin SecurePassword</code></pre>
 <p>This is just a recommendation. Please consult a web application security specialist before making your ST instance live.</p>
 <ol>
 <li>Keep your operating system and runtime software like Node.js updated. This will ensure that your system is up-to-date with the latest security patches and fixes which can help prevent potential vulnerabilities.</li>
-<li>Use a whitelist and a network firewall. Only allow trusted IP ranges to access the server.
-3a. Enable basic authentication. It acts as a &quot;master password&quot; before you can proceed to the front-end app.
-3b. Configure external authentication. A known service for that is <a href="https://goauthentik.io/">authentik</a>.</li>
+<li>Use a whitelist and a network firewall. Only allow trusted IP ranges to access the server.</li>
+<li>Enable basic authentication. It acts as a &quot;master password&quot; before you can proceed to the front-end app.</li>
+<li>Alternatively, configure external authentication. A known service for that is <a href="https://goauthentik.io/">authentik</a>.</li>
 <li>Never leave admin accounts passwordless. A server will warn you upon the startup if you have any unprotected admin accounts.</li>
 <li>Use the discreet login setting outside of the local network. This will hide the user list from any potential outsiders.</li>
 <li>Check the access logs often. They are written to the server console and the <code v-pre>access.log</code> file and provide information on incoming connections, such as IP address and user agent.</li>
