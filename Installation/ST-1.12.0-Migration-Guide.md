@@ -1,6 +1,8 @@
 # SillyTavern 1.12.0 Migration Guide
 
-> This content describes a pre-release version and is subject to change.
+!!! warning Warning
+This content describes a pre-release version and is subject to change.
+!!!
 
 SillyTavern 1.12.0 (codename the "Neo Server" update) includes several critical changes that may affect the way you use SillyTavern.
 
@@ -36,7 +38,11 @@ node server.js --dataRoot="/Users/harry/ST-Data"
 npm run start -- --dataRoot="/Users/harry/ST-Data"
 ```
 
-The default data root path is `./data`, which means the `data` directory in the SillyTavern's repository.
+The default data root path is `./data`, which means the `data` directory in SillyTavern's repository.
+
+!!! info Note
+The data root path should be either a **full absolute** or a **full relative** path. You _can't_ use path shortcuts like `~` or `%APP_DATA%`, as these are resolved by a shell, not the operating system.
+!!!
 
 ### Migration
 
@@ -67,7 +73,9 @@ volumes:
 
 **Step 3.** Rebuild the container and start it up.
 
-> Soft links between the `/public` directory and the `config` volume are no longer needed and are not built into the Docker container!
+!!! info Note
+Soft links between the `/public` directory and the `config` volume are no longer needed and are not built into the Docker container!
+!!!
 
 #### What to migrate?
 
@@ -103,11 +111,13 @@ The following files and directories are subject to the data migration. Assuming 
 
 1.12.0 adds a (completely optional) ability to create a multi-user setup on the same server, allowing multiple users to use their own fully isolated SillyTavern instances even at the same time. User accounts can also be password-protected for an additional layer of privacy.
 
-> While we tried to applied most of the well-known security practices, this still doesn't make SillyTavern server secure enough to expose it to the public internet.
+> While we tried to apply most of the well-known security practices, this still doesn't make the SillyTavern server secure enough to expose it to the public internet.
 
+!!! danger Disclaimer
 **NEVER HOST ANY INSTANCES TO THE OPEN INTERNET WITHOUT ENSURING PROPER SECURITY MEASURES FIRST.**
 
 **WE ARE NOT RESPONSIBLE FOR ANY DAMAGE OR LOSSES IN CASES OF UNAUTHORIZED ACCESS DUE TO IMPROPER OR INADEQUATE SECURITY IMPLEMENTATION.**
+!!!
 
 ### Configuration
 
@@ -157,8 +167,8 @@ The login screen is bypassed and not displayed when you have only one active use
 
 You can access an account self-management menu using an "Account" button under the "User settings" panel in the top menu bar.
 
-1. Display name - used in the login screen, can be changed. Does not correlate with personas - you can still use as many personas as you want.
-2. Profile picture - used in the login screen. The picture is taken from the default persona picture if set, or the last used persona otherwise.
+1. Display name - used in the login screen, can be changed. Does not correlate with personas and is not visible for the AI APIs - you can still use as many personas as you want.
+2. Profile picture - used in the login screen. You can either use a custom picture, the default persona picture (if set), or the last used persona otherwise.
 3. Password - a lock icon reflects the account protection status (open lock = no password). A password can be set, changed, or removed using the "Change Password" button.
 4. Settings Snapshots - access and review the backups of your `settings.json` file, with the ability to create or restore snapshots.
 5. Download Backup - download an archive of your user data folder.
@@ -176,13 +186,16 @@ Example: node recover.js admin SecurePassword
 
 ### Security checklist
 
-This is just a recommendation. Please consult a web application security specialist before making your ST instance live.
+**This is just a recommendation. Please consult a web application security specialist before making your ST instance live.**
 
 1. Keep your operating system and runtime software like Node.js updated. This will ensure that your system is up-to-date with the latest security patches and fixes which can help prevent potential vulnerabilities.
 2. Use a whitelist and a network firewall. Only allow trusted IP ranges to access the server.
 3. Enable basic authentication. It acts as a "master password" before you can proceed to the front-end app.
-4. Alternatively, configure external authentication. A few known services for are [Authelia](https://authelia.com) or [Authentik](https://goauthentik.io/).
+4. Alternatively, configure external authentication. Some known services for that are [Authelia](https://www.authelia.com/) and [authentik](https://goauthentik.io/).
 5. Never leave admin accounts passwordless. A server will warn you upon the startup if you have any unprotected admin accounts.
 6. Use the discreet login setting outside of the local network. This will hide the user list from any potential outsiders.
 7. Check the access logs often. They are written to the server console and the `access.log` file and provide information on incoming connections, such as IP address and user agent.
-8. Configure HTTPS. For a localhost server, you can generate and use a self-signed certificate. Otherwise, you may need to deploy a proxying web server like [Traefik](https://traefik.io/traefik/) or [Caddy](https://caddyserver.com/docs/getting-started). Refer to our [Reverse Proxy](../Usage/ST%20Reverse%20Proxy%20Guide.md) guide on setting this up.
+8. Configure HTTPS. For a localhost server, you can generate and use a self-signed certificate. Otherwise, you may need to deploy a proxying web server like [Traefik](https://traefik.io/) or [Caddy](https://caddyserver.com/docs/getting-started).
+
+Find more on secure proxying in the following guide: [Reverse Proxying SillyTavern
+](https://docs.sillytavern.app/usage/st-reverse-proxy-guide/)
