@@ -7,7 +7,7 @@ This extension allows you to play retro console games right from the SillyTavern
 **Prerequisites:**
 
 - Latest release version of SillyTavern.
-- ROM files downloaded from the net. You can find them [anywhere](https://archive.org/details/no-intro-2021).
+- ROM files downloaded from the net. You can find them [anywhere](https://archive.org/details/ni-romsets).
 
 **How to install:**
 
