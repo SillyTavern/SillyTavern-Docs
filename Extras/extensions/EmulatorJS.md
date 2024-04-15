@@ -33,10 +33,11 @@ With the power of multimodal models such as GPT-4 Vision, your AI bots can see y
 ### Requirements
 
 1. A browser that supports [ImageCapture](https://developer.mozilla.org/en-US/docs/Web/API/ImageCapture#browser_compatibility). Tested on desktop Chrome. Firefox requires to enable it with config. Safari won't work.
-2. Image inlining mode is recommended. Requires OpenAI or OpenRouter API key with "gpt-4-vision" as the selected model.
+2. Image inlining mode is recommended. Requires OpenAI or OpenRouter API key with "gpt-4-vision" as the selected model; Google MakerSuite with Gemini Vision model; or Anthropic Claude 3 (Opus model recommended).
 3. If image inlining is disabled, make sure that the "Image Captioning" extension is enabled, then select the "Multimodal" captioning source:
   - OpenAI API with access to the "gpt-4-vision" model.
-  - OpenRouter API with compatible model.
+  - OpenRouter API with compatible multimodal model.
+  - Locally hosted Llava model in Koboldcpp or oobabooga TextGen WebUI.
 
 ### How to enable comments
 
@@ -63,7 +64,7 @@ Comments are temporarily paused (interval step skipped) if:
 Other common issues:
 
 1. Make sure you've set a commenting interval before launching the game.
-2. Make sure you have set an OpenAI key and there are no errors in the ST server console.
+2. Make sure you have set a multimodal API key and there are no errors in the ST server console.
 
 Still doesn't work? Send us your browser debug console logs (press F12).
 
