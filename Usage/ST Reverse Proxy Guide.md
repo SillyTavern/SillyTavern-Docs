@@ -60,9 +60,9 @@ For Linux, we will reverse proxying SillyTavern through [Traefik](https://traefi
     ```sh
     sudo chown -R <USER>:<USER> .
     ```
-7. Make a folder inside the _docker_ folder, that being `appdata` and inside _appdata_ being `traefik`.
+7. Make a folder inside the _docker_ folder, that being `secrets` and inside _secrets_ being `cloudflare`.
     ```sh
-    mkdir secrets && mkdir cloudflare
+    mkdir secrets && mkdir secrets/cloudflare
     ```
 8. Make a folder inside the _docker_ folder, that being `appdata` and inside _appdata_ being `traefik`. Enter the `appdata/traefik` folder afterwards.
     ```sh
@@ -220,7 +220,7 @@ For Linux, we will reverse proxying SillyTavern through [Traefik](https://traefi
 
 22. Wait a few minutes, then open your domain page you made for ST. At the end of it, you should be able to open SillyTavern from anywhere you go just with one URL and one account.
     !!! info Tip
-    If nothing still happens, check the container logs for Traefik for any possible errors.
+    If nothing happens after several minutes, check the container logs for Traefik for any possible errors.
     !!!
 23. Enjoy! :D
 
@@ -339,7 +339,7 @@ Do note that we run SillyTavern on bare-metal over Docker. This is a rough idea 
     ```
 14. Wait a few minutes, then open your domain page you made for ST. At the end of it, you should be able to open SillyTavern from anywhere you go just with one URL and one account.
     !!! info Tip
-    If nothing still happens, check the container logs for Traefik for any possible errors.
+    If nothing happens after several minutes, check the container logs for Traefik for any possible errors.
     !!!
 15. Enjoy! :D
 
