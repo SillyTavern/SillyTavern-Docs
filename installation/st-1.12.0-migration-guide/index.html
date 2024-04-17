@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766698531489">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.766698545709">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.766698531489" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.766698545709" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.766698531489" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.766698545709" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.766698531489" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.766698531489" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.766698545709" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.766698545709" defer></script>
 
     <Style>
         a {
@@ -314,8 +314,8 @@ npm run start -- --dataRoot=&quot;/Users/harry/ST-Data&quot;</code></pre>
 <p><strong>Step 1.</strong> Create a new volume, and mount it to the &quot;/home/node/app/data&quot; path within the container. Don&#x27;t remove the <code v-pre>config</code> volume.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-yaml"><code v-pre class="language-yaml">volumes:
-  - &quot;./config:/home/node/app/config&quot;
-  - &quot;./data:/home/node/app/data&quot;</code></pre>
+    - &quot;./config:/home/node/app/config&quot;
+    - &quot;./data:/home/node/app/data&quot;</code></pre>
 </doc-codeblock></div>
 <p><strong>Step 2.</strong> Move everything but the <code v-pre>config.yaml</code> file from the <code v-pre>config</code> volume into the <code v-pre>default-user</code> subdirectory of the <code v-pre>data</code> volume.</p>
 <p><strong>Step 3.</strong> Rebuild the container and start it up.</p>
