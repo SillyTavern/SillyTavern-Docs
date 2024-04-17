@@ -152,8 +152,8 @@ A list of tags that are replaced when sending to generate:
 14. \{\{date\}\} => current system date.
 15. \{\{input\}\} => contents of the user input bar.
 16. \{\{weekday\}\} => the current weekday
-17. \{\{isotime\}\} => the current ISO date (YYYY-MM-DD)
-18. \{\{isodate\}\} => the current ISO time (24-hour clock)
+17. \{\{isotime\}\} => the current ISO time (24-hour clock)
+18. \{\{isodate\}\} => the current ISO date (YYYY-MM-DD)
 19. \{\{idle_duration\}\} inserts a humanized string of the time range since the last user message was sent (examples: 4 hours, 1 day).
 20. \{\{random:(args)\}\} returns a random item from the list. (e.g. \{\{random:1,2,3,4\}\} will return 1 of the 4 numbers at random). Works with text lists too.
 21. \{\{random::arg1::arg2\}\} => alternate syntax for random that supports commas in its arguments.
