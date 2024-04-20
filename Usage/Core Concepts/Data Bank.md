@@ -1,3 +1,7 @@
+---
+tags: [vector storage, RAG, retrieval-augmented generation, vectors, documents, files, attachments]
+---
+
 # Data Bank
 
 !!! warning Warning
@@ -172,7 +176,3 @@ The following rules apply:
 ## Conclusion
 
 Congratulations! Your chatting experience is now enhanced with the power of RAG. Its capabilities are only limited by your imagination. As always, don't be afraid to experiment!
-
----
-
-Keywords: vector storage, RAG, retrieval-augmented generation, vectors, documents, files, attachments.
