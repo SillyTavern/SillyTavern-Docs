@@ -21,7 +21,7 @@ The built-in Chat Attachments extension (included by default in release versions
 Data Bank stores file attachments, also known as documents. The documents are divided into three scopes of availability.
 
 1. Global attachments - available in every chat, either solo or group.
-2. Character attachments - available only for the currently chosen character, including when they are replying in a group.
+2. Character attachments - available only for the currently chosen character, including when they are replying in a group. _Attachments are saved locally and are not exported with the character card!_
 3. Chat attachments - available only in the currently open chat. Every character in the chat can pull from it.
 
 !!! info Note
