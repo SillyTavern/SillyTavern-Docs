@@ -2,7 +2,7 @@
 tags: [vector storage, RAG, retrieval-augmented generation, vectors, documents, files, attachments]
 ---
 
-# Data Bank
+# Data Bank (RAG)
 
 !!! warning Warning
 This content describes a pre-release version and is subject to change.
