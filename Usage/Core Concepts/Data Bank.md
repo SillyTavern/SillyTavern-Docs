@@ -8,7 +8,7 @@ tags: [vector storage, RAG, retrieval-augmented generation, vectors, documents, 
 This content describes a pre-release version and is subject to change.
 !!!
 
-Retrieval-augmented generation (RAG) is a technique for providing external sources of knowledge to the LLM. It helps to improve the accuracy of AI answers by having access to information outside of the model's training data.
+Retrieval-augmented generation (RAG) is a technique for providing external sources of knowledge to the LLM. It helps improve the accuracy of AI answers by accessing information outside of the model's training data.
 
 SillyTavern provides a set of tools for building a multi-purpose knowledge base from a diverse number of sources, as well as using the collected data in LLM prompts.
 
@@ -97,7 +97,7 @@ Vector Storage, which comes bundled with SillyTavern, is a reference implementat
 2. Vector Storage extension uses the [Vectra](https://github.com/Stevenic/vectra) library to keep track of file embeddings. They are stored in JSON files in the `/vectors` folder of your user data directory. Every document is internally represented by its own index/collection file.
 !!!
 
-As the Vectors functionality is disabled by default, you need to open the extensions panel ("Stacked Cubes" icon on the top bar), the navigate to "Vector Storage" section, and tick the "Enabled for files" checkbox under the "File vectorization settings".
+As the Vectors functionality is disabled by default, you need to open the extensions panel ("Stacked Cubes" icon on the top bar), then navigate to the "Vector Storage" section, and tick the "Enabled for files" checkbox under the "File vectorization settings".
 
 By itself, Vector Storage does not produce any vectors, you need to use a compatible embedding provider.
 
@@ -140,7 +140,7 @@ These settings control the files that are attached directly to the messages.
 The following rules apply:
 
 1. Only messages that fit in the LLM context window can have their attachments retrieved.
-2. When the vector storage extension is disabled, file attachments are fully inserted into the prompt along with their accompanying message.
+2. When the vector storage extension is disabled, file attachments and their accompanying message are fully inserted into the prompt.
 3. When file vectorization is enabled, then the file will be split into chunks and only the most relevant pieces will be inserted, saving the context space and allowing the model to stay focused.
 
 - Size threshold (KB) - sets a chunking splitting threshold. Only the files larger than the specified size will be split.
@@ -155,7 +155,7 @@ The following rules apply:
 
 1. When file vectorization is disabled, the Data Bank is not used.
 2. Otherwise, all available documents from the current scope (see above) are considered for the query. Only the most relevant chunks across all the files are retrieved. Multiple chunks of the same file are inserted in their original order.
-3. The inserted chunks will reserve a part of the context before the fitting of the chat messages takes place.
+3. The inserted chunks will reserve a part of the context before fitting the chat messages.
 
 - Size threshold (KB) - sets a chunking splitting threshold. Only the files larger than the specified size will be split.
 - Chunk size (chars) - sets the target size of an individual chunk (in textual characters, not model tokens!).
@@ -167,10 +167,10 @@ The following rules apply:
 
 - Include in World Info Scanning - check if you want the injected content to activate lore book entries.
 - Vectorize All - forcibly ingests the embeddings for all unprocessed files.
-- Purge Vectors - clears the file embeddings, allowing to recalculate their vectors
+- Purge Vectors - clears the file embeddings, allowing to recalculate their vectors.
 
 !!! warning Warning
-"Chat vectorization" settings are out of scope for this guide and will not be covered here.
+"Chat vectorization" settings are out of the scope of this guide and will not be covered here.
 !!!
 
 ## Conclusion
