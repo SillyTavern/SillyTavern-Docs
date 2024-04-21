@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.767014205480">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.767014452805">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.767014205480" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.767014452805" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.767014205480" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.767014452805" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.767014205480" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.767014452805" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -220,7 +220,7 @@
         </div>
     </div>
 </div>
-<p>Retrieval-augmented generation (RAG) is a technique for providing external sources of knowledge to the LLM. It helps to improve the accuracy of AI answers by having access to information outside of the model&#x27;s training data.</p>
+<p>Retrieval-augmented generation (RAG) is a technique for providing external sources of knowledge to the LLM. It helps improve the accuracy of AI answers by accessing information outside of the model&#x27;s training data.</p>
 <p>SillyTavern provides a set of tools for building a multi-purpose knowledge base from a diverse number of sources, as well as using the collected data in LLM prompts.</p>
 <doc-anchor-target id="accessing-the-data-bank">
     <h2>
@@ -386,7 +386,7 @@
         </div>
     </div>
 </div>
-<p>As the Vectors functionality is disabled by default, you need to open the extensions panel (&quot;Stacked Cubes&quot; icon on the top bar), the navigate to &quot;Vector Storage&quot; section, and tick the &quot;Enabled for files&quot; checkbox under the &quot;File vectorization settings&quot;.</p>
+<p>As the Vectors functionality is disabled by default, you need to open the extensions panel (&quot;Stacked Cubes&quot; icon on the top bar), then navigate to the &quot;Vector Storage&quot; section, and tick the &quot;Enabled for files&quot; checkbox under the &quot;File vectorization settings&quot;.</p>
 <p>By itself, Vector Storage does not produce any vectors, you need to use a compatible embedding provider.</p>
 <doc-anchor-target id="vector-providers">
     <h2>
@@ -472,7 +472,7 @@
 <p>The following rules apply:</p>
 <ol>
 <li>Only messages that fit in the LLM context window can have their attachments retrieved.</li>
-<li>When the vector storage extension is disabled, file attachments are fully inserted into the prompt along with their accompanying message.</li>
+<li>When the vector storage extension is disabled, file attachments and their accompanying message are fully inserted into the prompt.</li>
 <li>When file vectorization is enabled, then the file will be split into chunks and only the most relevant pieces will be inserted, saving the context space and allowing the model to stay focused.</li>
 </ol>
 <ul>
@@ -491,7 +491,7 @@
 <ol>
 <li>When file vectorization is disabled, the Data Bank is not used.</li>
 <li>Otherwise, all available documents from the current scope (see above) are considered for the query. Only the most relevant chunks across all the files are retrieved. Multiple chunks of the same file are inserted in their original order.</li>
-<li>The inserted chunks will reserve a part of the context before the fitting of the chat messages takes place.</li>
+<li>The inserted chunks will reserve a part of the context before fitting the chat messages.</li>
 </ol>
 <ul>
 <li>Size threshold (KB) - sets a chunking splitting threshold. Only the files larger than the specified size will be split.</li>
@@ -509,7 +509,7 @@
 <ul>
 <li>Include in World Info Scanning - check if you want the injected content to activate lore book entries.</li>
 <li>Vectorize All - forcibly ingests the embeddings for all unprocessed files.</li>
-<li>Purge Vectors - clears the file embeddings, allowing to recalculate their vectors</li>
+<li>Purge Vectors - clears the file embeddings, allowing to recalculate their vectors.</li>
 </ul>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
@@ -524,7 +524,7 @@
         </div>
         <div class="pr-5 ml-3 w-full">
             <h5>Warning</h5>
-<p>&quot;Chat vectorization&quot; settings are out of scope for this guide and will not be covered here.</p>
+<p>&quot;Chat vectorization&quot; settings are out of the scope of this guide and will not be covered here.</p>
         </div>
     </div>
 </div>
