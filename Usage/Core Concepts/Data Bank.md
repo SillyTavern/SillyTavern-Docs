@@ -42,6 +42,10 @@ Various extensions and plugins can also provide new ways to gather and process d
 
 To add a document to any of the scopes, click "Add" and pick one of the available sources.
 
+### Notepad
+
+Create a text file from scratch, or edit an existing attachment.
+
 ### File
 
 Upload a file from the hard drive of your computer. SillyTavern provides built-in converters for popular file formats:
@@ -53,6 +57,10 @@ Upload a file from the hard drive of your computer. SillyTavern provides built-i
 - TXT
 
 You can also attach any text files with non-standard extensions, such as JSON, YAML, source codes, etc. If there are no known conversions from the type of a selected file, and the file can't be parsed as a plain text document, the file upload will be rejected, meaning that raw binary files are not allowed.
+
+!!! info Note
+Importing Microsoft Office (DOCX, PPTX, XLSX) and LibreOffice documents (ODT, ODP, ODS) requires a [Server Plugin](https://github.com/Cohee1207/SillyTavern-Office-Parser) to be installed and loaded. See the plugin's README page for installation instructions.
+!!!
 
 ### Web
 
