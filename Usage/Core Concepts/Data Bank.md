@@ -168,7 +168,7 @@ The following rules apply:
 - Size threshold (KB) - sets a chunking splitting threshold. Only the files larger than the specified size will be split.
 - Chunk size (chars) - sets the target size of an individual chunk (in textual characters, not model tokens!).
 - Retrieve chunks - sets the maximum amount of the file chunks to be retrieved. This allowance is shared between all files.
-- Injection Template - defines how the retrieved information will be inserted into the prompt. You can use a special `{{text}}` macro to specify the position of the retrieved text, as well as any other macro.
+- Injection Template - defines how the retrieved information will be inserted into the prompt. You can use a special \{\{text\}\} macro to specify the position of the retrieved text, as well as any other macros.
 - Injection Position - sets where to insert the prompt injection. The same rules as for Author's Note and World Info apply.
 
 ### Shared settings
