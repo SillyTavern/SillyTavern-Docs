@@ -36,6 +36,7 @@ You can configure the instruction template for generating prompts for every gene
 * [OpenAI DALL-E 2/3](https://platform.openai.com/)
 * [TogetherAI](https://api.together.xyz/models)
 * [Draw Things](https://drawthings.ai/)
+* [Pollinations](https://pollinations.ai/)
 * [ComfyUI](https://github.com/comfyanonymous/ComfyUI). Requires a workflow JSON file.
 * [SillyTavern Extras](https://github.com/SillyTavern/SillyTavern-Extras) (will be deprecated in future)
 
