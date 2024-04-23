@@ -104,8 +104,8 @@ To enable HTTP BA, Open `config.yaml` in the SillyTavern base directory and sear
 ```yaml
 basicAuthMode: true
 basicAuthUser:
-  - username: "MyUsername"
-  - password: "MyPassword"
+  username: "MyUsername"
+  password: "MyPassword"
 ```
 
 Save the file and restart SillyTavern if it was already running. You should be prompted for username and password when connecting to your ST. Both username and password are transmitted in plain text. If you are concerned about this, you can serve ST via HTTPS.
