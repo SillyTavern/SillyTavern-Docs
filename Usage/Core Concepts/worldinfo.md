@@ -124,7 +124,7 @@ The script command will run only once if multiple entries with the same Automati
 This content describes a pre-release version and is subject to change.
 !!!
 
-The Vector Storage extension provides an alternative to keyword matching by using the similarity between the recent chats and World Info entry contents.
+The Vector Storage extension provides an alternative to keyword matching by using the similarity between the recent chat messages and World Info entry contents.
 
 To enable and use this, the following prerequisites need to be met:
 
