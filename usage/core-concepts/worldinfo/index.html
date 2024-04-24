@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.767273881839">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.767273933973">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.767273881839" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.767273933973" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.767273881839" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.767273933973" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.767273881839" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.767273933973" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -338,11 +338,55 @@
 <li><span class="docs-emoji">&#x1F517;</span> (Chain Link) = The entry is allowed to be inserted by embedding similarity.</li>
 <li><span class="docs-emoji">&#x274C;</span> (Red Cross) = The entry is disabled.</li>
 </ol>
-<doc-anchor-target id="vector-storage-matching">
+<doc-anchor-target id="optional-filter-1">
     <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#optional-filter-1">#</doc-anchor-trigger>
+        <span>Optional Filter</span>
+    </h4>
+</doc-anchor-target>
+<p>Comma-separated list of additional keywords in conjunction with the primary key.
+If no arguments are provided, this flag is ignored.
+Supports logic for AND ANY, NOT ANY, or NOT ALL</p>
+<ol>
+<li>AND ANY = Activates the entry only if the primary key and Any one of the optional filter keys are in scanned context.</li>
+<li>AND ALL = Activates the entry only if the primary key and ALL of the optional filter keys are present.</li>
+<li>NOT ANY = Activates the entry only if the primary key and None of the optional filter keys are in scanned context.</li>
+<li>NOT ALL = Prevents activation of the entry despite primary key trigger, if all of the optional filters are in scanned context.</li>
+</ol>
+<doc-anchor-target id="probability">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#probability">#</doc-anchor-trigger>
+        <span>Probability</span>
+    </h4>
+</doc-anchor-target>
+<p>This value acts like an additional filter that adds a chance for the entry NOT to be inserted when it is activated by any means (constant, primary key, recursion).</p>
+<ol>
+<li>Probability = 100 means that the entry will be inserted on every activation.</li>
+<li>Probability = 50 means that the entry will be inserted with a 1:1 chance.</li>
+<li>Probability = 0 means that the entry will NOT be inserted (essentially disabling it).</li>
+</ol>
+<p>Use this to create random events in your chats. For example, every message could have a 1% chance of waking up an Elder God if its name is mentioned in the message.</p>
+<doc-anchor-target id="inclusion-group">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#inclusion-group">#</doc-anchor-trigger>
+        <span>Inclusion Group</span>
+    </h4>
+</doc-anchor-target>
+<p>If multiple entries having the same group label were activated, only one will be inserted into the prompt. Entries are selected based on their Trigger% chance. The higher the number - the higher the probability.</p>
+<p><strong>Grouped entries don&#x27;t use Trigger% for the likelihood of their activation, only to determine the selection winner.</strong></p>
+<doc-anchor-target id="automation-id">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#automation-id">#</doc-anchor-trigger>
+        <span>Automation ID</span>
+    </h4>
+</doc-anchor-target>
+<p>Allows to integrate World Info entries with <a href="https://docs.sillytavern.app/usage/st-script/">STscripts</a> from Quick Replies extension. If both the quick reply command and the WI entry have the same Automation ID, the command will be executed automatically when the entry with a matching ID is activated.</p>
+<p>The script command will run only once if multiple entries with the same Automation ID are activated.</p>
+<doc-anchor-target id="vector-storage-matching">
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#vector-storage-matching">#</doc-anchor-trigger>
         <span>Vector Storage Matching</span>
-    </h4>
+    </h2>
 </doc-anchor-target>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
@@ -393,50 +437,6 @@
         </div>
     </div>
 </div>
-<doc-anchor-target id="optional-filter-1">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#optional-filter-1">#</doc-anchor-trigger>
-        <span>Optional Filter</span>
-    </h4>
-</doc-anchor-target>
-<p>Comma-separated list of additional keywords in conjunction with the primary key.
-If no arguments are provided, this flag is ignored.
-Supports logic for AND ANY, NOT ANY, or NOT ALL</p>
-<ol>
-<li>AND ANY = Activates the entry only if the primary key and Any one of the optional filter keys are in scanned context.</li>
-<li>AND ALL = Activates the entry only if the primary key and ALL of the optional filter keys are present.</li>
-<li>NOT ANY = Activates the entry only if the primary key and None of the optional filter keys are in scanned context.</li>
-<li>NOT ALL = Prevents activation of the entry despite primary key trigger, if all of the optional filters are in scanned context.</li>
-</ol>
-<doc-anchor-target id="probability">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#probability">#</doc-anchor-trigger>
-        <span>Probability</span>
-    </h4>
-</doc-anchor-target>
-<p>This value acts like an additional filter that adds a chance for the entry NOT to be inserted when it is activated by any means (constant, primary key, recursion).</p>
-<ol>
-<li>Probability = 100 means that the entry will be inserted on every activation.</li>
-<li>Probability = 50 means that the entry will be inserted with a 1:1 chance.</li>
-<li>Probability = 0 means that the entry will NOT be inserted (essentially disabling it).</li>
-</ol>
-<p>Use this to create random events in your chats. For example, every message could have a 1% chance of waking up an Elder God if its name is mentioned in the message.</p>
-<doc-anchor-target id="inclusion-group">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#inclusion-group">#</doc-anchor-trigger>
-        <span>Inclusion Group</span>
-    </h4>
-</doc-anchor-target>
-<p>If multiple entries having the same group label were activated, only one will be inserted into the prompt. Entries are selected based on their Trigger% chance. The higher the number - the higher the probability.</p>
-<p><strong>Grouped entries don&#x27;t use Trigger% for the likelihood of their activation, only to determine the selection winner.</strong></p>
-<doc-anchor-target id="automation-id">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#automation-id">#</doc-anchor-trigger>
-        <span>Automation ID</span>
-    </h4>
-</doc-anchor-target>
-<p>Allows to integrate World Info entries with <a href="https://docs.sillytavern.app/usage/st-script/">STscripts</a> from Quick Replies extension. If both the quick reply command and the WI entry have the same Automation ID, the command will be executed automatically when the entry with a matching ID is activated.</p>
-<p>The script command will run only once if multiple entries with the same Automation ID are activated.</p>
 <doc-anchor-target id="activation-settings">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#activation-settings">#</doc-anchor-trigger>
