@@ -6,7 +6,8 @@ label: Local Installation
 # Extras Installation
 
 This page contains instructions for installing SillyTavern Extras on your local device.
-
+---
+## Extras project has been discontinued since April 2024 and won't receive any new updates or modules. The vast majority of modules are available natively in the main SillyTavern application. You may still install and use it but don't expect to get immediate support if you face any issues.
 ---
 Local installation of Extras can be difficult or impossible on your OS (especially Termux).
 
