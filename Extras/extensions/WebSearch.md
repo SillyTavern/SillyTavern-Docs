@@ -44,7 +44,7 @@ Get the key here: https://serpapi.com/dashboard
 ### Prompt Settings
 
 1. Prompt Budget - sets the maximum capacity of the inserted text (in characters of text, NOT tokens). Rule of thumb: 1 token ~ 3-4 characters, adjust according to your model's context limits. Default = 1500 characters.
-2. Insertion Template - how the result gets inserted into the prompt. Supports the usual macro + special macro: `{{query}}` for search query and `{{text}}` for search results.
+2. Insertion Template - how the result gets inserted into the prompt. Supports the usual macro + special macro: \{\{query\}\} for search query and \{\{text\}\} for search results.
 3. Injection Position - where the result goes in the prompt. The same options as for the Author's Note: as in-chat injection or before/after system prompt.
 
 ### Search Activation
@@ -59,8 +59,8 @@ Get the key here: https://serpapi.com/dashboard
 1. Visit Links - text will be extracted from the visited search result pages and saved to a file attachment.
 2. Visit Count - how many links will be visited and parsed for text.
 3. Visit Domain Blacklist - site domains to be excluded from visiting. One per line.
-4. File Header - file header template, inserted at the start of the text file, has an additional `{{query}}` macro.
-5. Block Header - link block template, inserted with the parsed content of every link. Use `{{link}}` macro for page URL and `{{text}}` for page content.
+4. File Header - file header template, inserted at the start of the text file, has an additional \{\{query\}\} macro.
+5. Block Header - link block template, inserted with the parsed content of every link. Use \{\{link\}\} macro for page URL and \{\{text\}\} for page content.
 
 ## More info
 
