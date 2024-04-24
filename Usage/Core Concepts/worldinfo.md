@@ -85,31 +85,6 @@ If empty, can be backfilled using the entries' first key by clicking on the "Fil
 3. 🔗 (Chain Link) = The entry is allowed to be inserted by embedding similarity.
 4. ❌ (Red Cross) = The entry is disabled.
 
-#### Vector Storage Matching
-
-!!! warning Warning
-This content describes a pre-release version and is subject to change.
-!!!
-
-The Vector Storage extension provides an alternative to keyword matching by using the similarity between the recent chats and World Info entry contents.
-
-To enable and use this, the following prerequisites need to be met:
-
-1. Vector Storage extension is enabled and is configured to use one of the available embedding sources.
-2. The "Enable for World Info" checkbox is ticked in the Vector Storage extension settings.
-3. Either the World Info entries that are allowed for keyless matching have the "Vectorized" (🔗) status or the "Enabled for all entries" option is enabled in the Vector Storage settings.
-
-Vector Storage matching adheres to this set of rules:
-
-- The maximum number of entries that are allowed to be matched with the Vector Storage can be adjusted with the "Max Entries" setting. This number only sets the limit and does not influence the token budget set in the activation settings for World Info. All of the budgeting rules still apply.
-- This feature only replaces the check for keywords. All additional checks must be met for the entry to be inserted: trigger%, character filters, inclusion groups, etc.
-- The "Scan Depth" setting from Activation Settings or entry overrides is not used, instead, the Vector Storage "Query messages" value is utilized to get the text to match against. This allows for a configuration like "Scan Depth" set to 0, so no regular keyword matches will be made, but entries still can be activated by vectors.
-- A "Vectorized" status is only an additional marker. The entry would still behave like a normal, enabled, non-constant record that will be activated by keywords if they are set. Remove the keywords if you want them to be activated only by vectors.
-
-!!! note Note
-Since the retrieval quality depends entirely on the outputs of the embedding model, it's impossible to predict exactly what entries will be inserted. If you want deterministic and predictable results, stick to keyword matching.
-!!!
-
 #### Optional Filter
 
 Comma-separated list of additional keywords in conjunction with the primary key.
@@ -142,6 +117,31 @@ If multiple entries having the same group label were activated, only one will be
 Allows to integrate World Info entries with [STscripts](https://docs.sillytavern.app/usage/st-script/) from Quick Replies extension. If both the quick reply command and the WI entry have the same Automation ID, the command will be executed automatically when the entry with a matching ID is activated.
 
 The script command will run only once if multiple entries with the same Automation ID are activated.
+
+## Vector Storage Matching
+
+!!! warning Warning
+This content describes a pre-release version and is subject to change.
+!!!
+
+The Vector Storage extension provides an alternative to keyword matching by using the similarity between the recent chats and World Info entry contents.
+
+To enable and use this, the following prerequisites need to be met:
+
+1. Vector Storage extension is enabled and is configured to use one of the available embedding sources.
+2. The "Enable for World Info" checkbox is ticked in the Vector Storage extension settings.
+3. Either the World Info entries that are allowed for keyless matching have the "Vectorized" (🔗) status or the "Enabled for all entries" option is enabled in the Vector Storage settings.
+
+Vector Storage matching adheres to this set of rules:
+
+- The maximum number of entries that are allowed to be matched with the Vector Storage can be adjusted with the "Max Entries" setting. This number only sets the limit and does not influence the token budget set in the activation settings for World Info. All of the budgeting rules still apply.
+- This feature only replaces the check for keywords. All additional checks must be met for the entry to be inserted: trigger%, character filters, inclusion groups, etc.
+- The "Scan Depth" setting from Activation Settings or entry overrides is not used, instead, the Vector Storage "Query messages" value is utilized to get the text to match against. This allows for a configuration like "Scan Depth" set to 0, so no regular keyword matches will be made, but entries still can be activated by vectors.
+- A "Vectorized" status is only an additional marker. The entry would still behave like a normal, enabled, non-constant record that will be activated by keywords if they are set. Remove the keywords if you want them to be activated only by vectors.
+
+!!! note Note
+Since the retrieval quality depends entirely on the outputs of the embedding model, it's impossible to predict exactly what entries will be inserted. If you want deterministic and predictable results, stick to keyword matching.
+!!!
 
 ## Activation Settings
 
