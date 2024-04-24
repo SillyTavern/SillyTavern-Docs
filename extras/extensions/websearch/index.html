@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.767199728873">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.767268772723">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.767199728873" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.767268772723" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.767199728873" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.767268772723" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.767199728873" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.767268772723" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -274,7 +274,7 @@
 </doc-anchor-target>
 <ol>
 <li>Prompt Budget - sets the maximum capacity of the inserted text (in characters of text, NOT tokens). Rule of thumb: 1 token ~ 3-4 characters, adjust according to your model&#x27;s context limits. Default = 1500 characters.</li>
-<li>Insertion Template - how the result gets inserted into the prompt. Supports the usual macro + special macro: <code v-pre>for search query and</code> for search results.</li>
+<li>Insertion Template - how the result gets inserted into the prompt. Supports the usual macro + special macro: {{query}} for search query and {{text}} for search results.</li>
 <li>Injection Position - where the result goes in the prompt. The same options as for the Author&#x27;s Note: as in-chat injection or before/after system prompt.</li>
 </ol>
 <doc-anchor-target id="search-activation">
@@ -299,8 +299,8 @@
 <li>Visit Links - text will be extracted from the visited search result pages and saved to a file attachment.</li>
 <li>Visit Count - how many links will be visited and parsed for text.</li>
 <li>Visit Domain Blacklist - site domains to be excluded from visiting. One per line.</li>
-<li>File Header - file header template, inserted at the start of the text file, has an additional &#x60;&#x60; macro.</li>
-<li>Block Header - link block template, inserted with the parsed content of every link. Use <code v-pre>macro for page URL and</code> for page content.</li>
+<li>File Header - file header template, inserted at the start of the text file, has an additional {{query}} macro.</li>
+<li>Block Header - link block template, inserted with the parsed content of every link. Use {{link}} macro for page URL and {{text}} for page content.</li>
 </ol>
 <doc-anchor-target id="more-info">
     <h2>
