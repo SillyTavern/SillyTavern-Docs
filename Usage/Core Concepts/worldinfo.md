@@ -132,7 +132,7 @@ To enable and use this, the following prerequisites need to be met:
 2. The "Enable for World Info" checkbox is ticked in the Vector Storage extension settings.
 3. Either the World Info entries that are allowed for keyless matching have the "Vectorized" (🔗) status or the "Enabled for all entries" option is enabled in the Vector Storage settings.
 
-The choice of the vectorization model in the extension and the theoretical meaning behind the term "embeddings" won't be covered here. Check out the [Data Bank](https://docs.sillytavern.app/usage/core-concepts/data-bank/#vectorization-settings) guide if you require more info on this topic.
+The choice of the vectorization model in the extension and the theoretical meaning behind the term "embeddings" won't be covered here. Check out the [Data Bank](https://docs.sillytavern.app/usage/core-concepts/data-bank/#vector-storage) guide if you require more info on this topic.
 
 Vector Storage matching adheres to this set of rules:
 
