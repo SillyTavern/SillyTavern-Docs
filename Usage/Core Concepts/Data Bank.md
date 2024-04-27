@@ -1,5 +1,14 @@
 ---
-tags: [vector storage, RAG, retrieval-augmented generation, vectors, documents, files, attachments]
+tags:
+    [
+        vector storage,
+        RAG,
+        retrieval-augmented generation,
+        vectors,
+        documents,
+        files,
+        attachments,
+    ]
 ---
 
 # Data Bank (RAG)
@@ -32,9 +41,9 @@ What can be a document? Practically anything that is representable in plain text
 
 Examples include, but are not limited to:
 
-- Local files (books, scientific papers, etc.)
-- Web pages (Wikipedia, articles, news)
-- Video transcripts
+-   Local files (books, scientific papers, etc.)
+-   Web pages (Wikipedia, articles, news)
+-   Video transcripts
 
 Various extensions and plugins can also provide new ways to gather and process data, more on that below.
 
@@ -50,11 +59,11 @@ Create a text file from scratch, or edit an existing attachment.
 
 Upload a file from the hard drive of your computer. SillyTavern provides built-in converters for popular file formats:
 
-- PDF (text only)
-- HTML
-- Markdown
-- ePUB
-- TXT
+-   PDF (text only)
+-   HTML
+-   Markdown
+-   ePUB
+-   TXT
 
 You can also attach any text files with non-standard extensions, such as JSON, YAML, source codes, etc. If there are no known conversions from the type of a selected file, and the file can't be parsed as a plain text document, the file upload will be rejected, meaning that raw binary files are not allowed.
 
@@ -92,6 +101,21 @@ This source requires to have a [Server Plugin](https://github.com/Cohee1207/Sill
 
 Scrape articles from a [Fandom](https://www.fandom.com/) wiki by its ID or URL. As some wikis are very large, it may be beneficial to limit the scope using the filter regular expression, it will be tested against the article's title. If no filter is provided, then all of the pages are subject to be exported. You may save them either as individual files for every page, or joint into a single document.
 
+### Bronie Parser Extension (Third-Party)
+
+!!! warning Note
+This source comes from a third-party and is **not affiliated or endorsed** by the SillyTavern team. This sourse requires you to have Bronya Rand's [Bronie Parser Extension](https://github.com/Bronya-Rand/Bronie-Parser-Extension) installed and several Server Plugins depending on what sources you plan to use.
+!!!
+
+Bronya Rand's Bronie Parser Extension allows the use of third-party scrapers, such as miHoYo/HoYoverse's [HoYoLab](https://wiki.hoyolab.com) into SillyTavern, similar to the other data sources.
+
+Currently, Bronya Rand's Bronie Parser Extension supports the following:
+
+-   miHoYo/HoYoverse's HoYoLab (for Genshin Impact/Honkai: Star Rail)\*
+    > Genshin Impact scraper is still a work-in-progress.
+
+To begin, install Bronya Rand's Bronie Parser Extension by following it's [installation guide](https://github.com/Bronya-Rand/Bronie-Parser-Extension?tab=readme-ov-file#installation) and install a supported Server Plugin into SillyTavern. Restart SillyTavern and go to the _Data Bank_ menu. Click `+ Add` and you should see that your recently installed scrapers are added into the possible list of sources to obtain information from.
+
 ## Vector Storage
 
 So, you've built yourself a nice and comprehensive library of information on your specific subject matter. What's next?
@@ -101,9 +125,10 @@ To use the documents for RAG, you need to use a compatible extension that will i
 Vector Storage, which comes bundled with SillyTavern, is a reference implementation of such an extension. It uses embeddings (also known as vectors) to search for documents that relate to your ongoing chats.
 
 !!! info Fun facts
+
 1. Embeddings are arrays of numbers that abstractly represent a piece of text, produced by specialized language models. More similar texts have a shorter distance between their respective vectors.
 2. Vector Storage extension uses the [Vectra](https://github.com/Stevenic/vectra) library to keep track of file embeddings. They are stored in JSON files in the `/vectors` folder of your user data directory. Every document is internally represented by its own index/collection file.
-!!!
+   !!!
 
 As the Vectors functionality is disabled by default, you need to open the extensions panel ("Stacked Cubes" icon on the top bar), then navigate to the "Vector Storage" section, and tick the "Enabled for files" checkbox under the "File vectorization settings".
 
@@ -151,9 +176,9 @@ The following rules apply:
 2. When the vector storage extension is disabled, file attachments and their accompanying message are fully inserted into the prompt.
 3. When file vectorization is enabled, then the file will be split into chunks and only the most relevant pieces will be inserted, saving the context space and allowing the model to stay focused.
 
-- Size threshold (KB) - sets a chunking splitting threshold. Only the files larger than the specified size will be split.
-- Chunk size (chars) - sets the target size of an individual chunk (in textual characters, not model tokens!).
-- Retrieve chunks - sets the maximum amount of the most relevant file chunks to be retrieved. They will be inserted in their original order.
+-   Size threshold (KB) - sets a chunking splitting threshold. Only the files larger than the specified size will be split.
+-   Chunk size (chars) - sets the target size of an individual chunk (in textual characters, not model tokens!).
+-   Retrieve chunks - sets the maximum amount of the most relevant file chunks to be retrieved. They will be inserted in their original order.
 
 ### Data Bank files
 
@@ -165,17 +190,17 @@ The following rules apply:
 2. Otherwise, all available documents from the current scope (see above) are considered for the query. Only the most relevant chunks across all the files are retrieved. Multiple chunks of the same file are inserted in their original order.
 3. The inserted chunks will reserve a part of the context before fitting the chat messages.
 
-- Size threshold (KB) - sets a chunking splitting threshold. Only the files larger than the specified size will be split.
-- Chunk size (chars) - sets the target size of an individual chunk (in textual characters, not model tokens!).
-- Retrieve chunks - sets the maximum amount of the file chunks to be retrieved. This allowance is shared between all files.
-- Injection Template - defines how the retrieved information will be inserted into the prompt. You can use a special \{\{text\}\} macro to specify the position of the retrieved text, as well as any other macros.
-- Injection Position - sets where to insert the prompt injection. The same rules as for Author's Note and World Info apply.
+-   Size threshold (KB) - sets a chunking splitting threshold. Only the files larger than the specified size will be split.
+-   Chunk size (chars) - sets the target size of an individual chunk (in textual characters, not model tokens!).
+-   Retrieve chunks - sets the maximum amount of the file chunks to be retrieved. This allowance is shared between all files.
+-   Injection Template - defines how the retrieved information will be inserted into the prompt. You can use a special \{\{text\}\} macro to specify the position of the retrieved text, as well as any other macros.
+-   Injection Position - sets where to insert the prompt injection. The same rules as for Author's Note and World Info apply.
 
 ### Shared settings
 
-- Include in World Info Scanning - check if you want the injected content to activate lore book entries.
-- Vectorize All - forcibly ingests the embeddings for all unprocessed files.
-- Purge Vectors - clears the file embeddings, allowing to recalculate their vectors.
+-   Include in World Info Scanning - check if you want the injected content to activate lore book entries.
+-   Vectorize All - forcibly ingests the embeddings for all unprocessed files.
+-   Purge Vectors - clears the file embeddings, allowing to recalculate their vectors.
 
 !!! warning Warning
 "Chat vectorization" settings are out of the scope of this guide and will not be covered here.
