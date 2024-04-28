@@ -65,6 +65,10 @@ You can load a plugin from a subdirectory in the `plugins` in one of the followi
 
 A resulting file must export an `init` function and `info` object with the same requirements as for individual files.
 
+Example of a directory plugin (with `index.js` file): <https://github.com/SillyTavern/SillyTavern-DiscordRichPresence-Server>
+
+### Bundling
+
 It is preferable to use a bundler (such as Webpack or Browserify) that will package all of the requirements into one file. Make sure to set "Node" as a build target.
 
-Example of a directory plugin (with `index.js` file): https://github.com/SillyTavern/SillyTavern-DiscordRichPresence-Server
+Template repository for plugins using Webpack and TypeScript: <https://github.com/SillyTavern/Plugin-WebpackTemplate>
