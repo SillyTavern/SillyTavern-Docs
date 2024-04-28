@@ -67,4 +67,4 @@ A resulting file must export an `init` function and `info` object with the same 
 
 It is preferable to use a bundler (such as Webpack or Browserify) that will package all of the requirements into one file. Make sure to set "Node" as a build target.
 
-Example of a directory plugin (with `index.js` file): https://github.com/Cohee1207/SillyTavern-DiscordRichPresence-Server
+Example of a directory plugin (with `index.js` file): https://github.com/SillyTavern/SillyTavern-DiscordRichPresence-Server

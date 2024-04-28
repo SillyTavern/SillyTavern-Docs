@@ -68,7 +68,7 @@ Upload a file from the hard drive of your computer. SillyTavern provides built-i
 You can also attach any text files with non-standard extensions, such as JSON, YAML, source codes, etc. If there are no known conversions from the type of a selected file, and the file can't be parsed as a plain text document, the file upload will be rejected, meaning that raw binary files are not allowed.
 
 !!! info Note
-Importing Microsoft Office (DOCX, PPTX, XLSX) and LibreOffice documents (ODT, ODP, ODS) requires a [Server Plugin](https://github.com/Cohee1207/SillyTavern-Office-Parser) to be installed and loaded. See the plugin's README page for installation instructions.
+Importing Microsoft Office (DOCX, PPTX, XLSX) and LibreOffice documents (ODT, ODP, ODS) requires a [Server Plugin](https://github.com/SillyTavern/SillyTavern-Office-Parser) to be installed and loaded. See the plugin's README page for installation instructions.
 !!!
 
 ### Web
@@ -96,7 +96,7 @@ To begin, specify the search query, max number of links to be visited, and the o
 ### Fandom
 
 !!! info Note
-This source requires to have a [Server Plugin](https://github.com/Cohee1207/SillyTavern-Fandom-Scraper) installed and loaded. See the plugin's README page for installation instructions.
+This source requires to have a [Server Plugin](https://github.com/SillyTavern/SillyTavern-Fandom-Scraper) installed and loaded. See the plugin's README page for installation instructions.
 !!!
 
 Scrape articles from a [Fandom](https://www.fandom.com/) wiki by its ID or URL. As some wikis are very large, it may be beneficial to limit the scope using the filter regular expression, it will be tested against the article's title. If no filter is provided, then all of the pages are subject to be exported. You may save them either as individual files for every page, or joint into a single document.

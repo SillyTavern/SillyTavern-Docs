@@ -75,9 +75,9 @@ SillyTavern is only a frontend interface, so you will need to have access to one
 
 ### How can I get in touch with the developers directly?
 
-* Discord: Cohee#1207 or RossAscends#1779
+* Discord: cohee or rossascends
 * Reddit: /u/RossAscends or /u/sillylossy
-* [Post a GitHub issue](https://github.com/Cohee1207/SillyTavern/issues)
+* [Post a GitHub issue](https://github.com/SillyTavern/SillyTavern/issues)
 
 ### I like your project! How do I contribute?
 

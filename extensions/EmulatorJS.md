@@ -12,7 +12,7 @@ This extension allows you to play retro console games right from the SillyTavern
 **How to install:**
 
 1. Install using SillyTavern's extensions downloader.
-2. Or use this link: `https://github.com/Cohee1207/SillyTavern-EmulatorJS`
+2. Or use this link: `https://github.com/SillyTavern/SillyTavern-EmulatorJS`
 
 ## Usage
 
