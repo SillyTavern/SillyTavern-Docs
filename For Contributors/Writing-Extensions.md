@@ -18,7 +18,20 @@ See live examples of simple SillyTavern extensions:
 
 Extensions can also utilize bundling to isolate themselves from the rest of the modules and use any dependencies from NPM, including UI frameworks like Vue, React, etc.
 
-* https://github.com/Cohee1207/Extension-ReactTemplate - template repository of a barebone extension using React and Webpack.
+* https://github.com/SillyTavern/Extension-ReactTemplate - template repository of a barebone extension using React and Webpack.
+
+To use relative imports from the bundle, you may need to create an import wrapper. Here's an example for Webpack:
+
+```js
+// define
+async function importFromScript(what) {
+    const module = await import(/* webpackIgnore: true */'../../../../../script.js');
+    return module[what];
+}
+
+// use
+const generateRaw = await importFromScript('generateRaw');
+```
 
 ## manifest.json
 
