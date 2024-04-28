@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.767622582966">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.767625782720">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.767622582966" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.767625782720" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.767622582966" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.767625782720" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.767622582966" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.767622582966" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.767625782720" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.767625782720" defer></script>
 
     <Style>
         a {
@@ -269,8 +269,15 @@ module.exports = {
 <li><code v-pre>index.mjs</code> file for ES modules.</li>
 </ol>
 <p>A resulting file must export an <code v-pre>init</code> function and <code v-pre>info</code> object with the same requirements as for individual files.</p>
-<p>It is preferable to use a bundler (such as Webpack or Browserify) that will package all of the requirements into one file. Make sure to set &quot;Node&quot; as a build target.</p>
 <p>Example of a directory plugin (with <code v-pre>index.js</code> file): <a href="https://github.com/SillyTavern/SillyTavern-DiscordRichPresence-Server">https://github.com/SillyTavern/SillyTavern-DiscordRichPresence-Server</a></p>
+<doc-anchor-target id="bundling">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#bundling">#</doc-anchor-trigger>
+        <span>Bundling</span>
+    </h3>
+</doc-anchor-target>
+<p>It is preferable to use a bundler (such as Webpack or Browserify) that will package all of the requirements into one file. Make sure to set &quot;Node&quot; as a build target.</p>
+<p>Template repository for plugins using Webpack and TypeScript: <a href="https://github.com/SillyTavern/Plugin-WebpackTemplate">https://github.com/SillyTavern/Plugin-WebpackTemplate</a></p>
 
                                 
                                 <!-- Required only on API pages -->
