@@ -108,9 +108,16 @@ Use this to create random events in your chats. For example, every message could
 
 #### Inclusion Group
 
-If multiple entries having the same group label were activated, only one will be inserted into the prompt. Entries are selected based on their Trigger% chance. The higher the number - the higher the probability.
+Inclusion groups control how entries are selected when multiple entries with the same group label are triggered simultaneously. If multiple entries having the same group label were activated, only one will be inserted into the prompt.  
+By default, the chosen entry is selected randomly based on their Trigger% chance — the higher the percentage, the higher the probability of selection. This allows for a random selection among the triggered entries, adding an element of surprise and variety to interactions.
 
-**Grouped entries don't use Trigger% for the likelihood of their activation, only to determine the selection winner.**
+> ℹ️ **Grouped entries don't use Trigger% for the likelihood of their activation, only to determine the selection winner.**
+
+#### Prioritize Inclusion
+
+To provide more control over which entries are activated via [Inclusion Group](https://docs.sillytavern.app/usage/core-concepts/worldinfo/#inclusion-group), you can use the 'Prioritize Inclusion' setting. This option allows you to specify deterministically which entry to choose instead of randomly rolling Trigger% chances.
+
+If multiple entries having the same group label and this setting turned on were activated, the one with the highest 'Order' value will be selected. This is useful for creating a fallback sequences via inclusion groups. For example to priorize low-depth entries with more emphasis, or to choose a specific instruction on setting the scene over another if both are valid.
 
 #### Automation ID
 
