@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.767864047634">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.767917314658">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.767864047634" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.767917314658" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.767864047634" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.767917314658" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.767864047634" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.767917314658" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -392,6 +392,7 @@ By default, the chosen entry is selected randomly based on their Trigger% chance
     </h4>
 </doc-anchor-target>
 <p>Allows to integrate World Info entries with <a href="https://docs.sillytavern.app/usage/st-script/">STscripts</a> from Quick Replies extension. If both the quick reply command and the WI entry have the same Automation ID, the command will be executed automatically when the entry with a matching ID is activated.</p>
+<p>Automations are executed in the order they are triggered, adhering to your designated sorting strategy, combining the <doc-anchor-trigger to="#character-lore-insertion-strategy">Character Lore Insertion Strategy</doc-anchor-trigger> with the &#x27;Priority&#x27; sorting. Which leads to <doc-anchor-trigger to="#status">Blue Circle</doc-anchor-trigger> entries processed first, followed by others in their specified &#x27;Order&#x27;. Recursively triggered entries will be processed after in the same order.</p>
 <p>The script command will run only once if multiple entries with the same Automation ID are activated.</p>
 <doc-anchor-target id="vector-storage-matching">
     <h2>
