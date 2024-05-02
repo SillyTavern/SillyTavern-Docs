@@ -32,7 +32,7 @@ To run your first script, open any SillyTavern chat and type the following into 
 | ![Hello World](/static/scripts/hello-world.png) |
 | -- |
 
-You should the message in the toast on top of the screen. Now let's break it down bit by bit.
+You should see the message in the toast on top of the screen. Now let's break it down bit by bit.
 
 A script is a batch of commands, each one starting with the slash, with or without named and unnamed arguments, and terminated with the command separator character: `|`.
 
