@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.767977724191">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.768049033166">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -35,11 +35,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.767977724191" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.768049033166" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.767977724191" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.768049033166" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.767977724191" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.768049033166" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -258,7 +258,7 @@
 <ol>
 <li>Make sure you&#x27;re on the latest release or staging version of SillyTavern.</li>
 <li>Open the extensions panel and expand the &quot;Character Expressions&quot; plugin menu.</li>
-<li>Click the &quot;Local server classification&quot; checkbox.</li>
+<li>Select &quot;Local&quot; in the classification source dropdown.</li>
 <li>This will start a one-time download of the classification model from HuggingFace Hub (about ~100 Mb).</li>
 <li>Generate any message to verify that the classification works and the sprite appears. You may also check the server console for debug logs.</li>
 </ol>
@@ -271,7 +271,21 @@
 <ol>
 <li>Have Extras installed and running with the <code v-pre>classify</code> module enabled: <code v-pre>python server.py --enable-modules=classify</code></li>
 <li>Import the expression images the same way as mentioned above.</li>
+<li>Select &quot;Extras&quot; in the classification source dropdown.</li>
 <li>The appropriate expression image will display automatically whenever the AI sends you a response.</li>
+</ol>
+<doc-anchor-target id="setup-instructions-with-llm">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#setup-instructions-with-llm">#</doc-anchor-trigger>
+        <span>Setup Instructions (with LLM)</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li>Connect to any of the supported and properly configured Text Generation APIs.</li>
+<li>Import the expression images the same way as mentioned above.</li>
+<li>Select &quot;LLM&quot; in the classification source dropdown.</li>
+<li>Optionally, configure the classification instruction prompt.</li>
+<li>Generate any message to verify that the classification works and the sprite appears. You may also check the server console for debug logs.</li>
 </ol>
 <doc-anchor-target id="how-do-i-get-more-expression-options">
     <h3>
