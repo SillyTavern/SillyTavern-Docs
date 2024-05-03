@@ -28,7 +28,7 @@ The `classify` module uses a small 'sentiment parsing' model that runs on the Si
 
 1. Make sure you're on the latest release or staging version of SillyTavern.
 2. Open the extensions panel and expand the "Character Expressions" plugin menu.
-3. Click the "Local server classification" checkbox.
+3. Select "Local" in the classification source dropdown. 
 4. This will start a one-time download of the classification model from HuggingFace Hub (about ~100 Mb).
 5. Generate any message to verify that the classification works and the sprite appears. You may also check the server console for debug logs.
 
@@ -36,7 +36,16 @@ The `classify` module uses a small 'sentiment parsing' model that runs on the Si
 
 1. Have Extras installed and running with the `classify` module enabled: `python server.py --enable-modules=classify`
 2. Import the expression images the same way as mentioned above.
-3. The appropriate expression image will display automatically whenever the AI sends you a response.
+3. Select "Extras" in the classification source dropdown.
+4. The appropriate expression image will display automatically whenever the AI sends you a response.
+
+### Setup Instructions (with LLM)
+
+1. Connect to any of the supported and properly configured Text Generation APIs.
+2. Import the expression images the same way as mentioned above.
+3. Select "LLM" in the classification source dropdown.
+4. Optionally, configure the classification instruction prompt.
+5. Generate any message to verify that the classification works and the sprite appears. You may also check the server console for debug logs.
 
 ### How do I get more expression options?
 
