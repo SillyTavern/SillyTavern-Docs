@@ -8,7 +8,7 @@ icon: law
 
 **See the GNU Affero General Public License for more details.**
 
-* TAI Base by Humi: Unknown license
+* TAI Base by Humi: MIT
 * Cohee's modifications and derived code: AGPL v3
 * RossAscends' additions: AGPL v3
 * Portions of CncAnon's TavernAITurbo mod: Unknown license
