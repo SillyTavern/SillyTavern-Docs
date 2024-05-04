@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.768174896368">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.768176610258">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.768174896368" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.768176610258" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.768174896368" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.768176610258" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.768174896368" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.768176610258" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -399,6 +399,13 @@ By default, the chosen entry is selected randomly based on their Trigger% chance
 <li>Entry 2. Keys: song, sing, Ghosts. Group: songs</li>
 </ul>
 <p>The input <code v-pre>sing me a song</code> can activate either entry (both activated 2 keys), but <code v-pre>sing me a song about Ghosts</code> will activate only Entry 2 (activated 3 keys).</p>
+<p>The score calculation logic for primary keys is 1 match = 1 point.</p>
+<p>For secondary keys, the interaction depends on the chosen Selective Logic:</p>
+<ol>
+<li>AND ANY: 1 secondary match = 1 point.</li>
+<li>AND ALL: 1 point for every secondary key if they all match.</li>
+<li>NOT ANY and NOT ALL: no change.</li>
+</ol>
 <doc-anchor-target id="automation-id">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#automation-id">#</doc-anchor-trigger>
