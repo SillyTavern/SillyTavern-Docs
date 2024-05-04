@@ -130,7 +130,7 @@ Example:
 - Entry 1. Keys: song, sing, Black Cat. Group: songs
 - Entry 2. Keys: song, sing, Ghosts. Group: songs
 
-The input `sing me a song` can activate either entry, but `sing me a song about Ghosts` will activate only Entry 2.
+The input `sing me a song` can activate either entry (both activated 2 keys), but `sing me a song about Ghosts` will activate only Entry 2 (activated 3 keys).
 
 #### Automation ID
 
