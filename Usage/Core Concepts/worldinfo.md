@@ -132,6 +132,14 @@ Example:
 
 The input `sing me a song` can activate either entry (both activated 2 keys), but `sing me a song about Ghosts` will activate only Entry 2 (activated 3 keys).
 
+The score calculation logic for primary keys is 1 match = 1 point.
+
+For secondary keys, the interaction depends on the chosen Selective Logic:
+
+1. AND ANY: 1 secondary match = 1 point.
+2. AND ALL: 1 point for every secondary key if they all match.
+3. NOT ANY and NOT ALL: no change.
+
 #### Automation ID
 
 Allows to integrate World Info entries with [STscripts](https://docs.sillytavern.app/usage/st-script/) from Quick Replies extension. If both the quick reply command and the WI entry have the same Automation ID, the command will be executed automatically when the entry with a matching ID is activated.
