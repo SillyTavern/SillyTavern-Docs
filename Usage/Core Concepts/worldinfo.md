@@ -117,7 +117,20 @@ By default, the chosen entry is selected randomly based on their Trigger% chance
 
 To provide more control over which entries are activated via [Inclusion Group](https://docs.sillytavern.app/usage/core-concepts/worldinfo/#inclusion-group), you can use the 'Prioritize Inclusion' setting. This option allows you to specify deterministically which entry to choose instead of randomly rolling Trigger% chances.
 
-If multiple entries having the same group label and this setting turned on were activated, the one with the highest 'Order' value will be selected. This is useful for creating a fallback sequences via inclusion groups. For example to priorize low-depth entries with more emphasis, or to choose a specific instruction on setting the scene over another if both are valid.
+If multiple entries having the same group label and this setting turned on were activated, the one with the highest 'Order' value will be selected. This is useful for creating fallback sequences via inclusion groups. For example to priorize low-depth entries with more emphasis, or to choose a specific instruction on setting the scene over another if both are valid.
+
+#### Use Group Scoring
+
+When this setting is enabled globally or per entry, the number of activated entry keys determines the group winner selection. Only the subset of a group with the highest number of key matches will be left to be activated by Trigger% or Inclusion Priority - the rest will be deactivated and removed from the group.
+
+Use this to give more specificity for individual entries in large groups. For example, they can have a common key and a specific key. A random entry will be inserted when a specific key is not provided, and vice versa.
+
+Example:
+
+- Entry 1. Keys: song, sing, Black Cat. Group: songs
+- Entry 2. Keys: song, sing, Ghosts. Group: songs
+
+The input `sing me a song` can activate either entry, but `sing me a song about Ghosts` will activate only Entry 2.
 
 #### Automation ID
 
