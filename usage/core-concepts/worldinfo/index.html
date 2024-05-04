@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.768137389495">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.768174818636">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.768137389495" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.768174818636" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.768137389495" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.768174818636" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.768137389495" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.768174818636" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -384,7 +384,21 @@ By default, the chosen entry is selected randomly based on their Trigger% chance
     </h4>
 </doc-anchor-target>
 <p>To provide more control over which entries are activated via <a href="https://docs.sillytavern.app/usage/core-concepts/worldinfo/#inclusion-group">Inclusion Group</a>, you can use the &#x27;Prioritize Inclusion&#x27; setting. This option allows you to specify deterministically which entry to choose instead of randomly rolling Trigger% chances.</p>
-<p>If multiple entries having the same group label and this setting turned on were activated, the one with the highest &#x27;Order&#x27; value will be selected. This is useful for creating a fallback sequences via inclusion groups. For example to priorize low-depth entries with more emphasis, or to choose a specific instruction on setting the scene over another if both are valid.</p>
+<p>If multiple entries having the same group label and this setting turned on were activated, the one with the highest &#x27;Order&#x27; value will be selected. This is useful for creating fallback sequences via inclusion groups. For example to priorize low-depth entries with more emphasis, or to choose a specific instruction on setting the scene over another if both are valid.</p>
+<doc-anchor-target id="use-group-scoring">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#use-group-scoring">#</doc-anchor-trigger>
+        <span>Use Group Scoring</span>
+    </h4>
+</doc-anchor-target>
+<p>When this setting is enabled globally or per entry, the number of activated entry keys determines the group winner selection. Only the subset of a group with the highest number of key matches will be left to be activated by Trigger% or Inclusion Priority - the rest will be deactivated and removed from the group.</p>
+<p>Use this to give more specificity for individual entries in large groups. For example, they can have a common key and a specific key. A random entry will be inserted when a specific key is not provided, and vice versa.</p>
+<p>Example:</p>
+<ul>
+<li>Entry 1. Keys: song, sing, Black Cat. Group: songs</li>
+<li>Entry 2. Keys: song, sing, Ghosts. Group: songs</li>
+</ul>
+<p>The input <code v-pre>sing me a song</code> can activate either entry, but <code v-pre>sing me a song about Ghosts</code> will activate only Entry 2.</p>
 <doc-anchor-target id="automation-id">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#automation-id">#</doc-anchor-trigger>
