@@ -125,13 +125,6 @@ When this setting is enabled globally or per entry, the number of activated entr
 
 Use this to give more specificity for individual entries in large groups. For example, they can have a common key and a specific key. A random entry will be inserted when a specific key is not provided, and vice versa.
 
-Example:
-
-- Entry 1. Keys: song, sing, Black Cat. Group: songs
-- Entry 2. Keys: song, sing, Ghosts. Group: songs
-
-The input `sing me a song` can activate either entry (both activated 2 keys), but `sing me a song about Ghosts` will activate only Entry 2 (activated 3 keys).
-
 The score calculation logic for primary keys is 1 match = 1 point.
 
 For secondary keys, the interaction depends on the chosen Selective Logic:
@@ -139,6 +132,13 @@ For secondary keys, the interaction depends on the chosen Selective Logic:
 1. AND ANY: 1 secondary match = 1 point.
 2. AND ALL: 1 point for every secondary key if they all match.
 3. NOT ANY and NOT ALL: no change.
+
+Example:
+
+- Entry 1. Keys: song, sing, Black Cat. Group: songs
+- Entry 2. Keys: song, sing, Ghosts. Group: songs
+
+The input `sing me a song` can activate either entry (both activated 2 keys), but `sing me a song about Ghosts` will activate only Entry 2 (activated 3 keys).
 
 #### Automation ID
 
