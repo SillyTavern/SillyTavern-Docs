@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.768176656677">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.768321348907">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.768176656677" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.768321348907" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.768176656677" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.768321348907" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.768176656677" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.768321348907" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -373,17 +373,14 @@ Supports logic for AND ANY, NOT ANY, or NOT ALL</p>
     </h4>
 </doc-anchor-target>
 <p>Inclusion groups control how entries are selected when multiple entries with the same group label are triggered simultaneously. If multiple entries having the same group label were activated, only one will be inserted into the prompt.<br />
-By default, the chosen entry is selected randomly based on their Trigger% chance — the higher the percentage, the higher the probability of selection. This allows for a random selection among the triggered entries, adding an element of surprise and variety to interactions.</p>
-<blockquote>
-<p><span class="docs-emoji">&#x2139;&#xFE0F;</span> <strong>Grouped entries don&#x27;t use Trigger% for the likelihood of their activation, only to determine the selection winner.</strong></p>
-</blockquote>
+By default, the chosen entry is selected randomly based on their Group Weight (default is 100 points) — the higher the number, the higher the probability of selection. This allows for a random selection among the triggered entries, adding an element of surprise and variety to interactions.</p>
 <doc-anchor-target id="prioritize-inclusion">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#prioritize-inclusion">#</doc-anchor-trigger>
         <span>Prioritize Inclusion</span>
     </h4>
 </doc-anchor-target>
-<p>To provide more control over which entries are activated via <a href="https://docs.sillytavern.app/usage/core-concepts/worldinfo/#inclusion-group">Inclusion Group</a>, you can use the &#x27;Prioritize Inclusion&#x27; setting. This option allows you to specify deterministically which entry to choose instead of randomly rolling Trigger% chances.</p>
+<p>To provide more control over which entries are activated via <a href="https://docs.sillytavern.app/usage/core-concepts/worldinfo/#inclusion-group">Inclusion Group</a>, you can use the &#x27;Prioritize Inclusion&#x27; setting. This option allows you to specify deterministically which entry to choose instead of randomly rolling Group Weight chances.</p>
 <p>If multiple entries having the same group label and this setting turned on were activated, the one with the highest &#x27;Order&#x27; value will be selected. This is useful for creating fallback sequences via inclusion groups. For example to priorize low-depth entries with more emphasis, or to choose a specific instruction on setting the scene over another if both are valid.</p>
 <doc-anchor-target id="use-group-scoring">
     <h4>
@@ -391,7 +388,7 @@ By default, the chosen entry is selected randomly based on their Trigger% chance
         <span>Use Group Scoring</span>
     </h4>
 </doc-anchor-target>
-<p>When this setting is enabled globally or per entry, the number of activated entry keys determines the group winner selection. Only the subset of a group with the highest number of key matches will be left to be activated by Trigger% or Inclusion Priority - the rest will be deactivated and removed from the group.</p>
+<p>When this setting is enabled globally or per entry, the number of activated entry keys determines the group winner selection. Only the subset of a group with the highest number of key matches will be left to be activated by Group Weight or Inclusion Priority - the rest will be deactivated and removed from the group.</p>
 <p>Use this to give more specificity for individual entries in large groups. For example, they can have a common key and a specific key. A random entry will be inserted when a specific key is not provided, and vice versa.</p>
 <p>The score calculation logic for primary keys is 1 match = 1 point.</p>
 <p>For secondary keys, the interaction depends on the chosen Selective Logic:</p>
