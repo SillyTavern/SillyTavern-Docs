@@ -63,12 +63,16 @@ Numeric value. Defines a priority of the entry if multiple were activated at onc
 
 * **Before Char Defs:** World Info entry is inserted before the character's description and scenario. Has a moderate impact on the conversation.
 * **After Char Defs:** World Info entry is inserted after the character's description and scenario. Has a greater impact on the conversation.
+* **Before Example Messages:** The World Info entry is parsed as an example dialogue block and inserted before the examples provided by the character card.
+* **After Example Messages:** The World Info entry is parsed as an example dialogue block and inserted after the examples provided by the character card.
 * **Top of AN:** World Info entry is inserted at the top of Author's Note content. Has a variable impact depending on the Author's Note position.
 * **Bottom of AN:** World Info entry is inserted at the bottom of Author's Note content. Has a variable impact depending on the Author's Note position.
 * **@ D:** World Info entry is inserted at a specific depth in the chat (Depth 0 being the bottom of the prompt).
     - ⚙️ - as a system role message
     - 👤 - as a user role message
     - 🤖 - as an assistant role message
+
+Example Message entries will be formatted according to the prompt-building settings: Instruct Mode or Chat Completion prompt manager. They also follow the Example Messages Behavior rules: being gradually pushed out on full context, always kept, or disabled altogether.
 
 If your Author's Note is disabled (Insertion Frequency = 0), World Info entries in A/N positions will be ignored!
 
