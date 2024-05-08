@@ -208,7 +208,7 @@ Strategies for fixing this:
 * Design a good `First Message` for the Character, which shows them speaking in a long-winded manner. AI models can improve a lot when given guidance about the writing style you expect.
 * Add a phrase in the character's Description Box such as "likes to talk a lot" or "very verbose speaker"
 * Do the same thing for your `Author's Note`, or `Jailbreak Prompt for OAI/Claude`
-* As a last resort, you can try turning on `Multigen` (in the User Settings panel), but will make responses come out slower because it's making the AI produce small replies back to back, and then combining them all together into one big reply. It may also be incompatible with some API options.
+* As a last resort, you can try turning on `Auto-Continue` (in the User Settings panel), but will make responses come out slower because it's making the AI produce small replies back to back, and then combining them all together into one big reply. It may also be incompatible with some API options.
 
 ## How to make the AI write less?
 
@@ -217,7 +217,7 @@ This is mostly only a problem for models like ChatGPT or Claude. The same strate
 * decrease the `Response Length` slider
 * give the character a phrase like 'short spoken', or 'doesn't talk much' line in their Description.
 * give the character a brief First Message to set the tone and expectation for the chat.
-* make sure `Multigen` is turned off.
+* make sure `Auto-Continue` is turned off.
 
 ## How to make the AI stop writing the actions of my character, and driving the plot all on its own?
 
