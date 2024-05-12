@@ -207,8 +207,8 @@ Supported rules for boolean comparison are the following. An operation applied t
 
 A subcommand is a string containing a list of slash commands to execute.
 
-1. To use command batching in subcommands, the command separator character should be escaped like this: `\|`.
-2. Since macro values are executed when the conditional is entered, not when the subcommand is executed, a macro could be additionally escaped to delay their evaluation to the subcommand execution time: `\{\{\macro\}\}`.
+1. To use command batching in subcommands, the command separator character should be escaped (see below).
+2. Since macro values are executed when the conditional is entered, not when the subcommand is executed, a macro could be additionally escaped to delay their evaluation to the subcommand execution time.
 3. The result of the subcommands execution is piped to the command after `/if`.
 4. The `/abort` command interrupts the script execution when encountered.
 
@@ -218,6 +218,220 @@ The following example will pass a "true" string to the next command the variable
 ```
 /if left=a right=5 rule=eq else="/pass false" "/pass true" |
 /echo
+```
+
+## Escape Sequences
+
+### Macros
+
+Escaping of macros works just like before. However, with closures, you will need to escape macros a lot less often than before. Either escape the two opening curly braces, or both the opening and closing pair.
+
+```stscript
+/echo \{\{char}} |
+/echo \{\{char\}\}
+```
+
+### Pipes
+
+Pipes don't need to be escaped in closures (when used as command separators). Everywhere where you want to use a literal pipe character instead of a command separator, you need to escape it.
+
+```stscript
+/echo title="a\|b" c\|d |
+/echo title=a\|b c\|d |
+```
+
+With the parser flag `STRICT_ESCAPING` you don't need to escape pipes in quoted values.
+
+```stscript
+/parser-flag STRICT_ESCAPING |
+/echo title="a|b" c\|d |
+/echo title=a\|b c\|d |
+```
+
+### Quotes
+
+To use a literal quote-character inside a quoted value, the character must be escaped.
+
+```stscript
+/echo title="a \"b\" c" d "e" f
+```
+
+### Spaces
+
+To use space in the value of a named argument, you either have to surround the value in quote, or escape the space character.
+
+```stscript
+/echo title="a b" c d |
+/echo title=a\ b c d
+```
+
+### Closure Delimiters
+
+If you want to use the character combinations used to mark the beginning or end of a closure, you have to escape the sequence with a single backslash.
+
+```stscript
+/echo \{: |
+/echo \:}
+```
+
+## Pipe Breakers
+
+```stscript
+||
+```
+
+To prevent the previous command's output from being automatically injected as the unnamed argument into the next command, put double pipes between the two commands.
+
+```stscript
+/echo we don't want to pass this on ||
+/world
+```
+
+## Closures
+
+```stscript
+{: ... :}
+```
+
+Closures (block statements, lambdas, anonymous functions, whatever you want to call them) are a series of commands wrapped between `{:` and `:}`, that are only evaluated once that part of the code is executed.
+
+### Sub-Commands
+
+Closures make using sub-commands a lot easier and get rid of the need to escape pipes and macros.
+
+```stscript
+// if without closures |
+/if left=1 rule=eq right=1
+    else="
+        /echo not equal \|
+        /return 0
+    "
+    /echo equal \|
+    /return \{\{pipe}}
+```
+
+```stscript
+// if with closures |
+/if left=1 rule=eq right=1
+    else={:
+        /echo not equal |
+        /return 0
+    :}
+    {:
+        /echo equal |
+        /return {{pipe}}
+    :}
+```
+
+### Scopes
+
+Closures have their own scope and support scoped variables. Scoped variables are declared with `/let`, their values set and retrieved with `/var`. Another way to get a scoped variable is the `{{var::}}` macro.
+
+```stscript
+/let x |
+/let y 2 |
+/var x 1 |
+/var y |
+/echo x is {{var::x}} and y is {{pipe}}.
+```
+
+Within a closure, you have access to all variables declared within that same closure or in one of its ancestors. You don't have access to variables declared in a closure's descendants.  
+If a variable is declared with the same name as a variable that was declared in one of the closure's ancestors, you don't have access to the ancestor variable in this closure and its descendants.
+
+```stscript
+/let x this is root x |
+/let y this is root y |
+/return {:
+    /echo called from level-1: x is "{{var::x}}" and y is "{{var::y}}" |
+    /delay 500 |
+    /let x this is level-1 x |
+    /echo called from level-1: x is "{{var::x}}" and y is "{{var::y}}" |
+    /delay 500 |
+    /return {:
+        /echo called from level-2: x is "{{var::x}}" and y is "{{var::y}}" |
+        /let x this is level-2 x |
+        /echo called from level-2: x is "{{var::x}}" and y is "{{var::y}}" |
+        /delay 500
+    :}()
+:}() |
+/echo called from root: x is "{{var::x}}" and y is "{{var::y}}"
+```
+
+### Named Closures
+
+```stscript
+/let x {: ... :} | /:x
+```
+
+Closures can be assigned to variables (only scoped variables) to be called at a later point or to be used as sub-commands.
+
+```stscript
+/let myClosure {:
+    /echo this is my closure
+:} |
+/:myClosure
+```
+
+```stscript
+/let myClosure {:
+    /echo this is my closure |
+    /delay 500
+:} |
+/times 3 {{var::myClosure}}
+```
+
+`/:` can also be used to execute Quick Replies, as it is just a shorthand for `/run`.
+
+```stscript
+/:QrSetName.QrButtonLabel |
+/run QrSetName.QrButtonLabel
+```
+
+### Closure Arguments
+
+Named closures can take named arguments, just like slash commands. The arguments can have default values.
+
+```stscript
+/let myClosure {: a=1 b=
+    /echo a is {{var::a}} and b is {{var::b}}
+:} |
+/:myClosure b=10
+```
+
+### Immediately Executed Closures
+
+```stscript
+{: ... :}()
+```
+
+Closures can be immediately executed, meaning they will be replaced with their return value. This is helpful in places where no explicit support for closures exists, and to shorten some commands that would otherwise require a lot of intermediate variables.
+
+```stscript
+// a simple length comparison of two strings without closures |
+/len foo |
+/var lenOfFoo {{pipe}} |
+/len bar |
+/var lenOfBar {{pipe}} |
+/if left={{var::lenOfFoo}} rule=eq right={{var:lenOfBar}} /echo yay!
+```
+
+```stscript
+// the same comparison with immediately executed closures |
+/if left={:/len foo:}() rule=eq right={:/len bar:}() /echo yay!
+```
+
+## Comments
+
+```stscript
+// ... | /# ...
+```
+
+A comment is a human-readable explanation or annotation in the script code. Comments don't break pipes.
+
+```stscript
+// this is a comment |
+/echo foo |
+/# this is also a comment
 ```
 
 ## Flow control - loops
@@ -500,6 +714,93 @@ There's a variety of useful text manipulation utility commands to be used in var
 1. `list` is a JSON-serialized array of strings containing the candidates. Can also specify a variable name containing the list. **Required argument.**
 2. Unnamed argument is the input text to be matched. Output is one of the candidates matching the input most closely.
 
+## Autocomplete
+
+- Autocomplete is enabled both on the chat input, and the large Quick Reply editor.
+- Autocomplete works anywhere in your input. Even with multiple piped commands and nested closures.
+- Autocomplete supports three ways of looking up matching commands (*User Settings* -> *STscript Matching*).
+
+1. **Starts with** The "old" way. Only commands that begin exactly with the typed value will show up.
+2. **Includes**  All commands that *include* the type value will show up. Example: When entering `/delete`, the commands `/qr-delete` and `/qr-set-delete` will show up in the autocomplete list (/qr-**delete**, /qr-set-**delete**).
+3. **Fuzzy**  All commands that can be fuzzy-matched against the typed value will show up. Example: When entering `/seas`, the command `/sendas` will show up in the autocomplete list (/**se**nd**as**).
+
+- Command arguments are supported by autocomplete as well. The list will show up for required arguments automatically. For optional arguments, press *Ctrl*+*Space* to open the list of available options.
+- When entering `/:` to execute a closure or QR, autocomplete will show a list of scoped variables and QRs.
+- Autocomplete has limited support for macros (in slash commands). Type `{{` to get a list of available macros.
+- Use the *up* and *down* *arrow keys* to select an option from the list of autocomplete options.
+- Press *Enter* or *Tab* or *click* on an option to place the option at the cursor.
+- Press *Escape* to close the autocomplete list.
+- Press *Ctrl*+*Space* to open the autocomplete list or toggle the selected option's details.
+
+## Parser Flags
+
+```stscript
+/parser-flag
+```
+
+The parser accepts flags to modify its behavior. These flags can be toggled on and off at any point in a script and all following input will be evaluated accordingly.  
+You can set your default flags in user settings.
+
+### Strict Escaping
+
+```stscript
+/parser-flag STRICT_ESCAPING on |
+```
+
+Changes with `STRICT_ESCAPING` enabled are as follows.
+
+#### Pipes
+
+Pipes don't need to be escaped in quoted values.
+
+```stscript
+/echo title="a|b" c\|d
+```
+
+#### Backslashes
+
+A backslash in front of a symbol can be escaped to provide the literal backslash followed by the functional symbol.
+
+```stscript
+// this will echo "foo \", then echo "bar" |
+/echo foo \\|
+/echo bar
+```
+
+```stscript
+/echo \\|
+/echo \\\|
+```
+
+### Replace Variable Macros
+
+```stscript
+/parser-flag REPLACE_GETVAR on |
+```
+
+This flag helps to avoid double-substitutions when the variable values contain text that could be interpreted as macros. The `{{var::}}` macros get substituted last and no further substitutions happen on the resulting text / variable value.
+
+Replaces all `{{getvar::}}` and `{{getglobalvar::}}` macros with `{{var::}}`.
+Behind the scenes, the parser will insert a series of command executors before the command with the replaced macros:
+
+- call `/let` to save the current `{{pipe}}` to a scoped variable
+- call `/getvar` or `/getglobalvar` to get the variable used in the macro
+- call `/let` to save the retrieved variable to a scoped variable
+- call `/return` with the saved `{{pipe}}` value to restore the correct piped value for the next command
+
+```stscript
+// the following will echo the last message's id / number |
+/setvar key=x \{\{lastMessageId}} |
+/echo {{getvar::x}}
+```
+
+```stscript
+// this will echo the literal text {{lastMessageId}} |
+/parser-flag REPLACE_GETVAR |
+/setvar key=x \{\{lastMessageId}} |
+/echo {{getvar::x}}
+```
+
 ## Quick Replies: script library and auto-execution
 
 Quick Replies is a built-in SillyTavern extension that provides an easy way to store and execute your scripts.
@@ -747,4 +1048,25 @@ Scripts can also interact with SillyTavern's UI: navigate through the chats or c
 /pow PHI fib_no | /div {{pipe}} SQRT5 |
 /round |
 /echo {{getvar::fib_no}}th Fibonacci's number is: {{pipe}}
+```
+
+### Recursive Factorial (using closures)
+
+```stscript
+/let fact {: n=
+    /if left={{var::n}} rule=gt right=1
+        else={:
+            /return 1
+        :}
+        {:
+            /sub {{var::n}} 1 |
+            /:fact n={{pipe}} |
+            /mul {{var::n}} {{pipe}}
+        :}
+:} |
+
+/input Calculate factorial of: |
+/let n {{pipe}} |
+/:fact n={{var::n}} |
+/echo factorial of {{var::n}} is {{pipe}}
 ```

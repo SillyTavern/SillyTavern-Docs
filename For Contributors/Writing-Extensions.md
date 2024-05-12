@@ -111,7 +111,61 @@ Using imports from SillyTavern code is unreliable and can break at any time if t
 
 If you're missing any of the functions/properties in `getContext`, please get in touch with the developers or send us a Pull Request!
 
-### Registering slash commands
+## Registering slash commands (new way)
+
+While `registerSlashCommand` still exists for backward compatibility, new slash commands should now be registered through `SlashCommandParser.addCommandObject()` to provide extended details about the command and its parameters to the parser (and in turn to autocomplete and the command help).
+
+```javascript
+SlashCommandParser.addCommandObject(SlashCommand.fromProps({ name: 'repeat',
+    callback: (namedArgs, unnamedArgs) => {
+        return Array(namedArgs.times ?? 5)
+            .fill(unnamedArgs.toString())
+            .join(isTrueBoolean(namedArgs.space.toString()) ? ' ' : '')
+        ;
+    },
+    aliases: ['example-command'],
+    returns: 'the repeated text',
+    namedArgumentList: [
+        SlashCommandNamedArgument.fromProps({ name: 'times',
+            description: 'number of times to repeat the text',
+            typeList: ARGUMENT_TYPE.NUMBER,
+            defaultValue: '5',
+        }),
+        SlashCommandNamedArgument.fromProps({ name: 'space',
+            description: 'whether to separate the texts with a space',
+            typeList: ARGUMENT_TYPE.BOOLEAN,
+            defaultValue: 'off',
+            enumList: ['on', 'off'],
+        }),
+    ],
+    unnamedArgumentList: [
+        SlashCommandArgument.fromProps({ description: 'the text to repeat',
+            typeList: ARGUMENT_TYPE.STRING,
+            isRequired: true,
+        }),
+    ],
+    helpString: `
+        <div>
+            Repeats the provided text a number of times.
+        </div>
+        <div>
+            <strong>Example:</strong>
+            <ul>
+                <li>
+                    <pre><code class="language-stscript">/repeat foo</code></pre>
+                    returns "foofoofoofoofoo"
+                </li>
+                <li>
+                    <pre><code class="language-stscript">/repeat times=3 space=on bar</code></pre>
+                    returns "bar bar bar"
+                </li>
+            </ul>
+        </div>
+    `,
+}));
+```
+
+## Registering slash commands (old way)
 
 Use `registerSlashCommand()` to register a new slash command:
 
