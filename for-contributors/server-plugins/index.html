@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.768496911209">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.768827700903">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.768496911209" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.768827700903" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.768496911209" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.768827700903" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.768496911209" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.768496911209" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.768827700903" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.768827700903" defer></script>
 
     <Style>
         a {
@@ -225,6 +225,20 @@
 <p>The module should also export an <code v-pre>info</code> object containing the information about the plugin (<code v-pre>id</code>, <code v-pre>name</code>, and <code v-pre>description</code> strings). This will provide the information about the plugin to the loader.</p>
 <p>You can register routes via the router that will be registered under the <code v-pre>/api/plugins/{id}/{route}</code> path. For example <code v-pre>router.get('/foo')</code> for plugin <code v-pre>example</code> will produce a route like this: <code v-pre>/api/plugins/example/foo</code>.</p>
 <p>A plugin could also <em>optionally</em> export an <code v-pre>exit</code> function that performs clean-up on shutting down the server. It should have no arguments and must return a Promise.</p>
+<p>TypeScript contract for plugin exports:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">interface PluginInfo {
+    id: string;
+    name: string;
+    description: string;
+}
+
+interface Plugin {
+    init: (router: Router) =&gt; Promise&lt;void&gt;;
+    exit: () =&gt; Promise&lt;void&gt;;
+    info: PluginInfo;
+}</code></pre>
+</doc-codeblock></div>
 <p>See below for a &quot;Hello world!&quot; plugin example:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-javascript"><code v-pre class="language-javascript">/**
