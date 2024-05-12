@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.768827700903">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.768856546647">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -35,11 +35,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.768827700903" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.768856546647" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.768827700903" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.768856546647" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.768827700903" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.768856546647" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -464,8 +464,8 @@ These concepts are going to be described in the following document.</p>
 </doc-anchor-target>
 <p>A subcommand is a string containing a list of slash commands to execute.</p>
 <ol>
-<li>To use command batching in subcommands, the command separator character should be escaped like this: <code v-pre>\|</code>.</li>
-<li>Since macro values are executed when the conditional is entered, not when the subcommand is executed, a macro could be additionally escaped to delay their evaluation to the subcommand execution time: <code v-pre>\{\{\macro\}\}</code>.</li>
+<li>To use command batching in subcommands, the command separator character should be escaped (see below).</li>
+<li>Since macro values are executed when the conditional is entered, not when the subcommand is executed, a macro could be additionally escaped to delay their evaluation to the subcommand execution time.</li>
 <li>The result of the subcommands execution is piped to the command after <code v-pre>/if</code>.</li>
 <li>The <code v-pre>/abort</code> command interrupts the script execution when encountered.</li>
 </ol>
@@ -474,6 +474,260 @@ The following example will pass a &quot;true&quot; string to the next command th
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">/if left=a right=5 rule=eq else=&quot;/pass false&quot; &quot;/pass true&quot; |
 /echo</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="escape-sequences">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#escape-sequences">#</doc-anchor-trigger>
+        <span>Escape Sequences</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="macros">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#macros">#</doc-anchor-trigger>
+        <span>Macros</span>
+    </h3>
+</doc-anchor-target>
+<p>Escaping of macros works just like before. However, with closures, you will need to escape macros a lot less often than before. Either escape the two opening curly braces, or both the opening and closing pair.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/echo \{\{char}} |
+/echo \{\{char\}\}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="pipes">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pipes">#</doc-anchor-trigger>
+        <span>Pipes</span>
+    </h3>
+</doc-anchor-target>
+<p>Pipes don&#x27;t need to be escaped in closures (when used as command separators). Everywhere where you want to use a literal pipe character instead of a command separator, you need to escape it.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/echo title=&quot;a\|b&quot; c\|d |
+/echo title=a\|b c\|d |</code></pre>
+</doc-codeblock></div>
+<p>With the parser flag <code v-pre>STRICT_ESCAPING</code> you don&#x27;t need to escape pipes in quoted values.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/parser-flag STRICT_ESCAPING |
+/echo title=&quot;a|b&quot; c\|d |
+/echo title=a\|b c\|d |</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="quotes">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#quotes">#</doc-anchor-trigger>
+        <span>Quotes</span>
+    </h3>
+</doc-anchor-target>
+<p>To use a literal quote-character inside a quoted value, the character must be escaped.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/echo title=&quot;a \&quot;b\&quot; c&quot; d &quot;e&quot; f</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="spaces">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#spaces">#</doc-anchor-trigger>
+        <span>Spaces</span>
+    </h3>
+</doc-anchor-target>
+<p>To use space in the value of a named argument, you either have to surround the value in quote, or escape the space character.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/echo title=&quot;a b&quot; c d |
+/echo title=a\ b c d</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="closure-delimiters">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#closure-delimiters">#</doc-anchor-trigger>
+        <span>Closure Delimiters</span>
+    </h3>
+</doc-anchor-target>
+<p>If you want to use the character combinations used to mark the beginning or end of a closure, you have to escape the sequence with a single backslash.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/echo \{: |
+/echo \:}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="pipe-breakers">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pipe-breakers">#</doc-anchor-trigger>
+        <span>Pipe Breakers</span>
+    </h2>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">||</code></pre>
+</doc-codeblock></div>
+<p>To prevent the previous command&#x27;s output from being automatically injected as the unnamed argument into the next command, put double pipes between the two commands.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/echo we don't want to pass this on ||
+/world</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="closures">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#closures">#</doc-anchor-trigger>
+        <span>Closures</span>
+    </h2>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">{: ... :}</code></pre>
+</doc-codeblock></div>
+<p>Closures (block statements, lambdas, anonymous functions, whatever you want to call them) are a series of commands wrapped between <code v-pre>{:</code> and <code v-pre>:}</code>, that are only evaluated once that part of the code is executed.</p>
+<doc-anchor-target id="sub-commands">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sub-commands">#</doc-anchor-trigger>
+        <span>Sub-Commands</span>
+    </h3>
+</doc-anchor-target>
+<p>Closures make using sub-commands a lot easier and get rid of the need to escape pipes and macros.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">// if without closures |
+/if left=1 rule=eq right=1
+    else=&quot;
+        /echo not equal \|
+        /return 0
+    &quot;
+    /echo equal \|
+    /return \{\{pipe}}</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">// if with closures |
+/if left=1 rule=eq right=1
+    else={:
+        /echo not equal |
+        /return 0
+    :}
+    {:
+        /echo equal |
+        /return {{pipe}}
+    :}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="scopes">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#scopes">#</doc-anchor-trigger>
+        <span>Scopes</span>
+    </h3>
+</doc-anchor-target>
+<p>Closures have their own scope and support scoped variables. Scoped variables are declared with <code v-pre>/let</code>, their values set and retrieved with <code v-pre>/var</code>. Another way to get a scoped variable is the <code v-pre>{{var::}}</code> macro.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/let x |
+/let y 2 |
+/var x 1 |
+/var y |
+/echo x is {{var::x}} and y is {{pipe}}.</code></pre>
+</doc-codeblock></div>
+<p>Within a closure, you have access to all variables declared within that same closure or in one of its ancestors. You don&#x27;t have access to variables declared in a closure&#x27;s descendants.<br />
+If a variable is declared with the same name as a variable that was declared in one of the closure&#x27;s ancestors, you don&#x27;t have access to the ancestor variable in this closure and its descendants.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/let x this is root x |
+/let y this is root y |
+/return {:
+    /echo called from level-1: x is &quot;{{var::x}}&quot; and y is &quot;{{var::y}}&quot; |
+    /delay 500 |
+    /let x this is level-1 x |
+    /echo called from level-1: x is &quot;{{var::x}}&quot; and y is &quot;{{var::y}}&quot; |
+    /delay 500 |
+    /return {:
+        /echo called from level-2: x is &quot;{{var::x}}&quot; and y is &quot;{{var::y}}&quot; |
+        /let x this is level-2 x |
+        /echo called from level-2: x is &quot;{{var::x}}&quot; and y is &quot;{{var::y}}&quot; |
+        /delay 500
+    :}()
+:}() |
+/echo called from root: x is &quot;{{var::x}}&quot; and y is &quot;{{var::y}}&quot;</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="named-closures">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#named-closures">#</doc-anchor-trigger>
+        <span>Named Closures</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/let x {: ... :} | /:x</code></pre>
+</doc-codeblock></div>
+<p>Closures can be assigned to variables (only scoped variables) to be called at a later point or to be used as sub-commands.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/let myClosure {:
+    /echo this is my closure
+:} |
+/:myClosure</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/let myClosure {:
+    /echo this is my closure |
+    /delay 500
+:} |
+/times 3 {{var::myClosure}}</code></pre>
+</doc-codeblock></div>
+<p><code v-pre>/:</code> can also be used to execute Quick Replies, as it is just a shorthand for <code v-pre>/run</code>.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/:QrSetName.QrButtonLabel |
+/run QrSetName.QrButtonLabel</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="closure-arguments">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#closure-arguments">#</doc-anchor-trigger>
+        <span>Closure Arguments</span>
+    </h3>
+</doc-anchor-target>
+<p>Named closures can take named arguments, just like slash commands. The arguments can have default values.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/let myClosure {: a=1 b=
+    /echo a is {{var::a}} and b is {{var::b}}
+:} |
+/:myClosure b=10</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="immediately-executed-closures">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#immediately-executed-closures">#</doc-anchor-trigger>
+        <span>Immediately Executed Closures</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">{: ... :}()</code></pre>
+</doc-codeblock></div>
+<p>Closures can be immediately executed, meaning they will be replaced with their return value. This is helpful in places where no explicit support for closures exists, and to shorten some commands that would otherwise require a lot of intermediate variables.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">// a simple length comparison of two strings without closures |
+/len foo |
+/var lenOfFoo {{pipe}} |
+/len bar |
+/var lenOfBar {{pipe}} |
+/if left={{var::lenOfFoo}} rule=eq right={{var:lenOfBar}} /echo yay!</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">// the same comparison with immediately executed closures |
+/if left={:/len foo:}() rule=eq right={:/len bar:}() /echo yay!</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="comments">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#comments">#</doc-anchor-trigger>
+        <span>Comments</span>
+    </h2>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">// ... | /# ...</code></pre>
+</doc-codeblock></div>
+<p>A comment is a human-readable explanation or annotation in the script code. Comments don&#x27;t break pipes.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">// this is a comment |
+/echo foo |
+/# this is also a comment</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="flow-control---loops">
     <h2>
@@ -904,6 +1158,115 @@ This example will get you 3 last messages in the chat:</p>
 <li><code v-pre>list</code> is a JSON-serialized array of strings containing the candidates. Can also specify a variable name containing the list. <strong>Required argument.</strong></li>
 <li>Unnamed argument is the input text to be matched. Output is one of the candidates matching the input most closely.</li>
 </ol>
+<doc-anchor-target id="autocomplete">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#autocomplete">#</doc-anchor-trigger>
+        <span>Autocomplete</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li>Autocomplete is enabled both on the chat input, and the large Quick Reply editor.</li>
+<li>Autocomplete works anywhere in your input. Even with multiple piped commands and nested closures.</li>
+<li>Autocomplete supports three ways of looking up matching commands (<em>User Settings</em> -&gt; <em>STscript Matching</em>).</li>
+</ul>
+<ol>
+<li><strong>Starts with</strong> The &quot;old&quot; way. Only commands that begin exactly with the typed value will show up.</li>
+<li><strong>Includes</strong>  All commands that <em>include</em> the type value will show up. Example: When entering <code v-pre>/delete</code>, the commands <code v-pre>/qr-delete</code> and <code v-pre>/qr-set-delete</code> will show up in the autocomplete list (/qr-<strong>delete</strong>, /qr-set-<strong>delete</strong>).</li>
+<li><strong>Fuzzy</strong>  All commands that can be fuzzy-matched against the typed value will show up. Example: When entering <code v-pre>/seas</code>, the command <code v-pre>/sendas</code> will show up in the autocomplete list (/<strong>se</strong>nd<strong>as</strong>).</li>
+</ol>
+<ul>
+<li>Command arguments are supported by autocomplete as well. The list will show up for required arguments automatically. For optional arguments, press <em>Ctrl</em>+<em>Space</em> to open the list of available options.</li>
+<li>When entering <code v-pre>/:</code> to execute a closure or QR, autocomplete will show a list of scoped variables and QRs.</li>
+<li>Autocomplete has limited support for macros (in slash commands). Type <code v-pre>{{</code> to get a list of available macros.</li>
+<li>Use the <em>up</em> and <em>down</em> <em>arrow keys</em> to select an option from the list of autocomplete options.</li>
+<li>Press <em>Enter</em> or <em>Tab</em> or <em>click</em> on an option to place the option at the cursor.</li>
+<li>Press <em>Escape</em> to close the autocomplete list.</li>
+<li>Press <em>Ctrl</em>+<em>Space</em> to open the autocomplete list or toggle the selected option&#x27;s details.</li>
+</ul>
+<doc-anchor-target id="parser-flags">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#parser-flags">#</doc-anchor-trigger>
+        <span>Parser Flags</span>
+    </h2>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/parser-flag</code></pre>
+</doc-codeblock></div>
+<p>The parser accepts flags to modify its behavior. These flags can be toggled on and off at any point in a script and all following input will be evaluated accordingly.<br />
+You can set your default flags in user settings.</p>
+<doc-anchor-target id="strict-escaping">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#strict-escaping">#</doc-anchor-trigger>
+        <span>Strict Escaping</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/parser-flag STRICT_ESCAPING on |</code></pre>
+</doc-codeblock></div>
+<p>Changes with <code v-pre>STRICT_ESCAPING</code> enabled are as follows.</p>
+<doc-anchor-target id="pipes-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pipes-1">#</doc-anchor-trigger>
+        <span>Pipes</span>
+    </h4>
+</doc-anchor-target>
+<p>Pipes don&#x27;t need to be escaped in quoted values.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/echo title=&quot;a|b&quot; c\|d</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="backslashes">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#backslashes">#</doc-anchor-trigger>
+        <span>Backslashes</span>
+    </h4>
+</doc-anchor-target>
+<p>A backslash in front of a symbol can be escaped to provide the literal backslash followed by the functional symbol.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">// this will echo &quot;foo \&quot;, then echo &quot;bar&quot; |
+/echo foo \\|
+/echo bar</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/echo \\|
+/echo \\\|</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="replace-variable-macros">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#replace-variable-macros">#</doc-anchor-trigger>
+        <span>Replace Variable Macros</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/parser-flag REPLACE_GETVAR on |</code></pre>
+</doc-codeblock></div>
+<p>This flag helps to avoid double-substitutions when the variable values contain text that could be interpreted as macros. The <code v-pre>{{var::}}</code> macros get substituted last and no further substitutions happen on the resulting text / variable value.</p>
+<p>Replaces all <code v-pre>{{getvar::}}</code> and <code v-pre>{{getglobalvar::}}</code> macros with <code v-pre>{{var::}}</code>.
+Behind the scenes, the parser will insert a series of command executors before the command with the replaced macros:</p>
+<ul>
+<li>call <code v-pre>/let</code> to save the current <code v-pre>{{pipe}}</code> to a scoped variable</li>
+<li>call <code v-pre>/getvar</code> or <code v-pre>/getglobalvar</code> to get the variable used in the macro</li>
+<li>call <code v-pre>/let</code> to save the retrieved variable to a scoped variable</li>
+<li>call <code v-pre>/return</code> with the saved <code v-pre>{{pipe}}</code> value to restore the correct piped value for the next command</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">// the following will echo the last message's id / number |
+/setvar key=x \{\{lastMessageId}} |
+/echo {{getvar::x}}</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">// this will echo the literal text {{lastMessageId}} |
+/parser-flag REPLACE_GETVAR |
+/setvar key=x \{\{lastMessageId}} |
+/echo {{getvar::x}}</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="quick-replies-script-library-and-auto-execution">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#quick-replies-script-library-and-auto-execution">#</doc-anchor-trigger>
@@ -1234,6 +1597,31 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
 /pow PHI fib_no | /div {{pipe}} SQRT5 |
 /round |
 /echo {{getvar::fib_no}}th Fibonacci's number is: {{pipe}}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="recursive-factorial-using-closures">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#recursive-factorial-using-closures">#</doc-anchor-trigger>
+        <span>Recursive Factorial (using closures)</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/let fact {: n=
+    /if left={{var::n}} rule=gt right=1
+        else={:
+            /return 1
+        :}
+        {:
+            /sub {{var::n}} 1 |
+            /:fact n={{pipe}} |
+            /mul {{var::n}} {{pipe}}
+        :}
+:} |
+
+/input Calculate factorial of: |
+/let n {{pipe}} |
+/:fact n={{var::n}} |
+/echo factorial of {{var::n}} is {{pipe}}</code></pre>
 </doc-codeblock></div>
 
                                 

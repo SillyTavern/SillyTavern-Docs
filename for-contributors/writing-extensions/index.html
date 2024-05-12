@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.768827700903">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.768856546647">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.768827700903" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.768856546647" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.768827700903" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.768856546647" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.768827700903" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.768827700903" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.768856546647" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.768856546647" defer></script>
 
     <Style>
         a {
@@ -323,11 +323,67 @@ function handleMessage(data) {
 </doc-anchor-target>
 <p>Using imports from SillyTavern code is unreliable and can break at any time if the internal structure of ST&#x27;s modules changes. <code v-pre>getContext</code> provides a more stable API.</p>
 <p>If you&#x27;re missing any of the functions/properties in <code v-pre>getContext</code>, please get in touch with the developers or send us a Pull Request!</p>
-<doc-anchor-target id="registering-slash-commands">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#registering-slash-commands">#</doc-anchor-trigger>
-        <span>Registering slash commands</span>
-    </h3>
+<doc-anchor-target id="registering-slash-commands-new-way">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#registering-slash-commands-new-way">#</doc-anchor-trigger>
+        <span>Registering slash commands (new way)</span>
+    </h2>
+</doc-anchor-target>
+<p>While <code v-pre>registerSlashCommand</code> still exists for backward compatibility, new slash commands should now be registered through <code v-pre>SlashCommandParser.addCommandObject()</code> to provide extended details about the command and its parameters to the parser (and in turn to autocomplete and the command help).</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-javascript"><code v-pre class="language-javascript">SlashCommandParser.addCommandObject(SlashCommand.fromProps({ name: 'repeat',
+    callback: (namedArgs, unnamedArgs) =&gt; {
+        return Array(namedArgs.times ?? 5)
+            .fill(unnamedArgs.toString())
+            .join(isTrueBoolean(namedArgs.space.toString()) ? ' ' : '')
+        ;
+    },
+    aliases: ['example-command'],
+    returns: 'the repeated text',
+    namedArgumentList: [
+        SlashCommandNamedArgument.fromProps({ name: 'times',
+            description: 'number of times to repeat the text',
+            typeList: ARGUMENT_TYPE.NUMBER,
+            defaultValue: '5',
+        }),
+        SlashCommandNamedArgument.fromProps({ name: 'space',
+            description: 'whether to separate the texts with a space',
+            typeList: ARGUMENT_TYPE.BOOLEAN,
+            defaultValue: 'off',
+            enumList: ['on', 'off'],
+        }),
+    ],
+    unnamedArgumentList: [
+        SlashCommandArgument.fromProps({ description: 'the text to repeat',
+            typeList: ARGUMENT_TYPE.STRING,
+            isRequired: true,
+        }),
+    ],
+    helpString: `
+        &lt;div&gt;
+            Repeats the provided text a number of times.
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;strong&gt;Example:&lt;/strong&gt;
+            &lt;ul&gt;
+                &lt;li&gt;
+                    &lt;pre&gt;&lt;code class=&quot;language-stscript&quot;&gt;/repeat foo&lt;/code&gt;&lt;/pre&gt;
+                    returns &quot;foofoofoofoofoo&quot;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;pre&gt;&lt;code class=&quot;language-stscript&quot;&gt;/repeat times=3 space=on bar&lt;/code&gt;&lt;/pre&gt;
+                    returns &quot;bar bar bar&quot;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    `,
+}));</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="registering-slash-commands-old-way">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#registering-slash-commands-old-way">#</doc-anchor-trigger>
+        <span>Registering slash commands (old way)</span>
+    </h2>
 </doc-anchor-target>
 <p>Use <code v-pre>registerSlashCommand()</code> to register a new slash command:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
