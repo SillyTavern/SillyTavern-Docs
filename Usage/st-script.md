@@ -45,7 +45,7 @@ Commands are executed sequentially, one after another, and transfer data between
 
 As constant unnamed arguments and pipes are interchangeable, we could rewrite this script simply as:
 
-```
+```stscript
 /echo Hello, World!
 ```
 
@@ -80,7 +80,7 @@ Now let's add a little bit of interactivity to the script. We will accept the in
 - `rows=number` - (only for `/input`) increases the size of the input control. Default: 1.
 
 Example:
-```
+```stscript
 /popup large=on wide=on okButton="Accept" Please accept our terms and conditions....
 ```
 
@@ -94,7 +94,7 @@ Example:
 
 Example:
 
-```
+```stscript
 /echo severity=error Something really bad happened.
 ```
 
@@ -126,7 +126,7 @@ Variables are used to store and manipulate data in scripts, using either command
 
 Now, let's consider the following example:
 
-```
+```stscript
 /input What do you want to generate? |
 /setvar key=SDinput |
 /echo Requesting an image of {{getvar::SDinput}} |
@@ -165,7 +165,7 @@ You can use the `/if` command to create conditional expressions that branch the 
 
 Let's review the following example:
 
-```
+```stscript
 /input What's your favorite drink? |
 /if left={{pipe}} right="black tea" rule=eq else="/echo You shall not pass \| /abort" "/echo Welcome to the club, \{\{user\}\}"
 ```
@@ -215,7 +215,7 @@ A subcommand is a string containing a list of slash commands to execute.
 `/if` commands can be used as a ternary operator.
 The following example will pass a "true" string to the next command the variable `a` equals 5, and a "false" string otherwise.
 
-```
+```stscript
 /if left=a right=5 rule=eq else="/pass false" "/pass true" |
 /echo
 ```
@@ -493,7 +493,7 @@ Runs a subcommand a specified number of times.
 
 ### Example 1: get an area of a circle with a radius of 50.
 
-```
+```stscript
 /setglobalvar key=PI 3.1415 |
 /setvar key=r 50 |
 /mul r r PI |
@@ -503,7 +503,7 @@ Runs a subcommand a specified number of times.
 
 ### Example 2: calculate a factorial of 5.
 
-```
+```stscript
 /setvar key=input 5 |
 /setvar key=i 1 |
 /setvar key=product 1 |
@@ -534,7 +534,7 @@ Scripts can make requests to your currently connected LLM API using the followin
 
 The generated text is then passed through the pipe to the next command and can be saved to a variable or displaced using the I/O capabilities:
 
-```
+```stscript
 /genraw Write a funny message from Cthulhu about taking over the world. Use emojis. |
 /popup <h3>Cthulhu says:</h3><div>{{pipe}}</div>
 ```
@@ -583,7 +583,7 @@ You can access messages in the currently selected chat using the `/messages` com
 To calculate the start index for a range, for example, when you need to get the last N messages, use variable subtraction.
 This example will get you 3 last messages in the chat:
 
-```
+```stscript
 /setvar key=start {{lastMessageId}} |
 /addvar key=start -2 |
 /messages names=off {{getvar::start}}-{{lastMessageId}} |
@@ -606,7 +606,7 @@ A script can send messages as either a user, character, persona, neutral narrato
 
 This will insert a user message at the beginning of the conversation history:
 
-```
+```stscript
 /send at=0 Hi, I use Linux.
 ```
 
@@ -660,7 +660,7 @@ World Info (also known as Lorebook) is a highly utilitarian tool for dynamically
 
 ### Example 1: Read a content from the chat lorebook by key
 
-```
+```stscript
 /getchatbook | /setvar key=chatLore |
 /findentry file=chatLore field=key Shadowfang |
 /getentryfield file=chatLore field=key |
@@ -669,7 +669,7 @@ World Info (also known as Lorebook) is a highly utilitarian tool for dynamically
 
 ### Example 2: Create a chat lorebook entry with key and content
 
-```
+```stscript
 /getchatbook | /setvar key=chatLore |
 /createentry file=chatLore key="Milla" Milla Basset is a friend of Lilac and Carol. She is a hush basset puppy who possesses the power of alchemy. |
 /echo
@@ -677,7 +677,7 @@ World Info (also known as Lorebook) is a highly utilitarian tool for dynamically
 
 ### Example 3: Expand an existing lorebook entry with new information from the chat
 
-```
+```stscript
 /getchatbook | /setvar key=chatLore |
 /findentry file=chatLore field=key Milla |
 /setvar key=millaUid |
@@ -830,7 +830,7 @@ Don't forget to click "Update" before switching to a different set to write your
 
 Now you can add your first script to the library. Pick any free slot (or create one), type "Click me" into the left box to set the label, then paste this into the right box:
 
-```
+```stscript
 /addvar key=clicks 1 |
 /if left=clicks right=5 rule=eq else="/echo Keep going..." "/echo You did it!  \| /flushvar clicks"
 ```
@@ -884,7 +884,7 @@ Let's create two Quick Replies:
 
 **Command:**
 
-```
+```stscript
 /pass {{roll:d100}}
 ```
 ***
@@ -893,7 +893,7 @@ Let's create two Quick Replies:
 `GetMessage`
 
 **Command:**
-```
+```stscript
 /run GetRandom | /echo Your lucky number is: {{pipe}}
 ```
 ***
@@ -907,7 +907,9 @@ Clicking on the `GetMessage` button will call the `GetRandom` procedure which wi
 
 You can call a procedure from a different quick reply preset using the `a.b` syntax, where a = QR preset name and b = QR label name
 
-`/run QRpreset1.QRlabel1`
+```stscript
+/run QRpreset1.QRlabel1
+```
 
 By default, the system will first look for a quick reply label `a.b`, so if one of your labels is literally "QRpreset1.QRlabel1" it will try to run that. If no such label is found, it will search for a QR preset name "QRpreset1" with a QR labelled "QRlabel1".
 
@@ -1014,7 +1016,7 @@ Scripts can also interact with SillyTavern's UI: navigate through the chats or c
 
 ### Generate chat summary (by @IkariDevGIT)
 
-```
+```stscript
 /setglobalvar key=summaryPrompt Summarize the most important facts and events that have happened in the chat given to you in the Input header. Limit the summary to 100 words or less. Your response should include nothing but the summary. |
 /setvar key=tmp |
 /messages 0-{{lastMessageId}} |
@@ -1031,7 +1033,7 @@ Scripts can also interact with SillyTavern's UI: navigate through the chats or c
 
 ### Buttons popup usage
 
-```
+```stscript
 /setglobalvar key=genders ["boy", "girl", "other"] |
 /buttons labels=genders Who are you? |
 /echo You picked: {{pipe}}
@@ -1041,7 +1043,7 @@ Scripts can also interact with SillyTavern's UI: navigate through the chats or c
 
 > **Hint**: Set value of `fib_no` to the desired number
 
-```
+```stscript
 /setvar key=fib_no 5 |
 /pow 5 0.5 | /setglobalvar key=SQRT5 |
 /setglobalvar key=PHI 1.618033 |
