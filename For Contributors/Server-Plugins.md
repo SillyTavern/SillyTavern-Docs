@@ -22,6 +22,22 @@ You can register routes via the router that will be registered under the `/api/p
 
 A plugin could also *optionally* export an `exit` function that performs clean-up on shutting down the server. It should have no arguments and must return a Promise.
 
+TypeScript contract for plugin exports:
+
+```ts
+interface PluginInfo {
+    id: string;
+    name: string;
+    description: string;
+}
+
+interface Plugin {
+    init: (router: Router) => Promise<void>;
+    exit: () => Promise<void>;
+    info: PluginInfo;
+}
+```
+
 See below for a "Hello world!" plugin example:
 
 ```js
