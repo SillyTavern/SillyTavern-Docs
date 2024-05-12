@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.768856546647">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.768860021593">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -35,11 +35,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.768856546647" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.768860021593" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.768856546647" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.768860021593" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.768856546647" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.768860021593" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -260,6 +260,7 @@ These concepts are going to be described in the following document.</p>
 </blockquote>
 <p>As constant unnamed arguments and pipes are interchangeable, we could rewrite this script simply as:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
 <pre class="language-none"><code v-pre class="language-none">/echo Hello, World!</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="user-input">
@@ -314,6 +315,7 @@ These concepts are going to be described in the following document.</p>
 </ul>
 <p>Example:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
 <pre class="language-none"><code v-pre class="language-none">/popup large=on wide=on okButton=&quot;Accept&quot; Please accept our terms and conditions....</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="arguments-for-echo">
@@ -331,6 +333,7 @@ These concepts are going to be described in the following document.</p>
 </ul>
 <p>Example:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
 <pre class="language-none"><code v-pre class="language-none">/echo severity=error Something really bad happened.</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="variables">
@@ -367,6 +370,7 @@ These concepts are going to be described in the following document.</p>
 </ul>
 <p>Now, let&#x27;s consider the following example:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
 <pre class="language-none"><code v-pre class="language-none">/input What do you want to generate? |
 /setvar key=SDinput |
 /echo Requesting an image of {{getvar::SDinput}} |
@@ -413,6 +417,7 @@ These concepts are going to be described in the following document.</p>
 <p><code v-pre>/if left=valueA right=valueB rule=comparison else=&quot;(command on false)&quot; &quot;(command on true)&quot;</code></p>
 <p>Let&#x27;s review the following example:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
 <pre class="language-none"><code v-pre class="language-none">/input What's your favorite drink? |
 /if left={{pipe}} right=&quot;black tea&quot; rule=eq else=&quot;/echo You shall not pass \| /abort&quot; &quot;/echo Welcome to the club, \{\{user\}\}&quot;</code></pre>
 </doc-codeblock></div>
@@ -472,6 +477,7 @@ These concepts are going to be described in the following document.</p>
 <p><code v-pre>/if</code> commands can be used as a ternary operator.
 The following example will pass a &quot;true&quot; string to the next command the variable <code v-pre>a</code> equals 5, and a &quot;false&quot; string otherwise.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
 <pre class="language-none"><code v-pre class="language-none">/if left=a right=5 rule=eq else=&quot;/pass false&quot; &quot;/pass true&quot; |
 /echo</code></pre>
 </doc-codeblock></div>
@@ -804,6 +810,7 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
 <pre class="language-none"><code v-pre class="language-none">/setglobalvar key=PI 3.1415 |
 /setvar key=r 50 |
 /mul r r PI |
@@ -817,6 +824,7 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
 <pre class="language-none"><code v-pre class="language-none">/setvar key=input 5 |
 /setvar key=i 1 |
 /setvar key=product 1 |
@@ -854,6 +862,7 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 </ul>
 <p>The generated text is then passed through the pipe to the next command and can be saved to a variable or displaced using the I/O capabilities:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
 <pre class="language-none"><code v-pre class="language-none">/genraw Write a funny message from Cthulhu about taking over the world. Use emojis. |
 /popup &lt;h3&gt;Cthulhu says:&lt;/h3&gt;&lt;div&gt;{{pipe}}&lt;/div&gt;</code></pre>
 </doc-codeblock></div>
@@ -925,6 +934,7 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 <p>To calculate the start index for a range, for example, when you need to get the last N messages, use variable subtraction.
 This example will get you 3 last messages in the chat:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
 <pre class="language-none"><code v-pre class="language-none">/setvar key=start {{lastMessageId}} |
 /addvar key=start -2 |
 /messages names=off {{getvar::start}}-{{lastMessageId}} |
@@ -949,6 +959,7 @@ This example will get you 3 last messages in the chat:</p>
 <p><code v-pre>/send</code>, <code v-pre>/sendas</code>, <code v-pre>/sys</code>, and <code v-pre>/comment</code> commands optionally accept a named argument <code v-pre>at</code> with a zero-based numeric value (or a variable name that contains such a value) that specifies an exact position of message insertion. By default new messages are inserted at the end of the chat log.</p>
 <p>This will insert a user message at the beginning of the conversation history:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
 <pre class="language-none"><code v-pre class="language-none">/send at=0 Hi, I use Linux.</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="delete-messages">
@@ -1088,6 +1099,7 @@ This example will get you 3 last messages in the chat:</p>
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
 <pre class="language-none"><code v-pre class="language-none">/getchatbook | /setvar key=chatLore |
 /findentry file=chatLore field=key Shadowfang |
 /getentryfield file=chatLore field=key |
@@ -1100,6 +1112,7 @@ This example will get you 3 last messages in the chat:</p>
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
 <pre class="language-none"><code v-pre class="language-none">/getchatbook | /setvar key=chatLore |
 /createentry file=chatLore key=&quot;Milla&quot; Milla Basset is a friend of Lilac and Carol. She is a hush basset puppy who possesses the power of alchemy. |
 /echo</code></pre>
@@ -1111,6 +1124,7 @@ This example will get you 3 last messages in the chat:</p>
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
 <pre class="language-none"><code v-pre class="language-none">/getchatbook | /setvar key=chatLore |
 /findentry file=chatLore field=key Milla |
 /setvar key=millaUid |
@@ -1302,6 +1316,7 @@ Don&#x27;t forget to click &quot;Update&quot; before switching to a different se
 </doc-anchor-target>
 <p>Now you can add your first script to the library. Pick any free slot (or create one), type &quot;Click me&quot; into the left box to set the label, then paste this into the right box:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
 <pre class="language-none"><code v-pre class="language-none">/addvar key=clicks 1 |
 /if left=clicks right=5 rule=eq else=&quot;/echo Keep going...&quot; &quot;/echo You did it!  \| /flushvar clicks&quot;</code></pre>
 </doc-codeblock></div>
@@ -1361,6 +1376,7 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
 <p><code v-pre>GetRandom</code></p>
 <p><strong>Command:</strong></p>
 <div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
 <pre class="language-none"><code v-pre class="language-none">/pass {{roll:d100}}</code></pre>
 </doc-codeblock></div>
 <hr>
@@ -1368,6 +1384,7 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
 <p><code v-pre>GetMessage</code></p>
 <p><strong>Command:</strong></p>
 <div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
 <pre class="language-none"><code v-pre class="language-none">/run GetRandom | /echo Your lucky number is: {{pipe}}</code></pre>
 </doc-codeblock></div>
 <hr>
@@ -1383,7 +1400,10 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
     </h3>
 </doc-anchor-target>
 <p>You can call a procedure from a different quick reply preset using the <code v-pre>a.b</code> syntax, where a = QR preset name and b = QR label name</p>
-<p><code v-pre>/run QRpreset1.QRlabel1</code></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/run QRpreset1.QRlabel1</code></pre>
+</doc-codeblock></div>
 <p>By default, the system will first look for a quick reply label <code v-pre>a.b</code>, so if one of your labels is literally &quot;QRpreset1.QRlabel1&quot; it will try to run that. If no such label is found, it will search for a QR preset name &quot;QRpreset1&quot; with a QR labelled &quot;QRlabel1&quot;.</p>
 <doc-anchor-target id="quick-replies-management-commands">
     <h3>
@@ -1557,6 +1577,7 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
 <pre class="language-none"><code v-pre class="language-none">/setglobalvar key=summaryPrompt Summarize the most important facts and events that have happened in the chat given to you in the Input header. Limit the summary to 100 words or less. Your response should include nothing but the summary. |
 /setvar key=tmp |
 /messages 0-{{lastMessageId}} |
@@ -1577,6 +1598,7 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
 <pre class="language-none"><code v-pre class="language-none">/setglobalvar key=genders [&quot;boy&quot;, &quot;girl&quot;, &quot;other&quot;] |
 /buttons labels=genders Who are you? |
 /echo You picked: {{pipe}}</code></pre>
@@ -1591,6 +1613,7 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
 <p><strong>Hint</strong>: Set value of <code v-pre>fib_no</code> to the desired number</p>
 </blockquote>
 <div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
 <pre class="language-none"><code v-pre class="language-none">/setvar key=fib_no 5 |
 /pow 5 0.5 | /setglobalvar key=SQRT5 |
 /setglobalvar key=PHI 1.618033 |
