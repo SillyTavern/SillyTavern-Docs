@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.768860021593">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.768913458426">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -35,11 +35,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.768860021593" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.768913458426" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.768860021593" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.768913458426" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.768860021593" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.768913458426" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -237,6 +237,7 @@ These concepts are going to be described in the following document.</p>
 </doc-anchor-target>
 <p>To run your first script, open any SillyTavern chat and type the following into the chat input bar:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
 <pre class="language-none"><code v-pre class="language-none">/pass Hello, World! | /echo</code></pre>
 </doc-codeblock></div>
 <div class="table-wrapper scrollbar overflow-hidden">
@@ -271,6 +272,7 @@ These concepts are going to be described in the following document.</p>
 </doc-anchor-target>
 <p>Now let&#x27;s add a little bit of interactivity to the script. We will accept the input value from the user and display it in the notification.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
 <pre class="language-none"><code v-pre class="language-none">/input Enter your name |
 /echo Hello, my name is {{pipe}}</code></pre>
 </doc-codeblock></div>
@@ -742,7 +744,10 @@ If a variable is declared with the same name as a variable that was declared in 
     </h2>
 </doc-anchor-target>
 <p>If you need to run some command in a loop until a certain condition is met, use the <code v-pre>/while</code> command.</p>
-<p><code v-pre>/while left=valueA right=valueB rule=operation guard=on &quot;commands&quot;</code></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/while left=valueA right=valueB rule=operation guard=on &quot;commands&quot;</code></pre>
+</doc-codeblock></div>
 <p>On each step of the loop it compares the value of variable A with the value of variable B, and if the condition yields true, then executes any valid slash command enclosed in quotes, otherwise exists the loop. This command doesn&#x27;t write anything to the output pipe.</p>
 <doc-anchor-target id="arguments-for-while">
     <h3>
@@ -755,6 +760,7 @@ If a variable is declared with the same name as a variable that was declared in 
 To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 <p>This example adds 1 to the value of <code v-pre>i</code> until it reaches 10, then outputs the resulting value (10 in this case).</p>
 <div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
 <pre class="language-none"><code v-pre class="language-none">/setvar key=i 0 |
 /while left=i right=10 rule=lt &quot;/addvar key=i 1&quot; |
 /echo {{getvar::i}} |
@@ -853,7 +859,10 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
         <span>Arguments for <code v-pre>/gen</code> and <code v-pre>/genraw</code></span>
     </h3>
 </doc-anchor-target>
-<p><code v-pre>/genraw lock=on/off stop=[] instruct=on/off (prompt)</code></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/genraw lock=on/off stop=[] instruct=on/off (prompt)</code></pre>
+</doc-codeblock></div>
 <ul>
 <li><code v-pre>lock</code> — can be <code v-pre>on</code> or <code v-pre>off</code>. Specifies whether a user input should be blocked while the generation is in progress. Default: <code v-pre>off</code>.</li>
 <li><code v-pre>stop</code> — JSON-serialized array of strings. Adds a custom stop string (if the API supports it) just for this generation. Default: none.</li>
@@ -897,7 +906,10 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
         <span>Arguments for <code v-pre>/inject</code></span>
     </h3>
 </doc-anchor-target>
-<p><code v-pre>/inject id=IdGoesHere position=chat depth=4 My prompt injection</code></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/inject id=IdGoesHere position=chat depth=4 My prompt injection</code></pre>
+</doc-codeblock></div>
 <ul>
 <li><code v-pre>id</code> — an identifier string or a reference to a variable. Consequent calls of <code v-pre>/inject</code> with the same ID will overwrite the previous text injection. <strong>Required argument.</strong></li>
 <li><code v-pre>position</code> — sets a position for the injection. Default: <code v-pre>after</code>. Possible values:
@@ -923,7 +935,10 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
     </h3>
 </doc-anchor-target>
 <p>You can access messages in the currently selected chat using the <code v-pre>/messages</code> command.</p>
-<p><code v-pre>/messages names=on/off start-finish</code></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/messages names=on/off start-finish</code></pre>
+</doc-codeblock></div>
 <ul>
 <li>The <code v-pre>names</code> argument is used to specify whether you want to include character names or not, default: <code v-pre>on</code>.</li>
 <li>In an unnamed argument, it accepts a message index or range in the <code v-pre>start-finish</code> format. Ranges are inclusive!</li>
@@ -1155,7 +1170,10 @@ This example will get you 3 last messages in the chat:</p>
         <span>Arguments for <code v-pre>/trimtokens</code></span>
     </h3>
 </doc-anchor-target>
-<p><code v-pre>/trimtokens limit=number direction=start/end (input)</code></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/trimtokens limit=number direction=start/end (input)</code></pre>
+</doc-codeblock></div>
 <ol>
 <li><code v-pre>direction</code> sets the direction for trimming, which can be either <code v-pre>start</code> or <code v-pre>end</code>. Default: <code v-pre>end</code>.</li>
 <li><code v-pre>limit</code> sets the amount of tokens to left in the output. Can also specify a variable name containing the number. <strong>Required argument.</strong></li>
@@ -1167,7 +1185,10 @@ This example will get you 3 last messages in the chat:</p>
         <span>Arguments for <code v-pre>/fuzzy</code></span>
     </h3>
 </doc-anchor-target>
-<p><code v-pre>/fuzzy list=[&quot;candidate1&quot;,&quot;candidate2&quot;] (input)</code></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/fuzzy list=[&quot;candidate1&quot;,&quot;candidate2&quot;] (input)</code></pre>
+</doc-codeblock></div>
 <ol>
 <li><code v-pre>list</code> is a JSON-serialized array of strings containing the candidates. Can also specify a variable name containing the list. <strong>Required argument.</strong></li>
 <li>Unnamed argument is the input text to be matched. Output is one of the candidates matching the input most closely.</li>
@@ -1340,7 +1361,7 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
 </div>
 <p>In this menu you can do the following:</p>
 <ul>
-<li>Edit the script in a convenient full screen editor</li>
+<li>Edit the script in a convenient full-screen editor</li>
 <li>Hide the button from the chat bar, making it accessible only for auto-execution.</li>
 <li>Enable automatic execution on one or more of the following conditions:
 <ul>
@@ -1352,12 +1373,13 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
 <li>Activating a World Info entry using the same Automation ID</li>
 </ul>
 </li>
-<li>Provide a custom tool-tip for the quick reply (text displayed when hovering over the quick reply in your UI)</li>
+<li>Provide a custom tool tip for the quick reply (text displayed when hovering over the quick reply in your UI)</li>
 <li>Execute the script for test purposes</li>
 </ul>
 <p>Commands are executed automatically only if the Quick Replies extension is enabled.</p>
 <p>For example, you can display a message after sending five user messages by adding the following script and setting it to auto-execute on the user message.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
 <pre class="language-none"><code v-pre class="language-none">/addvar key=usercounter 1 |
 /echo You've sent {{pipe}} messages. |
 /if left=usercounter right=5 rule=gte &quot;/echo Game over! \| /flushvar usercounter&quot;</code></pre>
@@ -1369,7 +1391,10 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
     </h2>
 </doc-anchor-target>
 <p>A <code v-pre>/run</code> command can call scripts defined in the Quick Replies by their label, basically providing the ability to define procedures and return results from them. This allows to have reusable script blocks that other scripts could reference. The last result from the procedure&#x27;s pipe is passed to the next command after it.</p>
-<p><code v-pre>/run ScriptLabel</code></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/run ScriptLabel</code></pre>
+</doc-codeblock></div>
 <p>Let&#x27;s create two Quick Replies:</p>
 <hr>
 <p><strong>Label:</strong></p>
@@ -1404,7 +1429,7 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
 <div class="codeblock-title">stscript</div>
 <pre class="language-none"><code v-pre class="language-none">/run QRpreset1.QRlabel1</code></pre>
 </doc-codeblock></div>
-<p>By default, the system will first look for a quick reply label <code v-pre>a.b</code>, so if one of your labels is literally &quot;QRpreset1.QRlabel1&quot; it will try to run that. If no such label is found, it will search for a QR preset name &quot;QRpreset1&quot; with a QR labelled &quot;QRlabel1&quot;.</p>
+<p>By default, the system will first look for a quick reply label <code v-pre>a.b</code>, so if one of your labels is literally &quot;QRpreset1.QRlabel1&quot; it will try to run that. If no such label is found, it will search for a QR preset name &quot;QRpreset1&quot; with a QR labeled &quot;QRlabel1&quot;.</p>
 <doc-anchor-target id="quick-replies-management-commands">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#quick-replies-management-commands">#</doc-anchor-trigger>
