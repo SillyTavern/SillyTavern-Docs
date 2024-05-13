@@ -25,7 +25,7 @@ With great power comes great responsibility. Be careful and always inspect the s
 
 To run your first script, open any SillyTavern chat and type the following into the chat input bar:
 
-```
+```stscript
 /pass Hello, World! | /echo
 ```
 
@@ -53,7 +53,7 @@ As constant unnamed arguments and pipes are interchangeable, we could rewrite th
 
 Now let's add a little bit of interactivity to the script. We will accept the input value from the user and display it in the notification.
 
-```
+```stscript
 /input Enter your name |
 /echo Hello, my name is {{pipe}}
 ```
@@ -438,7 +438,9 @@ A comment is a human-readable explanation or annotation in the script code. Comm
 
 If you need to run some command in a loop until a certain condition is met, use the `/while` command.
 
-`/while left=valueA right=valueB rule=operation guard=on "commands"`
+```stscript
+/while left=valueA right=valueB rule=operation guard=on "commands"
+```
 
 On each step of the loop it compares the value of variable A with the value of variable B, and if the condition yields true, then executes any valid slash command enclosed in quotes, otherwise exists the loop. This command doesn't write anything to the output pipe.
 
@@ -451,12 +453,13 @@ To disable and allow endless loops, set `guard=off`.
 
 This example adds 1 to the value of `i` until it reaches 10, then outputs the resulting value (10 in this case).
 
-```
+```stscript
 /setvar key=i 0 |
 /while left=i right=10 rule=lt "/addvar key=i 1" |
 /echo {{getvar::i}} |
 /flushvar i
 ```
+
 ### Arguments for `/times`
 
 Runs a subcommand a specified number of times.
@@ -525,7 +528,9 @@ Scripts can make requests to your currently connected LLM API using the followin
 
 ### Arguments for `/gen` and `/genraw`
 
-`/genraw lock=on/off stop=[] instruct=on/off (prompt)`
+```stscript
+/genraw lock=on/off stop=[] instruct=on/off (prompt)
+```
 
 - `lock` — can be `on` or `off`. Specifies whether a user input should be blocked while the generation is in progress. Default: `off`.
 - `stop` — JSON-serialized array of strings. Adds a custom stop string (if the API supports it) just for this generation. Default: none.
@@ -556,7 +561,9 @@ Scripts can add custom LLM prompt injections, making it essentially an equivalen
 
 ### Arguments for `/inject`
 
-`/inject id=IdGoesHere position=chat depth=4 My prompt injection`
+```stscript
+/inject id=IdGoesHere position=chat depth=4 My prompt injection
+```
 
 - `id` — an identifier string or a reference to a variable. Consequent calls of `/inject` with the same ID will overwrite the previous text injection. **Required argument.**
 - `position` — sets a position for the injection. Default: `after`. Possible values:
@@ -572,7 +579,9 @@ Scripts can add custom LLM prompt injections, making it essentially an equivalen
 
 You can access messages in the currently selected chat using the `/messages` command.
 
-`/messages names=on/off start-finish`
+```stscript
+/messages names=on/off start-finish
+```
 
 - The `names` argument is used to specify whether you want to include character names or not, default: `on`.
 - In an unnamed argument, it accepts a message index or range in the `start-finish` format. Ranges are inclusive!
@@ -701,7 +710,9 @@ There's a variety of useful text manipulation utility commands to be used in var
 
 ### Arguments for `/trimtokens`
 
-`/trimtokens limit=number direction=start/end (input)`
+```stscript
+/trimtokens limit=number direction=start/end (input)
+```
 
 1. `direction` sets the direction for trimming, which can be either `start` or `end`. Default: `end`.
 2. `limit` sets the amount of tokens to left in the output. Can also specify a variable name containing the number. **Required argument.**
@@ -709,7 +720,9 @@ There's a variety of useful text manipulation utility commands to be used in var
 
 ### Arguments for `/fuzzy`
 
-`/fuzzy list=["candidate1","candidate2"] (input)`
+```stscript
+/fuzzy list=["candidate1","candidate2"] (input)
+```
 
 1. `list` is a JSON-serialized array of strings containing the candidates. Can also specify a variable name containing the list. **Required argument.**
 2. Unnamed argument is the input text to be matched. Output is one of the candidates matching the input most closely.
@@ -847,7 +860,7 @@ Open the modal menu by clicking the `⋮` button for the created command.
 
 In this menu you can do the following:
 
-- Edit the script in a convenient full screen editor
+- Edit the script in a convenient full-screen editor
 - Hide the button from the chat bar, making it accessible only for auto-execution.
 - Enable automatic execution on one or more of the following conditions:
   * App startup
@@ -856,14 +869,14 @@ In this menu you can do the following:
   * Opening a character or group chat
   * Triggering a reply from a group member
   * Activating a World Info entry using the same Automation ID
-- Provide a custom tool-tip for the quick reply (text displayed when hovering over the quick reply in your UI)
+- Provide a custom tool tip for the quick reply (text displayed when hovering over the quick reply in your UI)
 - Execute the script for test purposes
 
 Commands are executed automatically only if the Quick Replies extension is enabled.
 
 For example, you can display a message after sending five user messages by adding the following script and setting it to auto-execute on the user message.
 
-```
+```stscript
 /addvar key=usercounter 1 |
 /echo You've sent {{pipe}} messages. |
 /if left=usercounter right=5 rule=gte "/echo Game over! \| /flushvar usercounter"
@@ -873,7 +886,9 @@ For example, you can display a message after sending five user messages by addin
 
 A `/run` command can call scripts defined in the Quick Replies by their label, basically providing the ability to define procedures and return results from them. This allows to have reusable script blocks that other scripts could reference. The last result from the procedure's pipe is passed to the next command after it.
 
-`/run ScriptLabel`
+```stscript
+/run ScriptLabel
+```
 
 Let's create two Quick Replies:
 
@@ -911,7 +926,7 @@ You can call a procedure from a different quick reply preset using the `a.b` syn
 /run QRpreset1.QRlabel1
 ```
 
-By default, the system will first look for a quick reply label `a.b`, so if one of your labels is literally "QRpreset1.QRlabel1" it will try to run that. If no such label is found, it will search for a QR preset name "QRpreset1" with a QR labelled "QRlabel1".
+By default, the system will first look for a quick reply label `a.b`, so if one of your labels is literally "QRpreset1.QRlabel1" it will try to run that. If no such label is found, it will search for a QR preset name "QRpreset1" with a QR labeled "QRlabel1".
 
 ### Quick Replies management commands
 
