@@ -104,15 +104,14 @@ Scrape articles from a [Fandom](https://www.fandom.com/) wiki by its ID or URL. 
 ### Bronie Parser Extension (Third-Party)
 
 !!! warning Note
-This source comes from a third-party and is **not affiliated or endorsed** by the SillyTavern team. This sourse requires you to have Bronya Rand's [Bronie Parser Extension](https://github.com/Bronya-Rand/Bronie-Parser-Extension) installed and several Server Plugins depending on what sources you plan to use.
+This source comes from a third-party and is **not affiliated** with the SillyTavern team. This source requires you to have Bronya Rand's [Bronie Parser Extension](https://github.com/Bronya-Rand/Bronie-Parser-Extension) installed as well as Server Plugins that require the parser to work.
 !!!
 
 Bronya Rand's Bronie Parser Extension allows the use of third-party scrapers, such as miHoYo/HoYoverse's [HoYoLab](https://wiki.hoyolab.com) into SillyTavern, similar to the other data sources.
 
 Currently, Bronya Rand's Bronie Parser Extension supports the following:
 
--   miHoYo/HoYoverse's HoYoLab (for Genshin Impact/Honkai: Star Rail)\*
-    > Genshin Impact scraper is still a work-in-progress.
+-   miHoYo/HoYoverse's HoYoLab (for Genshin Impact/Honkai: Star Rail) via [HoYoWiki-Scraper-TS](https://github.com/Bronya-Rand/HoYoWiki-Scraper-TS)
 
 To begin, install Bronya Rand's Bronie Parser Extension by following it's [installation guide](https://github.com/Bronya-Rand/Bronie-Parser-Extension?tab=readme-ov-file#installation) and install a supported Server Plugin into SillyTavern. Restart SillyTavern and go to the _Data Bank_ menu. Click `+ Add` and you should see that your recently installed scrapers are added into the possible list of sources to obtain information from.
 
