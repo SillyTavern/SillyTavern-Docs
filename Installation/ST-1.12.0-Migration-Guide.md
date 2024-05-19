@@ -1,9 +1,5 @@
 # SillyTavern 1.12.0 Migration Guide
 
-!!! warning Warning
-This content describes a pre-release version and is subject to change.
-!!!
-
 SillyTavern 1.12.0 (codename the "Neo Server" update) includes several critical changes that may affect the way you use SillyTavern.
 
 This guide will prepare you for the update and provide some further guidance.
