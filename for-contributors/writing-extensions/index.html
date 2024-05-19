@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769450366736">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769459621043">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.769450366736" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.769459621043" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769450366736" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769459621043" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769450366736" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.769450366736" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769459621043" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.769459621043" defer></script>
 
     <Style>
         a {
@@ -243,7 +243,7 @@ const generateRaw = await importFromScript('generateRaw');</code></pre>
         <span>manifest.json</span>
     </h2>
 </doc-anchor-target>
-<p>Every extension must have a folder in <code v-pre>public/scripts/extensions</code> and have a manifest.json file which contains metadata about the plugin and a JS script file.</p>
+<p>Every extension must have a folder in <code v-pre>data/&lt;user-handle&gt;/extensions</code> and have a manifest.json file which contains metadata about the plugin and a JS script file.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-javascript"><code v-pre class="language-javascript">{
     &quot;display_name&quot;: &quot;The name of the plugin&quot;,
@@ -268,7 +268,7 @@ const generateRaw = await importFromScript('generateRaw');</code></pre>
 <li><code v-pre>author</code> is required. It should contain the name or contact info of the author(s).</li>
 <li><code v-pre>auto_update</code> is set to true if the extension should auto-update when the version of the ST package changes.</li>
 </ul>
-<p>Downloadable extensions are mounted into the <code v-pre>public/scripts/extensions/third-party</code> folder, so relative imports should be used based on that. Be careful about where you create your extension during development if you plan on installing it from your GitHub which overwrites the content in the <code v-pre>third-party</code> folder.</p>
+<p>Downloadable extensions are mounted into the <code v-pre>/scripts/extensions/third-party</code> folder, so relative imports should be used based on that. Be careful about where you create your extension during development if you plan on installing it from your GitHub which overwrites the content in the <code v-pre>third-party</code> folder.</p>
 <doc-anchor-target id="requires-vs-optional">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#requires-vs-optional">#</doc-anchor-trigger>
