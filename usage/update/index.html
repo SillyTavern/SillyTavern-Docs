@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769441681207">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769442266129">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.769441681207" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.769442266129" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769441681207" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769442266129" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769441681207" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769442266129" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -267,14 +267,27 @@ Alternatively, if the command prompt gives you problems (and you have GitHub Des
 <li><p>Copy the following files/folders as necessary(*) from your old ST installation:</p>
 </li>
 </ol>
-<p>(*) &#x27;As necessary&#x27; = &quot;If you made any custom content related to those folders&quot;.
-None of the folders are mandatory, so only copy what you need.</p>
-<doc-anchor-target id="note-do-not-copy-the-entire-public-folder">
+<p>(*) &#x27;As necessary&#x27; = &quot;If you made any custom content related to those folders&quot;.</p>
+<doc-anchor-target id="updating-1120">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#note-do-not-copy-the-entire-public-folder">#</doc-anchor-trigger>
-        <span>NOTE: DO NOT COPY THE ENTIRE /PUBLIC/ FOLDER</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#updating-1120">#</doc-anchor-trigger>
+        <span>Updating &gt;=1.12.0</span>
     </h4>
 </doc-anchor-target>
+<p>Copy the <code v-pre>/data</code> directory and <code v-pre>config.yaml</code> file from one installation to another.</p>
+<doc-anchor-target id="updating-from-1120-to-1120">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#updating-from-1120-to-1120">#</doc-anchor-trigger>
+        <span>Updating from &lt;1.12.0 to &gt;1.12.0</span>
+    </h4>
+</doc-anchor-target>
+<p>1.12.0 includes an automated migration procedure. The steps below are required <em>only</em> if the migration was interrupted or errored.</p>
+<ol start="5">
+<li>Run the updated server install at least once to create the <code v-pre>/data/default-user</code> directory.</li>
+<li>Transfer the files from old <code v-pre>/public</code> to new <code v-pre>/data/default-user</code> as necessary.</li>
+</ol>
+<p>None of the folders are mandatory, so only copy what you need.</p>
+<p><strong>NOTE: DO NOT COPY THE ENTIRE /PUBLIC/ FOLDER</strong></p>
 <p>Doing so could break the new install and prevent new features from being present.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">plaintext</div>
@@ -299,13 +312,10 @@ User
 settings.json
 secrets.json &lt;---- this one is in the base folder, not /public/</code></pre>
 </doc-codeblock></div>
-<ol start="5">
-<li><p>Once those folders/files are copied, Paste them into the /Public/ folder (with secrets.json going into the base folder) of the new install.</p>
-</li>
-<li><p>Start SillyTavern once again with the method appropriate to your OS, and pray you got it right.</p>
-</li>
-<li><p>If everything shows up, you can safely delete the old ST folder.</p>
-</li>
+<ol start="7">
+<li>Once those folders/files are copied, paste them into the /data/default-user folder (with secrets.json going into the folder root) of the new install.</li>
+<li>Start SillyTavern once again with the method appropriate to your OS, and pray you got it right.</li>
+<li>If everything shows up, you can safely delete the old ST folder.</li>
 </ol>
 <doc-anchor-target id="common-update-problems">
     <h3>
