@@ -131,36 +131,46 @@ Circumstances and context of the dialogue.
 
 A list of tags that are replaced when sending to generate:
 
-1. \{\{user\}\} and \<USER\> => User's Name.
-2. \{\{charPrompt\}\} => Character's Main Prompt override
-3. \{\{charJailbreak\}\} => Character's Jailbreak Prompt override
-4. \{\{char\}\} and \<BOT\> => Character's Name.
-5. \{\{description\}\} => Character's Description.
-6. \{\{scenario\}\} => Character's Scenario or chat scenario override (if set).
-7. \{\{personality\}\} => Character's Personality.
-8. \{\{persona\}\} => User's Persona description.
-9. \{\{mesExamples\}\} => Character's Examples of Dialogue (unaltered and unsplit).
-10. \{\{lastMessageId\}\} => last chat message ID.
-11. \{\{lastMessage\}\} => last chat message text.
-12. \{\{lastCharMessage\}\} => last chat message sent by character.
-13. \{\{lastUserMessage\}\} => last chat message sent by user.
-14. \{\{currentSwipeId\}\} => 1-based ID of the currently displayed last message swipe.
-15. \{\{lastSwipeId\}\} => number of swipes in the last chat message.
-11. \{\{original\}\} can be used in Prompt Overrides fields (Main Prompt and Jailbreak) to include the respective default prompt from the system settings. Applied to Chat Completion APIs and Instruct mode only.
-12. \{\{time\}\} => current system time.
-13. \{\{time_UTC±X\}\} => current time in the specified UTC offset (timezone), e.g. for UTC+02:00 use \{\{time_UTC\+2\}\}.
-14. \{\{date\}\} => current system date.
-15. \{\{input\}\} => contents of the user input bar.
-16. \{\{weekday\}\} => the current weekday
-17. \{\{isotime\}\} => the current ISO time (24-hour clock)
-18. \{\{isodate\}\} => the current ISO date (YYYY-MM-DD)
-19. \{\{idle_duration\}\} inserts a humanized string of the time range since the last user message was sent (examples: 4 hours, 1 day).
-20. \{\{random:(args)\}\} returns a random item from the list. (e.g. \{\{random:1,2,3,4\}\} will return 1 of the 4 numbers at random). Works with text lists too.
-21. \{\{random::arg1::arg2\}\} => alternate syntax for random that supports commas in its arguments.
-22. \{\{pick::(args)\}\} => alternative to random, but the selected argument is stable on subsequent evaluations in the current chat if the source string remains unchanged.
-23. \{\{roll:(formula)\}\} generates a random value and returns it using the provided dice formula using D&D dice syntax: XdY+Z. For example, \{\{roll:d6\}\} will generate a random value in the 1-6 range (standard six-sided dice).
-24. \{\{bias "text here"\}\} sets a behavioral bias for the AI until the next user input. Quotes around the text are important.
-25. \{\{// (note)\}\} allows to leave a note that will be replaced with blank content. Not visible for the AI.
+
+1. \{\{pipe\}\} => only for slash command batching. Replaced with the returned result of the previous command.
+2. \{\{newline\}\} => just inserts a newline.
+3. \{\{trim\}\} => trims newlines surrounding this macro.
+4. \{\{noop\}\} => no operation, just an empty string.
+5. \{\{user\}\} and \<USER\> => User's Name.
+6. \{\{charPrompt\}\} => Character's Main Prompt override
+7. \{\{charJailbreak\}\} => Character's Jailbreak Prompt override
+8. \{\{char\}\} and \<BOT\> => Character's Name.
+9. \{\{description\}\} => Character's Description.
+10. \{\{scenario\}\} => Character's Scenario or chat scenario override (if set).
+11. \{\{personality\}\} => Character's Personality.
+12. \{\{persona\}\} => User's Persona description.
+13. \{\{mesExamples\}\} => Character's Examples of Dialogue (unaltered and unsplit).
+14. \{\{char_version\}\} => the Character's version number.
+15. \{\{model\}\} => a text generation model name for the currently selected API. **Can be inaccurate!**
+16. \{\{lastMessageId\}\} => last chat message ID.
+17. \{\{lastMessage\}\} => last chat message text.
+18. \{\{firstIncludedMessageId\}\} => the ID of the first message included in the context. Requires generation to be run at least once in the current session.
+19. \{\{lastCharMessage\}\} => last chat message sent by character.
+20. \{\{lastUserMessage\}\} => last chat message sent by user.
+21. \{\{currentSwipeId\}\} => 1-based ID of the currently displayed last message swipe.
+22. \{\{lastSwipeId\}\} => number of swipes in the last chat message.
+23. \{\{original\}\} can be used in Prompt Overrides fields (Main Prompt and Jailbreak) to include the respective default prompt from the system settings. Applied to Chat Completion APIs and Instruct mode only.
+24. \{\{time\}\} => current system time.
+25. \{\{time_UTC±X\}\} => current time in the specified UTC offset (timezone), e.g. for UTC+02:00 use \{\{time_UTC\+2\}\}.
+26. \{\{timeDiff::(time1)::(time2)\}\} => the time difference between time1 and time2. Accepts time and date macros.
+27. \{\{date\}\} => current system date.
+28. \{\{input\}\} => contents of the user input bar.
+29. \{\{weekday\}\} => the current weekday
+30. \{\{isotime\}\} => the current ISO time (24-hour clock)
+31. \{\{isodate\}\} => the current ISO date (YYYY-MM-DD)
+32. \{\{idle_duration\}\} inserts a humanized string of the time range since the last user message was sent (examples: 4 hours, 1 day).
+33. \{\{random:(args)\}\} returns a random item from the list. (e.g. \{\{random:1,2,3,4\}\} will return 1 of the 4 numbers at random). Works with text lists too.
+34. \{\{random::arg1::arg2\}\} => alternate syntax for random that supports commas in its arguments.
+35. \{\{pick::(args)\}\} => alternative to random, but the selected argument is stable on subsequent evaluations in the current chat if the source string remains unchanged.
+36. \{\{roll:(formula)\}\} generates a random value and returns it using the provided dice formula using D&D dice syntax: XdY+Z. For example, \{\{roll:d6\}\} will generate a random value in the 1-6 range (standard six-sided dice).
+37. \{\{bias "text here"\}\} sets a behavioral bias for the AI until the next user input. Quotes around the text are important.
+38. \{\{// (note)\}\} allows to leave a note that will be replaced with blank content. Not visible for the AI.
+39. \{\{banned "text here"\}\} dynamically add text in the quotes to banned word sequences, if Text Generation WebUI backend is used. Does nothing for other backends. Can be used anywhere (Character description, WI, AN, etc.) Quotes around the text are important.
 
 #### Instruct Mode and Context Template Macros:
 
