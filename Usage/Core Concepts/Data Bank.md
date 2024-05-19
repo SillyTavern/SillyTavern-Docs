@@ -13,10 +13,6 @@ tags:
 
 # Data Bank (RAG)
 
-!!! warning Warning
-This content describes a pre-release version and is subject to change.
-!!!
-
 Retrieval-augmented generation (RAG) is a technique for providing external sources of knowledge to the LLM. It helps improve the accuracy of AI answers by accessing information outside of the model's training data.
 
 SillyTavern provides a set of tools for building a multi-purpose knowledge base from a diverse number of sources, as well as using the collected data in LLM prompts.
