@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769442266129">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769450366736">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.769442266129" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.769450366736" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.769442266129" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.769450366736" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.769442266129" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.769450366736" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -363,6 +363,10 @@
 <p><strong>This list may be incomplete or outdated. Use the <code v-pre>/help macros</code> slash command in any SillyTavern chat to get the list of macros that work in your instance.</strong></p>
 <p>A list of tags that are replaced when sending to generate:</p>
 <ol>
+<li>{{pipe}} =&gt; only for slash command batching. Replaced with the returned result of the previous command.</li>
+<li>{{newline}} =&gt; just inserts a newline.</li>
+<li>{{trim}} =&gt; trims newlines surrounding this macro.</li>
+<li>{{noop}} =&gt; no operation, just an empty string.</li>
 <li>{{user}} and &lt;USER&gt; =&gt; User&#x27;s Name.</li>
 <li>{{charPrompt}} =&gt; Character&#x27;s Main Prompt override</li>
 <li>{{charJailbreak}} =&gt; Character&#x27;s Jailbreak Prompt override</li>
@@ -372,8 +376,11 @@
 <li>{{personality}} =&gt; Character&#x27;s Personality.</li>
 <li>{{persona}} =&gt; User&#x27;s Persona description.</li>
 <li>{{mesExamples}} =&gt; Character&#x27;s Examples of Dialogue (unaltered and unsplit).</li>
+<li>{{char_version}} =&gt; the Character&#x27;s version number.</li>
+<li>{{model}} =&gt; a text generation model name for the currently selected API. <strong>Can be inaccurate!</strong></li>
 <li>{{lastMessageId}} =&gt; last chat message ID.</li>
 <li>{{lastMessage}} =&gt; last chat message text.</li>
+<li>{{firstIncludedMessageId}} =&gt; the ID of the first message included in the context. Requires generation to be run at least once in the current session.</li>
 <li>{{lastCharMessage}} =&gt; last chat message sent by character.</li>
 <li>{{lastUserMessage}} =&gt; last chat message sent by user.</li>
 <li>{{currentSwipeId}} =&gt; 1-based ID of the currently displayed last message swipe.</li>
@@ -381,6 +388,7 @@
 <li>{{original}} can be used in Prompt Overrides fields (Main Prompt and Jailbreak) to include the respective default prompt from the system settings. Applied to Chat Completion APIs and Instruct mode only.</li>
 <li>{{time}} =&gt; current system time.</li>
 <li>{{time_UTC±X}} =&gt; current time in the specified UTC offset (timezone), e.g. for UTC+02:00 use {{time_UTC+2}}.</li>
+<li>{{timeDiff::(time1)::(time2)}} =&gt; the time difference between time1 and time2. Accepts time and date macros.</li>
 <li>{{date}} =&gt; current system date.</li>
 <li>{{input}} =&gt; contents of the user input bar.</li>
 <li>{{weekday}} =&gt; the current weekday</li>
@@ -393,6 +401,7 @@
 <li>{{roll:(formula)}} generates a random value and returns it using the provided dice formula using D&amp;D dice syntax: XdY+Z. For example, {{roll:d6}} will generate a random value in the 1-6 range (standard six-sided dice).</li>
 <li>{{bias &quot;text here&quot;}} sets a behavioral bias for the AI until the next user input. Quotes around the text are important.</li>
 <li>{{// (note)}} allows to leave a note that will be replaced with blank content. Not visible for the AI.</li>
+<li>{{banned &quot;text here&quot;}} dynamically add text in the quotes to banned word sequences, if Text Generation WebUI backend is used. Does nothing for other backends. Can be used anywhere (Character description, WI, AN, etc.) Quotes around the text are important.</li>
 </ol>
 <doc-anchor-target id="instruct-mode-and-context-template-macros">
     <h4>
