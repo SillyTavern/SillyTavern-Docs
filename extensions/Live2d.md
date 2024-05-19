@@ -10,7 +10,7 @@ Before you begin, ensure you've met the following prerequisites:
 
 2. **Extension Installation**: Install the "Live2D" extension from the "Download Extensions & Assets" menu in the Extensions panel (represented by the stacked blocks icon).
 
-3. **Model Folder Placement**: Place your Live2D model folders into the `/public/assets/live2d` directory. A properly organized `live2d` assets folder might look like this:
+3. **Model Folder Placement**: Place your Live2D model folders into the `/data/<user-handle>/assets/live2d` directory. A properly organized `live2d` assets folder might look like this:
 
     ![Asset folder example](/static/extensions/live2d-folder.png)
 
@@ -18,7 +18,7 @@ Before you begin, ensure you've met the following prerequisites:
 
     ![Live2d model folder example](/static/extensions/live2d-model.png)
 
-    - Note: Models can also be placed in character-specific folders, such as `/public/characters/Shizuku/live2d/`. However, models in character folders will only be accessible for that specific character.
+    - Note: Models can also be placed in character-specific folders, such as `/data/<user-handle>/characters/Shizuku/live2d/`. However, models in character folders will only be accessible for that specific character.
 
 ## Extension Settings
 

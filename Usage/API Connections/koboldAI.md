@@ -2,7 +2,7 @@
 
 ### Basic Settings
 
-Standard KoboldAI settings files are used here. To add your own settings, simply add the file .settings in `SillyTavern\public\KoboldAI Settings`
+Standard KoboldAI settings files are used here. To add your own settings, simply add the file .settings in `SillyTavern\data\<user-handle>\KoboldAI Settings`
 
 ### Soft Prompts
 

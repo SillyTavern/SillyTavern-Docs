@@ -28,7 +28,7 @@ Clio is not a bad model, but not as powerful as Kayra. Clio's speed advantage is
 
 ## Settings
 
-The files with the settings are here (SillyTavern\public\NovelAI Settings).
+The files with the settings are here (`SillyTavern/data/<user-handle>/NovelAI Settings`).
 You can also manually add your own settings files.
 
 ### Response Length

@@ -31,7 +31,7 @@ Before you begin, ensure you've met the following prerequisites:
 To set up custom music for your characters' emotions, follow these steps:
 
 1. **Navigate to Character Folder**:
-   - Go to the characters folder, e.g., `\SillyTavern\public\characters\Seraphina`.
+   - Go to the characters folder, e.g., `\SillyTavern\data\<user-handle>\characters\Seraphina`.
 
 2. **Create BGM Folder**:
    - Inside the character folder, create a subfolder named `bgm`.
@@ -51,7 +51,7 @@ To set up custom music for your characters' emotions, follow these steps:
 If a character doesn't have custom BGM in their folder, a default track will play. Here's how you can change it:
 
 1. **Navigate to BGM Folder**:
-   - Go to the following folder: `\SillyTavern\public\assets\bgm`.
+   - Go to the following folder: `\SillyTavern\data\<user-handle>\assets\bgm`.
 
 2. **Replace/Add Music**:
    - Replace or add music files (`.mp3`, `.ogg`, `.wav`) to this folder.
@@ -63,7 +63,7 @@ If a character doesn't have custom BGM in their folder, a default track will pla
 Ambient sounds add depth to your scenes. Here's how you can customize them:
 
 1. **Navigate to Ambient Folder**:
-   - Go to the following folder: `\SillyTavern\public\assets\ambient`.
+   - Go to the following folder: `\SillyTavern\data\<user-handle>\assets\ambient`.
 
 2. **File Naming Convention**:
    - Ambient audio filenames correspond to background image filenames, replacing spaces with dashes.

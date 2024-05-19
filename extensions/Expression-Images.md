@@ -11,7 +11,7 @@ Expression images can use a classification model running alongside SillyTavern's
 1. Open the Extensions Panel and expand the 'Expression images' section. If you have the character chat open, you will see a grid of image placeholders.
 ![Expression Drawer](/static/extensions/expression-drawer.png)
 
-2. Click the 'import' button at the top left of each image in the grid, and select the image you want to apply to that emotion. This will save the image with the correct filename inside the `/public/characters/(character_name_here)/` folder.
+2. Click the 'import' button at the top left of each image in the grid, and select the image you want to apply to that emotion. This will save the image with the correct filename inside the `/data/<user-handle>/characters/(character_name_here)/` folder.
 
 3. To show the image in your SillyTavern window, click the image in the grid after it has been uploaded.
 
@@ -95,12 +95,12 @@ If you want a different image set to be used for each version of the same-named 
 
 #### How to set an override
 
-1. Create a folder in the `/public/characters` with any name and put images there, e.g. `/public/characters/Boris`.
+1. Create a folder in the `/data/<user-handle>/characters` with any name and put images there, e.g. `/data/<user-handle>/characters/Boris`.
 2. Open the chat with the character whose sprites you'd like to override.
 3. Enter the name of the override folder into the "Sprite Folder Override" input and click "Submit".
 4. The Sprites list will reload and the "Sprite set" indicator should show the override folder.
 5. Alternatively, you can use the `/costume` slash command to achieve the same result: `/costume Boris`.
-6. By prepending a backslash to the override folder name, it will resolve to a subfolder in the current character sprites folder, e.g. `/costume \tracksuit` for the character named Boris will resolve to the `/public/characters/Boris/tracksuit` folder.
+6. By prepending a backslash to the override folder name, it will resolve to a subfolder in the current character sprites folder, e.g. `/costume \tracksuit` for the character named Boris will resolve to the `/data/<user-handle>/characters/Boris/tracksuit` folder.
 
 #### Custom expressions
 

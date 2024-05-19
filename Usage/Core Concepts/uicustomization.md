@@ -16,7 +16,7 @@ If "Background Sound Only" option is enabled, the sound plays only if SillyTaver
 
 You can use the color pickers and sliders to customize the UI in many ways.
 
-You can also save presets and share them with other users (saved into `/public/themes/`).
+You can also save presets and share them with other users (saved into `/data/<user-handle>/themes/`).
 
 ### Power User Options
 

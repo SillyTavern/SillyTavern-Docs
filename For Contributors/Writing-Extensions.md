@@ -35,7 +35,7 @@ const generateRaw = await importFromScript('generateRaw');
 
 ## manifest.json
 
-Every extension must have a folder in `public/scripts/extensions` and have a manifest.json file which contains metadata about the plugin and a JS script file.
+Every extension must have a folder in `data/<user-handle>/extensions` and have a manifest.json file which contains metadata about the plugin and a JS script file.
 
 
 ```js
@@ -62,7 +62,7 @@ Every extension must have a folder in `public/scripts/extensions` and have a man
 * `author` is required. It should contain the name or contact info of the author(s).
 * `auto_update` is set to true if the extension should auto-update when the version of the ST package changes.
 
-Downloadable extensions are mounted into the `public/scripts/extensions/third-party` folder, so relative imports should be used based on that. Be careful about where you create your extension during development if you plan on installing it from your GitHub which overwrites the content in the `third-party` folder.
+Downloadable extensions are mounted into the `/scripts/extensions/third-party` folder, so relative imports should be used based on that. Be careful about where you create your extension during development if you plan on installing it from your GitHub which overwrites the content in the `third-party` folder.
 
 #### `requires` vs `optional`
 

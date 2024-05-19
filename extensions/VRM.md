@@ -10,7 +10,7 @@ Before you begin, ensure you've met the following prerequisites:
 
 2. **Extension Installation**: Install the "VRM" extension from the "Download Extensions & Assets" menu in the Extensions panel (represented by the stacked blocks icon).
 
-3. **Model Folder Placement**: Place your VRM model files (.vrm) into the `/public/assets/vrm/model` directory and your animation files into the `/public/assets/vrm/animation` directory. The currently supported animation file format are .fbx and .bvh that are compatible with VRM models. This include any animation you can get from Mixamo (https://www.mixamo.com/) and any animation you can export from tools like XR Animator (https://github.com/ButzYung/SystemAnimatorOnline).
+3. **Model Folder Placement**: Place your VRM model files (.vrm) into the `/data/<user-handle>/assets/vrm/model` directory and your animation files into the `/data/<user-handle>/assets/vrm/animation` directory. The currently supported animation file format are .fbx and .bvh that are compatible with VRM models. This include any animation you can get from Mixamo (https://www.mixamo.com/) and any animation you can export from tools like XR Animator (https://github.com/ButzYung/SystemAnimatorOnline).
 
 ## Extension Settings
 
@@ -90,7 +90,7 @@ These settings allow you to manage characters and assign VRM models to them.
 
 2. **Select Model**:
    - Choose a model from the list to assign it to the selected character.
-   - The model has to be located in `/public/assets/vrm/model` directory.
+   - The model has to be located in `/data/<user-handle>/assets/vrm/model` directory.
 
 3. **Reset button**
     - Click this button to reset the model settings to its default. If you have animation files that correspond to the default value they will be auto mapped. See the naming mapping at the end of this README.
