@@ -1,6 +1,6 @@
 # Stable Diffusion
 
-## Image Generation plugin
+## Image Generation extension
 
 Use local or cloud-based Stable Diffusion APIs to generate images.
 The free mode is also supported via the `/sd (anything_here)` command in the chat input bar.
