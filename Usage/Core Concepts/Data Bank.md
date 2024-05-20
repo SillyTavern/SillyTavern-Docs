@@ -135,8 +135,8 @@ By itself, Vector Storage does not produce any vectors, you need to use a compat
 
 These sources are free and unlimited and use your CPU/GPU to calculate embeddings.
 
-1. Local (Transformers) - runs on a Node server. SillyTavern will automatically download a compatible model in ONNX format from HuggingFace. Mediocre quality and speed. Default model: [jina-embeddings-v2-base-en](https://huggingface.co/Cohee/jina-embeddings-v2-base-en).
-2. Extras - runs under the [Extras API](https://github.com/SillyTavern/SillyTavern-extras) using the SentenceTransformers loader. Tolerable quality and speed. Default model: [all-mpnet-base-v2](https://huggingface.co/sentence-transformers/all-mpnet-base-v2).
+1. Local (Transformers) - runs on a Node server. SillyTavern will automatically download a compatible model in ONNX format from HuggingFace. Default model: [jina-embeddings-v2-base-en](https://huggingface.co/Cohee/jina-embeddings-v2-base-en).
+2. Extras - runs under the [Extras API](https://github.com/SillyTavern/SillyTavern-extras) using the SentenceTransformers loader. Default model: [all-mpnet-base-v2](https://huggingface.co/sentence-transformers/all-mpnet-base-v2).
 
 ### API sources
 
