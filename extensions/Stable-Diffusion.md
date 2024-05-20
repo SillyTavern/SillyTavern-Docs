@@ -51,7 +51,7 @@ Allow to edit the automatically generated prompts manually before sending them t
 Allows to trigger an image generation instead of text as a reply to a user message that follows the special pattern:
 
 1. Contains one of the following words: send, mail, imagine, generate, make, create, draw, paint, render
-2. Followed by one of the following words: pic, picture, image, drawing, painting, photo, photograph
+2. Followed by one of the following words (not further than <=10 characters away): pic, picture, image, drawing, painting, photo, photograph
 3. Followed by a target subject of image generation, could be optionally preceded by phrases like "of a" or "of this".
 
 Examples of valid requests and captured subjects:
