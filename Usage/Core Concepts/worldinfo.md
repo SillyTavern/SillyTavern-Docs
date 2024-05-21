@@ -47,9 +47,26 @@ Entries from the Global World Info Info would be included first by their Inserti
 
 A list of keywords that trigger the activation of a World Info entry. Keys are not case-sensitive by default (this is [configurable](#case-sensitive-keys)).
 
+##### Regular Expression (Regex) as Keys
+
+Keys allow a more flexible approach to matching by supporting regex. This makes it possible to match more dynamic content with optional words or characters, spacing, and all the other utilities that regex provides.  
+If a defined key is a valid regex (Javascript regex style, with `/` as delimiters. All flags are allowed), it will be treated as such when checking whether an entry should be triggered. Multiple regexes can be entered as separate keys and will work alongside each other. Inside a regex, commas are possible. Plaintext keys do not support commas, as they are treated as key separators.  
+
+An example of a use-case for advanced regex matching:  
+An entry/instruction that should be inserted, when char is doing a weather-related action
+```js
+/(?:{{char}}|he|she) (?:is talking about|is noticing|is checking whether|observes) (?:the )?(rainy weather|heavy wind|it is going to rain|cloudy sky)/i
+```
+
+For more information on Regex syntax and possbilities: [Regular expressions - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions)
+
+##### Key Input
+
+There are two modes to enter keywords, each with a slightly different UI. In *plaintext mode* (default), keys can be entered as a comma-separated list in a single text field. Regexes can be included too, but they don't have any special highlighting. In *fancy mode*, the keys appear as separate elements and regexes will be highlighted as such. The control supports editing and deleting keys. The mode can be switched via the inline button inside the input control.
+
 #### Optional Filter
 
-A list of supplementary keywords that are used in conjunction with the main keywords. See [Optional Filter](#optional-filter-1).
+A list of supplementary keywords that are used in conjunction with the main keywords. See [Optional Filter](#optional-filter-1). These keys also support [regex](#regular-expression-regex-as-keys).
 
 #### Entry Content
 
@@ -115,6 +132,8 @@ Use this to create random events in your chats. For example, every message could
 Inclusion groups control how entries are selected when multiple entries with the same group label are triggered simultaneously. If multiple entries having the same group label were activated, only one will be inserted into the prompt.
 
 By default, the chosen entry is selected randomly based on their Group Weight (default is 100 points) — the higher the number, the higher the probability of selection. This allows for a random selection among the triggered entries, adding an element of surprise and variety to interactions.
+
+A single entry can be part of multiple inclusion groups if they are defined as a comma-separated list. The same logic as explained above will apply. If that entry is triggered, it will *disable* all other entries that are part of any of its groups. Therefore, if any of the groups are activated, this entry will not be activated.
 
 #### Prioritize Inclusion
 
@@ -208,6 +227,16 @@ Minimum Activations: If set to a non-zero value, this will disregard the limitat
 Maximum Depth to scan for when using the Min Activations setting.
 
 ### Recursive scanning
+
+Recursive scanning allows for entries to activate other entries or be activated by others, enabling complex interactions and dependencies between different World Info entries. This feature can significantly enhance the dynamic nature of your storytelling or role-playing scenarios.  
+Whether recursive scanning is enabled can be controlled with the global setting **Recursive Scan**.  
+There are three options available to control recursion for each entry:
+
+- **Non-recursable**: When this checkbox is selected, the entry will not be activated by other entries. This is useful for static information that should not change or be influenced by other world info entries.
+  
+- **Prevent further recursion**: Selecting this option ensures that once this entry is activated, it will not trigger any other entries. This is helpful to avoid unintended chains of activations.
+
+- **Delay until recursion**: This entry will only be activated during recursive checks, meaning it won't be triggered in the initial pass but can be activated by other entries that have recursion enabled. This is useful for deeper layers of information that should only come into play when specifically referenced by other entries, or information that should purposely be withheld if something else is activated.
 
 **Entries can activate other entries by mentioning their keywords in the content text.**
 
