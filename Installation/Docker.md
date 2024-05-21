@@ -312,9 +312,13 @@ docker compose restart sillytavern
 
 SillyTavern's data folder will be within the `data` folder. Backing up your files should be easy to do, however, restoring or adding content into it may require you to do so with administrator rights.
 
-## Running Server Plugins within Docker
+## Running Server Plugins
 
 Running plugins like [HoYoWiki-Scraper-TS](https://github.com/Bronya-Rand/HoYoWiki-Scraper-TS) or [SillyTavern-Fandom-Scraper](https://github.com/SillyTavern/SillyTavern-Fandom-Scraper) within Docker is no different from running it on your system without Docker, however we will need to do a slight modification to the Docker Compose script in order to do so.
+
+!!! Note
+If you already see a _plugins_ folder within the `docker` folder, you can skip Steps 1-2.
+!!!
 
 1. Using `nano` or a code editor, open _docker-compose.yml_ and add the following line below `volumes`.
 
@@ -325,7 +329,7 @@ Running plugins like [HoYoWiki-Scraper-TS](https://github.com/Bronya-Rand/HoYoWi
         - "./plugins:/home/node/app/plugins"
 ```
 
-2. Create a new folder within the docker folder called `plugins`.
+2. Create a new folder within the `docker` folder called _plugins_.
 3. Follow your plugins instructions on installing the plugin.
 4. Using `nano` or a code editor with administator rights, open _config.yaml_ (within the `config` folder) and enable `enableServerPlugins`
 
