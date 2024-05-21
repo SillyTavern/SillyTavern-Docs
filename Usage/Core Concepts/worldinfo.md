@@ -133,6 +133,8 @@ Inclusion groups control how entries are selected when multiple entries with the
 
 By default, the chosen entry is selected randomly based on their Group Weight (default is 100 points) — the higher the number, the higher the probability of selection. This allows for a random selection among the triggered entries, adding an element of surprise and variety to interactions.
 
+A single entry can be part of multiple inclusion groups. The same logic as explained above will apply. If that entry is triggered, it will *disable* all other entries that are part of any of its groups. Therefore, if any of the groups are activated, this entry will not be activated.
+
 #### Prioritize Inclusion
 
 To provide more control over which entries are activated via [Inclusion Group](https://docs.sillytavern.app/usage/core-concepts/worldinfo/#inclusion-group), you can use the 'Prioritize Inclusion' setting. This option allows you to specify deterministically which entry to choose instead of randomly rolling Group Weight chances.
