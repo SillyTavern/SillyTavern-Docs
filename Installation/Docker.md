@@ -9,7 +9,9 @@ label: Docker
 This guide assumes you installed SillyTavern in a non-root (non-admin) folder. If you installed SillyTavern in a root folder, you may have to run some of these commands with administrator rights [`sudo`, `doas`, Command Prompt (Administrator)].
 !!!
 
-## Linux
+## Installation
+
+### Linux
 
 1. Install Docker by following the Docker installation guide [here](https://docs.docker.com/engine/install/).
    !!! danger
@@ -113,7 +115,7 @@ This guide assumes you installed SillyTavern in a non-root (non-admin) folder. I
 
 10. Enjoy! :D
 
-## Windows
+### Windows
 
 !!! warning Regarding Docker on Windows
 Using Docker on Windows is **_really_** complicated. Not only do you need to activate _Windows Subsystem for Linux_ within _Turn Windows features on or off_, but also configure your system for Virtualization (Intel VT-d/AMD SVM) which differ from PC manufacturer to PC manufacturer (or motherboard manufacturer). Sometimes, this option is not present on some systems.
@@ -197,7 +199,7 @@ It is highly suggested you install SillyTavern by following our [Windows](/Insta
 
 9.  Enjoy! :D
 
-## macOS
+### macOS
 
 !!!
 Even though macOS is similar to Linux, it doesn't have the Docker Engine. You will have to install Docker Desktop similarly to Windows.
@@ -292,3 +294,49 @@ You will also need to install [Homebrew](https://brew.sh/) in order to install G
 8.  Open an new browser and go to [http://localhost:8000](http://localhost:8000). You should see SillyTavern load in a few moments.
 
 9.  Enjoy! :D
+
+## Configuring SillyTavern
+
+SillyTavern's configuration file (config.yaml) will be located within the `config` folder. Configuring the config file should be no different than configuring it without Docker, however you will need to run `nano` or a code editor with administrator rights in order to save your changes.
+
+!!! warning
+Don't forget to restart the Docker container for SillyTavern in order to apply your changes! Make sure you execute this command within the `docker` folder.
+
+```sh
+docker compose restart sillytavern
+```
+
+!!!
+
+## Locating User Data
+
+SillyTavern's data folder will be within the `data` folder. Backing up your files should be easy to do, however, restoring or adding content into it may require you to do so with administrator rights.
+
+## Running Server Plugins within Docker
+
+Running plugins like [HoYoWiki-Scraper-TS](https://github.com/Bronya-Rand/HoYoWiki-Scraper-TS) or [SillyTavern-Fandom-Scraper](https://github.com/SillyTavern/SillyTavern-Fandom-Scraper) within Docker is no different from running it on your system without Docker, however we will need to do a slight modification to the Docker Compose script in order to do so.
+
+1. Using `nano` or a code editor, open _docker-compose.yml_ and add the following line below `volumes`.
+
+```sh
+    volumes:
+        - "./config:/home/node/app/config"
+        - "./data:/home/node/app/data"
+        - "./plugins:/home/node/app/plugins"
+```
+
+2. Create a new folder within the docker folder called `plugins`.
+3. Follow your plugins instructions on installing the plugin.
+4. Using `nano` or a code editor with administator rights, open _config.yaml_ (within the `config` folder) and enable `enableServerPlugins`
+
+```sh
+enableServerPlugins: true
+```
+
+5. Restart the Docker container.
+
+```sh
+docker compose restart sillytavern
+```
+
+6. Profit.
