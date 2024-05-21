@@ -62,7 +62,7 @@ This guide assumes you installed SillyTavern in a non-root (non-admin) folder. I
     docker network inspect docker_default
     ```
 
-    You should recieve some sort of output similar to the following below.
+    You should receive some sort of output similar to the following below.
 
     ```json
     [
@@ -105,22 +105,26 @@ This guide assumes you installed SillyTavern in a non-root (non-admin) folder. I
 
     Save the file by pressing _Ctrl+S_ then exit `nano` by pressing _Ctrl+X_.
 
-8. Restart the Docker Container to apply the new configuration.
+!!! info
+Note that if you configured Docker network as a bridge, you could also add external IP addresses to the whitelist as usual.
+!!!
+
+9. Restart the Docker Container to apply the new configuration.
 
     ```sh
     docker compose restart sillytavern
     ```
 
-9. Open an new browser and go to [http://localhost:8000](http://localhost:8000). You should see SillyTavern load in a few moments.
+10. Open an new browser and go to [http://localhost:8000](http://localhost:8000). You should see SillyTavern load in a few moments.
 
-10. Enjoy! :D
+11. Enjoy! :D
 
 ### Windows
 
 !!! warning Regarding Docker on Windows
-Using Docker on Windows is **_really_** complicated. Not only do you need to activate _Windows Subsystem for Linux_ within _Turn Windows features on or off_, but also configure your system for Virtualization (Intel VT-d/AMD SVM) which differ from PC manufacturer to PC manufacturer (or motherboard manufacturer). Sometimes, this option is not present on some systems.
+Using Docker on Windows is **_really_** complicated. Not only do you need to activate _Windows Subsystem for Linux_ within _Turn Windows features on or off_, but also configure your system for Virtualization (Intel VT-d/AMD SVM) which differs from PC manufacturer to PC manufacturer (or motherboard manufacturer). Sometimes, this option is not present on some systems.
 
-It is highly suggested you install SillyTavern by following our [Windows](/Installation/Windows.md) guide. This section is a _rough_ idea on how it can be done on Windows.
+It is highly suggested you install SillyTavern by following our [Windows](/Installation/Windows.md) guide. This section is a _rough_ idea of how it can be done on Windows.
 !!!
 
 1.  Install Docker Desktop by following the Docker installation guide [here](https://docs.docker.com/desktop/install/windows-install/).
@@ -150,7 +154,7 @@ It is highly suggested you install SillyTavern by following our [Windows](/Insta
     docker network inspect docker_default
     ```
 
-    You should recieve some sort of output similar to the following below.
+    You should receive some sort of output similar to the following below.
 
     ```json
     [
@@ -188,6 +192,10 @@ It is highly suggested you install SillyTavern by following our [Windows](/Insta
     ```
 
     Save the file by pressing _Ctrl+S_ then exit your editor.
+
+!!! info
+Note that if you configured Docker network as a bridge, you could also add external IP addresses to the whitelist as usual.
+!!!
 
 7.  Restart the Docker Container to apply the new configuration.
 
@@ -285,6 +293,10 @@ You will also need to install [Homebrew](https://brew.sh/) in order to install G
 
     Save the file by pressing _Ctrl+S_ then exit `nano` by pressing _Ctrl+X_.
 
+!!! info
+Note that if you configured Docker network as a bridge, you could also add external IP addresses to the whitelist as usual.
+!!!
+
 7.  Restart the Docker Container to apply the new configuration.
 
     ```sh
@@ -330,8 +342,8 @@ If you already see a _plugins_ folder within the `docker` folder, you can skip S
 ```
 
 2. Create a new folder within the `docker` folder called _plugins_.
-3. Follow your plugins instructions on installing the plugin.
-4. Using `nano` or a code editor with administator rights, open _config.yaml_ (within the `config` folder) and enable `enableServerPlugins`
+3. Follow your plugin's instructions on installing the plugin.
+4. Using `nano` or a code editor with administrator rights, open _config.yaml_ (within the `config` folder) and enable `enableServerPlugins`
 
 ```sh
 enableServerPlugins: true
