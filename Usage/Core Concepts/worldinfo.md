@@ -47,9 +47,26 @@ Entries from the Global World Info Info would be included first by their Inserti
 
 A list of keywords that trigger the activation of a World Info entry. Keys are not case-sensitive by default (this is [configurable](#case-sensitive-keys)).
 
+##### Regular Expression (Regex) as Keys
+
+Keys allow a more flexible approach to matching by supporting regex. This makes it possible to match more dynamic content with optional words or characters, spacing, and all the other utilities that regex provides.  
+If a defined key is a valid regex (Javascript regex style, with `/` as delimiters. All flags are allowed), it will be treated as such when checking whether an entry should be triggered. Multiple regexes can be entered as separate keys and will work alongside each other. Inside a regex, commas are possible. Plaintext keys do not support commas, as they are treated as key separators.  
+
+An example of a use-case for advanced regex matching:  
+An entry/instruction that should be inserted, when char is doing a weather-related action
+```js
+/(?:{{char}}|he|she) (?:is talking about|is noticing|is checking whether|observes) (?:the )?(rainy weather|heavy wind|it is going to rain|cloudy sky)/i
+```
+
+For more information on Regex syntax and possbilities: [Regular expressions - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions)
+
+##### Key Input
+
+There are two modes to enter keywords, each with a slightly different UI. In *plaintext mode* (default), keys can be entered as a comma-separated list in a single text field. Regexes can be included too, but they don't have any special highlighting. In *fancy mode*, the keys appear as separate elements and regexes will be highlighted as such. The control supports editing and deleting keys. The mode can be switched via the inline button inside the input control.
+
 #### Optional Filter
 
-A list of supplementary keywords that are used in conjunction with the main keywords. See [Optional Filter](#optional-filter-1).
+A list of supplementary keywords that are used in conjunction with the main keywords. See [Optional Filter](#optional-filter-1). These keys also support [regex](#regular-expression-regex-as-keys).
 
 #### Entry Content
 
