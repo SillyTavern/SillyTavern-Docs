@@ -6,38 +6,38 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769634746810">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769641378718">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>Running Extras via Colab | docs.ST.app</title>
-    <meta name="title" content="Running Extras via Colab | docs.ST.app">
-    <meta name="description" content="Instructions to run the SillyTavern Extras Colab.">
+    <title>Extras Installation | docs.ST.app</title>
+    <meta name="title" content="Extras Installation | docs.ST.app">
+    <meta name="description" content="This page contains instructions for installing SillyTavern Extras on your local device.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.sillytavern.app/extras/running-extras-in-colab/">
+    <link rel="canonical" href="https://docs.sillytavern.app/extensions/extras/installation/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.sillytavern.app/extras/running-extras-in-colab/">
-    <meta property="og:title" content="Running Extras via Colab | docs.ST.app">
-    <meta property="og:description" content="Instructions to run the SillyTavern Extras Colab.">
+    <meta property="og:url" content="https://docs.sillytavern.app/extensions/extras/installation/">
+    <meta property="og:title" content="Extras Installation | docs.ST.app">
+    <meta property="og:description" content="This page contains instructions for installing SillyTavern Extras on your local device.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.sillytavern.app/extras/running-extras-in-colab/">
-    <meta property="twitter:title" content="Running Extras via Colab | docs.ST.app">
-    <meta property="twitter:description" content="Instructions to run the SillyTavern Extras Colab.">
+    <meta property="twitter:url" content="https://docs.sillytavern.app/extensions/extras/installation/">
+    <meta property="twitter:title" content="Extras Installation | docs.ST.app">
+    <meta property="twitter:description" content="This page contains instructions for installing SillyTavern Extras on your local device.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.769634746810" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.769641378718" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.769634746810" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.769634746810" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.769641378718" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.769641378718" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -67,10 +67,10 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
+                        <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-xl">
                             <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                                <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo.png">
-                                <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo.png">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png">
                             </span>
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                         </a>
@@ -197,43 +197,255 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="running-extras-via-colab" class="break-words">
+<doc-anchor-target id="extras-installation" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#running-extras-via-colab">#</doc-anchor-trigger>
-        <span>Running Extras via Colab</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#extras-installation">#</doc-anchor-trigger>
+        <span>Extras Installation</span>
     </h1>
 </doc-anchor-target>
+<p>This page contains instructions for installing SillyTavern Extras on your local device.</p>
 <hr>
-<doc-anchor-target id="extras-project-has-been-discontinued-since-april-2024-and-wont-receive-any-new-updates-or-modules-the-vast-majority-of-modules-are-available-natively-in-the-main-sillytavern-application-you-may-still-use-the-colab-notebook-but-dont-expect-to-get-immediate-support-if-you-face-any-issues">
+<doc-anchor-target id="extras-project-has-been-discontinued-since-april-2024-and-wont-receive-any-new-updates-or-modules-the-vast-majority-of-modules-are-available-natively-in-the-main-sillytavern-application-you-may-still-install-and-use-it-but-dont-expect-to-get-immediate-support-if-you-face-any-issues">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#extras-project-has-been-discontinued-since-april-2024-and-wont-receive-any-new-updates-or-modules-the-vast-majority-of-modules-are-available-natively-in-the-main-sillytavern-application-you-may-still-use-the-colab-notebook-but-dont-expect-to-get-immediate-support-if-you-face-any-issues">#</doc-anchor-trigger>
-        <span>Extras project has been discontinued since April 2024 and won&#x27;t receive any new updates or modules. The vast majority of modules are available natively in the main SillyTavern application. You may still use the Colab notebook but don&#x27;t expect to get immediate support if you face any issues.</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#extras-project-has-been-discontinued-since-april-2024-and-wont-receive-any-new-updates-or-modules-the-vast-majority-of-modules-are-available-natively-in-the-main-sillytavern-application-you-may-still-install-and-use-it-but-dont-expect-to-get-immediate-support-if-you-face-any-issues">#</doc-anchor-trigger>
+        <span>Extras project has been discontinued since April 2024 and won&#x27;t receive any new updates or modules. The vast majority of modules are available natively in the main SillyTavern application. You may still install and use it but don&#x27;t expect to get immediate support if you face any issues.</span>
     </h2>
 </doc-anchor-target>
 <hr>
-<p>Instructions to run the SillyTavern Extras Colab.</p>
+<p>Local installation of Extras can be difficult or impossible on your OS (especially Termux).</p>
+<doc-anchor-target id="use-the-official-extras-colab">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#use-the-official-extras-colab">#</doc-anchor-trigger>
+        <span>Use the <a href="https://colab.research.google.com/github/SillyTavern/SillyTavern/blob/release/colab/GPU.ipynb">Official Extras Colab</a></span>
+    </h4>
+</doc-anchor-target>
 <ul>
-<li>Open the <a href="https://colab.research.google.com/github/SillyTavern/SillyTavern/blob/release/colab/GPU.ipynb">Official Extras Colab</a></li>
-<li>Select the desired &quot;Extra&quot; options</li>
-<li>select <code v-pre>use_cpu</code> to run Extras without requiring GPU credit
+<li>Simple to setup</li>
+<li>Free to use</li>
+<li>No Colab GPU credits required (use the <code v-pre>use_cpu</code> options)</li>
+<li>See the <a href="https://docs.sillytavern.app/extras/running-extras-in-colab/">Colab Guide Page</a> for details.</li>
+</ul>
+<hr>
+<doc-anchor-target id="installation-methods">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#installation-methods">#</doc-anchor-trigger>
+        <span>Installation Methods</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="miniconda-recommended">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#miniconda-recommended">#</doc-anchor-trigger>
+        <span>MiniConda (recommended)</span>
+    </h3>
+</doc-anchor-target>
+<p>This method is recommended because Conda makes a &#x27;virtual environment&#x27; for the Extras requirement packages to live inside, so they do not affect your system-wide Python setup.</p>
+<ol>
+<li>Install <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a></li>
+</ol>
+<p><em>(Important!) Read <a href="https://conda.io/projects/conda/en/latest/user-guide/getting-started.html">how to use Conda</a></em></p>
+<ol start="2">
+<li>Install <a href="https://git-scm.com/downloads">git</a></li>
+</ol>
+<p><em>(Chads who installed SillyTavern with git to begin with can skip this step!)</em></p>
+<p>After you have both of them installed...</p>
+<p>Type/paste the commands below <code v-pre>ONE BY ONE</code> IN THE <code v-pre>CONDA COMMAND PROMPT WINDOW</code> and hit <code v-pre>Enter</code> after each one.</p>
+<ol start="3">
+<li>Create a new Conda environment (let&#x27;s call it <code v-pre>extras</code>):</li>
+</ol>
+<p><code v-pre>conda create -n extras</code></p>
+<ol start="4">
+<li>Activate the new environment</li>
+</ol>
+<p><code v-pre>conda activate extras</code> (you should see <code v-pre>(extras)</code> pop up on the left side of your command prompt)</p>
+<ol start="5">
+<li>Install the required system packages (this will take some time)</li>
+</ol>
+<p><code v-pre>conda install python=3.11 git</code></p>
+<ol start="6">
+<li>Clone the Extras GitHub repo</li>
+</ol>
+<p><code v-pre>git clone https://github.com/SillyTavern/SillyTavern-extras</code></p>
+<ol start="7">
+<li>Navigate to your cloned Extras repo</li>
+</ol>
+<p><code v-pre>cd SillyTavern-extras</code></p>
+<ol start="8">
+<li>Install Extras&#x27; requirements by using <strong>one</strong> of the following commands (will take time, again):</li>
+</ol>
 <ul>
-<li>this will make Stable Diffusion slower, but everything else will run normally</li>
+<li><code v-pre>pip install -r requirements.txt</code> - for basic features</li>
+<li><code v-pre>pip install -r requirements-rvc.txt</code> - for real-time voice cloning</li>
+<li><code v-pre>pip install -r requirements-coqui.txt</code> - for Coqui TTS (not recommended)</li>
 </ul>
-</li>
-<li>Not required, but recommended: select the <code v-pre>secure</code> option to generate the API key to protect your shared instance.</li>
-<li>Click the Start button on the left (looks like a triangle &#x27;play&#x27; button)</li>
-<li>Wait for it to finish loading everything</li>
-<li>Look for the <code v-pre>trycloudflare.com</code> link at the bottom of the output. Ignore the localhost link, it won&#x27;t work (we tried!).</li>
-<li>It will start with the text <code v-pre>Running on</code></li>
-<li>Copy the API URL link that is listed under that line. (<strong>DO NOT copy the &#x27;localhost&#x27; URL, use the other one</strong>)</li>
-<li>Start SillyTavern with extensions support: (set <code v-pre>enableExtensions</code> to <code v-pre>true</code> in your <code v-pre>config.yaml</code> if necessary)</li>
-<li>Navigate to SillyTavern&#x27;s Extensions menu (click the &#x27;stacked blocks&#x27; icon at the top of the page).</li>
-<li>Paste the API URL into the box at the top. (<strong>NOT the API Key box</strong>)</li>
-<li>If you have NOT enabled the <code v-pre>secure</code> option, make sure the API Key box is completely empty when using the official colab.</li>
-<li>If you have enabled the <code v-pre>secure</code> option, paste the generated API key into the API Key box.</li>
-<li>API key will appear in the colab&#x27;s console output, for example: <code v-pre>Your API key is fee2f3f559</code></li>
-<li>Click &quot;Connect&quot;</li>
+<p>See the <a href="https://docs.sillytavern.app/extras/installation/common-problems/">Common Problems</a> page if you get errors at this step!</p>
+<ol start="9">
+<li>See below &#x27;Running Extras After Install&#x27;</li>
+</ol>
+<hr>
+<doc-anchor-target id="system-wide-installation">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#system-wide-installation">#</doc-anchor-trigger>
+        <span>System-Wide Installation</span>
+    </h3>
+</doc-anchor-target>
+<p>This is easier, but will affect your system-wide Python installation.</p>
+<p>This can cause conflicts if you work with many Python programs that have different requirements.</p>
+<p>If this is your first time touching anything Python-related, that should not be a problem.</p>
+<ol>
+<li>Install Python 3.11: <a href="https://www.python.org/downloads/release/python-3115/">https://www.python.org/downloads/release/python-3115/</a></li>
+<li>Install git: <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></li>
+<li>Open a command prompt window and go to a folder in which you have complete access permissions.</li>
+<li>Clone the repo: <code v-pre>git clone https://github.com/SillyTavern/SillyTavern-extras</code>, hit Enter.</li>
+<li>After the clone has finished, type <code v-pre>cd SillyTavern-extras</code>, hit Enter.</li>
+<li>Type <code v-pre>python -m pip install -r requirements.txt</code></li>
+<li>See below &#x27;Running Extras After Install&#x27;</li>
+</ol>
+<hr>
+<doc-anchor-target id="running-extras-after-install">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#running-extras-after-install">#</doc-anchor-trigger>
+        <span>Running Extras After Install</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="confirm-extensions-are-enabled">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#confirm-extensions-are-enabled">#</doc-anchor-trigger>
+        <span>Confirm extensions are enabled</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li>Open the file called <code v-pre>config.yaml</code>in a text editor. The file is located in ST&#x27;s base install folder.</li>
+<li>Look for the line that reads <code v-pre>enableExtensions</code>.</li>
+<li>Make sure that line has <code v-pre>true</code>, and not <code v-pre>false</code>.</li>
+</ol>
+<doc-anchor-target id="decide-which-module-to-use">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#decide-which-module-to-use">#</doc-anchor-trigger>
+        <span>Decide which module to use</span>
+    </h3>
+</doc-anchor-target>
+<p>(This only needs to be done once)</p>
+<ul>
+<li>Extras is always started with a Python command line.</li>
+<li><code v-pre>python server.py</code> is the bare minimum, but it does not enable any useful modules.</li>
+<li>to enable modules you must use the <code v-pre>--enable-modules=</code> modifier, with a comma-separated list of module names</li>
 </ul>
+<p>Example: <code v-pre>python server.py --enable-modules=caption,summarize,classify</code></p>
+<p>This would enable Image Captioning, Chat Summary, and live updating Character Expressions.</p>
+<p>Below is a table that describes each module.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>caption</code></td>
+<td>Image captioning</td>
+</tr>
+<tr>
+<td><code v-pre>summarize</code></td>
+<td>Text summarization</td>
+</tr>
+<tr>
+<td><code v-pre>classify</code></td>
+<td>Text sentiment classification</td>
+</tr>
+<tr>
+<td><code v-pre>sd</code></td>
+<td>Stable Diffusion image generation</td>
+</tr>
+<tr>
+<td><code v-pre>silero-tts</code></td>
+<td><a href="https://github.com/ouoertheo/silero-api-server">Silero TTS server</a></td>
+</tr>
+<tr>
+<td><code v-pre>edge-tts</code></td>
+<td><a href="https://github.com/rany2/edge-tts">Microsoft Edge TTS client</a></td>
+</tr>
+<tr>
+<td><code v-pre>chromadb</code></td>
+<td>Vector storage server</td>
+</tr>
+<tr>
+<td><code v-pre>coqui-tts</code></td>
+<td>Coqui TTS</td>
+</tr>
+<tr>
+<td><code v-pre>rvc</code></td>
+<td>Real-time voice cloning</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>Decide which modules you want to add to your Python command line.</li>
+<li>They will be used in the next step.</li>
+</ul>
+<p><strong>NOTE: There must be <code v-pre>no spaces at all in your Python command's module list!</code></strong></p>
+<doc-anchor-target id="start-extras-server">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#start-extras-server">#</doc-anchor-trigger>
+        <span>Start Extras Server</span>
+    </h3>
+</doc-anchor-target>
+<p>While still in your command prompt window inside the Extras installation folder...</p>
+<ol>
+<li>Make sure your conda environment is active (if you used the Conda install method)</li>
+<li>Type <code v-pre>activate extras</code> if the environment is not active.</li>
+<li>Type <code v-pre>python server.py --enable-modules=YOUR,SELECTED,MODULE,LIST,HERE</code></li>
+<li>The extras server will load.</li>
+<li>After a while it will show you a URL at the end. For local installs, this defaults to <code v-pre>http://localhost:5100</code>.</li>
+<li>Copy the API URL.</li>
+</ol>
+<doc-anchor-target id="connect-st-to-the-extras-server">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#connect-st-to-the-extras-server">#</doc-anchor-trigger>
+        <span>Connect ST to the Extras server</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li>Start your SillyTavern server, and view the SillyTavern interface in your browser.</li>
+<li>Open the Extensions panel (via the &#x27;Stacked Blocks&#x27; icon at the top of the page)</li>
+<li>Paste the API URL into the input box.</li>
+<li>Click <code v-pre>Connect</code>.</li>
+</ol>
+<p>To run Extras again, simply activate the environment and run these commands in a command prompt.</p>
+<p><code v-pre>conda activate extras</code>, Hit Enter.
+<code v-pre>python server.py</code>, Hit Enter.</p>
+<p>Be sure to the additional options for server.py (see below) that your setup requires.</p>
+<doc-anchor-target id="make-a-bat-file-for-easy-startup">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#make-a-bat-file-for-easy-startup">#</doc-anchor-trigger>
+        <span>Make a .bat File for Easy Startup</span>
+    </h2>
+</doc-anchor-target>
+<p>This is Optional and only applies to Windows, but something similar should be possible on MacOS.</p>
+<ol>
+<li>View your Windows Desktop</li>
+<li>Right-click, select <code v-pre>New</code>, and then click <code v-pre>Text Document</code></li>
+<li>A new file will appear on your Desktop, asking for a name.</li>
+<li>Name the file <code v-pre>STExtras.txt</code></li>
+<li>Open the newly created file in a text editor.</li>
+<li>Paste the following code into it:</li>
+</ol>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">cd C:\_your_\_full_\_Extras_\_folder_\_path_\
+call conda activate extras
+python server.py --enable-modules=YOUR,SELECTED,MODULE,LIST,HERE,WITH,NO,SPACES
+call conda deactivate
+pause</code></pre>
+</doc-codeblock></div>
+<ol start="6">
+<li>Replace the placeholder folder path with your actual Extras install folder path.</li>
+<li>Replace the python command line with your actual command line</li>
+<li>Save the file with a new name <code v-pre>STExtras.bat</code> (Use <code v-pre>File</code> &gt;&gt; <code v-pre>Save As</code> in most text editors)</li>
+</ol>
+<p>You can now simply double-click on this .bat file to easily start Extras.</p>
+<p>If you ever want to change the module list (or any other command line modifiers for the extras server), simply edit the python command inside the .bat file.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -241,7 +453,7 @@
                             </div>
                             <footer class="clear-both">
                                 <div class="flex flex-wrap items-center justify-between mt-14">
-                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/SillyTavern/SillyTavern-Docs/edit/main/Extras/Running Extras in Colab.md" target="_blank" rel="noopener">
+                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/SillyTavern/SillyTavern-Docs/edit/main/extensions/Extras/Installation.md" target="_blank" rel="noopener">
                                         <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         <span>Edit this page</span>
                                     </a>
@@ -249,20 +461,20 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../usage/st-script/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../extensions/extras/running-extras-in-colab/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">S​Tscript Language Reference</span>
+                                                <span class="block mt-1">Extras via Colab</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../extras/installation/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../extensions/extras/installation/common-problems/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Local Installation</span>
+                                                <span class="block mt-1">Common Problems</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -306,6 +518,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Extras via Colab", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Local Installation", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
