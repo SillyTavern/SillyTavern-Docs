@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769628444445">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.769634746810">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.769628444445" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.769634746810" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.769628444445" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.769634746810" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.769628444445" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.769634746810" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.769634746810" defer></script>
 
     <Style>
         a {
@@ -277,13 +278,34 @@
     </h4>
 </doc-anchor-target>
 <p>A list of keywords that trigger the activation of a World Info entry. Keys are not case-sensitive by default (this is <doc-anchor-trigger to="#case-sensitive-keys">configurable</doc-anchor-trigger>).</p>
+<doc-anchor-target id="regular-expression-regex-as-keys">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#regular-expression-regex-as-keys">#</doc-anchor-trigger>
+        <span>Regular Expression (Regex) as Keys</span>
+    </h5>
+</doc-anchor-target>
+<p>Keys allow a more flexible approach to matching by supporting regex. This makes it possible to match more dynamic content with optional words or characters, spacing, and all the other utilities that regex provides.<br />
+If a defined key is a valid regex (Javascript regex style, with <code v-pre>/</code> as delimiters. All flags are allowed), it will be treated as such when checking whether an entry should be triggered. Multiple regexes can be entered as separate keys and will work alongside each other. Inside a regex, commas are possible. Plaintext keys do not support commas, as they are treated as key separators.</p>
+<p>An example of a use-case for advanced regex matching:<br />
+An entry/instruction that should be inserted, when char is doing a weather-related action</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-javascript"><code v-pre class="language-javascript">/(?:|he|she) (?:is talking about|is noticing|is checking whether|observes) (?:the )?(rainy weather|heavy wind|it is going to rain|cloudy sky)/i</code></pre>
+</doc-codeblock></div>
+<p>For more information on Regex syntax and possbilities: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions">Regular expressions - JavaScript | MDN</a></p>
+<doc-anchor-target id="key-input">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#key-input">#</doc-anchor-trigger>
+        <span>Key Input</span>
+    </h5>
+</doc-anchor-target>
+<p>There are two modes to enter keywords, each with a slightly different UI. In <em>plaintext mode</em> (default), keys can be entered as a comma-separated list in a single text field. Regexes can be included too, but they don&#x27;t have any special highlighting. In <em>fancy mode</em>, the keys appear as separate elements and regexes will be highlighted as such. The control supports editing and deleting keys. The mode can be switched via the inline button inside the input control.</p>
 <doc-anchor-target id="optional-filter">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#optional-filter">#</doc-anchor-trigger>
         <span>Optional Filter</span>
     </h4>
 </doc-anchor-target>
-<p>A list of supplementary keywords that are used in conjunction with the main keywords. See <doc-anchor-trigger to="#optional-filter-1">Optional Filter</doc-anchor-trigger>.</p>
+<p>A list of supplementary keywords that are used in conjunction with the main keywords. See <doc-anchor-trigger to="#optional-filter-1">Optional Filter</doc-anchor-trigger>. These keys also support <doc-anchor-trigger to="#regular-expression-regex-as-keys">regex</doc-anchor-trigger>.</p>
 <doc-anchor-target id="entry-content">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#entry-content">#</doc-anchor-trigger>
@@ -377,6 +399,7 @@ Supports logic for AND ANY, NOT ANY, or NOT ALL</p>
 </doc-anchor-target>
 <p>Inclusion groups control how entries are selected when multiple entries with the same group label are triggered simultaneously. If multiple entries having the same group label were activated, only one will be inserted into the prompt.</p>
 <p>By default, the chosen entry is selected randomly based on their Group Weight (default is 100 points) — the higher the number, the higher the probability of selection. This allows for a random selection among the triggered entries, adding an element of surprise and variety to interactions.</p>
+<p>A single entry can be part of multiple inclusion groups if they are defined as a comma-separated list. The same logic as explained above will apply. If that entry is triggered, it will <em>disable</em> all other entries that are part of any of its groups. Therefore, if any of the groups are activated, this entry will not be activated.</p>
 <doc-anchor-target id="prioritize-inclusion">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#prioritize-inclusion">#</doc-anchor-trigger>
@@ -507,6 +530,17 @@ You can define a threshold relative to your API&#x27;s max-context settings (Con
         <span>Recursive scanning</span>
     </h3>
 </doc-anchor-target>
+<p>Recursive scanning allows for entries to activate other entries or be activated by others, enabling complex interactions and dependencies between different World Info entries. This feature can significantly enhance the dynamic nature of your storytelling or role-playing scenarios.<br />
+Whether recursive scanning is enabled can be controlled with the global setting <strong>Recursive Scan</strong>.<br />
+There are three options available to control recursion for each entry:</p>
+<ul>
+<li><p><strong>Non-recursable</strong>: When this checkbox is selected, the entry will not be activated by other entries. This is useful for static information that should not change or be influenced by other world info entries.</p>
+</li>
+<li><p><strong>Prevent further recursion</strong>: Selecting this option ensures that once this entry is activated, it will not trigger any other entries. This is helpful to avoid unintended chains of activations.</p>
+</li>
+<li><p><strong>Delay until recursion</strong>: This entry will only be activated during recursive checks, meaning it won&#x27;t be triggered in the initial pass but can be activated by other entries that have recursion enabled. This is useful for deeper layers of information that should only come into play when specifically referenced by other entries, or information that should purposely be withheld if something else is activated.</p>
+</li>
+</ul>
 <p><strong>Entries can activate other entries by mentioning their keywords in the content text.</strong></p>
 <p>For example, if your World Info contains two entries:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -622,6 +656,6 @@ Content: Rufus is a dog.</code></pre>
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "World Info", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "World Info", level: 3, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
