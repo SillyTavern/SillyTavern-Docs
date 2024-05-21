@@ -226,6 +226,16 @@ Maximum Depth to scan for when using the Min Activations setting.
 
 ### Recursive scanning
 
+Recursive scanning allows for entries to activate other entries or be activated by others, enabling complex interactions and dependencies between different World Info entries. This feature can significantly enhance the dynamic nature of your storytelling or role-playing scenarios.  
+Whether recursive scanning is enabled can be controlled with the global setting **Recursive Scan**.  
+There are three options available to control recursion for each entry:
+
+- **Non-recursable**: When this checkbox is selected, the entry will not be activated by other entries. This is useful for static information that should not change or be influenced by other world info entries.
+  
+- **Prevent further recursion**: Selecting this option ensures that once this entry is activated, it will not trigger any other entries. This is helpful to avoid unintended chains of activations.
+
+- **Delay until recursion**: This entry will only be activated during recursive checks, meaning it won't be triggered in the initial pass but can be activated by other entries that have recursion enabled. This is useful for deeper layers of information that should only come into play when specifically referenced by other entries, or information that should purposely be withheld if something else is activated.
+
 **Entries can activate other entries by mentioning their keywords in the content text.**
 
 For example, if your World Info contains two entries:
