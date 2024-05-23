@@ -193,6 +193,8 @@ The following rules apply:
 
 ### Shared settings
 
+-   Query messages - how many of the latest chat messages will be used for querying document chunks.
+-   Score threshold - adjust to allow culling the retrieval of chunks based on their relevance score (0 - no match at all, 1 - perfect match). Higher values allow for more accurate retrieval and prevent completely random information from entering the context. Sane values are in a range between 0.2 (more loose) and 0.5 (more focused).
 -   Include in World Info Scanning - check if you want the injected content to activate lore book entries.
 -   Vectorize All - forcibly ingests the embeddings for all unprocessed files.
 -   Purge Vectors - clears the file embeddings, allowing to recalculate their vectors.
