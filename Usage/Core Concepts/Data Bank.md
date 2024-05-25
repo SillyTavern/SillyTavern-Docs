@@ -150,7 +150,7 @@ All these sources require an API key of the respective service and usually have 
 6. NomicAI
 
 !!! warning Warning
-Embeddings are only usable when they are required using the same model that generated them. When changing an embedding model or source, it is recommended to purge and recalculate file vectors.
+Embeddings are only usable when they are retrieved using the same model that generated them. When changing an embedding model or source, it is recommended to purge and recalculate file vectors.
 !!!
 
 ## Vectorization Settings
