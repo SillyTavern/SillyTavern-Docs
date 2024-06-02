@@ -17,9 +17,50 @@ After activating the remote connection listening, you **MUST** turn on at least 
 
 **NOTE:** SillyTavern is a single-user program, so anyone who logs in will be able to see all characters and chats, and be able to change any settings inside the UI. [Basic Authentication](#HTTPBasicAuthentication) allows for requesting authorization before access to ST is granted, however the single-user principle still applies.
 
+## Tailscale
+
+This is the easiest way to remotely and safely use Tailscale from anywhere with any device. Anyone can do it and it's free. This is also an easy way to share your powerful PC with your friends. If you don't think Tailscale is a trustworthy company you can also host your own server using [Headscale](https://github.com/juanfont/headscale), but that is outside of the scope of this tutorial.
+
+### 1. Creating an account
+
+* Go to [Tailscale's website](https://tailscale.com/) and create a new account.
+
+**NOTE:** For everyday use by a single person Tailscale will be permanently free. If you fear hidden costs, just don't add any payment options.
+
+### 2. Setting up clients
+
+* Go to [Tailscale's download page](https://tailscale.com/download) and download the client/app on the device you have SillyTavern running on and on the device you want to use it from remote location.
+* Log in on both devices with your previously created account.
+* Go to [Tailscale's admin page](https://login.tailscale.com/admin/machines) and approve both devices.
+* Take note of both of the connected devices' names.
+
+### 3. Adding your devices to the whitelist
+
+* Now you can add your connecting device's machine name (the one you want to use SillyTavern with) to SillyTavern's whitelist by following [Managing whitelisted IPs](#managing-whitelisted-ips).
+
+**NOTE:** Assuming you have not opened any ports for web traffic in your router settings, using the whitelist or basic auth is not necessary and you can disable both safely if you want since SillyTavern never gets publicly exposed when using Tailscale. If you disable basic auth and/or whitelisting you have to set `securityOverride` to true in *config.yaml* for SillyTavern to start.
+
+### 4. Connecting
+
+Now whenever you want to use SillyTavern from anywhere all you have to do is
+* Have Tailscale turned on on both the PC hosting SillyTavern and your device that wants to use it remotely.
+* Open a browser on the device that wants to connect and go to `http://<machine name of PC running st>:8000/`
+
+### 5. Sharing SillyTavern instance with friend (optional)
+
+* Tell your friend to create their own Tailscale account and download the client on their device.
+* Go to [Tailscale's admin page](https://login.tailscale.com/admin/machines).
+* Hover over the three-dot button on your PC hosting SillyTavern and press "Share..." or press the three-dot button and press "Sharing settings...".
+* Uncheck "Allow use as an exit node" (unless you want your friend to be able to route all their internet traffic through your PC).
+* Either send the link as an email or change tab to "Copy share link", press the big blue button with same text and send it to your friend in any other way. 
+* After clicking your share link, your friend will see your PC pop up in their Tailscale network.
+* Send your friend the same link you use to access SillyTavern as explained in the last step.
+
+**NOTE:** This will give your friend full access to any services running locally on your PC like SillyTavern, automatic1111 etc. Only do this if you truly trust your friend.
+
 ## Whitelist
 
-### 1. Managing whitelisted IPs
+### 1. Managing whitelisted IPs {#managing-whitelisted-ips}
 
 * Create a new text file inside your SillyTavern base install folder called `whitelist.txt`.
 * Open the file in a text editor, add a list of IPs you want to be allowed to connect.
