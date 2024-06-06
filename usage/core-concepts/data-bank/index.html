@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770242848922">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.771029185011">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.770242848922" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.771029185011" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.770242848922" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.771029185011" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.770242848922" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.771029185011" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -517,6 +517,7 @@
 <ul>
 <li>Size threshold (KB) - sets a chunking splitting threshold. Only the files larger than the specified size will be split.</li>
 <li>Chunk size (chars) - sets the target size of an individual chunk (in textual characters, not model tokens!).</li>
+<li>Chunk overlap (%) - sets the percentage of a chunk size that will be shared between adjacent chunks. This allows for a smoother transition between the chunks, but may also introduce some redundancy.</li>
 <li>Retrieve chunks - sets the maximum amount of the most relevant file chunks to be retrieved. They will be inserted in their original order.</li>
 </ul>
 <doc-anchor-target id="data-bank-files">
@@ -535,6 +536,7 @@
 <ul>
 <li>Size threshold (KB) - sets a chunking splitting threshold. Only the files larger than the specified size will be split.</li>
 <li>Chunk size (chars) - sets the target size of an individual chunk (in textual characters, not model tokens!).</li>
+<li>Chunk overlap (%) - sets the percentage of a chunk size that will be shared between adjacent chunks. This allows for a smoother transition between the chunks, but may also introduce some redundancy.</li>
 <li>Retrieve chunks - sets the maximum amount of the file chunks to be retrieved. This allowance is shared between all files.</li>
 <li>Injection Template - defines how the retrieved information will be inserted into the prompt. You can use a special {{text}} macro to specify the position of the retrieved text, as well as any other macros.</li>
 <li>Injection Position - sets where to insert the prompt injection. The same rules as for Author&#x27;s Note and World Info apply.</li>
