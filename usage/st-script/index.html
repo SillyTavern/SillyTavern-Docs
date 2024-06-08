@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.771029744582">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.771166749548">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -35,11 +35,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.771029744582" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.771166749548" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.771029744582" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.771166749548" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.771029744582" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.771166749548" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -1059,7 +1059,7 @@ This example will get you 3 last messages in the chat:</p>
 <tr>
 <td style="text-align: left;"><code v-pre>selectiveLogic</code></td>
 <td style="text-align: left;">Logic</td>
-<td style="text-align: left;">0 = AND, 1 = NOT</td>
+<td style="text-align: left;">(see below)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code v-pre>excludeRecursion</code></td>
@@ -1082,6 +1082,11 @@ This example will get you 3 last messages in the chat:</p>
 <td style="text-align: left;">(see below)</td>
 </tr>
 <tr>
+<td style="text-align: left;"><code v-pre>role</code></td>
+<td style="text-align: left;">Depth Role</td>
+<td style="text-align: left;">(see below)</td>
+</tr>
+<tr>
 <td style="text-align: left;"><code v-pre>scanDepth</code></td>
 <td style="text-align: left;">Scan Depth</td>
 <td style="text-align: left;">Number (0-100)</td>
@@ -1099,6 +1104,13 @@ This example will get you 3 last messages in the chat:</p>
 </tbody>
 </table>
 </div>
+<p><strong>Logic values</strong></p>
+<ul>
+<li>0 = AND ANY</li>
+<li>1 = NOT ALL</li>
+<li>2 = NOT ANY</li>
+<li>3 = AND ALL</li>
+</ul>
 <p><strong>Position values</strong></p>
 <ul>
 <li>0 = before main prompt</li>
@@ -1106,6 +1118,14 @@ This example will get you 3 last messages in the chat:</p>
 <li>2 = top of Author&#x27;s Note</li>
 <li>3 = bottom of Author&#x27;s Note</li>
 <li>4 = in-chat at depth</li>
+<li>5 = top of example messages</li>
+<li>6 = bottom of example messages</li>
+</ul>
+<p><strong>Role values</strong> (Position = 4 only)</p>
+<ul>
+<li>0 = System</li>
+<li>1 = User</li>
+<li>2 = Assistant</li>
 </ul>
 <doc-anchor-target id="example-1-read-a-content-from-the-chat-lorebook-by-key">
     <h3>
