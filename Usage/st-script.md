@@ -674,12 +674,13 @@ World Info (also known as Lorebook) is a highly utilitarian tool for dynamically
 - 2 = top of Author's Note
 - 3 = bottom of Author's Note
 - 4 = in-chat at depth
--     role values(Position value 4 only)
-      0 = System
-      1 = User
-      2 = Assistant
 - 5 = top of example messages
 - 6 = bottom of example messages
+
+**Role values** (Position = 4 only)
+- 0 = System
+- 1 = User
+- 2 = Assistant
 
 ### Example 1: Read a content from the chat lorebook by key
 
