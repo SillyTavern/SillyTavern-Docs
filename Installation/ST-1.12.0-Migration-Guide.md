@@ -44,7 +44,7 @@ The data root path should be either a **full absolute** or a **full relative** p
 
 #### **IMPORTANT!** Before we begin
 
-1. Set the data root _before_ first running the server after pulling an update. Run `npm install` for the `config.yaml` to populate with a new value, or pass a console argument.
+1. **Only if you want to move dataRoot from the default location. Otherwise, skip this part.** Set the data root _before_ first running the server after pulling an update. Run `npm install` for the `config.yaml` to populate with a new value, or pass a console argument.
 2. All data will be migrated into a `default-user` account. See more on [Users](#users) below.
 
 #### Containerless (bare metal) installs
