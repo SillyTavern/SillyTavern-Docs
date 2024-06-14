@@ -80,6 +80,14 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 - Models ranging from 7B to 70B
 - [Setup Instructions](/usage/api-connections/DreamGen/)
 
+### [Featherless](https://featherless.ai)
+
+- Private model execution service
+- Mission: easiest and fastest way to run *any* model from Hugging Face (uncensored, abliterated, fimbulvetr, etc.).
+- 15+ models from 8-15B (as June 2024) and growing
+- Monthly cost of $10 USD for unlimited chat.
+- [Website](https://featherless.ai)
+- [Setup Instructions](https://docs.sillytavern.app/usage/api-connections/featherless/)
 
 ### Kobold Horde
 
