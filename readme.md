@@ -12,9 +12,11 @@ Since the 1.10.6 release version, most of the previously built-in extensions hav
 
 ### Screenshots
 
-| ![Chat](/static/screenshot1.jpg) | ![Waifu mode](/static/screenshot2.jpg) |
+| ![VN Mode](/static/screenshot1.jpg) | ![Character Management](/static/screenshot2.jpg) |
 |:---:|:---:|
-| ![VN Mode](/static/screenshot3.jpg) | ![Backgrounds](/static/screenshot4.jpg) |
+| ![Advanced Formatting](/static/screenshot3.jpg) | ![Slash Commands](/static/screenshot4.jpg) |
+|:---:|:---:|
+| ![Extensions](/static/screenshot5.jpg) | ![Response Config](/static/screenshot6.jpg) |
 
 ### Branches
 
