@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.771949963556">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.771962204808">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -35,11 +35,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.771949963556" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.771962204808" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.771949963556" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.771962204808" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.771949963556" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.771962204808" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -265,9 +265,9 @@
 These settings try to stick to the DreamGen format as closely as possible but due to the irregular formatting of character cards, it is not always perfect.</p>
 <ol>
 <li>Go to the &quot;Advanced Formatting&quot; page.</li>
-<li>Under &quot;Context Template&quot; pick <code v-pre>DreamGen Role-Play V1</code>.</li>
+<li>Under &quot;Context Template&quot; pick <code v-pre>DreamGen Role-Play V1 Llama3 / ChatML</code> depending on the model (*).</li>
 <li><strong>Enable &quot;Instruct Mode&quot;.</strong></li>
-<li>Under &quot;Instruct Mode Presets&quot; pick <code v-pre>DreamGen Role-Play V1</code>.</li>
+<li>Under &quot;Instruct Mode Presets&quot; pick <code v-pre>DreamGen Role-Play V1 Llama3 / ChatML</code>.</li>
 </ol>
 <p><figure class="content-center">
     <img src="../../../static/dreamgen/dreamgen_st_context_settings.jpg" alt="DreamGen context settings">
@@ -278,6 +278,8 @@ These settings try to stick to the DreamGen format as closely as possible but du
     <figcaption class="caption">DreamGen instruct settings</figcaption>
 </figure>
 </p>
+<p>(*) When to use Llama 3 and when to use ChatML? As of 2024/06/17, <code v-pre>opus-v1-sm</code> is <code v-pre>ChatML</code> and all other models are <code v-pre>Llama3</code> based.
+When running local models, the template will be indicated in the model&#x27;s HuggingFace card.</p>
 <doc-anchor-target id="completion-settings">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#completion-settings">#</doc-anchor-trigger>
@@ -358,30 +360,14 @@ This makes the message examples and the initial message very important.</p>
         <span>Formatting Message Examples</span>
     </h4>
 </doc-anchor-target>
-<p>The <code v-pre>{{mesExamples}}</code> are appended at the end of the system prompt, allowing us to leverage the ChatML+Text format. Here&#x27;s how the examples should be formatted:</p>
+<p>The <code v-pre>{{mesExamples}}</code> are appended at the end of the system prompt. To take full advantage of the instruct formatting, make sure that your examples are separated with the <code v-pre>&lt;START&gt;</code> separator. For example:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">&lt;|im_end|&gt;
-&lt;|im_start|&gt;text names= {{user}}
-(user's turn)&lt;|im_end|&gt;
-&lt;|im_start|&gt;text names= {{char}}
-(char's turn)&lt;|im_end|&gt;
-&lt;|im_start|&gt;text names= {{user}}
-(user's turn)&lt;|im_end|&gt;
-&lt;|im_start|&gt;text names= {{char}}
-(char's turn)</code></pre>
-</doc-codeblock></div>
-<p>Note that we have <code v-pre>&lt;|im_end|&gt;</code> at the start, to close the system prompt, and that we do not have <code v-pre>&lt;|im_end|&gt;</code> at the end, as that will be added by SillyTavern.</p>
-<p>You can also use <code v-pre>user</code> turns to provide context for the example conversations:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">&lt;|im_end|&gt;
-&lt;|im_start|&gt;user
-Before the main story starts, {{char}} describes their body to {{user}}.&lt;|im_end|&gt;
-&lt;|im_start|&gt;text names= {{user}}
-(user's turn)&lt;|im_end|&gt;
-&lt;|im_start|&gt;text names= {{char}}
-(char's turn)&lt;|im_end|&gt;
-&lt;|im_start|&gt;user
-{{user}} and {{char}} meet up for coffee.</code></pre>
+<pre class="language-none"><code v-pre class="language-none">&lt;START&gt;
+{{user}}: (user's turn)
+{{char}}: (char's turn)
+&lt;START&gt;
+{{user}}: (user's turn)
+{{char}}: (char's turn)</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="examples">
     <h3>
@@ -428,6 +414,19 @@ Before the main story starts, {{char}} describes their body to {{user}}.&lt;|im_
         <span>FAQ</span>
     </h2>
 </doc-anchor-target>
+<doc-anchor-target id="what-sampler-settings-should-i-use">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#what-sampler-settings-should-i-use">#</doc-anchor-trigger>
+        <span>What sampler settings should I use?</span>
+    </h3>
+</doc-anchor-target>
+<p>You can start with these:</p>
+<ul>
+<li>Temperature: 1.0</li>
+<li>MinP: 0.05</li>
+<li>Presence Penalty: 0.1</li>
+<li>Frequency Penalty: 0.1</li>
+</ul>
 <doc-anchor-target id="how-can-i-make-the-responses-longer-or-shorter">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#how-can-i-make-the-responses-longer-or-shorter">#</doc-anchor-trigger>
@@ -440,7 +439,18 @@ Before the main story starts, {{char}} describes their body to {{user}}.&lt;|im_
 <li>Change the <code v-pre>Min Length</code> in the Completion Settings.</li>
 <li>Add <code v-pre>Last Output Sequence</code> similar to the following in the Advanced Formatting settings under Instruct Mode:</li>
 </ul>
-<p>Here&#x27;s an example of the <code v-pre>Last Output Sequence</code> that might help make the model respond in a more verbose way:</p>
+<p>Here&#x27;s an example of the <code v-pre>Last Output Sequence</code> that might help make the model respond in a more verbose way, using the Llama 3 template:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">&lt;|eot_id|&gt;
+&lt;|start_header_id|&gt;user&lt;|end_header_id|&gt;
+
+Length: 400 words
+Plot: {{char}} replies to {{user}} in detailed and elaborate way.&lt;|eot_id|&gt;
+&lt;|start_header_id|&gt;writer character: {{char}}&lt;|end_header_id|&gt;
+
+</code></pre>
+</doc-codeblock></div>
+<p>The same expressed using the ChatML template:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">&lt;|im_end|&gt;
 &lt;|im_start|&gt;user
@@ -455,7 +465,8 @@ Plot: {{char}} replies to {{user}} in detailed and elaborate way.&lt;|im_end|&gt
         <span>How can I stop the model from repeating itself?</span>
     </h3>
 </doc-anchor-target>
-<p>You can try increasing &quot;Repetition Penalty&quot; in the Completion Settings or rephrasing the part of the context that&#x27;s getting repeated.</p>
+<p>If the model repeats what&#x27;s in the context, you can try increasing &quot;Repetition Penalty&quot; in the Completion Settings or you can try rephrasing the part of the context that&#x27;s getting repeated.
+If the model repeats itself within one message, you can try increasing &quot;Presence Penalty&quot; or &quot;Frequency Penalty&quot;.</p>
 <doc-anchor-target id="how-can-i-steer-the-role-play">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#how-can-i-steer-the-role-play">#</doc-anchor-trigger>
