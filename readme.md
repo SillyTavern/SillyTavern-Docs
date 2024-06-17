@@ -15,8 +15,8 @@ Since the 1.10.6 release version, most of the previously built-in extensions hav
 | ![VN Mode](/static/screenshot1.jpg) | ![Character Management](/static/screenshot2.jpg) |
 |:---:|:---:|
 | ![Advanced Formatting](/static/screenshot3.jpg) | ![Slash Commands](/static/screenshot4.jpg) |
-|:---:|:---:|
 | ![Extensions](/static/screenshot5.jpg) | ![Response Config](/static/screenshot6.jpg) |
+| ![Backgrounds](/static/screenshot7.jpg) | ![User Settings](/static/screenshot8.jpg) |
 
 ### Branches
 
