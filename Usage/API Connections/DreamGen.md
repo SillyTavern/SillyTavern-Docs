@@ -35,12 +35,15 @@ SillyTavern comes with built-in presets made for DreamGen. Make sure to use thes
 These settings try to stick to the DreamGen format as closely as possible but due to the irregular formatting of character cards, it is not always perfect.
 
 1. Go to the "Advanced Formatting" page.
-2. Under "Context Template" pick `DreamGen Role-Play V1`.
+2. Under "Context Template" pick `DreamGen Role-Play V1 Llama3 / ChatML` depending on the model (*).
 3. **Enable "Instruct Mode".**
-4. Under "Instruct Mode Presets" pick `DreamGen Role-Play V1`.
+4. Under "Instruct Mode Presets" pick `DreamGen Role-Play V1 Llama3 / ChatML`.
 
 ![DreamGen context settings](/static/dreamgen/dreamgen_st_context_settings.jpg)
 ![DreamGen instruct settings](/static/dreamgen/dreamgen_st_instruct_settings.jpg)
+
+(*) When to use Llama 3 and when to use ChatML? As of 2024/06/17, `opus-v1-sm` is `ChatML` and all other models are `Llama3` based.
+When running local models, the template will be indicated in the model's HuggingFace card. 
 
 ## Completion Settings
 
@@ -112,40 +115,17 @@ This makes the message examples and the initial message very important.
 
 #### Formatting Message Examples
 
-The {%{`{{mesExamples}}`}%} are appended at the end of the system prompt, allowing us to leverage the ChatML+Text format. Here's how the examples should be formatted:
+The {%{`{{mesExamples}}`}%} are appended at the end of the system prompt. To take full advantage of the instruct formatting, make sure that your examples are separated with the `<START>` separator. For example:
 
 {%{
 
 ```
-<|im_end|>
-<|im_start|>text names= {{user}}
-(user's turn)<|im_end|>
-<|im_start|>text names= {{char}}
-(char's turn)<|im_end|>
-<|im_start|>text names= {{user}}
-(user's turn)<|im_end|>
-<|im_start|>text names= {{char}}
-(char's turn)
-```
-
-}%}
-
-Note that we have `<|im_end|>` at the start, to close the system prompt, and that we do not have `<|im_end|>` at the end, as that will be added by SillyTavern.
-
-You can also use `user` turns to provide context for the example conversations:
-
-{%{
-
-```
-<|im_end|>
-<|im_start|>user
-Before the main story starts, {{char}} describes their body to {{user}}.<|im_end|>
-<|im_start|>text names= {{user}}
-(user's turn)<|im_end|>
-<|im_start|>text names= {{char}}
-(char's turn)<|im_end|>
-<|im_start|>user
-{{user}} and {{char}} meet up for coffee.
+<START>
+{{user}}: (user's turn)
+{{char}}: (char's turn)
+<START>
+{{user}}: (user's turn)
+{{char}}: (char's turn)
 ```
 
 }%}
@@ -176,6 +156,15 @@ This is an edit of the Lara Lightland card by Deffcolony.
 
 ## FAQ
 
+### What sampler settings should I use?
+
+You can start with these:
+
+- Temperature: 1.0
+- MinP: 0.05
+- Presence Penalty: 0.1
+- Frequency Penalty: 0.1
+
 ### How can I make the responses longer or shorter? 
 
 You have several options:
@@ -184,7 +173,25 @@ You have several options:
 -   Change the `Min Length` in the Completion Settings.
 -   Add `Last Output Sequence` similar to the following in the Advanced Formatting settings under Instruct Mode:
 
-Here's an example of the `Last Output Sequence` that might help make the model respond in a more verbose way:
+Here's an example of the `Last Output Sequence` that might help make the model respond in a more verbose way, using the Llama 3 template:
+
+{%{
+
+```
+<|eot_id|>
+<|start_header_id|>user<|end_header_id|>
+
+Length: 400 words
+Plot: {{char}} replies to {{user}} in detailed and elaborate way.<|eot_id|>
+<|start_header_id|>writer character: {{char}}<|end_header_id|>
+
+
+```
+
+The same expressed using the ChatML template:
+
+}%}
+
 
 {%{
 
@@ -202,7 +209,8 @@ You can change the text within to something more suitable for your scenario or c
 
 ### How can I stop the model from repeating itself? 
 
-You can try increasing "Repetition Penalty" in the Completion Settings or rephrasing the part of the context that's getting repeated.
+If the model repeats what's in the context, you can try increasing "Repetition Penalty" in the Completion Settings or you can try rephrasing the part of the context that's getting repeated.
+If the model repeats itself within one message, you can try increasing "Presence Penalty" or "Frequency Penalty".
 
 ### How can I steer the role-play?
 
