@@ -199,7 +199,7 @@ Since the retrieval quality depends entirely on the outputs of the embedding mod
 This content describes a pre-release version and is subject to change.
 !!!
 
-Usually, World Info evaluation is stateless, meaning that the result of the evaluation is the same, only depending on the current chat context. However, with the introduction of Timed Effects, you can create entries that stay active after being triggered, or can't be triggered after the activation.
+Usually, World Info evaluation is stateless, meaning that the result of the evaluation is the same, only depending on the current chat context. However, with the introduction of Timed Effects, you can create entries that have an activation delay, stay active after being triggered, or can't be triggered after the activation.
 
 ### Timed Effects Rules
 
@@ -213,19 +213,24 @@ Usually, World Info evaluation is stateless, meaning that the result of the eval
 
 1. Sticky - the entry stays active for N messages after being activated. Stickied entries ignore probability checks on consequent scans until they expire.
 2. Cooldown - the entry can't be activated for N messages after being activated. Can be used together with sticky: the entry goes on cooldown when the sticky duration ends.
+3. Delay - the entry can't be activated unless there are at least N messages in the chat at the moment of evaluation.
+    * Delay = 0 -> The entry can be activated at any time.
+    * Delay = 1 -> The entry can't be activated if the chat is empty (no greeting).
+    * Delay = 2 -> The entry can't be activated if there is zero or only one message in the chat, etc.
 
 ### Timed Effects Example
 
-Entry configuration: sticky for 3 messages, cooldown for 2 messages
+Entry configuration: sticky = 3, cooldown = 2, delay = 2.
 
 ```txt
-Message 0: entry activated
-Message 1: sticky
+Message 0: delay
+Message 1: entry activated
 Message 2: sticky
 Message 3: sticky
-Message 4: cooldown
+Message 4: sticky
 Message 5: cooldown
-Message 6: entry can be activated again
+Message 6: cooldown
+Message 7: entry can be activated again
 ```
 
 ## Activation Settings
