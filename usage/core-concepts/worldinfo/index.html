@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.772504429618">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.772753880034">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.772504429618" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.772753880034" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.772504429618" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.772753880034" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.772504429618" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.772504429618" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.772753880034" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.772753880034" defer></script>
 
     <Style>
         a {
@@ -500,7 +500,7 @@ Supports logic for AND ANY, NOT ANY, or NOT ALL</p>
         </div>
     </div>
 </div>
-<p>Usually, World Info evaluation is stateless, meaning that the result of the evaluation is the same, only depending on the current chat context. However, with the introduction of Timed Effects, you can create entries that stay active after being triggered, or can&#x27;t be triggered after the activation.</p>
+<p>Usually, World Info evaluation is stateless, meaning that the result of the evaluation is the same, only depending on the current chat context. However, with the introduction of Timed Effects, you can create entries that have an activation delay, stay active after being triggered, or can&#x27;t be triggered after the activation.</p>
 <doc-anchor-target id="timed-effects-rules">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#timed-effects-rules">#</doc-anchor-trigger>
@@ -523,6 +523,13 @@ Supports logic for AND ANY, NOT ANY, or NOT ALL</p>
 <ol>
 <li>Sticky - the entry stays active for N messages after being activated. Stickied entries ignore probability checks on consequent scans until they expire.</li>
 <li>Cooldown - the entry can&#x27;t be activated for N messages after being activated. Can be used together with sticky: the entry goes on cooldown when the sticky duration ends.</li>
+<li>Delay - the entry can&#x27;t be activated unless there are at least N messages in the chat at the moment of evaluation.
+<ul>
+<li>Delay = 0 -&gt; The entry can be activated at any time.</li>
+<li>Delay = 1 -&gt; The entry can&#x27;t be activated if the chat is empty (no greeting).</li>
+<li>Delay = 2 -&gt; The entry can&#x27;t be activated if there is zero or only one message in the chat, etc.</li>
+</ul>
+</li>
 </ol>
 <doc-anchor-target id="timed-effects-example">
     <h3>
@@ -530,15 +537,16 @@ Supports logic for AND ANY, NOT ANY, or NOT ALL</p>
         <span>Timed Effects Example</span>
     </h3>
 </doc-anchor-target>
-<p>Entry configuration: sticky for 3 messages, cooldown for 2 messages</p>
+<p>Entry configuration: sticky = 3, cooldown = 2, delay = 2.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">Message 0: entry activated
-Message 1: sticky
+<pre class="language-none"><code v-pre class="language-none">Message 0: delay
+Message 1: entry activated
 Message 2: sticky
 Message 3: sticky
-Message 4: cooldown
+Message 4: sticky
 Message 5: cooldown
-Message 6: entry can be activated again</code></pre>
+Message 6: cooldown
+Message 7: entry can be activated again</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="activation-settings">
     <h2>
