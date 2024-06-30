@@ -195,10 +195,6 @@ Since the retrieval quality depends entirely on the outputs of the embedding mod
 
 ## Timed Effects
 
-!!! warning Warning
-This content describes a pre-release version and is subject to change.
-!!!
-
 Usually, World Info evaluation is stateless, meaning that the result of the evaluation is the same, only depending on the current chat context. However, with the introduction of Timed Effects, you can create entries that have an activation delay, stay active after being triggered, or can't be triggered after the activation.
 
 ### Timed Effects Rules
