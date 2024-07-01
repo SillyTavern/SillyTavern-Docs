@@ -120,7 +120,7 @@ Example:
 ```
 node server.js --ssl
 ```
-As per default, ST will search for your certificates inside the /cert folder. If your files are located elsewhere, you can use the `--keyPath` and `--certPath` arguments.
+As per default, ST will search for your certificates inside the `certs` folder. If your files are located elsewhere, you can use the `--keyPath` and `--certPath` arguments.
 
 Example:
 ```
