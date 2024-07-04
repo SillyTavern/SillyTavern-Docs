@@ -38,7 +38,8 @@ You can configure the instruction template for generating prompts for every gene
 * [Draw Things](https://drawthings.ai/)
 * [Pollinations](https://pollinations.ai/)
 * [ComfyUI](https://github.com/comfyanonymous/ComfyUI). Requires a workflow JSON file.
-* [SillyTavern Extras](https://github.com/SillyTavern/SillyTavern-Extras) (will be deprecated in future)
+* [Stability AI](https://platform.stability.ai/)
+* [SillyTavern Extras](https://github.com/SillyTavern/SillyTavern-Extras) (deprecated, not recommended)
 
 ## Options
 
