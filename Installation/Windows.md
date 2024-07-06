@@ -27,12 +27,14 @@ INSTALLATION ON WINDOWS 7 IS IMPOSSIBLE AS IT CAN NOT RUN NODEJS 18.16
   8. The server will then start, and SillyTavern will pop up in your browser.
 
 ## Installing via SillyTavern Launcher
- 1. Install [Git for Windows](https://gitforwindows.org/)
- 2. Open Windows Explorer (`Win+E`) and make or choose a folder where you wanna install the launcher to
- 3. Open a Command Prompt inside that folder by clicking in the 'Address Bar' at the top, typing `cmd`, and pressing Enter.
- 4. When you see a black box, insert the following command: `git clone https://github.com/SillyTavern/SillyTavern-Launcher.git`
- 5. Double-click on `installer.bat` and choose what you wanna install
- 6. After installation double-click on `launcher.bat`
+1.  On your keyboard: press **`WINDOWS + R`** to open Run dialog box. Then, run the following command to install git:
+```shell
+cmd /c winget install -e --id Git.Git
+```
+2. On your keyboard: press **`WINDOWS + E`** to open File Explorer, then navigate to the folder where you want to install the launcher. Once in the desired folder, type `cmd` into the address bar and press enter. Then, run the following command:
+```shell
+git clone https://github.com/SillyTavern/SillyTavern-Launcher.git && cd SillyTavern-Launcher && start installer.bat
+```
 
 ## Installing via GitHub Desktop
 (This allows git usage **only** in GitHub Desktop, if you want to use `git` on the command line too, you also need to install [Git for Windows](https://gitforwindows.org/))
