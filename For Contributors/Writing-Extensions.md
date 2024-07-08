@@ -172,7 +172,7 @@ Use `registerSlashCommand()` to register a new slash command:
 ```js
 import { registerSlashCommand } from "../../slash-commands.js";
 
-registerSlashCommand("commandname", commandFunction, ["alias"], "Description shown in /help", true, true);
+registerSlashCommand("commandname", commandFunction, ["alias"], "Description shown in /help");
 
 function commandFunction(namedArgs, unnamedArgs) {
     // Command logic
@@ -192,8 +192,6 @@ Arguments explanation:
   * `unnamedArgs` - a string containing the unnamed argument
 3. `aliases` - an array of alias strings. The command can be called using any of the aliases, but they won't be shown in the autocomplete but will be listed in the help command.
 4. `helpString` - a string that will be displayed when the `/help slash` command is called. Must describe what your command does and which arguments it accepts. May contain HTML markup.
-5. `interruptsGeneration` - if the command is executed from the user input area, the message generation will be interrupted. Default: `false`.
-6. `purgeFromMessage` - if the command is executed from the user input area, it will be purged from the input text area when the command finishes executing. Default: `true`.
 
 All registered commands can be used in [STscript](https://docs.sillytavern.app/usage/st-script/) in any possible way.
 
