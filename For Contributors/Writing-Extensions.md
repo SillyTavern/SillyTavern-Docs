@@ -165,7 +165,7 @@ SlashCommandParser.addCommandObject(SlashCommand.fromProps({ name: 'repeat',
 }));
 ```
 
-## Registering slash commands (old way)
+## (DEPRECATED) Registering slash commands (old way)
 
 Use `registerSlashCommand()` to register a new slash command:
 
