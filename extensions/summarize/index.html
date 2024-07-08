@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.773610954225">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.773744429938">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -35,11 +35,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.773610954225" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.773744429938" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.773610954225" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.773744429938" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.773610954225" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.773744429938" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -261,8 +261,8 @@
 <li><strong>Summary Prompt</strong> - defines the prompt that will used for creating a summary. May include any of the known macros, as well as a special {{words}} macro (see below).</li>
 <li><strong>Target summary length (words)</strong> - defines the value of the {{words}} macro that can be inserted into the Summary Prompt. This setting is completely optional and has no effect at all if the macro is not used.</li>
 <li><strong>API response length (tokens)</strong> - allows to set an override API response length for generating summaries that are different from the globally set value.</li>
-<li><strong>Max messages per request <em>(raw modes only)</em></strong> - set to limit the maximum number of messages that will be included in one summarization prompt. <code v-pre>0</code> means no explicit limitation, but the resulting number of messages to summarize will still depend on the maximum context size, calculated using the formula: <code v-pre>max summary buffer = context size - summarization prompt - previous summary - response length</code>. Use this when you want to get more focused summaries on models with large context sizes.
-5 <strong>No WI/AN</strong> - omit World Info and Author&#x27;s Note from text to be summarized. Only has an effect when using the Classic prompt builder. The Raw prompt builder always omits WI/AN.</li>
+<li><strong>Max messages per request <em>(raw modes only)</em></strong> - set to limit the maximum number of messages that will be included in one summarization prompt. <code v-pre>0</code> means no explicit limitation, but the resulting number of messages to summarize will still depend on the maximum context size, calculated using the formula: <code v-pre>max summary buffer = context size - summarization prompt - previous summary - response length</code>. Use this when you want to get more focused summaries on models with large context sizes.</li>
+<li><strong>No WI/AN</strong> - omit World Info and Author&#x27;s Note from text to be summarized. Only has an effect when using the Classic prompt builder. The Raw prompt builder always omits WI/AN.</li>
 <li><strong>Update every X messages</strong> - sets the interval at which the summary is generated. <code v-pre>0</code> means that the automatic summarization is disabled, but you can still trigger it manually by clicking the &quot;Summarize now&quot; button. This should be adjusted based on how quickly the prompt buffer entirely fills with chat messages. Ideally, you&#x27;d want to have the first summary generated when the messages are starting to get dropped out of the prompt.</li>
 <li><strong>Update every X words</strong> - same as above, but using words (not tokens!) instead of messages, theoretically can be a more accurate measurement due to how unpredictable the contents of chat messages usually are, but your mileage may vary.</li>
 </ol>
