@@ -219,7 +219,7 @@ The main event types are:
 * `MESSAGE_SENT`
 * `CHAT_CHANGED`
 
-The rest can be found [here](https://github.com/SillyTavern/SillyTavern/blob/release/public/script.js#L364).
+The rest can be found [here](https://github.com/SillyTavern/SillyTavern/blob/a410c63333069100aee6d4e4b54196cd6accfa24/public/script.js#L399).
 
 ### Do Extras request
 
