@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.773783104707">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.773783166358">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.773783104707" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.773783166358" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.773783104707" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.773783166358" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.773783104707" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.773783104707" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.773783166358" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.773783166358" defer></script>
 
     <Style>
         a {
@@ -389,7 +389,7 @@ function handleMessage(data) {
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-javascript"><code v-pre class="language-javascript">import { registerSlashCommand } from &quot;../../slash-commands.js&quot;;
 
-registerSlashCommand(&quot;commandname&quot;, commandFunction, [&quot;alias&quot;], &quot;Description shown in /help&quot;, true, true);
+registerSlashCommand(&quot;commandname&quot;, commandFunction, [&quot;alias&quot;], &quot;Description shown in /help&quot;);
 
 function commandFunction(namedArgs, unnamedArgs) {
     // Command logic
@@ -411,8 +411,6 @@ function commandFunction(namedArgs, unnamedArgs) {
 <ol start="3">
 <li><code v-pre>aliases</code> - an array of alias strings. The command can be called using any of the aliases, but they won&#x27;t be shown in the autocomplete but will be listed in the help command.</li>
 <li><code v-pre>helpString</code> - a string that will be displayed when the <code v-pre>/help slash</code> command is called. Must describe what your command does and which arguments it accepts. May contain HTML markup.</li>
-<li><code v-pre>interruptsGeneration</code> - if the command is executed from the user input area, the message generation will be interrupted. Default: <code v-pre>false</code>.</li>
-<li><code v-pre>purgeFromMessage</code> - if the command is executed from the user input area, it will be purged from the input text area when the command finishes executing. Default: <code v-pre>true</code>.</li>
 </ol>
 <p>All registered commands can be used in <a href="https://docs.sillytavern.app/usage/st-script/">STscript</a> in any possible way.</p>
 <blockquote>
