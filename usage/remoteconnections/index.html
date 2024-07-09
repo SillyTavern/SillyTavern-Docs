@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.773783196308">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.773861727657">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.773783196308" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.773861727657" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.773783196308" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.773861727657" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.773783196308" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.773783196308" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.773861727657" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.773861727657" defer></script>
 
     <Style>
         a {
@@ -219,9 +219,9 @@ listen: true</code></pre>
         <span>Whitelist</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="1-managing-whitelisted-ips">
+<doc-anchor-target id="managing-whitelisted-ips">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#1-managing-whitelisted-ips">#</doc-anchor-trigger>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#managing-whitelisted-ips">#</doc-anchor-trigger>
         <span>1. Managing whitelisted IPs</span>
     </h3>
 </doc-anchor-target>
@@ -354,6 +354,71 @@ basicAuthUser:
     </h3>
 </doc-anchor-target>
 <p>The simplest, quickest way to get a certificate is by using <a href="https://letsencrypt.org/getting-started/">certbot</a>.</p>
+<doc-anchor-target id="tailscale">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tailscale">#</doc-anchor-trigger>
+        <span>Tailscale</span>
+    </h2>
+</doc-anchor-target>
+<p>Tailscale is a VPN provider enabling a secure remote connection to your PC. An open-source implementation of the Tailscale server exists and you can also host the server using <a href="https://github.com/juanfont/headscale">Headscale</a>, but that is outside of the scope of this tutorial.</p>
+<doc-anchor-target id="1-creating-an-account">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-creating-an-account">#</doc-anchor-trigger>
+        <span>1. Creating an account</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Go to <a href="https://tailscale.com/">Tailscale&#x27;s website</a> and create a new account.</li>
+</ul>
+<p><strong>NOTE:</strong> For everyday use by a single person Tailscale will be permanently free. If you fear hidden costs, just don&#x27;t add any payment options.</p>
+<doc-anchor-target id="2-setting-up-clients">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-setting-up-clients">#</doc-anchor-trigger>
+        <span>2. Setting up clients</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Go to <a href="https://tailscale.com/download">Tailscale&#x27;s download page</a> and download the client/app on the device you have SillyTavern running on and on the device you want to use from a remote location.</li>
+<li>Log in on both devices with your previously created account.</li>
+<li>Go to <a href="https://login.tailscale.com/admin/machines">Tailscale&#x27;s admin page</a> and approve both devices.</li>
+<li>Take note of both of the connected devices&#x27; names.</li>
+</ul>
+<doc-anchor-target id="3-adding-your-devices-to-the-whitelist">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-adding-your-devices-to-the-whitelist">#</doc-anchor-trigger>
+        <span>3. Adding your devices to the whitelist</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Add your connecting device&#x27;s machine name (the one you want to use SillyTavern with) to SillyTavern&#x27;s whitelist by following <doc-anchor-trigger to="#managing-whitelisted-ips">Managing whitelisted IPs</doc-anchor-trigger>.</li>
+</ul>
+<doc-anchor-target id="4-connecting">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-connecting">#</doc-anchor-trigger>
+        <span>4. Connecting</span>
+    </h3>
+</doc-anchor-target>
+<p>Now whenever you want to use SillyTavern from anywhere all you have to do is:</p>
+<ul>
+<li>Have Tailscale turned on on both the PC hosting SillyTavern and your device that wants to use it remotely.</li>
+<li>Open a browser on the device that wants to connect and go to <code v-pre>http://&lt;machine name of PC running st&gt;:8000/</code></li>
+</ul>
+<doc-anchor-target id="5-sharing-sillytavern-instance-with-a-friend-optional">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#5-sharing-sillytavern-instance-with-a-friend-optional">#</doc-anchor-trigger>
+        <span>5. Sharing SillyTavern instance with a friend (optional)</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Tell your friend to create their own Tailscale account and download the client on their device.</li>
+<li>Go to <a href="https://login.tailscale.com/admin/machines">Tailscale&#x27;s admin page</a>.</li>
+<li>Hover over the three-dot button on your PC hosting SillyTavern and press &quot;Share...&quot; or press the three-dot button and press &quot;Sharing settings...&quot;.</li>
+<li>Uncheck &quot;Allow use as an exit node&quot; (unless you want your friend to be able to route all their internet traffic through your PC).</li>
+<li>Either send the link as an email or change the tab to &quot;Copy share link&quot;, press the big blue button with the same text, and send it to your friend in any other way.</li>
+<li>After clicking your share link, your friend will see your PC pop up in their Tailscale network.</li>
+<li>Send your friend the same link you use to access SillyTavern as explained in the last step.</li>
+</ul>
+<p><strong>NOTE:</strong> This will give your friend full access to any services running locally on your PC like SillyTavern, automatic1111, etc. Only do this if you truly trust your friend.</p>
 
                                 
                                 <!-- Required only on API pages -->
