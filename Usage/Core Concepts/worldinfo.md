@@ -258,6 +258,8 @@ Entries inserted by directly mentioning their keys have higher priority than tho
 
 Minimum Activations: If set to a non-zero value, this will disregard the limitation of "scan-depth", seeking all of the chat log backward from the latest message for keywords until as many entries as specified in min activations have been triggered. This will still be limited by the Max Depth setting or your overall Budget cap.
 
+*Additional scan sweeps triggered by Min Activations will not check entries added by recursion on previous steps. Only chat messages and extension prompts can trigger these additional activations. However, the entries activated by Min Activations can trigger other entries as usual.*
+
 ### Max Depth
 
 Maximum Depth to scan for when using the Min Activations setting.
