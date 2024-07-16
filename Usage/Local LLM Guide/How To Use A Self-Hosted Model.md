@@ -4,9 +4,21 @@ order: 103
 
 # Self-hosted AI models
 
+!!! warning
+This guide is based on the author's personal experience and knowledge and is not an absolute truth. All statements should be taken with a grain of salt. If you have any corrections or suggestions, please contact us on Discord or send a PR to the [SillyTavern documentation repository](https://github.com/SillyTavern/SillyTavern-Docs).
+!!!
+
 ## Intro
 
 This guide aims to help you get set up using SillyTavern with a local AI running on your PC (we'll start using the proper terminology from now on and call it an LLM). Read it before bothering people with tech support questions.
+
+### What are the best Large Language Models?
+
+It is impossible to answer this question as there's no standardized scale of "Best". The community ⁠has enough resources and discussions going on Reddit and Discord to form at least some opinion on what is the preferred / go-to model. Your mileage may vary.
+
+### What is the best configuration?
+
+If there was a best or no-brainer setup, would there even have to be a need for configuration? The best configuration is the one that works for you. It's a trial-and-error process.
 
 ## Hardware requirements and orientation
 
