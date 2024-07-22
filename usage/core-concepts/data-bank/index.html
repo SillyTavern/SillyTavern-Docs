@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.774830006546">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.774998508261">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.774830006546" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.774998508261" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.774830006546" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.774998508261" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.774830006546" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.774998508261" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -441,8 +441,9 @@
 <ol>
 <li>Local (Transformers) - runs on a Node server. SillyTavern will automatically download a compatible model in ONNX format from HuggingFace. Default model: <a href="https://huggingface.co/Cohee/jina-embeddings-v2-base-en">jina-embeddings-v2-base-en</a>.</li>
 <li>Extras - runs under the <a href="https://github.com/SillyTavern/SillyTavern-extras">Extras API</a> using the SentenceTransformers loader. Default model: <a href="https://huggingface.co/sentence-transformers/all-mpnet-base-v2">all-mpnet-base-v2</a>.</li>
-<li><em>(staging branch)</em> Ollama - get it from <a href="https://ollama.com/">https://ollama.com/</a>. Set the API URL in the API connection menu (under Text Completion, default: <code v-pre>http://localhost:11434</code>). Must download a compatible model first, then set its name in the extension settings. Example model: <a href="https://ollama.com/library/mxbai-embed-large">mxbai-embed-large</a>. Optionally, check an option to keep the model loaded in memory.</li>
-<li><em>(staging branch)</em> llama.cpp server - get it from <a href="https://github.com/ggerganov/llama.cpp">ggerganov/llama.cpp</a> and run the server executable with <code v-pre>--embedding</code> flag. Load compatible GGUF embedding models from HuggingFace, for example, <a href="https://huggingface.co/nomic-ai/nomic-embed-text-v1.5-GGUF">nomic-ai/nomic-embed-text-v1.5-GGUF</a>.</li>
+<li>Ollama - get it from <a href="https://ollama.com/">https://ollama.com/</a>. Set the API URL in the API connection menu (under Text Completion, default: <code v-pre>http://localhost:11434</code>). Must download a compatible model first, then set its name in the extension settings. Example model: <a href="https://ollama.com/library/mxbai-embed-large">mxbai-embed-large</a>. Optionally, check an option to keep the model loaded in memory.</li>
+<li>llama.cpp server - get it from <a href="https://github.com/ggerganov/llama.cpp">ggerganov/llama.cpp</a> and run the server executable with <code v-pre>--embedding</code> flag. Load compatible GGUF embedding models from HuggingFace, for example, <a href="https://huggingface.co/nomic-ai/nomic-embed-text-v1.5-GGUF">nomic-ai/nomic-embed-text-v1.5-GGUF</a>.</li>
+<li>vLLM - get it from <a href="https://github.com/vllm-project/vllm">vllm-project/vllm</a>. Set the API URL and API key in the API connection menu first.</li>
 </ol>
 <doc-anchor-target id="api-sources">
     <h3>
