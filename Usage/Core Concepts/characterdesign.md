@@ -138,7 +138,7 @@ A list of tags that are replaced when sending to generate:
 4. \{\{noop\}\} => no operation, just an empty string.
 5. \{\{user\}\} and \<USER\> => User's Name.
 6. \{\{charPrompt\}\} => Character's Main Prompt override
-7. \{\{charJailbreak\}\} => Character's Jailbreak Prompt override
+7. \{\{charJailbreak\}\} => Character's Post-History Instructions Prompt override
 8. \{\{char\}\} and \<BOT\> => Character's Name.
 9. \{\{description\}\} => Character's Description.
 10. \{\{scenario\}\} => Character's Scenario or chat scenario override (if set).
@@ -154,7 +154,7 @@ A list of tags that are replaced when sending to generate:
 20. \{\{lastUserMessage\}\} => last chat message sent by user.
 21. \{\{currentSwipeId\}\} => 1-based ID of the currently displayed last message swipe.
 22. \{\{lastSwipeId\}\} => number of swipes in the last chat message.
-23. \{\{original\}\} can be used in Prompt Overrides fields (Main Prompt and Jailbreak) to include the respective default prompt from the system settings. Applied to Chat Completion APIs and Instruct mode only.
+23. \{\{original\}\} can be used in Prompt Overrides fields (Main Prompt and Post-History Instructions) to include the respective default prompt from the system settings. Applied to Chat Completion APIs and Instruct mode only.
 24. \{\{time\}\} => current system time.
 25. \{\{time_UTC±X\}\} => current time in the specified UTC offset (timezone), e.g. for UTC+02:00 use \{\{time_UTC\+2\}\}.
 26. \{\{timeDiff::(time1)::(time2)\}\} => the time difference between time1 and time2. Accepts time and date macros.
