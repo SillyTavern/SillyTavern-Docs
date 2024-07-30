@@ -465,7 +465,7 @@ In addition to running named closures saved inside scoped variables, the `/run` 
 	/add 1 2 3 4 |
 :} |
 /echo |
-
+```
 
 ## Comments
 
