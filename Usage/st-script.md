@@ -30,7 +30,7 @@ To run your first script, open any SillyTavern chat and type the following into 
 ```
 
 | ![Hello World](/static/scripts/hello-world.png) |
-| -- |
+| ----------------------------------------------- |
 
 You should see the message in the toast on top of the screen. Now let's break it down bit by bit.
 
@@ -62,7 +62,7 @@ Now let's add a little bit of interactivity to the script. We will accept the in
 2. Because `/echo` already has an unnamed argument that sets the template for the output, we use the `{{pipe}}` macro to specify a place where the pipe value will be rendered.
 
 | ![Slim Shady Input](/static/scripts/slim-input.png) | ![Slim Shady Output](/static/scripts/slim-output.png) |
-| -- | -- |
+| --------------------------------------------------- | ----------------------------------------------------- |
 
 ### Other input/output commands
 
@@ -398,6 +398,40 @@ Named closures can take named arguments, just like slash commands. The arguments
 /:myClosure b=10
 ```
 
+## Closures and Piped Argument
+
+!!! info "Staging Feature"
+The following section documents features that are currently available only on the **Staging** branch.
+!!!
+
+The piped value from a parent closure will not be automatically injected into the first command of a child closure.  
+You can still explicitly reference the parent's piped value with `{{pipe}}`, but if you leave the unnamed argument of the first command inside a closure blank, the value will *not* be automatically injected.
+
+```stscript
+/* This used to attempt to change the model to "foo"
+   because the value "foo" from the /echo outside of
+   the loop was injected into the /model command
+   inside of the loop.
+   Now it will simply echo the current model without 
+   attempting to change it.
+*|
+/echo foo |
+/times 2 {:
+	/model |
+	/echo |
+:} |
+```
+```stscript
+/* You can still recreate the old behavior by
+   explicitly using the {{pipe}} macro.
+*|
+/echo foo |
+/times 2 {:
+	/model {{pipe}} |
+	/echo |
+:} |
+```
+
 ### Immediately Executed Closures
 
 ```stscript
@@ -420,6 +454,19 @@ Closures can be immediately executed, meaning they will be replaced with their r
 /if left={:/len foo:}() rule=eq right={:/len bar:}() /echo yay!
 ```
 
+!!! info "Staging Feature"
+The following section documents features that are currently available only on the **Staging** branch.
+!!!
+
+In addition to running named closures saved inside scoped variables, the `/run` command can also be used to execute closures immediately.
+
+```stscript
+/run {:
+	/add 1 2 3 4 |
+:} |
+/echo |
+
+
 ## Comments
 
 ```stscript
@@ -434,7 +481,27 @@ A comment is a human-readable explanation or annotation in the script code. Comm
 /# this is also a comment
 ```
 
-## Flow control - loops
+### Block Comments
+
+!!! info "Staging Feature"
+The following section documents features that are currently available only on the **Staging** branch.
+!!!
+
+Block comments can be used to quickly comment out multiple commands at once. They will not terminate on a pipe.
+
+```stscript
+/echo foo |
+/*
+/echo bar |
+/echo foobar |
+*|
+/echo foo again |
+```
+
+
+## Flow Control
+
+### Loops: `/while` and `/times`
 
 If you need to run some command in a loop until a certain condition is met, use the `/while` command.
 
@@ -444,7 +511,7 @@ If you need to run some command in a loop until a certain condition is met, use 
 
 On each step of the loop it compares the value of variable A with the value of variable B, and if the condition yields true, then executes any valid slash command enclosed in quotes, otherwise exists the loop. This command doesn't write anything to the output pipe.
 
-### Arguments for `/while`
+#### Arguments for `/while`
 
 **The set of available boolean comparisons, handing of variables, literal values, and subcommands is the same as for the `/if` command.**
 
@@ -460,13 +527,71 @@ This example adds 1 to the value of `i` until it reaches 10, then outputs the re
 /flushvar i
 ```
 
-### Arguments for `/times`
+#### Arguments for `/times`
 
 Runs a subcommand a specified number of times.
 
 `/times (repeats) "(command)"` – any valid slash command enclosed in quotes repeats a number of times, e.g. `/setvar key=i 1 | /times 5 "/addvar key=i 1"` adds 1 to the value of "i" 5 times.
 - {{timesIndex}} is replaced with the iteration number (zero-based), e.g. `/times 4 "/echo {{timesIndex}}"` echoes the numbers 0 through 4.
 - Loops are limited to 100 iterations by default, pass `guard=off` to disable.
+
+### Breaking out of Loops and Closures
+
+!!! info "Staging Feature"
+The following section documents features that are currently available only on the **Staging** branch.
+!!!
+
+```stscript
+/break |
+```
+
+The `/break` command can be used to break out of a loop (`/while` or `/times`) or a closure early. The unnamed argument of `/break` can be used to pass a value different from the current pipe along.  
+`/break` is currently implemented in the following commands:
+- `/while` - exits the loop early
+- `/times` - exits the loop early
+- `/run` (with a closure or closure via variable) - exits the closure early
+- `/:` (with a closure) - exits the closure early
+
+```stscript
+/times 10 {:
+	/echo {{timesIndex}}
+	/delay 500 |
+	/if left={{timesIndex}} rule=gt right=3 {:
+		/break
+	:} |
+:} |
+```
+
+```stscript
+/let x {: iterations=2
+	/if left={{var::iterations}} rule=gt right=10 {:
+		/break too many iterations! |
+	:} |
+	/times {{var::iterations}} {:
+		/delay 500 |
+		/echo {{timesIndex}} |
+	:} |
+:} |
+/:x iterations=30 |
+/echo the final result is: {{pipe}}
+```
+
+```stscript
+/run {:
+	/break 1 |
+	/pass 2 |
+:} |
+/echo pipe will be one: {{pipe}} |
+```
+
+```stscript
+/let x {:
+	/break 1 |
+	/pass 2 |
+:} |
+/:x |
+/echo pipe will be one: {{pipe}} |
+```
 
 ## Math operations
 
@@ -545,7 +670,7 @@ The generated text is then passed through the pipe to the next command and can b
 ```
 
 | ![Cthulhu Says](/static/scripts/cthulhu-says.png) |
-| -- |
+| ------------------------------------------------- |
 
 ## Prompt injections
 
@@ -641,23 +766,23 @@ World Info (also known as Lorebook) is a highly utilitarian tool for dynamically
 
 ### Valid entry fields
 
-| Field              | UI element       | Value type       |
-| :----------------- | :--------------- | :--------------- |
-| `content`          | Content          | String           |
-| `comment`          | Title / Memo     | String           |
-| `key`              | Primary Keywords | List of strings  |
-| `keysecondary`     | Optional Filter  | List of strings  |
-| `constant`         | Constant Status  | Boolean (1/0)    |
-| `disable`          | Disabled Status  | Boolean (1/0)    |
-| `order`            | Order            | Number           |
-| `selectiveLogic`   | Logic            | (see below)      |
-| `excludeRecursion` | Non-recursable   | Boolean (1/0)    |
-| `probability`      | Trigger%         | Number (0-100)   |
-| `depth`            | Depth            | Number (0-999)   |
-| `position`         | Position         | (see below)      |
-| `role`             | Depth Role       | (see below)      |
-| `scanDepth`        | Scan Depth       | Number (0-100)   |
-| `caseSensitive`    | Case-Sensitive   | Boolean (1/0)    |
+| Field              | UI element        | Value type      |
+| :----------------- | :---------------- | :-------------- |
+| `content`          | Content           | String          |
+| `comment`          | Title / Memo      | String          |
+| `key`              | Primary Keywords  | List of strings |
+| `keysecondary`     | Optional Filter   | List of strings |
+| `constant`         | Constant Status   | Boolean (1/0)   |
+| `disable`          | Disabled Status   | Boolean (1/0)   |
+| `order`            | Order             | Number          |
+| `selectiveLogic`   | Logic             | (see below)     |
+| `excludeRecursion` | Non-recursable    | Boolean (1/0)   |
+| `probability`      | Trigger%          | Number (0-100)  |
+| `depth`            | Depth             | Number (0-999)  |
+| `position`         | Position          | (see below)     |
+| `role`             | Depth Role        | (see below)     |
+| `scanDepth`        | Scan Depth        | Number (0-100)  |
+| `caseSensitive`    | Case-Sensitive    | Boolean (1/0)   |
 | `matchWholeWords`  | Match Whole Words | Boolean (1/0)   |
 
 **Logic values**
@@ -871,7 +996,7 @@ Every click increments the variable `clicks` by one and displays a different mes
 Open the modal menu by clicking the `⋮` button for the created command.
 
 | ![Automatic execution](/static/scripts/autoexecute.png) |
-| -- |
+| ------------------------------------------------------- |
 
 In this menu you can do the following:
 
@@ -897,7 +1022,28 @@ For example, you can display a message after sending five user messages by addin
 /if left=usercounter right=5 rule=gte "/echo Game over! \| /flushvar usercounter"
 ```
 
-## Calling procedures
+### Debugger
+
+!!! info "Staging Feature"
+The following section documents features that are currently available only on the **Staging** branch.
+!!!
+
+A basic debugger exists inside the expanded Quick Reply editor. Set breakpoints with `/breakpoint |` anywhere in your script. When executing the script from the QR editor, the execution will be interrupted at that point, allowing you to examine the currently available variables, pipe, command arguments, and more, and to step through the rest of the code one by one.
+
+```stscript
+/let x {: n=1
+	/echo n is {{var::n}} |
+	/mul n n |
+:} |
+/breakpoint |
+/:x n=3 |
+/echo result is {{pipe}} |
+```
+
+| ![QR Editor Debugger](/static/scripts/qr-debugger.png) |
+| ------------------------------------------------------ |
+
+### Calling procedures
 
 A `/run` command can call scripts defined in the Quick Replies by their label, basically providing the ability to define procedures and return results from them. This allows to have reusable script blocks that other scripts could reference. The last result from the procedure's pipe is passed to the next command after it.
 
@@ -933,7 +1079,7 @@ Clicking on the `GetMessage` button will call the `GetRandom` procedure which wi
 - Procedures do not accept named or unnamed arguments, but can reference the same variables as the caller.
 - Avoid recursion when calling procedures as it may produce the "call stack exceeded" error if handled unadvisedly.
 
-### Calling procedures from a different Quick Reply preset
+#### Calling procedures from a different Quick Reply preset
 
 You can call a procedure from a different quick reply preset using the `a.b` syntax, where a = QR preset name and b = QR label name
 
@@ -977,6 +1123,14 @@ Arguments:
 - `bot`      - bool   - auto execute on AI message, e.g., `bot=true`
 - `load`     - bool   - auto execute on chat load, e.g., `load=true`
 - `title`    - bool   - title / tooltip to be shown on button, e.g., `title="My Fancy Button"`
+
+####
+
+!!! info "Staging Feature"
+The following section documents features that are currently available only on the **Staging** branch.
+!!!
+
+* `qr-get` - retrieves all of a Quick Reply's properties, eample: `/qr-get set=myQrSet id=42`
 
 #### Create or update QR preset
 
