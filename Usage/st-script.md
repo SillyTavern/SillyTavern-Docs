@@ -1040,7 +1040,7 @@ A basic debugger exists inside the expanded Quick Reply editor. Set breakpoints 
 /echo result is {{pipe}} |
 ```
 
-| ![QR Editor Debugger](/static/scripts/qr-debugger.png) |
+| ![QR Editor Debugger](/static/scripts/st-debugger.png) |
 | ------------------------------------------------------ |
 
 ### Calling procedures
