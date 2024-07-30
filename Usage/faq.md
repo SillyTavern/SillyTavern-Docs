@@ -207,7 +207,7 @@ Strategies for fixing this:
 * Increase the `Response Length` slider
 * Design a good `First Message` for the Character, which shows them speaking in a long-winded manner. AI models can improve a lot when given guidance about the writing style you expect.
 * Add a phrase in the character's Description Box such as "likes to talk a lot" or "very verbose speaker"
-* Do the same thing for your `Author's Note`, or `Post-History Instruction Prompt for OAI/Claude`
+* Do the same thing for your `Author's Note`, or `Post-History Instruction Prompt`
 * As a last resort, you can try turning on `Auto-Continue` (in the User Settings panel), but will make responses come out slower because it's making the AI produce small replies back to back, and then combining them all together into one big reply. It may also be incompatible with some API options.
 
 ## How to make the AI write less?
