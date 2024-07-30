@@ -398,7 +398,7 @@ Named closures can take named arguments, just like slash commands. The arguments
 /:myClosure b=10
 ```
 
-## Closures and Piped Argument
+### Closures and Piped Arguments
 
 !!! info "Staging Feature"
 The following section documents features that are currently available only on the **Staging** branch.
