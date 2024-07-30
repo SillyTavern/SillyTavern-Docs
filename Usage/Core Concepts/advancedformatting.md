@@ -46,11 +46,11 @@ Adds "Example Separator" and "Chat Start" to the list of stop strings.
 
 Helpful if the model tends to hallucinate or leak whole blocks of example dialogue preceded by the separator.
 
-### Allow Jailbreak
+### Allow Post-History Instructions
 
-Includes Jailbreak at the end of the prompt, formatted as the last user message.
+Includes the Post-History Instructions at the end of the prompt, formatted as the last user message.
 
-The jailbreak prompt should be defined in the character card and "Prefer Char. Jailbreak" setting should be enabled.
+The Post-History Instructions prompt should be defined in the character card and "Prefer Char. Instructions" setting should be enabled.
 
 Should be used with care, as placing instructions low in the context can lead to degraded quality of the outputs of smaller models.
 

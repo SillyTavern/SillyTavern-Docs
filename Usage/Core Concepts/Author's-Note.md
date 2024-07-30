@@ -60,9 +60,9 @@ The Author's Note can be used to specify how the AI should write it's responses.
 - [Write your next reply in the style of Edgar Allan Poe]
 - [Use markdown italics to signify unspoken actions, and quotation marks to specify spoken word.]
 
-#### Reinforcing Jailbreak Prompts
+#### Reinforcing Instructions
 
-- [Remember the agreement we made at the beginning of this chat.]
+- [Remember the instructions you were given at the beginning of this chat.]
 
 #### As temporary World Info, Character Bias, or Instruct for non-Instruct models
 
