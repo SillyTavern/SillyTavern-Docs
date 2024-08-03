@@ -33,7 +33,7 @@ The VRM extension offers various settings to customize the behavior of your anim
     - don't use that incorrect face experession
     - disable blinking completly with this checkbox
 
-4. **TTS ip sync**
+4. **TTS Lip sync**
     - Enable this checkbox to have the VRM mouth movement follow the sound of your TTS when it's played. Only work with TTS whose sound is played by Sillytavern itself like XTTS (not in streaming mode). If disabled, mouth will be animated according to the message text length when a new character message is received.
 
 5. **Auto-send Interaction**:
