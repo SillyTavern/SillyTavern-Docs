@@ -73,7 +73,25 @@ Good model uploaders like TheBloke give descriptive names. But if they don't:
 
 With the LLM now on your PC, we need to download a tool that will act as a middle-man between SillyTavern and the model: it will load the model, and expose its functionality as a local HTTP web API that SillyTavern can talk to, the same way that SillyTavern talks with paid webservices like OpenAI GPT or Claude. The tool you use should be either KoboldAI or Oobabooga (or other compatible tools). 
 
-The rest of this guide will continue using Oobabooga, but these tools should be considered equivalent.
+This guide covers both options, you only need one.
+
+### Downloading and using KoboldCpp (No installation required, GGUF models)
+1. Visit https://koboldai.org/cpp where you will see the latest version with various files you can download.
+2. At the time of writing the newest CUDA version they list is cu12 which will work best on modern Nvidia GPU's, if you have an older GPU or a different brand you can use the regular koboldcpp.exe. If you have an old CPU its possible that KoboldCpp will crash when you try to load models, in that case try the _oldcpu version to see if it resolves your issue.
+3. KoboldCpp does not need to be installed, once you start KoboldCpp you will immediately be able to select your GGUF model such as the one linked above using the Browse button next to the Model field.
+4. By default KoboldCpp runs at a maximum of 4K context even if you set this higher in SillyTavern, if you wish to run a model at higher context make sure to adjust the context slider on this screen before launching the model. Keep in mind that more context size means higher (video) memory requirements, if you set this to high or load a model that is to big for your system KoboldCpp will automatically begin using your CPU for the layers it can not fit on your GPU, this will be much slower.
+5. Click Launch, if everything goes well a new webpage will open with KoboldAI Lite where you can test if everything works correctly.
+6. Open SillyTavern and click API Connections (2nd button in the top bar)
+7. Set API to Text Completion and the API Type to KoboldCpp.
+8. Set server URL to <http://127.0.0.1:5001/> or the link that KoboldCpp gave you in case it is not running on the same system (You can activate KoboldCpp's Remote Tunnel mode to obtain a link that can be accessed from anywhere).
+9. Click Connect. It should connect successfully and detect kunoichi-dpo-v2-7b.Q6_K.gguf as the model.
+10. Chat with a character to test that it works.
+
+### Tips for Optimizing KoboldCpp's speed
+1. Flash Attention will help reduce the memory requirements, it can be faster or slowing depending on your system and will allow you to fit more layers on your GPU than the default.
+2. KoboldCpp will leave some space for other software when it guesses layers to prevent issues, if you have few programs open and are unable to fit the model entirely in the GPU you may be able to add a few extra layers.
+3. If the model uses up to much memory for the context size you can decrease this by Quantizing the KV. This will reduce the quality of the output but can help you put more layers on the GPU. To do this you go to the Tokens tab in KoboldCpp and then disable Context Shifting and enable Flash Attention. This will unlock the Quantized KV Cache slider, a lower number means less memory / intelligence of the model.
+4. Running KoboldCpp on a slower system where it takes long to process the prompt? Context Shifting works best when you avoid using Lorebooks, randomization or other features that dynamically change the input. Leaving context shifting enabled KoboldCpp will help you avoid long reprocessing times.
 
 ### Installing Oobabooga
 
