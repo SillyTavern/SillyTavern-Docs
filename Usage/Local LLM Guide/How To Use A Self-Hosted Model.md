@@ -77,15 +77,15 @@ This guide covers both options, you only need one.
 
 ### Downloading and using KoboldCpp (No installation required, GGUF models)
 1. Visit https://koboldai.org/cpp where you will see the latest version with various files you can download.
-2. At the time of writing the newest CUDA version they list is cu12 which will work best on modern Nvidia GPU's, if you have an older GPU or a different brand you can use the regular koboldcpp.exe. If you have an old CPU its possible that KoboldCpp will crash when you try to load models, in that case try the _oldcpu version to see if it resolves your issue.
-3. KoboldCpp does not need to be installed, once you start KoboldCpp you will immediately be able to select your GGUF model such as the one linked above using the Browse button next to the Model field.
-4. By default KoboldCpp runs at a maximum of 4K context even if you set this higher in SillyTavern, if you wish to run a model at higher context make sure to adjust the context slider on this screen before launching the model. Keep in mind that more context size means higher (video) memory requirements, if you set this to high or load a model that is to big for your system KoboldCpp will automatically begin using your CPU for the layers it can not fit on your GPU, this will be much slower.
-5. Click Launch, if everything goes well a new webpage will open with KoboldAI Lite where you can test if everything works correctly.
-6. Open SillyTavern and click API Connections (2nd button in the top bar)
-7. Set API to Text Completion and the API Type to KoboldCpp.
-8. Set server URL to <http://127.0.0.1:5001/> or the link that KoboldCpp gave you in case it is not running on the same system (You can activate KoboldCpp's Remote Tunnel mode to obtain a link that can be accessed from anywhere).
-9. Click Connect. It should connect successfully and detect kunoichi-dpo-v2-7b.Q6_K.gguf as the model.
-10. Chat with a character to test that it works.
+At the time of writing the newest CUDA version they list is cu12 which will work best on modern Nvidia GPU's, if you have an older GPU or a different brand you can use the regular koboldcpp.exe. If you have an old CPU its possible that KoboldCpp will crash when you try to load models, in that case try the _oldcpu version to see if it resolves your issue.
+2. KoboldCpp does not need to be installed, once you start KoboldCpp you will immediately be able to select your GGUF model such as the one linked above using the Browse button next to the Model field.
+3. By default KoboldCpp runs at a maximum of 4K context even if you set this higher in SillyTavern, if you wish to run a model at higher context make sure to adjust the context slider on this screen before launching the model. Keep in mind that more context size means higher (video) memory requirements, if you set this to high or load a model that is to big for your system KoboldCpp will automatically begin using your CPU for the layers it can not fit on your GPU, this will be much slower.
+4. Click Launch, if everything goes well a new webpage will open with KoboldAI Lite where you can test if everything works correctly.
+5. Open SillyTavern and click API Connections (2nd button in the top bar)
+6. Set API to Text Completion and the API Type to KoboldCpp.
+7. Set server URL to <http://127.0.0.1:5001/> or the link that KoboldCpp gave you in case it is not running on the same system (You can activate KoboldCpp's Remote Tunnel mode to obtain a link that can be accessed from anywhere).
+8. Click Connect. It should connect successfully and detect kunoichi-dpo-v2-7b.Q6_K.gguf as the model.
+9. Chat with a character to test that it works.
 
 ### Tips for Optimizing KoboldCpp's speed
 1. Flash Attention will help reduce the memory requirements, it can be faster or slowing depending on your system and will allow you to fit more layers on your GPU than the default.
