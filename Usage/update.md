@@ -13,7 +13,7 @@ This is not an installation guide. If you need installation instructions, go to 
 
 ----
 
-## Linux/Termux
+## Linux/Termux or MacOS
 
 You definitely installed via git, so just 'git pull' inside the SillyTavern directory.
 
@@ -23,7 +23,7 @@ You definitely installed via git, so just 'git pull' inside the SillyTavern dire
 
 ----
 
-## Windows/MacOS
+## Windows
 
 >First try using the `UpdateAndStart.bat` which is located in your SillyTavern installation base folder.
 
@@ -105,13 +105,14 @@ secrets.json <---- this one is in the base folder, not /public/
 9. If everything shows up, you can safely delete the old ST folder.
 
 ### Common Update Problems
+
 #### "There are unresolved conflicts in the working directory."
 
 This means that you've modified default files that have been changed in the remote repository (such as setting presets).
 
 To fix this, run this in the terminal. Use cautiously, as it can be destructive. Make sure to have a backup if needed.
 
-```
+```bash
 git merge --abort
 git reset --hard
 git pull --rebase --autostash
@@ -132,14 +133,16 @@ git pull --rebase --autostash
 - Didn't help? Remove the node_modules folder
 
 **Windows**
-```
+
+```bash
 rmdir /s /q node_modules
 npm cache clean --force
 npm install
 ```
 
 **Unix/Linux**
-```
+
+```bash
 rm -rf node_modules
 npm cache clean --force
 npm install
