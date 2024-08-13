@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.776209994348">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.776850999075">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.776209994348" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.776850999075" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.776209994348" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.776850999075" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.776209994348" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.776209994348" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.776850999075" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.776850999075" defer></script>
 
     <Style>
         a {
@@ -226,7 +226,7 @@
         <span>Register a function</span>
     </h2>
 </doc-anchor-target>
-<p>When a Chat Completion request is prepared, an event of type <code v-pre>LLM_FUNCTION_TOOL_REGISTER</code> is emitted through the <code v-pre>eventSource</code> object. The registrations are ephemeral and do not persist between requests, so you can always whether or not to skip the registration based on the event data.</p>
+<p>When a Chat Completion request is prepared, an event of type <code v-pre>LLM_FUNCTION_TOOL_REGISTER</code> is emitted through the <code v-pre>eventSource</code> object. The registrations are ephemeral and do not persist between requests, so you can always choose whether or not to skip the registration based on the event data.</p>
 <p>The event data consists of the following: type of the generation that triggered the event, generation data (including sampling parameters and assembled chat prompt), and a callback function to register a function tool. To register a function, you MUST call the <code v-pre>registerFunctionTool</code> function with the following parameters:</p>
 <ol>
 <li><code v-pre>name</code>: Name of the function tool to register. This will be later used as an identifier to call the function.</li>
