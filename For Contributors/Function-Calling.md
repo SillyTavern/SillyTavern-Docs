@@ -19,7 +19,7 @@ Function Calling allows adding dynamic functionality to your extensions by letti
 
 ## Register a function
 
-When a Chat Completion request is prepared, an event of type `LLM_FUNCTION_TOOL_REGISTER` is emitted through the `eventSource` object. The registrations are ephemeral and do not persist between requests, so you can always whether or not to skip the registration based on the event data.
+When a Chat Completion request is prepared, an event of type `LLM_FUNCTION_TOOL_REGISTER` is emitted through the `eventSource` object. The registrations are ephemeral and do not persist between requests, so you can always choose whether or not to skip the registration based on the event data.
 
 The event data consists of the following: type of the generation that triggered the event, generation data (including sampling parameters and assembled chat prompt), and a callback function to register a function tool. To register a function, you MUST call the `registerFunctionTool` function with the following parameters:
 
