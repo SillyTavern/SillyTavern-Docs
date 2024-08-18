@@ -225,4 +225,4 @@ This should be handled in the `Author's Note` with a combination of phrases like
 
 * \{\{char\}\}'s responses shall only be passive and reactive to \{\{user\}\}'s actions.
 * Your next response shall be solely from the POV of \{\{char\}\}.
-* You are never allowed to dictate actions of speech for \{\{user\}\}
+* You are never allowed to dictate actions or speech for \{\{user\}\}
