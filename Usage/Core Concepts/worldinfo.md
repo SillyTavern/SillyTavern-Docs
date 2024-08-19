@@ -14,7 +14,7 @@ The SillyTavern engine activates and seamlessly integrates the appropriate lore 
 
 * The World Info engine is a very powerful prompt management tool. Don't fixate on adding character lore alone, feel free to experiment.
 * Activation keywords, titles, and other information that is not in the **Content** field is not inserted into context, so each World Info entry have a comprehensive, standalone description.
-* To create rich and detailed world lore, entries can be interlinked and reference one another by using recursive activation. See more on Recursion below.
+* To create rich and detailed world lore, entries can be interlinked and reference one another by using recursive activation. See more on [Recursion](#recursive-scanning) below.
 * SillyTavern offers flexible context budgeting for inserted background information. To conserve tokens, it is advisable to keep entry contents concise.
 
 ### Further reading
@@ -333,6 +333,8 @@ For example, when this setting is active, keys 'rose' and 'Rose' will be treated
 Entries with keys containing only one word will be matched only if the entire word is present in the search text. Enabled by default.
 
 For example, if the setting is enabled and the entry key is "king", then text such as "long live the king" would be matched, but "it's not to my liking" wouldn't.
+
+**Important:** this setting can have a detrimental effect when use with languages that don't use whitespace to separate words (e.g. Japanese or Chinese). If you write entries in these languages, it is advised to keep it off.
 
 ### Alert on overflow
 
