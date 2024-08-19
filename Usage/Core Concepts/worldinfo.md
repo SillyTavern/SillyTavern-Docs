@@ -8,7 +8,7 @@ It functions like a dynamic dictionary that only inserts relevant information fr
 
 The SillyTavern engine activates and seamlessly integrates the appropriate lore into the prompt, providing background information to the AI.
 
-*It is important to note that while World Info helps guide the AI toward your desired lore / Content, it does not guarantee its appearance in the generated output messages. That depends on how good your model is at making use of additional information!*
+*It is important to note that while World Info helps guide the AI toward the desired content, it does not guarantee its appearance in the generated output messages. That depends on how good your model is at making use of additional information!*
 
 ### Pro Tips
 
