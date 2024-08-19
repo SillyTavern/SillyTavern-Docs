@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.777324607941">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.777372362031">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -14,7 +14,7 @@
     <!-- Primary Meta Tags -->
     <title>World Info | docs.ST.app</title>
     <meta name="title" content="World Info | docs.ST.app">
-    <meta name="description" content="World Info (also known as Lorebooks or Memory Books) enhances AI's understanding of the details in your fictional world.">
+    <meta name="description" content="World Info (also known as Lorebooks or Memory Books) is a powerful tool available in ST to insert prompts dynamically into your chat to help guide...">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/usage/core-concepts/worldinfo/">
@@ -23,22 +23,22 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/usage/core-concepts/worldinfo/">
     <meta property="og:title" content="World Info | docs.ST.app">
-    <meta property="og:description" content="World Info (also known as Lorebooks or Memory Books) enhances AI's understanding of the details in your fictional world.">
+    <meta property="og:description" content="World Info (also known as Lorebooks or Memory Books) is a powerful tool available in ST to insert prompts dynamically into your chat to help guide...">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/usage/core-concepts/worldinfo/">
     <meta property="twitter:title" content="World Info | docs.ST.app">
-    <meta property="twitter:description" content="World Info (also known as Lorebooks or Memory Books) enhances AI's understanding of the details in your fictional world.">
+    <meta property="twitter:description" content="World Info (also known as Lorebooks or Memory Books) is a powerful tool available in ST to insert prompts dynamically into your chat to help guide...">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.777324607941" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.777372362031" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.777324607941" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.777372362031" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.777324607941" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.777324607941" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.777372362031" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.777372362031" defer></script>
 
     <Style>
         a {
@@ -204,10 +204,11 @@
         <span>World Info</span>
     </h1>
 </doc-anchor-target>
-<p><strong>World Info (also known as Lorebooks or Memory Books) enhances AI&#x27;s understanding of the details in your fictional world.</strong></p>
+<p><strong>World Info (also known as Lorebooks or Memory Books) is a powerful tool available in ST to insert prompts dynamically into your chat to help guide the AI replies</strong></p>
+<p>Commmonly, World Info (WI for short) is used to  enhance the AI&#x27;s understanding of the details in your fictional world, however you could use a World Info entry to insert ANYTHING that you would like to insert into the prompt.</p>
 <p>It functions like a dynamic dictionary that only inserts relevant information from World Info entries when keywords associated with the entries are present in the message text.</p>
 <p>The SillyTavern engine activates and seamlessly integrates the appropriate lore into the prompt, providing background information to the AI.</p>
-<p><em>It is important to note that while World Info helps guide the AI toward your desired lore, it does not guarantee its appearance in the generated output messages.</em></p>
+<p><em>It is important to note that while World Info helps guide the AI toward the desired content, it does not guarantee its appearance in the generated output messages. That depends on how good your model is at making use of additional information!</em></p>
 <doc-anchor-target id="pro-tips">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#pro-tips">#</doc-anchor-trigger>
@@ -215,10 +216,10 @@
     </h3>
 </doc-anchor-target>
 <ul>
-<li>The AI does not insert keywords into context, so each World Info entry should be a comprehensive, standalone description.</li>
-<li>To create rich and detailed world lore, entries can be interlinked and reference one another.</li>
-<li>To conserve tokens, it is advisable to keep entry contents concise.</li>
 <li>The World Info engine is a very powerful prompt management tool. Don&#x27;t fixate on adding character lore alone, feel free to experiment.</li>
+<li>Activation keywords, titles, and other information that is not in the <strong>Content</strong> field is not inserted into context, so each World Info entry have a comprehensive, standalone description.</li>
+<li>To create rich and detailed world lore, entries can be interlinked and reference one another by using recursive activation. See more on Recursion below.</li>
+<li>SillyTavern offers flexible context budgeting for inserted background information. To conserve tokens, it is advisable to keep entry contents concise.</li>
 </ul>
 <doc-anchor-target id="further-reading">
     <h3>
@@ -553,6 +554,24 @@ Message 7: entry can be activated again</code></pre>
 <li>If set to 1, then SillyTavern only scans the last message.</li>
 <li>2 = two last messages, etc.</li>
 </ul>
+<doc-anchor-target id="include-names">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#include-names">#</doc-anchor-trigger>
+        <span>Include Names</span>
+    </h3>
+</doc-anchor-target>
+<p>Defines if the names of the chat participants should be included in the scanned text buffer as message prefixes. This allows activating entries that use names as keywords without directly mentioning the names in messages.</p>
+<p>See an example of the text to be scanned below, assuming chat participants are named Alice and Bob.</p>
+<p>Enabled (default):</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Alice: Hello! Good to see you.
+Bob: How is the weather today?</code></pre>
+</doc-codeblock></div>
+<p>Disabled:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Hello! Good to see you.
+How is the weather today?</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="context---budget">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#context---budget">#</doc-anchor-trigger>
