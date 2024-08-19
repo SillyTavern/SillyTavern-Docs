@@ -2,7 +2,7 @@
 
 **World Info (also known as Lorebooks or Memory Books) is a powerful tool available in ST to insert prompts dynamically into your chat to help guide the AI replies**
 
-Commmonly, World Info is used to  enhance the AI's understanding of the details in your fictional world, however you could use a World Info entry to insert ANYTHING that you would like to insert into the prompt. 
+Commmonly, World Info (WI for short) is used to  enhance the AI's understanding of the details in your fictional world, however you could use a World Info entry to insert ANYTHING that you would like to insert into the prompt. 
 
 It functions like a dynamic dictionary that only inserts relevant information from World Info entries when keywords associated with the entries are present in the message text.
 
@@ -13,9 +13,9 @@ The SillyTavern engine activates and seamlessly integrates the appropriate lore 
 ### Pro Tips
 
 * The World Info engine is a very powerful prompt management tool. Don't fixate on adding character lore alone, feel free to experiment.
-* The AI does not insert keywords into context, so each World Info entry should be a comprehensive, standalone description.
-* To create rich and detailed world lore, entries can be interlinked and reference one another.
-* To conserve tokens, it is advisable to keep entry contents concise.
+* Activation keywords, titles, and other information that is not in the **Content** field is not inserted into context, so each World Info entry have a comprehensive, standalone description.
+* To create rich and detailed world lore, entries can be interlinked and reference one another by using recursive activation. See more on Recursion below.
+* SillyTavern offers flexible context budgeting for inserted background information. To conserve tokens, it is advisable to keep entry contents concise.
 
 ### Further reading
 
@@ -244,6 +244,26 @@ Defines how many messages in the chat history should be scanned for World Info k
 * If set to 0, then only recursed entries and Author's Note are evaluated.
 * If set to 1, then SillyTavern only scans the last message.
 * 2 = two last messages, etc.
+
+### Include Names
+
+Defines if the names of the chat participants should be included in the scanned text buffer as message prefixes. This allows activating entries that use names as keywords without directly mentioning the names in messages.
+
+See an example of the text to be scanned below, assuming chat participants are named Alice and Bob.
+
+Enabled (default):
+
+```txt
+Alice: Hello! Good to see you.
+Bob: How is the weather today?
+```
+
+Disabled:
+
+```txt
+Hello! Good to see you.
+How is the weather today?
+```
 
 ### Context % / Budget
 
