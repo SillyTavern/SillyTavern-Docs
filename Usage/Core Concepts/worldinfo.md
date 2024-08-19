@@ -249,7 +249,7 @@ Defines how many messages in the chat history should be scanned for World Info k
 
 Defines if the names of the chat participants should be included in the scanned text buffer as message prefixes. This allows activating entries that use names as keywords without directly mentioning the names in messages.
 
-See an example of the text to be scanned below, assuming chat participants are named Alice and Bob.
+See an example of the text to be scanned below, assuming the chat participants are named Alice and Bob.
 
 Enabled (default):
 
@@ -334,7 +334,7 @@ Entries with keys containing only one word will be matched only if the entire wo
 
 For example, if the setting is enabled and the entry key is "king", then text such as "long live the king" would be matched, but "it's not to my liking" wouldn't.
 
-**Important:** this setting can have a detrimental effect when use with languages that don't use whitespace to separate words (e.g. Japanese or Chinese). If you write entries in these languages, it is advised to keep it off.
+**Important:** this setting can have a detrimental effect when used with languages that don't use whitespace to separate words (e.g. Japanese or Chinese). If you write entries in these languages, it is advised to keep it off.
 
 ### Alert on overflow
 
