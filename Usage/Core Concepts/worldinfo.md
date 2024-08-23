@@ -13,9 +13,9 @@ The SillyTavern engine activates and seamlessly integrates the appropriate lore 
 ### Pro Tips
 
 * The World Info engine is a very powerful prompt management tool. Don't fixate on adding character lore alone, feel free to experiment.
-* Activation keywords, titles, and other information that is not in the **Content** field is not inserted into context, so each World Info entry have a comprehensive, standalone description.
+* Activation keywords, titles, and other information that is not in the **Content** field is not inserted into context, so each World Info entry should have a comprehensive, standalone description.
 * To create rich and detailed world lore, entries can be interlinked and reference one another by using recursive activation. See more on [Recursion](#recursive-scanning) below.
-* SillyTavern offers flexible context budgeting for inserted background information. To conserve tokens, it is advisable to keep entry contents concise.
+* SillyTavern offers flexible context budgeting for inserted background information. To conserve prompt tokens, it is advisable to keep entry contents concise.
 
 ### Further reading
 
@@ -278,6 +278,8 @@ Entries inserted by directly mentioning their keys have higher priority than tho
 
 ### Min Activations
 
+**This setting is mutually exclusive with Max Recursion Steps.**
+
 Minimum Activations: If set to a non-zero value, this will disregard the limitation of "scan-depth", seeking all of the chat log backward from the latest message for keywords until as many entries as specified in min activations have been triggered. This will still be limited by the Max Depth setting or your overall Budget cap.
 
 *Additional scan sweeps triggered by Min Activations will not check entries added by recursion on previous steps. Only chat messages and extension prompts can trigger these additional activations. However, the entries activated by Min Activations can trigger other entries as usual.*
@@ -315,6 +317,18 @@ Content: Rufus is a dog.
 ```
 
 **Both** of them will be pulled into the context if the message text mentions **just Bessie**.
+
+### Max Recursion Steps
+
+**This setting is mutually exclusive with Min Activations.**
+
+When set to zero, recursion nesting is only limited by your prompt budget. When set to a non-zero value, limits the total number of scan sweeps to desired maximum "nesting level".
+
+Example values:
+
+- 1 effectively disables recursion as the check stops after the first step.
+- 2 can only activate recursive entries once.
+- 3 can trigger recursion twice...
 
 ### Case-sensitive keys
 
