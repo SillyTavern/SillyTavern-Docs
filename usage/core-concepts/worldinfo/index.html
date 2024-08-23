@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.777642030937">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.777753811457">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.777642030937" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.777753811457" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.777642030937" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.777753811457" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.777642030937" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.777642030937" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.777753811457" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.777753811457" defer></script>
 
     <Style>
         a {
@@ -217,9 +217,9 @@
 </doc-anchor-target>
 <ul>
 <li>The World Info engine is a very powerful prompt management tool. Don&#x27;t fixate on adding character lore alone, feel free to experiment.</li>
-<li>Activation keywords, titles, and other information that is not in the <strong>Content</strong> field is not inserted into context, so each World Info entry have a comprehensive, standalone description.</li>
+<li>Activation keywords, titles, and other information that is not in the <strong>Content</strong> field is not inserted into context, so each World Info entry should have a comprehensive, standalone description.</li>
 <li>To create rich and detailed world lore, entries can be interlinked and reference one another by using recursive activation. See more on <doc-anchor-trigger to="#recursive-scanning">Recursion</doc-anchor-trigger> below.</li>
-<li>SillyTavern offers flexible context budgeting for inserted background information. To conserve tokens, it is advisable to keep entry contents concise.</li>
+<li>SillyTavern offers flexible context budgeting for inserted background information. To conserve prompt tokens, it is advisable to keep entry contents concise.</li>
 </ul>
 <doc-anchor-target id="further-reading">
     <h3>
@@ -589,6 +589,7 @@ You can define a threshold relative to your API&#x27;s max-context settings (Con
         <span>Min Activations</span>
     </h3>
 </doc-anchor-target>
+<p><strong>This setting is mutually exclusive with Max Recursion Steps.</strong></p>
 <p>Minimum Activations: If set to a non-zero value, this will disregard the limitation of &quot;scan-depth&quot;, seeking all of the chat log backward from the latest message for keywords until as many entries as specified in min activations have been triggered. This will still be limited by the Max Depth setting or your overall Budget cap.</p>
 <p><em>Additional scan sweeps triggered by Min Activations will not check entries added by recursion on previous steps. Only chat messages and extension prompts can trigger these additional activations. However, the entries activated by Min Activations can trigger other entries as usual.</em></p>
 <doc-anchor-target id="max-depth">
@@ -628,6 +629,20 @@ Keyword: Rufus
 Content: Rufus is a dog.</code></pre>
 </doc-codeblock></div>
 <p><strong>Both</strong> of them will be pulled into the context if the message text mentions <strong>just Bessie</strong>.</p>
+<doc-anchor-target id="max-recursion-steps">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#max-recursion-steps">#</doc-anchor-trigger>
+        <span>Max Recursion Steps</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>This setting is mutually exclusive with Min Activations.</strong></p>
+<p>When set to zero, recursion nesting is only limited by your prompt budget. When set to a non-zero value, limits the total number of scan sweeps to desired maximum &quot;nesting level&quot;.</p>
+<p>Example values:</p>
+<ul>
+<li>1 effectively disables recursion as the check stops after the first step.</li>
+<li>2 can only activate recursive entries once.</li>
+<li>3 can trigger recursion twice...</li>
+</ul>
 <doc-anchor-target id="case-sensitive-keys">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#case-sensitive-keys">#</doc-anchor-trigger>
