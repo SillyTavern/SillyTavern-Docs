@@ -6,6 +6,22 @@ Use local or cloud-based Stable Diffusion APIs to generate images.
 The free mode is also supported via the `/sd (anything_here)` command in the chat input bar.
 Most common Stable Diffusion generation settings are customizable within the SillyTavern UI.
 
+## Supported Sources
+
+* [Stable Horde](https://stablehorde.net/)
+* [NovelAI Diffusion](https://novelai.net/). Requires an active subscription.
+* [Stable Diffusion WebUI / AUTOMATIC1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
+* [SD.Next / vladmandic](https://github.com/vladmandic/automatic)
+* [OpenAI DALL-E 2/3](https://platform.openai.com/)
+* [TogetherAI](https://api.together.xyz/models)
+* [Draw Things](https://drawthings.ai/)
+* [Pollinations](https://pollinations.ai/)
+* [ComfyUI](https://github.com/comfyanonymous/ComfyUI). Requires a workflow JSON file.
+* [Stability AI](https://platform.stability.ai/)
+* [HuggingFace Serverless Inference](https://huggingface.co/docs/api-inference/index)
+* [Block Entropy](https://blockentropy.ai/)
+* [SillyTavern Extras](https://github.com/SillyTavern/SillyTavern-Extras) (deprecated, not recommended)
+
 ## Generation modes
 
 | Wand menu item     | Slash command argument | Description                                    | Remarks                               |
@@ -22,24 +38,43 @@ Most common Stable Diffusion generation settings are customizable within the Sil
 
 1. Use the "Image Generation" item in the extensions context menu (wand).
 2. Type a `/sd (argument)` slash command with an argument from the Generation modes table. Anything else would trigger a "free mode" to make SD generate whatever you prompted. Example: `/sd apple tree` would generate a picture of an apple tree.
-3. Look for a paintbrush icon in the context actions for chat messages. This will force the "Raw Message" mode for the selected message.
+3. `/sd` command also prov
+4. Look for a paintbrush icon in the context actions for chat messages. This will force the "Raw Message" mode for the selected message.
 
 Every generation mode besides raw message and free mode will trigger a prompt generation using your currently selected main generation API to convert chat context into the SD prompt.
 You can configure the instruction template for generating prompts for every generation mode using the "SD Prompt Templates" settings drawer in the extensions panel.
 
-## Supported Sources
+### Tips and tricks for the `/sd` command usage
 
-* [Stable Horde](https://stablehorde.net/)
-* [NovelAI Diffusion](https://novelai.net/). Requires an active subscription.
-* [Stable Diffusion WebUI / AUTOMATIC1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
-* [SD.Next / vladmandic](https://github.com/vladmandic/automatic)
-* [OpenAI DALL-E 2/3](https://platform.openai.com/)
-* [TogetherAI](https://api.together.xyz/models)
-* [Draw Things](https://drawthings.ai/)
-* [Pollinations](https://pollinations.ai/)
-* [ComfyUI](https://github.com/comfyanonymous/ComfyUI). Requires a workflow JSON file.
-* [Stability AI](https://platform.stability.ai/)
-* [SillyTavern Extras](https://github.com/SillyTavern/SillyTavern-Extras) (deprecated, not recommended)
+#### View all generated images
+
+To view all saved images for a character (including other chats), open a gallery from a "More..." dropdown menu on a character info panel, or use a `/show-gallery` slash command.
+
+#### Specify a negative prompt
+
+Use a `negative` named argument before the prompt to enforce a specific negative prompt for this generation.
+
+```stscript
+/sd negative="ugly, fat" cute girl eating a burger
+```
+
+#### Include a character-specific prefix
+
+Use a special `{{charPrefix}}` macro in free-prompt mode to include positive and negative prompt prefixes (if defined) for the current character.
+
+```stscript
+/sd {{charPrefix}}, riding a bike
+```
+
+#### Suppress a chat message
+
+You can avoid posting a generated image into the chat by passing a `quiet=true` named argument. The image will still be added into the character gallery, and the command will produce a relative URL to the image that can be consumed by other commands.
+
+The example below will send the generated image using Markdown as a user persona.
+
+```stscript
+/sd quiet=true me | /send Here's a picture of me: ![my portrait]({{pipe}})
+```
 
 ## Options
 
@@ -70,10 +105,15 @@ Some special subjects trigger a predefined generation mode:
 * 'last message' => "The Last Message"
 * 'background', 'scene background', 'scene', 'scenery', 'surroundings', 'environment' => "Background"
 
-### Auto-enhance prompts
+### Extend free-mode prompts
+
+When using the interactive mode of the slash command, automatically extend free-mode generation subject descriptions by prompting your main API.
+
+### Auto-extend prompts
+
+**May not work well, it is recommended to manually inspect generated prompts when using this.**
 
 This option uses an additional GPT-2 text generation model to add more details to the prompt generated by the main API.
-Works best for SDXL image models. It may not work well with other models, and it is recommended to manually edit prompts in this case.
 
 Default GPT-2 model: [Cohee/fooocus_expansion-onnx](https://huggingface.co/Cohee/fooocus_expansion-onnx)
 
