@@ -59,7 +59,7 @@ Use a `negative` named argument before the prompt to enforce a specific negative
 
 #### Include a character-specific prefix
 
-Use a special `{{charPrefix}}` macro in free-prompt mode to include positive and negative prompt prefixes (if defined) for the current character.
+Use a special \{\{charPrefix\}\} macro in free-prompt mode to include positive and negative prompt prefixes (if defined) for the current character.
 
 ```stscript
 /sd {{charPrefix}}, riding a bike
@@ -171,4 +171,4 @@ Use this to quickly save and restore your favorite style/quality presets to use 
 
 Generated images inserted into the chat are hidden in the main API prompts by default, but this can be overriden individually per generation initiator ("Magic wand" icon, slash command, interactive mode). This can be used for making the experience more immersive by letting the characters "acknowledge" the images. Multimodal models in Chat Completions API may also 'see' the images if "Send inline images" is enabled.
 
-A text message can be customized by changing the "Chat Message Template" under Image Prompt Templates. All regular macros can be used in this template, plus a special `{{prompt}}` macro to specify where the image prompt will be added.
+A text message can be customized by changing the "Chat Message Template" under Image Prompt Templates. All regular macros can be used in this template, plus a special \{\{prompt\}\} macro to specify where the image prompt will be added.
