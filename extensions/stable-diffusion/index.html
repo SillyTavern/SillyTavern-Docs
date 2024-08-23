@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.777758937516">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.777760140848">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -14,7 +14,7 @@
     <!-- Primary Meta Tags -->
     <title>Stable Diffusion | docs.ST.app</title>
     <meta name="title" content="Stable Diffusion | docs.ST.app">
-    <meta name="description" content="Use local or cloud-based Stable Diffusion APIs to generate images. The free mode is also supported via the ">
+    <meta name="description" content="Use local or cloud-based Stable Diffusion, FLUX or DALL-E APIs to generate images. The free mode is also supported via the ">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/extensions/stable-diffusion/">
@@ -23,21 +23,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/extensions/stable-diffusion/">
     <meta property="og:title" content="Stable Diffusion | docs.ST.app">
-    <meta property="og:description" content="Use local or cloud-based Stable Diffusion APIs to generate images. The free mode is also supported via the ">
+    <meta property="og:description" content="Use local or cloud-based Stable Diffusion, FLUX or DALL-E APIs to generate images. The free mode is also supported via the ">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/extensions/stable-diffusion/">
     <meta property="twitter:title" content="Stable Diffusion | docs.ST.app">
-    <meta property="twitter:description" content="Use local or cloud-based Stable Diffusion APIs to generate images. The free mode is also supported via the ">
+    <meta property="twitter:description" content="Use local or cloud-based Stable Diffusion, FLUX or DALL-E APIs to generate images. The free mode is also supported via the ">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.777758937516" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.777760140848" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.777758937516" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.777760140848" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.777758937516" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.777760140848" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -209,7 +209,7 @@
         <span>Image Generation extension</span>
     </h2>
 </doc-anchor-target>
-<p>Use local or cloud-based Stable Diffusion APIs to generate images.
+<p>Use local or cloud-based Stable Diffusion, FLUX or DALL-E APIs to generate images.
 The free mode is also supported via the <code v-pre>/sd (anything_here)</code> command in the chat input bar.
 Most common Stable Diffusion generation settings are customizable within the SillyTavern UI.</p>
 <doc-anchor-target id="supported-sources">
@@ -356,6 +356,15 @@ You can configure the instruction template for generating prompts for every gene
 <div class="codeblock-title">stscript</div>
 <pre class="language-none"><code v-pre class="language-none">/sd quiet=true me | /send Here's a picture of me: ![my portrait]()</code></pre>
 </doc-codeblock></div>
+<doc-anchor-target id="image-swipes">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#image-swipes">#</doc-anchor-trigger>
+        <span>Image swipes</span>
+    </h3>
+</doc-anchor-target>
+<p>Images swipes allow to reroll the image generation while keeping the same prompt. If a fixed seed is set, it will be randomized for the next generation.</p>
+<p>To cycle through images, hover a mouse cursor (tap on mobile) over a generated image to reveal arrow buttons and swipes counter. Tapping right arrow on the latest image will generate a new one.</p>
+<p><em>&#x27;Swipes&#x27; here is just a name, don&#x27;t try the actual swiping gesture, as this will regenerate the message itself, not the attached image.</em></p>
 <doc-anchor-target id="options">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#options">#</doc-anchor-trigger>
@@ -445,11 +454,13 @@ You can configure the instruction template for generating prompts for every gene
 </doc-anchor-target>
 <p>Any characteristics that describe the currently selected character. Will be added after a common prefix.</p>
 <p>Example: <code v-pre>female, green eyes, brown hair, pink shirt</code>.</p>
+<p>You can also specify a negative prompt prefix for any unwanted content. It will be combined with the general negative prompt.</p>
 <p>Limitations:</p>
 <ol>
 <li>Works only in 1-to-1 chats. Will not be used in groups.</li>
 <li>Won&#x27;t be used for backgrounds and free mode generations.</li>
 </ol>
+<p>If you want to share the prefixes with others, tick the &quot;Shareable&quot; checkbox. This will save them with the character data, rather than your local settings.</p>
 <p><strong>Pro tip:</strong> If supported by the generation source, you can also use LoRAs/embeddings here, for example: <code v-pre>&lt;lora:DonaldDuck:1&gt;</code>.</p>
 <doc-anchor-target id="styles">
     <h2>
@@ -462,6 +473,14 @@ You can configure the instruction template for generating prompts for every gene
 <li>Common Prompt Prefix</li>
 <li>Negative Prompt</li>
 </ol>
+<doc-anchor-target id="chat-message-visibility">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#chat-message-visibility">#</doc-anchor-trigger>
+        <span>Chat Message Visibility</span>
+    </h2>
+</doc-anchor-target>
+<p>Generated images inserted into the chat are hidden in the main API prompts by default, but this can be overriden individually per generation initiator (&quot;Magic wand&quot; icon, slash command, interactive mode). This can be used for making the experience more immersive by letting the characters &quot;acknowledge&quot; the images. Multimodal models in Chat Completions API may also &#x27;see&#x27; the images if &quot;Send inline images&quot; is enabled.</p>
+<p>A text message can be customized by changing the &quot;Chat Message Template&quot; under Image Prompt Templates. All regular macros can be used in this template, plus a special &#x60;&#x60; macro to specify where the image prompt will be added.</p>
 
                                 
                                 <!-- Required only on API pages -->
