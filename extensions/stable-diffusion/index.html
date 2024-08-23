@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.777760190491">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.777760272079">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.777760190491" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.777760272079" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.777760190491" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.777760272079" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.777760190491" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.777760272079" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -338,7 +338,7 @@ You can configure the instruction template for generating prompts for every gene
         <span>Include a character-specific prefix</span>
     </h4>
 </doc-anchor-target>
-<p>Use a special &#x60;&#x60; macro in free-prompt mode to include positive and negative prompt prefixes (if defined) for the current character.</p>
+<p>Use a special {{charPrefix}} macro in free-prompt mode to include positive and negative prompt prefixes (if defined) for the current character.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre class="language-none"><code v-pre class="language-none">/sd , riding a bike</code></pre>
@@ -479,7 +479,7 @@ You can configure the instruction template for generating prompts for every gene
     </h2>
 </doc-anchor-target>
 <p>Generated images inserted into the chat are hidden in the main API prompts by default, but this can be overriden individually per generation initiator (&quot;Magic wand&quot; icon, slash command, interactive mode). This can be used for making the experience more immersive by letting the characters &quot;acknowledge&quot; the images. Multimodal models in Chat Completions API may also &#x27;see&#x27; the images if &quot;Send inline images&quot; is enabled.</p>
-<p>A text message can be customized by changing the &quot;Chat Message Template&quot; under Image Prompt Templates. All regular macros can be used in this template, plus a special &#x60;&#x60; macro to specify where the image prompt will be added.</p>
+<p>A text message can be customized by changing the &quot;Chat Message Template&quot; under Image Prompt Templates. All regular macros can be used in this template, plus a special {{prompt}} macro to specify where the image prompt will be added.</p>
 
                                 
                                 <!-- Required only on API pages -->
