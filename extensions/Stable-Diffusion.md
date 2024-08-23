@@ -38,8 +38,7 @@ Most common Stable Diffusion generation settings are customizable within the Sil
 
 1. Use the "Image Generation" item in the extensions context menu (wand).
 2. Type a `/sd (argument)` slash command with an argument from the Generation modes table. Anything else would trigger a "free mode" to make SD generate whatever you prompted. Example: `/sd apple tree` would generate a picture of an apple tree.
-3. `/sd` command also prov
-4. Look for a paintbrush icon in the context actions for chat messages. This will force the "Raw Message" mode for the selected message.
+3. Look for a paintbrush icon in the context actions for chat messages. This will force the "Raw Message" mode for the selected message.
 
 Every generation mode besides raw message and free mode will trigger a prompt generation using your currently selected main generation API to convert chat context into the SD prompt.
 You can configure the instruction template for generating prompts for every generation mode using the "SD Prompt Templates" settings drawer in the extensions panel.
