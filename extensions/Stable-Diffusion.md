@@ -2,7 +2,7 @@
 
 ## Image Generation extension
 
-Use local or cloud-based Stable Diffusion APIs to generate images.
+Use local or cloud-based Stable Diffusion, FLUX or DALL-E APIs to generate images.
 The free mode is also supported via the `/sd (anything_here)` command in the chat input bar.
 Most common Stable Diffusion generation settings are customizable within the SillyTavern UI.
 
@@ -76,6 +76,14 @@ The example below will send the generated image using Markdown as a user persona
 /sd quiet=true me | /send Here's a picture of me: ![my portrait]({{pipe}})
 ```
 
+### Image swipes
+
+Images swipes allow to reroll the image generation while keeping the same prompt. If a fixed seed is set, it will be randomized for the next generation. 
+
+To cycle through images, hover a mouse cursor (tap on mobile) over a generated image to reveal arrow buttons and swipes counter. Tapping right arrow on the latest image will generate a new one.
+
+*'Swipes' here is just a name, don't try the actual swiping gesture, as this will regenerate the message itself, not the attached image.*
+
 ## Options
 
 ### Edit prompts before generation
@@ -143,9 +151,13 @@ Any characteristics that describe the currently selected character. Will be adde
 
 Example: `female, green eyes, brown hair, pink shirt`.
 
+You can also specify a negative prompt prefix for any unwanted content. It will be combined with the general negative prompt.
+
 Limitations:
 1. Works only in 1-to-1 chats. Will not be used in groups.
 2. Won't be used for backgrounds and free mode generations.
+
+If you want to share the prefixes with others, tick the "Shareable" checkbox. This will save them with the character data, rather than your local settings. 
 
 **Pro tip:** If supported by the generation source, you can also use LoRAs/embeddings here, for example: `<lora:DonaldDuck:1>`.
 
@@ -155,3 +167,9 @@ Use this to quickly save and restore your favorite style/quality presets to use 
 
 1. Common Prompt Prefix
 2. Negative Prompt
+
+## Chat Message Visibility
+
+Generated images inserted into the chat are hidden in the main API prompts by default, but this can be overriden individually per generation initiator ("Magic wand" icon, slash command, interactive mode). This can be used for making the experience more immersive by letting the characters "acknowledge" the images. Multimodal models in Chat Completions API may also 'see' the images if "Send inline images" is enabled.
+
+A text message can be customized by changing the "Chat Message Template" under Image Prompt Templates. All regular macros can be used in this template, plus a special `{{prompt}}` macro to specify where the image prompt will be added.
