@@ -125,12 +125,17 @@ Example:
 
 Circumstances and context of the dialogue.
 
-### Replacement tags (macros)
+### Favorite Character
+
+Mark the character as a favorite to quickly filter on the side menu bar by selecting the "Favorites" sort option. Favorite characters have a golden highlight in the list. This will also make the character portrait appear in the hotswaps area (if enabled in User Settings).
+
+### Macros (replacement tags)
 
 **This list may be incomplete or outdated. Use the `/help macros` slash command in any SillyTavern chat to get the list of macros that work in your instance.**
 
-A list of tags that are replaced when sending to generate:
+Note: some extensions may also add special context-specific macros that only work in certain places. These will not be documented here.
 
+A list of macros that are replaced when sending a prompt to generate:
 
 1. \{\{pipe\}\} => only for slash command batching. Replaced with the returned result of the previous command.
 2. \{\{newline\}\} => just inserts a newline.
@@ -209,7 +214,3 @@ A list of tags that are replaced when sending to generate:
 8. \{\{addglobalvar::name::value\}\} – replaced with empty string, adds a numeric value of "increment" to the global variable "name"
 9. \{\{incglobalvar::name\}\} – replaced with the result of the increment of value of the global variable "name" by 1
 10. \{\{decglobalvar::name\}\} – replaced with the result of the decrement of value of the global variable "name" by 1
-
-### Favorite Character
-
-Mark the character as a favorite to quickly filter on the side menu bar by pressing the "star" button.
