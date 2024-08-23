@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.777753811457">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.777758937516">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.777753811457" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.777758937516" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.777753811457" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.777758937516" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.777753811457" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.777758937516" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -212,6 +212,27 @@
 <p>Use local or cloud-based Stable Diffusion APIs to generate images.
 The free mode is also supported via the <code v-pre>/sd (anything_here)</code> command in the chat input bar.
 Most common Stable Diffusion generation settings are customizable within the SillyTavern UI.</p>
+<doc-anchor-target id="supported-sources">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#supported-sources">#</doc-anchor-trigger>
+        <span>Supported Sources</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li><a href="https://stablehorde.net/">Stable Horde</a></li>
+<li><a href="https://novelai.net/">NovelAI Diffusion</a>. Requires an active subscription.</li>
+<li><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui">Stable Diffusion WebUI / AUTOMATIC1111</a></li>
+<li><a href="https://github.com/vladmandic/automatic">SD.Next / vladmandic</a></li>
+<li><a href="https://platform.openai.com/">OpenAI DALL-E 2/3</a></li>
+<li><a href="https://api.together.xyz/models">TogetherAI</a></li>
+<li><a href="https://drawthings.ai/">Draw Things</a></li>
+<li><a href="https://pollinations.ai/">Pollinations</a></li>
+<li><a href="https://github.com/comfyanonymous/ComfyUI">ComfyUI</a>. Requires a workflow JSON file.</li>
+<li><a href="https://platform.stability.ai/">Stability AI</a></li>
+<li><a href="https://huggingface.co/docs/api-inference/index">HuggingFace Serverless Inference</a></li>
+<li><a href="https://blockentropy.ai/">Block Entropy</a></li>
+<li><a href="https://github.com/SillyTavern/SillyTavern-Extras">SillyTavern Extras</a> (deprecated, not recommended)</li>
+</ul>
 <doc-anchor-target id="generation-modes">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#generation-modes">#</doc-anchor-trigger>
@@ -283,29 +304,58 @@ Most common Stable Diffusion generation settings are customizable within the Sil
 <ol>
 <li>Use the &quot;Image Generation&quot; item in the extensions context menu (wand).</li>
 <li>Type a <code v-pre>/sd (argument)</code> slash command with an argument from the Generation modes table. Anything else would trigger a &quot;free mode&quot; to make SD generate whatever you prompted. Example: <code v-pre>/sd apple tree</code> would generate a picture of an apple tree.</li>
+<li><code v-pre>/sd</code> command also prov</li>
 <li>Look for a paintbrush icon in the context actions for chat messages. This will force the &quot;Raw Message&quot; mode for the selected message.</li>
 </ol>
 <p>Every generation mode besides raw message and free mode will trigger a prompt generation using your currently selected main generation API to convert chat context into the SD prompt.
 You can configure the instruction template for generating prompts for every generation mode using the &quot;SD Prompt Templates&quot; settings drawer in the extensions panel.</p>
-<doc-anchor-target id="supported-sources">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#supported-sources">#</doc-anchor-trigger>
-        <span>Supported Sources</span>
-    </h2>
+<doc-anchor-target id="tips-and-tricks-for-the-sd-command-usage">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tips-and-tricks-for-the-sd-command-usage">#</doc-anchor-trigger>
+        <span>Tips and tricks for the <code v-pre>/sd</code> command usage</span>
+    </h3>
 </doc-anchor-target>
-<ul>
-<li><a href="https://stablehorde.net/">Stable Horde</a></li>
-<li><a href="https://novelai.net/">NovelAI Diffusion</a>. Requires an active subscription.</li>
-<li><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui">Stable Diffusion WebUI / AUTOMATIC1111</a></li>
-<li><a href="https://github.com/vladmandic/automatic">SD.Next / vladmandic</a></li>
-<li><a href="https://platform.openai.com/">OpenAI DALL-E 2/3</a></li>
-<li><a href="https://api.together.xyz/models">TogetherAI</a></li>
-<li><a href="https://drawthings.ai/">Draw Things</a></li>
-<li><a href="https://pollinations.ai/">Pollinations</a></li>
-<li><a href="https://github.com/comfyanonymous/ComfyUI">ComfyUI</a>. Requires a workflow JSON file.</li>
-<li><a href="https://platform.stability.ai/">Stability AI</a></li>
-<li><a href="https://github.com/SillyTavern/SillyTavern-Extras">SillyTavern Extras</a> (deprecated, not recommended)</li>
-</ul>
+<doc-anchor-target id="view-all-generated-images">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#view-all-generated-images">#</doc-anchor-trigger>
+        <span>View all generated images</span>
+    </h4>
+</doc-anchor-target>
+<p>To view all saved images for a character (including other chats), open a gallery from a &quot;More...&quot; dropdown menu on a character info panel, or use a <code v-pre>/show-gallery</code> slash command.</p>
+<doc-anchor-target id="specify-a-negative-prompt">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#specify-a-negative-prompt">#</doc-anchor-trigger>
+        <span>Specify a negative prompt</span>
+    </h4>
+</doc-anchor-target>
+<p>Use a <code v-pre>negative</code> named argument before the prompt to enforce a specific negative prompt for this generation.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/sd negative=&quot;ugly, fat&quot; cute girl eating a burger</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="include-a-character-specific-prefix">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#include-a-character-specific-prefix">#</doc-anchor-trigger>
+        <span>Include a character-specific prefix</span>
+    </h4>
+</doc-anchor-target>
+<p>Use a special &#x60;&#x60; macro in free-prompt mode to include positive and negative prompt prefixes (if defined) for the current character.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/sd , riding a bike</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="suppress-a-chat-message">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#suppress-a-chat-message">#</doc-anchor-trigger>
+        <span>Suppress a chat message</span>
+    </h4>
+</doc-anchor-target>
+<p>You can avoid posting a generated image into the chat by passing a <code v-pre>quiet=true</code> named argument. The image will still be added into the character gallery, and the command will produce a relative URL to the image that can be consumed by other commands.</p>
+<p>The example below will send the generated image using Markdown as a user persona.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
+<pre class="language-none"><code v-pre class="language-none">/sd quiet=true me | /send Here's a picture of me: ![my portrait]()</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="options">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#options">#</doc-anchor-trigger>
@@ -346,14 +396,21 @@ You can configure the instruction template for generating prompts for every gene
 <li>&#x27;last message&#x27; =&gt; &quot;The Last Message&quot;</li>
 <li>&#x27;background&#x27;, &#x27;scene background&#x27;, &#x27;scene&#x27;, &#x27;scenery&#x27;, &#x27;surroundings&#x27;, &#x27;environment&#x27; =&gt; &quot;Background&quot;</li>
 </ul>
-<doc-anchor-target id="auto-enhance-prompts">
+<doc-anchor-target id="extend-free-mode-prompts">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#auto-enhance-prompts">#</doc-anchor-trigger>
-        <span>Auto-enhance prompts</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#extend-free-mode-prompts">#</doc-anchor-trigger>
+        <span>Extend free-mode prompts</span>
     </h3>
 </doc-anchor-target>
-<p>This option uses an additional GPT-2 text generation model to add more details to the prompt generated by the main API.
-Works best for SDXL image models. It may not work well with other models, and it is recommended to manually edit prompts in this case.</p>
+<p>When using the interactive mode of the slash command, automatically extend free-mode generation subject descriptions by prompting your main API.</p>
+<doc-anchor-target id="auto-extend-prompts">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#auto-extend-prompts">#</doc-anchor-trigger>
+        <span>Auto-extend prompts</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>May not work well, it is recommended to manually inspect generated prompts when using this.</strong></p>
+<p>This option uses an additional GPT-2 text generation model to add more details to the prompt generated by the main API.</p>
 <p>Default GPT-2 model: <a href="https://huggingface.co/Cohee/fooocus_expansion-onnx">Cohee/fooocus_expansion-onnx</a></p>
 <doc-anchor-target id="snap-auto-adjusted-resolutions">
     <h3>
