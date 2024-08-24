@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.777760562871">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.777829495863">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.777760562871" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.777829495863" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.777760562871" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.777829495863" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.777760562871" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.777829495863" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -250,14 +250,22 @@ This is the main way to format your character card for text completion and instr
     </h4>
 </doc-anchor-target>
 <p>Inserted as a separator after the rendered story string and after the example dialogues blocks, but before the first message in context.</p>
-<doc-anchor-target id="use-as-stop-strings">
+<doc-anchor-target id="separators-as-stop-strings">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#use-as-stop-strings">#</doc-anchor-trigger>
-        <span>Use as Stop Strings</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#separators-as-stop-strings">#</doc-anchor-trigger>
+        <span>Separators as Stop Strings</span>
     </h3>
 </doc-anchor-target>
 <p>Adds &quot;Example Separator&quot; and &quot;Chat Start&quot; to the list of stop strings.</p>
 <p>Helpful if the model tends to hallucinate or leak whole blocks of example dialogue preceded by the separator.</p>
+<doc-anchor-target id="names-as-stop-strings">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#names-as-stop-strings">#</doc-anchor-trigger>
+        <span>Names as Stop Strings</span>
+    </h3>
+</doc-anchor-target>
+<p>Adds Character and User Persona names to the list of stop strings.</p>
+<p>Recommended to keep it on to prevent model impersonation.</p>
 <doc-anchor-target id="allow-post-history-instructions">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#allow-post-history-instructions">#</doc-anchor-trigger>
@@ -290,28 +298,31 @@ Character:</code></pre>
 <ol>
 <li>NovelAI Clio: NerdStash tokenizer.</li>
 <li>NovelAI Kayra: NerdStash v2 tokenizer.</li>
-<li>Text Completion: API tokenizer (if supported) or LLaMA tokenizer.</li>
-<li>KoboldAI Classic / AI Horde: LLaMA tokenizer.</li>
+<li>Text Completion: API tokenizer (if supported) or Llama tokenizer.</li>
+<li>KoboldAI Classic / AI Horde: Llama tokenizer.</li>
 <li>Koboldcpp: model API tokenizer.</li>
 </ol>
 <p>If you get inaccurate results or wish to experiment, you can set an <em>override tokenizer</em> for SillyTavern to use while forming a request to the AI backend:</p>
 <ol>
 <li>None. Each token is estimated to be ~3.3 characters, rounded up to the nearest integer. <strong>Try this if your prompts get cut off on high context lengths.</strong> This approach is used by KoboldAI Lite.</li>
-<li>LLaMA tokenizer. Used by LLaMA 1/2 models family: Vicuna, Hermes, Airoboros, etc. <strong>Pick if you use a LLaMA 1/2 model.</strong></li>
+<li>Llama tokenizer. Used by Llama 1/2 models family: Vicuna, Hermes, Airoboros, etc. <strong>Pick if you use a Llama 1/2 model.</strong></li>
+<li>Llama 3 tokenizer. Used by Llama 3/3.1 models. <strong>Pick if you use a Llama 3/3.1 model.</strong></li>
 <li>NerdStash tokenizer. Used by NovelAI&#x27;s Clio model. <strong>Pick if you use the Clio model.</strong></li>
 <li>NerdStash v2 tokenizer. Used by NovelAI&#x27;s Kayra model. <strong>Pick if you use the Kayra model.</strong></li>
 <li>Mistral tokenizer. Used by Mistral models family and their finetunes. <strong>Pick if you use a Mistral model.</strong></li>
-<li>Yi tokenized. User by Yi models. <strong>Pick if you use a Yi model.</strong></li>
+<li>Yi tokenizer. Used by Yi models. <strong>Pick if you use a Yi model.</strong></li>
+<li>Gemma tokenizer. Used by Gemini/Gemma models. <strong>Pick if you use a Gemma model.</strong></li>
 <li>API tokenizer. Queries the generation API to get the token count directly from the model. Known backends to support: Text Generation WebUI (ooba), koboldcpp, TabbyAPI, Aphrodite API. <strong>Pick if you use a supported backend.</strong></li>
 </ol>
 <p>Chat Completion APIs <strong>(non-overridable)</strong>:</p>
 <ol>
-<li>GPT via OpenAI / OpenRouter / Window: model-dependant tokenizer via <a href="https://github.com/openai/tiktoken">tiktoken</a>.</li>
-<li>Claude: Model-dependant tokenizer via <a href="https://github.com/mlc-ai/tokenizers-cpp">WebTokenizers</a>.</li>
-<li>OpenRouter: Llama and Mistral tokenizers for their respective models.</li>
+<li>OpenAI: model-dependant tokenizer via <a href="https://github.com/openai/tiktoken">tiktoken</a>.</li>
+<li>Claude: model-dependant tokenizer via <a href="https://github.com/mlc-ai/tokenizers-cpp">WebTokenizers</a>.</li>
+<li>OpenRouter: Llama, Mistral, Gemma, Yi tokenizers for their respective models.</li>
+<li>Google AI Studio: Gemma tokenizer.</li>
 <li>Scale API: GPT-4 tokenizer.</li>
 <li>AI21 API: GPT-3.5 turbo (default, fast) or API tokenizer (if toggled on, can cause slowdowns!).</li>
-<li>Fallback tokenizer (for proxies): GPT-3.5 turbo tokenizer.</li>
+<li>Fallback tokenizer: GPT-3.5 turbo tokenizer.</li>
 </ol>
 <doc-anchor-target id="token-padding">
     <h3>
@@ -337,9 +348,10 @@ Character:</code></pre>
 <li>AI Horde</li>
 <li>Text Completion APIs: Text Generation WebUI (ooba), Tabby, Aphrodite, Mancer, TogetherAI, Ollama, etc.</li>
 <li>NovelAI</li>
-<li>OpenAI, including via OpenRouter (max 4 strings)</li>
+<li>OpenAI (max 4 strings)</li>
+<li>OpenRouter</li>
 <li>Claude</li>
-<li>Google MakerSuite</li>
+<li>Google AI Studio</li>
 </ol>
 
                                 
