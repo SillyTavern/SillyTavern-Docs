@@ -40,11 +40,17 @@ Used as a block header and a separator between the example dialogue blocks. Any 
 
 Inserted as a separator after the rendered story string and after the example dialogues blocks, but before the first message in context.
 
-### Use as Stop Strings
+### Separators as Stop Strings
 
 Adds "Example Separator" and "Chat Start" to the list of stop strings.
 
 Helpful if the model tends to hallucinate or leak whole blocks of example dialogue preceded by the separator.
+
+### Names as Stop Strings
+
+Adds Character and User Persona names to the list of stop strings.
+
+Recommended to keep it on to prevent model impersonation.
 
 ### Allow Post-History Instructions
 
@@ -73,28 +79,31 @@ Text Completion APIs **(overridable)**:
 
 1. NovelAI Clio: NerdStash tokenizer.
 2. NovelAI Kayra: NerdStash v2 tokenizer.
-3. Text Completion: API tokenizer (if supported) or LLaMA tokenizer.
-4. KoboldAI Classic / AI Horde: LLaMA tokenizer.
+3. Text Completion: API tokenizer (if supported) or Llama tokenizer.
+4. KoboldAI Classic / AI Horde: Llama tokenizer.
 5. Koboldcpp: model API tokenizer.
 
 If you get inaccurate results or wish to experiment, you can set an *override tokenizer* for SillyTavern to use while forming a request to the AI backend:
 
 1. None. Each token is estimated to be ~3.3 characters, rounded up to the nearest integer. **Try this if your prompts get cut off on high context lengths.** This approach is used by KoboldAI Lite.
-2. LLaMA tokenizer. Used by LLaMA 1/2 models family: Vicuna, Hermes, Airoboros, etc. **Pick if you use a LLaMA 1/2 model.**
-3. NerdStash tokenizer. Used by NovelAI's Clio model. **Pick if you use the Clio model.**
-4. NerdStash v2 tokenizer. Used by NovelAI's Kayra model. **Pick if you use the Kayra model.**
-5. Mistral tokenizer. Used by Mistral models family and their finetunes. **Pick if you use a Mistral model.**
-6. Yi tokenized. User by Yi models. **Pick if you use a Yi model.**
-7. API tokenizer. Queries the generation API to get the token count directly from the model. Known backends to support: Text Generation WebUI (ooba), koboldcpp, TabbyAPI, Aphrodite API. **Pick if you use a supported backend.**
+2. Llama tokenizer. Used by Llama 1/2 models family: Vicuna, Hermes, Airoboros, etc. **Pick if you use a Llama 1/2 model.**
+3. Llama 3 tokenizer. Used by Llama 3/3.1 models. **Pick if you use a Llama 3/3.1 model.**
+4. NerdStash tokenizer. Used by NovelAI's Clio model. **Pick if you use the Clio model.**
+5. NerdStash v2 tokenizer. Used by NovelAI's Kayra model. **Pick if you use the Kayra model.**
+6. Mistral tokenizer. Used by Mistral models family and their finetunes. **Pick if you use a Mistral model.**
+7. Yi tokenizer. Used by Yi models. **Pick if you use a Yi model.**
+8. Gemma tokenizer. Used by Gemini/Gemma models. **Pick if you use a Gemma model.**
+9. API tokenizer. Queries the generation API to get the token count directly from the model. Known backends to support: Text Generation WebUI (ooba), koboldcpp, TabbyAPI, Aphrodite API. **Pick if you use a supported backend.**
 
 Chat Completion APIs **(non-overridable)**:
 
-1. GPT via OpenAI / OpenRouter / Window: model-dependant tokenizer via [tiktoken](https://github.com/openai/tiktoken).
-2. Claude: Model-dependant tokenizer via [WebTokenizers](https://github.com/mlc-ai/tokenizers-cpp).
-3. OpenRouter: Llama and Mistral tokenizers for their respective models.
-4. Scale API: GPT-4 tokenizer.
-5. AI21 API: GPT-3.5 turbo (default, fast) or API tokenizer (if toggled on, can cause slowdowns!).
-6. Fallback tokenizer (for proxies): GPT-3.5 turbo tokenizer.
+1. OpenAI: model-dependant tokenizer via [tiktoken](https://github.com/openai/tiktoken).
+2. Claude: model-dependant tokenizer via [WebTokenizers](https://github.com/mlc-ai/tokenizers-cpp).
+3. OpenRouter: Llama, Mistral, Gemma, Yi tokenizers for their respective models.
+4. Google AI Studio: Gemma tokenizer.
+5. Scale API: GPT-4 tokenizer.
+6. AI21 API: GPT-3.5 turbo (default, fast) or API tokenizer (if toggled on, can cause slowdowns!).
+7. Fallback tokenizer: GPT-3.5 turbo tokenizer.
 
 ### Token Padding
 
@@ -118,6 +127,7 @@ Supported APIs:
 2. AI Horde
 3. Text Completion APIs: Text Generation WebUI (ooba), Tabby, Aphrodite, Mancer, TogetherAI, Ollama, etc.
 4. NovelAI
-5. OpenAI, including via OpenRouter (max 4 strings)
-6. Claude
-7. Google MakerSuite
+5. OpenAI (max 4 strings)
+6. OpenRouter
+7. Claude
+8. Google AI Studio
