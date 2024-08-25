@@ -23,11 +23,15 @@ Before you begin, ensure you've met the following prerequisites:
    - How to modify PATH variable: https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/
    - To test whether you did things correctly, open a command prompt and run ```ffmpeg```. It should print the ffmpeg version and info.
 
-1. **Make sure TTS is enabled and works**: RVC depends on TTS, you need to enable a TTS module. Refer to our TTS guide for how. Your TTS has to be already working properly and narrating your chats before you try to add RVC to the mix!
-2. **Install the extension**: Install the "RVC" extension from the "Download Extensions & Assets" menu in the Extensions panel (stacked blocks icon).
-3. **Enable RVC in SillyTavern**: In SillyTavern, navigate to **Extensions** > **RVC** and enable it.
-4. **Pick the source**: In the extension settings, choose an RVC source to use.
-5. Proceed to the source-specific installation instructions.
+- **Make sure TTS is enabled and works**: RVC depends on TTS, you need to enable a TTS module. Refer to our TTS guide to learn how. Your TTS has to be already working properly and narrating your chats before you try to add RVC to the mix! 
+- **Install the extension**: Install the "RVC" extension from the "Download Extensions & Assets" menu in the Extensions panel (stacked blocks icon).
+- **Enable RVC in SillyTavern**: In SillyTavern, navigate to **Extensions** > **RVC** and enable it.
+- **Pick the source**: In the extension settings, choose an RVC source to use.
+- Proceed to the source-specific installation instructions.
+
+Please note, that:
+- System TTS engine does not support voice conversion at all.
+- Streaming TTS will wait for the audio stream to end before conversion.
 
 ### rvc-python Setup
 
