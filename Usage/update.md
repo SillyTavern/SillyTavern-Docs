@@ -106,6 +106,12 @@ secrets.json <---- this one is in the base folder, not /public/
 
 ### Common Update Problems
 
+#### I use Docker and all my data is gone after the update!
+
+You must follow the migration guide to update volume mappings for the new data model introduced in 1.12.0
+
+[Migration guide for Docker containers](https://docs.sillytavern.app/installation/st-1.12.0-migration-guide/#containerized-docker-installs)
+
 #### "There are unresolved conflicts in the working directory."
 
 This means that you've modified default files that have been changed in the remote repository (such as setting presets).
