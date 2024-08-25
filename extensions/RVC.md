@@ -18,12 +18,12 @@ SillyTavern's RVC supports several API sources that perform audio conversion:
 Before you begin, ensure you've met the following prerequisites:
 
 - Make sure you have `ffmpeg` binary in your PATH environment variable. This tool is used to convert incoming audio.
-   - Use the Toolbox in Launcher.bat script to install ffmpeg automatically: https://github.com/SillyTavern/SillyTavern-Launcher/blob/main/Launcher.bat
-   - Or download the build here: https://www.gyan.dev/ffmpeg/builds/ 
-   - How to modify PATH variable: https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/
+   - Use the Toolbox in SillyTavern Launcher script to install ffmpeg automatically: <https://github.com/SillyTavern/SillyTavern-Launcher>
+   - Or download the build here: <https://www.gyan.dev/ffmpeg/builds/>
+   - How to modify PATH variable: <https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/>
    - To test whether you did things correctly, open a command prompt and run ```ffmpeg```. It should print the ffmpeg version and info.
 
-- **Make sure TTS is enabled and works**: RVC depends on TTS, you need to enable a TTS module. Refer to our TTS guide to learn how. Your TTS has to be already working properly and narrating your chats before you try to add RVC to the mix! 
+- **Make sure TTS is enabled and works**: RVC depends on TTS, you need to enable a TTS extension. Your TTS has to be already working properly and narrating your chats before you try to add RVC to the mix!
 - **Install the extension**: Install the "RVC" extension from the "Download Extensions & Assets" menu in the Extensions panel (stacked blocks icon).
 - **Enable RVC in SillyTavern**: In SillyTavern, navigate to **Extensions** > **RVC** and enable it.
 - **Pick the source**: In the extension settings, choose an RVC source to use.
