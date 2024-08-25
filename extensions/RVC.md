@@ -72,7 +72,11 @@ python -m rvc_python api -mp modelname -p 5050 -l
 
 5. **Configure a voice map**
 
-Voice map defines voice conversion settings for every character or user persona. To set up a voice map, choose your character or persona name from the "Character" dropdown, then choose an RVC "Voice", then click Apply. Optionally, you can also configure other related settings such as pitch correction or filtering. If you did everytinhg correctly, the Voice Map debug area will show something like 'Betty:MyVoice(rvpme)'.
+**Voice map defines voice conversion settings for every character or user persona.**
+
+- To set up a voice map, choose your character or persona name from the "Character" dropdown, then choose an RVC "Voice", then click Apply.
+- Optionally, you can also configure other related settings such as pitch correction or filtering.
+- If you did everytinhg correctly, the Voice Map debug area will show something like 'Betty:MyVoice(rvpme)'.
 
 ### SillyTavern Extras Setup
 
