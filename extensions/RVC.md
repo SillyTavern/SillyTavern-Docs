@@ -11,7 +11,7 @@ RVC is NOT TTS: it's more like speech-to-speech. It takes an audio clip as its i
 SillyTavern's RVC supports several API sources that perform audio conversion:
 
 * [rvc-python](https://github.com/daswer123/rvc-python)
-* [SillyTavern Extras](https://github.com/SillyTavern/SillyTavern-Extras)
+* [SillyTavern Extras](https://github.com/SillyTavern/SillyTavern-Extras) (deprecated)
 
 ### Common prerequisites
 
