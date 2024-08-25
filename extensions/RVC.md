@@ -31,22 +31,22 @@ Before you begin, ensure you've met the following prerequisites:
 
 ### rvc-python Setup
 
-**1. Install the package**
+1. **Install the package**
 
-Follow the installation instructions from the GitHub page: [rvc-python Installation](https://github.com/daswer123/rvc-python?tab=readme-ov-file#installation). It is recommended to follow CUDA installation instructions if you use an Nvidia GPU.
+Follow the installation instructions from the GitHub page: [rvc-python Installation](https://github.com/daswer123/rvc-python?tab=readme-ov-file#installation). It is recommended to follow CUDA installation instructions if you have an Nvidia GPU.
 
 If you're experiencing problems when installing on Windows (e.g. building fairseq step fails), make sure the following software is installed on your PC:
 
 - [Windows 10 SDK](https://developer.microsoft.com/en-us/windows/downloads/windows-sdk/)
 - [Visual Studio Build Tools 2022](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2022)
 
-**2. Prepare the models**
+2. **Prepare the models**
 
 Create a directory for storing RVC models. By default it is named `rvc_models` and is picked up from your current directory when starting up the server. Every model is a subfolder (its name will be visible in the UI) that should contain `.pth` (required) and `.index` (optional) files.
 
 Read more: [rvc-python Model Management](https://github.com/daswer123/rvc-python?tab=readme-ov-file#model-management)
 
-**3. Start the API server**
+3. **Start the API server**
 
 *As of writing, starting up the server requires at least one model present in the models directory.*
 
@@ -60,10 +60,15 @@ python -m rvc_python api -mp modelname -p 5050 -l
 - `5050` - sets a listening port for the server. Change if you want to host on a different port.
 - `-l` - sets the server to listen on all network interfaces. Remove to only listen on localhost.
 
-**4. Connect to the server**
+4. **Connect to the server**
 
 - In the RVC extension settings, set an approprite **rvc-python API URL**. By default, it will be `http://localhost:5050`.
 - Check the "Use CUDA" checkbox if you have installed rvc-python to support CUDA acceleration.
+- Press "Refresh" to load a list of available voices.
+
+5. **Configure a voice map**
+
+Voice map defines voice conversion settings for every character or user persona. To set up a voice map, choose your character or persona name from the "Character" dropdown, then choose an RVC "Voice", then click Apply. Optionally, you can also configure other related settings such as pitch correction or filtering. If you did everytinhg correctly, the Voice Map debug area will show something like 'Betty:MyVoice(rvpme)'.
 
 ### SillyTavern Extras Setup
 
@@ -81,11 +86,14 @@ python -m rvc_python api -mp modelname -p 5050 -l
      ```
      Optionally, you may wish to run RVC on your GPU if you have a capable one, by adding ```--cuda``` to the startup command. Based on a quick test, VRAM usage was 3.4GB for narrating 50 tokens (~36 words), and 7.6GB for 200 tokens (~150 words).
 
-4. **Select Pitch Extraction**:
+4. **Set Up Voice Map**:
+   - Create a Voice map for RVC. Set your Character to your desired SillyTavern character name, and set Voice to the RVC folder you created at step 1, then click Apply. If you did things correctly, the Voice Map will show something like 'Betty:MyVoice(rvpme)'.
+
+5. **Select Pitch Extraction**:
    - Choose "rmvpe" as the pitch extraction method.
    - If you have trouble with "rmvpe" try other methods.
 
-5. **(Optional) Configure RVC to save your generations to file**:
+6. **(Optional) Configure RVC to save your generations to file**:
    - If for testing or troubleshooting purposes you wish to save the generated RVC audio, add ```--rvc-save-file``` to your startup command. This will save the last generation under SillyTavern-extrasdata/tmp/rvc_output.wav:
    ```shell
    python server.py --enable-modules=rvc,silero-tts --rvc-save-file
