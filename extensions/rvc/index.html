@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.777912307853">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.777943006019">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.777912307853" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.777943006019" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.777912307853" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.777943006019" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.777912307853" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.777912307853" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.777943006019" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.777943006019" defer></script>
 
     <Style>
         a {
@@ -205,23 +205,27 @@
     </h1>
 </doc-anchor-target>
 <p>This guide will walk you through using RVC, a technique that allows transferring voice features from one audio clip to another, enabling voices to speak in different tones and styles.</p>
-<p>Ever enjoyed those famous &quot;Presidents Play X&quot; videos? They were created using RVC. With the RVC Extra module, you can make your SillyTavern characters speak in any voice you desire, be it anime, movie, or even your own unique voice.</p>
-<p>RVC is NOT TTS: it&#x27;s more like speech-to-speech. It takes an audio clip as its input. In the background, what RVC does is work in tandem with SillyTavern-extras&#x27;s TTS module: it waits for TTS to generate an audio file (which TTS would&#x27;ve done regardless of whether you use RVC or not), then RVC will perform a second pass that takes the TTS audio file and transforms it into the cloned voice from your RVC configuration.</p>
+<p>Ever enjoyed those famous &quot;Presidents Play X&quot; videos? They were created using RVC. With the RVC extension, you can make your SillyTavern characters speak in any voice you desire, be it anime, movie, or even your own unique voice.</p>
+<p>RVC is NOT TTS: it&#x27;s more like speech-to-speech. It takes an audio clip as its input. In the background, what RVC does is work in tandem with SillyTavern&#x27;s TTS extension: it waits for TTS to generate an audio file (which TTS would&#x27;ve done regardless of whether you use RVC or not), then RVC will perform a second pass that takes the TTS audio file and transforms it into the cloned voice from your RVC configuration.</p>
 <doc-anchor-target id="rvc-setup">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#rvc-setup">#</doc-anchor-trigger>
         <span>RVC Setup</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="prerequisites">
+<p>SillyTavern&#x27;s RVC supports several API sources that perform audio conversion:</p>
+<ul>
+<li><a href="https://github.com/daswer123/rvc-python">rvc-python</a></li>
+<li><a href="https://github.com/SillyTavern/SillyTavern-Extras">SillyTavern Extras</a></li>
+</ul>
+<doc-anchor-target id="common-prerequisites">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#prerequisites">#</doc-anchor-trigger>
-        <span>Prerequisites</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#common-prerequisites">#</doc-anchor-trigger>
+        <span>Common prerequisites</span>
     </h3>
 </doc-anchor-target>
 <p>Before you begin, ensure you&#x27;ve met the following prerequisites:</p>
 <ul>
-<li>Install the &quot;RVC&quot; extension from the &quot;Download Extensions &amp; Assets&quot; menu in the Extensions panel (stacked blocks icon).</li>
 <li>Make sure you have <code v-pre>ffmpeg</code> binary in your PATH environment variable. This tool is used to convert incoming audio.
 <ul>
 <li>Use the Toolbox in Launcher.bat script to install ffmpeg automatically: <a href="https://github.com/SillyTavern/SillyTavern-Launcher/blob/main/Launcher.bat">https://github.com/SillyTavern/SillyTavern-Launcher/blob/main/Launcher.bat</a></li>
@@ -231,10 +235,49 @@
 </ul>
 </li>
 </ul>
-<doc-anchor-target id="step-by-step-setup">
+<ol>
+<li><strong>Make sure TTS is enabled and works</strong>: RVC depends on TTS, you need to enable a TTS module. Refer to our TTS guide for how. Your TTS has to be already working properly and narrating your chats before you try to add RVC to the mix!</li>
+<li><strong>Install the extension</strong>: Install the &quot;RVC&quot; extension from the &quot;Download Extensions &amp; Assets&quot; menu in the Extensions panel (stacked blocks icon).</li>
+<li><strong>Enable RVC in SillyTavern</strong>: In SillyTavern, navigate to <strong>Extensions</strong> &gt; <strong>RVC</strong> and enable it.</li>
+<li><strong>Pick the source</strong>: In the extension settings, choose an RVC source to use.</li>
+<li>Proceed to the source-specific installation instructions.</li>
+</ol>
+<doc-anchor-target id="rvc-python-setup">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#step-by-step-setup">#</doc-anchor-trigger>
-        <span>Step-by-Step Setup</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#rvc-python-setup">#</doc-anchor-trigger>
+        <span>rvc-python Setup</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>1. Install the package</strong></p>
+<p>Follow the installation instructions from the GitHub page: <a href="https://github.com/daswer123/rvc-python?tab=readme-ov-file#installation">rvc-python Installation</a>. It is recommended to follow CUDA installation instructions if you use an Nvidia GPU.</p>
+<p>If you&#x27;re experiencing problems when installing on Windows (e.g. building fairseq step fails), make sure the following software is installed on your PC:</p>
+<ul>
+<li><a href="https://developer.microsoft.com/en-us/windows/downloads/windows-sdk/">Windows 10 SDK</a></li>
+<li><a href="https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2022">Visual Studio Build Tools 2022</a></li>
+</ul>
+<p><strong>2. Prepare the models</strong></p>
+<p>Create a directory for storing RVC models. By default it is named <code v-pre>rvc_models</code> and is picked up from your current directory when starting up the server. Every model is a subfolder (its name will be visible in the UI) that should contain <code v-pre>.pth</code> (required) and <code v-pre>.index</code> (optional) files.</p>
+<p>Read more: <a href="https://github.com/daswer123/rvc-python?tab=readme-ov-file#model-management">rvc-python Model Management</a></p>
+<p><strong>3. Start the API server</strong></p>
+<p><em>As of writing, starting up the server requires at least one model present in the models directory.</em></p>
+<p>Start the API server by running the following command:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">python -m rvc_python api -mp modelname -p 5050 -l</code></pre>
+</doc-codeblock></div>
+<ul>
+<li><code v-pre>modelname</code> - sets an initial model name. Must be a name of the subfolder from <code v-pre>rvc_models</code>.</li>
+<li><code v-pre>5050</code> - sets a listening port for the server. Change if you want to host on a different port.</li>
+<li><code v-pre>-l</code> - sets the server to listen on all network interfaces. Remove to only listen on localhost.</li>
+</ul>
+<p><strong>4. Connect to the server</strong></p>
+<ul>
+<li>In the RVC extension settings, set an approprite <strong>rvc-python API URL</strong>. By default, it will be <code v-pre>http://localhost:5050</code>.</li>
+<li>Check the &quot;Use CUDA&quot; checkbox if you have installed rvc-python to support CUDA acceleration.</li>
+</ul>
+<doc-anchor-target id="sillytavern-extras-setup">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sillytavern-extras-setup">#</doc-anchor-trigger>
+        <span>SillyTavern Extras Setup</span>
     </h3>
 </doc-anchor-target>
 <ol>
@@ -249,11 +292,6 @@
 <li>Install the necessary requirements using the command: <code v-pre>pip install -r requirements-rvc.txt</code>.</li>
 </ul>
 </li>
-<li><p><strong>Make sure TTS is enabled and works</strong></p>
-<ul>
-<li>RVC depends on TTS, you need to enable a TTS module. Refer to our TTS guide for how. Your TTS has to be already working properly and narrating your chats before you try to add RVC to the mix!</li>
-</ul>
-</li>
 <li><p><strong>Run SillyTavern-extras with RVC enabled</strong>:</p>
 <ul>
 <li>Launch SillyTavern-extras with the RVC module enabled. This example invocation assumes you used Silero TTS which comes pre-installed with SillyTavern-extras:
@@ -261,16 +299,6 @@
 <pre class="language-bash"><code v-pre class="language-bash">python server.py --enable-modules=rvc,silero-tts</code></pre>
 </doc-codeblock></div>
 Optionally, you may wish to run RVC on your GPU if you have a capable one, by adding <code v-pre>--cuda</code> to the startup command. Based on a quick test, VRAM usage was 3.4GB for narrating 50 tokens (~36 words), and 7.6GB for 200 tokens (~150 words).</li>
-</ul>
-</li>
-<li><p><strong>Configure RVC in SillyTavern</strong>:</p>
-<ul>
-<li>In SillyTavern, navigate to <strong>Extensions</strong> &gt; <strong>RVC</strong> and enable it.</li>
-</ul>
-</li>
-<li><p><strong>Set Up Voice Map</strong>:</p>
-<ul>
-<li>Create a Voice map for RVC. Set your Character to your desired SillyTavern character name, and set Voice to the RVC folder you created at step 1, then click Apply. If you did things correctly, the Voice Map will show something like &#x27;Betty:MyVoice(rvpme)&#x27;.</li>
 </ul>
 </li>
 <li><p><strong>Select Pitch Extraction</strong>:</p>
@@ -289,10 +317,10 @@ Optionally, you may wish to run RVC on your GPU if you have a capable one, by ad
 </li>
 </ol>
 <doc-anchor-target id="expression-based-dynamic-voice">
-    <h3>
+    <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#expression-based-dynamic-voice">#</doc-anchor-trigger>
         <span>Expression-Based Dynamic Voice</span>
-    </h3>
+    </h4>
 </doc-anchor-target>
 <ol>
 <li><p><strong>Configure RVC Models</strong>:</p>
