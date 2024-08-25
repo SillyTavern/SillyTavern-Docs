@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.777943367022">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.777943503733">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.777943367022" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.777943503733" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.777943367022" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.777943503733" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.777943367022" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.777943367022" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.777943503733" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.777943503733" defer></script>
 
     <Style>
         a {
@@ -226,7 +226,7 @@
 </doc-anchor-target>
 <p>Before you begin, ensure you&#x27;ve met the following prerequisites:</p>
 <ul>
-<li>Make sure you have <code v-pre>ffmpeg</code> binary in your PATH environment variable. This tool is used to convert incoming audio.
+<li><p>Make sure you have <code v-pre>ffmpeg</code> binary in your PATH environment variable. This tool is used to convert incoming audio.</p>
 <ul>
 <li>Use the Toolbox in Launcher.bat script to install ffmpeg automatically: <a href="https://github.com/SillyTavern/SillyTavern-Launcher/blob/main/Launcher.bat">https://github.com/SillyTavern/SillyTavern-Launcher/blob/main/Launcher.bat</a></li>
 <li>Or download the build here: <a href="https://www.gyan.dev/ffmpeg/builds/">https://www.gyan.dev/ffmpeg/builds/</a></li>
@@ -234,14 +234,22 @@
 <li>To test whether you did things correctly, open a command prompt and run <code v-pre>ffmpeg</code>. It should print the ffmpeg version and info.</li>
 </ul>
 </li>
+<li><p><strong>Make sure TTS is enabled and works</strong>: RVC depends on TTS, you need to enable a TTS module. Refer to our TTS guide to learn how. Your TTS has to be already working properly and narrating your chats before you try to add RVC to the mix!</p>
+</li>
+<li><p><strong>Install the extension</strong>: Install the &quot;RVC&quot; extension from the &quot;Download Extensions &amp; Assets&quot; menu in the Extensions panel (stacked blocks icon).</p>
+</li>
+<li><p><strong>Enable RVC in SillyTavern</strong>: In SillyTavern, navigate to <strong>Extensions</strong> &gt; <strong>RVC</strong> and enable it.</p>
+</li>
+<li><p><strong>Pick the source</strong>: In the extension settings, choose an RVC source to use.</p>
+</li>
+<li><p>Proceed to the source-specific installation instructions.</p>
+</li>
 </ul>
-<ol>
-<li><strong>Make sure TTS is enabled and works</strong>: RVC depends on TTS, you need to enable a TTS module. Refer to our TTS guide for how. Your TTS has to be already working properly and narrating your chats before you try to add RVC to the mix!</li>
-<li><strong>Install the extension</strong>: Install the &quot;RVC&quot; extension from the &quot;Download Extensions &amp; Assets&quot; menu in the Extensions panel (stacked blocks icon).</li>
-<li><strong>Enable RVC in SillyTavern</strong>: In SillyTavern, navigate to <strong>Extensions</strong> &gt; <strong>RVC</strong> and enable it.</li>
-<li><strong>Pick the source</strong>: In the extension settings, choose an RVC source to use.</li>
-<li>Proceed to the source-specific installation instructions.</li>
-</ol>
+<p>Please note, that:</p>
+<ul>
+<li>System TTS engine does not support voice conversion at all.</li>
+<li>Streaming TTS will wait for the audio stream to end before conversion.</li>
+</ul>
 <doc-anchor-target id="rvc-python-setup">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#rvc-python-setup">#</doc-anchor-trigger>
