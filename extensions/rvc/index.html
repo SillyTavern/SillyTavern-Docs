@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.777945409132">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.777972014609">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.777945409132" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.777972014609" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.777945409132" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.777972014609" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.777945409132" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.777945409132" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.777972014609" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.777972014609" defer></script>
 
     <Style>
         a {
@@ -224,81 +224,133 @@
         <span>Common prerequisites</span>
     </h3>
 </doc-anchor-target>
-<p>Before you begin, ensure you&#x27;ve met the following prerequisites:</p>
-<ul>
-<li><p>Make sure you have <code v-pre>ffmpeg</code> binary in your PATH environment variable. This tool is used to convert incoming audio.</p>
+<p>Before you begin, ensure you&#x27;ve met the following prerequisites.</p>
+<doc-anchor-target id="ffmpeg">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ffmpeg">#</doc-anchor-trigger>
+        <span>ffmpeg</span>
+    </h4>
+</doc-anchor-target>
+<p>Make sure you have <code v-pre>ffmpeg</code> binary in your PATH environment variable. This tool is used to convert incoming audio.</p>
+<p><strong>Windows</strong>:</p>
 <ul>
 <li>Use the Toolbox in SillyTavern Launcher script to install ffmpeg automatically: <a href="https://github.com/SillyTavern/SillyTavern-Launcher">https://github.com/SillyTavern/SillyTavern-Launcher</a></li>
 <li>Or download the build here: <a href="https://www.gyan.dev/ffmpeg/builds/">https://www.gyan.dev/ffmpeg/builds/</a></li>
 <li>How to modify PATH variable: <a href="https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/">https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/</a></li>
 <li>To test whether you did things correctly, open a command prompt and run <code v-pre>ffmpeg</code>. It should print the ffmpeg version and info.</li>
 </ul>
-</li>
-<li><p><strong>Make sure TTS is enabled and works</strong>: RVC depends on TTS, you need to enable a TTS extension. Your TTS has to be already working properly and narrating your chats before you try to add RVC to the mix!</p>
-</li>
-<li><p><strong>Install the extension</strong>: Install the &quot;RVC&quot; extension from the &quot;Download Extensions &amp; Assets&quot; menu in the Extensions panel (stacked blocks icon).</p>
-</li>
-<li><p><strong>Enable RVC in SillyTavern</strong>: In SillyTavern, navigate to <strong>Extensions</strong> &gt; <strong>RVC</strong> and enable it.</p>
-</li>
-<li><p><strong>Pick the source</strong>: In the extension settings, choose an RVC source to use.</p>
-</li>
-<li><p>Proceed to the source-specific installation instructions.</p>
-</li>
-</ul>
+<p><strong>Linux</strong>:</p>
+<p>Install ffmpeg using your package manager.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash"># Debian/Ubuntu
+sudo apt install ffmpeg
+# Arch Linux
+sudo pacman -S ffmpeg
+# Fedora
+sudo dnf install ffmpeg</code></pre>
+</doc-codeblock></div>
+<p><strong>macOS</strong>:</p>
+<p>Install ffmpeg using <a href="https://brew.sh/">Homebrew</a>:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">brew install ffmpeg</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="make-sure-tts-is-enabled-and-works">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#make-sure-tts-is-enabled-and-works">#</doc-anchor-trigger>
+        <span>Make sure TTS is enabled and works</span>
+    </h4>
+</doc-anchor-target>
+<p>RVC depends on TTS, you need to enable a TTS extension. Your TTS has to be already working properly and narrating your chats before you try to add RVC to the mix!</p>
 <p>Please note, that:</p>
 <ul>
 <li>System TTS engine does not support voice conversion at all.</li>
 <li>Streaming TTS will wait for the audio stream to end before conversion.</li>
 </ul>
+<doc-anchor-target id="install-the-extension">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#install-the-extension">#</doc-anchor-trigger>
+        <span>Install the extension</span>
+    </h4>
+</doc-anchor-target>
+<p>Install the &quot;RVC&quot; extension from the &quot;Download Extensions &amp; Assets&quot; menu in the Extensions panel (stacked blocks icon).</p>
+<doc-anchor-target id="enable-rvc-in-sillytavern">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#enable-rvc-in-sillytavern">#</doc-anchor-trigger>
+        <span>Enable RVC in SillyTavern*</span>
+    </h4>
+</doc-anchor-target>
+<p>In SillyTavern, navigate to <strong>Extensions</strong> &gt; <strong>RVC</strong> and enable it.</p>
+<doc-anchor-target id="pick-the-source">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pick-the-source">#</doc-anchor-trigger>
+        <span>Pick the source</span>
+    </h4>
+</doc-anchor-target>
+<p>In the extension settings, choose an RVC source to use. Then proceed to the source-specific installation instructions.</p>
 <doc-anchor-target id="rvc-python-setup">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#rvc-python-setup">#</doc-anchor-trigger>
         <span>rvc-python Setup</span>
     </h3>
 </doc-anchor-target>
-<ol>
-<li><strong>Install the package</strong></li>
-</ol>
+<doc-anchor-target id="1-install-the-package">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-install-the-package">#</doc-anchor-trigger>
+        <span>1. Install the package</span>
+    </h4>
+</doc-anchor-target>
 <p>Follow the installation instructions from the GitHub page: <a href="https://github.com/daswer123/rvc-python?tab=readme-ov-file#installation">rvc-python Installation</a>. It is recommended to follow CUDA installation instructions if you have an Nvidia GPU.</p>
 <p>If you&#x27;re experiencing problems when installing on Windows (e.g. building fairseq step fails), make sure the following software is installed on your PC:</p>
 <ul>
 <li><a href="https://developer.microsoft.com/en-us/windows/downloads/windows-sdk/">Windows 10 SDK</a></li>
 <li><a href="https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2022">Visual Studio Build Tools 2022</a></li>
 </ul>
-<ol start="2">
-<li><strong>Prepare the models</strong></li>
-</ol>
+<doc-anchor-target id="2-prepare-the-models">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-prepare-the-models">#</doc-anchor-trigger>
+        <span>2. Prepare the models</span>
+    </h4>
+</doc-anchor-target>
 <p>Create a directory for storing RVC models. By default it is named <code v-pre>rvc_models</code> and is picked up from your current directory when starting up the server. Every model is a subfolder (its name will be visible in the UI) that should contain <code v-pre>.pth</code> (required) and <code v-pre>.index</code> (optional) files.</p>
 <p>Read more: <a href="https://github.com/daswer123/rvc-python?tab=readme-ov-file#model-management">rvc-python Model Management</a></p>
-<ol start="3">
-<li><strong>Start the API server</strong></li>
-</ol>
-<p><em>As of writing, starting up the server requires at least one model present in the models directory.</em></p>
+<doc-anchor-target id="3-start-the-api-server">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-start-the-api-server">#</doc-anchor-trigger>
+        <span>3. Start the API server</span>
+    </h4>
+</doc-anchor-target>
 <p>Start the API server by running the following command:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">python -m rvc_python api -mp modelname -p 5050 -l</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">python -m rvc_python api -p 5050 -l -md models_path</code></pre>
 </doc-codeblock></div>
+<p><strong>Arguments:</strong></p>
 <ul>
-<li><code v-pre>modelname</code> - sets an initial model name. Must be a name of the subfolder from <code v-pre>rvc_models</code>.</li>
 <li><code v-pre>5050</code> - sets a listening port for the server. Change if you want to host on a different port.</li>
+<li><code v-pre>models_path</code> - sets a path for models. Remove if you want to use the default <code v-pre>rvc_models</code> directory.</li>
 <li><code v-pre>-l</code> - sets the server to listen on all network interfaces. Remove to only listen on localhost.</li>
 </ul>
-<ol start="4">
-<li><strong>Connect to the server</strong></li>
-</ol>
+<doc-anchor-target id="4-connect-to-the-server">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-connect-to-the-server">#</doc-anchor-trigger>
+        <span>4. Connect to the server</span>
+    </h4>
+</doc-anchor-target>
 <ul>
-<li>In the RVC extension settings, set an approprite <strong>rvc-python API URL</strong>. By default, it will be <code v-pre>http://localhost:5050</code>.</li>
-<li>Check the &quot;Use CUDA&quot; checkbox if you have installed rvc-python to support CUDA acceleration.</li>
+<li>In the RVC extension settings, set an appropriate <strong>rvc-python API URL</strong>. By default, it will be <code v-pre>http://localhost:5050</code>.</li>
+<li>Check the <strong>Use CUDA</strong> checkbox if you have installed rvc-python to support CUDA acceleration.</li>
 <li>Press &quot;Refresh&quot; to load a list of available voices.</li>
 </ul>
-<ol start="5">
-<li><strong>Configure a voice map</strong></li>
-</ol>
+<doc-anchor-target id="5-configure-a-voice-map">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#5-configure-a-voice-map">#</doc-anchor-trigger>
+        <span>5. Configure a voice map</span>
+    </h4>
+</doc-anchor-target>
 <p><strong>Voice map defines voice conversion settings for every character or user persona.</strong></p>
 <ul>
 <li>To set up a voice map, choose your character or persona name from the &quot;Character&quot; dropdown, then choose an RVC &quot;Voice&quot;, then click Apply.</li>
 <li>Optionally, you can also configure other related settings such as pitch correction or filtering.</li>
-<li>If you did everytinhg correctly, the Voice Map debug area will show something like &#x27;Betty:MyVoice(rvpme)&#x27;.</li>
+<li>If you did everything correctly, the Voice Map debug area will show something like &#x27;Betty:MyVoice(rvpme)&#x27;.</li>
 </ul>
 <doc-anchor-target id="sillytavern-extras-setup">
     <h3>
@@ -306,74 +358,94 @@
         <span>SillyTavern Extras Setup</span>
     </h3>
 </doc-anchor-target>
-<ol>
-<li><p><strong>Prepare RVC Model Files</strong>:</p>
+<doc-anchor-target id="1-prepare-rvc-model-files">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-prepare-rvc-model-files">#</doc-anchor-trigger>
+        <span>1. Prepare RVC Model Files</span>
+    </h4>
+</doc-anchor-target>
 <ul>
-<li>In a file browser, Navigate to: <code v-pre>\SillyTavern-extras\data\models\rvc</code></li>
+<li>In a file browser, navigate to: <code v-pre>\SillyTavern-extras\data\models\rvc</code>.</li>
 <li>Create a subfolder like &#x27;Betty&#x27; and place the <code v-pre>.pth</code> and <code v-pre>.index</code> files into it. (Hint: you can download voice files from <a href="https://voice-models.com">https://voice-models.com</a>, make sure the voice name says it&#x27;s RVPME.)</li>
 </ul>
-</li>
-<li><p><strong>Install Requirements</strong>:</p>
-<ul>
-<li>Install the necessary requirements using the command: <code v-pre>pip install -r requirements-rvc.txt</code>.</li>
-</ul>
-</li>
-<li><p><strong>Run SillyTavern-extras with RVC enabled</strong>:</p>
-<ul>
-<li>Launch SillyTavern-extras with the RVC module enabled. This example invocation assumes you used Silero TTS which comes pre-installed with SillyTavern-extras:
+<doc-anchor-target id="2-install-requirements">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-install-requirements">#</doc-anchor-trigger>
+        <span>2. Install Requirements</span>
+    </h4>
+</doc-anchor-target>
+<p>Install the necessary requirements using the command:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">python server.py --enable-modules=rvc,silero-tts</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">pip install -r requirements-rvc.txt`</code></pre>
 </doc-codeblock></div>
-Optionally, you may wish to run RVC on your GPU if you have a capable one, by adding <code v-pre>--cuda</code> to the startup command. Based on a quick test, VRAM usage was 3.4GB for narrating 50 tokens (~36 words), and 7.6GB for 200 tokens (~150 words).</li>
-</ul>
-</li>
-<li><p><strong>Set Up Voice Map</strong>:</p>
-<ul>
-<li>Create a Voice map for RVC. Set your Character to your desired SillyTavern character name, and set Voice to the RVC folder you created at step 1, then click Apply. If you did things correctly, the Voice Map will show something like &#x27;Betty:MyVoice(rvpme)&#x27;.</li>
-</ul>
-</li>
-<li><p><strong>Select Pitch Extraction</strong>:</p>
+<doc-anchor-target id="3-run-sillytavern-extras-with-rvc-enabled">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-run-sillytavern-extras-with-rvc-enabled">#</doc-anchor-trigger>
+        <span>3. Run SillyTavern-extras with RVC enabled</span>
+    </h4>
+</doc-anchor-target>
+<p>Launch SillyTavern-extras with the RVC module enabled. This example invocation assumes you used Edge TTS which comes pre-installed with SillyTavern-extras:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">python server.py --enable-modules=rvc,edge-tts</code></pre>
+</doc-codeblock></div>
+<p>Optionally, you may wish to run RVC on your GPU if you have a capable one, by adding <code v-pre>--cuda</code> to the startup command. Based on a quick test, VRAM usage was 3.4GB for narrating 50 tokens (~36 words), and 7.6GB for 200 tokens (~150 words).</p>
+<doc-anchor-target id="4-set-up-voice-mapping">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-set-up-voice-mapping">#</doc-anchor-trigger>
+        <span>4. Set Up Voice Mapping</span>
+    </h4>
+</doc-anchor-target>
+<p>Create a Voice map for RVC. Set your Character to your desired SillyTavern character name, and set Voice to the RVC folder you created at step 1, then click Apply. If you did things correctly, the Voice Map will show something like &#x27;Betty:MyVoice(rvpme)&#x27;.</p>
+<doc-anchor-target id="5-select-pitch-extraction">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#5-select-pitch-extraction">#</doc-anchor-trigger>
+        <span>5. Select Pitch Extraction</span>
+    </h4>
+</doc-anchor-target>
 <ul>
 <li>Choose &quot;rmvpe&quot; as the pitch extraction method.</li>
-<li>If you have trouble with &quot;rmvpe&quot; try other methods.</li>
+<li>If you have trouble with &quot;rmvpe&quot; try other methods (for example, &quot;harvest&quot; or &quot;torchcrepe&quot;).</li>
 </ul>
-</li>
-<li><p><strong>(Optional) Configure RVC to save your generations to file</strong>:</p>
-<ul>
-<li>If for testing or troubleshooting purposes you wish to save the generated RVC audio, add <code v-pre>--rvc-save-file</code> to your startup command. This will save the last generation under SillyTavern-extrasdata/tmp/rvc_output.wav:</li>
-</ul>
+<doc-anchor-target id="6-optional-configure-rvc-to-save-your-generations-to-file">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#6-optional-configure-rvc-to-save-your-generations-to-file">#</doc-anchor-trigger>
+        <span>6. (Optional) Configure RVC to save your generations to file</span>
+    </h4>
+</doc-anchor-target>
+<p>If for testing or troubleshooting purposes you wish to save the generated RVC audio, add <code v-pre>--rvc-save-file</code> to your startup command. This will save the last generation under <code v-pre>SillyTavern-extras/data/tmp/rvc_output.wav</code>:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">python server.py --enable-modules=rvc,silero-tts --rvc-save-file</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">python server.py --enable-modules=rvc,edge-tts --rvc-save-file</code></pre>
 </doc-codeblock></div>
-</li>
-</ol>
 <doc-anchor-target id="expression-based-dynamic-voice">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#expression-based-dynamic-voice">#</doc-anchor-trigger>
         <span>Expression-Based Dynamic Voice</span>
     </h4>
 </doc-anchor-target>
-<ol>
-<li><p><strong>Configure RVC Models</strong>:</p>
-<ul>
-<li>In your RVC model folder, have separate <code v-pre>.pth</code> and <code v-pre>.index</code> files for each classified expression (e.g., anger, fear, joy, love, sadness, surprise).</li>
-</ul>
-</li>
-<li><p><strong>Enable Modules</strong>:</p>
-<ul>
-<li>Enable both RVC and classify modules:
+<doc-anchor-target id="1-configure-rvc-models">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-configure-rvc-models">#</doc-anchor-trigger>
+        <span>1. Configure RVC Models</span>
+    </h5>
+</doc-anchor-target>
+<p>In your RVC model folder, have separate <code v-pre>.pth</code> and <code v-pre>.index</code> files for each classified expression (e.g., anger, fear, joy, love, sadness, surprise).</p>
+<doc-anchor-target id="2-enable-modules">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-enable-modules">#</doc-anchor-trigger>
+        <span>2. Enable Modules</span>
+    </h5>
+</doc-anchor-target>
+<p>Enable both RVC and classify modules:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">python server.py --enable-modules=rvc,classify</code></pre>
 </doc-codeblock></div>
-</li>
-</ul>
-</li>
-<li><p><strong>Use RVC Module</strong>:</p>
-<ul>
-<li>The remaining setup is similar to using the RVC module alone (as explained above).</li>
-</ul>
-</li>
-</ol>
+<doc-anchor-target id="3-use-rvc-module">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-use-rvc-module">#</doc-anchor-trigger>
+        <span>3. Use RVC Module</span>
+    </h5>
+</doc-anchor-target>
+<p>The remaining setup is similar to using the RVC module alone (as explained above).</p>
 <doc-anchor-target id="train-your-own-rvc-model">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#train-your-own-rvc-model">#</doc-anchor-trigger>
@@ -387,75 +459,73 @@ Optionally, you may wish to run RVC on your GPU if you have a capable one, by ad
     </h3>
 </doc-anchor-target>
 <p>Automatically install and launch Mangio-RVC: <a href="https://github.com/deffcolony/rvc-easy-menu">https://github.com/deffcolony/rvc-easy-menu</a></p>
-<ol>
-<li><p><strong>Clone Repository</strong>:</p>
-<ul>
-<li>Clone the repository to your desired location:
+<doc-anchor-target id="1-clone-repository">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-clone-repository">#</doc-anchor-trigger>
+        <span>1. Clone Repository</span>
+    </h4>
+</doc-anchor-target>
+<p>Clone the repository to your desired location:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">git clone https://github.com/deffcolony/rvc-easy-menu.git</code></pre>
 </doc-codeblock></div>
-</li>
-</ul>
-</li>
-<li><p><strong>Launch RVC-Launcher.bat</strong>:</p>
+<doc-anchor-target id="2-launch-rvc-launcherbat">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-launch-rvc-launcherbat">#</doc-anchor-trigger>
+        <span>2. Launch RVC-Launcher.bat</span>
+    </h4>
+</doc-anchor-target>
 <ul>
 <li>Open the <code v-pre>RVC-Launcher.bat</code> file.</li>
 <li>Choose option 1 to install RVC.</li>
 </ul>
-</li>
-<li><p><strong>Complete Installation</strong>:</p>
-<ul>
-<li>When prompted, install required packages and dependencies.</li>
-</ul>
-</li>
-<li><p><strong>Open WebUI for Voice Training</strong>:</p>
-<ul>
-<li>After installation, choose option 2 to open the WebUI for voice training.</li>
-</ul>
-</li>
-</ol>
+<doc-anchor-target id="3-complete-installation">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-complete-installation">#</doc-anchor-trigger>
+        <span>3. Complete Installation</span>
+    </h4>
+</doc-anchor-target>
+<p>When prompted, install required packages and dependencies.</p>
+<doc-anchor-target id="4-open-webui-for-voice-training">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-open-webui-for-voice-training">#</doc-anchor-trigger>
+        <span>4. Open WebUI for Voice Training</span>
+    </h4>
+</doc-anchor-target>
+<p>After installation, choose option 2 to open the WebUI for voice training.</p>
 <doc-anchor-target id="mangio-rvc-training-a-voice-model">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#mangio-rvc-training-a-voice-model">#</doc-anchor-trigger>
         <span>Mangio-RVC: Training a Voice Model</span>
     </h3>
 </doc-anchor-target>
-<p><strong>Dataset Preparation</strong>:</p>
-<ol>
-<li><strong>Prepare Audio</strong>:
+<p><em><strong>Dataset Preparation</strong></em>:</p>
+<p><strong>1. Prepare Audio</strong>:</p>
 <ul>
 <li>Place the audio you want to train in the <code v-pre>datasets</code> folder.</li>
 <li>Ensure the audio is free of background noise – only raw voice is needed.</li>
 <li>Longer audio makes a better output quality.</li>
 </ul>
-</li>
-</ol>
-<p><strong>WebUI Training</strong>:</p>
-<ol>
-<li><p><strong>Access Training Tab</strong>:</p>
+<p><em><strong>WebUI Training</strong></em>:</p>
+<p><strong>1. Access Training Tab</strong>:</p>
 <ul>
 <li>Click on the training tab in the WebUI.</li>
 </ul>
-</li>
-<li><p><strong>Configure Experiment</strong>:</p>
+<p><strong>2. Configure Experiment</strong>:</p>
 <ul>
 <li>Enter an experiment name (e.g., <code v-pre>my-epic-voice-model</code>).</li>
 <li>Set version to v2.</li>
 </ul>
-</li>
-<li><p><strong>Process Data and Extract Features</strong>:</p>
+<p><strong>3. Process Data and Extract Features</strong>:</p>
 <ul>
 <li>Click &quot;Process data&quot; and &quot;Feature extraction&quot;.</li>
 <li>Set &quot;Save frequency&quot; to 50.</li>
 </ul>
-</li>
-<li><p><strong>Training Parameters</strong>:</p>
+<p><strong>4. Training Parameters</strong>:</p>
 <ul>
 <li>Set &quot;Total training epochs&quot; to 300.</li>
 <li>Click &quot;Train feature index&quot; and &quot;Train model&quot;.</li>
 </ul>
-</li>
-</ol>
 
                                 
                                 <!-- Required only on API pages -->
