@@ -400,10 +400,6 @@ Named closures can take named arguments, just like slash commands. The arguments
 
 ### Closures and Piped Arguments
 
-!!! info "Staging Feature"
-The following section documents features that are currently available only on the **Staging** branch.
-!!!
-
 The piped value from a parent closure will not be automatically injected into the first command of a child closure.  
 You can still explicitly reference the parent's piped value with `{{pipe}}`, but if you leave the unnamed argument of the first command inside a closure blank, the value will *not* be automatically injected.
 
@@ -454,10 +450,6 @@ Closures can be immediately executed, meaning they will be replaced with their r
 /if left={:/len foo:}() rule=eq right={:/len bar:}() /echo yay!
 ```
 
-!!! info "Staging Feature"
-The following section documents features that are currently available only on the **Staging** branch.
-!!!
-
 In addition to running named closures saved inside scoped variables, the `/run` command can also be used to execute closures immediately.
 
 ```stscript
@@ -482,10 +474,6 @@ A comment is a human-readable explanation or annotation in the script code. Comm
 ```
 
 ### Block Comments
-
-!!! info "Staging Feature"
-The following section documents features that are currently available only on the **Staging** branch.
-!!!
 
 Block comments can be used to quickly comment out multiple commands at once. They will not terminate on a pipe.
 
@@ -536,10 +524,6 @@ Runs a subcommand a specified number of times.
 - Loops are limited to 100 iterations by default, pass `guard=off` to disable.
 
 ### Breaking out of Loops and Closures
-
-!!! info "Staging Feature"
-The following section documents features that are currently available only on the **Staging** branch.
-!!!
 
 ```stscript
 /break |
@@ -1024,10 +1008,6 @@ For example, you can display a message after sending five user messages by addin
 
 ### Debugger
 
-!!! info "Staging Feature"
-The following section documents features that are currently available only on the **Staging** branch.
-!!!
-
 A basic debugger exists inside the expanded Quick Reply editor. Set breakpoints with `/breakpoint |` anywhere in your script. When executing the script from the QR editor, the execution will be interrupted at that point, allowing you to examine the currently available variables, pipe, command arguments, and more, and to step through the rest of the code one by one.
 
 ```stscript
@@ -1125,10 +1105,6 @@ Arguments:
 - `title`    - bool   - title / tooltip to be shown on button, e.g., `title="My Fancy Button"`
 
 ####
-
-!!! info "Staging Feature"
-The following section documents features that are currently available only on the **Staging** branch.
-!!!
 
 * `qr-get` - retrieves all of a Quick Reply's properties, eample: `/qr-get set=myQrSet id=42`
 
