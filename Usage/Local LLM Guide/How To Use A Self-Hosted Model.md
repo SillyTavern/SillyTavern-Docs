@@ -75,6 +75,10 @@ With the LLM now on your PC, we need to download a tool that will act as a middl
 
 This guide covers both options, you only need one.
 
+!!! warning
+If you are hosting SillyTavern on Docker, use **http://host.docker.internal:<port>** instead of **http://127.0.0.1:<port>**. This is because SillyTavern connects to the API endpoint from the server running in the Docker container. Docker's network stack is separate from the host's, and so the loopback interfaces are not shared.
+!!!
+
 ### Downloading and using KoboldCpp (No installation required, GGUF models)
 1. Visit https://koboldai.org/cpp where you will see the latest version with various files you can download.
 At the time of writing the newest CUDA version they list is cu12 which will work best on modern Nvidia GPU's, if you have an older GPU or a different brand you can use the regular koboldcpp.exe. If you have an old CPU its possible that KoboldCpp will crash when you try to load models, in that case try the _oldcpu version to see if it resolves your issue.
