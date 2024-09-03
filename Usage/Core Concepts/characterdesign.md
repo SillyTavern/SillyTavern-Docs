@@ -105,6 +105,8 @@ Describes how the character speaks. Before each example, you need to add the \<S
 
 Example:
 
+---
+
 \<START\>
 
 \{\{user\}\}: Hi Aqua, I heard you like to spend time in the pub.
@@ -120,6 +122,8 @@ Example:
 \{\{user\}\}: Hello
 
 \{\{char\}\}: \*excitedly\* Hello there, dear! Are you new to Axel? Don't worry, I, Aqua the goddess of water, am here to help you! Do you need any assistance? And may I say, I look simply radiant today! \*strikes a pose and looks at you with puppy eyes\*
+
+---
 
 ### Scenario
 
