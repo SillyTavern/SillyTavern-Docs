@@ -38,23 +38,23 @@ User: { Write a happy song about Nintendo Switch. }
 
 ## Instruct Mode Settings
 
-### Presets
+### Templates
 
-Provides ready-made presets with prompts and sequences for some well-known instruct models.
+Provides ready-made templates with prompts and sequences for some well-known instruct models.
 
-*Changing a preset resets your system prompt to default! Don't forget to save your preset if you made any changes you don't want to lose.*
+*Changing a template resets your system prompt to default! Don't forget to save your template if you made any changes you don't want to lose.*
 
-### Default preset (heart icon)
+### Default template (heart icon)
 
-If toggled, connecting to an API will automatically select this preset if no other presets were triggered by the regex match.
+If toggled, connecting to an API will automatically select this template if no other templates were triggered by the regex match.
 
-Instruct mode needs to be enabled prior. Only one preset can be marked as default.
+Instruct mode needs to be enabled prior. Only one template can be marked as default.
 
 ### Activation Regex
 
-If defined as a valid regular expression, when connected to a model and its name matches this regex, will automatically select this preset.
+If defined as a valid regular expression, when connected to a model and its name matches this regex, will automatically select this template.
 
-Instruct mode needs to be enabled prior. Only the first regex match across presets will be selected (evaluated in alphabetical order).
+Instruct mode needs to be enabled prior. Only the first regex match across templates will be selected (evaluated in alphabetical order).
 
 #### Wrap Sequences with Newline
 
