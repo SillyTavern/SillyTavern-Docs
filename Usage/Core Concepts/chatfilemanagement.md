@@ -2,7 +2,11 @@
 
 This page describes the ways you can manage your AI chat files.
 
-### Solo Chats
+### Solo Chats vs Group Chats
+
+The simplest way to use a character card is a Solo chat; just click on their card and start chatting.
+
+Once you have a few character cards, you can also use the "Create New Chat Group" button to create a [group chat](https://docs.sillytavern.app/usage/core-concepts/groupchats/) including multiple characters which will then interact with each other and you.
 
 #### Chat import
 
@@ -10,11 +14,26 @@ This page describes the ways you can manage your AI chat files.
 
 To import Character.AI chats, use this tool: [https://github.com/0x000011b/characterai-dumper](https://github.com/0x000011b/characterai-dumper).
 
-### Group Chats
+### Export as .jsonl
+
+When clicking on View Chat files, each entry on the the chat file list will have a button to export it in a format that can then be re-imported as is. Use this to share or migrate chats including all their metadata (but excluding images).
+
+If you're mindful of privacy, be sure to inspect the exported JSONL file and scrub anything you don't want to share.
 
 ### Export as .txt
 
+You can also export a simplified text-only version with the "Download chat as plain text document" button.
+
 ### Bookmarks
+
+From the three dots button at the right of each chat message, you have two ways to create bookmarks:
+
+- "Create Branch" will clone the current chat up to that point and switch to it
+- "Create Checkopint" will clone current chat up to that point, ask for a name to give it and create it but NOT switch to it.
+
+You can think of them as roughly as "open link in new tab" and "open link in new tab in the background" in a browser.
+
+You can go back to the parent from a clone by entering the burger menu button on the left of the message text box, then clicking "Back to parent chat".
 
 ### Rename Chat
 
@@ -22,4 +41,4 @@ By default chat files are given a named with the date and time they were started
 
 You can change this by clicking the pencil icon and typing in a new name.
 
-This wil break links between bookmarks related to that chat.
+This will break links between bookmarks related to that chat.
