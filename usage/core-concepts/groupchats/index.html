@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.778707973044">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.778793152218">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.778707973044" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.778793152218" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.778707973044" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.778793152218" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.778707973044" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.778793152218" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -257,7 +257,12 @@
         <span>Join character cards</span>
     </h4>
 </doc-anchor-target>
-<p>The information of all of the group members (excluding muted if they aren&#x27;t the current speaker) is combined into one in their list order. This can help in cases when altering large chunks of the context is undesirable, e.g. with llama.cpp.</p>
+<p>The information of all of the group members is combined into one joint prompt in their list order. This can help in cases when altering large chunks of the context is undesirable, e.g. with llama.cpp prompt caching.</p>
+<p>This mode has two sub-modes (you must choose one):</p>
+<ul>
+<li>Include muted - muted characters will always be included into the joint prompt.</li>
+<li>Exclude muted - muted characters won&#x27;t be included if they aren&#x27;t the current speaker.</li>
+</ul>
 <p>The following fields are being combined:</p>
 <ol>
 <li>Description</li>
@@ -267,6 +272,14 @@
 <li>Character notes / Depth prompts</li>
 </ol>
 <p><strong>Important!</strong> Please be aware that due to how the typical character card is structured, the use of this mode can lead to unexpected behavior, including but not limited to: characters being confused about themselves, having merged personalities, uncertain traits, etc.</p>
+<doc-anchor-target id="join-prefix-and-suffix">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#join-prefix-and-suffix">#</doc-anchor-trigger>
+        <span>Join Prefix and Suffix</span>
+    </h4>
+</doc-anchor-target>
+<p>When &#x27;Join character cards&#x27; is selected, all respective fields of the characters are being joined together. This means that in the resulting prompt all character descriptions will be joined to one big blob of text. If you want those fields to be separated, you can define a prefix and/or suffix.</p>
+<p>These options support normal macros and will also replace {{char}} with the relevant characters&#x27;s name and &lt;FIELDNAME&gt; with the name of the part (e.g.: description, personality, scenario, etc.)</p>
 <doc-anchor-target id="other-group-chat-menu-options">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#other-group-chat-menu-options">#</doc-anchor-trigger>
