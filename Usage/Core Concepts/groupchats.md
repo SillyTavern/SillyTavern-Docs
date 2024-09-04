@@ -36,7 +36,12 @@ Default mode. Every time the message is generated, only the character card infor
 
 #### Join character cards
 
-The information of all of the group members (excluding muted if they aren't the current speaker) is combined into one in their list order. This can help in cases when altering large chunks of the context is undesirable, e.g. with llama.cpp.
+The information of all of the group members is combined into one joint prompt in their list order. This can help in cases when altering large chunks of the context is undesirable, e.g. with llama.cpp prompt caching.
+
+This mode has two sub-modes (you must choose one):
+
+* Include muted - muted characters will always be included into the joint prompt.
+* Exclude muted - muted characters won't be included if they aren't the current speaker.
 
 The following fields are being combined:
 
@@ -47,6 +52,12 @@ The following fields are being combined:
 5. Character notes / Depth prompts
 
 **Important!** Please be aware that due to how the typical character card is structured, the use of this mode can lead to unexpected behavior, including but not limited to: characters being confused about themselves, having merged personalities, uncertain traits, etc.
+
+#### Join Prefix and Suffix
+
+When 'Join character cards' is selected, all respective fields of the characters are being joined together. This means that in the resulting prompt all character descriptions will be joined to one big blob of text. If you want those fields to be separated, you can define a prefix and/or suffix.
+
+These options support normal macros and will also replace \{\{char\}\} with the relevant characters's name and \<FIELDNAME\> with the name of the part (e.g.: description, personality, scenario, etc.)
 
 ### Other Group Chat menu options
 
