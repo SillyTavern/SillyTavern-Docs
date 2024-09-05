@@ -2,6 +2,10 @@
 
 This page describes the ways you can manage your AI chat files.
 
+!!! info Note
+Some of these options are available in the "Manage chat files" dialog that opens from the bottom left options menu.
+!!!
+
 ### Solo Chats vs Group Chats
 
 The simplest way to use a character card is a Solo chat; just click on their card and start chatting.
@@ -10,19 +14,25 @@ Once you have a few character cards, you can also use the "Create New Chat Group
 
 #### Chat import
 
-**Import chats into SillyTavern**
+**Import chats from Character.AI into SillyTavern**
 
-To import Character.AI chats, use this tool: [https://github.com/0x000011b/characterai-dumper](https://github.com/0x000011b/characterai-dumper).
+To import Character.AI chats and bots, use the CAI Tools browser extension: [https://github.com/irsat000/CAI-Tools](https://github.com/irsat000/CAI-Tools).
+
+Other programs and tools that you can import chats from include:
+
+* TavernAI (original): [https://github.com/TavernAI/TavernAI](https://github.com/TavernAI/TavernAI)
+* Text Generation WebUI (oobabooga): [https://github.com/oobabooga/text-generation-webui](https://github.com/oobabooga/text-generation-webui)
+* Agnai: [https://github.com/agnaistic/agnai](https://github.com/agnaistic/agnai)
 
 ### Export as .jsonl
 
-When clicking on View Chat files, each entry on the the chat file list will have a button to export it in a format that can then be re-imported as is. Use this to share or migrate chats including all their metadata (but excluding images).
+When clicking on "Manage chat files", each entry on the the chat file list will have a button to export it in a format that can then be re-imported as is. Use this to share or migrate chats including all their metadata (but excluding images and file attachments).
 
 If you're mindful of privacy, be sure to inspect the exported JSONL file and scrub anything you don't want to share.
 
 ### Export as .txt
 
-You can also export a simplified text-only version with the "Download chat as plain text document" button.
+You can also export a simplified text-only version with the "Download chat as plain text document" button. It can't be re-imported again as it loses important metadata!
 
 ### Checkpoints
 
