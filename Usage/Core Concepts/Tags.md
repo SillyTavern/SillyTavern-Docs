@@ -6,9 +6,9 @@ Character cards and groups can be assigned zero or more tags. They are useful to
 
 There are several ways to add or remove tags to a character card:
 
-- Import embedded tags during the import. This requires 
+- Import embedded tags during the import.
 - Open a card from the Character Management panel. From there you will be able to assign tags to a character card.
-- Mass tagging
+- Mass tagging.
 
 To do mass tagging, click the "Bulk edit characters" button (pencil icon), select the cards you want to tag, right click on any of them, then click "Tag" in the contextual menu.
 
