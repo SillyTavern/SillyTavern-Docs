@@ -13,7 +13,7 @@ To do mass tagging, click the "Bulk edit characters" button (pencil icon), selec
 
 From this screen you will be able to:
 - add or remove tags using the combo box
-- remove all tags from the selected cards ("All)
+- remove all tags from the selected cards ("All")
 - remove the intersection of tags among all selected cards from those cards ("Mutual")
 - import (create locally) all tags stored in the character card, in case you imported it ("Import All")
 - import (create locally) tags stored in the character card which also exist locally with matching names ("Import Existing")
