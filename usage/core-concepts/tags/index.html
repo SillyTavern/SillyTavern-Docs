@@ -12,29 +12,32 @@
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>vector storage | docs.ST.app</title>
-    <meta name="title" content="vector storage | docs.ST.app">
+    <title>Tags | docs.ST.app</title>
+    <meta name="title" content="Tags | docs.ST.app">
+    <meta name="description" content="Character cards and groups can be assigned zero or more tags.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.sillytavern.app/tags/vector-storage/">
+    <link rel="canonical" href="https://docs.sillytavern.app/usage/core-concepts/tags/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.sillytavern.app/tags/vector-storage/">
-    <meta property="og:title" content="vector storage | docs.ST.app">
+    <meta property="og:url" content="https://docs.sillytavern.app/usage/core-concepts/tags/">
+    <meta property="og:title" content="Tags | docs.ST.app">
+    <meta property="og:description" content="Character cards and groups can be assigned zero or more tags.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.sillytavern.app/tags/vector-storage/">
-    <meta property="twitter:title" content="vector storage | docs.ST.app">
+    <meta property="twitter:url" content="https://docs.sillytavern.app/usage/core-concepts/tags/">
+    <meta property="twitter:title" content="Tags | docs.ST.app">
+    <meta property="twitter:description" content="Character cards and groups can be assigned zero or more tags.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.778833452965" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.778833452965" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.778833452965" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.778833452965" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.778833452965" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.778833452965" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -64,10 +67,10 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
+                        <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-xl">
                             <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                                <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo.png">
-                                <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo.png">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png">
                             </span>
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                         </a>
@@ -194,27 +197,188 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="tag-vector-storage" class="break-words">
+<doc-anchor-target id="tags" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tag-vector-storage">#</doc-anchor-trigger>
-        <span>Tag: vector storage</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tags">#</doc-anchor-trigger>
+        <span>Tags</span>
     </h1>
 </doc-anchor-target>
-<p>See all <a href="../">tags</a>.</p>
-<a class="no-link mb-6 overflow-hidden border border-gray-200 rounded-lg md:flex dark:border-dark-700 hover:border-gray-400 dark:hover:border-dark-450" href="../../usage/core-concepts/data-bank/">
-    <div class="p-6">
-        <div class="text-xs font-semibold text-blue-500 uppercase dark:text-blue-400">Usage &#8226; Core Concepts</div>
-        <div class="mt-2 text-lg font-semibold leading-snug text-gray-900 dark:text-white md:text-xl">Data Bank (RAG)</div>
-        <div class="line-clamp-3"><p class="hidden mt-2 md:block">Retrieval-augmented generation (RAG) is a technique for providing external sources of knowledge to the LLM.</p></div>
+<p>Character cards and groups can be assigned zero or more tags. They are useful to organize quickly growing collections by themes, quality, provenance or whatever you like.</p>
+<doc-anchor-target id="tagging">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tagging">#</doc-anchor-trigger>
+        <span>Tagging</span>
+    </h2>
+</doc-anchor-target>
+<p>There are several ways to add or remove tags to a character card:</p>
+<ul>
+<li>Import embedded tags during the import.</li>
+<li>Open a card from the Character Management panel. From there you will be able to assign tags to a character card.</li>
+<li>Mass tagging.</li>
+</ul>
+<p>To do mass tagging, click the &quot;Bulk edit characters&quot; button (pencil icon), select the cards you want to tag, right click on any of them, then click &quot;Tag&quot; in the contextual menu.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-300" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Note</h5>
+<p>Please note that groups cannot be tagged like this.</p>
+        </div>
     </div>
-</a>
+</div>
+<p>From this screen you will be able to:</p>
+<ul>
+<li>add or remove tags using the combo box</li>
+<li>remove all tags from the selected cards (&quot;All&quot;)</li>
+<li>remove the intersection of tags among all selected cards from those cards (&quot;Mutual&quot;)</li>
+<li>import (create locally) all tags stored in the character card, in case you imported it (&quot;Import All&quot;)</li>
+<li>import (create locally) tags stored in the character card which also exist locally with matching names (&quot;Import Existing&quot;)</li>
+</ul>
+<doc-anchor-target id="managing">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#managing">#</doc-anchor-trigger>
+        <span>Managing</span>
+    </h2>
+</doc-anchor-target>
+<p>To view and manage all existing tags, open the Character Management panel then click on the &quot;Manage tags&quot; button (gear icon).</p>
+<p>You can backup and restore all the information here (tag list, tag assignments to cards, colors, folder settings, etc) using the buttons on the top right.</p>
+<p>You can use grip buttons on the left to reorder tags as they will appear in the tag filter in Character Management.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Warning</h5>
+<p>The tags backup JSON file is not intented for sharing with others as it contains information specific to your instance only, such as internal entity names!</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="importing-tags-when-importing-character-cards">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#importing-tags-when-importing-character-cards">#</doc-anchor-trigger>
+        <span>Importing tags when importing character cards</span>
+    </h2>
+</doc-anchor-target>
+<p>When importing external character cards from downloaded images (or from the &quot;Import content from external URL&quot; button), you&#x27;ll be prompted to optionally import the tags that it contains. They are not required for the card to function; tags are simply organizational.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-300" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Note</h5>
+<p>This popup will appear only if a User Settings option &quot;Import Card Tags&quot; is set to &quot;Ask&quot;.</p>
+        </div>
+    </div>
+</div>
+<p>In the &quot;Import tags for CHARACTER NAME&quot; popup that opens, you&#x27;ll see a list of Existing tags (which you already had locally with a matching name), and New tags (which you did not have locally).</p>
+<p>You can either:</p>
+<ul>
+<li>trim the lists as needed and then hit &quot;Import&quot; -- remaining Existing tags will be added to the imported character card, and remaining New tags will be created locally and then added to the card.</li>
+<li>or simply hit &quot;Import none&quot; to ignore tags contained in the character card and import ONLY the card</li>
+<li>or &quot;Import All&quot; as a shortcut to import all tags found in the character card (NOTE: including any that you trimmed from the lists above; use the &quot;Import&quot; button if you did)</li>
+<li>or &quot;Import Existing&quot; as a shortcut to only import tags that existed locally with a matching name.</li>
+</ul>
+<doc-anchor-target id="filtering-character-cards">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#filtering-character-cards">#</doc-anchor-trigger>
+        <span>Filtering character cards</span>
+    </h2>
+</doc-anchor-target>
+<p>After you create tags, you will see them on a row in the Character Management panel. You can click these to switch tag filtering state; in order:</p>
+<ul>
+<li>one click will show cards tagged with this tag</li>
+<li>another click to only show cards NOT tagged with this tag</li>
+<li>another click to reset filtering by this tag</li>
+</ul>
+<p>You can filter by any number of tags at the same time.</p>
+<doc-anchor-target id="tags-as-folders">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tags-as-folders">#</doc-anchor-trigger>
+        <span>Tags as Folders</span>
+    </h2>
+</doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-300" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Note</h5>
+<p>To use this functionality, it has to be enabled first in the User Settings, under the UI Theme column. The state of this toggle also saves with the UI theme.</p>
+        </div>
+    </div>
+</div>
+<p>From the &quot;Manage tags&quot; button (gear icon), each tag entry has a multi-state toggle button to cycle between these tags-as-folder modes (called &quot;bogus folder&quot; in the code):</p>
+<ul>
+<li>one click to turn this tag into an &quot;open folder&quot;. It will appear as a virtual entry in the card list; clicking into it will only show cards with that tag</li>
+<li>another click to turn this tag into a &quot;closed folder&quot;. As above, but cards tagged with this tag will not appear by default - you&#x27;ll need to click into the folder to see them.</li>
+<li>another click to reset tag-as-folder state for this tag.</li>
+</ul>
 
                                 
                                 <!-- Required only on API pages -->
                                 <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
                             </div>
                             <footer class="clear-both">
+                                <div class="flex flex-wrap items-center justify-between mt-14">
+                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/SillyTavern/SillyTavern-Docs/edit/main/Usage/Core Concepts/Tags.md" target="_blank" rel="noopener">
+                                        <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        <span>Edit this page</span>
+                                    </a>
+                                </div>
                             
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/core-concepts/slashcommands/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">Slash commands</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/core-concepts/uicustomization/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">UI Customization</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
                             </footer>
                         </main>
                 
@@ -253,6 +417,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "vector storage", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Tags", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
