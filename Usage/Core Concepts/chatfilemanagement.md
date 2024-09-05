@@ -24,16 +24,18 @@ If you're mindful of privacy, be sure to inspect the exported JSONL file and scr
 
 You can also export a simplified text-only version with the "Download chat as plain text document" button.
 
-### Bookmarks
+### Checkpoints
 
-From the three dots button at the right of each chat message, you have two ways to create bookmarks:
+"Checkpoints" are clones of the current chat, in that they copy all messages from the given chat up to a certain point, and they store a link to the source (by chat file name).
 
-- "Create Branch" will clone the current chat up to that point and switch to it
-- "Create Checkopint" will clone current chat up to that point, ask for a name to give it and create it but NOT switch to it.
+From the three dots button at the right of each chat message, you have two ways to create checkpoints:
+
+- "Create Branch" will clone the current chat up to that message and switch to it
+- "Create Checkpoint" will clone current chat up to that message, ask for a name and create it but NOT switch to it
 
 You can think of them as roughly as "open link in new tab" and "open link in new tab in the background" in a browser.
 
-You can go back to the parent from a clone by entering the burger menu button on the left of the message text box, then clicking "Back to parent chat".
+You can go back to the parent from a checkpoint by entering the burger menu button on the left of the message text box, then clicking "Back to parent chat".
 
 ### Rename Chat
 
@@ -41,4 +43,5 @@ By default chat files are given a named with the date and time they were started
 
 You can change this by clicking the pencil icon and typing in a new name.
 
-This will break links between bookmarks related to that chat.
+Note that this will break links to that chat from checkpoints (since they are linked by chat file name).
+
