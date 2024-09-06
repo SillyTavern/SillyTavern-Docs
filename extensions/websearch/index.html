@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.778834035705">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.778941715263">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.778834035705" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.778941715263" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.778834035705" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.778941715263" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.778834035705" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.778941715263" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -235,6 +235,14 @@
 </doc-anchor-target>
 <p>Requires SerpApi key and provides access to Google search.</p>
 <p>Get the key here: <a href="https://serpapi.com/dashboard">https://serpapi.com/dashboard</a></p>
+<doc-anchor-target id="searxng">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#searxng">#</doc-anchor-trigger>
+        <span>SearXNG</span>
+    </h3>
+</doc-anchor-target>
+<p>Requires a SearXNG instance URL (either private or public). Uses HTML format for search results.</p>
+<p>Learn more: <a href="https://docs.searxng.org/">https://docs.searxng.org/</a></p>
 <doc-anchor-target id="how-to-use">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-use">#</doc-anchor-trigger>
@@ -286,6 +294,7 @@
 <ol>
 <li>Use Backticks - enables search activation using words encased in single backticks.</li>
 <li>Use Trigger Phrases - enables search activation using trigger phrases.</li>
+<li>Regular expressions - provide a JS-flavored regex to match the user message. If the regex matches, the search with a given query will be triggered. Search query supports &#x60;&#x60; and $1-syntax to reference the matched group. Example: <code v-pre>/what is happening in (.*)/i</code> regex for search query <code v-pre>news in $1</code> will match a message containing <code v-pre>what is happening in New York</code> and trigger the search with the query <code v-pre>news in New York</code>.</li>
 <li>Trigger Phrases - add phrases that will trigger the search, one by one. It can be anywhere in the message, and the query starts from the trigger word and spans to &quot;Max Words&quot; total. To exclude a specific message from processing, it must start with a period, e.g. <code v-pre>.What do you think?</code>. Priority of triggers: first by order in the textbox, then the first one in the user message.</li>
 <li>Max Words - how many words are included in the search query (including the trigger phrase). Google has a limit of about 32 words per prompt. Default = 10 words.</li>
 </ol>
@@ -301,6 +310,7 @@
 <li>Visit Domain Blacklist - site domains to be excluded from visiting. One per line.</li>
 <li>File Header - file header template, inserted at the start of the text file, has an additional {{query}} macro.</li>
 <li>Block Header - link block template, inserted with the parsed content of every link. Use {{link}} macro for page URL and {{text}} for page content.</li>
+<li>Save Target - where to save the results of scraping. Possible options: trigger message attachments, or chat attachments of Data Bank.</li>
 </ol>
 <doc-anchor-target id="more-info">
     <h2>
@@ -310,7 +320,12 @@
 </doc-anchor-target>
 <p>Search results from the latest query will stay included in the prompt until the next valid query is found.
 If you want to ask additional questions without accidentally triggering the search, start your message with a period.</p>
-<p>If both backticks and trigger phrases search activation are used, backticks have a higher priority.</p>
+<p>Priority of triggers (if multiple are enabled):</p>
+<ol>
+<li>Backticks.</li>
+<li>Regular expressions.</li>
+<li>Trigger phrases.</li>
+</ol>
 <p>To discard all previous queries from processing, start the user message with an exclamation mark, for example, a user message <code v-pre>!Now let's talk about...</code> will discard this and every message above it.</p>
 <p>This extension also provides a <code v-pre>/websearch</code> slash command to use in STscript. More info here: <a href="https://docs.sillytavern.app/usage/st-script/">STscript Language Reference</a></p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -345,6 +360,16 @@ Example: /websearch links=off snippets=on how to make a sandwich</code></pre>
 <ol>
 <li>Google - answer box, knowledge graph, page snippets.</li>
 <li>DuckDuckGo - page snippets.</li>
+</ol>
+<doc-anchor-target id="searxng-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#searxng-1">#</doc-anchor-trigger>
+        <span>SearXNG</span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li>Infobox.</li>
+<li>Page snippets.</li>
 </ol>
 
                                 
