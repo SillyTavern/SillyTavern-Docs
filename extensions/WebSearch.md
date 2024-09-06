@@ -24,6 +24,12 @@ Requires SerpApi key and provides access to Google search.
 
 Get the key here: https://serpapi.com/dashboard
 
+### SearXNG
+
+Requires a SearXNG instance URL (either private or public). Uses HTML format for search results.
+
+Learn more: <https://docs.searxng.org/>
+
 ## How to use
 
 1. Make sure you use the latest version of SillyTavern.
@@ -51,8 +57,9 @@ Get the key here: https://serpapi.com/dashboard
 
 1. Use Backticks - enables search activation using words encased in single backticks.
 2. Use Trigger Phrases - enables search activation using trigger phrases.
-3. Trigger Phrases - add phrases that will trigger the search, one by one. It can be anywhere in the message, and the query starts from the trigger word and spans to "Max Words" total. To exclude a specific message from processing, it must start with a period, e.g. `.What do you think?`. Priority of triggers: first by order in the textbox, then the first one in the user message.
-4. Max Words - how many words are included in the search query (including the trigger phrase). Google has a limit of about 32 words per prompt. Default = 10 words.
+3. Regular expressions - provide a JS-flavored regex to match the user message. If the regex matches, the search with a given query will be triggered. Search query supports `{{macros}}` and $1-syntax to reference the matched group. Example: `/what is happening in (.*)/i` regex for search query `news in $1` will match a message containing `what is happening in New York` and trigger the search with the query `news in New York`.
+4. Trigger Phrases - add phrases that will trigger the search, one by one. It can be anywhere in the message, and the query starts from the trigger word and spans to "Max Words" total. To exclude a specific message from processing, it must start with a period, e.g. `.What do you think?`. Priority of triggers: first by order in the textbox, then the first one in the user message.
+5. Max Words - how many words are included in the search query (including the trigger phrase). Google has a limit of about 32 words per prompt. Default = 10 words.
 
 ### Page Scraping
 
@@ -61,13 +68,18 @@ Get the key here: https://serpapi.com/dashboard
 3. Visit Domain Blacklist - site domains to be excluded from visiting. One per line.
 4. File Header - file header template, inserted at the start of the text file, has an additional \{\{query\}\} macro.
 5. Block Header - link block template, inserted with the parsed content of every link. Use \{\{link\}\} macro for page URL and \{\{text\}\} for page content.
+6. Save Target - where to save the results of scraping. Possible options: trigger message attachments, or chat attachments of Data Bank.
 
 ## More info
 
 Search results from the latest query will stay included in the prompt until the next valid query is found.
 If you want to ask additional questions without accidentally triggering the search, start your message with a period.
 
-If both backticks and trigger phrases search activation are used, backticks have a higher priority.
+Priority of triggers (if multiple are enabled):
+
+1. Backticks.
+2. Regular expressions.
+3. Trigger phrases.
 
 To discard all previous queries from processing, start the user message with an exclamation mark, for example, a user message `!Now let's talk about...` will discard this and every message above it.
 
@@ -92,3 +104,8 @@ Example: /websearch links=off snippets=on how to make a sandwich
 
 1. Google - answer box, knowledge graph, page snippets.
 2. DuckDuckGo - page snippets.
+
+#### SearXNG
+
+1. Infobox.
+2. Page snippets.
