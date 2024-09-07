@@ -4,7 +4,7 @@
 This content describes a pre-release version and is subject to change.
 !!!
 
-Save connection profiles to quickly switch between different APIs, models and formatting templates. This is useful when you actively use multiple API connections or need to switch between different configurations without surfing through the menus.
+Save Connection Profiles to quickly switch between different APIs, models and formatting templates. This is useful when you actively use multiple API connections or need to switch between different configurations without surfing through the menus.
 
 ## Accessing Connection Profiles
 
@@ -12,7 +12,7 @@ This feature is enabled by default starting from SillyTavern 1.12.6 or later as 
 
 ## What is Saved
 
-Connection profiles store the following selections.
+Connection Profiles store the following selections.
 
 ### Common
 
@@ -37,7 +37,7 @@ Profiles only save the selection in dropdown fields, without knowing anything ab
 
 * To save a profile, set all the required settings and click the "Create" button. Then review the settings and provide a name for the profile. **A name should be unique.**
 * To view the detailed information about a chosen profile, click on the "Information" button. Click again to hide the details.
-* Making changes to the selections does not automatically update the profile. To update a profile, click the "Update" button.
+* Connection Profile settings are saved into `settings.json` without altering the associated profile save file until you press the "Update" button. This means that if you setup a profile, but then switch to a different one without updating, you will lose all of your previous changes
 * To restore the changed selections from a saved profile, click the "Reload" button.
 * To delete a profile, click the "Delete" button and confirm the deletion. **This action is irreversible.**
 
