@@ -105,6 +105,23 @@ Chat Completion APIs **(non-overridable)**:
 6. AI21 API: GPT-3.5 turbo (default, fast) or API tokenizer (if toggled on, can cause slowdowns!).
 7. Fallback tokenizer: GPT-3.5 turbo tokenizer.
 
+#### Additional Tokenizers
+
+!!! warning Warning
+This content describes a pre-release version and is subject to change.
+!!!
+
+These tokenizers are not included in the default installation due to their size A one-time download is required when they're used for the first time.
+
+1. Qwen2 tokenizer.
+2. Command-R tokenizer. Used by Cohere source in Chat Completion.
+
+If you don't want to use internet downloads, the opt-out option exists in config.yaml: `enableDownloadableTokenizers`. Set to `false` to disable downloads.
+
+You can also download tokenizers manually from the [SillyTavern-Tokenizers](https://github.com/SillyTavern/SillyTavern-Tokenizers) repository. Download the JSON files and put them in the `_cache` subdirectory of your data root, the path is `./data/_cache` by default. Create the `_cache` directory if it doesn't exist. After that, restart the SillyTavern server to re-initialize tokenizers.
+
+If the required tokenizer model is not cached and downloads are disabled, a fallback tokenizer (Llama 3) will be used for counting.
+
 ### Token Padding
 
 **Important: This section doesn't apply to Chat Completions API. SillyTavern will always use a matching tokenizer for these models.**
