@@ -31,7 +31,7 @@ Connection profiles store the following selections.
 
 ## Managing Connection Profiles
 
-!!! note Note
+!!! info Note
 Profiles only save the selection in dropdown fields, without knowing anything about the underlying settings. This means that you will lose unsaved changes by switching to a different profile. To prevent this, make sure to update all presets and templates if you don't want to lose ephemeral changes.
 !!!
 
