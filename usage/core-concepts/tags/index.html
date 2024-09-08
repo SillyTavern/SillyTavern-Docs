@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.779124543058">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.779124931088">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.779124543058" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.779124931088" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.779124543058" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.779124931088" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.779124543058" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.779124931088" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -231,17 +231,17 @@
         </div>
         <div class="pr-5 ml-3 w-full">
             <h5>Note</h5>
-<p>Please note that groups cannot be tagged like this.</p>
+<p>Please note that groups cannot be mass tagged.</p>
         </div>
     </div>
 </div>
 <p>From this screen you will be able to:</p>
 <ul>
-<li>add or remove tags using the combo box</li>
-<li>remove all tags from the selected cards (&quot;All&quot;)</li>
-<li>remove the intersection of tags among all selected cards from those cards (&quot;Mutual&quot;)</li>
-<li>import (create locally) all tags stored in the character card, in case you imported it (&quot;Import All&quot;)</li>
-<li>import (create locally) tags stored in the character card which also exist locally with matching names (&quot;Import Existing&quot;)</li>
+<li>Add or remove tags using the combo box.</li>
+<li>Remove all tags from the selected cards (&quot;All&quot;).</li>
+<li>Remove the intersection of tags among all selected cards from those cards (&quot;Mutual&quot;).</li>
+<li>Import (create locally) all tags stored in the character card, in case you imported it (&quot;Import All&quot;).</li>
+<li>Import (create locally) tags stored in the character card which also exist locally with matching names (&quot;Import Existing&quot;).</li>
 </ul>
 <doc-anchor-target id="managing">
     <h2>
@@ -276,6 +276,7 @@
     </h2>
 </doc-anchor-target>
 <p>When importing external character cards from downloaded images (or from the &quot;Import content from external URL&quot; button), you&#x27;ll be prompted to optionally import the tags that it contains. They are not required for the card to function; tags are simply organizational.</p>
+<p>Embedded card tags are stored in the &quot;Creator&#x27;s Metadata&quot; section of &quot;Advanced Definitions&quot; menu of the character editor. If you wish to propose some tags to other users who would import that character, populate the &quot;Tags to Embed&quot; field with a comma-separated list of tags.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -297,10 +298,10 @@
 <p>In the &quot;Import tags for CHARACTER NAME&quot; popup that opens, you&#x27;ll see a list of Existing tags (which you already had locally with a matching name), and New tags (which you did not have locally).</p>
 <p>You can either:</p>
 <ul>
-<li>trim the lists as needed and then hit &quot;Import&quot; -- remaining Existing tags will be added to the imported character card, and remaining New tags will be created locally and then added to the card.</li>
-<li>or simply hit &quot;Import none&quot; to ignore tags contained in the character card and import ONLY the card</li>
-<li>or &quot;Import All&quot; as a shortcut to import all tags found in the character card (NOTE: including any that you trimmed from the lists above; use the &quot;Import&quot; button if you did)</li>
-<li>or &quot;Import Existing&quot; as a shortcut to only import tags that existed locally with a matching name.</li>
+<li>Trim the lists as needed and then hit &quot;Import&quot; - remaining Existing tags will be added to the imported character card, and remaining New tags will be created locally and then added to the card.</li>
+<li>Or simply hit &quot;Import none&quot; to ignore tags contained in the character card and import ONLY the card.</li>
+<li>Or &quot;Import All&quot; as a shortcut to import all tags found in the character card (NOTE: including any that you trimmed from the lists above; use the &quot;Import&quot; button if you did).</li>
+<li>Or &quot;Import Existing&quot; as a shortcut to only import tags that existed locally with a matching name.</li>
 </ul>
 <doc-anchor-target id="filtering-character-cards">
     <h2>
@@ -310,9 +311,9 @@
 </doc-anchor-target>
 <p>After you create tags, you will see them on a row in the Character Management panel. You can click these to switch tag filtering state; in order:</p>
 <ul>
-<li>one click will show cards tagged with this tag</li>
-<li>another click to only show cards NOT tagged with this tag</li>
-<li>another click to reset filtering by this tag</li>
+<li>One click will show cards tagged with this tag.</li>
+<li>Another click to only show cards NOT tagged with this tag.</li>
+<li>Another click to reset filtering by this tag.</li>
 </ul>
 <p>You can filter by any number of tags at the same time.</p>
 <doc-anchor-target id="tags-as-folders">
