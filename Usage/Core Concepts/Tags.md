@@ -13,15 +13,16 @@ There are several ways to add or remove tags to a character card:
 To do mass tagging, click the "Bulk edit characters" button (pencil icon), select the cards you want to tag, right click on any of them, then click "Tag" in the contextual menu.
 
 !!! info Note
-Please note that groups cannot be tagged like this.
+Please note that groups cannot be mass tagged.
 !!!
 
 From this screen you will be able to:
-- add or remove tags using the combo box
-- remove all tags from the selected cards ("All")
-- remove the intersection of tags among all selected cards from those cards ("Mutual")
-- import (create locally) all tags stored in the character card, in case you imported it ("Import All")
-- import (create locally) tags stored in the character card which also exist locally with matching names ("Import Existing")
+
+- Add or remove tags using the combo box.
+- Remove all tags from the selected cards ("All").
+- Remove the intersection of tags among all selected cards from those cards ("Mutual").
+- Import (create locally) all tags stored in the character card, in case you imported it ("Import All").
+- Import (create locally) tags stored in the character card which also exist locally with matching names ("Import Existing").
 
 ## Managing
 
@@ -39,6 +40,8 @@ The tags backup JSON file is not intented for sharing with others as it contains
 
 When importing external character cards from downloaded images (or from the "Import content from external URL" button), you'll be prompted to optionally import the tags that it contains. They are not required for the card to function; tags are simply organizational.
 
+Embedded card tags are stored in the "Creator's Metadata" section of "Advanced Definitions" menu of the character editor. If you wish to propose some tags to other users who would import that character, populate the "Tags to Embed" field with a comma-separated list of tags.
+
 !!! info Note
 This popup will appear only if a User Settings option "Import Card Tags" is set to "Ask". 
 !!!
@@ -47,18 +50,18 @@ In the "Import tags for CHARACTER NAME" popup that opens, you'll see a list of E
 
 You can either:
 
-- trim the lists as needed and then hit "Import" -- remaining Existing tags will be added to the imported character card, and remaining New tags will be created locally and then added to the card.
-- or simply hit "Import none" to ignore tags contained in the character card and import ONLY the card
-- or "Import All" as a shortcut to import all tags found in the character card (NOTE: including any that you trimmed from the lists above; use the "Import" button if you did)
-- or "Import Existing" as a shortcut to only import tags that existed locally with a matching name.
+- Trim the lists as needed and then hit "Import" - remaining Existing tags will be added to the imported character card, and remaining New tags will be created locally and then added to the card.
+- Or simply hit "Import none" to ignore tags contained in the character card and import ONLY the card.
+- Or "Import All" as a shortcut to import all tags found in the character card (NOTE: including any that you trimmed from the lists above; use the "Import" button if you did).
+- Or "Import Existing" as a shortcut to only import tags that existed locally with a matching name.
 
 ## Filtering character cards
 
 After you create tags, you will see them on a row in the Character Management panel. You can click these to switch tag filtering state; in order:
 
-- one click will show cards tagged with this tag
-- another click to only show cards NOT tagged with this tag
-- another click to reset filtering by this tag
+- One click will show cards tagged with this tag.
+- Another click to only show cards NOT tagged with this tag.
+- Another click to reset filtering by this tag.
 
 You can filter by any number of tags at the same time.
 
