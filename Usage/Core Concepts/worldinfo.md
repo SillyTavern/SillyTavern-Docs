@@ -119,7 +119,7 @@ Supports logic for AND ANY, NOT ANY, or NOT ALL
 3. NOT ANY = Activates the entry only if the primary key and None of the optional filter keys are in scanned context.
 4. NOT ALL = Prevents activation of the entry despite primary key trigger, if all of the optional filters are in scanned context.
 
-#### Probability
+#### Probability (Trigger %)
 
 This value acts like an additional filter that adds a chance for the entry NOT to be inserted when it is activated by any means (constant, primary key, recursion).
 
