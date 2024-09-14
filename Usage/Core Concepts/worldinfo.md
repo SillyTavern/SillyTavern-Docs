@@ -60,6 +60,17 @@ An entry/instruction that should be inserted, when char is doing a weather-relat
 /(?:{{char}}|he|she) (?:is talking about|is noticing|is checking whether|observes) (?:the )?(rainy weather|heavy wind|it is going to rain|cloudy sky)/i
 ```
 
+**ST prefixes every dialogue entry with `{{character name}}:` and after v1.12.6, concatenates them using the character value 1 (`\x01`).** 
+
+This means you can match specific input or output from a certain character using:
+```js
+/\x01{{user}}:[^\x01]*key/
+```
+For example, to match **only** the user saying "hello", you could use the following regex:
+```js
+/\x01{{user}}:[^\x01]*hello/
+```
+
 For more information on Regex syntax and possbilities: [Regular expressions - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions)
 
 ##### Key Input
