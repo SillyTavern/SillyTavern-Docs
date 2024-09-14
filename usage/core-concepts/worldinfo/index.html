@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.779627995935">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.779654955168">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.779627995935" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.779654955168" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.779627995935" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.779654955168" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.779627995935" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.779627995935" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.779654955168" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.779654955168" defer></script>
 
     <Style>
         a {
@@ -291,6 +291,15 @@ If a defined key is a valid regex (Javascript regex style, with <code v-pre>/</c
 An entry/instruction that should be inserted, when char is doing a weather-related action</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-javascript"><code v-pre class="language-javascript">/(?:|he|she) (?:is talking about|is noticing|is checking whether|observes) (?:the )?(rainy weather|heavy wind|it is going to rain|cloudy sky)/i</code></pre>
+</doc-codeblock></div>
+<p><strong>ST prefixes every dialogue entry with <code v-pre>{{ ERROR }}:</code> and after v1.12.6, concatenates them using the character value 1 (<code v-pre>\x01</code>).</strong></p>
+<p>This means you can match specific input or output from a certain character using:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-javascript"><code v-pre class="language-javascript">/\x01:[^\x01]*key/</code></pre>
+</doc-codeblock></div>
+<p>For example, to match <strong>only</strong> the user saying &quot;hello&quot;, you could use the following regex:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-javascript"><code v-pre class="language-javascript">/\x01:[^\x01]*hello/</code></pre>
 </doc-codeblock></div>
 <p>For more information on Regex syntax and possbilities: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions">Regular expressions - JavaScript | MDN</a></p>
 <doc-anchor-target id="key-input">
