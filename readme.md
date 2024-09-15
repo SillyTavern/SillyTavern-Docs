@@ -58,6 +58,7 @@ You can also create your own character cards from scratch. Refer to the [Charact
 * [Rich UI customization options](https://docs.sillytavern.app/usage/core-concepts/uicustomization/): theme colors, background images, custom CSS, and more
 * [User personas](https://docs.sillytavern.app/usage/core-concepts/personas/): let the AI know a bit about you for greater immersion
 * [Built-in RAG support](https://docs.sillytavern.app/usage/core-concepts/data-bank/): add documents to your chats for the AI to reference
+* Extensive [chat commands](https://docs.sillytavern.app/usage/core-concepts/slashcommands) subsystem and own [scripting engine](https://docs.sillytavern.app/usage/st-script/)
 
 ## Extensions
 
