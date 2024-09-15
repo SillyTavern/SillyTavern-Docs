@@ -70,9 +70,13 @@ Also, a special \{\{name\}\} macro can be used in message prefixes to reference 
 
 #### Include Names
 
-If enabled, prepend characters and user names to chat history logs after inserting the sequences.
+If enabled, prepend characters and user names to chat history logs after the prefix sequence.
 
-*Automatically enabled for group chats and messages sent using personas, unless the **Force for Groups and Personas** setting is unchecked!*
+The following options are available:
+
+* **Never**: Do not add name prefixes before the message contents.
+* **Groups and Past Personas**: Only add name prefixes to messages from group characters and past personas.
+* **Always**: Always add name prefixes before the message contents.
 
 ### System Prompt
 
