@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.779739886264">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.779752407235">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.779739886264" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.779752407235" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.779739886264" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.779752407235" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.779739886264" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.779752407235" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -302,8 +302,13 @@
         <span>Include Names</span>
     </h4>
 </doc-anchor-target>
-<p>If enabled, prepend characters and user names to chat history logs after inserting the sequences.</p>
-<p><em>Automatically enabled for group chats and messages sent using personas, unless the <strong>Force for Groups and Personas</strong> setting is unchecked!</em></p>
+<p>If enabled, prepend characters and user names to chat history logs after the prefix sequence.</p>
+<p>The following options are available:</p>
+<ul>
+<li><strong>Never</strong>: Do not add name prefixes before the message contents.</li>
+<li><strong>Groups and Past Personas</strong>: Only add name prefixes to messages from group characters and past personas.</li>
+<li><strong>Always</strong>: Always add name prefixes before the message contents.</li>
+</ul>
 <doc-anchor-target id="system-prompt">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#system-prompt">#</doc-anchor-trigger>
