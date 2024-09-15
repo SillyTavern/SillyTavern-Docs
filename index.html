@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.779732029705">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.779736550156">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -35,11 +35,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="resources/css/retype.css?v=3.5.0.779732029705" rel="stylesheet">
+    <link href="resources/css/retype.css?v=3.5.0.779736550156" rel="stylesheet">
 
-    <script data-cfasync="false" src="resources/js/config.js?v=3.5.0.779732029705" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="resources/js/config.js?v=3.5.0.779736550156" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="resources/js/lunr.js?v=3.5.0.779732029705" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="resources/js/lunr.js?v=3.5.0.779736550156" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -210,20 +210,13 @@
     <figcaption class="caption">SillyTavern - LLM Frontend for Power Users</figcaption>
 </figure>
 </p>
-<p>Brought to you by Cohee, RossAscends, and the SillyTavern community, SillyTavern is a local-install interface that allows you to interact with text generation AIs (LLMs) to chat and roleplay with custom characters.</p>
-<p>SillyTavern originated as a modification of TavernAI 1.2.8 in February 2023, and has since added many cutting-edge features not present in the original TavernAI.</p>
-<doc-anchor-target id="missing-extensions-after-the-update">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#missing-extensions-after-the-update">#</doc-anchor-trigger>
-        <span>Missing extensions after the update?</span>
-    </h3>
-</doc-anchor-target>
-<p>Since the 1.10.6 release version, most of the previously built-in extensions have been converted to downloadable add-ons. You can download them via the built-in &quot;Download Extensions and Assets&quot; menu in the extensions panel (stacked blocks icon in the top bar).</p>
+<p>SillyTavern (or ST for short) is a locally installed user interface that allows you to interact with text generation LLMs, image generation engines, and TTS voice models.</p>
+<p>Beginning in February 2023 as a fork of TavernAI 1.2.8, SillyTavern now has over 100 contributors and 2 years of independent development under its belt, and continues to serve as a leading software for savvy AI enthusiasts.</p>
 <doc-anchor-target id="screenshots">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#screenshots">#</doc-anchor-trigger>
         <span>Screenshots</span>
-    </h3>
+    </h2>
 </doc-anchor-target>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
@@ -250,104 +243,117 @@
 </table>
 </div>
 <doc-anchor-target id="branches">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#branches">#</doc-anchor-trigger>
         <span>Branches</span>
-    </h3>
+    </h2>
 </doc-anchor-target>
 <p>SillyTavern is being developed using a two-branch system to ensure a smooth experience for all users.</p>
 <ul>
-<li>release -<span class="docs-emoji">&#x1F31F;</span> <strong>Recommended for most users.</strong> This is the most stable and recommended branch, updated only when major releases are pushed. It&#x27;s suitable for the majority of users.</li>
-<li>staging - <span class="docs-emoji">&#x26A0;&#xFE0F;</span> <strong>Not recommended for casual use.</strong> This branch has the latest features, but be cautious as it may break at any time. Only for power users and enthusiasts.</li>
+<li><code v-pre>release</code> -<span class="docs-emoji">&#x1F31F;</span> <strong>Recommended for most users.</strong> This is the most stable and recommended branch, updated only when major releases are pushed. It&#x27;s suitable for the majority of users. Typically updated once a month.</li>
+<li><code v-pre>staging</code> - <span class="docs-emoji">&#x26A0;&#xFE0F;</span> <strong>Not recommended for casual use.</strong> This branch has the latest features, but be cautious as it may break at any time. Only for power users and enthusiasts. Updates several times daily.</li>
 </ul>
 <p>Learn more <a href="https://docs.sillytavern.app/usage/branches/">here</a>.</p>
-<doc-anchor-target id="features">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#features">#</doc-anchor-trigger>
-        <span>Features</span>
-    </h3>
+<doc-anchor-target id="character-cards">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#character-cards">#</doc-anchor-trigger>
+        <span>Character Cards</span>
+    </h2>
+</doc-anchor-target>
+<p>SillyTavern is built around the concept of &quot;character cards&quot;. A character card is a collection of prompts that set the behavior of the LLM and is required to have persistent conversations in SillyTavern. They function similarly to ChatGPT&#x27;s GPTs or Poe&#x27;s bots. The content of a character card can be anything: an abstract scenario, an assistant tailored for a specific task, a famous personality or a fictional character.</p>
+<p>The name field is the only required character card input. To start a neutral conversation with the language model, create a new card simply called &quot;Assistant&quot; and leave the rest of the boxes blank. For a more themed chat, you can provide the language model with various background details, behavior and writing patterns, and a scenario to jump start the chat.</p>
+<!-- To have a quick conversation without selecting a character card or to just test the LLM connection, simply type your prompt input into the input bar on the Welcome Screen after opening SillyTavern. Please note that such chats are temporary and will not be saved. -->
+<p>To get a general idea on how to define character cards, see the default character (Seraphina) or download selected community-made cards from the &quot;Download Extensions &amp; Assets&quot; menu.</p>
+<doc-anchor-target id="key-features">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#key-features">#</doc-anchor-trigger>
+        <span>Key Features</span>
+    </h2>
 </doc-anchor-target>
 <ul>
-<li>Mobile-friendly interface</li>
-<li>Multiple backend API connectivity (<a href="https://github.com/KoboldAI/KoboldAI-Client">KoboldAI</a>, <a href="https://github.com/LostRuins/koboldcpp">KoboldCpp</a>, <a href="https://horde.koboldai.net/">AI Horde</a>, <a href="https://github.com/LostRuins/koboldcpp">NovelAI</a>, <a href="https://github.com/oobabooga/text-generation-webui">Oobabooga&#x27;s TextGen WebUI</a>, <a href="https://chat.openai.com/">OpenAI</a>, <a href="https://windowai.io">WindowAI</a>, <a href="https://openrouter.ai/">OpenRouter</a>, <a href="https://github.com/theroyallab/tabbyAPI">TabbyAPI</a>, and many more...). See <a href="https://docs.sillytavern.app/usage/api-connections/">API connections</a>.</li>
-<li>Visual Novel-like Waifu Mode</li>
-<li>Horde Stable Diffusion generation</li>
-<li>TTS support (ElevenLabs, Silero, etc.)</li>
-<li>WorldInfo (lorebooks)</li>
-<li>Author&#x27;s Note / Character Bias</li>
-<li>Customizable colors, backgrounds, avatar styles, and UI panel placement</li>
-<li>Notification sound for AI responses</li>
-<li>Export chats as .txt files</li>
-<li>Auto-translate single messages or the entire chat via Google API, even automatically.</li>
-<li>Extensive prompt formatting options</li>
-<li>Character HotSwap buttons to quickly change between your favorite characters</li>
-<li>Prompt token breakdown view for each message</li>
-<li>Swipes</li>
-<li>Group chats: multi-bot rooms for characters to talk to you or each other</li>
-<li>Chat bookmarks / branching</li>
+<li>Advanced <a href="/usage/core20concepts/advancedformatting.md">text generation settings</a> with many community-made presets</li>
+<li><a href="/usage/core20concepts/worldinfo.md">World Info support</a>: create rich lore or save tokens on your character card</li>
+<li><a href="/usage/core20concepts/groupchats.md">Group chats</a>: multi-bot rooms for characters to talk to you and/or each other</li>
+<li><a href="/usage/core20concepts/uicustomization.md">Rich UI customization options</a>: theme colors, background images, custom CSS, and more</li>
+<li><a href="/usage/core20concepts/personas.md">User personas</a>: let the AI know a bit about you for greater immersion</li>
+<li><a href="/usage/core20concepts/data20bank.md">Built-in RAG support</a>: add documents to your chats for the AI to reference</li>
 </ul>
 <doc-anchor-target id="extensions">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#extensions">#</doc-anchor-trigger>
         <span>Extensions</span>
-    </h3>
+    </h2>
 </doc-anchor-target>
-<p>SillyTavern supports extensions/plugins:</p>
+<p>SillyTavern has extensibility support.</p>
 <ul>
-<li>Character emotional expressions</li>
-<li>Auto-Summary of the chat history</li>
-<li>Sending images to chat, and the AI interpreting the content.</li>
-<li>Stable Diffusion image generation (5 chat-related presets plus &#x27;free mode&#x27;)</li>
-<li>Text-to-speech for AI response messages (via ElevenLabs, Silero, or the OS&#x27;s System TTS)</li>
+<li><a href="extensions/expression-images/">Character emotional expressions (sprites)</a></li>
+<li><a href="extensions/summarize/">Auto-Summary of the chat history</a></li>
+<li>Automatic UI and chat translation</li>
+<li><a href="extensions/stable-diffusion/">Stable Diffusion/FLUX/DALL-E image generation</a></li>
+<li><a href="extensions/tts/">Text-to-speech for AI response messages (via ElevenLabs, Silero, or the OS&#x27;s System TTS)</a></li>
+<li><a href="extensions/websearch/">Web Search capabilities for adding additional real world context to your prompts</a></li>
+<li>Many more are available to download from the &quot;Download Extensions &amp; Assets&quot; menu.</li>
 </ul>
-<p>Additional functionality can be added by using <a href="https://github.com/SillyTavern/SillyTavern-extras">SillyTavern Extras</a>.</p>
-<!-- 
-### Screenshots
-
-![](https://user-images.githubusercontent.com/18619528/228649245-8061c60f-63dc-488e-9325-f151b7a3ec2d.png)
-![](https://user-images.githubusercontent.com/18619528/228649856-fbdeef05-d727-4d5a-be80-266cbbc6b811.png)
--->
 <doc-anchor-target id="installation-requirements">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#installation-requirements">#</doc-anchor-trigger>
         <span>Installation Requirements</span>
-    </h3>
+    </h2>
 </doc-anchor-target>
+<p>The hardware requirements are minimal: it will run on anything that can run NodeJS 18 or higher. If you intend to do LLM inference on your local machine, we recommend a 3000-series NVIDIA graphics card with at least 6GB of VRAM.</p>
+<p>Follow the installation guide for your platform:</p>
 <ul>
-<li>SillyTavern will run on virtually any device capable of running NodeJS v18.</li>
-<li>NOTE: due to the above requirement, <strong>SillyTavern will not run on Windows 7.</strong></li>
+<li><a href="https://docs.sillytavern.app/installation/windows/">Windows</a></li>
+<li><a href="https://docs.sillytavern.app/installation/linuxmacos/">Linux and Mac</a></li>
+<li><a href="https://docs.sillytavern.app/installation/android-(termux)/">Android</a></li>
+<li><a href="https://docs.sillytavern.app/installation/docker/">Docker</a></li>
 </ul>
 <doc-anchor-target id="what-do-i-need-other-than-sillytavern">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#what-do-i-need-other-than-sillytavern">#</doc-anchor-trigger>
         <span>What do I need other than SillyTavern?</span>
-    </h3>
+    </h2>
 </doc-anchor-target>
-<p>SillyTavern is only a frontend interface, so you will need to have access to one of the backend APIs listed above.</p>
+<p>Since SillyTavern is only an interface, you will need access to an LLM backend to provide inference. You can use AI Horde for instant out-of-the-box chatting. Aside from that, we support many other local and cloud-based LLM backends: OpenAI-compatible API, KoboldAI, Tabby, and many more. You can read more about our supported APIs in the <a href="https://docs.sillytavern.app/usage/api-connections/">API Connections</a> section.</p>
 <doc-anchor-target id="how-can-i-get-in-touch-with-the-developers-directly">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#how-can-i-get-in-touch-with-the-developers-directly">#</doc-anchor-trigger>
         <span>How can I get in touch with the developers directly?</span>
-    </h3>
+    </h2>
 </doc-anchor-target>
 <ul>
-<li>Discord: cohee or rossascends</li>
-<li>Reddit: /u/RossAscends or /u/sillylossy</li>
+<li>Discord: cohee, rossascends, wolfsblvt</li>
+<li>Reddit: <a href="https://www.reddit.com/user/RossAscends/">/u/RossAscends</a>, <a href="https://www.reddit.com/user/sillylossy/">/u/sillylossy</a>, <a href="https://www.reddit.com/user/Wolfsblvt/">u/Wolfsblvt</a></li>
 <li><a href="https://github.com/SillyTavern/SillyTavern/issues">Post a GitHub issue</a></li>
 </ul>
 <doc-anchor-target id="i-like-your-project-how-do-i-contribute">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#i-like-your-project-how-do-i-contribute">#</doc-anchor-trigger>
         <span>I like your project! How do I contribute?</span>
-    </h3>
+    </h2>
 </doc-anchor-target>
 <ul>
-<li>We welcome pull requests!</li>
+<li>We welcome pull requests! Follow the <a href="https://github.com/SillyTavern/SillyTavern/blob/release/CONTRIBUTING.md">Contribution Guidelines</a> to get started.</li>
 <li>We also welcome helpful and informed bug reports that use the templates provided in our GitHub.</li>
 <li>We do not accept monetary donations for the project itself.</li>
-<li>Cohee does not take donations.</li>
+</ul>
+<doc-anchor-target id="personal-donations">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#personal-donations">#</doc-anchor-trigger>
+        <span>Personal Donations</span>
+    </h2>
+</doc-anchor-target>
+<p>Your support for individual contributors is appreciated, but it will not influence the overall development direction of SillyTavern.</p>
+<ul>
 <li>RossAscends has a personal <a href="https://www.patreon.com/RossAscends">Patreon</a> &amp; <a href="https://ko-fi.com/rossascends">Kofi</a></li>
 </ul>
+<doc-anchor-target id="license">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#license">#</doc-anchor-trigger>
+        <span>License</span>
+    </h2>
+</doc-anchor-target>
+<p>SillyTavern is a free and open-source project released under the <a href="https://github.com/SillyTavern/SillyTavern/blob/release/LICENSE">AGPL-3.0 License</a>.</p>
 
                                 
                                 <!-- Required only on API pages -->
