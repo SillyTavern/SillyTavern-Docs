@@ -14,6 +14,17 @@ SillyTavern is a passion project brought to you by a dedicated community of LLM 
 | ![Extensions](/static/screenshot5.jpg) | ![Response Config](/static/screenshot6.jpg) |
 | ![Backgrounds](/static/screenshot7.jpg) | ![User Settings](/static/screenshot8.jpg) |
 
+## Installation Requirements
+
+The hardware requirements are minimal: it will run on anything that can run NodeJS 18 or higher. If you intend to do LLM inference on your local machine, we recommend a 3000-series NVIDIA graphics card with at least 6GB of VRAM.
+
+Follow the installation guide for your platform:
+
+* [Windows](https://docs.sillytavern.app/installation/windows/)
+* [Linux and Mac](https://docs.sillytavern.app/installation/linuxmacos/)
+* [Android](https://docs.sillytavern.app/installation/android-(termux)/)
+* [Docker](https://docs.sillytavern.app/installation/docker/)
+
 ## Branches
 
 SillyTavern is being developed using a two-branch system to ensure a smooth experience for all users.
@@ -22,6 +33,10 @@ SillyTavern is being developed using a two-branch system to ensure a smooth expe
 * `staging` - ⚠️ **Not recommended for casual use.** This branch has the latest features, but be cautious as it may break at any time. Only for power users and enthusiasts. Updates several times daily.
 
 Learn more [here](https://docs.sillytavern.app/usage/branches/).
+
+## What do I need other than SillyTavern?
+
+Since SillyTavern is only an interface, you will need access to an LLM backend to provide inference. You can use AI Horde for instant out-of-the-box chatting. Aside from that, we support many other local and cloud-based LLM backends: OpenAI-compatible API, KoboldAI, Tabby, and many more. You can read more about our supported APIs in the [API Connections](https://docs.sillytavern.app/usage/api-connections/) section.
 
 ## Character Cards
 
@@ -32,6 +47,8 @@ The name field is the only required character card input. To start a neutral con
 <!-- To have a quick conversation without selecting a character card or to just test the LLM connection, simply type your prompt input into the input bar on the Welcome Screen after opening SillyTavern. Please note that such chats are temporary and will not be saved. -->
 
 To get a general idea on how to define character cards, see the default character (Seraphina) or download selected community-made cards from the "Download Extensions & Assets" menu.
+
+You can also create your own character cards from scratch. Refer to the [Character Design](/Usage/Core%20Concepts/characterdesign.md) guide for more information.
 
 ## Key Features
 
@@ -53,21 +70,6 @@ SillyTavern has extensibility support.
 * [Text-to-speech for AI response messages (via ElevenLabs, Silero, or the OS's System TTS)](/extensions/TTS.md)
 * [Web Search capabilities for adding additional real world context to your prompts](/extensions/WebSearch.md)
 * Many more are available to download from the "Download Extensions & Assets" menu.
-
-## Installation Requirements
-
-The hardware requirements are minimal: it will run on anything that can run NodeJS 18 or higher. If you intend to do LLM inference on your local machine, we recommend a 3000-series NVIDIA graphics card with at least 6GB of VRAM.
-
-Follow the installation guide for your platform:
-
-* [Windows](https://docs.sillytavern.app/installation/windows/)
-* [Linux and Mac](https://docs.sillytavern.app/installation/linuxmacos/)
-* [Android](https://docs.sillytavern.app/installation/android-(termux)/)
-* [Docker](https://docs.sillytavern.app/installation/docker/)
-
-## What do I need other than SillyTavern?
-
-Since SillyTavern is only an interface, you will need access to an LLM backend to provide inference. You can use AI Horde for instant out-of-the-box chatting. Aside from that, we support many other local and cloud-based LLM backends: OpenAI-compatible API, KoboldAI, Tabby, and many more. You can read more about our supported APIs in the [API Connections](https://docs.sillytavern.app/usage/api-connections/) section.
 
 ## How can I get in touch with the developers directly?
 
