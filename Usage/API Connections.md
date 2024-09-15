@@ -8,9 +8,9 @@ SillyTavern can connect to a wide range of LLM APIs.
 Below is a description of their respective strengths, weaknesses, and use cases.
 
 ## ELI5: Chat Completions vs Text Completions
-When you first navigate to the "API Connections" page in ST, you will notice a drop-down option to select between options using nomenclature such as "Chat Completion" completion and "Text Completion". It's helpful to understand what this is.
+When you first navigate to the "API Connections" page in ST, you will notice a drop-down option to select between options using nomenclature such as "Chat Completion" and "Text Completion". It's helpful to understand what this is.
 
-What it's not: It's easy to think of "Text Completion" as local models and "Chat Completion" but that's not the case. Neither is e.g. "Novel AI" or "Kobold" actually a separate type of model altogether, even though they are separate options in the API dropdown in ST. You can force models into different API structures with the appropriate backend, but that's not the point of this section.
+What it's not: It's easy to think of "Text Completion" as local models and "Chat Completion" as cloud based LLMs but that's not the case. Neither is e.g. "Novel AI" or "Kobold" actually a separate type of model altogether, even though they are separate options in the API dropdown in ST. You can force models into different API structures with the appropriate backend, but that's not the point of this section.
 
 When you send a message using ST, your chat, character description, and other prompts such as lorebooks or author notes are constructed into a single "prompt" to be sent to the model. The API "type" for the model you are using decides how exactly this prompt will be constructed (something that ST takes care of you automatically in the background - you can open your ST terminal and see exactly what the prompt being sent to the AI looks like). 
 
