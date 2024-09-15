@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.779654955168">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.779732029705">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.779654955168" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.779732029705" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.779654955168" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.779732029705" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.779654955168" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.779732029705" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -205,6 +205,31 @@
 </doc-anchor-target>
 <p>SillyTavern can connect to a wide range of LLM APIs.
 Below is a description of their respective strengths, weaknesses, and use cases.</p>
+<doc-anchor-target id="eli5-chat-completions-vs-text-completions">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#eli5-chat-completions-vs-text-completions">#</doc-anchor-trigger>
+        <span>ELI5: Chat Completions vs Text Completions</span>
+    </h2>
+</doc-anchor-target>
+<p>When you first navigate to the &quot;API Connections&quot; page in ST, you will notice a drop-down option to select between options using nomenclature such as &quot;Chat Completion&quot; and &quot;Text Completion&quot;. It&#x27;s helpful to understand what this is.</p>
+<p>What it&#x27;s not: It&#x27;s easy to think of &quot;Text Completion&quot; as local models and &quot;Chat Completion&quot; as cloud-based LLMs but that&#x27;s not the case. Neither is e.g. &quot;Novel AI&quot; or &quot;Kobold&quot; actually a separate type of model altogether, even though they are separate options in the API dropdown in ST. You can force models into different API structures with the appropriate backend, but that&#x27;s not the point of this section.</p>
+<p>When you send a message using ST, your chat, character description, and other prompts such as lorebooks or author notes are constructed into a single &quot;prompt&quot; to be sent to the model. The API &quot;type&quot; for the model you are using decides how exactly this prompt will be constructed (something that ST takes care of you automatically in the background - you can open your ST terminal and see exactly what the prompt being sent to the AI looks like).</p>
+<doc-anchor-target id="chat-completions">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#chat-completions">#</doc-anchor-trigger>
+        <span>Chat Completions</span>
+    </h3>
+</doc-anchor-target>
+<p>A Chat Completion model, as its name suggests will structure your prompt into a series of messages between the User (you) and the Assistant (the AI) or System (neutral). Models that are trained for Chat Completion help create the feeling of a &quot;Chat&quot;, with the AI &quot;responding&quot; to the last message. When you&#x27;re using the ChatGPT website, you&#x27;re dealing with a Chat Completions API in the background.</p>
+<doc-anchor-target id="text-completions-aka-just-completions">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#text-completions-aka-just-completions">#</doc-anchor-trigger>
+        <span>Text Completions (a.k.a just &quot;Completions&quot;)</span>
+    </h3>
+</doc-anchor-target>
+<p>A Text Completion on the other hand, and again as its name suggests, will convert your prompt into one long string and the model will simply try to continue this (like, literally imagine all your text, your hundreds of messages, all your formatting, newlines, etc. squashed into one very long sentence).</p>
+<p>If your messages in ST happen to be formatted as a series of messages between YourPersona: and Character:, the Text Completion model will try to continue this pattern and ST will render it as a new chat message for you, but really the model is just trying to continue the Text. If you offered an input of &quot;The Sun rises in the&quot;, a text completion model is likely to finish that message for you with &quot;East&quot;.</p>
+<p>Most Text Completion models have a recommended &quot;Instruct Template&quot; (usually mentioned in the model&#x27;s documentation or download page) that help them &quot;respond&quot; to messages and instructions, just like a Chat Completion model. ST usually has most (if not all) Instruct Templates available for you to choose from in the &quot;Advanced Formatting&quot; page.</p>
 <doc-anchor-target id="local-apis">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#local-apis">#</doc-anchor-trigger>
