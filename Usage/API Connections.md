@@ -22,7 +22,8 @@ A Chat Completion model, as its name suggests will structure your prompt into a 
 ### Text Completions (a.k.a just "Completions")
 
 A Text Completion on the other hand, and again as its name suggests, will convert your prompt into one long string and the model will simply try to continue this (like, literally imagine all your text, your hundreds of messages, all your formatting, newlines, etc. squashed into one very long sentence).
-If your messages in ST happen to formatted as a series of messages between YourPersona: and Character:, the Text Completion model will try to continue this pattern and ST will render it as a new chat message for you, but really the model is just trying to continue the Text. If you offered an input of "The Sun rises in the", a text completion model is likely to finish that message for you with "East".
+If your messages in ST happen to formatted as a series of messages between YourPersona: and Character:, the Text Completion model will try to continue this pattern and ST will render it as a new chat message for you, but really the model is just trying to continue the Text. If you offered an input of "The Sun rises in the", a text completion model is likely to finish that message for you with "East". 
+Most Text Completion models have a recommended "Instruct Template" (usually mentioned in the model's documentation or download page) that help them behave "respond" to messages and instructions, just like a Chat Completion model. ST usually has most (if not all) Instruct Templates available for you to choose from in the "Advanced Formatting" page.
 
 ## Local APIs
 
