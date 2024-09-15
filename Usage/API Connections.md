@@ -7,6 +7,26 @@ icon: repo-forked
 SillyTavern can connect to a wide range of LLM APIs.
 Below is a description of their respective strengths, weaknesses, and use cases.
 
+## ELI5: Chat Completions vs Text Completions
+
+When you first navigate to the "API Connections" page in ST, you will notice a drop-down option to select between options using nomenclature such as "Chat Completion" and "Text Completion". It's helpful to understand what this is.
+
+What it's not: It's easy to think of "Text Completion" as local models and "Chat Completion" as cloud-based LLMs but that's not the case. Neither is e.g. "Novel AI" or "Kobold" actually a separate type of model altogether, even though they are separate options in the API dropdown in ST. You can force models into different API structures with the appropriate backend, but that's not the point of this section.
+
+When you send a message using ST, your chat, character description, and other prompts such as lorebooks or author notes are constructed into a single "prompt" to be sent to the model. The API "type" for the model you are using decides how exactly this prompt will be constructed (something that ST takes care of you automatically in the background - you can open your ST terminal and see exactly what the prompt being sent to the AI looks like). 
+
+### Chat Completions
+
+A Chat Completion model, as its name suggests will structure your prompt into a series of messages between the User (you) and the Assistant (the AI) or System (neutral). Models that are trained for Chat Completion help create the feeling of a "Chat", with the AI "responding" to the last message. When you're using the ChatGPT website, you're dealing with a Chat Completions API in the background.
+
+### Text Completions (a.k.a just "Completions")
+
+A Text Completion on the other hand, and again as its name suggests, will convert your prompt into one long string and the model will simply try to continue this (like, literally imagine all your text, your hundreds of messages, all your formatting, newlines, etc. squashed into one very long sentence).
+
+If your messages in ST happen to be formatted as a series of messages between YourPersona: and Character:, the Text Completion model will try to continue this pattern and ST will render it as a new chat message for you, but really the model is just trying to continue the Text. If you offered an input of "The Sun rises in the", a text completion model is likely to finish that message for you with "East". 
+
+Most Text Completion models have a recommended "Instruct Template" (usually mentioned in the model's documentation or download page) that help them "respond" to messages and instructions, just like a Chat Completion model. ST usually has most (if not all) Instruct Templates available for you to choose from in the "Advanced Formatting" page.
+
 ## Local APIs
 
 - These LLM APIs can be run on your PC.
