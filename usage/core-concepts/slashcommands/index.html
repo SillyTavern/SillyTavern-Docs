@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.779737338054">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.779739886264">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.779737338054" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.779739886264" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.779737338054" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.779739886264" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.779737338054" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.779739886264" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -221,44 +221,17 @@
     </div>
 </div>
 <ul>
-<li>/help – displays this help message (aliases: /?)</li>
-<li>/name (name) – sets user name and persona avatar (if set) (aliases: /persona)</li>
-<li>/sync – syncs user name in user-attributed messages in the current chat</li>
-<li>/bind – binds/unbinds a persona (name and avatar) to the current chat</li>
-<li>/bg (filename) – sets a background according to the filename, partial names allowed, will set the first one alphabetically if multiple files begin with the provided argument string (aliases: /background)</li>
-<li>/sendas – sends a message as a specific character.</li>
+<li><code v-pre>/help</code> – displays the help message</li>
+<li><code v-pre>/api</code> - switches to a different API</li>
+<li><code v-pre>/sys</code> - sends a neutral message as a system narrator</li>
+<li><code v-pre>/send</code> - sends a message as the user without triggering the generation</li>
+<li><code v-pre>/sendas</code> – sends a message as a specific character</li>
+<li><code v-pre>/comment</code> - adds a comment to the chat invisible to the AI</li>
+<li><code v-pre>/impersonate</code> - ask AI to write as you with an optional prompt</li>
+<li><code v-pre>/persona</code> - set your user persona</li>
+<li><code v-pre>/imagine</code> - generate an image from a text prompt</li>
+<li><code v-pre>/bg</code> - set a background image by file name</li>
 </ul>
-<p>Example:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">/sendas Chloe
-Hello, guys!
-will send &quot;Hello, guys!&quot; from &quot;Chloe&quot;.
-Uses character avatar if it exists in the characters list.</code></pre>
-</doc-codeblock></div>
-<ul>
-<li>/sys (text) – sends message as a system narrator</li>
-<li>/sysname (name) – sets a name for future system narrator messages in this chat (display only). Default: System. Leave empty to reset.</li>
-<li>/note (text) – sets an author&#x27;s note for the currently selected chat</li>
-<li>/depth (number) – sets an author&#x27;s note depth for in-chat positioning</li>
-<li>/freq (number) – sets an author&#x27;s note insertion frequency (aliases: /interval)</li>
-<li>/pos (chat or scenario) – sets an author&#x27;s note position (aliases: /position)</li>
-<li>/roll (dice formula) – roll the dice. For example, /roll 2d6 (aliases: /r)</li>
-<li>/taskcheck – checks if the current task is completed</li>
-<li>/lock – locks a background for the currently selected chat</li>
-<li>/unlock – unlocks a background for the currently selected chat</li>
-<li>/autobg – automatically changes the background based on the chat context (aliases: /bgauto)</li>
-<li>/sd (argument) – requests SD to make an image. Supported arguments:</li>
-</ul>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">you – AI character full body selfie
-face – AI character face-only selfie
-me – user character full body selfie
-scene – visual recap of the whole chat scenario
-last – visual recap of the last chat message
-raw_last – visual recap of the last chat message with no summary</code></pre>
-</doc-codeblock></div>
-<p>Anything else would trigger a &quot;free mode&quot; to make SD generate whatever you prompted.
-example: &#x27;/sd apple tree&#x27; would generate a picture of an apple tree.</p>
 
                                 
                                 <!-- Required only on API pages -->
