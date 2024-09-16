@@ -106,7 +106,7 @@ Most Text Completion models have a recommended "Instruct Template" (usually ment
 - SillyTavern can access this API out of the box with no additional settings required
 - Uses the GPU of individual volunteers (Horde Workers) to process responses for your chat inputs
 - At the mercy of the Worker in terms of generation wait times, AI settings, and available models
-- [Website](https://horde.koboldai.net)
+- [Website](https://aihorde.net/)
 
 ### Mancer AI
 

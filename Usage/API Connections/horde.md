@@ -39,7 +39,7 @@ To reduce wait times, follow the tips down below.
 
 ## Tips
 
-- [Register an account on the Horde website](https://horde.koboldai.net/register) then add your Horde key into the SillyTavern Horde API Key box.
+- [Register an account on the Horde website](https://aihorde.net/register) then add your Horde key into the SillyTavern Horde API Key box.
 - [Set up a Horde Worker](https://github.com/Haidra-Org/AI-Horde-Worker#readme) to provide your GPU for others.
   - Letting others use your GPU earns you ['Kudos', a kind of Horde-only currency](https://github.com/Haidra-Org/AI-Horde/blob/main/FAQ.md#kudos).
   - The more kudos your account has, the faster you will get chat responses from other Horde Workers.
