@@ -57,21 +57,19 @@ If a defined key is a valid regex (Javascript regex style, with `/` as delimiter
 An example of a use-case for advanced regex matching:  
 An entry/instruction that should be inserted, when char is doing a weather-related action
 ```js
-/(?:{{char}}|he|she) (?:is talking about|is noticing|is checking whether|observes) (?:the )?(rainy weather|heavy wind|it is going to rain|cloudy sky)/i
-```
-
-**ST prefixes every dialogue entry with `{{character name}}:` and after v1.12.6, concatenates them using the character value 1 (`\x01`).** 
-
-This means you can match specific input or output from a certain character using:
-```js
-/\x01{{user}}:[^\x01]*key/
-```
-For example, to match **only** the user saying "hello", you could use the following regex:
-```js
-/\x01{{user}}:[^\x01]*hello/
+/(?:\{\{char\}\}|he|she) (?:is talking about|is noticing|is checking whether|observes) (?:the )?(rainy weather|heavy wind|it is going to rain|cloudy sky)/i
 ```
 
 For more information on Regex syntax and possbilities: [Regular expressions - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions)
+
+###### Advanced Regex Per-Message Matching
+ST prefixes every chat message with `\{\{character name\}\}:` and after v1.12.6, concatenates prepends them using the character value 1 (`\x01`).  
+This means you can match specific input or output from a certain character using a regex tied to that separation character.
+
+For example, to match only the user saying "hello", you could use the following regex:
+```js
+/\x01\{\{user\}\}:[^\x01]*?hello/
+```
 
 ##### Key Input
 
