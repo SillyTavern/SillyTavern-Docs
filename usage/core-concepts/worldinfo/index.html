@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.779772756222">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.779838005908">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.5.0.779772756222" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.5.0.779838005908" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.779772756222" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.5.0.779838005908" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.779772756222" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.779772756222" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.5.0.779838005908" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.5.0.779838005908" defer></script>
 
     <Style>
         a {
@@ -625,7 +625,7 @@ There are three options available to control recursion for each entry:</p>
 </li>
 <li><p><strong>Prevent further recursion</strong>: Selecting this option ensures that once this entry is activated, it will not trigger any other entries. This is helpful to avoid unintended chains of activations.</p>
 </li>
-<li><p><strong>Delay until recursion</strong>: This entry will only be activated during recursive checks, meaning it won&#x27;t be triggered in the initial pass but can be activated by other entries that have recursion enabled. This is useful for deeper layers of information that should only come into play when specifically referenced by other entries, or information that should purposely be withheld if something else is activated.</p>
+<li><p><strong>Delay until recursion</strong>: This entry will only be activated during recursive checks, meaning it won&#x27;t be triggered in the initial pass but can be activated by other entries that have recursion enabled. Now, with the added <strong>Recursion Level</strong> for those delays, entries are grouped by levels. Initially, only the first level (smallest number) will match. Once no matches are found, the next level becomes eligible for matching, repeating the process until all levels are checked. This allows for more control over how and when deeper layers of information are revealed during recursion, especially in combination with criteria as NOT ANY or NOT ALL combination of key matches.</p>
 </li>
 </ul>
 <p><strong>Entries can activate other entries by mentioning their keywords in the content text.</strong></p>
