@@ -42,7 +42,7 @@ Remember, you want to run the largest, least quantized model that can fit in you
 
 ## Downloading an LLM
 
-To get started, you will need to download an LLM. The most common place to find and download LLMs is on HuggingFace. There are thousands of models available. A good way to find models is to check TheBloke's account page: <https://huggingface.co/TheBloke>. He's a one-man army dedicated to converting every model to GGUF. If you don't want GGUF, he links the original model page where you might find other formats for that same model.
+To get started, you will need to download an LLM. The most common place to find and download LLMs is on HuggingFace. There are thousands of models available. A good way to find GGUF models is to check bartowski's account page: <https://huggingface.co/bartowski>. If you don't want GGUF, he links the original model page where you might find other formats for that same model.
 
 On a given model's page, you will find a whole bunch of files. 
 
