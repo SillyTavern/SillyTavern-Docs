@@ -9,7 +9,7 @@ Instruct Mode allows you to adjust the prompting for instruction-following model
 Fully supported. This includes:
 
 * All of the sources under Text Completion
-* KoboldAI Classic 
+* KoboldAI Classic
 * AI Horde
 
 #### Choosing a formatting
@@ -24,25 +24,31 @@ Example: [NeverSleep/Noromaid-13b-v0.1.1](https://huggingface.co/NeverSleep/Noro
 
 This is not supported **(and not needed)** for Chat Completion APIs. They use an entirely different prompt builder.
 
-Exception: OpenRouter with instruct override enabled. This is a legacy setting and will eventually be removed.
+Exception: OpenRouter with instruct override enabled. This is a legacy setting and will be removed soon.
 
-### NovelAI 
+### NovelAI
 
 While *technically* supported for NovelAI, none of their models were trained to understand instruct formatting. Kayra uses a special instruct module that is activated *automatically* when an instruction wrapped in curly braces is encountered in chat messages, so using Instruct Mode for the entire prompt will lead to **degraded quality** of the outputs.
 
 Here's an example that auto-activates the instruct module for NovelAI:
 
-```
+```txt
 User: { Write a happy song about Nintendo Switch. }
 ```
 
 ## Instruct Mode Settings
 
+### System Prompt
+
+!!! warning Recent change
+The System Prompt is now a separate entity. See the [Advanced Formatting](https://docs.sillytavern.app/usage/core-concepts/advancedformatting/) page for more details.
+!!!
+
 ### Templates
 
-Provides ready-made templates with prompts and sequences for some well-known instruct models.
+Provides ready-made templates with sequences for some well-known instruct models.
 
-*Changing a template resets your system prompt to default! Don't forget to save your template if you made any changes you don't want to lose.*
+*Changing a template resets the unsaved settings to the last saved state! Don't forget to save your template if you made any changes you don't want to lose.*
 
 ### Default template (heart icon)
 
@@ -77,14 +83,6 @@ The following options are available:
 * **Never**: Do not add name prefixes before the message contents.
 * **Groups and Past Personas**: Only add name prefixes to messages from group characters and past personas.
 * **Always**: Always add name prefixes before the message contents.
-
-### System Prompt
-
-Usually added to the beginning of each prompt. Should define the instructions for the model to follow. Supports substitutions via any of the supported \{\{macro\}\} parameters.
-
-For example:
-
-> Write one reply in internet RP style for \{\{char\}\}. Be verbose and creative.
 
 ### Sequences: System Prompt Wrapping
 
