@@ -62,19 +62,19 @@ If defined as a valid regular expression, when connected to a model and its name
 
 Instruct mode needs to be enabled prior. Only the first regex match across templates will be selected (evaluated in alphabetical order).
 
-#### Wrap Sequences with Newline
+### Wrap Sequences with Newline
 
 Each sequence text will be wrapped with newline characters when inserted into the prompt. Required for Alpaca and its derivatives.
 
 Disable if you want to have full control over line terminators.
 
-#### Replace Macro in Sequences
+### Replace Macro in Sequences
 
 If enabled, known \{\{macro\}\} substitutions will be replaced if defined in message wrapping sequences.
 
 Also, a special \{\{name\}\} macro can be used in message prefixes to reference the actual name attached to a message (rather than a currently active \{\{char\}\} or \{\{user\}\}), which can be helpful when using group chats or /sendas command. If the name can't be determined, "System" is used as a fallback placeholder.
 
-#### Include Names
+### Include Names
 
 If enabled, prepend characters and user names to chat history logs after the prefix sequence.
 
