@@ -1,6 +1,6 @@
 # What is SillyTavern?
 
-![SillyTavern - LLM Frontend for Power Users](/static/banner.jpg)
+![SillyTavern - LLM Frontend for Power Users](/static/banner.png)
 
 SillyTavern (or ST for short) is a locally installed user interface that allows you to interact with text generation LLMs, image generation engines, and TTS voice models. Our goal is to empower users with as much utility and control over their LLM prompts as possible, embracing the steep learning curve as part of the fun.
 
@@ -8,10 +8,10 @@ SillyTavern is a passion project brought to you by a dedicated community of LLM 
 
 ## Screenshots
 
-| ![VN Mode](/static/screenshot1.jpg) | ![Character Management](/static/screenshot2.jpg) |
+![Character Management](/static/screenshot2.jpg) |
+ ![Response Config](/static/screenshot6.jpg) |
 |:---:|:---:|
 | ![Advanced Formatting](/static/screenshot3.jpg) | ![Slash Commands](/static/screenshot4.jpg) |
-| ![Extensions](/static/screenshot5.jpg) | ![Response Config](/static/screenshot6.jpg) |
 | ![Backgrounds](/static/screenshot7.jpg) | ![User Settings](/static/screenshot8.jpg) |
 
 ## Installation Requirements
