@@ -8,8 +8,7 @@ SillyTavern is a passion project brought to you by a dedicated community of LLM 
 
 ## Screenshots
 
-![Character Management](/static/screenshot2.jpg) |
- ![Response Config](/static/screenshot6.jpg) |
+| ![Character Management](/static/screenshot2.jpg) | ![Response Config](/static/screenshot6.jpg) |
 |:---:|:---:|
 | ![Advanced Formatting](/static/screenshot3.jpg) | ![Slash Commands](/static/screenshot4.jpg) |
 | ![Backgrounds](/static/screenshot7.jpg) | ![User Settings](/static/screenshot8.jpg) |
