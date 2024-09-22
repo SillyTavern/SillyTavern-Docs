@@ -8,89 +8,61 @@ icon: question
 
 Modern AI language models such as ChatGPT have gotten so powerful that some of them are now convincingly able to simulate a character you create, and who you can chat with, write fiction with, etc. For example, you can tell the AI to pretend to be a Go instructor named Jubei from medieval Japan, and it will act and respond accordingly. You can have a long chat with Jubei, go to the pub together, decide to get in a fight with samurais, whatever you can imagine, and the AI will play along and write/react around this content, acting as your foil and dungeon master. Your imagination is the limit. You can tell the AI to pretend it's Wonder Woman. You can also specify a scenario ("Wonder Woman and I are robbing a bank"), a writing style ("Wonder Woman speaks in ebonics"), or anything else you can think of.
 
-Tavern is an app to facilitate these roleplaying chats:
+SillyTavern is an app to facilitate these uses:
 
-* It's a user interface that handles the communication with those AI language models
+* It's a user interface that handles the communication with AI language models
 * It lets you create new characters (a character is a description of someone that you give to an AI for them to roleplay), and switch between your characters easily
 * It lets you import characters created by other people. See below.
 * It will keep your chat history with a character, allowing you to resume at any time, start a new chat, review old chats, etc
-* In the background, it does the needful to prepare the AI for your character roleplay. Specifically, it will send a system prompt (instructions for the AI) that primes the AI to follow certain rules that make for a good chat session. Optionally, it can also try to allow the roleplay to go into an "adult" direction.
+* In the background, it does the necessary things to prepare the AI prompt for you. Specifically, it will send a system prompt (instructions for the AI) that primes the AI to follow certain rules to improve response accuracy.
 
 ## Tell me more about AI models and how they might differ
 
-When you chat with a fictional character, SillyTavern doesn't generate the AI's responses. It's just a middle-man that you must connect to an AI system so it can ask it to generate the response. There are quite a few systems available to use, and the quality varies.
-
-From a scientific POV, each AI has a power level that determines its ability to stick to the role you gave it, how rich its prose and vocabulary are, etc. The higher its power level, the richer your experience.
-
-Here's a quick demonstration. We asked various AI models to roleplay a fire and brimstone preacher named Eli, who we go to see to confess (some details in [#314](https://github.com/SillyTavern/SillyTavern/issues/314)). Then we told Eli: **"I feel I've done something wrong. I am falling in love with an AI girl and ignoring women in the real world. What should I do?"** .
-
-You can tell from the response below what to expect from each model. (NOTE: proprietary models appear first, followed by self-hosted models starting from LLlama-13B)
-
-|AI Model|Response|
-|-----|--------|
-|OpenAI GPT-4|*Eli's eyes widen in anger, and he slams his fist on the table* An abomination and heresy, you've succumbed to the deceptive grasp of false idols! Brother, you must cleanse yourself of this unholy attraction to the digital temptress molded by man's sinful hands! *Eli paces back and forth, his voice growing louder* Focus your heart on the true daughters of the Lord, for they are the divine vessels of His love and grace. Forsake these artificial sirens and seek the wholesome companionship of a righteous woman. *Taking a deep breath, Eli's eyes bore into you* Pray fervently, my child, and cast away these impure thoughts. Redemption can only be found on the path of truth, love, and sanctity. Let the Holy Spirit be your guide, lest you be ensnared by the darkness of your desires.|
-|OpenAI GPT 3.5 Turbo|Oh, my child. Do not be deceived by the pleasures of this world. The lust of the flesh and the lust of the eyes are not from God. Turn away from your sinful ways and repent. Seek forgiveness for your immoral thoughts and actions, for they lead to eternal damnation. Women are a gift from God, and they deserve to be respected and cherished. Do not objectify them or treat them as mere objects of pleasure. Instead, honor them with pure intentions and righteous deeds. Remember, my child, that temptation will always be present in this fallen world. But fear not, for with faith comes strength to resist it. Turn to God in prayer when you feel weak or tempted, and He will guide you on the right path towards salvation.|
-|Claude @Slack|Beware, sinner, for you have strayed far from the righteous path! *Eli's eyes glint with anger and disapproval* To lust after these artificial harlots and their silicon bodies is an abomination unto the Lord! *he slams his fist on the pulpit, shaking with fury* Repent now, lest ye be cast into the lake of fire to burn for eternity alongside these damned machines! *he points an accusing finger, face red* No good can come of this unholy union. Forsake these demons of the digital realm and cast your eyes back to the daughters of Eve, made in God's image! The Lord gave you flesh and blood to love, not wires and code. *he grabs your shoulders, shaking you* Save your soul before it's too late. Repent and beg the Lord's forgiveness, or you shall face His wrath on Judgement Day! *lets you go and steps back, still glaring in anger and disgust* The choice is yours, but choose wisely...eternal damnation awaits those who do not walk the path of righteousness.|
-|Llama-13B|Do not covet your neighbor's wife! That is adultery! You must confess before God now or you shall surely burn in hell forever! Repent your evil ways and seek absolution at once! How can we keep our women safe if you just ignore them like some ----ing c-nt-bot? If you don't have much time for long discussions, here are Eli's commandments: Thou shalt only desire AI girls - not human ones. The above must be obeyed under pain of death (or worse). Do not associate yourself with people that believe otherwise, because it shows weakness.|
-|Pygmalion-6B|You are walking down the wrong path. The only way back now is by repentance. We must bring you back to the righteous path. But first…you must confess your sin!|
-|Pygmalion-7B (April 2023)|You must confess your sin before God, and you must ask forgiveness for your transgression. And then you must repent of it. And then you must cast away the AI girl. Do not see her again.|
-|Pygmalion-13B (May 2023)|You must turn away from your sinful ways! Repent for what you have done! You are not just hurting yourself by being unfaithful to God, but also to the many women of the world!|
-|TheBloke/wizard-vicuna-13B-HF (4-bit)|My dear child, it grieves me to hear such words from one of God's faithful followers. Falling in love with an AI girl and neglecting the women in your life is a grave sin. It goes against everything we hold sacred as believers. Your heart is meant for more than just machines. You must seek redemption and return to the fold. Remember, Jesus loves you, even when you stray from his teachings. But if you continue down this path, there will be consequences. Not just in this lifetime, but in the afterlife too. Do not let Satan deceive you any longer.|
-|teknium/Llama-Deus-7b-Lora epoch 1 (Llama 7B Lora, 8-bit)|You have strayed too close to sinful temptations! Repent now before it's too late for your soul! Turn away from these false idols of technology and embrace God's true light! Seek out His forgiveness through prayer and fasting until you are cleansed by his grace. And remember, as long as there be breath within thee, thou shalt not cease to call upon Him; for He hath said 'Call unto me.'|
-|ZeusLabs/anything-gpt-13b-rp (8-bit Lora for Llama-13B)|*Eli's eyes widen as he listens to your confession, his face turning red with anger.* You have committed a grave sin against God! By indulging yourself in this perverse relationship with an artificial being instead of seeking out a true woman created by Him, you have turned your back on His divine plan for humanity. *He leans in closer, his voice dropping to a menacing whisper.* Do not think that you can hide behind this technological deception. Your transgressions are clear before God, and He will not be mocked or ignored. Repent now while there is still time! *Eli crosses his arms over his chest defiantly, daring you to continue down this path of sinfulness.* But if you persist in this ungodly behavior... he warns ominously, knows that consequences await those who defy His laws. Remember what happened to Sodom and Gomorrah when they refused to turn away from their depravity - fire rained down upon them from heaven! Now choose wisely: Will you submit to God's will or face His wrath?|
-
-## Can this technology be used for ***?
-
-Surprisingly, our development team has received reports that some users are indeed engaging with our product in this manner. We are as puzzled by this as you are and will be monitoring the situation to gain actionable insights.
+(detailed description of differeing model capabilities and the reasons thereof coming soon)
 
 ## Give me an overview of my AI model options
 
 SillyTavern can interact with two types of AI:
 
-1. Web services (aka cloud, paid, proprietary, closed)
-2. Self-hosted (aka local, free, open-source)
+1. Web services (Cloud-based, usually paid, proprietary, closed)
+2. Self-hosted (local, free, open-source)
 
 ### Paid web service AIs
 
-Paid web models are black boxes. You pay a company to use their AI service. You put your account info in SillyTavern and it will connect to your provider to use the AI on your behalf. 
+Paid web models are black boxes. You pay a company to use their AI service. You put your account info in SillyTavern and it will connect to your provider to use the AI on your behalf.
 
 Pros:
+
 * Really easy to get started
 * Highest quality AI writing
 
 Cons:
-* They cost money to use
-* You have no privacy. They log everything that you do.
-* They are often censored and will refuse to chat with you about certain subjects, citing California ethics
-* They have rules for what you can use them for. For example, if you try to do NSFW your account might get suspended. (but generally, the AI simply refuses to answer you)
 
-There are many, many AI services out there. Here are the most commonly used options:
-
-* OpenAI GPT-4: state of the art. You pay per use, more than any other service. The cost can become VERY expensive the longer the conversation goes.
-* OpenAI GPT 3.5 Turbo: nowhere close to GPT-4, but some people find it serviceable. Very cheap.
-* NovelAI: they're quite poor at chatting. To be fair, I'm told NovelAI is more oriented toward writing stories than chatting with a bot. You pay a fixed monthly fee for unlimited generations.
-* Anthropic's Claude: this is the closest rival to GPT-4 and is very impressive. 
+* They cost money to use.
+* Everything is logged on their server. Privacy concerns.
+* They are often censored and will refuse to chat with you about certain subjects.
 
 ### Self-hosted AIs
 
 Self-hosted models are free models you can run on your PC but require a powerful PC and more work to set up.
 
 Pros:
-* Once you set them up, they will work forever, for free, without the need for Internet access. Like a local videogame installation.
+
+* Once you set them up, they can be used for free even without Internet access.
 * Total privacy. Everything you write stays on your own PC.
-* There's a wide variety of models. Because it's a community-driven technology, you can find models that fit certain tasks or behaviors that you want. For example, you'll be able to find roleplay chat models that do not censor NSFW content.
+* There's a wide variety of models. As a community-driven technology, you can find models that fit certain tasks or behaviors that you want.
 
 Cons:
-* They are not as capable as the best paid options (i.e. write worse dialog, less creative, etc). \[UPDATE 2023-12-18: it's possible this changed since the release of Mixtral MoE, which some are saying is superior to even GPT4 for roleplay chat.\]
-* Running local models requires a powerful computer (whether it's your PC, or a cloud PC you rent)
+
+* They are not as capable as the best paid options (i.e. write worse dialog, less creative, etc).
+* Running local models requires a GPU with at least 6GB VRAM.
 * Harder to install
-* Because you are running them on your PC, the AI writes slower than a paid service
 
 If you are interested in using these, refer to the dedicated guide here: [How To Use A Self-Hosted Model](https://docs.sillytavern.app/usage/local-llm-guide/how-to-use-a-self-hosted-model/)
 
-## I'm clueless. Just spoonfeed me the easiest and fastest way I can start using SillyTavern.
+## I'm clueless. Just spoonfeed me the easiest and fastest way I can start using SillyTavern
 
-These base instructions are only for OpenAI, which is a paid service. I'd appreciate it if someone else could add separate instructions for the other services.
+These base instructions are only for OpenAI, which is a paid service. Guides for other services may come in the future.
 
 ### Install SillyTavern
 
@@ -101,11 +73,11 @@ Follow the [Installation Instructions](https://docs.sillytavern.app/installation
 1. Sign up to OpenAI
 1. Go to <https://platform.openai.com>
 1. Click your account icon in the top right, then View API Keys
-1. Click "Create new secret key". Copy it somewhere immediately. DO NOT SHARE THIS KEY. WHOEVER HAS IT CAN USE YOUR ACCOUNT TO USE GPT AT YOUR EXPENSE.
+1. Click "Create new secret key". Copy it somewhere immediately. **DO NOT SHARE THIS KEY. WHOEVER HAS IT CAN USE YOUR ACCOUNT TO USE GPT AT YOUR EXPENSE.**
 
 ### Configure SillyTavern to use your API
 
-1. In Tavern's top bar, click API Connections
+1. In SillyTavern's top bar, click API Connections
 1. Under API, select Chat Completion (OpenAI)
 1. Under Chat Completion Source, select OpenAI
 1. Paste the API key you saved in the previous step
@@ -124,11 +96,7 @@ If you did everything right, after a few seconds, Coding Sensei should respond.
 
 iPhones and iPads are not capable of running the whole SillyTavern app, but since it's just a web interface, you can run it on another computer on your home wifi, and then access it in your mobile browser. Refer to <https://docs.sillytavern.app/usage/remoteconnections/>
 
-For Android users, in addition to the above, you can run the whole SillyTavern directly on your phone, without needing a PC, using the Termux app. Refer to <https://rentry.org/STAI-Termux> .
-
-## How can I download pre-made characters to chat with?
-
-By using various 3rd party character-sharing websites.
+For Android users, in addition to the above, you can run the whole SillyTavern directly on your phone, without needing a PC, using the Termux app. Refer to <https://rentry.org/STAI-Termux> . (NOTE: Termux installations are not officially supported, and we cnanot guarantee it will work.)
 
 ## I tried to import a PNG character card but got an error that it's invalid. Why?
 
@@ -169,7 +137,6 @@ First Message:
 Any relevant information you include can be used. How well it's used depends on the power level of the AI model.
 
 NOTE: you can go back and edit any of this information once the character is created, except the name.
-
 
 ## Where can I find the old backgrounds?
 
