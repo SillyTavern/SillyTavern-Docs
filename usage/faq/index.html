@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.780320720489">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.780320932261">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.780320720489" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.780320932261" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.780320720489" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.780320932261" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.780320720489" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.780320932261" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -212,10 +212,10 @@
 <p>Modern AI language models such as ChatGPT have gotten so powerful that some of them are now convincingly able to simulate a character you create, and who you can chat with, write fiction with, etc. For example, you can tell the AI to pretend to be a Go instructor named Jubei from medieval Japan, and it will act and respond accordingly. You can have a long chat with Jubei, go to the pub together, decide to get in a fight with samurais, whatever you can imagine, and the AI will play along and write/react around this content, acting as your foil and dungeon master. Your imagination is the limit. You can tell the AI to pretend it&#x27;s Wonder Woman. You can also specify a scenario (&quot;Wonder Woman and I are robbing a bank&quot;), a writing style (&quot;Wonder Woman speaks in ebonics&quot;), or anything else you can think of.</p>
 <p>SillyTavern is an app to facilitate these uses:</p>
 <ul>
-<li>It&#x27;s a user interface that handles the communication with AI language models</li>
-<li>It lets you create new characters (a character is a description of someone that you give to an AI for them to roleplay), and switch between your characters easily</li>
-<li>It lets you import characters created by other people. See below.</li>
-<li>It will keep your chat history with a character, allowing you to resume at any time, start a new chat, review old chats, etc</li>
+<li>It&#x27;s a user interface that handles communication with AI language models.</li>
+<li>It lets you create new character cards (prompts), and switch between them easily.</li>
+<li>It lets you import characters created by other people.</li>
+<li>It will keep your chat history with a character, allowing you to resume at any time, start a new chat, review old chats, etc.</li>
 <li>In the background, it does the necessary things to prepare the AI prompt for you. Specifically, it will send a system prompt (instructions for the AI) that primes the AI to follow certain rules to improve response accuracy.</li>
 </ul>
 <doc-anchor-target id="tell-me-more-about-ai-models-and-how-they-might-differ">
@@ -245,8 +245,8 @@
 <p>Paid web models are black boxes. You pay a company to use their AI service. You put your account info in SillyTavern and it will connect to your provider to use the AI on your behalf.</p>
 <p>Pros:</p>
 <ul>
-<li>Really easy to get started</li>
-<li>Highest quality AI writing</li>
+<li>Really easy to get started.</li>
+<li>Highest quality AI writing.</li>
 </ul>
 <p>Cons:</p>
 <ul>
@@ -269,7 +269,7 @@
 </ul>
 <p>Cons:</p>
 <ul>
-<li>They are not as capable as the SOTA options (i.e. write worse dialog, less creative, etc).</li>
+<li>They are not as capable as <abbr title="State of the art">SOTA</abbr> models (i.e., they write worse dialog, are less creative, etc).</li>
 <li>Running local models requires a GPU with at least 6GB VRAM.</li>
 </ul>
 <p>If you are interested in using these, refer to the dedicated guide here: <a href="https://docs.sillytavern.app/usage/local-llm-guide/how-to-use-a-self-hosted-model/">How To Use A Self-Hosted Model</a></p>
@@ -294,9 +294,9 @@
     </h3>
 </doc-anchor-target>
 <ol>
-<li>Sign up to OpenAI</li>
+<li>Sign up to OpenAI.</li>
 <li>Go to <a href="https://platform.openai.com">https://platform.openai.com</a></li>
-<li>Click your account icon in the top right, then View API Keys</li>
+<li>Click your account icon in the top right, then View API Keys.</li>
 <li>Click &quot;Create new secret key&quot;. Copy it somewhere immediately. <strong>DO NOT SHARE THIS KEY. WHOEVER HAS IT CAN USE YOUR ACCOUNT TO USE GPT AT YOUR EXPENSE.</strong></li>
 </ol>
 <doc-anchor-target id="configure-sillytavern-to-use-your-api">
@@ -306,10 +306,10 @@
     </h3>
 </doc-anchor-target>
 <ol>
-<li>In SillyTavern&#x27;s top bar, click API Connections</li>
-<li>Under API, select Chat Completion (OpenAI)</li>
-<li>Under Chat Completion Source, select OpenAI</li>
-<li>Paste the API key you saved in the previous step</li>
+<li>In SillyTavern&#x27;s top bar, click API Connections.</li>
+<li>Under API, select Chat Completion (OpenAI).</li>
+<li>Under Chat Completion Source, select OpenAI.</li>
+<li>Paste the API key you saved in the previous step.</li>
 <li>Click the Connect button. Confirm it says Valid.</li>
 <li>By default, SillyTavern will use GPT-4 Turbo. You can choose a different model, but educate yourself on the pricing.</li>
 </ol>
@@ -320,9 +320,9 @@
     </h3>
 </doc-anchor-target>
 <ol>
-<li>In SillyTavern&#x27;s top bar, click Character Management at the far right</li>
-<li>Select an existing character such as Seraphina</li>
-<li>In the text box at the bottom, write something to Seraphina, then press Enter or click the Send button</li>
+<li>In SillyTavern&#x27;s top bar, click Character Management at the far right.</li>
+<li>Select an existing character such as Seraphina.</li>
+<li>In the text box at the bottom, write something to Seraphina, then press Enter or click the Send button.</li>
 </ol>
 <p>If you did everything right, after a few seconds, Seraphina should respond.</p>
 <doc-anchor-target id="can-i-use-sillytavern-on-my-phone-or-tablet">
