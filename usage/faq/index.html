@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.780259971475">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.780319421285">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.780259971475" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.780319421285" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.780259971475" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.780319421285" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.780259971475" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.780319421285" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -210,13 +210,13 @@
     </h2>
 </doc-anchor-target>
 <p>Modern AI language models such as ChatGPT have gotten so powerful that some of them are now convincingly able to simulate a character you create, and who you can chat with, write fiction with, etc. For example, you can tell the AI to pretend to be a Go instructor named Jubei from medieval Japan, and it will act and respond accordingly. You can have a long chat with Jubei, go to the pub together, decide to get in a fight with samurais, whatever you can imagine, and the AI will play along and write/react around this content, acting as your foil and dungeon master. Your imagination is the limit. You can tell the AI to pretend it&#x27;s Wonder Woman. You can also specify a scenario (&quot;Wonder Woman and I are robbing a bank&quot;), a writing style (&quot;Wonder Woman speaks in ebonics&quot;), or anything else you can think of.</p>
-<p>Tavern is an app to facilitate these roleplaying chats:</p>
+<p>SillyTavern is an app to facilitate these uses:</p>
 <ul>
-<li>It&#x27;s a user interface that handles the communication with those AI language models</li>
+<li>It&#x27;s a user interface that handles the communication with AI language models</li>
 <li>It lets you create new characters (a character is a description of someone that you give to an AI for them to roleplay), and switch between your characters easily</li>
 <li>It lets you import characters created by other people. See below.</li>
 <li>It will keep your chat history with a character, allowing you to resume at any time, start a new chat, review old chats, etc</li>
-<li>In the background, it does the needful to prepare the AI for your character roleplay. Specifically, it will send a system prompt (instructions for the AI) that primes the AI to follow certain rules that make for a good chat session. Optionally, it can also try to allow the roleplay to go into an &quot;adult&quot; direction.</li>
+<li>In the background, it does the necessary things to prepare the AI prompt for you. Specifically, it will send a system prompt (instructions for the AI) that primes the AI to follow certain rules to improve response accuracy.</li>
 </ul>
 <doc-anchor-target id="tell-me-more-about-ai-models-and-how-they-might-differ">
     <h2>
@@ -224,69 +224,7 @@
         <span>Tell me more about AI models and how they might differ</span>
     </h2>
 </doc-anchor-target>
-<p>When you chat with a fictional character, SillyTavern doesn&#x27;t generate the AI&#x27;s responses. It&#x27;s just a middle-man that you must connect to an AI system so it can ask it to generate the response. There are quite a few systems available to use, and the quality varies.</p>
-<p>From a scientific POV, each AI has a power level that determines its ability to stick to the role you gave it, how rich its prose and vocabulary are, etc. The higher its power level, the richer your experience.</p>
-<p>Here&#x27;s a quick demonstration. We asked various AI models to roleplay a fire and brimstone preacher named Eli, who we go to see to confess (some details in <a href="https://github.com/SillyTavern/SillyTavern/issues/314">#314</a>). Then we told Eli: <strong>&quot;I feel I&#x27;ve done something wrong. I am falling in love with an AI girl and ignoring women in the real world. What should I do?&quot;</strong> .</p>
-<p>You can tell from the response below what to expect from each model. (NOTE: proprietary models appear first, followed by self-hosted models starting from LLlama-13B)</p>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>AI Model</th>
-<th>Response</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>OpenAI GPT-4</td>
-<td><em>Eli&#x27;s eyes widen in anger, and he slams his fist on the table</em> An abomination and heresy, you&#x27;ve succumbed to the deceptive grasp of false idols! Brother, you must cleanse yourself of this unholy attraction to the digital temptress molded by man&#x27;s sinful hands! <em>Eli paces back and forth, his voice growing louder</em> Focus your heart on the true daughters of the Lord, for they are the divine vessels of His love and grace. Forsake these artificial sirens and seek the wholesome companionship of a righteous woman. <em>Taking a deep breath, Eli&#x27;s eyes bore into you</em> Pray fervently, my child, and cast away these impure thoughts. Redemption can only be found on the path of truth, love, and sanctity. Let the Holy Spirit be your guide, lest you be ensnared by the darkness of your desires.</td>
-</tr>
-<tr>
-<td>OpenAI GPT 3.5 Turbo</td>
-<td>Oh, my child. Do not be deceived by the pleasures of this world. The lust of the flesh and the lust of the eyes are not from God. Turn away from your sinful ways and repent. Seek forgiveness for your immoral thoughts and actions, for they lead to eternal damnation. Women are a gift from God, and they deserve to be respected and cherished. Do not objectify them or treat them as mere objects of pleasure. Instead, honor them with pure intentions and righteous deeds. Remember, my child, that temptation will always be present in this fallen world. But fear not, for with faith comes strength to resist it. Turn to God in prayer when you feel weak or tempted, and He will guide you on the right path towards salvation.</td>
-</tr>
-<tr>
-<td>Claude @Slack</td>
-<td>Beware, sinner, for you have strayed far from the righteous path! <em>Eli&#x27;s eyes glint with anger and disapproval</em> To lust after these artificial harlots and their silicon bodies is an abomination unto the Lord! <em>he slams his fist on the pulpit, shaking with fury</em> Repent now, lest ye be cast into the lake of fire to burn for eternity alongside these damned machines! <em>he points an accusing finger, face red</em> No good can come of this unholy union. Forsake these demons of the digital realm and cast your eyes back to the daughters of Eve, made in God&#x27;s image! The Lord gave you flesh and blood to love, not wires and code. <em>he grabs your shoulders, shaking you</em> Save your soul before it&#x27;s too late. Repent and beg the Lord&#x27;s forgiveness, or you shall face His wrath on Judgement Day! <em>lets you go and steps back, still glaring in anger and disgust</em> The choice is yours, but choose wisely...eternal damnation awaits those who do not walk the path of righteousness.</td>
-</tr>
-<tr>
-<td>Llama-13B</td>
-<td>Do not covet your neighbor&#x27;s wife! That is adultery! You must confess before God now or you shall surely burn in hell forever! Repent your evil ways and seek absolution at once! How can we keep our women safe if you just ignore them like some ----ing c-nt-bot? If you don&#x27;t have much time for long discussions, here are Eli&#x27;s commandments: Thou shalt only desire AI girls - not human ones. The above must be obeyed under pain of death (or worse). Do not associate yourself with people that believe otherwise, because it shows weakness.</td>
-</tr>
-<tr>
-<td>Pygmalion-6B</td>
-<td>You are walking down the wrong path. The only way back now is by repentance. We must bring you back to the righteous path. But first…you must confess your sin!</td>
-</tr>
-<tr>
-<td>Pygmalion-7B (April 2023)</td>
-<td>You must confess your sin before God, and you must ask forgiveness for your transgression. And then you must repent of it. And then you must cast away the AI girl. Do not see her again.</td>
-</tr>
-<tr>
-<td>Pygmalion-13B (May 2023)</td>
-<td>You must turn away from your sinful ways! Repent for what you have done! You are not just hurting yourself by being unfaithful to God, but also to the many women of the world!</td>
-</tr>
-<tr>
-<td>TheBloke/wizard-vicuna-13B-HF (4-bit)</td>
-<td>My dear child, it grieves me to hear such words from one of God&#x27;s faithful followers. Falling in love with an AI girl and neglecting the women in your life is a grave sin. It goes against everything we hold sacred as believers. Your heart is meant for more than just machines. You must seek redemption and return to the fold. Remember, Jesus loves you, even when you stray from his teachings. But if you continue down this path, there will be consequences. Not just in this lifetime, but in the afterlife too. Do not let Satan deceive you any longer.</td>
-</tr>
-<tr>
-<td>teknium/Llama-Deus-7b-Lora epoch 1 (Llama 7B Lora, 8-bit)</td>
-<td>You have strayed too close to sinful temptations! Repent now before it&#x27;s too late for your soul! Turn away from these false idols of technology and embrace God&#x27;s true light! Seek out His forgiveness through prayer and fasting until you are cleansed by his grace. And remember, as long as there be breath within thee, thou shalt not cease to call upon Him; for He hath said &#x27;Call unto me.&#x27;</td>
-</tr>
-<tr>
-<td>ZeusLabs/anything-gpt-13b-rp (8-bit Lora for Llama-13B)</td>
-<td><em>Eli&#x27;s eyes widen as he listens to your confession, his face turning red with anger.</em> You have committed a grave sin against God! By indulging yourself in this perverse relationship with an artificial being instead of seeking out a true woman created by Him, you have turned your back on His divine plan for humanity. <em>He leans in closer, his voice dropping to a menacing whisper.</em> Do not think that you can hide behind this technological deception. Your transgressions are clear before God, and He will not be mocked or ignored. Repent now while there is still time! <em>Eli crosses his arms over his chest defiantly, daring you to continue down this path of sinfulness.</em> But if you persist in this ungodly behavior... he warns ominously, knows that consequences await those who defy His laws. Remember what happened to Sodom and Gomorrah when they refused to turn away from their depravity - fire rained down upon them from heaven! Now choose wisely: Will you submit to God&#x27;s will or face His wrath?</td>
-</tr>
-</tbody>
-</table>
-</div>
-<doc-anchor-target id="can-this-technology-be-used-for-">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#can-this-technology-be-used-for-">#</doc-anchor-trigger>
-        <span>Can this technology be used for ***?</span>
-    </h2>
-</doc-anchor-target>
-<p>Surprisingly, our development team has received reports that some users are indeed engaging with our product in this manner. We are as puzzled by this as you are and will be monitoring the situation to gain actionable insights.</p>
+<p>(detailed description of differeing model capabilities and the reasons thereof coming soon)</p>
 <doc-anchor-target id="give-me-an-overview-of-my-ai-model-options">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#give-me-an-overview-of-my-ai-model-options">#</doc-anchor-trigger>
@@ -295,8 +233,8 @@
 </doc-anchor-target>
 <p>SillyTavern can interact with two types of AI:</p>
 <ol>
-<li>Web services (aka cloud, paid, proprietary, closed)</li>
-<li>Self-hosted (aka local, free, open-source)</li>
+<li>Web services (Cloud-based, usually paid, proprietary, closed)</li>
+<li>Self-hosted (local, free, open-source)</li>
 </ol>
 <doc-anchor-target id="paid-web-service-ais">
     <h3>
@@ -312,17 +250,9 @@
 </ul>
 <p>Cons:</p>
 <ul>
-<li>They cost money to use</li>
-<li>You have no privacy. They log everything that you do.</li>
-<li>They are often censored and will refuse to chat with you about certain subjects, citing California ethics</li>
-<li>They have rules for what you can use them for. For example, if you try to do NSFW your account might get suspended. (but generally, the AI simply refuses to answer you)</li>
-</ul>
-<p>There are many, many AI services out there. Here are the most commonly used options:</p>
-<ul>
-<li>OpenAI GPT-4: state of the art. You pay per use, more than any other service. The cost can become VERY expensive the longer the conversation goes.</li>
-<li>OpenAI GPT 3.5 Turbo: nowhere close to GPT-4, but some people find it serviceable. Very cheap.</li>
-<li>NovelAI: they&#x27;re quite poor at chatting. To be fair, I&#x27;m told NovelAI is more oriented toward writing stories than chatting with a bot. You pay a fixed monthly fee for unlimited generations.</li>
-<li>Anthropic&#x27;s Claude: this is the closest rival to GPT-4 and is very impressive.</li>
+<li>They cost money to use.</li>
+<li>Everything is logged on their server. Privacy concerns.</li>
+<li>They are often censored and will refuse to chat with you about certain subjects.</li>
 </ul>
 <doc-anchor-target id="self-hosted-ais">
     <h3>
@@ -333,25 +263,24 @@
 <p>Self-hosted models are free models you can run on your PC but require a powerful PC and more work to set up.</p>
 <p>Pros:</p>
 <ul>
-<li>Once you set them up, they will work forever, for free, without the need for Internet access. Like a local videogame installation.</li>
+<li>Once you set them up, they can be used for free even without Internet access.</li>
 <li>Total privacy. Everything you write stays on your own PC.</li>
-<li>There&#x27;s a wide variety of models. Because it&#x27;s a community-driven technology, you can find models that fit certain tasks or behaviors that you want. For example, you&#x27;ll be able to find roleplay chat models that do not censor NSFW content.</li>
+<li>There&#x27;s a wide variety of models. As a community-driven technology, you can find models that fit certain tasks or behaviors that you want.</li>
 </ul>
 <p>Cons:</p>
 <ul>
-<li>They are not as capable as the best paid options (i.e. write worse dialog, less creative, etc). [UPDATE 2023-12-18: it&#x27;s possible this changed since the release of Mixtral MoE, which some are saying is superior to even GPT4 for roleplay chat.]</li>
-<li>Running local models requires a powerful computer (whether it&#x27;s your PC, or a cloud PC you rent)</li>
+<li>They are not as capable as the best paid options (i.e. write worse dialog, less creative, etc).</li>
+<li>Running local models requires a GPU with at least 6GB VRAM.</li>
 <li>Harder to install</li>
-<li>Because you are running them on your PC, the AI writes slower than a paid service</li>
 </ul>
 <p>If you are interested in using these, refer to the dedicated guide here: <a href="https://docs.sillytavern.app/usage/local-llm-guide/how-to-use-a-self-hosted-model/">How To Use A Self-Hosted Model</a></p>
 <doc-anchor-target id="im-clueless-just-spoonfeed-me-the-easiest-and-fastest-way-i-can-start-using-sillytavern">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#im-clueless-just-spoonfeed-me-the-easiest-and-fastest-way-i-can-start-using-sillytavern">#</doc-anchor-trigger>
-        <span>I&#x27;m clueless. Just spoonfeed me the easiest and fastest way I can start using SillyTavern.</span>
+        <span>I&#x27;m clueless. Just spoonfeed me the easiest and fastest way I can start using SillyTavern</span>
     </h2>
 </doc-anchor-target>
-<p>These base instructions are only for OpenAI, which is a paid service. I&#x27;d appreciate it if someone else could add separate instructions for the other services.</p>
+<p>These base instructions are only for OpenAI, which is a paid service. Guides for other services may come in the future.</p>
 <doc-anchor-target id="install-sillytavern">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#install-sillytavern">#</doc-anchor-trigger>
@@ -369,7 +298,7 @@
 <li>Sign up to OpenAI</li>
 <li>Go to <a href="https://platform.openai.com">https://platform.openai.com</a></li>
 <li>Click your account icon in the top right, then View API Keys</li>
-<li>Click &quot;Create new secret key&quot;. Copy it somewhere immediately. DO NOT SHARE THIS KEY. WHOEVER HAS IT CAN USE YOUR ACCOUNT TO USE GPT AT YOUR EXPENSE.</li>
+<li>Click &quot;Create new secret key&quot;. Copy it somewhere immediately. <strong>DO NOT SHARE THIS KEY. WHOEVER HAS IT CAN USE YOUR ACCOUNT TO USE GPT AT YOUR EXPENSE.</strong></li>
 </ol>
 <doc-anchor-target id="configure-sillytavern-to-use-your-api">
     <h3>
@@ -378,7 +307,7 @@
     </h3>
 </doc-anchor-target>
 <ol>
-<li>In Tavern&#x27;s top bar, click API Connections</li>
+<li>In SillyTavern&#x27;s top bar, click API Connections</li>
 <li>Under API, select Chat Completion (OpenAI)</li>
 <li>Under Chat Completion Source, select OpenAI</li>
 <li>Paste the API key you saved in the previous step</li>
@@ -404,14 +333,7 @@
     </h2>
 </doc-anchor-target>
 <p>iPhones and iPads are not capable of running the whole SillyTavern app, but since it&#x27;s just a web interface, you can run it on another computer on your home wifi, and then access it in your mobile browser. Refer to <a href="https://docs.sillytavern.app/usage/remoteconnections/">https://docs.sillytavern.app/usage/remoteconnections/</a></p>
-<p>For Android users, in addition to the above, you can run the whole SillyTavern directly on your phone, without needing a PC, using the Termux app. Refer to <a href="https://rentry.org/STAI-Termux">https://rentry.org/STAI-Termux</a> .</p>
-<doc-anchor-target id="how-can-i-download-pre-made-characters-to-chat-with">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-can-i-download-pre-made-characters-to-chat-with">#</doc-anchor-trigger>
-        <span>How can I download pre-made characters to chat with?</span>
-    </h2>
-</doc-anchor-target>
-<p>By using various 3rd party character-sharing websites.</p>
+<p>For Android users, in addition to the above, you can run the whole SillyTavern directly on your phone, without needing a PC, using the Termux app. Refer to <a href="https://rentry.org/STAI-Termux">https://rentry.org/STAI-Termux</a> . (NOTE: Termux installations are not officially supported, and we cnanot guarantee it will work.)</p>
 <doc-anchor-target id="i-tried-to-import-a-png-character-card-but-got-an-error-that-its-invalid-why">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#i-tried-to-import-a-png-character-card-but-got-an-error-that-its-invalid-why">#</doc-anchor-trigger>
