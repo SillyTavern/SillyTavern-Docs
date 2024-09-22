@@ -18,7 +18,7 @@ SillyTavern is an app to facilitate these uses:
 
 ## Tell me more about AI models and how they might differ
 
-(detailed description of differeing model capabilities and the reasons thereof coming soon)
+(detailed description of different model capabilities and the reasons thereof coming soon)
 
 ## Give me an overview of my AI model options
 
@@ -54,9 +54,8 @@ Pros:
 
 Cons:
 
-* They are not as capable as the best paid options (i.e. write worse dialog, less creative, etc).
+* They are not as capable as the SOTA options (i.e. write worse dialog, less creative, etc).
 * Running local models requires a GPU with at least 6GB VRAM.
-* Harder to install
 
 If you are interested in using these, refer to the dedicated guide here: [How To Use A Self-Hosted Model](https://docs.sillytavern.app/usage/local-llm-guide/how-to-use-a-self-hosted-model/)
 
@@ -82,21 +81,21 @@ Follow the [Installation Instructions](https://docs.sillytavern.app/installation
 1. Under Chat Completion Source, select OpenAI
 1. Paste the API key you saved in the previous step
 1. Click the Connect button. Confirm it says Valid.
-1. By default, SillyTavern will use GPT 3.5 Turbo. If you have access to GPT-4, you really want to be using that for the highest quality, but educate yourself on the pricing.
+1. By default, SillyTavern will use GPT-4 Turbo. You can choose a different model, but educate yourself on the pricing.
 
 ### Test your setup
 
 1. In SillyTavern's top bar, click Character Management at the far right
-1. Select an existing character such as Coding Sensei
-1. In the text box at the bottom, write something to Coding Sensei, then press Enter or click the Send button
+1. Select an existing character such as Seraphina
+1. In the text box at the bottom, write something to Seraphina, then press Enter or click the Send button
 
-If you did everything right, after a few seconds, Coding Sensei should respond.
+If you did everything right, after a few seconds, Seraphina should respond.
 
 ## Can I use SillyTavern on my phone or tablet?
 
-iPhones and iPads are not capable of running the whole SillyTavern app, but since it's just a web interface, you can run it on another computer on your home wifi, and then access it in your mobile browser. Refer to <https://docs.sillytavern.app/usage/remoteconnections/>
+iPhones and iPads are not capable of running the whole SillyTavern app, but since it's just a web interface, you can run it on another computer on your home Wi-Fi, and then access it in your mobile browser. Refer to <https://docs.sillytavern.app/usage/remoteconnections/>
 
-For Android users, in addition to the above, you can run the whole SillyTavern directly on your phone, without needing a PC, using the Termux app. Refer to <https://rentry.org/STAI-Termux> . (NOTE: Termux installations are not officially supported, and we cnanot guarantee it will work.)
+For Android users, in addition to the above, you can run the whole SillyTavern directly on your phone, without needing a PC, using the Termux app. Refer to <https://rentry.org/STAI-Termux> . (NOTE: Termux installations are not officially supported, and we can't guarantee it will work.)
 
 ## I tried to import a PNG character card but got an error that it's invalid. Why?
 
@@ -106,10 +105,6 @@ Two possibilities:
 2. The PNG file was actually a WEBP file with a `.png` filename. You can try renaming the card to `.webp` before importing, or look for a proper PNG version of the image.
 
 ## How can I make my own AI character?
-
-It depends on the model/API you're using. KoboldAI seems to use a custom syntax, you can refer to their site for that.
-
-I will speak for the services I know: GPT, Claude, and the Llama or Mistral-based LLMs. With these services, you can just use the natural English language to describe the character. Let's create a very basic new character as an example.
 
 1. Click the Character Management button
 1. Click Create New Character
@@ -138,14 +133,6 @@ Any relevant information you include can be used. How well it's used depends on 
 
 NOTE: you can go back and edit any of this information once the character is created, except the name.
 
-## Where can I find the old backgrounds?
-
-We're moving to a 100% original content only policy, so old background images have been removed from this repository.
-
-You can find them archived here:
-
-<https://files.catbox.moe/1xevnc.zip>
-
 ## Where are my API keys stored? Why can't I see them?
 
 SillyTavern saves your API keys to a `secrets.json` file in the server directory.
@@ -154,24 +141,25 @@ By default, they will not be exposed to a frontend after you enter them and relo
 
 To enable viewing your keys by clicking a button in the API block:
 
-1. Set the value of `allowKeysExposure` to `true` in `config.yaml` file.
+1. Set the value of `allowKeysExposure` to `true` in the `config.yaml` file.
 2. Restart the SillyTavern server.
 
 ## Why is the UI so slow/jittery?
 
 * Try enabling the No Blur Effect (Fast UI) mode on the User settings panel.
-* make sure your browser is using Hardware Acceleration.
+* Enable Reduced motion in the UI theme settings to remove cosmetic animations.
+* Make sure your browser is using Hardware Acceleration.
 
 ## How to make the AI write more?
 
 Sometimes the AI will only respond with a single sentence when you'd like it to be more verbose.
-This is usually a problem with locally run models like Pygmalion.
+This is usually a problem with locally run models.
 
 If you simply want the bot to continue writing from where it left off at the end of its most recent reply, you can send an empty user message by typing nothing into the Input Bar and clicking Send. This will force the bot to continue the story.
 
 Strategies for fixing this:
 
-* Increase the `Response Length` slider
+* Decrease the value of the `Response Length` setting
 * Design a good `First Message` for the Character, which shows them speaking in a long-winded manner. AI models can improve a lot when given guidance about the writing style you expect.
 * Add a phrase in the character's Description Box such as "likes to talk a lot" or "very verbose speaker"
 * Do the same thing for your `Author's Note`, or `Post-History Instruction Prompt`
@@ -181,10 +169,10 @@ Strategies for fixing this:
 
 This is mostly only a problem for models like ChatGPT or Claude. The same strategies can be applied but in reverse.
 
-* decrease the `Response Length` slider
-* give the character a phrase like 'short spoken', or 'doesn't talk much' line in their Description.
-* give the character a brief First Message to set the tone and expectation for the chat.
-* make sure `Auto-Continue` is turned off.
+* Decrease the value of the `Response Length` setting
+* Give the character a phrase like 'short spoken', or 'doesn't talk much' line in their Description.
+* Give the character a brief First Message to set the tone and expectation for the chat.
+* Make sure `Auto-Continue` is turned off.
 
 ## How to make the AI stop writing the actions of my character, and driving the plot all on its own?
 
