@@ -99,6 +99,14 @@ Most Text Completion models have a recommended "Instruct Template" (usually ment
 - The newest models (Claude 3) support multimodality
 - Requires a specific prompting style and utilization of [prefills](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/prefill-claudes-response) for reply steering
 - [Website](https://console.anthropic.com/)
+- 
+
+### Mistral (by Mistral AI)
+
+- Efficient models from various sizes and use cases.
+- From 32k to 128k context sizes for general use, and 32k to 256k context sizes for coding.
+- Free Tier with rate limits.
+- Reasonable moderation, with Mistrals main principles being to be neutral and empower users, more information [here](https://mistral.ai/terms/). 
 
 ### OpenRouter
 
