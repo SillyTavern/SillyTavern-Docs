@@ -37,7 +37,7 @@ Mistral AI is a team developing both open and proprietary models with high scien
 - Once that's done, you can choose a [plan](https://console.mistral.ai/billing/plans) and set up your payment information or opt for the Free Tier.
 - Next, you can create your [API key](https://console.mistral.ai/api-keys/). You may need to wait a couple of minutes before the key becomes valid!
 
-**Important!**
+**Important!**  
 *Lost API keys can't be restored! You would have to create a new one. Make sure to keep it safe!*
 
 ## Proxy
