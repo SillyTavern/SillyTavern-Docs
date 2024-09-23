@@ -84,24 +84,37 @@ Most Text Completion models have a recommended "Instruct Template" (usually ment
 - They are stronger/smarter than most local LLMs
 - However they all have content filtering of varying degrees, and most require payment
 
+### OpenAI (ChatGPT)
+
+- Easy to set up and acquire an API key
+- Requires prepayment for credits and charges per prompt
+- Very logical. Creative style can be repetitive and predictable
+- Most of the newer models (gpt-4-turbo, gpt-4o) support multimodality
+- [Website](https://platform.openai.com/), [Setup Instructions](https://docs.sillytavern.app/usage/api-connections/openai/)
+
 ### Claude (by Anthropic)
 
 - Recommended for users who want their AI chats to have a creative, unique writing style
-- 4k, 8k, 100k context models available
-- Strongest content filter of all APIs (as of June 2023)
-- Limited access to most models
-- Currently not accepting new account creation; on a waitlist (June 2023)
-- [Website](https://www.anthropic.com/index/introducing-claude)
+- Requires prepayment for credits and charges per prompt
+- The newest models (Claude 3) support multimodality
+- Requires a specific prompting style and utilization of [prefills](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/prefill-claudes-response) for reply steering
+- [Website](https://console.anthropic.com/)
+
+### OpenRouter
+
+- WindowAI browser extension allows you to connect to the abovementioned cloud LLMs with your own API key
+- Use OpenRouter to pay to use their API keys instead
+- Useful if you don't want to create individual accounts on each service
+- [WindowAI website](https://windowai.io) and [OpenRouter website](https://openrouter.ai)
 
 ### DreamGen
 
-- Uncensored models without filters tuned for steerable AI role-play and story-writing
+- Uncensored models tuned for steerable creative writing
 - Free monthly credits, as well as paid subscription
 - Models ranging from 7B to 70B
 - [Setup Instructions](/usage/api-connections/DreamGen/)
 
-
-### Kobold Horde
+### AI Horde
 
 - SillyTavern can access this API out of the box with no additional settings required
 - Uses the GPU of individual volunteers (Horde Workers) to process responses for your chat inputs
@@ -110,8 +123,8 @@ Most Text Completion models have a recommended "Instruct Template" (usually ment
 
 ### Mancer AI
 
-- Service that hosts unconstrained models, no need to jailbreak.
-- Uses 'credits' to pay for tokens on various models. Free credits refill daily.
+- Service that hosts unconstrained models of various families
+- Uses 'credits' to pay for tokens on various models
 - Does not log prompts by default, but you can enable it to get credit discounts on tokens.
 - Uses an API similar to `Oobabooga TextGeneration WebUI`, see [Mancer docs](https://mancer.tech/docs/clients/#sampling-parameters) for details.
 - [Website](https://mancer.tech/), [Setup Instructions](https://docs.sillytavern.app/usage/api-connections/mancer/)
@@ -120,19 +133,4 @@ Most Text Completion models have a recommended "Instruct Template" (usually ment
 
 - No content filter
 - Paid subscription required
-- [Setup Instructions](https://docs.sillytavern.app/usage/api-connections/novelai/)
-
-### OpenAI (ChatGPT)
-
-- Easy to set up and acquire an API key, 4k-128k context models available
-- Free trial requires a valid phone number
-- After the trial, all usage is charged monthly
-- Writing style for roleplay can be repetitive and predictable
-- [Setup Instructions](https://docs.sillytavern.app/usage/api-connections/openai/)
-
-### OpenRouter
-
-- WindowAI browser extension allows you to connect to the abovementioned cloud LLMs with your own API key
-- Use OpenRouter to pay to use their API keys instead
-- Useful if you don't want to create individual accounts on each service
-- [WindowAI website](https://windowai.io) and [OpenRouter website](https://openrouter.ai)
+- [Website](https://novelai.net/), [Setup Instructions](https://docs.sillytavern.app/usage/api-connections/novelai/)
