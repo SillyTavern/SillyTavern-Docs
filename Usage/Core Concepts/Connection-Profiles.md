@@ -21,6 +21,7 @@ Connection Profiles store the following selections.
 
 ### Text Completion APIs
 
+* [System Prompt and its state](https://docs.sillytavern.app/usage/core-concepts/advancedformatting/#system-prompt)
 * [Instruct Mode state and template](https://docs.sillytavern.app/usage/core-concepts/instructmode/)
 * [Context Template](https://docs.sillytavern.app/usage/core-concepts/advancedformatting/#context-template)
 * [Tokenizer](https://docs.sillytavern.app/usage/core-concepts/advancedformatting/#tokenizer)
