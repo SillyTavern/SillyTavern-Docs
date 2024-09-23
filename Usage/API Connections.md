@@ -100,6 +100,13 @@ Most Text Completion models have a recommended "Instruct Template" (usually ment
 - Requires a specific prompting style and utilization of [prefills](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/prefill-claudes-response) for reply steering
 - [Website](https://console.anthropic.com/)
 
+### Mistral (by Mistral AI)
+
+- Efficient models from various sizes and use cases. You can create an account and API key on [their platform](https://console.mistral.ai/api-keys/).
+- From 32k to 128k context sizes for general use, and 32k to 256k context sizes for coding.
+- Free Tier with rate limits.
+- Reasonable moderation, with Mistrals main principles being to be neutral and empower users, more information [here](https://mistral.ai/terms/). 
+
 ### OpenRouter
 
 - WindowAI browser extension allows you to connect to the abovementioned cloud LLMs with your own API key
