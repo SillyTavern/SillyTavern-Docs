@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.780391691590">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.780418117613">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.780391691590" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.780418117613" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.780391691590" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.780418117613" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.780391691590" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.780418117613" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -319,6 +319,19 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 <li>They are stronger/smarter than most local LLMs</li>
 <li>However they all have content filtering of varying degrees, and most require payment</li>
 </ul>
+<doc-anchor-target id="openai-chatgpt">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#openai-chatgpt">#</doc-anchor-trigger>
+        <span>OpenAI (ChatGPT)</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Easy to set up and acquire an API key</li>
+<li>Requires prepayment for credits and charges per prompt</li>
+<li>Very logical. Creative style can be repetitive and predictable</li>
+<li>Most of the newer models (gpt-4-turbo, gpt-4o) support multimodality</li>
+<li><a href="https://platform.openai.com/">Website</a>, <a href="https://docs.sillytavern.app/usage/api-connections/openai/">Setup Instructions</a></li>
+</ul>
 <doc-anchor-target id="claude-by-anthropic">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#claude-by-anthropic">#</doc-anchor-trigger>
@@ -327,11 +340,22 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 </doc-anchor-target>
 <ul>
 <li>Recommended for users who want their AI chats to have a creative, unique writing style</li>
-<li>4k, 8k, 100k context models available</li>
-<li>Strongest content filter of all APIs (as of June 2023)</li>
-<li>Limited access to most models</li>
-<li>Currently not accepting new account creation; on a waitlist (June 2023)</li>
-<li><a href="https://www.anthropic.com/index/introducing-claude">Website</a></li>
+<li>Requires prepayment for credits and charges per prompt</li>
+<li>The newest models (Claude 3) support multimodality</li>
+<li>Requires a specific prompting style and utilization of <a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/prefill-claudes-response">prefills</a> for reply steering</li>
+<li><a href="https://console.anthropic.com/">Website</a></li>
+</ul>
+<doc-anchor-target id="openrouter">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#openrouter">#</doc-anchor-trigger>
+        <span>OpenRouter</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>WindowAI browser extension allows you to connect to the abovementioned cloud LLMs with your own API key</li>
+<li>Use OpenRouter to pay to use their API keys instead</li>
+<li>Useful if you don&#x27;t want to create individual accounts on each service</li>
+<li><a href="https://windowai.io">WindowAI website</a> and <a href="https://openrouter.ai">OpenRouter website</a></li>
 </ul>
 <doc-anchor-target id="dreamgen">
     <h3>
@@ -340,15 +364,15 @@ Below is a description of their respective strengths, weaknesses, and use cases.
     </h3>
 </doc-anchor-target>
 <ul>
-<li>Uncensored models without filters tuned for steerable AI role-play and story-writing</li>
+<li>Uncensored models tuned for steerable creative writing</li>
 <li>Free monthly credits, as well as paid subscription</li>
 <li>Models ranging from 7B to 70B</li>
 <li><a href="/usage/api-connections/dreamgen/">Setup Instructions</a></li>
 </ul>
-<doc-anchor-target id="kobold-horde">
+<doc-anchor-target id="ai-horde">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#kobold-horde">#</doc-anchor-trigger>
-        <span>Kobold Horde</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ai-horde">#</doc-anchor-trigger>
+        <span>AI Horde</span>
     </h3>
 </doc-anchor-target>
 <ul>
@@ -364,8 +388,8 @@ Below is a description of their respective strengths, weaknesses, and use cases.
     </h3>
 </doc-anchor-target>
 <ul>
-<li>Service that hosts unconstrained models, no need to jailbreak.</li>
-<li>Uses &#x27;credits&#x27; to pay for tokens on various models. Free credits refill daily.</li>
+<li>Service that hosts unconstrained models of various families</li>
+<li>Uses &#x27;credits&#x27; to pay for tokens on various models</li>
 <li>Does not log prompts by default, but you can enable it to get credit discounts on tokens.</li>
 <li>Uses an API similar to <code v-pre>Oobabooga TextGeneration WebUI</code>, see <a href="https://mancer.tech/docs/clients/#sampling-parameters">Mancer docs</a> for details.</li>
 <li><a href="https://mancer.tech/">Website</a>, <a href="https://docs.sillytavern.app/usage/api-connections/mancer/">Setup Instructions</a></li>
@@ -379,32 +403,7 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 <ul>
 <li>No content filter</li>
 <li>Paid subscription required</li>
-<li><a href="https://docs.sillytavern.app/usage/api-connections/novelai/">Setup Instructions</a></li>
-</ul>
-<doc-anchor-target id="openai-chatgpt">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#openai-chatgpt">#</doc-anchor-trigger>
-        <span>OpenAI (ChatGPT)</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li>Easy to set up and acquire an API key, 4k-128k context models available</li>
-<li>Free trial requires a valid phone number</li>
-<li>After the trial, all usage is charged monthly</li>
-<li>Writing style for roleplay can be repetitive and predictable</li>
-<li><a href="https://docs.sillytavern.app/usage/api-connections/openai/">Setup Instructions</a></li>
-</ul>
-<doc-anchor-target id="openrouter">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#openrouter">#</doc-anchor-trigger>
-        <span>OpenRouter</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li>WindowAI browser extension allows you to connect to the abovementioned cloud LLMs with your own API key</li>
-<li>Use OpenRouter to pay to use their API keys instead</li>
-<li>Useful if you don&#x27;t want to create individual accounts on each service</li>
-<li><a href="https://windowai.io">WindowAI website</a> and <a href="https://openrouter.ai">OpenRouter website</a></li>
+<li><a href="https://novelai.net/">Website</a>, <a href="https://docs.sillytavern.app/usage/api-connections/novelai/">Setup Instructions</a></li>
 </ul>
 
                                 
