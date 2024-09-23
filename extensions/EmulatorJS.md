@@ -33,11 +33,11 @@ With the power of multimodal models such as GPT-4 Vision, your AI bots can see y
 ### Requirements
 
 1. A browser that supports [ImageCapture](https://developer.mozilla.org/en-US/docs/Web/API/ImageCapture#browser_compatibility). Tested on desktop Chrome. Firefox requires to enable it with config. Safari won't work.
-2. Image inlining mode is recommended. Requires OpenAI or OpenRouter API key with "gpt-4-vision" as the selected model; Google MakerSuite with Gemini Vision model; or Anthropic Claude 3 (Opus model recommended).
+2. Chat Completion API with image inlining mode is recommended. Requires OpenAI or OpenRouter API key with "gpt-4-turbo" or "gpt-4o" as the selected model; Google AI Studio with Gemini 1.5 Pro or Gemini 1.5 Flash model; Anthropic Claude (Opus 3 or Sonnet 3.5 models recommended). Check the API documentation of the chosen to see if the chosen model supports multimodal prompts.
 3. If image inlining is disabled, make sure that the "Image Captioning" extension is enabled, then select the "Multimodal" captioning source:
-  - OpenAI API with access to the "gpt-4-vision" model.
-  - OpenRouter API with compatible multimodal model.
-  - Locally hosted Llava model in Koboldcpp or oobabooga TextGen WebUI.
+  - OpenAI, Claude, MistralAI, Google AI Studio with access with any vision-supported model.
+  - OpenRouter API with a compatible multimodal model.
+  - Locally hosted Llava model in Ollama, KoboldCpp, oobabooga TextGen WebUI or vLLM.
 
 ### How to enable comments
 
