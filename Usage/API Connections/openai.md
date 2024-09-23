@@ -3,9 +3,6 @@ order: 20
 ---
 # Chat Completions
 
-Chat completion APIs include OpenAI, Claude, Mistral AI and PaLM.
-WindowAI & OpenRouter allows connection to these as well.
-
 ## OpenAI
 
 ### API key
