@@ -99,7 +99,6 @@ Most Text Completion models have a recommended "Instruct Template" (usually ment
 - The newest models (Claude 3) support multimodality
 - Requires a specific prompting style and utilization of [prefills](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/prefill-claudes-response) for reply steering
 - [Website](https://console.anthropic.com/)
-- 
 
 ### Mistral (by Mistral AI)
 
