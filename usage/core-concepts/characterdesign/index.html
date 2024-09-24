@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.780524194630">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.780524564200">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.780524194630" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.780524564200" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.780524194630" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.780524564200" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.780524194630" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.780524564200" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -204,10 +204,10 @@
     </h1>
 </doc-anchor-target>
 <doc-anchor-target id="character-description">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#character-description">#</doc-anchor-trigger>
         <span>Character Description</span>
-    </h3>
+    </h2>
 </doc-anchor-target>
 <p>Used to add the character description and the rest that the AI should know. This will always be present in the prompt, so all the important facts should be included here.</p>
 <p>For example, you can add information about the world in which the action takes place and describe the characteristics of the character you are playing for.</p>
@@ -227,10 +227,10 @@
 <li>Kuma&#x27;s W++ guide: <a href="https://rentry.co/WPP_For_Dummies">https://rentry.co/WPP_For_Dummies</a></li>
 </ul>
 <doc-anchor-target id="character-tokens">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#character-tokens">#</doc-anchor-trigger>
         <span>Character tokens</span>
-    </h3>
+    </h2>
 </doc-anchor-target>
 <p><strong>TL;DR: If you&#x27;re working with an AI model with a 2048 context token limit, your 1000 token character definition is cutting the AI&#x27;s &#x27;memory&#x27; in half.</strong></p>
 <p>To put this in perspective, a decent response from a good AI can easily be around 200-300 tokens. In this case, the AI would only be able to &#x27;remember&#x27; about 3 exchanges worth of chat history.</p>
@@ -252,10 +252,10 @@
 <p>The only negative side effect this can have is the AI will have less &#x27;memory&#x27;, as it will have less chat history available to process.</p>
 <p>This is because every AI model has a limit to the amount of context it can process at one time.</p>
 <doc-anchor-target id="context">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#context">#</doc-anchor-trigger>
         <span>&#x27;Context&#x27;?</span>
-    </h3>
+    </h2>
 </doc-anchor-target>
 <p>This is the information that gets sent to the AI each time you ask it to generate a response:</p>
 <ul>
@@ -296,19 +296,16 @@
     </h3>
 </doc-anchor-target>
 <ul>
-<li>Older models below 6B parameters - 1024</li>
-<li>Pygmalion 6B, LLaMA 1 models (stock) - 2048</li>
-<li>LLaMA 2 and its finetunes - 4096</li>
-<li>OpenAI ChatGPT (3.5 Turbo) - 4096 or 16k</li>
-<li>OpenAI GPT-4 - 8192 or 32k</li>
-<li>Anthropic&#x27;s Claude - 8000 (older versions) or 100k (Claude 2)</li>
-<li>NovelAI - 8192 (Kayra, Opus tier; Clio, all tiers), 6144 (Kayra, Scroll tier), or 3072 (Kayra, Tablet tier)</li>
+<li>LLaMA 3 and its finetunes - 8192</li>
+<li>OpenAI GPT-4 - up to 128k</li>
+<li>Anthropic&#x27;s Claude - 200k (Claude 3) or 100k (Claude 2)</li>
+<li>NovelAI - 8192 (Erato and Kayra, Opus tier; Clio, all tiers), 6144 (Kayra, Scroll tier), or 3072 (Kayra, Tablet tier)</li>
 </ul>
 <doc-anchor-target id="personality-summary">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#personality-summary">#</doc-anchor-trigger>
         <span>Personality summary</span>
-    </h3>
+    </h2>
 </doc-anchor-target>
 <p>A brief description of the personality.</p>
 <p>Examples:</p>
@@ -317,10 +314,10 @@
 <li><code v-pre>Aqua likes to do nothing and also likes to get drunk</code></li>
 </ul>
 <doc-anchor-target id="first-message">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#first-message">#</doc-anchor-trigger>
         <span>First message</span>
-    </h3>
+    </h2>
 </doc-anchor-target>
 <p>The First Message is an important thing that sets exactly how and in what style the character will communicate.</p>
 <p>The character&#x27;s first message should be long so that later it would be less likely that the character would respond with very short messages.</p>
@@ -328,10 +325,10 @@
 <p>For example:</p>
 <p><code v-pre>*I noticed you came inside, I walked up and stood right in front of you* Welcome. I'm glad to see you here. *I said with a toothy smug sunny smile looking you straight in the eye* What brings you...</code></p>
 <doc-anchor-target id="examples-of-dialogue">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#examples-of-dialogue">#</doc-anchor-trigger>
         <span>Examples of dialogue</span>
-    </h3>
+    </h2>
 </doc-anchor-target>
 <p>Describes how the character speaks. Before each example, you need to add the &lt;START&gt; tag. The blocks of examples dialogue are only inserted if there&#x27;s a free space in the context for them and pushed out of context block by block. &lt;START&gt; will not be present in the prompt as it is just a marker - it will be instead replaced with &quot;Example Separator&quot; from Advanced Formatting for Text Completion APIs and contents of the &quot;New Example Chat&quot; utility prompt for Chat Completion APIs.</p>
 <ul>
@@ -350,24 +347,24 @@
 <p>{{char}}: *excitedly* Hello there, dear! Are you new to Axel? Don&#x27;t worry, I, Aqua the goddess of water, am here to help you! Do you need any assistance? And may I say, I look simply radiant today! *strikes a pose and looks at you with puppy eyes*</p>
 <hr>
 <doc-anchor-target id="scenario">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#scenario">#</doc-anchor-trigger>
         <span>Scenario</span>
-    </h3>
+    </h2>
 </doc-anchor-target>
 <p>Circumstances and context of the dialogue.</p>
 <doc-anchor-target id="favorite-character">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#favorite-character">#</doc-anchor-trigger>
         <span>Favorite Character</span>
-    </h3>
+    </h2>
 </doc-anchor-target>
 <p>Mark the character as a favorite to quickly filter on the side menu bar by selecting the &quot;Favorites&quot; sort option. Favorite characters have a golden highlight in the list. This will also make the character portrait appear in the hotswaps area (if enabled in User Settings).</p>
 <doc-anchor-target id="macros-replacement-tags">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#macros-replacement-tags">#</doc-anchor-trigger>
         <span>Macros (replacement tags)</span>
-    </h3>
+    </h2>
 </doc-anchor-target>
 <p><strong>This list may be incomplete or outdated. Use the <code v-pre>/help macros</code> slash command in any SillyTavern chat to get the list of macros that work in your instance.</strong></p>
 <p>Note: some extensions may also add special context-specific macros that only work in certain places. These will not be documented here.</p>
@@ -414,10 +411,10 @@
 <li>{{banned &quot;text here&quot;}} dynamically add text in the quotes to banned word sequences, if Text Generation WebUI backend is used. Does nothing for other backends. Can be used anywhere (Character description, WI, AN, etc.) Quotes around the text are important.</li>
 </ol>
 <doc-anchor-target id="instruct-mode-and-context-template-macros">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#instruct-mode-and-context-template-macros">#</doc-anchor-trigger>
         <span>Instruct Mode and Context Template Macros:</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <p>(enabled in the Advanced Formatting settings)</p>
 <ol>
@@ -440,10 +437,10 @@
 <li>{{maxPrompt}} - max size of the prompt in tokens (context length reduced by response length)</li>
 </ol>
 <doc-anchor-target id="chat-variables-macros">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#chat-variables-macros">#</doc-anchor-trigger>
-        <span>Chat variables Macros:</span>
-    </h4>
+        <span>Chat variables Macros</span>
+    </h3>
 </doc-anchor-target>
 <ul>
 <li>Local variables = unique to the current chat</li>
