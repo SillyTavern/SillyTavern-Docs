@@ -43,7 +43,7 @@ SillyTavern is built around the concept of "character cards". A character card i
 
 The name field is the only required character card input. To start a neutral conversation with the language model, create a new card simply called "Assistant" and leave the rest of the boxes blank. For a more themed chat, you can provide the language model with various background details, behavior and writing patterns, and a scenario to jump start the chat.
 
-<!-- To have a quick conversation without selecting a character card or to just test the LLM connection, simply type your prompt input into the input bar on the Welcome Screen after opening SillyTavern. Please note that such chats are temporary and will not be saved. -->
+To have a quick conversation without selecting a character card or to just test the LLM connection, simply type your prompt input into the input bar on the Welcome Screen after opening SillyTavern. Please note that such chats are temporary and will not be saved.
 
 To get a general idea on how to define character cards, see the default character (Seraphina) or download selected community-made cards from the "Download Extensions & Assets" menu.
 
