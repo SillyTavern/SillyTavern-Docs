@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.780514924289">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.780517128415">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -35,11 +35,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.780514924289" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.780517128415" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.780514924289" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.780517128415" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.780514924289" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.780517128415" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -250,8 +250,8 @@
         <span>Models</span>
     </h2>
 </doc-anchor-target>
-<p>You should use Kayra.</p>
-<p>Clio is not a bad model, but not as powerful as Kayra. Clio&#x27;s speed advantage is insignificant. On NovelAI&#x27;s tablet and scroll tiers, Clio does have a larger context size than Kayra, but trading that off against better coherence/prose quality from Kayra is unlikely to be worth it.</p>
+<p>If you have Opus, then Erato is the model to use. If you don&#x27;t have Opus, then Kayra is the best available model.</p>
+<p>Clio has a larger context size on Tablet/scroll tiers, but the strength of Kayra usually makes up for that difference.</p>
 <doc-anchor-target id="settings">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#settings">#</doc-anchor-trigger>
@@ -277,7 +277,7 @@ You can also manually add your own settings files.</p>
 <ul>
 <li>Kayra (Tablet) - 3072 tokens</li>
 <li>Kayra (Scroll) - 6144 tokens</li>
-<li>Kayra (Opus) and Clio (all tiers) - 8192 tokens</li>
+<li>Erato (Opus exclusive), Kayra (Opus) and Clio (all tiers) - 8192 tokens</li>
 </ul>
 <doc-anchor-target id="preamble">
     <h3>
@@ -293,6 +293,19 @@ You can also manually add your own settings files.</p>
     </h2>
 </doc-anchor-target>
 <p>This is, according to Novel AI, what the default presets are good for.</p>
+<doc-anchor-target id="erato">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#erato">#</doc-anchor-trigger>
+        <span>Erato</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Golden Arrow - A good all-rounder.</li>
+<li>Wilder - Higher variety of word choice, more differences between rerolls, more prone to mistakes.</li>
+<li>Zany Scribe - Avoids mistakes and repetition. Prioritizes more complex words.</li>
+<li>Dragonfruit - Varied and complex language with little repetition. More frequent mistakes and contradictions.</li>
+<li>Shosetsu - Designed for writing in Japanese. Works fine for English too.</li>
+</ul>
 <doc-anchor-target id="kayra">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#kayra">#</doc-anchor-trigger>
@@ -301,17 +314,11 @@ You can also manually add your own settings files.</p>
 </doc-anchor-target>
 <ul>
 <li>Asper - For creative writing. Expect unexpected twists.</li>
-<li>Blended-Coffee - (CFG) Fresh Coffee with some CFG mixed in.</li>
-<li>Blook - (CFG) Tends towards simple, concise but varied language.</li>
 <li>Carefree - A good All-rounder</li>
-<li>CosmicCube - (CFG) A solid, sensible baseline. Tweak randomness to preference.</li>
 <li>Fresh-Coffee - Keeps things on track. Handles instruct well.</li>
-<li>Green-Active-Writer - (CFG) Similar to Writer&#x27;s Daemon, but with high CFG</li>
-<li>PilotFish - (CFG) Made for lore-heavy creative writing.</li>
 <li>Pro_Writer - Mimic the pacing and feel of best-selling fiction</li>
 <li>Stelenes - More likely to choose reasonable alternatives. Variety on retries.</li>
 <li>Tea_Time - It gets good when it gets going.</li>
-<li>Tesseract - (CFG) Maintains style and quality.</li>
 <li>Writers-Daemon - Extremely imaginative, sometimes too much.</li>
 </ul>
 <doc-anchor-target id="clio">
