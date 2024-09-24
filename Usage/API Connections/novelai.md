@@ -54,9 +54,9 @@ This is, according to Novel AI, what the default presets are good for.
 
 * Golden Arrow - A good all-rounder.
 * Wilder - Higher variety of word choice, more differences between rerolls, more prone to mistakes.
-Zany Scribe - Avoids mistakes and repetition. Prioritizes more complex words.
-Dragonfruit - Varied and complex language with little repetition. More frequent mistakes and contradictions.
-Shosetsu - Designed for writing in Japanese. Works fine for English too.
+* Zany Scribe - Avoids mistakes and repetition. Prioritizes more complex words.
+* Dragonfruit - Varied and complex language with little repetition. More frequent mistakes and contradictions.
+* Shosetsu - Designed for writing in Japanese. Works fine for English too.
 
 ### Kayra
 
