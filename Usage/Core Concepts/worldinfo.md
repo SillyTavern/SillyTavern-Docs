@@ -1,8 +1,8 @@
 # World Info
 
-**World Info (also known as Lorebooks or Memory Books) is a powerful tool available in ST to insert prompts dynamically into your chat to help guide the AI replies**
+**World Info (also known as Lorebooks or Memory Books) is a powerful tool available in ST to insert prompts dynamically into your chat to help guide the AI replies.**
 
-Commmonly, World Info (WI for short) is used to  enhance the AI's understanding of the details in your fictional world, however you could use a World Info entry to insert ANYTHING that you would like to insert into the prompt. 
+Commonly, World Info (WI for short) is used to  enhance the AI's understanding of the details in your fictional world, however you could use a World Info entry to insert ANYTHING that you would like to insert into the prompt.
 
 It functions like a dynamic dictionary that only inserts relevant information from World Info entries when keywords associated with the entries are present in the message text.
 
@@ -10,14 +10,14 @@ The SillyTavern engine activates and seamlessly integrates the appropriate lore 
 
 *It is important to note that while World Info helps guide the AI toward the desired content, it does not guarantee its appearance in the generated output messages. That depends on how good your model is at making use of additional information!*
 
-### Pro Tips
+## Pro Tips
 
 * The World Info engine is a very powerful prompt management tool. Don't fixate on adding character lore alone, feel free to experiment.
 * Activation keywords, titles, and other information that is not in the **Content** field is not inserted into context, so each World Info entry should have a comprehensive, standalone description.
 * To create rich and detailed world lore, entries can be interlinked and reference one another by using recursive activation. See more on [Recursion](#recursive-scanning) below.
 * SillyTavern offers flexible context budgeting for inserted background information. To conserve prompt tokens, it is advisable to keep entry contents concise.
 
-### Further reading
+## Further reading
 
 * [World Info Encyclopedia](https://rentry.co/world-info-encyclopedia): Exhaustive in-depth guide to World Info and Lorebooks. By kingbri, Alicat, Trappu.
 
@@ -56,17 +56,20 @@ If a defined key is a valid regex (Javascript regex style, with `/` as delimiter
 
 An example of a use-case for advanced regex matching:  
 An entry/instruction that should be inserted, when char is doing a weather-related action
+
 ```js
 /(?:\{\{char\}\}|he|she) (?:is talking about|is noticing|is checking whether|observes) (?:the )?(rainy weather|heavy wind|it is going to rain|cloudy sky)/i
 ```
 
-For more information on Regex syntax and possbilities: [Regular expressions - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions)
+For more information on Regex syntax and possibilities: [Regular expressions - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions)
 
 ###### Advanced Regex Per-Message Matching
-ST prefixes every chat message with `\{\{character name\}\}:` and after v1.12.6, concatenates prepends them using the character value 1 (`\x01`).  
+
+ST prefixes every chat message in the WI scan buffer with `\{\{character name\}\}:` and after v1.12.6, concatenates prepends them using the character value 1 (`\x01`).  
 This means you can match specific input or output from a certain character using a regex tied to that separation character.
 
 For example, to match only the user saying "hello", you could use the following regex:
+
 ```js
 /\x01\{\{user\}\}:[^\x01]*?hello/
 ```
@@ -150,7 +153,7 @@ A single entry can be part of multiple inclusion groups if they are defined as a
 
 To provide more control over which entries are activated via [Inclusion Group](https://docs.sillytavern.app/usage/core-concepts/worldinfo/#inclusion-group), you can use the 'Prioritize Inclusion' setting. This option allows you to specify deterministically which entry to choose instead of randomly rolling Group Weight chances.
 
-If multiple entries having the same group label and this setting turned on were activated, the one with the highest 'Order' value will be selected. This is useful for creating fallback sequences via inclusion groups. For example to priorize low-depth entries with more emphasis, or to choose a specific instruction on setting the scene over another if both are valid.
+If multiple entries having the same group label and this setting turned on were activated, the one with the highest 'Order' value will be selected. This is useful for creating fallback sequences via inclusion groups. For example to prioritize low-depth entries with more emphasis, or to choose a specific instruction on setting the scene over another if both are valid.
 
 #### Use Group Scoring
 
