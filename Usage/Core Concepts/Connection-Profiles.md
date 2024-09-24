@@ -1,9 +1,5 @@
 # Connection Profiles
 
-!!! warning Warning
-This content describes a pre-release version and is subject to change.
-!!!
-
 Save Connection Profiles to quickly switch between different APIs, models and formatting templates. This is useful when you actively use multiple API connections or need to switch between different configurations without surfing through the menus.
 
 ## Accessing Connection Profiles

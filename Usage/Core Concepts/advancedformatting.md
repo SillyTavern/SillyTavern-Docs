@@ -119,10 +119,6 @@ Chat Completion APIs **(non-overridable)**:
 
 #### Additional Tokenizers
 
-!!! warning Warning
-This content describes a pre-release version and is subject to change.
-!!!
-
 These tokenizers are not included in the default installation due to their size A one-time download is required when they're used for the first time.
 
 1. Qwen2 tokenizer.
