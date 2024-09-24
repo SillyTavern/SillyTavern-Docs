@@ -22,9 +22,9 @@ To get your NovelAI API key, follow these steps:
 
 ## Models
 
-You should use Kayra. 
+If you have Opus, then Erato is the model to use. If you don't have Opus, then Kayra is the best available model.
 
-Clio is not a bad model, but not as powerful as Kayra. Clio's speed advantage is insignificant. On NovelAI's tablet and scroll tiers, Clio does have a larger context size than Kayra, but trading that off against better coherence/prose quality from Kayra is unlikely to be worth it.
+Clio has a larger context size on Tablet/scroll tiers, but the strength of Kayra usually makes up for that difference.
 
 ## Settings
 
@@ -41,7 +41,7 @@ How many tokens of the chat are kept in the context at any given time. How large
 
 - Kayra (Tablet) - 3072 tokens
 - Kayra (Scroll) - 6144 tokens
-- Kayra (Opus) and Clio (all tiers) - 8192 tokens
+- Erato (Opus exclusive), Kayra (Opus) and Clio (all tiers) - 8192 tokens
 
 ### Preamble
 
@@ -50,20 +50,22 @@ Text that is inserted right above the chat to modify the writing style. The reco
 ## Preset Descriptions
 This is, according to Novel AI, what the default presets are good for.
 
+### Erato
+
+* Golden Arrow - A good all-rounder.
+* Wilder - Higher variety of word choice, more differences between rerolls, more prone to mistakes.
+Zany Scribe - Avoids mistakes and repetition. Prioritizes more complex words.
+Dragonfruit - Varied and complex language with little repetition. More frequent mistakes and contradictions.
+Shosetsu - Designed for writing in Japanese. Works fine for English too.
+
 ### Kayra
 
 * Asper - For creative writing. Expect unexpected twists.
-* Blended-Coffee - (CFG) Fresh Coffee with some CFG mixed in.
-* Blook - (CFG) Tends towards simple, concise but varied language.
 * Carefree - A good All-rounder
-* CosmicCube - (CFG) A solid, sensible baseline. Tweak randomness to preference.
 * Fresh-Coffee - Keeps things on track. Handles instruct well.  
-* Green-Active-Writer - (CFG) Similar to Writer's Daemon, but with high CFG
-* PilotFish - (CFG) Made for lore-heavy creative writing.
 * Pro_Writer - Mimic the pacing and feel of best-selling fiction
 * Stelenes - More likely to choose reasonable alternatives. Variety on retries.
 * Tea_Time - It gets good when it gets going.
-* Tesseract - (CFG) Maintains style and quality.
 * Writers-Daemon - Extremely imaginative, sometimes too much.
 
 ### Clio
