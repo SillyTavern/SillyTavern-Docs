@@ -1,10 +1,10 @@
 # Author's Note
 
-### What is it?
+## What is it?
 
 Author's Note is a powerful tool for customizing AI responses which inserts a section of text into the prompt at any position and at any frequency you desire.
 
-### Usage
+## Usage
 
 The Author's Note can be found in the Options menu on the left side of the chat input bar.
 
@@ -12,9 +12,9 @@ The Author's Note can be found in the Options menu on the left side of the chat 
 ---------------|---------------------|
 |![](/static/extensions/note-menu.png) | ![](/static/extensions/note-panel.png)|
 
-### Configuring Author's Notes
+## Configuring Author's Notes
 
-#### Chat-specific Author's Note
+### Chat-specific Author's Note
 
 The box at the top of the Author's Note panel contains the Author's Note for your current chat.
 
@@ -50,9 +50,9 @@ Frequency 4 = Author's Note will be inserted into every 4th user input prompt.
 
 The box at the bottom of the panel contains the Default Author's Note which will be applied to each new chat.
 
-### Common Use Cases
+## Common Use Cases
 
-#### Remind AI of response formatting
+### Remind AI of response formatting
 
 The Author's Note can be used to specify how the AI should write it's responses.
 
@@ -60,11 +60,11 @@ The Author's Note can be used to specify how the AI should write it's responses.
 - [Write your next reply in the style of Edgar Allan Poe]
 - [Use markdown italics to signify unspoken actions, and quotation marks to specify spoken word.]
 
-#### Reinforcing Instructions
+### Reinforcing Instructions
 
 - [Remember the instructions you were given at the beginning of this chat.]
 
-#### As temporary World Info, Character Bias, or Instruct for non-Instruct models
+### As temporary World Info, Character Bias, or Instruct for non-Instruct models
 
 - [\{\{char\}\} is in the library]
 - [\{\{user\}\} has a fresh wound to his leg, so won't be able to run away.]

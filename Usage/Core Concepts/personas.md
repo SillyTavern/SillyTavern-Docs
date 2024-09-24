@@ -50,7 +50,7 @@ Alternatively, you could use /lock and /unlock slash commands to achieve the sam
 ## Default persona
 
 You can select one persona as your preferred default identity, automatically selecting it for all new chats and chats where a persona is not locked.
-The default persona is represented by a yellow outline on the Persona Management panel. 
+The default persona is represented by a yellow outline on the Persona Management panel.
 
 * To set persona as a default, click the "crown" button in the persona block, then confirm your action.
 * To undo this action and unset the default persona, click the "crown" button again.

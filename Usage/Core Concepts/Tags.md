@@ -33,7 +33,7 @@ You can backup and restore all the information here (tag list, tag assignments t
 You can use grip buttons on the left to reorder tags as they will appear in the tag filter in Character Management.
 
 !!! warning Warning
-The tags backup JSON file is not intented for sharing with others as it contains information specific to your instance only, such as internal entity names!
+The tags backup JSON file is not intended for sharing with others as it contains information specific to your instance only, such as internal entity names!
 !!!
 
 ## Importing tags when importing character cards

@@ -1,6 +1,6 @@
 # Character Design
 
-### Character Description
+## Character Description
 
 Used to add the character description and the rest that the AI should know. This will always be present in the prompt, so all the important facts should be included here.
 
@@ -14,12 +14,12 @@ Methods of character formatting is a complicated topic beyond the scope of this 
 
 Recommended guides that were tested with or rely on SillyTavern's features:
 
-* Trappu's PLists + Ali:Chat guide: https://wikia.schneedc.com/bot-creation/trappu/creation
-* AliCat's Ali:Chat guide: https://rentry.co/alichat
-* kingbri's minimalistic guide: https://rentry.co/kingbri-chara-guide
-* Kuma's W++ guide: https://rentry.co/WPP_For_Dummies
+* Trappu's PLists + Ali:Chat guide: <https://wikia.schneedc.com/bot-creation/trappu/creation>
+* AliCat's Ali:Chat guide: <https://rentry.co/alichat>
+* kingbri's minimalistic guide: <https://rentry.co/kingbri-chara-guide>
+* Kuma's W++ guide: <https://rentry.co/WPP_For_Dummies>
 
-### Character tokens
+## Character tokens
 
 **TL;DR: If you're working with an AI model with a 2048 context token limit, your 1000 token character definition is cutting the AI's 'memory' in half.**
 
@@ -39,7 +39,7 @@ The only negative side effect this can have is the AI will have less 'memory', a
 
 This is because every AI model has a limit to the amount of context it can process at one time.
 
-### 'Context'?
+## 'Context'?
 
 This is the information that gets sent to the AI each time you ask it to generate a response:
 
@@ -67,15 +67,12 @@ These will always be sent to the AI with every generation request:
 
 ### Popular AI Model Context Token Limits
 
-* Older models below 6B parameters - 1024
-* Pygmalion 6B, LLaMA 1 models (stock) - 2048
-* LLaMA 2 and its finetunes - 4096
-* OpenAI ChatGPT (3.5 Turbo) - 4096 or 16k
-* OpenAI GPT-4 - 8192 or 32k
-* Anthropic's Claude - 8000 (older versions) or 100k (Claude 2)
-* NovelAI - 8192 (Kayra, Opus tier; Clio, all tiers), 6144 (Kayra, Scroll tier), or 3072 (Kayra, Tablet tier)
+* LLaMA 3 and its finetunes - 8192
+* OpenAI GPT-4 - up to 128k
+* Anthropic's Claude - 200k (Claude 3) or 100k (Claude 2)
+* NovelAI - 8192 (Erato and Kayra, Opus tier; Clio, all tiers), 6144 (Kayra, Scroll tier), or 3072 (Kayra, Tablet tier)
 
-### Personality summary
+## Personality summary
 
 A brief description of the personality.
 
@@ -84,7 +81,7 @@ Examples:
 * `Cheerful, cunning, provocative`
 * `Aqua likes to do nothing and also likes to get drunk`
 
-### First message
+## First message
 
 The First Message is an important thing that sets exactly how and in what style the character will communicate.
 
@@ -96,7 +93,7 @@ For example:
 
 `*I noticed you came inside, I walked up and stood right in front of you* Welcome. I'm glad to see you here. *I said with a toothy smug sunny smile looking you straight in the eye* What brings you...`
 
-### Examples of dialogue
+## Examples of dialogue
 
 Describes how the character speaks. Before each example, you need to add the \<START\> tag. The blocks of examples dialogue are only inserted if there's a free space in the context for them and pushed out of context block by block. \<START\> will not be present in the prompt as it is just a marker - it will be instead replaced with "Example Separator" from Advanced Formatting for Text Completion APIs and contents of the "New Example Chat" utility prompt for Chat Completion APIs.
 
@@ -125,15 +122,15 @@ Example:
 
 ---
 
-### Scenario
+## Scenario
 
 Circumstances and context of the dialogue.
 
-### Favorite Character
+## Favorite Character
 
 Mark the character as a favorite to quickly filter on the side menu bar by selecting the "Favorites" sort option. Favorite characters have a golden highlight in the list. This will also make the character portrait appear in the hotswaps area (if enabled in User Settings).
 
-### Macros (replacement tags)
+## Macros (replacement tags)
 
 **This list may be incomplete or outdated. Use the `/help macros` slash command in any SillyTavern chat to get the list of macros that work in your instance.**
 
@@ -181,7 +178,7 @@ A list of macros that are replaced when sending a prompt to generate:
 38. \{\{// (note)\}\} allows to leave a note that will be replaced with blank content. Not visible for the AI.
 39. \{\{banned "text here"\}\} dynamically add text in the quotes to banned word sequences, if Text Generation WebUI backend is used. Does nothing for other backends. Can be used anywhere (Character description, WI, AN, etc.) Quotes around the text are important.
 
-#### Instruct Mode and Context Template Macros:
+### Instruct Mode and Context Template Macros:
 
 (enabled in the Advanced Formatting settings)
 
@@ -203,7 +200,7 @@ A list of macros that are replaced when sending a prompt to generate:
 16. \{\{instructStop\}\} – instruct stop sequence
 17. \{\{maxPrompt\}\} - max size of the prompt in tokens (context length reduced by response length)
 
-#### Chat variables Macros:
+### Chat variables Macros
 
 - Local variables = unique to the current chat
 - Global variables = works in any chat for any character

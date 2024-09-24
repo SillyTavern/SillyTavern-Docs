@@ -28,14 +28,14 @@ The following formatting rules are supported:
 
 ##### LaTeX syntax
 
-```
+```txt
 $$ formula goes here $$
 ```
 
 ##### Asciimath syntax
 
-```
-formula goes here $
+```txt
+$ formula goes here $
 ```
 
 More information: [KaTeX](https://katex.org/)
