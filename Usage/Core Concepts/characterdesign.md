@@ -178,7 +178,7 @@ A list of macros that are replaced when sending a prompt to generate:
 38. \{\{// (note)\}\} allows to leave a note that will be replaced with blank content. Not visible for the AI.
 39. \{\{banned "text here"\}\} dynamically add text in the quotes to banned word sequences, if Text Generation WebUI backend is used. Does nothing for other backends. Can be used anywhere (Character description, WI, AN, etc.) Quotes around the text are important.
 
-### Instruct Mode and Context Template Macros:
+### Instruct Mode and Context Template Macros
 
 (enabled in the Advanced Formatting settings)
 
