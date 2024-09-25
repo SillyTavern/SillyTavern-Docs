@@ -25,8 +25,6 @@ Recommended guides that were tested with or rely on SillyTavern's features:
 
 To put this in perspective, a decent response from a good AI can easily be around 200-300 tokens. In this case, the AI would only be able to 'remember' about 3 exchanges worth of chat history.
 
-***
-
 ### Why did my character's token counter turn red?
 
 When we see your character has over half of the model-defined context length of tokens in its definitions, we highlight it for you because this can lower the AI's capabilities to provide an enjoyable conversation.
