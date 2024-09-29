@@ -10,7 +10,7 @@ This differs from adding static direction through prompting in that it adds sequ
 
 Before you begin, ensure you've met the following prerequisites:
 
-- Make sure you're on the latest `staging` branch of SillyTavern.
+- Make sure you're on the latest version of SillyTavern.
 - Install the "Objective" extension from the "Download Extensions & Assets" menu in the Extensions panel (stacked blocks icon).
 
 ### Common Use Cases

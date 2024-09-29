@@ -8,7 +8,7 @@ Fear not, this stunning groundbreaking technology is already available at your l
 
 ## Prerequisites
 
-1. Latest `staging` branch of SillyTavern.
+1. Latest version of SillyTavern.
 2. [Miniconda](https://docs.conda.io/projects/miniconda/en/latest/miniconda-install.html) installed.
 3. (Windows) [Visual C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/) installed.
 4. WAV files with voice clips to clone from (~10 seconds per file). File requirements: PCM, Mono, 22050Hz, 16-bit (convert via Audacity).
@@ -93,12 +93,14 @@ The audio will still be generated (assuming you're using the latest version of t
 
 #### How to get streaming support?
 
-1. Update to the latest `staging` branch of SillyTavern.
+1. Update SillyTavern to the latest version.
 2. Update the XTTS server to the latest version.
-```
+
+```bash
 conda activate xtts
 pip install xtts-api-server --upgrade
 ```
+
 3. Start and connect XTTS to ST as usual.
 4. Enable the "Streaming" XTTS extension setting in SillyTavern.
 

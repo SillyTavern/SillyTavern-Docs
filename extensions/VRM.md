@@ -6,7 +6,7 @@ This guide will walk you through the process of setting up and customizing the V
 
 Before you begin, ensure you've met the following prerequisites:
 
-1. **Branch Selection**: Make sure you're using the latest `staging` branch of SillyTavern to access the latest features and updates.
+1. **Branch Selection**: Make sure you're using the latest version branch of SillyTavern to access the latest features and updates.
 
 2. **Extension Installation**: Install the "VRM" extension from the "Download Extensions & Assets" menu in the Extensions panel (represented by the stacked blocks icon).
 
