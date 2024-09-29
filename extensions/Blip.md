@@ -6,7 +6,7 @@ This guide will walk you through setting up and customizing blip extension for y
 
 Before you begin, ensure you've met the following prerequisites:
 
-- Make sure you're on the latest `staging` branch of SillyTavern.
+- Make sure you're on the latest version of SillyTavern.
 - Install the "Blip" extension from the "Download Extensions & Assets" menu in the Extensions panel (stacked blocks icon).
 
 ## Blip global settings
@@ -56,8 +56,5 @@ You can save a profile for each character:
    - You can get official ST blip assets from the assets extension menu.
    - Or put file directly into: `\SillyTavern\data\<user-handle>\assets\blip`.
    - Enable the checkbox to force to wait entire file is played before playing again if needed.
-
-# Remarks
-- Blip animation can only start when full message is received, don't use streaming mode.
 
 Thank you for following this guide! Your SillyTavern experience is now enriched with text animation and blip voices.
