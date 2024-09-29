@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.780964042366">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.780966179451">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,11 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.780964042366" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.780966179451" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.780964042366" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.780966179451" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.780964042366" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.780966179451" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.780966179451" defer></script>
 
     <Style>
         a {
@@ -213,7 +214,7 @@
     </h2>
 </doc-anchor-target>
 <ol>
-<li>Latest <code v-pre>staging</code> branch of SillyTavern.</li>
+<li>Latest version of SillyTavern.</li>
 <li><a href="https://docs.conda.io/projects/miniconda/en/latest/miniconda-install.html">Miniconda</a> installed.</li>
 <li>(Windows) <a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/">Visual C++ Build Tools</a> installed.</li>
 <li>WAV files with voice clips to clone from (~10 seconds per file). File requirements: PCM, Mono, 22050Hz, 16-bit (convert via Audacity).</li>
@@ -335,11 +336,11 @@ from your speakers. The generation takes some time and it&#x27;s not real-time e
     </h4>
 </doc-anchor-target>
 <ol>
-<li>Update to the latest <code v-pre>staging</code> branch of SillyTavern.</li>
+<li>Update SillyTavern to the latest version.</li>
 <li>Update the XTTS server to the latest version.</li>
 </ol>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">conda activate xtts
+<pre class="language-bash"><code v-pre class="language-bash">conda activate xtts
 pip install xtts-api-server --upgrade</code></pre>
 </doc-codeblock></div>
 <ol start="3">
@@ -441,6 +442,6 @@ pip install xtts-api-server --upgrade</code></pre>
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "XTTS with voice cloning", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "XTTS with voice cloning", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
