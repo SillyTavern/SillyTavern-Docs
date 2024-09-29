@@ -113,12 +113,13 @@ A text field for your convenience to label your entries, which is not utilized b
 
 If empty, can be backfilled using the entries' first key by clicking on the "Fill empty memos" button.
 
-#### Status
+#### Strategy
 
 1. 🔵 (Blue Circle) = The entry would always be present in the prompt.
 2. 🟢 (Green Circle) = The entry will be triggered only in the presence of the keyword.
 3. 🔗 (Chain Link) = The entry is allowed to be inserted by embedding similarity.
-4. ❌ (Red Cross) = The entry is disabled.
+
+Each Entry also has a toggle that allows you to enable or disable the entry.
 
 #### Optional Filter
 
