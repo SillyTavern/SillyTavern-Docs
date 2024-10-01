@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.781099786616">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.781128041143">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,12 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.781099786616" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.781128041143" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.781099786616" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.781128041143" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.781099786616" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.781099786616" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.781128041143" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -205,164 +204,25 @@
     </h1>
 </doc-anchor-target>
 <p>Function Calling allows adding dynamic functionality to your extensions by letting the LLM use structured data that you then can use to trigger a specific functionality of the extension.</p>
-<doc-anchor-target id="limitations-and-prerequisites">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#limitations-and-prerequisites">#</doc-anchor-trigger>
-        <span>Limitations and prerequisites</span>
-    </h2>
-</doc-anchor-target>
-<ol>
-<li>This feature is only available for certain Chat Completion sources: OpenAI, Claude, MistralAI, Cohere, Groq, OpenRouter, and Perplexity.</li>
-<li>Text Completion APIs don&#x27;t support function calls, but some of them selectively allow JSON grammar schemas. Their use is outside the scope of this document.</li>
-<li>For requests that use streaming, the function calling feature is not available. Note: background (&#x27;quiet&#x27;) requests are never streamed, even if streaming is enabled.</li>
-<li>The support for function calling must be explicitly allowed by the user first. This is done by enabling the &quot;Enable function calling&quot; option in the AI Response Configuration panel.</li>
-<li>When a function is called, the normal response generation will be suppressed, so you will likely receive an empty response when calling <code v-pre>generateQuietPrompt</code>.</li>
-<li>There is no guarantee that an LLM will perform any function calls at all. Always provide a backup plan for when the function call is not executed.</li>
-<li>To determine if the function calling feature is supported, you can call <code v-pre>isFunctionCallingSupported</code> exported from the <code v-pre>openai.js</code> module.</li>
-</ol>
-<doc-anchor-target id="register-a-function">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#register-a-function">#</doc-anchor-trigger>
-        <span>Register a function</span>
-    </h2>
-</doc-anchor-target>
-<p>When a Chat Completion request is prepared, an event of type <code v-pre>LLM_FUNCTION_TOOL_REGISTER</code> is emitted through the <code v-pre>eventSource</code> object. The registrations are ephemeral and do not persist between requests, so you can always choose whether or not to skip the registration based on the event data.</p>
-<p>The event data consists of the following: type of the generation that triggered the event, generation data (including sampling parameters and assembled chat prompt), and a callback function to register a function tool. To register a function, you MUST call the <code v-pre>registerFunctionTool</code> function with the following parameters:</p>
-<ol>
-<li><code v-pre>name</code>: Name of the function tool to register. This will be later used as an identifier to call the function.</li>
-<li><code v-pre>description</code>: Description of the function tool. It helps the language model to better understand what the tool is supposed to do.</li>
-<li><code v-pre>params</code>: JSON schema for the parameters of the function tool. A model will try to generate a JSON object that matches this schema for the parameters of the function call.</li>
-<li><code v-pre>required</code>: Whether the function tool should be forced to be used. This is just a hint and does not guarantee that your function will be executed, especially if the API doesn&#x27;t support simultaneous calls or does not provide a way to force it.</li>
-</ol>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Attention</h5>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">/**
- * Callback data for the `LLM_FUNCTION_TOOL_REGISTER` event type that is triggered when a function tool can be registered.
- */
-interface FunctionToolRegister {
-    /**
-     * The type of generation that is being used
-     */
-    type?: string;
-    /**
-     * Generation data, including messages and sampling parameters
-     */
-    data: Record&lt;string, object&gt;;
-    /**
-     * Callback to register an LLM function tool.
-     */
-    registerFunctionTool: typeof registerFunctionTool;
-}
-
-/**
- * Callback data for the `LLM_FUNCTION_TOOL_REGISTER` event type that is triggered when a function tool is registered.
- * @param name Name of the function tool to register
- * @param description Description of the function tool
- * @param params JSON schema for the parameters of the function tool
- * @param required Whether the function tool should be forced to be used
- */
-declare function registerFunctionTool(name: string, description: string, params: object, required: boolean): Promise&lt;void&gt;;</code></pre>
+<pre class="language-none"><code v-pre class="language-none">This feature is currently under development. The previous implementation was wrong and will be fixed in the next release.</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="handle-a-successful-call">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#handle-a-successful-call">#</doc-anchor-trigger>
-        <span>Handle a successful call</span>
-    </h2>
-</doc-anchor-target>
-<p>When a function call is detected in the output of the LLM, an event of type <code v-pre>LLM_FUNCTION_TOOL_CALL</code> is emitted through the <code v-pre>eventSource</code> object. The event data consists of the following: name of the function tool that was called and arguments that were passed to the function in a JSON-serialized string form.</p>
-<p><strong>Note:</strong> Always check that arguments can be parsed correctly and perform basic validation before using them! Sometimes models do not generate correct JSON.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-typescript"><code v-pre class="language-typescript">/**
- * Callback data for the `LLM_FUNCTION_TOOL_CALL` event type that is triggered when a function tool is called.
- */
-interface FunctionToolCall {
-    /**
-     * Name of the function tool to call
-     */
-    name: string;
-    /**
-     * JSON object with the parameters to pass to the function tool
-     */
-    arguments: string;
-}</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="example-code">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#example-code">#</doc-anchor-trigger>
-        <span>Example code</span>
-    </h2>
-</doc-anchor-target>
-<p>Example of the function registration and usage:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-javascript"><code v-pre class="language-javascript">// Not supported? Alas, resort to other methods.
-if (!isFunctionCallingSupported()) {
-    return;
-}
-
-// Setup a callback for the `LLM_FUNCTION_TOOL_REGISTER` event.
-// Use `on` to always listen to the event, or `once` to listen only once.
-eventSource.on(event_types.LLM_FUNCTION_TOOL_REGISTER, (args) =&gt; {
-    // Only trigger on quiet mode
-    if (args.type !== 'quiet') {
-        return;
-    }
-
-    // Register the function tool
-    args.registerFunctionTool(
-        // name
-        'getWeather',
-        // description
-        'Get the weather for a specific location',
-        // params
-        {
-            $schema: 'http://json-schema.org/draft-04/schema#',
-            type: 'object',
-            properties: {
-                location: {
-                    type: 'string',
-                    description: 'The location to get the weather for',
-                },
-            },
-            required: [
-                'location',
-            ],
-        },
-        // required
-        true,
-    );
-});
-
-// Setup a callback for the `LLM_FUNCTION_TOOL_CALL` event.
-// Respond to a function call if it matches the registered function tool.
-eventSource.on(event_types.LLM_FUNCTION_TOOL_CALL, (args) =&gt; {
-    if (args.name !== 'getWeather') {
-        return;
-    }
-
-    try {
-        // Expecting JSON data like: { &quot;location&quot;: &quot;Sacramento&quot; }
-        const data = JSON.parse(args?.arguments);
-
-        // No actual data to work with
-        if (!data.location) {
-            return;
-        }
-
-        // Do something with the data
-        getWeather(data.location);
-    } catch {
-        // Model did not generate correct JSON
-    }
-});
-
-// Make a quiet prompt generation request. This will trigger the `LLM_FUNCTION_TOOL_REGISTER` event.
-// Imagine that the prompt is coming from a user input.
-const response = await generateQuietPrompt('What is the weather in Sacramento?', false, false);
-// Response may contain a plain text response in case no tools were called. Always check for this.
-
-if (response) {
-    // Do something with the response
-}</code></pre>
-</doc-codeblock></div>
+        </div>
+    </div>
+</div>
 
                                 
                                 <!-- Required only on API pages -->
@@ -435,6 +295,6 @@ if (response) {
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Function Calling", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Function Calling", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
