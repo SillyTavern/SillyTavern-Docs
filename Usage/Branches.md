@@ -1,5 +1,6 @@
 ---
 icon: git-branch
+order: 100
 ---
 
 ## Branches

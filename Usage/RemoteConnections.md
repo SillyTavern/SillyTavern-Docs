@@ -1,6 +1,6 @@
 ---
 icon: rss
-order: 24
+order: 10
 ---
 # Remote connections
 

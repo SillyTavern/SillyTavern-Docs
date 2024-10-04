@@ -1,6 +1,6 @@
 ---
 label: Reverse Proxying SillyTavern
-order: 23
+order: 5
 icon: server
 ---
 

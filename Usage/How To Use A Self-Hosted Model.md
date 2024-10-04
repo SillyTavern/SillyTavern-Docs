@@ -1,5 +1,6 @@
 ---
-order: 22
+order: 20
+icon: desktop-download
 ---
 
 # Self-hosted AI models
