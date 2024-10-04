@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.781128041143">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.781377125597">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -14,7 +14,7 @@
     <!-- Primary Meta Tags -->
     <title>DreamGen | docs.ST.app</title>
     <meta name="title" content="DreamGen | docs.ST.app">
-    <meta name="description" content="DreamGen is an app and an API for AI-powered role-playing and story-writing.">
+    <meta name="description" content="DreamGen is an app and an API for AI-powered creative writing.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/usage/api-connections/dreamgen/">
@@ -23,23 +23,23 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/usage/api-connections/dreamgen/">
     <meta property="og:title" content="DreamGen | docs.ST.app">
-    <meta property="og:description" content="DreamGen is an app and an API for AI-powered role-playing and story-writing.">
+    <meta property="og:description" content="DreamGen is an app and an API for AI-powered creative writing.">
     <meta property="og:image" content="https://docs.sillytavern.app/static/dreamgen/dreamgen_api_keys_new.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/usage/api-connections/dreamgen/">
     <meta property="twitter:title" content="DreamGen | docs.ST.app">
-    <meta property="twitter:description" content="DreamGen is an app and an API for AI-powered role-playing and story-writing.">
+    <meta property="twitter:description" content="DreamGen is an app and an API for AI-powered creative writing.">
     <meta property="twitter:image" content="https://docs.sillytavern.app/static/dreamgen/dreamgen_api_keys_new.jpg">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.781128041143" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.781377125597" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.781128041143" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.781377125597" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.781128041143" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.781377125597" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -205,7 +205,7 @@
         <span>DreamGen</span>
     </h1>
 </doc-anchor-target>
-<p>DreamGen is an app and an API for AI-powered role-playing and story-writing. They have a free tier, as well as a paid subscription that allows unlimited monthly access to their high-quality in-house text generation models made specifically for the purpose of steerable AI role-playing and story-writing. Create an account to get started: <a href="https://dreamgen.com/">https://dreamgen.com/</a>.</p>
+<p>DreamGen is an app and an API for AI-powered creative writing. They have a free tier, as well as a paid subscription that allows unlimited monthly access to their high-quality in-house text generation models made specifically for the purpose of steerable AI-assisted writing. Create an account to get started: <a href="https://dreamgen.com/">https://dreamgen.com/</a>.</p>
 <p>The (free) credits reset at the start of each calendar month. See <a href="https://dreamgen.com/pricing">pricing</a> to see the credit cost for each model and <a href="https://dreamgen.com/account/usage">usage</a> to see your remaining credits.</p>
 <doc-anchor-target id="connecting-to-dreamgen">
     <h2>
@@ -253,7 +253,7 @@
         <span>Models</span>
     </h2>
 </doc-anchor-target>
-<p>DreamGen offers <code v-pre>opus-v1-sm</code>, <code v-pre>opus-v1-lg</code>, and <code v-pre>opus-v1-xl</code>. The larger the model, the better it will be at following instructions and writing good role-play and stories.</p>
+<p>DreamGen offers <code v-pre>opus-v1-sm</code>, <code v-pre>opus-v1-lg</code>, and <code v-pre>opus-v1-xl</code>. The larger the model, the better it will be at following instructions and writing good stories.</p>
 <doc-anchor-target id="formatting-settings">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#formatting-settings">#</doc-anchor-trigger>
@@ -305,7 +305,7 @@ When running local models, the template will be indicated in the model&#x27;s Hu
     </h2>
 </doc-anchor-target>
 <p>The DreamGen models differ from the regular instruction-following models like OpenAI&#x27;s ChatGPT.</p>
-<p>The models were fine-tuned for the task of writing a role-play or a story based on the provided description which typically consists of plot description, style description, characters, locations, lore, etc. The models can also be <em>steered</em> in the middle of the role-play, making you the director, telling the characters what they should do or how the plot should unfold.</p>
+<p>The models were fine-tuned for the task of writing a story based on the provided description which typically consists of plot description, style description, characters, locations, lore, etc. The models can also be <em>steered</em> in the middle of the story, making you the director, telling the characters what they should do or how the plot should unfold.</p>
 <p>A well-formatted <strong>system prompt</strong> message would look like this:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">You are an intelligent, skilled, versatile writer.
@@ -467,10 +467,10 @@ Plot: {{char}} replies to {{user}} in detailed and elaborate way.&lt;|im_end|&gt
 </doc-anchor-target>
 <p>If the model repeats what&#x27;s in the context, you can try increasing &quot;Repetition Penalty&quot; in the Completion Settings or you can try rephrasing the part of the context that&#x27;s getting repeated.
 If the model repeats itself within one message, you can try increasing &quot;Presence Penalty&quot; or &quot;Frequency Penalty&quot;.</p>
-<doc-anchor-target id="how-can-i-steer-the-role-play">
+<doc-anchor-target id="how-can-i-steer-the-story">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-can-i-steer-the-role-play">#</doc-anchor-trigger>
-        <span>How can I steer the role-play?</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-can-i-steer-the-story">#</doc-anchor-trigger>
+        <span>How can I steer the story?</span>
     </h3>
 </doc-anchor-target>
 <p>If you want to direct the characters to do something, or to steer the plot in certain direction, you can use the <code v-pre>user</code> role (that is the <code v-pre>&lt;|im_start|&gt;user</code> preamble).</p>
