@@ -6,7 +6,7 @@ The settings provided in this section allow for more control over the prompt-bui
 
 ## System Prompt
 
-System Prompt defines the general instructions for the model to follow. It sets the tone and context for the conversation. For example, it tells the model to act as an AI assistant, a writing partner, or a role-playing character. The System Prompt is a part of the [Story String](#story-string) and usually the first part of the prompt that the model receives.
+System Prompt defines the general instructions for the model to follow. It sets the tone and context for the conversation. For example, it tells the model to act as an AI assistant, a writing partner, or a fictional character. The System Prompt is a part of the [Story String](#story-string) and usually the first part of the prompt that the model receives.
 
 Supports substitutions via any of the supported \{\{macro\}\} parameters.
 

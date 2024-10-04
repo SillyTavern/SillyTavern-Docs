@@ -57,7 +57,7 @@ The default persona is represented by a yellow outline on the Persona Management
 
 ## Pro Tips
 
-1. Switching user personas in chat does not automatically change the attribution of previously sent user messages. That way it is possible to role-play as multiple user characters at once.
+1. Switching user personas in chat does not automatically change the attribution of previously sent user messages. That way it is possible to use multiple user characters at once.
 2. You can attribute all user-sent messages in the currently open chat to a currently selected persona by clicking
 the "sync" button on the Persona Management panel or by using the /sync slash command.
 3. To change the persona image without deleting it, hover over the avatar on the Persona Management panel and click the bottom-left button.

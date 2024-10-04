@@ -1,6 +1,6 @@
 # DreamGen
 
-DreamGen is an app and an API for AI-powered role-playing and story-writing. They have a free tier, as well as a paid subscription that allows unlimited monthly access to their high-quality in-house text generation models made specifically for the purpose of steerable AI role-playing and story-writing. Create an account to get started: <https://dreamgen.com/>.
+DreamGen is an app and an API for AI-powered creative writing. They have a free tier, as well as a paid subscription that allows unlimited monthly access to their high-quality in-house text generation models made specifically for the purpose of steerable AI-assisted writing. Create an account to get started: <https://dreamgen.com/>.
 
 The (free) credits reset at the start of each calendar month. See [pricing](https://dreamgen.com/pricing) to see the credit cost for each model and [usage](https://dreamgen.com/account/usage) to see your remaining credits.
 
@@ -25,7 +25,7 @@ Go to the [DreamGen API keys](https://dreamgen.com/account/api-keys) page and cl
 
 ## Models
 
-DreamGen offers `opus-v1-sm`, `opus-v1-lg`, and `opus-v1-xl`. The larger the model, the better it will be at following instructions and writing good role-play and stories.
+DreamGen offers `opus-v1-sm`, `opus-v1-lg`, and `opus-v1-xl`. The larger the model, the better it will be at following instructions and writing good stories.
 
 ## Formatting Settings
 
@@ -63,7 +63,7 @@ Good starting values might be:
 
 The DreamGen models differ from the regular instruction-following models like OpenAI's ChatGPT.
 
-The models were fine-tuned for the task of writing a role-play or a story based on the provided description which typically consists of plot description, style description, characters, locations, lore, etc. The models can also be *steered* in the middle of the role-play, making you the director, telling the characters what they should do or how the plot should unfold.
+The models were fine-tuned for the task of writing a story based on the provided description which typically consists of plot description, style description, characters, locations, lore, etc. The models can also be *steered* in the middle of the story, making you the director, telling the characters what they should do or how the plot should unfold.
 
 A well-formatted **system prompt** message would look like this:
 
@@ -212,7 +212,7 @@ You can change the text within to something more suitable for your scenario or c
 If the model repeats what's in the context, you can try increasing "Repetition Penalty" in the Completion Settings or you can try rephrasing the part of the context that's getting repeated.
 If the model repeats itself within one message, you can try increasing "Presence Penalty" or "Frequency Penalty".
 
-### How can I steer the role-play?
+### How can I steer the story?
 
 If you want to direct the characters to do something, or to steer the plot in certain direction, you can use the `user` role (that is the `<|im_start|>user` preamble).
 

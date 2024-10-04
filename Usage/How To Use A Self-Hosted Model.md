@@ -1,5 +1,5 @@
 ---
-order: 103
+order: 22
 ---
 
 # Self-hosted AI models
@@ -131,9 +131,3 @@ Here's a more correct/dummy proof installation procedure:
 ## Conclusion
 
 Congrats, you should now have a working local LLM.
-
-## Part 2: Configuring SillyTavern to get better outputs from the LLM
-
-So you chatted with the bot and it kind of sucks. Maybe it's a bad model. Maybe you're incapable of running better models and this is as good as it gets. But maybe you can fix her.
-
-Read on in the next guide, [How To Improve Output Quality](https://docs.sillytavern.app/usage/local-llm-guide/how-to-improve-output-quality/)

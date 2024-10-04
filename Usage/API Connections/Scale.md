@@ -14,7 +14,7 @@ Currently, Scale doesn't support token streaming and configuring parameters like
 - Select a proper language model to be deployed (GPT-4 is recommended)
 - Replace the contents of the "User" section of the prompt with the following:
 
->Complete the next response in this fictional roleplay chat.
+>Complete the next response in this fictional chat.
 >
 >\{\{ input \}\}
 
