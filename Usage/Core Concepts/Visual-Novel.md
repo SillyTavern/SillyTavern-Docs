@@ -60,7 +60,12 @@ Obtaining character sprites can be done by browsing the internet for existing sp
     !!! warning
     Generating sprites from scratch is time-consuming (especially if no LoRAs exist for your character and/or for the Stable Diffusion model you want to use) and will require decent hardware in order to generate them, more so if you plan on making 28 sprite expression than 6 and if you are using SDXL and/or upscaling sprites to a more higher resolution.
     !!!
-3. Use the character card image. It might not be like a sprite, but at least you have something to look at on-screen.
+3. Use the character card image. It might not be like a sprite, but at least you have something to look at on-screen. However, multiple character cards cannot be used in VN mode.
+    !!! Character Card Images with the Prome Visual Novel Extension
+    With the Prome Visual Novel Extension 1.0.6+, there is a feature called `Emulate Character Card as Sprite` that allows you to have a group chat with both sprite and non-sprite characters by using their character card as a sprite in chat.
+    
+    ![Character Card Group Chat](/static/vn/extensions/prome/card-emulation.png)
+    !!!
 
 ## VN Extensions
 
@@ -76,4 +81,4 @@ The Prome Visual Novel Extension is an endorsed third-party extension from Brony
 | :--------: | :--------------------------: |
 | ![Sheld Hide](/static/vn/extensions/prome/sheld_hide.png) | ![Focus Mode w/ Darken Sprites](/static/vn/extensions/prome/defocus.png)
 
-To install the Prome Visual Novel Extension, you can either install by going to `Download Extensions & Assets` and finding *Prome*, or follow the installation instructions on the [Prome Visual Novel Extension](https://github.com/Bronya-Rand/Prome-VN-Extension?tab=readme-ov-file#installation-and-usage) Github page. Adjusting Prome's settings can be found either in *Extensions* -> **Prome (Visual Novel Extension)** or via the 🪄 (Wand) menu.
+To install the Prome Visual Novel Extension, you can either install by going to `Download Extensions & Assets` and finding *Prome Visual Novel Extension*, or follow the installation instructions on the [Prome Visual Novel Extension](https://github.com/Bronya-Rand/Prome-VN-Extension?tab=readme-ov-file#installation-and-usage) Github page. Adjusting Prome's settings can be found either in *Extensions* -> **Prome (Visual Novel Extension)** or via the 🪄 (Wand) menu.
