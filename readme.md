@@ -8,9 +8,9 @@ SillyTavern is a passion project brought to you by a dedicated community of LLM 
 
 ## Screenshots
 
-| ![API Connection](/static/screenshot1.jpg) | ![Chat UI](/static/screenshot2.jpg) |
+| [![API Connection](/static/screenshot1.jpg)](/static/screenshot1.jpg) | [![Chat UI](/static/screenshot2.jpg)](/static/screenshot2.jpg) |
 |:---:|:---:|
-| ![Advanced Formatting](/static/screenshot3.jpg) | ![World Info](/static/screenshot4.jpg) |
+| [![Advanced Formatting](/static/screenshot3.jpg)](/static/screenshot3.jpg) | [![World Info](/static/screenshot4.jpg)](/static/screenshot4.jpg) |
 
 ## Installation Requirements
 
