@@ -26,7 +26,7 @@ The `classify` module uses a small 'sentiment parsing' model that runs on the Si
 
 ### Setup Instructions (local classification)
 
-1. Make sure you're on the latest version version of SillyTavern.
+1. Make sure you're on the latest version of SillyTavern.
 2. Open the extensions panel and expand the "Character Expressions" plugin menu.
 3. Select "Local" in the classification source dropdown.
 4. This will start a one-time download of the classification model from HuggingFace Hub (about ~100 Mb).
