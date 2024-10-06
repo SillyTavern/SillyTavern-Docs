@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.781420284612">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.781553316225">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,11 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.781420284612" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.781553316225" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.781420284612" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.781553316225" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.781420284612" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.781553316225" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.781553316225" defer></script>
 
     <Style>
         a {
@@ -217,12 +218,119 @@
         </div>
         <div class="pr-5 ml-3 w-full">
             <h5>Attention</h5>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">This feature is currently under development. The previous implementation was wrong and will be fixed in the next release.</code></pre>
-</doc-codeblock></div>
+<p>This feature is currently under development. Implementation details may change.</p>
         </div>
     </div>
 </div>
+<doc-anchor-target id="example-use-cases">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-use-cases">#</doc-anchor-trigger>
+        <span>Example use cases</span>
+    </h2>
+</doc-anchor-target>
+<ol>
+<li>Query external APIs for additional information (news, weather, web search, etc.).</li>
+<li>Perform calculations or conversions based on user input.</li>
+<li>Store and recall important memories or facts, including RAG and database queries.</li>
+<li>Introduce true randomness into the conversation (dice rolls, coin flips, etc.).</li>
+</ol>
+<doc-anchor-target id="prerequisites-and-limitations">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#prerequisites-and-limitations">#</doc-anchor-trigger>
+        <span>Prerequisites and limitations</span>
+    </h2>
+</doc-anchor-target>
+<ol>
+<li>This feature is only available for certain Chat Completion sources: OpenAI, Claude, MistralAI, Groq, OpenRouter and Custom API sources.</li>
+<li>Text Completion APIs don&#x27;t support function calls, but some locally-hosted backends like Ollama and TabbyAPI may run in Custom OpenAI-compatible mode under Chat Completion.</li>
+<li>The support for function calling must be explicitly allowed by the user first. This is done by enabling the &quot;Enable function calling&quot; option in the AI Response Configuration panel.</li>
+<li>There is no guarantee that an LLM will perform any function calls at all. Most of them require an explicit &quot;activation&quot; through the prompt (e.g., the user asking to &quot;Roll a dice&quot;, &quot;Get the weather&quot;, etc.).</li>
+<li>Not all prompts can trigger a tool call. Continuations, impersonation, swipes and background (&#x27;quiet&#x27;) prompts are not allowed to trigger a tool call. They can still use past successful tool calls in their responses.</li>
+<li>To determine if the function tool calling feature is supported, you can call <code v-pre>isToolCallingSupported</code> from the <code v-pre>SillyTavern.getContext()</code> object. This will check if the current API supports function tool calling and if it&#x27;s enabled in the settings.</li>
+</ol>
+<doc-anchor-target id="how-to-make-a-function-tool">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-make-a-function-tool">#</doc-anchor-trigger>
+        <span>How to make a function tool</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="register-a-function">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#register-a-function">#</doc-anchor-trigger>
+        <span>Register a function</span>
+    </h3>
+</doc-anchor-target>
+<p>To register a function tool, you need to call the <code v-pre>registerFunctionTool</code> function from the <code v-pre>SillyTavern.getContext()</code> object and pass the required parameters. Here is an example of how to register a function tool:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">SillyTavern.getContext().registerFunctionTool({
+    // Internal name of the function tool. Must be unique.
+    name: &quot;myFunction&quot;,
+    // Display name of the function tool. Will be shown in the UI. (Optional)
+    displayName: &quot;My Function&quot;,
+    // Description of the function tool. Must describe what the function does and when to use it.
+    description: &quot;My function description. Use when you need to do something.&quot;,
+    // JSON schema for the parameters of the function tool. See: https://json-schema.org/
+    parameters: {
+        $schema: 'http://json-schema.org/draft-04/schema#',
+        type: 'object',
+        properties: {
+            param1: {
+                type: 'string',
+                description: 'Parameter 1 description',
+            },
+            param2: {
+                type: 'string',
+                description: 'Parameter 2 description',
+            },
+        },
+        required: [
+            'param1', 'param2',
+        ],
+    },
+    // Function to call when the tool is triggered. Can be async.
+    // If the result is not a string, it will be JSON-stringified.
+    action: async ({ param1, param2 }) =&gt; {
+        // Your function code here
+        console.log(`Function called with parameters: ${param1}, ${param2}`);
+        return &quot;Function result&quot;;
+    },
+    // Optional function to format the toast message displayed when the function is invoked.
+    // If an empty string is returned, no toast message will be displayed.
+    formatMessage: ({ param1, param2 }) =&gt; {
+        return `Function is called with: ${param1} and ${param2}`;
+    },
+});</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="unregister-a-function">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#unregister-a-function">#</doc-anchor-trigger>
+        <span>Unregister a function</span>
+    </h3>
+</doc-anchor-target>
+<p>To deactivate a function tool, you need to call the <code v-pre>unregisterFunctionTool</code> function from the <code v-pre>SillyTavern.getContext()</code> object and pass the name of the function tool to disable. Here is an example of how to unregister a function tool:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">SillyTavern.getContext().unregisterFunctionTool(&quot;myFunction&quot;);</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="tips-and-tricks">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tips-and-tricks">#</doc-anchor-trigger>
+        <span>Tips and tricks</span>
+    </h2>
+</doc-anchor-target>
+<ol>
+<li>Successful tool calls are saved as a part of the visible history and will be displayed in the chat UI, so you can inspect the actual parameters and results.</li>
+<li>If you don&#x27;t want to see the tool call in the chat history. If you want to stylize or hide them with custom CSS, target a <code v-pre>toolCall</code> class on <code v-pre>.mes</code> elements, i.e. <code v-pre>.mes.toolCall { display: none; }</code> or <code v-pre>.mes.toolCall { color: #999; }</code>.</li>
+</ol>
+<doc-anchor-target id="reference-functions">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#reference-functions">#</doc-anchor-trigger>
+        <span>Reference functions</span>
+    </h2>
+</doc-anchor-target>
+<ol>
+<li><a href="https://github.com/SillyTavern/Extension-RSS/blob/24957bc1596854947706b4598d16b1546fd69a6c/index.js#L77">GetNews</a>: Fetches the latest news from RSS feeds.</li>
+<li><a href="https://github.com/SillyTavern/Extension-AccuWeather/blob/ba6f41fb7316fe189050582242a1280cc9d1be25/index.js#L428">GetWeather</a>: Fetches the current weather information or forecast for a location from AccuWeather.</li>
+</ol>
 
                                 
                                 <!-- Required only on API pages -->
@@ -295,6 +403,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Function Calling", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Function Calling", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
