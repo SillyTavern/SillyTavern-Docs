@@ -55,11 +55,12 @@ Learn more: <https://docs.searxng.org/>
 
 ### Search Activation
 
-1. Use Backticks - enables search activation using words encased in single backticks.
-2. Use Trigger Phrases - enables search activation using trigger phrases.
-3. Regular expressions - provide a JS-flavored regex to match the user message. If the regex matches, the search with a given query will be triggered. Search query supports `{{macros}}` and $1-syntax to reference the matched group. Example: `/what is happening in (.*)/i` regex for search query `news in $1` will match a message containing `what is happening in New York` and trigger the search with the query `news in New York`.
-4. Trigger Phrases - add phrases that will trigger the search, one by one. It can be anywhere in the message, and the query starts from the trigger word and spans to "Max Words" total. To exclude a specific message from processing, it must start with a period, e.g. `.What do you think?`. Priority of triggers: first by order in the textbox, then the first one in the user message.
-5. Max Words - how many words are included in the search query (including the trigger phrase). Google has a limit of about 32 words per prompt. Default = 10 words.
+1. Use function tool - uses [function calling](https://docs.sillytavern.app/for-contributors/function-calling/) to activate search. Must use a supported Chat Completion API and be enabled in the AI Response settings. **Disables all other activation methods when engaged.**
+2. Use Backticks - enables search activation using words encased in single backticks.
+3. Use Trigger Phrases - enables search activation using trigger phrases.
+4. Regular expressions - provide a JS-flavored regex to match the user message. If the regex matches, the search with a given query will be triggered. Search query supports `{{macros}}` and $1-syntax to reference the matched group. Example: `/what is happening in (.*)/i` regex for search query `news in $1` will match a message containing `what is happening in New York` and trigger the search with the query `news in New York`.
+5. Trigger Phrases - add phrases that will trigger the search, one by one. It can be anywhere in the message, and the query starts from the trigger word and spans to "Max Words" total. To exclude a specific message from processing, it must start with a period, e.g. `.What do you think?`. Priority of triggers: first by order in the textbox, then the first one in the user message.
+6. Max Words - how many words are included in the search query (including the trigger phrase). Google has a limit of about 32 words per prompt. Default = 10 words.
 
 ### Page Scraping
 
@@ -74,6 +75,10 @@ Learn more: <https://docs.searxng.org/>
 
 Search results from the latest query will stay included in the prompt until the next valid query is found.
 If you want to ask additional questions without accidentally triggering the search, start your message with a period.
+
+!!! info
+Web Search function tool always overrides other triggers if enabled and available.
+!!!
 
 Priority of triggers (if multiple are enabled):
 

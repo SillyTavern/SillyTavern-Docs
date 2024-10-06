@@ -75,7 +75,9 @@ The most common format is a PNG file with a transparent background.
 
 ### Using the 'default expressions'
 
-*(This feature will only activate if local classification is enabled or with Extras API connected. There is no way to manually display default expression images.)*
+!!! warning
+This feature will only activate if local classification is enabled or with Extras API connected. There is no way to manually display default expression images.
+!!!
 
 ![Use Default Expressions](/static/extensions/expression-default.png)
 

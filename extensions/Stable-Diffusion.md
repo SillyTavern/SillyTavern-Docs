@@ -6,19 +6,19 @@ Most common Stable Diffusion generation settings are customizable within the Sil
 
 ## Supported Sources
 
-* [Stable Horde](https://stablehorde.net/)
-* [NovelAI Diffusion](https://novelai.net/). Requires an active subscription.
-* [Stable Diffusion WebUI / AUTOMATIC1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
-* [SD.Next / vladmandic](https://github.com/vladmandic/automatic)
-* [OpenAI DALL-E 2/3](https://platform.openai.com/)
-* [TogetherAI](https://api.together.xyz/models)
-* [Draw Things](https://drawthings.ai/)
-* [Pollinations](https://pollinations.ai/)
-* [ComfyUI](https://github.com/comfyanonymous/ComfyUI). Requires a workflow JSON file.
-* [Stability AI](https://platform.stability.ai/)
-* [HuggingFace Serverless Inference](https://huggingface.co/docs/api-inference/index)
 * [Block Entropy](https://blockentropy.ai/)
+* [ComfyUI](https://github.com/comfyanonymous/ComfyUI). Requires a workflow JSON file.
+* [Draw Things](https://drawthings.ai/)
+* [HuggingFace Serverless Inference](https://huggingface.co/docs/api-inference/index)
+* [NovelAI Diffusion](https://novelai.net/). Requires an active subscription.
+* [OpenAI DALL-E 2/3](https://platform.openai.com/)
+* [Pollinations](https://pollinations.ai/)
+* [SD.Next / vladmandic](https://github.com/vladmandic/automatic)
 * [SillyTavern Extras](https://github.com/SillyTavern/SillyTavern-Extras) (deprecated, not recommended)
+* [Stability AI](https://platform.stability.ai/)
+* [Stable Diffusion WebUI / AUTOMATIC1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
+* [Stable Horde](https://stablehorde.net/)
+* [TogetherAI](https://api.together.xyz/models)
 
 ## Generation modes
 
@@ -87,7 +87,22 @@ To cycle through images, hover a mouse cursor (tap on mobile) over a generated i
 
 Allow to edit the automatically generated prompts manually before sending them to the Stable Diffusion API.
 
-### Interactive mode
+### Use function tool
+
+Uses [function calling](https://docs.sillytavern.app/for-contributors/function-calling/) to automatically detect.
+
+**Requirements:**
+
+1. Must have image generation configured with a supported source.
+2. Must use a supported Chat Completion API model and have function tool calling enabled in the AI Response settings.
+3. The "Use function tool" option must be enabled in the Image Generation settings.
+4. The user should express an intent to generate an image in the chat message, e.g. "Send me a picture of a cat".
+
+!!! warning
+The interactive mode will not trigger when the function tool is enabled.
+!!!
+
+### Use interactive mode
 
 Allows to trigger an image generation instead of text as a reply to a user message that follows the special pattern:
 
