@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.781554139458">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.781554546479">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.781554139458" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.781554546479" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.781554139458" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.781554546479" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.781554139458" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.781554139458" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.781554546479" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.781554546479" defer></script>
 
     <Style>
         a {
@@ -234,6 +234,18 @@
 <li>Store and recall important memories or facts, including RAG and database queries.</li>
 <li>Introduce true randomness into the conversation (dice rolls, coin flips, etc.).</li>
 </ol>
+<doc-anchor-target id="officially-supported-extensions-using-function-calling">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#officially-supported-extensions-using-function-calling">#</doc-anchor-trigger>
+        <span>Officially supported extensions using function calling</span>
+    </h2>
+</doc-anchor-target>
+<ol>
+<li><a href="https://docs.sillytavern.app/extensions/stable-diffusion/">Image Generation</a> (built-in) - generate images based on user prompts.</li>
+<li><a href="https://docs.sillytavern.app/extensions/websearch/">Web Search</a> - trigger a web search for a query.</li>
+<li><a href="https://github.com/SillyTavern/Extension-RSS/">RSS</a> - fetch the latest news from RSS feeds.</li>
+<li><a href="https://github.com/SillyTavern/Extension-AccuWeather">AccuWeather</a> - fetch the weather information from AccuWeather.</li>
+</ol>
 <doc-anchor-target id="prerequisites-and-limitations">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#prerequisites-and-limitations">#</doc-anchor-trigger>
@@ -246,7 +258,6 @@
 <li>The support for function calling must be explicitly allowed by the user first. This is done by enabling the &quot;Enable function calling&quot; option in the AI Response Configuration panel.</li>
 <li>There is no guarantee that an LLM will perform any function calls at all. Most of them require an explicit &quot;activation&quot; through the prompt (e.g., the user asking to &quot;Roll a dice&quot;, &quot;Get the weather&quot;, etc.).</li>
 <li>Not all prompts can trigger a tool call. Continuations, impersonation, swipes and background (&#x27;quiet&#x27;) prompts are not allowed to trigger a tool call. They can still use past successful tool calls in their responses.</li>
-<li>To determine if the function tool calling feature is supported, you can call <code v-pre>isToolCallingSupported</code> from the <code v-pre>SillyTavern.getContext()</code> object. This will check if the current API supports function tool calling and if it&#x27;s enabled in the settings.</li>
 </ol>
 <doc-anchor-target id="how-to-make-a-function-tool">
     <h2>
@@ -254,6 +265,20 @@
         <span>How to make a function tool</span>
     </h2>
 </doc-anchor-target>
+<doc-anchor-target id="check-if-the-feature-is-supported">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#check-if-the-feature-is-supported">#</doc-anchor-trigger>
+        <span>Check if the feature is supported</span>
+    </h3>
+</doc-anchor-target>
+<p>To determine if the function tool calling feature is supported, you can call <code v-pre>isToolCallingSupported</code> from the <code v-pre>SillyTavern.getContext()</code> object. This will check if the current API supports function tool calling and if it&#x27;s enabled in the settings. Here is an example of how to check if the feature is supported:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-typescript"><code v-pre class="language-typescript">if (SillyTavern.getContext().isToolCallingSupported()) {
+    console.log(&quot;Function tool calling is supported&quot;);
+} else {
+    console.log(&quot;Function tool calling is not supported&quot;);
+}</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="register-a-function">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#register-a-function">#</doc-anchor-trigger>
@@ -320,16 +345,6 @@
 <ol>
 <li>Successful tool calls are saved as a part of the visible history and will be displayed in the chat UI, so you can inspect the actual parameters and results.</li>
 <li>If you don&#x27;t want to see the tool call in the chat history. If you want to stylize or hide them with custom CSS, target a <code v-pre>toolCall</code> class on <code v-pre>.mes</code> elements, i.e. <code v-pre>.mes.toolCall { display: none; }</code> or <code v-pre>.mes.toolCall { color: #999; }</code>.</li>
-</ol>
-<doc-anchor-target id="reference-functions">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#reference-functions">#</doc-anchor-trigger>
-        <span>Reference functions</span>
-    </h2>
-</doc-anchor-target>
-<ol>
-<li><a href="https://github.com/SillyTavern/Extension-RSS/blob/24957bc1596854947706b4598d16b1546fd69a6c/index.js#L77">GetNews</a>: Fetches the latest news from RSS feeds.</li>
-<li><a href="https://github.com/SillyTavern/Extension-AccuWeather/blob/ba6f41fb7316fe189050582242a1280cc9d1be25/index.js#L428">GetWeather</a>: Fetches the current weather information or forecast for a location from AccuWeather.</li>
 </ol>
 
                                 
