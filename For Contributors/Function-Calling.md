@@ -18,6 +18,13 @@ This feature is currently under development. Implementation details may change.
 3. Store and recall important memories or facts, including RAG and database queries.
 4. Introduce true randomness into the conversation (dice rolls, coin flips, etc.).
 
+## Officially supported extensions using function calling
+
+1. [Image Generation](https://docs.sillytavern.app/extensions/stable-diffusion/) (built-in) - generate images based on user prompts.
+2. [Web Search](https://docs.sillytavern.app/extensions/websearch/) - trigger a web search for a query.
+3. [RSS](https://github.com/SillyTavern/Extension-RSS/) - fetch the latest news from RSS feeds.
+4. [AccuWeather](https://github.com/SillyTavern/Extension-AccuWeather) - fetch the weather information from AccuWeather.
+
 ## Prerequisites and limitations
 
 1. This feature is only available for certain Chat Completion sources: OpenAI, Claude, MistralAI, Groq, OpenRouter and Custom API sources.
@@ -25,9 +32,20 @@ This feature is currently under development. Implementation details may change.
 3. The support for function calling must be explicitly allowed by the user first. This is done by enabling the "Enable function calling" option in the AI Response Configuration panel.
 4. There is no guarantee that an LLM will perform any function calls at all. Most of them require an explicit "activation" through the prompt (e.g., the user asking to "Roll a dice", "Get the weather", etc.).
 5. Not all prompts can trigger a tool call. Continuations, impersonation, swipes and background ('quiet') prompts are not allowed to trigger a tool call. They can still use past successful tool calls in their responses.
-6. To determine if the function tool calling feature is supported, you can call `isToolCallingSupported` from the `SillyTavern.getContext()` object. This will check if the current API supports function tool calling and if it's enabled in the settings.
 
 ## How to make a function tool
+
+### Check if the feature is supported
+
+To determine if the function tool calling feature is supported, you can call `isToolCallingSupported` from the `SillyTavern.getContext()` object. This will check if the current API supports function tool calling and if it's enabled in the settings. Here is an example of how to check if the feature is supported:
+
+```ts
+if (SillyTavern.getContext().isToolCallingSupported()) {
+    console.log("Function tool calling is supported");
+} else {
+    console.log("Function tool calling is not supported");
+}
+```
 
 ### Register a function
 
@@ -86,8 +104,3 @@ SillyTavern.getContext().unregisterFunctionTool("myFunction");
 
 1. Successful tool calls are saved as a part of the visible history and will be displayed in the chat UI, so you can inspect the actual parameters and results.
 2. If you don't want to see the tool call in the chat history. If you want to stylize or hide them with custom CSS, target a `toolCall` class on `.mes` elements, i.e. `.mes.toolCall { display: none; }` or `.mes.toolCall { color: #999; }`.
-
-## Reference functions
-
-1. [GetNews](https://github.com/SillyTavern/Extension-RSS/blob/24957bc1596854947706b4598d16b1546fd69a6c/index.js#L77): Fetches the latest news from RSS feeds.
-2. [GetWeather](https://github.com/SillyTavern/Extension-AccuWeather/blob/ba6f41fb7316fe189050582242a1280cc9d1be25/index.js#L428): Fetches the current weather information or forecast for a location from AccuWeather.
