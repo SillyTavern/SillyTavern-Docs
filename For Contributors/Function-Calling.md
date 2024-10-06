@@ -24,6 +24,7 @@ This feature is currently under development. Implementation details may change.
 2. [Web Search](https://docs.sillytavern.app/extensions/websearch/) - trigger a web search for a query.
 3. [RSS](https://github.com/SillyTavern/Extension-RSS/) - fetch the latest news from RSS feeds.
 4. [AccuWeather](https://github.com/SillyTavern/Extension-AccuWeather) - fetch the weather information from AccuWeather.
+5. [D&D Dice](https://github.com/SillyTavern/Extension-Dice) - roll dice for D&D games.
 
 ## Prerequisites and limitations
 
