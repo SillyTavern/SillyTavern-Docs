@@ -218,6 +218,22 @@ For Linux, we will reverse proxying SillyTavern through [Traefik](https://traefi
     Make sure to change the default username and password to something strong that you can remember.
     !!!
 
+!!! warning
+This toggle described below is currently only available in the `staging` branch. 
+!!!
+
+Or to use the SillyTavern accounts as usernames and passwords:
+
+```yaml
+basicAuthMode: true
+enableUserAccounts: true
+perUserBasicAuth: true
+```
+
+!!! warning Tip
+Before enabling perUserBasicAuth ensure you have a valid multi-user setup with working passwords.
+!!!
+
 22. Wait a few minutes, then open your domain page you made for ST. At the end of it, you should be able to open SillyTavern from anywhere you go just with one URL and one account.
     !!! info Tip
     If nothing happens after several minutes, check the container logs for Traefik for any possible errors.
