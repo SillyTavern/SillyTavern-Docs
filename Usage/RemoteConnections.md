@@ -108,6 +108,20 @@ basicAuthUser:
   password: "MyPassword"
 ```
 
+!!! warning
+This toggle described below is currently only available in the `staging` branch. 
+!!!
+
+Alternatively you can enable basic auth as follows:
+
+```yaml
+basicAuthMode: true
+enableUserAccounts: true
+perUserBasicAuth: true
+```
+
+In this `perUserBasicAuth` mode the basic auth's username and password will be the same as any valid multi user account that has a password. Additionally SillyTavern will login directly to that account. **Ensure you have an account with a password prior to enabling `perUserBasicAuth`.**
+
 Save the file and restart SillyTavern if it was already running. You should be prompted for username and password when connecting to your ST. Both username and password are transmitted in plain text. If you are concerned about this, you can serve ST via HTTPS.
 
 ## HTTPS
