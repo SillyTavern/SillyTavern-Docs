@@ -28,11 +28,11 @@ This feature is currently under development. Implementation details may change.
 
 ## Prerequisites and limitations
 
-1. This feature is only available for certain Chat Completion sources: OpenAI, Claude, MistralAI, Groq, OpenRouter and Custom API sources.
+1. This feature is only available for certain Chat Completion sources: OpenAI, Claude, MistralAI, Groq, Cohere, OpenRouter and Custom API sources.
 2. Text Completion APIs don't support function calls, but some locally-hosted backends like Ollama and TabbyAPI may run in Custom OpenAI-compatible mode under Chat Completion.
 3. The support for function calling must be explicitly allowed by the user first. This is done by enabling the "Enable function calling" option in the AI Response Configuration panel.
 4. There is no guarantee that an LLM will perform any function calls at all. Most of them require an explicit "activation" through the prompt (e.g., the user asking to "Roll a dice", "Get the weather", etc.).
-5. Not all prompts can trigger a tool call. Continuations, impersonation, swipes and background ('quiet') prompts are not allowed to trigger a tool call. They can still use past successful tool calls in their responses.
+5. Not all prompts can trigger a tool call. Continuations, impersonation, background ('quiet') prompts are not allowed to trigger a tool call. They can still use past successful tool calls in their responses.
 
 ## How to make a function tool
 
@@ -89,6 +89,11 @@ SillyTavern.getContext().registerFunctionTool({
     // If an empty string is returned, no toast message will be displayed.
     formatMessage: ({ param1, param2 }) => {
         return `Function is called with: ${param1} and ${param2}`;
+    },
+    // Optional function that returns a boolean value indicating whether the tool should be registered for the current prompt.
+    // If no shouldRegister function is provided, the tool will be registered for every prompt.
+    shouldRegister: () => {
+        return true;
     },
 });
 ```
