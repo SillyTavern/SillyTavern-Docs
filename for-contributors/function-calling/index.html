@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.781555749721">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.782758037011">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.781555749721" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.782758037011" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.781555749721" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.782758037011" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.781555749721" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.781555749721" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.782758037011" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.782758037011" defer></script>
 
     <Style>
         a {
@@ -254,11 +254,11 @@
     </h2>
 </doc-anchor-target>
 <ol>
-<li>This feature is only available for certain Chat Completion sources: OpenAI, Claude, MistralAI, Groq, OpenRouter and Custom API sources.</li>
+<li>This feature is only available for certain Chat Completion sources: OpenAI, Claude, MistralAI, Groq, Cohere, OpenRouter and Custom API sources.</li>
 <li>Text Completion APIs don&#x27;t support function calls, but some locally-hosted backends like Ollama and TabbyAPI may run in Custom OpenAI-compatible mode under Chat Completion.</li>
 <li>The support for function calling must be explicitly allowed by the user first. This is done by enabling the &quot;Enable function calling&quot; option in the AI Response Configuration panel.</li>
 <li>There is no guarantee that an LLM will perform any function calls at all. Most of them require an explicit &quot;activation&quot; through the prompt (e.g., the user asking to &quot;Roll a dice&quot;, &quot;Get the weather&quot;, etc.).</li>
-<li>Not all prompts can trigger a tool call. Continuations, impersonation, swipes and background (&#x27;quiet&#x27;) prompts are not allowed to trigger a tool call. They can still use past successful tool calls in their responses.</li>
+<li>Not all prompts can trigger a tool call. Continuations, impersonation, background (&#x27;quiet&#x27;) prompts are not allowed to trigger a tool call. They can still use past successful tool calls in their responses.</li>
 </ol>
 <doc-anchor-target id="how-to-make-a-function-tool">
     <h2>
@@ -324,6 +324,11 @@
     // If an empty string is returned, no toast message will be displayed.
     formatMessage: ({ param1, param2 }) =&gt; {
         return `Function is called with: ${param1} and ${param2}`;
+    },
+    // Optional function that returns a boolean value indicating whether the tool should be registered for the current prompt.
+    // If no shouldRegister function is provided, the tool will be registered for every prompt.
+    shouldRegister: () =&gt; {
+        return true;
     },
 });</code></pre>
 </doc-codeblock></div>
