@@ -50,13 +50,13 @@ in our collection that are most similar to the text in the search query. In the 
 
 To enable Chat vectorization, select "Extensions" > "Vector Storage" > "Enabled for chat messages".
 
-Configure a vectorization source and vectorization model. Chat vectorization uses the same vector source as [Data Bank](/Usage/Core%20Concepts/Data%20Bank.md), 
-so you may have set this up already. The settings for the Vectorization Source and Vectorization Model are documented in [Data Bank](/Usage/Core%20Concepts/Data%20Bank.md).
+Configure a vectorization source and vectorization model. Chat vectorization uses the same vector source as Data Bank, 
+so you may have set this up already. The settings for the Vectorization Source and Vectorization Model are documented in [Data Bank](https://docs.sillytavern.app/usage/core-concepts/data-bank/).
 
-Chat vectorization uses the same vector storage as [Data Bank](/Usage/Core%20Concepts/Data%20Bank.md), but this does not need to be set up or configured. 
-There is also information about Vector Storage in [Data Bank](/Usage/Core%20Concepts/Data%20Bank.md).
+Chat vectorization uses the same vector storage as Data Bank, but this does not need to be set up or configured. 
+There is also information about Vector Storage in [Data Bank](https://docs.sillytavern.app/usage/core-concepts/data-bank/).
 
-Chat vectorization does not use [Data Bank](/Usage/Core%20Concepts/Data%20Bank.md) to store the chat messages. The messages are stored in the chat. 
+Chat vectorization does not use Data Bank to store the chat messages. The messages are stored in the chat. 
 
 ## Preparing chat messages for search (vector storage)
 
@@ -71,7 +71,7 @@ You can change this with "Chunk size (chars)".
 
 Messages are divided into chunks by finding a chunk boundary such as a paragraph break, line break, or space between words. This is so that 
 the all the chunks make sense, as far as possible. If your chat messages have some other way to mark natural splitting points, such as `----`, 
-you can add this to "Chunk boundary". The setting for "Chunk boundary" is shared with [Data Bank](/Usage/Core%20Concepts/Data%20Bank.md).
+you can add this to "Chunk boundary". The setting for "Chunk boundary" is shared with Data Bank.
 
 ### Vector storage controls
 
@@ -82,14 +82,16 @@ It also indicates the specific chat messages that have been vectorized, by marki
 
 To remove all the vectors for messages in the current chat, choose "Purge Vectors".
 
-!! The controls for "Vectorize All" and "Purge Vectors" **within Chat vectorization** only affect the stored vectors for the current chat. 
-However, there are identical buttons in File vectorization that affect the vectors for files in [Data Bank](/Usage/Core%20Concepts/Data%20Bank.md). Ensure that you are purging the vectors that you intend to purge. !! 
+!!!
+The controls for "Vectorize All" and "Purge Vectors" **within Chat vectorization** only affect the stored vectors for the current chat. 
+However, there are identical buttons in File vectorization that affect the vectors for files in Data Bank. Ensure that you are purging the vectors that you intend to purge.
+!!! 
 
 ## Finding relevant messages to shuffle (vector retrieval)
 
-To find the most relevant messages in the chat history, the most recent messages are converted (vectorized) into a query vector. By default, the 2 most recent messages are used. To change this, change the value of "Query messages". This value is also used when finding relevant content from [Data Bank](/Usage/Core%20Concepts/Data%20Bank.md). 
+To find the most relevant messages in the chat history, the most recent messages are converted (vectorized) into a query vector. By default, the 2 most recent messages are used. To change this, change the value of "Query messages". This value is also used when finding relevant content from Data Bank. 
 
-Past messages must have a relevance score of at least 25% to be included. You can change this with "Score threshold". The setting for score threshold is shared with [Data Bank](/Usage/Core%20Concepts/Data%20Bank.md).
+Past messages must have a relevance score of at least 25% to be included. You can change this with "Score threshold". The setting for score threshold is shared with Data Bank.
 
 The 3 most relevant messages from chat history are shuffled. You can change this with "Insert#".
 
