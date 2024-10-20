@@ -205,7 +205,7 @@ The following rules apply:
 -   Purge Vectors - clears the file embeddings, allowing to recalculate their vectors.
 
 !!! warning Warning
-"Chat vectorization" settings are out of the scope of this guide and will not be covered here.
+"Chat vectorization" settings are out of the scope of this guide and is covered on the [Chat Vectorization](https://docs.sillytavern.app/extensions/chat-vectorization/) page.
 !!!
 
 ## Conclusion
