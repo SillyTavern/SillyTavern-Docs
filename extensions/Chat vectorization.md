@@ -11,7 +11,11 @@ tags:
     ]
 ---
 
-# Chat vectorization
+# Chat Vectorization
+
+!!! warning Disclaimer
+The use of this extension does not guarantee a better chatting experience or improved memory of any sort. Only use if you understand all the implications of vector database utilization.
+!!!
 
 Chat vectorization searches for messages in your current chat history that seem relevant to your most recent messages. 
 It temporarily shuffles the most relevant messages to the beginning or end of the chat history. 
@@ -70,6 +74,7 @@ the all the chunks make sense, as far as possible. If your chat messages have so
 you can add this to "Chunk boundary". The setting for "Chunk boundary" is shared with [Data Bank](/Usage/Core%20Concepts/Data%20Bank.md).
 
 ### Vector storage controls
+
 To calculate vectors for all messages in the current chat, without waiting for them to be processed in the background, choose "Vectorize All" from the settings.
 
 To see how many messages in the current chat have been vectorized, choose "View Stats". This displays the total number of vectors stored. 
