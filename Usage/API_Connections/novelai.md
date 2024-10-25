@@ -151,9 +151,9 @@ Here are a couple of example cards, made for NovelAI, that show off different wa
 
 <div style="display:flex;gap:2em;justify-content:center">
 
-[![Valka](/static/valka.png)](/static/valka.png)
+[![Valka](/static/Valka.png)](/static/Valka.png)
 
-[![Eris](/static/eris.png)](/static/eris.png)
+[![Eris](/static/Eris.png)](/static/Eris.png)
 
 </div>
 

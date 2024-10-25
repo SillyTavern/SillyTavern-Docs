@@ -2,6 +2,7 @@
 order: -20
 icon: question
 ---
+
 # FAQ
 
 ## Explain what SillyTavern is about
@@ -20,7 +21,7 @@ SillyTavern is an app to facilitate these uses:
 
 SillyTavern can interact with two types of AI:
 
-1. [Web services](/Usage/API Connections/openai.md) (Cloud-based, usually paid, proprietary, closed)
+1. [Web services](/Usage/API_Connections/openai.md) (Cloud-based, usually paid, proprietary, closed)
 2. [Self-hosted](self-hosted.md) (local, free, open-source)
 
 ### Paid web service AIs

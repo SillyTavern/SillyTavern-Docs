@@ -121,7 +121,7 @@ Most Text Completion models have a recommended "Instruct Template" (usually ment
 - Uncensored models tuned for steerable creative writing
 - Free monthly credits, as well as paid subscription
 - Models ranging from 7B to 70B
-- [Setup Instructions](API Connections/DreamGen.md)
+- [Setup Instructions](DreamGen.md)
 
 ### AI Horde
 
