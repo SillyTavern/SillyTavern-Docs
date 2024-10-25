@@ -93,7 +93,7 @@ Most Text Completion models have a recommended "Instruct Template" (usually ment
 - Requires prepayment for credits and charges per prompt
 - Very logical. Creative style can be repetitive and predictable
 - Most of the newer models (gpt-4-turbo, gpt-4o) support multimodality
-- [Website](https://platform.openai.com/), [Setup Instructions](https://docs.sillytavern.app/usage/api-connections/openai/)
+- [Website](https://platform.openai.com/), [Setup Instructions](/Usage/API_Connections/openai.md)
 
 ### Claude (by Anthropic)
 
@@ -137,10 +137,10 @@ Most Text Completion models have a recommended "Instruct Template" (usually ment
 - Uses 'credits' to pay for tokens on various models
 - Does not log prompts by default, but you can enable it to get credit discounts on tokens.
 - Uses an API similar to `Oobabooga TextGeneration WebUI`, see [Mancer docs](https://mancer.tech/docs/clients/#sampling-parameters) for details.
-- [Website](https://mancer.tech/), [Setup Instructions](https://docs.sillytavern.app/usage/api-connections/mancer/)
+- [Website](https://mancer.tech/), [Setup Instructions](/Usage/API_Connections/mancer.md)
 
 ### NovelAI
 
 - No content filter
 - Paid subscription required
-- [Website](https://novelai.net/), [Setup Instructions](https://docs.sillytavern.app/usage/api-connections/novelai/)
+- [Website](https://novelai.net/), [Setup Instructions](/Usage/API_Connections/novelai.md)

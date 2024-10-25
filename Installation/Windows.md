@@ -60,4 +60,4 @@ git clone https://github.com/SillyTavern/SillyTavern-Launcher.git && cd SillyTav
 
   ![image](/static/windows-4.png)
 
-  10. Connect to any of the [supported APIs](https://docs.sillytavern.app/usage/api-connections/) and start chatting!
+  10. Connect to any of the [supported APIs](/Usage/API_Connections/index.md) and start chatting!

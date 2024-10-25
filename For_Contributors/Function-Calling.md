@@ -20,8 +20,8 @@ This feature is currently under development. Implementation details may change.
 
 ## Officially supported extensions using function calling
 
-1. [Image Generation](https://docs.sillytavern.app/extensions/stable-diffusion/) (built-in) - generate images based on user prompts.
-2. [Web Search](https://docs.sillytavern.app/extensions/websearch/) - trigger a web search for a query.
+1. [Image Generation](/extensions/Stable-Diffusion.md) (built-in) - generate images based on user prompts.
+2. [Web Search](/extensions/WebSearch.md) - trigger a web search for a query.
 3. [RSS](https://github.com/SillyTavern/Extension-RSS/) - fetch the latest news from RSS feeds.
 4. [AccuWeather](https://github.com/SillyTavern/Extension-AccuWeather) - fetch the weather information from AccuWeather.
 5. [D&D Dice](https://github.com/SillyTavern/Extension-Dice) - roll dice for D&D games.

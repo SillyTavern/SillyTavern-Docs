@@ -32,7 +32,7 @@ SillyTavern is being developed using a two-branch system to ensure a smooth expe
 
 ## What do I need other than SillyTavern?
 
-Since SillyTavern is only an interface, you will need access to an LLM backend to provide inference. You can use AI Horde for instant out-of-the-box chatting. Aside from that, we support many other local and cloud-based LLM backends: OpenAI-compatible API, KoboldAI, Tabby, and many more. You can read more about our supported APIs in the [API Connections](https://docs.sillytavern.app/usage/api-connections/) section.
+Since SillyTavern is only an interface, you will need access to an LLM backend to provide inference. You can use AI Horde for instant out-of-the-box chatting. Aside from that, we support many other local and cloud-based LLM backends: OpenAI-compatible API, KoboldAI, Tabby, and many more. You can read more about our supported APIs in the [API Connections](/Usage/API_Connections/index.md) section.
 
 ## Character Cards
 
@@ -44,17 +44,17 @@ To have a quick conversation without selecting a character card or to just test 
 
 To get a general idea on how to define character cards, see the default character (Seraphina) or download selected community-made cards from the "Download Extensions & Assets" menu.
 
-You can also create your own character cards from scratch. Refer to the [Character Design](https://docs.sillytavern.app/usage/core-concepts/characterdesign/) guide for more information.
+You can also create your own character cards from scratch. Refer to the [Character Design](/Usage/Core_Concepts/characterdesign.md) guide for more information.
 
 ## Key Features
 
-* Advanced [text generation settings](https://docs.sillytavern.app/usage/core-concepts/advancedformatting/) with many community-made presets
-* [World Info support](https://docs.sillytavern.app/usage/core-concepts/worldinfo/): create rich lore or save tokens on your character card
-* [Group chats](https://docs.sillytavern.app/usage/core-concepts/groupchats/): multi-bot rooms for characters to talk to you and/or each other
-* [Rich UI customization options](https://docs.sillytavern.app/usage/core-concepts/uicustomization/): theme colors, background images, custom CSS, and more
-* [User personas](https://docs.sillytavern.app/usage/core-concepts/personas/): let the AI know a bit about you for greater immersion
-* [Built-in RAG support](https://docs.sillytavern.app/usage/core-concepts/data-bank/): add documents to your chats for the AI to reference
-* Extensive [chat commands](https://docs.sillytavern.app/usage/core-concepts/slashcommands) subsystem and own [scripting engine](https://docs.sillytavern.app/usage/st-script/)
+* Advanced [text generation settings](/Usage/Core_Concepts/advancedformatting.md) with many community-made presets
+* [World Info support](Usage/Core_Concepts/worldinfo.md): create rich lore or save tokens on your character card
+* [Group chats](/Usage/Core_Concepts/groupchats.md): multi-bot rooms for characters to talk to you and/or each other
+* [Rich UI customization options](/Usage/Core_Concepts/uicustomization.md): theme colors, background images, custom CSS, and more
+* [User personas](/Usage/Core_Concepts/personas.md): let the AI know a bit about you for greater immersion
+* [Built-in RAG support](/Usage/Core_Concepts/data-bank.md): add documents to your chats for the AI to reference
+* Extensive [chat commands](/Usage/Core_Concepts/slashcommands.md) subsystem and own [scripting engine](/For_Contributors/st-script.md)
 
 ## Extensions
 

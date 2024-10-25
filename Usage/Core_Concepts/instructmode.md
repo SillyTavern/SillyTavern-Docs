@@ -41,7 +41,7 @@ User: { Write a happy song about Nintendo Switch. }
 ### System Prompt
 
 !!! warning Recent change
-The System Prompt is now a separate entity. See the [Advanced Formatting](https://docs.sillytavern.app/usage/core-concepts/advancedformatting/) page for more details.
+The System Prompt is now a separate entity. See the [Advanced Formatting](/Usage/Core_Concepts/advancedformatting.md#system-prompt) page for more details.
 !!!
 
 ### Templates

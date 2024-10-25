@@ -10,7 +10,7 @@ Some of these options are available in the "Manage chat files" dialog that opens
 
 The simplest way to use a character card is a Solo chat; just click on their card and start chatting.
 
-Once you have a few character cards, you can also use the "Create New Chat Group" button to create a [group chat](https://docs.sillytavern.app/usage/core-concepts/groupchats/) including multiple characters which will then interact with each other and you.
+Once you have a few character cards, you can also use the "Create New Chat Group" button to create a [group chat](/Usage/Core_Concepts/groupchats.md) including multiple characters which will then interact with each other and you.
 
 ## Chat import
 

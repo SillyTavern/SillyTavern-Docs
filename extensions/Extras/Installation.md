@@ -19,7 +19,7 @@ Local installation of Extras can be difficult or impossible on your OS (especial
 * Simple to setup
 * Free to use
 * No Colab GPU credits required (use the `use_cpu` options)
-* See the [Colab Guide Page](https://docs.sillytavern.app/extras/running-extras-in-colab/) for details.
+* See the [Colab Guide Page](/extensions/Extras/running-extras-in-colab.md) for details.
 
 ---
 
@@ -67,7 +67,7 @@ Type/paste the commands below `ONE BY ONE` IN THE `CONDA COMMAND PROMPT WINDOW` 
 * `pip install -r requirements-rvc.txt` - for real-time voice cloning
 * `pip install -r requirements-coqui.txt` - for Coqui TTS (not recommended)
 
-See the [Common Problems](https://docs.sillytavern.app/extras/installation/common-problems/) page if you get errors at this step!
+See the [Common Problems](/extensions/Extras/Installation/common-problems.md) page if you get errors at this step!
 
 9. See below 'Running Extras After Install'
 

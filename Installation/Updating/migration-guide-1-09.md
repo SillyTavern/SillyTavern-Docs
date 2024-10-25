@@ -10,7 +10,7 @@ _**It is recommended to do a fresh install.**_ However, if you wish to use an ex
 
 **IMPORTANT!** Before doing anything, make *a complete backup* of your installation. You may *lose your data* in the process, so don't ignore this warning.
 
-Not sure of which files to back up? See the list here: [How to Update SillyTavern](https://docs.sillytavern.app/usage/update/#note-do-not-copy-the-entire-public-folder)
+Not sure of which files to back up? See the list here: [How to Update SillyTavern](/Installation/Updating/index.md#updating-from-1120-to-1120)
 
 ### git installs
 

@@ -15,7 +15,7 @@ Local installation of Extras can be difficult or impossible on your OS (especial
 * Simple to setup
 * Free to use
 * No Colab GPU credits required (use the `use_cpu` options)
-* See the [Colab Guide Page](https://docs.sillytavern.app/extras/running-extras-in-colab/) for details.
+* See the [Colab Guide Page](/extensions/Extras/running-extras-in-colab.md) for details.
 
 ---
 
@@ -71,7 +71,7 @@ Install the requirements using the `requirements-silicon.txt` file instead.
 ### Missing modules?
 
 * You must specify a list of module names in your Python command line, with the `--enable-modules` modifier.
-* See [Modules](https://docs.sillytavern.app/extras/installation/#decide-which-module-to-use) section.
+* See [Modules](/extensions/Extras/Installation.md#decide-which-module-to-use) section.
 
 ---
 

@@ -204,8 +204,8 @@ The following rules apply:
 -   Vectorize All - forcibly ingests the embeddings for all unprocessed files.
 -   Purge Vectors - clears the file embeddings, allowing to recalculate their vectors.
 
-!!! warning Warning
-"Chat vectorization" settings are out of the scope of this guide and is covered on the [Chat Vectorization](https://docs.sillytavern.app/extensions/chat-vectorization/) page.
+!!! info Note
+For "Chat vectorization" settings see [Chat Vectorization](/extensions/Chat-vectorization.md).
 !!!
 
 ## Conclusion

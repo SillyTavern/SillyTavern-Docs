@@ -12,15 +12,15 @@ Connection Profiles store the following selections.
 
 ### Common
 
-* [API type, model and the server URL](https://docs.sillytavern.app/usage/api-connections/)
-* [Settings preset](https://docs.sillytavern.app/usage/common-settings/)
+* [API type, model and the server URL](/Usage/API_Connections/index.md)
+* [Settings preset](/Usage/Common-Settings.md)
 
 ### Text Completion APIs
 
-* [System Prompt and its state](https://docs.sillytavern.app/usage/core-concepts/advancedformatting/#system-prompt)
-* [Instruct Mode state and template](https://docs.sillytavern.app/usage/core-concepts/instructmode/)
-* [Context Template](https://docs.sillytavern.app/usage/core-concepts/advancedformatting/#context-template)
-* [Tokenizer](https://docs.sillytavern.app/usage/core-concepts/advancedformatting/#tokenizer)
+* [System Prompt and its state](/Usage/Core_Concepts/advancedformatting.md#system-prompt)
+* [Instruct Mode state and template](//Usage/Core_Concepts/instructmode.md)
+* [Context Template](/Usage/Core_Concepts/advancedformatting.md#context-template)
+* [Tokenizer](/Usage/Core_Concepts/advancedformatting.md#tokenizer)
 
 ### Chat Completion APIs
 

@@ -194,7 +194,7 @@ Arguments explanation:
 3. `aliases` - an array of alias strings. The command can be called using any of the aliases, but they won't be shown in the autocomplete but will be listed in the help command.
 4. `helpString` - a string that will be displayed when the `/help slash` command is called. Must describe what your command does and which arguments it accepts. May contain HTML markup.
 
-All registered commands can be used in [STscript](https://docs.sillytavern.app/usage/st-script/) in any possible way.
+All registered commands can be used in [STscript](/For_Contributors/st-script.md) in any possible way.
 
 > In rare circumstances, the unnamed command argument can also receive a number so be sure to type check or convert if you expect a concrete type!
 

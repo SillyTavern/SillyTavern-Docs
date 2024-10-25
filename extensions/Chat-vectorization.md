@@ -51,10 +51,10 @@ in our collection that are most similar to the text in the search query. In the 
 To enable Chat vectorization, select "Extensions" > "Vector Storage" > "Enabled for chat messages".
 
 Configure a vectorization source and vectorization model. Chat vectorization uses the same vector source as Data Bank, 
-so you may have set this up already. The settings for the Vectorization Source and Vectorization Model are documented in [Data Bank](https://docs.sillytavern.app/usage/core-concepts/data-bank/).
+so you may have set this up already. The settings for the Vectorization Source and Vectorization Model are documented in [Data Bank](/Usage/Core_Concepts/data-bank.md).
 
 Chat vectorization uses the same vector storage as Data Bank, but this does not need to be set up or configured. 
-There is also information about Vector Storage in [Data Bank](https://docs.sillytavern.app/usage/core-concepts/data-bank/).
+There is also information about Vector Storage in [Data Bank](/Usage/Core_Concepts/data-bank.md).
 
 Chat vectorization does not use Data Bank to store the chat messages. The messages are stored in the chat. 
 
