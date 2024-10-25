@@ -1,6 +1,7 @@
 ---
 order: -40
 icon: desktop-download
+route: /usage/how-to-use-a-self-hosted-model/
 ---
 
 # Self-hosted AI models

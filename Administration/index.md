@@ -22,7 +22,7 @@ To share your SillyTavern instance with others, you can create multiple user acc
 :::
 
 :::callout
-**[Remote access](Remote-connections)**
+**[Remote access](remote-connections)**
 
 You can access your SillyTavern instance from your phone, tablet, or another computer.
 :::
@@ -35,7 +35,7 @@ To access your SillyTavern instance from the internet, you can use a VPN or a tu
 :::
 
 :::callout
-**[Reverse proxying](Reverse-Proxying.md)**
+**[Reverse proxying](reverse-proxying)**
 
 For enthusiasts, you can set up a reverse proxy to access your SillyTavern instance from the internet.
 :::
@@ -55,4 +55,4 @@ For enthusiasts, you can set up a reverse proxy to access your SillyTavern insta
 7. Check the access logs often. They are written to the server console and the `access.log` file and provide information on incoming connections, such as IP address and user agent.
 8. Configure HTTPS. For a localhost server, you can generate and use a self-signed certificate. Otherwise, you may need to deploy a proxying web server like [Traefik](https://traefik.io/) or [Caddy](https://caddyserver.com/docs/getting-started).
 
-Find more on secure proxying in the following guide: [Reverse Proxying SillyTavern](Reverse-Proxying.md).
+Find more on secure proxying in the following guide: [Reverse Proxying SillyTavern](reverse-proxying).

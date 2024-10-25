@@ -2,6 +2,7 @@
 label: Reverse proxying
 order: -50
 icon: server
+route: /usage/st-reverse-proxy-guide
 ---
 
 !!! danger Note

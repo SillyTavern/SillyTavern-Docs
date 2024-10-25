@@ -1,7 +1,9 @@
 ---
 icon: rss
 order: -30
+route: /usage/remoteconnections
 ---
+
 # Remote connections
 
 Most often this is for people who want to use SillyTavern on their mobile phones while their PC runs the ST server within the same WiFi network.

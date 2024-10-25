@@ -2,6 +2,7 @@
 order: -30
 icon: repo-forked
 expanded: false
+route: /usage/api-connections
 ---
 
 # API Connections

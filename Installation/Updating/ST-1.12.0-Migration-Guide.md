@@ -1,5 +1,6 @@
 ---
 order: 112
+route: /installation/st-1.12.0-migration-guide/
 ---
 
 # 1.12.0 Migration Guide

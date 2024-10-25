@@ -58,7 +58,7 @@ If you are interested in using these, refer to the dedicated guide here: [How To
 
 ## Can I use SillyTavern on my phone or tablet?
 
-iPhones and iPads are not capable of running the whole SillyTavern app, but since it's just a web interface, you can run it on another computer on your home Wi-Fi, and then access it in your mobile browser. Refer to [Remote Connections](/Administration/Remote-connections.md) for more information.
+iPhones and iPads are not capable of running the whole SillyTavern app, but since it's just a web interface, you can run it on another computer on your home Wi-Fi, and then access it in your mobile browser. Refer to [Remote Connections](/Administration/remote-connections.md) for more information.
 
 For Android users, in addition to the above, you can run the whole SillyTavern directly on your phone, without needing a PC, using the Termux app. Refer to [Installation (Android)](/Installation/Android.md). (NOTE: Termux installations are not officially supported, and we can't guarantee it will work.)
 
@@ -72,13 +72,13 @@ Two possibilities:
 ## How can I make my own AI character?
 
 1. Click the Character Management button
-1. Click Create New Character
-1. Under Character Name, give a name, like Amanda
-1. Optionally, click the Select Avatar button to pick an image portrait for this character
-1. Under Description, describe the character, and include any information you want that you feel is relevant to the chat. For example: ```Amanda is a student traveling during her gap year. She's 6 feet tall, and a volleyball player. She has an athletic figure. She has long brown hair. She loves the Victorian England period, and watching TV and reading novels relating to that period.```
+2. Click Create New Character
+3. Under Character Name, give a name, like Amanda
+4. Optionally, click the Select Avatar button to pick an image portrait for this character
+5. Under Description, describe the character, and include any information you want that you feel is relevant to the chat. For example: ```Amanda is a student traveling during her gap year. She's 6 feet tall, and a volleyball player. She has an athletic figure. She has long brown hair. She loves the Victorian England period, and watching TV and reading novels relating to that period.```
 For example, if you want Amanda to be friendly, then you would add: ```Amanda is extremely cheerful and outgoing.```
-1. Under First Message, write the greeting the character when you begin a new chat. For example: ```*Amanda waves at you* Hey! Are you a backpacker too?```
-1. Click the Create Character button
+6. Under First Message, write the greeting the character when you begin a new chat. For example: ```*Amanda waves at you* Hey! Are you a backpacker too?```
+7. Click the Create Character button
 
 You now have a basic character you can chat with. Select Amanda from the character list, and a new chat will begin.
 
