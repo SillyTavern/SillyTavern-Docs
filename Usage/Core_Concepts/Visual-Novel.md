@@ -73,12 +73,12 @@ Obtaining character sprites can be done by browsing the internet for existing sp
 
 The Prome Visual Novel Extension is an endorsed third-party extension from Bronya Rand and Prometheus that enhances the visual novel experience in SillyTavern even further with features such as Letterbox Mode which makes the visual novel UI more "cinematic", Focus Mode with Darken Character Sprites, Traditional VN Mode where only the last message in chat appears in chat and more planned to come!
 
-| Letterbox Mode | Traditional VN Mode |
-| :------------: | :-----------------: |
-| ![Horizontal Letterbox Mode](/static/vn/extensions/prome/horizontal.png) | ![Traditional VN Mode](/static/vn/extensions/prome/single-message.png)
+|                              Letterbox Mode                              |                          Traditional VN Mode                           |
+|:------------------------------------------------------------------------:|:----------------------------------------------------------------------:|
+| ![Horizontal Letterbox Mode](/static/vn/extensions/prome/horizontal.png) | ![Traditional VN Mode](/static/vn/extensions/prome/single-message.png) |
 
-| Hide Sheld (Message Box) | Focus Mode (w/ Darken Sprites) |
-| :--------: | :--------------------------: |
-| ![Sheld Hide](/static/vn/extensions/prome/sheld_hide.png) | ![Focus Mode w/ Darken Sprites](/static/vn/extensions/prome/defocus.png)
+|                 Hide Sheld (Message Box)                  |                      Focus Mode (w/ Darken Sprites)                      |
+|:---------------------------------------------------------:|:------------------------------------------------------------------------:|
+| ![Sheld Hide](/static/vn/extensions/prome/sheld_hide.png) | ![Focus Mode w/ Darken Sprites](/static/vn/extensions/prome/defocus.png) |
 
 To install the Prome Visual Novel Extension, you can either install by going to `Download Extensions & Assets` and finding *Prome Visual Novel Extension*, or follow the installation instructions on the [Prome Visual Novel Extension](https://github.com/Bronya-Rand/Prome-VN-Extension?tab=readme-ov-file#installation-and-usage) Github page. Adjusting Prome's settings can be found either in *Extensions* -> **Prome (Visual Novel Extension)** or via the 🪄 (Wand) menu.

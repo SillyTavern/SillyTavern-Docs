@@ -61,47 +61,47 @@ If you insist on installing via a zip, here is the tedious process for doing the
 
 4. Copy the following files/folders as necessary(*) from your old ST installation:
 
-(*) 'As necessary' = "If you made any custom content related to those folders".
-
-#### Updating >=1.12.0
-
-Copy the `/data` directory and `config.yaml` file from one installation to another.
-
-#### Updating from <1.12.0 to >1.12.0
-
-1.12.0 includes an automated migration procedure. The steps below are required *only* if the migration was interrupted or errored.
+    (*) 'As necessary' = "If you made any custom content related to those folders".
+    
+    #### Updating >=1.12.0
+    
+    Copy the `/data` directory and `config.yaml` file from one installation to another.
+    
+    #### Updating from <1.12.0 to >1.12.0
+    
+    1.12.0 includes an automated migration procedure. The steps below are required *only* if the migration was interrupted or errored.
 
 5. Run the updated server install at least once to create the `/data/default-user` directory.
 6. Transfer the files from old `/public` to new `/data/default-user` as necessary.
-
-None of the folders are mandatory, so only copy what you need.
-
-**NOTE: DO NOT COPY THE ENTIRE /PUBLIC/ FOLDER**
-
-Doing so could break the new install and prevent new features from being present.
-
-```plaintext
-Assets
-Backgrounds
-Characters
-Chats
-Context
-Groups
-Group chats
-Instruct
-movingUI
-KoboldAI Settings
-NovelAI Settings
-OpenAI Settings
-QuickReplies
-TextGen Settings (textgen = ooba)
-Themes
-User Avatars
-Worlds
-User
-settings.json
-secrets.json <---- this one is in the base folder, not /public/
-```
+    
+    None of the folders are mandatory, so only copy what you need.
+    
+    **NOTE: DO NOT COPY THE ENTIRE /PUBLIC/ FOLDER**
+    
+    Doing so could break the new install and prevent new features from being present.
+    
+    ```plaintext
+    Assets
+    Backgrounds
+    Characters
+    Chats
+    Context
+    Groups
+    Group chats
+    Instruct
+    movingUI
+    KoboldAI Settings
+    NovelAI Settings
+    OpenAI Settings
+    QuickReplies
+    TextGen Settings (textgen = ooba)
+    Themes
+    User Avatars
+    Worlds
+    User
+    settings.json
+    secrets.json <---- this one is in the base folder, not /public/
+    ```
 
 7. Once those folders/files are copied, paste them into the /data/default-user folder (with secrets.json going into the folder root) of the new install.
 8. Start SillyTavern once again with the method appropriate to your OS, and pray you got it right.

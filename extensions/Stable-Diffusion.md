@@ -23,7 +23,7 @@ Most common Stable Diffusion generation settings are customizable within the Sil
 ## Generation modes
 
 | Wand menu item     | Slash command argument | Description                                    | Remarks                               |
-| :----------------- | :--------------------- | :--------------------------------------------- | :------------------------------------ |
+|:-------------------|:-----------------------|:-----------------------------------------------|:--------------------------------------|
 | "Yourself"         | `you`                  | A full-body portrait of the current character. | -                                     | 
 | "Your Face"        | `face`                 | A close-up portrait of the current character.  | Forces a portrait aspect ratio.       |
 | "Me"               | `me`                   | A portrait of the user persona.                | -                                     |

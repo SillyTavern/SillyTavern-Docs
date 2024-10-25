@@ -10,17 +10,17 @@ Tries to simulate the flow of a real human conversation. The algorithm is as fol
 
 1. Mentions of the group member names are extracted from the last message in chat.
 
-Only whole words are recognized as mentions! If your character's name is "Misaka Mikoto", they will reply only activate on "Misaka" or "Mikoto", but never to "Misa", "Railgun", etc.
-
-Unless the "Allow Self Responses" setting is enabled, characters won't reply to mentions of their name in their own message!
+    Only whole words are recognized as mentions! If your character's name is "Misaka Mikoto", they will reply only activate on "Misaka" or "Mikoto", but never to "Misa", "Railgun", etc.
+    
+    Unless the "Allow Self Responses" setting is enabled, characters won't reply to mentions of their name in their own message!
 
 2. Characters are activated by the "Talkativeness" factor.
 
-Talkativeness defines how often the character speaks if they were not mentioned. Adjust this value on the "Advanced Definitions" screen in the character editor. Slider values are on a linear scale from **0% / Shy** (character never talks unless mentioned) to **100% / Chatty** (character always replies). The default value for new characters is 50% chance.
+    Talkativeness defines how often the character speaks if they were not mentioned. Adjust this value on the "Advanced Definitions" screen in the character editor. Slider values are on a linear scale from **0% / Shy** (character never talks unless mentioned) to **100% / Chatty** (character always replies). The default value for new characters is 50% chance.
 
 3. A random character is selected.
 
-If no characters were activated at previous steps, one speaker is selected randomly, ignoring all other conditions.
+    If no characters were activated at previous steps, one speaker is selected randomly, ignoring all other conditions.
 
 #### List Order
 

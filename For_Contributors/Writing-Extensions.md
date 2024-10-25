@@ -39,7 +39,7 @@ const generateRaw = await importFromScript('generateRaw');
 Every extension must have a folder in `data/<user-handle>/extensions` and have a manifest.json file which contains metadata about the plugin and a JS script file.
 
 
-```js
+```json
 {
     "display_name": "The name of the plugin",
     "loading_order": 1,
@@ -94,12 +94,12 @@ You can also use a globally defined window object: `SillyTavern.getContext()`.
 
 Unless you're building a bundled extension, you can import variables and functions from other JS files.
 
-For example, this code snipped will generate a reply from the currently selected API in the background:
+For example, this code snippet will generate a reply from the currently selected API in the background:
 
 ```js
 import { generateQuietPrompt } from "../../../script.js";
 
-function handleMessage(data) {
+async function handleMessage(data) {
     const text = data.message;
     const translated = await generateQuietPrompt(text);
     // ...
@@ -189,8 +189,8 @@ Arguments explanation:
 
 1. `command` - the main command name. It will be used in autocompletion and help commands.
 2. `callback` - a function that will be executed when the command is triggered. A callback function can accept two arguments:
-  * `namedArgs` - an object with named arguments
-  * `unnamedArgs` - a string containing the unnamed argument
+   * `namedArgs` - an object with named arguments
+   * `unnamedArgs` - a string containing the unnamed argument
 3. `aliases` - an array of alias strings. The command can be called using any of the aliases, but they won't be shown in the autocomplete but will be listed in the help command.
 4. `helpString` - a string that will be displayed when the `/help slash` command is called. Must describe what your command does and which arguments it accepts. May contain HTML markup.
 

@@ -46,23 +46,23 @@ Follow the [Installation Guide](/Installation/index.md) to install and start Sil
 ### Get access to OpenAI
 
 1. Sign up to OpenAI.
-1. Go to <https://platform.openai.com>
-1. Click your account icon in the top right, then View API Keys.
-1. Click "Create new secret key". Copy it somewhere immediately. **DO NOT SHARE THIS KEY. WHOEVER HAS IT CAN USE YOUR ACCOUNT TO USE GPT AT YOUR EXPENSE.**
+2. Go to <https://platform.openai.com>
+3. Click your account icon in the top right, then View API Keys.
+4. Click "Create new secret key". Copy it somewhere immediately. **DO NOT SHARE THIS KEY. WHOEVER HAS IT CAN USE YOUR ACCOUNT TO USE GPT AT YOUR EXPENSE.**
 
 ### Configure SillyTavern to use your API
 
 1. In SillyTavern's top bar, click API Connections.
-1. Under API, select Chat Completion (OpenAI).
-1. Under Chat Completion Source, select OpenAI.
-1. Paste the API key you saved in the previous step.
-1. Click the Connect button. Confirm it says Valid.
-1. By default, SillyTavern will use GPT-4 Turbo. You can choose a different model, but educate yourself on the pricing.
+2. Under API, select Chat Completion (OpenAI).
+3. Under Chat Completion Source, select OpenAI.
+4. Paste the API key you saved in the previous step.
+5. Click the Connect button. Confirm it says Valid.
+6. By default, SillyTavern will use GPT-4 Turbo. You can choose a different model, but educate yourself on the pricing.
 
 ### Test your setup
 
 1. In SillyTavern's top bar, click Character Management at the far right.
-1. Select an existing character such as Seraphina.
-1. In the text box at the bottom, write something to Seraphina, then press Enter or click the Send button.
+2. Select an existing character such as Seraphina.
+3. In the text box at the bottom, write something to Seraphina, then press Enter or click the Send button.
 
 If you did everything right, after a few seconds, Seraphina should respond.

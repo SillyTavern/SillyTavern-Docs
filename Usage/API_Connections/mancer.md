@@ -8,7 +8,7 @@ Mancer is a large language model inferencing service that lets you run whatever 
 1. Sign up for an account at [mancer.tech](https://mancer.tech/).
 2. Click on Dashboard and copy your API Key.
 
-![Mancer dashboard as of 2/27/2024](/static/mancer-dashboard.png)
+    ![Mancer dashboard as of 2/27/2024](/static/mancer-dashboard.png)
 
 3. In SillyTavern, select the Text Completion API, and then select Mancer under API Type.
 4. Enter your Mancer API Key and click Connect.

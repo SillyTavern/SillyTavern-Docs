@@ -164,14 +164,14 @@ For Linux, we will reverse proxying SillyTavern through [Traefik](https://traefi
 17. Return to your domain page and go to **DNS**. Create a new record using **Add record** and create two _A_ type keys like the ones below. Replace `PUBLIC_IP` with your own public IP, then click _Save_.
 
     | Type | Name (required) | Target (required) | Proxy Status | TTL  |
-    | ---- | --------------- | ----------------- | ------------ | ---- |
+    |------|-----------------|-------------------|--------------|------|
     | A    | DOMAIN.com      | PUBLIC_IP         | Proxied      | Auto |
     | A    | www             | PUBLIC_IP         | Proxied      | Auto |
 
 18. Create another record of the **`CNAME`** type, then click _Save_. Here is an example on how it should appear on the Cloudflare dashboard.
 
     | Type  | Name (required) | Target (required) | Proxy Status | TTL |
-    | ----- | --------------- | ----------------- | ------------ | --- |
+    |-------|-----------------|-------------------|--------------|-----|
     | CNAME | silly           | DOMAIN.com        | Proxied      | N/A |
 
 19. `cd` into _appdata/traefik_ and using `nano` or a similar editor, create a file name _config.yml_ and paste the following. Replace `PRIVATE_IP` with the private IP you obtained, and `silly.DOMAIN.com` with the name of your subdomain and domain page, then save the file.
@@ -219,18 +219,17 @@ For Linux, we will reverse proxying SillyTavern through [Traefik](https://traefi
     Make sure to change the default username and password to something strong that you can remember.
     !!!
 
+    Or to use the SillyTavern accounts as usernames and passwords:
 
-Or to use the SillyTavern accounts as usernames and passwords:
+    ```yaml
+    basicAuthMode: true
+    enableUserAccounts: true
+    perUserBasicAuth: true
+    ```
 
-```yaml
-basicAuthMode: true
-enableUserAccounts: true
-perUserBasicAuth: true
-```
-
-!!! warning Tip
-Before enabling perUserBasicAuth ensure you have a valid multi-user setup with working passwords.
-!!!
+    !!! warning Tip
+    Before enabling perUserBasicAuth ensure you have a valid multi-user setup with working passwords.
+    !!!
 
 22. Wait a few minutes, then open your domain page you made for ST. At the end of it, you should be able to open SillyTavern from anywhere you go just with one URL and one account.
     !!! info Tip
@@ -260,14 +259,14 @@ Do note that we run SillyTavern on bare-metal over Docker. This is a rough idea 
 6. Return to your domain page and go to **DNS**. Create a new record using **Add record** and create two _A_ type keys like the ones below. Replace `PUBLIC_IP` with your own public IP and the example domain with your domain, then click _Save_.
 
     | Type | Name (required) | Target (required) | Proxy Status | TTL  |
-    | ---- | --------------- | ----------------- | ------------ | ---- |
+    |------|-----------------|-------------------|--------------|------|
     | A    | DOMAIN.com      | PUBLIC_IP         | Proxied      | Auto |
     | A    | www             | PUBLIC_IP         | Proxied      | Auto |
 
 7. Create another record of the **`CNAME`** type, then click _Save_. Here is an example on how it should appear on the Cloudflare dashboard.
 
     | Type  | Name (required) | Target (required) | Proxy Status | TTL |
-    | ----- | --------------- | ----------------- | ------------ | --- |
+    |-------|-----------------|-------------------|--------------|-----|
     | CNAME | silly           | DOMAIN.com        | Proxied      | N/A |
 
 8. Git clone SillyTavern into the `docker` folder.
@@ -289,7 +288,7 @@ Do note that we run SillyTavern on bare-metal over Docker. This is a rough idea 
             secrets:
                 - CF_DNS_API_KEY
             ports:
-                - 80:80
+                - "80:80"
                 - 443:443
                 - 8080:8080
             environment:

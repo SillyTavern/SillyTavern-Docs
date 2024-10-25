@@ -32,7 +32,7 @@ To run your first script, open any SillyTavern chat and type the following into 
 ```
 
 | ![Hello World](/static/scripts/hello-world.png) |
-| ----------------------------------------------- |
+|-------------------------------------------------|
 
 You should see the message in the toast on top of the screen. Now let's break it down bit by bit.
 
@@ -64,7 +64,7 @@ Now let's add a little bit of interactivity to the script. We will accept the in
 2. Because `/echo` already has an unnamed argument that sets the template for the output, we use the `{{pipe}}` macro to specify a place where the pipe value will be rendered.
 
 | ![Slim Shady Input](/static/scripts/slim-input.png) | ![Slim Shady Output](/static/scripts/slim-output.png) |
-| --------------------------------------------------- | ----------------------------------------------------- |
+|-----------------------------------------------------|-------------------------------------------------------|
 
 ### Other input/output commands
 
@@ -656,7 +656,7 @@ The generated text is then passed through the pipe to the next command and can b
 ```
 
 | ![Cthulhu Says](/static/scripts/cthulhu-says.png) |
-| ------------------------------------------------- |
+|---------------------------------------------------|
 
 ## Prompt injections
 
@@ -748,12 +748,12 @@ World Info (also known as Lorebook) is a highly utilitarian tool for dynamically
 2. `/findentry file=bookName field=fieldName [text]` – finds a UID of the record from the specified file (or a variable pointing to a file name) using fuzzy matching of a field value with the provided text (default field: `key`) and passes the UID down the pipe, e.g. `/findentry file=chatLore field=key Shadowfang`.
 3. `/getentryfield file=bookName field=field [UID]` – gets a field value (default field: `content`) of the record with the UID from the specified World Info file (or a variable pointing to a file name) and passes the value down the pipe, e.g. `/getentryfield file=chatLore field=content 123`.
 4. `/setentryfield file=bookName uid=UID field=field [text]` – sets a field value (default field: `content`) of the record with the UID (or a variable pointing to UID) from the specified World Info file (or a variable pointing to a file name). To set multiple values for key fields, use a comma-delimited list as a text value, e.g. `/setentryfield file=chatLore uid=123 field=key Shadowfang,sword,weapon`.
-4. `/createentry file=bookName key=keyValue [content text]` – creates a new record in the specified file  (or a variable pointing to a file name) with the key and content (both of these arguments are *optional*) and passes the UID down the pipe, e.g. `/createentry file=chatLore key=Shadowfang The sword of the king`.
+5. `/createentry file=bookName key=keyValue [content text]` – creates a new record in the specified file  (or a variable pointing to a file name) with the key and content (both of these arguments are *optional*) and passes the UID down the pipe, e.g. `/createentry file=chatLore key=Shadowfang The sword of the king`.
 
 ### Valid entry fields
 
 | Field              | UI element        | Value type      |
-| :----------------- | :---------------- | :-------------- |
+|:-------------------|:------------------|:----------------|
 | `content`          | Content           | String          |
 | `comment`          | Title / Memo      | String          |
 | `key`              | Primary Keywords  | List of strings |
@@ -982,7 +982,7 @@ Every click increments the variable `clicks` by one and displays a different mes
 Open the modal menu by clicking the `⋮` button for the created command.
 
 | ![Automatic execution](/static/scripts/autoexecute.png) |
-| ------------------------------------------------------- |
+|---------------------------------------------------------|
 
 In this menu you can do the following:
 
@@ -1023,7 +1023,7 @@ A basic debugger exists inside the expanded Quick Reply editor. Set breakpoints 
 ```
 
 | ![QR Editor Debugger](/static/scripts/st-debugger.png) |
-| ------------------------------------------------------ |
+|--------------------------------------------------------|
 
 ### Calling procedures
 
@@ -1170,9 +1170,9 @@ Scripts can also interact with SillyTavern's UI: navigate through the chats or c
 4. `/movingui (name)` — activates a MovingUI preset by name.
 5. `/resetui` — resets the MovingUI panels state to their original positions.
 6. `/panels` — toggles the UI panels visibility: top bar, left and right drawers.
-6. `/bg (name)` — finds and sets a background using fuzzy names matching. Respect the chat background lock state.
-7. `/lockbg` — locks the background image for the current chat.
-8. `/unlockbg` — unlocks the background image for the current chat.
+7. `/bg (name)` — finds and sets a background using fuzzy names matching. Respect the chat background lock state.
+8. `/lockbg` — locks the background image for the current chat.
+9. `/unlockbg` — unlocks the background image for the current chat.
 
 ## More examples
 

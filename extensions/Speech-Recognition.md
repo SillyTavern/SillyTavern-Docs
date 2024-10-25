@@ -17,21 +17,21 @@ Before you begin, ensure you've met the following prerequisites:
    - Select "Browser" from the dropdown options.
    - If your browser doesn't support voice recognition, an error popup will appear.
 
-3. **Select Message Mode**:
+2. **Select Message Mode**:
    - Choose the "Message Mode" you want:
      - **Append**: Your message will be appended to the current user message text area.
      - **Replace**: Your message will replace the current user message in the text area.
      - **Auto send**: Your message will automatically be sent once the end of speech is detected.
 
-4. **Enable Message Mapping** *(Optional)*:
+3. **Enable Message Mapping** *(Optional)*:
    - Setup phrases mapping for vocal shortcuts.
    - For instance, by adding "command delete = /del2", the "/del2" command will replace your voice message when "command delete" is detected.
    - Useful when combined with auto send mode for full voice control. Enable this by checking "Enable messages mapping".
 
-5. **Select Language**:
+4. **Select Language**:
    - Choose the language you want to speak (Note: not every browser supports all languages).
 
-6. **Recording**:
+5. **Recording**:
    - To start recording, click the microphone button to the right of the message area next to the send button. Click again to stop recording. Recording may stop automatically if no voice is detected.
 
 ## Speech Recognition Setup (Whisper/Vosk)

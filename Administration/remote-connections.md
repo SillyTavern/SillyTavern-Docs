@@ -40,35 +40,40 @@ After activating the remote connection listening, you must turn on at least one 
   * **127.0.0.1 MUST be included in the list, or you will not be able to connect on the host machine**
   * Individual IPs, and wildcard (*) IP ranges are accepted.
   * CIDR masks are also accepted (eg. 10.0.0.0/24).
-
-Examples:
-
-```txt
-192.168.0.1
-192.168.0.20
-
-//or simply
-
-192.168.*.*
-```
-
-(the above wildcard IP range will allow any device on the local network to connect)
-
-#### General Purpose whitelist.txt
-
-Copy and paste this exactly:
-
-```txt
-192.168.*.*
-127.0.0.1
-```
-
-This will allow any device on the same network as the host machine, as well as the host machine itself, to connect to ST.
-
 * Save the `whitelist.txt` file.
 * **Restart your SillyTavern server.**
 
-*Note: `config.yaml` also has a `whitelist` array, which you can use in the same way, but this array will be ignored if `whitelist.txt` exists. We do not recommend using the `config.yaml` IP list, because using `whitelist.txt` is easier*
+#### Example `whitelist.txt` files
+
+1. Allows any device on the local network to connect:
+
+    ```txt
+    10.0.0.0/8
+    172.16.0.0/12
+    192.168.0.0/16
+    127.0.0.1
+    ::1
+    ```
+   
+    If you are not sure what addresses your local network uses, use the whitelist above. 
+
+2. Allows two specific devices to connect:
+
+    ```txt
+    192.168.0.2
+    192.168.0.5
+    127.0.0.1
+    ```
+
+3. Allows any device on the 192.168.0.* subnet to connect:
+
+    ```txt
+    192.168.0.*
+    127.0.0.1
+    ```
+
+!!! `config.yaml` also has a `whitelist` array, which you can use in the same way, but this array will be ignored if `whitelist.txt` exists. We do not recommend using the `config.yaml` IP list, because using `whitelist.txt` is easier.
+!!!
 
 !!! Removing access control by whitelist
 Change `whitelistMode` to `false`, remove (or rename) `whitelist.txt` in the SillyTavern base install folder, and restart the server.

@@ -24,17 +24,18 @@ Not sure of which files to back up? See the list here: [How to Update SillyTaver
         public/css/bg_load.css
         public/settings.json
    ```
-   You will see a list of files effected. If you do not care about those settings files being replaced `git switch -f release` or `git switch -f staging` will set your branch.
+   You will see a list of files affected. If you do not care about those settings files being replaced `git switch -f release` or `git switch -f staging` will set your branch.
    If you do care to save those changes restore from backup.
-7. Type `npm install` and then `npm run start` to test that everything behaves correctly.
-8. Enjoy! Restore your data from a backup if needed.
+
+5. Type `npm install` and then `npm run start` to test that everything behaves correctly.
+6. Enjoy! Restore your data from a backup if needed.
 
 ### fatal: invalid reference: release
 
 This may happen if you cloned just a single branch from an old remote (before migration to the organization repo). To fix this, you need to add and fetch a branch from a new remote:
 
 ```
-git remote add st http://github.com/SillyTavern/SillyTavern
+git remote add st https://github.com/SillyTavern/SillyTavern
 git fetch st
 git checkout -t st/release
 ```

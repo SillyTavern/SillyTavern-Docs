@@ -83,7 +83,7 @@ Soft links between the `/public` directory and the `config` volume are no longer
 The following files and directories are subject to the data migration. Assuming the default configuration, the before and after paths are provided in the table below.
 
 | Before                                 | After                                |
-| -------------------------------------- | ------------------------------------ |
+|----------------------------------------|--------------------------------------|
 | /secrets.json                          | /data/default-user/secrets.json      |
 | /thumbnails                            | /data/default-user/thumbnails        |
 | /vectors                               | /data/default-user/vectors           |
