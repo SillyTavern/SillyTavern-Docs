@@ -1,15 +1,18 @@
 ---
-order: 105
+label: Updating
 icon: repo-pull
+order: -1
+expanded: false
 ---
 
 # How to Update SillyTavern
 
 Find your OS below and follow the instructions to update ST.
 
-(This guide assumes you have already installed SillyTavern once and know how to run it on your OS.)
+!!! For installation instructions, see the [Installation](/Installation/index.md) page.
 
-This is not an installation guide. If you need installation instructions, go to the Installation page for your OS (can be found in site navigation).
+This guide assumes you have already installed and run SillyTavern at least once.
+!!!
 
 ----
 
@@ -44,7 +47,7 @@ You have chosen a wise path.
 
 Since your installation was done via Zip, you will need to make a new install using git.
 
-Thankfully we have [instructions](https://docs.sillytavern.app/installation/windows/) on how to do so.
+Thankfully we have [instructions](/Installation/Windows.md) on how to do so.
 
 Once you have used git to install a NEW SillyTavern into a DIFFERENT folder, come back to this page and proceed to **Step 4** of the 'Zip Update' instructions below.
 
@@ -108,9 +111,8 @@ secrets.json <---- this one is in the base folder, not /public/
 
 #### I use Docker and all my data is gone after the update!
 
-You must follow the migration guide to update volume mappings for the new data model introduced in 1.12.0
-
-[Migration guide for Docker containers](https://docs.sillytavern.app/installation/st-1.12.0-migration-guide/#containerized-docker-installs)
+You must follow the [Migration guide for Docker containers](/Installation/Updating/ST-1.12.0-Migration-Guide.md#containerized-docker-installs)
+ to update volume mappings for the new data model introduced in 1.12.0
 
 #### "There are unresolved conflicts in the working directory."
 

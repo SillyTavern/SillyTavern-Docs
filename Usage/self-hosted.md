@@ -1,5 +1,5 @@
 ---
-order: 20
+order: -40
 icon: desktop-download
 ---
 
@@ -15,7 +15,7 @@ This guide aims to help you get set up using SillyTavern with a local AI running
 
 ### What are the best Large Language Models?
 
-It is impossible to answer this question as there's no standardized scale of "Best". The community ⁠has enough resources and discussions going on Reddit and Discord to form at least some opinion on what is the preferred / go-to model. Your mileage may vary.
+It is impossible to answer this question as there's no standardized scale of "Best". The community has enough resources and discussions going on Reddit and Discord to form at least some opinion on what is the preferred / go-to model. Your mileage may vary.
 
 ### What is the best configuration?
 

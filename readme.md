@@ -18,10 +18,10 @@ The hardware requirements are minimal: it will run on anything that can run Node
 
 Follow the installation guide for your platform:
 
-* [Windows](https://docs.sillytavern.app/installation/windows/)
-* [Linux and Mac](https://docs.sillytavern.app/installation/linuxmacos/)
-* [Android](https://docs.sillytavern.app/installation/android-(termux)/)
-* [Docker](https://docs.sillytavern.app/installation/docker/)
+* [Windows](/Installation/Windows.md)
+* [Linux and Mac](/Installation/LinuxMacOS.md)
+* [Android](/Installation/Android.md)
+* [Docker](/Installation/Docker.md)
 
 ## Branches
 
@@ -29,8 +29,6 @@ SillyTavern is being developed using a two-branch system to ensure a smooth expe
 
 * `release` -🌟 **Recommended for most users.** This is the most stable and recommended branch, updated only when major releases are pushed. It's suitable for the majority of users. Typically updated once a month.
 * `staging` - ⚠️ **Not recommended for casual use.** This branch has the latest features, but be cautious as it may break at any time. Only for power users and enthusiasts. Updates several times daily.
-
-Learn more [here](https://docs.sillytavern.app/usage/branches/).
 
 ## What do I need other than SillyTavern?
 
@@ -62,12 +60,12 @@ You can also create your own character cards from scratch. Refer to the [Charact
 
 SillyTavern has extensibility support.
 
-* [Character emotional expressions (sprites)](https://docs.sillytavern.app/extensions/expression-images/)
-* [Auto-Summary of the chat history](https://docs.sillytavern.app/extensions/summarize/)
+* [Character emotional expressions (sprites)](/extensions/Expression-Images.md)
+* [Auto-Summary of the chat history](/extensions/Summarize.md)
 * Automatic UI and chat translation
-* [Stable Diffusion/FLUX/DALL-E image generation](https://docs.sillytavern.app/extensions/stable-diffusion/)
-* [Text-to-speech for AI response messages (via ElevenLabs, Silero, or the OS's System TTS)](https://docs.sillytavern.app/extensions/tts/)
-* [Web Search capabilities for adding additional real world context to your prompts](https://docs.sillytavern.app/extensions/websearch/)
+* [Stable Diffusion/FLUX/DALL-E image generation](/extensions/Stable-Diffusion.md)
+* [Text-to-speech for AI response messages (via ElevenLabs, Silero, or the OS's System TTS)](/extensions/TTS.md)
+* [Web Search capabilities for adding additional real world context to your prompts](/extensions/WebSearch.md)
 * Many more are available to download from the "Download Extensions & Assets" menu.
 
 ## How can I get in touch with the developers directly?

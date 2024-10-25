@@ -1,4 +1,8 @@
-# SillyTavern 1.12.0 Migration Guide
+---
+order: 112
+---
+
+# 1.12.0 Migration Guide
 
 SillyTavern 1.12.0 (codename the "Neo Server" update) includes several critical changes that may affect the way you use SillyTavern.
 
@@ -107,91 +111,4 @@ The following files and directories are subject to the data migration. Assuming 
 
 1.12.0 adds a (completely optional) ability to create a multi-user setup on the same server, allowing multiple users to use their own fully isolated SillyTavern instances even at the same time. User accounts can also be password-protected for an additional layer of privacy.
 
-> While we tried to apply most of the well-known security practices, this still doesn't make the SillyTavern server secure enough to expose it to the public internet.
-
-!!! danger Disclaimer
-**NEVER HOST ANY INSTANCES TO THE OPEN INTERNET WITHOUT ENSURING PROPER SECURITY MEASURES FIRST.**
-
-**WE ARE NOT RESPONSIBLE FOR ANY DAMAGE OR LOSSES IN CASES OF UNAUTHORIZED ACCESS DUE TO IMPROPER OR INADEQUATE SECURITY IMPLEMENTATION.**
-!!!
-
-### Configuration
-
-To enable and use the multi-user mode, edit the `config.yaml` file:
-
-```yaml
-# Enable multi-user mode
-enableUserAccounts: true
-# Enable discreet login mode: hides user list on the login screen
-enableDiscreetLogin: true
-```
-
-1. When the user account setting is disabled, a `default-user` fallback admin account is utilized for storing the user data.
-2. When the discreet login setting is disabled, a list of active users is displayed on the login screen. If enabled, a user must enter their handle manually.
-
-> You can't _delete_ the `default-user` account from the users list because it is used for serving the user data in case if `enableUserAccounts` is set to `false`. But you can _disable_ it to hide it from the list and disallow logins.
-
-### User handles
-
-A handle is the unique identifier of a user. It can consist only of lowercase letters, numbers, and dashes.
-
-A path to the user data directory assumes using the following pattern: `%DATA_ROOT%/%USER_HANDLE%`.
-
-Examples of valid user handles:
-
--   default-user
--   juan555
--   flux-the-cat
--   cool-guy1337
-
-### User roles
-
--   **Admin** - can manage (create, delete, modify) other users.
--   **User** - can't manage other users.
-
-Except for having admin panel access, both user roles are functionally identical and can use a full range of SillyTavern features without any restrictions. An implementation of user permissions is TBD.
-
-All user accounts are created as regular users first, and then could be promoted to admins if needed.
-
-### Login screen
-
-There you can select a user account to use. Has two styles, depending on the `enableDiscreetLogin` config value.
-
-The login screen is bypassed and not displayed when you have only one active user and it is not password protected.
-
-### User profile
-
-You can access an account self-management menu using an "Account" button under the "User settings" panel in the top menu bar.
-
-1. Display name - used in the login screen, can be changed. Does not correlate with personas and is not visible for the AI APIs - you can still use as many personas as you want.
-2. Profile picture - used in the login screen. You can either use a custom picture, the default persona picture (if set), or the last used persona otherwise.
-3. Password - a lock icon reflects the account protection status (open lock = no password). A password can be set, changed, or removed using the "Change Password" button.
-4. Settings Snapshots - access and review the backups of your `settings.json` file, with the ability to create or restore snapshots.
-5. Download Backup - download an archive of your user data folder.
-6. Reset Settings - reset factory default settings, while leaving other data (character, chats) intact.
-
-### Password recovery
-
-1. A password can be recovered from a login screen. You need access to the server console to get a one-time recovery code (consisting of 4 digits).
-2. Alternatively, you can use a utility script in the SillyTavern server to reset a password by providing the user handle.
-
-```txt
-Usage: node recover.js [account] (password)
-Example: node recover.js admin SecurePassword
-```
-
-### Security checklist
-
-**This is just a recommendation. Please consult a web application security specialist before making your ST instance live.**
-
-1. Keep your operating system and runtime software like Node.js updated. This will ensure that your system is up-to-date with the latest security patches and fixes which can help prevent potential vulnerabilities.
-2. Use a whitelist and a network firewall. Only allow trusted IP ranges to access the server.
-3. Enable basic authentication. It acts as a "master password" before you can proceed to the front-end app.
-4. Alternatively, configure external authentication. Some known services for that are [Authelia](https://www.authelia.com/) and [authentik](https://goauthentik.io/).
-5. Never leave admin accounts passwordless. A server will warn you upon the startup if you have any unprotected admin accounts.
-6. Use the discreet login setting outside of the local network. This will hide the user list from any potential outsiders.
-7. Check the access logs often. They are written to the server console and the `access.log` file and provide information on incoming connections, such as IP address and user agent.
-8. Configure HTTPS. For a localhost server, you can generate and use a self-signed certificate. Otherwise, you may need to deploy a proxying web server like [Traefik](https://traefik.io/) or [Caddy](https://caddyserver.com/docs/getting-started).
-
-Find more on secure proxying in the following guide: [Reverse Proxying SillyTavern
-](https://docs.sillytavern.app/usage/st-reverse-proxy-guide/)
+Please refer to the [Users](/Administration/multi-user.md) documentation for more information.

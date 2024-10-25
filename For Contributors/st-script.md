@@ -1,6 +1,7 @@
 ---
-order: 1
+order: 0
 icon: file-symlink-file
+route: /usage/st-script
 ---
 
 # STscript Language Reference

@@ -1,6 +1,7 @@
 ---
-order: 30
+order: -30
 icon: repo-forked
+expanded: false
 ---
 
 # API Connections
@@ -120,7 +121,7 @@ Most Text Completion models have a recommended "Instruct Template" (usually ment
 - Uncensored models tuned for steerable creative writing
 - Free monthly credits, as well as paid subscription
 - Models ranging from 7B to 70B
-- [Setup Instructions](/usage/api-connections/DreamGen/)
+- [Setup Instructions](API Connections/DreamGen.md)
 
 ### AI Horde
 

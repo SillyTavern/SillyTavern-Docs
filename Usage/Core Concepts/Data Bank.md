@@ -82,7 +82,7 @@ The script is loaded in the video's default language. Optionally, you can specif
 ### Web Search
 
 !!! info Note
-This source requires to have a [Web Search](/Extras/extensions/WebSearch.md) extension installed and properly configured. See the linked page for more details.
+This source requires to have a [Web Search](/extensions/WebSearch.md) extension installed and properly configured. See the linked page for more details.
 !!!
 
 Perform a web search and download the text from the search result pages. This is similar to the Web source but fully automated. A chosen search engine will be inherited from the extension settings, so set it up in advance.
