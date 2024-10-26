@@ -18,24 +18,23 @@ You can use the color pickers and sliders to customize the UI in many ways.
 
 You can also save presets and share them with other users (saved into `/data/<user-handle>/themes/`).
 
-### Power User Options
+### Formulas Rendering
 
-#### Formulas Rendering
+To enable math formulas rendering, use the [LaTeX extension](https://github.com/SillyTavern/Extension-LaTeX). To get the extension, you need to install it via the "Download Extensions & Assets" menu in SillyTavern.
 
-Enables math formulas rendering using the [showdown-katex](https://obedm503.github.io/showdown-katex/) package.
+Type your formulas in code blocks with `latex` or `asciimath` language identifiers for LaTeX and AsciiMath respectively. The extension uses [KaTeX](https://katex.org/) for rendering.
 
-The following formatting rules are supported:
-
-##### LaTeX syntax
-
-```txt
-$$ formula goes here $$
+<pre><code>```latex
+\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
 ```
 
-##### Asciimath syntax
+```asciimath
+int_{-oo}^{oo} e^{-x^2} dx = sqrt{pi}
+```</code></pre>
 
-```txt
-$ formula goes here $
-```
+!!! info Deprecation notice
+The legacy `$` and `$$` wrapper syntax is no longer supported. Please use the following regex scripts to polyfill the old syntax:
 
-More information: [KaTeX](https://katex.org/)
+* [$$ - LaTeX](https://github.com/SillyTavern/Extension-LaTeX/raw/refs/heads/main/assets/$$_-_latex.json)
+* [$ - AsciiMath](https://github.com/SillyTavern/Extension-LaTeX/raw/refs/heads/main/assets/$_-_asciimath.json)
+!!!
