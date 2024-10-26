@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.782779011121">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783258630767">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.782779011121" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.783258630767" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.782779011121" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.783258630767" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.782779011121" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.783258630767" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -49,10 +49,24 @@
         }
 
         body {
-            font-family: Noto Sans;
+            font-family: Noto Sans, sans-serif;
+        }
+
+        .callout {
+          padding: 1rem;
+          margin-bottom: 1rem;
+          border: 1px solid #d2d6dc;
+          border-radius: 0.375rem;
+        }
+        .callout p {
+          margin-bottom: 0.5rem !important;
+        }
+        .callout p:last-child {
+          margin-bottom: 0 !important;
         }
     </Style>
     <link href="https://sillytavern.app/webfonts/NotoSans/stylesheet.css" rel="stylesheet">
+
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -275,7 +289,7 @@
 </li>
 <li><p><strong>Default Music Selection</strong>:</p>
 <ul>
-<li>When no emotion is detected, a random neutral track will play as the default. Emotions are detected similarly to updating sprites; refer to the <a href="https://docs.sillytavern.app/extras/extensions/expression-images/">expression images documentation</a> for details.</li>
+<li>When no emotion is detected, a random neutral track will play as the default. Emotions are detected similarly to updating sprites; refer to the <a href="../expression-images/">expression images documentation</a> for details.</li>
 </ul>
 </li>
 </ol>

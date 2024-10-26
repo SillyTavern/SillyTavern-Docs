@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.782779011121">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783258630767">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.782779011121" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.783258630767" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.782779011121" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.783258630767" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.782779011121" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.783258630767" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -49,10 +49,24 @@
         }
 
         body {
-            font-family: Noto Sans;
+            font-family: Noto Sans, sans-serif;
+        }
+
+        .callout {
+          padding: 1rem;
+          margin-bottom: 1rem;
+          border: 1px solid #d2d6dc;
+          border-radius: 0.375rem;
+        }
+        .callout p {
+          margin-bottom: 0.5rem !important;
+        }
+        .callout p:last-child {
+          margin-bottom: 0 !important;
         }
     </Style>
     <link href="https://sillytavern.app/webfonts/NotoSans/stylesheet.css" rel="stylesheet">
+
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -292,7 +306,7 @@
     </h3>
 </doc-anchor-target>
 <ol>
-<li>Use function tool - uses <a href="https://docs.sillytavern.app/for-contributors/function-calling/">function calling</a> to activate search. Must use a supported Chat Completion API and be enabled in the AI Response settings. <strong>Disables all other activation methods when engaged.</strong></li>
+<li>Use function tool - uses <a href="../../for-contributors/function-calling/">function calling</a> to activate search. Must use a supported Chat Completion API and be enabled in the AI Response settings. <strong>Disables all other activation methods when engaged.</strong></li>
 <li>Use Backticks - enables search activation using words encased in single backticks.</li>
 <li>Use Trigger Phrases - enables search activation using trigger phrases.</li>
 <li>Regular expressions - provide a JS-flavored regex to match the user message. If the regex matches, the search with a given query will be triggered. Search query supports &#x60;&#x60; and $1-syntax to reference the matched group. Example: <code v-pre>/what is happening in (.*)/i</code> regex for search query <code v-pre>news in $1</code> will match a message containing <code v-pre>what is happening in New York</code> and trigger the search with the query <code v-pre>news in New York</code>.</li>
@@ -345,7 +359,7 @@ If you want to ask additional questions without accidentally triggering the sear
 <li>Trigger phrases.</li>
 </ol>
 <p>To discard all previous queries from processing, start the user message with an exclamation mark, for example, a user message <code v-pre>!Now let's talk about...</code> will discard this and every message above it.</p>
-<p>This extension also provides a <code v-pre>/websearch</code> slash command to use in STscript. More info here: <a href="https://docs.sillytavern.app/usage/st-script/">STscript Language Reference</a></p>
+<p>This extension also provides a <code v-pre>/websearch</code> slash command to use in STscript. More info here: <a href="../../usage/st-script/#extension-commands">STscript Language Reference</a></p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">/websearch (links=on|off snippets=on|off [query]) – performs a web search query. Use named arguments to specify what to return - page snippets (default: on), full parsed pages (default: off) or both.
 

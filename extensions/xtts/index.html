@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.782779011121">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783258630767">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.782779011121" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.783258630767" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.782779011121" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.783258630767" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.782779011121" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.782779011121" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.783258630767" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.783258630767" defer></script>
 
     <Style>
         a {
@@ -50,10 +50,24 @@
         }
 
         body {
-            font-family: Noto Sans;
+            font-family: Noto Sans, sans-serif;
+        }
+
+        .callout {
+          padding: 1rem;
+          margin-bottom: 1rem;
+          border: 1px solid #d2d6dc;
+          border-radius: 0.375rem;
+        }
+        .callout p {
+          margin-bottom: 0.5rem !important;
+        }
+        .callout p:last-child {
+          margin-bottom: 0 !important;
         }
     </Style>
     <link href="https://sillytavern.app/webfonts/NotoSans/stylesheet.css" rel="stylesheet">
+
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -247,49 +261,42 @@ Open the Anaconda command prompt and follow the instructions line by line.</p>
     </h3>
 </doc-anchor-target>
 <ol>
-<li>Navigate to the folder you&#x27;ve created at step 4 of prerequisites.</li>
-</ol>
+<li>Navigate to the folder you&#x27;ve created at step 4 of prerequisites.
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">cd C:\xtts</code></pre>
 </doc-codeblock></div>
-<ol start="2">
-<li>Create a new conda env. From now on, we&#x27;ll call it <code v-pre>xtts</code>.</li>
-</ol>
+</li>
+<li>Create a new conda env. From now on, we&#x27;ll call it <code v-pre>xtts</code>.
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">conda create -n xtts</code></pre>
 </doc-codeblock></div>
-<ol start="3">
-<li>Activate a newly created env.</li>
-</ol>
+</li>
+<li>Activate a newly created env.
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">conda activate xtts</code></pre>
 </doc-codeblock></div>
-<ol start="4">
-<li>Install Python 3.10 to your env. Confirm with &quot;y&quot; when prompted.</li>
-</ol>
+</li>
+<li>Install Python 3.10 to your env. Confirm with &quot;y&quot; when prompted.
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">conda install python=3.10</code></pre>
 </doc-codeblock></div>
-<ol start="5">
-<li>Install the XTTS server with its requirements.</li>
-</ol>
+</li>
+<li>Install the XTTS server with its requirements.
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">pip install xtts-api-server pydub</code></pre>
 </doc-codeblock></div>
-<ol start="6">
+</li>
 <li>Install PyTorch. This can take some time. The following line installs PyTorch with GPU acceleration support (CUDA).
-If you want to use just the CPU inference, drop the last part that starts with <code v-pre>--index-url</code>.</li>
-</ol>
+If you want to use just the CPU inference, drop the last part that starts with <code v-pre>--index-url</code>.
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118</code></pre>
 </doc-codeblock></div>
-<ol start="7">
-<li>Start the XTTS server on the default host and port: <a href="http://localhost:8020">http://localhost:8020</a></li>
-</ol>
+</li>
+<li>Start the XTTS server on the default host and port: <a href="http://localhost:8020">http://localhost:8020</a>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">python -m xtts_api_server</code></pre>
 </doc-codeblock></div>
-<ol start="8">
+</li>
 <li>During your first startup, the model will be downloaded (about ~2 GB).
 Don&#x27;t forget to read the legal notice from Coqui AI very carefully. Lol, I&#x27;m kidding, just hit &quot;y&quot; again.</li>
 </ol>
@@ -336,16 +343,18 @@ from your speakers. The generation takes some time and it&#x27;s not real-time e
     </h4>
 </doc-anchor-target>
 <ol>
-<li>Update SillyTavern to the latest version.</li>
-<li>Update the XTTS server to the latest version.</li>
-</ol>
+<li><p>Update SillyTavern to the latest version.</p>
+</li>
+<li><p>Update the XTTS server to the latest version.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">conda activate xtts
 pip install xtts-api-server --upgrade</code></pre>
 </doc-codeblock></div>
-<ol start="3">
-<li>Start and connect XTTS to ST as usual.</li>
-<li>Enable the &quot;Streaming&quot; XTTS extension setting in SillyTavern.</li>
+</li>
+<li><p>Start and connect XTTS to ST as usual.</p>
+</li>
+<li><p>Enable the &quot;Streaming&quot; XTTS extension setting in SillyTavern.</p>
+</li>
 </ol>
 <doc-anchor-target id="choppy-audio">
     <h3>
