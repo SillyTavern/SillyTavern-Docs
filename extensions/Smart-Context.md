@@ -4,7 +4,7 @@ order: -99
 
 # (OBSOLETE) Smart Context
 
-## **THIS EXTENSION IS NO LONGER MAINTAINED AND NOT RECOMMENDED TO USE. CONSIDER [CHAT VECTORIZATION](./Chat%20vectorization.md) AS A POSSIBLE ALTERNATIVE.**
+## **THIS EXTENSION IS NO LONGER MAINTAINED AND NOT RECOMMENDED TO USE. CONSIDER [CHAT VECTORIZATION](/extensions/Chat-vectorization.md) AS A POSSIBLE ALTERNATIVE.**
 
 !!! warning Disclaimer
 The use of this extension does not guarantee a better chatting experience or improved memory of any sort. Only use if you understand all the implications of vector database utilization.

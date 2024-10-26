@@ -105,19 +105,19 @@ This guide assumes you installed SillyTavern in a non-root (non-admin) folder. I
 
     Save the file by pressing _Ctrl+S_ then exit `nano` by pressing _Ctrl+X_.
 
-!!! info
-Note that if you configured Docker network as a bridge, you could also add external IP addresses to the whitelist as usual.
-!!!
+    !!! info
+    Note that if you configured Docker network as a bridge, you could also add external IP addresses to the whitelist as usual.
+    !!!
 
-9. Restart the Docker Container to apply the new configuration.
+8. Restart the Docker Container to apply the new configuration.
 
     ```sh
     docker compose restart sillytavern
     ```
 
-10. Open an new browser and go to [http://localhost:8000](http://localhost:8000). You should see SillyTavern load in a few moments.
+9. Open an new browser and go to [http://localhost:8000](http://localhost:8000). You should see SillyTavern load in a few moments.
 
-11. Enjoy! :D
+10. Enjoy! :D
 
 ### Windows
 
@@ -193,9 +193,9 @@ It is highly suggested you install SillyTavern by following our [Windows](/Insta
 
     Save the file by pressing _Ctrl+S_ then exit your editor.
 
-!!! info
-Note that if you configured Docker network as a bridge, you could also add external IP addresses to the whitelist as usual.
-!!!
+    !!! info
+    Note that if you configured Docker network as a bridge, you could also add external IP addresses to the whitelist as usual.
+    !!!
 
 7.  Restart the Docker Container to apply the new configuration.
 
@@ -293,9 +293,9 @@ You will also need to install [Homebrew](https://brew.sh/) in order to install G
 
     Save the file by pressing _Ctrl+S_ then exit `nano` by pressing _Ctrl+X_.
 
-!!! info
-Note that if you configured Docker network as a bridge, you could also add external IP addresses to the whitelist as usual.
-!!!
+    !!! info
+    Note that if you configured Docker network as a bridge, you could also add external IP addresses to the whitelist as usual.
+    !!!
 
 7.  Restart the Docker Container to apply the new configuration.
 
@@ -334,25 +334,25 @@ If you already see a _plugins_ folder within the `docker` folder, you can skip S
 
 1. Using `nano` or a code editor, open _docker-compose.yml_ and add the following line below `volumes`.
 
-```sh
-    volumes:
-        - "./config:/home/node/app/config"
-        - "./data:/home/node/app/data"
-        - "./plugins:/home/node/app/plugins"
-```
+    ```sh
+        volumes:
+            - "./config:/home/node/app/config"
+            - "./data:/home/node/app/data"
+            - "./plugins:/home/node/app/plugins"
+    ```
 
 2. Create a new folder within the `docker` folder called _plugins_.
 3. Follow your plugin's instructions on installing the plugin.
 4. Using `nano` or a code editor with administrator rights, open _config.yaml_ (within the `config` folder) and enable `enableServerPlugins`
 
-```sh
-enableServerPlugins: true
-```
+    ```sh
+    enableServerPlugins: true
+    ```
 
 5. Restart the Docker container.
 
-```sh
-docker compose restart sillytavern
-```
+    ```sh
+    docker compose restart sillytavern
+    ```
 
 6. Profit.

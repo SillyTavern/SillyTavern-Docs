@@ -23,11 +23,11 @@ Click to expand one of the below:
 1) To download the AllTalk setup you can either:
    - A) On the AllTalk [page](https://github.com/erew123/alltalk_tts) select **CODE** > **Download ZIP** then extract it to the text-generation-webui extensions folder<br>e.g. `\text-generation-webui\extensions\alltalk_tts\`<br><br>
    - B) Go to a terminal/console, move into the `\text-generation-webui\extensions\` folder<br>and `git clone https://github.com/erew123/alltalk_tts`<br><br>
-3) In a terminal/command prompt, in the text-generation-webui folder you will start its Python environment with either `cmd_windows.bat` or `./cmd_linux.sh`
-4) Move into the AllTalk folder e.g. `cd extensions` then `cd alltalk_tts`
-5) Start the AllTalk setup script `atsetup.bat` or `./atsetup.sh`
-6) Follow the on-screen prompts and install the correct requirements files that you need. It's recommended to test AllTalk works before installing DeepSpeed.
-7) When the AllTalk server has started its default settings and documentation page will be on http://127.0.0.1:7851/
+2) In a terminal/command prompt, in the text-generation-webui folder you will start its Python environment with either `cmd_windows.bat` or `./cmd_linux.sh`
+3) Move into the AllTalk folder e.g. `cd extensions` then `cd alltalk_tts`
+4) Start the AllTalk setup script `atsetup.bat` or `./atsetup.sh`
+5) Follow the on-screen prompts and install the correct requirements files that you need. It's recommended to test AllTalk works before installing DeepSpeed.
+6) When the AllTalk server has started its default settings and documentation page will be on http://127.0.0.1:7851/
 
    Any time you need to make changes to AllTalk, or use Finetuning etc, always start the Text-generation-webui Python environment first.
 
@@ -43,10 +43,10 @@ Click to expand one of the below:
 1) To download the AllTalk setup you can either:
    - A) On the AllTalk [page](https://github.com/erew123/alltalk_tts) select **CODE** > **Download ZIP** then extract it to the folder of your choice<br>e.g. `C:\myfiles\alltalk_tts\`<br><br>
    - B) Go to a terminal/console, move into the folder of your choice e.g `C:\myfiles\` folder<br>and `git clone https://github.com/erew123/alltalk_tts`<br><br>
-4) In a terminal/command prompt, move into the AllTalk folder e.g. `cd alltalk_tts`
-5) Start the AllTalk setup script `atsetup.bat` or `./atsetup.sh`
-6) Follow the on-screen prompts and install the correct requirements files that you need. It's recommended to test AllTalk works before installing DeepSpeed.
-7) When the AllTalk server has started its default settings and documentation page will be on http://127.0.0.1:7851/
+2) In a terminal/command prompt, move into the AllTalk folder e.g. `cd alltalk_tts`
+3) Start the AllTalk setup script `atsetup.bat` or `./atsetup.sh`
+4) Follow the on-screen prompts and install the correct requirements files that you need. It's recommended to test AllTalk works before installing DeepSpeed.
+5) When the AllTalk server has started its default settings and documentation page will be on http://127.0.0.1:7851/
 
    DeepSpeed on Windows machines will be installed as standard. Linux machines have other requirements which are detailed within the setup utility and on this page.
 

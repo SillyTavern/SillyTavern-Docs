@@ -1,7 +1,8 @@
 ---
-order: 110
+order: -20
 icon: question
 ---
+
 # FAQ
 
 ## Explain what SillyTavern is about
@@ -16,16 +17,12 @@ SillyTavern is an app to facilitate these uses:
 * It will keep your chat history with a character, allowing you to resume at any time, start a new chat, review old chats, etc.
 * In the background, it does the necessary things to prepare the AI prompt for you. Specifically, it will send a system prompt (instructions for the AI) that primes the AI to follow certain rules to improve response accuracy.
 
-## Tell me more about AI models and how they might differ
-
-(detailed description of different model capabilities and the reasons thereof coming soon)
-
 ## Give me an overview of my AI model options
 
 SillyTavern can interact with two types of AI:
 
-1. Web services (Cloud-based, usually paid, proprietary, closed)
-2. Self-hosted (local, free, open-source)
+1. [Web services](/Usage/API_Connections/openai.md) (Cloud-based, usually paid, proprietary, closed)
+2. [Self-hosted](self-hosted.md) (local, free, open-source)
 
 ### Paid web service AIs
 
@@ -57,45 +54,13 @@ Cons:
 * They are not as capable as <abbr title="State of the art">SOTA</abbr> models (i.e., they write worse dialog, are less creative, etc).
 * Running local models requires a GPU with at least 6GB VRAM.
 
-If you are interested in using these, refer to the dedicated guide here: [How To Use A Self-Hosted Model](https://docs.sillytavern.app/usage/local-llm-guide/how-to-use-a-self-hosted-model/)
-
-## I'm clueless. Just spoonfeed me the easiest and fastest way I can start using SillyTavern
-
-These base instructions are only for OpenAI, which is a paid service. Guides for other services may come in the future.
-
-### Install SillyTavern
-
-Follow the [Installation Instructions](https://docs.sillytavern.app/installation/windows/).
-
-### Get access to OpenAI
-
-1. Sign up to OpenAI.
-1. Go to <https://platform.openai.com>
-1. Click your account icon in the top right, then View API Keys.
-1. Click "Create new secret key". Copy it somewhere immediately. **DO NOT SHARE THIS KEY. WHOEVER HAS IT CAN USE YOUR ACCOUNT TO USE GPT AT YOUR EXPENSE.**
-
-### Configure SillyTavern to use your API
-
-1. In SillyTavern's top bar, click API Connections.
-1. Under API, select Chat Completion (OpenAI).
-1. Under Chat Completion Source, select OpenAI.
-1. Paste the API key you saved in the previous step.
-1. Click the Connect button. Confirm it says Valid.
-1. By default, SillyTavern will use GPT-4 Turbo. You can choose a different model, but educate yourself on the pricing.
-
-### Test your setup
-
-1. In SillyTavern's top bar, click Character Management at the far right.
-1. Select an existing character such as Seraphina.
-1. In the text box at the bottom, write something to Seraphina, then press Enter or click the Send button.
-
-If you did everything right, after a few seconds, Seraphina should respond.
+If you are interested in using these, refer to the dedicated guide here: [How To Use A Self-Hosted Model](self-hosted.md).
 
 ## Can I use SillyTavern on my phone or tablet?
 
-iPhones and iPads are not capable of running the whole SillyTavern app, but since it's just a web interface, you can run it on another computer on your home Wi-Fi, and then access it in your mobile browser. Refer to <https://docs.sillytavern.app/usage/remoteconnections/>
+iPhones and iPads are not capable of running the whole SillyTavern app, but since it's just a web interface, you can run it on another computer on your home Wi-Fi, and then access it in your mobile browser. Refer to [Remote Connections](/Administration/remote-connections.md) for more information.
 
-For Android users, in addition to the above, you can run the whole SillyTavern directly on your phone, without needing a PC, using the Termux app. Refer to <https://rentry.org/STAI-Termux> . (NOTE: Termux installations are not officially supported, and we can't guarantee it will work.)
+For Android users, in addition to the above, you can run the whole SillyTavern directly on your phone, without needing a PC, using the Termux app. Refer to [Installation (Android)](/Installation/Android.md). (NOTE: Termux installations are not officially supported, and we can't guarantee it will work.)
 
 ## I tried to import a PNG character card but got an error that it's invalid. Why?
 
@@ -107,13 +72,13 @@ Two possibilities:
 ## How can I make my own AI character?
 
 1. Click the Character Management button
-1. Click Create New Character
-1. Under Character Name, give a name, like Amanda
-1. Optionally, click the Select Avatar button to pick an image portrait for this character
-1. Under Description, describe the character, and include any information you want that you feel is relevant to the chat. For example: ```Amanda is a student traveling during her gap year. She's 6 feet tall, and a volleyball player. She has an athletic figure. She has long brown hair. She loves the Victorian England period, and watching TV and reading novels relating to that period.```
+2. Click Create New Character
+3. Under Character Name, give a name, like Amanda
+4. Optionally, click the Select Avatar button to pick an image portrait for this character
+5. Under Description, describe the character, and include any information you want that you feel is relevant to the chat. For example: ```Amanda is a student traveling during her gap year. She's 6 feet tall, and a volleyball player. She has an athletic figure. She has long brown hair. She loves the Victorian England period, and watching TV and reading novels relating to that period.```
 For example, if you want Amanda to be friendly, then you would add: ```Amanda is extremely cheerful and outgoing.```
-1. Under First Message, write the greeting the character when you begin a new chat. For example: ```*Amanda waves at you* Hey! Are you a backpacker too?```
-1. Click the Create Character button
+6. Under First Message, write the greeting the character when you begin a new chat. For example: ```*Amanda waves at you* Hey! Are you a backpacker too?```
+7. Click the Create Character button
 
 You now have a basic character you can chat with. Select Amanda from the character list, and a new chat will begin.
 

@@ -7,9 +7,10 @@ label: Local Installation
 
 This page contains instructions for installing SillyTavern Extras on your local device.
 
----
-## Extras project has been discontinued since April 2024 and won't receive any new updates or modules. The vast majority of modules are available natively in the main SillyTavern application. You may still install and use it but don't expect to get immediate support if you face any issues.
----
+!!! Discontinued
+The Extras project was discontinued in April 2024 and won't receive any new updates or modules. The vast majority of modules are available natively in the main SillyTavern application. You may still install and use it but don't expect to get immediate support if you face any issues.
+!!!
+
 
 Local installation of Extras can be difficult or impossible on your OS (especially Termux).
 
@@ -18,7 +19,7 @@ Local installation of Extras can be difficult or impossible on your OS (especial
 * Simple to setup
 * Free to use
 * No Colab GPU credits required (use the `use_cpu` options)
-* See the [Colab Guide Page](https://docs.sillytavern.app/extras/running-extras-in-colab/) for details.
+* See the [Colab Guide Page](/extensions/Extras/running-extras-in-colab.md) for details.
 
 ---
 
@@ -30,43 +31,43 @@ This method is recommended because Conda makes a 'virtual environment' for the E
 
 1. Install [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
 
-_(Important!) Read [how to use Conda](https://conda.io/projects/conda/en/latest/user-guide/getting-started.html)_
+    _(Important!) Read [how to use Conda](https://conda.io/projects/conda/en/latest/user-guide/getting-started.html)_
 
 2. Install [git](https://git-scm.com/downloads)
 
-_(Chads who installed SillyTavern with git to begin with can skip this step!)_
-
-After you have both of them installed...
-
-Type/paste the commands below `ONE BY ONE` IN THE `CONDA COMMAND PROMPT WINDOW` and hit `Enter` after each one.
+    _(Chads who installed SillyTavern with git to begin with can skip this step!)_
+    
+    After you have both of them installed...
+    
+    Type/paste the commands below `ONE BY ONE` IN THE `CONDA COMMAND PROMPT WINDOW` and hit `Enter` after each one.
 
 3. Create a new Conda environment (let's call it `extras`):
 
-`conda create -n extras`
+    `conda create -n extras`
 
 4. Activate the new environment
 
-`conda activate extras` (you should see `(extras)` pop up on the left side of your command prompt)
+    `conda activate extras` (you should see `(extras)` pop up on the left side of your command prompt)
 
 5. Install the required system packages (this will take some time)
 
-`conda install python=3.11 git`
+    `conda install python=3.11 git`
 
 6. Clone the Extras GitHub repo
 
-`git clone https://github.com/SillyTavern/SillyTavern-extras`
+    `git clone https://github.com/SillyTavern/SillyTavern-extras`
 
 7. Navigate to your cloned Extras repo
 
-`cd SillyTavern-extras`
+    `cd SillyTavern-extras`
 
 8. Install Extras' requirements by using **one** of the following commands (will take time, again):
 
-* `pip install -r requirements.txt` - for basic features
-* `pip install -r requirements-rvc.txt` - for real-time voice cloning
-* `pip install -r requirements-coqui.txt` - for Coqui TTS (not recommended)
+   * `pip install -r requirements.txt` - for basic features
+   * `pip install -r requirements-rvc.txt` - for real-time voice cloning
+   * `pip install -r requirements-coqui.txt` - for Coqui TTS (not recommended)
 
-See the [Common Problems](https://docs.sillytavern.app/extras/installation/common-problems/) page if you get errors at this step!
+    See the [Common Problems](/extensions/Extras/Installation/common-problems.md) page if you get errors at this step!
 
 9. See below 'Running Extras After Install'
 
@@ -112,17 +113,17 @@ This would enable Image Captioning, Chat Summary, and live updating Character Ex
 
 Below is a table that describes each module.
 
-| Name        | Description                       |
-| ----------- | --------------------------------- |
-| `caption`   | Image captioning                  |
-| `summarize` | Text summarization                |
-| `classify`  | Text sentiment classification     |
-| `sd`        | Stable Diffusion image generation |
-| `silero-tts`| [Silero TTS server](https://github.com/ouoertheo/silero-api-server) |
-| `edge-tts`  | [Microsoft Edge TTS client](https://github.com/rany2/edge-tts) |
-| `chromadb`  | Vector storage server           |
-| `coqui-tts` | Coqui TTS                       |
-| `rvc`       | Real-time voice cloning         |
+| Name         | Description                                                         |
+|--------------|---------------------------------------------------------------------|
+| `caption`    | Image captioning                                                    |
+| `summarize`  | Text summarization                                                  |
+| `classify`   | Text sentiment classification                                       |
+| `sd`         | Stable Diffusion image generation                                   |
+| `silero-tts` | [Silero TTS server](https://github.com/ouoertheo/silero-api-server) |
+| `edge-tts`   | [Microsoft Edge TTS client](https://github.com/rany2/edge-tts)      |
+| `chromadb`   | Vector storage server                                               |
+| `coqui-tts`  | Coqui TTS                                                           |
+| `rvc`        | Real-time voice cloning                                             |
 
 * Decide which modules you want to add to your Python command line.
 * They will be used in the next step.
@@ -162,20 +163,20 @@ This is Optional and only applies to Windows, but something similar should be po
 2. Right-click, select `New`, and then click `Text Document`
 3. A new file will appear on your Desktop, asking for a name.
 4. Name the file `STExtras.txt`
-4. Open the newly created file in a text editor.
-5. Paste the following code into it:
+5. Open the newly created file in a text editor.
+6. Paste the following code into it:
 
-```
-cd C:\_your_\_full_\_Extras_\_folder_\_path_\
-call conda activate extras
-python server.py --enable-modules=YOUR,SELECTED,MODULE,LIST,HERE,WITH,NO,SPACES
-call conda deactivate
-pause
-```
+    ```
+    cd C:\_your_\_full_\_Extras_\_folder_\_path_\
+    call conda activate extras
+    python server.py --enable-modules=YOUR,SELECTED,MODULE,LIST,HERE,WITH,NO,SPACES
+    call conda deactivate
+    pause
+    ```
 
-6. Replace the placeholder folder path with your actual Extras install folder path.
-7. Replace the python command line with your actual command line
-8. Save the file with a new name `STExtras.bat` (Use `File` >> `Save As` in most text editors)
+7. Replace the placeholder folder path with your actual Extras install folder path.
+8. Replace the python command line with your actual command line
+9. Save the file with a new name `STExtras.bat` (Use `File` >> `Save As` in most text editors)
 
 You can now simply double-click on this .bat file to easily start Extras.
 

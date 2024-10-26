@@ -103,7 +103,7 @@ These settings allow you to manage characters and assign VRM models to them.
 2. **Model Center X/Y Offset**:
    - Use those sliders to change the horizontal/vertical position of the model relative to the window center.
 
-4. **Model X/Y Rotation**
+3. **Model X/Y Rotation**
     - Use those sliders to change the horizontal/vertical rotation of the model relative to the model hips.
 
 ### Remarks

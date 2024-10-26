@@ -8,8 +8,8 @@ SillyTavern is a passion project brought to you by a dedicated community of LLM 
 
 ## Screenshots
 
-| [![API Connection](/static/screenshot1.jpg)](/static/screenshot1.jpg) | [![Chat UI](/static/screenshot2.jpg)](/static/screenshot2.jpg) |
-|:---:|:---:|
+|   [![API Connection](/static/screenshot1.jpg)](/static/screenshot1.jpg)    |  [![Chat UI](/static/screenshot2.jpg)](/static/screenshot2.jpg)   |
+|:--------------------------------------------------------------------------:|:-----------------------------------------------------------------:|
 | [![Advanced Formatting](/static/screenshot3.jpg)](/static/screenshot3.jpg) | [![World Info](/static/screenshot4.jpg)](/static/screenshot4.jpg) |
 
 ## Installation Requirements
@@ -18,10 +18,10 @@ The hardware requirements are minimal: it will run on anything that can run Node
 
 Follow the installation guide for your platform:
 
-* [Windows](https://docs.sillytavern.app/installation/windows/)
-* [Linux and Mac](https://docs.sillytavern.app/installation/linuxmacos/)
-* [Android](https://docs.sillytavern.app/installation/android-(termux)/)
-* [Docker](https://docs.sillytavern.app/installation/docker/)
+* [Windows](/Installation/Windows.md)
+* [Linux and Mac](/Installation/LinuxMacOS.md)
+* [Android](/Installation/Android.md)
+* [Docker](/Installation/Docker.md)
 
 ## Branches
 
@@ -30,11 +30,9 @@ SillyTavern is being developed using a two-branch system to ensure a smooth expe
 * `release` -🌟 **Recommended for most users.** This is the most stable and recommended branch, updated only when major releases are pushed. It's suitable for the majority of users. Typically updated once a month.
 * `staging` - ⚠️ **Not recommended for casual use.** This branch has the latest features, but be cautious as it may break at any time. Only for power users and enthusiasts. Updates several times daily.
 
-Learn more [here](https://docs.sillytavern.app/usage/branches/).
-
 ## What do I need other than SillyTavern?
 
-Since SillyTavern is only an interface, you will need access to an LLM backend to provide inference. You can use AI Horde for instant out-of-the-box chatting. Aside from that, we support many other local and cloud-based LLM backends: OpenAI-compatible API, KoboldAI, Tabby, and many more. You can read more about our supported APIs in the [API Connections](https://docs.sillytavern.app/usage/api-connections/) section.
+Since SillyTavern is only an interface, you will need access to an LLM backend to provide inference. You can use AI Horde for instant out-of-the-box chatting. Aside from that, we support many other local and cloud-based LLM backends: OpenAI-compatible API, KoboldAI, Tabby, and many more. You can read more about our supported APIs in the [API Connections](/Usage/API_Connections/index.md) section.
 
 ## Character Cards
 
@@ -46,28 +44,28 @@ To have a quick conversation without selecting a character card or to just test 
 
 To get a general idea on how to define character cards, see the default character (Seraphina) or download selected community-made cards from the "Download Extensions & Assets" menu.
 
-You can also create your own character cards from scratch. Refer to the [Character Design](https://docs.sillytavern.app/usage/core-concepts/characterdesign/) guide for more information.
+You can also create your own character cards from scratch. Refer to the [Character Design](/Usage/Core_Concepts/characterdesign.md) guide for more information.
 
 ## Key Features
 
-* Advanced [text generation settings](https://docs.sillytavern.app/usage/core-concepts/advancedformatting/) with many community-made presets
-* [World Info support](https://docs.sillytavern.app/usage/core-concepts/worldinfo/): create rich lore or save tokens on your character card
-* [Group chats](https://docs.sillytavern.app/usage/core-concepts/groupchats/): multi-bot rooms for characters to talk to you and/or each other
-* [Rich UI customization options](https://docs.sillytavern.app/usage/core-concepts/uicustomization/): theme colors, background images, custom CSS, and more
-* [User personas](https://docs.sillytavern.app/usage/core-concepts/personas/): let the AI know a bit about you for greater immersion
-* [Built-in RAG support](https://docs.sillytavern.app/usage/core-concepts/data-bank/): add documents to your chats for the AI to reference
-* Extensive [chat commands](https://docs.sillytavern.app/usage/core-concepts/slashcommands) subsystem and own [scripting engine](https://docs.sillytavern.app/usage/st-script/)
+* Advanced [text generation settings](/Usage/Core_Concepts/advancedformatting.md) with many community-made presets
+* [World Info support](Usage/Core_Concepts/worldinfo.md): create rich lore or save tokens on your character card
+* [Group chats](/Usage/Core_Concepts/groupchats.md): multi-bot rooms for characters to talk to you and/or each other
+* [Rich UI customization options](/Usage/Core_Concepts/uicustomization.md): theme colors, background images, custom CSS, and more
+* [User personas](/Usage/Core_Concepts/personas.md): let the AI know a bit about you for greater immersion
+* [Built-in RAG support](/Usage/Core_Concepts/data-bank.md): add documents to your chats for the AI to reference
+* Extensive [chat commands](/Usage/Core_Concepts/slashcommands.md) subsystem and own [scripting engine](/For_Contributors/st-script.md)
 
 ## Extensions
 
 SillyTavern has extensibility support.
 
-* [Character emotional expressions (sprites)](https://docs.sillytavern.app/extensions/expression-images/)
-* [Auto-Summary of the chat history](https://docs.sillytavern.app/extensions/summarize/)
+* [Character emotional expressions (sprites)](/extensions/Expression-Images.md)
+* [Auto-Summary of the chat history](/extensions/Summarize.md)
 * Automatic UI and chat translation
-* [Stable Diffusion/FLUX/DALL-E image generation](https://docs.sillytavern.app/extensions/stable-diffusion/)
-* [Text-to-speech for AI response messages (via ElevenLabs, Silero, or the OS's System TTS)](https://docs.sillytavern.app/extensions/tts/)
-* [Web Search capabilities for adding additional real world context to your prompts](https://docs.sillytavern.app/extensions/websearch/)
+* [Stable Diffusion/FLUX/DALL-E image generation](/extensions/Stable-Diffusion.md)
+* [Text-to-speech for AI response messages (via ElevenLabs, Silero, or the OS's System TTS)](/extensions/TTS.md)
+* [Web Search capabilities for adding additional real world context to your prompts](/extensions/WebSearch.md)
 * Many more are available to download from the "Download Extensions & Assets" menu.
 
 ## How can I get in touch with the developers directly?

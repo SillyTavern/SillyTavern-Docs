@@ -32,12 +32,12 @@ Used to select which TTS service you want to use.
 Given the example text: `*Cohee approaches you with a faint "nya"* "Good evening, senpai", she says.`
 Here's a table showing how the text will be modified based on the boolean states of **Ignore \*text, even "quotes", inside asterisks\*** and **Only narrate "quotes"**:
 
-| **Ignore \*text, even "quotes", inside asterisks\*** 	| **Only narrate "quotes"**	| **Output**                                                                   |
-| :---------------------------------------------------- | :------------------------ | :--------------------------------------------------------------------------- | 
-| Disabled                                              |	Disabled	                 | Cohee approaches you with a faint "nya" "Good evening, senpai", she says.    |
-| Disabled                                              | Enabled	                  | "nya"... "Good evening, senpai"                                              |
-| Enabled	                                              | Disabled	                 | "Good evening, senpai", she says.                                            |
-| Enabled	                                              | Enabled	                  | "Good evening, senpai"                                                       |
+| **Ignore \*text, even "quotes", inside asterisks\*** 	 | **Only narrate "quotes"**	 | **Output**                                                                |
+|:-------------------------------------------------------|:---------------------------|:--------------------------------------------------------------------------| 
+| Disabled                                               | 	Disabled	                 | Cohee approaches you with a faint "nya" "Good evening, senpai", she says. |
+| Disabled                                               | Enabled	                   | "nya"... "Good evening, senpai"                                           |
+| Enabled	                                               | Disabled	                  | "Good evening, senpai", she says.                                         |
+| Enabled	                                               | Enabled	                   | "Good evening, senpai"                                                    |
 
 #### Sliders
 
