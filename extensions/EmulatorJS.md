@@ -24,7 +24,7 @@ This extension allows you to play retro console games right from the SillyTavern
 - You can customize controls and other settings in the emulator frame after launching the game.
 - Use save/load state functions if you need to take a break.
 
-Check the EmulatorJS docs to see the list of available cores and their requirements: [Systems](https://emulatorjs.org/docs/Systems.html).
+Check the EmulatorJS docs to see the list of available cores and their requirements: [Systems](https://emulatorjs.org/docs/systems).
 
 ## Comments mode
 
