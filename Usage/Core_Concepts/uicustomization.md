@@ -1,3 +1,7 @@
+---
+order: user-settings-10
+---
+
 # UI Customization
 
 ### UI Customization

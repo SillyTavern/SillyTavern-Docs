@@ -1,3 +1,7 @@
+---
+order: character-40
+---
+
 # Author's Note
 
 ## What is it?

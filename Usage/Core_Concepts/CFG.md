@@ -1,3 +1,7 @@
+---
+order: prompts-50
+---
+
 # CFG
 
 Page written by: kingbri

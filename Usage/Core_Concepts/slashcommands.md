@@ -1,3 +1,7 @@
+---
+icon: rel-file-path
+---
+
 # Slash commands
 
 !!!warning

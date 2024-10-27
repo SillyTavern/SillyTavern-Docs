@@ -1,3 +1,7 @@
+---
+order: character-30
+---
+
 # Tags
 
 Character cards and groups can be assigned zero or more tags. They are useful to organize quickly growing collections by themes, quality, provenance or whatever you like.

@@ -1,6 +1,16 @@
+---
+order: prompts-30
+---
+
 # Instruct Mode
 
 Instruct Mode allows you to adjust the prompting for instruction-following models trained on various prompt formats, such as Alpaca, ChatML, Llama2, etc.
+
+!!! Applies to: Text Completion APIs
+For equivalent settings in Chat Completion APIs, use [Prompt Manager](prompt-manager.md).
+
+Exception: OpenRouter with instruct override enabled. This is a legacy setting and will be removed soon.
+!!!
 
 ## API support
 
@@ -41,7 +51,7 @@ User: { Write a happy song about Nintendo Switch. }
 ### System Prompt
 
 !!! warning Recent change
-The System Prompt is now a separate entity. See the [Advanced Formatting](/Usage/Core_Concepts/advancedformatting.md#system-prompt) page for more details.
+The System Prompt is now a separate entity. See the [Advanced Formatting](advancedformatting.md#system-prompt) page for more details.
 !!!
 
 ### Templates

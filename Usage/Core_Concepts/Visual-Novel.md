@@ -1,4 +1,5 @@
 ---
+order: user-settings-10
 tags:
     [
         visual novel,
