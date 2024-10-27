@@ -89,3 +89,15 @@ To use per-character Post-History Instructions, add them to the character's [Pos
 Post-History Instructions is one of the default prompts in [Prompt Manager](prompt-manager.md). It is usually the last message in the context that the model receives, attributed to ("sent by") the system role.
 
 +++
+
+## Adding to the Prompt (World Info)
+
+You can insert additional information anywhere in the prompt using the [World Info](worldinfo.md) feature. By setting the conditions for when the information should be inserted, you can guide the AI to include specific details, change how it responds, or add new elements to the conversation.
+
+Some common uses of World Info include:
+
+* a "lorebook" or "encyclopedia" with information about the world or setting
+* a way to manage different system prompts for various characters and situations
+* a place to store memories that the AI should "recall" in the conversation
+* a more modular system for creating, editing, and sharing character details
+* a source of random events and surprises for the AI to react to, or to make you react to!
