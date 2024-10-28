@@ -8,8 +8,6 @@ Instruct Mode allows you to adjust the prompting for instruction-following model
 
 !!! Applies to: Text Completion APIs
 For equivalent settings in Chat Completion APIs, use [Prompt Manager](prompt-manager.md).
-
-Exception: OpenRouter with instruct override enabled. This is a legacy setting and will be removed soon.
 !!!
 
 ## API support
