@@ -8,7 +8,7 @@ order: -20
 
 Use [**Authelia**](https://www.authelia.com/) or [**Authentik**](https://goauthentik.io/).
 
-Authelia and Authentik are open-source single sign-on (SSO) apps. SSO allows you to create users and secure many different pages using a login portal presented on sites you want to secure. One of us primarily use this over ST's authentication for their own domain use and while it is complex to setup, it is a good way to both learn SSO and secure your ST instance out on the internet more.
+Authelia and Authentik are open-source single sign-on (SSO) apps. SSO allows you to create users and secure many different pages using a login portal presented on sites you want to secure. While it is complex to setup, it is a good way to both learn SSO and secure your ST instance out on the internet more.
 
 If you plan to use Authelia to secure ST's, you must enable `securityOverride` in *config.yaml*. Authlia will handle the login security, but ST has no way of knowing this and will refuse to start without securityOverride.
 
