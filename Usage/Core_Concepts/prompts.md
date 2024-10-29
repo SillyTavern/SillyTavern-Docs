@@ -80,13 +80,15 @@ Since the Post-History Instructions are sent after the user message, they are th
 
 +++ Text Completion APIs
 
-Post-History Instructions cannot be defined globally, as far as I know... You could achieve the same effect with an [Author's Note](Author's-Note.md).
+Post-History Instructions cannot be defined globally. You could achieve the same effect with an [Author's Note](Author's-Note.md).
 
 To use per-character Post-History Instructions, add them to the character's [Post-History Instructions](characterdesign.md) and enable **both** [Prefer Char. Instructions](user-settings.md) and [Allow Post-History Instructions](context-template.md#allow-post-history-instructions).
 
+The Post-History Instructions is added as an invisible user role injection that precedes the last line of the prompt (usually containing a response message "header").
+
 +++ Chat Completion APIs
 
-Post-History Instructions is one of the default prompts in [Prompt Manager](prompt-manager.md). It is usually the last message in the context that the model receives, attributed to ("sent by") the system role.
+Post-History Instructions is one of the default prompts in [Prompt Manager](prompt-manager.md). It is usually the last message in the context that the model receives, attributed to ("sent by") the system role. If your Chat Completion API does not support the system role, it will usually be attributed to the user role instead.
 
 +++
 
