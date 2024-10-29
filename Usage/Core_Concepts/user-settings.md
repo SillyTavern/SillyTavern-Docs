@@ -202,16 +202,16 @@ It will not make the AI write more than it would have otherwise. Asking the AI t
 ### Message Formatting & Display
 Controls how messages are formatted and what content is displayed.
 * **Forbid External Media**: Block embedded media from external domains
-* **Show {\{char}}: in responses**: Allow character name display format
-* **Show {\{user}}: in responses**: Allow user name display format
-* **Show <tags> in responses**: Allow HTML markup alongside Markdown
-* **Relax message trim in Groups**: Allow multi-character dialogue in group messages
-* **Show group chat queue**: Display response order in group chats
+* **Show {\{char}}: in responses**: Retain character name prefix in responses if generated
+* **Show {\{user}}: in responses**: Retain user name prefix in responses if generated
+* **Show <tags> in responses**: Allow (some) HTML tags in responses to be displayed as HTML 
+* **Relax message trim in Groups**: Allow AI to speak for other characters in group chats, rather than stopping the response generation
+* **Show group chat queue**: Display response order in the character list for group chats
 
 ### Prompt Inspection and Debugging
-Technical settings for debugging and advanced functionality.
+
 * **Log prompts to console**: Output prompts to browser console
-* **Request token probabilities**: Enable token probability analysis
+* **Request token probabilities**: Request token probabilities for AI responses from the API. Where available, these can be viewed in <i class="fa-solid fa-bars" title="Burger Menu icon"></i> Token Probabilities.
 
 ### AutoComplete
 - Auto-hide details
@@ -222,24 +222,20 @@ Technical settings for debugging and advanced functionality.
 - Width controls
 
 ## STscript Settings
-Configuration options for the [STscript](/For_Contributors/st-script.md) parser functionality.
+Configuration options for the [STscript parser](/For_Contributors/st-script.md#parser-flags).
 
 ### STRICT_ESCAPING
-The strict escaping mode provides more precise control over how special characters are handled in your scripts. When enabled, any character that has special meaning in STscript (like brackets, braces, or formatting characters) can be escaped using a backslash (\). This mode also allows backslashes themselves to be escaped, enabling you to precisely control when characters should be interpreted literally versus when they should maintain their special function.
-For example:
-- `\{\{` will render as literal `{{` instead of starting a macro
-- `\\` will render as a single literal backslash
-- `\*` will show as literal asterisk instead of starting italic formatting
 
-This is particularly useful when working with complex scripts that need to include literal special characters while still maintaining STscript functionality.
+* Pipes don't need to be escaped in quoted values.
+* A backslash in front of a symbol can be escaped to provide the literal backslash followed by the functional symbol.
+
+See [Strict Escaping](/For_Contributors/st-script.md#strict-escaping) for more information.
 
 ### REPLACE_GETVAR
-This flag modifies how variable retrieval macros (`{{getvar::}}` and `{{getglobalvar::}}`) handle their contents. When enabled, it prevents these macros from automatically evaluating any macro-like values they contain.
-For example, if a variable contains the text "{{newline}}", with this flag enabled:
-- The text will remain literally as "{{newline}}" instead of being converted to a line break
-- This is accomplished by internally converting these getter macros into scoped variables
-- Helps maintain literal values when working with stored variables that might contain macro-like syntax
-  This flag is particularly valuable when you need to preserve the exact content of variables without unexpected macro evaluation.
+
+Helps to avoid double-substitutions when the variable values contain text that could be interpreted as macros.
+
+See [Replace Variable Macros](/For_Contributors/st-script.md#replace-variable-macros) for more information.
 
 ## Debug menu
 
