@@ -1,3 +1,7 @@
+---
+route: /extensions/talkinghead
+---
+
 # talkinghead
 
 ### What is it?

@@ -73,7 +73,7 @@ Use <i class="fa-fw fa-solid fa-maximize" title="Expand icon"></i> **Expand** to
 
 If you switch themes, your custom CSS will be replaced by the custom CSS of the new theme. Ensure you save your custom CSS to a theme if you want to keep it when switching themes.
 
-If you use a lot of custom CSS, or want to use the same custom CSS with several themes, the unofficial) [CSS Snippets extension](https://github.com/LenAnderson/SillyTavern-CssSnippets) can help you manage and organize your custom CSS.
+If you use a lot of custom CSS, or want to use the same custom CSS with several themes, the unofficial [CSS Snippets extension](https://github.com/LenAnderson/SillyTavern-CssSnippets) can help you manage and organize your custom CSS.
 
 ---
 

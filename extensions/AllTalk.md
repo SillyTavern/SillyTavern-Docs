@@ -1,3 +1,7 @@
+---
+order: TTS-AllTalk
+---
+
 # AllTalk TTS
 
 AllTalk is voice cloning system based on the Coqui XTTS models, requiring only a good quality wav audio file to attempt to reproduce the original speaker. It also offers finetuning options to improve the reproduction quality of the voice where needed. 

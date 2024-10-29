@@ -103,7 +103,7 @@ Select **New User** to create a new user account.
 * Password (optional)
 * Password Confirmation
 
-Creating a new user automatically generates a subfolder in the /data/ directory using the user's handle as the folder name. Fields marked with * are required.
+Creating a new user automatically generates a subfolder in the /data/ directory using the user's handle as the folder name.
 
 #### <i class="fa-fw fa-solid fa-right-from-bracket"></i> Logout
 
@@ -204,7 +204,7 @@ Controls how messages are formatted and what content is displayed.
 * **Forbid External Media**: Block embedded media from external domains
 * **Show {\{char}}: in responses**: Retain character name prefix in responses if generated
 * **Show {\{user}}: in responses**: Retain user name prefix in responses if generated
-* **Show <tags> in responses**: Allow (some) HTML tags in responses to be displayed as HTML 
+* **Show tags in responses**: Allow (some) HTML tags in responses to be displayed as HTML 
 * **Relax message trim in Groups**: Allow AI to speak for other characters in group chats, rather than stopping the response generation
 * **Show group chat queue**: Display response order in the character list for group chats
 

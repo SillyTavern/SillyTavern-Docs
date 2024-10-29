@@ -1,8 +1,8 @@
 ---
-order: -99
+route: /extensions/smart-context
 ---
 
-# (OBSOLETE) Smart Context
+# Smart Context
 
 ## **THIS EXTENSION IS NO LONGER MAINTAINED AND NOT RECOMMENDED TO USE. CONSIDER [CHAT VECTORIZATION](/extensions/Chat-vectorization.md) AS A POSSIBLE ALTERNATIVE.**
 
