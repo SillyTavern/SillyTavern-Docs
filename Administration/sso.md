@@ -5,15 +5,32 @@ order: -20
 ---
 
 # Single Sign-On (SSO)
+SSO allows you to create users and secure many different pages using a login portal presented on sites you want to secure. While it is complex to setup, it is a good way to both learn SSO and secure your ST instance out on the internet more.
 
-Use [**Authelia**](https://www.authelia.com/) or [**Authentik**](https://goauthentik.io/).
+[**Authelia**](https://www.authelia.com/) and [**Authentik**](https://goauthentik.io/) are open-source SSO providers that can be used with SillyTavern. 
 
-Authelia and Authentik are open-source single sign-on (SSO) apps. SSO allows you to create users and secure many different pages using a login portal presented on sites you want to secure. While it is complex to setup, it is a good way to both learn SSO and secure your ST instance out on the internet more.
+## Sign in with SSO
 
-While it is more complex to set up than the built-in [password management](/Usage/Core_Concepts/user-settings.md#account-management), it is a good way to both learn SSO and increase the security of SillyTavern if it is exposed to the internet.
+If your SSO-provided username exactly matches the username of a SillyTavern user account, you can sign in to SillyTavern as that user by SSO.
 
-If you plan to use Authelia to secure ST's, you must enable `securityOverride` in *config.yaml*. Authlia will handle the login security, but ST has no way of knowing this and will refuse to start without securityOverride.
+To do this, enable `autheliaAuth` in *config.yaml*.
+    
+```yaml
+autheliaAuth: true
+```
 
-If using Authelia it is recommened to disable ST's basic auth since Authlia provides better functionality and the same security.
+This augments or replaces the built-in [password management](/Usage/Core_Concepts/user-settings.md#account-management) component of a [multi-user mode](/Administration/multi-user.md) setup.
 
-If your Authelia username exactly matches the username of a SillyTavern user account in multi-user mode you can enable `autheliaAuth` in the *config.yaml* to directly login to the account using Authelia.
+## Replacing HTTP BA
+
+SSO can also replace [HTTP Basic Authentication](/Administration/remote-connections.md#access-control-by-http-basic-authentication) as an access control mechanism for [remote connections](/Administration/remote-connections.md#access-control).
+
+This is recommended because SSO provides better security and functionality than HTTP BA.
+
+To use an SSO provider in place of HTTP BA, enable `securityOverride` in *config.yaml*. Otherwise, SillyTavern will [refuse to start](remote-connections.md#access-control).
+
+```yaml
+autheliaAuth: true
+basicAuthMode: false
+securityOverride: true
+```
