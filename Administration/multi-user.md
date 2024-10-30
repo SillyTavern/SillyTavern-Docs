@@ -7,9 +7,7 @@ order: -10
 Multi-user mode allows several people to use one SillyTavern server. Each user has their own settings, extensions, and data. User accounts can also be password-protected.
 
 !!! warning
-User passwords provide basic privacy for each user of a multi-user setup. They are not a security feature and should not be considered as such. User data is stored in plain text and can be accessed by anyone with access to the server. 
-
-There is no rate-limiting to prevent brute-force attacks. If this is a concern, it is recommended to use a reverse proxy with TLS and rate-limiting, and a dedicated [authentication service](sso.md).
+User passwords provide basic privacy between users of a multi-user setup. They are not a security feature and should not be considered as such. All user data (including chat history, API keys, and other sensitive information) is stored in plain text on the server. It can be viewed and modified by anyone with access to the server's filesystem. **Do not use SillyTavern on a public server or with untrusted users.**
 !!!
 
 ## Configuration
