@@ -23,12 +23,14 @@ Most of the settings in this panel do not apply to Chat Completions APIs as they
 ## System Prompt
 
 !!! Applies to: Text Completion APIs
-For equivalent settings in Chat Completion APIs, use [Prompt Manager](prompt-manager.md).
+For equivalent settings in Chat Completion APIs, use [Prompt Manager](prompt-manager.md). The **Main Prompt** is the equivalent of the System Prompt in Chat Completion APIs.
 !!!
+
+The System Prompt defines the general instructions for the model to follow. It sets the tone and context for the conversation. For example, it tells the model to act as an AI assistant, a writing partner, or a fictional character.
 
 The System Prompt is a part of the [Story String](context-template.md#story-string) and usually the first part of the prompt that the model receives.
 
-See the [prompting guide](prompts.md#main-prompt) to learn more about the System Prompt.
+See the [prompting guide](prompts.md#main-prompt-system-prompt) to learn more about the System Prompt.
 
 ## Context Template
 
