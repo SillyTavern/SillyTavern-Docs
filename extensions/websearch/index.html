@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783717023297">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783717116849">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.783717023297" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.783717116849" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.783717023297" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.783717116849" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.783717023297" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.783717116849" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -274,6 +274,14 @@
 </doc-anchor-target>
 <p>Requires a SearXNG instance URL (either private or public). Uses HTML format for search results.</p>
 <p>Learn more: <a href="https://docs.searxng.org/">https://docs.searxng.org/</a></p>
+<doc-anchor-target id="tavily-ai">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tavily-ai">#</doc-anchor-trigger>
+        <span>Tavily AI</span>
+    </h3>
+</doc-anchor-target>
+<p>Requires an API key.
+Get the key here: <a href="https://app.tavily.com/">https://app.tavily.com/</a></p>
 <doc-anchor-target id="how-to-use">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-use">#</doc-anchor-trigger>
@@ -323,7 +331,7 @@
     </h3>
 </doc-anchor-target>
 <ol>
-<li>Use function tool - uses <a href="../../for-contributors/function-calling/">function calling</a> to activate search. Must use a supported Chat Completion API and be enabled in the AI Response settings. <strong>Disables all other activation methods when engaged.</strong></li>
+<li>Use function tool - uses <a href="../../for-contributors/function-calling/">function calling</a> to activate search or scrape web pages. Must use a supported Chat Completion API and be enabled in the AI Response settings. <strong>Disables all other activation methods when engaged.</strong></li>
 <li>Use Backticks - enables search activation using words encased in single backticks.</li>
 <li>Use Trigger Phrases - enables search activation using trigger phrases.</li>
 <li>Regular expressions - provide a JS-flavored regex to match the user message. If the regex matches, the search with a given query will be triggered. Search query supports &#x60;&#x60; and $1-syntax to reference the matched group. Example: <code v-pre>/what is happening in (.*)/i</code> regex for search query <code v-pre>news in $1</code> will match a message containing <code v-pre>what is happening in New York</code> and trigger the search with the query <code v-pre>news in New York</code>.</li>
@@ -419,6 +427,16 @@ Example: /websearch links=off snippets=on how to make a sandwich</code></pre>
 <ol>
 <li>Infobox.</li>
 <li>Page snippets.</li>
+</ol>
+<doc-anchor-target id="tavily-ai-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tavily-ai-1">#</doc-anchor-trigger>
+        <span>Tavily AI</span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li>Answer.</li>
+<li>Page contents.</li>
 </ol>
 
                                 
