@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783444715140">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783678944172">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -14,7 +14,7 @@
     <!-- Primary Meta Tags -->
     <title>Extensions | docs.ST.app</title>
     <meta name="title" content="Extensions | docs.ST.app">
-    <meta name="description" content="SillyTavern comes with many extensions that can be enabled or disabled in the Extensions panel.">
+    <meta name="description" content="SillyTavern comes with many extensions that can be enabled or disabled in the Extensions panel. Extensions can add new">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/extensions/">
@@ -23,23 +23,23 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/extensions/">
     <meta property="og:title" content="Extensions | docs.ST.app">
-    <meta property="og:description" content="SillyTavern comes with many extensions that can be enabled or disabled in the Extensions panel.">
+    <meta property="og:description" content="SillyTavern comes with many extensions that can be enabled or disabled in the Extensions panel. Extensions can add new">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/extensions/">
     <meta property="twitter:title" content="Extensions | docs.ST.app">
-    <meta property="twitter:description" content="SillyTavern comes with many extensions that can be enabled or disabled in the Extensions panel.">
+    <meta property="twitter:description" content="SillyTavern comes with many extensions that can be enabled or disabled in the Extensions panel. Extensions can add new">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../resources/css/retype.css?v=3.6.0.783444715140" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.6.0.783678944172" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.783444715140" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.783678944172" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.783444715140" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.783678944172" data-turbo-eval="false" defer></script>
 
-    <Style>
+    <style>
         a {
             color: brown !important;
         }
@@ -53,19 +53,36 @@
         }
 
         .callout {
-          padding: 1rem;
-          margin-bottom: 1rem;
-          border: 1px solid #d2d6dc;
-          border-radius: 0.375rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #d2d6dc;
+            border-radius: 0.375rem;
         }
+
         .callout p {
-          margin-bottom: 0.5rem !important;
+            margin-bottom: 0.5rem !important;
+            overflow: hidden;
         }
+
         .callout p:last-child {
-          margin-bottom: 0 !important;
+            margin-bottom: 0 !important;
         }
-    </Style>
-    <link href="https://sillytavern.app/webfonts/NotoSans/stylesheet.css" rel="stylesheet">
+
+        div.callout:has(img) {
+            min-height: 8rem;
+        }
+
+        .callout img {
+            width: 3rem;
+            float: left;
+            margin-right: 1rem;
+            filter: invert(42%) hue-rotate(183deg) brightness(91%) contrast(83%);
+        }
+    </style>
+    <link href="/static/webfonts/NotoSans/stylesheet.css" rel="stylesheet"/>
+    <link href="/static/css/fontawesome.min.css" rel="stylesheet"/>
+    <link href="/static/css/solid.min.css" rel="stylesheet"/>
+    <link href="/static/css/brands.min.css" rel="stylesheet"/>
 
 </head>
 <body>
@@ -217,17 +234,46 @@
         <span>Extensions</span>
     </h1>
 </doc-anchor-target>
-<p>SillyTavern comes with many extensions that can be enabled or disabled in the Extensions panel. Extensions can add new features, change the behaviour of existing features, or provide additional content for your AI to use.</p>
-<p>Some of the extensions include:</p>
-<ul>
-<li><a href="expression-images/">Character emotional expressions (sprites)</a></li>
-<li><a href="summarize/">Auto-Summary of the chat history</a></li>
-<li>Automatic UI and chat translation</li>
-<li><a href="stable-diffusion/">Stable Diffusion/FLUX/DALL-E image generation</a></li>
-<li><a href="tts/">Text-to-speech for AI response messages (via ElevenLabs, Silero, or the OS&#x27;s System TTS)</a></li>
-<li><a href="websearch/">Web Search capabilities for adding additional real world context to your prompts</a></li>
-</ul>
-<p>Many more are available to download from the &quot;Download Extensions &amp; Assets&quot; menu.</p>
+<p>SillyTavern comes with many extensions that can be enabled or disabled in the Extensions panel. Extensions can add new
+features, change the behaviour of existing features, or provide additional content for your AI to use.</p>
+<doc-anchor-target id="built-in-extensions">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#built-in-extensions">#</doc-anchor-trigger>
+        <span>Built-in extensions</span>
+    </h2>
+</doc-anchor-target>
+<div class="callout"><p><strong><a href="stable-diffusion/">Image Generation</a></strong></p>
+<p>Use local or cloud-based Stable Diffusion, FLUX or DALL-E APIs to generate images</p>
+</div>
+<div class="callout"><p><strong><a href="expression-images/">Expression Images</a></strong></p>
+<p>Images (aka &#x27;sprites&#x27;) of your AI character, shown next to or behind the chat window</p>
+</div>
+<div class="callout"><p><strong><a href="summarize/">Summarize</a></strong></p>
+<p>Auto-summary of the chat history</p>
+</div>
+<div class="callout"><p><strong><a href="chat-vectorization/">Chat Vectorization</a></strong></p>
+<p>Finds relevant messages from chat history and adds them into the context</p>
+</div>
+<div class="callout"><p><strong><a href="tts/">Text To Speech</a></strong></p>
+<p>Voice narration for your chat messages via ElevenLabs, Silero, your system TTS, <strong><a href="alltalk/">AllTalk</a></strong>, <strong><a href="xtts/">XTTS</a></strong>, and more</p>
+</div>
+<div class="callout"><p><strong><a href="../usage/st-script/">Quick Reply</a></strong></p>
+<p>Reply to chat messages with a single click, run commands and STscripts, and more</p>
+</div>
+<div class="callout"><p><strong>Translate</strong></p>
+<p>Translate chat messages to a different language</p>
+</div>
+<div class="callout"><p><strong>Token Counter</strong></p>
+<p>Converts text into tokens and counts the number of tokens</p>
+</div>
+<hr>
+<doc-anchor-target id="installable-extensions">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#installable-extensions">#</doc-anchor-trigger>
+        <span>Installable extensions</span>
+    </h2>
+</doc-anchor-target>
+<p>Install any of these extensions from the &quot;Download Extensions &amp; Assets&quot; menu in <strong>Extensions</strong>.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -245,6 +291,111 @@
 <p>The Extras project was discontinued in April 2024. You do not need to install Extras to use extensions.</p>
         </div>
     </div>
+</div>
+<div class="callout"><p><strong><a href="blip/">Blip</a></strong></p>
+<p>Animate the text of character messages with variable speed and play sound along the animation.</p>
+</div>
+<div class="callout"><p><strong><a href="dynamic-audio/">Dynamic Audio</a></strong></p>
+<p>Adds immersive background music and ambient sounds to your chats.</p>
+</div>
+<div class="callout"><p><strong><a href="emulatorjs/">EmulatorJS</a></strong></p>
+<p>Play retro console games directly in SillyTavern chats.</p>
+</div>
+<div class="callout"><p><strong><a href="live2d/">Live2d</a></strong></p>
+<p>Adds support for live2d models. Customizable expressions, animations and interactions.</p>
+</div>
+<div class="callout"><p><strong><a href="objective/">Objective</a></strong></p>
+<p>Set an Objective for the AI to aim for during the chat.</p>
+</div>
+<div class="callout"><p><strong><a href="rvc/">RVC</a></strong></p>
+<p>Adds Realtime Voice Cloning capabilities to the Text-to-Speech module.</p>
+</div>
+<div class="callout"><p><strong><a href="speech-recognition/">Speech Recognition</a></strong></p>
+<p>Convert your speech to text using browser or extras.</p>
+</div>
+<div class="callout"><p><strong><a href="vrm/">VRM</a></strong></p>
+<p>Adds support for VRM models. Customizable expressions, animations and interactions.</p>
+</div>
+<div class="callout"><p><strong><a href="websearch/">Web Search</a></strong></p>
+<p>Adds web search results to LLM prompts.</p>
+</div>
+<div class="callout"><p><strong><a href="https://github.com/SillyTavern/Extension-AccuWeather">AccuWeather</a></strong></p>
+<p>Provides weather information using the AccuWeather API as a slash command or a function tool.</p>
+</div>
+<div class="callout"><p><strong><a href="https://github.com/SillyTavern/Extension-TopInfoBar">Chat Top Bar</a></strong></p>
+<p>Adds a top bar to the chat window with shortcuts to quick actions.</p>
+</div>
+<div class="callout"><p><strong><a href="https://github.com/SillyTavern/SillyTavern-Chess">Chess</a></strong></p>
+<p>Play the game of chess with the LLM.</p>
+</div>
+<div class="callout"><p><strong><a href="https://github.com/SillyTavern/Extension-CodeRunner">Code Runner</a></strong></p>
+<p>Allows running JavaScript and STscript code from code blocks in chat.</p>
+</div>
+<div class="callout"><p><strong><a href="https://github.com/SillyTavern/Extension-Dice">D&amp;D Dice</a></strong></p>
+<p>A set of 7 classic D&amp;D dice for all your dice rolling needs.</p>
+</div>
+<div class="callout"><p><strong><a href="https://github.com/SillyTavern/Extension-DupeFinder">Duplicate Finder</a></strong></p>
+<p>Adds an ability to cluster characters by similarity groups to easily find duplicates.</p>
+</div>
+<div class="callout"><p><strong><a href="https://github.com/SillyTavern/Extension-EmojiPicker">Emoji Picker</a></strong></p>
+<p>Adds a button to quickly insert emojis into a chat message.</p>
+</div>
+<div class="callout"><p><strong><a href="https://github.com/SillyTavern/Extension-GroupGreetings">Group Greetings</a></strong></p>
+<p>Allows setting alternate greetings that are specific to group chats.</p>
+</div>
+<div class="callout"><p><strong><a href="https://github.com/SillyTavern/SillyTavern-GroupSendAs">Group SendAs</a></strong></p>
+<p>Adds a button to quickly insert a /sendas command template for the selected group member.</p>
+</div>
+<div class="callout"><p><strong><a href="https://github.com/SillyTavern/Extension-HypeBot">HypeBot</a></strong></p>
+<p>Show personalized suggestions based on your recent chats using the NovelAI&#x27;s HypeBot engine. Requires an active NovelAI subscription.</p>
+</div>
+<div class="callout"><p><strong><a href="https://github.com/SillyTavern/Extension-Idle">Idle</a></strong></p>
+<p>Adds &quot;idle prompting&quot; after the user has been idle for some time to organically continue the conversation.</p>
+</div>
+<div class="callout"><p><strong><a href="https://github.com/SillyTavern/Extension-ImageMetadataViewer">Image Metadata Viewer</a></strong></p>
+<p>View metadata of enlarged images attached to a chat.</p>
+</div>
+<div class="callout"><p><strong><a href="https://github.com/SillyTavern/Extension-LaTeX">LaTeX</a></strong></p>
+<p>Render LaTeX and AsciiMath formulas in chat messages.</p>
+</div>
+<div class="callout"><p><strong><a href="https://github.com/SillyTavern/Extension-Mermaid">Mermaid</a></strong></p>
+<p>Adds Mermaid diagrams &amp; flowcharts rendering to SillyTavern chats.</p>
+</div>
+<div class="callout"><p><strong><a href="https://github.com/SillyTavern/Extension-Notebook">Notebook</a></strong></p>
+<p>Adds a place to store your notes. Supports rich text formatting.</p>
+</div>
+<div class="callout"><p><strong><a href="https://github.com/SillyTavern/Extension-Randomizer">Parameter Randomizer</a></strong></p>
+<p>Adds ability to randomize API settings sliders with every generation.</p>
+</div>
+<div class="callout"><p><strong><a href="https://github.com/Bronya-Rand/Prome-VN-Extension">Prome Visual Novel Extension</a></strong></p>
+<p>Enhances the current visual novel experience with more features (Focus Mode, Letterbox Mode, and more)!</p>
+</div>
+<div class="callout"><p><strong><a href="https://github.com/SillyTavern/Extension-PromptInspector">Prompt Inspector</a></strong></p>
+<p>Adds an option to inspect and edit output prompts before sending them to the server.</p>
+</div>
+<div class="callout"><p><strong><a href="https://github.com/SillyTavern/SillyTavern-PushNotifications">Push Notifications</a></strong></p>
+<p>Allows to receive push notifications for incoming chat messages.</p>
+</div>
+<div class="callout"><p><strong><a href="https://github.com/SillyTavern/Extension-QuickPersona">Quick Persona</a></strong></p>
+<p>Adds a dropdown menu for selecting user personas from the chat bar.</p>
+</div>
+<div class="callout"><p><strong><a href="https://github.com/SillyTavern/Extension-RSS">RSS</a></strong></p>
+<p>Gets the latest news from RSS feeds as a slash command or a function tool.</p>
+</div>
+<div class="callout"><p><strong><a href="https://github.com/SillyTavern/Extension-ScreenShare">Screen Share</a></strong></p>
+<p>Provides the screen image for multimodal models when you send a message.</p>
+</div>
+<div class="callout"><p><strong><a href="https://github.com/SillyTavern/Extension-Silence">Silence Player</a></strong></p>
+<p>Adds a silence audio player to the extensions menu. Can help if the browser tab is being killed in a background.</p>
+</div>
+<div class="callout"><p><strong><a href="https://github.com/SillyTavern/SillyTavern-Timelines">Timelines</a></strong></p>
+<p>Adds a timeline navigation to the chat history.</p>
+</div>
+<div class="callout"><p><strong><a href="https://github.com/LenAnderson/SillyTavern-Variable-Viewer">Variable Viewer</a></strong></p>
+<p>Easy way to view and modify variables.</p>
+</div>
+<div class="callout"><p><strong><a href="https://github.com/SillyTavern/Extension-WebLLM">WebLLM</a></strong></p>
+<p>Provides an interface for extensions to use language models directly in the browser.</p>
 </div>
 
                                 
@@ -271,10 +422,10 @@
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../extensions/alltalk/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../extensions/blip/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">All​Talk TTS</span>
+                                                <span class="block mt-1">Blip</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>

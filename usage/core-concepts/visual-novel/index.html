@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783444715140">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783678944172">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -35,13 +35,13 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.783444715140" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.783678944172" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.783444715140" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.783678944172" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.783444715140" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.783678944172" data-turbo-eval="false" defer></script>
 
-    <Style>
+    <style>
         a {
             color: brown !important;
         }
@@ -55,19 +55,36 @@
         }
 
         .callout {
-          padding: 1rem;
-          margin-bottom: 1rem;
-          border: 1px solid #d2d6dc;
-          border-radius: 0.375rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #d2d6dc;
+            border-radius: 0.375rem;
         }
+
         .callout p {
-          margin-bottom: 0.5rem !important;
+            margin-bottom: 0.5rem !important;
+            overflow: hidden;
         }
+
         .callout p:last-child {
-          margin-bottom: 0 !important;
+            margin-bottom: 0 !important;
         }
-    </Style>
-    <link href="https://sillytavern.app/webfonts/NotoSans/stylesheet.css" rel="stylesheet">
+
+        div.callout:has(img) {
+            min-height: 8rem;
+        }
+
+        .callout img {
+            width: 3rem;
+            float: left;
+            margin-right: 1rem;
+            filter: invert(42%) hue-rotate(183deg) brightness(91%) contrast(83%);
+        }
+    </style>
+    <link href="/static/webfonts/NotoSans/stylesheet.css" rel="stylesheet"/>
+    <link href="/static/css/fontawesome.min.css" rel="stylesheet"/>
+    <link href="/static/css/solid.min.css" rel="stylesheet"/>
+    <link href="/static/css/brands.min.css" rel="stylesheet"/>
 
 </head>
 <body>

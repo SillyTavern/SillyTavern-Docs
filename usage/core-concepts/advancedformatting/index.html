@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783444715140">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783678944172">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -14,7 +14,7 @@
     <!-- Primary Meta Tags -->
     <title>Advanced Formatting | docs.ST.app</title>
     <meta name="title" content="Advanced Formatting | docs.ST.app">
-    <meta name="description" content="The settings provided in this section allow for more control over the prompt-building strategy.">
+    <meta name="description" content="The settings provided in this section allow for more control over the prompt-building strategy, primarily for Text Completion APIs.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/usage/core-concepts/advancedformatting/">
@@ -23,23 +23,23 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/usage/core-concepts/advancedformatting/">
     <meta property="og:title" content="Advanced Formatting | docs.ST.app">
-    <meta property="og:description" content="The settings provided in this section allow for more control over the prompt-building strategy.">
+    <meta property="og:description" content="The settings provided in this section allow for more control over the prompt-building strategy, primarily for Text Completion APIs.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/usage/core-concepts/advancedformatting/">
     <meta property="twitter:title" content="Advanced Formatting | docs.ST.app">
-    <meta property="twitter:description" content="The settings provided in this section allow for more control over the prompt-building strategy.">
+    <meta property="twitter:description" content="The settings provided in this section allow for more control over the prompt-building strategy, primarily for Text Completion APIs.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.783444715140" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.783678944172" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.783444715140" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.783678944172" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.783444715140" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.783678944172" data-turbo-eval="false" defer></script>
 
-    <Style>
+    <style>
         a {
             color: brown !important;
         }
@@ -53,19 +53,36 @@
         }
 
         .callout {
-          padding: 1rem;
-          margin-bottom: 1rem;
-          border: 1px solid #d2d6dc;
-          border-radius: 0.375rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #d2d6dc;
+            border-radius: 0.375rem;
         }
+
         .callout p {
-          margin-bottom: 0.5rem !important;
+            margin-bottom: 0.5rem !important;
+            overflow: hidden;
         }
+
         .callout p:last-child {
-          margin-bottom: 0 !important;
+            margin-bottom: 0 !important;
         }
-    </Style>
-    <link href="https://sillytavern.app/webfonts/NotoSans/stylesheet.css" rel="stylesheet">
+
+        div.callout:has(img) {
+            min-height: 8rem;
+        }
+
+        .callout img {
+            width: 3rem;
+            float: left;
+            margin-right: 1rem;
+            filter: invert(42%) hue-rotate(183deg) brightness(91%) contrast(83%);
+        }
+    </style>
+    <link href="/static/webfonts/NotoSans/stylesheet.css" rel="stylesheet"/>
+    <link href="/static/css/fontawesome.min.css" rel="stylesheet"/>
+    <link href="/static/css/solid.min.css" rel="stylesheet"/>
+    <link href="/static/css/brands.min.css" rel="stylesheet"/>
 
 </head>
 <body>
@@ -217,167 +234,88 @@
         <span>Advanced Formatting</span>
     </h1>
 </doc-anchor-target>
-<p>The settings provided in this section allow for more control over the prompt-building strategy.</p>
-<p><strong>Most of the settings here do not apply to Chat Completions APIs as they are governed by the prompt manager system instead.</strong></p>
+<p>The settings provided in this section allow for more control over the <a href="../prompts/">prompt-building</a> strategy, primarily for Text Completion APIs.</p>
+<p>Most of the settings in this panel do not apply to Chat Completions APIs as they are governed by the prompt manager system instead.</p>
+<doc-tabs>
+<doc-tab v-cloak id="text-completion-apis">
+<template #title>Text Completion APIs</template>
+<ul>
+<li><doc-anchor-trigger to="#system-prompt">System Prompt</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#context-template">Context Template</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#tokenizer">Tokenizer</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#custom-stopping-strings">Custom Stopping Strings</doc-anchor-trigger></li>
+</ul>
+</doc-tab>
+<doc-tab v-cloak id="chat-completion-apis">
+<template #title>Chat Completion APIs</template>
+<ul>
+<li>System Prompt: not applicable, use <a href="../prompt-manager/">Prompt Manager</a></li>
+<li>Context Template: not applicable, use <a href="../prompt-manager/">Prompt Manager</a></li>
+<li><doc-anchor-trigger to="#tokenizer">Tokenizer</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#custom-stopping-strings">Custom Stopping Strings</doc-anchor-trigger></li>
+</ul>
+</doc-tab>
+</doc-tabs>
 <doc-anchor-target id="system-prompt">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#system-prompt">#</doc-anchor-trigger>
         <span>System Prompt</span>
     </h2>
 </doc-anchor-target>
-<p>System Prompt defines the general instructions for the model to follow. It sets the tone and context for the conversation. For example, it tells the model to act as an AI assistant, a writing partner, or a fictional character. The System Prompt is a part of the <doc-anchor-trigger to="#story-string">Story String</doc-anchor-trigger> and usually the first part of the prompt that the model receives.</p>
-<p>Supports substitutions via any of the supported {{macro}} parameters.</p>
-<p>For example:</p>
-<blockquote>
-<p>You are a helpful AI assistant. You should provide useful information and help {{user}} with their questions.</p>
-</blockquote>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Applies to: Text Completion APIs</h5>
+<p>For equivalent settings in Chat Completion APIs, use <a href="../prompt-manager/">Prompt Manager</a>.</p>
+        </div>
+    </div>
+</div>
+<p>The System Prompt is a part of the <a href="../context-template/#story-string">Story String</a> and usually the first part of the prompt that the model receives.</p>
+<p>See the <a href="../prompts/#main-prompt">prompting guide</a> to learn more about the System Prompt.</p>
 <doc-anchor-target id="context-template">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#context-template">#</doc-anchor-trigger>
         <span>Context Template</span>
     </h2>
 </doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Applies to: Text Completion APIs</h5>
+<p>For equivalent settings in Chat Completion APIs, use <a href="../prompt-manager/">Prompt Manager</a>.</p>
+        </div>
+    </div>
+</div>
 <p>Usually, AI models require you to provide the character data to them in some specific way. SillyTavern includes a list of pre-made conversion rules for different models, but you may customize them however you like.</p>
-<doc-anchor-target id="story-string">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#story-string">#</doc-anchor-trigger>
-        <span>Story string</span>
-    </h3>
-</doc-anchor-target>
-<p>This field is a template for pre-chat character data (known internally as a story string).
-This is the main way to format your character card for text completion and instruct models.</p>
-<p>The template supports Handlebars syntax and any custom text injections or formatting. See the language reference here: <a href="https://handlebarsjs.com/guide/">https://handlebarsjs.com/guide/</a></p>
-<p>We provide the following parameters to the Handlebars evaluator (wrap them into double-curly braces):</p>
-<ol>
-<li><code v-pre>description</code> - character&#x27;s Description</li>
-<li><code v-pre>scenario</code> - character&#x27;s Scenario</li>
-<li><code v-pre>personality</code> - character&#x27;s Personality</li>
-<li><code v-pre>system</code> - <doc-anchor-trigger to="#system-prompt">system prompt</doc-anchor-trigger> OR character&#x27;s main prompt override (if exists and &quot;Prefer Char. Prompt&quot; is enabled in User Settings)</li>
-<li><code v-pre>persona</code> - selected persona description</li>
-<li><code v-pre>char</code> - character&#x27;s name</li>
-<li><code v-pre>user</code> - selected persona name</li>
-<li><code v-pre>wiBefore</code> or <code v-pre>loreBefore</code> - combined activated World Info entries with Position set to &quot;Before Char Defs&quot;</li>
-<li><code v-pre>wiAfter</code> or <code v-pre>loreAfter</code> - combined activated World Info entries with Position set to &quot;After Char Defs&quot;</li>
-<li><code v-pre>mesExamples</code> - (optional) character&#x27;s Example Dialogues, instruct-formatted with separator. Set &quot;Example Messages Behavior&quot; to &quot;Never include examples&quot; to avoid duplication.</li>
-</ol>
-<p>A special {{trim}} macro is supported to remove any newlines that surround it. Use it in case you want some part of text NOT be separated with a newline from the previous line (<em>spaces <strong>are not</strong> trimmed</em>).</p>
-<p><strong>WARNING</strong>: If some of the above parameters are missing from the story string template, they are not going to be sent in the prompt at all.</p>
-<doc-anchor-target id="example-separator">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#example-separator">#</doc-anchor-trigger>
-        <span>Example Separator</span>
-    </h3>
-</doc-anchor-target>
-<p>Used as a block header and a separator between the example dialogue blocks. Any instance of <code v-pre>&lt;START&gt;</code> tags in the example dialogues will be replaced with the contents of this field.</p>
-<doc-anchor-target id="chat-start">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#chat-start">#</doc-anchor-trigger>
-        <span>Chat Start</span>
-    </h3>
-</doc-anchor-target>
-<p>Inserted as a separator after the rendered story string and after the example dialogues blocks, but before the first message in context.</p>
-<doc-anchor-target id="separators-as-stop-strings">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#separators-as-stop-strings">#</doc-anchor-trigger>
-        <span>Separators as Stop Strings</span>
-    </h3>
-</doc-anchor-target>
-<p>Adds &quot;Example Separator&quot; and &quot;Chat Start&quot; to the list of stop strings.</p>
-<p>Helpful if the model tends to hallucinate or leak whole blocks of example dialogue preceded by the separator.</p>
-<doc-anchor-target id="names-as-stop-strings">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#names-as-stop-strings">#</doc-anchor-trigger>
-        <span>Names as Stop Strings</span>
-    </h3>
-</doc-anchor-target>
-<p>Adds Character and User Persona names to the list of stop strings.</p>
-<p>Recommended to keep it on to prevent model impersonation.</p>
-<doc-anchor-target id="allow-post-history-instructions">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#allow-post-history-instructions">#</doc-anchor-trigger>
-        <span>Allow Post-History Instructions</span>
-    </h3>
-</doc-anchor-target>
-<p>Includes the Post-History Instructions at the end of the prompt, formatted as the last user message.</p>
-<p>The Post-History Instructions prompt should be defined in the character card and &quot;Prefer Char. Instructions&quot; setting should be enabled.</p>
-<p>Should be used with care, as placing instructions low in the context can lead to degraded quality of the outputs of smaller models.</p>
-<doc-anchor-target id="always-add-characters-name-to-prompt">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#always-add-characters-name-to-prompt">#</doc-anchor-trigger>
-        <span>Always add character&#x27;s name to prompt</span>
-    </h3>
-</doc-anchor-target>
-<p>Appends the character&#x27;s name to the prompt to force the model to complete the message as the character:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">** OTHER CONTEXT HERE **
-Character:</code></pre>
-</doc-codeblock></div>
+<p>The options for this section are explained in <a href="../context-template/">Context Template</a>.</p>
 <doc-anchor-target id="tokenizer">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#tokenizer">#</doc-anchor-trigger>
         <span>Tokenizer</span>
-    </h3>
+    </h2>
 </doc-anchor-target>
 <p>A tokenizer is a tool that breaks down a piece of text into smaller units called tokens. These tokens can be individual words or even parts of words, such as prefixes, suffixes, or punctuation. A rule of thumb is that one token generally corresponds to 3~4 characters of text.</p>
-<p>SillyTavern provides a &quot;Best match&quot; option that tries to match the tokenizer using the following rules depending on the API provider used.</p>
-<p>Text Completion APIs <strong>(overridable)</strong>:</p>
-<ol>
-<li>NovelAI Clio: NerdStash tokenizer.</li>
-<li>NovelAI Kayra: NerdStash v2 tokenizer.</li>
-<li>Text Completion: API tokenizer (if supported) or Llama tokenizer.</li>
-<li>KoboldAI Classic / AI Horde: Llama tokenizer.</li>
-<li>Koboldcpp: model API tokenizer.</li>
-</ol>
-<p>If you get inaccurate results or wish to experiment, you can set an <em>override tokenizer</em> for SillyTavern to use while forming a request to the AI backend:</p>
-<ol>
-<li>None. Each token is estimated to be ~3.3 characters, rounded up to the nearest integer. <strong>Try this if your prompts get cut off on high context lengths.</strong> This approach is used by KoboldAI Lite.</li>
-<li>Llama tokenizer. Used by Llama 1/2 models family: Vicuna, Hermes, Airoboros, etc. <strong>Pick if you use a Llama 1/2 model.</strong></li>
-<li>Llama 3 tokenizer. Used by Llama 3/3.1 models. <strong>Pick if you use a Llama 3/3.1 model.</strong></li>
-<li>NerdStash tokenizer. Used by NovelAI&#x27;s Clio model. <strong>Pick if you use the Clio model.</strong></li>
-<li>NerdStash v2 tokenizer. Used by NovelAI&#x27;s Kayra model. <strong>Pick if you use the Kayra model.</strong></li>
-<li>Mistral V1 tokenizer. Used by older Mistral models family and their finetunes. <strong>Pick if you use a Mistral model.</strong></li>
-<li>Yi tokenizer. Used by Yi models. <strong>Pick if you use a Yi model.</strong></li>
-<li>Gemma tokenizer. Used by Gemini/Gemma models. <strong>Pick if you use a Gemma model.</strong></li>
-<li>API tokenizer. Queries the generation API to get the token count directly from the model. Known backends to support: Text Generation WebUI (ooba), koboldcpp, TabbyAPI, Aphrodite API. <strong>Pick if you use a supported backend.</strong></li>
-</ol>
-<p>Chat Completion APIs <strong>(non-overridable)</strong>:</p>
-<ol>
-<li>OpenAI: model-dependant tokenizer via <a href="https://github.com/openai/tiktoken">tiktoken</a>.</li>
-<li>Claude: model-dependant tokenizer via <a href="https://github.com/mlc-ai/tokenizers-cpp">WebTokenizers</a>.</li>
-<li>OpenRouter: Llama, Mistral, Gemma, Yi tokenizers for their respective models.</li>
-<li>Google AI Studio: Gemma tokenizer.</li>
-<li>Scale API: GPT-4 tokenizer.</li>
-<li>AI21 API: Jamba tokenizer (requires a one-time download).</li>
-<li>Cohere API: Command-R tokenizer (requires a one-time download).</li>
-<li>MistralAI API: Mistral V1 or V3 tokenizer (requires a one-time download).</li>
-<li>Fallback tokenizer: GPT-3.5 turbo tokenizer.</li>
-</ol>
-<doc-anchor-target id="additional-tokenizers">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#additional-tokenizers">#</doc-anchor-trigger>
-        <span>Additional Tokenizers</span>
-    </h4>
-</doc-anchor-target>
-<p>These tokenizers are not included in the default installation due to their size A one-time download is required when they&#x27;re used for the first time.</p>
-<ol>
-<li>Qwen2 tokenizer.</li>
-<li>Command-R tokenizer. Used by Cohere source in Chat Completion.</li>
-<li>Mistral V3 (Nemo) tokenizer. Used by MistralAI source in Chat Completion (Nemo and Pixtral models).</li>
-</ol>
-<p>If you don&#x27;t want to use internet downloads, the opt-out option exists in config.yaml: <code v-pre>enableDownloadableTokenizers</code>. Set to <code v-pre>false</code> to disable downloads.</p>
-<p>You can also download tokenizers manually from the <a href="https://github.com/SillyTavern/SillyTavern-Tokenizers">SillyTavern-Tokenizers</a> repository. Download the JSON files and put them in the <code v-pre>_cache</code> subdirectory of your data root, the path is <code v-pre>./data/_cache</code> by default. Create the <code v-pre>_cache</code> directory if it doesn&#x27;t exist. After that, restart the SillyTavern server to re-initialize tokenizers.</p>
-<p>If the required tokenizer model is not cached and downloads are disabled, a fallback tokenizer (Llama 3) will be used for counting.</p>
-<doc-anchor-target id="token-padding">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#token-padding">#</doc-anchor-trigger>
-        <span>Token Padding</span>
-    </h3>
-</doc-anchor-target>
-<p><strong>Important: This section doesn&#x27;t apply to Chat Completions API. SillyTavern will always use a matching tokenizer for these models.</strong></p>
-<p>Unless SillyTavern uses a tokenizer provided by the remote backend API that runs the model, all token counts assumed during prompt generation are estimated based on the selected <doc-anchor-trigger to="#tokenizer">tokenizer</doc-anchor-trigger> type.</p>
-<p>Since the results of tokenization can be inaccurate on context sizes close to the model-defined maximum, some parts of the prompt may be trimmed or dropped, which may negatively affect the coherence of character definitions.</p>
-<p>To prevent this, SillyTavern allocates a portion of the context size as padding to avoid adding more chat items than the model can accommodate. If you find that some part of the prompt is trimmed even with the most-matching tokenizer selected, adjust the padding so the description is not truncated.</p>
-<p>You can input negative values for reverse padding, which allows allocating more than the set maximum amount of tokens.</p>
+<p>The options for this section are explained in <a href="../tokenizer/">Tokenizer</a>.</p>
 <doc-anchor-target id="custom-stopping-strings">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#custom-stopping-strings">#</doc-anchor-trigger>
@@ -411,20 +349,20 @@ Character:</code></pre>
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/core-concepts/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/core-concepts/prompts/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Core Concepts</span>
+                                                <span class="block mt-1">Prompts</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/core-concepts/authors-note/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/core-concepts/context-template/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Author's Note</span>
+                                                <span class="block mt-1">Context Template</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>

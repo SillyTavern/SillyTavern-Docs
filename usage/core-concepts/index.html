@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783444715140">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783678944172">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -14,6 +14,7 @@
     <!-- Primary Meta Tags -->
     <title>Core Concepts | docs.ST.app</title>
     <meta name="title" content="Core Concepts | docs.ST.app">
+    <meta name="description" content="Response Configuration and Prompt Manager">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/usage/core-concepts/">
@@ -22,21 +23,23 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/usage/core-concepts/">
     <meta property="og:title" content="Core Concepts | docs.ST.app">
+    <meta property="og:description" content="Response Configuration and Prompt Manager">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/usage/core-concepts/">
     <meta property="twitter:title" content="Core Concepts | docs.ST.app">
+    <meta property="twitter:description" content="Response Configuration and Prompt Manager">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.783444715140" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.783678944172" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.783444715140" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.783678944172" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.783444715140" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.783678944172" data-turbo-eval="false" defer></script>
 
-    <Style>
+    <style>
         a {
             color: brown !important;
         }
@@ -50,19 +53,36 @@
         }
 
         .callout {
-          padding: 1rem;
-          margin-bottom: 1rem;
-          border: 1px solid #d2d6dc;
-          border-radius: 0.375rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #d2d6dc;
+            border-radius: 0.375rem;
         }
+
         .callout p {
-          margin-bottom: 0.5rem !important;
+            margin-bottom: 0.5rem !important;
+            overflow: hidden;
         }
+
         .callout p:last-child {
-          margin-bottom: 0 !important;
+            margin-bottom: 0 !important;
         }
-    </Style>
-    <link href="https://sillytavern.app/webfonts/NotoSans/stylesheet.css" rel="stylesheet">
+
+        div.callout:has(img) {
+            min-height: 8rem;
+        }
+
+        .callout img {
+            width: 3rem;
+            float: left;
+            margin-right: 1rem;
+            filter: invert(42%) hue-rotate(183deg) brightness(91%) contrast(83%);
+        }
+    </style>
+    <link href="/static/webfonts/NotoSans/stylesheet.css" rel="stylesheet"/>
+    <link href="/static/css/fontawesome.min.css" rel="stylesheet"/>
+    <link href="/static/css/solid.min.css" rel="stylesheet"/>
+    <link href="/static/css/brands.min.css" rel="stylesheet"/>
 
 </head>
 <body>
@@ -214,6 +234,48 @@
         <span>Core Concepts</span>
     </h1>
 </doc-anchor-target>
+<doc-anchor-target id="configuration-panels">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#configuration-panels">#</doc-anchor-trigger>
+        <span>Configuration panels</span>
+    </h2>
+</doc-anchor-target>
+<div class="callout"><p><strong><a href="../common-settings/">Response Configuration</a></strong> and <strong><a href="prompt-manager/">Prompt Manager</a></strong></p>
+<img src="../../static/navbar/sliders-solid.svg" alt="sliders" class="icon">
+Control text generation and sampling. Customize prompt construction for Chat Completion APIs.
+</div>
+<div class="callout"><p><strong><a href="../api-connections/">API Connections</a></strong></p>
+<img src="../../static/navbar/plug-solid.svg" alt="API Connections icon" class="icon">
+Connect to AI models for generating text, images, and more
+</div>
+<div class="callout"><p><strong><a href="advancedformatting/">Advanced Formatting</a></strong></p>
+<img src="../../static/navbar/font-solid.svg" alt="Advanced Formatting icon" class="icon">
+Customize prompt construction for Text Completion APIs
+</div>
+<div class="callout"><p><strong><a href="worldinfo/">World Info</a></strong></p>
+<img src="../../static/navbar/book-atlas-solid.svg" alt="World Info icon" class="icon">
+Manage information and when to insert it into the prompt
+</div>
+<div class="callout"><p><strong><a href="user-settings/">User Settings</a></strong></p>
+<img src="../../static/navbar/user-gear-solid.svg" alt="User Settings icon" class="icon">
+Change the theme, and the look and feel of messages and chats
+</div>
+<div class="callout"><p><strong>Backgrounds</strong></p>
+<img src="../../static/navbar/panorama-solid.svg" alt="Backgrounds icon" class="icon">
+Change the background image
+</div>
+<div class="callout"><p><strong><a href="../../extensions/">Extensions</a></strong></p>
+<img src="../../static/navbar/cubes-solid.svg" alt="Extensions icon" class="icon">
+Add new features and capabilities to the AI or the interface
+</div>
+<div class="callout"><p><strong><a href="personas/">Personas</a></strong></p>
+<img src="../../static/navbar/user-gear-solid.svg" alt="Personas icon" class="icon">
+Create and manage personas to use with the AI
+</div>
+<div class="callout"><p><strong><a href="characterdesign/">Characters</a></strong></p>
+<img src="../../static/navbar/address-card-solid.svg" alt="Characters icon" class="icon">
+Create and manage characters for the AI to use
+</div>
 
                                 
                                 <!-- Required only on API pages -->
@@ -239,10 +301,10 @@
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../usage/core-concepts/advancedformatting/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../usage/core-concepts/characterdesign/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Advanced Formatting</span>
+                                                <span class="block mt-1">Character Design</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>

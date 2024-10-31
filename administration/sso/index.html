@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783444715140">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783678944172">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -14,7 +14,7 @@
     <!-- Primary Meta Tags -->
     <title>Single Sign-On (SSO) | docs.ST.app</title>
     <meta name="title" content="Single Sign-On (SSO) | docs.ST.app">
-    <meta name="description" content="Use Authelia or Authentik.">
+    <meta name="description" content="SSO allows you to create users and secure many different pages using a login portal presented on sites you want to secure.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/administration/sso/">
@@ -23,23 +23,24 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/administration/sso/">
     <meta property="og:title" content="Single Sign-On (SSO) | docs.ST.app">
-    <meta property="og:description" content="Use Authelia or Authentik.">
+    <meta property="og:description" content="SSO allows you to create users and secure many different pages using a login portal presented on sites you want to secure.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/administration/sso/">
     <meta property="twitter:title" content="Single Sign-On (SSO) | docs.ST.app">
-    <meta property="twitter:description" content="Use Authelia or Authentik.">
+    <meta property="twitter:description" content="SSO allows you to create users and secure many different pages using a login portal presented on sites you want to secure.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.783444715140" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.783678944172" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.783444715140" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.783678944172" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.783444715140" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.783678944172" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.783678944172" defer></script>
 
-    <Style>
+    <style>
         a {
             color: brown !important;
         }
@@ -53,19 +54,36 @@
         }
 
         .callout {
-          padding: 1rem;
-          margin-bottom: 1rem;
-          border: 1px solid #d2d6dc;
-          border-radius: 0.375rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #d2d6dc;
+            border-radius: 0.375rem;
         }
+
         .callout p {
-          margin-bottom: 0.5rem !important;
+            margin-bottom: 0.5rem !important;
+            overflow: hidden;
         }
+
         .callout p:last-child {
-          margin-bottom: 0 !important;
+            margin-bottom: 0 !important;
         }
-    </Style>
-    <link href="https://sillytavern.app/webfonts/NotoSans/stylesheet.css" rel="stylesheet">
+
+        div.callout:has(img) {
+            min-height: 8rem;
+        }
+
+        .callout img {
+            width: 3rem;
+            float: left;
+            margin-right: 1rem;
+            filter: invert(42%) hue-rotate(183deg) brightness(91%) contrast(83%);
+        }
+    </style>
+    <link href="/static/webfonts/NotoSans/stylesheet.css" rel="stylesheet"/>
+    <link href="/static/css/fontawesome.min.css" rel="stylesheet"/>
+    <link href="/static/css/solid.min.css" rel="stylesheet"/>
+    <link href="/static/css/brands.min.css" rel="stylesheet"/>
 
 </head>
 <body>
@@ -217,11 +235,34 @@
         <span>Single Sign-On (SSO)</span>
     </h1>
 </doc-anchor-target>
-<p>Use <a href="https://www.authelia.com/"><strong>Authelia</strong></a> or <a href="https://goauthentik.io/"><strong>Authentik</strong></a>.</p>
-<p>Authelia and Authentik are open-source single sign-on (SSO) apps. SSO allows you to create users and secure many different pages using a login portal presented on sites you want to secure. While it is complex to setup, it is a good way to both learn SSO and secure your ST instance out on the internet more.</p>
-<p>If you plan to use Authelia to secure ST&#x27;s, you must enable <code v-pre>securityOverride</code> in <em>config.yaml</em>. Authlia will handle the login security, but ST has no way of knowing this and will refuse to start without securityOverride.</p>
-<p>If using Authelia it is recommened to disable ST&#x27;s basic auth since Authlia provides better functionality and the same security.</p>
-<p>If your Authelia username exactly matches the username of a SillyTavern user account in multi-user mode you can enable <code v-pre>autheliaAuth</code> in the <em>config.yaml</em> to directly login to the account using Authelia.</p>
+<p>SSO allows you to create users and secure many different pages using a login portal presented on sites you want to secure. While it is complex to setup, it is a good way to both learn SSO and secure your ST instance out on the internet more.</p>
+<p><a href="https://www.authelia.com/"><strong>Authelia</strong></a> and <a href="https://goauthentik.io/"><strong>Authentik</strong></a> are open-source SSO providers that can be used with SillyTavern.</p>
+<doc-anchor-target id="sign-in-with-sso">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sign-in-with-sso">#</doc-anchor-trigger>
+        <span>Sign in with SSO</span>
+    </h2>
+</doc-anchor-target>
+<p>If your SSO-provided username exactly matches the username of a SillyTavern user account, you can sign in to SillyTavern as that user by SSO.</p>
+<p>To do this, enable <code v-pre>autheliaAuth</code> in <em>config.yaml</em>.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-yaml"><code v-pre class="language-yaml">autheliaAuth: true</code></pre>
+</doc-codeblock></div>
+<p>This augments or replaces the built-in <a href="../../usage/core-concepts/user-settings/#account-management">password management</a> component of a <a href="../multi-user/">multi-user mode</a> setup.</p>
+<doc-anchor-target id="replacing-http-ba">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#replacing-http-ba">#</doc-anchor-trigger>
+        <span>Replacing HTTP BA</span>
+    </h2>
+</doc-anchor-target>
+<p>SSO can also replace <a href="../../usage/remoteconnections/#access-control-by-http-basic-authentication">HTTP Basic Authentication</a> as an access control mechanism for <a href="../../usage/remoteconnections/#access-control">remote connections</a>.</p>
+<p>This is recommended because SSO provides better security and functionality than HTTP BA.</p>
+<p>To use an SSO provider in place of HTTP BA, enable <code v-pre>securityOverride</code> in <em>config.yaml</em>. Otherwise, SillyTavern will <a href="../../usage/remoteconnections/#access-control">refuse to start</a>.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-yaml"><code v-pre class="language-yaml">autheliaAuth: true
+basicAuthMode: false
+securityOverride: true</code></pre>
+</doc-codeblock></div>
 
                                 
                                 <!-- Required only on API pages -->
@@ -294,6 +335,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Single Sign-On (SSO)", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Single Sign-On (SSO)", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
