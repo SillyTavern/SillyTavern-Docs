@@ -32,11 +32,9 @@ Example: [NeverSleep/Noromaid-13b-v0.1.1](https://huggingface.co/NeverSleep/Noro
 
 This is not supported **(and not needed)** for Chat Completion APIs. They use an entirely different prompt builder.
 
-Exception: OpenRouter with instruct override enabled. This is a legacy setting and will be removed soon.
-
 ### NovelAI
 
-While *technically* supported for NovelAI, none of their models were trained to understand instruct formatting. Kayra uses a special instruct module that is activated *automatically* when an instruction wrapped in curly braces is encountered in chat messages, so using Instruct Mode for the entire prompt will lead to **degraded quality** of the outputs.
+While *technically* supported for NovelAI, none of their models were trained to understand instruct formatting. NovelAI models can use a special instruct module that is activated *automatically* when an instruction wrapped in curly braces is encountered in chat messages, so using Instruct Mode for the entire prompt will lead to **degraded quality** of the outputs.
 
 Here's an example that auto-activates the instruct module for NovelAI:
 
@@ -57,12 +55,6 @@ The System Prompt is now a separate entity. See the [Advanced Formatting](advanc
 Provides ready-made templates with sequences for some well-known instruct models.
 
 *Changing a template resets the unsaved settings to the last saved state! Don't forget to save your template if you made any changes you don't want to lose.*
-
-### Default template (heart icon)
-
-If toggled, connecting to an API will automatically select this template if no other templates were triggered by the regex match.
-
-Instruct mode needs to be enabled prior. Only one template can be marked as default.
 
 ### Activation Regex
 
