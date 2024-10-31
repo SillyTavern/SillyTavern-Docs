@@ -30,6 +30,10 @@ Requires a SearXNG instance URL (either private or public). Uses HTML format for
 
 Learn more: <https://docs.searxng.org/>
 
+### Tavily AI
+Requires an API key.
+Get the key here: <https://app.tavily.com/>
+
 ## How to use
 
 1. Make sure you use the latest version of SillyTavern.
@@ -55,7 +59,7 @@ Learn more: <https://docs.searxng.org/>
 
 ### Search Activation
 
-1. Use function tool - uses [function calling](/For_Contributors/Function-Calling.md) to activate search. Must use a supported Chat Completion API and be enabled in the AI Response settings. **Disables all other activation methods when engaged.**
+1. Use function tool - uses [function calling](/For_Contributors/Function-Calling.md) to activate search or scrape web pages. Must use a supported Chat Completion API and be enabled in the AI Response settings. **Disables all other activation methods when engaged.**
 2. Use Backticks - enables search activation using words encased in single backticks.
 3. Use Trigger Phrases - enables search activation using trigger phrases.
 4. Regular expressions - provide a JS-flavored regex to match the user message. If the regex matches, the search with a given query will be triggered. Search query supports `{{macros}}` and $1-syntax to reference the matched group. Example: `/what is happening in (.*)/i` regex for search query `news in $1` will match a message containing `what is happening in New York` and trigger the search with the query `news in New York`.
@@ -114,3 +118,8 @@ Example: /websearch links=off snippets=on how to make a sandwich
 
 1. Infobox.
 2. Page snippets.
+
+#### Tavily AI
+
+1. Answer.
+2. Page contents.
