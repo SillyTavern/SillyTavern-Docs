@@ -1,3 +1,8 @@
+---
+order: worldinfo
+icon: globe
+---
+
 # World Info
 
 **World Info (also known as Lorebooks or Memory Books) is a powerful tool available in ST to insert prompts dynamically into your chat to help guide the AI replies.**

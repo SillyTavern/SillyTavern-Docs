@@ -22,7 +22,8 @@ You should not use port forwarding to expose your ST server to the internet. Ins
 
 ## Allowing remote connections
 
-By default, ST server only accepts local connections. In order to allow remote connections, set the parameter `listen` within `config.yaml` to `true`:
+By default, the ST server only accepts connections from the machine that it's running on (localhost). To allow it to listen for connections from other devices, set the `listen` option in `config.yaml` to `true`.
+
 ```yaml
 # Listen for incoming connections
 listen: true
@@ -30,7 +31,7 @@ listen: true
 
 ## Access control
 
-After activating the remote connection listening, you must turn on at least one access control method, or ST server will refuse to start.
+After activating the remote connection listening, you must turn on at least one access control method, or the server will refuse to start.
 
 ### Access control by whitelist
 
@@ -80,6 +81,12 @@ Change `whitelistMode` to `false`, remove (or rename) `whitelist.txt` in the Sil
 !!!
 
 ### Access control by HTTP Basic Authentication
+
+!!! warning
+HTTP Basic Authentication does not provide strong security. 
+
+There is no rate-limiting to prevent brute-force attacks. If this is a concern, it is recommended to use a reverse proxy with TLS and rate-limiting, and a dedicated [authentication service](sso.md).
+!!!
 
 The server will ask for username and password whenever a client connects via HTTP. **This only works if the Remote connections (listen: true) are enabled.**
 

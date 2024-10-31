@@ -1,3 +1,7 @@
+---
+icon: smiley
+---
+
 # Persona Management
 
 ## What is a persona?

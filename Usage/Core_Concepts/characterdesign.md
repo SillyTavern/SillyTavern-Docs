@@ -1,3 +1,8 @@
+---
+order: character-10
+icon: person-fill
+---
+
 # Character Design
 
 ## Character Description
