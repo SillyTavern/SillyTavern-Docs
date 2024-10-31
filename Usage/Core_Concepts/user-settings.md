@@ -22,23 +22,29 @@ Chat to characters with sprites, like in visual novels such as Doki Doki Literat
 
 
 ## General Settings
+
 These are the core settings that affect your overall SillyTavern experience.
 
 ### UI Language
+
 SillyTavern's user interface is available in multiple languages. The language selector provides these options:
 * **Default**: Uses your system language if available
 * **English**: Forces English UI regardless of system settings
 * Other languages available through the dropdown
-  Note: This setting only affects the user interface text. For AI conversation translation, please use the Chat Translation extension.
+
+Note: This setting only affects the user interface text. For AI conversation translation, please use the Chat Translation extension.
 
 ### Software Version
+
 Your current version of SillyTavern is displayed in the top-right corner. This information is essential for:
 * Troubleshooting problems
 * Ensuring compatibility with extensions
 * Determining if updates are available
-  To update SillyTavern to the latest version, please refer to the [Updating](/Installation/Updating) documentation.
+
+To update SillyTavern to the latest version, please refer to the [Updating](/Installation/Updating) documentation.
 
 ### Account Management
+
 Control your SillyTavern user account, back up your settings and user data, and manage user roles and permissions in [multi-user mode](/Administration/multi-user.md).
 
 #### <i class="fa-fw fa-solid fa-user-shield"></i> Account
@@ -76,6 +82,7 @@ Multi-account features require `enableUserAccounts` to be set to true in config.
 Select **Manage Users** to view and manage existing user accounts.
 
 ##### User Profile
+
 - Custom avatar management (upload/remove)
 - Display name and handle
 - Role and status information
@@ -83,6 +90,7 @@ Select **Manage Users** to view and manage existing user accounts.
 - Password protection status
 
 ##### Account Controls
+
 - <i class="fa-fw fa-solid fa-pencil"></i> Edit display name
 - <i class="fa-fw fa-solid fa-check"></i> Enable account
 - <i class="fa-fw fa-solid fa-ban"></i> Disable account
@@ -90,6 +98,7 @@ Select **Manage Users** to view and manage existing user accounts.
 - <i class="fa-fw fa-solid fa-arrow-down"></i> Demote to regular user
 
 ##### Management Actions
+
 - <i class="fa-fw fa-solid fa-download"></i> Download user data backup
 - <i class="fa-fw fa-solid fa-key"></i> Change user password
 - <i class="fa-fw fa-solid fa-trash"></i> Delete account
@@ -113,6 +122,7 @@ Creating a new user automatically generates a subfolder in the /data/ directory 
 Sign out of your current session.
 
 ### Settings Search
+
 A convenient search bar that helps you quickly find specific settings:
 * Type any keyword to filter and highlight settings anywhere in User Settings
 * Searches through setting names and descriptions
@@ -125,6 +135,7 @@ Change the appearance of the chat interface to suit your preferences.
 For more information on the settings in this section of <i class="fa-fw fa-solid fa-user-gear" title="User Settings icon"></i> **User Settings**, see [UI Customization](uicustomization.md#ui-theme).
 
 ## Character Handling
+
 * **Char List Subheader**: Choose what additional information to display under character names in the [<i class="fa-fw fa-solid fa-address-card" title="Characters icon"></i> Characters](characterdesign.md) list:
     - Character Version
     - Created by
@@ -141,6 +152,7 @@ For more information on the settings in this section of <i class="fa-fw fa-solid
 * **Spoiler Free Mode**: Hides character definitions behind a spoiler button in the editor panel.
 
 ## Miscellaneous
+
 * **Reload Chat**: Reloads and redraws the current chat.
 * **[Debug Menu](#debug-menu)**: Access debugging options.
 * **Smooth Streaming**: Experimental feature for smoother text generation. Includes speed control slider.
@@ -156,7 +168,9 @@ For more information on the settings in this section of <i class="fa-fw fa-solid
     - Preset system for saving/loading UI layouts
 
 ## Chat/Message Handling
+
 ### Message Display Settings
+
 Controls how messages are loaded and displayed in the chat interface. These settings affect the overall chat experience and performance.
 * **# Messages to Load**: Number of chat history messages to load before pagination (0 = All)
 * **Streaming FPS**: Update speed of streamed text (5-100 FPS)
@@ -164,7 +178,9 @@ Controls how messages are loaded and displayed in the chat interface. These sett
     - Gradual push-out
     - Always include examples
     - Never include examples
+
 ### Input & Response Controls
+
 Settings that determine how messages are sent and how the AI continues its responses.
 * **Enter to Send**: Choose between Disabled, Automatic (PC), or Enabled
 * **"Send" to Continue**: Use Send button to continue AI responses
@@ -174,6 +190,7 @@ Settings that determine how messages are sent and how the AI continues its respo
 * **Gestures**: Enable swipe gestures for generation (Mobile only)
 
 ### Auto-Management
+
 Automated features that help manage chat flow and content.
 * **Auto-load Last Chat**: Automatically load the most recent chat on startup
 * **Auto-scroll Chat**: Automatically scroll to newest messages
@@ -182,6 +199,7 @@ Automated features that help manage chat flow and content.
 * **Auto-fix Markdown**: Automatically correct markdown formatting
 
 #### Auto-swipe
+
 Automatically reject and regenerate AI messages based on configurable criteria.
 * **Enable Auto-swipe**: Master toggle for the auto-swipe function
 * **Minimum generated message length**: Triggers an auto-swipe if the message is shorter than this value
@@ -189,6 +207,7 @@ Automatically reject and regenerate AI messages based on configurable criteria.
 * **Blacklisted word count to swipe**: Minimum number of blacklisted words that must be detected to trigger an auto-swipe
 
 #### Auto-Continue
+
 Automatically continues a response if the model stopped before reaching a certain length.
 
 This lets your AI write a long response in multiple parts, so that you can have a short [response length setting](/Usage/Common-Settings.md#response-tokens) while still getting long replies. 
@@ -200,6 +219,7 @@ It will not make the AI write more than it would have otherwise. Asking the AI t
 * **Target length (tokens)**: The desired message length in tokens - will trigger continue if message is shorter than this value (0-1024)
 
 ### Message Formatting & Display
+
 Controls how messages are formatted and what content is displayed.
 * **Forbid External Media**: Block embedded media from external domains
 * **Show {\{char}}: in responses**: Retain character name prefix in responses if generated
@@ -214,6 +234,7 @@ Controls how messages are formatted and what content is displayed.
 * **Request token probabilities**: Request token probabilities for AI responses from the API. Where available, these can be viewed in <i class="fa-solid fa-bars" title="Burger Menu icon"></i> Token Probabilities.
 
 ### AutoComplete
+
 - Auto-hide details
 - Matching style (Starts with/Includes/Fuzzy)
 - Visual style (Theme/Dark/Light)
@@ -222,6 +243,7 @@ Controls how messages are formatted and what content is displayed.
 - Width controls
 
 ## STscript Settings
+
 Configuration options for the [STscript parser](/For_Contributors/st-script.md#parser-flags).
 
 ### STRICT_ESCAPING
@@ -270,4 +292,5 @@ Because extensions can add debug functions, the available options will vary depe
 * **Force onboarding**: Restarts the onboarding process
 * **Toggle event tracing**: Enables/disables event tracking for debugging
 * **Copy ST setup**: [Work in Progress] Copies system configuration data to clipboard for bug reports
-  Each function can be executed using the "Execute" button beneath its description. Consider backing up your data before using these tools, as some operations cannot be undone.
+
+Each function can be executed using the "Execute" button beneath its description. Consider backing up your data before using these tools, as some operations cannot be undone.
