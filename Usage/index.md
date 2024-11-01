@@ -93,7 +93,7 @@ Manage information and when to insert it into the prompt
 :::
 
 :::callout
-<i class="fa-solid fa-gear fa-2xl fa-fw"></i> **[User Settings](/Usage/User_Settings/User_Settings.md)**
+<i class="fa-solid fa-user-gear fa-2xl fa-fw"></i> **[User Settings](/Usage/User_Settings/User_Settings.md)**
 
 Change the theme, and the look and feel of messages and chats
 :::
@@ -105,22 +105,19 @@ Change the background image
 :::
 
 :::callout
-<i class="fa-solid fa-cubes fa-2xl fa-fw"></i>
-**[Extensions](/extensions/index.md)**
+<i class="fa-solid fa-cubes fa-2xl fa-fw"></i> **[Extensions](/extensions/index.md)**
 
 Add new features and capabilities to the AI or the interface
 :::
 
 :::callout
-<i class="fa-solid fa-user-gear fa-2xl fa-fw"></i>
-**[Personas](/Usage/personas.md)**
+<i class="fa-solid fa-face-smile fa-2xl fa-fw"></i> **[Personas](/Usage/personas.md)**
 
 Create and manage personas to use with the AI
 :::
 
 :::callout
-<i class="fa-solid fa-address-card fa-2xl fa-fw"></i>
-**[Characters](/Usage/Characters/index.md)**
+<i class="fa-solid fa-address-card fa-2xl fa-fw"></i> **[Characters](/Usage/Characters/index.md)**
 
 Create and manage characters for the AI to use
 :::
