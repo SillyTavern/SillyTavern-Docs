@@ -1,6 +1,6 @@
 ---
-order: prompts
-icon: pencil
+order: 140
+icon: typography
 ---
 
 # Prompts
@@ -10,10 +10,10 @@ When you send a message to your AI, the text you write is combined with other te
 The prompt can include a variety of different types of text, including:
 
 * [Main instructions](#main-prompt-system-prompt) to the AI about how to generate a response
-* Definitions of the [roles that the AI should take on](characterdesign.md)
-* Definitions of [the role that you are taking on](personas.md)
-* [Information about the "world"](worldinfo.md) that the AI is interacting with
-* Relevant documents or information from [Data Bank](data-bank.md)
+* Definitions of the [roles that the AI should take on](/Usage/Characters/characterdesign.md)
+* Definitions of [the role that you are taking on](/Usage/personas.md)
+* [Information about the "world"](/Usage/worldinfo.md) that the AI is interacting with
+* Relevant documents or information from [Data Bank](/Usage/Characters/data-bank.md)
 * [Summaries](/extensions/Summarize.md) of the past conversation
 * Results of [web searches](/extensions/WebSearch.md) or other [external data sources](/For_Contributors/Function-Calling.md)
 * Previous messages in the conversation
@@ -22,7 +22,7 @@ The prompt can include a variety of different types of text, including:
 
 This can be a lot to manage! To help you understand how to structure and modify the request that's sent to the AI, SillyTavern identifies different elements that you might want to include in your prompt. You can then structure your prompt to include the things that make sense for the way you want to interact with the AI.
 
-Many of these elements are explained in the sections where you will change them. For example, to describe the role that you would like the AI to take on, you could use the [Description](characterdesign.md#personality-summary) field in [Character Design](characterdesign.md).
+Many of these elements are explained in the sections where you will change them. For example, to describe the role that you would like the AI to take on, you could use the [Description](/Usage/Characters/characterdesign.md#personality-summary) field in [Character Design](/Usage/Characters/characterdesign.md).
 
 ## Viewing the Prompt
 
@@ -69,7 +69,7 @@ The default Main Prompt is:
 
 The \{\{char\}\} and \{\{user\}\} placeholders are replaced with the names of the character and persona that you've defined in the conversation. 
 
-You can use any of the supported [\{\{macro\}\}](characterdesign.md#macros-replacement-tags) tags in the Main Prompt to include information that might vary between conversations or changes as the conversation progresses.
+You can use any of the supported [\{\{macro\}\}](/Usage/Characters/characterdesign.md#macros-replacement-tags) tags in the Main Prompt to include information that might vary between conversations or changes as the conversation progresses.
 
 ### Adjusting the Main Prompt
 
@@ -105,11 +105,11 @@ There is often a better place than the Main Prompt to include information about 
 
 When adjusting the main prompt to improve the AI's responses, consder that the AI picks up a lot from the message history. The history is its memory of past events, character interactions and relationships, and its style guide for word choice and writing style.
 
-Use this to your advantage by also providing [example messages](characterdesign.md#examples-of-dialogue) showing how you want the AI to respond. Showing what you want is often easier than trying to explain it!
+Use this to your advantage by also providing [example messages](/Usage/Characters/characterdesign.md#examples-of-dialogue) showing how you want the AI to respond. Showing what you want is often easier than trying to explain it!
 
 When your conversation already has history, changing the main prompt has a limited effect on the AI's responses. In terms of events and relationships, the AI assumes that the main prompt occurred in the distant past, and the message history updates it. In terms of writing style and word choice, the AI assumes that all the messages in history were generated according to the rules in the *current* main prompt, and that it should continue to generate messages in the same way. Some suggestions for dealing with this are:
 
-* insert current instructions close to or after the end of message history, for example by using an [Author's Note](Author's-Note.md)
+* insert current instructions close to or after the end of message history, for example by using an [Author's Note](/Usage/Characters/Author's-Note.md)
 * test your changes to the main prompt by starting a new conversation
 * edit the message history to remove or correct examples of unwanted behaviour
 * use the [Post-History Instructions](#post-history-instructions) to provide final instructions to the AI
@@ -134,7 +134,7 @@ You may not want the AI to think of itself as role-playing at all. Instead of re
 
 What if you want the AI to act as a narrator, describing events from an omniscient perspective, inventing its own characters and settings?
 
-One approach is to create a named character for the AI to use as a narrator. This character could be called "Narrator" or "AI", suggesting that the AI is a general-purpose storyteller, or it could be named after a specific scenario or setting, giving the AI the task of narrating a story in that setting. The details of the setting can then be defined in the [Character](characterdesign.md) or in [World Info](worldinfo.md).
+One approach is to create a named character for the AI to use as a narrator. This character could be called "Narrator" or "AI", suggesting that the AI is a general-purpose storyteller, or it could be named after a specific scenario or setting, giving the AI the task of narrating a story in that setting. The details of the setting can then be defined in the [Character](/Usage/Characters/characterdesign.md) or in [World Info](/Usage/worldinfo.md).
 
 You will need to adjust the default main prompt to reflect the AI's role. For a general-purpose narrator, you might use:
 
@@ -162,9 +162,9 @@ Since the Post-History Instructions are sent after the user message, they are th
 
 +++ Text Completion APIs
 
-Post-History Instructions cannot be defined globally. You could achieve the same effect with an [Author's Note](Author's-Note.md).
+Post-History Instructions cannot be defined globally. You could achieve the same effect with an [Author's Note](/Usage/Characters/Author's-Note.md).
 
-To use per-character Post-History Instructions, add them to the character's [Post-History Instructions](characterdesign.md) and enable **both** [Prefer Char. Instructions](user-settings.md) and [Allow Post-History Instructions](context-template.md#allow-post-history-instructions).
+To use per-character Post-History Instructions, add them to the character's [Post-History Instructions](/Usage/Characters/characterdesign.md) and enable **both** [Prefer Char. Instructions](/Usage/User_Settings/User_Settings.md) and [Allow Post-History Instructions](context-template.md#allow-post-history-instructions).
 
 The Post-History Instructions is added as an invisible user role injection that precedes the last line of the prompt (usually containing a response message "header").
 
@@ -176,7 +176,7 @@ Post-History Instructions is one of the default prompts in [Prompt Manager](prom
 
 ## Adding to the Prompt (World Info)
 
-You can insert additional information anywhere in the prompt using the [World Info](worldinfo.md) feature. By setting the conditions for when the information should be inserted, you can guide the AI to include specific details, change how it responds, or add new elements to the conversation.
+You can insert additional information anywhere in the prompt using the [World Info](/Usage/worldinfo.md) feature. By setting the conditions for when the information should be inserted, you can guide the AI to include specific details, change how it responds, or add new elements to the conversation.
 
 Some common uses of World Info include:
 

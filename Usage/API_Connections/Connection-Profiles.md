@@ -1,5 +1,7 @@
 ---
 icon: paperclip
+route: /usage/core-concepts/connection-profiles
+order: 100
 ---
 
 # Connection Profiles
@@ -21,10 +23,10 @@ Connection Profiles store the following selections.
 
 ### Text Completion APIs
 
-* [System Prompt and its state](/Usage/Core_Concepts/advancedformatting.md#system-prompt)
+* [System Prompt and its state](/Usage/Prompts/advancedformatting.md#system-prompt)
 * [Instruct Mode state and template](//Usage/Core_Concepts/instructmode.md)
-* [Context Template](/Usage/Core_Concepts/advancedformatting.md#context-template)
-* [Tokenizer](/Usage/Core_Concepts/advancedformatting.md#tokenizer)
+* [Context Template](/Usage/Prompts/advancedformatting.md#context-template)
+* [Tokenizer](/Usage/Prompts/advancedformatting.md#tokenizer)
 
 ### Chat Completion APIs
 

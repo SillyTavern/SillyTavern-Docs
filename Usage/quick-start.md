@@ -1,8 +1,9 @@
 ---
-title: Quick Start
+order: 190
 icon: rocket
-order: -10
 ---
+
+# Quick Start
 
 !!!light
 I'm clueless. Just spoonfeed me the easiest and fastest way I can start using SillyTavern. -- *Anonymous*
@@ -33,7 +34,7 @@ You can get started with SillyTavern in just a few minutes. Here are two easy wa
 6. Close the API Connections window. Enter a message in the chat box at the bottom and press Enter.
 
    ![This is an optional caption](/static/quick-start/5_msg.png)
-7. Your AI will respond in a few moments. You can continue chatting with it. Success!
+7. Your AI will respond in a few moments. You can continue [chatting](/Usage/Chatting/index.md) with it. Success!
 
    ![This is an optional caption](/static/quick-start/6_success.png)
 

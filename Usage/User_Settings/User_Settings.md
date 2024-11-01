@@ -1,6 +1,6 @@
 ---
+order: 120
 icon: gear
-order: user-settings
 ---
 
 # User Settings
@@ -54,7 +54,7 @@ In the Account dialog, you can view and edit your profile information, change yo
 **Profile Information**
 
 * Display name (editable via pencil icon)
-* User avatar (can also be changed using [Personas](/Usage/Core_Concepts/personas.md))
+* User avatar (can also be changed using [Personas](/Usage/personas.md))
 * Account handle
 * User role
 * Account creation date
@@ -136,7 +136,7 @@ For more information on the settings in this section of <i class="fa-fw fa-solid
 
 ## Character Handling
 
-* **Char List Subheader**: Choose what additional information to display under character names in the [<i class="fa-fw fa-solid fa-address-card" title="Characters icon"></i> Characters](characterdesign.md) list:
+* **Char List Subheader**: Choose what additional information to display under character names in the [<i class="fa-fw fa-solid fa-address-card" title="Characters icon"></i> Characters](/Usage/Characters/characterdesign.md) list:
     - Character Version
     - Created by
 * **Import Card Tags**: Controls how tags are handled when importing character cards:

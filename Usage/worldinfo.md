@@ -1,5 +1,5 @@
 ---
-order: worldinfo
+order: 130
 icon: globe
 ---
 
@@ -157,7 +157,7 @@ A single entry can be part of multiple inclusion groups if they are defined as a
 
 #### Prioritize Inclusion
 
-To provide more control over which entries are activated via [Inclusion Group](/Usage/Core_Concepts/worldinfo.md#inclusion-group), you can use the 'Prioritize Inclusion' setting. This option allows you to specify deterministically which entry to choose instead of randomly rolling Group Weight chances.
+To provide more control over which entries are activated via [Inclusion Group](/Usage/worldinfo.md#inclusion-group), you can use the 'Prioritize Inclusion' setting. This option allows you to specify deterministically which entry to choose instead of randomly rolling Group Weight chances.
 
 If multiple entries having the same group label and this setting turned on were activated, the one with the highest 'Order' value will be selected. This is useful for creating fallback sequences via inclusion groups. For example to prioritize low-depth entries with more emphasis, or to choose a specific instruction on setting the scene over another if both are valid.
 
@@ -200,7 +200,7 @@ To enable and use this, the following prerequisites need to be met:
 2. The "Enable for World Info" checkbox is ticked in the Vector Storage extension settings.
 3. Either the World Info entries that are allowed for keyless matching have the "Vectorized" (🔗) status or the "Enabled for all entries" option is checked in the Vector Storage settings.
 
-The choice of the vectorization model in the extension and the theoretical meaning behind the term "embeddings" won't be covered here. Check out the [Data Bank](/Usage/Core_Concepts/data-bank.md#vector-storage) guide if you require more info on this topic.
+The choice of the vectorization model in the extension and the theoretical meaning behind the term "embeddings" won't be covered here. Check out the [Data Bank](/Usage/Characters/data-bank.md#vector-storage) guide if you require more info on this topic.
 
 Vector Storage matching adheres to this set of rules:
 

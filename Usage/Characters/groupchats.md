@@ -1,5 +1,6 @@
 ---
 order: character-20
+route: /usage/core-concepts/groupchats
 ---
 
 # Group Chats

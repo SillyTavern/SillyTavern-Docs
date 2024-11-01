@@ -1,5 +1,6 @@
 ---
 order: character-50
+route: /usage/core-concepts/data-bank
 tags:
     [
         vector storage,

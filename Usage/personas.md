@@ -1,8 +1,10 @@
 ---
+order: 110
 icon: smiley
+route: /usage/core-concepts/personas
 ---
 
-# Persona Management
+# Personas
 
 ## What is a persona?
 
