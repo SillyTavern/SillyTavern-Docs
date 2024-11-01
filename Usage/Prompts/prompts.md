@@ -97,7 +97,7 @@ Giving the AI additional instructions in the Main Prompt can help it understand 
 
 > Answer truthfully and write out your thinking step by step to be sure you get the right answer.
 
-The AI will more easily follow instructions about what it should do than what it should not do. For example, if you want the AI to avoid writing in a certain way, it's better to tell it how you want it to write instead. And while `Do not decide what {{user}} says or does` is commonly included in prompts to prevent the AI from controlling your persona, some users find `Write {{char}}'s responses in a way that respects {{user}}'s autonomy` is more effective.
+The AI will more easily follow instructions about what it should do than what it should not do. For example, if you want the AI to avoid writing in a certain way, it's better to tell it how you want it to write instead. And while *"Do not decide what \{\{user\}\} says or does"* is commonly included in prompts to prevent the AI from controlling your persona, some users find *"Write  \{\{char\}\}'s responses in a way that respects  \{\{user\}\}'s autonomy"* is more effective.
 
 There is often a better place than the Main Prompt to include information about the user or characters, modify a character's writing and speaking style, or give other specific instructions. The Main Prompt is best used for general instructions about the conversation as a whole, or about a type of conversation that you want to have.
 
