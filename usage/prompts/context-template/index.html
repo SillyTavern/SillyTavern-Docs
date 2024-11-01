@@ -6,38 +6,38 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783717116849">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783797346969">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>UI Customization | docs.ST.app</title>
-    <meta name="title" content="UI Customization | docs.ST.app">
-    <meta name="description" content="Theme files allow you to save, share, and reuse your UI customizations.">
+    <title>Context Template | docs.ST.app</title>
+    <meta name="title" content="Context Template | docs.ST.app">
+    <meta name="description" content="For equivalent settings in Chat Completion APIs, use Prompt Manager.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.sillytavern.app/usage/core-concepts/uicustomization/">
+    <link rel="canonical" href="https://docs.sillytavern.app/usage/prompts/context-template/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.sillytavern.app/usage/core-concepts/uicustomization/">
-    <meta property="og:title" content="UI Customization | docs.ST.app">
-    <meta property="og:description" content="Theme files allow you to save, share, and reuse your UI customizations.">
+    <meta property="og:url" content="https://docs.sillytavern.app/usage/prompts/context-template/">
+    <meta property="og:title" content="Context Template | docs.ST.app">
+    <meta property="og:description" content="For equivalent settings in Chat Completion APIs, use Prompt Manager.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.sillytavern.app/usage/core-concepts/uicustomization/">
-    <meta property="twitter:title" content="UI Customization | docs.ST.app">
-    <meta property="twitter:description" content="Theme files allow you to save, share, and reuse your UI customizations.">
+    <meta property="twitter:url" content="https://docs.sillytavern.app/usage/prompts/context-template/">
+    <meta property="twitter:title" content="Context Template | docs.ST.app">
+    <meta property="twitter:description" content="For equivalent settings in Chat Completion APIs, use Prompt Manager.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.783717116849" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.783797346969" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.783717116849" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.783797346969" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.783717116849" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.783797346969" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -72,9 +72,7 @@
             min-height: 8rem;
         }
 
-        .callout img {
-            width: 3rem;
-            float: left;
+        .callout i.fa-solid {
             margin-right: 1rem;
             filter: invert(42%) hue-rotate(183deg) brightness(91%) contrast(83%);
         }
@@ -228,143 +226,17 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="ui-customization" class="break-words">
+<doc-anchor-target id="context-template" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ui-customization">#</doc-anchor-trigger>
-        <span>UI Customization</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#context-template">#</doc-anchor-trigger>
+        <span>Context Template</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="ui-theme">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ui-theme">#</doc-anchor-trigger>
-        <span>UI Theme</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="theme-management">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#theme-management">#</doc-anchor-trigger>
-        <span>Theme Management</span>
-    </h3>
-</doc-anchor-target>
-<p>Theme files allow you to save, share, and reuse your UI customizations. You can maintain multiple themes for different moods or purposes, and switch between them instantly.</p>
-<ul>
-<li>Import/Export theme files</li>
-<li>Delete existing themes</li>
-<li>Save changes to current theme</li>
-<li>Save as new theme</li>
-</ul>
-<p>All the settings in this section are saved to the current theme. If you switch themes, the settings will be replaced by the settings of the new theme.</p>
-<doc-anchor-target id="display-settings">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#display-settings">#</doc-anchor-trigger>
-        <span>Display Settings</span>
-    </h3>
-</doc-anchor-target>
-<p>These fundamental display options affect how characters and messages are presented in the chat interface. Choose the style that best fits your preferences and provides the most comfortable reading experience.</p>
-<ul>
-<li><strong>Avatar Style</strong>: Choose between Circle, Square, or Rectangle</li>
-<li><strong>Chat Style</strong>: Select from Flat, Bubbles, or Document layouts</li>
-</ul>
-<doc-anchor-target id="theme-colors">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#theme-colors">#</doc-anchor-trigger>
-        <span>Theme Colors</span>
-    </h3>
-</doc-anchor-target>
-<p>Customize the color scheme of every UI element to create your perfect theme. Colors can be selected using a color picker, and include transparency options where applicable.</p>
-<ul>
-<li>Main Text</li>
-<li>Italics Text</li>
-<li>Underlined Text</li>
-<li>Quote Text</li>
-<li>Text Shadow</li>
-<li>Chat Background</li>
-<li>UI Background</li>
-<li>UI Border</li>
-<li>User Message</li>
-<li>AI Message</li>
-</ul>
-<doc-anchor-target id="layout--visual-settings">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#layout--visual-settings">#</doc-anchor-trigger>
-        <span>Layout &amp; Visual Settings</span>
-    </h3>
-</doc-anchor-target>
-<p>Fine-tune the visual presentation of the interface with these sliders.</p>
-<ul>
-<li><strong>Chat Width</strong>: Adjust chat window width (25-100% of screen)</li>
-<li><strong>Font Scale</strong>: Customize text size (0.5-1.5x)</li>
-<li><strong>Blur Strength</strong>: Control UI panel blur (0-30)</li>
-<li><strong>Shadow Width</strong>: Adjust text shadow intensity (0-5)</li>
-</ul>
-<doc-anchor-target id="theme-toggles">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#theme-toggles">#</doc-anchor-trigger>
-        <span>Theme Toggles</span>
-    </h3>
-</doc-anchor-target>
-<p>These switches control various UI features and behaviors. Some options can improve performance on lower-end devices, while others add useful information or functionality to the chat interface.</p>
-<ul>
-<li><strong>Reduced Motion</strong>: Disable animations and transitions</li>
-<li><strong>No Blur Effect</strong>: Remove background blur for better performance</li>
-<li><strong>No Text Shadows</strong>: Disable text shadow effects</li>
-<li><strong><a href="../visual-novel/">Visual Novel mode</a></strong>: Compact chat with background sprite</li>
-<li><strong>Expand Message Actions</strong>: Always show full message context menu</li>
-<li><strong>Zen Sliders</strong>: Simplified parameter controls</li>
-<li><strong>Mad Lab Mode</strong>: Unrestricted parameter ranges</li>
-<li><strong>Message Timer</strong>: Show AI response generation time</li>
-<li><strong>Chat Timestamps</strong>: Display message timestamps</li>
-<li><strong>Model Icons</strong>: Show AI model icons for messages</li>
-<li><strong>Message IDs</strong>: Display sequential message numbers</li>
-<li><strong>Hide Chat Avatars</strong>: Remove avatars from chat</li>
-<li><strong>Message Token Count</strong>: Show token counts per message</li>
-<li><strong>Compact Input Area</strong>: Single-row input (Mobile only)</li>
-<li><strong>Swipe # for All Messages</strong>: Show swipe numbers on all messages (Mobile)</li>
-<li><strong>Characters Hotswap</strong>: Quick-select buttons for favorite characters</li>
-<li><strong>Avatar Hover Magnification</strong>: Zoom effect on avatar hover</li>
-<li><strong>Tags as Folders</strong>: Organize characters using tags as folders</li>
-</ul>
-<doc-anchor-target id="custom-css">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#custom-css">#</doc-anchor-trigger>
-        <span>Custom CSS</span>
-    </h3>
-</doc-anchor-target>
-<p>Allows you to apply custom CSS styles to further customize the appearance of the chat interface.</p>
-<p>Use <i class="fa-fw fa-solid fa-maximize" title="Expand icon"></i> <strong>Expand</strong> to expand the editor window for better visibility and editing.</p>
-<p>If you switch themes, your custom CSS will be replaced by the custom CSS of the new theme. Ensure you save your custom CSS to a theme if you want to keep it when switching themes.</p>
-<p>If you use a lot of custom CSS, or want to use the same custom CSS with several themes, the unofficial <a href="https://github.com/LenAnderson/SillyTavern-CssSnippets">CSS Snippets extension</a> can help you manage and organize your custom CSS.</p>
-<hr>
-<doc-anchor-target id="message-sound">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#message-sound">#</doc-anchor-trigger>
-        <span>Message Sound</span>
-    </h2>
-</doc-anchor-target>
-<p>To play your own custom sound on receiving a new message from bot, replace the following MP3 file in your SillyTavern folder:</p>
-<p><code v-pre>public/sounds/message.mp3</code></p>
-<p>Plays at 80% volume.</p>
-<p>If the &quot;<a href="../user-settings/#miscellaneous">Background Sound Only</a>&quot; option is enabled, the sound plays only if SillyTavern window is <strong>unfocused</strong>.</p>
-<doc-anchor-target id="formulas-rendering">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#formulas-rendering">#</doc-anchor-trigger>
-        <span>Formulas Rendering</span>
-    </h2>
-</doc-anchor-target>
-<p>To enable math formulas rendering, use the <a href="https://github.com/SillyTavern/Extension-LaTeX">LaTeX extension</a>. To get the extension, you need to install it via the &quot;Download Extensions &amp; Assets&quot; menu in SillyTavern.</p>
-<p>Type your formulas in code blocks with <code v-pre>latex</code> or <code v-pre>asciimath</code> language identifiers for LaTeX and AsciiMath respectively. The extension uses <a href="https://katex.org/">KaTeX</a> for rendering.</p>
-<pre><code>```latex
-\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
-```
-
-```asciimath
-int_{-oo}^{oo} e^{-x^2} dx = sqrt{pi}
-```</code></pre>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-300" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -373,15 +245,87 @@ int_{-oo}^{oo} e^{-x^2} dx = sqrt{pi}
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>Deprecation notice</h5>
-<p>The legacy <code v-pre>$</code> and <code v-pre>$$</code> wrapper syntax is no longer supported. Please use the following regex scripts to polyfill the old syntax:</p>
-<ul>
-<li><a href="https://github.com/SillyTavern/Extension-LaTeX/raw/refs/heads/main/assets/$$_-_latex.json">$$ - LaTeX</a></li>
-<li><a href="https://github.com/SillyTavern/Extension-LaTeX/raw/refs/heads/main/assets/$_-_asciimath.json">$ - AsciiMath</a></li>
-</ul>
+            <h5>Applies to: Text Completion APIs</h5>
+<p>For equivalent settings in Chat Completion APIs, use <a href="../prompt-manager/">Prompt Manager</a>.</p>
         </div>
     </div>
 </div>
+<p>Usually, AI models require you to provide the character data to them in some specific way. SillyTavern includes a list of pre-made conversion rules for different models, but you may customize them however you like.</p>
+<p>Edit these settings in the &quot;<a href="../advancedformatting/">Advanced Formatting</a>&quot; panel.</p>
+<doc-anchor-target id="story-string">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#story-string">#</doc-anchor-trigger>
+        <span>Story string</span>
+    </h2>
+</doc-anchor-target>
+<p>This field is a template for pre-chat character data (known internally as a story string).
+This is the main way to format your character card for text completion and instruct models.</p>
+<p>The template supports Handlebars syntax and any custom text injections or formatting. See the language reference here: <a href="https://handlebarsjs.com/guide/">https://handlebarsjs.com/guide/</a></p>
+<p>We provide the following parameters to the Handlebars evaluator (wrap them into double-curly braces):</p>
+<ol>
+<li><code v-pre>description</code> - character&#x27;s Description</li>
+<li><code v-pre>scenario</code> - character&#x27;s Scenario</li>
+<li><code v-pre>personality</code> - character&#x27;s Personality</li>
+<li><code v-pre>system</code> - <a href="../advancedformatting/#system-prompt">system prompt</a> OR character&#x27;s main prompt override (if exists and &quot;Prefer Char. Prompt&quot; is enabled in User Settings)</li>
+<li><code v-pre>persona</code> - selected persona description</li>
+<li><code v-pre>char</code> - character&#x27;s name</li>
+<li><code v-pre>user</code> - selected persona name</li>
+<li><code v-pre>wiBefore</code> or <code v-pre>loreBefore</code> - combined activated World Info entries with Position set to &quot;Before Char Defs&quot;</li>
+<li><code v-pre>wiAfter</code> or <code v-pre>loreAfter</code> - combined activated World Info entries with Position set to &quot;After Char Defs&quot;</li>
+<li><code v-pre>mesExamples</code> - (optional) character&#x27;s Example Dialogues, instruct-formatted with separator. Set &quot;Example Messages Behavior&quot; to &quot;Never include examples&quot; to avoid duplication.</li>
+</ol>
+<p>A special {{trim}} macro is supported to remove any newlines that surround it. Use it in case you want some part of text NOT be separated with a newline from the previous line (<em>spaces <strong>are not</strong> trimmed</em>).</p>
+<p><strong>WARNING</strong>: If some of the above parameters are missing from the story string template, they are not going to be sent in the prompt at all.</p>
+<doc-anchor-target id="example-separator">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-separator">#</doc-anchor-trigger>
+        <span>Example Separator</span>
+    </h2>
+</doc-anchor-target>
+<p>Used as a block header and a separator between the example dialogue blocks. Any instance of <code v-pre>&lt;START&gt;</code> tags in the example dialogues will be replaced with the contents of this field.</p>
+<doc-anchor-target id="chat-start">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#chat-start">#</doc-anchor-trigger>
+        <span>Chat Start</span>
+    </h2>
+</doc-anchor-target>
+<p>Inserted as a separator after the rendered story string and after the example dialogues blocks, but before the first message in context.</p>
+<doc-anchor-target id="separators-as-stop-strings">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#separators-as-stop-strings">#</doc-anchor-trigger>
+        <span>Separators as Stop Strings</span>
+    </h2>
+</doc-anchor-target>
+<p>Adds &quot;Example Separator&quot; and &quot;Chat Start&quot; to the list of stop strings.</p>
+<p>Helpful if the model tends to hallucinate or leak whole blocks of example dialogue preceded by the separator.</p>
+<doc-anchor-target id="names-as-stop-strings">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#names-as-stop-strings">#</doc-anchor-trigger>
+        <span>Names as Stop Strings</span>
+    </h2>
+</doc-anchor-target>
+<p>Adds Character and User Persona names to the list of stop strings.</p>
+<p>Recommended to keep it on to prevent model impersonation.</p>
+<doc-anchor-target id="allow-post-history-instructions">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#allow-post-history-instructions">#</doc-anchor-trigger>
+        <span>Allow Post-History Instructions</span>
+    </h2>
+</doc-anchor-target>
+<p>Includes the Post-History Instructions at the end of the prompt, formatted as the last user message.</p>
+<p>The Post-History Instructions prompt should be defined in the character card and &quot;Prefer Char. Instructions&quot; setting should be enabled.</p>
+<p>Should be used with care, as placing instructions low in the context can lead to degraded quality of the outputs of smaller models.</p>
+<doc-anchor-target id="always-add-characters-name-to-prompt">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#always-add-characters-name-to-prompt">#</doc-anchor-trigger>
+        <span>Always add character&#x27;s name to prompt</span>
+    </h2>
+</doc-anchor-target>
+<p>Appends the character&#x27;s name to the prompt to force the model to complete the message as the character:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">** OTHER CONTEXT HERE **
+Character:</code></pre>
+</doc-codeblock></div>
 
                                 
                                 <!-- Required only on API pages -->
@@ -389,7 +333,7 @@ int_{-oo}^{oo} e^{-x^2} dx = sqrt{pi}
                             </div>
                             <footer class="clear-both">
                                 <div class="flex flex-wrap items-center justify-between mt-14">
-                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/SillyTavern/SillyTavern-Docs/edit/main/Usage/Core_Concepts/uicustomization.md" target="_blank" rel="noopener">
+                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/SillyTavern/SillyTavern-Docs/edit/main/Usage/Prompts/context-template.md" target="_blank" rel="noopener">
                                         <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         <span>Edit this page</span>
                                     </a>
@@ -397,20 +341,20 @@ int_{-oo}^{oo} e^{-x^2} dx = sqrt{pi}
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/core-concepts/user-settings/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/prompts/advancedformatting/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">User Settings</span>
+                                                <span class="block mt-1">Advanced Formatting</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/core-concepts/visual-novel/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/prompts/instructmode/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Visual Novel (VN) Mode</span>
+                                                <span class="block mt-1">Instruct Mode</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -454,6 +398,6 @@ int_{-oo}^{oo} e^{-x^2} dx = sqrt{pi}
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "UI Customization", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Context Template", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
