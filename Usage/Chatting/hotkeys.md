@@ -1,6 +1,7 @@
 ---
 order: -60
 icon: key-asterisk
+route: /usage/hotkeys
 ---
 
 # HotKeys

@@ -85,7 +85,7 @@ To play your own custom sound on receiving a new message from bot, replace the f
 
 Plays at 80% volume.
 
-If the "[Background Sound Only](user-settings.md#miscellaneous)" option is enabled, the sound plays only if SillyTavern window is **unfocused**.
+If the "[Background Sound Only](User_Settings.md#miscellaneous)" option is enabled, the sound plays only if SillyTavern window is **unfocused**.
 
 
 ## Formulas Rendering

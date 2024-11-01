@@ -1,6 +1,6 @@
 ---
 order: character-10
-icon: person-fill
+route: /usage/core-concepts/characterdesign
 ---
 
 # Character Design

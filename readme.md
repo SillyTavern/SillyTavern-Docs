@@ -44,17 +44,17 @@ To have a quick conversation without selecting a character card or to just test 
 
 To get a general idea on how to define character cards, see the default character (Seraphina) or download selected community-made cards from the "Download Extensions & Assets" menu.
 
-You can also create your own character cards from scratch. Refer to the [Character Design](/Usage/Core_Concepts/characterdesign.md) guide for more information.
+You can also create your own character cards from scratch. Refer to the [Character Design](/Usage/Characters/characterdesign.md) guide for more information.
 
 ## Key Features
 
-* Advanced [text generation settings](/Usage/Core_Concepts/advancedformatting.md) with many community-made presets
-* [World Info support](Usage/Core_Concepts/worldinfo.md): create rich lore or save tokens on your character card
-* [Group chats](/Usage/Core_Concepts/groupchats.md): multi-bot rooms for characters to talk to you and/or each other
-* [Rich UI customization options](/Usage/Core_Concepts/uicustomization.md): theme colors, background images, custom CSS, and more
-* [User personas](/Usage/Core_Concepts/personas.md): let the AI know a bit about you for greater immersion
-* [Built-in RAG support](/Usage/Core_Concepts/data-bank.md): add documents to your chats for the AI to reference
-* Extensive [chat commands](/Usage/Core_Concepts/slashcommands.md) subsystem and own [scripting engine](/For_Contributors/st-script.md)
+* Advanced [text generation settings](/Usage/Prompts/advancedformatting.md) with many community-made presets
+* [World Info support](Usage/worldinfo.md): create rich lore or save tokens on your character card
+* [Group chats](/Usage/Characters/groupchats.md): multi-bot rooms for characters to talk to you and/or each other
+* [Rich UI customization options](/Usage/User_Settings/uicustomization.md): theme colors, background images, custom CSS, and more
+* [User personas](/Usage/personas.md): let the AI know a bit about you for greater immersion
+* [Built-in RAG support](/Usage/Characters/data-bank.md): add documents to your chats for the AI to reference
+* Extensive [chat commands](/Usage/Chatting/slashcommands.md) subsystem and own [scripting engine](/For_Contributors/st-script.md)
 
 ## Extensions
 

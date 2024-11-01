@@ -1,5 +1,5 @@
 ---
-order: -40
+order: 90
 icon: desktop-download
 route: /usage/how-to-use-a-self-hosted-model/
 ---
