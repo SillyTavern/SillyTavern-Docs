@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783797958955">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783817185240">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.783797958955" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.783817185240" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.783797958955" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.783817185240" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.783797958955" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.783817185240" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -68,13 +68,9 @@
             margin-bottom: 0 !important;
         }
 
-        div.callout:has(img) {
-            min-height: 8rem;
-        }
-
-        .callout i.fa-solid {
-            margin-right: 1rem;
-            filter: invert(42%) hue-rotate(183deg) brightness(91%) contrast(83%);
+        .callout .fa-fw {
+            margin: 1rem 0.5rem 1rem 0;
+            color: slategrey;
         }
     </style>
     <link href="/static/webfonts/NotoSans/stylesheet.css" rel="stylesheet"/>
@@ -348,7 +344,7 @@
 <blockquote>
 <p>Answer truthfully and write out your thinking step by step to be sure you get the right answer.</p>
 </blockquote>
-<p>The AI will more easily follow instructions about what it should do than what it should not do. For example, if you want the AI to avoid writing in a certain way, it&#x27;s better to tell it how you want it to write instead. And while <code v-pre>Do not decide what  says or does</code> is commonly included in prompts to prevent the AI from controlling your persona, some users find <code v-pre>Write 's responses in a way that respects 's autonomy</code> is more effective.</p>
+<p>The AI will more easily follow instructions about what it should do than what it should not do. For example, if you want the AI to avoid writing in a certain way, it&#x27;s better to tell it how you want it to write instead. And while <em>&quot;Do not decide what {{user}} says or does&quot;</em> is commonly included in prompts to prevent the AI from controlling your persona, some users find <em>&quot;Write  {{char}}&#x27;s responses in a way that respects  {{user}}&#x27;s autonomy&quot;</em> is more effective.</p>
 <p>There is often a better place than the Main Prompt to include information about the user or characters, modify a character&#x27;s writing and speaking style, or give other specific instructions. The Main Prompt is best used for general instructions about the conversation as a whole, or about a type of conversation that you want to have.</p>
 <doc-anchor-target id="effect-of-message-history">
     <h3>
