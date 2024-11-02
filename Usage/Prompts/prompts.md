@@ -12,7 +12,7 @@ The prompt can include a variety of different types of text, including:
 * [Main instructions](#main-prompt-system-prompt) to the AI about how to generate a response
 * Definitions of the [roles that the AI should take on](/Usage/Characters/characterdesign.md)
 * Definitions of [the role that you are taking on](/Usage/personas.md)
-* [Information about the "world"](/Usage/worldinfo.md) that the AI is interacting with
+* [Information about the "world"](/Usage/World_Info/World_Info.md) that the AI is interacting with
 * Relevant documents or information from [Data Bank](/Usage/Characters/data-bank.md)
 * [Summaries](/extensions/Summarize.md) of the past conversation
 * Results of [web searches](/extensions/WebSearch.md) or other [external data sources](/For_Contributors/Function-Calling.md)
@@ -134,7 +134,7 @@ You may not want the AI to think of itself as role-playing at all. Instead of re
 
 What if you want the AI to act as a narrator, describing events from an omniscient perspective, inventing its own characters and settings?
 
-One approach is to create a named character for the AI to use as a narrator. This character could be called "Narrator" or "AI", suggesting that the AI is a general-purpose storyteller, or it could be named after a specific scenario or setting, giving the AI the task of narrating a story in that setting. The details of the setting can then be defined in the [Character](/Usage/Characters/characterdesign.md) or in [World Info](/Usage/worldinfo.md).
+One approach is to create a named character for the AI to use as a narrator. This character could be called "Narrator" or "AI", suggesting that the AI is a general-purpose storyteller, or it could be named after a specific scenario or setting, giving the AI the task of narrating a story in that setting. The details of the setting can then be defined in the [Character](/Usage/Characters/characterdesign.md) or in [World Info](/Usage/World_Info/World_Info.md).
 
 You will need to adjust the default main prompt to reflect the AI's role. For a general-purpose narrator, you might use:
 
@@ -176,7 +176,7 @@ Post-History Instructions is one of the default prompts in [Prompt Manager](prom
 
 ## Adding to the Prompt (World Info)
 
-You can insert additional information anywhere in the prompt using the [World Info](/Usage/worldinfo.md) feature. By setting the conditions for when the information should be inserted, you can guide the AI to include specific details, change how it responds, or add new elements to the conversation.
+You can insert additional information anywhere in the prompt using the [World Info](/Usage/World_Info/World_Info.md) feature. By setting the conditions for when the information should be inserted, you can guide the AI to include specific details, change how it responds, or add new elements to the conversation.
 
 Some common uses of World Info include:
 

@@ -44,7 +44,7 @@ Control the requests that you send to the AI and how it responds
 :::callout
 ## Building on SillyTavern
 
-**[World Info](/Usage/worldinfo.md)**
+**[World Info](/Usage/World_Info/World_Info.md)**
 
 Manage information and when to insert it into the prompt
 
@@ -87,7 +87,7 @@ Customize prompt construction for Text Completion APIs
 :::
 
 :::callout
-<i class="fa-solid fa-book-atlas fa-2xl fa-fw"></i> **[World Info](/Usage/worldinfo.md)**
+<i class="fa-solid fa-book-atlas fa-2xl fa-fw"></i> **[World Info](/Usage/World_Info/World_Info.md)**
 
 Manage information and when to insert it into the prompt
 :::

@@ -49,7 +49,7 @@ You can also create your own character cards from scratch. Refer to the [Charact
 ## Key Features
 
 * Advanced [text generation settings](/Usage/Prompts/advancedformatting.md) with many community-made presets
-* [World Info support](Usage/worldinfo.md): create rich lore or save tokens on your character card
+* [World Info support](Usage/World_Info/World_Info.md): create rich lore or save tokens on your character card
 * [Group chats](/Usage/Characters/groupchats.md): multi-bot rooms for characters to talk to you and/or each other
 * [Rich UI customization options](/Usage/User_Settings/uicustomization.md): theme colors, background images, custom CSS, and more
 * [User personas](/Usage/personas.md): let the AI know a bit about you for greater immersion

@@ -1,4 +1,5 @@
 ---
+route: /usage/core-concepts/worldinfo
 order: 130
 icon: globe
 ---
@@ -157,7 +158,7 @@ A single entry can be part of multiple inclusion groups if they are defined as a
 
 #### Prioritize Inclusion
 
-To provide more control over which entries are activated via [Inclusion Group](/Usage/worldinfo.md#inclusion-group), you can use the 'Prioritize Inclusion' setting. This option allows you to specify deterministically which entry to choose instead of randomly rolling Group Weight chances.
+To provide more control over which entries are activated via [Inclusion Group](#inclusion-group), you can use the 'Prioritize Inclusion' setting. This option allows you to specify deterministically which entry to choose instead of randomly rolling Group Weight chances.
 
 If multiple entries having the same group label and this setting turned on were activated, the one with the highest 'Order' value will be selected. This is useful for creating fallback sequences via inclusion groups. For example to prioritize low-depth entries with more emphasis, or to choose a specific instruction on setting the scene over another if both are valid.
 
