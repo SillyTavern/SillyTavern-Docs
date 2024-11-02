@@ -29,13 +29,13 @@ To help reduce this problem, SillyTavern has built in the following feature:
 - Select one or more Models ('AI brains' for the characters) from the Model Selector at the bottom of the panel.
 - Select a character and begin chatting.
 
-  ![ST Kobold Horde API Connection Panel](/static/horde-config.png)
+![ST Kobold Horde API Connection Panel](/static/horde-config.png)
 
 !!!warning
 By default, your SillyTavern instance connects to the Horde's low priority 'guest account'.
 This means you may have to wait a long time for a reply.
 To reduce wait times, follow the tips down below.
- !!!
+!!!
 
 ## Tips
 
