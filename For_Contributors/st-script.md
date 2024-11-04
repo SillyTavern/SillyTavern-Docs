@@ -797,8 +797,8 @@ World Info (also known as Lorebook) is a highly utilitarian tool for dynamically
 
 ```stscript
 /getchatbook | /setvar key=chatLore |
-/findentry file=chatLore field=key Shadowfang |
-/getentryfield file=chatLore field=key |
+/findentry file={{getvar::chatLore}} field=key Shadowfang |
+/getentryfield file={{getvar::chatLore}} field=key |
 /echo
 ```
 
@@ -806,7 +806,7 @@ World Info (also known as Lorebook) is a highly utilitarian tool for dynamically
 
 ```stscript
 /getchatbook | /setvar key=chatLore |
-/createentry file=chatLore key="Milla" Milla Basset is a friend of Lilac and Carol. She is a hush basset puppy who possesses the power of alchemy. |
+/createentry file={{getvar::chatLore}} key="Milla" Milla Basset is a friend of Lilac and Carol. She is a hush basset puppy who possesses the power of alchemy. |
 /echo
 ```
 
@@ -814,14 +814,14 @@ World Info (also known as Lorebook) is a highly utilitarian tool for dynamically
 
 ```stscript
 /getchatbook | /setvar key=chatLore |
-/findentry file=chatLore field=key Milla |
+/findentry file={{getvar::chatLore}} field=key Milla |
 /setvar key=millaUid |
-/getentryfield file=chatLore field=content |
+/getentryfield file={{getvar::chatLore}} field=content |
 /setvar key=millaContent |
 /gen lock=on Tell me more about Milla Basset based on the provided conversation history. Incorporate existing information into your reply: {{getvar::millaContent}} |
 /setvar key=millaContent |
 /echo New content: {{pipe}} |
-/setentryfield file=chatLore uid=millaUid field=content {{getvar::millaContent}}
+/setentryfield file={{getvar::chatLore}} uid=millaUid field=content {{getvar::millaContent}}
 ```
 
 ## Text manipulation
