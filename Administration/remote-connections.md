@@ -29,6 +29,20 @@ By default, the ST server only accepts connections from the machine that it's ru
 listen: true
 ```
 
+When ST is listening for remote connections, you should see this message in the console:
+
+```
+SillyTavern is listening on IPv4: 0.0.0.0:8000
+```
+
+and some explanation about what that means.
+
+When ST is **not** listening for remote connections, you should see this message in the console:
+
+```
+SillyTavern is listening on IPv4: 127.0.0.1:8000
+```
+
 ## Access control
 
 After activating the remote connection listening, you must turn on at least one access control method, or the server will refuse to start.
@@ -134,15 +148,51 @@ A typical address for an ST host on the same wifi network would look like:
 
 Use http:// NOT https://
 
+### Connection logging
+
+New connections to the server are displayed in the console window and logged in the `access.log` file in the SillyTavern base directory.
+
+A console message for a browser on the same machine as the server looks like:
+
+```
+New connection from 127.0.0.1; User Agent: ...
+```
+
+A console message for a browser on a different machine on the same network as the server might look like:
+
+```
+New connection from 192.168.116.187; User Agent: ...
+```
+
+If a connection is refused, the console message will look like:
+
+```
+New connection from 192.168.116.211; User Agent: ...
+
+Forbidden: Connection attempt from 192.168.116.211. If you are attempting to connect, 
+please add your IP address in whitelist or disable whitelist mode in config.yaml in 
+root of SillyTavern folder.
+```
+
+`access.log` will contain the connection information, with timestamps, but not whether the connection was accepted or refused.
+
 ### Troubleshooting
 
 Still unable to connect?
 
-* Enable the Private Network profile type in Settings > Network and Internet > Ethernet. This is VERY important for Windows 11, otherwise, you would be unable to connect even with the aforementioned firewall rules.
+* If the connection attempt [appears in the console](#connection-logging), but is forbidden, it is a [whitelist issue](#access-control-by-whitelist).
+* If ST is listening for remote connections but the connection attempt does not appear in the console, it is a [network issue](#network-issues).
+* If ST is not listening for remote connections, it is a [reading issue](#allowing-remote-connections).
+
+#### Network issues
+
 * On Windows, the application may be blocked by the application firewall. The quickest way to fix this is to uninstall and reinstall node.js, and when prompted by the firewall, allow it to access the network. Otherwise, you will need to manually allow the node.js application through the Windows application firewall.
+* On Windows 11, enable the Private Network profile type in Settings > Network and Internet > Ethernet. This is VERY important for Windows 11, otherwise, you would be unable to connect even with the aforementioned firewall rules.
 * On Linux, you may need to allow the port through the firewall. The command to do this is `sudo ufw allow 8000`. This will allow traffic on port 8000.
 
 Do not modify the port forwarding settings on your router. This is not necessary for accessing ST within your local network, and can expose your server to the internet.
+
+If you are trying to access your ST server from [outside your local network](remote-connections.md), and it's not working, identify whether the problem is between the remote device and the tunnel/VPN endpoint, or between the tunnel endpoint on the server and the ST service. Otherwise you will spend a lot of time troubleshooting the wrong thing.
 
 ## HTTPS
 
