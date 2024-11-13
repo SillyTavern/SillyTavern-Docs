@@ -178,13 +178,12 @@ Token probabilities are not available from all APIs. If you are using an API tha
 * **Text Generation WebUI** (oobabooga): Available
 * **TabbyAPI**: Available
 * **NovelAI**: Available
-* **KoboldCPP**: Appears to be unavailable
+* **KoboldCPP**: Available
 * **Ollama**: Appears to be unavailable
 * **OpenRouter Text**: Appears to be unavailable
 
 #### Chat Completion
-* **OpenAI**: Available, but rerolling is not supported
+* **OpenAI** or **Custom**: Available, but rerolling is not supported
 * **Anthropic**: Appears to be unavailable
 * **Google AI Studio**: Appears to be unavailable
 * **OpenRouter Chat**: Appears to be unavailable
-* **Ollama**: Appears to be unavailable
