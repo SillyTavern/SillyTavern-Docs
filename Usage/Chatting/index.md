@@ -93,7 +93,7 @@ the chat interface.
 
 * <i class="fa-lg fa-solid fa-note-sticky"></i> **[Author's Note](/Usage/Characters/Author's-Note.md)**: Custom context instructions
 * <i class="fa-lg fa-solid fa-scale-balanced"></i> **[CFG Scale](/Usage/Prompts/CFG.md)**: Adjust response creativity
-* <i class="fa-lg fa-solid fa-pie-chart"></i> **Token Probabilities**: View token generation stats
+* <i class="fa-lg fa-solid fa-pie-chart"></i> **[Token Probabilities](#token-probabilities-panel)**: View token generation stats
 
 ### Chat Navigation
 
@@ -114,3 +114,69 @@ the chat interface.
 * <i class="fa-lg fa-solid fa-arrow-right"></i> **Continue**: Extend last message
 
 Note: Some options may be hidden depending on context and chat state.
+
+## Token Probabilities Panel
+
+The Token Probabilities panel lets you peek into the AI's sampling and generation process during text generation. It shows you not just what the AI wrote, but what other words and phrases it considered at each point in the text.
+
+When you click any token (word, punctuation, or formatting character) in the generated text, the panel displays alternative tokens the AI considered at that position, along with their probability scores. This gives you insight into the AI's "thought process" and shows other directions the response could have taken. Looking at these alternatives can help you understand whether there were several likely options or a single clear choice.
+
+If you see a token that you think the AI should have chosen differently, choose an alternative and the message will regenerate from that point forward, potentially giving you a different response.
+
+### Rerolling
+
+If you change a specific token and regenerate the response, the part of the new response before the changed token will be the same as the original response. This part is shown in gray. Since it was not generated, there is no probability information for this part.
+
+You may like to see other responses that could have been generated based on your alternative token.
+
+You can click the gray portion to "reroll" the generation, giving you a new variation of the text. Clicking any part of the gray portion will keep the entire gray portion and regenerate the entire white/tinted portion.
+
+Holding Ctrl while clicking a token in the gray portion will retain the gray portion up to the clicked token and regenerate the rest of the text. Your choice of alternative token can not be kept in this case.
+
+### Controls
+
+**Token Display**:
+
+* Generated text is split into individual tokens
+* Each token is interactive, click a token to see alternatives considered by the AI
+* Tokens are tinted as a visual aid but this does not indicate probability
+* Special characters (spaces, newlines) are visibly marked
+
+**Token Selection**:
+
+* Click a token to view alternatives
+* Click an alternative to replace the token and regenerate the response
+* Hover over a token to see its raw log-probability score
+
+**Window Controls**:
+
+* <i class="fa-solid fa-grip"></i> Drag handle for panel repositioning (MovingUI only)
+* <i class="fa-solid fa-window-maximize"></i> Maximize/restore panel size
+* <i class="fa-solid fa-circle-chevron-up"></i> Expand/collapse panel content
+* <i class="fa-solid fa-circle-xmark"></i> Close panel
+
+### Availability
+
+You must select **Request token probabilities** in [User Settings](/Usage/User_Settings/User_Settings.md#chatmessage-handling) to enable this feature.
+
+Token probabilities are only available for the most recent message, and are not saved to the chat. If token probability information is no longer available for a message, the panel will display a message indicating this.
+
+Token probabilities are not available when using Smooth Streaming.
+
+Token probabilities are not available from all APIs. If you are using an API that does not support token probabilities, the panel will open but will not display any information.
+
+#### Text Completion
+* **LlamaCPP**: Available
+* **Text Generation WebUI** (oobabooga): Available
+* **TabbyAPI**: Available
+* **NovelAI**: Available
+* **KoboldCPP**: Appears to be unavailable
+* **Ollama**: Appears to be unavailable
+* **OpenRouter Text**: Appears to be unavailable
+
+#### Chat Completion
+* **OpenAI**: Available, but rerolling is not supported
+* **Anthropic**: Appears to be unavailable
+* **Google AI Studio**: Appears to be unavailable
+* **OpenRouter Chat**: Appears to be unavailable
+* **Ollama**: Appears to be unavailable
