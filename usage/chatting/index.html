@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.784109626609">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.784856248250">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -35,11 +35,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.784109626609" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.784856248250" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.784109626609" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.784856248250" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.784109626609" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.784856248250" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -397,7 +397,7 @@ the chat interface.</p>
 <ul>
 <li><i class="fa-lg fa-solid fa-note-sticky"></i> <strong><a href="../core-concepts/authors-note/">Author&#x27;s Note</a></strong>: Custom context instructions</li>
 <li><i class="fa-lg fa-solid fa-scale-balanced"></i> <strong><a href="../prompts/cfg/">CFG Scale</a></strong>: Adjust response creativity</li>
-<li><i class="fa-lg fa-solid fa-pie-chart"></i> <strong>Token Probabilities</strong>: View token generation stats</li>
+<li><i class="fa-lg fa-solid fa-pie-chart"></i> <strong><doc-anchor-trigger to="#token-probabilities-panel">Token Probabilities</doc-anchor-trigger></strong>: View token generation stats</li>
 </ul>
 <doc-anchor-target id="chat-navigation">
     <h3>
@@ -433,6 +433,104 @@ the chat interface.</p>
 <li><i class="fa-lg fa-solid fa-arrow-right"></i> <strong>Continue</strong>: Extend last message</li>
 </ul>
 <p>Note: Some options may be hidden depending on context and chat state.</p>
+<doc-anchor-target id="token-probabilities-panel">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#token-probabilities-panel">#</doc-anchor-trigger>
+        <span>Token Probabilities Panel</span>
+    </h2>
+</doc-anchor-target>
+<p>The Token Probabilities panel lets you look into the AI&#x27;s sampling process for text generation. It shows you not just what the AI wrote, but what other options it considered at each point in the text.</p>
+<p>To open it, click the <i class="fa-solid fa-pie-chart"></i> <strong>Token Probabilities</strong> button in the <i class="fa-solid fa-bars" title="Burger Menu icon"></i> <strong>Chat Options</strong> panel.</p>
+<p><figure class="content-center">
+    <img src="../../static/token-probs/fling-msg.png" alt="Example message" width="500">
+    <figcaption class="caption">Example message</figcaption>
+</figure>
+</p>
+<p><figure class="content-center">
+    <img src="../../static/token-probs/fling-probs.png" alt="Token probabilities display for example message" width="500">
+    <figcaption class="caption">Token probabilities display for example message</figcaption>
+</figure>
+</p>
+<p>When you click any token (word, punctuation, or formatting character) in the generated text, the panel displays alternative tokens the AI considered at that position, along with their probability scores. This gives you insight into the AI&#x27;s &quot;thought process&quot; and shows other directions the response could have taken. Looking at these alternatives can help you understand whether there were several likely options or a single clear choice.</p>
+<p><figure class="content-center">
+    <img src="../../static/token-probs/fling-probs-logprob.png" alt="Alternative tokens and probabilities" width="500">
+    <figcaption class="caption">Alternative tokens and probabilities</figcaption>
+</figure>
+</p>
+<p>If you see a token that you think the AI should have chosen differently, choose an alternative and the message will regenerate from that point forward, potentially giving you a different response.</p>
+<doc-anchor-target id="rerolling">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#rerolling">#</doc-anchor-trigger>
+        <span>Rerolling</span>
+    </h3>
+</doc-anchor-target>
+<p>If you change a specific token and regenerate the response, the part of the new response before the changed token will be the same as the original response. This part is shown in gray. Since it was not generated, there is no probability information for this part.</p>
+<p>You may like to see other responses that could have been generated based on your alternative token.</p>
+<p>You can click the gray portion to &quot;reroll&quot; the generation, giving you a new variation of the text. Clicking any part of the gray portion will keep the entire gray portion and regenerate the entire white/tinted portion.</p>
+<p>Holding Ctrl while clicking a token in the gray portion will retain the gray portion up to the clicked token and regenerate the rest of the text. Your choice of alternative token can not be kept in this case.</p>
+<doc-anchor-target id="controls">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#controls">#</doc-anchor-trigger>
+        <span>Controls</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Token Display</strong>:</p>
+<ul>
+<li>Generated text is split into individual tokens</li>
+<li>Each token is interactive, click a token to see alternatives considered by the AI</li>
+<li>Tokens are tinted as a visual aid but this does not indicate probability</li>
+<li>Special characters (spaces, newlines) are visibly marked</li>
+</ul>
+<p><strong>Token Selection</strong>:</p>
+<ul>
+<li>Click a token to view alternatives</li>
+<li>Click an alternative to replace the token and regenerate the response</li>
+<li>Hover over a token to see its raw log-probability score</li>
+</ul>
+<p><strong>Window Controls</strong>:</p>
+<ul>
+<li><i class="fa-solid fa-grip"></i> Drag handle for panel repositioning (MovingUI only)</li>
+<li><i class="fa-solid fa-window-maximize"></i> Maximize/restore panel size</li>
+<li><i class="fa-solid fa-circle-chevron-up"></i> Expand/collapse panel content</li>
+<li><i class="fa-solid fa-circle-xmark"></i> Close panel</li>
+</ul>
+<doc-anchor-target id="availability">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#availability">#</doc-anchor-trigger>
+        <span>Availability</span>
+    </h3>
+</doc-anchor-target>
+<p>You must select <strong>Request token probabilities</strong> in <a href="../user_settings/#chatmessage-handling">User Settings</a> to enable this feature.</p>
+<p>Token probabilities are only available for the most recent message, and are not saved to the chat. If token probability information is no longer available for a message, the panel will display a message indicating this.</p>
+<p>Token probabilities are not available when using Smooth Streaming.</p>
+<p>Token probabilities are not available from all APIs. If you are using an API that does not support token probabilities, the panel will open but will not display any information.</p>
+<doc-anchor-target id="text-completion">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#text-completion">#</doc-anchor-trigger>
+        <span>Text Completion</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><strong>LlamaCPP</strong>: Available</li>
+<li><strong>Text Generation WebUI</strong> (oobabooga): Available</li>
+<li><strong>TabbyAPI</strong>: Available</li>
+<li><strong>NovelAI</strong>: Available</li>
+<li><strong>KoboldCPP</strong>: Available</li>
+<li><strong>Ollama</strong>: Appears to be unavailable</li>
+<li><strong>OpenRouter Text</strong>: Appears to be unavailable</li>
+</ul>
+<doc-anchor-target id="chat-completion">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#chat-completion">#</doc-anchor-trigger>
+        <span>Chat Completion</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><strong>OpenAI</strong> or <strong>Custom</strong>: Available, but rerolling is not supported</li>
+<li><strong>Anthropic</strong>: Appears to be unavailable</li>
+<li><strong>Google AI Studio</strong>: Appears to be unavailable</li>
+<li><strong>OpenRouter Chat</strong>: Appears to be unavailable</li>
+</ul>
 
                                 
                                 <!-- Required only on API pages -->

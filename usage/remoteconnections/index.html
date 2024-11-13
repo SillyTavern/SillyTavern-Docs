@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.784109626609">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.784856248250">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.784109626609" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.784856248250" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.784109626609" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.784856248250" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.784109626609" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.784109626609" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.784856248250" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.784856248250" defer></script>
 
     <style>
         a {
@@ -276,6 +276,15 @@
 <pre class="language-yaml"><code v-pre class="language-yaml"># Listen for incoming connections
 listen: true</code></pre>
 </doc-codeblock></div>
+<p>When ST is listening for remote connections, you should see this message in the console:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">SillyTavern is listening on IPv4: 0.0.0.0:8000</code></pre>
+</doc-codeblock></div>
+<p>and some explanation about what that means.</p>
+<p>When ST is <strong>not</strong> listening for remote connections, you should see this message in the console:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">SillyTavern is listening on IPv4: 127.0.0.1:8000</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="access-control">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#access-control">#</doc-anchor-trigger>
@@ -438,6 +447,30 @@ perUserBasicAuth: true</code></pre>
 <p>A typical address for an ST host on the same wifi network would look like:</p>
 <p><code v-pre>http://192.168.0.5:8000</code></p>
 <p>Use http:// NOT https://</p>
+<doc-anchor-target id="connection-logging">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#connection-logging">#</doc-anchor-trigger>
+        <span>Connection logging</span>
+    </h3>
+</doc-anchor-target>
+<p>New connections to the server are displayed in the console window and logged in the <code v-pre>access.log</code> file in the SillyTavern base directory.</p>
+<p>A console message for a browser on the same machine as the server looks like:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">New connection from 127.0.0.1; User Agent: ...</code></pre>
+</doc-codeblock></div>
+<p>A console message for a browser on a different machine on the same network as the server might look like:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">New connection from 192.168.116.187; User Agent: ...</code></pre>
+</doc-codeblock></div>
+<p>If a connection is refused, the console message will look like:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">New connection from 192.168.116.211; User Agent: ...
+
+Forbidden: Connection attempt from 192.168.116.211. If you are attempting to connect, 
+please add your IP address in whitelist or disable whitelist mode in config.yaml in 
+root of SillyTavern folder.</code></pre>
+</doc-codeblock></div>
+<p><code v-pre>access.log</code> will contain the connection information, with timestamps, but not whether the connection was accepted or refused.</p>
 <doc-anchor-target id="troubleshooting">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#troubleshooting">#</doc-anchor-trigger>
@@ -446,11 +479,23 @@ perUserBasicAuth: true</code></pre>
 </doc-anchor-target>
 <p>Still unable to connect?</p>
 <ul>
-<li>Enable the Private Network profile type in Settings &gt; Network and Internet &gt; Ethernet. This is VERY important for Windows 11, otherwise, you would be unable to connect even with the aforementioned firewall rules.</li>
+<li>If the connection attempt <doc-anchor-trigger to="#connection-logging">appears in the console</doc-anchor-trigger>, but is forbidden, it is a <doc-anchor-trigger to="#access-control-by-whitelist">whitelist issue</doc-anchor-trigger>.</li>
+<li>If ST is listening for remote connections but the connection attempt does not appear in the console, it is a <doc-anchor-trigger to="#network-issues">network issue</doc-anchor-trigger>.</li>
+<li>If ST is not listening for remote connections, it is a <doc-anchor-trigger to="#allowing-remote-connections">reading issue</doc-anchor-trigger>.</li>
+</ul>
+<doc-anchor-target id="network-issues">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#network-issues">#</doc-anchor-trigger>
+        <span>Network issues</span>
+    </h4>
+</doc-anchor-target>
+<ul>
 <li>On Windows, the application may be blocked by the application firewall. The quickest way to fix this is to uninstall and reinstall node.js, and when prompted by the firewall, allow it to access the network. Otherwise, you will need to manually allow the node.js application through the Windows application firewall.</li>
+<li>On Windows 11, enable the Private Network profile type in Settings &gt; Network and Internet &gt; Ethernet. This is VERY important for Windows 11, otherwise, you would be unable to connect even with the aforementioned firewall rules.</li>
 <li>On Linux, you may need to allow the port through the firewall. The command to do this is <code v-pre>sudo ufw allow 8000</code>. This will allow traffic on port 8000.</li>
 </ul>
 <p>Do not modify the port forwarding settings on your router. This is not necessary for accessing ST within your local network, and can expose your server to the internet.</p>
+<p>If you are trying to access your ST server from <a href="">outside your local network</a>, and it&#x27;s not working, identify whether the problem is between the remote device and the tunnel/VPN endpoint, or between the tunnel endpoint on the server and the ST service. Otherwise you will spend a lot of time troubleshooting the wrong thing.</p>
 <doc-anchor-target id="https">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#https">#</doc-anchor-trigger>
