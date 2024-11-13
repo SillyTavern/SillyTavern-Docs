@@ -117,9 +117,17 @@ Note: Some options may be hidden depending on context and chat state.
 
 ## Token Probabilities Panel
 
-The Token Probabilities panel lets you peek into the AI's sampling and generation process during text generation. It shows you not just what the AI wrote, but what other words and phrases it considered at each point in the text.
+The Token Probabilities panel lets you look into the AI's sampling process for text generation. It shows you not just what the AI wrote, but what other options it considered at each point in the text.
+
+To open it, click the <i class="fa-solid fa-pie-chart"></i> **Token Probabilities** button in the <i class="fa-solid fa-bars" title="Burger Menu icon"></i> **Chat Options** panel.
+
+![Example message](/static/token-probs/fling-msg.png){ width=500}
+
+![Token probabilities display for example message](/static/token-probs/fling-probs.png){ width=500}
 
 When you click any token (word, punctuation, or formatting character) in the generated text, the panel displays alternative tokens the AI considered at that position, along with their probability scores. This gives you insight into the AI's "thought process" and shows other directions the response could have taken. Looking at these alternatives can help you understand whether there were several likely options or a single clear choice.
+
+![Alternative tokens and probabilities](/static/token-probs/fling-probs-logprob.png){ width=500}
 
 If you see a token that you think the AI should have chosen differently, choose an alternative and the message will regenerate from that point forward, potentially giving you a different response.
 
