@@ -126,7 +126,7 @@ protocol:
 
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|-----------------|
-| `mistral.enablePrefix` | Enable reply prefilling | `false` | `true`, `false` |
+| `mistral.enablePrefix` | Enable reply prefilling. **The prefix will be echoed in the response** | `false` | `true`, `false` |
 
 ### Ollama Configuration
 
@@ -135,6 +135,14 @@ protocol:
 | `ollama.keepAlive` | Model keep-alive duration (seconds) | `-1` | `-1` (indefinite), `0` (immediate unload), positive integer |
 
 ### Claude Configuration
+
+!!! warning
+**IMPORTANT!**
+
+Use with caution and only when the prompt prefix is static and doesn't change between requests. \{\{random\}\} macro, lorebooks, vectors, summaries, etc. will likely invalidate the cache and you'll just waste money on cache misses. Behavior may be unpredictable and no guarantees can or will be made.
+
+See: [Prompt Caching](https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching)
+!!!
 
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|-----------------|
