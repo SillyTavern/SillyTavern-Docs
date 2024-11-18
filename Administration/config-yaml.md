@@ -10,9 +10,9 @@ This documentation may be obsolete, incomplete, or incorrect. Please refer to th
 
 !!!
 
-`config.yaml` is the main configuration file for the SillyTavern server that you can find in the repository root directory after installing SillyTavern. It is a YAML file that contains various settings, such as the network settings, security settings, and backend-specific options. The changes made to this file will take effect after restarting the server.
+`config.yaml` is the main configuration file for the SillyTavern server that you can find in the repository root directory after [completing the installation](/Installation/index.md). It is a YAML file that contains various settings, such as the network settings, security settings, and backend-specific options. **The changes made to this file will take effect after restarting the server.**
 
-New settings that added to the upstream version will be automatically populated with the default values when you run `npm install` (or specifically, the `post-install.js` script) after updating the repository. You can then modify these settings as needed.
+New settings that added to the upstream version will be automatically populated with the default values when you run `npm install` (or specifically, the `post-install.js` script) after [updating the repository](/Installation/Updating/index.md). You can then modify these settings as needed.
 
 For nested settings, dot notation is used to indicate the hierarchy. For example, `protocol.ipv6: false` refers to the `ipv6` setting under the `protocol` section with a value of `false`.
 
