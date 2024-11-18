@@ -2,7 +2,7 @@
 icon: cpu
 ---
 
-# Server Configuration (config.yaml)
+# Configuration File
 
 !!! warning Disclaimer
 
