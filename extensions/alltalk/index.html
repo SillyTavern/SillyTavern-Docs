@@ -6,15 +6,15 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.784856248250">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.785244441631">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>AllTalk TTS | docs.ST.app</title>
-    <meta name="title" content="AllTalk TTS | docs.ST.app">
-    <meta name="description" content="AllTalk is voice cloning system based on the Coqui XTTS models, requiring only a good quality wav audio file to attempt to reproduce the original...">
+    <title>AllTalk TTS V2 | docs.ST.app</title>
+    <meta name="title" content="AllTalk TTS V2 | docs.ST.app">
+    <meta name="description" content="AllTalk is a voice cloning system based on Coqui XTTS, F5-TTS, VITS, Piper and other TTS model engines, designed to produce high-quality voice...">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/extensions/alltalk/">
@@ -22,22 +22,22 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/extensions/alltalk/">
-    <meta property="og:title" content="AllTalk TTS | docs.ST.app">
-    <meta property="og:description" content="AllTalk is voice cloning system based on the Coqui XTTS models, requiring only a good quality wav audio file to attempt to reproduce the original...">
+    <meta property="og:title" content="AllTalk TTS V2 | docs.ST.app">
+    <meta property="og:description" content="AllTalk is a voice cloning system based on Coqui XTTS, F5-TTS, VITS, Piper and other TTS model engines, designed to produce high-quality voice...">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/extensions/alltalk/">
-    <meta property="twitter:title" content="AllTalk TTS | docs.ST.app">
-    <meta property="twitter:description" content="AllTalk is voice cloning system based on the Coqui XTTS models, requiring only a good quality wav audio file to attempt to reproduce the original...">
+    <meta property="twitter:title" content="AllTalk TTS V2 | docs.ST.app">
+    <meta property="twitter:description" content="AllTalk is a voice cloning system based on Coqui XTTS, F5-TTS, VITS, Piper and other TTS model engines, designed to produce high-quality voice...">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.784856248250" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.785244441631" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.784856248250" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.785244441631" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.784856248250" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.785244441631" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -222,135 +222,93 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="alltalk-tts" class="break-words">
+<doc-anchor-target id="alltalk-tts-v2" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#alltalk-tts">#</doc-anchor-trigger>
-        <span>AllTalk TTS</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#alltalk-tts-v2">#</doc-anchor-trigger>
+        <span>AllTalk TTS V2</span>
     </h1>
 </doc-anchor-target>
-<p>AllTalk is voice cloning system based on the Coqui XTTS models, requiring only a good quality wav audio file to attempt to reproduce the original speaker. It also offers finetuning options to improve the reproduction quality of the voice where needed.</p>
-<p>To look over the full feature set, please visit this <a href="https://github.com/erew123/alltalk_tts?#alltalk-tts">link</a> and <a href="https://github.com/erew123/screenshots/raw/main/sillytavern.jpg">Screenshot here</a></p>
-<p>Along with the standard SillyTavern text splitting options to choose what is or isnt spoken, AllTalk offers and additional option to use the AllTalk narrator, so that non-character text can be read out in an alternative voice <a href="https://vocaroo.com/18nrv7FR6wuA">example</a></p>
-<p>Documentation and custom settings are built into AllTalk and available on a link within the SillyTaven TTS interface.</p>
-<doc-anchor-target id="setup">
+<p>AllTalk is a voice cloning system based on Coqui XTTS, F5-TTS, VITS, Piper and other TTS model engines, designed to produce high-quality voice reproduction (either zero shot voice cloning or built-in voices). In AllTalk V2, significant updates enhance functionality and ease of use, including multiple TTS engine support, expanded customization, and performance optimizations. For a comprehensive list of features, refer to the <a href="https://github.com/erew123/alltalk_tts/wiki">AllTalk Wiki here</a>.</p>
+<hr>
+<doc-anchor-target id="key-features-in-alltalk-v2">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#setup">#</doc-anchor-trigger>
-        <span><span class="docs-emoji">&#x1F7E9;</span> Setup</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#key-features-in-alltalk-v2">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F7E9;</span> Key Features in AllTalk V2</span>
     </h2>
 </doc-anchor-target>
-<p>You have 2x current options for installation. If you are using Text-generation-webui as your LLM model loader, you can add AllTalk as an extension there. If you wish to use AllTalk as a standalone, you can do that too. For all the latest documentation, support and help please visit <a href="https://github.com/erew123/alltalk_tts?#alltalk-tts">here</a>. Below are two quick installation methods (with videos) however please look at the AllTalk website if you need manual installation methods.</p>
-<p>Click to expand one of the below:</p>
-<details>
-	<summary>QUICK SETUP - Text-Generation-webui</summary><br>
-<p><strong>NOTE</strong> You will need to <strong>uncheck</strong> &quot;Enable TTS&quot; within the <strong>Text-generation-webui interface</strong>, otherwise when you are using SillyTavern, AllTalk will dual generate TTS due to how Text-generation-webui sends messages. It is possible to set this as start-up setting within the AllTalk settings page.</p>
-<p>If you wish to see this as a video, please go <a href="https://www.youtube.com/watch?v=icn2XS5rUH8">here</a></p>
-<ol>
-<li><p>To download the AllTalk setup you can either:</p>
 <ul>
-<li>
-<ol type="A">
-<li>On the AllTalk <a href="https://github.com/erew123/alltalk_tts">page</a> select <strong>CODE</strong> &gt; <strong>Download ZIP</strong> then extract it to the text-generation-webui extensions folder<br>e.g. <code v-pre>\text-generation-webui\extensions\alltalk_tts\</code><br><br></li>
-</ol>
-</li>
-<li>
-<ol type="A" start="2">
-<li>Go to a terminal/console, move into the <code v-pre>\text-generation-webui\extensions\</code> folder<br>and <code v-pre>git clone https://github.com/erew123/alltalk_tts</code><br><br></li>
-</ol>
-</li>
+<li><strong>Multi-engine Support</strong>: Easily switch between Coqui XTTS, VITS, Piper, Parler, F5, and custom engines.</li>
+<li><strong>Voice Conversion (RVC)</strong>: Enhanced retrieval-based voice cloning pipeline.</li>
+<li><strong>Customizable Settings</strong>: Adjust per-engine settings and save startup configurations.</li>
+<li><strong>Narrator Functionality</strong>: Specify separate voices for narration and characters.</li>
+<li><strong>Standalone and Integrated Use</strong>: Seamless integration with SillyTavern.</li>
+<li><strong>DeepSpeed and Low VRAM Modes</strong>: Performance optimization for resource-limited environments.</li>
+<li><strong>Screenshots</strong>: See AllTalk V2’s interface <a href="https://github.com/erew123/alltalk_tts/discussions/237">here</a>.</li>
 </ul>
-</li>
-<li><p>In a terminal/command prompt, in the text-generation-webui folder you will start its Python environment with either <code v-pre>cmd_windows.bat</code> or <code v-pre>./cmd_linux.sh</code></p>
-</li>
-<li><p>Move into the AllTalk folder e.g. <code v-pre>cd extensions</code> then <code v-pre>cd alltalk_tts</code></p>
-</li>
-<li><p>Start the AllTalk setup script <code v-pre>atsetup.bat</code> or <code v-pre>./atsetup.sh</code></p>
-</li>
-<li><p>Follow the on-screen prompts and install the correct requirements files that you need. It&#x27;s recommended to test AllTalk works before installing DeepSpeed.</p>
-</li>
-<li><p>When the AllTalk server has started its default settings and documentation page will be on <a href="http://127.0.0.1:7851/">http://127.0.0.1:7851/</a></p>
-<p>Any time you need to make changes to AllTalk, or use Finetuning etc, always start the Text-generation-webui Python environment first.</p>
-<p>Please read the <code v-pre>🟩 Other installation notes</code> (also additional voices are available there).</p>
-<p>Finetuning &amp; DeepSpeed have other installation requirements (depending on your OS) so please read any instructions in the setup utility and refer to the AllTalk Github page for detailed instructions.<br><br></p>
-</li>
-</ol>
-</details>
-<details>
-	<summary>QUICK SETUP - Standalone Installation</summary><br>
-<p>If you wish to see this as a video, please go <a href="https://www.youtube.com/watch?v=AQYCccDRbaY">here</a></p>
-<ol>
-<li><p>To download the AllTalk setup you can either:</p>
+<hr>
+<doc-anchor-target id="setup-and-installation-options">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#setup-and-installation-options">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F7E8;</span> Setup and Installation Options</span>
+    </h2>
+</doc-anchor-target>
+<p>AllTalk offers both standalone and integrated installation methods. The fastest setup involves using one of the quick installation options provided, with scripts automating most of the process.</p>
 <ul>
-<li>
-<ol type="A">
-<li>On the AllTalk <a href="https://github.com/erew123/alltalk_tts">page</a> select <strong>CODE</strong> &gt; <strong>Download ZIP</strong> then extract it to the folder of your choice<br>e.g. <code v-pre>C:\myfiles\alltalk_tts\</code><br><br></li>
-</ol>
-</li>
-<li>
-<ol type="A" start="2">
-<li>Go to a terminal/console, move into the folder of your choice e.g <code v-pre>C:\myfiles\</code> folder<br>and <code v-pre>git clone https://github.com/erew123/alltalk_tts</code><br><br></li>
-</ol>
-</li>
+<li><strong>Standalone Installation</strong>: Recommended for most users (<a href="https://github.com/erew123/alltalk_tts/wiki/Install-%E2%80%90-Standalone-Installation">Standalone Guide</a>)</li>
+<li><strong>Text-generation-webui Integration</strong>: For integration into Text-generation-webui (<a href="https://github.com/erew123/alltalk_tts/wiki/Install-%E2%80%90-Text%E2%80%90generation%E2%80%90webui-Installation">TGWUI Installation Guide</a>)</li>
 </ul>
-</li>
-<li><p>In a terminal/command prompt, move into the AllTalk folder e.g. <code v-pre>cd alltalk_tts</code></p>
-</li>
-<li><p>Start the AllTalk setup script <code v-pre>atsetup.bat</code> or <code v-pre>./atsetup.sh</code></p>
-</li>
-<li><p>Follow the on-screen prompts and install the correct requirements files that you need. It&#x27;s recommended to test AllTalk works before installing DeepSpeed.</p>
-</li>
-<li><p>When the AllTalk server has started its default settings and documentation page will be on <a href="http://127.0.0.1:7851/">http://127.0.0.1:7851/</a></p>
-<p>DeepSpeed on Windows machines will be installed as standard. Linux machines have other requirements which are detailed within the setup utility and on this page.</p>
-<p>Please read the <code v-pre>🟩 Other installation notes</code> (also additional voices are available there).</p>
-<p>Finetuning has other installation requirements so please read any instructions in the setup utility and refer to the AllTalk Github page for detailed instructions.<br><br></p>
-</li>
-</ol>
-</details>
-<doc-anchor-target id="other-installation-notes">
+<doc-anchor-target id="manual-installation">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#other-installation-notes">#</doc-anchor-trigger>
-        <span><span class="docs-emoji">&#x1F7E9;</span> Other installation notes</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#manual-installation">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F7E9;</span> Manual Installation</span>
     </h4>
 </doc-anchor-target>
-<p>On first startup, AllTalk will download the Coqui XTTSv2 2.0.2 model to its <strong>models</strong> folder (1.8GB space required). Check the command prompt/terminal window if you want to know what its doing. After it says &quot;Model Loaded&quot; AllTalk is usually available on its IP address a few seconds later, for you to connect to in your browser.</p>
-<p>Once the extension is loaded, please find all documentation and settings on <a href="http://127.0.0.1:7851/">http://127.0.0.1:7851/</a></p>
-<p><strong>Where to find voices</strong> <a href="https://aiartes.com/voiceai">https://aiartes.com/voiceai</a> or <a href="https://commons.wikimedia.org/">https://commons.wikimedia.org/</a> or interviews on youtube etc. Instructions on how to cut down and prepare a voice sample are within the built in documentation.</p>
-<p>Please read the note about ensuring your character cards are set up correctly.</p>
-<p>Some extra voices for AllTalk are downloadable <a href="https://drive.google.com/file/d/1bYdZdr3L69kmzUN3vSiqZmLRD7-A3M47/view?usp=drive_link">here</a></p>
-<doc-anchor-target id="a-note-on-character-cards-greeting-messages">
+<p>For advanced users requiring detailed control, follow the <a href="https://github.com/erew123/alltalk_tts/wiki/Install-%E2%80%90-Manual-Installation-Guide">Manual Installation Guide</a> for a step-by-step setup on Windows, Linux, or Mac (untested).</p>
+<doc-anchor-target id="google-colab-installation">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#a-note-on-character-cards-greeting-messages">#</doc-anchor-trigger>
-        <span><span class="docs-emoji">&#x1F7E9;</span> A note on Character Cards &amp; Greeting Messages</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#google-colab-installation">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F7E9;</span> Google Colab Installation</span>
     </h4>
 </doc-anchor-target>
-<p>Messages intended for the Narrator should be enclosed in asterisks <code v-pre>*</code> and those for the character inside quotation marks <code v-pre>&quot;</code>. However, AI systems often deviate from these rules, resulting in text that is neither in quotes nor asterisks. Sometimes, text may appear with only a single asterisk, and AI models may vary their formatting mid-conversation. For example, they might use asterisks initially and then switch to unmarked text. A properly formatted line should look like this:</p>
-<p><code v-pre>&quot;</code>Hey! I&#x27;m so excited to finally meet you. I&#x27;ve heard so many great things about you and I&#x27;m eager to pick your brain about computers.<code v-pre>&quot;</code> <code v-pre>*</code>She walked across the room and picked up her cup of coffee<code v-pre>*</code></p>
-<p>Most narrator/character systems switch voices upon encountering an asterisk or quotation marks, which is somewhat effective. AllTalk has undergone several revisions in its sentence splitting and identification methods. While some irregularities and AI deviations in message formatting are inevitable, any line beginning or ending with an asterisk should now be recognized as Narrator dialogue. Lines enclosed in double quotes are identified as Character dialogue. For any other text, you can choose how AllTalk handles it: whether it should be interpreted as Character or Narrator dialogue (most AI systems tend to lean more towards one format when generating text not enclosed in quotes or asterisks).</p>
-<p>You can monitor what AllTalk identifies as Narrator lines on the terminal/command prompt and adjust its behavior if needed (Text Not Inside - Function).</p>
-<doc-anchor-target id="using-alltalk-within-sillytavern-understanding-the-settings">
+<p>Run AllTalk in a cloud environment with the <a href="https://github.com/erew123/alltalk_tts/wiki/Google-COLAB">Google Colab Installation</a> for users who prefer not to install locally.</p>
+<hr>
+<doc-anchor-target id="using-alltalk-within-sillytavern">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#using-alltalk-within-sillytavern-understanding-the-settings">#</doc-anchor-trigger>
-        <span><span class="docs-emoji">&#x1F7E8;</span> Using AllTalk within SillyTavern &amp; understanding the settings</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#using-alltalk-within-sillytavern">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F7E8;</span> Using AllTalk within SillyTavern</span>
     </h2>
 </doc-anchor-target>
-<p>When you have AllTalk loaded, within SillyTavern on the TTS page, select AllTalk and at the bottom is a link &quot;AllTalk Config &amp; Docs&quot;. Click that link and it will take you to your AllTalk server where you can find explanations of the settings.</p>
-<p>Some settings cannot be used at the same time, so AllTalk will enable/disable certain settings as needed.</p>
-<p>If SillyTavern is loaded before AllTalk is available, you may need to click the Reload button on SillyTavern&#x27;s TTS extensions page.</p>
-<p>A few quick tip on using AllTalk within SillyTavern:</p>
+<p>Once AllTalk is loaded, select it within SillyTavern on the TTS page, ensuring to select the correct AllTalk server version in the settings.</p>
 <ul>
-<li>Only change DeepSpeed, Low VRAM or Model one at a time. Wait for it to say Ready before changing something else.</li>
-<li>You can permanently change the AllTalk startup settings or DeepSpeed, Low VRAM and Model in the AllTalk settings page.</li>
-<li>Different AI models use quotes and asterisks differently, so when using the AllTalk narrator, you may need to change &quot;Text not inside&quot; depending on model.</li>
-<li>Add new voice samples to the voices folder. You can Finetune a model to make it sound even closer to the original sample.</li>
-<li>DeepSpeed will improve processing time to TTS to be 2-3x faster (Installed as default on Stanalone installations, but needs activating)</li>
-<li>Low VRAM can be very beneficial if you don&#x27;t have much memory left after loading your LLM.</li>
+<li><strong>Settings Management</strong>: AllTalk may enable or disable specific settings based on your selected configuration.</li>
+<li><strong>Loading Sequence</strong>: If SillyTavern is loaded before AllTalk, reload the TTS extensions page.</li>
+<li><strong>Performance Optimization</strong>: Enable DeepSpeed and Low VRAM modes selectively to improve performance based on system resources.</li>
+<li><strong>Narrator function</strong>: Details of the Narrator function can be found on the <a href="https://github.com/erew123/alltalk_tts/wiki/Narrator-Function">AllTalk Wiki</a>.</li>
 </ul>
-<doc-anchor-target id="support-help-assistance-other-questions">
+<p>Full details of the SillyTavern AllTalk Extension will be updated on the <a href="https://github.com/erew123/alltalk_tts/wiki/SillyTavern-Extension">AllTalk Wiki page for SillyTavern</a></p>
+<p>TGWUI Users who user the AllTalk extension for TGWUI need to disable <code v-pre>Enable TGWUI TTS</code> in the TGWUI chat interface, otherwise you will have duplicate TTS audio generated.</p>
+<hr>
+<doc-anchor-target id="troubleshooting">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#support-help-assistance-other-questions">#</doc-anchor-trigger>
-        <span><span class="docs-emoji">&#x1F7E8;</span> Support, Help, Assistance &amp; other questions</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#troubleshooting">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F7E8;</span> Troubleshooting</span>
     </h2>
 </doc-anchor-target>
-<p>Please visit <a href="https://github.com/erew123/alltalk_tts?#alltalk-tts">here</a></p>
+<p>If you experience issues that you believe are specific to AllTalk within SillyTavern, please refer to the <a href="https://github.com/erew123/alltalk_tts/wiki/SillyTavern-Extension">AllTalk Wiki page for SillyTavern</a> for the lastest information.</p>
+<hr>
+<doc-anchor-target id="support-assistance-and-feature-requests">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#support-assistance-and-feature-requests">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F7EA;</span> Support, Assistance, and Feature Requests</span>
+    </h3>
+</doc-anchor-target>
+<p>For further assistance:</p>
+<ul>
+<li>Refer to the <a href="https://github.com/erew123/alltalk_tts/wiki">Wiki</a> and built-in documentation.</li>
+<li>Join discussions on the <a href="https://github.com/erew123/alltalk_tts/discussions/245">Discussion Board</a>.</li>
+<li>Submit bugs or feature requests through the <a href="https://github.com/erew123/alltalk_tts/issues">Issue Tracker</a>.</li>
+</ul>
+<hr>
 
                                 
                                 <!-- Required only on API pages -->
@@ -423,6 +381,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "AllTalk TTS", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "AllTalk TTS V2", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
