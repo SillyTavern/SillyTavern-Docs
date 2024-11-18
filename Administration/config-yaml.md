@@ -1,3 +1,7 @@
+---
+icon: cpu
+---
+
 # Server Configuration (config.yaml)
 
 !!! warning Disclaimer
