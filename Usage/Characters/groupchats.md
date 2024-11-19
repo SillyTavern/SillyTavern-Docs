@@ -9,6 +9,10 @@ route: /usage/core-concepts/groupchats
 
 Decides how characters in group chats are drafted for their replies.
 
+### Manual
+
+You can select the character to reply manually from the menu or with the `/trigger` command. The selected group member will be the only one to reply. User messages won't trigger any replies automatically. Triggering a generation with an empty user input will trigger a random unmuted group member to reply.
+
 #### Natural Order
 
 Tries to simulate the flow of a real human conversation. The algorithm is as follows:
