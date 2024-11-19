@@ -89,7 +89,7 @@ Allow to edit the automatically generated prompts manually before sending them t
 
 ### Use function tool
 
-Uses [function calling](/extensions/Stable-Diffusion.md) to automatically detect.
+Uses [function calling](/extensions/Stable-Diffusion.md) to automatically detect the intention to generate an image.
 
 **Requirements:**
 
