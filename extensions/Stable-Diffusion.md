@@ -1,24 +1,44 @@
 # Image Generation
 
 Use local or cloud-based Stable Diffusion, FLUX or DALL-E APIs to generate images.
-The free mode is also supported via the `/sd (anything_here)` command in the chat input bar.
+
+Automatically generate images as replies to your messages for full immersion, 
+generate from chat history and character information from the wand menu or slash commands, 
+or use the `/sd (anything_here)` command in the chat input bar to make an image with your own prompt.
+
 Most common Stable Diffusion generation settings are customizable within the SillyTavern UI.
 
-## Supported Sources
+- Supports [multiple image generation sources](#supported-sources), both local and cloud-based
+- Various [generation modes](#generation-modes) for characters, scenes, and custom prompts
+- [Slash commands](#how-to-generate-an-image) for easy image generation within chats
+- [Interactive mode](#use-interactive-mode) to trigger image generation based on natural language requests
+- Customizable prompt templates and [prefixes](#common-prompt-prefix) for consistent style and quality
+- [Character-specific prompt prefixes](#character-specific-prompt-prefix) for tailored character images
+- [Style presets](#styles) to quickly switch between different image generation settings
+- Flexible [visibility options](#chat-message-visibility) for generated images in chat
+- Advanced [ComfyUI integration](#comfyui-configuration) for highly customizable workflows
+- Ability to [view all generated images](#view-all-generated-images) in a character gallery
+- [Image swipes](#image-swipes) feature to regenerate images while keeping the same prompt
+- Options to [edit prompts before generation](#edit-prompts-before-generation) and [extend free-mode prompts](#extend-free-mode-prompts)
+- Integration with AI [function calling](#use-function-tool) for automatic image generation detection
+  
+## Supported sources
 
-* [Block Entropy](https://blockentropy.ai/)
-* [ComfyUI](https://github.com/comfyanonymous/ComfyUI). Requires a workflow JSON file.
-* [Draw Things](https://drawthings.ai/)
-* [HuggingFace Serverless Inference](https://huggingface.co/docs/api-inference/index)
-* [NovelAI Diffusion](https://novelai.net/). Requires an active subscription.
-* [OpenAI DALL-E 2/3](https://platform.openai.com/)
-* [Pollinations](https://pollinations.ai/)
-* [SD.Next / vladmandic](https://github.com/vladmandic/automatic)
-* [SillyTavern Extras](https://github.com/SillyTavern/SillyTavern-Extras) (deprecated, not recommended)
-* [Stability AI](https://platform.stability.ai/)
-* [Stable Diffusion WebUI / AUTOMATIC1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
-* [Stable Horde](https://stablehorde.net/)
-* [TogetherAI](https://api.together.xyz/models)
+| Source                                                                                            | Remarks                                                                                         |
+|:--------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------|
+| [Block Entropy](https://blockentropy.ai/)                                                         | All services will be discontinued on December 31, 2024                                          |
+| [ComfyUI](https://github.com/comfyanonymous/ComfyUI)                                              | Local, open source (GPL3), free of charge, see [ComfyUI Configuration](#comfyui-configuration). |
+| [Draw Things](https://drawthings.ai/)                                                             | Local, Mac/iOS, free of charge                                                                  |
+| [HuggingFace Serverless](https://huggingface.co/docs/api-inference/index)                         | Cloud, free of charge                                                                           |
+| [NovelAI Diffusion](https://novelai.net/)                                                         | Cloud, requires an active subscription                                                          |
+| [OpenAI DALL-E 2/3](https://platform.openai.com/)                                                 | Cloud, requires an active subscription                                                          |
+| [Pollinations](https://pollinations.ai/)                                                          | Cloud, open source (MIT), free of charge                                                        |
+| [SD.Next / vladmandic](https://github.com/vladmandic/automatic)                                   | Local, open source (AGPL3), free of charge                                                      |
+| [SillyTavern Extras](https://github.com/SillyTavern/SillyTavern-Extras)                           | Deprecated, not recommended                                                                     |
+| [Stability AI](https://platform.stability.ai/)                                                    | Cloud, paid                                                                                     |
+| [Stable Diffusion WebUI / AUTOMATIC1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui) | Local, open source (AGPL3), free of charge                                                      |
+| [Stable Horde](https://stablehorde.net/)                                                          | Cloud, open source (AGPL3), free of charge                                                      |
+| [TogetherAI](https://api.together.xyz/models)                                                     | Cloud                                                                                           |
 
 ## Generation modes
 
@@ -182,7 +202,7 @@ A text message can be customized by changing the "Chat Message Template" under I
 
 ## ComfyUI Configuration
 
-ComfyUI is a fast and very flexible option for image generation. 
+[ComfyUI](https://github.com/comfyanonymous/ComfyUI) is a fast and very flexible option for image generation. 
 
 If you're familiar with ComfyUI, the tl;dr is: make your workflow in ComfyUI, download it **in API format**, and paste it into the SillyTavern ComfyUI Workflow Editor. ST will submit your workflow to ComfyUI's API and you will get an image in your chat. But with great power comes great responsibility, and the main responsibility is inserting placeholders in your workflow JSON so you can change settings from SillyTavern.
 
@@ -192,7 +212,10 @@ If you're not familiar with ComfyUI, you can still use it to generate images in 
 
 This panel allows you to configure and manage your ComfyUI integration with SillyTavern.
 
-Enter the URL of your ComfyUI server in the **ComfyUI URL** input field. The default value is `http://127.0.0.1:8188`. If you are using SwarmUI, the default port for the managed ComfyUI server is `7821`, 20 ports higher than the default port for SwarmUI.
+Enter the URL of your ComfyUI server in the **ComfyUI URL** input field. The default value is `http://127.0.0.1:8188`. 
+If you are using [SwarmUI](https://github.com/mcmonkeyprojects/SwarmUI), the default port for the 
+[managed ComfyUI server](https://github.com/mcmonkeyprojects/SwarmUI/blob/master/src/BuiltinExtensions/ComfyUIBackend/README.md) is `7821`, 
+20 ports higher than the default port for SwarmUI.
 
 After entering the URL, choose <i class="fa-solid fa-check"></i> **Connect** to validate and establish a connection. The ComfyUI server must be accessible from the SillyTavern host machine.
  
@@ -283,7 +306,7 @@ The prompt primitive node will be removed from the API version of the workflow, 
     },
     "class_type": "LoraTagLoader",
     "_meta": {"title": "Load LoRA Tag"}
-  }
+}
 ```
 +++ Original JSON
 ```json
@@ -394,7 +417,8 @@ Insert the `%char_avatar%`, `%width%`, and `%height%` placeholders into the JSON
 }
 ```
 
-To get a base64-encoded image string for testing your workflow in ComfyUI, use any online tool that converts images to base64 strings. Here's an example string you can use for initial testing: [sd-base64-test-string.txt](/static/extensions/sd-comfy-base64-test-string.txt).
+To get a base64-encoded image string for testing your workflow in ComfyUI, use any online tool that converts images to base64 strings. 
+Here's an example string you can use for initial testing: [sd-comfy-base64-test-string.txt](/static/extensions/sd-comfy-base64-test-string.txt).
 
 #### Other placeholders
 
@@ -453,7 +477,9 @@ Read all the general information on this page so you're familiar with the image 
 
 #### Loading LoRAs
 
-Use a LoRA tag loader node (such as [Load LoRA Tag](https://github.com/badjeff/comfyui_lora_tag_loader)) to load any LoRAs specified in the prompt. Now you can add as many LoRAs as you like to your prompt with tags like `<lora:CroissantStyle:0.8>`, and they will be loaded into your workflow. This will also make the "pro-tip" of using LoRAs in [character-specific prompt prefixes](#character-specific-prompt-prefix) work with ComfyUI.
+Use a LoRA tag loader node (such as [Load LoRA Tag](https://github.com/badjeff/comfyui_lora_tag_loader)) to load any LoRAs specified in the prompt. 
+Now you can add as many LoRAs as you like to your prompt with tags like `<lora:CroissantStyle:0.8>`, and they will be loaded into your workflow. 
+This will also make the "pro-tip" of using LoRAs in [character-specific prompt prefixes](#character-specific-prompt-prefix) work with ComfyUI.
 
 #### Setting workflow values from styles or slash-commands
 
@@ -463,7 +489,5 @@ You can use macros in custom placeholder values. As a practical example, let's s
 2. Use a custom placeholder to set the value of that input, but use <code>\{\{getvar::remove_background}}</code> as the replace value
 3. Now you can set the value of `remove_background` with `/setvar key=remove_background true` or `/setvar key=remove_background false` before generating an image
 4. The workflow will use the value you set to determine whether to remove the background
-5. Make an image style "No background" with common prompt prefix <code>\{\{setvar::remove_background::true{prompt}}}</code>
+5. Make an image style "No background" with common prompt prefix <code>\{\{setvar::remove_background::true}}</code>
 6. Use the style control or `/imagine-style No background` to set the value of `remove_background` to `true` before generating an image
-
-
