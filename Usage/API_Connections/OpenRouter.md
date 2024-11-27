@@ -9,7 +9,7 @@ OpenRouter works by letting you use keys they own to access models like GPT-4 an
 
 It has a free trial (about $1) and paid access afterward.  No subscription or monthly bill - you pay for what you actually use. Some models have free access with a limited context size.
 
-- [OpenRouter Pricing Details](https://openrouter.ai/docs)
+- [OpenRouter Pricing Details](https://openrouter.ai/models?o=pricing-high-to-low)
 - Create an OpenRouter account: [openrouter.ai](https://openrouter.ai/)
 
 ![OpenRouter-ConnectionPanel](/static/openrouter-connection.png)

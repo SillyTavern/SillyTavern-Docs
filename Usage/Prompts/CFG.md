@@ -14,7 +14,8 @@ CFG, or classifier-free guidance is a method that's used to help make parts of a
 
 ### Supported Backend APIs
 
-Currently, the supported backends are oobabooga's textgen WebUI, NovelAI, and TabbyAPI. NovelAI has its own documentation for CFG that you can read [here](https://docs.novelai.net/text/cfg.html)
+Currently, the supported backends are oobabooga's textgen WebUI, NovelAI, and TabbyAPI. 
+NovelAI had its own [documentation for CFG](https://web.archive.org/web/20240917150051/https://docs.novelai.net/text/cfg.html).
 
 WARNING: CFG increases vram usage due to ingesting more than 1 prompt! If your GPU memory runs out while generating a prompt with CFG on, consider reducing your context size, using a lesser parameter model, or turning off CFG entirely.
 

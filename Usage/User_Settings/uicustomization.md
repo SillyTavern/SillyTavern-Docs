@@ -1,5 +1,6 @@
 ---
 order: user-settings-10
+route: /usage/core-concepts/uicustomization/
 ---
 
 # UI Customization

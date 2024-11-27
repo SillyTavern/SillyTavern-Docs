@@ -31,8 +31,7 @@ Requires a SearXNG instance URL (either private or public). Uses HTML format for
 Learn more: <https://docs.searxng.org/>
 
 ### Tavily AI
-Requires an API key.
-Get the key here: <https://app.tavily.com/>
+Requires an API key. Get the key here: <https://app.tavily.com/> :icon-lock: 
 
 ## How to use
 

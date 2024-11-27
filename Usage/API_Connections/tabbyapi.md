@@ -4,8 +4,8 @@ A FastAPI based application that allows for generating text using an LLM using t
 * [GitHub](https://github.com/theroyallab/tabbyAPI)
 
 ### Quickstart
-1. Follow the [installation instructions](https://github.com/theroyallab/tabbyAPI/wiki/1.-Getting-Started) on the official TabbyAPI GitHub.
-2. [Create your config.yml](https://github.com/theroyallab/tabbyAPI/wiki/2.-Configuration) to set your model path, default model, sequence length, etc. You can ignore most (if not all) of these settings if you want.
+1. Follow the [installation instructions](https://github.com/theroyallab/tabbyAPI/wiki/01.-Getting-Started) on the official TabbyAPI GitHub.
+2. [Create your config.yml](https://github.com/theroyallab/tabbyAPI/wiki/02.-Server-options) to set your model path, default model, sequence length, etc. You can ignore most (if not all) of these settings if you want.
 3. Launch TabbyAPI. If it worked, you should see something like this:
 
     ![TabbyAPI terminal](/static/tabby-terminal.png)

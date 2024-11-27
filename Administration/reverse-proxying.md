@@ -27,11 +27,11 @@ You must have prior knowledge of
 -   Linux console commands
 -   DNS Records
 -   Public IP addresses
--   [Docker](https://docker.com)
+-   [Docker](https://www.docker.com)
 
 !!!
 
-**You will have to buy a domain for yourself and configure a `CNAME` for your SillyTavern page. We suggest adding or buying the domain on [Cloudflare](https://cloudflare.com) as this guide will cover how to do this with Cloudflare itself.**
+**You will have to buy a domain for yourself and configure a `CNAME` for your SillyTavern page. We suggest adding or buying the domain on [Cloudflare](https://www.cloudflare.com) as this guide will cover how to do this with Cloudflare itself.**
 
 ## Installation
 

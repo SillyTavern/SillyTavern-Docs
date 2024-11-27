@@ -31,7 +31,7 @@ This method is recommended because Conda makes a 'virtual environment' for the E
 
 1. Install [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
 
-    _(Important!) Read [how to use Conda](https://conda.io/projects/conda/en/latest/user-guide/getting-started.html)_
+    _(Important!) Read [how to use Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html)_
 
 2. Install [git](https://git-scm.com/downloads)
 

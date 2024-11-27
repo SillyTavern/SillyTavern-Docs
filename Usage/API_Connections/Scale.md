@@ -30,4 +30,4 @@ Currently, Scale doesn't support token streaming and configuring parameters like
 
 ## Credits
 
-Implementation and documentation are inspired by the work of [khanon](https://github.com/khanonners): <https://github.com/khanonners/TavernAIScale>
+Implementation and documentation are inspired by the work of khanon on TavernAIScale.
