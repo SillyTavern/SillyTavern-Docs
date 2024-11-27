@@ -1,3 +1,7 @@
+---
+templating: false
+---
+
 # Image Generation
 
 Use local or cloud-based Stable Diffusion, FLUX or DALL-E APIs to generate images.
@@ -72,12 +76,12 @@ To view all saved images for a character (including other chats), open a gallery
 Use a `negative` named argument before the prompt to enforce a specific negative prompt for this generation.
 
 ```stscript
-/sd negative="ugly, fat" cute girl eating a burger
+/sd negative="fries" cute tater farmer holding a tayto in a spud-field
 ```
 
 #### Include a character-specific prefix
 
-Use a special \{\{charPrefix\}\} macro in free-prompt mode to include positive and negative prompt prefixes (if defined) for the current character.
+Use a special `{{charPrefix}}` macro in free-prompt mode to include positive and negative prompt prefixes (if defined) for the current character.
 
 ```stscript
 /sd {{charPrefix}}, riding a bike
@@ -198,7 +202,7 @@ You can also switch between styles using the `/imagine-style` command (or `/sd-s
 
 Generated images inserted into the chat are hidden in the main API prompts by default, but this can be overriden individually per generation initiator ("Magic wand" icon, slash command, interactive mode). This can be used for making the experience more immersive by letting the characters "acknowledge" the images. Multimodal models in Chat Completions API may also 'see' the images if "Send inline images" is enabled.
 
-A text message can be customized by changing the "Chat Message Template" under Image Prompt Templates. All regular macros can be used in this template, plus a special \{\{prompt\}\} macro to specify where the image prompt will be added.
+A text message can be customized by changing the "Chat Message Template" under Image Prompt Templates. All regular macros can be used in this template, plus a special `{{prompt}}` macro to specify where the image prompt will be added.
 
 ## ComfyUI Configuration
 
@@ -483,11 +487,13 @@ This will also make the "pro-tip" of using LoRAs in [character-specific prompt p
 
 #### Setting workflow values from styles or slash-commands
 
-You can use macros in custom placeholder values. As a practical example, let's say you sometimes want to generate images without a background, and you'd like this to be switchable with a slash-command or image style. Here's how you could do it:
+You can use macros in custom placeholder values. As a practical example, 
+let's say you sometimes want to generate images without a background, and you'd like this to be switchable with a 
+slash-command or image style. Here's how you could do it:
 
 1. Make a ComfyUI workflow that removes the image background, or not, depending on the value of an input
-2. Use a custom placeholder to set the value of that input, but use <code>\{\{getvar::remove_background}}</code> as the replace value
+2. Use a custom placeholder to set the value of that input, but use `{{getvar::remove_background}}` as the replace value
 3. Now you can set the value of `remove_background` with `/setvar key=remove_background true` or `/setvar key=remove_background false` before generating an image
 4. The workflow will use the value you set to determine whether to remove the background
-5. Make an image style "No background" with common prompt prefix <code>\{\{setvar::remove_background::true}}</code>
+5. Make an image style "No background" with common prompt prefix `{{setvar::remove_background::true}}`
 6. Use the style control or `/imagine-style No background` to set the value of `remove_background` to `true` before generating an image
