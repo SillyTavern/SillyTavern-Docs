@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.786016665215">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.786106553133">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.786016665215" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.786106553133" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.786016665215" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.786106553133" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.786016665215" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.786106553133" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -234,7 +234,7 @@
 <li><doc-anchor-trigger to="#main-prompt-system-prompt">Main instructions</doc-anchor-trigger> to the AI about how to generate a response</li>
 <li>Definitions of the <a href="../core-concepts/characterdesign/">roles that the AI should take on</a></li>
 <li>Definitions of <a href="../core-concepts/personas/">the role that you are taking on</a></li>
-<li><a href="../worldinfo/">Information about the &quot;world&quot;</a> that the AI is interacting with</li>
+<li><a href="../core-concepts/worldinfo/">Information about the &quot;world&quot;</a> that the AI is interacting with</li>
 <li>Relevant documents or information from <a href="../core-concepts/data-bank/">Data Bank</a></li>
 <li><a href="../../extensions/summarize/">Summaries</a> of the past conversation</li>
 <li>Results of <a href="../../extensions/websearch/">web searches</a> or other <a href="../../for-contributors/function-calling/">external data sources</a></li>
@@ -267,7 +267,7 @@
 <doc-tabs>
 <doc-tab v-cloak id="text-completion-apis">
 <template #title>Text Completion APIs</template>
-<p>Use the <a href="advancedformatting/">Advanced Formatting</a> panel to customize prompt construction for Text Completion APIs.</p>
+<p>Use the <a href="../core-concepts/advancedformatting/">Advanced Formatting</a> panel to customize prompt construction for Text Completion APIs.</p>
 </doc-tab>
 <doc-tab v-cloak id="chat-completion-apis">
 <template #title>Chat Completion APIs</template>
@@ -284,7 +284,7 @@
 <doc-tabs>
 <doc-tab v-cloak id="text-completion-apis">
 <template #title>Text Completion APIs</template>
-<p>The <a href="advancedformatting/#system-prompt">System Prompt</a> is a part of the <a href="context-template/#story-string">Story String</a> and usually the first part of the prompt that the model receives.</p>
+<p>The <a href="../core-concepts/advancedformatting/#system-prompt">System Prompt</a> is a part of the <a href="context-template/#story-string">Story String</a> and usually the first part of the prompt that the model receives.</p>
 </doc-tab>
 <doc-tab v-cloak id="chat-completion-apis">
 <template #title>Chat Completion APIs</template>
@@ -401,7 +401,7 @@
     </h3>
 </doc-anchor-target>
 <p>What if you want the AI to act as a narrator, describing events from an omniscient perspective, inventing its own characters and settings?</p>
-<p>One approach is to create a named character for the AI to use as a narrator. This character could be called &quot;Narrator&quot; or &quot;AI&quot;, suggesting that the AI is a general-purpose storyteller, or it could be named after a specific scenario or setting, giving the AI the task of narrating a story in that setting. The details of the setting can then be defined in the <a href="../core-concepts/characterdesign/">Character</a> or in <a href="../worldinfo/">World Info</a>.</p>
+<p>One approach is to create a named character for the AI to use as a narrator. This character could be called &quot;Narrator&quot; or &quot;AI&quot;, suggesting that the AI is a general-purpose storyteller, or it could be named after a specific scenario or setting, giving the AI the task of narrating a story in that setting. The details of the setting can then be defined in the <a href="../core-concepts/characterdesign/">Character</a> or in <a href="../core-concepts/worldinfo/">World Info</a>.</p>
 <p>You will need to adjust the default main prompt to reflect the AI&#x27;s role. For a general-purpose narrator, you might use:</p>
 <blockquote>
 <p>You are {{char}}, a skilled and versatile storyteller. Narrate the story.</p>
@@ -445,7 +445,7 @@
         <span>Adding to the Prompt (World Info)</span>
     </h2>
 </doc-anchor-target>
-<p>You can insert additional information anywhere in the prompt using the <a href="../worldinfo/">World Info</a> feature. By setting the conditions for when the information should be inserted, you can guide the AI to include specific details, change how it responds, or add new elements to the conversation.</p>
+<p>You can insert additional information anywhere in the prompt using the <a href="../core-concepts/worldinfo/">World Info</a> feature. By setting the conditions for when the information should be inserted, you can guide the AI to include specific details, change how it responds, or add new elements to the conversation.</p>
 <p>Some common uses of World Info include:</p>
 <ul>
 <li>a &quot;lorebook&quot; or &quot;encyclopedia&quot; with information about the world or setting</li>
@@ -479,7 +479,7 @@
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../usage/prompts/advancedformatting/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../usage/core-concepts/advancedformatting/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
                                                 <span class="block mt-1">Advanced Formatting</span>
