@@ -1,6 +1,7 @@
 ---
 order: 130
 icon: globe
+route: /usage/core-concepts/worldinfo/
 ---
 
 # World Info

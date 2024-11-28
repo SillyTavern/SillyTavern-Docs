@@ -55,7 +55,7 @@ It is possible to configure a proxy/alternative endpoint for OpenAI's backend. T
 Examples of backends which implement this API are:
 
 * [LM Studio](https://lmstudio.ai/)
-* [LiteLLM](https://litellm.ai/)
+* [LiteLLM](https://www.litellm.ai/)
 * [LocalAI](https://localai.io/)
 
 This feature is accessed by:

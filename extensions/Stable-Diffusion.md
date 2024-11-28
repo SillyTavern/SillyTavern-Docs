@@ -42,7 +42,7 @@ Most common Stable Diffusion generation settings are customizable within the Sil
 | [Stability AI](https://platform.stability.ai/)                                                    | Cloud, paid                                                                                     |
 | [Stable Diffusion WebUI / AUTOMATIC1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui) | Local, open source (AGPL3), free of charge                                                      |
 | [Stable Horde](https://stablehorde.net/)                                                          | Cloud, open source (AGPL3), free of charge                                                      |
-| [TogetherAI](https://api.together.xyz/models)                                                     | Cloud                                                                                           |
+| [TogetherAI](https://docs.together.ai/docs/serverless-models#image-models)                        | Cloud                                                                                           |
 
 ## Generation modes
 

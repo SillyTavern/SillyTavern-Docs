@@ -24,7 +24,7 @@ Connection Profiles store the following selections.
 ### Text Completion APIs
 
 * [System Prompt and its state](/Usage/Prompts/advancedformatting.md#system-prompt)
-* [Instruct Mode state and template](//Usage/Core_Concepts/instructmode.md)
+* [Instruct Mode state and template](/Usage/Prompts/instructmode.md)
 * [Context Template](/Usage/Prompts/advancedformatting.md#context-template)
 * [Tokenizer](/Usage/Prompts/advancedformatting.md#tokenizer)
 

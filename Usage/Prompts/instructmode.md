@@ -1,5 +1,6 @@
 ---
 order: prompts-30
+route: /usage/core-concepts/instructmode/
 ---
 
 # Instruct Mode

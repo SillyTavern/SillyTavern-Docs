@@ -127,7 +127,7 @@ Using Docker on Windows is **_really_** complicated. Not only do you need to act
 It is highly suggested you install SillyTavern by following our [Windows](/Installation/Windows.md) guide. This section is a _rough_ idea of how it can be done on Windows.
 !!!
 
-1.  Install Docker Desktop by following the Docker installation guide [here](https://docs.docker.com/desktop/install/windows-install/).
+1.  Install Docker Desktop by following the Docker installation guide [here](https://docs.docker.com/desktop/setup/install/windows-install/).
 2.  Install [Git for Windows](https://git-scm.com/download/win).
 3.  Clone the SillyTavern repository.
 
@@ -214,7 +214,7 @@ Even though macOS is similar to Linux, it doesn't have the Docker Engine. You wi
 You will also need to install [Homebrew](https://brew.sh/) in order to install Git on your Mac. This section is a _rough_ idea on how it can be done on macOS.
 !!!
 
-1.  Install Docker Desktop by following the Docker installation guide [here](https://docs.docker.com/desktop/install/mac-install/).
+1.  Install Docker Desktop by following the Docker installation guide [here](https://docs.docker.com/desktop/setup/install/mac-install/).
 2.  Install `git` using Homebrew.
 
     ```sh
