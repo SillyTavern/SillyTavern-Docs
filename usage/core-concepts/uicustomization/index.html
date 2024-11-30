@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.786106553133">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.786286022617">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.786106553133" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.786286022617" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.786106553133" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.786286022617" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.786106553133" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.786286022617" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -254,11 +254,48 @@
         <span>Display Settings</span>
     </h3>
 </doc-anchor-target>
-<p>These fundamental display options affect how characters and messages are presented in the chat interface. Choose the style that best fits your preferences and provides the most comfortable reading experience.</p>
-<ul>
-<li><strong>Avatar Style</strong>: Choose between Circle, Square, or Rectangle</li>
-<li><strong>Chat Style</strong>: Select from Flat, Bubbles, or Document layouts</li>
-</ul>
+<p>These display options affect how characters and messages are presented in the chat interface.</p>
+<doc-anchor-target id="avatar-style">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#avatar-style">#</doc-anchor-trigger>
+        <span>Avatar Style</span>
+    </h4>
+</doc-anchor-target>
+<p>Choose between Circle, Square, or Rectangle.</p>
+<doc-anchor-target id="chat-style">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#chat-style">#</doc-anchor-trigger>
+        <span>Chat Style</span>
+    </h4>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Style</th>
+<th>Description</th>
+<th><a href="../../st-script/#ui-styling">Slash command</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Flat</strong></td>
+<td>Clean and continuous &quot;chat log&quot; style, a flat canvas for your AI interactions to come to life.</td>
+<td><code v-pre>/flat</code><br><code v-pre>/default</code></td>
+</tr>
+<tr>
+<td><strong>Bubbles</strong></td>
+<td>&quot;Instant messenger&quot; style with distinct bubbles for each message, delightful rounded corners, and a subtle 3D effect.</td>
+<td><code v-pre>/bubble</code><br><code v-pre>/bubbles</code></td>
+</tr>
+<tr>
+<td><strong>Document</strong></td>
+<td>Compact, document-like appearance with click-to-edit mode and a text-focused layout. Hides avatars, timestamps, and message control buttons for past messages.</td>
+<td><code v-pre>/single</code><br><code v-pre>/story</code></td>
+</tr>
+</tbody>
+</table>
+</div>
 <doc-anchor-target id="theme-colors">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#theme-colors">#</doc-anchor-trigger>
