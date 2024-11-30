@@ -8,9 +8,33 @@ order: 35
 # Extensions
 
 SillyTavern comes with many extensions that can be enabled or disabled in the Extensions panel. Extensions can add new
-features, change the behaviour of existing features, or provide additional content for your AI to use.
+features, change the behaviour of existing features, or provide additional content for your AI to use. More extensions
+can be installed from the "Download Extensions & Assets" menu in the Extensions panel.
+
+## Extensions panel
+
+To open or close the Extensions panel, choose **<i class="fa-solid fa-cubes fa-fw"></i> Extensions** in the top bar.
+
+- **<i class="fa-solid fa-cubes"></i> Manage extensions**: Activate, deactivate, and update extensions
+- **Download Extensions & Assets**: Install [more extensions](#installable-extensions), characters, sounds, and backgrounds from the SillyTavern repository
+- **Notify on extension updates**: Check to be notified when there are updates available for installed extensions
+- **<i class="fa-solid fa-cloud-arrow-down"></i> Install extension**: Import an extension from a Git repository URL
+
+!!! warning
+Using third-party extensions can have unintended side effects and may pose security risks. 
+Always make sure you trust the source before importing an extension via **<i class="fa-solid fa-cloud-arrow-down"></i> Install extension**. 
+We are not responsible for any damage caused by third-party extensions.
+!!!
 
 ## Built-in extensions
+
+These extensions are built into SillyTavern and do not need to be installed. They can be enabled or disabled in the Extensions panel.
+
+:::callout
+**[Image Captioning](captioning.md)**
+
+Generates text from images so your AI can "see" and respond to visual content in your conversations
+:::
 
 :::callout
 **[Image Generation](Stable-Diffusion.md)**
@@ -43,7 +67,7 @@ Voice narration for your chat messages via ElevenLabs, Silero, your system TTS, 
 :::
 
 :::callout
-**[Quick Reply](/For_Contributors/st-script.md)**
+**[Quick Reply](/For_Contributors/st-script.md#quick-replies-script-library-and-auto-execution)**
 
 Reply to chat messages with a single click, run commands and STscripts, and more
 :::
