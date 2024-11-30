@@ -18,9 +18,17 @@ Theme files allow you to save, share, and reuse your UI customizations. You can 
 All the settings in this section are saved to the current theme. If you switch themes, the settings will be replaced by the settings of the new theme.
 
 ### Display Settings
-These fundamental display options affect how characters and messages are presented in the chat interface. Choose the style that best fits your preferences and provides the most comfortable reading experience.
-* **Avatar Style**: Choose between Circle, Square, or Rectangle
-* **Chat Style**: Select from Flat, Bubbles, or Document layouts
+These display options affect how characters and messages are presented in the chat interface.
+
+#### Avatar Style
+Choose between Circle, Square, or Rectangle.
+
+#### Chat Style
+| Style        | Description                                                                                                                                                    | [Slash command](/For_Contributors/st-script.md#ui-styling) |
+|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------|
+| **Flat**     | Clean and continuous "chat log" style, a flat canvas for your AI interactions to come to life.                                                                 | `/flat`<br>`/default`                                      |
+| **Bubbles**  | "Instant messenger" style with distinct bubbles for each message, delightful rounded corners, and a subtle 3D effect.                                          | `/bubble`<br>`/bubbles`                                    |
+| **Document** | Compact, document-like appearance with click-to-edit mode and a text-focused layout. Hides avatars, timestamps, and message control buttons for past messages. | `/single`<br>`/story`                                      |
 
 ### Theme Colors
 Customize the color scheme of every UI element to create your perfect theme. Colors can be selected using a color picker, and include transparency options where applicable.
