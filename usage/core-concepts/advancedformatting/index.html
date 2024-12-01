@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.786404329384">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.786405250839">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.786404329384" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.786405250839" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.786404329384" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.786405250839" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.786404329384" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.786405250839" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -274,13 +274,13 @@
         </div>
     </div>
 </div>
-<p>Some Text Completion sources provide an ability to automatically choose templates recommended by the model author. This works by comparing a hash of the chat template defined in the model&#x27;s <code v-pre>tokenizer_config.json</code> with the one of the default SillyTavern templates.</p>
+<p>Some Text Completion sources provide an ability to automatically choose templates recommended by the model author. This works by comparing a hash of the chat template defined in the model&#x27;s <code v-pre>tokenizer_config.json</code> file with one of the default SillyTavern templates.</p>
 <ol>
 <li><strong><i class="fa-solid fa-bolt"></i> Derive templates</strong> option must be enabled in the <strong><i class="fa-solid fa-font"></i> Advanced Formatting</strong> menu. This can be applied to Context, Instruct, or both.</li>
 <li>A supported backend must be chosen as a Text Completion source. Currently only llama.cpp and KoboldCpp support deriving templates.</li>
 <li>The model must correctly report its metadata when the connection to the API is established. If this didn&#x27;t work, try updating the backend to the latest version.</li>
 <li>The reported chat template hash must match the one of the <a href="https://github.com/SillyTavern/SillyTavern/blob/release/public/scripts/chat-templates.js">known SillyTavern templates</a>. This only covers default templates, such as Llama 3, Gemma 2, Mistral V7, etc.</li>
-<li>If the hash matches, the template will be automatically selected if it exists in the templates list.</li>
+<li>If the hash matches, the template will be automatically selected if it exists in the templates list (i.e., not renamed or deleted).</li>
 </ol>
 <doc-anchor-target id="system-prompt">
     <h2>
