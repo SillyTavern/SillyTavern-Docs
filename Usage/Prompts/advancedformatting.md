@@ -21,6 +21,20 @@ Most of the settings in this panel do not apply to Chat Completions APIs as they
 * [Custom Stopping Strings](#custom-stopping-strings)
 +++
 
+## Backend-defined templates
+
+!!! Applies to: Text Completion APIs
+Not applicable to Chat Completion APIs as they use a different prompt builder.
+!!!
+
+Some Text Completion sources provide an ability to automatically choose templates recommended by the model author. This works by comparing a hash of the chat template defined in the model's `tokenizer_config.json` with the one of the default SillyTavern templates.
+
+1. **<i class="fa-solid fa-bolt"></i> Derive templates** option must be enabled in the **<i class="fa-solid fa-font"></i> Advanced Formatting** menu. This can be applied to Context, Instruct, or both.
+2. A supported backend must be chosen as a Text Completion source. Currently only llama.cpp and KoboldCpp support deriving templates.
+3. The model must correctly report its metadata when the connection to the API is established. If this didn't work, try updating the backend to the latest version.
+4. The reported chat template hash must match the one of the [known SillyTavern templates](https://github.com/SillyTavern/SillyTavern/blob/release/public/scripts/chat-templates.js). This only covers default templates, such as Llama 3, Gemma 2, Mistral V7, etc.
+5. If the hash matches, the template will be automatically selected if it exists in the templates list.
+
 ## System Prompt
 
 !!! Applies to: Text Completion APIs
