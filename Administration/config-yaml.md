@@ -26,6 +26,7 @@ protocol:
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|-----------------|
 | `dataRoot` | Root directory for user data storage | `./data` | Any valid directory path |
+| `cardsCacheCapacity` | The maximum amount of memory that parsed character cards can use in MB. | 100 | Any positive integer |
 
 ## [Network Configuration](/Administration/remote-connections.md)
 
