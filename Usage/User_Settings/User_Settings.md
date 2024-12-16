@@ -33,7 +33,7 @@ SillyTavern's user interface is available in multiple languages. The language se
 * **English**: Forces English UI regardless of system settings
 * Other languages available through the dropdown
 
-Note: This setting only affects the user interface text. For AI conversation translation, please use the Chat Translation extension.
+Note: This setting only affects the user interface text. For AI conversation translation, please use the [Chat Translation](../../extensions/Translation.md) extension.
 
 ### Software Version
 
