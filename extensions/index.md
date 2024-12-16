@@ -31,6 +31,12 @@ We are not responsible for any damage caused by third-party extensions.
 These extensions are built into SillyTavern and do not need to be installed. They can be enabled or disabled in the Extensions panel.
 
 :::callout
+**[Chat Translation](Translation.md)**
+
+Translate chat messages to a different language
+:::
+
+:::callout
 **[Image Captioning](captioning.md)**
 
 Generates text from images so your AI can "see" and respond to visual content in your conversations
@@ -70,12 +76,6 @@ Voice narration for your chat messages via ElevenLabs, Silero, your system TTS, 
 **[Quick Reply](/For_Contributors/st-script.md#quick-replies-script-library-and-auto-execution)**
 
 Reply to chat messages with a single click, run commands and STscripts, and more
-:::
-
-:::callout
-**Translate**
-
-Translate chat messages to a different language
 :::
 
 :::callout
