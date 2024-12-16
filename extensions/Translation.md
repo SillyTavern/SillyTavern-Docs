@@ -11,7 +11,7 @@ different languages using various translation providers. It supports both manual
 automatic translation modes.
 
 ![Character message translated from English to Chinese using 'Translate Message/翻譯訊息' message action button](../static/extensions/translation/sensei.png)
- 
+
 +++ English
 !["Translate Chat", "Translate Input"](../static/extensions/translation/wand-menu-en.png)
 +++ 简体中文
@@ -39,7 +39,8 @@ Extensions** menu
 - Translates just the current input text
 - Useful before sending a message
 
-**<i class="fa-solid fa-language"></i> Translate Message** icon in the **<i class="fa-solid fa-ellipsis"></i> Message Actions**
+**<i class="fa-solid fa-language"></i> Translate Message** icon in the **<i class="fa-solid fa-ellipsis"></i> Message
+Actions**
 toolbar of any message
 
 - Click to translate just that message
@@ -124,7 +125,7 @@ explicit source language selection.
 ## Slash Commands
 
 Use `/translate` command for quick translations. Syntax: `/translate [target=language_code] text`. If target language is
-not provided, the value from the extension settings will be used.   
+not provided, the value from the extension settings will be used.
 
 ### Basic usage
 
@@ -147,8 +148,8 @@ Translate text to Spanish and add it to the chat:
 ### Testing, pipeline translation, localization
 
 Prompt the user for a message and a language, translate the message into that language, then re-translate it into the
-configured target language and show both translations in a popup. This example uses the `/input` and `/buttons` commands to
-gather user input:
+configured target language and show both translations in a popup. This example uses the `/input` and `/buttons` commands
+to gather user input:
 
 ```shell
 /input default="Hello, world!" <span data-i18n="Test Message">Sample text</span> | 
@@ -188,15 +189,21 @@ Input language detection is relatively effective in the following examples:
 - UTF-8 encoding, special characters, and emojis are supported
 - Handles large messages by splitting into chunks when needed
 - Preserves formatting and embedded images in messages
-- Caches translations to avoid redundant API callschecking
+- Caches translations to avoid redundant API calls
 
 ### AI input language
 
-`internal_language` controls the language into which user messages are auto-translated before being sent to the AI. It is hardcoded to 'en' in the default settings and cannot be changed through the UI. Thus, the translation target language for messages *to the AI* is always English. Previous testing showed that AI performance was better when receiving English messages, but this may change as more LLMs are being trained on more varied language data. I suppose one could change `internal_language` in `settings.json` and find out.
+`internal_language` controls the language into which user messages are auto-translated before being sent to the AI. It
+is hardcoded to 'en' in the default settings and cannot be changed through the UI. Thus, the translation target language
+for messages *to the AI* is always English. Previous testing showed that AI performance was better when receiving
+English messages, but this may change as more LLMs are being trained on more varied language data. I suppose one could
+change `internal_language` in `settings.json` and find out.
 
 ### Chinese variant handling
 
-The extension supports both Simplified and Traditional Chinese, but not all translation providers do. The UI presents these as 'Chinese (Simplified)' and 'Chinese (Traditional)' respectively, with language codes 'zh-CN' and 'zh-TW'. They are mapped to the following language codes for translation providers:
+The extension supports both Simplified and Traditional Chinese, but not all translation providers do. The UI presents
+these as 'Chinese (Simplified)' and 'Chinese (Traditional)' respectively, with language codes 'zh-CN' and 'zh-TW'. They
+are mapped to the following language codes for translation providers:
 
 * Libre Translate: 'zh-CN' to 'zh' and 'zh-TW' to 'zt'.
 * DeepL and DeepLX: both variants to 'ZH'.
