@@ -33,3 +33,9 @@ UI extensions run in a browser environment and expand the functionality of Silly
 
 Server plugins allow adding functionality such as new API endpoints by running code in the NodeJS environment.
 :::
+
+:::callout
+**[Internationalization (i18n)](i18n)**
+
+Learn how to translate SillTavern's UI into your language.
+:::
