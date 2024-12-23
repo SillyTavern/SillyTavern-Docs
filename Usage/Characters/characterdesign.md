@@ -94,7 +94,9 @@ You can also use asterisks ** to describe the character's actions.
 
 For example:
 
-`*I noticed you came inside, I walked up and stood right in front of you* Welcome. I'm glad to see you here. *I said with a toothy smug sunny smile looking you straight in the eye* What brings you...`
+```txt
+*I noticed you came inside, I walked up and stood right in front of you* Welcome. I'm glad to see you here. *I said with a toothy smug sunny smile looking you straight in the eye* What brings you...
+```
 
 ## Examples of dialogue
 
