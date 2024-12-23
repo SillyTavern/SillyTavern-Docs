@@ -17,8 +17,6 @@ It's a simple yet powerful scripting language that could be used to expand the f
 STscript is built using the slash commands engine, utilizing command batching, data piping, macros, and variables.
 These concepts are going to be described in the following document.
 
-> **STscript is still in active development.** It's recommended to use the *staging* branch if you plan to use any of its features.
-
 ### Security precaution
 
 With great power comes great responsibility. Be careful and always inspect the scripts before executing them.
