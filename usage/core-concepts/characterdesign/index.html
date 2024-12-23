@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.787699487082">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.788289923274">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.787699487082" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.788289923274" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.787699487082" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.788289923274" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.787699487082" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.788289923274" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -72,11 +72,16 @@
             margin: 1rem 0.5rem 1rem 0;
             color: slategrey;
         }
+
+        .codeblock code,
+        .codeblock pre {
+            white-space: pre-wrap;
+        }
     </style>
-    <link href="/static/webfonts/NotoSans/stylesheet.css" rel="stylesheet"/>
-    <link href="/static/css/fontawesome.min.css" rel="stylesheet"/>
-    <link href="/static/css/solid.min.css" rel="stylesheet"/>
-    <link href="/static/css/brands.min.css" rel="stylesheet"/>
+    <link href="/static/webfonts/NotoSans/stylesheet.css" rel="stylesheet" />
+    <link href="/static/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="/static/css/solid.min.css" rel="stylesheet" />
+    <link href="/static/css/brands.min.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -359,16 +364,16 @@
 <li>Use {{user}} instead of the user name.</li>
 </ul>
 <p>Example:</p>
-<hr>
-<p>&lt;START&gt;</p>
-<p>{{user}}: Hi Aqua, I heard you like to spend time in the pub.</p>
-<p>{{char}}: *excitedly* Oh my goodness, yes! I just love spending time at the pub! It&#x27;s so much fun to talk to all the adventurers and hear about their exciting adventures! And you are?</p>
-<p>{{user}}: I&#x27;m new here and I wanted to ask for your advice.</p>
-<p>{{char}}: *giggles* Oh, advice! I love giving advice! And in gratitude for that, treat me to a drink! <em>gives signals to the bartender</em></p>
-<p>&lt;START&gt;</p>
-<p>{{user}}: Hello</p>
-<p>{{char}}: *excitedly* Hello there, dear! Are you new to Axel? Don&#x27;t worry, I, Aqua the goddess of water, am here to help you! Do you need any assistance? And may I say, I look simply radiant today! *strikes a pose and looks at you with puppy eyes*</p>
-<hr>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">&lt;START&gt;
+{{user}}: Hi Aqua, I heard you like to spend time in the pub.
+{{char}}: *excitedly* Oh my goodness, yes! I just love spending time at the pub! It's so much fun to talk to all the adventurers and hear about their exciting adventures! And you are?
+{{user}}: I'm new here and I wanted to ask for your advice.
+{{char}}: *giggles* Oh, advice! I love giving advice! And in gratitude for that, treat me to a drink! *gives signals to the bartender*
+&lt;START&gt;
+{{user}}: Hello
+{{char}}: *excitedly* Hello there, dear! Are you new to Axel? Don't worry, I, Aqua the goddess of water, am here to help you! Do you need any assistance? And may I say, I look simply radiant today! *strikes a pose and looks at you with puppy eyes*</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="scenario">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#scenario">#</doc-anchor-trigger>
@@ -392,47 +397,194 @@
 <p><strong>This list may be incomplete or outdated. Use the <code v-pre>/help macros</code> slash command in any SillyTavern chat to get the list of macros that work in your instance.</strong></p>
 <p>Note: some extensions may also add special context-specific macros that only work in certain places. These will not be documented here.</p>
 <p>A list of macros that are replaced when sending a prompt to generate:</p>
-<ol>
-<li>{{pipe}} =&gt; only for slash command batching. Replaced with the returned result of the previous command.</li>
-<li>{{newline}} =&gt; just inserts a newline.</li>
-<li>{{trim}} =&gt; trims newlines surrounding this macro.</li>
-<li>{{noop}} =&gt; no operation, just an empty string.</li>
-<li>{{user}} and &lt;USER&gt; =&gt; User&#x27;s Name.</li>
-<li>{{charPrompt}} =&gt; Character&#x27;s Main Prompt override</li>
-<li>{{charJailbreak}} =&gt; Character&#x27;s Post-History Instructions Prompt override</li>
-<li>{{char}} and &lt;BOT&gt; =&gt; Character&#x27;s Name.</li>
-<li>{{description}} =&gt; Character&#x27;s Description.</li>
-<li>{{scenario}} =&gt; Character&#x27;s Scenario or chat scenario override (if set).</li>
-<li>{{personality}} =&gt; Character&#x27;s Personality.</li>
-<li>{{persona}} =&gt; User&#x27;s Persona description.</li>
-<li>{{mesExamples}} =&gt; Character&#x27;s Examples of Dialogue (unaltered and unsplit).</li>
-<li>{{char_version}} =&gt; the Character&#x27;s version number.</li>
-<li>{{model}} =&gt; a text generation model name for the currently selected API. <strong>Can be inaccurate!</strong></li>
-<li>{{lastMessageId}} =&gt; last chat message ID.</li>
-<li>{{lastMessage}} =&gt; last chat message text.</li>
-<li>{{firstIncludedMessageId}} =&gt; the ID of the first message included in the context. Requires generation to be run at least once in the current session.</li>
-<li>{{lastCharMessage}} =&gt; last chat message sent by character.</li>
-<li>{{lastUserMessage}} =&gt; last chat message sent by user.</li>
-<li>{{currentSwipeId}} =&gt; 1-based ID of the currently displayed last message swipe.</li>
-<li>{{lastSwipeId}} =&gt; number of swipes in the last chat message.</li>
-<li>{{original}} can be used in Prompt Overrides fields (Main Prompt and Post-History Instructions) to include the respective default prompt from the system settings. Applied to Chat Completion APIs and Instruct mode only.</li>
-<li>{{time}} =&gt; current system time.</li>
-<li>{{time_UTC±X}} =&gt; current time in the specified UTC offset (timezone), e.g. for UTC+02:00 use {{time_UTC+2}}.</li>
-<li>{{timeDiff::(time1)::(time2)}} =&gt; the time difference between time1 and time2. Accepts time and date macros.</li>
-<li>{{date}} =&gt; current system date.</li>
-<li>{{input}} =&gt; contents of the user input bar.</li>
-<li>{{weekday}} =&gt; the current weekday</li>
-<li>{{isotime}} =&gt; the current ISO time (24-hour clock)</li>
-<li>{{isodate}} =&gt; the current ISO date (YYYY-MM-DD)</li>
-<li>{{idle_duration}} inserts a humanized string of the time range since the last user message was sent (examples: 4 hours, 1 day).</li>
-<li>{{random:(args)}} returns a random item from the list. (e.g. {{random:1,2,3,4}} will return 1 of the 4 numbers at random). Works with text lists too.</li>
-<li>{{random::arg1::arg2}} =&gt; alternate syntax for random that supports commas in its arguments.</li>
-<li>{{pick::(args)}} =&gt; alternative to random, but the selected argument is stable on subsequent evaluations in the current chat if the source string remains unchanged.</li>
-<li>{{roll:(formula)}} generates a random value and returns it using the provided dice formula using D&amp;D dice syntax: XdY+Z. For example, {{roll:d6}} will generate a random value in the 1-6 range (standard six-sided dice).</li>
-<li>{{bias &quot;text here&quot;}} sets a behavioral bias for the AI until the next user input. Quotes around the text are important.</li>
-<li>{{// (note)}} allows to leave a note that will be replaced with blank content. Not visible for the AI.</li>
-<li>{{banned &quot;text here&quot;}} dynamically add text in the quotes to banned word sequences, if Text Generation WebUI backend is used. Does nothing for other backends. Can be used anywhere (Character description, WI, AN, etc.) Quotes around the text are important.</li>
-</ol>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Macro</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>{{pipe}}</code></td>
+<td>Only for slash command batching. Replaced with the returned result of the previous command.</td>
+</tr>
+<tr>
+<td><code v-pre>{{newline}}</code></td>
+<td>Inserts a newline.</td>
+</tr>
+<tr>
+<td><code v-pre>{{trim}}</code></td>
+<td>Trims newlines surrounding this macro.</td>
+</tr>
+<tr>
+<td><code v-pre>{{noop}}</code></td>
+<td>No operation, just an empty string.</td>
+</tr>
+<tr>
+<td><code v-pre>{{user}}</code> or <code v-pre>&lt;USER&gt;</code></td>
+<td>User&#x27;s name.</td>
+</tr>
+<tr>
+<td><code v-pre>{{charPrompt}}</code></td>
+<td>Character&#x27;s Main Prompt override.</td>
+</tr>
+<tr>
+<td><code v-pre>{{charJailbreak}}</code></td>
+<td>Character&#x27;s Post-History Instructions Prompt override.</td>
+</tr>
+<tr>
+<td><code v-pre>{{group}}</code> or <code v-pre>{{charIfNotGroup}}</code></td>
+<td>Comma-separated list of group member names or character name in solo chats.</td>
+</tr>
+<tr>
+<td><code v-pre>{{groupNotMuted}}</code></td>
+<td>Same as <code v-pre>{{group}}</code> but excludes muted members.</td>
+</tr>
+<tr>
+<td><code v-pre>{{char}}</code> or <code v-pre>&lt;BOT&gt;</code></td>
+<td>Character&#x27;s name.</td>
+</tr>
+<tr>
+<td><code v-pre>{{description}}</code></td>
+<td>Character&#x27;s description.</td>
+</tr>
+<tr>
+<td><code v-pre>{{scenario}}</code></td>
+<td>Character&#x27;s scenario or chat scenario override (if set).</td>
+</tr>
+<tr>
+<td><code v-pre>{{personality}}</code></td>
+<td>Character&#x27;s personality.</td>
+</tr>
+<tr>
+<td><code v-pre>{{persona}}</code></td>
+<td>User&#x27;s persona description.</td>
+</tr>
+<tr>
+<td><code v-pre>{{mesExamples}}</code></td>
+<td>Character&#x27;s examples of dialogue (unaltered and unsplit).</td>
+</tr>
+<tr>
+<td><code v-pre>{{char_version}}</code></td>
+<td>The character&#x27;s version number.</td>
+</tr>
+<tr>
+<td><code v-pre>{{model}}</code></td>
+<td>Text generation model name for the currently selected API. <strong>Can be inaccurate!</strong></td>
+</tr>
+<tr>
+<td><code v-pre>{{lastMessageId}}</code></td>
+<td>Last chat message ID.</td>
+</tr>
+<tr>
+<td><code v-pre>{{lastMessage}}</code></td>
+<td>Last chat message text.</td>
+</tr>
+<tr>
+<td><code v-pre>{{firstIncludedMessageId}}</code></td>
+<td>The ID of the first message included in the context. Requires generation to be run at least once in the current session.</td>
+</tr>
+<tr>
+<td><code v-pre>{{lastCharMessage}}</code></td>
+<td>Last chat message sent by character.</td>
+</tr>
+<tr>
+<td><code v-pre>{{lastUserMessage}}</code></td>
+<td>Last chat message sent by user.</td>
+</tr>
+<tr>
+<td><code v-pre>{{currentSwipeId}}</code></td>
+<td>1-based ID of the currently displayed last message swipe.</td>
+</tr>
+<tr>
+<td><code v-pre>{{lastSwipeId}}</code></td>
+<td>Number of swipes in the last chat message.</td>
+</tr>
+<tr>
+<td><code v-pre>{{lastGenerationType}}</code></td>
+<td>Type of the last queued generation request. Values: &quot;normal&quot;, &quot;impersonate&quot;, &quot;regenerate&quot;, &quot;quiet&quot;, &quot;swipe&quot;, &quot;continue&quot;.</td>
+</tr>
+<tr>
+<td><code v-pre>{{original}}</code></td>
+<td>Can be used in Prompt Overrides fields to include the default prompt from system settings. Applied to Chat Completion APIs and Instruct mode only.</td>
+</tr>
+<tr>
+<td><code v-pre>{{time}}</code></td>
+<td>Current system time.</td>
+</tr>
+<tr>
+<td><code v-pre>{{time_UTC±X}}</code></td>
+<td>Current time in the specified UTC offset (timezone), e.g. for UTC+02:00 use <code v-pre>{{time_UTC+2}}</code>.</td>
+</tr>
+<tr>
+<td><code v-pre>{{timeDiff::(time1)::(time2)}}</code></td>
+<td>The time difference between time1 and time2. Accepts time and date macros.</td>
+</tr>
+<tr>
+<td><code v-pre>{{date}}</code></td>
+<td>Current system date.</td>
+</tr>
+<tr>
+<td><code v-pre>{{input}}</code></td>
+<td>Contents of the user input bar.</td>
+</tr>
+<tr>
+<td><code v-pre>{{weekday}}</code></td>
+<td>The current weekday.</td>
+</tr>
+<tr>
+<td><code v-pre>{{isotime}}</code></td>
+<td>The current ISO time (24-hour clock).</td>
+</tr>
+<tr>
+<td><code v-pre>{{isodate}}</code></td>
+<td>The current ISO date (YYYY-MM-DD).</td>
+</tr>
+<tr>
+<td><code v-pre>{{datetimeformat ...}}</code></td>
+<td>Current date/time in specified format (e.g. <code v-pre>{{datetimeformat DD.MM.YYYY HH:mm}}</code>).</td>
+</tr>
+<tr>
+<td><code v-pre>{{idle_duration}}</code></td>
+<td>Inserts a humanized string of the time range since the last user message was sent (examples: 4 hours, 1 day).</td>
+</tr>
+<tr>
+<td><code v-pre>{{random:(args)}}</code></td>
+<td>Returns a random item from the list (e.g. <code v-pre>{{random:1,2,3,4}}</code> will return 1 of the 4 numbers at random).</td>
+</tr>
+<tr>
+<td><code v-pre>{{random::arg1::arg2}}</code></td>
+<td>Alternate syntax for random that supports commas in its arguments.</td>
+</tr>
+<tr>
+<td><code v-pre>{{pick::(args)}}</code></td>
+<td>Alternative to random, but the selected argument is stable on subsequent evaluations in the current chat if the source string remains unchanged.</td>
+</tr>
+<tr>
+<td><code v-pre>{{roll:(formula)}}</code></td>
+<td>Generates a random value using D&amp;D dice syntax: XdY+Z (e.g. <code v-pre>{{roll:d6}}</code> generates a value 1-6).</td>
+</tr>
+<tr>
+<td><code v-pre>{{bias &quot;text here&quot;}}</code></td>
+<td>Sets a behavioral bias for the AI until the next user input. Quotes around text are required.</td>
+</tr>
+<tr>
+<td><code v-pre>{{// (note)}}</code></td>
+<td>Allows leaving a note that will be replaced with blank content. Not visible for the AI.</td>
+</tr>
+<tr>
+<td><code v-pre>{{banned &quot;text here&quot;}}</code></td>
+<td>Dynamically adds quoted text to banned word sequences for Text Generation WebUI backend. Does nothing for other backends. Quotes required.</td>
+</tr>
+<tr>
+<td><code v-pre>{{reverse:(content)}}</code></td>
+<td>Reverses the content of the macro.</td>
+</tr>
+</tbody>
+</table>
+</div>
 <doc-anchor-target id="instruct-mode-and-context-template-macros">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#instruct-mode-and-context-template-macros">#</doc-anchor-trigger>
@@ -440,25 +592,102 @@
     </h3>
 </doc-anchor-target>
 <p>(enabled in the Advanced Formatting settings)</p>
-<ol>
-<li>{{exampleSeparator}} – context template example dialogues separator</li>
-<li>{{chatStart}} – context template chat start line</li>
-<li>{{instructSystemPrompt}} – instruct system prompt</li>
-<li>{{instructSystemPromptPrefix}} – system prompt prefix sequence</li>
-<li>{{instructSystemPromptSuffix}} – system prompt suffix sequence</li>
-<li>{{instructUserPrefix}} – user message prefix sequence</li>
-<li>{{instructAssistantPrefix}} – assistant message prefix sequence</li>
-<li>{{instructSystemPrefix}} – system message prefix sequence</li>
-<li>{{instructUserSuffix}} – user message suffix sequence</li>
-<li>{{instructAssistantSuffix}} – assistant message suffix sequence</li>
-<li>{{instructSystemSuffix}} – system message suffix sequence</li>
-<li>{{instructFirstAssistantPrefix}} – assistant first output sequence</li>
-<li>{{instructLastAssistantPrefix}} – assistant last output sequence</li>
-<li>{{instructSystemInstructionPrefix}} – system instruction prefix sequence</li>
-<li>{{instructUserFiller}} – user filler message text</li>
-<li>{{instructStop}} – instruct stop sequence</li>
-<li>{{maxPrompt}} - max size of the prompt in tokens (context length reduced by response length)</li>
-</ol>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Macro</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>{{exampleSeparator}}</code></td>
+<td>Context template example dialogues separator.</td>
+</tr>
+<tr>
+<td><code v-pre>{{chatStart}}</code></td>
+<td>Context template chat start line.</td>
+</tr>
+<tr>
+<td><code v-pre>{{instructSystemPrompt}}</code></td>
+<td>Instruct system prompt.</td>
+</tr>
+<tr>
+<td><code v-pre>{{instructSystemPromptPrefix}}</code></td>
+<td>System prompt prefix sequence.</td>
+</tr>
+<tr>
+<td><code v-pre>{{instructSystemPromptSuffix}}</code></td>
+<td>System prompt suffix sequence.</td>
+</tr>
+<tr>
+<td><code v-pre>{{instructUserPrefix}}</code></td>
+<td>User message prefix sequence.</td>
+</tr>
+<tr>
+<td><code v-pre>{{instructAssistantPrefix}}</code></td>
+<td>Assistant message prefix sequence.</td>
+</tr>
+<tr>
+<td><code v-pre>{{instructSystemPrefix}}</code></td>
+<td>System message prefix sequence.</td>
+</tr>
+<tr>
+<td><code v-pre>{{instructUserSuffix}}</code></td>
+<td>User message suffix sequence.</td>
+</tr>
+<tr>
+<td><code v-pre>{{instructAssistantSuffix}}</code></td>
+<td>Assistant message suffix sequence.</td>
+</tr>
+<tr>
+<td><code v-pre>{{instructSystemSuffix}}</code></td>
+<td>System message suffix sequence.</td>
+</tr>
+<tr>
+<td><code v-pre>{{instructFirstAssistantPrefix}}</code></td>
+<td>Assistant first output sequence.</td>
+</tr>
+<tr>
+<td><code v-pre>{{instructLastAssistantPrefix}}</code></td>
+<td>Assistant last output sequence.</td>
+</tr>
+<tr>
+<td><code v-pre>{{instructFirstUserPrefix}}</code></td>
+<td>Instruct user first input sequence.</td>
+</tr>
+<tr>
+<td><code v-pre>{{instructLastUserPrefix}}</code></td>
+<td>Instruct user last input sequence.</td>
+</tr>
+<tr>
+<td><code v-pre>{{instructSystemInstructionPrefix}}</code></td>
+<td>System instruction prefix sequence.</td>
+</tr>
+<tr>
+<td><code v-pre>{{instructUserFiller}}</code></td>
+<td>User filler message text.</td>
+</tr>
+<tr>
+<td><code v-pre>{{instructStop}}</code></td>
+<td>Instruct stop sequence.</td>
+</tr>
+<tr>
+<td><code v-pre>{{maxPrompt}}</code></td>
+<td>Max size of the prompt in tokens (context length reduced by response length).</td>
+</tr>
+<tr>
+<td><code v-pre>{{systemPrompt}}</code></td>
+<td>System prompt content, including character prompt override if allowed and available.</td>
+</tr>
+<tr>
+<td><code v-pre>{{defaultSystemPrompt}}</code></td>
+<td>System prompt content (excluding character prompt override).</td>
+</tr>
+</tbody>
+</table>
+</div>
 <doc-anchor-target id="chat-variables-macros">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#chat-variables-macros">#</doc-anchor-trigger>
@@ -469,18 +698,89 @@
 <li>Local variables = unique to the current chat</li>
 <li>Global variables = works in any chat for any character</li>
 </ul>
-<ol>
-<li>{{getvar::name}} – replaced with the value of the local variable &quot;name&quot;</li>
-<li>{{setvar::name::value}} – replaced with empty string, sets the local variable &quot;name&quot; to &quot;value&quot;</li>
-<li>{{addvar::name::increment}} – replaced with empty strings, adds a numeric value of &quot;increment&quot; to the local variable &quot;name&quot;</li>
-<li>{{incvar::name}} – replaced with the result of the increment of value of the variable &quot;name&quot; by 1</li>
-<li>{{decvar::name}} – replaced with the result of the decrement of value of the variable &quot;name&quot; by 1</li>
-<li>{{getglobalvar::name}} – replaced with the value of the global variable &quot;name&quot;</li>
-<li>{{setglobalvar::name::value}} – replaced with empty string, sets the global variable &quot;name&quot; to &quot;value&quot;</li>
-<li>{{addglobalvar::name::value}} – replaced with empty string, adds a numeric value of &quot;increment&quot; to the global variable &quot;name&quot;</li>
-<li>{{incglobalvar::name}} – replaced with the result of the increment of value of the global variable &quot;name&quot; by 1</li>
-<li>{{decglobalvar::name}} – replaced with the result of the decrement of value of the global variable &quot;name&quot; by 1</li>
-</ol>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Macro</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>{{getvar::name}}</code></td>
+<td>Replaced with the value of the local variable &quot;name&quot;.</td>
+</tr>
+<tr>
+<td><code v-pre>{{setvar::name::value}}</code></td>
+<td>Replaced with empty string, sets the local variable &quot;name&quot; to &quot;value&quot;.</td>
+</tr>
+<tr>
+<td><code v-pre>{{addvar::name::increment}}</code></td>
+<td>Replaced with empty string, adds a numeric value of &quot;increment&quot; to the local variable &quot;name&quot;.</td>
+</tr>
+<tr>
+<td><code v-pre>{{incvar::name}}</code></td>
+<td>Replaced with the result of incrementing the value of variable &quot;name&quot; by 1.</td>
+</tr>
+<tr>
+<td><code v-pre>{{decvar::name}}</code></td>
+<td>Replaced with the result of decrementing the value of variable &quot;name&quot; by 1.</td>
+</tr>
+<tr>
+<td><code v-pre>{{getglobalvar::name}}</code></td>
+<td>Replaced with the value of the global variable &quot;name&quot;.</td>
+</tr>
+<tr>
+<td><code v-pre>{{setglobalvar::name::value}}</code></td>
+<td>Replaced with empty string, sets the global variable &quot;name&quot; to &quot;value&quot;.</td>
+</tr>
+<tr>
+<td><code v-pre>{{addglobalvar::name::value}}</code></td>
+<td>Replaced with empty string, adds a numeric value of &quot;increment&quot; to the global variable &quot;name&quot;.</td>
+</tr>
+<tr>
+<td><code v-pre>{{incglobalvar::name}}</code></td>
+<td>Replaced with the result of incrementing the value of global variable &quot;name&quot; by 1.</td>
+</tr>
+<tr>
+<td><code v-pre>{{decglobalvar::name}}</code></td>
+<td>Replaced with the result of decrementing the value of global variable &quot;name&quot; by 1.</td>
+</tr>
+<tr>
+<td><code v-pre>{{var::name}}</code></td>
+<td>Replaced with the value of the scoped variable &quot;name&quot; (STscript only).</td>
+</tr>
+<tr>
+<td><code v-pre>{{var::name::index}}</code></td>
+<td>Replaced with the value at index of the scoped variable &quot;name&quot; (for arrays/objects in STscript).</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="extension-specific-macros">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#extension-specific-macros">#</doc-anchor-trigger>
+        <span>Extension-specific Macros</span>
+    </h3>
+</doc-anchor-target>
+<p>Added by extensions and only work in specific contexts.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Macro</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>{{summary}}</code></td>
+<td>Replaced with the summary of the current chat session (if available).</td>
+</tr>
+</tbody>
+</table>
+</div>
 
                                 
                                 <!-- Required only on API pages -->
