@@ -1,6 +1,7 @@
 ---
 order: character-10
 route: /usage/core-concepts/characterdesign
+templating: false
 ---
 
 # Character Design
@@ -104,25 +105,16 @@ Describes how the character speaks. Before each example, you need to add the \<S
 
 Example:
 
----
-
-\<START\>
-
-\{\{user\}\}: Hi Aqua, I heard you like to spend time in the pub.
-
-\{\{char\}\}: \*excitedly\* Oh my goodness, yes! I just love spending time at the pub! It's so much fun to talk to all the adventurers and hear about their exciting adventures! And you are?
-
-\{\{user\}\}: I'm new here and I wanted to ask for your advice.
-
-\{\{char\}\}: \*giggles\* Oh, advice! I love giving advice! And in gratitude for that, treat me to a drink! *gives signals to the bartender*
-
-\<START\>
-
-\{\{user\}\}: Hello
-
-\{\{char\}\}: \*excitedly\* Hello there, dear! Are you new to Axel? Don't worry, I, Aqua the goddess of water, am here to help you! Do you need any assistance? And may I say, I look simply radiant today! \*strikes a pose and looks at you with puppy eyes\*
-
----
+```txt
+<START>
+{{user}}: Hi Aqua, I heard you like to spend time in the pub.
+{{char}}: *excitedly* Oh my goodness, yes! I just love spending time at the pub! It's so much fun to talk to all the adventurers and hear about their exciting adventures! And you are?
+{{user}}: I'm new here and I wanted to ask for your advice.
+{{char}}: *giggles* Oh, advice! I love giving advice! And in gratitude for that, treat me to a drink! *gives signals to the bartender*
+<START>
+{{user}}: Hello
+{{char}}: *excitedly* Hello there, dear! Are you new to Axel? Don't worry, I, Aqua the goddess of water, am here to help you! Do you need any assistance? And may I say, I look simply radiant today! *strikes a pose and looks at you with puppy eyes*
+```
 
 ## Scenario
 
@@ -140,80 +132,104 @@ Note: some extensions may also add special context-specific macros that only wor
 
 A list of macros that are replaced when sending a prompt to generate:
 
-1. \{\{pipe\}\} => only for slash command batching. Replaced with the returned result of the previous command.
-2. \{\{newline\}\} => just inserts a newline.
-3. \{\{trim\}\} => trims newlines surrounding this macro.
-4. \{\{noop\}\} => no operation, just an empty string.
-5. \{\{user\}\} and \<USER\> => User's Name.
-6. \{\{charPrompt\}\} => Character's Main Prompt override
-7. \{\{charJailbreak\}\} => Character's Post-History Instructions Prompt override
-8. \{\{char\}\} and \<BOT\> => Character's Name.
-9. \{\{description\}\} => Character's Description.
-10. \{\{scenario\}\} => Character's Scenario or chat scenario override (if set).
-11. \{\{personality\}\} => Character's Personality.
-12. \{\{persona\}\} => User's Persona description.
-13. \{\{mesExamples\}\} => Character's Examples of Dialogue (unaltered and unsplit).
-14. \{\{char_version\}\} => the Character's version number.
-15. \{\{model\}\} => a text generation model name for the currently selected API. **Can be inaccurate!**
-16. \{\{lastMessageId\}\} => last chat message ID.
-17. \{\{lastMessage\}\} => last chat message text.
-18. \{\{firstIncludedMessageId\}\} => the ID of the first message included in the context. Requires generation to be run at least once in the current session.
-19. \{\{lastCharMessage\}\} => last chat message sent by character.
-20. \{\{lastUserMessage\}\} => last chat message sent by user.
-21. \{\{currentSwipeId\}\} => 1-based ID of the currently displayed last message swipe.
-22. \{\{lastSwipeId\}\} => number of swipes in the last chat message.
-23. \{\{original\}\} can be used in Prompt Overrides fields (Main Prompt and Post-History Instructions) to include the respective default prompt from the system settings. Applied to Chat Completion APIs and Instruct mode only.
-24. \{\{time\}\} => current system time.
-25. \{\{time_UTC±X\}\} => current time in the specified UTC offset (timezone), e.g. for UTC+02:00 use \{\{time_UTC\+2\}\}.
-26. \{\{timeDiff::(time1)::(time2)\}\} => the time difference between time1 and time2. Accepts time and date macros.
-27. \{\{date\}\} => current system date.
-28. \{\{input\}\} => contents of the user input bar.
-29. \{\{weekday\}\} => the current weekday
-30. \{\{isotime\}\} => the current ISO time (24-hour clock)
-31. \{\{isodate\}\} => the current ISO date (YYYY-MM-DD)
-32. \{\{idle_duration\}\} inserts a humanized string of the time range since the last user message was sent (examples: 4 hours, 1 day).
-33. \{\{random:(args)\}\} returns a random item from the list. (e.g. \{\{random:1,2,3,4\}\} will return 1 of the 4 numbers at random). Works with text lists too.
-34. \{\{random::arg1::arg2\}\} => alternate syntax for random that supports commas in its arguments.
-35. \{\{pick::(args)\}\} => alternative to random, but the selected argument is stable on subsequent evaluations in the current chat if the source string remains unchanged.
-36. \{\{roll:(formula)\}\} generates a random value and returns it using the provided dice formula using D&D dice syntax: XdY+Z. For example, \{\{roll:d6\}\} will generate a random value in the 1-6 range (standard six-sided dice).
-37. \{\{bias "text here"\}\} sets a behavioral bias for the AI until the next user input. Quotes around the text are important.
-38. \{\{// (note)\}\} allows to leave a note that will be replaced with blank content. Not visible for the AI.
-39. \{\{banned "text here"\}\} dynamically add text in the quotes to banned word sequences, if Text Generation WebUI backend is used. Does nothing for other backends. Can be used anywhere (Character description, WI, AN, etc.) Quotes around the text are important.
+| Macro | Description |
+|-------|-------------|
+| `{{pipe}}` | Only for slash command batching. Replaced with the returned result of the previous command. |
+| `{{newline}}` | Inserts a newline. |
+| `{{trim}}` | Trims newlines surrounding this macro. |
+| `{{noop}}` | No operation, just an empty string. |
+| `{{user}}` or `<USER>` | User's name. |
+| `{{charPrompt}}` | Character's Main Prompt override. |
+| `{{charJailbreak}}` | Character's Post-History Instructions Prompt override. |
+| `{{group}}` or `{{charIfNotGroup}}` | Comma-separated list of group member names or character name in solo chats. |
+| `{{groupNotMuted}}` | Same as `{{group}}` but excludes muted members. |
+| `{{char}}` or `<BOT>` | Character's name. |
+| `{{description}}` | Character's description. |
+| `{{scenario}}` | Character's scenario or chat scenario override (if set). |
+| `{{personality}}` | Character's personality. |
+| `{{persona}}` | User's persona description. |
+| `{{mesExamples}}` | Character's examples of dialogue (unaltered and unsplit). |
+| `{{char_version}}` | The character's version number. |
+| `{{model}}` | Text generation model name for the currently selected API. **Can be inaccurate!** |
+| `{{lastMessageId}}` | Last chat message ID. |
+| `{{lastMessage}}` | Last chat message text. |
+| `{{firstIncludedMessageId}}` | The ID of the first message included in the context. Requires generation to be run at least once in the current session. |
+| `{{lastCharMessage}}` | Last chat message sent by character. |
+| `{{lastUserMessage}}` | Last chat message sent by user. |
+| `{{currentSwipeId}}` | 1-based ID of the currently displayed last message swipe. |
+| `{{lastSwipeId}}` | Number of swipes in the last chat message. |
+| `{{lastGenerationType}}` | Type of the last queued generation request. Values: "normal", "impersonate", "regenerate", "quiet", "swipe", "continue". |
+| `{{original}}` | Can be used in Prompt Overrides fields to include the default prompt from system settings. Applied to Chat Completion APIs and Instruct mode only. |
+| `{{time}}` | Current system time. |
+| `{{time_UTC±X}}` | Current time in the specified UTC offset (timezone), e.g. for UTC+02:00 use `{{time_UTC+2}}`. |
+| `{{timeDiff::(time1)::(time2)}}` | The time difference between time1 and time2. Accepts time and date macros. |
+| `{{date}}` | Current system date. |
+| `{{input}}` | Contents of the user input bar. |
+| `{{weekday}}` | The current weekday. |
+| `{{isotime}}` | The current ISO time (24-hour clock). |
+| `{{isodate}}` | The current ISO date (YYYY-MM-DD). |
+| `{{datetimeformat ...}}` | Current date/time in specified format (e.g. `{{datetimeformat DD.MM.YYYY HH:mm}}`). |
+| `{{idle_duration}}` | Inserts a humanized string of the time range since the last user message was sent (examples: 4 hours, 1 day). |
+| `{{random:(args)}}` | Returns a random item from the list (e.g. `{{random:1,2,3,4}}` will return 1 of the 4 numbers at random). |
+| `{{random::arg1::arg2}}` | Alternate syntax for random that supports commas in its arguments. |
+| `{{pick::(args)}}` | Alternative to random, but the selected argument is stable on subsequent evaluations in the current chat if the source string remains unchanged. |
+| `{{roll:(formula)}}` | Generates a random value using D&D dice syntax: XdY+Z (e.g. `{{roll:d6}}` generates a value 1-6). |
+| `{{bias "text here"}}` | Sets a behavioral bias for the AI until the next user input. Quotes around text are required. |
+| `{{// (note)}}` | Allows leaving a note that will be replaced with blank content. Not visible for the AI. |
+| `{{banned "text here"}}` | Dynamically adds quoted text to banned word sequences for Text Generation WebUI backend. Does nothing for other backends. Quotes required. |
+| `{{reverse:(content)}}` | Reverses the content of the macro. |
 
 ### Instruct Mode and Context Template Macros
 
 (enabled in the Advanced Formatting settings)
 
-1. \{\{exampleSeparator\}\} – context template example dialogues separator
-2. \{\{chatStart\}\} – context template chat start line
-3. \{\{instructSystemPrompt\}\} – instruct system prompt
-4. \{\{instructSystemPromptPrefix\}\} – system prompt prefix sequence
-5. \{\{instructSystemPromptSuffix\}\} – system prompt suffix sequence
-6. \{\{instructUserPrefix\}\} – user message prefix sequence
-7. \{\{instructAssistantPrefix\}\} – assistant message prefix sequence
-8. \{\{instructSystemPrefix\}\} – system message prefix sequence
-9. \{\{instructUserSuffix\}\} – user message suffix sequence
-10. \{\{instructAssistantSuffix\}\} – assistant message suffix sequence
-11. \{\{instructSystemSuffix\}\} – system message suffix sequence
-12. \{\{instructFirstAssistantPrefix\}\} – assistant first output sequence
-13. \{\{instructLastAssistantPrefix\}\} – assistant last output sequence
-14. \{\{instructSystemInstructionPrefix\}\} – system instruction prefix sequence
-15. \{\{instructUserFiller\}\} – user filler message text
-16. \{\{instructStop\}\} – instruct stop sequence
-17. \{\{maxPrompt\}\} - max size of the prompt in tokens (context length reduced by response length)
-
+| Macro | Description |
+|-------|-------------|
+| `{{exampleSeparator}}` | Context template example dialogues separator. |
+| `{{chatStart}}` | Context template chat start line. |
+| `{{instructSystemPrompt}}` | Instruct system prompt. |
+| `{{instructSystemPromptPrefix}}` | System prompt prefix sequence. |
+| `{{instructSystemPromptSuffix}}` | System prompt suffix sequence. |
+| `{{instructUserPrefix}}` | User message prefix sequence. |
+| `{{instructAssistantPrefix}}` | Assistant message prefix sequence. |
+| `{{instructSystemPrefix}}` | System message prefix sequence. |
+| `{{instructUserSuffix}}` | User message suffix sequence. |
+| `{{instructAssistantSuffix}}` | Assistant message suffix sequence. |
+| `{{instructSystemSuffix}}` | System message suffix sequence. |
+| `{{instructFirstAssistantPrefix}}` | Assistant first output sequence. |
+| `{{instructLastAssistantPrefix}}` | Assistant last output sequence. |
+| `{{instructFirstUserPrefix}}` | Instruct user first input sequence. |
+| `{{instructLastUserPrefix}}` | Instruct user last input sequence. |
+| `{{instructSystemInstructionPrefix}}` | System instruction prefix sequence. |
+| `{{instructUserFiller}}` | User filler message text. |
+| `{{instructStop}}` | Instruct stop sequence. |
+| `{{maxPrompt}}` | Max size of the prompt in tokens (context length reduced by response length). |
+| `{{systemPrompt}}` | System prompt content, including character prompt override if allowed and available. |
+| `{{defaultSystemPrompt}}` | System prompt content (excluding character prompt override). |
 ### Chat variables Macros
 
 - Local variables = unique to the current chat
 - Global variables = works in any chat for any character
 
-1. \{\{getvar::name\}\} – replaced with the value of the local variable "name"
-2. \{\{setvar::name::value\}\} – replaced with empty string, sets the local variable "name" to "value"
-3. \{\{addvar::name::increment\}\} – replaced with empty strings, adds a numeric value of "increment" to the local variable "name"
-4. \{\{incvar::name\}\} – replaced with the result of the increment of value of the variable "name" by 1
-5. \{\{decvar::name\}\} – replaced with the result of the decrement of value of the variable "name" by 1
-6. \{\{getglobalvar::name\}\} – replaced with the value of the global variable "name"
-7. \{\{setglobalvar::name::value\}\} – replaced with empty string, sets the global variable "name" to "value"
-8. \{\{addglobalvar::name::value\}\} – replaced with empty string, adds a numeric value of "increment" to the global variable "name"
-9. \{\{incglobalvar::name\}\} – replaced with the result of the increment of value of the global variable "name" by 1
-10. \{\{decglobalvar::name\}\} – replaced with the result of the decrement of value of the global variable "name" by 1
+| Macro | Description |
+|-------|-------------|
+| `{{getvar::name}}` | Replaced with the value of the local variable "name". |
+| `{{setvar::name::value}}` | Replaced with empty string, sets the local variable "name" to "value". |
+| `{{addvar::name::increment}}` | Replaced with empty string, adds a numeric value of "increment" to the local variable "name". |
+| `{{incvar::name}}` | Replaced with the result of incrementing the value of variable "name" by 1. |
+| `{{decvar::name}}` | Replaced with the result of decrementing the value of variable "name" by 1. |
+| `{{getglobalvar::name}}` | Replaced with the value of the global variable "name". |
+| `{{setglobalvar::name::value}}` | Replaced with empty string, sets the global variable "name" to "value". |
+| `{{addglobalvar::name::value}}` | Replaced with empty string, adds a numeric value of "increment" to the global variable "name". |
+| `{{incglobalvar::name}}` | Replaced with the result of incrementing the value of global variable "name" by 1. |
+| `{{decglobalvar::name}}` | Replaced with the result of decrementing the value of global variable "name" by 1. |
+| `{{var::name}}` | Replaced with the value of the scoped variable "name" (STscript only). |
+| `{{var::name::index}}` | Replaced with the value at index of the scoped variable "name" (for arrays/objects in STscript). |
+
+### Extension-specific Macros
+
+Added by extensions and only work in specific contexts.
+
+| Macro | Description |
+|-------|-------------|
+| `{{summary}}` | Replaced with the summary of the current chat session (if available). |
