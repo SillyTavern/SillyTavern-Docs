@@ -5,7 +5,7 @@ route: /usage/core-concepts/macros
 
 # Macros (replacement tags)
 
-!!! note
+!!! Note
 This list may be incomplete or outdated. Use the `/help macros` slash command in any SillyTavern chat to get the list of macros that work in your instance.
 !!!
 
