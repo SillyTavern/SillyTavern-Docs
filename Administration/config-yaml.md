@@ -27,6 +27,7 @@ protocol:
 |---------|-------------|---------|-----------------|
 | `dataRoot` | Root directory for user data storage | `./data` | Any valid directory path |
 | `cardsCacheCapacity` | The maximum amount of memory that parsed character cards can use in MB. | 100 | Any positive integer |
+| `skipContentCheck` | Skip new default content checks | `false` | `true`, `false` |
 
 ## [Network Configuration](/Administration/remote-connections.md)
 
@@ -81,17 +82,22 @@ protocol:
 | `autorunPortOverride` | Override port for browser autorun | `-1` | `-1` (use server port), any valid port number |
 | `avoidLocalhost` | Avoid using 'localhost' for autorun | `false` | `true`, `false` |
 
-## Advanced Configuration
+## Thumbnailing Configuration
 
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|-----------------|
-| `disableThumbnails` | Disable thumbnail generation | `false` | `true`, `false` |
-| `thumbnailsQuality` | JPEG thumbnail quality | `95` | 0-100 |
-| `avatarThumbnailsPng` | Generate PNG thumbnails instead of JPEG | `false` | `true`, `false` |
-| `skipContentCheck` | Skip new default content checks | `false` | `true`, `false` |
-| `disableChatBackup` | Disable automatic chat backups | `false` | `true`, `false` |
-| `numberOfBackups` | Number of backups to keep | `50` | Any positive integer |
-| `chatBackupThrottleInterval` | Backup throttle interval (ms) | `10000` | Any positive integer |
+| `thumbnails.enabled` | Enable thumbnail generation | `true` | `true`, `false` |
+| `thumbnails.quality` | JPEG thumbnail quality | `95` | 0-100 |
+| `thumbnails.format` | Image format for thumbnails | `jpg` | `jpg`, `png` |
+
+## Backup Configuration
+
+| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|-----------------|
+| `backups.chat.enabled` | Enable automatic chat backups | `true` | `true`, `false` |
+| `backups.common.numberOfBackups` | Number of backups to keep | `50` | Any positive integer |
+| `backups.chat.throttleInterval` | Backup throttle interval (ms) | `10000` | Any positive integer |
+| `backups.chat.maxTotalBackups` | Maximum total chat backups to keep | `-1` | Any positive integer or -1 |
 
 ## [Extensions Configuration](/extensions/index.md)
 
