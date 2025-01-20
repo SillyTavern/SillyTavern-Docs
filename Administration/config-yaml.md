@@ -89,6 +89,7 @@ protocol:
 | `thumbnails.enabled` | Enable thumbnail generation | `true` | `true`, `false` |
 | `thumbnails.quality` | JPEG thumbnail quality | `95` | 0-100 |
 | `thumbnails.format` | Image format for thumbnails | `jpg` | `jpg`, `png` |
+| `thumbnails.dimensions` | Thumbnail sizes per type (width, height) | `{ 'bg': [160, 90], 'avatar': [96, 144] }` | Object (key: string, value: array of numbers) |
 
 ## Backup Configuration
 
