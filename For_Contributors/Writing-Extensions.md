@@ -97,7 +97,7 @@ Unless you're building a bundled extension, you can import variables and functio
 For example, this code snippet will generate a reply from the currently selected API in the background:
 
 ```js
-import { generateQuietPrompt } from "../../../script.js";
+import { generateQuietPrompt } from "../../../../script.js";
 
 async function handleMessage(data) {
     const text = data.message;
@@ -203,7 +203,7 @@ All registered commands can be used in [STscript](/For_Contributors/st-script.md
 Use eventSource.on() to listen for events:
 
 ```js
-import { eventSource, event_types } from "../../../script.js";
+import { eventSource, event_types } from "../../../../script.js";
 
 eventSource.on(event_types.MESSAGE_RECEIVED, handleIncomingMessage);
 
