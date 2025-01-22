@@ -29,6 +29,7 @@ Other programs and tools that you can import chats from include:
 * Text Generation WebUI (oobabooga): <https://github.com/oobabooga/text-generation-webui>
 * Agnai: <https://github.com/agnaistic/agnai>
 * KoboldAI Lite: <https://github.com/LostRuins/lite.koboldai.net>
+* RisuAI: <https://github.com/kwaroran/RisuAI>
 
 ## Export as .jsonl
 
