@@ -656,6 +656,13 @@ The generated text is then passed through the pipe to the next command and can b
 | ![Cthulhu Says](/static/scripts/cthulhu-says.png) |
 |---------------------------------------------------|
 
+or to insert the generated message as a response from your character:
+
+```stscript
+/genraw You have been memory wiped, your name is now Lisa and you're tearing me apart. You're tearing me apart Lisa! |
+/sendas name={{char}} {{pipe}}
+```
+
 ## Prompt injections
 
 Scripts can add custom LLM prompt injections, making it essentially an equivalent of unlimited Author's Notes.
