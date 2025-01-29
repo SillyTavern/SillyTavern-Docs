@@ -14,7 +14,7 @@ Text Completion APIs **(overridable)**:
 2. NovelAI Kayra: NerdStash v2 tokenizer.
 3. Text Completion: API tokenizer (if supported) or Llama tokenizer.
 4. KoboldAI Classic / AI Horde: Llama tokenizer.
-5. Koboldcpp: model API tokenizer.
+5. KoboldCpp: model API tokenizer.
 
 If you get inaccurate results or wish to experiment, you can set an _override tokenizer_ for SillyTavern to use while forming a request to the AI backend:
 
@@ -23,10 +23,12 @@ If you get inaccurate results or wish to experiment, you can set an _override to
 3. Llama 3 tokenizer. Used by Llama 3/3.1 models. **Pick if you use a Llama 3/3.1 model.**
 4. NerdStash tokenizer. Used by NovelAI's Clio model. **Pick if you use the Clio model.**
 5. NerdStash v2 tokenizer. Used by NovelAI's Kayra model. **Pick if you use the Kayra model.**
-6. Mistral V1 tokenizer. Used by older Mistral models family and their finetunes. **Pick if you use a Mistral model.**
-7. Yi tokenizer. Used by Yi models. **Pick if you use a Yi model.**
-8. Gemma tokenizer. Used by Gemini/Gemma models. **Pick if you use a Gemma model.**
-9. API tokenizer. Queries the generation API to get the token count directly from the model. Known backends to support: Text Generation WebUI (ooba), koboldcpp, TabbyAPI, Aphrodite API. **Pick if you use a supported backend.**
+6. Mistral V1 tokenizer. Used by older Mistral models family and their finetunes. **Pick if you use an older Mistral model.**
+7. Mistral Nemo tokenizer. Used by Mistral Nemo models family and their finetunes. **Pick if you use a Mistral Nemo/Pixtral model.**
+8. Yi tokenizer. Used by Yi models. **Pick if you use a Yi model.**
+9. Gemma tokenizer. Used by Gemini/Gemma models. **Pick if you use a Gemma model.**
+10. DeepSeek tokenizer. Used by DeepSeek models (such as R1). **Pick if you use a DeepSeek model.**
+11. API tokenizer. Queries the generation API to get the token count directly from the model. Known backends to support: Text Generation WebUI (ooba), koboldcpp, TabbyAPI, Aphrodite API. **Pick if you use a supported backend.**
 
 Chat Completion APIs **(non-overridable)**:
 
@@ -38,7 +40,8 @@ Chat Completion APIs **(non-overridable)**:
 6. AI21 API: Jamba tokenizer (requires a one-time download).
 7. Cohere API: Command-R tokenizer (requires a one-time download).
 8. MistralAI API: Mistral V1 or V3 tokenizer (requires a one-time download).
-9. Fallback tokenizer: GPT-3.5 turbo tokenizer.
+9. DeepSeek API: DeepSeek tokenizer (requires a one-time download).
+10. Fallback tokenizer: GPT-3.5 turbo tokenizer.
 
 #### Additional Tokenizers
 
@@ -47,6 +50,7 @@ These tokenizers are not included in the default installation due to their size 
 1. Qwen2 tokenizer.
 2. Command-R tokenizer. Used by Cohere source in Chat Completion.
 3. Mistral V3 (Nemo) tokenizer. Used by MistralAI source in Chat Completion (Nemo and Pixtral models).
+4. DeepSeek (deepseek-chat) tokenizer. Used by DeepSeek source in Chat Completion.
 
 If you don't want to use internet downloads, the opt-out option exists in config.yaml: `enableDownloadableTokenizers`. Set to `false` to disable downloads.
 
