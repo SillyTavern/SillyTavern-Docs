@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791295492624">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791472520020">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.791295492624" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.791472520020" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.791295492624" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.791472520020" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.791295492624" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.791472520020" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -241,7 +241,7 @@
 <li>NovelAI Kayra: NerdStash v2 tokenizer.</li>
 <li>Text Completion: API tokenizer (if supported) or Llama tokenizer.</li>
 <li>KoboldAI Classic / AI Horde: Llama tokenizer.</li>
-<li>Koboldcpp: model API tokenizer.</li>
+<li>KoboldCpp: model API tokenizer.</li>
 </ol>
 <p>If you get inaccurate results or wish to experiment, you can set an <em>override tokenizer</em> for SillyTavern to use while forming a request to the AI backend:</p>
 <ol>
@@ -250,9 +250,11 @@
 <li>Llama 3 tokenizer. Used by Llama 3/3.1 models. <strong>Pick if you use a Llama 3/3.1 model.</strong></li>
 <li>NerdStash tokenizer. Used by NovelAI&#x27;s Clio model. <strong>Pick if you use the Clio model.</strong></li>
 <li>NerdStash v2 tokenizer. Used by NovelAI&#x27;s Kayra model. <strong>Pick if you use the Kayra model.</strong></li>
-<li>Mistral V1 tokenizer. Used by older Mistral models family and their finetunes. <strong>Pick if you use a Mistral model.</strong></li>
+<li>Mistral V1 tokenizer. Used by older Mistral models family and their finetunes. <strong>Pick if you use an older Mistral model.</strong></li>
+<li>Mistral Nemo tokenizer. Used by Mistral Nemo models family and their finetunes. <strong>Pick if you use a Mistral Nemo/Pixtral model.</strong></li>
 <li>Yi tokenizer. Used by Yi models. <strong>Pick if you use a Yi model.</strong></li>
 <li>Gemma tokenizer. Used by Gemini/Gemma models. <strong>Pick if you use a Gemma model.</strong></li>
+<li>DeepSeek tokenizer. Used by DeepSeek models (such as R1). <strong>Pick if you use a DeepSeek model.</strong></li>
 <li>API tokenizer. Queries the generation API to get the token count directly from the model. Known backends to support: Text Generation WebUI (ooba), koboldcpp, TabbyAPI, Aphrodite API. <strong>Pick if you use a supported backend.</strong></li>
 </ol>
 <p>Chat Completion APIs <strong>(non-overridable)</strong>:</p>
@@ -265,6 +267,7 @@
 <li>AI21 API: Jamba tokenizer (requires a one-time download).</li>
 <li>Cohere API: Command-R tokenizer (requires a one-time download).</li>
 <li>MistralAI API: Mistral V1 or V3 tokenizer (requires a one-time download).</li>
+<li>DeepSeek API: DeepSeek tokenizer (requires a one-time download).</li>
 <li>Fallback tokenizer: GPT-3.5 turbo tokenizer.</li>
 </ol>
 <doc-anchor-target id="additional-tokenizers">
@@ -278,6 +281,7 @@
 <li>Qwen2 tokenizer.</li>
 <li>Command-R tokenizer. Used by Cohere source in Chat Completion.</li>
 <li>Mistral V3 (Nemo) tokenizer. Used by MistralAI source in Chat Completion (Nemo and Pixtral models).</li>
+<li>DeepSeek (deepseek-chat) tokenizer. Used by DeepSeek source in Chat Completion.</li>
 </ol>
 <p>If you don&#x27;t want to use internet downloads, the opt-out option exists in config.yaml: <code v-pre>enableDownloadableTokenizers</code>. Set to <code v-pre>false</code> to disable downloads.</p>
 <p>You can also download tokenizers manually from the <a href="https://github.com/SillyTavern/SillyTavern-Tokenizers">SillyTavern-Tokenizers</a> repository. Download the JSON files and put them in the <code v-pre>_cache</code> subdirectory of your data root, the path is <code v-pre>./data/_cache</code> by default. Create the <code v-pre>_cache</code> directory if it doesn&#x27;t exist. After that, restart the SillyTavern server to re-initialize tokenizers.</p>
