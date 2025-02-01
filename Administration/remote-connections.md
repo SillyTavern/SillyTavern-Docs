@@ -45,7 +45,7 @@ SillyTavern is listening on IPv4: 127.0.0.1:8000
 
 ## Access control configuration
 
-After enabling remote connection listening, you must configure at least one access control method. Otherwise, the server will fail to start.
+After enabling remote connection listening, you must configure at least one access control method. Otherwise, the server will not start.
 
 ### Whitelist-Based access control
 
