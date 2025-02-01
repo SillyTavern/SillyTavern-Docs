@@ -93,7 +93,7 @@ To enable access control via a whitelist, edit the `config.yaml` file in `/Silly
       - 192.168.0.*
     ```
 
-### Disabling Whitelist-Based Access Control
+### Disabling whitelist-based access control
 
 To disable access control via a whitelist:
 
