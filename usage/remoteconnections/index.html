@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791758913875">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791771755874">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.791758913875" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.791771755874" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.791758913875" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.791771755874" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.791758913875" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.791758913875" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.791771755874" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.791771755874" defer></script>
 
     <style>
         a {
@@ -277,6 +277,24 @@
     </h2>
 </doc-anchor-target>
 <p>By default, the ST server only accepts connections from the machine that it&#x27;s running on (localhost). To allow it to listen for connections from other devices, set the <code v-pre>listen</code> option in <code v-pre>config.yaml</code> to <code v-pre>true</code>.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>If you search for <code v-pre>config.yaml</code> directly in the SillyTavern folder, you may find two files.</h5>
+<p>All modifications to <code v-pre>config.yaml</code> in this document refer to the one in the SillyTavern root directory (/SillyTavern/config.yaml), not <code v-pre>/SillyTavern/default/config.yaml</code>.</p>
+        </div>
+    </div>
+</div>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-yaml"><code v-pre class="language-yaml"># Listen for incoming connections
 listen: true</code></pre>
@@ -290,40 +308,118 @@ listen: true</code></pre>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">SillyTavern is listening on IPv4: 127.0.0.1:8000</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="access-control">
+<doc-anchor-target id="access-control-configuration">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#access-control">#</doc-anchor-trigger>
-        <span>Access control</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#access-control-configuration">#</doc-anchor-trigger>
+        <span>Access control configuration</span>
     </h2>
 </doc-anchor-target>
-<p>After activating the remote connection listening, you must turn on at least one access control method, or the server will refuse to start.</p>
-<doc-anchor-target id="access-control-by-whitelist">
+<p>After enabling remote connection listening, you must configure at least one access control method. Otherwise, the server will not start.</p>
+<doc-anchor-target id="whitelist-based-access-control">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#access-control-by-whitelist">#</doc-anchor-trigger>
-        <span>Access control by whitelist</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#whitelist-based-access-control">#</doc-anchor-trigger>
+        <span>Whitelist-Based access control</span>
     </h3>
 </doc-anchor-target>
+<p>To enable access control via a whitelist, edit the <code v-pre>config.yaml</code> file in the SillyTavern root directory (<code v-pre>/SillyTavern/config.yaml</code>):</p>
+<ol>
+<li>Start SillyTavern at least once to generate the necessary configuration files.</li>
+<li>Open <code v-pre>/SillyTavern/config.yaml</code> in a text editor.</li>
+<li>Find the <code v-pre>whitelist</code> section and add the IP addresses you wish to allow:
 <ul>
-<li>Create a new text file inside your SillyTavern base install folder called <code v-pre>whitelist.txt</code>.</li>
-<li>Open the file in a text editor, add a list of IPs you want to be allowed to connect.
-<ul>
-<li>Each IP must be on its own line.</li>
-<li><strong>127.0.0.1 MUST be included in the list, or you will not be able to connect on the host machine</strong></li>
-<li>Individual IPs, and wildcard (*) IP ranges are accepted.</li>
-<li>CIDR masks are also accepted (eg. 10.0.0.0/24).</li>
+<li>List each IP address separately.</li>
+<li>Ensure <code v-pre>127.0.0.1</code> is included, or you will be unable to connect from the host machine.</li>
+<li>Supports individual IPs, CIDR masks (e.g., <code v-pre>10.0.0.0/24</code>), and wildcard (<code v-pre>*</code>) ranges.</li>
 </ul>
 </li>
-<li>Save the <code v-pre>whitelist.txt</code> file.</li>
+<li>Save the <code v-pre>config.yaml</code> file.</li>
 <li><strong>Restart your SillyTavern server.</strong></li>
-</ul>
-<doc-anchor-target id="example-whitelisttxt-files">
+</ol>
+<doc-anchor-target id="example-configyaml-whitelist-configuration">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#example-whitelisttxt-files">#</doc-anchor-trigger>
-        <span>Example <code v-pre>whitelist.txt</code> files</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-configyaml-whitelist-configuration">#</doc-anchor-trigger>
+        <span>Example <code v-pre>config.yaml</code> whitelist configuration</span>
     </h4>
 </doc-anchor-target>
 <ol>
-<li><p>Allows any device on the local network to connect:</p>
+<li><p>Allow any device on the local network:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-yaml"><code v-pre class="language-yaml">whitelist:
+  - ::1
+  - 127.0.0.1
+  - 10.0.0.0/8
+  - 172.16.0.0/12
+  - 192.168.0.0/16</code></pre>
+</doc-codeblock></div>
+<p>If unsure about your local network&#x27;s address range, use the whitelist above.</p>
+</li>
+<li><p>Allows two specific devices to connect:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-yaml"><code v-pre class="language-yaml">whitelist:
+  - ::1
+  - 127.0.0.1
+  - 192.168.0.2
+  - 192.168.0.5</code></pre>
+</doc-codeblock></div>
+</li>
+<li><p>Allows any device on the <code v-pre>192.168.0.*</code> subnet to connect:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-yaml"><code v-pre class="language-yaml">whitelist:
+  - ::1
+  - 127.0.0.1
+  - 192.168.0.*</code></pre>
+</doc-codeblock></div>
+</li>
+</ol>
+<doc-anchor-target id="disabling-whitelist-based-access-control">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#disabling-whitelist-based-access-control">#</doc-anchor-trigger>
+        <span>Disabling whitelist-based access control</span>
+    </h3>
+</doc-anchor-target>
+<p>To disable access control via a whitelist:</p>
+<ul>
+<li>Set <code v-pre>whitelistMode</code> to <code v-pre>false</code> in <code v-pre>/SillyTavern/config.yaml</code>.</li>
+<li>Remove or rename <code v-pre>whitelist.txt</code> (if it exists) in the SillyTavern base installation folder.</li>
+<li>Restart your SillyTavern server.</li>
+</ul>
+<doc-anchor-target id="not-recommended-using-whitelisttxt">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#not-recommended-using-whitelisttxt">#</doc-anchor-trigger>
+        <span>Not recommended: using <code v-pre>whitelist.txt</code></span>
+    </h3>
+</doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>If <code v-pre>whitelist.txt</code> exists, it takes precedence over the whitelist settings in <code v-pre>config.yaml</code>.</h5>
+<p>However, since all other configurations are managed within <code v-pre>config.yaml</code>, and <code v-pre>whitelist.txt</code> may encounter permission issues or become locked, the system could silently revert to using the <code v-pre>config.yaml</code> whitelist.</p>
+<p><strong>Editing config.yaml directly is both simpler and more reliable.</strong></p>
+        </div>
+    </div>
+</div>
+<p>If you still prefer using whitelist.txt:</p>
+<ol>
+<li>Create a new text file named <code v-pre>whitelist.txt</code> in the SillyTavern base installation folder.</li>
+<li>Open it in a text editor and add the allowed IP addresses.</li>
+<li>Save the file and restart your SillyTavern server.</li>
+</ol>
+<doc-anchor-target id="example-whitelisttxt-configuration">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-whitelisttxt-configuration">#</doc-anchor-trigger>
+        <span>Example <code v-pre>whitelist.txt</code> configuration</span>
+    </h4>
+</doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">10.0.0.0/8
 172.16.0.0/12
@@ -331,57 +427,7 @@ listen: true</code></pre>
 127.0.0.1
 ::1</code></pre>
 </doc-codeblock></div>
-<p>If you are not sure what addresses your local network uses, use the whitelist above.</p>
-</li>
-<li><p>Allows two specific devices to connect:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">192.168.0.2
-192.168.0.5
-127.0.0.1</code></pre>
-</doc-codeblock></div>
-</li>
-<li><p>Allows any device on the 192.168.0.* subnet to connect:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">192.168.0.*
-127.0.0.1</code></pre>
-</doc-codeblock></div>
-</li>
-</ol>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-            <h5><code v-pre>config.yaml</code> also has a <code v-pre>whitelist</code> array, which you can use in the same way, but this array will be ignored if <code v-pre>whitelist.txt</code> exists. We do not recommend using the <code v-pre>config.yaml</code> IP list, because using <code v-pre>whitelist.txt</code> is easier.</h5>
-        </div>
-    </div>
-</div>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-            <h5>Removing access control by whitelist</h5>
-<p>Change <code v-pre>whitelistMode</code> to <code v-pre>false</code>, remove (or rename) <code v-pre>whitelist.txt</code> in the SillyTavern base install folder, and restart the server.</p>
-        </div>
-    </div>
-</div>
+<p>This allows any device on the local network to connect.</p>
 <doc-anchor-target id="access-control-by-http-basic-authentication">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#access-control-by-http-basic-authentication">#</doc-anchor-trigger>
