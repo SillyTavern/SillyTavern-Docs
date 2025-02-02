@@ -24,6 +24,10 @@ You should not use port forwarding to expose your ST server to the internet. Ins
 
 By default, the ST server only accepts connections from the machine that it's running on (localhost). To allow it to listen for connections from other devices, set the `listen` option in `config.yaml` to `true`.
 
+!!! If you search for `config.yaml` directly in the SillyTavern folder, you may find two files.
+All modifications to `config.yaml` in this document refer to the one in the SillyTavern root directory (/SillyTavern/config.yaml), not `/SillyTavern/default/config.yaml`.
+!!!
+
 ```yaml
 # Listen for incoming connections
 listen: true
@@ -43,56 +47,91 @@ When ST is **not** listening for remote connections, you should see this message
 SillyTavern is listening on IPv4: 127.0.0.1:8000
 ```
 
-## Access control
+## Access control configuration
 
-After activating the remote connection listening, you must turn on at least one access control method, or the server will refuse to start.
+After enabling remote connection listening, you must configure at least one access control method. Otherwise, the server will not start.
 
-### Access control by whitelist
+### Whitelist-Based access control
 
-* Create a new text file inside your SillyTavern base install folder called `whitelist.txt`.
-* Open the file in a text editor, add a list of IPs you want to be allowed to connect.
-  * Each IP must be on its own line.
-  * **127.0.0.1 MUST be included in the list, or you will not be able to connect on the host machine**
-  * Individual IPs, and wildcard (*) IP ranges are accepted.
-  * CIDR masks are also accepted (eg. 10.0.0.0/24).
-* Save the `whitelist.txt` file.
-* **Restart your SillyTavern server.**
+To enable access control via a whitelist, edit the `config.yaml` file in the SillyTavern root directory (`/SillyTavern/config.yaml`):
 
-#### Example `whitelist.txt` files
+1. Start SillyTavern at least once to generate the necessary configuration files.
+2. Open `/SillyTavern/config.yaml` in a text editor.
+3. Find the `whitelist` section and add the IP addresses you wish to allow:
+    * List each IP address separately.
+    * Ensure `127.0.0.1` is included, or you will be unable to connect from the host machine.
+    * Supports individual IPs, CIDR masks (e.g., `10.0.0.0/24`), and wildcard (`*`) ranges.
+4. Save the `config.yaml` file.
+5. **Restart your SillyTavern server.**
 
-1. Allows any device on the local network to connect:
+#### Example `config.yaml` whitelist configuration
 
-    ```txt
-    10.0.0.0/8
-    172.16.0.0/12
-    192.168.0.0/16
-    127.0.0.1
-    ::1
+1. Allow any device on the local network:
+
+    ```yaml
+    whitelist:
+      - ::1
+      - 127.0.0.1
+      - 10.0.0.0/8
+      - 172.16.0.0/12
+      - 192.168.0.0/16
     ```
    
-    If you are not sure what addresses your local network uses, use the whitelist above. 
+    If unsure about your local network's address range, use the whitelist above.
 
 2. Allows two specific devices to connect:
 
-    ```txt
-    192.168.0.2
-    192.168.0.5
-    127.0.0.1
+    ```yaml
+    whitelist:
+      - ::1
+      - 127.0.0.1
+      - 192.168.0.2
+      - 192.168.0.5
     ```
 
-3. Allows any device on the 192.168.0.* subnet to connect:
+3. Allows any device on the `192.168.0.*` subnet to connect:
 
-    ```txt
-    192.168.0.*
-    127.0.0.1
+    ```yaml
+    whitelist:
+      - ::1
+      - 127.0.0.1
+      - 192.168.0.*
     ```
 
-!!! `config.yaml` also has a `whitelist` array, which you can use in the same way, but this array will be ignored if `whitelist.txt` exists. We do not recommend using the `config.yaml` IP list, because using `whitelist.txt` is easier.
+### Disabling whitelist-based access control
+
+To disable access control via a whitelist:
+
+* Set `whitelistMode` to `false` in `/SillyTavern/config.yaml`.
+* Remove or rename `whitelist.txt` (if it exists) in the SillyTavern base installation folder.
+* Restart your SillyTavern server.
+
+### Not recommended: using `whitelist.txt`
+
+!!! If `whitelist.txt` exists, it takes precedence over the whitelist settings in `config.yaml`.
+
+However, since all other configurations are managed within `config.yaml`, and `whitelist.txt` may encounter permission issues or become locked, the system could silently revert to using the `config.yaml` whitelist.
+
+**Editing config.yaml directly is both simpler and more reliable.**
 !!!
 
-!!! Removing access control by whitelist
-Change `whitelistMode` to `false`, remove (or rename) `whitelist.txt` in the SillyTavern base install folder, and restart the server.
-!!!
+If you still prefer using whitelist.txt:
+
+1. Create a new text file named `whitelist.txt` in the SillyTavern base installation folder.
+2. Open it in a text editor and add the allowed IP addresses.
+3. Save the file and restart your SillyTavern server.
+
+#### Example `whitelist.txt` configuration
+
+```txt
+10.0.0.0/8
+172.16.0.0/12
+192.168.0.0/16
+127.0.0.1
+::1
+```
+
+This allows any device on the local network to connect.
 
 ### Access control by HTTP Basic Authentication
 
