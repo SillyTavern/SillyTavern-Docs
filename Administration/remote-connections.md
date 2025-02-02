@@ -24,6 +24,10 @@ You should not use port forwarding to expose your ST server to the internet. Ins
 
 By default, the ST server only accepts connections from the machine that it's running on (localhost). To allow it to listen for connections from other devices, set the `listen` option in `config.yaml` to `true`.
 
+!!! If you search for `config.yaml` directly in the SillyTavern folder, you may find two files.
+All modifications to `config.yaml` in this document refer to the one in the SillyTavern root directory (/SillyTavern/config.yaml), not `/SillyTavern/default/config.yaml`.
+!!!
+
 ```yaml
 # Listen for incoming connections
 listen: true
@@ -49,15 +53,16 @@ After enabling remote connection listening, you must configure at least one acce
 
 ### Whitelist-Based access control
 
-To enable access control via a whitelist, edit the `config.yaml` file in `/SillyTavern/default/`:
+To enable access control via a whitelist, edit the `config.yaml` file in the SillyTavern root directory (`/SillyTavern/config.yaml`):
 
-1. Open `config.yaml` in a text editor.
-2. Find the whitelist section and add the IP addresses you wish to allow.
+1. Start SillyTavern at least once to generate the necessary configuration files.
+2. Open `/SillyTavern/config.yaml` in a text editor.
+3. Find the `whitelist` section and add the IP addresses you wish to allow:
     * List each IP address separately.
     * Ensure `127.0.0.1` is included, or you will be unable to connect from the host machine.
     * Supports individual IPs, CIDR masks (e.g., `10.0.0.0/24`), and wildcard (`*`) ranges.
-3. Save the `/SillyTavern/default/config.yaml` file and delete `/SillyTavern/config.yaml` (if it exists) to prevent conflicts.
-4. **Restart your SillyTavern server.**
+4. Save the `config.yaml` file.
+5. **Restart your SillyTavern server.**
 
 #### Example `config.yaml` whitelist configuration
 
@@ -97,7 +102,7 @@ To enable access control via a whitelist, edit the `config.yaml` file in `/Silly
 
 To disable access control via a whitelist:
 
-* Set `whitelistMode` to `false` in `/SillyTavern/default/config.yaml`.
+* Set `whitelistMode` to `false` in `/SillyTavern/config.yaml`.
 * Remove or rename `whitelist.txt` (if it exists) in the SillyTavern base installation folder.
 * Restart your SillyTavern server.
 
