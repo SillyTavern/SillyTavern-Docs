@@ -20,6 +20,14 @@ When a reasoning block is expanded, you can copy or edit its contents using the 
 
 Add a reasoning block to any message through the **<i class="fa-solid fa-pencil"></i> Message Edit** menu. Click **<i class="fa-solid fa-lightbulb"></i>** while editing to add a reasoning section. Third-party extensions can also add reasoning by writing to the `extra.reasoning` field of the message object before adding it to the chat.
 
+### With a Command
+
+Use the `/reasoning-set` STscript command to add reasoning to a message. The command takes the `at` (message ID, defaults to the last message) and reasoning text as arguments.
+
+```stscript
+/reasoning-set at=0 This is the reasoning.
+```
+
 ### By Backend
 
 If your chosen LLM backend and model support reasoning output, enable "Request Model Reasoning" in the **<i class="fa-solid fa-sliders"></i> AI Response Configuration** panel.
@@ -33,7 +41,7 @@ Supported sources:
 
 Enable "Auto-Parse Reasoning" in the **<i class="fa-solid fa-font"></i> Advanced Formatting** panel to automatically parse reasoning from the model's output.
 
-The response must contain a reasoning section wrapped in configured Prefix and Suffix sequences.
+The response must contain a reasoning section wrapped in configured Prefix and Suffix sequences. The sequences provided by default correspond to the DeepSeek R1 reasoning format.
 
 Example with prefix `<think>` and suffix `</think>`:
 
