@@ -64,3 +64,14 @@ By default, recognized reasoning block contents are not sent back to the model. 
 !!!
 Most model providers do not recommend sending CoT back to the model in multi-turn conversations.
 !!!
+
+## Regex Scripts
+
+Regular expression scripts from the Regex extension can be applied to the contents of reasoning blocks. Check "Reasoning" in the "Affects" section of the script editor to target reasoning blocks specifically.
+
+Different ephemerality options affect reasoning blocks in the following ways:
+
+1. No ephemerality: reasoning content is permanently changed.
+2. Run on edit: regex script will be re-evaluated when the reasoning block is edited.
+3. Alter chat display: regex is applied to the reasoning block's display text, not the underlying content.
+4. Alter outgoing prompts: regex is only applied to reasoning blocks before they are sent to the model.
