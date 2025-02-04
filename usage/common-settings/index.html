@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791771755874">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.792015939710">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.791771755874" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.792015939710" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.791771755874" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.792015939710" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.791771755874" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.792015939710" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -276,11 +276,12 @@
         <span>Temperature</span>
     </h3>
 </doc-anchor-target>
-<p>Controls the randomness of the generated text.</p>
+<p>Temperature controls the randomness in token selection:</p>
 <ul>
-<li>Lower value: responses are more logical but less creative.</li>
-<li>Higher value: responses are more creative but less logical.</li>
+<li>Low temperature (&lt;1.0) leads to more predictable text, favoring higher probability tokens</li>
+<li>High temperature (&gt;1.0) increases creativity and diversity in the output by giving lower probability tokens a better chance.</li>
 </ul>
+<p>Set to 1 for the original probabilities.</p>
 <doc-anchor-target id="repetition-penalty">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#repetition-penalty">#</doc-anchor-trigger>
@@ -288,10 +289,6 @@
     </h3>
 </doc-anchor-target>
 <p>Attempts to curb repetition by penalizing tokens based on how often they occur in the context.</p>
-<ul>
-<li>Sometimes, if the character is fixated on something or repeats the same phrase, increasing this parameter can help.</li>
-<li>This parameter will break responses if set too high. It&#x27;s best not to go above <code v-pre>1.15</code> unless you know what you&#x27;re doing.</li>
-</ul>
 <p>Set the value to 1 to disable its effect.</p>
 <doc-anchor-target id="repetition-penalty-range">
     <h4>
@@ -315,15 +312,15 @@
         <span>Top K</span>
     </h3>
 </doc-anchor-target>
-<p>Limits the token pool to the K most likely tokens. A lower number is more consistent but less creative.</p>
-<p>Set the value to 0 to disable its effect.</p>
+<p>Top K sets a maximum amount of top tokens that can be chosen from. For example, if Top K is 20, this means only the 20 highest ranking tokens will be kept (regardless of their probabilities being diverse or limited).</p>
+<p>Set to 0 (or -1, depending on your backend) to disable.</p>
 <doc-anchor-target id="top-p">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#top-p">#</doc-anchor-trigger>
         <span>Top P</span>
     </h3>
 </doc-anchor-target>
-<p>Limits the token pool to however many tokens it takes for their probabilities to add up to P. A lower number is more consistent but less creative.</p>
+<p>Top P (a.k.a. nucleus sampling) adds up all the top tokens required to add up to the target percentage. If the Top 2 tokens are both 25%, and Top P is 0.50, only the Top 2 tokens are considered.</p>
 <p>Set the value to 1 to disable its effect.</p>
 <doc-anchor-target id="typical-p">
     <h3>
@@ -331,7 +328,7 @@
         <span>Typical P</span>
     </h3>
 </doc-anchor-target>
-<p>Selects tokens randomly from the list of possible tokens, with each token having an equal chance of being selected. Produces responses that are more diverse but may also be less coherent.</p>
+<p>Typical P Sampling prioritizes tokens based on their deviation from the average entropy of the set. It maintains tokens whose cumulative probability is close to a predefined threshold (e.g., 0.5), emphasizing those with average information content.</p>
 <p>Set the value to 1 to disable its effect.</p>
 <doc-anchor-target id="min-p">
     <h3>
@@ -350,7 +347,7 @@
         <span>Top A</span>
     </h3>
 </doc-anchor-target>
-<p>The number of tokens chosen from the most likely options is automatically determined based on the likelihood distribution of the options, but instead of choosing the <code v-pre>Top P</code> or <code v-pre>Top K</code> tokens, it chooses all tokens with probabilities above a certain threshold.</p>
+<p>Top A sets a threshold for token selection based on the square of the highest token probability. For example, if the Top-A value is 0.2 and the top token&#x27;s probability is 50%, tokens with probabilities below 5% (0.2 * 0.5^2) are excluded.</p>
 <p>Set the value to 0 to disable its effect.</p>
 <doc-anchor-target id="tail-free-sampling">
     <h3>
@@ -358,7 +355,7 @@
         <span>Tail Free Sampling</span>
     </h3>
 </doc-anchor-target>
-<p>This setting removes the least probable tokens from consideration during text generation, which can improve the quality and coherence of the generated text.</p>
+<p>Tail-Free Sampling (TFS) searches for a tail of low-probability tokens in the distribution, by analyzing the rate of change in token probabilities using derivatives. It retains tokens up to a threshold (e.g., 0.3) based on the normalized second derivative. The closer to 0, the more discarded tokens.</p>
 <p>Set the value to 1 to disable its effect.</p>
 <doc-anchor-target id="smoothing-factor">
     <h3>
@@ -383,6 +380,65 @@
 <li><code v-pre>Exponent</code> applies an exponential curve based on the top token.</li>
 </ul>
 <p>Untick to disable its effect.</p>
+<doc-anchor-target id="epsilon-cutoff">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#epsilon-cutoff">#</doc-anchor-trigger>
+        <span>Epsilon Cutoff</span>
+    </h3>
+</doc-anchor-target>
+<p>Epsilon cutoff sets a probability floor below which tokens are excluded from being sampled. In units of 1e-4; a reasonable value is 3.</p>
+<p>Set to 0 to disable.</p>
+<doc-anchor-target id="eta-cutoff">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#eta-cutoff">#</doc-anchor-trigger>
+        <span>Eta Cutoff</span>
+    </h3>
+</doc-anchor-target>
+<p>Eta cutoff is the main parameter of the special Eta Sampling technique. In units of 1e-4; a reasonable value is 3. See the paper <a href="https://arxiv.org/abs/2210.15191">Truncation Sampling as Language Model Desmoothing by Hewitt et al. (2022)</a> for details.</p>
+<p>Set to 0 to disable.</p>
+<doc-anchor-target id="dry-repetition-penalty">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#dry-repetition-penalty">#</doc-anchor-trigger>
+        <span>DRY Repetition Penalty</span>
+    </h3>
+</doc-anchor-target>
+<p>DRY penalizes tokens that would extend the end of the input into a sequence that has previously occurred in the input. If you want to allow repeating certain sequences verbatim (e.g. names), you can add them to the sequence breakers list. See the Pull Request <a href="https://github.com/oobabooga/text-generation-webui/pull/5677">here</a>.</p>
+<p>Set multiplier to 0 to disable.</p>
+<doc-anchor-target id="exclude-top-choices-xtc">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#exclude-top-choices-xtc">#</doc-anchor-trigger>
+        <span>Exclude Top Choices (XTC)</span>
+    </h3>
+</doc-anchor-target>
+<p>XTC sampling algorithm removes the most likely tokens from consideration instead of pruning the least likely tokens It removes all except the least likely token meeting a given threshold, with a given probability. This ensures that at least one &quot;viable&quot; choice remains, retaining coherence. See the Pull Request <a href="https://github.com/oobabooga/text-generation-webui/pull/6335">here</a>.</p>
+<p>Set probability to 0 to disable.</p>
+<doc-anchor-target id="mirostat">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mirostat">#</doc-anchor-trigger>
+        <span>Mirostat</span>
+    </h3>
+</doc-anchor-target>
+<p>Mirostat matches the output perplexity to that of the input, thus avoiding the repetition trap (where, as the autoregressive inference produces text, the perplexity of the output tends toward zero) and the confusion trap (where the perplexity diverges). For details, see the paper <a href="https://arxiv.org/abs/2007.14966">Mirostat: A Neural Text Decoding Algorithm that Directly Controls Perplexity by Basu et al. (2020)</a>.</p>
+<p>Mode chooses the Mirostat version.</p>
+<ul>
+<li>0 = disable,</li>
+<li>1 = Mirostat 1.0 (llama.cpp only),</li>
+<li>2 = Mirostat 2.0.</li>
+</ul>
+<doc-anchor-target id="beam-search">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#beam-search">#</doc-anchor-trigger>
+        <span>Beam Search</span>
+    </h3>
+</doc-anchor-target>
+<p>A greedy, brute-force algorithm used in LLM sampling to find the most likely sequence of words or tokens. It expands multiple candidate sequences at once, maintaining a fixed number (beam width) of top sequences at each step.</p>
+<doc-anchor-target id="top-nsigma">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#top-nsigma">#</doc-anchor-trigger>
+        <span>Top nsigma</span>
+    </h3>
+</doc-anchor-target>
+<p>A sampling method that filters logits based on their statistical properties. It keeps tokens within n standard deviations of the maximum logit value, providing a simpler alternative to top-p/top-k sampling while maintaining sampling stability across different temperatures.</p>
 
                                 
                                 <!-- Required only on API pages -->
