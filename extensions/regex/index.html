@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.792035485570">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.792036336920">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -35,11 +35,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.792035485570" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.792036336920" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.792035485570" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.792036336920" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.792035485570" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.792036336920" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -290,9 +290,9 @@
 <p>Below this is a list of your scripts with some action buttons.</p>
 <ul>
 <li>Drag handles (three horizontal bars to the left of the script name) let you drag/drop the scripts into any order you like.</li>
-<li>Primary of/off switch can be quickly toggled to enable or disable the script without changing anything else. Disabled scripts are shown with <del>strikethrough</del> styling. <strong>If a script is disabled here, it will be untriggerable by a QuickReply or STScript.</strong></li>
+<li>Primary on/off switch can be quickly toggled to enable or disable the script without changing anything else. Disabled scripts are shown with <del>strikethrough</del> styling. <strong>If a script is disabled here, it will be untriggerable by a QuickReply or STScript.</strong></li>
 <li>&#x27;Edit&#x27; (pencil) button will open the RegEx script editor.</li>
-<li>&#x27;Move to scoped&#x27; (down arrow) will convert a global script to a scope script and apply it to the current character. In reverse (up arrow), it would convert a scoped script to global.</li>
+<li>&#x27;Move to scoped&#x27; (down arrow) will convert a global script to a scoped script and apply it to the current character. In reverse (up arrow), it would convert a scoped script to global.</li>
 <li>&#x27;Export&#x27; will cause your browser to download an exported <code v-pre>.json</code> file of the Script, which can then be shared and imported into another instance of SillyTavern.</li>
 <li>&#x27;Delete&#x27; (trashcan) deletes the script.</li>
 </ul>
@@ -307,26 +307,25 @@
     <figcaption class="caption">RegEx Editor</figcaption>
 </figure>
 </p>
-<doc-anchor-target id="primary-configurations">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#primary-configurations">#</doc-anchor-trigger>
-        <span>Primary Configurations</span>
-    </h3>
-</doc-anchor-target>
 <ul>
-<li><p><strong>Scope</strong> : By default a RegEx script is applied to any and all characters, but if a script is created as (or converted to) a scoped script, it will only apply to the currently active character. This script will be written into the charater&#x27;s card data (making it shareable with the card), and will be displayed in a separate section of the RegEx extension panel.</p>
-</li>
 <li><p><strong>Name</strong> : The label for the script shown on the extension&#x27;s script list.</p>
 </li>
-<li><p><strong>Find Regex</strong> : This is the Regular Expression that is used to detect your targeted the text pattern. This is usually the most complex part of any RegEx script, and is the easiest place to make mistakes. You can click the large &#x27;Test Mode&#x27; button at the top of the Regex Editor to open a comparison view. Type some text into the &#x27;Input&#x27; box, and the results of your RegEx script will be shown in the Output box.</p>
+<li><p><strong>Find Regex</strong> : This is the Regular Expression that is used to detect your targeted text pattern. This is usually the most complex part of any RegEx script, and is the easiest place to make mistakes. Refer to the links at the top of the page for information how to write a RegEx sequence.</p>
 </li>
-<li><p><strong>Replace With</strong> : This what will replace the matched sequence. In a very simple example, if your &#x27;Find Regex&#x27; is <code v-pre>apple</code>, and your &#x27;Repalce With&#x27; is <code v-pre>orange</code>, all instances of the &#x27;apple&#x27; would be automatically changed to &#x27;orange&#x27; in any text where the script is applied.</p>
+<li><p><strong>Test Mode</strong> : This will open a comparison view at the top of the editor. Type some text into the &#x27;Input&#x27; box, and the results of your RegEx script will be shown in the Output box.</p>
 </li>
 </ul>
-<p>You can also use the extension-specific macro &#x60;&#x60; in this box to insert the full matched sequence of text. This is commonly used to apply styles to specific words. Going back to the above example, if <code v-pre>****</code> were put into the &#x27;Replace With&#x27; box instead, all occurences of the word &#x27;apple&#x27; would be replaced with <code v-pre>**apple**</code>, which would apply the bold markdown style to it.</p>
-<p>You can also use variables such as $1, $2, $3 etc to insert what are called &#x27;Capture Groups&#x27;. These are substrings located in the text sequence matched by the &#x27;Find Regex&#x27; sequence. <strong>Note that using these variables requires the matching expression to contain sets of parentheses to define which part of the matched string counts as a captured group.</strong> Refer to the links above for reference on how to set up Capture Groups.</p>
+<doc-anchor-target id="replace-with">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#replace-with">#</doc-anchor-trigger>
+        <span>Replace With</span>
+    </h3>
+</doc-anchor-target>
+<p>This what will replace the matched sequence. In a very simple example, if your &#x27;Find Regex&#x27; is <code v-pre>apple</code>, and your &#x27;Repalce With&#x27; is <code v-pre>orange</code>, all instances of the &#x27;apple&#x27; would be automatically changed to &#x27;orange&#x27; in any text where the script is applied.</p>
+<p>The extension-specific macro <code v-pre>\{\{match\}\}\</code> in this box will insert the full matched sequence of text. This is commonly used to apply styles to specific words. Going back to the above example, if <code v-pre>**\{\{match\}\}**</code> were put into the &#x27;Replace With&#x27; box instead, all occurences of the word &#x27;apple&#x27; would be replaced with <code v-pre>**apple**</code>, which would apply the bold markdown style to it.</p>
+<p>Variables such as $1, $2, $3 etc can be used to insert what are called &#x27;Capture Groups&#x27;. These are substrings located in the text sequence matched by the &#x27;Find Regex&#x27; sequence. <strong>Note that using these variables requires the matching expression to contain sets of parentheses to define which part of the matched string counts as a captured group.</strong> Refer to the links at the top for reference on how to set up Capture Groups.</p>
 <ul>
-<li><p><strong>Trim Out</strong> : text put in this box will be removed from the matched text sequence before the &#x27;Replace With&#x27; process is applied. For example, if our match was &#x27;apple&#x27;, and the Trim Out box contains &#x27;le&#x27;, then the letters &#x27;le&#x27; would be removed first before the &#x27;Replace With&#x27; process is applied. Since our &#x27;Replace With&#x27; box contains <code v-pre>****</code> it would result in <code v-pre>**app**</code> being put in as the replacement for &#x27;apple&#x27; (first &#x27;le&#x27; is removed, and the remaining matched text is given the bold markdown style). Multiple trims can be applied by adding a newline between each string you want to remove.</p>
+<li><p><strong>Trim Out</strong> : text put in this box will be removed from the matched text sequence before the &#x27;Replace With&#x27; process is applied. For example, if our match was &#x27;apple&#x27;, and the Trim Out box contains &#x27;le&#x27;, then the letters &#x27;le&#x27; would be removed first before the &#x27;Replace With&#x27; process is applied. Since our &#x27;Replace With&#x27; box contains <code v-pre>**\{\{match\}\}**</code> it would result in <code v-pre>**app**</code> being put in as the replacement for &#x27;apple&#x27; (first &#x27;le&#x27; is removed, and the remaining matched text is given the bold markdown style). Multiple trims can be applied by adding a newline between each string you want to remove.</p>
 </li>
 <li><p><strong>Affects</strong> : This list of checkboxes defines the text sources to which the RegEx script will be applied. If everthing here is unchecked the script will never activate during normal chatting, but it can still be activated via slash command or STScript.</p>
 </li>
@@ -338,7 +337,12 @@
 <li>&#x27;Run on Edit&#x27; makes the script also run after a chat message has been edited. If this is unchecked, the contents of edited chat messages will not trigger the script.</li>
 </ul>
 </li>
-<li><p><strong>Macros in Find Regex</strong> : Select whether or not to replace macros (such as <code v-pre>, </code>, etc) that are present in the Find Regex box&#x27;s sequence. Replacements can be either done verbatim (using the literal value of those macros), or &#x27;escaped&#x27; (meaning each character will be preceded with a RegEx escape slash <code v-pre>\</code>. This can be useful if you have certain special characters in the values of the macro).</p>
+<li><p><strong>Macros in Find Regex</strong> : Select whether or not to replace macros (such as <code v-pre>, </code>, etc) that are present in the Find Regex box&#x27;s sequence.</p>
+<ul>
+<li>&#x27;Don&#x27;t Substitute&#x27; will cause any SillyTavern macros to be ignored so the RegEx script will treat them literally when searching.</li>
+<li>&#x27;Raw&#x27; will send in the value of hte macro verbatim.</li>
+<li>&#x27;Escaped&#x27; will add a RegEx escape slash <code v-pre>\</code> before each character to ensure they do not accidentally alter the overall RegEx sequence. This can be useful if you have certain special characters in the values of the macro.</li>
+</ul>
 </li>
 </ul>
 <doc-anchor-target id="ephemerality">
@@ -347,7 +351,7 @@
         <span>Ephemerality</span>
     </h3>
 </doc-anchor-target>
-<p>By default (when neither box here is checked) a RegEx script will directly edit the text values stored inside the chat&#x27;s JSONL file. This ensures both the outgoing prompt and the chat display will always contain the same values. However, this change to the chat data file is irreversible.</p>
+<p>By default (when neither box here is checked) a RegEx script will directly edit the text values stored inside the chat&#x27;s JSONL file. This ensures both the outgoing prompt and the chat display will always contain the same values. However, these changes to the chat file are irreversible.</p>
 <p>If you do not want this to happen, you can enable either of the checkboxes here to limit the RegEx script&#x27;s affects to only the display or the outgoing prompt.</p>
 <p>If only one of the boxes is checked, there will be no changes made to the chat file, but <strong>only the checked item</strong> will be get the changes. This means you will be seeing one thing, but the LLM will be seeing another. Use this carefully.</p>
 <p>If both are selected, the script will function as normal in all ways EXCEPT it will not write any changes to the chat file.</p>
