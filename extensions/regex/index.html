@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.792037127620">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.792037674114">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -35,11 +35,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.792037127620" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.792037674114" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.792037127620" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.792037674114" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.792037127620" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.792037674114" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -314,23 +314,20 @@
 </figure>
 </p>
 <ul>
-<li><p><strong>Name</strong> : The label for the script shown on the extension&#x27;s script list.</p>
+<li><p><strong>Test Mode</strong> : This will open a comparison view at the top of the editor. Type some text into the &#x27;Input&#x27; box, and the results of your RegEx script will be shown in the Output box. It is a valuable debug tool as it will uppdate the Output box in real time as you make changes to the script settings.</p>
 </li>
-<li><p><strong>Find Regex</strong> : This is the Regular Expression that is used to detect your targeted text pattern. This is usually the most complex part of any RegEx script, and is the easiest place to make mistakes. Refer to the links at the top of the page for information how to write a RegEx sequence.</p>
+<li><p><strong>Name</strong> : The label for the script shown on the extension&#x27;s script list. <strong>This is also used to target the script when triggering it via slashcommand or STScript.</strong></p>
 </li>
-<li><p><strong>Test Mode</strong> : This will open a comparison view at the top of the editor. Type some text into the &#x27;Input&#x27; box, and the results of your RegEx script will be shown in the Output box.</p>
+<li><p><strong>Find Regex</strong> : This is the Regular Expression that is used to detect your targeted text pattern. This is usually the most complex part of any RegEx script, and is the easiest place to make mistakes. Refer to the links at the top of the page for information how to write a RegEx sequence. This box can resolve the values of common SillyTavern macros (such as {{user}}, {{char}}, etc) if the &#x27;Macros in Find Regex&#x27; is set to do so (see below).</p>
+</li>
+<li><p><strong>Replace With</strong>: This is what will replace the matched sequence. In a very simple example, if your &#x27;Find Regex&#x27; is <code v-pre>apple</code>, and your &#x27;Repalce With&#x27; is <code v-pre>orange</code>, all instances of the &#x27;apple&#x27; would be automatically changed to &#x27;orange&#x27; in any text where the script is applied.</p>
+<ul>
+<li><p>The extension-specific macro {{match}} in this box will insert the full matched sequence of text. This is commonly used to apply styles to specific words. Going back to the above example, if **{{match}}** were put into the &#x27;Replace With&#x27; box instead, all occurences of the word &#x27;apple&#x27; would be replaced with <code v-pre>**apple**</code>, which would apply the bold markdown style to it.</p>
+</li>
+<li><p>Variables such as $1, $2, $3 etc can be used to insert what are called &#x27;Capture Groups&#x27;. These are substrings located in the text sequence matched by the &#x27;Find Regex&#x27; sequence. <strong>Note that using these variables requires the matching expression to contain sets of parentheses to define which part of the matched string counts as a captured group.</strong> Refer to the links at the top for reference on how to set up Capture Groups.</p>
 </li>
 </ul>
-<doc-anchor-target id="replace-with">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#replace-with">#</doc-anchor-trigger>
-        <span>Replace With</span>
-    </h3>
-</doc-anchor-target>
-<p>This what will replace the matched sequence. In a very simple example, if your &#x27;Find Regex&#x27; is <code v-pre>apple</code>, and your &#x27;Repalce With&#x27; is <code v-pre>orange</code>, all instances of the &#x27;apple&#x27; would be automatically changed to &#x27;orange&#x27; in any text where the script is applied.</p>
-<p>The extension-specific macro {{match}} in this box will insert the full matched sequence of text. This is commonly used to apply styles to specific words. Going back to the above example, if **{{match}}** were put into the &#x27;Replace With&#x27; box instead, all occurences of the word &#x27;apple&#x27; would be replaced with <code v-pre>**apple**</code>, which would apply the bold markdown style to it.</p>
-<p>Variables such as $1, $2, $3 etc can be used to insert what are called &#x27;Capture Groups&#x27;. These are substrings located in the text sequence matched by the &#x27;Find Regex&#x27; sequence. <strong>Note that using these variables requires the matching expression to contain sets of parentheses to define which part of the matched string counts as a captured group.</strong> Refer to the links at the top for reference on how to set up Capture Groups.</p>
-<ul>
+</li>
 <li><p><strong>Trim Out</strong> : text put in this box will be removed from the matched text sequence before the &#x27;Replace With&#x27; process is applied. For example, if our match was &#x27;apple&#x27;, and the Trim Out box contains &#x27;le&#x27;, then the letters &#x27;le&#x27; would be removed first before the &#x27;Replace With&#x27; process is applied. Since our &#x27;Replace With&#x27; box contains **{{match}}** it would result in <code v-pre>**app**</code> being put in as the replacement for &#x27;apple&#x27; (first &#x27;le&#x27; is removed, and the remaining matched text is given the bold markdown style). Multiple trims can be applied by adding a newline between each string you want to remove.</p>
 </li>
 <li><p><strong>Affects</strong> : This list of checkboxes defines the text sources to which the RegEx script will be applied. If everthing here is unchecked the script will never activate during normal chatting, but it can still be activated via slash command or STScript.</p>
