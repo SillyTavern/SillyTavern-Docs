@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.792036336920">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.792036772141">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -35,11 +35,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.792036336920" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.792036772141" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.792036336920" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.792036772141" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.792036336920" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.792036772141" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -242,7 +242,7 @@
     </h2>
 </doc-anchor-target>
 <p>The RegEx extension lets the user automatically detect specific patterns in a strings of text (called &#x27;sequences&#x27;) and apply manipulations to them. It can be a powerful tool when used in conjuction with other SillyTavern features such as QuickReplies or STSCript, or simply a way to remove certain words from a chat.</p>
-<p><strong>This document will not explain process of writing a RegEx sequence in depth. There are many online resources to assist you with that.</strong></p>
+<p><strong>This document will not explain the process of writing a RegEx sequence in depth. There are many online resources to assist you with that.</strong></p>
 <ul>
 <li><p><a href="https://regexr.com">https://regexr.com</a></p>
 </li>
@@ -322,10 +322,10 @@
     </h3>
 </doc-anchor-target>
 <p>This what will replace the matched sequence. In a very simple example, if your &#x27;Find Regex&#x27; is <code v-pre>apple</code>, and your &#x27;Repalce With&#x27; is <code v-pre>orange</code>, all instances of the &#x27;apple&#x27; would be automatically changed to &#x27;orange&#x27; in any text where the script is applied.</p>
-<p>The extension-specific macro <code v-pre>\{\{match\}\}\</code> in this box will insert the full matched sequence of text. This is commonly used to apply styles to specific words. Going back to the above example, if <code v-pre>**\{\{match\}\}**</code> were put into the &#x27;Replace With&#x27; box instead, all occurences of the word &#x27;apple&#x27; would be replaced with <code v-pre>**apple**</code>, which would apply the bold markdown style to it.</p>
+<p>The extension-specific macro {{match}}\ in this box will insert the full matched sequence of text. This is commonly used to apply styles to specific words. Going back to the above example, if **{{match}}** were put into the &#x27;Replace With&#x27; box instead, all occurences of the word &#x27;apple&#x27; would be replaced with <code v-pre>**apple**</code>, which would apply the bold markdown style to it.</p>
 <p>Variables such as $1, $2, $3 etc can be used to insert what are called &#x27;Capture Groups&#x27;. These are substrings located in the text sequence matched by the &#x27;Find Regex&#x27; sequence. <strong>Note that using these variables requires the matching expression to contain sets of parentheses to define which part of the matched string counts as a captured group.</strong> Refer to the links at the top for reference on how to set up Capture Groups.</p>
 <ul>
-<li><p><strong>Trim Out</strong> : text put in this box will be removed from the matched text sequence before the &#x27;Replace With&#x27; process is applied. For example, if our match was &#x27;apple&#x27;, and the Trim Out box contains &#x27;le&#x27;, then the letters &#x27;le&#x27; would be removed first before the &#x27;Replace With&#x27; process is applied. Since our &#x27;Replace With&#x27; box contains <code v-pre>**\{\{match\}\}**</code> it would result in <code v-pre>**app**</code> being put in as the replacement for &#x27;apple&#x27; (first &#x27;le&#x27; is removed, and the remaining matched text is given the bold markdown style). Multiple trims can be applied by adding a newline between each string you want to remove.</p>
+<li><p><strong>Trim Out</strong> : text put in this box will be removed from the matched text sequence before the &#x27;Replace With&#x27; process is applied. For example, if our match was &#x27;apple&#x27;, and the Trim Out box contains &#x27;le&#x27;, then the letters &#x27;le&#x27; would be removed first before the &#x27;Replace With&#x27; process is applied. Since our &#x27;Replace With&#x27; box contains **{{match}}** it would result in <code v-pre>**app**</code> being put in as the replacement for &#x27;apple&#x27; (first &#x27;le&#x27; is removed, and the remaining matched text is given the bold markdown style). Multiple trims can be applied by adding a newline between each string you want to remove.</p>
 </li>
 <li><p><strong>Affects</strong> : This list of checkboxes defines the text sources to which the RegEx script will be applied. If everthing here is unchecked the script will never activate during normal chatting, but it can still be activated via slash command or STScript.</p>
 </li>
@@ -337,7 +337,7 @@
 <li>&#x27;Run on Edit&#x27; makes the script also run after a chat message has been edited. If this is unchecked, the contents of edited chat messages will not trigger the script.</li>
 </ul>
 </li>
-<li><p><strong>Macros in Find Regex</strong> : Select whether or not to replace macros (such as <code v-pre>, </code>, etc) that are present in the Find Regex box&#x27;s sequence.</p>
+<li><p><strong>Macros in Find Regex</strong> : Select whether or not to replace macros (such as {{user}}, {{char}}, etc) that are present in the Find Regex box&#x27;s sequence.</p>
 <ul>
 <li>&#x27;Don&#x27;t Substitute&#x27; will cause any SillyTavern macros to be ignored so the RegEx script will treat them literally when searching.</li>
 <li>&#x27;Raw&#x27; will send in the value of hte macro verbatim.</li>
