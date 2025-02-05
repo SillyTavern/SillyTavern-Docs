@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.792037674114">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.792038463087">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -35,11 +35,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.792037674114" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.792038463087" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.792037674114" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.792038463087" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.792037674114" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.792038463087" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -320,9 +320,9 @@
 </li>
 <li><p><strong>Find Regex</strong> : This is the Regular Expression that is used to detect your targeted text pattern. This is usually the most complex part of any RegEx script, and is the easiest place to make mistakes. Refer to the links at the top of the page for information how to write a RegEx sequence. This box can resolve the values of common SillyTavern macros (such as {{user}}, {{char}}, etc) if the &#x27;Macros in Find Regex&#x27; is set to do so (see below).</p>
 </li>
-<li><p><strong>Replace With</strong>: This is what will replace the matched sequence. In a very simple example, if your &#x27;Find Regex&#x27; is <code v-pre>apple</code>, and your &#x27;Repalce With&#x27; is <code v-pre>orange</code>, all instances of the &#x27;apple&#x27; would be automatically changed to &#x27;orange&#x27; in any text where the script is applied.</p>
+<li><p><strong>Replace With</strong>: This is what will replace the matched sequence. In a very simple example, if your &#x27;Find Regex&#x27; is <code v-pre>apple</code>, and your &#x27;Replace With&#x27; is <code v-pre>orange</code>, all instances of &#x27;apple&#x27; would be automatically changed to &#x27;orange&#x27; in any text where the script is applied.</p>
 <ul>
-<li><p>The extension-specific macro {{match}} in this box will insert the full matched sequence of text. This is commonly used to apply styles to specific words. Going back to the above example, if **{{match}}** were put into the &#x27;Replace With&#x27; box instead, all occurences of the word &#x27;apple&#x27; would be replaced with <code v-pre>**apple**</code>, which would apply the bold markdown style to it.</p>
+<li><p>Adding the extension-specific macro {{match}} in this box will insert the full matched sequence of text. This is commonly used to apply styles to specific words. Going back to the above example, if **{{match}}** were put into the &#x27;Replace With&#x27; box instead, all occurences of the word &#x27;apple&#x27; would be replaced with <code v-pre>**apple**</code>, which would apply the bold markdown style to it.</p>
 </li>
 <li><p>Variables such as $1, $2, $3 etc can be used to insert what are called &#x27;Capture Groups&#x27;. These are substrings located in the text sequence matched by the &#x27;Find Regex&#x27; sequence. <strong>Note that using these variables requires the matching expression to contain sets of parentheses to define which part of the matched string counts as a captured group.</strong> Refer to the links at the top for reference on how to set up Capture Groups.</p>
 </li>
@@ -330,13 +330,21 @@
 </li>
 <li><p><strong>Trim Out</strong> : text put in this box will be removed from the matched text sequence before the &#x27;Replace With&#x27; process is applied. For example, if our match was &#x27;apple&#x27;, and the Trim Out box contains &#x27;le&#x27;, then the letters &#x27;le&#x27; would be removed first before the &#x27;Replace With&#x27; process is applied. Since our &#x27;Replace With&#x27; box contains **{{match}}** it would result in <code v-pre>**app**</code> being put in as the replacement for &#x27;apple&#x27; (first &#x27;le&#x27; is removed, and the remaining matched text is given the bold markdown style). Multiple trims can be applied by adding a newline between each string you want to remove.</p>
 </li>
-<li><p><strong>Affects</strong> : This list of checkboxes defines the text sources to which the RegEx script will be applied. If everthing here is unchecked the script will never activate during normal chatting, but it can still be activated via slash command or STScript.</p>
+<li><p><strong>Affects</strong> : This list of checkboxes defines the text sources to which the RegEx script will be applied.</p>
+<ul>
+<li>&#x27;User Input&#x27;: script will be run against the contents of the user&#x27;s typed input after they hit Send.</li>
+<li>&#x27;AI Response&#x27;: script will be run against the contents of the AI&#x27;s response after it is received.</li>
+<li>&#x27;Slash Commands&#x27;: script will be run against the values inserted into prompt/chat by slash commands.</li>
+<li>&#x27;World Info&#x27;: script will be run on against contents of World Info entries as they are injected into the prompt. <strong>Requires &#x27;Alter Outgoing Prompt&#x27; to be checked (or both ephemerality boxes to be unchecked).</strong></li>
+<li>&#x27;Reasoning&#x27;: script will be run against the contents of the &#x27;reasoning&#x27; object returned by Chat Completion API&#x27;s like Gemini or Deepseek. If &#x27;Alter Outgoing Prompt&#x27; is checked under Ephemerality, the script will also be applied to any reasoning blocks that are added into prompt in subsequent chat turns.</li>
+<li><strong>If everthing here is unchecked the script will never activate during normal chatting, but it can still be activated via slash command or STScript.</strong></li>
+</ul>
 </li>
 <li><p><strong>Min/Max Depth</strong> : How far back in the chat history to look for strings to match with. Leave both blank to apply the script to the whole chat.</p>
 </li>
 <li><p><strong>Other Options</strong> :</p>
 <ul>
-<li>&#x27;Disabled&#x27; prevents the script from running. This is used as an override to prevent the script from running when you simply don&#x27;t want to change any of the values and/or don&#x27;t want to disable it entirely via the switch on the script list (as doing so would prevent STScripts from triggering it).</li>
+<li>&#x27;Disabled&#x27; prevents the script from running. This is used as an override to prevent the script from running when you simply don&#x27;t want to change any of the script&#x27;s settings and/or don&#x27;t want to disable it entirely via the switch on the script list (as doing so would prevent slash commands from triggering it).</li>
 <li>&#x27;Run on Edit&#x27; makes the script also run after a chat message has been edited. If this is unchecked, the contents of edited chat messages will not trigger the script.</li>
 </ul>
 </li>
@@ -366,7 +374,7 @@
 </doc-anchor-target>
 <p>While RegEx is commonly used as a simple Find/Replace tool, it can also be used in more complex ways.</p>
 <p>For example the &#x27;Replace With&#x27; box could include a set of CSS rules and HTML to add a specific styled HTML element into your chat whenever a certain word is found. This will require the <code v-pre>Show &lt;tags&gt; in responses</code> box to be unchecked in the User Settings panel.</p>
-<p>The script can also be set to never trigger during normal use, but could be instead be triggered via slashcommand as part of a logic check inside an STScript. The &#x27;Replace With&#x27; box would include a unique value the script recognizes to indicate if a logic check is true or false. This expands the utility of RegEx to the full capabilities of all slashcommands, allowing for truly unlimited levels of control and automation based on the contents of the chat.</p>
+<p>The script can also be set to never trigger during normal use, but could be instead be triggered via slash command as part of a logic check inside an STScript. The &#x27;Replace With&#x27; box would include a unique value the script recognizes to indicate if a logic check is true or false. This expands the utility of RegEx to the full capabilities of all slash commands, allowing for truly unlimited levels of control and automation based on the contents of the chat.</p>
 
                                 
                                 <!-- Required only on API pages -->
