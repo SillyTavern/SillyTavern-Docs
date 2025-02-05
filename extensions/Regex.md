@@ -70,7 +70,7 @@ Variables such as $1, $2, $3 etc can be used to insert what are called 'Capture 
 
 - **Macros in Find Regex** : Select whether or not to replace macros (such as \{\{user\}\}, \{\{char\}\}, etc) that are present in the Find Regex box's sequence.
   - 'Don't Substitute' will cause any SillyTavern macros to be ignored so the RegEx script will treat them literally when searching.
-  - 'Raw' will send in the value of hte macro verbatim.
+  - 'Raw' will send in the value of the macro verbatim. This might alter the way your RegEx script searches the text if the value of the macro contains certain special characters.
   - 'Escaped' will add a RegEx escape slash `\` before each character to ensure they do not accidentally alter the overall RegEx sequence. This can be useful if you have certain special characters in the values of the macro.
 
 ### Ephemerality
