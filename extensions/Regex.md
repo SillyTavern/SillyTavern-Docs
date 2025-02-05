@@ -32,9 +32,9 @@ RegEx is often used to apply a find-replace function on certain words in the cha
 Below this is a list of your scripts with some action buttons.
 
 - Drag handles (three horizontal bars to the left of the script name) let you drag/drop the scripts into any order you like.
-- Primary of/off switch can be quickly toggled to enable or disable the script without changing anything else. Disabled scripts are shown with ~~strikethrough~~ styling. **If a script is disabled here, it will be untriggerable by a QuickReply or STScript.**
+- Primary on/off switch can be quickly toggled to enable or disable the script without changing anything else. Disabled scripts are shown with ~~strikethrough~~ styling. **If a script is disabled here, it will be untriggerable by a QuickReply or STScript.**
 - 'Edit' (pencil) button will open the RegEx script editor.
-- 'Move to scoped' (down arrow) will convert a global script to a scope script and apply it to the current character. In reverse (up arrow), it would convert a scoped script to global.
+- 'Move to scoped' (down arrow) will convert a global script to a scoped script and apply it to the current character. In reverse (up arrow), it would convert a scoped script to global.
 - 'Export' will cause your browser to download an exported `.json` file of the Script, which can then be shared and imported into another instance of SillyTavern.
 - 'Delete' (trashcan) deletes the script.
 
@@ -42,21 +42,21 @@ Below this is a list of your scripts with some action buttons.
 
 ![RegEx Editor](/static/extensions/regex-editor.png)
 
-### Primary Configurations
-
-- **Scope** : By default a RegEx script is applied to any and all characters, but if a script is created as (or converted to) a scoped script, it will only apply to the currently active character. This script will be written into the charater's card data (making it shareable with the card), and will be displayed in a separate section of the RegEx extension panel.
-
 - **Name** : The label for the script shown on the extension's script list.
 
-- **Find Regex** : This is the Regular Expression that is used to detect your targeted the text pattern. This is usually the most complex part of any RegEx script, and is the easiest place to make mistakes. You can click the large 'Test Mode' button at the top of the Regex Editor to open a comparison view. Type some text into the 'Input' box, and the results of your RegEx script will be shown in the Output box.
+- **Find Regex** : This is the Regular Expression that is used to detect your targeted text pattern. This is usually the most complex part of any RegEx script, and is the easiest place to make mistakes. Refer to the links at the top of the page for information how to write a RegEx sequence.
 
-- **Replace With** : This what will replace the matched sequence. In a very simple example, if your 'Find Regex' is `apple`, and your 'Repalce With' is `orange`, all instances of the 'apple' would be automatically changed to 'orange' in any text where the script is applied.
+- **Test Mode** : This will open a comparison view at the top of the editor. Type some text into the 'Input' box, and the results of your RegEx script will be shown in the Output box.
 
-You can also use the extension-specific macro `{{match}}` in this box to insert the full matched sequence of text. This is commonly used to apply styles to specific words. Going back to the above example, if `**{{match}}**` were put into the 'Replace With' box instead, all occurences of the word 'apple' would be replaced with `**apple**`, which would apply the bold markdown style to it.
+### Replace With
 
-You can also use variables such as $1, $2, $3 etc to insert what are called 'Capture Groups'. These are substrings located in the text sequence matched by the 'Find Regex' sequence. **Note that using these variables requires the matching expression to contain sets of parentheses to define which part of the matched string counts as a captured group.** Refer to the links above for reference on how to set up Capture Groups.
+This what will replace the matched sequence. In a very simple example, if your 'Find Regex' is `apple`, and your 'Repalce With' is `orange`, all instances of the 'apple' would be automatically changed to 'orange' in any text where the script is applied.
 
-- **Trim Out** : text put in this box will be removed from the matched text sequence before the 'Replace With' process is applied. For example, if our match was 'apple', and the Trim Out box contains 'le', then the letters 'le' would be removed first before the 'Replace With' process is applied. Since our 'Replace With' box contains `**{{match}}**` it would result in `**app**` being put in as the replacement for 'apple' (first 'le' is removed, and the remaining matched text is given the bold markdown style). Multiple trims can be applied by adding a newline between each string you want to remove.
+The extension-specific macro `\{\{match\}\}\` in this box will insert the full matched sequence of text. This is commonly used to apply styles to specific words. Going back to the above example, if `**\{\{match\}\}**` were put into the 'Replace With' box instead, all occurences of the word 'apple' would be replaced with `**apple**`, which would apply the bold markdown style to it.
+
+Variables such as $1, $2, $3 etc can be used to insert what are called 'Capture Groups'. These are substrings located in the text sequence matched by the 'Find Regex' sequence. **Note that using these variables requires the matching expression to contain sets of parentheses to define which part of the matched string counts as a captured group.** Refer to the links at the top for reference on how to set up Capture Groups.
+
+- **Trim Out** : text put in this box will be removed from the matched text sequence before the 'Replace With' process is applied. For example, if our match was 'apple', and the Trim Out box contains 'le', then the letters 'le' would be removed first before the 'Replace With' process is applied. Since our 'Replace With' box contains `**\{\{match\}\}**` it would result in `**app**` being put in as the replacement for 'apple' (first 'le' is removed, and the remaining matched text is given the bold markdown style). Multiple trims can be applied by adding a newline between each string you want to remove.
 
 - **Affects** : This list of checkboxes defines the text sources to which the RegEx script will be applied. If everthing here is unchecked the script will never activate during normal chatting, but it can still be activated via slash command or STScript.
 
@@ -66,11 +66,14 @@ You can also use variables such as $1, $2, $3 etc to insert what are called 'Cap
   - 'Disabled' prevents the script from running. This is used as an override to prevent the script from running when you simply don't want to change any of the values and/or don't want to disable it entirely via the switch on the script list (as doing so would prevent STScripts from triggering it).
   - 'Run on Edit' makes the script also run after a chat message has been edited. If this is unchecked, the contents of edited chat messages will not trigger the script.
 
-- **Macros in Find Regex** : Select whether or not to replace macros (such as `{{user}}`, `{{char}}`, etc) that are present in the Find Regex box's sequence. Replacements can be either done verbatim (using the literal value of those macros), or 'escaped' (meaning each character will be preceded with a RegEx escape slash `\`. This can be useful if you have certain special characters in the values of the macro).
+- **Macros in Find Regex** : Select whether or not to replace macros (such as `{{user}}`, `{{char}}`, etc) that are present in the Find Regex box's sequence.
+  - 'Don't Substitute' will cause any SillyTavern macros to be ignored so the RegEx script will treat them literally when searching.
+  - 'Raw' will send in the value of hte macro verbatim.
+  - 'Escaped' will add a RegEx escape slash `\` before each character to ensure they do not accidentally alter the overall RegEx sequence. This can be useful if you have certain special characters in the values of the macro.
 
 ### Ephemerality
 
-By default (when neither box here is checked) a RegEx script will directly edit the text values stored inside the chat's JSONL file. This ensures both the outgoing prompt and the chat display will always contain the same values. However, this change to the chat data file is irreversible.
+By default (when neither box here is checked) a RegEx script will directly edit the text values stored inside the chat's JSONL file. This ensures both the outgoing prompt and the chat display will always contain the same values. However, these changes to the chat file are irreversible.
 
 If you do not want this to happen, you can enable either of the checkboxes here to limit the RegEx script's affects to only the display or the outgoing prompt.
 
