@@ -44,19 +44,17 @@ Below this is a list of your scripts with some action buttons.
 
 ![RegEx Editor](/static/extensions/regex-editor.png)
 
-- **Name** : The label for the script shown on the extension's script list.
+- **Test Mode** : This will open a comparison view at the top of the editor. Type some text into the 'Input' box, and the results of your RegEx script will be shown in the Output box. It is a valuable debug tool as it will uppdate the Output box in real time as you make changes to the script settings.
 
-- **Find Regex** : This is the Regular Expression that is used to detect your targeted text pattern. This is usually the most complex part of any RegEx script, and is the easiest place to make mistakes. Refer to the links at the top of the page for information how to write a RegEx sequence.
+- **Name** : The label for the script shown on the extension's script list. **This is also used to target the script when triggering it via slashcommand or STScript.**
 
-- **Test Mode** : This will open a comparison view at the top of the editor. Type some text into the 'Input' box, and the results of your RegEx script will be shown in the Output box.
+- **Find Regex** : This is the Regular Expression that is used to detect your targeted text pattern. This is usually the most complex part of any RegEx script, and is the easiest place to make mistakes. Refer to the links at the top of the page for information how to write a RegEx sequence. This box can resolve the values of common SillyTavern macros (such as \{\{user\}\}, \{\{char\}\}, etc) if the 'Macros in Find Regex' is set to do so (see below).
 
-### Replace With
+- **Replace With**: This is what will replace the matched sequence. In a very simple example, if your 'Find Regex' is `apple`, and your 'Repalce With' is `orange`, all instances of the 'apple' would be automatically changed to 'orange' in any text where the script is applied.
 
-This what will replace the matched sequence. In a very simple example, if your 'Find Regex' is `apple`, and your 'Repalce With' is `orange`, all instances of the 'apple' would be automatically changed to 'orange' in any text where the script is applied.
+  - The extension-specific macro \{\{match\}\} in this box will insert the full matched sequence of text. This is commonly used to apply styles to specific words. Going back to the above example, if \*\*\{\{match\}\}\*\* were put into the 'Replace With' box instead, all occurences of the word 'apple' would be replaced with `**apple**`, which would apply the bold markdown style to it.
 
-The extension-specific macro \{\{match\}\} in this box will insert the full matched sequence of text. This is commonly used to apply styles to specific words. Going back to the above example, if \*\*\{\{match\}\}\*\* were put into the 'Replace With' box instead, all occurences of the word 'apple' would be replaced with `**apple**`, which would apply the bold markdown style to it.
-
-Variables such as $1, $2, $3 etc can be used to insert what are called 'Capture Groups'. These are substrings located in the text sequence matched by the 'Find Regex' sequence. **Note that using these variables requires the matching expression to contain sets of parentheses to define which part of the matched string counts as a captured group.** Refer to the links at the top for reference on how to set up Capture Groups.
+  - Variables such as $1, $2, $3 etc can be used to insert what are called 'Capture Groups'. These are substrings located in the text sequence matched by the 'Find Regex' sequence. **Note that using these variables requires the matching expression to contain sets of parentheses to define which part of the matched string counts as a captured group.** Refer to the links at the top for reference on how to set up Capture Groups.
 
 - **Trim Out** : text put in this box will be removed from the matched text sequence before the 'Replace With' process is applied. For example, if our match was 'apple', and the Trim Out box contains 'le', then the letters 'le' would be removed first before the 'Replace With' process is applied. Since our 'Replace With' box contains \*\*\{\{match\}\}\*\* it would result in `**app**` being put in as the replacement for 'apple' (first 'le' is removed, and the remaining matched text is given the bold markdown style). Multiple trims can be applied by adding a newline between each string you want to remove.
 
