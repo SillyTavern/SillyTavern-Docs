@@ -4,6 +4,8 @@
 
 The RegEx extension lets the user automatically detect specific patterns in a strings of text (called 'sequences') and apply manipulations to them. It can be a powerful tool when used in conjuction with other SillyTavern features such as QuickReplies or STSCript, or simply a way to remove certain words from a chat.
 
+## Helpful Links
+
 **This document will not explain the process of writing a RegEx sequence in depth. There are many online resources to assist you with that.**
 
 - [https://regexr.com](https://regexr.com)
@@ -52,7 +54,7 @@ Below this is a list of your scripts with some action buttons.
 
 This what will replace the matched sequence. In a very simple example, if your 'Find Regex' is `apple`, and your 'Repalce With' is `orange`, all instances of the 'apple' would be automatically changed to 'orange' in any text where the script is applied.
 
-The extension-specific macro \{\{match\}\}\ in this box will insert the full matched sequence of text. This is commonly used to apply styles to specific words. Going back to the above example, if \*\*\{\{match\}\}\*\* were put into the 'Replace With' box instead, all occurences of the word 'apple' would be replaced with `**apple**`, which would apply the bold markdown style to it.
+The extension-specific macro \{\{match\}\} in this box will insert the full matched sequence of text. This is commonly used to apply styles to specific words. Going back to the above example, if \*\*\{\{match\}\}\*\* were put into the 'Replace With' box instead, all occurences of the word 'apple' would be replaced with `**apple**`, which would apply the bold markdown style to it.
 
 Variables such as $1, $2, $3 etc can be used to insert what are called 'Capture Groups'. These are substrings located in the text sequence matched by the 'Find Regex' sequence. **Note that using these variables requires the matching expression to contain sets of parentheses to define which part of the matched string counts as a captured group.** Refer to the links at the top for reference on how to set up Capture Groups.
 
