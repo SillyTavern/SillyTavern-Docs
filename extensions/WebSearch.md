@@ -28,6 +28,8 @@ Get the key here: https://serpapi.com/dashboard
 
 Requires a SearXNG instance URL (either private or public). Uses HTML format for search results.
 
+SearXNG preferences string: obtained from SearXNG - preferences - COOKIES - Copy preferences hash
+
 Learn more: <https://docs.searxng.org/>
 
 ### Tavily AI
