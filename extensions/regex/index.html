@@ -6,15 +6,15 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.792188251055">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.792190330052">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>RegEx | docs.ST.app</title>
-    <meta name="title" content="RegEx | docs.ST.app">
-    <meta name="description" content="The RegEx extension lets the user automatically detect specific patterns in a strings of text (called 'sequences') and apply manipulations to them.">
+    <title>Regex | docs.ST.app</title>
+    <meta name="title" content="Regex | docs.ST.app">
+    <meta name="description" content="The Regex extension lets the user automatically detect specific patterns in a strings of text (called 'sequences') and apply manipulations...">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/extensions/regex/">
@@ -22,24 +22,24 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/extensions/regex/">
-    <meta property="og:title" content="RegEx | docs.ST.app">
-    <meta property="og:description" content="The RegEx extension lets the user automatically detect specific patterns in a strings of text (called 'sequences') and apply manipulations to them.">
+    <meta property="og:title" content="Regex | docs.ST.app">
+    <meta property="og:description" content="The Regex extension lets the user automatically detect specific patterns in a strings of text (called 'sequences') and apply manipulations...">
     <meta property="og:image" content="https://docs.sillytavern.app/static/extensions/regex-listview.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/extensions/regex/">
-    <meta property="twitter:title" content="RegEx | docs.ST.app">
-    <meta property="twitter:description" content="The RegEx extension lets the user automatically detect specific patterns in a strings of text (called 'sequences') and apply manipulations to them.">
+    <meta property="twitter:title" content="Regex | docs.ST.app">
+    <meta property="twitter:description" content="The Regex extension lets the user automatically detect specific patterns in a strings of text (called 'sequences') and apply manipulations...">
     <meta property="twitter:image" content="https://docs.sillytavern.app/static/extensions/regex-listview.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.792188251055" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.792190330052" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.792188251055" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.792190330052" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.792188251055" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.792190330052" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -232,7 +232,7 @@
 <doc-anchor-target id="regex" class="break-words">
     <h1>
         <doc-anchor-trigger class="header-anchor-trigger" to="#regex">#</doc-anchor-trigger>
-        <span>RegEx</span>
+        <span>Regex</span>
     </h1>
 </doc-anchor-target>
 <doc-anchor-target id="what-is-it">
@@ -241,7 +241,7 @@
         <span>What is it?</span>
     </h2>
 </doc-anchor-target>
-<p>The RegEx extension lets the user automatically detect specific patterns in a strings of text (called &#x27;sequences&#x27;) and apply manipulations to them. It can be a powerful tool when used in conjuction with other SillyTavern features such as QuickReplies or STSCript, or simply a way to remove certain words from a chat.</p>
+<p>The Regex extension lets the user automatically detect specific patterns in a strings of text (called &#x27;sequences&#x27;) and apply manipulations (replacements) to them. It can be a powerful tool when used in conjuction with other SillyTavern features such as <a href="../../usage/st-script/">Quick Replies or STscript</a>, or simply a way to remove certain words from a chat.</p>
 <doc-anchor-target id="helpful-links">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#helpful-links">#</doc-anchor-trigger>
@@ -263,16 +263,15 @@
         <span>Prerequisites</span>
     </h2>
 </doc-anchor-target>
-<ul>
-<li>Install the &quot;RegEx&quot; extension from the &quot;Download Extensions &amp; Assets&quot; menu in the Extensions panel (stacked blocks icon).</li>
-</ul>
+<p>Regex is a built-in extension of SillyTavern, so no additional setup is required.</p>
+<p>You may find its settings in the <strong><i class="fa-solid fa-cubes"></i> Extensions</strong> panel.</p>
 <doc-anchor-target id="common-use-cases">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#common-use-cases">#</doc-anchor-trigger>
         <span>Common Use Cases</span>
     </h2>
 </doc-anchor-target>
-<p>RegEx is often used to apply a find-replace function on certain words in the chat, to add markdown styles to certain words or sentence types, or to return a boolean value to an STScript.</p>
+<p>RegEx is often used to apply a find-replace function on certain words in the chat, to add markdown styles to certain words or sentence types, or to return a boolean value to an STscript.</p>
 <doc-anchor-target id="script-list">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#script-list">#</doc-anchor-trigger>
@@ -296,7 +295,7 @@
 <p>Below this is a list of your scripts with some action buttons.</p>
 <ul>
 <li>Drag handles (three horizontal bars to the left of the script name) let you drag/drop the scripts into any order you like.</li>
-<li>Primary on/off switch can be quickly toggled to enable or disable the script without changing anything else. Disabled scripts are shown with <del>strikethrough</del> styling. <strong>If a script is disabled here, it will be untriggerable by a QuickReply or STScript.</strong></li>
+<li>Primary on/off switch can be quickly toggled to enable or disable the script without changing anything else. Disabled scripts are shown with <del>strikethrough</del> styling. <strong>If a script is disabled here, it will be untriggerable by a Quick Reply or STscript.</strong></li>
 <li>&#x27;Edit&#x27; (pencil) button will open the RegEx script editor.</li>
 <li>&#x27;Move to scoped&#x27; (down arrow) will convert a global script to a scoped script and apply it to the current character. In reverse (up arrow), it would convert a scoped script to global.</li>
 <li>&#x27;Export&#x27; will cause your browser to download an exported <code v-pre>.json</code> file of the Script, which can then be shared and imported into another instance of SillyTavern.</li>
@@ -314,11 +313,11 @@
 </figure>
 </p>
 <ul>
-<li><p><strong>Test Mode</strong> : This will open a comparison view at the top of the editor. Type some text into the &#x27;Input&#x27; box, and the results of your RegEx script will be shown in the Output box. It is a valuable debug tool as it will uppdate the Output box in real time as you make changes to the script settings.</p>
+<li><p><strong>Test Mode</strong> : This will open a comparison view at the top of the editor. Type some text into the &#x27;Input&#x27; box, and the results of your RegEx script will be shown in the Output box. It is a valuable debug tool as it will update the Output box in real time as you make changes to the script settings.</p>
 </li>
-<li><p><strong>Name</strong> : The label for the script shown on the extension&#x27;s script list. <strong>This is also used to target the script when triggering it via slashcommand or STScript.</strong></p>
+<li><p><strong>Name</strong> : The label for the script shown on the extension&#x27;s script list. <strong>This is also used to target the script when triggering it via slash command or STscript.</strong></p>
 </li>
-<li><p><strong>Find Regex</strong> : This is the Regular Expression that is used to detect your targeted text pattern. This is usually the most complex part of any RegEx script, and is the easiest place to make mistakes. Refer to the links at the top of the page for information how to write a RegEx sequence. This box can resolve the values of common SillyTavern macros (such as {{user}}, {{char}}, etc) if the &#x27;Macros in Find Regex&#x27; is set to do so (see below).</p>
+<li><p><strong>Find Regex</strong> : This is the Regular Expression that is used to detect your targeted text pattern. This is usually the most complex part of any RegEx script, and is the easiest place to make mistakes. Refer to the links at the top of the page for information how to write a RegEx sequence. This box can resolve the values of <a href="../../usage/core-concepts/macros/">common SillyTavern macros</a> (such as {{user}}, {{char}}, etc) if the &#x27;Macros in Find Regex&#x27; is set to do so (see below).</p>
 </li>
 <li><p><strong>Replace With</strong>: This is what will replace the matched sequence. In a very simple example, if your &#x27;Find Regex&#x27; is <code v-pre>apple</code>, and your &#x27;Replace With&#x27; is <code v-pre>orange</code>, all instances of &#x27;apple&#x27; would be automatically changed to &#x27;orange&#x27; in any text where the script is applied.</p>
 <ul>
@@ -337,7 +336,7 @@
 <li>&#x27;Slash Commands&#x27;: script will be run against the values inserted into prompt/chat by slash commands.</li>
 <li>&#x27;World Info&#x27;: script will be run on against contents of World Info entries as they are injected into the prompt. <strong>Requires &#x27;Alter Outgoing Prompt&#x27; to be checked (or both ephemerality boxes to be unchecked).</strong></li>
 <li>&#x27;Reasoning&#x27;: script will be run against the contents of the &#x27;reasoning&#x27; object returned by Chat Completion API&#x27;s like Gemini or Deepseek. If &#x27;Alter Outgoing Prompt&#x27; is checked under Ephemerality, the script will also be applied to any reasoning blocks that are added into prompt in subsequent chat turns.</li>
-<li><strong>If everthing here is unchecked the script will never activate during normal chatting, but it can still be activated via slash command or STScript.</strong></li>
+<li><strong>If everthing here is unchecked the script will never activate during normal chatting, but it can still be activated via slash command or STscript.</strong></li>
 </ul>
 </li>
 <li><p><strong>Min/Max Depth</strong> : How far back in the chat history to look for strings to match with. Leave both blank to apply the script to the whole chat.</p>
@@ -364,7 +363,7 @@
 </doc-anchor-target>
 <p>By default (when neither box here is checked) a RegEx script will directly edit the text values stored inside the chat&#x27;s JSONL file. This ensures both the outgoing prompt and the chat display will always contain the same values. However, these changes to the chat file are irreversible.</p>
 <p>If you do not want this to happen, you can enable either of the checkboxes here to limit the RegEx script&#x27;s affects to only the display or the outgoing prompt.</p>
-<p>If only one of the boxes is checked, there will be no changes made to the chat file, but <strong>only the checked item</strong> will be get the changes. This means you will be seeing one thing, but the LLM will be seeing another. Use this carefully.</p>
+<p>If only one of the boxes is checked, there will be no changes made to the chat file, but <strong>only the checked item</strong> will be changed. This means you will be seeing one thing, but the LLM will be seeing another. Use this carefully.</p>
 <p>If both are selected, the script will function as normal in all ways EXCEPT it will not write any changes to the chat file.</p>
 <doc-anchor-target id="advanced-use">
     <h2>
@@ -374,7 +373,7 @@
 </doc-anchor-target>
 <p>While RegEx is commonly used as a simple Find/Replace tool, it can also be used in more complex ways.</p>
 <p>For example the &#x27;Replace With&#x27; box could include a set of CSS rules and HTML to add a specific styled HTML element into your chat whenever a certain word is found. This will require the <code v-pre>Show &lt;tags&gt; in responses</code> box to be unchecked in the User Settings panel.</p>
-<p>The script can also be set to never trigger during normal use, but could instead be triggered via slash command as part of a logic check inside an STScript. The &#x27;Replace With&#x27; box would include a unique value the script recognizes to indicate if a logic check is true or false. This expands the utility of RegEx to the full capabilities of all slash commands, allowing for truly unlimited levels of control and automation based on the contents of the chat.</p>
+<p>The script can also be set to never trigger during normal use, but could instead be triggered via slash command as part of a logic check inside an STscript. The &#x27;Replace With&#x27; box would include a unique value the script recognizes to indicate if a logic check is true or false. This expands the utility of RegEx to the full capabilities of all slash commands, allowing for truly unlimited levels of control and automation based on the contents of the chat.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -447,6 +446,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "RegEx", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Regex", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
