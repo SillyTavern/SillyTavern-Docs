@@ -25,7 +25,7 @@ Add a reasoning block to any message through the **<i class="fa-solid fa-pencil"
 Use the `/reasoning-set` STscript command to add reasoning to a message. The command takes `at` (message ID, defaults to the last message) and reasoning text as arguments.
 
 ```stscript
-/reasoning-set at=0 This is the reasoning.
+/reasoning-set at=0 This is the reasoning for the first message.
 ```
 
 ### By Backend
