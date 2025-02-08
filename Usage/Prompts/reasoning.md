@@ -67,7 +67,7 @@ For streamed responses, reasoning will only be parsed after the stream completes
 
 ## Prompting with Reasoning
 
-By default, recognized reasoning block contents are not sent back to the model. To include reasoning in prompts, enable "Add to Prompts" in the **<i class="fa-solid fa-font"></i> Advanced Formatting** panel. Content will be wrapped in configured Prefix and Suffix sequences and separated by a configured Separator. The Max Additions numeric setting controls how many reasoning blocks can be included, counting from the end of the prompt.
+By default, recognized reasoning block contents are not sent back to the model. To include reasoning in prompts, enable "Add to Prompts" in the **<i class="fa-solid fa-font"></i> Advanced Formatting** panel. Reasoning content will be wrapped in configured Prefix and Suffix sequences and separated by a Separator from the main context. The Max Additions numeric setting controls how many reasoning blocks can be included, counting from the end of the prompt.
 
 !!!
 Most model providers do not recommend sending CoT back to the model in multi-turn conversations.
