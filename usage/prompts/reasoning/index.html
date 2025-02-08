@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.792364955992">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.792365138889">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.792364955992" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.792365138889" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.792364955992" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.792365138889" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.792364955992" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.792365138889" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -270,13 +270,13 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>Most reasoning-related settings can be configured in the &quot;Reasoning&quot; section of <strong><i class="fa-solid fa-font"></i> Advanced Formatting</strong> panel.</p>
+<p>Most reasoning-related settings can be configured in the &quot;Reasoning&quot; section of <strong><i class="fa-solid fa-font"></i> Advanced Formatting</strong> panel.</p>
         </div>
     </div>
 </div>
 <p>Reasoning blocks appear in the chat as collapsible message sections. They can be added manually, automatically by the backend, or through response parsing (see below).</p>
-<p>By default, reasoning blocks are collapsed to save space. Click a block to expand and view its contents. You can set blocks to expand automatically by enabling <strong><i class="fa-solid fa-expand"></i> Auto-Expand</strong> in the reasoning settings.</p>
-<p>When a reasoning block is expanded, you can copy or edit its contents using the <strong><i class="fa-solid fa-copy"></i> Copy</strong> and <strong><i class="fa-solid fa-pencil"></i> Edit</strong> buttons.</p>
+<p>By default, reasoning blocks are collapsed to save space. Click a block to expand and view its contents. You can set blocks to expand automatically by enabling <strong>Auto-Expand</strong> in the reasoning settings.</p>
+<p>When a reasoning block is expanded, you can copy or edit its contents using the <strong><i class="fa-solid fa-copy"></i> Copy</strong> and <strong><i class="fa-solid fa-pencil"></i> Edit</strong> buttons.</p>
 <doc-anchor-target id="adding-reasoning">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#adding-reasoning">#</doc-anchor-trigger>
@@ -289,7 +289,7 @@
         <span>Manually</span>
     </h3>
 </doc-anchor-target>
-<p>Add a reasoning block to any message through the <strong><i class="fa-solid fa-pencil"></i> Message Edit</strong> menu. Click <strong><i class="fa-solid fa-lightbulb"></i></strong> while editing to add a reasoning section. Third-party extensions can also add reasoning by writing to the <code v-pre>extra.reasoning</code> field of the message object before adding it to the chat.</p>
+<p>Add a reasoning block to any message through the <strong><i class="fa-solid fa-pencil"></i> Message Edit</strong> menu. Click <strong><i class="fa-solid fa-lightbulb"></i></strong> while editing to add a reasoning section. Third-party extensions can also add reasoning by writing to the <code v-pre>extra.reasoning</code> field of the message object before adding it to the chat.</p>
 <doc-anchor-target id="with-a-command">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#with-a-command">#</doc-anchor-trigger>
@@ -307,7 +307,7 @@
         <span>By Backend</span>
     </h3>
 </doc-anchor-target>
-<p>If your chosen LLM backend and model support reasoning output, enable &quot;Request Model Reasoning&quot; in the <strong><i class="fa-solid fa-sliders"></i> AI Response Configuration</strong> panel.</p>
+<p>If your chosen LLM backend and model support reasoning output, enable &quot;Request Model Reasoning&quot; in the <strong><i class="fa-solid fa-sliders"></i> AI Response Configuration</strong> panel.</p>
 <p>Supported sources:</p>
 <ul>
 <li>DeepSeek</li>
@@ -319,7 +319,7 @@
         <span>By Parsing</span>
     </h3>
 </doc-anchor-target>
-<p>Enable &quot;Auto-Parse&quot; in the <strong><i class="fa-solid fa-font"></i> Advanced Formatting</strong> panel to automatically parse reasoning from the model&#x27;s output.</p>
+<p>Enable &quot;Auto-Parse&quot; in the <strong><i class="fa-solid fa-font"></i> Advanced Formatting</strong> panel to automatically parse reasoning from the model&#x27;s output.</p>
 <p>The response must contain a reasoning section wrapped in configured Prefix and Suffix sequences. The sequences provided by default correspond to the DeepSeek R1 reasoning format.</p>
 <p>Example with prefix <code v-pre>&lt;think&gt;</code> and suffix <code v-pre>&lt;/think&gt;</code>:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -352,7 +352,7 @@ This is the main content.</code></pre>
         <span>Prompting with Reasoning</span>
     </h2>
 </doc-anchor-target>
-<p>By default, recognized reasoning block contents are not sent back to the model. To include reasoning in prompts, enable &quot;Add to Prompts&quot; in the <strong><i class="fa-solid fa-font"></i> Advanced Formatting</strong> panel. Reasoning content will be wrapped in configured Prefix and Suffix sequences and separated by a Separator from the main context. The Max Additions numeric setting controls how many reasoning blocks can be included, counting from the end of the prompt.</p>
+<p>By default, recognized reasoning block contents are not sent back to the model. To include reasoning in prompts, enable &quot;Add to Prompts&quot; in the <strong><i class="fa-solid fa-font"></i> Advanced Formatting</strong> panel. Reasoning content will be wrapped in configured Prefix and Suffix sequences and separated by a Separator from the main context. The Max Additions numeric setting controls how many reasoning blocks can be included, counting from the end of the prompt.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
