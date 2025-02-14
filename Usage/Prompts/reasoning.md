@@ -26,6 +26,8 @@ By default, reasoning blocks are collapsed to save space. Click a block to expan
 
 When a reasoning block is expanded, you can copy or edit its contents using the **<i class="fa-solid fa-copy"></i> Copy** and **<i class="fa-solid fa-pencil"></i> Edit** buttons.
 
+Some models models support reasoning, but will not send their thoughts back. It is possible to still show the reasoning block with reasoning time for those by toggling the **Show Hidden** setting.
+
 ## Adding Reasoning
 
 ### Manually
