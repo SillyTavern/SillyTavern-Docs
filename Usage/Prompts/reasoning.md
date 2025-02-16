@@ -4,10 +4,6 @@ tags: ['>=1.12.12']
 
 # Reasoning
 
-!!! warning Warning
-This information refers to a pre-release feature that is still in development. It may be incomplete, contain errors, or be subject to breaking changes.
-!!!
-
 In language models, reasoning (also known as model thinking) refers to a chain-of-thought (CoT) technique that mirrors human problem-solving through step-by-step analysis. SillyTavern provides several features that make the use of reasoning models more efficient and consistent across supported backends.
 
 ## Common issues
