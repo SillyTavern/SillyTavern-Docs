@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.793048696096">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.793049084588">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.793048696096" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.793049084588" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.793048696096" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.793049084588" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.793048696096" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.793048696096" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.793049084588" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.793049084588" defer></script>
 
     <style>
         a {
@@ -282,6 +282,12 @@
 <td>Any valid directory path</td>
 </tr>
 <tr>
+<td><code v-pre>minLogLevel</code></td>
+<td>Minimum log level to display in the terminal</td>
+<td><code v-pre>0</code> (DEBUG)</td>
+<td>(DEBUG = 0, INFO = 1, WARN = 2, ERROR = 3)</td>
+</tr>
+<tr>
 <td><code v-pre>cardsCacheCapacity</code></td>
 <td>The maximum amount of memory that parsed character cards can use in MB.</td>
 <td>100</td>
@@ -291,6 +297,12 @@
 <td><code v-pre>skipContentCheck</code></td>
 <td>Skip new default content checks</td>
 <td><code v-pre>false</code></td>
+<td><code v-pre>true</code>, <code v-pre>false</code></td>
+</tr>
+<tr>
+<td><code v-pre>enableDownloadableTokenizers</code></td>
+<td>Enable on-demand tokenizer downloads</td>
+<td><code v-pre>true</code></td>
 <td><code v-pre>true</code>, <code v-pre>false</code></td>
 </tr>
 </tbody>
@@ -329,13 +341,25 @@
 <td><code v-pre>protocol.ipv4</code></td>
 <td>Enable listening on IPv4 protocol</td>
 <td><code v-pre>true</code></td>
-<td><code v-pre>true</code>, <code v-pre>false</code></td>
+<td><code v-pre>true</code>, <code v-pre>false</code>, <code v-pre>auto</code></td>
 </tr>
 <tr>
 <td><code v-pre>protocol.ipv6</code></td>
 <td>Enable listening on IPv6 protocol</td>
 <td><code v-pre>false</code></td>
-<td><code v-pre>true</code>, <code v-pre>false</code></td>
+<td><code v-pre>true</code>, <code v-pre>false</code>, <code v-pre>auto</code></td>
+</tr>
+<tr>
+<td><code v-pre>listenAddress.ipv4</code></td>
+<td>Listen on specific IPv4 address</td>
+<td><code v-pre>0.0.0.0</code></td>
+<td>Valid IPv4 address</td>
+</tr>
+<tr>
+<td><code v-pre>listenAddress.ipv6</code></td>
+<td>Listen on specific IPv6 address</td>
+<td><code v-pre>'[::]'</code></td>
+<td>Valid IPv6 address</td>
 </tr>
 <tr>
 <td><code v-pre>dnsPreferIPv6</code></td>
@@ -458,7 +482,7 @@
 <tr>
 <td><code v-pre>sessionTimeout</code></td>
 <td>User session timeout in seconds</td>
-<td><code v-pre>86400</code> (24 hours)</td>
+<td><code v-pre>-1</code> (disabled)</td>
 <td>Any number (-1 to disable, 0 for browser close, &gt;0 for timeout)</td>
 </tr>
 <tr>
@@ -676,55 +700,49 @@
 </thead>
 <tbody>
 <tr>
-<td><code v-pre>enableExtensions</code></td>
+<td><code v-pre>extensions.enabled</code></td>
 <td>Enable UI extensions</td>
 <td><code v-pre>true</code></td>
 <td><code v-pre>true</code>, <code v-pre>false</code></td>
 </tr>
 <tr>
-<td><code v-pre>enableExtensionsAutoUpdate</code></td>
+<td><code v-pre>extensions.autoUpdate</code></td>
 <td>Auto-update extensions</td>
 <td><code v-pre>true</code></td>
 <td><code v-pre>true</code>, <code v-pre>false</code></td>
 </tr>
 <tr>
-<td><code v-pre>enableDownloadableTokenizers</code></td>
-<td>Enable on-demand tokenizer downloads</td>
+<td><code v-pre>extensions.models.autoDownload</code></td>
+<td>Enable automatic model downloads</td>
 <td><code v-pre>true</code></td>
 <td><code v-pre>true</code>, <code v-pre>false</code></td>
 </tr>
 <tr>
-<td><code v-pre>extras.disableAutoDownload</code></td>
-<td>Disable automatic model downloads</td>
-<td><code v-pre>false</code></td>
-<td><code v-pre>true</code>, <code v-pre>false</code></td>
-</tr>
-<tr>
-<td><code v-pre>extras.classificationModel</code></td>
+<td><code v-pre>extensions.models.classification</code></td>
 <td>HuggingFace model ID for classification</td>
 <td><code v-pre>&quot;Cohee/distilbert-base-uncased-go-emotions-onnx&quot;</code></td>
 <td>Valid model ID</td>
 </tr>
 <tr>
-<td><code v-pre>extras.captioningModel</code></td>
+<td><code v-pre>extensions.models.captioning</code></td>
 <td>HuggingFace model ID for image captioning</td>
 <td><code v-pre>&quot;Xenova/vit-gpt2-image-captioning&quot;</code></td>
 <td>Valid model ID</td>
 </tr>
 <tr>
-<td><code v-pre>extras.embeddingModel</code></td>
+<td><code v-pre>extensions.models.embedding</code></td>
 <td>HuggingFace model ID for embeddings</td>
 <td><code v-pre>&quot;Cohee/jina-embeddings-v2-base-en&quot;</code></td>
 <td>Valid model ID</td>
 </tr>
 <tr>
-<td><code v-pre>extras.speechToTextModel</code></td>
+<td><code v-pre>extensions.models.speechToText</code></td>
 <td>HuggingFace model ID for speech-to-text</td>
 <td><code v-pre>&quot;Xenova/whisper-small&quot;</code></td>
 <td>Valid model ID</td>
 </tr>
 <tr>
-<td><code v-pre>extras.textToSpeechModel</code></td>
+<td><code v-pre>extensions.models.textToSpeech</code></td>
 <td>HuggingFace model ID for text-to-speech</td>
 <td><code v-pre>&quot;Xenova/speecht5_tts&quot;</code></td>
 <td>Valid model ID</td>
@@ -753,6 +771,12 @@
 <td><code v-pre>enableServerPlugins</code></td>
 <td>Enable server-side plugins</td>
 <td><code v-pre>false</code></td>
+<td><code v-pre>true</code>, <code v-pre>false</code></td>
+</tr>
+<tr>
+<td><code v-pre>enableServerPluginsAutoUpdate</code></td>
+<td>Attempt to automatically update server plugins on startup</td>
+<td><code v-pre>true</code></td>
 <td><code v-pre>true</code>, <code v-pre>false</code></td>
 </tr>
 </tbody>
@@ -850,6 +874,12 @@
 <td>Model keep-alive duration (seconds)</td>
 <td><code v-pre>-1</code></td>
 <td><code v-pre>-1</code> (indefinite), <code v-pre>0</code> (immediate unload), positive integer</td>
+</tr>
+<tr>
+<td><code v-pre>ollama.batchSize</code></td>
+<td>Controls the &quot;num_batch&quot; (batch size) parameter of the generation request</td>
+<td><code v-pre>-1</code></td>
+<td><code v-pre>-1</code> (model default), positive integer</td>
 </tr>
 </tbody>
 </table>
