@@ -26,8 +26,10 @@ protocol:
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|-----------------|
 | `dataRoot` | Root directory for user data storage | `./data` | Any valid directory path |
+| `minLogLevel` | Minimum log level to display in the terminal | `0` (DEBUG) | (DEBUG = 0, INFO = 1, WARN = 2, ERROR = 3) |
 | `cardsCacheCapacity` | The maximum amount of memory that parsed character cards can use in MB. | 100 | Any positive integer |
 | `skipContentCheck` | Skip new default content checks | `false` | `true`, `false` |
+| `enableDownloadableTokenizers` | Enable on-demand tokenizer downloads | `true` | `true`, `false` |
 
 ## [Network Configuration](/Administration/remote-connections.md)
 
@@ -35,8 +37,10 @@ protocol:
 |---------|-------------|---------|-----------------|
 | `listen` | Enable listening for incoming connections | `false` | `true`, `false` |
 | `port` | Server listening port | `8000` | Any valid port number (1-65535) |
-| `protocol.ipv4` | Enable listening on IPv4 protocol | `true` | `true`, `false` |
-| `protocol.ipv6` | Enable listening on IPv6 protocol | `false` | `true`, `false` |
+| `protocol.ipv4` | Enable listening on IPv4 protocol | `true` | `true`, `false`, `auto` |
+| `protocol.ipv6` | Enable listening on IPv6 protocol | `false` | `true`, `false`, `auto` |
+| `listenAddress.ipv4` | Listen on specific IPv4 address | `0.0.0.0` | Valid IPv4 address |
+| `listenAddress.ipv6` | Listen on specific IPv6 address | `'[::]'` | Valid IPv6 address |
 | `dnsPreferIPv6` | Prefer IPv6 for DNS resolution | `false` | `true`, `false` |
 
 ## Security Configuration
@@ -60,7 +64,7 @@ protocol:
 | `basicAuthUser.password` | Basic auth password | `"password"` | Any string |
 | `enableUserAccounts` | Enable multi-user mode | `false` | `true`, `false` |
 | `enableDiscreetLogin` | Hide user list on login screen | `false` | `true`, `false` |
-| `sessionTimeout` | User session timeout in seconds | `86400` (24 hours) | Any number (-1 to disable, 0 for browser close, >0 for timeout) |
+| `sessionTimeout` | User session timeout in seconds | `-1` (disabled) | Any number (-1 to disable, 0 for browser close, >0 for timeout) |
 | `cookieSecret` | Secret for signing session cookies | `''` (auto-generated) | Any string |
 | `autheliaAuth` | Enable Authelia-based auto login. See: [SSO](/Administration/sso.md) | `false` | `true`, `false` |
 | `perUserBasicAuth` | Use account credentials for basic auth | `false` | `true`, `false` |
@@ -105,21 +109,21 @@ protocol:
 
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|-----------------|
-| `enableExtensions` | Enable UI extensions | `true` | `true`, `false` |
-| `enableExtensionsAutoUpdate` | Auto-update extensions | `true` | `true`, `false` |
-| `enableDownloadableTokenizers` | Enable on-demand tokenizer downloads | `true` | `true`, `false` |
-| `extras.disableAutoDownload` | Disable automatic model downloads | `false` | `true`, `false` |
-| `extras.classificationModel` | HuggingFace model ID for classification | `"Cohee/distilbert-base-uncased-go-emotions-onnx"` | Valid model ID |
-| `extras.captioningModel` | HuggingFace model ID for image captioning | `"Xenova/vit-gpt2-image-captioning"` | Valid model ID |
-| `extras.embeddingModel` | HuggingFace model ID for embeddings | `"Cohee/jina-embeddings-v2-base-en"` | Valid model ID |
-| `extras.speechToTextModel` | HuggingFace model ID for speech-to-text | `"Xenova/whisper-small"` | Valid model ID |
-| `extras.textToSpeechModel` | HuggingFace model ID for text-to-speech | `"Xenova/speecht5_tts"` | Valid model ID |
+| `extensions.enabled` | Enable UI extensions | `true` | `true`, `false` |
+| `extensions.autoUpdate` | Auto-update extensions | `true` | `true`, `false` |
+| `extensions.models.autoDownload` | Enable automatic model downloads | `true` | `true`, `false` |
+| `extensions.models.classification` | HuggingFace model ID for classification | `"Cohee/distilbert-base-uncased-go-emotions-onnx"` | Valid model ID |
+| `extensions.models.captioning` | HuggingFace model ID for image captioning | `"Xenova/vit-gpt2-image-captioning"` | Valid model ID |
+| `extensions.models.embedding` | HuggingFace model ID for embeddings | `"Cohee/jina-embeddings-v2-base-en"` | Valid model ID |
+| `extensions.models.speechToText` | HuggingFace model ID for speech-to-text | `"Xenova/whisper-small"` | Valid model ID |
+| `extensions.models.textToSpeech` | HuggingFace model ID for text-to-speech | `"Xenova/speecht5_tts"` | Valid model ID |
 
 ## [Server Plugins](/For_Contributors/Server-Plugins.md)
 
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|-----------------|
 | `enableServerPlugins` | Enable server-side plugins | `false` | `true`, `false` |
+| `enableServerPluginsAutoUpdate` | Attempt to automatically update server plugins on startup | `true` | `true`, `false` |
 
 ## [API Integration Settings](/Usage/API_Connections/index.md)
 
@@ -142,6 +146,7 @@ protocol:
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|-----------------|
 | `ollama.keepAlive` | Model keep-alive duration (seconds) | `-1` | `-1` (indefinite), `0` (immediate unload), positive integer |
+| `ollama.batchSize` | Controls the "num_batch" (batch size) parameter of the generation request | `-1` | `-1` (model default), positive integer |
 
 ### Claude Configuration
 
