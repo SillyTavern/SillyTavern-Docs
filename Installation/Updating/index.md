@@ -109,11 +109,6 @@ If you insist on installing via a zip, here is the tedious process for doing the
 
 ### Common Update Problems
 
-#### I use Docker and all my data is gone after the update!
-
-You must follow the [Migration guide for Docker containers](/Installation/Updating/ST-1.12.0-Migration-Guide.md#containerized-docker-installs)
- to update volume mappings for the new data model introduced in 1.12.0
-
 #### "There are unresolved conflicts in the working directory."
 
 This means that you've modified default files that have been changed in the remote repository (such as setting presets).
@@ -155,3 +150,25 @@ rm -rf node_modules
 npm cache clean --force
 npm install
 ```
+
+## Docker
+
+1. Open a terminal window and navigate to your docker directory `cd SillyTavern/docker`
+2. Delete your container with `docker compose down`
+3. Delete the SillyTavern docker image from cache `docker rmi ghcr.io/sillytavern/sillytavern:latest` (Replace `sillytavern:latest` with `sillytavern:staging` if you are targeting the staging branch.)
+4. Rebuild the container with `sudo docker compose up -d`
+
+If everything goes smoothly, docker should start redownloading the image, and you will be up and running shortly. If you face any issues, refer to the next section of this guide.
+
+### Common Update Problems
+#### I use Docker and all my data is gone after the update!
+
+You must follow the [Migration guide for Docker containers](/Installation/Updating/ST-1.12.0-Migration-Guide.md#containerized-docker-installs)
+ to update volume mappings for the new data model introduced in 1.12.0
+
+#### Permission denied when running docker commands
+
+This is a Linux issue, and implies that your permissions are not properly set up. There are two ways to get around this:
+
+1. **The Easy method**: If you have sudo access on your user, simply prefix commands with `sudo` (for example: `sudo docker compose down`) 
+2. **The Proper method**: Fix your permissions. This varies depending on the version of Linux you use. There are plenty of guides online to help you fix this issue.
