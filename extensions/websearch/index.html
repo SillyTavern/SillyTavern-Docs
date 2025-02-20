@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.793049084588">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.793402961467">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.793049084588" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.793402961467" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.793049084588" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.793402961467" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.793049084588" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.793402961467" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -263,7 +263,7 @@
         <span>SerpApi</span>
     </h3>
 </doc-anchor-target>
-<p>Requires SerpApi key and provides access to Google search.</p>
+<p>Requires an API key.</p>
 <p>Get the key here: <a href="https://serpapi.com/dashboard">https://serpapi.com/dashboard</a></p>
 <doc-anchor-target id="searxng">
     <h3>
@@ -280,7 +280,8 @@
         <span>Tavily AI</span>
     </h3>
 </doc-anchor-target>
-<p>Requires an API key. Get the key here: <a href="https://app.tavily.com/">https://app.tavily.com/</a> <svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M6 9V7.25C6 3.845 8.503 1 12 1s6 2.845 6 6.25V9h.5a2.5 2.5 0 0 1 2.5 2.5v8a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 19.5v-8A2.5 2.5 0 0 1 5.5 9Zm-1.5 2.5v8a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1h-13a1 1 0 0 0-1 1Zm3-4.25V9h9V7.25c0-2.67-1.922-4.75-4.5-4.75-2.578 0-4.5 2.08-4.5 4.75Z"/></g></g></svg></p>
+<p>Requires an API key.</p>
+<p>Get the key here: <a href="https://app.tavily.com/">https://app.tavily.com/</a></p>
 <doc-anchor-target id="koboldcpp">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#koboldcpp">#</doc-anchor-trigger>
@@ -289,6 +290,14 @@
 </doc-anchor-target>
 <p>KoboldCpp URL must be provided in Text Completion API settings. KoboldCpp version must be &gt;= 1.81.1 and WebSearch module must be enabled on startup: enable Network =&gt; Enable WebSearch in the GUI launcher or add <code v-pre>--websearch</code> to the command line.</p>
 <p>See: <a href="https://github.com/LostRuins/koboldcpp/releases/tag/v1.81.1">https://github.com/LostRuins/koboldcpp/releases/tag/v1.81.1</a></p>
+<doc-anchor-target id="serper">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#serper">#</doc-anchor-trigger>
+        <span>Serper</span>
+    </h3>
+</doc-anchor-target>
+<p>Requires an API key.</p>
+<p>Get the key here: <a href="https://serper.dev/">https://serper.dev/</a></p>
 <doc-anchor-target id="how-to-use">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-use">#</doc-anchor-trigger>
@@ -357,7 +366,8 @@
 <li>Visit Domain Blacklist - site domains to be excluded from visiting. One per line.</li>
 <li>File Header - file header template, inserted at the start of the text file, has an additional {{query}} macro.</li>
 <li>Block Header - link block template, inserted with the parsed content of every link. Use {{link}} macro for page URL and {{text}} for page content.</li>
-<li>Save Target - where to save the results of scraping. Possible options: trigger message attachments, or chat attachments of Data Bank.</li>
+<li>Save Target - where to save the results of scraping. Possible options: trigger message attachments, or chat attachments of Data Bank, or just images (if the source supports them).</li>
+<li>Include Images - attach relevant images to the chat. Requires a source that supports images (see below).</li>
 </ol>
 <doc-anchor-target id="more-info">
     <h2>
@@ -393,6 +403,7 @@ If you want to ask additional questions without accidentally triggering the sear
 <p>To discard all previous queries from processing, start the user message with an exclamation mark, for example, a user message <code v-pre>!Now let's talk about...</code> will discard this and every message above it.</p>
 <p>This extension also provides a <code v-pre>/websearch</code> slash command to use in STscript. More info here: <a href="../../usage/st-script/#extension-commands">STscript Language Reference</a></p>
 <div class="codeblock-wrapper"><doc-codeblock>
+<div class="codeblock-title">stscript</div>
 <pre class="language-none"><code v-pre class="language-none">/websearch (links=on|off snippets=on|off [query]) – performs a web search query. Use named arguments to specify what to return - page snippets (default: on), full parsed pages (default: off) or both.
 
 Example: /websearch links=off snippets=on how to make a sandwich</code></pre>
@@ -403,6 +414,14 @@ Example: /websearch links=off snippets=on how to make a sandwich</code></pre>
         <span>What can be included in the search result?</span>
     </h3>
 </doc-anchor-target>
+<p><strong>Thesaurus:</strong></p>
+<ul>
+<li>Answer box: Direct answer to the question.</li>
+<li>Knowledge graph: Encyclopedic knowledge about the topic.</li>
+<li>Page snippets: Relevant extracts from the web pages.</li>
+<li>Relevant questions: Questions and answers to similar topics.</li>
+<li>Images: Relevant images.</li>
+</ul>
 <doc-anchor-target id="serpapi-1">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#serpapi-1">#</doc-anchor-trigger>
@@ -410,10 +429,11 @@ Example: /websearch links=off snippets=on how to make a sandwich</code></pre>
     </h4>
 </doc-anchor-target>
 <ol>
-<li>Answer box. Direct answer to the question.</li>
-<li>Knowledge graph. Encyclopedic knowledge about the topic.</li>
-<li>Page snippets (max 10). Relevant extracts from the web pages.</li>
-<li>Relevant questions (max 10). Questions and answers to similar topics.</li>
+<li>Answer box.</li>
+<li>Knowledge graph.</li>
+<li>Page snippets (max 10).</li>
+<li>Relevant questions (max 10).</li>
+<li>Images (max 10).</li>
 </ol>
 <doc-anchor-target id="selenium-plugin-and-extras-api">
     <h4>
@@ -425,6 +445,7 @@ Example: /websearch links=off snippets=on how to make a sandwich</code></pre>
 <li>Google - answer box, knowledge graph, page snippets.</li>
 <li>DuckDuckGo - page snippets.</li>
 </ol>
+<p><strong>Selenium Plugin</strong> can additionaly provide images.</p>
 <doc-anchor-target id="searxng-1">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#searxng-1">#</doc-anchor-trigger>
@@ -434,6 +455,7 @@ Example: /websearch links=off snippets=on how to make a sandwich</code></pre>
 <ol>
 <li>Infobox.</li>
 <li>Page snippets.</li>
+<li>Images.</li>
 </ol>
 <doc-anchor-target id="tavily-ai-1">
     <h4>
@@ -444,6 +466,7 @@ Example: /websearch links=off snippets=on how to make a sandwich</code></pre>
 <ol>
 <li>Answer.</li>
 <li>Page contents.</li>
+<li>Images (up to 5).</li>
 </ol>
 <doc-anchor-target id="koboldcpp-1">
     <h4>
@@ -454,6 +477,19 @@ Example: /websearch links=off snippets=on how to make a sandwich</code></pre>
 <ol>
 <li>Page titles.</li>
 <li>Page snippets.</li>
+</ol>
+<doc-anchor-target id="serper-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#serper-1">#</doc-anchor-trigger>
+        <span>Serper</span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li>Answer box.</li>
+<li>Knowledge graph.</li>
+<li>Page snippets.</li>
+<li>Relevant questions.</li>
+<li>Images.</li>
 </ol>
 
                                 
