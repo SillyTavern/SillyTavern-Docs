@@ -20,9 +20,9 @@ Supports Google and DuckDuckGo engines.
 
 ### SerpApi
 
-Requires SerpApi key and provides access to Google search.
+Requires an API key.
 
-Get the key here: https://serpapi.com/dashboard
+Get the key here: <https://serpapi.com/dashboard>
 
 ### SearXNG
 
@@ -34,13 +34,21 @@ Learn more: <https://docs.searxng.org/>
 
 ### Tavily AI
 
-Requires an API key. Get the key here: <https://app.tavily.com/> :icon-lock: 
+Requires an API key.
+
+Get the key here: <https://app.tavily.com/>
 
 ### KoboldCpp
 
 KoboldCpp URL must be provided in Text Completion API settings. KoboldCpp version must be >= 1.81.1 and WebSearch module must be enabled on startup: enable Network => Enable WebSearch in the GUI launcher or add `--websearch` to the command line.
 
 See: <https://github.com/LostRuins/koboldcpp/releases/tag/v1.81.1>
+
+### Serper
+
+Requires an API key.
+
+Get the key here: <https://serper.dev/>
 
 ## How to use
 
@@ -81,7 +89,8 @@ See: <https://github.com/LostRuins/koboldcpp/releases/tag/v1.81.1>
 3. Visit Domain Blacklist - site domains to be excluded from visiting. One per line.
 4. File Header - file header template, inserted at the start of the text file, has an additional \{\{query\}\} macro.
 5. Block Header - link block template, inserted with the parsed content of every link. Use \{\{link\}\} macro for page URL and \{\{text\}\} for page content.
-6. Save Target - where to save the results of scraping. Possible options: trigger message attachments, or chat attachments of Data Bank.
+6. Save Target - where to save the results of scraping. Possible options: trigger message attachments, or chat attachments of Data Bank, or just images (if the source supports them).
+7. Include Images - attach relevant images to the chat. Requires a source that supports images (see below).
 
 ## More info
 
@@ -102,7 +111,7 @@ To discard all previous queries from processing, start the user message with an 
 
 This extension also provides a `/websearch` slash command to use in STscript. More info here: [STscript Language Reference](/For_Contributors/st-script.md#extension-commands)
 
-```
+```stscript
 /websearch (links=on|off snippets=on|off [query]) – performs a web search query. Use named arguments to specify what to return - page snippets (default: on), full parsed pages (default: off) or both.
 
 Example: /websearch links=off snippets=on how to make a sandwich
@@ -110,29 +119,50 @@ Example: /websearch links=off snippets=on how to make a sandwich
 
 ### What can be included in the search result?
 
+**Thesaurus:**
+
+- Answer box: Direct answer to the question.
+- Knowledge graph: Encyclopedic knowledge about the topic.
+- Page snippets: Relevant extracts from the web pages.
+- Relevant questions: Questions and answers to similar topics.
+- Images: Relevant images.
+
 #### SerpApi
 
-1. Answer box. Direct answer to the question.
-2. Knowledge graph. Encyclopedic knowledge about the topic.
-3. Page snippets (max 10). Relevant extracts from the web pages.
-4. Relevant questions (max 10). Questions and answers to similar topics.
+1. Answer box.
+2. Knowledge graph.
+3. Page snippets (max 10).
+4. Relevant questions (max 10).
+5. Images (max 10).
 
 #### Selenium Plugin and Extras API
 
 1. Google - answer box, knowledge graph, page snippets.
 2. DuckDuckGo - page snippets.
 
+**Selenium Plugin** can additionaly provide images.
+
 #### SearXNG
 
 1. Infobox.
 2. Page snippets.
+3. Images.
 
 #### Tavily AI
 
 1. Answer.
 2. Page contents.
+3. Images (up to 5).
 
 #### KoboldCpp
 
 1. Page titles.
 2. Page snippets.
+
+#### Serper
+
+1. Answer box.
+2. Knowledge graph.
+3. Page snippets.
+4. Relevant questions.
+5. Images.
