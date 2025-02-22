@@ -12,7 +12,7 @@ The Regex extension lets the user automatically detect specific patterns in a st
 
 - [https://regex101.com](https://regex101.com)
 
-- [https://pythonium.net/regex](https://pythonium.net/regex)
+- [https://extendsclass.com/regex-tester.html](https://extendsclass.com/regex-tester.html)
 
 - [https://en.wikipedia.org/wiki/Regular_expression](https://en.wikipedia.org/wiki/Regular_expression)
 
