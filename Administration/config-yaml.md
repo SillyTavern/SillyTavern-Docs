@@ -8,6 +8,7 @@ icon: cpu
 
 This documentation may be obsolete, incomplete, or incorrect. Please refer to the [default config.yaml](https://github.com/SillyTavern/SillyTavern/blob/release/default/config.yaml) in your installation for the most up-to-date list of settings.
 
+**WARNING: DO NOT EDIT THE DEFAULT CONFIG DIRECTLY. THIS WON'T HAVE ANY POSITIVE EFFECT. EDIT ITS COPY IN THE REPOSITORY ROOT INSTEAD.**
 !!!
 
 `config.yaml` is the main configuration file for the SillyTavern server that you can find in the repository root directory after [completing the installation](/Installation/index.md). It is a YAML file that contains various settings, such as the network settings, security settings, and backend-specific options. **The changes made to this file will take effect after restarting the server.**
