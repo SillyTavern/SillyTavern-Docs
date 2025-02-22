@@ -2,7 +2,7 @@
 
 ## What is it?
 
-The Regex extension lets the user automatically detect specific patterns in a strings of text (called 'sequences') and apply manipulations (replacements) to them. It can be a powerful tool when used in conjuction with other SillyTavern features such as [Quick Replies or STscript](/For_Contributors/st-script.md), or simply a way to remove certain words from a chat.
+The Regex extension lets the user automatically detect specific patterns in a string of text (called 'sequences') and apply manipulations (replacements) to them. It can be a powerful tool when used in conjuction with other SillyTavern features such as [Quick Replies or STscript](/For_Contributors/st-script.md), or simply a way to remove certain words from a chat.
 
 ## Helpful Links
 
@@ -11,6 +11,8 @@ The Regex extension lets the user automatically detect specific patterns in a st
 - [https://regexr.com](https://regexr.com)
 
 - [https://regex101.com](https://regex101.com)
+
+- [https://extendsclass.com/regex-tester.html](https://extendsclass.com/regex-tester.html)
 
 - [https://en.wikipedia.org/wiki/Regular_expression](https://en.wikipedia.org/wiki/Regular_expression)
 
