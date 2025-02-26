@@ -115,6 +115,23 @@ To enable viewing your keys by clicking a button in the API block:
 * Enable Reduced motion in the UI theme settings to remove cosmetic animations.
 * Make sure your browser is using Hardware Acceleration.
 
+## I'm experiencing an input lag. What can I do?
+
+Performance degradation, particularly input lag, is most commonly attributed to browser extensions. Known problematic extensions include:
+
+* iCloud Password Manager
+* DeepL Translation
+* AI-based grammar correction tools
+* Various ad-blocking extensions
+
+If you experience performance issues and cannot identify the cause, or suspect an issue with SillyTavern itself, please:
+
+1. [Record a performance profile](https://developer.chrome.com/docs/devtools/performance/reference)
+2. Export the profile as a JSON file
+3. Submit it to the development team for analysis
+
+We recommend first testing with all browser extensions and third-party SillyTavern extensions disabled to isolate the source of the performance degradation.
+
 ## How to make the AI write more?
 
 Sometimes the AI will only respond with a single sentence when you'd like it to be more verbose.
