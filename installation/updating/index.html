@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.793659457613">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.793898046515">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.793659457613" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.793898046515" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.793659457613" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.793898046515" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.793659457613" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.793659457613" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.793898046515" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.793898046515" defer></script>
 
     <style>
         a {
@@ -371,14 +371,6 @@ secrets.json &lt;---- this one is in the base folder, not /public/</code></pre>
         <span>Common Update Problems</span>
     </h3>
 </doc-anchor-target>
-<doc-anchor-target id="i-use-docker-and-all-my-data-is-gone-after-the-update">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#i-use-docker-and-all-my-data-is-gone-after-the-update">#</doc-anchor-trigger>
-        <span>I use Docker and all my data is gone after the update!</span>
-    </h4>
-</doc-anchor-target>
-<p>You must follow the <a href="../st-1.12.0-migration-guide/#containerized-docker-installs">Migration guide for Docker containers</a>
-to update volume mappings for the new data model introduced in 1.12.0</p>
 <doc-anchor-target id="there-are-unresolved-conflicts-in-the-working-directory">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#there-are-unresolved-conflicts-in-the-working-directory">#</doc-anchor-trigger>
@@ -428,6 +420,44 @@ npm install</code></pre>
 npm cache clean --force
 npm install</code></pre>
 </doc-codeblock></div>
+<doc-anchor-target id="docker">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#docker">#</doc-anchor-trigger>
+        <span>Docker</span>
+    </h2>
+</doc-anchor-target>
+<ol>
+<li>Open a terminal window and navigate to your docker directory <code v-pre>cd SillyTavern/docker</code></li>
+<li>Delete your container with <code v-pre>docker compose down</code></li>
+<li>Delete the SillyTavern docker image from cache <code v-pre>docker rmi ghcr.io/sillytavern/sillytavern:latest</code> (Replace <code v-pre>sillytavern:latest</code> with <code v-pre>sillytavern:staging</code> if you are targeting the staging branch.)</li>
+<li>Rebuild the container with <code v-pre>sudo docker compose up -d</code></li>
+</ol>
+<p>If everything goes smoothly, docker should start redownloading the image, and you will be up and running shortly. If you face any issues, refer to the next section of this guide.</p>
+<doc-anchor-target id="common-update-problems-1">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#common-update-problems-1">#</doc-anchor-trigger>
+        <span>Common Update Problems</span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="i-use-docker-and-all-my-data-is-gone-after-the-update">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#i-use-docker-and-all-my-data-is-gone-after-the-update">#</doc-anchor-trigger>
+        <span>I use Docker and all my data is gone after the update!</span>
+    </h4>
+</doc-anchor-target>
+<p>You must follow the <a href="../st-1.12.0-migration-guide/#containerized-docker-installs">Migration guide for Docker containers</a>
+to update volume mappings for the new data model introduced in 1.12.0</p>
+<doc-anchor-target id="permission-denied-when-running-docker-commands">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#permission-denied-when-running-docker-commands">#</doc-anchor-trigger>
+        <span>Permission denied when running docker commands</span>
+    </h4>
+</doc-anchor-target>
+<p>This is a Linux issue, and implies that your permissions are not properly set up. There are two ways to get around this:</p>
+<ol>
+<li><strong>The Easy method</strong>: If you have sudo access on your user, simply prefix commands with <code v-pre>sudo</code> (for example: <code v-pre>sudo docker compose down</code>)</li>
+<li><strong>The Proper method</strong>: Fix your permissions. This varies depending on the version of Linux you use. There are plenty of guides online to help you fix this issue.</li>
+</ol>
 
                                 
                                 <!-- Required only on API pages -->
