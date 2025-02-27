@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.794009461697">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.794009776053">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.794009461697" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.794009776053" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.794009461697" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.794009776053" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.794009461697" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.794009461697" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.794009776053" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.794009776053" defer></script>
 
     <style>
         a {
@@ -540,39 +540,6 @@ SillyTavern.getContext().addLocaleData('de-de', { 'Hello': 'Hallo' });</code></p
     `,
 }));</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="deprecated-registering-slash-commands-old-way">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#deprecated-registering-slash-commands-old-way">#</doc-anchor-trigger>
-        <span>(DEPRECATED) Registering slash commands (old way)</span>
-    </h2>
-</doc-anchor-target>
-<p>Use <code v-pre>registerSlashCommand()</code> to register a new slash command:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-javascript"><code v-pre class="language-javascript">import { registerSlashCommand } from &quot;../../slash-commands.js&quot;;
-
-registerSlashCommand(&quot;commandname&quot;, commandFunction, [&quot;alias&quot;], &quot;Description shown in /help&quot;);
-
-function commandFunction(namedArgs, unnamedArgs) {
-    // Command logic
-}</code></pre>
-</doc-codeblock></div>
-<p>Example of command execution:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/commandname namedArgument=value Unnamed argument</code></pre>
-</doc-codeblock></div>
-<p>Arguments explanation:</p>
-<ol>
-<li><code v-pre>command</code> - the main command name. It will be used in autocompletion and help commands.</li>
-<li><code v-pre>callback</code> - a function that will be executed when the command is triggered. A callback function can accept two arguments:
-<ul>
-<li><code v-pre>namedArgs</code> - an object with named arguments</li>
-<li><code v-pre>unnamedArgs</code> - a string containing the unnamed argument</li>
-</ul>
-</li>
-<li><code v-pre>aliases</code> - an array of alias strings. The command can be called using any of the aliases, but they won&#x27;t be shown in the autocomplete but will be listed in the help command.</li>
-<li><code v-pre>helpString</code> - a string that will be displayed when the <code v-pre>/help slash</code> command is called. Must describe what your command does and which arguments it accepts. May contain HTML markup.</li>
-</ol>
 <p>All registered commands can be used in <a href="../../usage/st-script/">STscript</a> in any possible way.</p>
 <doc-anchor-target id="listening-to-event-types">
     <h3>
