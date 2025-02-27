@@ -141,7 +141,7 @@ If you simply want the bot to continue writing from where it left off at the end
 
 Strategies for fixing this:
 
-* Decrease the value of the `Response Length` setting
+* Increase the value of the `Response Length` setting
 * Design a good `First Message` for the Character, which shows them speaking in a long-winded manner. AI models can improve a lot when given guidance about the writing style you expect.
 * Add a phrase in the character's Description Box such as "likes to talk a lot" or "very verbose speaker"
 * Do the same thing for your `Author's Note`, or `Post-History Instruction Prompt`
