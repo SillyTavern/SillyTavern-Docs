@@ -37,7 +37,7 @@ Mistral AI is a team developing both open and proprietary models with high scien
 **Important!**  
 *Lost API keys can't be restored! You would have to create a new one. Make sure to keep it safe!*
 
-## Proxy
+## Custom OpenAI-compatible endpoint
 
 !!!warning
 It is important to note that we do not provide support for possible issues that you may have!
@@ -45,38 +45,44 @@ We do not guarantee compatibility with every possible API endpoint!
 !!!
 
 !!!
-If you intend to use this proxy feature to use a local endpoint, like TabbyAPI, Oobabooga, Aphrodite, or any like those, you might want to check out the [built-in compatibility for those](/Usage/API_Connections/index.md) instead. This proxy feature is mainly intended for use with other services and programs that expose an OpenAI-compatible API Chat Completion endpoint.
+If you intend to use this feature to use a local endpoint, like TabbyAPI, Oobabooga, Aphrodite, or any like those, you might want to check out the [built-in compatibility for those](/Usage/API_Connections/index.md) instead. The custom endpoint feature is mainly intended for use with other services and programs that expose an OpenAI-compatible API Chat Completion endpoint.
 
 Most Text Completion APIs support far greater customization options than OpenAI's standards allow for. These greater customization options, such as the Min-P sampler, may be worthwhile for SillyTavern users to check out, which can greatly improve the quality of generations.
 !!!
 
-It is possible to configure a proxy/alternative endpoint for OpenAI's backend. This custom endpoint can connect to alternative Chat Completion APIs that support the generic OpenAI API schema.
+You can configure an alternative endpoint for the Chat Completions backend. This custom endpoint can connect to any server that supports the generic OpenAI API schema.
 
-Examples of backends which implement this API are:
+Examples of compatible backends include:
 
 * [LM Studio](https://lmstudio.ai/)
 * [LiteLLM](https://www.litellm.ai/)
 * [LocalAI](https://localai.io/)
 
-This feature is accessed by:
+## Connecting
 
-- Switching to the 'Chat Completion' API type.
-- Selecting 'OpenAI' for 'Chat Completion Source'.
-- Leaving the details like the API key empty.
-- Opening the 'AI Response Configuration' tab and scrolling down to the 'OpenAI / Claude Reverse Proxy' section.
+To access this feature:
 
-There you may enter the proxy/custom endpoint and optionally an API key under 'Proxy Password' if needed.
-For example, TabbyAPI provides you with an API key you have to use.
+1. Switch to the 'Chat Completion' API type
+2. Select 'Custom (OpenAI-compatible)' for 'Chat Completion Source'
 
-Back in the 'AI Connections' tab, you can find two optional checkboxes labeled:
+Enter the custom endpoint URL and an API key if required. For example, TabbyAPI requires an API key for authentication.
 
-- Bypass API status check.
-- Show "External" models (provided by API).
+> **Hint:** If you experience connection issues, try adding `/v1` to the end of the endpoint URL. Do NOT add the `/chat/completions` suffix.
 
-Checking 'Bypass API status check' tells SillyTavern to stop alerting you about a non-functioning API endpoint. Check this if your API endpoint works, but SillyTavern keeps warning you anyway.
+## Selecting a Model
 
-> **Hint:** If it doesn't work, try adding `/v1` at the end of the endpoint URL!
+If the custom API implements the `/v1/models` endpoint to provide a list of available models, you can choose from a dropdown list. Otherwise, use the text field to manually input a model ID.
 
-Checking 'Show "External" models (provided by API)' will show the external available models as reported by your custom API endpoint in the dropdown (scroll down past OpenAI's models). This allows you to select different API models right from SillyTavern without having to go into your custom app and change the model.
+Check 'Bypass API status check' to prevent SillyTavern from alerting you about a non-functioning API endpoint. Enable this option if your API endpoint works properly but SillyTavern continues to display warnings.
 
-**This feature is not required for custom API endpoints to work** and might not be available on every backend.
+Click "Test Message" to verify connectivity by sending a simple prompt to the model.
+
+## Prompt Post-Processing
+
+Some endpoints may impose specific restrictions on the format of incoming prompts, such as requiring only one system message or strictly alternating roles.
+
+SillyTavern provides built-in prompt converters to help meet these requirements (from least to most restrictive):
+
+1. Merge consecutive messages from the same role
+2. Merge roles and allow only one system message (semi-strict)
+3. Merge roles, allow only one optional system message, and require a user role to be first (strict)
