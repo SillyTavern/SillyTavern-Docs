@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.793982205743">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.793983228764">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.793982205743" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.793983228764" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.793982205743" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.793983228764" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.793982205743" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.793983228764" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -284,10 +284,10 @@
 </ul>
 <p><strong>Important!</strong><br />
 <em>Lost API keys can&#x27;t be restored! You would have to create a new one. Make sure to keep it safe!</em></p>
-<doc-anchor-target id="proxy">
+<doc-anchor-target id="custom-openai-compatible-endpoint">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#proxy">#</doc-anchor-trigger>
-        <span>Proxy</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#custom-openai-compatible-endpoint">#</doc-anchor-trigger>
+        <span>Custom OpenAI-compatible endpoint</span>
     </h2>
 </doc-anchor-target>
 <div class="flex mb-6">
@@ -320,38 +320,55 @@ We do not guarantee compatibility with every possible API endpoint!</p>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>If you intend to use this proxy feature to use a local endpoint, like TabbyAPI, Oobabooga, Aphrodite, or any like those, you might want to check out the <a href="../">built-in compatibility for those</a> instead. This proxy feature is mainly intended for use with other services and programs that expose an OpenAI-compatible API Chat Completion endpoint.</p>
+<p>If you intend to use this feature to use a local endpoint, like TabbyAPI, Oobabooga, Aphrodite, or any like those, you might want to check out the <a href="../">built-in compatibility for those</a> instead. The custom endpoint feature is mainly intended for use with other services and programs that expose an OpenAI-compatible API Chat Completion endpoint.</p>
 <p>Most Text Completion APIs support far greater customization options than OpenAI&#x27;s standards allow for. These greater customization options, such as the Min-P sampler, may be worthwhile for SillyTavern users to check out, which can greatly improve the quality of generations.</p>
         </div>
     </div>
 </div>
-<p>It is possible to configure a proxy/alternative endpoint for OpenAI&#x27;s backend. This custom endpoint can connect to alternative Chat Completion APIs that support the generic OpenAI API schema.</p>
-<p>Examples of backends which implement this API are:</p>
+<p>You can configure an alternative endpoint for the Chat Completions backend. This custom endpoint can connect to any server that supports the generic OpenAI API schema.</p>
+<p>Examples of compatible backends include:</p>
 <ul>
 <li><a href="https://lmstudio.ai/">LM Studio</a></li>
 <li><a href="https://www.litellm.ai/">LiteLLM</a></li>
 <li><a href="https://localai.io/">LocalAI</a></li>
 </ul>
-<p>This feature is accessed by:</p>
-<ul>
-<li>Switching to the &#x27;Chat Completion&#x27; API type.</li>
-<li>Selecting &#x27;OpenAI&#x27; for &#x27;Chat Completion Source&#x27;.</li>
-<li>Leaving the details like the API key empty.</li>
-<li>Opening the &#x27;AI Response Configuration&#x27; tab and scrolling down to the &#x27;OpenAI / Claude Reverse Proxy&#x27; section.</li>
-</ul>
-<p>There you may enter the proxy/custom endpoint and optionally an API key under &#x27;Proxy Password&#x27; if needed.
-For example, TabbyAPI provides you with an API key you have to use.</p>
-<p>Back in the &#x27;AI Connections&#x27; tab, you can find two optional checkboxes labeled:</p>
-<ul>
-<li>Bypass API status check.</li>
-<li>Show &quot;External&quot; models (provided by API).</li>
-</ul>
-<p>Checking &#x27;Bypass API status check&#x27; tells SillyTavern to stop alerting you about a non-functioning API endpoint. Check this if your API endpoint works, but SillyTavern keeps warning you anyway.</p>
+<doc-anchor-target id="connecting">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#connecting">#</doc-anchor-trigger>
+        <span>Connecting</span>
+    </h2>
+</doc-anchor-target>
+<p>To access this feature:</p>
+<ol>
+<li>Switch to the &#x27;Chat Completion&#x27; API type</li>
+<li>Select &#x27;Custom (OpenAI-compatible)&#x27; for &#x27;Chat Completion Source&#x27;</li>
+</ol>
+<p>Enter the custom endpoint URL and an API key if required. For example, TabbyAPI requires an API key for authentication.</p>
 <blockquote>
-<p><strong>Hint:</strong> If it doesn&#x27;t work, try adding <code v-pre>/v1</code> at the end of the endpoint URL!</p>
+<p><strong>Hint:</strong> If you experience connection issues, try adding <code v-pre>/v1</code> to the end of the endpoint URL. Do NOT add the <code v-pre>/chat/completions</code> suffix.</p>
 </blockquote>
-<p>Checking &#x27;Show &quot;External&quot; models (provided by API)&#x27; will show the external available models as reported by your custom API endpoint in the dropdown (scroll down past OpenAI&#x27;s models). This allows you to select different API models right from SillyTavern without having to go into your custom app and change the model.</p>
-<p><strong>This feature is not required for custom API endpoints to work</strong> and might not be available on every backend.</p>
+<doc-anchor-target id="selecting-a-model">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#selecting-a-model">#</doc-anchor-trigger>
+        <span>Selecting a Model</span>
+    </h2>
+</doc-anchor-target>
+<p>If the custom API implements the <code v-pre>/v1/models</code> endpoint to provide a list of available models, you can choose from a dropdown list. Otherwise, use the text field to manually input a model ID.</p>
+<p>Check &#x27;Bypass API status check&#x27; to prevent SillyTavern from alerting you about a non-functioning API endpoint. Enable this option if your API endpoint works properly but SillyTavern continues to display warnings.</p>
+<p>Click &quot;Test Message&quot; to verify connectivity by sending a simple prompt to the model.</p>
+<doc-anchor-target id="prompt-post-processing">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#prompt-post-processing">#</doc-anchor-trigger>
+        <span>Prompt Post-Processing</span>
+    </h2>
+</doc-anchor-target>
+<p>Some endpoints may impose specific restrictions on the format of incoming prompts, such as requiring only one system message or strictly alternating roles.</p>
+<p>SillyTavern provides built-in prompt converters to help meet these requirements (from least to most restrictive):</p>
+<ol>
+<li>Merge consecutive messages from the same role</li>
+<li>Merge roles and allow only one system message (semi-strict)</li>
+<li>Merge roles, allow only one optional system message, and require a user role to be first (strict)</li>
+</ol>
 
                                 
                                 <!-- Required only on API pages -->
