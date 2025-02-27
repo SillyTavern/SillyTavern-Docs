@@ -246,35 +246,6 @@ SlashCommandParser.addCommandObject(SlashCommand.fromProps({ name: 'repeat',
 }));
 ```
 
-## (DEPRECATED) Registering slash commands (old way)
-
-Use `registerSlashCommand()` to register a new slash command:
-
-```js
-import { registerSlashCommand } from "../../slash-commands.js";
-
-registerSlashCommand("commandname", commandFunction, ["alias"], "Description shown in /help");
-
-function commandFunction(namedArgs, unnamedArgs) {
-    // Command logic
-}
-```
-
-Example of command execution:
-
-```stscript
-/commandname namedArgument=value Unnamed argument
-```
-
-Arguments explanation:
-
-1. `command` - the main command name. It will be used in autocompletion and help commands.
-2. `callback` - a function that will be executed when the command is triggered. A callback function can accept two arguments:
-   * `namedArgs` - an object with named arguments
-   * `unnamedArgs` - a string containing the unnamed argument
-3. `aliases` - an array of alias strings. The command can be called using any of the aliases, but they won't be shown in the autocomplete but will be listed in the help command.
-4. `helpString` - a string that will be displayed when the `/help slash` command is called. Must describe what your command does and which arguments it accepts. May contain HTML markup.
-
 All registered commands can be used in [STscript](/For_Contributors/st-script.md) in any possible way.
 
 ### Listening to event types
