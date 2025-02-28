@@ -34,6 +34,8 @@ Optionally, one World Info file could be assigned to a character to serve as a d
 
 To do that, navigate to a Character Management panel and click a globe button, then pick World Info from a dropdown list and click "Ok".
 
+To unbind or change character lore, shift click on the globe button. If on mobile, click more and then "Link World Info"
+
 ### Character Lore Insertion Strategy
 
 When generating an AI reply, entries from the character World Info will be combined with the entries from a global World Info selector using one of the following strategies:
