@@ -95,6 +95,8 @@ SillyTavern.getContext().registerFunctionTool({
     shouldRegister: () => {
         return true;
     },
+    // Optional flag. If set to true, the function call will be performed, but the result won't be recorded to the visible chat history.
+    stealth: false,
 });
 ```
 
