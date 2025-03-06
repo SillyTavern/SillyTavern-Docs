@@ -110,5 +110,5 @@ SillyTavern.getContext().unregisterFunctionTool("myFunction");
 
 ## Tips and tricks
 
-1. Successful tool calls are saved as a part of the visible history and will be displayed in the chat UI, so you can inspect the actual parameters and results.
+1. Successful tool calls are saved as a part of the visible history and will be displayed in the chat UI, so you can inspect the actual parameters and results. If that is not desirable, set the `stealth: true` flag when registering a function tool.
 2. If you don't want to see the tool call in the chat history. If you want to stylize or hide them with custom CSS, target a `toolCall` class on `.mes` elements, i.e. `.mes.toolCall { display: none; }` or `.mes.toolCall { color: #999; }`.
