@@ -19,9 +19,12 @@ The summarization extension is installed in SillyTavern by default, thus it will
 
 ## Supported summary sources
 
-### Main API
+The "Summarize With" dropdown allows you to select the source for generating summaries. The available options are:
 
-Summarization will be powered by your currently selected AI backend, model and settings. This method requires no additional setup, just a working API connection.
+*   **Main API:** Summarization is powered by your currently selected AI backend, model and settings. This method requires no additional setup, just a working API connection. 
+*   **Extras API (deprecated):**  Extras server with the `summarize` module could run an auxiliary summarization model (BART).  It has a very small context size (~1024 tokens), so its ability to handle large summaries is quite limited. *Note: This option is deprecated and may be removed in a future update.*
+*   **WebLLM Extension:** Uses the WebLLM extension for summarization.  Requires the WebLLM extension to be installed and configured.
+*   **Connection Profile:**  If selected, a new dropdown will appear labeled "Connection Profile".  This allows you to choose a specific [connection profile](https://docs.sillytavern.app/usage/core-concepts/connection-profiles/#connection-profiles). The summarization request will then be sent using the LLM API and parameters defined in the selected profile. This allows you to use a dedicated API (e.g., OpenAI/4o, KoboldCpp) and settings (temperature, top_p, etc.) for summarization that are different from your main chat generation settings.
 
 This option has the following sub-modes that differ depending on how the summary prompt is built:
 
@@ -29,7 +32,7 @@ This option has the following sub-modes that differ depending on how the summary
 2. Raw, non-blocking. Same as above, but the chat generation will not be blocked during the summary generation. Not every backend supports simultaneous requests, so switch to blocking mode if summarization fails.
 3. Classic, blocking. The summarization prompt will be sent at the end of your usual generation prompt, as a neutral system instruction, not omitting the character card, main prompt, example dialogues and other parts of chat prompts. This usually results in prompts that play nicely with reusing processed prompts, so it is recommended to use with llama.cpp and its siblings.
 
-#### Summary Settings explained
+### Summary Settings explained
 
 1. **Summary Prompt** - defines the prompt that will used for creating a summary. May include any of the known macros, as well as a special \{\{words\}\} macro (see below).
 2. **Target summary length (words)** - defines the value of the \{\{words\}\} macro that can be inserted into the Summary Prompt. This setting is completely optional and has no effect at all if the macro is not used.
@@ -49,7 +52,7 @@ If you're unsure about the interval settings, you can click the "magic wand" but
 4. If "Max messages" is set, adjust the average to account for messages that don't fit the summary limit
 5. Round down the adjusted average messages per prompt to a multiple of 5
 
-#### Example prompts
+### Example prompts
 
 **Raw prompt**
 ```
@@ -83,7 +86,7 @@ System:
 [Summarization prompt]
 ```
 
-### Extras API
+### Extras API (deprecated)
 
 Extras server with the `summarize` module could run an auxiliary summarization model (BART).
 
