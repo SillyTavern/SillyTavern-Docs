@@ -98,6 +98,13 @@ To enable access control via a whitelist, edit the `config.yaml` file in the Sil
       - 192.168.0.*
     ```
 
+4. Allow network connections for all IPv4 devices:
+
+    ```yaml
+    whitelist:
+      - 0.0.0.0/0
+    ```
+
 ### Disabling whitelist-based access control
 
 To disable access control via a whitelist:
