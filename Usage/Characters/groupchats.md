@@ -35,6 +35,10 @@ Tries to simulate the flow of a real human conversation. The algorithm is as fol
 
 Characters are drafted based on the order they are presented in the group members list. No other rules apply.
 
+#### Pooled Order
+
+Activates one random character that hasn't spoken yet since the last user message. If all characters have spoken, selects one randomly until the next user message.
+
 ### Group generation handling mode
 
 This setting decides how to handle the character information of the group chat members. No matter the choice, the group chat history is always shared between all the members.

@@ -109,13 +109,15 @@ To enable viewing your keys by clicking a button in the API block:
 1. Set the value of `allowKeysExposure` to `true` in the `config.yaml` file.
 2. Restart the SillyTavern server.
 
-## Why is the UI so slow/jittery?
+## Performance Tips
+
+### Why is the UI so slow/jittery?
 
 * Try enabling the No Blur Effect (Fast UI) mode on the User settings panel.
 * Enable Reduced motion in the UI theme settings to remove cosmetic animations.
 * Make sure your browser is using Hardware Acceleration.
 
-## I'm experiencing an input lag. What can I do?
+### I'm experiencing an input lag. What can I do?
 
 Performance degradation, particularly input lag, is most commonly attributed to browser extensions. Known problematic extensions include:
 
@@ -131,6 +133,19 @@ If you experience performance issues and cannot identify the cause, or suspect a
 3. Submit it to the development team for analysis
 
 We recommend first testing with all browser extensions and third-party SillyTavern extensions disabled to isolate the source of the performance degradation.
+
+### When I import a lot of characters, the app becomes slow. Why?
+
+Unfortunately, SillyTavern wasn't designed to handle huge character libraries. The more you have, the longer it will take to load the character list. Evidential data suggests that the performance degradation starts to become noticeable when you have more than 1000 characters.
+
+However, there are some things you can do to mitigate the issue:
+
+1. Enable lazy loading of characters setting the value `performance.lazyLoadCharacters` to true in the `config.yaml` file. After the next server restart, the character list will only load the full data of characters you interact with. Please be aware that some third-party extensions may not work correctly with this setting enabled if they were not updated to support it (contact the extension developer for more information).
+2. Increase the memory cache capacity if you have some spare RAM. This will allow the server to keep more characters in memory, reducing the time it takes to load them. You can do this by adjusting the value of `performance.memoryCacheCapacity` to a higher number in the `config.yaml` file. The default value is `100mb`.
+
+!!! warning
+Memory cache is disabled on Android devices due to the limited amount of available memory.
+!!!
 
 ## How to make the AI write more?
 

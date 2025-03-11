@@ -81,6 +81,25 @@ Below this is a list of your scripts with some action buttons.
   - 'Raw' will send in the value of the macro verbatim. This might alter the way your RegEx script searches the text if the value of the macro contains certain special characters.
   - 'Escaped' will add a RegEx escape slash `\` before each character to ensure they do not accidentally alter the overall RegEx sequence. This can be useful if you have certain special characters in the values of the macro.
 
+### Flags
+
+By default the Find Regex pattern is case-sensitive and applies only to the first match. To adjust this behavior, as well as other RegEx flags, you can add them like so:
+
+```txt
+/yourpattern/flags
+```
+
+Example: `/yourpattern/gi` will match all instances of 'yourpattern' in the text, regardless of case.
+
+Some of the most common flags are:
+
+- `i` : case-insensitive
+- `g` : global (applies to all matches, not just the first)
+- `m` : multi-line (treats the input as multiple lines, so `^` and `$` match the start/end of each line, not just the whole string)
+- `u` : unicode (treats the input as unicode, so `\d`, `\w`, etc. will match unicode characters)
+
+For more information on RegEx flags, see the following MDN page: [Advanced searching with flags](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions#advanced_searching_with_flags)
+
 ### Ephemerality
 
 By default (when neither box here is checked) a RegEx script will directly edit the text values stored inside the chat's JSONL file. This ensures both the outgoing prompt and the chat display will always contain the same values. However, these changes to the chat file are irreversible.

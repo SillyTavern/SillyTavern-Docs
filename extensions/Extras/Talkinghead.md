@@ -4,6 +4,8 @@ route: /extensions/talkinghead
 
 # talkinghead
 
+## **THE SUPPORT FOR TALKGINHEAD WAS DROPPED IN SILLYTAVERN 1.12.13. THIS PAGE IS KEPT FOR HISTORICAL PURPOSES.**
+
 ### What is it?
 
 An implementation of Talking Head Anime 3 Demo for AITuber. It possesses the following features:

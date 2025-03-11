@@ -22,15 +22,44 @@ protocol:
   ipv6: false
 ```
 
+## Environment Variables
+
+Configuration variables may also be set via environment variables and will override the values in the `config.yaml` file.
+
+The environment variables should be prefixed with `SILLYTAVERN_` and use uppercase letters for the setting names. For example, the `dataRoot` setting can be overridden with the `SILLYTAVERN_DATAROOT` environment variable.
+
+The nested settings should be separated by underscores. For example, `protocol.ipv6` can be overridden with the `SILLYTAVERN_PROTOCOL_IPV6` environment variable.
+
+!!! warning
+Configurations that expect arrays or objects should be JSON-stringified. For example, to override the `whitelist` setting with the `SILLYTAVERN_WHITELIST` environment variable, you should set it as a JSON string: `SILLYTAVERN_WHITELIST='["127.0.0.1", "::1"]'`.
+!!!
+
+If using Node.js >= 20, you can also store the environment variables in a `.env` file and pass it to the server using the `--env` flag. For example, to use the `.env` file located in the repository root, you can start the server with the following command:
+
+```bash
+node --env-file=.env server.js
+```
+
+Alternatively, pass the environment variables directly via the command line:
+
+```bash
+SILLYTAVERN_LISTEN=true SILLYTAVERN_PORT=8000 node server.js
+```
+
 ## Data Configuration
 
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|-----------------|
 | `dataRoot` | Root directory for user data storage | `./data` | Any valid directory path |
-| `minLogLevel` | Minimum log level to display in the terminal | `0` (DEBUG) | (DEBUG = 0, INFO = 1, WARN = 2, ERROR = 3) |
-| `cardsCacheCapacity` | The maximum amount of memory that parsed character cards can use in MB. | 100 | Any positive integer |
 | `skipContentCheck` | Skip new default content checks | `false` | `true`, `false` |
 | `enableDownloadableTokenizers` | Enable on-demand tokenizer downloads | `true` | `true`, `false` |
+
+## Logging Configuration
+
+| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|------------------|
+| `logging.minLogLevel` | Minimum log level to display in the terminal | `0` (DEBUG) | (DEBUG = 0, INFO = 1, WARN = 2, ERROR = 3) |
+| `logging.enableAccessLog` | Write server access log | `true` | `true`, `false` |
 
 ## [Network Configuration](/Administration/remote-connections.md)
 
@@ -44,6 +73,14 @@ protocol:
 | `listenAddress.ipv6` | Listen on specific IPv6 address | `'[::]'` | Valid IPv6 address |
 | `dnsPreferIPv6` | Prefer IPv6 for DNS resolution | `false` | `true`, `false` |
 
+## SSL Configuration
+
+| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|------------------|
+| `ssl.enabled` | Enable SSL/TLS | `false` | `true`, `false` |
+| `ssl.keyPath` | Path to SSL private key | `"./certs/privkey.pem"` | Valid file path |
+| `ssl.certPath` | Path to SSL certificate | `"./certs/cert.pem"` | Valid file path |
+
 ## Security Configuration
 
 | Setting | Description | Default | Permitted Values |
@@ -51,6 +88,7 @@ protocol:
 | `whitelistMode` | Enable IP whitelist filtering | `true` | `true`, `false` |
 | `enableForwardedWhitelist` | Check forwarded headers for whitelisted IPs | `true` | `true`, `false` |
 | `whitelist` | List of allowed IP addresses | `["::1", "127.0.0.1"]` | Array of valid IP addresses |
+| `whitelistDockerHosts` | Automatically whitelist Docker host IPs | `true` | `true`, `false` |
 | `enableCorsProxy` | Enable CORS proxy middleware | `false` | `true`, `false` |
 | `allowKeysExposure` | Allow API keys exposure in the UI | `false` | `true`, `false` |
 | `disableCsrfProtection` | Disable CSRF protection (not recommended) | `false` | `true`, `false` |
@@ -66,9 +104,14 @@ protocol:
 | `enableUserAccounts` | Enable multi-user mode | `false` | `true`, `false` |
 | `enableDiscreetLogin` | Hide user list on login screen | `false` | `true`, `false` |
 | `sessionTimeout` | User session timeout in seconds | `-1` (disabled) | Any number (-1 to disable, 0 for browser close, >0 for timeout) |
-| `cookieSecret` | Secret for signing session cookies | `''` (auto-generated) | Any string |
 | `autheliaAuth` | Enable Authelia-based auto login. See: [SSO](/Administration/sso.md) | `false` | `true`, `false` |
 | `perUserBasicAuth` | Use account credentials for basic auth | `false` | `true`, `false` |
+
+## Rate Limiting Configuration
+
+| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|------------------|
+| `rateLimiting.preferRealIpHeader` | Use X-Real-IP header instead of socket IP for rate limiting | `false` | `true`, `false` |
 
 ## Request Proxy Configuration
 
@@ -86,6 +129,13 @@ protocol:
 | `autorunHostname` | Hostname used when autorun opens the browser | `"auto"` | `"auto"`, any valid hostname (e.g., `"localhost"`, `"st.example.com"`) |
 | `autorunPortOverride` | Override port for browser autorun | `-1` | `-1` (use server port), any valid port number |
 | `avoidLocalhost` | Avoid using 'localhost' for autorun | `false` | `true`, `false` |
+
+## Performance Configuration
+
+| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|------------------|
+| `performance.lazyLoadCharacters` | Lazy-load character data | `true` | `true`, `false` |
+| `performance.memoryCacheCapacity` | Maximum memory cache capacity | `100mb` | Human-readable size (e.g., `100mb`, `1gb`) |
 
 ## Thumbnailing Configuration
 

@@ -39,9 +39,9 @@ What can be a document? Practically anything that is representable in plain text
 
 Examples include, but are not limited to:
 
--   Local files (books, scientific papers, etc.)
--   Web pages (Wikipedia, articles, news)
--   Video transcripts
+- Local files (books, scientific papers, etc.)
+- Web pages (Wikipedia, articles, news)
+- Video transcripts
 
 Various extensions and plugins can also provide new ways to gather and process data, more on that below.
 
@@ -57,11 +57,11 @@ Create a text file from scratch, or edit an existing attachment.
 
 Upload a file from the hard drive of your computer. SillyTavern provides built-in converters for popular file formats:
 
--   PDF (text only)
--   HTML
--   Markdown
--   ePUB
--   TXT
+- PDF (text only)
+- HTML
+- Markdown
+- ePUB
+- TXT
 
 You can also attach any text files with non-standard extensions, such as JSON, YAML, source codes, etc. If there are no known conversions from the type of a selected file, and the file can't be parsed as a plain text document, the file upload will be rejected, meaning that raw binary files are not allowed.
 
@@ -109,7 +109,7 @@ Bronya Rand's Bronie Parser Extension allows the use of third-party scrapers, su
 
 Currently, Bronya Rand's Bronie Parser Extension supports the following:
 
--   miHoYo/HoYoverse's HoYoLab (for Genshin Impact/Honkai: Star Rail) via [HoYoWiki-Scraper-TS](https://github.com/Bronya-Rand/HoYoWiki-Scraper-TS)
+- miHoYo/HoYoverse's HoYoLab (for Genshin Impact/Honkai: Star Rail) via [HoYoWiki-Scraper-TS](https://github.com/Bronya-Rand/HoYoWiki-Scraper-TS)
 
 To begin, install Bronya Rand's Bronie Parser Extension by following it's [installation guide](https://github.com/Bronya-Rand/Bronie-Parser-Extension?tab=readme-ov-file#installation) and install a supported Server Plugin into SillyTavern. Restart SillyTavern and go to the _Data Bank_ menu. Click `+ Add` and you should see that your recently installed scrapers are added into the possible list of sources to obtain information from.
 
@@ -133,15 +133,20 @@ By itself, Vector Storage does not produce any vectors, you need to use a compat
 
 ## Vector Providers
 
+!!! warning Warning
+Embeddings are only usable when they are retrieved using the same model that generated them. When changing an embedding model or source, the vectors need to be recalculated.
+!!!
+
 ### Local
 
 These sources are free and unlimited and use your CPU/GPU to calculate embeddings.
 
 1. Local (Transformers) - runs on a Node server. SillyTavern will automatically download a compatible model in ONNX format from HuggingFace. Default model: [jina-embeddings-v2-base-en](https://huggingface.co/Cohee/jina-embeddings-v2-base-en).
-2. Extras - runs under the [Extras API](https://github.com/SillyTavern/SillyTavern-extras) using the SentenceTransformers loader. Default model: [all-mpnet-base-v2](https://huggingface.co/sentence-transformers/all-mpnet-base-v2).
+2. WebLLM - requires an extension to be installed and a web browser that [supports WebGPU](https://caniuse.com/webgpu). Runs directly in your browser, can use hardware accelleration. Automatically downloads supported models from HuggingFace. Install the extension from here: <https://github.com/SillyTavern/Extension-WebLLM>.
 3. Ollama - get it from <https://ollama.com/>. Set the API URL in the API connection menu (under Text Completion, default: `http://localhost:11434`). Must download a compatible model first, then set its name in the extension settings. Example model: [mxbai-embed-large](https://ollama.com/library/mxbai-embed-large). Optionally, check an option to keep the model loaded in memory.
 4. llama.cpp server - get it from [ggerganov/llama.cpp](https://github.com/ggerganov/llama.cpp) and run the server executable with `--embedding` flag. Load compatible GGUF embedding models from HuggingFace, for example, [nomic-ai/nomic-embed-text-v1.5-GGUF](https://huggingface.co/nomic-ai/nomic-embed-text-v1.5-GGUF).
 5. vLLM - get it from [vllm-project/vllm](https://github.com/vllm-project/vllm). Set the API URL and API key in the API connection menu first.
+6. Extras (deprecated) - runs under the [Extras API](https://github.com/SillyTavern/SillyTavern-extras) using the SentenceTransformers loader. Default model: [all-mpnet-base-v2](https://huggingface.co/sentence-transformers/all-mpnet-base-v2). This source is not maintained and will be eventually removed in the future.
 
 ### API sources
 
@@ -153,10 +158,6 @@ All these sources require an API key of the respective service and usually have 
 4. TogetherAI
 5. MistralAI
 6. NomicAI
-
-!!! warning Warning
-Embeddings are only usable when they are retrieved using the same model that generated them. When changing an embedding model or source, it is recommended to purge and recalculate file vectors.
-!!!
 
 ## Vectorization Settings
 
@@ -176,10 +177,10 @@ The following rules apply:
 2. When the vector storage extension is disabled, file attachments and their accompanying message are fully inserted into the prompt.
 3. When file vectorization is enabled, then the file will be split into chunks and only the most relevant pieces will be inserted, saving the context space and allowing the model to stay focused.
 
--   Size threshold (KB) - sets a chunking splitting threshold. Only the files larger than the specified size will be split.
--   Chunk size (chars) - sets the target size of an individual chunk (in textual characters, not model tokens!).
--   Chunk overlap (%) - sets the percentage of a chunk size that will be shared between adjacent chunks. This allows for a smoother transition between the chunks, but may also introduce some redundancy.
--   Retrieve chunks - sets the maximum amount of the most relevant file chunks to be retrieved. They will be inserted in their original order.
+- Size threshold (KB) - sets a chunking splitting threshold. Only the files larger than the specified size will be split.
+- Chunk size (chars) - sets the target size of an individual chunk (in textual characters, not model tokens!).
+- Chunk overlap (%) - sets the percentage of a chunk size that will be shared between adjacent chunks. This allows for a smoother transition between the chunks, but may also introduce some redundancy.
+- Retrieve chunks - sets the maximum amount of the most relevant file chunks to be retrieved. They will be inserted in their original order.
 
 ### Data Bank files
 
@@ -191,20 +192,20 @@ The following rules apply:
 2. Otherwise, all available documents from the current scope (see above) are considered for the query. Only the most relevant chunks across all the files are retrieved. Multiple chunks of the same file are inserted in their original order.
 3. The inserted chunks will reserve a part of the context before fitting the chat messages.
 
--   Size threshold (KB) - sets a chunking splitting threshold. Only the files larger than the specified size will be split.
--   Chunk size (chars) - sets the target size of an individual chunk (in textual characters, not model tokens!).
--   Chunk overlap (%) - sets the percentage of a chunk size that will be shared between adjacent chunks. This allows for a smoother transition between the chunks, but may also introduce some redundancy.
--   Retrieve chunks - sets the maximum amount of the file chunks to be retrieved. This allowance is shared between all files.
--   Injection Template - defines how the retrieved information will be inserted into the prompt. You can use a special \{\{text\}\} macro to specify the position of the retrieved text, as well as any other macros.
--   Injection Position - sets where to insert the prompt injection. The same rules as for Author's Note and World Info apply.
+- Size threshold (KB) - sets a chunking splitting threshold. Only the files larger than the specified size will be split.
+- Chunk size (chars) - sets the target size of an individual chunk (in textual characters, not model tokens!).
+- Chunk overlap (%) - sets the percentage of a chunk size that will be shared between adjacent chunks. This allows for a smoother transition between the chunks, but may also introduce some redundancy.
+- Retrieve chunks - sets the maximum amount of the file chunks to be retrieved. This allowance is shared between all files.
+- Injection Template - defines how the retrieved information will be inserted into the prompt. You can use a special \{\{text\}\} macro to specify the position of the retrieved text, as well as any other macros.
+- Injection Position - sets where to insert the prompt injection. The same rules as for Author's Note and World Info apply.
 
 ### Shared settings
 
--   Query messages - how many of the latest chat messages will be used for querying document chunks.
--   Score threshold - adjust to allow culling the retrieval of chunks based on their relevance score (0 - no match at all, 1 - perfect match). Higher values allow for more accurate retrieval and prevent completely random information from entering the context. Sane values are in a range between 0.2 (more loose) and 0.5 (more focused).
--   Include in World Info Scanning - check if you want the injected content to activate lore book entries.
--   Vectorize All - forcibly ingests the embeddings for all unprocessed files.
--   Purge Vectors - clears the file embeddings, allowing to recalculate their vectors.
+- Query messages - how many of the latest chat messages will be used for querying document chunks.
+- Score threshold - adjust to allow culling the retrieval of chunks based on their relevance score (0 - no match at all, 1 - perfect match). Higher values allow for more accurate retrieval and prevent completely random information from entering the context. Sane values are in a range between 0.2 (more loose) and 0.5 (more focused).
+- Include in World Info Scanning - check if you want the injected content to activate lore book entries.
+- Vectorize All - forcibly ingests the embeddings for all unprocessed files.
+- Purge Vectors - clears the file embeddings, allowing to recalculate their vectors.
 
 !!! info Note
 For "Chat vectorization" settings see [Chat Vectorization](/extensions/Chat-vectorization.md).
