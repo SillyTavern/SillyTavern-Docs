@@ -24,7 +24,7 @@ protocol:
 
 ## Environment Variables
 
-Configuration variables may also be set via environment variables and will override the values in the `config.yaml` file.
+Configuration may also be set via environment variables which will override the values in the `config.yaml` file.
 
 The environment variables should be prefixed with `SILLYTAVERN_` and use uppercase letters for the setting names. For example, the `dataRoot` setting can be overridden with the `SILLYTAVERN_DATAROOT` environment variable.
 
@@ -45,6 +45,8 @@ Alternatively, pass the environment variables directly via the command line:
 ```bash
 SILLYTAVERN_LISTEN=true SILLYTAVERN_PORT=8000 node server.js
 ```
+
+See more on using environment variables in the [Node.js documentation](https://nodejs.org/en/learn/command-line/how-to-read-environment-variables-from-nodejs).
 
 ## Data Configuration
 
