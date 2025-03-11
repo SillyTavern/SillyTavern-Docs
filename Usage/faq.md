@@ -141,7 +141,7 @@ Unfortunately, SillyTavern wasn't designed to handle huge character libraries. T
 However, there are some things you can do to mitigate the issue:
 
 1. Enable lazy loading of characters setting the value `performance.lazyLoadCharacters` to true in the `config.yaml` file. After the next server restart, the character list will only load the full data of characters you interact with. Please be aware that some third-party extensions may not work correctly with this setting enabled if they were not updated to support it (contact the extension developer for more information).
-2. Increase the memory cache capacity if you have some spare RAM. This will allow the server to keep more characters in memory, reducing the time it takes to load them. You can do this by adjusting the value of `performance.memoryCacheCapacity` to a higher number in the `config.yaml` file. The default value is `100mb`.
+2. Increase the memory cache capacity if you have some spare RAM. This will allow the server to keep more characters in memory, reducing the time it takes to load them. You can do this by adjusting the value of `performance.memoryCacheCapacity` to a higher number in the `config.yaml` file. The default value is `100mb`. Approximate rule of thumb: increase the value by 100mb for every 3000 characters you have.
 
 !!! warning
 Memory cache is disabled on Android devices due to the limited amount of available memory.
