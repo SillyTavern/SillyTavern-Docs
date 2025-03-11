@@ -31,7 +31,7 @@ Note: some extensions may also add special context-specific macros that only wor
 | `{{scenario}}` | Character's scenario or chat scenario override (if set). |
 | `{{personality}}` | Character's personality. |
 | `{{persona}}` | User's persona description. |
-| `{{mesExamples}}` | Character's examples of dialogue (formatted). |
+| `{{mesExamples}}` | Character's examples of dialogue (instruct-formatted). |
 | `{{mesExamplesRaw}}`  | Chaaracter's examples of dialogue (unaltered and unsplit). |
 | `{{char_version}}` | The character's version number. |
 | `{{model}}` | Text generation model name for the currently selected API. **Can be inaccurate!** |

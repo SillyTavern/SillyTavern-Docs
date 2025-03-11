@@ -37,7 +37,7 @@ Characters are drafted based on the order they are presented in the group member
 
 #### Pooled Order
 
-Activates one random character that hasn't spoken yet since the last user message. If all characters have spoken, selects one randomly until the next user message.
+Activates one random character who have't spoken yet since the last user message. If all characters have spoken, selects one randomly until the next user message.
 
 ### Group generation handling mode
 

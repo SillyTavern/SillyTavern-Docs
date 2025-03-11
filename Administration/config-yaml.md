@@ -34,7 +34,7 @@ The nested settings should be separated by underscores. For example, `protocol.i
 Configurations that expect arrays or objects should be JSON-stringified. For example, to override the `whitelist` setting with the `SILLYTAVERN_WHITELIST` environment variable, you should set it as a JSON string: `SILLYTAVERN_WHITELIST='["127.0.0.1", "::1"]'`.
 !!!
 
-If using Node.js >= 20, you can also store the environment variables in a `.env` file and pass it to the server using the `--env` flag. For example, to use the `.env` file located in the repository root, you can start the server with the following command:
+If using Node.js >= 20, you can also store the environment variables in a `.env` file and pass it to the server using the `--env-file` flag. For example, to use the `.env` file located in the repository root, you can start the server with the following command:
 
 ```bash
 node --env-file=.env server.js
