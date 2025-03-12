@@ -70,8 +70,6 @@ Below this is a list of your scripts with some action buttons.
   - 'Reasoning': script will be run against the contents of the 'reasoning' object returned by Chat Completion API's like Gemini or Deepseek. If 'Alter Outgoing Prompt' is checked under Ephemerality, the script will also be applied to any reasoning blocks that are added into prompt in subsequent chat turns.
   - **If everthing here is unchecked the script will never activate during normal chatting, but it can still be activated via slash command or STscript.**
 
-- **Min/Max Depth** : How far back in the chat history to look for strings to match with. Leave both blank to apply the script to the whole chat.
-
 - **Other Options** :
   - 'Disabled' prevents the script from running. This is used as an override to prevent the script from running when you simply don't want to change any of the script's settings and/or don't want to disable it entirely via the switch on the script list (as doing so would prevent slash commands from triggering it).
   - 'Run on Edit' makes the script also run after a chat message has been edited. If this is unchecked, the contents of edited chat messages will not trigger the script.
@@ -80,6 +78,22 @@ Below this is a list of your scripts with some action buttons.
   - 'Don't Substitute' will cause any SillyTavern macros to be ignored so the RegEx script will treat them literally when searching.
   - 'Raw' will send in the value of the macro verbatim. This might alter the way your RegEx script searches the text if the value of the macro contains certain special characters.
   - 'Escaped' will add a RegEx escape slash `\` before each character to ensure they do not accidentally alter the overall RegEx sequence. This can be useful if you have certain special characters in the values of the macro.
+
+### Depth Settings
+
+The Min/Max Depth settings provide precise control over which messages in the chat history your regex pattern will affect:
+
+- **Min Depth**: Only affects messages that are at least N levels deep in the chat history
+  - 0 = last message
+  - 1 = second-to-last message
+  - etc.
+  - When blank (set to 'Unlimited'), or -1, will also affect the message to continue on the Continue action
+
+- **Max Depth**: Only affects messages no deeper than N levels in the chat history
+  - Must be greater than Min Depth for the regex to apply
+  - System prompts and utility prompts are not affected by these settings
+
+For example, setting Min Depth to 0 and Max Depth to 2 would only apply your regex to the three most recent messages in the chat.
 
 ### Flags
 
