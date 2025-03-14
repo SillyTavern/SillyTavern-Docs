@@ -14,46 +14,52 @@ A persona in SillyTavern is the identity you use to participate in chats — ess
 
 ## How to create a Persona?
 
-1. Open the **Persona Management** panel (smiley face icon in the top bar).
+1. Open the **Persona Management** panel (<i class="fa-solid fa-face-smile"></i> button in the top menu).
 2. Create a blank persona with the **Create** button and give it a name.
 3. In the persona list, select the newly created persona.
 4. On the right side you can fill in your description and set an avatar via the "Change Persona Image" button. Both are optional.
 5. Now your persona is ready to use in chats.
 
+#### Convert Character to Persona
+
+Personas can also be created by converting any existing character. Simply open the Character, select "More..." and click "Convert to Persona". A persona with the same name and description will be created. The character will not be deleted.
+
 ## Persona Description
 
-Each persona can store a custom text description — mental and physical traits, age, occupation, or any personal details. These can also include template macros such as `{{char}}` or `{{user}}`.
+Each persona can store a custom text description — mental and physical traits, age, occupation, or any personal details. These can also include template macros such as `{{char}}` or `{{user}}` (see [Macros](/Usage/Characters/macros.md)).
 
 Where your persona description is injected into the AI prompt depends on the **Position** setting in the Persona Management panel:
 
 - **None (disabled)**
 - **In Story String / Prompt Manager** (the default)
 - **Top of Author's Note**
-- **Bottom of Author's Note**
+- **Bottom of Author's Note** (Will only be added when an Author's Note exists)
 - **In Chat @ Depth** (This will open up configuration options to set depth and the role)
 
 The position is saved **per persona**.
 
 ## Persona Connections / Locking
 
-Persona connections ensure that a given persona is automatically selected in certain situations. There are three types of locking:
+Persona connections ensure that a given persona is automatically selected in certain situations. If no persona is connected, the currently chosen persona will stay selected.
 
-1. **🔒 Chat lock** – The persona is locked to the current chat.
-2. **🔒 Character lock** – The persona is locked to a specific character.
-3. **👑 Default persona** – One persona that is used whenever no other locks apply.
+There are three types of locking:
+
+1. **<i class="fa-solid fa-unlock"></i> Chat lock** – The persona is locked to the current chat.
+2. **<i class="fa-solid fa-unlock"></i> Character lock** – The persona is locked to a specific character.
+3. **<i class="fa-solid fa-crown"></i> Default persona** – One persona that is used whenever no other locks apply.
 
 ### 1. Lock to a Chat
 
 If a persona is locked to a chat, opening that chat in the future will automatically switch your active persona to the locked one.
 
-- **To lock**: Select the desired persona, then click the **🔒 Chat** button under the "Connections" section (or use `/persona-lock type=chat on`).
+- **To lock**: Select the desired persona, then click the **<i class="fa-solid fa-unlock"></i> Chat** button under the "Connections" section (or use `/persona-lock type=chat on`).
 - **To unlock**: Click the button again (or use `/persona-lock type=chat off`).
 
 ### 2. Lock to a Character
 
 You can also link a persona to a specific character. Opening any chat with that character automatically selects your locked persona.
 
-- **To lock**: Select the desired persona, then click the **🔒 Character** button under the "Connections" section (or use `/persona-lock type=character on`).
+- **To lock**: Select the desired persona, then click the **<i class="fa-solid fa-unlock"></i> Character** button under the "Connections" section (or use `/persona-lock type=character on`).
 - **To unlock**: Click the button again (or use `/persona-lock type=character off`).
 
 The Persona Management panel also shows which characters are linked to that persona (displayed as small avatars). Clicking them navigates directly to that character's chat.
@@ -69,7 +75,7 @@ If multiple personas are linked to the same character, you'll see a popup asking
 
 Your **default persona** is used whenever there's no other relevant lock. The default persona is recognizable by a yellow border.
 
-- **To set/unset default**: Select the desired persona, then click the **👑 Default** button under the "Connections" section (or use `/persona-lock type=default`).
+- **To set/unset default**: Select the desired persona, then click the **<i class="fa-solid fa-crown"></i> Default** button under the "Connections" section (or use `/persona-lock type=default`).
 
 Only one persona can be chosen as the default persona.
 
@@ -111,14 +117,17 @@ All settings under the **Current Persona** are saved per-persona. A few global s
 
 ### `/persona-sync`
 
-- Converts all user messages in the active chat to the **current** persona.
+- Re-attributes all user messages in the active chat to the **current** persona and it's name.
 
 > **Note:** The older `/lock` and `/unlock` commands remain for backward compatibility but may be removed in the future. Use `/persona-lock` instead.
 
 ## Pro Tips
 
-1. **Switching personas mid-chat** doesn't rewrite your past user messages to the new persona; those remain attributed to whichever persona you were using at the time.
+1. **Switching personas mid-chat** doesn't re-attribute your past user messages to the new persona; those remain attributed to whichever persona you were using at the time.
 2. **Batch re-attribution**: If you ever need all prior messages to match a new persona, hit the **sync** button or use `/persona-sync`.
-3. **Replace persona images** without losing description or locks by hovering over the avatar and clicking the image-replace button.
+3. **Replace persona images** without losing description or locks choosing your persona and clicking the Change Persona Image button.
 4. **Character link popups**: If multiple personas are linked to the same character, you'll get a popup to pick which persona each time you open the chat. This is a handy way to have a small selection of personas to choose from for specific characters.
-5. **Backups**: You can back up your entire Persona list (names, images, connections, descriptions) with the **Backup** button in Persona Management, and restore it later if needed.
+5. **Backups**: You can back up your entire Persona list (names, character connections, descriptions) with the **Backup** button in Persona Management, and restore it later if needed.  
+Remarks:
+   - Images and and Default/Chat connections are not saved together with personas and will not be backed via this.
+   - These backups are not designed to be shared, as they contain internal links.
