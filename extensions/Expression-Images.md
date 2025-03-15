@@ -86,7 +86,7 @@ All of those can be selected via the dropdown under 'Default / Fallback Expressi
 
 1. **Choose a Fallback Expression**: If an expression gets chosen where you don't have an image for, the fallback expression gets shown instead. Simply select one of the available expressions from the dropdown.
 2. **[No Fallback]**: When no image exists, show nothing.
-3. **[Default emojis]**: You can use the built-in default expressions which are included with in SillyTavern. These are simple emoji-style images. Default emojis will work alongside existing images for any expressions that don't have one set.
+3. **[Default emojis]**: You can use the built-in default expressions which are included with in SillyTavern. These are simple emoji-style images.
 
 ### Using Multiple Images per Expression
 
