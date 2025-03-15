@@ -77,6 +77,7 @@ Supported APIs:
 6. OpenRouter (both Text and Chat Completion)
 7. Claude
 8. Google AI Studio
+9. MistralAI
 
 ## Start Reply With
 
