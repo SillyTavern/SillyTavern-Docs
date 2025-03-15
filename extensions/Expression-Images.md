@@ -4,7 +4,7 @@
 
 Expression images are images (aka 'sprites') of your AI character which are shown next to (or behind) the chat window.
 
-Expression images can automatically change based on a classification model running alongside SillyTavern. This allows the Expressions to change automatically based on the sentiment expressed in the AI's most recent chat response.
+Expression images can automatically change based on a classification, adjusting to the sentiment expressed in the AI's most recent chat response.
 
 ### Adding Character Expression Images
 
@@ -36,7 +36,7 @@ Expressions change per message or at regular intervals when message streaming is
 
 ##### How does the classify module work?
 
-The `classify` module uses a small 'sentiment parsing' model that runs on the SillyTavern host machine (eg. on your PC, or the colab machine). This model takes the new output from the AI and detects what kind of sentiment, or emotion, the text is expressing. While multiple sentiments may be expressed in a single message, the model only picks the most likely one and returns that to the SillyTavern. The frontend extension then displays the image that is associated with that sentiment.
+The `classify` module uses a small 'sentiment parsing' model that runs alongside the SillyTavern server. This model takes the new output from the AI and detects what kind of sentiment, or emotion, the text is expressing. While multiple sentiments may be expressed in a single message, the model only picks the most likely one and returns that to the SillyTavern. The frontend extension then displays the image that is associated with that sentiment.
 
 #### Setup Instructions (with Extras)
 
@@ -71,7 +71,7 @@ How to get more expression options than provided by default? You can set up **Cu
 > [!TIP]
 > Both Local and Extras only support a limited list of expressions. Local supports the default 28 (as this is what the model was trained on), while Extras only supports 6.
 >
-> If you want Custom Expressions to be displayed, you either need a custom local model configured, or you can use LLM or WebLLM as classification source, which both will automatically use all existing expressions - both the default and any custom ones.
+> If you want Custom Expressions to be displayed, you either need to train a classification model with supported labels (outside the scope of this guide), or you can use LLM or WebLLM as classification source, which both will automatically use all existing expressions - both the default and any custom ones.
 
 ### What image formats are supported for Expressions?
 
@@ -86,7 +86,7 @@ All of those can be selected via the dropdown under 'Default / Fallback Expressi
 
 1. **Choose a Fallback Expression**: If an expression gets chosen where you don't have an image for, the fallback expression gets shown instead. Simply select one of the available expressions from the dropdown.
 2. **[No Fallback]**: When no image exists, show nothing.
-3. **[Default emojis]**: You can use the built-in default expressions which are included with in SillyTavern. These are simple emoji-style images. Default emojis will work alongside any available custom expressions.
+3. **[Default emojis]**: You can use the built-in default expressions which are included with in SillyTavern. These are simple emoji-style images. Default emojis will work alongside existing images for any expressions that don't have one set.
 
 ### Using Multiple Images per Expression
 
@@ -101,7 +101,7 @@ If you want to force a new image of that expression to be chosen when the same e
 
 #### Naming Convention for Multiple Images per Expression
 
-In case of multiple images per expressions, files need to be named a specif way.
+In case of multiple images per expressions, files need to be named a specic way.
 The files need to start with the name of the expressions, and then followed by a suffix, either separated by a dot or a dash. Examples: `joy.png`, `joy-1.png`, `joy.expressive.png`  
 File names must follow this format for both direct uploads and ZIP imports.
 
