@@ -4,20 +4,18 @@
 
 Expression images are images (aka 'sprites') of your AI character which are shown next to (or behind) the chat window.
 
-Expression images can use a classification model running alongside SillyTavern's main application. This allows the Expressions to change automatically based on the sentiment expressed in the AI's most recent chat response.
+Expression images can automatically change based on a classification model running alongside SillyTavern. This allows the Expressions to change automatically based on the sentiment expressed in the AI's most recent chat response.
 
-### Setup Add Character Expression Images
+### Adding Character Expression Images
 
 1. Open the Extensions Panel and expand the 'Character Expressions' section. If you have the character chat open, you will see a grid of image placeholders.
 ![Expression Drawer](/static/extensions/expression-drawer.png)
-
 2. Click the 'Upload image' button at the top left of each image in the grid, and select the image you want to apply to that emotion. This will save the image with the correct filename inside the `/data/<user-handle>/characters/(character_name_here)/` folder.
-
-3. Repeat this with all expressions you want to define an image for.
+3. Repeat this for all expressions you want to assign an image to.
 
 #### Importing an Expression images ZIP file
 
-Using the '<i class="fa-solid fa-file-zipper"></i> Upload sprite pack (ZIP)' button, you can import a zip file that contains a collection of expression images, and those images will automatically be added to the correct folder for your **currently selected character**. The zip file must have a flat internal structure (no subfolders) and the individual images should be named correctly. Importing a zip will not automatically rename any images to make them match the emotions.
+Using the '<i class="fa-solid fa-file-zipper"></i> Upload sprite pack (ZIP)' button, you can import a zip file that contains a collection of expression images, and those images will automatically be added to the correct folder for your **currently selected character**. The ZIP file must contain all images in a flat structure (no subfolders) and correctly named files. Importing a zip will not automatically rename any images to make them match the emotions.
 
 ### Change Expressions Manually
 
@@ -27,7 +25,7 @@ Using the '<i class="fa-solid fa-file-zipper"></i> Upload sprite pack (ZIP)' but
 ### Change Expressions Automatically
 
 To automatically set expressions when the character replies, you have multiple options.
-Expressions will be changed per message, or in regularly intervals when message streaming is enabled.
+Expressions change per message or at regular intervals when message streaming is enabled.
 
 #### Setup Instructions (Local)
 
@@ -43,7 +41,7 @@ The `classify` module uses a small 'sentiment parsing' model that runs on the Si
 #### Setup Instructions (with Extras)
 
 > [!WARNING]  
-> Extras is deprecated and support might be dropped in the future.
+> Extras is deprecated and may be removed in future updates.
 
 1. Have Extras installed and running with the `classify` module enabled: `python server.py --enable-modules=classify`
 2. Import the expression images the same way as mentioned above.
@@ -68,8 +66,7 @@ The `classify` module uses a small 'sentiment parsing' model that runs on the Si
 
 ### Custom Expressions
 
-How to get more expression options than provided by default? You can set up **Custom Expressions** in the extension settings. The names for those expressions can be freely chosen.  
-Custom Expressions will show up in the expression mage list and can be assigned images the same way as other images. They will have an indicator showing that those are custom.
+How to get more expression options than provided by default? You can set up **Custom Expressions** in the extension settings. You can assign any name to Custom Expressions. They will appear in the expression image list and can be assigned images like other expressions. They will have an indicator showing that those are custom.
 
 > [!TIP]
 > Both Local and Extras only support a limited list of expressions. Local supports the default 28 (as this is what the model was trained on), while Extras only supports 6.
@@ -93,7 +90,7 @@ All of those can be selected via the dropdown under 'Default / Fallback Expressi
 
 ### Using Multiple Images per Expression
 
-It is possible to add more than one image per expression, to allow even more variaty in displayed expressions.  
+It is possible to add multiple images per expression to allow for more variety in displayed expressions.  
 To enable this, simply toggle **Allow multiple sprites per expression**.  
 You can now upload more than one image, and any additional images will be displayed with a small marker.
 
@@ -102,11 +99,11 @@ Individual images can be manually chosen by selecting them with a click, or via 
 Whenever an expression with multiple images gets automatically chosen, one of the existing images will be selected at random.  
 If you want to force a new image of that expression to be chosen when the same expression gets used multiple times, you can enable **Re-roll if same sprite is used again**.
 
-#### Naming of multiple images per expression
+#### Naming Convention for Multiple Images per Expression
 
 In case of multiple images per expressions, files need to be named a specif way.
 The files need to start with the name of the expressions, and then followed by a suffix, either separated by a dot or a dash. Examples: `joy.png`, `joy-1.png`, `joy.expressive.png`  
-File names need to follow this format for both direct uploads and also the ZIP file.
+File names must follow this format for both direct uploads and ZIP imports.
 
 ### Sprite Folder Override
 
