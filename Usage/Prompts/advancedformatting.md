@@ -81,7 +81,7 @@ Supported APIs:
 
 ## Start Reply With
 
-!!! note
+!!! Note
 By default, the Start Reply With prefix won't be shown in the resulting message. Enable "Show reply prefix in chat" to display it.
 !!!
 
