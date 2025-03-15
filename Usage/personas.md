@@ -2,6 +2,7 @@
 order: 110
 icon: smiley
 route: /usage/core-concepts/personas
+templating: false
 ---
 
 # Personas
@@ -22,7 +23,11 @@ A persona in SillyTavern is the identity you use to participate in chats — ess
 
 #### Convert Character to Persona
 
-Personas can also be created by converting any existing character. Simply open the Character, select "More..." and click "Convert to Persona". A persona with the same name and description will be created. The character will not be deleted.
+Personas can also be created by converting any existing character. Simply open the Character, select "More..." and click "Convert to Persona". A persona with the same name and description will be created. Other character card fields like Scenario or Personality will not be used. The character will not be deleted.
+
+!!! note
+Since `{{user}}` and `{{char}}` macros have opposite meanings when used in Persona and Character descriptions, you'll be prompted to swap them if the converted description contains either of them.
+!!!
 
 ## Persona Description
 
@@ -32,8 +37,7 @@ Where your persona description is injected into the AI prompt depends on the **P
 
 - **None (disabled)**
 - **In Story String / Prompt Manager** (the default)
-- **Top of Author's Note**
-- **Bottom of Author's Note** (Will only be added when an Author's Note exists)
+- **Top of Author's Note** / **Bottom of Author's Note** (Will only be added when an Author's Note exists)
 - **In Chat @ Depth** (This will open up configuration options to set depth and the role)
 
 The position is saved **per persona**.
@@ -73,7 +77,7 @@ If multiple personas are linked to the same character, you'll see a popup asking
 
 ### 3. Default Persona
 
-Your **default persona** is used whenever there's no other relevant lock. The default persona is recognizable by a yellow border.
+Your **default persona** is used whenever there's no other relevant lock. The default persona is recognizable by a yellow border around its avatar.
 
 - **To set/unset default**: Select the desired persona, then click the **<i class="fa-solid fa-crown"></i> Default** button under the "Connections" section (or use `/persona-lock type=default`).
 
@@ -125,9 +129,9 @@ All settings under the **Current Persona** are saved per-persona. A few global s
 
 1. **Switching personas mid-chat** doesn't re-attribute your past user messages to the new persona; those remain attributed to whichever persona you were using at the time.
 2. **Batch re-attribution**: If you ever need all prior messages to match a new persona, hit the **sync** button or use `/persona-sync`.
-3. **Replace persona images** without losing description or locks choosing your persona and clicking the Change Persona Image button.
+3. **Replace persona images** without losing description or locks choosing your persona and clicking the **<i class="fa-solid fa-images"></i> Change Persona Image** button.
 4. **Character link popups**: If multiple personas are linked to the same character, you'll get a popup to pick which persona each time you open the chat. This is a handy way to have a small selection of personas to choose from for specific characters.
 5. **Backups**: You can back up your entire Persona list (names, character connections, descriptions) with the **Backup** button in Persona Management, and restore it later if needed.  
 Remarks:
-   - Images and and Default/Chat connections are not saved together with personas and will not be backed via this.
+   - Images and and Chat connections are not saved together with personas and will not be backed via this.
    - These backups are not designed to be shared, as they contain internal links.
