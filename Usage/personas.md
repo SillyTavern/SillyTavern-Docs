@@ -25,7 +25,7 @@ A persona in SillyTavern is the identity you use to participate in chats — ess
 
 Personas can also be created by converting any existing character. Simply open the Character, select "More..." and click "Convert to Persona". A persona with the same name and description will be created. Other character card fields like Scenario or Personality will not be used. The character will not be deleted.
 
-!!! note
+!!! Note
 Since `{{user}}` and `{{char}}` macros have opposite meanings when used in Persona and Character descriptions, you'll be prompted to swap them if the converted description contains either of them.
 !!!
 
