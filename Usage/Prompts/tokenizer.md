@@ -38,7 +38,7 @@ Chat Completion APIs **(non-overridable)**:
 4. Google AI Studio: Gemma tokenizer.
 5. Scale API: GPT-4 tokenizer.
 6. AI21 API: Jamba tokenizer (requires a one-time download).
-7. Cohere API: Command-R tokenizer (requires a one-time download).
+7. Cohere API: Command-R or Command-A tokenizer (requires a one-time download).
 8. MistralAI API: Mistral V1 or V3 tokenizer (requires a one-time download).
 9. DeepSeek API: DeepSeek tokenizer (requires a one-time download).
 10. Fallback tokenizer: GPT-3.5 turbo tokenizer.
@@ -48,7 +48,7 @@ Chat Completion APIs **(non-overridable)**:
 These tokenizers are not included in the default installation due to their size A one-time download is required when they're used for the first time.
 
 1. Qwen2 tokenizer.
-2. Command-R tokenizer. Used by Cohere source in Chat Completion.
+2. Command-R / Command-A tokenizers. Used by Cohere source in Chat Completion.
 3. Mistral V3 (Nemo) tokenizer. Used by MistralAI source in Chat Completion (Nemo and Pixtral models).
 4. DeepSeek (deepseek-chat) tokenizer. Used by DeepSeek source in Chat Completion.
 

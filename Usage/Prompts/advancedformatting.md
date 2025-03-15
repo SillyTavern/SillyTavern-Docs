@@ -77,3 +77,23 @@ Supported APIs:
 6. OpenRouter (both Text and Chat Completion)
 7. Claude
 8. Google AI Studio
+9. MistralAI
+
+## Start Reply With
+
+!!! note
+By default, the Start Reply With prefix won't be shown in the resulting message. Enable "Show reply prefix in chat" to display it.
+!!!
+
+### Text Completion APIs
+
+Prefills the last line of the prompt, forcing the model to continue from that point. This is useful for enforcing content, such as nudging toward the [Model Reasoning](/Usage/Prompts/reasoning.md) with the defined prefix:
+
+```txt
+<think>
+Sure!
+```
+
+### Chat Completion APIs
+
+Adds an assistant role message to the end of the prompt. For some backend models, this is equivalent to prefilling the model response, but some may not support that at all and will fail with a validation error. If you're unsure, leave this field empty.

@@ -63,10 +63,6 @@ This is the reasoning.
 This is the main content.
 ```
 
-!!!
-For streamed responses, reasoning will only be parsed after the stream completes.
-!!!
-
 ## Prompting with Reasoning
 
 By default, recognized reasoning block contents are not sent back to the model. To include reasoning in prompts, enable "Add to Prompts" in the **<i class="fa-solid fa-font"></i> Advanced Formatting** panel. Reasoning content will be wrapped in configured Prefix and Suffix sequences and separated by a Separator from the main context. The Max Additions numeric setting controls how many reasoning blocks can be included, counting from the end of the prompt.
@@ -74,6 +70,15 @@ By default, recognized reasoning block contents are not sent back to the model. 
 !!!
 Most model providers do not recommend sending CoT back to the model in multi-turn conversations.
 !!!
+
+### Continuing from Reasoning
+
+A special case when the reasoning can be sent back to the model without having the "Add to Prompts" toggle enabled is when the generation is continued (e.g. by pressing "Continue" from the **<i class="fa-solid fa-bars"></i> Options** menu), but the message being continued contains only the reasoning without an actual content. This gives the model an opportunity to finish an incomplete reasoning and start generating the main content. The prompt will be sent as follows:
+
+```txt
+<think>
+Incomplete reasoning...
+```
 
 ## Regex Scripts
 
