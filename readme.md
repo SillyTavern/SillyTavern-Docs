@@ -4,7 +4,7 @@
 
 SillyTavern (or ST for short) is a locally installed user interface that allows you to interact with text generation LLMs, image generation engines, and TTS voice models. Our goal is to empower users with as much utility and control over their LLM prompts as possible, embracing the steep learning curve as part of the fun.
 
-SillyTavern is a passion project brought to you by a dedicated community of LLM enthusiasts and will always be free and open-sourced. Beginning in February 2023 as a fork of TavernAI 1.2.8, SillyTavern now has over 100 contributors and 2 years of independent development under its belt, and continues to serve as a leading software for savvy AI hobbyists.
+SillyTavern is a passion project brought to you by a dedicated community of LLM enthusiasts and will always be free and open-sourced. Beginning in February 2023 as a fork of TavernAI 1.2.8, SillyTavern now has over 200 contributors and 2 years of independent development under its belt, and continues to serve as a leading software for savvy AI hobbyists.
 
 ## Screenshots
 
