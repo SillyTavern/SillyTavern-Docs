@@ -71,6 +71,15 @@ By default, recognized reasoning block contents are not sent back to the model. 
 Most model providers do not recommend sending CoT back to the model in multi-turn conversations.
 !!!
 
+### Continuing from Reasoning
+
+A special case when the reasoning can be sent back to the model without having the "Add to Prompts" toggle enabled is when the generation is continued (e.g. by pressing "Continue" from the **<i class="fa-solid fa-bars"></i> Options** menu), but the message being continued contains only the reasoning without an actual content. This gives the model an opportunity to finish an incomplete reasoning and start generating the main content. The prompt will be sent as follows:
+
+```txt
+<think>
+Incomplete reasoning...
+```
+
 ## Regex Scripts
 
 Regular expression scripts from the [Regex extension](/extensions/Regex.md) can be applied to the contents of reasoning blocks. Check "Reasoning" in the "Affects" section of the script editor to target reasoning blocks specifically.
