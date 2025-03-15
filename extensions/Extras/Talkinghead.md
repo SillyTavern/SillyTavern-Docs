@@ -1,5 +1,6 @@
 ---
 route: /extensions/talkinghead
+tags: ['obsolete']
 ---
 
 # talkinghead
