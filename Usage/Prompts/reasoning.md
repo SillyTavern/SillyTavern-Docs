@@ -63,10 +63,6 @@ This is the reasoning.
 This is the main content.
 ```
 
-!!!
-For streamed responses, reasoning will only be parsed after the stream completes.
-!!!
-
 ## Prompting with Reasoning
 
 By default, recognized reasoning block contents are not sent back to the model. To include reasoning in prompts, enable "Add to Prompts" in the **<i class="fa-solid fa-font"></i> Advanced Formatting** panel. Reasoning content will be wrapped in configured Prefix and Suffix sequences and separated by a Separator from the main context. The Max Additions numeric setting controls how many reasoning blocks can be included, counting from the end of the prompt.
