@@ -20,6 +20,8 @@ Connection Profiles store the following selections.
 
 * [API type, model and the server URL](/Usage/API_Connections/index.md)
 * [Settings preset](/Usage/Common-Settings.md)
+* [Start Reply With](/Usage/Prompts/advancedformatting.md#start-reply-with) (can be explicitly empty)
+* [Custom Stopping Strings](/Usage/Prompts/advancedformatting.md#custom-stopping-strings) (can be explicitly empty)
 
 ### Text Completion APIs
 

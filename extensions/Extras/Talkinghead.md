@@ -1,8 +1,13 @@
 ---
 route: /extensions/talkinghead
+tags: ['obsolete']
 ---
 
 # talkinghead
+
+!!! warning
+**THE SUPPORT FOR TALKGINHEAD WAS DROPPED IN SILLYTAVERN 1.12.13. THIS PAGE IS KEPT FOR HISTORICAL PURPOSES.**
+!!!
 
 ### What is it?
 
