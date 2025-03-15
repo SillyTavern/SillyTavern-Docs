@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.795371319566">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.795387150328">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.795371319566" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.795387150328" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.795371319566" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.795387150328" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.795371319566" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.795371319566" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.795387150328" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.795387150328" defer></script>
 
     <style>
         a {
@@ -259,6 +259,40 @@
 <pre class="language-yaml"><code v-pre class="language-yaml">protocol:
   ipv6: false</code></pre>
 </doc-codeblock></div>
+<doc-anchor-target id="environment-variables">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#environment-variables">#</doc-anchor-trigger>
+        <span>Environment Variables</span>
+    </h2>
+</doc-anchor-target>
+<p>Configuration may also be set via environment variables which will override the values in the <code v-pre>config.yaml</code> file.</p>
+<p>The environment variables should be prefixed with <code v-pre>SILLYTAVERN_</code> and use uppercase letters for the setting names. For example, the <code v-pre>dataRoot</code> setting can be overridden with the <code v-pre>SILLYTAVERN_DATAROOT</code> environment variable.</p>
+<p>The nested settings should be separated by underscores. For example, <code v-pre>protocol.ipv6</code> can be overridden with the <code v-pre>SILLYTAVERN_PROTOCOL_IPV6</code> environment variable.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Configurations that expect arrays or objects should be JSON-stringified. For example, to override the <code v-pre>whitelist</code> setting with the <code v-pre>SILLYTAVERN_WHITELIST</code> environment variable, you should set it as a JSON string: <code v-pre>SILLYTAVERN_WHITELIST='[&quot;127.0.0.1&quot;, &quot;::1&quot;]'</code>.</p>
+        </div>
+    </div>
+</div>
+<p>If using Node.js &gt;= 20, you can also store the environment variables in a <code v-pre>.env</code> file and pass it to the server using the <code v-pre>--env-file</code> flag. For example, to use the <code v-pre>.env</code> file located in the repository root, you can start the server with the following command:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">node --env-file=.env server.js</code></pre>
+</doc-codeblock></div>
+<p>Alternatively, pass the environment variables directly via the command line:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">SILLYTAVERN_LISTEN=true SILLYTAVERN_PORT=8000 node server.js</code></pre>
+</doc-codeblock></div>
+<p>See more on using environment variables in the <a href="https://nodejs.org/en/learn/command-line/how-to-read-environment-variables-from-nodejs">Node.js documentation</a>.</p>
 <doc-anchor-target id="data-configuration">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#data-configuration">#</doc-anchor-trigger>
@@ -283,18 +317,6 @@
 <td>Any valid directory path</td>
 </tr>
 <tr>
-<td><code v-pre>minLogLevel</code></td>
-<td>Minimum log level to display in the terminal</td>
-<td><code v-pre>0</code> (DEBUG)</td>
-<td>(DEBUG = 0, INFO = 1, WARN = 2, ERROR = 3)</td>
-</tr>
-<tr>
-<td><code v-pre>cardsCacheCapacity</code></td>
-<td>The maximum amount of memory that parsed character cards can use in MB.</td>
-<td>100</td>
-<td>Any positive integer</td>
-</tr>
-<tr>
 <td><code v-pre>skipContentCheck</code></td>
 <td>Skip new default content checks</td>
 <td><code v-pre>false</code></td>
@@ -303,6 +325,38 @@
 <tr>
 <td><code v-pre>enableDownloadableTokenizers</code></td>
 <td>Enable on-demand tokenizer downloads</td>
+<td><code v-pre>true</code></td>
+<td><code v-pre>true</code>, <code v-pre>false</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="logging-configuration">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#logging-configuration">#</doc-anchor-trigger>
+        <span>Logging Configuration</span>
+    </h2>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+<th>Default</th>
+<th>Permitted Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>logging.minLogLevel</code></td>
+<td>Minimum log level to display in the terminal</td>
+<td><code v-pre>0</code> (DEBUG)</td>
+<td>(DEBUG = 0, INFO = 1, WARN = 2, ERROR = 3)</td>
+</tr>
+<tr>
+<td><code v-pre>logging.enableAccessLog</code></td>
+<td>Write server access log</td>
 <td><code v-pre>true</code></td>
 <td><code v-pre>true</code>, <code v-pre>false</code></td>
 </tr>
@@ -371,6 +425,44 @@
 </tbody>
 </table>
 </div>
+<doc-anchor-target id="ssl-configuration">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ssl-configuration">#</doc-anchor-trigger>
+        <span>SSL Configuration</span>
+    </h2>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+<th>Default</th>
+<th>Permitted Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>ssl.enabled</code></td>
+<td>Enable SSL/TLS</td>
+<td><code v-pre>false</code></td>
+<td><code v-pre>true</code>, <code v-pre>false</code></td>
+</tr>
+<tr>
+<td><code v-pre>ssl.keyPath</code></td>
+<td>Path to SSL private key</td>
+<td><code v-pre>&quot;./certs/privkey.pem&quot;</code></td>
+<td>Valid file path</td>
+</tr>
+<tr>
+<td><code v-pre>ssl.certPath</code></td>
+<td>Path to SSL certificate</td>
+<td><code v-pre>&quot;./certs/cert.pem&quot;</code></td>
+<td>Valid file path</td>
+</tr>
+</tbody>
+</table>
+</div>
 <doc-anchor-target id="security-configuration">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#security-configuration">#</doc-anchor-trigger>
@@ -405,6 +497,12 @@
 <td>List of allowed IP addresses</td>
 <td><code v-pre>[&quot;::1&quot;, &quot;127.0.0.1&quot;]</code></td>
 <td>Array of valid IP addresses</td>
+</tr>
+<tr>
+<td><code v-pre>whitelistDockerHosts</code></td>
+<td>Automatically whitelist Docker host IPs</td>
+<td><code v-pre>true</code></td>
+<td><code v-pre>true</code>, <code v-pre>false</code></td>
 </tr>
 <tr>
 <td><code v-pre>enableCorsProxy</code></td>
@@ -487,12 +585,6 @@
 <td>Any number (-1 to disable, 0 for browser close, &gt;0 for timeout)</td>
 </tr>
 <tr>
-<td><code v-pre>cookieSecret</code></td>
-<td>Secret for signing session cookies</td>
-<td><code v-pre>''</code> (auto-generated)</td>
-<td>Any string</td>
-</tr>
-<tr>
 <td><code v-pre>autheliaAuth</code></td>
 <td>Enable Authelia-based auto login. See: <a href="../sso/">SSO</a></td>
 <td><code v-pre>false</code></td>
@@ -501,6 +593,32 @@
 <tr>
 <td><code v-pre>perUserBasicAuth</code></td>
 <td>Use account credentials for basic auth</td>
+<td><code v-pre>false</code></td>
+<td><code v-pre>true</code>, <code v-pre>false</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="rate-limiting-configuration">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#rate-limiting-configuration">#</doc-anchor-trigger>
+        <span>Rate Limiting Configuration</span>
+    </h2>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+<th>Default</th>
+<th>Permitted Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>rateLimiting.preferRealIpHeader</code></td>
+<td>Use X-Real-IP header instead of socket IP for rate limiting</td>
 <td><code v-pre>false</code></td>
 <td><code v-pre>true</code>, <code v-pre>false</code></td>
 </tr>
@@ -585,6 +703,38 @@
 <td>Avoid using &#x27;localhost&#x27; for autorun</td>
 <td><code v-pre>false</code></td>
 <td><code v-pre>true</code>, <code v-pre>false</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="performance-configuration">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#performance-configuration">#</doc-anchor-trigger>
+        <span>Performance Configuration</span>
+    </h2>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+<th>Default</th>
+<th>Permitted Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>performance.lazyLoadCharacters</code></td>
+<td>Lazy-load character data</td>
+<td><code v-pre>true</code></td>
+<td><code v-pre>true</code>, <code v-pre>false</code></td>
+</tr>
+<tr>
+<td><code v-pre>performance.memoryCacheCapacity</code></td>
+<td>Maximum memory cache capacity</td>
+<td><code v-pre>100mb</code></td>
+<td>Human-readable size (e.g., <code v-pre>100mb</code>, <code v-pre>1gb</code>)</td>
 </tr>
 </tbody>
 </table>

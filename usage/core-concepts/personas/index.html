@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.795371319566">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.795387150328">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -14,7 +14,7 @@
     <!-- Primary Meta Tags -->
     <title>Personas | docs.ST.app</title>
     <meta name="title" content="Personas | docs.ST.app">
-    <meta name="description" content="A persona in SillyTavern represents a combination of a user name and a picture that create a unique identity for the character you play in your chats...">
+    <meta name="description" content="A persona in SillyTavern is the identity you use to participate in chats — essentially a combination of your display name, avatar, and optional...">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/usage/core-concepts/personas/">
@@ -23,21 +23,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/usage/core-concepts/personas/">
     <meta property="og:title" content="Personas | docs.ST.app">
-    <meta property="og:description" content="A persona in SillyTavern represents a combination of a user name and a picture that create a unique identity for the character you play in your chats...">
+    <meta property="og:description" content="A persona in SillyTavern is the identity you use to participate in chats — essentially a combination of your display name, avatar, and optional...">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/usage/core-concepts/personas/">
     <meta property="twitter:title" content="Personas | docs.ST.app">
-    <meta property="twitter:description" content="A persona in SillyTavern represents a combination of a user name and a picture that create a unique identity for the character you play in your chats...">
+    <meta property="twitter:description" content="A persona in SillyTavern is the identity you use to participate in chats — essentially a combination of your display name, avatar, and optional...">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.795371319566" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.795387150328" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.795371319566" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.795387150328" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.795371319566" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.795387150328" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -236,76 +236,197 @@
 <doc-anchor-target id="what-is-a-persona">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#what-is-a-persona">#</doc-anchor-trigger>
-        <span>What is a persona?</span>
+        <span>What is a Persona?</span>
     </h2>
 </doc-anchor-target>
-<p>A persona in SillyTavern represents a combination of a user name and a picture that
-create a unique identity for the character you play in your chats or identify yourself as.</p>
-<p><strong>Creating user personas is optional, but it is a good way to automate routine actions.</strong></p>
+<p>A persona in SillyTavern is the identity you use to participate in chats — essentially a combination of your display name, avatar, and optional descriptive text. Personas allow you to easily switch roles or &quot;characters&quot; you speak as, without having to manually update your username/avatar each time.</p>
+<blockquote>
+<p><strong>Note:</strong> Legacy user avatars/names that weren&#x27;t tied to a persona have been removed. Existing data will be migrated to personas. If no name was specified, the persona will be named &quot;[Unnamed Persona]&quot;.</p>
+</blockquote>
 <doc-anchor-target id="how-to-create-a-persona">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-create-a-persona">#</doc-anchor-trigger>
-        <span>How to create a persona?</span>
+        <span>How to create a Persona?</span>
     </h2>
 </doc-anchor-target>
-<p>To create a persona:</p>
 <ol>
-<li>Open the Persona Management panel (smiley face icon) in the top bar.</li>
-<li>Select an existing avatar, or create a blank persona with a dummy image (&quot;Create&quot; button).</li>
-<li>Find the persona in the list and pick the leftmost context action button (&quot;Bind a name to that avatar&quot;).</li>
-<li>Input a desired name into the popup window. Confirm by clicking an &quot;OK&quot; button.</li>
-<li>The avatar now represents a Persona. Click on the avatar to select it, and this will also automatically update the user name.</li>
+<li>Open the <strong>Persona Management</strong> panel (<i class="fa-solid fa-face-smile"></i> button in the top menu).</li>
+<li>Create a blank persona with the <strong>Create</strong> button and give it a name.</li>
+<li>In the persona list, select the newly created persona.</li>
+<li>On the right side you can fill in your description and set an avatar via the &quot;Change Persona Image&quot; button. Both are optional.</li>
+<li>Now your persona is ready to use in chats.</li>
 </ol>
+<doc-anchor-target id="convert-character-to-persona">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#convert-character-to-persona">#</doc-anchor-trigger>
+        <span>Convert Character to Persona</span>
+    </h4>
+</doc-anchor-target>
+<p>Personas can also be created by converting any existing character. Simply open the Character, select &quot;More...&quot; and click &quot;Convert to Persona&quot;. A persona with the same name and description will be created. Other character card fields like Scenario or Personality will not be used. The character will not be deleted.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>note</h5>
+<p>Since <code v-pre>{{user}}</code> and <code v-pre>{{char}}</code> macros have opposite meanings when used in Persona and Character descriptions, you&#x27;ll be prompted to swap them if the converted description contains either of them.</p>
+        </div>
+    </div>
+</div>
 <doc-anchor-target id="persona-description">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#persona-description">#</doc-anchor-trigger>
         <span>Persona Description</span>
     </h2>
 </doc-anchor-target>
-<p>The contents of this field represent any specific information that you want to bind to the selected persona.
-It could be any kind of description of your user character: mental and physical traits, age, occupation, etc.
-Here you can also use replacement macros like {{user}}, {{char}}, and other supported parameters.</p>
-<p>If defined, the Persona Description will be inserted into the AI prompt in one of the chosen places:</p>
-<ol>
-<li>In Prompt Manager (Chat Completion API) or Story String (other APIs). This is the default position.</li>
-<li>Top of an Author&#x27;s Note (if Author&#x27;s Note is not disabled).</li>
-<li>Bottom of an Author&#x27;s Note (if Author&#x27;s Note is not disabled).</li>
-</ol>
-<p><strong>However, keep in mind that picking a persona when you have set user description on an unbound avatar will not keep your changes.</strong></p>
-<p>To permanently save the user description, bind the currently selected avatar to a user name.</p>
-<doc-anchor-target id="persona-locking">
+<p>Each persona can store a custom text description — mental and physical traits, age, occupation, or any personal details. These can also include template macros such as <code v-pre>{{char}}</code> or <code v-pre>{{user}}</code> (see <a href="../macros/">Macros</a>).</p>
+<p>Where your persona description is injected into the AI prompt depends on the <strong>Position</strong> setting in the Persona Management panel:</p>
+<ul>
+<li><strong>None (disabled)</strong></li>
+<li><strong>In Story String / Prompt Manager</strong> (the default)</li>
+<li><strong>Top of Author&#x27;s Note</strong> / <strong>Bottom of Author&#x27;s Note</strong> (Will only be added when an Author&#x27;s Note exists)</li>
+<li><strong>In Chat @ Depth</strong> (This will open up configuration options to set depth and the role)</li>
+</ul>
+<p>The position is saved <strong>per persona</strong>.</p>
+<doc-anchor-target id="persona-connections--locking">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#persona-locking">#</doc-anchor-trigger>
-        <span>Persona locking</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#persona-connections--locking">#</doc-anchor-trigger>
+        <span>Persona Connections / Locking</span>
     </h2>
 </doc-anchor-target>
-<p>One chosen persona could be locked to the currently open individual or group chats.
-If the currently selected persona differs from the locked one, it will be automatically selected when you open that chat.</p>
-<doc-anchor-target id="to-lock-a-persona">
+<p>Persona connections ensure that a given persona is automatically selected in certain situations. If no persona is connected, the currently chosen persona will stay selected.</p>
+<p>There are three types of locking:</p>
+<ol>
+<li><strong><i class="fa-solid fa-unlock"></i> Chat lock</strong> – The persona is locked to the current chat.</li>
+<li><strong><i class="fa-solid fa-unlock"></i> Character lock</strong> – The persona is locked to a specific character.</li>
+<li><strong><i class="fa-solid fa-crown"></i> Default persona</strong> – One persona that is used whenever no other locks apply.</li>
+</ol>
+<doc-anchor-target id="1-lock-to-a-chat">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#to-lock-a-persona">#</doc-anchor-trigger>
-        <span>To lock a persona</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-lock-to-a-chat">#</doc-anchor-trigger>
+        <span>1. Lock to a Chat</span>
     </h3>
 </doc-anchor-target>
-<ol>
-<li>Open a chat (either group or individual).</li>
-<li>Select a desired persona by clicking on its avatar.</li>
-<li>Click the lock icon in the buttons row next to a name input.</li>
-<li>To revert this action, click the unlock icon. Then persona won&#x27;t be changed automatically when the chat is reopened.</li>
-</ol>
-<p>Alternatively, you could use /lock and /unlock slash commands to achieve the same result.</p>
-<doc-anchor-target id="default-persona">
+<p>If a persona is locked to a chat, opening that chat in the future will automatically switch your active persona to the locked one.</p>
+<ul>
+<li><strong>To lock</strong>: Select the desired persona, then click the <strong><i class="fa-solid fa-unlock"></i> Chat</strong> button under the &quot;Connections&quot; section (or use <code v-pre>/persona-lock type=chat on</code>).</li>
+<li><strong>To unlock</strong>: Click the button again (or use <code v-pre>/persona-lock type=chat off</code>).</li>
+</ul>
+<doc-anchor-target id="2-lock-to-a-character">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-lock-to-a-character">#</doc-anchor-trigger>
+        <span>2. Lock to a Character</span>
+    </h3>
+</doc-anchor-target>
+<p>You can also link a persona to a specific character. Opening any chat with that character automatically selects your locked persona.</p>
+<ul>
+<li><strong>To lock</strong>: Select the desired persona, then click the <strong><i class="fa-solid fa-unlock"></i> Character</strong> button under the &quot;Connections&quot; section (or use <code v-pre>/persona-lock type=character on</code>).</li>
+<li><strong>To unlock</strong>: Click the button again (or use <code v-pre>/persona-lock type=character off</code>).</li>
+</ul>
+<p>The Persona Management panel also shows which characters are linked to that persona (displayed as small avatars). Clicking them navigates directly to that character&#x27;s chat.</p>
+<doc-anchor-target id="locking-multiple-personas-to-the-same-character">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#locking-multiple-personas-to-the-same-character">#</doc-anchor-trigger>
+        <span>Locking multiple personas to the same character</span>
+    </h4>
+</doc-anchor-target>
+<p>If another persona was already linked with that character, it will be automatically unlinked by default.</p>
+<p>To have multiple personas linked at once, the global setting <strong>Allow multiple persona connections per character</strong> can be used.<br />
+If multiple personas are linked to the same character, you&#x27;ll see a popup asking which persona to use each time you open or start a new chat with that character (unless a persona is bound to the chat).</p>
+<doc-anchor-target id="3-default-persona">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-default-persona">#</doc-anchor-trigger>
+        <span>3. Default Persona</span>
+    </h3>
+</doc-anchor-target>
+<p>Your <strong>default persona</strong> is used whenever there&#x27;s no other relevant lock. The default persona is recognizable by a yellow border around its avatar.</p>
+<ul>
+<li><strong>To set/unset default</strong>: Select the desired persona, then click the <strong><i class="fa-solid fa-crown"></i> Default</strong> button under the &quot;Connections&quot; section (or use <code v-pre>/persona-lock type=default</code>).</li>
+</ul>
+<p>Only one persona can be chosen as the default persona.</p>
+<doc-anchor-target id="temporary-persona">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#temporary-persona">#</doc-anchor-trigger>
+        <span>Temporary Persona</span>
+    </h3>
+</doc-anchor-target>
+<p>If any of the three connection options connects a persona to the current character/chat, you can still choose to use a different persona. This persona will be marked in the persona panel as &quot;Temporary Persona&quot;. Any reload of the browser window or switch to a different chat and back will reset it to the linked persona again.</p>
+<p>You can manually <em>convert</em> a Temporary Persona to be persistently connected by linking it to the chat.</p>
+<doc-anchor-target id="global-persona-settings">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#default-persona">#</doc-anchor-trigger>
-        <span>Default persona</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#global-persona-settings">#</doc-anchor-trigger>
+        <span>Global Persona Settings</span>
     </h2>
 </doc-anchor-target>
-<p>You can select one persona as your preferred default identity, automatically selecting it for all new chats and chats where a persona is not locked.
-The default persona is represented by a yellow outline on the Persona Management panel.</p>
+<p>All settings under the <strong>Current Persona</strong> are saved per-persona. A few global settings exist too, those can be found under <strong>Global Persona Settings</strong> in the Persona Management panel.</p>
+<ol>
+<li><p><strong>Show notifications on switching personas</strong></p>
 <ul>
-<li>To set persona as a default, click the &quot;crown&quot; button in the persona block, then confirm your action.</li>
-<li>To undo this action and unset the default persona, click the &quot;crown&quot; button again.</li>
+<li>Enables persona-related toast messages (e.g., &quot;Persona Auto Selected&quot;, &quot;Temporary Persona&quot;).</li>
 </ul>
+</li>
+<li><p><strong>Allow multiple persona connections per character</strong></p>
+<ul>
+<li>When <strong>enabled</strong>, you can link multiple personas to a single character. Opening that character&#x27;s chat will prompt you which persona to use. If disabled, only one persona can be connected to a character at a time.</li>
+</ul>
+</li>
+<li><p><strong>Auto-lock a chosen persona to the chat</strong></p>
+<ul>
+<li>When <strong>enabled</strong>, any time you select a persona (manually or by auto-selection) or create a new chat, it locks that persona to the chat.<br />
+This combined with &quot;Allow multiple&quot; provides the option to have a persona selection per character, but keep it bound once chosen for a chat.</li>
+</ul>
+</li>
+</ol>
+<doc-anchor-target id="slash-commands-for-personas">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#slash-commands-for-personas">#</doc-anchor-trigger>
+        <span>Slash Commands for Personas</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="persona-lock-typetype">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#persona-lock-typetype">#</doc-anchor-trigger>
+        <span><code v-pre>/persona-lock type=&lt;type?&gt;</code></span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><code v-pre>chat</code> locks the current persona to your active chat.</li>
+<li><code v-pre>character</code> locks the current persona to the character in use.</li>
+<li><code v-pre>none</code> (or no argument) unlocks/clears the persona lock for the current context.</li>
+<li>If used without arguments, it returns the current lock state (or an error if none is set).</li>
+<li>The lock state can be chosen via <code v-pre>on</code>, <code v-pre>off</code> or <code v-pre>toggle</code>. Default is toggle.</li>
+</ul>
+<doc-anchor-target id="persona-name">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#persona-name">#</doc-anchor-trigger>
+        <span><code v-pre>/persona &lt;name&gt;</code></span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Quickly switch your active persona by name without opening the Persona Management panel.</li>
+<li>Example: <code v-pre>/persona Blaze</code>.</li>
+<li>Using <code v-pre>mode=temp</code> allows to temporarily set your name of the <strong>current</strong> persona, even though a persona with the same name might already exist (preserving your current avatar and description).</li>
+</ul>
+<doc-anchor-target id="persona-sync">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#persona-sync">#</doc-anchor-trigger>
+        <span><code v-pre>/persona-sync</code></span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Re-attributes all user messages in the active chat to the <strong>current</strong> persona and it&#x27;s name.</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> The older <code v-pre>/lock</code> and <code v-pre>/unlock</code> commands remain for backward compatibility but may be removed in the future. Use <code v-pre>/persona-lock</code> instead.</p>
+</blockquote>
 <doc-anchor-target id="pro-tips">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#pro-tips">#</doc-anchor-trigger>
@@ -313,13 +434,17 @@ The default persona is represented by a yellow outline on the Persona Management
     </h2>
 </doc-anchor-target>
 <ol>
-<li>Switching user personas in chat does not automatically change the attribution of previously sent user messages. That way it is possible to use multiple user characters at once.</li>
-<li>You can attribute all user-sent messages in the currently open chat to a currently selected persona by clicking
-the &quot;sync&quot; button on the Persona Management panel or by using the /sync slash command.</li>
-<li>To change the persona image without deleting it, hover over the avatar on the Persona Management panel and click the bottom-left button.
-Then choose a new image and it will be replaced, preserving your set description and chat lock states.</li>
-<li>To quickly change a persona while in chat without opening the Persona Management panel, use the /persona slash command. For example, <code v-pre>/persona Blaze</code>.</li>
-<li>You can do backups of your Personas and restore them using the previously saved file if needed. Look for the &quot;Backup&quot; and &quot;Restore&quot; buttons in the Persona Management panel.</li>
+<li><strong>Switching personas mid-chat</strong> doesn&#x27;t re-attribute your past user messages to the new persona; those remain attributed to whichever persona you were using at the time.</li>
+<li><strong>Batch re-attribution</strong>: If you ever need all prior messages to match a new persona, hit the <strong>sync</strong> button or use <code v-pre>/persona-sync</code>.</li>
+<li><strong>Replace persona images</strong> without losing description or locks choosing your persona and clicking the <strong><i class="fa-solid fa-images"></i> Change Persona Image</strong> button.</li>
+<li><strong>Character link popups</strong>: If multiple personas are linked to the same character, you&#x27;ll get a popup to pick which persona each time you open the chat. This is a handy way to have a small selection of personas to choose from for specific characters.</li>
+<li><strong>Backups</strong>: You can back up your entire Persona list (names, character connections, descriptions) with the <strong>Backup</strong> button in Persona Management, and restore it later if needed.<br />
+Remarks:
+<ul>
+<li>Images and and Chat connections are not saved together with personas and will not be backed via this.</li>
+<li>These backups are not designed to be shared, as they contain internal links.</li>
+</ul>
+</li>
 </ol>
 
                                 

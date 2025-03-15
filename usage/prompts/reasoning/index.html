@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.795371319566">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.795387150328">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.795371319566" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.795387150328" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.795371319566" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.795387150328" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.795371319566" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.795387150328" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -322,23 +322,6 @@ This is the reasoning.
 
 This is the main content.</code></pre>
 </doc-codeblock></div>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-<p>For streamed responses, reasoning will only be parsed after the stream completes.</p>
-        </div>
-    </div>
-</div>
 <doc-anchor-target id="prompting-with-reasoning">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#prompting-with-reasoning">#</doc-anchor-trigger>
@@ -363,6 +346,17 @@ This is the main content.</code></pre>
         </div>
     </div>
 </div>
+<doc-anchor-target id="continuing-from-reasoning">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#continuing-from-reasoning">#</doc-anchor-trigger>
+        <span>Continuing from Reasoning</span>
+    </h3>
+</doc-anchor-target>
+<p>A special case when the reasoning can be sent back to the model without having the &quot;Add to Prompts&quot; toggle enabled is when the generation is continued (e.g. by pressing &quot;Continue&quot; from the <strong><i class="fa-solid fa-bars"></i> Options</strong> menu), but the message being continued contains only the reasoning without an actual content. This gives the model an opportunity to finish an incomplete reasoning and start generating the main content. The prompt will be sent as follows:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">&lt;think&gt;
+Incomplete reasoning...</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="regex-scripts">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#regex-scripts">#</doc-anchor-trigger>

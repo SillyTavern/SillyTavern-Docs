@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.795371319566">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.795387150328">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.795371319566" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.795387150328" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.795371319566" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.795387150328" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.795371319566" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.795387150328" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -365,7 +365,50 @@
 <li>OpenRouter (both Text and Chat Completion)</li>
 <li>Claude</li>
 <li>Google AI Studio</li>
+<li>MistralAI</li>
 </ol>
+<doc-anchor-target id="start-reply-with">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#start-reply-with">#</doc-anchor-trigger>
+        <span>Start Reply With</span>
+    </h2>
+</doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>note</h5>
+<p>By default, the Start Reply With prefix won&#x27;t be shown in the resulting message. Enable &quot;Show reply prefix in chat&quot; to display it.</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="text-completion-apis">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#text-completion-apis">#</doc-anchor-trigger>
+        <span>Text Completion APIs</span>
+    </h3>
+</doc-anchor-target>
+<p>Prefills the last line of the prompt, forcing the model to continue from that point. This is useful for enforcing content, such as nudging toward the <a href="../../prompts/reasoning/">Model Reasoning</a> with the defined prefix:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">&lt;think&gt;
+Sure!</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="chat-completion-apis">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#chat-completion-apis">#</doc-anchor-trigger>
+        <span>Chat Completion APIs</span>
+    </h3>
+</doc-anchor-target>
+<p>Adds an assistant role message to the end of the prompt. For some backend models, this is equivalent to prefilling the model response, but some may not support that at all and will fail with a validation error. If you&#x27;re unsure, leave this field empty.</p>
 
                                 
                                 <!-- Required only on API pages -->

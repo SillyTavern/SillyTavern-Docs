@@ -6,14 +6,14 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.795371319566">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.795387150328">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Expression Images | docs.ST.app</title>
-    <meta name="title" content="Expression Images | docs.ST.app">
+    <title>Character Expressions | docs.ST.app</title>
+    <meta name="title" content="Character Expressions | docs.ST.app">
     <meta name="description" content="Expression images are images (aka 'sprites') of your AI character which are shown next to (or behind) the chat window.">
 
     <!-- Canonical -->
@@ -22,24 +22,24 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/extensions/expression-images/">
-    <meta property="og:title" content="Expression Images | docs.ST.app">
+    <meta property="og:title" content="Character Expressions | docs.ST.app">
     <meta property="og:description" content="Expression images are images (aka 'sprites') of your AI character which are shown next to (or behind) the chat window.">
     <meta property="og:image" content="https://docs.sillytavern.app/static/extensions/expression-drawer.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/extensions/expression-images/">
-    <meta property="twitter:title" content="Expression Images | docs.ST.app">
+    <meta property="twitter:title" content="Character Expressions | docs.ST.app">
     <meta property="twitter:description" content="Expression images are images (aka 'sprites') of your AI character which are shown next to (or behind) the chat window.">
     <meta property="twitter:image" content="https://docs.sillytavern.app/static/extensions/expression-drawer.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.795371319566" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.795387150328" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.795371319566" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.795387150328" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.795371319566" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.795387150328" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -229,10 +229,10 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="expression-images" class="break-words">
+<doc-anchor-target id="character-expressions" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#expression-images">#</doc-anchor-trigger>
-        <span>Expression Images</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#character-expressions">#</doc-anchor-trigger>
+        <span>Character Expressions</span>
     </h1>
 </doc-anchor-target>
 <doc-anchor-target id="what-is-it">
@@ -242,33 +242,30 @@
     </h3>
 </doc-anchor-target>
 <p>Expression images are images (aka &#x27;sprites&#x27;) of your AI character which are shown next to (or behind) the chat window.</p>
-<p>Expression images can use a classification model running alongside SillyTavern&#x27;s main application. This allows the Expressions to change automatically based on the sentiment expressed in the AI&#x27;s most recent chat response.</p>
-<doc-anchor-target id="setup-instructions-offline-mode-without-extras">
+<p>Expression images can automatically change based on a classification, adjusting to the sentiment expressed in the AI&#x27;s most recent chat response.</p>
+<doc-anchor-target id="adding-character-expression-images">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#setup-instructions-offline-mode-without-extras">#</doc-anchor-trigger>
-        <span>Setup Instructions (Offline Mode without Extras)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#adding-character-expression-images">#</doc-anchor-trigger>
+        <span>Adding Character Expression Images</span>
     </h3>
 </doc-anchor-target>
 <ol>
-<li><p>Open the Extensions Panel and expand the &#x27;Expression images&#x27; section. If you have the character chat open, you will see a grid of image placeholders.
+<li>Open the Extensions Panel and expand the &#x27;Character Expressions&#x27; section. If you have the character chat open, you will see a grid of image placeholders.
 <figure class="content-center">
     <img src="../../static/extensions/expression-drawer.png" alt="Expression Drawer">
     <figcaption class="caption">Expression Drawer</figcaption>
 </figure>
-</p>
 </li>
-<li><p>Click the &#x27;import&#x27; button at the top left of each image in the grid, and select the image you want to apply to that emotion. This will save the image with the correct filename inside the <code v-pre>/data/&lt;user-handle&gt;/characters/(character_name_here)/</code> folder.</p>
-</li>
-<li><p>To show the image in your SillyTavern window, click the image in the grid after it has been uploaded.</p>
-</li>
+<li>Click the &#x27;Upload image&#x27; button at the top left of each image in the grid, and select the image you want to apply to that emotion. This will save the image with the correct filename inside the <code v-pre>/data/&lt;user-handle&gt;/characters/(character_name_here)/</code> folder.</li>
+<li>Repeat this for all expressions you want to assign an image to.</li>
 </ol>
-<doc-anchor-target id="how-does-the-classify-module-work">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-does-the-classify-module-work">#</doc-anchor-trigger>
-        <span>How does the classify module work?</span>
-    </h3>
+<doc-anchor-target id="importing-an-expression-images-zip-file">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#importing-an-expression-images-zip-file">#</doc-anchor-trigger>
+        <span>Importing an Expression images ZIP file</span>
+    </h4>
 </doc-anchor-target>
-<p>The <code v-pre>classify</code> module uses a small &#x27;sentiment parsing&#x27; model that runs on the SillyTavern host machine (eg. on your PC, or the colab machine). This model takes the new output from the AI and detects what kind of sentiment, or emotion, the text is expressing. While multiple sentiments may be expressed in a single message, the model only picks the most likely one and returns that to the SillyTavern. The frontend plugin then displays the image that is associated with that sentiment.</p>
+<p>Using the &#x27;<i class="fa-solid fa-file-zipper"></i> Upload sprite pack (ZIP)&#x27; button, you can import a zip file that contains a collection of expression images, and those images will automatically be added to the correct folder for your <strong>currently selected character</strong>. The ZIP file must contain all images in a flat structure (no subfolders) and correctly named files. Importing a zip will not automatically rename any images to make them match the emotions.</p>
 <doc-anchor-target id="change-expressions-manually">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#change-expressions-manually">#</doc-anchor-trigger>
@@ -277,84 +274,42 @@
 </doc-anchor-target>
 <ol>
 <li>Click on any of the uploaded expression images (sprites) to display them near the chat interface (with default UI mode) or at the center of the screen (in Visual Novel mode).</li>
-<li>Use the <code v-pre>/emote (name)</code> slash command or matching Quick Reply to set the sprite without opening the extensions menu.</li>
+<li>Use the <code v-pre>/expression-set (name)</code> slash command or matching Quick Reply to set the sprite without opening the extensions menu.</li>
 </ol>
-<doc-anchor-target id="setup-instructions-local-classification">
+<doc-anchor-target id="change-expressions-automatically">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#setup-instructions-local-classification">#</doc-anchor-trigger>
-        <span>Setup Instructions (local classification)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#change-expressions-automatically">#</doc-anchor-trigger>
+        <span>Change Expressions Automatically</span>
     </h3>
 </doc-anchor-target>
+<p>To automatically set expressions when the character replies, you have multiple options.
+Expressions change per message or at regular intervals when message streaming is enabled.</p>
+<doc-anchor-target id="setup-instructions-local">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#setup-instructions-local">#</doc-anchor-trigger>
+        <span>Setup Instructions (Local)</span>
+    </h4>
+</doc-anchor-target>
 <ol>
-<li>Make sure you&#x27;re on the latest version of SillyTavern.</li>
-<li>Open the extensions panel and expand the &quot;Character Expressions&quot; plugin menu.</li>
+<li>Open the extensions panel and expand the &quot;Character Expressions&quot; extension menu.</li>
 <li>Select &quot;Local&quot; in the classification source dropdown.</li>
 <li>This will start a one-time download of the classification model from HuggingFace Hub (about ~100 Mb).</li>
 <li>Generate any message to verify that the classification works and the sprite appears. You may also check the server console for debug logs.</li>
 </ol>
+<p>Local classification defaults to 28 possible image labels: <a href="https://huggingface.co/Cohee/distilbert-base-uncased-go-emotions-onnx">Cohee/distilbert-base-uncased-go-emotions-onnx</a></p>
+<p>To use the 6-option classification model, change the value of <code v-pre>extensions.models.classification</code> variable in the <code v-pre>config.yaml</code> file to: <a href="https://huggingface.co/Cohee/bert-base-uncased-emotion-onnx">Cohee/bert-base-uncased-emotion-onnx</a></p>
+<doc-anchor-target id="how-does-the-classify-module-work">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-does-the-classify-module-work">#</doc-anchor-trigger>
+        <span>How does the classify module work?</span>
+    </h5>
+</doc-anchor-target>
+<p>The <code v-pre>classify</code> module uses a small &#x27;sentiment parsing&#x27; model that runs alongside the SillyTavern server. This model takes the new output from the AI and detects what kind of sentiment, or emotion, the text is expressing. While multiple sentiments may be expressed in a single message, the model only picks the most likely one and returns that to the SillyTavern. The frontend extension then displays the image that is associated with that sentiment.</p>
 <doc-anchor-target id="setup-instructions-with-extras">
-    <h3>
+    <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#setup-instructions-with-extras">#</doc-anchor-trigger>
         <span>Setup Instructions (with Extras)</span>
-    </h3>
-</doc-anchor-target>
-<ol>
-<li>Have Extras installed and running with the <code v-pre>classify</code> module enabled: <code v-pre>python server.py --enable-modules=classify</code></li>
-<li>Import the expression images the same way as mentioned above.</li>
-<li>Select &quot;Extras&quot; in the classification source dropdown.</li>
-<li>The appropriate expression image will display automatically whenever the AI sends you a response.</li>
-</ol>
-<doc-anchor-target id="setup-instructions-with-llm">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#setup-instructions-with-llm">#</doc-anchor-trigger>
-        <span>Setup Instructions (with LLM)</span>
-    </h3>
-</doc-anchor-target>
-<ol>
-<li>Connect to any of the supported and properly configured Text Generation APIs.</li>
-<li>Import the expression images the same way as mentioned above.</li>
-<li>Select &quot;LLM&quot; in the classification source dropdown.</li>
-<li>Optionally, configure the classification instruction prompt.</li>
-<li>Generate any message to verify that the classification works and the sprite appears. You may also check the server console for debug logs.</li>
-</ol>
-<doc-anchor-target id="how-do-i-get-more-expression-options">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-do-i-get-more-expression-options">#</doc-anchor-trigger>
-        <span>How do I get more expression options?</span>
-    </h3>
-</doc-anchor-target>
-<doc-anchor-target id="local">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#local">#</doc-anchor-trigger>
-        <span>Local</span>
     </h4>
-</doc-anchor-target>
-<p>Local classification defaults to 28 possible image labels: <a href="https://huggingface.co/Cohee/distilbert-base-uncased-go-emotions-onnx">Cohee/distilbert-base-uncased-go-emotions-onnx</a></p>
-<p>To use the 6-option classification model, open the <code v-pre>config.yaml</code> file with a text editor and change the value of the <code v-pre>classificationModel</code> variable to <a href="https://huggingface.co/Cohee/bert-base-uncased-emotion-onnx">Cohee/bert-base-uncased-emotion-onnx</a></p>
-<p>After that, restart the ST server to redownload the model. To revert it, change the value in <code v-pre>config.yaml</code> again.</p>
-<doc-anchor-target id="extras-api">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#extras-api">#</doc-anchor-trigger>
-        <span>Extras API</span>
-    </h4>
-</doc-anchor-target>
-<p>Extras API uses a classification model with 6 options by default: <a href="https://huggingface.co/nateraw/bert-base-uncased-emotion">nateraw/bert-base-uncased-emotion</a></p>
-<p>There is also a model with 28 options: <a href="https://huggingface.co/joeddav/distilbert-base-uncased-go-emotions-student">joeddav/distilbert-base-uncased-go-emotions-student</a></p>
-<p>To use this model you need to change your Extras command line to include the following argument (with a space before and after):</p>
-<p><code v-pre>--classification-model=joeddav/distilbert-base-uncased-go-emotions-student</code></p>
-<doc-anchor-target id="what-image-formats-are-supported-for-expressions">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#what-image-formats-are-supported-for-expressions">#</doc-anchor-trigger>
-        <span>What image formats are supported for Expressions?</span>
-    </h3>
-</doc-anchor-target>
-<p>Any image format is allowed, including webp and animated gifs.</p>
-<p>The most common format is a PNG file with a transparent background.</p>
-<doc-anchor-target id="using-the-default-expressions">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#using-the-default-expressions">#</doc-anchor-trigger>
-        <span>Using the &#x27;default expressions&#x27;</span>
-    </h3>
 </doc-anchor-target>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
@@ -368,37 +323,140 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>This feature will only activate if local classification is enabled or with Extras API connected. There is no way to manually display default expression images.</p>
+            <h5>Warning</h5>
+<p>Extras is deprecated and may be removed in future updates.</p>
         </div>
     </div>
 </div>
-<p><figure class="content-center">
-    <img src="../../static/extensions/expression-default.png" alt="Use Default Expressions">
-    <figcaption class="caption">Use Default Expressions</figcaption>
-</figure>
-</p>
-<p>If you don&#x27;t have custom expression images for a character, you can use the built-in default expressions which are included with the base SillyTavern installation. These are simple emoji-style images. Just click the checkbox at the top of the Expression images section inside the Extension panel. Default expressions will work alongside any available custom Expressions, and will display in cases when your custom image set has any missing images for a particular emotion.</p>
-<doc-anchor-target id="importing-an-expression-images-zip-file">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#importing-an-expression-images-zip-file">#</doc-anchor-trigger>
-        <span>Importing an Expression images zip file</span>
-    </h3>
-</doc-anchor-target>
-<p>Using the &#x27;import ZIP&#x27; button, you can import a zip file that contains a collection of expression images, and those images will automatically be added to the correct folder for your <strong>currently selected character</strong>. The zip file must have a flat internal structure (no subfolders) and the individual images should be named correctly. Importing a zip will not automatically rename any images to make them match the emotions.</p>
-<doc-anchor-target id="limitations">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#limitations">#</doc-anchor-trigger>
-        <span>Limitations</span>
-    </h3>
-</doc-anchor-target>
-<doc-anchor-target id="display-names-not-character-card-filenames-dictate-which-image-set-is-used">
+<ol>
+<li>Have Extras installed and running with the <code v-pre>classify</code> module enabled: <code v-pre>python server.py --enable-modules=classify</code></li>
+<li>Import the expression images the same way as mentioned above.</li>
+<li>Select &quot;Extras&quot; in the classification source dropdown.</li>
+<li>The appropriate expression image will display automatically whenever the AI sends you a response.</li>
+</ol>
+<p>Extras API uses a classification model with 6 options by default: <a href="https://huggingface.co/nateraw/bert-base-uncased-emotion">nateraw/bert-base-uncased-emotion</a></p>
+<p>There is also a model with 28 options: <a href="https://huggingface.co/joeddav/distilbert-base-uncased-go-emotions-student">joeddav/distilbert-base-uncased-go-emotions-student</a></p>
+<p>To use this model you need to change your Extras command line to include the following argument (with a space before and after): <code v-pre>--classification-model=joeddav/distilbert-base-uncased-go-emotions-student</code></p>
+<doc-anchor-target id="setup-instructions-with-llm">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#display-names-not-character-card-filenames-dictate-which-image-set-is-used">#</doc-anchor-trigger>
-        <span>Display names (not character card filenames) dictate which image set is used</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#setup-instructions-with-llm">#</doc-anchor-trigger>
+        <span>Setup Instructions (with LLM)</span>
     </h4>
 </doc-anchor-target>
+<ol>
+<li>Connect to any of the supported and properly configured APIs via <i class="fa-solid fa-plug"></i> API Connections.</li>
+<li>Import the expression images the same way as mentioned above.</li>
+<li>Select &quot;LLM&quot; in the classification source dropdown.</li>
+<li>Optionally, configure the classification instruction prompt.</li>
+<li>Generate any message to verify that the classification works and the sprite appears. You may also check the server console for debug logs.</li>
+</ol>
+<doc-anchor-target id="setup-instructions-webllm">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#setup-instructions-webllm">#</doc-anchor-trigger>
+        <span>Setup Instructions (WebLLM)</span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li>Install the official <a href="https://github.com/SillyTavern/Extension-WebLLM">WebLLM extension</a>.</li>
+<li>Import the expression images the same way as mentioned above.</li>
+<li>Select &quot;WebLLM&quot; in the classification source dropdown.</li>
+<li>Optionally, configure the classification instruction prompt.</li>
+<li>Generate any message to verify that the classification works and the sprite appears. You may also check the server console for debug logs.</li>
+</ol>
+<doc-anchor-target id="custom-expressions">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#custom-expressions">#</doc-anchor-trigger>
+        <span>Custom Expressions</span>
+    </h3>
+</doc-anchor-target>
+<p>How to get more expression options than provided by default? You can set up <strong>Custom Expressions</strong> in the extension settings. You can assign any name to Custom Expressions. They will appear in the expression image list and can be assigned images like other expressions. They will have an indicator showing that those are custom.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-green-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-green-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M21 9.09c-.55 0-1 .45-1 1v.92c0 4.96-4.04 8.99-9 8.99-4.97 0-9-4.04-9-9s4.04-9 9-9c1.27 0 2.5.26 3.66.78.51.22 1.1 0 1.32-.51.23-.5 0-1.1-.51-1.32C14.06.32 12.56 0 11.01 0H11C4.94 0 0 4.93 0 10.99 0 17.06 4.93 22 10.99 22H11c6.06 0 11-4.93 11-10.99v-.92c0-.56-.45-1-1-1z"></path>
+                    <path d="M8.71 9.31a.996.996 0 10-1.41 1.41l3 3c.19.19.44.29.71.29.27 0 .52-.11.71-.29l10-10.01a.996.996 0 10-1.41-1.41L11 11.6 8.71 9.31z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Tip</h5>
+<p>Both Local and Extras only support a limited list of expressions.</p>
+<p>If you want Custom Expressions to be displayed, you either need to train a classification model with supported labels (outside the scope of this guide), or you can use LLM or WebLLM as classification source, which both will automatically use all existing expressions - both the default and any custom ones.</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="what-image-formats-are-supported-for-expressions">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#what-image-formats-are-supported-for-expressions">#</doc-anchor-trigger>
+        <span>What image formats are supported for Expressions?</span>
+    </h3>
+</doc-anchor-target>
+<p>Any image format is allowed, including webp and animated gifs.</p>
+<p>The most common format is a PNG file with a transparent background.</p>
+<doc-anchor-target id="using-default-expressions">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#using-default-expressions">#</doc-anchor-trigger>
+        <span>Using Default Expressions</span>
+    </h3>
+</doc-anchor-target>
+<p>If you don&#x27;t have expression images for all expressions of a character, or no images at all, there are multiple options on what to display by default.<br />
+All of those can be selected via the dropdown under &#x27;Default / Fallback Expression&#x27;.</p>
+<ol>
+<li><strong>Choose a Fallback Expression</strong>: If an expression gets chosen where you don&#x27;t have an image for, the fallback expression gets shown instead. Simply select one of the available expressions from the dropdown.</li>
+<li><strong>[No Fallback]</strong>: When no image exists, show nothing.</li>
+<li><strong>[Default emojis]</strong>: You can use the built-in default expressions which are included with in SillyTavern. These are simple emoji-style images.</li>
+</ol>
+<doc-anchor-target id="using-multiple-images-per-expression">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#using-multiple-images-per-expression">#</doc-anchor-trigger>
+        <span>Using Multiple Images per Expression</span>
+    </h3>
+</doc-anchor-target>
+<p>It is possible to add multiple images per expression to allow for more variety in displayed expressions.<br />
+To enable this, simply toggle <strong>Allow multiple sprites per expression</strong>.<br />
+You can now upload more than one image, and any additional images will be displayed with a small marker.</p>
+<p>Individual images can be manually chosen by selecting them with a click, or via <code v-pre>/expression-set type=sprite</code>, which will list available sprite images, instead of expressions.</p>
+<p>Whenever an expression with multiple images gets automatically chosen, one of the existing images will be selected at random.<br />
+If you want to force a new image of that expression to be chosen when the same expression gets used multiple times, you can enable <strong>Re-roll if same sprite is used again</strong>.</p>
+<doc-anchor-target id="naming-convention-for-multiple-images-per-expression">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#naming-convention-for-multiple-images-per-expression">#</doc-anchor-trigger>
+        <span>Naming Convention for Multiple Images per Expression</span>
+    </h4>
+</doc-anchor-target>
+<p>In case of multiple images per expressions, files need to be named a specic way.
+The files need to start with the name of the expressions, and then followed by a suffix, either separated by a dot or a dash. Examples: <code v-pre>joy.png</code>, <code v-pre>joy-1.png</code>, <code v-pre>joy.expressive.png</code><br />
+File names must follow this format for both direct uploads and ZIP imports.</p>
+<doc-anchor-target id="sprite-folder-override">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sprite-folder-override">#</doc-anchor-trigger>
+        <span>Sprite Folder Override</span>
+    </h3>
+</doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Note</h5>
+<p>Display names (not character card filenames) dictate which image set is used</p>
+        </div>
+    </div>
+</div>
 <p>If you have more than one character with the same display name, they will both use the same set of expression images.</p>
-<p>If you want a different image set to be used for each version of the same-named character, you can use the sprites folder override.</p>
+<p>If you want a different image set to be used for each version of the same-named character, you can use the sprites folder override.<br />
+Folder overrides can also be used to define different sprite sets (outfits, etc.) of the same character.</p>
 <doc-anchor-target id="how-to-set-an-override">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-set-an-override">#</doc-anchor-trigger>
@@ -412,16 +470,6 @@
 <li>The Sprites list will reload and the &quot;Sprite set&quot; indicator should show the override folder.</li>
 <li>Alternatively, you can use the <code v-pre>/costume</code> slash command to achieve the same result: <code v-pre>/costume Boris</code>.</li>
 <li>By prepending a backslash to the override folder name, it will resolve to a subfolder in the current character sprites folder, e.g. <code v-pre>/costume \tracksuit</code> for the character named Boris will resolve to the <code v-pre>/data/&lt;user-handle&gt;/characters/Boris/tracksuit</code> folder.</li>
-</ol>
-<doc-anchor-target id="custom-expressions">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#custom-expressions">#</doc-anchor-trigger>
-        <span>Custom expressions</span>
-    </h4>
-</doc-anchor-target>
-<ol>
-<li>You can add your custom expression labels to the list and upload sprites for them.</li>
-<li><strong>However</strong>, they won&#x27;t be labeled automatically by the classification model. You <em>need</em> to set them manually (either by clicking or the <code v-pre>/emote</code> command).</li>
 </ol>
 
                                 
@@ -438,20 +486,20 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../extensions/emulatorjs/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../extensions/blip/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Emulator​JS</span>
+                                                <span class="block mt-1">Blip</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../extensions/captioning/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../extensions/translation/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Image Captioning</span>
+                                                <span class="block mt-1">Chat Translation</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -495,6 +543,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Expression Images", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Character Expressions", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>

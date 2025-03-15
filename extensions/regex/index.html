@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.795371319566">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.795387150328">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -35,11 +35,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.795371319566" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.795387150328" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.795371319566" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.795387150328" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.795371319566" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.795387150328" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -341,8 +341,6 @@
 <li><strong>If everthing here is unchecked the script will never activate during normal chatting, but it can still be activated via slash command or STscript.</strong></li>
 </ul>
 </li>
-<li><p><strong>Min/Max Depth</strong> : How far back in the chat history to look for strings to match with. Leave both blank to apply the script to the whole chat.</p>
-</li>
 <li><p><strong>Other Options</strong> :</p>
 <ul>
 <li>&#x27;Disabled&#x27; prevents the script from running. This is used as an override to prevent the script from running when you simply don&#x27;t want to change any of the script&#x27;s settings and/or don&#x27;t want to disable it entirely via the switch on the script list (as doing so would prevent slash commands from triggering it).</li>
@@ -357,6 +355,49 @@
 </ul>
 </li>
 </ul>
+<doc-anchor-target id="depth-settings">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#depth-settings">#</doc-anchor-trigger>
+        <span>Depth Settings</span>
+    </h3>
+</doc-anchor-target>
+<p>The Min/Max Depth settings provide precise control over which messages in the chat history your regex pattern will affect:</p>
+<ul>
+<li><p><strong>Min Depth</strong>: Only affects messages that are at least N levels deep in the chat history</p>
+<ul>
+<li>0 = last message</li>
+<li>1 = second-to-last message</li>
+<li>etc.</li>
+<li>When blank (set to &#x27;Unlimited&#x27;), or -1, will also affect the message to continue on the Continue action</li>
+</ul>
+</li>
+<li><p><strong>Max Depth</strong>: Only affects messages no deeper than N levels in the chat history</p>
+<ul>
+<li>Must be greater than Min Depth for the regex to apply</li>
+<li>System prompts and utility prompts are not affected by these settings</li>
+</ul>
+</li>
+</ul>
+<p>For example, setting Min Depth to 0 and Max Depth to 2 would only apply your regex to the three most recent messages in the chat.</p>
+<doc-anchor-target id="flags">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#flags">#</doc-anchor-trigger>
+        <span>Flags</span>
+    </h3>
+</doc-anchor-target>
+<p>By default the Find Regex pattern is case-sensitive and applies only to the first match. To adjust this behavior, as well as other RegEx flags, you can add them like so:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">/yourpattern/flags</code></pre>
+</doc-codeblock></div>
+<p>Example: <code v-pre>/yourpattern/gi</code> will match all instances of &#x27;yourpattern&#x27; in the text, regardless of case.</p>
+<p>Some of the most common flags are:</p>
+<ul>
+<li><code v-pre>i</code> : case-insensitive</li>
+<li><code v-pre>g</code> : global (applies to all matches, not just the first)</li>
+<li><code v-pre>m</code> : multi-line (treats the input as multiple lines, so <code v-pre>^</code> and <code v-pre>$</code> match the start/end of each line, not just the whole string)</li>
+<li><code v-pre>u</code> : unicode (treats the input as unicode, so <code v-pre>\d</code>, <code v-pre>\w</code>, etc. will match unicode characters)</li>
+</ul>
+<p>For more information on RegEx flags, see the following MDN page: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions#advanced_searching_with_flags">Advanced searching with flags</a></p>
 <doc-anchor-target id="ephemerality">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#ephemerality">#</doc-anchor-trigger>
