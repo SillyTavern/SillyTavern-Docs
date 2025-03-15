@@ -34,6 +34,10 @@ Expressions change per message or at regular intervals when message streaming is
 3. This will start a one-time download of the classification model from HuggingFace Hub (about ~100 Mb).
 4. Generate any message to verify that the classification works and the sprite appears. You may also check the server console for debug logs.
 
+Local classification defaults to 28 possible image labels: [Cohee/distilbert-base-uncased-go-emotions-onnx](https://huggingface.co/Cohee/distilbert-base-uncased-go-emotions-onnx)
+
+To use the 6-option classification model, change the value of `extensions.models.classification` variable in the `config.yaml` file to: [Cohee/bert-base-uncased-emotion-onnx](https://huggingface.co/Cohee/bert-base-uncased-emotion-onnx)
+
 ##### How does the classify module work?
 
 The `classify` module uses a small 'sentiment parsing' model that runs alongside the SillyTavern server. This model takes the new output from the AI and detects what kind of sentiment, or emotion, the text is expressing. While multiple sentiments may be expressed in a single message, the model only picks the most likely one and returns that to the SillyTavern. The frontend extension then displays the image that is associated with that sentiment.
@@ -47,6 +51,12 @@ The `classify` module uses a small 'sentiment parsing' model that runs alongside
 2. Import the expression images the same way as mentioned above.
 3. Select "Extras" in the classification source dropdown.
 4. The appropriate expression image will display automatically whenever the AI sends you a response.
+
+Extras API uses a classification model with 6 options by default: [nateraw/bert-base-uncased-emotion](https://huggingface.co/nateraw/bert-base-uncased-emotion)
+
+There is also a model with 28 options: [joeddav/distilbert-base-uncased-go-emotions-student](https://huggingface.co/joeddav/distilbert-base-uncased-go-emotions-student)
+
+To use this model you need to change your Extras command line to include the following argument (with a space before and after): `--classification-model=joeddav/distilbert-base-uncased-go-emotions-student`
 
 #### Setup Instructions (with LLM)
 
@@ -69,7 +79,7 @@ The `classify` module uses a small 'sentiment parsing' model that runs alongside
 How to get more expression options than provided by default? You can set up **Custom Expressions** in the extension settings. You can assign any name to Custom Expressions. They will appear in the expression image list and can be assigned images like other expressions. They will have an indicator showing that those are custom.
 
 > [!TIP]
-> Both Local and Extras only support a limited list of expressions. Local supports the default 28 (as this is what the model was trained on), while Extras only supports 6.
+> Both Local and Extras only support a limited list of expressions.
 >
 > If you want Custom Expressions to be displayed, you either need to train a classification model with supported labels (outside the scope of this guide), or you can use LLM or WebLLM as classification source, which both will automatically use all existing expressions - both the default and any custom ones.
 
