@@ -109,6 +109,7 @@ Some of the most common flags are:
 
 - `i` : case-insensitive
 - `g` : global (applies to all matches, not just the first)
+- `s` : dotAll (treats the input as a single line, so `.` will match newlines)
 - `m` : multi-line (treats the input as multiple lines, so `^` and `$` match the start/end of each line, not just the whole string)
 - `u` : unicode (treats the input as unicode, so `\d`, `\w`, etc. will match unicode characters)
 
