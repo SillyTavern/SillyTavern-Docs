@@ -163,7 +163,7 @@ See more on using environment variables in the [Node.js documentation](https://n
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|-----------------|
 | `extensions.enabled` | Enable UI extensions | `true` | `true`, `false` |
-| `extensions.autoUpdate` | Auto-update extensions | `true` | `true`, `false` |
+| `extensions.autoUpdate` | Auto-update extensions (if enabled by the extension manifest) | `true` | `true`, `false` |
 | `extensions.models.autoDownload` | Enable automatic model downloads | `true` | `true`, `false` |
 | `extensions.models.classification` | HuggingFace model ID for classification | `"Cohee/distilbert-base-uncased-go-emotions-onnx"` | Valid model ID |
 | `extensions.models.captioning` | HuggingFace model ID for image captioning | `"Xenova/vit-gpt2-image-captioning"` | Valid model ID |
