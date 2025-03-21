@@ -257,9 +257,9 @@ SlashCommandParser.addCommandObject(SlashCommand.fromProps({ name: 'repeat',
 
 All registered commands can be used in [STscript](/For_Contributors/st-script.md) in any possible way.
 
-### Listening to event types
+## Listening to event types
 
-Use eventSource.on() to listen for events:
+Use `eventSource.on()` to listen for events:
 
 ```js
 import { eventSource, event_types } from "../../../../script.js";
@@ -279,7 +279,7 @@ The main event types are:
 
 The rest can be found [here](https://github.com/SillyTavern/SillyTavern/blob/44343e8ec954c766d868826a7bed01a1f1e1ffbe/public/script.js#L436).
 
-### Do Extras request
+## Do Extras request
 
 !!! warning
 Extras API is deprecated. It's not recommended to use it in new extensions.
