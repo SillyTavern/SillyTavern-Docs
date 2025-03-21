@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.795906111919">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.795906459597">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.795906111919" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.795906459597" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.795906111919" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.795906459597" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.795906111919" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.795906111919" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.795906459597" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.795906459597" defer></script>
 
     <style>
         a {
@@ -555,12 +555,12 @@ SillyTavern.getContext().addLocaleData('de-de', { 'Hello': 'Hallo' });</code></p
 </doc-codeblock></div>
 <p>All registered commands can be used in <a href="../../usage/st-script/">STscript</a> in any possible way.</p>
 <doc-anchor-target id="listening-to-event-types">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#listening-to-event-types">#</doc-anchor-trigger>
         <span>Listening to event types</span>
-    </h3>
+    </h2>
 </doc-anchor-target>
-<p>Use eventSource.on() to listen for events:</p>
+<p>Use <code v-pre>eventSource.on()</code> to listen for events:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-javascript"><code v-pre class="language-javascript">import { eventSource, event_types } from &quot;../../../../script.js&quot;;
 
@@ -578,10 +578,10 @@ function handleIncomingMessage(data) {
 </ul>
 <p>The rest can be found <a href="https://github.com/SillyTavern/SillyTavern/blob/44343e8ec954c766d868826a7bed01a1f1e1ffbe/public/script.js#L436">here</a>.</p>
 <doc-anchor-target id="do-extras-request">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#do-extras-request">#</doc-anchor-trigger>
         <span>Do Extras request</span>
-    </h3>
+    </h2>
 </doc-anchor-target>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
