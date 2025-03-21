@@ -7,7 +7,16 @@ icon: file-added
 
 UI extensions expand the functionality of SillyTavern by hooking into its events and API. You can easily create your own extensions.
 
+## Extension submissions
+
 Want to contribute your extensions to the [official repository](https://github.com/SillyTavern/SillyTavern-Content)? Contact us!
+
+To ensure that all extensions are safe and easy to use, we have a few requirements:
+
+1. Your extension must be open-source and have a libre license (see [Choose a License](https://choosealicense.com/licenses/)). If unsure, AGPLv3 is a good choice.
+2. Extensions must be compatible with the latest release version of SillyTavern. Please be ready to update your extension if something in the core changes.
+3. Extensions must be well-documented. This includes a README file with installation instructions, usage examples, and a list of features.
+4. Extensions that have a server plugin requirement to function will not be accepted.
 
 ## Examples
 
