@@ -6,10 +6,10 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.795972960565">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.7.0.797968772084">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.6.0">
+    <meta name="generator" content="Retype 3.7.0">
 
     <!-- Primary Meta Tags -->
     <title>AllTalk TTS V2 | docs.ST.app</title>
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.795972960565" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.7.0.797968772084" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.795972960565" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.795972960565" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.7.0.797968772084" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.7.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.7.0.797968772084" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -166,7 +166,6 @@
             <!-- Sidebar Skeleton -->
             <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
             
-                <!-- Render this div, if config.showSidebarFilter is `true` -->
                 <div class="flex items-center h-16 px-6">
                     <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter">
                 </div>
@@ -262,6 +261,21 @@
 <li><strong>Standalone Installation</strong>: Recommended for most users (<a href="https://github.com/erew123/alltalk_tts/wiki/Install-%E2%80%90-Standalone-Installation">Standalone Guide</a>)</li>
 <li><strong>Text-generation-webui Integration</strong>: For integration into Text-generation-webui (<a href="https://github.com/erew123/alltalk_tts/wiki/Install-%E2%80%90-Text%E2%80%90generation%E2%80%90webui-Installation">TGWUI Installation Guide</a>)</li>
 </ul>
+<doc-anchor-target id="automated-installation">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#automated-installation">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F7E9;</span> Automated Installation</span>
+    </h4>
+</doc-anchor-target>
+<p><strong>This method is for Windows users only.</strong>
+For new users who want a quick setup, the automated installation uses the SillyTavern-Launcher.
+Note: This assumes you have already installed the SillyTavern-Launcher. If you haven’t, visit <a href="https://github.com/SillyTavern/SillyTavern-Launcher">https://github.com/SillyTavern/SillyTavern-Launcher</a> and follow the instructions in the readme.md file to install it.
+Once the SillyTavern-Launcher is installed:</p>
+<ol>
+<li>Run Launcher.bat</li>
+<li>Go to: <code v-pre>Home &gt; Toolbox &gt; App Installer &gt; Voice Generation</code></li>
+<li>Select the option labeled: <strong>Install AllTalk V2</strong></li>
+</ol>
 <doc-anchor-target id="manual-installation">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#manual-installation">#</doc-anchor-trigger>
