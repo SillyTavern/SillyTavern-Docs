@@ -26,6 +26,7 @@ AllTalk offers both standalone and integrated installation methods. The fastest 
 - **Text-generation-webui Integration**: For integration into Text-generation-webui ([TGWUI Installation Guide](https://github.com/erew123/alltalk_tts/wiki/Install-%E2%80%90-Text%E2%80%90generation%E2%80%90webui-Installation))
 
 #### 🟩 Automated Installation
+**This method is for Windows users only.**
 For new users who want a quick setup, the automated installation uses the SillyTavern-Launcher. 
 Note: This assumes you have already installed the SillyTavern-Launcher. If you haven’t, visit https://github.com/SillyTavern/SillyTavern-Launcher and follow the instructions in the readme.md file to install it.
 Once the SillyTavern-Launcher is installed:
