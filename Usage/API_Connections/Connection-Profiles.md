@@ -22,6 +22,7 @@ Connection Profiles store the following selections.
 * [Settings preset](/Usage/Common-Settings.md)
 * [Start Reply With](/Usage/Prompts/advancedformatting.md#start-reply-with) (can be explicitly empty)
 * [Custom Stopping Strings](/Usage/Prompts/advancedformatting.md#custom-stopping-strings) (can be explicitly empty)
+* [Reasoning Formatting](/Usage/Prompts/reasoning.md#configuration)
 
 ### Text Completion APIs
 

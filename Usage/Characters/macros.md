@@ -32,8 +32,9 @@ Note: some extensions may also add special context-specific macros that only wor
 | `{{personality}}` | Character's personality. |
 | `{{persona}}` | User's persona description. |
 | `{{mesExamples}}` | Character's examples of dialogue (instruct-formatted). |
-| `{{mesExamplesRaw}}`  | Chaaracter's examples of dialogue (unaltered and unsplit). |
-| `{{char_version}}` | The character's version number. |
+| `{{mesExamplesRaw}}`  | Character's examples of dialogue (unaltered and unsplit). |
+| `{{charVersion}}` | The character's version number. |
+| `{{charDepthPrompt}}` | The character's at-depth prompt. |
 | `{{model}}` | Text generation model name for the currently selected API. **Can be inaccurate!** |
 | `{{lastMessageId}}` | Last chat message ID. |
 | `{{lastMessage}}` | Last chat message text. |
@@ -118,3 +119,6 @@ Added by extensions and only work under certain conditions.
 | Macro | Description |
 |-------|-------------|
 | `{{summary}}` | Replaced with the summary of the current chat session (if available). |
+| `{{authorsNote}}` | Replaced with the contents of the Author's Note. |
+| `{{charAuthorsNote}}` | Replaced with the contents of the Character's Author's Note. |
+| `{{defaultAuthorsNote}}` | Replaced with the contents of the default Author's Note. |

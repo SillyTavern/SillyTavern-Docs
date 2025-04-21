@@ -137,6 +137,7 @@ See more on using environment variables in the [Node.js documentation](https://n
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|------------------|
 | `performance.lazyLoadCharacters` | Lazy-load character data | `true` | `true`, `false` |
+| `performance.useDiskCache` | Enables disk caching for character cards | `true` | `true`, `false` |
 | `performance.memoryCacheCapacity` | Maximum memory cache capacity | `100mb` | Human-readable size (e.g., `100mb`, `1gb`) |
 
 ## Thumbnailing Configuration
@@ -154,6 +155,7 @@ See more on using environment variables in the [Node.js documentation](https://n
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|-----------------|
 | `backups.chat.enabled` | Enable automatic chat backups | `true` | `true`, `false` |
+| `backups.chat.checkIntegrity` | Verify integrity of chat files before saving | `true` | `true`, `false` |
 | `backups.common.numberOfBackups` | Number of backups to keep | `50` | Any positive integer |
 | `backups.chat.throttleInterval` | Backup throttle interval (ms) | `10000` | Any positive integer |
 | `backups.chat.maxTotalBackups` | Maximum total chat backups to keep | `-1` | Any positive integer or -1 |
