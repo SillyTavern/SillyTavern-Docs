@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.7.0.798572168996">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.7.0.798897289310">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.7.0">
@@ -35,11 +35,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.7.0.798572168996" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.7.0.798897289310" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.7.0.798572168996" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.7.0.798897289310" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.7.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.7.0.798572168996" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.7.0.798897289310" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -320,7 +320,7 @@
 </li>
 <li><p><strong>Find Regex</strong> : This is the Regular Expression that is used to detect your targeted text pattern. This is usually the most complex part of any RegEx script, and is the easiest place to make mistakes. Refer to the links at the top of the page for information how to write a RegEx sequence. This box can resolve the values of <a href="../../usage/core-concepts/macros/">common SillyTavern macros</a> (such as {{user}}, {{char}}, etc) if the &#x27;Macros in Find Regex&#x27; is set to do so (see below).</p>
 </li>
-<li><p><strong>Replace With</strong>: This is what will replace the matched sequence. In a very simple example, if your &#x27;Find Regex&#x27; is <code v-pre>apple</code>, and your &#x27;Replace With&#x27; is <code v-pre>orange</code>, all instances of &#x27;apple&#x27; would be automatically changed to &#x27;orange&#x27; in any text where the script is applied.</p>
+<li><p><strong>Replace With</strong>: This is what will replace the matched sequence. In a very simple example, if your &#x27;Find Regex&#x27; is <code v-pre>apple</code>, and your &#x27;Replace With&#x27; is <code v-pre>orange</code>, the first occurence of &#x27;apple&#x27; would be automatically changed to &#x27;orange&#x27; in any text where the script is applied.</p>
 <ul>
 <li><p>Adding the extension-specific macro {{match}} in this box will insert the full matched sequence of text. This is commonly used to apply styles to specific words. Going back to the above example, if **{{match}}** were put into the &#x27;Replace With&#x27; box instead, all occurences of the word &#x27;apple&#x27; would be replaced with <code v-pre>**apple**</code>, which would apply the bold markdown style to it.</p>
 </li>
