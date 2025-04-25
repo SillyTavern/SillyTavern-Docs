@@ -54,7 +54,7 @@ Below this is a list of your scripts with some action buttons.
 
 - **Find Regex** : This is the Regular Expression that is used to detect your targeted text pattern. This is usually the most complex part of any RegEx script, and is the easiest place to make mistakes. Refer to the links at the top of the page for information how to write a RegEx sequence. This box can resolve the values of [common SillyTavern macros](/Usage/Characters/macros.md) (such as \{\{user\}\}, \{\{char\}\}, etc) if the 'Macros in Find Regex' is set to do so (see below).
 
-- **Replace With**: This is what will replace the matched sequence. In a very simple example, if your 'Find Regex' is `apple`, and your 'Replace With' is `orange`, all instances of 'apple' would be automatically changed to 'orange' in any text where the script is applied.
+- **Replace With**: This is what will replace the matched sequence. In a very simple example, if your 'Find Regex' is `apple`, and your 'Replace With' is `orange`, the first occurence of 'apple' would be automatically changed to 'orange' in any text where the script is applied.
 
   - Adding the extension-specific macro \{\{match\}\} in this box will insert the full matched sequence of text. This is commonly used to apply styles to specific words. Going back to the above example, if \*\*\{\{match\}\}\*\* were put into the 'Replace With' box instead, all occurences of the word 'apple' would be replaced with `**apple**`, which would apply the bold markdown style to it.
 
