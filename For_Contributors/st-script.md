@@ -162,12 +162,17 @@ The following modifications can be applied to commands to work with these variab
 
 You can use the `/if` command to create conditional expressions that branch the execution based on the defined rules.
 
-`/if left=valueA right=valueB rule=comparison else={: /echo (command on false) :} {: /echo (command on true) :}`
+```stscript
+/if left=valueA right=valueB rule=comparison else={: /echo (command on false) :} {: /echo (command on true) :}
+```
 
 Note that
 
-`/if left=valueA right=valueB rule=comparison else="(command on false)" "(command on true)"`
-syntax is also supported, however {: closures :} will help you write cleaner scripts.
+```stscript
+/if left=valueA right=valueB rule=comparison else="(command on false)" "(command on true)"
+```
+
+syntax is also supported, however `{: closures :}` will help you write cleaner scripts.
 
 Let's review the following example:
 
