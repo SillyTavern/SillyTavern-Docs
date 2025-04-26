@@ -2,6 +2,7 @@
 order: 0
 icon: file-symlink-file
 route: /usage/st-script
+templating: false
 ---
 
 # STscript Language Reference
@@ -161,7 +162,7 @@ The following modifications can be applied to commands to work with these variab
 
 You can use the `/if` command to create conditional expressions that branch the execution based on the defined rules.
 
-`/if left=valueA right=valueB rule=comparison else={:/echo (command on false):} {:/echo (command on true):}`
+`/if left=valueA right=valueB rule=comparison else={: /echo (command on false) :} {: /echo (command on true) :}`
 
 Note that
 
@@ -172,7 +173,7 @@ Let's review the following example:
 
 ```stscript
 /input What's your favorite drink? |
-/if left={{pipe}} right="black tea" rule=eq else={:/echo You shall not pass | /abort:} {:/echo Welcome to the club, {{user}}:}
+/if left={{pipe}} right="black tea" rule=eq else={: /echo You shall not pass | /abort :} {: /echo Welcome to the club, {{user}} :}
 ```
 
 This script evaluates the user input against a required value and displays different messages, depending on the input value.
@@ -221,7 +222,7 @@ A subcommand is a string containing a list of slash commands to execute.
 The following example will pass a "true" string to the next command the variable `a` equals 5, and a "false" string otherwise.
 
 ```stscript
-/if left=a right=5 rule=eq else={:/pass false:} {:/pass true:} |
+/if left=a right=5 rule=eq else={: /pass false:} {: /pass true :} |
 /echo
 ```
 
