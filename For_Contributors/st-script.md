@@ -161,13 +161,18 @@ The following modifications can be applied to commands to work with these variab
 
 You can use the `/if` command to create conditional expressions that branch the execution based on the defined rules.
 
+`/if left=valueA right=valueB rule=comparison else={:/echo (command on false):} {:/echo (command on true):}`
+
+Note that
+
 `/if left=valueA right=valueB rule=comparison else="(command on false)" "(command on true)"`
+syntax is also supported, however {: closures :} will help you write cleaner scripts.
 
 Let's review the following example:
 
 ```stscript
 /input What's your favorite drink? |
-/if left={{pipe}} right="black tea" rule=eq else="/echo You shall not pass \| /abort" "/echo Welcome to the club, \{\{user\}\}"
+/if left={{pipe}} right="black tea" rule=eq else={:/echo You shall not pass | /abort:} {:/echo Welcome to the club, {{user}}:}
 ```
 
 This script evaluates the user input against a required value and displays different messages, depending on the input value.
@@ -216,7 +221,7 @@ A subcommand is a string containing a list of slash commands to execute.
 The following example will pass a "true" string to the next command the variable `a` equals 5, and a "false" string otherwise.
 
 ```stscript
-/if left=a right=5 rule=eq else="/pass false" "/pass true" |
+/if left=a right=5 rule=eq else={:/pass false:} {:/pass true:} |
 /echo
 ```
 
@@ -520,7 +525,7 @@ This example adds 1 to the value of `i` until it reaches 10, then outputs the re
 Runs a subcommand a specified number of times.
 
 `/times (repeats) "(command)"` – any valid slash command enclosed in quotes repeats a number of times, e.g. `/setvar key=i 1 | /times 5 "/addvar key=i 1"` adds 1 to the value of "i" 5 times.
-- {{timesIndex}} is replaced with the iteration number (zero-based), e.g. `/times 4 "/echo {{timesIndex}}"` echoes the numbers 0 through 4.
+- {{timesIndex}} is replaced with the iteration number (zero-based), e.g. `/times 4 {:/echo {{timesIndex}}:}` echoes the numbers 0 through 4.
 - Loops are limited to 100 iterations by default, pass `guard=off` to disable.
 
 ### Breaking out of Loops and Closures
