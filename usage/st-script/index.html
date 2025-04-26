@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.7.0.798897289310">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.7.0.799021376377">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.7.0">
@@ -35,11 +35,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.7.0.798897289310" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.7.0.799021376377" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.7.0.798897289310" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.7.0.799021376377" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.7.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.7.0.798897289310" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.7.0.799021376377" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -442,12 +442,15 @@ These concepts are going to be described in the following document.</p>
     </h2>
 </doc-anchor-target>
 <p>You can use the <code v-pre>/if</code> command to create conditional expressions that branch the execution based on the defined rules.</p>
-<p><code v-pre>/if left=valueA right=valueB rule=comparison else=&quot;(command on false)&quot; &quot;(command on true)&quot;</code></p>
+<p><code v-pre>/if left=valueA right=valueB rule=comparison else={:/echo (command on false):} {:/echo (command on true):}</code></p>
+<p>Note that</p>
+<p :="" closures="" :=""><code v-pre>/if left=valueA right=valueB rule=comparison else=&quot;(command on false)&quot; &quot;(command on true)&quot;</code>
+syntax is also supported, however  will help you write cleaner scripts.</p>
 <p>Let&#x27;s review the following example:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre class="language-none"><code v-pre class="language-none">/input What's your favorite drink? |
-/if left={{pipe}} right=&quot;black tea&quot; rule=eq else=&quot;/echo You shall not pass \| /abort&quot; &quot;/echo Welcome to the club, \{\{user\}\}&quot;</code></pre>
+/if left={{pipe}} right=&quot;black tea&quot; rule=eq else={:/echo You shall not pass | /abort:} {:/echo Welcome to the club, {{user}}:}</code></pre>
 </doc-codeblock></div>
 <p>This script evaluates the user input against a required value and displays different messages, depending on the input value.</p>
 <doc-anchor-target id="arguments-for-if">
@@ -506,7 +509,7 @@ These concepts are going to be described in the following document.</p>
 The following example will pass a &quot;true&quot; string to the next command the variable <code v-pre>a</code> equals 5, and a &quot;false&quot; string otherwise.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/if left=a right=5 rule=eq else=&quot;/pass false&quot; &quot;/pass true&quot; |
+<pre class="language-none"><code v-pre class="language-none">/if left=a right=5 rule=eq else={:/pass false:} {:/pass true:} |
 /echo</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="escape-sequences">
@@ -865,7 +868,7 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 <p>Runs a subcommand a specified number of times.</p>
 <p><code v-pre>/times (repeats) &quot;(command)&quot;</code> – any valid slash command enclosed in quotes repeats a number of times, e.g. <code v-pre>/setvar key=i 1 | /times 5 &quot;/addvar key=i 1&quot;</code> adds 1 to the value of &quot;i&quot; 5 times.</p>
 <ul>
-<li>{{timesIndex}} is replaced with the iteration number (zero-based), e.g. <code v-pre>/times 4 &quot;/echo {{timesIndex}}&quot;</code> echoes the numbers 0 through 4.</li>
+<li>{{timesIndex}} is replaced with the iteration number (zero-based), e.g. <code v-pre>/times 4 {:/echo {{timesIndex}}:}</code> echoes the numbers 0 through 4.</li>
 <li>Loops are limited to 100 iterations by default, pass <code v-pre>guard=off</code> to disable.</li>
 </ul>
 <doc-anchor-target id="breaking-out-of-loops-and-closures">
