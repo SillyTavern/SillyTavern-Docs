@@ -185,6 +185,7 @@ To use one of these caption sources, select Multimodal in the Source dropdown.
 | OpenRouter                        | Cloud, paid (maybe free options), many models, pick from what's available within Captioning after configuring in API connections                                              |
 | Text Generation WebUI (oobabooga) | Local, must configure model in ooba                                                                                                                                           |
 | vLLM                              | Local                                                                                                                                                                         |
+| xAI (Grok)                        | Cloud, paid, grok-vision                                                                                                                                                      |
 
 ### KoboldCpp
 
