@@ -375,3 +375,19 @@ For example, if the setting is enabled and the entry key is "king", then text su
 ### Alert on overflow
 
 Shows an alert if the activated World Info exceeds the allocated token budget.
+
+## Additonal matching sources
+
+By default World Info Entries are matched only against content from the current conversation. These options allow you to match the entry against different character information that does not show up in the chat, or even persona information. This is useful when you want to have a wide range of entries that are to be used between several characters but don't want to have to manage large lists of tags, or don't want to have to update character filter lists every time you create a new one. This also allows you to match entries based on the persona you have active.
+
+- **Character Description**: Matches against the character description.
+
+- **Character Personality**: Matches against the character personality summary, found under Advanced Definitions.
+
+- **Scenario**: Matches against the character specified scenario, found under Advanced Definitions.
+
+- **Persona Description**: Matches against the current selected persona's description.
+
+- **Character's Note**: Matches against the character's note, which can be found under Advanced Definitions.
+
+- **Creator's Notes**: Matches against the character creator's notes, which can be found under Advanced Definitions. The creator's notes are usually not included in the prompt.
