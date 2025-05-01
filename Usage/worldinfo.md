@@ -196,6 +196,8 @@ The script command will run only once if multiple entries with the same Automati
 
 #### Additonal matching sources
 
+*Currently only available on staging.*
+
 By default World Info Entries are matched only against content from the current conversation. These options allow you to match the entry against different character information that does not show up in the chat, or even persona information. This is useful when you want to have a wide range of entries that are to be used between several characters but don't want to have to manage large lists of tags, or don't want to have to update character filter lists every time you create a new one. This also allows you to match entries based on the persona you have active.
 
 - **Character Description**: Matches against the character description.
