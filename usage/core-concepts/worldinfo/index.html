@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.7.0.799355007528">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.7.0.799448812709">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.7.0">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.7.0.799355007528" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.7.0.799448812709" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.7.0.799355007528" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.7.0.799448812709" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.7.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.7.0.799355007528" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.7.0.799355007528" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.7.0.799448812709" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.7.0.799448812709" defer></script>
 
     <style>
         a {
@@ -481,6 +481,28 @@ Supports logic for AND ANY, NOT ANY, or NOT ALL</p>
 <p>Allows to integrate World Info entries with <a href="../../st-script/">STscripts</a> from Quick Replies extension. If both the quick reply command and the WI entry have the same Automation ID, the command will be executed automatically when the entry with a matching ID is activated.</p>
 <p>Automations are executed in the order they are triggered, adhering to your designated sorting strategy, combining the <doc-anchor-trigger to="#character-lore-insertion-strategy">Character Lore Insertion Strategy</doc-anchor-trigger> with the &#x27;Priority&#x27; sorting. Which leads to <doc-anchor-trigger to="#strategy">Blue Circle</doc-anchor-trigger> entries processed first, followed by others in their specified &#x27;Order&#x27;. Recursively triggered entries will be processed after in the same order.</p>
 <p>The script command will run only once if multiple entries with the same Automation ID are activated.</p>
+<doc-anchor-target id="additonal-matching-sources">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#additonal-matching-sources">#</doc-anchor-trigger>
+        <span>Additonal matching sources</span>
+    </h4>
+</doc-anchor-target>
+<p><em>Currently only available on staging.</em></p>
+<p>By default World Info Entries are matched only against content from the current conversation. These options allow you to match the entry against different character information that does not show up in the chat, or even persona information. This is useful when you want to have a wide range of entries that are to be used between several characters but don&#x27;t want to have to manage large lists of tags, or don&#x27;t want to have to update character filter lists every time you create a new one. This also allows you to match entries based on the persona you have active.</p>
+<ul>
+<li><p><strong>Character Description</strong>: Matches against the character description.</p>
+</li>
+<li><p><strong>Character Personality</strong>: Matches against the character personality summary, found under Advanced Definitions.</p>
+</li>
+<li><p><strong>Scenario</strong>: Matches against the character specified scenario, found under Advanced Definitions.</p>
+</li>
+<li><p><strong>Persona Description</strong>: Matches against the current selected persona&#x27;s description.</p>
+</li>
+<li><p><strong>Character&#x27;s Note</strong>: Matches against the character&#x27;s note, which can be found under Advanced Definitions.</p>
+</li>
+<li><p><strong>Creator&#x27;s Notes</strong>: Matches against the character creator&#x27;s notes, which can be found under Advanced Definitions. The creator&#x27;s notes are usually not included in the prompt.</p>
+</li>
+</ul>
 <doc-anchor-target id="vector-storage-matching">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#vector-storage-matching">#</doc-anchor-trigger>
