@@ -674,7 +674,7 @@ or to insert the generated message as a response from your character:
 /sendas name={{char}} {{pipe}}
 ```
 
-## Character injection
+## Temporal character
 
 If you are not in a group chat, scripts may temporarily make a request to the currently connected LLM as a different character.
 
