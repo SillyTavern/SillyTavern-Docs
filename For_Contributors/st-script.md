@@ -674,6 +674,25 @@ or to insert the generated message as a response from your character:
 /sendas name={{char}} {{pipe}}
 ```
 
+## Character injection
+
+If you are not in a group chat, scripts may temporarily make a request to the currently connected LLM as a different character.
+
+- `/ask (prompt)` — generates text using the provided prompt for a specified character and including chat messages.
+
+```stscript
+/ask name=... (prompt)
+```
+### Arguments for `/ask`
+
+- `name` — **Required**. The name of the character to ask (or a unique character identifier, such as an avatar key). This must be provided as a named argument.
+- `return` — Specifies how the return value should be provided. Defaults to `pipe` (output via the command pipe). Other options can be specified if supported by the API.
+
+
+```stscript
+/ask name=Alice What is your favorite color?
+```
+
 ## Prompt injections
 
 Scripts can add custom LLM prompt injections, making it essentially an equivalent of unlimited Author's Notes.
