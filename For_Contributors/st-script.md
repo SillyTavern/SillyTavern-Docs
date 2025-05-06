@@ -678,7 +678,7 @@ or to insert the generated message as a response from your character:
 
 If you are not in a group chat, scripts may temporarily make a request to the currently connected LLM as a different character.
 
-- `/ask (prompt)` — generates text using the provided prompt for a specified character and including chat messages.
+- `/ask (prompt)` — generates text using the provided prompt for a specified character and including chat messages. Please note that swipes of the response from this character will revert back to the current character.
 
 ```stscript
 /ask name=... (prompt)
