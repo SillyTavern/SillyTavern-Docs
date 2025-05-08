@@ -90,3 +90,17 @@ Different ephemerality options affect reasoning blocks in the following ways:
 2. Run on edit: regex script will be re-evaluated when the reasoning block is edited.
 3. Alter chat display: regex is applied to the reasoning block's display text, not the underlying content.
 4. Alter outgoing prompts: regex is only applied to reasoning blocks before they are sent to the model.
+
+## Reasoning Effort
+
+Reasoning Effort is a Chat Completion setting in the **<i class="fa-solid fa-sliders"></i> AI Response Configuration** panel that influences how many tokens may potentially be used on reasoning. The effect of each option depends on the source connected to. Currently, Auto simply means the relevant parameter is not included in the request.
+
+| Option  | Claude (< max response)        | Google AI Studio (≤ 24576)         | OpenAI (keyword)     | OpenRouter (keyword)                   | xAI (Grok) (keyword) |
+| ------- | ------------------------------ | ---------------------------------- | -------------------- | -------------------------------------- | -------------------- |
+| Auto    | not specified, **no thinking** | not specified                      | not specified        | not specified, effect depends on model | not specified        |
+| Minimum | budgets 1024 tokens            | budgets 0 tokens, **no thinking**  | "low"                | "low", or 20% of max response          | "low"                |
+| Low     | 1024 <= 15% of max response    | 15% of max response                | "low"                | "low", or 20% of max response          | "low"                |
+| Medium  | 1024 <= 25% of max response    | 25% of max response                | "medium"             | "medium", or 50% of max response       | "medium"             |
+| High    | 1024 <= 50% of max response    | 50% of max response                | "high"               | "high", or 80% of max response         | "high"               |
+| Maximum | 1024 <= 95% of max response    | lower of 24576 or max response     | "high"               | "high", or 80% of max response         | "high"               |
+| Models  | 3.7 Sonnet                     | 2.5 Flash                          | o4-mini, o3\*, o1\*  | applicable models                      | grok-3-mini          |
