@@ -105,4 +105,4 @@ Reasoning Effort is a Chat Completion setting in the **<i class="fa-solid fa-sli
 | Maximum | 95% of max response, min 1024  | lower of 24576 or max response     | "high"               | "high", or 80% of max response         | "high"               |
 | Models  | 3.7 Sonnet                     | 2.5 Flash                          | o4-mini, o3\*, o1\*  | applicable models                      | grok-3-mini          |
 
-For Claude, if budget would be too low, then max response will be changed to 2024. For OpenRouter, only an OpenAI-style keyword is sent.
+For Claude, if the calculated budget would be too low, then max response will be changed to 2048. For OpenRouter, only an OpenAI-style keyword is sent.
