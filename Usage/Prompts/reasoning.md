@@ -100,7 +100,7 @@ Reasoning Effort is a Chat Completion setting in the **<i class="fa-solid fa-sli
 | Auto    | not specified, **no thinking** | not specified                      | not specified        | not specified, effect depends on model | not specified        |
 | Minimum | budgets 1024 tokens            | budgets 0 tokens, **no thinking**  | "low"                | "low", or 20% of max response          | "low"                |
 | Low     | 15% of max response, min 1024  | 15% of max response                | "low"                | "low", or 20% of max response          | "low"                |
-| Medium  | 25% of max response, min 1024  | 25% of max response                | "medium"             | "medium", or 50% of max response       | "medium"             |
+| Medium  | 25% of max response, min 1024  | 25% of max response                | "medium"             | "medium", or 50% of max response       | "low"                |
 | High    | 50% of max response, min 1024  | 50% of max response                | "high"               | "high", or 80% of max response         | "high"               |
 | Maximum | 95% of max response, min 1024  | lower of 24576 or max response     | "high"               | "high", or 80% of max response         | "high"               |
 | Models  | 3.7 Sonnet                     | 2.5 Flash                          | o4-mini, o3\*, o1\*  | applicable models                      | grok-3-mini          |
