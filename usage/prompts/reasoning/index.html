@@ -6,10 +6,10 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.0.799866497012">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.800053280728">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.8.0">
+    <meta name="generator" content="Retype 3.8.1">
 
     <!-- Primary Meta Tags -->
     <title>Reasoning | docs.ST.app</title>
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.8.0.799866497012" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.8.1.800053280728" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.8.0.799866497012" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.8.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.8.0.799866497012" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.8.1.800053280728" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.8.1" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.8.1.800053280728" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -370,6 +370,87 @@ Incomplete reasoning...</code></pre>
 <li>Alter chat display: regex is applied to the reasoning block&#x27;s display text, not the underlying content.</li>
 <li>Alter outgoing prompts: regex is only applied to reasoning blocks before they are sent to the model.</li>
 </ol>
+<doc-anchor-target id="reasoning-effort">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#reasoning-effort">#</doc-anchor-trigger>
+        <span>Reasoning Effort</span>
+    </h2>
+</doc-anchor-target>
+<p>Reasoning Effort is a Chat Completion setting in the <strong><i class="fa-solid fa-sliders"></i> AI Response Configuration</strong> panel that influences how many tokens may potentially be used on reasoning. The effect of each option depends on the source connected to. Currently, Auto simply means the relevant parameter is not included in the request.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Option</th>
+<th>Claude (≤ 21333 if no streaming)</th>
+<th>Google AI Studio (≤ 24576)</th>
+<th>OpenAI (keyword)</th>
+<th>OpenRouter (keyword)</th>
+<th>xAI (Grok) (keyword)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Auto</td>
+<td>not specified, <strong>no thinking</strong></td>
+<td>not specified</td>
+<td>not specified</td>
+<td>not specified, effect depends on model</td>
+<td>not specified</td>
+</tr>
+<tr>
+<td>Minimum</td>
+<td>budgets 1024 tokens</td>
+<td>budgets 0 tokens, <strong>no thinking</strong></td>
+<td>&quot;low&quot;</td>
+<td>&quot;low&quot;, or 20% of max response</td>
+<td>&quot;low&quot;</td>
+</tr>
+<tr>
+<td>Low</td>
+<td>15% of max response, min 1024</td>
+<td>15% of max response</td>
+<td>&quot;low&quot;</td>
+<td>&quot;low&quot;, or 20% of max response</td>
+<td>&quot;low&quot;</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td>25% of max response, min 1024</td>
+<td>25% of max response</td>
+<td>&quot;medium&quot;</td>
+<td>&quot;medium&quot;, or 50% of max response</td>
+<td>&quot;low&quot;</td>
+</tr>
+<tr>
+<td>High</td>
+<td>50% of max response, min 1024</td>
+<td>50% of max response</td>
+<td>&quot;high&quot;</td>
+<td>&quot;high&quot;, or 80% of max response</td>
+<td>&quot;high&quot;</td>
+</tr>
+<tr>
+<td>Maximum</td>
+<td>95% of max response, min 1024</td>
+<td>lower of max response or 24576</td>
+<td>&quot;high&quot;</td>
+<td>&quot;high&quot;, or 80% of max response</td>
+<td>&quot;high&quot;</td>
+</tr>
+<tr>
+<td>Models</td>
+<td>3.7 Sonnet</td>
+<td>2.5 Flash</td>
+<td>o4-mini, o3*, o1*</td>
+<td>applicable models</td>
+<td>grok-3-mini</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>For Claude, budget is capped to 21333 if streaming is disabled. If the calculated budget would be less than 1024, then max response is changed to 2048.</p>
+<p>For OpenRouter, only an OpenAI-style keyword is sent.</p>
 
                                 <div class="flex items-center mt-6 mb-6 clear-both">
                                     <span>
