@@ -79,10 +79,16 @@ Click "Test Message" to verify connectivity by sending a simple prompt to the mo
 
 ## Prompt Post-Processing
 
+!!!warning
+**Note:** Tool Calling is not supported when any Post-Processing option except "None" is selected.
+!!!
+
 Some endpoints may impose specific restrictions on the format of incoming prompts, such as requiring only one system message or strictly alternating roles.
 
 SillyTavern provides built-in prompt converters to help meet these requirements (from least to most restrictive):
 
-1. Merge consecutive messages from the same role
-2. Merge roles and allow only one system message (semi-strict)
-3. Merge roles, allow only one optional system message, and require a user role to be first (strict)
+1. None. No explicit processing applied, unless strictly required by the API
+2. Merge consecutive messages from the same role
+3. Merge roles and allow only one system message (semi-strict)
+4. Merge roles, allow only one optional system message, and require a user role to be first (strict)
+5. Merge all messages from all roles into a single user role message
