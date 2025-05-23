@@ -185,6 +185,10 @@ Limitations:
 1. Works only in 1-to-1 chats. Will not be used in groups.
 2. Won't be used for backgrounds and free mode generations.
 
+!!! note
+To force include a character prefix into a free mode prompt, use the `{{charPrefix}}` macro anywhere in the prompt.
+!!!
+
 If you want to share the prefixes with others, tick the "Shareable" checkbox. This will save them with the character data, rather than your local settings. 
 
 **Pro tip:** If supported by the generation source, you can also use LoRAs/embeddings here, for example: `<lora:DonaldDuck:1>`.
