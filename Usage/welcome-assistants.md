@@ -16,9 +16,9 @@ When no chat is active, the Welcome Screen provides several useful elements:
 
 * **SillyTavern Version:** Displays the application's logo and current version.
 * **Quick Links:** Easy access to:
-  * **Docs:** Opens the official SillyTavern documentation.
-  * **GitHub:** Takes you to the SillyTavern GitHub repository.
-  * **Discord:** Provides a link to the official SillyTavern Discord server.
+  * **Docs:** Opens the official SillyTavern documentation (you're already here!).
+  * **GitHub:** Takes you to the SillyTavern GitHub repository (<https://github.com/SillyTavern/SillyTavern>).
+  * **Discord:** Provides a link to the official SillyTavern Discord server (<https://discord.gg/sillytavern>).
 * **Temporary Chat Button:** Allows you to quickly start a new, temporary chat session with the default neutral assistant, which won't be saved to your chat history unless you explicitly save it.
 * **Recent Chats Section:** Lists your recent conversations for quick access. You can:
   * Show or hide this section.
