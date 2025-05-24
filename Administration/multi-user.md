@@ -110,7 +110,7 @@ Every user data directory has a `content.log` file that lists all files copied f
 | System Prompt template        | `'sysprompt'`        |
 | Reasoning Formatting template | `'reasoning'`        |
 
-### Example
+### Example (`/default/scaffold/index.json`)
 
 ```json
 [
