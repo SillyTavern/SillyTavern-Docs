@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.801314044396">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.801402069332">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.8.1">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.8.1.801314044396" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.8.1.801402069332" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.8.1.801314044396" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.8.1.801402069332" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.8.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.8.1.801314044396" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.8.1.801402069332" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -380,12 +380,14 @@ We do not guarantee compatibility with every possible API endpoint!</p>
 <p>Some endpoints may impose specific restrictions on the format of incoming prompts, such as requiring only one system message or strictly alternating roles.</p>
 <p>SillyTavern provides built-in prompt converters to help meet these requirements (from least to most restrictive):</p>
 <ol>
-<li>None. No explicit processing applied, unless strictly required by the API</li>
+<li>None - no explicit processing applied unless strictly required by the API</li>
 <li>Merge consecutive messages from the same role</li>
-<li>Merge roles and allow only one system message (semi-strict)</li>
-<li>Merge roles, allow only one optional system message, and require a user role to be first (strict)</li>
-<li>Merge all messages from all roles into a single user role message</li>
+<li>Semi-strict - merge roles and allow only one optional system message</li>
+<li>Strict - merge roles, allow only one optional system message, and require a user message to be first</li>
+<li>Single user message - merge all messages from all roles into a single user message</li>
 </ol>
+<p>Less restrictive options have no effect on more restrictive endpoints implemented in SillyTavern other than &quot;Custom OpenAI-compatible&quot;; Custom may error upon invalid request.</p>
+<p>In strict mode, if no user message exists before the first assistant message, then <code v-pre>promptPlaceholder</code> from <code v-pre>config.yaml</code> will be inserted, which by default is &quot;[Start a new chat]&quot;.</p>
 
                                 
                                 <!-- Required only on API pages -->
