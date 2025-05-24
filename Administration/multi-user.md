@@ -74,3 +74,57 @@ You can access an account self-management menu using an "Account" button under t
 Usage: node recover.js [account] (password)
 Example: node recover.js admin SecurePassword
 ```
+
+## Content scaffolding
+
+To add custom content for users, you can use the content scaffolding feature. This feature allows you to define a set of files that will be copied to each user's data directory when the server starts up.
+
+You must create an `index.json` file in the `/default/scaffold` directory for this feature to work. The syntax is the same as for default content. All file paths should be relative to the `/default/scaffold` directory, and you can organize files using subdirectories.
+
+Scaffolded files are copied before default files, which means they will override any default files (presets/settings/etc.) that have the same file name.
+
+!!!note
+Every user data directory has a `content.log` file that lists all files copied from the scaffold and default directories. Remove this file to force the server to sync the content again on the next restart.
+!!!
+
+### Recognized content types
+
+| Type                          | Value                |
+|-------------------------------|----------------------|
+| settings.json                 | `'settings'`         |
+| Character card                | `'character'`        |
+| Character sprites             | `'sprites'`          |
+| Background image              | `'background'`       |
+| World Info file               | `'world'`            |
+| Persona avatar                | `'avatar'`           |
+| UI theme                      | `'theme'`            |
+| ComfyUI workflow              | `'workflow'`         |
+| KoboldAI Classic preset       | `'kobold_preset'`    |
+| Chat Completion preset        | `'openai_preset'`    |
+| NovelAI preset                | `'novel_preset'`     |
+| Text Completion preset        | `'textgen_preset'`   |
+| Instruct Mode template        | `'instruct'`         |
+| Context Formatting template   | `'context'`          |
+| MovingUI preset               | `'moving_ui'`        |
+| Quick Replies set             | `'quick_replies'`    |
+| System Prompt template        | `'sysprompt'`        |
+| Reasoning Formatting template | `'reasoning'`        |
+
+### Example
+
+```json
+[
+    {
+        "filename": "themes/Midnight.json",
+        "type": "theme"
+    },
+    {
+        "filename": "backgrounds/city.png",
+        "type": "background"
+    },
+    {
+        "filename": "characters/Charlie.png",
+        "type": "character"
+    }
+]
+```
