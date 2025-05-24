@@ -87,8 +87,12 @@ Some endpoints may impose specific restrictions on the format of incoming prompt
 
 SillyTavern provides built-in prompt converters to help meet these requirements (from least to most restrictive):
 
-1. None. No explicit processing applied, unless strictly required by the API
+1. None - no explicit processing applied unless strictly required by the API
 2. Merge consecutive messages from the same role
-3. Merge roles and allow only one system message (semi-strict)
-4. Merge roles, allow only one optional system message, and require a user role to be first (strict)
-5. Merge all messages from all roles into a single user role message
+3. Semi-strict - merge roles and allow only one optional system message
+4. Strict - merge roles, allow only one optional system message, and require a user message to be first
+5. Single user message - merge all messages from all roles into a single user message
+
+Less restrictive options have no effect on more restrictive endpoints implemented in SillyTavern other than "Custom OpenAI-compatible"; Custom may error upon invalid request.
+
+In strict mode, if no user message exists before the first assistant message, then `promptPlaceholder` from `config.yaml` will be inserted, which by default is "\[Start a new chat]".
