@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.801417223780">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.801427369789">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.8.1">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.8.1.801417223780" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.8.1.801427369789" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.8.1.801417223780" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.8.1.801427369789" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.8.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.8.1.801417223780" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.8.1.801417223780" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.8.1.801427369789" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.8.1.801427369789" defer></script>
 
     <style>
         a {
@@ -333,6 +333,145 @@ enableDiscreetLogin: true</code></pre>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">Usage: node recover.js [account] (password)
 Example: node recover.js admin SecurePassword</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="content-scaffolding">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#content-scaffolding">#</doc-anchor-trigger>
+        <span>Content scaffolding</span>
+    </h2>
+</doc-anchor-target>
+<p>To add custom content for users, you can use the content scaffolding feature. This feature allows you to define a set of files that will be copied to each user&#x27;s data directory when the server starts up.</p>
+<p>You must create an <code v-pre>index.json</code> file in the <code v-pre>/default/scaffold</code> directory for this feature to work. The syntax is the same as for default content. All file paths should be relative to the <code v-pre>/default/scaffold</code> directory, and you can organize files using subdirectories.</p>
+<p>Scaffolded files are copied before default files, which means they will override any default files (presets/settings/etc.) that have the same file name.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>note</h5>
+<p>Every user data directory has a <code v-pre>content.log</code> file that lists all files copied from the scaffold and default directories. Remove this file to force the server to sync the content again on the next restart.</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="recognized-content-types">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#recognized-content-types">#</doc-anchor-trigger>
+        <span>Recognized content types</span>
+    </h3>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Type</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>settings.json</td>
+<td><code v-pre>'settings'</code></td>
+</tr>
+<tr>
+<td>Character card</td>
+<td><code v-pre>'character'</code></td>
+</tr>
+<tr>
+<td>Character sprites</td>
+<td><code v-pre>'sprites'</code></td>
+</tr>
+<tr>
+<td>Background image</td>
+<td><code v-pre>'background'</code></td>
+</tr>
+<tr>
+<td>World Info file</td>
+<td><code v-pre>'world'</code></td>
+</tr>
+<tr>
+<td>Persona avatar</td>
+<td><code v-pre>'avatar'</code></td>
+</tr>
+<tr>
+<td>UI theme</td>
+<td><code v-pre>'theme'</code></td>
+</tr>
+<tr>
+<td>ComfyUI workflow</td>
+<td><code v-pre>'workflow'</code></td>
+</tr>
+<tr>
+<td>KoboldAI Classic preset</td>
+<td><code v-pre>'kobold_preset'</code></td>
+</tr>
+<tr>
+<td>Chat Completion preset</td>
+<td><code v-pre>'openai_preset'</code></td>
+</tr>
+<tr>
+<td>NovelAI preset</td>
+<td><code v-pre>'novel_preset'</code></td>
+</tr>
+<tr>
+<td>Text Completion preset</td>
+<td><code v-pre>'textgen_preset'</code></td>
+</tr>
+<tr>
+<td>Instruct Mode template</td>
+<td><code v-pre>'instruct'</code></td>
+</tr>
+<tr>
+<td>Context Formatting template</td>
+<td><code v-pre>'context'</code></td>
+</tr>
+<tr>
+<td>MovingUI preset</td>
+<td><code v-pre>'moving_ui'</code></td>
+</tr>
+<tr>
+<td>Quick Replies set</td>
+<td><code v-pre>'quick_replies'</code></td>
+</tr>
+<tr>
+<td>System Prompt template</td>
+<td><code v-pre>'sysprompt'</code></td>
+</tr>
+<tr>
+<td>Reasoning Formatting template</td>
+<td><code v-pre>'reasoning'</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="example">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example">#</doc-anchor-trigger>
+        <span>Example</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">[
+    {
+        &quot;filename&quot;: &quot;themes/Midnight.json&quot;,
+        &quot;type&quot;: &quot;theme&quot;
+    },
+    {
+        &quot;filename&quot;: &quot;backgrounds/city.png&quot;,
+        &quot;type&quot;: &quot;background&quot;
+    },
+    {
+        &quot;filename&quot;: &quot;characters/Charlie.png&quot;,
+        &quot;type&quot;: &quot;character&quot;
+    }
+]</code></pre>
 </doc-codeblock></div>
 
                                 
