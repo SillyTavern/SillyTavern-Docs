@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.801402069332">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.801417173343">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.8.1">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.8.1.801402069332" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.8.1.801417173343" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.8.1.801402069332" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.8.1.801417173343" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.8.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.8.1.801402069332" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.8.1.801417173343" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -349,12 +349,13 @@ First Message:
         <span>Where are my API keys stored? Why can&#x27;t I see them?</span>
     </h2>
 </doc-anchor-target>
-<p>SillyTavern saves your API keys to a <code v-pre>secrets.json</code> file in the server directory.</p>
-<p>By default, they will not be exposed to a frontend after you enter them and reload the page.</p>
-<p>To enable viewing your keys by clicking a button in the API block:</p>
+<p>SillyTavern saves your API keys to a <code v-pre>secrets.json</code> file in the user data directory (<code v-pre>/data/default-user/secrets.json</code> is the default path).</p>
+<p>By default, API keys will not be visible from the interface after you have saved them and refreshed the page.</p>
+<p>In order to enable viewing your keys:</p>
 <ol>
-<li>Set the value of <code v-pre>allowKeysExposure</code> to <code v-pre>true</code> in the <code v-pre>config.yaml</code> file.</li>
+<li>Set the value of <code v-pre>allowKeysExposure</code> to <code v-pre>true</code> in <code v-pre>config.yaml</code> file.</li>
 <li>Restart the SillyTavern server.</li>
+<li>Click the &#x27;View hidden API keys&#x27; link at the bottom right of the API Connection Panel.</li>
 </ol>
 <doc-anchor-target id="performance-tips">
     <h2>
