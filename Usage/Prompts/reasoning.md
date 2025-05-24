@@ -40,12 +40,17 @@ Use the `/reasoning-set` STscript command to add reasoning to a message. The com
 
 ### By Backend
 
-If your chosen LLM backend and model support reasoning output, enable "Request Model Reasoning" in the **<i class="fa-solid fa-sliders"></i> AI Response Configuration** panel.
+If your chosen LLM backend and model support reasoning output, enable "Request Model Reasoning" in the **<i class="fa-solid fa-sliders"></i> AI Response Configuration** panel. Some sources require [Reasoning Effort](#reasoning-effort) to be set to a non-Auto value to enable reasoning.
+
+When enabled, the reasoning content provided by the model will be included in the response. It will be automatically recognized and displayed as a collapsible block in the chat.
 
 Supported sources:
 
 - DeepSeek
 - OpenRouter
+- Claude
+- Google AI Studio
+- xAI (Grok)
 
 ### By Parsing
 
