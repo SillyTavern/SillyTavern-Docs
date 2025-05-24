@@ -122,3 +122,5 @@ Added by extensions and only work under certain conditions.
 | `{{authorsNote}}` | Replaced with the contents of the Author's Note. |
 | `{{charAuthorsNote}}` | Replaced with the contents of the Character's Author's Note. |
 | `{{defaultAuthorsNote}}` | Replaced with the contents of the default Author's Note. |
+| `{{charPrefix}}` | Replaced with a character-specific Image Generation positive prompt prefix (if available). |
+| `{{charNegativePrefix}}` | Replaced with a character-specific Image Generation negative prompt prefix (if available). |
