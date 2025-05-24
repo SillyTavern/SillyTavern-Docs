@@ -1,3 +1,7 @@
+---
+tags: ['>=1.13.0']
+---
+
 # Welcome Page Assistants
 
 SillyTavern features a Welcome Screen that can greet you with a designated "Assistant" character. This screen appears when you launch SillyTavern without an active chat or after you close your last chat session.
