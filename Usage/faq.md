@@ -117,6 +117,7 @@ In order to enable viewing your keys:
 * Try enabling the No Blur Effect (Fast UI) mode on the User settings panel.
 * Enable Reduced motion in the UI theme settings to remove cosmetic animations.
 * Make sure your browser is using Hardware Acceleration.
+* If using response streaming, set the streaming FPS to a lower value (10-15 FPS is recommended).
 
 ### I'm experiencing an input lag. What can I do?
 
