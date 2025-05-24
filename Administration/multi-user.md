@@ -34,15 +34,15 @@ A path to the user data directory assumes using the following pattern: `%DATA_RO
 
 Examples of valid user handles:
 
--   default-user
--   juan555
--   flux-the-cat
--   cool-guy1337
+- default-user
+- juan555
+- flux-the-cat
+- cool-guy1337
 
 ## Roles
 
--   **Admin** - can manage (create, delete, modify) other users.
--   **User** - can't manage other users.
+- **Admin** - can manage (create, delete, modify) other users.
+- **User** - can't manage other users.
 
 Except for having admin panel access, both user roles are functionally identical and can use a full range of SillyTavern features without any restrictions. An implementation of user permissions is TBD.
 
