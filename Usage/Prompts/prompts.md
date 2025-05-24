@@ -162,7 +162,7 @@ To use per-character Post-History Instructions, add them to the character's [Pos
 
 +++ Text Completion APIs
 
-Post-History Instructions are defined in the [Advanced Formatting](/Usage/Prompts/advancedformatting.md) panel under the System Prompt category. The Post-History Instructions is added as an invisible user role injection that precedes the last line of the prompt (usually containing a response message "header").
+Post-History Instructions are defined in the [Advanced Formatting](/Usage/Prompts/advancedformatting.md) panel under the System Prompt category. The Post-History Instructions is added as an invisible user role injection that precedes the last line of the prompt (usually containing a response message "header"). Note that the "Enable System Prompt" toggle must be enabled for the Post-History Instructions to be applied (even if the System Prompt itself is empty).
 
 +++ Chat Completion APIs
 
