@@ -41,8 +41,8 @@ Examples of valid user handles:
 
 ## Roles
 
-- **Admin** - can manage (create, delete, modify) other users.
-- **User** - can't manage other users.
+- **Admin** - can manage (create, delete, modify) other users. Can install extensions for all users.
+- **User** - can't manage other users. Can install extensions only for themselves.
 
 Except for having admin panel access, both user roles are functionally identical and can use a full range of SillyTavern features without any restrictions. An implementation of user permissions is TBD.
 
