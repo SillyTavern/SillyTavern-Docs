@@ -30,12 +30,14 @@ Most common Stable Diffusion generation settings are customizable within the Sil
 
 | Source                                                                                            | Remarks                                                                                         |
 |:--------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------|
-| [Block Entropy](https://blockentropy.ai/)                                                         | All services will be discontinued on December 31, 2024                                          |
+| [Black Forest Labs](https://bfl.ai/)                                                              | Cloud, paid                                                                                     |
 | [ComfyUI](https://github.com/comfyanonymous/ComfyUI)                                              | Local, open source (GPL3), free of charge, see [ComfyUI Configuration](#comfyui-configuration). |
 | [Draw Things](https://drawthings.ai/)                                                             | Local, Mac/iOS, free of charge                                                                  |
+| [FAL.AI](https://fal.ai/)                                                                         | Cloud, paid                                                                                     |
 | [HuggingFace Serverless](https://huggingface.co/docs/api-inference/index)                         | Cloud, free of charge                                                                           |
+| [NanoGPT](https://nano-gpt.com/)                                                                  | Cloud, paid                                                                                     |
 | [NovelAI Diffusion](https://novelai.net/)                                                         | Cloud, requires an active subscription                                                          |
-| [OpenAI DALL-E 2/3](https://platform.openai.com/)                                                 | Cloud, requires an active subscription                                                          |
+| [OpenAI](https://platform.openai.com/)                                                            | Cloud, paid                                                                                     |
 | [Pollinations](https://pollinations.ai/)                                                          | Cloud, open source (MIT), free of charge                                                        |
 | [SD.Next / vladmandic](https://github.com/vladmandic/automatic)                                   | Local, open source (AGPL3), free of charge                                                      |
 | [SillyTavern Extras](https://github.com/SillyTavern/SillyTavern-Extras)                           | Deprecated, not recommended                                                                     |
@@ -43,6 +45,7 @@ Most common Stable Diffusion generation settings are customizable within the Sil
 | [Stable Diffusion WebUI / AUTOMATIC1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui) | Local, open source (AGPL3), free of charge                                                      |
 | [Stable Horde](https://stablehorde.net/)                                                          | Cloud, open source (AGPL3), free of charge                                                      |
 | [TogetherAI](https://docs.together.ai/docs/serverless-models#image-models)                        | Cloud                                                                                           |
+| [x.AI](https://x.ai/)                                                                             | Cloud, paid                                                                                     |
 
 ## Generation modes
 
