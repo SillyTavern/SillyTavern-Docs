@@ -56,14 +56,6 @@ Adds Character and User Persona names to the list of stop strings.
 
 Recommended to keep it on to prevent model impersonation.
 
-## Allow Post-History Instructions
-
-Includes the Post-History Instructions at the end of the prompt, formatted as the last user message.
-
-The Post-History Instructions prompt should be defined in the character card and "Prefer Char. Instructions" setting should be enabled.
-
-Should be used with care, as placing instructions low in the context can lead to degraded quality of the outputs of smaller models.
-
 ## Always add character's name to prompt
 
 Appends the character's name to the prompt to force the model to complete the message as the character:
