@@ -217,6 +217,13 @@ See: [Prompt Caching](https://docs.anthropic.com/en/docs/build-with-claude/promp
 |---------|-------------|---------|-----------------|
 | `claude.enableSystemPromptCache` | Enable system prompt caching | `false` | `true`, `false` |
 | `claude.cachingAtDepth` | Enable message history caching | `-1` | `-1` (disabled), `0` or positive integer |
+| `claude.extendedTTL` | Use 1h TTL instead of the default 5m. Note that this also increases the cost of the request. | `false` | `true`, `false` |
+
+### Google AI Studio Configuration
+
+| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|-----------------|
+| `gemini.apiVersion` | API endpoint version | `v1beta` | `v1beta`, `v1alpha` |
 
 ### DeepL Configuration
 
