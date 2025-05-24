@@ -89,7 +89,16 @@ There are two modes to enter keywords, each with a slightly different UI. In ⌨
 
 #### Optional Filter
 
-A list of supplementary keywords that are used in conjunction with the main keywords. See [Optional Filter](#optional-filter-1). These keys also support [regex](#regular-expression-regex-as-keys).
+Comma-separated list of additional keywords in conjunction with the primary key.
+If no arguments are provided, this flag is ignored.
+Supports logic for AND ANY, NOT ANY, or NOT ALL
+
+1. AND ANY = Activates the entry only if the primary key and Any one of the optional filter keys are in scanned context.
+2. AND ALL = Activates the entry only if the primary key and ALL of the optional filter keys are present.
+3. NOT ANY = Activates the entry only if the primary key and None of the optional filter keys are in scanned context.
+4. NOT ALL = Prevents activation of the entry despite primary key trigger, if all of the optional filters are in scanned context.
+
+These keys also support [regex](#regular-expression-regex-as-keys).
 
 #### Entry Content
 
@@ -108,9 +117,9 @@ Numeric value. Defines a priority of the entry if multiple were activated at onc
 * **Top of AN:** World Info entry is inserted at the top of Author's Note content. Has a variable impact depending on the Author's Note position.
 * **Bottom of AN:** World Info entry is inserted at the bottom of Author's Note content. Has a variable impact depending on the Author's Note position.
 * **@ D:** World Info entry is inserted at a specific depth in the chat (Depth 0 being the bottom of the prompt).
-    - ⚙️ - as a system role message
-    - 👤 - as a user role message
-    - 🤖 - as an assistant role message
+  * ⚙️ - as a system role message
+  * 👤 - as a user role message
+  * 🤖 - as an assistant role message
 
 Example Message entries will be formatted according to the prompt-building settings: Instruct Mode or Chat Completion prompt manager. They also follow the Example Messages Behavior rules: being gradually pushed out on full context, always kept, or disabled altogether.
 
@@ -129,17 +138,6 @@ If empty, can be backfilled using the entries' first key by clicking on the "Fil
 3. 🔗 (Chain Link) = The entry is allowed to be inserted by embedding similarity.
 
 Each Entry also has a toggle that allows you to enable or disable the entry.
-
-#### Optional Filter
-
-Comma-separated list of additional keywords in conjunction with the primary key.
-If no arguments are provided, this flag is ignored.
-Supports logic for AND ANY, NOT ANY, or NOT ALL
-
-1. AND ANY = Activates the entry only if the primary key and Any one of the optional filter keys are in scanned context.
-2. AND ALL = Activates the entry only if the primary key and ALL of the optional filter keys are present.
-3. NOT ANY = Activates the entry only if the primary key and None of the optional filter keys are in scanned context.
-4. NOT ALL = Prevents activation of the entry despite primary key trigger, if all of the optional filters are in scanned context.
 
 #### Probability (Trigger %)
 
@@ -181,8 +179,8 @@ For secondary keys, the interaction depends on the chosen Selective Logic:
 
 Example:
 
-- Entry 1. Keys: song, sing, Black Cat. Group: songs
-- Entry 2. Keys: song, sing, Ghosts. Group: songs
+* Entry 1. Keys: song, sing, Black Cat. Group: songs
+* Entry 2. Keys: song, sing, Ghosts. Group: songs
 
 The input `sing me a song` can activate either entry (both activated 2 keys), but `sing me a song about Ghosts` will activate only Entry 2 (activated 3 keys).
 
@@ -194,23 +192,16 @@ Automations are executed in the order they are triggered, adhering to your desig
 
 The script command will run only once if multiple entries with the same Automation ID are activated.
 
-#### Additonal matching sources
-
-*Currently only available on staging.*
+#### Additional matching sources
 
 By default World Info Entries are matched only against content from the current conversation. These options allow you to match the entry against different character information that does not show up in the chat, or even persona information. This is useful when you want to have a wide range of entries that are to be used between several characters but don't want to have to manage large lists of tags, or don't want to have to update character filter lists every time you create a new one. This also allows you to match entries based on the persona you have active.
 
-- **Character Description**: Matches against the character description.
-
-- **Character Personality**: Matches against the character personality summary, found under Advanced Definitions.
-
-- **Scenario**: Matches against the character specified scenario, found under Advanced Definitions.
-
-- **Persona Description**: Matches against the current selected persona's description.
-
-- **Character's Note**: Matches against the character's note, which can be found under Advanced Definitions.
-
-- **Creator's Notes**: Matches against the character creator's notes, which can be found under Advanced Definitions. The creator's notes are usually not included in the prompt.
+* **Character Description**: Matches against the character description.
+* **Character Personality**: Matches against the character personality summary, found under Advanced Definitions.
+* **Scenario**: Matches against the character specified scenario, found under Advanced Definitions.
+* **Persona Description**: Matches against the current selected persona's description.
+* **Character's Note**: Matches against the character's note, which can be found under Advanced Definitions.
+* **Creator's Notes**: Matches against the character creator's notes, which can be found under Advanced Definitions. The creator's notes are usually not included in the prompt.
 
 ## Vector Storage Matching
 
@@ -226,10 +217,10 @@ The choice of the vectorization model in the extension and the theoretical meani
 
 Vector Storage matching adheres to this set of rules:
 
-- The maximum number of entries that are allowed to be matched with the Vector Storage can be adjusted with the "Max Entries" setting. This number only sets the limit and does not influence the token budget set in the activation settings for World Info. All of the budgeting rules still apply.
-- This feature only replaces the check for keywords. All additional checks must be met for the entry to be inserted: trigger%, character filters, inclusion groups, etc.
-- The "Scan Depth" setting from Activation Settings or entry overrides is not used. The Vector Storage "Query messages" value is utilized instead to get the text to match against. This allows for a configuration like "Scan Depth" set to 0, so no regular keyword matches will be made, but entries still can be activated by vectors.
-- A "Vectorized" status is only an additional marker. The entry would still behave like a normal, enabled, non-constant record that will be activated by keywords if they are set. Remove the keywords if you want them to be activated only by vectors.
+* The maximum number of entries that are allowed to be matched with the Vector Storage can be adjusted with the "Max Entries" setting. This number only sets the limit and does not influence the token budget set in the activation settings for World Info. All of the budgeting rules still apply.
+* This feature only replaces the check for keywords. All additional checks must be met for the entry to be inserted: trigger%, character filters, inclusion groups, etc.
+* The "Scan Depth" setting from Activation Settings or entry overrides is not used. The Vector Storage "Query messages" value is utilized instead to get the text to match against. This allows for a configuration like "Scan Depth" set to 0, so no regular keyword matches will be made, but entries still can be activated by vectors.
+* A "Vectorized" status is only an additional marker. The entry would still behave like a normal, enabled, non-constant record that will be activated by keywords if they are set. Remove the keywords if you want them to be activated only by vectors.
 
 !!! info Note
 Since the retrieval quality depends entirely on the outputs of the embedding model, it's impossible to predict exactly what entries will be inserted. If you want deterministic and predictable results, stick to keyword matching.
@@ -334,11 +325,11 @@ Recursive scanning allows for entries to activate other entries or be activated 
 Whether recursive scanning is enabled can be controlled with the global setting **Recursive Scan**.  
 There are three options available to control recursion for each entry:
 
-- **Non-recursable**: When this checkbox is selected, the entry will not be activated by other entries. This is useful for static information that should not change or be influenced by other world info entries.
+8 **Non-recursable**: When this checkbox is selected, the entry will not be activated by other entries. This is useful for static information that should not change or be influenced by other world info entries.
   
-- **Prevent further recursion**: Selecting this option ensures that once this entry is activated, it will not trigger any other entries. This is helpful to avoid unintended chains of activations.
+* **Prevent further recursion**: Selecting this option ensures that once this entry is activated, it will not trigger any other entries. This is helpful to avoid unintended chains of activations.
 
-- **Delay until recursion**: This entry will only be activated during recursive checks, meaning it won't be triggered in the initial pass but can be activated by other entries that have recursion enabled. Now, with the added **Recursion Level** for those delays, entries are grouped by levels. Initially, only the first level (smallest number) will match. Once no matches are found, the next level becomes eligible for matching, repeating the process until all levels are checked. This allows for more control over how and when deeper layers of information are revealed during recursion, especially in combination with criteria as NOT ANY or NOT ALL combination of key matches.
+* **Delay until recursion**: This entry will only be activated during recursive checks, meaning it won't be triggered in the initial pass but can be activated by other entries that have recursion enabled. Now, with the added **Recursion Level** for those delays, entries are grouped by levels. Initially, only the first level (smallest number) will match. Once no matches are found, the next level becomes eligible for matching, repeating the process until all levels are checked. This allows for more control over how and when deeper layers of information are revealed during recursion, especially in combination with criteria as NOT ANY or NOT ALL combination of key matches.
 
 **Entries can activate other entries by mentioning their keywords in the content text.**
 
@@ -366,9 +357,9 @@ When set to zero, recursion nesting is only limited by your prompt budget. When 
 
 Example values:
 
-- 1 effectively disables recursion as the check stops after the first step.
-- 2 can only activate recursive entries once.
-- 3 can trigger recursion twice...
+* 1 effectively disables recursion as the check stops after the first step.
+* 2 can only activate recursive entries once.
+* 3 can trigger recursion twice...
 
 ### Case-sensitive keys
 
@@ -393,4 +384,3 @@ For example, if the setting is enabled and the entry key is "king", then text su
 ### Alert on overflow
 
 Shows an alert if the activated World Info exceeds the allocated token budget.
-
