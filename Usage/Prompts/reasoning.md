@@ -42,8 +42,6 @@ Use the `/reasoning-set` STscript command to add reasoning to a message. The com
 
 If your chosen LLM backend and model support reasoning output, enabling "Request model reasoning" in the **<i class="fa-solid fa-sliders"></i> AI Response Configuration** panel will add a reasoning block containing the model's thinking process.
 
-When enabled, the reasoning content provided by the model will be included in the response. It will be automatically recognized and displayed as a collapsible block in the chat.
-
 Supported sources:
 
 - Claude
