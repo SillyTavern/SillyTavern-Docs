@@ -228,6 +228,7 @@ Controls how messages are formatted and what content is displayed.
 * **Show tags in responses**: Allow (some) HTML tags in responses to be displayed as HTML 
 * **Relax message trim in Groups**: Allow AI to speak for other characters in group chats, rather than stopping the response generation
 * **Show group chat queue**: Display response order in the character list for group chats
+* **Pin greeting message styles**: Always render style tags from greetings, even if the message is unloaded due to lazy loading.
 
 ### Prompt Inspection and Debugging
 

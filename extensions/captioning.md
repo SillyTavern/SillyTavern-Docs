@@ -176,6 +176,7 @@ To use one of these caption sources, select Multimodal in the Source dropdown.
 | Cohere                            | Cloud, paid, Aya Vision 8B / 32B                                                                                                                                              |
 | Custom (OpenAI-compatible)        | For custom OpenAI-compatible APIs, uses currently configured model in API Connections tab                                                                                     |
 | Google AI Studio                  | Cloud, free tier then paid, Gemini Flash/Pro                                                                                                                                  |
+| Google Vertex AI (Express mode)   | Cloud, free tier, Gemini Flash/Pro                                                                                                                                            |
 | Groq                              | Cloud, llama-3.2-vision in 11B/90B, LLaVA                                                                                                                                     |
 | KoboldCpp                         | Local, must configure model in KoboldCpp                                                                                                                                      |
 | llama.cpp                         | Local, must configure model in llama.cpp                                                                                                                                      |
@@ -210,3 +211,22 @@ Some LLaVA finetunes you can try: [xtuner/llava-llama-3-8b-v1_1-gguf](https://hu
 
 You can use multimodal projections for the base model that your particular finetune was built from. Projections for some common base models are available from [koboldcpp/mmproj](https://huggingface.co/koboldcpp/mmproj/tree/main).
 
+### Secondary endpoints
+
+By default, the Multimodal source uses the primary endpoint configured in the API Connections tab.
+You can also set up a secondary endpoint specifically for multimodal captioning.
+
+- Open the **Image Captioning** panel in the **<i class="fa-solid fa-cubes"></i> Extensions** panel.
+- Select "Multimodal" as the captioning source and a preferred API provider.
+- Enter a valid URL for the secondary endpoint in the "Secondary captioning endpoint URL" field.
+- Check the "Use secondary URL" box to enable the secondary endpoint.
+
+> Do not append `/v1` or `/chat/completions` to the end of the URL. The extension will handle that automatically.
+
+This is only supported by the following APIs:
+
+- KoboldCpp
+- llama.cpp
+- Ollama
+- Text Generation WebUI (oobabooga)
+- vLLM

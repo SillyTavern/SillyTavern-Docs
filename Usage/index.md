@@ -39,6 +39,10 @@ Create and use characters to shape the AI's role, and personas to define your id
 **[Response Configuration](/Usage/Common-Settings.md)** and **[Prompts](/Usage/Prompts/prompts.md)**
 
 Control the requests that you send to the AI and how it responds
+
+**[Welcome Page Assistants](/Usage/welcome-assistants.md)**
+
+Learn how to set up and use Welcome Page Assistants to greet you with a designated character on the Welcome Screen.
 :::
 
 :::callout
