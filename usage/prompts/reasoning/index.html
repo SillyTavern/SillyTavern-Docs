@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.801481001304">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.801516007960">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.8.1">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.8.1.801481001304" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.8.1.801516007960" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.8.1.801481001304" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.8.1.801516007960" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.8.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.8.1.801481001304" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.8.1.801516007960" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -305,9 +305,11 @@
 <li>Claude</li>
 <li>DeepSeek</li>
 <li>Google AI Studio</li>
+<li>Google Vertex AI</li>
 <li>OpenRouter</li>
+<li>xAI (Grok)</li>
 </ul>
-<p>&quot;Request model reasoning&quot; does not determine whether a model does reasoning. Claude and Google AI Studio allow thinking mode to be toggled; see <doc-anchor-trigger to="#reasoning-effort">Reasoning Effort</doc-anchor-trigger>.</p>
+<p>&quot;Request model reasoning&quot; does not determine whether a model does reasoning. Claude and Google allow thinking mode to be toggled; see <doc-anchor-trigger to="#reasoning-effort">Reasoning Effort</doc-anchor-trigger>.</p>
 <doc-anchor-target id="by-parsing">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#by-parsing">#</doc-anchor-trigger>
@@ -386,7 +388,7 @@ Incomplete reasoning...</code></pre>
 <tr>
 <th>Option</th>
 <th>Claude (≤ 21333 if no streaming)</th>
-<th>Google AI Studio (≤ 24576)</th>
+<th>Google AI Studio / Vertex AI (≤ 24576)</th>
 <th>OpenAI (keyword)</th>
 <th>OpenRouter (keyword)</th>
 <th>xAI (Grok) (keyword)</th>
@@ -452,8 +454,11 @@ Incomplete reasoning...</code></pre>
 </tbody>
 </table>
 </div>
-<p>For Claude, budget is capped to 21333 if streaming is disabled. If the calculated budget would be less than 1024, then max response is changed to 2048.</p>
-<p>For OpenRouter, only an OpenAI-style keyword is sent.</p>
+<ul>
+<li>For Claude, budget is capped to 21333 if streaming is disabled. If the calculated budget would be less than 1024, then max response is changed to 2048.</li>
+<li>For Google AI Studio and Vertex AI, budget is capped to 24576 tokens, regardless of the streaming setting.</li>
+<li>For OpenRouter, only an OpenAI-style keyword is sent.</li>
+</ul>
 
                                 <div class="flex items-center mt-6 mb-6 clear-both">
                                     <span>

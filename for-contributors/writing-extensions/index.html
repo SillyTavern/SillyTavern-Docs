@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.801481001304">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.801516007960">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.8.1">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.8.1.801481001304" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.8.1.801516007960" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.8.1.801481001304" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.8.1.801516007960" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.8.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.8.1.801481001304" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.8.1.801481001304" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.8.1.801516007960" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.8.1.801516007960" defer></script>
 
     <style>
         a {
@@ -314,6 +314,7 @@ const generateRaw = await importFromScript('generateRaw');</code></pre>
 <li><code v-pre>author</code> is required. It should contain the name or contact info of the author(s).</li>
 <li><code v-pre>auto_update</code> is set to true if the extension should auto-update when the version of the ST package changes.</li>
 <li><code v-pre>i18n</code> is an optional object that specifies the supported locales and their corresponding JSON files (see below).</li>
+<li><code v-pre>generate_interceptor</code> is an optional string that specifies the name of a global function called on text generation requests.</li>
 </ul>
 <p>Downloadable extensions are mounted into the <code v-pre>/scripts/extensions/third-party</code> folder, so relative imports should be used based on that. Be careful about where you create your extension during development if you plan on installing it from your GitHub which overwrites the content in the <code v-pre>third-party</code> folder.</p>
 <doc-anchor-target id="requires-vs-optional">
@@ -576,6 +577,57 @@ function handleIncomingMessage(data) {
 <li><code v-pre>CHAT_CHANGED</code></li>
 </ul>
 <p>The rest can be found <a href="https://github.com/SillyTavern/SillyTavern/blob/44343e8ec954c766d868826a7bed01a1f1e1ffbe/public/script.js#L436">here</a>.</p>
+<doc-anchor-target id="prompt-interceptors">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#prompt-interceptors">#</doc-anchor-trigger>
+        <span>Prompt Interceptors</span>
+    </h2>
+</doc-anchor-target>
+<p>Prompt Interceptors provide a way for extensions to perform any activity such as modifying the chat data, adding injections, or aborting the generation before a text generation request is made.</p>
+<p>Interceptors from different extensions are run sequentially. The order is determined by the <code v-pre>loading_order</code> field in their respective <code v-pre>manifest.json</code> files. Extensions with lower <code v-pre>loading_order</code> values run earlier. If <code v-pre>loading_order</code> is not specified, a <code v-pre>display_name</code> is used as a fallback. If neither is specified, the order is undefined.</p>
+<doc-anchor-target id="registering-an-interceptor">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#registering-an-interceptor">#</doc-anchor-trigger>
+        <span>Registering an Interceptor</span>
+    </h3>
+</doc-anchor-target>
+<p>To define a prompt interceptor, add a <code v-pre>generate_interceptor</code> field to your extension&#x27;s <code v-pre>manifest.json</code> file. The value should be the name of a global function that will be called by SillyTavern.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">{
+    &quot;display_name&quot;: &quot;My Interceptor Extension&quot;,
+    &quot;loading_order&quot;: 10, // Affects execution order
+    &quot;generate_interceptor&quot;: &quot;myCustomInterceptorFunction&quot;,
+    // ... other manifest properties
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="interceptor-function">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#interceptor-function">#</doc-anchor-trigger>
+        <span>Interceptor Function</span>
+    </h3>
+</doc-anchor-target>
+<p>The <code v-pre>generate_interceptor</code> function is a global function that will be called upon generation requests that are not dry runs. It must be defined in the global scope (e.g., <code v-pre>globalThis.myCustomInterceptorFunction = async function(...) { ... }</code>) and can return a Promise if it needs to perform any asynchronous operations.</p>
+<p>The interceptor function receives the following arguments:</p>
+<ul>
+<li><code v-pre>chat</code>: An array of message objects representing the chat history that will be used for prompt building. You can modify this array directly (e.g., add, remove, or alter messages). Please note that messages are mutable, so any changes you make to the array will be reflected in the actual chat history. If you want the changes to be ephemeral, use <code v-pre>structuredClone</code> to create a deep copy of the message object.</li>
+<li><code v-pre>contextSize</code>: A number indicating the current context size (in tokens) calculated for the upcoming generation.</li>
+<li><code v-pre>abort</code>: A function that, when called, will signal to prevent the text generation from proceeding. Accepts a boolean parameter which prevents any subsequent interceptors from running if <code v-pre>true</code>.</li>
+<li><code v-pre>type</code>: A string indicating the type or trigger of the generation (e.g.<code v-pre>'quiet'</code>, <code v-pre>'regenerate'</code>, <code v-pre>'impersonate'</code>, <code v-pre>'swipe'</code>, etc.). This helps the interceptor apply logic conditionally based on how the generation was initiated.</li>
+</ul>
+<p><strong>Example Implementation:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-javascript"><code v-pre class="language-javascript">globalThis.myCustomInterceptorFunction = async function(chat, contextSize, abort, type) {
+    // Example: Add a system note before the last user message
+    const systemNote = {
+        is_user: false,
+        name: &quot;System Note&quot;,
+        send_date: Date.now(),
+        mes: &quot;This was added by my extension!&quot;
+    };
+    // Insert before the last message
+    chat.splice(chat.length - 1, 0, systemNote);
+}</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="do-extras-request">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#do-extras-request">#</doc-anchor-trigger>

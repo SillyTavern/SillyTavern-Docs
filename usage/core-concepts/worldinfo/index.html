@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.801481001304">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.801516007960">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.8.1">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.8.1.801481001304" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.8.1.801516007960" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.8.1.801481001304" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.8.1.801516007960" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.8.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.8.1.801481001304" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.8.1.801481001304" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.8.1.801516007960" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.8.1.801516007960" defer></script>
 
     <style>
         a {
@@ -348,7 +348,16 @@ This means you can match specific input or output from a certain character using
         <span>Optional Filter</span>
     </h4>
 </doc-anchor-target>
-<p>A list of supplementary keywords that are used in conjunction with the main keywords. See <doc-anchor-trigger to="#optional-filter-1">Optional Filter</doc-anchor-trigger>. These keys also support <doc-anchor-trigger to="#regular-expression-regex-as-keys">regex</doc-anchor-trigger>.</p>
+<p>Comma-separated list of additional keywords in conjunction with the primary key.
+If no arguments are provided, this flag is ignored.
+Supports logic for AND ANY, NOT ANY, or NOT ALL</p>
+<ol>
+<li>AND ANY = Activates the entry only if the primary key and Any one of the optional filter keys are in scanned context.</li>
+<li>AND ALL = Activates the entry only if the primary key and ALL of the optional filter keys are present.</li>
+<li>NOT ANY = Activates the entry only if the primary key and None of the optional filter keys are in scanned context.</li>
+<li>NOT ALL = Prevents activation of the entry despite primary key trigger, if all of the optional filters are in scanned context.</li>
+</ol>
+<p>These keys also support <doc-anchor-trigger to="#regular-expression-regex-as-keys">regex</doc-anchor-trigger>.</p>
 <doc-anchor-target id="entry-content">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#entry-content">#</doc-anchor-trigger>
@@ -406,21 +415,6 @@ This means you can match specific input or output from a certain character using
 <li><span class="docs-emoji">&#x1F517;</span> (Chain Link) = The entry is allowed to be inserted by embedding similarity.</li>
 </ol>
 <p>Each Entry also has a toggle that allows you to enable or disable the entry.</p>
-<doc-anchor-target id="optional-filter-1">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#optional-filter-1">#</doc-anchor-trigger>
-        <span>Optional Filter</span>
-    </h4>
-</doc-anchor-target>
-<p>Comma-separated list of additional keywords in conjunction with the primary key.
-If no arguments are provided, this flag is ignored.
-Supports logic for AND ANY, NOT ANY, or NOT ALL</p>
-<ol>
-<li>AND ANY = Activates the entry only if the primary key and Any one of the optional filter keys are in scanned context.</li>
-<li>AND ALL = Activates the entry only if the primary key and ALL of the optional filter keys are present.</li>
-<li>NOT ANY = Activates the entry only if the primary key and None of the optional filter keys are in scanned context.</li>
-<li>NOT ALL = Prevents activation of the entry despite primary key trigger, if all of the optional filters are in scanned context.</li>
-</ol>
 <doc-anchor-target id="probability-trigger-">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#probability-trigger-">#</doc-anchor-trigger>
@@ -481,27 +475,20 @@ Supports logic for AND ANY, NOT ANY, or NOT ALL</p>
 <p>Allows to integrate World Info entries with <a href="../../st-script/">STscripts</a> from Quick Replies extension. If both the quick reply command and the WI entry have the same Automation ID, the command will be executed automatically when the entry with a matching ID is activated.</p>
 <p>Automations are executed in the order they are triggered, adhering to your designated sorting strategy, combining the <doc-anchor-trigger to="#character-lore-insertion-strategy">Character Lore Insertion Strategy</doc-anchor-trigger> with the &#x27;Priority&#x27; sorting. Which leads to <doc-anchor-trigger to="#strategy">Blue Circle</doc-anchor-trigger> entries processed first, followed by others in their specified &#x27;Order&#x27;. Recursively triggered entries will be processed after in the same order.</p>
 <p>The script command will run only once if multiple entries with the same Automation ID are activated.</p>
-<doc-anchor-target id="additonal-matching-sources">
+<doc-anchor-target id="additional-matching-sources">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#additonal-matching-sources">#</doc-anchor-trigger>
-        <span>Additonal matching sources</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#additional-matching-sources">#</doc-anchor-trigger>
+        <span>Additional matching sources</span>
     </h4>
 </doc-anchor-target>
-<p><em>Currently only available on staging.</em></p>
 <p>By default World Info Entries are matched only against content from the current conversation. These options allow you to match the entry against different character information that does not show up in the chat, or even persona information. This is useful when you want to have a wide range of entries that are to be used between several characters but don&#x27;t want to have to manage large lists of tags, or don&#x27;t want to have to update character filter lists every time you create a new one. This also allows you to match entries based on the persona you have active.</p>
 <ul>
-<li><p><strong>Character Description</strong>: Matches against the character description.</p>
-</li>
-<li><p><strong>Character Personality</strong>: Matches against the character personality summary, found under Advanced Definitions.</p>
-</li>
-<li><p><strong>Scenario</strong>: Matches against the character specified scenario, found under Advanced Definitions.</p>
-</li>
-<li><p><strong>Persona Description</strong>: Matches against the current selected persona&#x27;s description.</p>
-</li>
-<li><p><strong>Character&#x27;s Note</strong>: Matches against the character&#x27;s note, which can be found under Advanced Definitions.</p>
-</li>
-<li><p><strong>Creator&#x27;s Notes</strong>: Matches against the character creator&#x27;s notes, which can be found under Advanced Definitions. The creator&#x27;s notes are usually not included in the prompt.</p>
-</li>
+<li><strong>Character Description</strong>: Matches against the character description.</li>
+<li><strong>Character Personality</strong>: Matches against the character personality summary, found under Advanced Definitions.</li>
+<li><strong>Scenario</strong>: Matches against the character specified scenario, found under Advanced Definitions.</li>
+<li><strong>Persona Description</strong>: Matches against the current selected persona&#x27;s description.</li>
+<li><strong>Character&#x27;s Note</strong>: Matches against the character&#x27;s note, which can be found under Advanced Definitions.</li>
+<li><strong>Creator&#x27;s Notes</strong>: Matches against the character creator&#x27;s notes, which can be found under Advanced Definitions. The creator&#x27;s notes are usually not included in the prompt.</li>
 </ul>
 <doc-anchor-target id="vector-storage-matching">
     <h2>
@@ -672,9 +659,8 @@ You can define a threshold relative to your API&#x27;s max-context settings (Con
 <p>Recursive scanning allows for entries to activate other entries or be activated by others, enabling complex interactions and dependencies between different World Info entries. This feature can significantly enhance the dynamic nature of your creative scenarios.<br />
 Whether recursive scanning is enabled can be controlled with the global setting <strong>Recursive Scan</strong>.<br />
 There are three options available to control recursion for each entry:</p>
+<p>8 <strong>Non-recursable</strong>: When this checkbox is selected, the entry will not be activated by other entries. This is useful for static information that should not change or be influenced by other world info entries.</p>
 <ul>
-<li><p><strong>Non-recursable</strong>: When this checkbox is selected, the entry will not be activated by other entries. This is useful for static information that should not change or be influenced by other world info entries.</p>
-</li>
 <li><p><strong>Prevent further recursion</strong>: Selecting this option ensures that once this entry is activated, it will not trigger any other entries. This is helpful to avoid unintended chains of activations.</p>
 </li>
 <li><p><strong>Delay until recursion</strong>: This entry will only be activated during recursive checks, meaning it won&#x27;t be triggered in the initial pass but can be activated by other entries that have recursion enabled. Now, with the added <strong>Recursion Level</strong> for those delays, entries are grouped by levels. Initially, only the first level (smallest number) will match. Once no matches are found, the next level becomes eligible for matching, repeating the process until all levels are checked. This allows for more control over how and when deeper layers of information are revealed during recursion, especially in combination with criteria as NOT ANY or NOT ALL combination of key matches.</p>

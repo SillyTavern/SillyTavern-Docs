@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.801481001304">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.801516007960">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.8.1">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.8.1.801481001304" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.8.1.801516007960" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.8.1.801481001304" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.8.1.801516007960" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.8.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.8.1.801481001304" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.8.1.801481001304" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.8.1.801516007960" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.8.1.801516007960" defer></script>
 
     <style>
         a {
@@ -526,6 +526,10 @@
 <td>Cloud, free tier then paid, Gemini Flash/Pro</td>
 </tr>
 <tr>
+<td>Google Vertex AI (Express mode)</td>
+<td>Cloud, free tier, Gemini Flash/Pro</td>
+</tr>
+<tr>
 <td>Groq</td>
 <td>Cloud, llama-3.2-vision in 11B/90B, LLaVA</td>
 </tr>
@@ -590,6 +594,31 @@
 </doc-codeblock></div>
 <p>Some LLaVA finetunes you can try: <a href="https://huggingface.co/xtuner/llava-llama-3-8b-v1_1-gguf">xtuner/llava-llama-3-8b-v1_1-gguf</a>, <a href="https://huggingface.co/xtuner/llava-phi-3-mini-gguf">xtuner/llava-phi-3-mini-gguf</a>.</p>
 <p>You can use multimodal projections for the base model that your particular finetune was built from. Projections for some common base models are available from <a href="https://huggingface.co/koboldcpp/mmproj/tree/main">koboldcpp/mmproj</a>.</p>
+<doc-anchor-target id="secondary-endpoints">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#secondary-endpoints">#</doc-anchor-trigger>
+        <span>Secondary endpoints</span>
+    </h3>
+</doc-anchor-target>
+<p>By default, the Multimodal source uses the primary endpoint configured in the API Connections tab.
+You can also set up a secondary endpoint specifically for multimodal captioning.</p>
+<ul>
+<li>Open the <strong>Image Captioning</strong> panel in the <strong><i class="fa-solid fa-cubes"></i> Extensions</strong> panel.</li>
+<li>Select &quot;Multimodal&quot; as the captioning source and a preferred API provider.</li>
+<li>Enter a valid URL for the secondary endpoint in the &quot;Secondary captioning endpoint URL&quot; field.</li>
+<li>Check the &quot;Use secondary URL&quot; box to enable the secondary endpoint.</li>
+</ul>
+<blockquote>
+<p>Do not append <code v-pre>/v1</code> or <code v-pre>/chat/completions</code> to the end of the URL. The extension will handle that automatically.</p>
+</blockquote>
+<p>This is only supported by the following APIs:</p>
+<ul>
+<li>KoboldCpp</li>
+<li>llama.cpp</li>
+<li>Ollama</li>
+<li>Text Generation WebUI (oobabooga)</li>
+<li>vLLM</li>
+</ul>
 
                                 
                                 <!-- Required only on API pages -->
