@@ -40,12 +40,16 @@ Use the `/reasoning-set` STscript command to add reasoning to a message. The com
 
 ### By Backend
 
-If your chosen LLM backend and model support reasoning output, enable "Request Model Reasoning" in the **<i class="fa-solid fa-sliders"></i> AI Response Configuration** panel.
+If your chosen LLM backend and model support reasoning output, enabling "Request model reasoning" in the **<i class="fa-solid fa-sliders"></i> AI Response Configuration** panel will add a reasoning block containing the model's thinking process.
 
 Supported sources:
 
+- Claude
 - DeepSeek
+- Google AI Studio
 - OpenRouter
+
+"Request model reasoning" does not determine whether a model does reasoning. Claude and Google AI Studio allow thinking mode to be toggled; see [Reasoning Effort](#reasoning-effort).
 
 ### By Parsing
 
@@ -103,7 +107,7 @@ Reasoning Effort is a Chat Completion setting in the **<i class="fa-solid fa-sli
 | Medium  | 25% of max response, min 1024    | 25% of max response                | "medium"             | "medium", or 50% of max response       | "low"                |
 | High    | 50% of max response, min 1024    | 50% of max response                | "high"               | "high", or 80% of max response         | "high"               |
 | Maximum | 95% of max response, min 1024    | lower of max response or 24576     | "high"               | "high", or 80% of max response         | "high"               |
-| Models  | 3.7 Sonnet                       | 2.5 Flash                          | o4-mini, o3\*, o1\*  | applicable models                      | grok-3-mini          |
+| Models  | Sonnet 3.7/4, Opus 4             | 2.5 Flash                          | o4-mini, o3\*, o1\*  | applicable models                      | grok-3-mini          |
 
 For Claude, budget is capped to 21333 if streaming is disabled. If the calculated budget would be less than 1024, then max response is changed to 2048.
 
