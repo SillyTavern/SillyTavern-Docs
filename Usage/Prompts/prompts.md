@@ -1,6 +1,7 @@
 ---
 order: 140
 icon: typography
+templating: false
 ---
 
 # Prompts
