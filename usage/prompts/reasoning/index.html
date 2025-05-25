@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.801427493257">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.801481001304">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.8.1">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.8.1.801427493257" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.8.1.801481001304" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.8.1.801427493257" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.8.1.801481001304" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.8.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.8.1.801427493257" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.8.1.801481001304" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -299,12 +299,15 @@
         <span>By Backend</span>
     </h3>
 </doc-anchor-target>
-<p>If your chosen LLM backend and model support reasoning output, enable &quot;Request Model Reasoning&quot; in the <strong><i class="fa-solid fa-sliders"></i> AI Response Configuration</strong> panel.</p>
+<p>If your chosen LLM backend and model support reasoning output, enabling &quot;Request model reasoning&quot; in the <strong><i class="fa-solid fa-sliders"></i> AI Response Configuration</strong> panel will add a reasoning block containing the model&#x27;s thinking process.</p>
 <p>Supported sources:</p>
 <ul>
+<li>Claude</li>
 <li>DeepSeek</li>
+<li>Google AI Studio</li>
 <li>OpenRouter</li>
 </ul>
+<p>&quot;Request model reasoning&quot; does not determine whether a model does reasoning. Claude and Google AI Studio allow thinking mode to be toggled; see <doc-anchor-trigger to="#reasoning-effort">Reasoning Effort</doc-anchor-trigger>.</p>
 <doc-anchor-target id="by-parsing">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#by-parsing">#</doc-anchor-trigger>
@@ -440,7 +443,7 @@ Incomplete reasoning...</code></pre>
 </tr>
 <tr>
 <td>Models</td>
-<td>3.7 Sonnet</td>
+<td>Sonnet 3.7/4, Opus 4</td>
 <td>2.5 Flash</td>
 <td>o4-mini, o3*, o1*</td>
 <td>applicable models</td>
