@@ -136,7 +136,7 @@ Caption an image from message #10 with a custom prompt then [generate a new imag
 
 ## Local source
 
-You can change the model in [config.yaml](/Administration/config-yaml.md#extensions-configuration). The key is called `extras.captioningModel` because reasons. Enter the Hugging Face model ID you want to use. The default is `Xenova/vit-gpt2-image-captioning`. 
+You can change the model in [config.yaml](/Administration/config-yaml.md#extensions-configuration). The key is called `extensions.models.captioning` because reasons. Enter the Hugging Face model ID you want to use. The default is `Xenova/vit-gpt2-image-captioning`. 
 
 You can use any model that supports image captioning (`VisionEncoderDecoderModel` or "image-to-text" pipeline). The model needs be to compatible with the transformers.js library. That is, it needs ONNX weights. Look for models with the `ONNX` and `image-to-text` tags, or that have a folder called `onnx` full of `.onnx` files. 
 
