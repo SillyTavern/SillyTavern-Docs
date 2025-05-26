@@ -38,7 +38,7 @@ Since SillyTavern is only an interface, you will need access to an LLM backend t
 
 SillyTavern is built around the concept of "character cards". A character card is a collection of prompts that set the behavior of the LLM and is required to have persistent conversations in SillyTavern. They function similarly to ChatGPT's GPTs or Poe's bots. The content of a character card can be anything: an abstract scenario, an assistant tailored for a specific task, a famous personality or a fictional character.
 
-To have a quick conversation without selecting a character card or to just test the LLM connection, simply type your prompt input into the input bar on the Welcome Screen after opening SillyTavern. This will create an empty "Assistant" character card that you can customize later.
+To have a quick conversation without selecting a character card or to just test the LLM connection, simply type your prompt input into the input bar on the [Welcome Screen](/Usage/welcome-assistants.md) after opening SillyTavern. This will create an empty "Assistant" character card that you can customize later.
 
 To get a general idea on how to define character cards, see the default character (Seraphina) or download selected community-made cards from the "Download Extensions & Assets" menu.
 
