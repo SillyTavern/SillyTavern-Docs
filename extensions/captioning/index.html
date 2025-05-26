@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.801531955614">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.801559000165">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.8.1">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.8.1.801531955614" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.8.1.801559000165" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.8.1.801531955614" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.8.1.801559000165" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.8.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.8.1.801531955614" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.8.1.801531955614" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.8.1.801559000165" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.8.1.801559000165" defer></script>
 
     <style>
         a {
@@ -459,7 +459,7 @@
 </doc-anchor-target>
 <ul>
 <li><strong>Model</strong>: Choose the model for image captioning. Options vary based on the selected API.</li>
-<li><strong>Allow reverse proxy</strong>: Toggle to allow using a reverse proxy if defined and valid (OpenAI, Anthropic, Google, Mistral)</li>
+<li><strong>Allow reverse proxy</strong>: Toggle to allow using a reverse proxy if defined and valid (OpenAI, Anthropic, Google, Mistral, xAI)</li>
 </ul>
 <p>API keys and endpoint URLs for captioning sources are managed in the <a href="../../usage/api-connections/">API Connections</a> panel. Set the connection up in API Connections first, then select it as your captions source in Captioning.</p>
 <div class="flex mb-6">
@@ -480,8 +480,11 @@
         </div>
     </div>
 </div>
-<p>For most local backends, you will need to set some options in the model backend rather than in SillyTavern. If your backend can only run one model at a time and doesn&#x27;t support automatic switching, you are unfortunately going to have a hard time using the same backend for chat and captioning with different models.</p>
-<p>Even if you run two instances of the backend on different ports, API Connections only allows one active configuration per backend type. But what if I told you... that you can probably connect to your backend in both Text Completion and Chat Completion modes? Now you can have two connections to the same backend type.</p>
+<p>For most local backends, you will need to set some options in the model backend rather than in SillyTavern. If your backend can only run one model at a time and doesn&#x27;t support automatic switching, you have several options to use different models for chat and captioning:</p>
+<ol>
+<li><strong>Secondary endpoints:</strong> Use the secondary endpoint feature (see <doc-anchor-trigger to="#secondary-endpoints">Secondary endpoints</doc-anchor-trigger> section below) to connect to a different instance or model for captioning</li>
+<li><strong>Multiple connection types:</strong> Connect to your backend using both Text Completion and Chat Completion modes in API Connections - this gives you two separate connections to the same backend type</li>
+</ol>
 <doc-anchor-target id="sources">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#sources">#</doc-anchor-trigger>
@@ -558,6 +561,10 @@
 <td>Cloud, paid (maybe free options), many models, pick from what&#x27;s available within Captioning after configuring in API connections</td>
 </tr>
 <tr>
+<td>Pollinations</td>
+<td>Cloud, free</td>
+</tr>
+<tr>
 <td>Text Generation WebUI (oobabooga)</td>
 <td>Local, must configure model in ooba</td>
 </tr>
@@ -572,28 +579,6 @@
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="koboldcpp">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#koboldcpp">#</doc-anchor-trigger>
-        <span>KoboldCpp</span>
-    </h3>
-</doc-anchor-target>
-<p>For general information on installing and using <a href="https://github.com/LostRuins/koboldcpp">KoboldCpp</a>, see the <a href="https://github.com/LostRuins/koboldcpp/wiki">KoboldCpp documentation</a>.</p>
-<p>To use KoboldCpp for multimodal captioning:</p>
-<ul>
-<li>get a multimodal-capable model, trained to process text and image prompts at the same time.</li>
-<li>also get the multimodal projections for the model. These weights allow the model to understand how the text and image parts of the input relate to each other.</li>
-<li>load the model and projections in the KoboldCpp launch GUI or command line interface.</li>
-</ul>
-<p>The original and classic local multimodal model is LLaVA. GGUF-format files for the model and projections are available from <a href="https://huggingface.co/Mozilla/llava-v1.5-7b-llamafile">Mozilla/llava-v1.5-7b-llamafile</a>. To load them from the command line, set the model and projections with the <code v-pre>--model</code> and <code v-pre>--mmproj</code> flags. For example:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">./koboldcpp \
---model=&quot;models/llava-v1.5-7b-Q4_K.gguf&quot; \
---mmproj=&quot;models/ llava-v1.5-7b-mmproj-Q4_0.gguf&quot; \
-... other flags ...</code></pre>
-</doc-codeblock></div>
-<p>Some LLaVA finetunes you can try: <a href="https://huggingface.co/xtuner/llava-llama-3-8b-v1_1-gguf">xtuner/llava-llama-3-8b-v1_1-gguf</a>, <a href="https://huggingface.co/xtuner/llava-phi-3-mini-gguf">xtuner/llava-phi-3-mini-gguf</a>.</p>
-<p>You can use multimodal projections for the base model that your particular finetune was built from. Projections for some common base models are available from <a href="https://huggingface.co/koboldcpp/mmproj/tree/main">koboldcpp/mmproj</a>.</p>
 <doc-anchor-target id="secondary-endpoints">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#secondary-endpoints">#</doc-anchor-trigger>
@@ -619,6 +604,34 @@ You can also set up a secondary endpoint specifically for multimodal captioning.
 <li>Text Generation WebUI (oobabooga)</li>
 <li>vLLM</li>
 </ul>
+<doc-anchor-target id="source-specific-guides">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#source-specific-guides">#</doc-anchor-trigger>
+        <span>Source-specific guides</span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="koboldcpp">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#koboldcpp">#</doc-anchor-trigger>
+        <span>KoboldCpp</span>
+    </h4>
+</doc-anchor-target>
+<p>For general information on installing and using <a href="https://github.com/LostRuins/koboldcpp">KoboldCpp</a>, see the <a href="https://github.com/LostRuins/koboldcpp/wiki">KoboldCpp documentation</a>.</p>
+<p>To use KoboldCpp for multimodal captioning:</p>
+<ul>
+<li>get a multimodal-capable model, trained to process text and image prompts at the same time.</li>
+<li>also get the multimodal projections for the model. These weights allow the model to understand how the text and image parts of the input relate to each other.</li>
+<li>load the model and projections in the KoboldCpp launch GUI or command line interface.</li>
+</ul>
+<p>The original and classic local multimodal model is LLaVA. GGUF-format files for the model and projections are available from <a href="https://huggingface.co/Mozilla/llava-v1.5-7b-llamafile">Mozilla/llava-v1.5-7b-llamafile</a>. To load them from the command line, set the model and projections with the <code v-pre>--model</code> and <code v-pre>--mmproj</code> flags. For example:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">./koboldcpp \
+--model=&quot;models/llava-v1.5-7b-Q4_K.gguf&quot; \
+--mmproj=&quot;models/ llava-v1.5-7b-mmproj-Q4_0.gguf&quot; \
+... other flags ...</code></pre>
+</doc-codeblock></div>
+<p>Some LLaVA finetunes you can try: <a href="https://huggingface.co/xtuner/llava-llama-3-8b-v1_1-gguf">xtuner/llava-llama-3-8b-v1_1-gguf</a>, <a href="https://huggingface.co/xtuner/llava-phi-3-mini-gguf">xtuner/llava-phi-3-mini-gguf</a>.</p>
+<p>You can use multimodal projections for the base model that your particular finetune was built from. Projections for some common base models are available from <a href="https://huggingface.co/koboldcpp/mmproj/tree/main">koboldcpp/mmproj</a>.</p>
 
                                 
                                 <!-- Required only on API pages -->
