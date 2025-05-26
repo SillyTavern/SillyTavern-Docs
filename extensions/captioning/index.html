@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.801559457551">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.801559513869">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.8.1">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.8.1.801559457551" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.8.1.801559513869" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.8.1.801559457551" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.8.1.801559513869" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.8.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.8.1.801559457551" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.8.1.801559457551" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.8.1.801559513869" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.8.1.801559513869" defer></script>
 
     <style>
         a {
@@ -443,7 +443,7 @@
         <span>Local source</span>
     </h2>
 </doc-anchor-target>
-<p>You can change the model in <a href="../../administration/config-yaml/#extensions-configuration">config.yaml</a>. The key is called <code v-pre>extensions.models.captioning</code> because reasons. Enter the Hugging Face model ID you want to use. The default is <code v-pre>Xenova/vit-gpt2-image-captioning</code>.</p>
+<p>You can change the model in <a href="../../administration/config-yaml/#extensions-configuration">config.yaml</a>. The key is called <code v-pre>extensions.models.captioning</code>. Enter the Hugging Face model ID you want to use. The default is <code v-pre>Xenova/vit-gpt2-image-captioning</code>.</p>
 <p>You can use any model that supports image captioning (<code v-pre>VisionEncoderDecoderModel</code> or &quot;image-to-text&quot; pipeline). The model needs be to compatible with the transformers.js library. That is, it needs ONNX weights. Look for models with the <code v-pre>ONNX</code> and <code v-pre>image-to-text</code> tags, or that have a folder called <code v-pre>onnx</code> full of <code v-pre>.onnx</code> files.</p>
 <doc-anchor-target id="multimodal-source">
     <h2>
