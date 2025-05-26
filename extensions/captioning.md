@@ -157,7 +157,7 @@ You can still use Claude for chats and Google AI Studio for image captioning, or
 
 For most local backends, you will need to set some options in the model backend rather than in SillyTavern. If your backend can only run one model at a time and doesn't support automatic switching, you have several options to use different models for chat and captioning:
 
-1. **Secondary endpoints:** Use the secondary endpoint feature (see [Secondary endpoints](#secondary-endpoints) section below) to connect to a different instance or model for captioning
+1. **Secondary endpoints:** Use the secondary endpoint feature (see [Secondary endpoints](#secondary-endpoints) section below) to connect to a different API server for captioning
 2. **Multiple connection types:** Connect to your backend using both Text Completion and Chat Completion modes in API Connections - this gives you two separate connections to the same backend type
 
 ### Sources
