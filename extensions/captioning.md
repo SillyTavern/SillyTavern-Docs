@@ -145,7 +145,7 @@ You can use any model that supports image captioning (`VisionEncoderDecoderModel
 ### General configuration
 
 - **Model**: Choose the model for image captioning. Options vary based on the selected API.
-- **Allow reverse proxy**: Toggle to allow using a reverse proxy if defined and valid (OpenAI, Anthropic, Google, Mistral)
+- **Allow reverse proxy**: Toggle to allow using a reverse proxy if defined and valid (OpenAI, Anthropic, Google, Mistral, xAI)
 
 API keys and endpoint URLs for captioning sources are managed in the [API Connections](/Usage/API_Connections/index.md) panel. Set the connection up in API Connections first, then select it as your captions source in Captioning.
 
@@ -155,9 +155,10 @@ One last time: configure the API key/address/port in **<i class="fa-solid fa-plu
 You can still use Claude for chats and Google AI Studio for image captioning, or whatever. Just set them *both* up in the 'API Connections' tab first. Then flip your Chat Completion source to Claude and your Captioning source to Google AI Studio.
 !!!
 
-For most local backends, you will need to set some options in the model backend rather than in SillyTavern. If your backend can only run one model at a time and doesn't support automatic switching, you are unfortunately going to have a hard time using the same backend for chat and captioning with different models. 
+For most local backends, you will need to set some options in the model backend rather than in SillyTavern. If your backend can only run one model at a time and doesn't support automatic switching, you have several options to use different models for chat and captioning:
 
-Even if you run two instances of the backend on different ports, API Connections only allows one active configuration per backend type. But what if I told you... that you can probably connect to your backend in both Text Completion and Chat Completion modes? Now you can have two connections to the same backend type.
+1. **Secondary endpoints:** Use the secondary endpoint feature (see [Secondary endpoints](#secondary-endpoints) section below) to connect to a different instance or model for captioning
+2. **Multiple connection types:** Connect to your backend using both Text Completion and Chat Completion modes in API Connections - this gives you two separate connections to the same backend type
 
 ### Sources
 
@@ -184,11 +185,34 @@ To use one of these caption sources, select Multimodal in the Source dropdown.
 | Ollama                            | Local, can switch between available models and download [additional vision models](https://ollama.com/search?c=vision) within Captioning after configuring in API Connections |
 | OpenAI                            | Cloud, paid, GPT-4 Vision, 4-turbo, 4o, 4o-mini                                                                                                                               |
 | OpenRouter                        | Cloud, paid (maybe free options), many models, pick from what's available within Captioning after configuring in API connections                                              |
+| Pollinations                      | Cloud, free                                                                                                                                                                   |
 | Text Generation WebUI (oobabooga) | Local, must configure model in ooba                                                                                                                                           |
 | vLLM                              | Local                                                                                                                                                                         |
 | xAI (Grok)                        | Cloud, paid, grok-vision                                                                                                                                                      |
 
-### KoboldCpp
+### Secondary endpoints
+
+By default, the Multimodal source uses the primary endpoint configured in the API Connections tab.
+You can also set up a secondary endpoint specifically for multimodal captioning.
+
+- Open the **Image Captioning** panel in the **<i class="fa-solid fa-cubes"></i> Extensions** panel.
+- Select "Multimodal" as the captioning source and a preferred API provider.
+- Enter a valid URL for the secondary endpoint in the "Secondary captioning endpoint URL" field.
+- Check the "Use secondary URL" box to enable the secondary endpoint.
+
+> Do not append `/v1` or `/chat/completions` to the end of the URL. The extension will handle that automatically.
+
+This is only supported by the following APIs:
+
+- KoboldCpp
+- llama.cpp
+- Ollama
+- Text Generation WebUI (oobabooga)
+- vLLM
+
+### Source-specific guides
+
+#### KoboldCpp
 
 For general information on installing and using [KoboldCpp](https://github.com/LostRuins/koboldcpp), see the [KoboldCpp documentation](https://github.com/LostRuins/koboldcpp/wiki).
 
@@ -210,23 +234,3 @@ The original and classic local multimodal model is LLaVA. GGUF-format files for 
 Some LLaVA finetunes you can try: [xtuner/llava-llama-3-8b-v1_1-gguf](https://huggingface.co/xtuner/llava-llama-3-8b-v1_1-gguf), [xtuner/llava-phi-3-mini-gguf](https://huggingface.co/xtuner/llava-phi-3-mini-gguf).
 
 You can use multimodal projections for the base model that your particular finetune was built from. Projections for some common base models are available from [koboldcpp/mmproj](https://huggingface.co/koboldcpp/mmproj/tree/main).
-
-### Secondary endpoints
-
-By default, the Multimodal source uses the primary endpoint configured in the API Connections tab.
-You can also set up a secondary endpoint specifically for multimodal captioning.
-
-- Open the **Image Captioning** panel in the **<i class="fa-solid fa-cubes"></i> Extensions** panel.
-- Select "Multimodal" as the captioning source and a preferred API provider.
-- Enter a valid URL for the secondary endpoint in the "Secondary captioning endpoint URL" field.
-- Check the "Use secondary URL" box to enable the secondary endpoint.
-
-> Do not append `/v1` or `/chat/completions` to the end of the URL. The extension will handle that automatically.
-
-This is only supported by the following APIs:
-
-- KoboldCpp
-- llama.cpp
-- Ollama
-- Text Generation WebUI (oobabooga)
-- vLLM
