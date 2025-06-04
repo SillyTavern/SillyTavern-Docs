@@ -261,6 +261,87 @@ Helps to avoid double-substitutions when the variable values contain text that c
 
 See [Replace Variable Macros](/For_Contributors/st-script.md#replace-variable-macros) for more information.
 
+## Clean-Up Menu
+
+The Clean-Up menu provides a data maintenance tool that helps you identify and remove unnecessary files from your SillyTavern installation. This feature helps keep your data directory organized and can free up significant disk space.
+
+!!! warning "Important Warning"
+The Clean-up tool will permanently delete files. **This action cannot be undone!**
+
+Manual uploads to the `/data/user/files/` and `/data/user/images/` directories will be deleted if they are not associated with chat messages or Data Bank entries.
+
+If unsure, make a backup of your data before using the Clean-up menu.
+!!!
+
+### How to Use Clean-Up
+
+1. Click the **Clean-Up** button under the **Miscellaneous** section
+2. Click **Scan** to analyze your installation. This may take some time depending on the size of your data directory
+3. Review the categories of files found
+4. Use **View** to preview file contents before deletion
+5. Use **Download** to save files before deletion
+6. Delete individual files or entire categories as needed
+
+### Clean-Up Categories
+
+The Clean-Up tool scans for loose files into the following categories:
+
+#### Files
+
+* **What it finds**: Files that are not associated with chat messages or Data Bank entries
+* **Location**: `/data/<user-handle>/user/files/`
+* **Risk**: ⚠️ **WILL DELETE MANUAL UPLOADS** that aren't referenced in chats
+* **When to clean**: Safe to delete if you don't need unreferenced files
+
+#### Images
+
+* **What it finds**: Images that are not associated with chat messages
+* **Location**: `/data/<user-handle>/user/images/`
+* **Risk**: ⚠️ **WILL DELETE MANUAL UPLOADS** that aren't referenced in chats
+* **When to clean**: Safe to delete if you don't need unreferenced images
+
+#### Chats
+
+* **What it finds**: Chat files associated with deleted characters
+* **Location**: `data/<user-handle>/chats/`
+* **Risk**: ⚠️ **Orphaned chats will be permanently lost**
+* **When to clean**: Safe to delete if you've intentionally deleted characters and no longer need their chat histories
+
+#### Group Chats
+
+* **What it finds**: Chat files associated with deleted groups
+* **Location**: `data/<user-handle>/group chats/`
+* **Risk**: ⚠️ **Orphaned group chats will be permanently lost**
+* **When to clean**: Safe to delete if you've intentionally deleted groups and no longer need their chat histories
+
+#### Avatar Thumbnails
+
+* **What it finds**: Thumbnails for avatars of missing or deleted characters
+* **Location**: `data/<user-handle>/thumbnails/avatar`
+* **Risk**: ✅ **Safe to delete** - thumbnails are automatically regenerated when needed
+* **When to clean**: Always safe to clean, helps free up space
+
+#### Background Thumbnails
+
+* **What it finds**: Thumbnails for missing or deleted backgrounds
+* **Location**: `data/<user-handle>/thumbnails/bg`
+* **Risk**: ✅ **Safe to delete** - thumbnails are automatically regenerated when needed
+* **When to clean**: Always safe to clean, helps free up space
+
+#### Chat Backups
+
+* **What it finds**: Automatically generated chat backups
+* **Location**: `data/<user-handle>/backups/chat_*`
+* **Risk**: ⚠️ **Backup files will be permanently lost**
+* **When to clean**: Consider keeping recent backups, but older ones can be safely deleted
+
+#### Settings Backups
+
+* **What it finds**: Automatically generated settings backups
+* **Location**: `data/<user-handle>/backups/settings_*`
+* **Risk**: ⚠️ **Settings backup files will be permanently lost**
+* **When to clean**: Consider keeping recent backups, but older ones can be safely deleted
+
 ## Debug menu
 
 !!! warning These functions are intended for advanced users only.
