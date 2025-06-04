@@ -6,10 +6,10 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.801559513869">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.802380931256">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.8.1">
+    <meta name="generator" content="Retype 3.9.0">
 
     <!-- Primary Meta Tags -->
     <title>Chat Translation | docs.ST.app</title>
@@ -33,14 +33,14 @@
     <meta property="twitter:description" content="The Chat Translation Extension enables real-time translation of chat messages between different languages using various translation providers.">
     <meta property="twitter:image" content="https://docs.sillytavern.app/static/extensions/translation/sensei.png">
 
-    <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+    <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.8.1.801559513869" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.9.0.802380931256" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.8.1.801559513869" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.8.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.8.1.801559513869" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.8.1.801559513869" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.9.0.802380931256" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.9.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.9.0.802380931256" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.9.0.802380931256" defer></script>
 
     <style>
         a {
@@ -245,15 +245,15 @@
 different languages using various translation providers. It supports both manual and
 automatic translation modes.</p>
 <p><figure class="content-center">
-    <img src="../../static/extensions/translation/sensei.png" alt="Character message translated from English to Chinese using 'Translate Message/翻譯訊息' message action button">
-    <figcaption class="caption">Character message translated from English to Chinese using &#x27;Translate Message/翻譯訊息&#x27; message action button</figcaption>
+    <img src="../../static/extensions/translation/sensei.png" alt="Character message translated from English to Chinese using 'Translate Message/翻譯訊息' message action button" />
+    <figcaption class="caption">Character message translated from English to Chinese using 'Translate Message/翻譯訊息' message action button</figcaption>
 </figure>
 </p>
 <doc-tabs>
 <doc-tab v-cloak id="english">
 <template #title>English</template>
 <p><figure class="content-center">
-    <img src="../../static/extensions/translation/wand-menu-en.png" alt="&quot;Translate Chat&quot;, &quot;Translate Input&quot;">
+    <img src="../../static/extensions/translation/wand-menu-en.png" alt="&quot;Translate Chat&quot;, &quot;Translate Input&quot;" />
     <figcaption class="caption">&quot;Translate Chat&quot;, &quot;Translate Input&quot;</figcaption>
 </figure>
 </p>
@@ -261,7 +261,7 @@ automatic translation modes.</p>
 <doc-tab v-cloak id="简体中文">
 <template #title>简体中文</template>
 <p><figure class="content-center">
-    <img src="../../static/extensions/translation/wand-menu-zh-cn.png" alt="&quot;翻译聊天&quot;, &quot;翻译输入&quot;">
+    <img src="../../static/extensions/translation/wand-menu-zh-cn.png" alt="&quot;翻译聊天&quot;, &quot;翻译输入&quot;" />
     <figcaption class="caption">&quot;翻译聊天&quot;, &quot;翻译输入&quot;</figcaption>
 </figure>
 </p>
@@ -269,7 +269,7 @@ automatic translation modes.</p>
 <doc-tab v-cloak id="繁體中文">
 <template #title>繁體中文</template>
 <p><figure class="content-center">
-    <img src="../../static/extensions/translation/wand-menu-zh-tw.png" alt="&quot;翻譯聊天內容&quot;, &quot;翻譯輸入內容&quot;">
+    <img src="../../static/extensions/translation/wand-menu-zh-tw.png" alt="&quot;翻譯聊天內容&quot;, &quot;翻譯輸入內容&quot;" />
     <figcaption class="caption">&quot;翻譯聊天內容&quot;, &quot;翻譯輸入內容&quot;</figcaption>
 </figure>
 </p>
@@ -277,7 +277,7 @@ automatic translation modes.</p>
 <doc-tab v-cloak id="한국어">
 <template #title>한국어</template>
 <p><figure class="content-center">
-    <img src="../../static/extensions/translation/wand-menu-ko.png" alt="&quot;채팅 번역하기&quot;, &quot;입력 번역하기&quot;">
+    <img src="../../static/extensions/translation/wand-menu-ko.png" alt="&quot;채팅 번역하기&quot;, &quot;입력 번역하기&quot;" />
     <figcaption class="caption">&quot;채팅 번역하기&quot;, &quot;입력 번역하기&quot;</figcaption>
 </figure>
 </p>
@@ -285,7 +285,7 @@ automatic translation modes.</p>
 <doc-tab v-cloak id="русский">
 <template #title>Русский</template>
 <p><figure class="content-center">
-    <img src="../../static/extensions/translation/wand-menu-ru.png" alt="&quot;Перевести чат&quot;, &quot;Перевести моё сообщение&quot;">
+    <img src="../../static/extensions/translation/wand-menu-ru.png" alt="&quot;Перевести чат&quot;, &quot;Перевести моё сообщение&quot;" />
     <figcaption class="caption">&quot;Перевести чат&quot;, &quot;Перевести моё сообщение&quot;</figcaption>
 </figure>
 </p>
@@ -482,8 +482,8 @@ not provided, the value from the extension settings will be used.</p>
 <pre class="language-none"><code v-pre class="language-none">/translate Welcome to the Tavern | /echo </code></pre>
 </doc-codeblock></div>
 <p><figure class="content-center">
-    <img src="../../static/extensions/translation/welcome-tavern.png" alt="Popup in Chinese (Simplified), '欢迎来到酒馆/Welcome to the Tavern'">
-    <figcaption class="caption">Popup in Chinese (Simplified), &#x27;欢迎来到酒馆/Welcome to the Tavern&#x27;</figcaption>
+    <img src="../../static/extensions/translation/welcome-tavern.png" alt="Popup in Chinese (Simplified), '欢迎来到酒馆/Welcome to the Tavern'" />
+    <figcaption class="caption">Popup in Chinese (Simplified), '欢迎来到酒馆/Welcome to the Tavern'</figcaption>
 </figure>
 </p>
 <p>Translate text to Spanish and add it to the chat:</p>
@@ -491,8 +491,8 @@ not provided, the value from the extension settings will be used.</p>
 <pre class="language-none"><code v-pre class="language-none">/translate target=es Hello world | /send</code></pre>
 </doc-codeblock></div>
 <p><figure class="content-center">
-    <img src="../../static/extensions/translation/hola-mundo.png" alt="User message in Spanish, 'Hola Mundo/Hello world'">
-    <figcaption class="caption">User message in Spanish, &#x27;Hola Mundo/Hello world&#x27;</figcaption>
+    <img src="../../static/extensions/translation/hola-mundo.png" alt="User message in Spanish, 'Hola Mundo/Hello world'" />
+    <figcaption class="caption">User message in Spanish, 'Hola Mundo/Hello world'</figcaption>
 </figure>
 </p>
 <doc-anchor-target id="testing-pipeline-translation-localization">
@@ -519,12 +519,12 @@ to gather user input:</p>
 <p>This is useful for checking the quality of a translation into a language that you don&#x27;t speak, before writing it
 somewhere important.</p>
 <p><figure class="content-center">
-    <img src="../../static/extensions/translation/welcome-tavern-en-cn.png" alt="Popup, 'Welcome to the Tavern/欢迎来到酒馆/welcome to the pub', en, zh-CN, en">
-    <figcaption class="caption">Popup, &#x27;Welcome to the Tavern/欢迎来到酒馆/welcome to the pub&#x27;, en, zh-CN, en</figcaption>
+    <img src="../../static/extensions/translation/welcome-tavern-en-cn.png" alt="Popup, 'Welcome to the Tavern/欢迎来到酒馆/welcome to the pub', en, zh-CN, en" />
+    <figcaption class="caption">Popup, 'Welcome to the Tavern/欢迎来到酒馆/welcome to the pub', en, zh-CN, en</figcaption>
 </figure>
 <figure class="content-center">
-    <img src="../../static/extensions/translation/eels-out-zh-tw.png" alt="Popup, 'My hovercraft is full of eels/我的氣墊船裡裝滿了鰻魚/My hovercraft is filled with eels', en, zh-TW, en">
-    <figcaption class="caption">Popup, &#x27;My hovercraft is full of eels/我的氣墊船裡裝滿了鰻魚/My hovercraft is filled with eels&#x27;, en, zh-TW, en</figcaption>
+    <img src="../../static/extensions/translation/eels-out-zh-tw.png" alt="Popup, 'My hovercraft is full of eels/我的氣墊船裡裝滿了鰻魚/My hovercraft is filled with eels', en, zh-TW, en" />
+    <figcaption class="caption">Popup, 'My hovercraft is full of eels/我的氣墊船裡裝滿了鰻魚/My hovercraft is filled with eels', en, zh-TW, en</figcaption>
 </figure>
 </p>
 <p>The UI controls are shown in the current locale, independent of the configured target language.</p>
@@ -545,22 +545,22 @@ somewhere important.</p>
 </table>
 </div>
 <p><figure class="content-center">
-    <img src="../../static/extensions/translation/eels-out-tw-en.png" alt="Popup, '我的氣墊船裡裝滿了鰻魚/My hovercraft is full of eels', zh-TW -&gt; en -&gt; zh-TW">
-    <figcaption class="caption">Popup, &#x27;我的氣墊船裡裝滿了鰻魚/My hovercraft is full of eels&#x27;, zh-TW -&gt; en -&gt; zh-TW</figcaption>
+    <img src="../../static/extensions/translation/eels-out-tw-en.png" alt="Popup, '我的氣墊船裡裝滿了鰻魚/My hovercraft is full of eels', zh-TW -&gt; en -&gt; zh-TW" />
+    <figcaption class="caption">Popup, '我的氣墊船裡裝滿了鰻魚/My hovercraft is full of eels', zh-TW -&gt; en -&gt; zh-TW</figcaption>
 </figure>
 </p>
 <p>Input language detection is relatively effective in the following examples:</p>
 <p><figure class="content-center">
-    <img src="../../static/extensions/translation/eels-out-tw-hu.png" alt="Popup, '(My hovercraft is full of eels)/A légpárnás hajóm tele van angolnával/我的氣墊船裡裝滿了鰻魚', zh-TW -&gt; hu -&gt; zh-TW">
-    <figcaption class="caption">Popup, &#x27;(My hovercraft is full of eels)/A légpárnás hajóm tele van angolnával/我的氣墊船裡裝滿了鰻魚&#x27;, zh-TW -&gt; hu -&gt; zh-TW</figcaption>
+    <img src="../../static/extensions/translation/eels-out-tw-hu.png" alt="Popup, '(My hovercraft is full of eels)/A légpárnás hajóm tele van angolnával/我的氣墊船裡裝滿了鰻魚', zh-TW -&gt; hu -&gt; zh-TW" />
+    <figcaption class="caption">Popup, '(My hovercraft is full of eels)/A légpárnás hajóm tele van angolnával/我的氣墊船裡裝滿了鰻魚', zh-TW -&gt; hu -&gt; zh-TW</figcaption>
 </figure>
 <figure class="content-center">
-    <img src="../../static/extensions/translation/eels-out-tw-es-en.png" alt="Popup, '我的氣墊船裡裝滿了鰻魚/Mi aerodeslizador está lleno de anguilas/My hovercraft is full of eels', zh-TW -&gt; es -&gt; en">
-    <figcaption class="caption">Popup, &#x27;我的氣墊船裡裝滿了鰻魚/Mi aerodeslizador está lleno de anguilas/My hovercraft is full of eels&#x27;, zh-TW -&gt; es -&gt; en</figcaption>
+    <img src="../../static/extensions/translation/eels-out-tw-es-en.png" alt="Popup, '我的氣墊船裡裝滿了鰻魚/Mi aerodeslizador está lleno de anguilas/My hovercraft is full of eels', zh-TW -&gt; es -&gt; en" />
+    <figcaption class="caption">Popup, '我的氣墊船裡裝滿了鰻魚/Mi aerodeslizador está lleno de anguilas/My hovercraft is full of eels', zh-TW -&gt; es -&gt; en</figcaption>
 </figure>
 <figure class="content-center">
-    <img src="../../static/extensions/translation/eels-out-it-zhcn-en.png" alt="Popup, 'Il mio hovercraft è pieno di anguille/我的气垫船里装满了鳗鱼/My hovercraft is filled with eels', it -&gt; zh-CN -&gt; en">
-    <figcaption class="caption">Popup, &#x27;Il mio hovercraft è pieno di anguille/我的气垫船里装满了鳗鱼/My hovercraft is filled with eels&#x27;, it -&gt; zh-CN -&gt; en</figcaption>
+    <img src="../../static/extensions/translation/eels-out-it-zhcn-en.png" alt="Popup, 'Il mio hovercraft è pieno di anguille/我的气垫船里装满了鳗鱼/My hovercraft is filled with eels', it -&gt; zh-CN -&gt; en" />
+    <figcaption class="caption">Popup, 'Il mio hovercraft è pieno di anguille/我的气垫船里装满了鳗鱼/My hovercraft is filled with eels', it -&gt; zh-CN -&gt; en</figcaption>
 </figure>
 </p>
 <doc-anchor-target id="technical-notes">
@@ -628,7 +628,7 @@ are mapped to the following language codes for translation providers:</p>
                                     </a>
                                 </div>
                             
-                                <nav class="flex mt-14">
+                                <nav class="print:hidden flex mt-14">
                                     <div class="w-1/2">
                                         <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../extensions/expression-images/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
@@ -652,13 +652,13 @@ are mapped to the following language codes for translation providers:</p>
                             </footer>
                         </main>
                 
-                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
-                            <footer class="flex flex-wrap items-center justify-between">
-                                <div>
+                        <div class="print:border-none border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between print:justify-center">
+                                <div class="print:hidden">
                                     <ul class="flex flex-wrap items-center text-sm">
                                     </ul>
                                 </div>
-                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2025. All rights reserved.</p></div>
+                                <div class="print:justify-center docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2025. All rights reserved.</p></div>
                             </footer>
                         </div>
                     </div>

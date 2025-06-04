@@ -6,10 +6,10 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.8.1.801559513869">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.802380931256">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.8.1">
+    <meta name="generator" content="Retype 3.9.0">
 
     <!-- Primary Meta Tags -->
     <title>CFG | docs.ST.app</title>
@@ -33,13 +33,13 @@
     <meta property="twitter:description" content="Page written by: kingbri">
     <meta property="twitter:image" content="https://docs.sillytavern.app/static/cfg-hamburger.png">
 
-    <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+    <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.8.1.801559513869" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.9.0.802380931256" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.8.1.801559513869" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.8.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.8.1.801559513869" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.9.0.802380931256" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.9.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.9.0.802380931256" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -261,13 +261,13 @@ NovelAI had its own <a href="https://web.archive.org/web/20240917150051/https://
 </doc-anchor-target>
 <p>Accessing CFG settings are the same as accessing Author&#x27;s note:</p>
 <p><figure class="content-center">
-    <img src="../../../static/cfg-hamburger.png" alt="CFGhamburgermenupng">
+    <img src="../../../static/cfg-hamburger.png" alt="CFGhamburgermenupng" />
     <figcaption class="caption">CFGhamburgermenupng</figcaption>
 </figure>
 </p>
 <p>And here&#x27;s what the CFG panel looks like:</p>
 <p><figure class="content-center">
-    <img src="../../../static/cfg-panel.png" alt="CFGchatpanelpng">
+    <img src="../../../static/cfg-panel.png" alt="CFGchatpanelpng" />
     <figcaption class="caption">CFGchatpanelpng</figcaption>
 </figure>
 </p>
@@ -303,7 +303,7 @@ NovelAI had its own <a href="https://web.archive.org/web/20240917150051/https://
 </doc-anchor-target>
 <p>In group chats, the CFG scale panel looks like this:</p>
 <p><figure class="content-center">
-    <img src="../../../static/cfg-groups.png" alt="CFGpanelgcpng">
+    <img src="../../../static/cfg-groups.png" alt="CFGpanelgcpng" />
     <figcaption class="caption">CFGpanelgcpng</figcaption>
 </figure>
 </p>
@@ -326,7 +326,7 @@ NovelAI had its own <a href="https://web.archive.org/web/20240917150051/https://
 <p>Yes and no. CFG with LLMs works in a different way than what one might be used to in Stable Diffusion. LLM-based CFG works on the principle of &quot;prompt mixing&quot;. The CFG formula takes a positive and negative prompt, then mixes the <em>differences</em> between them. From there, a combined prompt is sent and a response is generated!</p>
 <p>Here&#x27;s an illustration to help visualize this concept. The red represents the negative prompt, the blue represents the neutral prompt, and the purple represents the mixed result that&#x27;s interpreted. All the white space is the same across all 3 prompts, so those are not used for CFG mixing.</p>
 <p><figure class="content-center">
-    <img src="../../../static/cfg-diagram.png" alt="stcfgdiagrampng">
+    <img src="../../../static/cfg-diagram.png" alt="stcfgdiagrampng" />
     <figcaption class="caption">stcfgdiagrampng</figcaption>
 </figure>
 </p>
@@ -407,7 +407,7 @@ NovelAI had its own <a href="https://web.archive.org/web/20240917150051/https://
                                     </a>
                                 </div>
                             
-                                <nav class="flex mt-14">
+                                <nav class="print:hidden flex mt-14">
                                     <div class="w-1/2">
                                         <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/prompts/tokenizer/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
@@ -431,13 +431,13 @@ NovelAI had its own <a href="https://web.archive.org/web/20240917150051/https://
                             </footer>
                         </main>
                 
-                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
-                            <footer class="flex flex-wrap items-center justify-between">
-                                <div>
+                        <div class="print:border-none border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between print:justify-center">
+                                <div class="print:hidden">
                                     <ul class="flex flex-wrap items-center text-sm">
                                     </ul>
                                 </div>
-                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2025. All rights reserved.</p></div>
+                                <div class="print:justify-center docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2025. All rights reserved.</p></div>
                             </footer>
                         </div>
                     </div>
