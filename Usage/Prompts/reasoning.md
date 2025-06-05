@@ -112,5 +112,5 @@ Reasoning Effort is a Chat Completion setting in the **<i class="fa-solid fa-sli
 | Maximum | 95% of max response, min 1024    | lower of max response or 32768  | lower of max response or 24576    | "high"               | "high", or 80% of max response   | "high"               |
 
 - For Claude, budget is capped to 21333 if streaming is disabled. If the calculated budget would be less than 1024, then max response is changed to 2048.
-- For Google AI Studio and Vertex AI, budget is capped to 24576 tokens, regardless of the streaming setting.
+- For Gemini 2.5 Pro and 2.5 Flash, budget is capped to 32768 or 24576 tokens respectively, regardless of the streaming setting.
 - For OpenRouter, only an OpenAI-style keyword is sent.
