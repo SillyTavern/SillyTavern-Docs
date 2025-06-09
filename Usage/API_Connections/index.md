@@ -103,6 +103,13 @@ Most Text Completion models have a recommended "Instruct Template" (usually ment
 - Requires a specific prompting style and utilization of [prefills](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/prefill-claudes-response) for reply steering
 - [Website](https://console.anthropic.com/)
 
+### Google AI Studio and Vertex AI
+
+- Has free tier with rate limits (Gemini Flash), may require billing information
+- [AI Studio](https://aistudio.google.com/) usually has the latest models and features
+- [Vertex AI](https://console.cloud.google.com/vertex-ai/studio) is trickier to set up, but more stable
+- [Setup Instructions](/Usage/API_Connections/google.md)
+
 ### Mistral (by Mistral AI)
 
 - Efficient models from various sizes and use cases. You can create an account and API key on [their platform](https://console.mistral.ai/api-keys/).
