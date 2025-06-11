@@ -80,7 +80,7 @@ Click "Test Message" to verify connectivity by sending a simple prompt to the mo
 ## Prompt Post-Processing
 
 !!!warning
-**Note:** Tool Calling is not supported when any Post-Processing option except "None" is selected.
+**Note:** Tool Calling is not supported when Post-Processing option with "no tools" is used!
 !!!
 
 Some endpoints may impose specific restrictions on the format of incoming prompts, such as requiring only one system message or strictly alternating roles.
@@ -92,6 +92,8 @@ SillyTavern provides built-in prompt converters to help meet these requirements 
 3. Semi-strict - merge roles and allow only one optional system message
 4. Strict - merge roles, allow only one optional system message, and require a user message to be first
 5. Single user message - merge all messages from all roles into a single user message
+
+Merge, semi-strict, and strict additionally remove any tool calls from the prompt, unless the "with tools" variant is selected. This is useful for APIs that do not support tool calling and your existing prompts contain tool calls.
 
 Less restrictive options have no effect on more restrictive endpoints implemented in SillyTavern other than "Custom OpenAI-compatible"; Custom may error upon invalid request.
 
