@@ -123,14 +123,17 @@ See more on using environment variables in the [Node.js documentation](https://n
 | `requestProxy.url` | Proxy server URL | `null` | Valid proxy URL (e.g., `"socks5://username:password@example.com:1080"`) |
 | `requestProxy.bypass` | Hosts to bypass proxy | `["localhost", "127.0.0.1"]` | Array of hostnames/IPs |
 
-## AutoRun Configuration
+## Browser Launch Configuration
+
+> Previously known as "Autorun" settings.
 
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|-----------------|
-| `autorun` | Open browser automatically on startup | `true` | `true`, `false` |
-| `autorunHostname` | Hostname used when autorun opens the browser | `"auto"` | `"auto"`, any valid hostname (e.g., `"localhost"`, `"st.example.com"`) |
-| `autorunPortOverride` | Override port for browser autorun | `-1` | `-1` (use server port), any valid port number |
-| `avoidLocalhost` | Avoid using 'localhost' for autorun | `false` | `true`, `false` |
+| `browserLaunch.enabled` | Open the browser automatically on server startup | `true` | `true`, `false` |
+| `browserLaunch.browser` | Browser to use for opening the URL | `"default"` | `"default"`, `"chrome"`, `"firefox"`, `"edge"` |
+| `browserLaunch.hostname` | Override the hostname for browser launch | `"auto"` | `"auto"`, any valid hostname (e.g., `"localhost"`, `"st.example.com"`) |
+| `browserLaunch.port` | Override the port for browser launch | `-1` | `-1` (use server port), any valid port number |
+| `browserLaunch.avoidLocalhost` | Avoid using 'localhost' in a launch URL | `false` | `true`, `false` |
 
 ## Performance Configuration
 
