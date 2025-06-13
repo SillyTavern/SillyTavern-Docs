@@ -30,6 +30,7 @@ Most common Stable Diffusion generation settings are customizable within the Sil
 
 | Source                                                                                            | Remarks                                                                                         |
 |:--------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------|
+| [AI.ML API](https://aimlapi.com/)                                                                 | Cloud, paid                                                                                     |
 | [Black Forest Labs](https://bfl.ai/)                                                              | Cloud, paid                                                                                     |
 | [ComfyUI](https://github.com/comfyanonymous/ComfyUI)                                              | Local, open source (GPL3), free of charge, see [ComfyUI Configuration](#comfyui-configuration). |
 | [Draw Things](https://drawthings.ai/)                                                             | Local, Mac/iOS, free of charge                                                                  |

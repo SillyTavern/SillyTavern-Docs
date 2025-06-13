@@ -38,34 +38,28 @@ Most Text Completion models have a recommended "Instruct Template" (usually ment
 - Requires separate download of LLM models from [HuggingFace](https://huggingface.co/models?other=LLM) which can be 5-50GB each.
 - Most models are not as powerful as cloud LLM APIs.
 
-### KoboldAI
-
-- Runs on your PC, 100% private, wide range of models available
-- Gives the most direct control of the AI's generation settings
-- Requires large amounts of VRAM in your GPU (6-24GB, depending on the LLM model)
-- Models limited to 2k context
-- No streaming
-- Popular KoboldAI versions:
-  - [Henky's United](https://github.com/henk717/KoboldAI)
-  - [0cc4m's 4bit-supporting United](https://github.com/0cc4m/KoboldAI)
-
-### AI/ML API
-
-* Unified API for 300+ models including Claude, GPT-4o, Gemini, LLaMA 3, Mistral and others
-* High uptime, fast response times, generous rate limits even on flagship models
-* No need to create accounts for each provider — one token unlocks them all
-* Supports chat completion, text completion, image generation, and captioning
-* Compatible with tools/function calling and JSON mode
-* Official SillyTavern support: chat, image, and completion modes
-* [Website](https://aimlapi.com/app/?utm_source=sillytavern&utm_medium=github&utm_campaign=integration) · [Docs](https://docs.aimlapi.com/?utm_source=sillytavern&utm_medium=github&utm_campaign=integration) · [Models](https://aimlapi.com/models?utm_source=sillytavern&utm_medium=github&utm_campaign=integration)
-
 ### KoboldCpp
 
 - Easy-to-use API with CPU offloading (helpful for low VRAM users) and streaming
-- Runs from a single .exe file on Windows (must be compiled from source on MacOS and Linux)
-- Supports GGUF/GGML models
+- Runs from a single binary file on Windows, Mac, and Linux
+- Supports GGUF models
 - Slower than GPU-only loaders such as AutoGPTQ and Exllama/v2
 - [GitHub](https://github.com/LostRuins/koboldcpp)
+
+### llama.cpp
+
+- The original source from which KoboldCpp and Ollama were forked
+- Provides pre-compiled binaries and an option to compile from source
+- Supports GGUF models
+- Lightweight CLI interface for llama-server
+- [GitHub](https://github.com/ggml-org/llama.cpp)
+
+### Ollama
+
+- Easiest to set up and use from all llama.cpp-based APIs
+- A nifty [catalog](https://ollama.com/library) of models available for one-click download
+- Supports GGUF models wrapped in Ollama's own format
+- [GitHub](https://github.com/ollama/ollama), [Website](https://ollama.com/)
 
 ### Oobabooga TextGeneration WebUI
 
@@ -91,11 +85,29 @@ Most Text Completion models have a recommended "Instruct Template" (usually ment
 - Not recommended for users with low VRAM (no CPU offloading)
 - [GitHub](https://github.com/theroyallab/tabbyAPI)
 
+### KoboldAI Classic (deprecated, abandoned)
+
+- Runs on your PC, 100% private, wide range of models available
+- Gives the most direct control of the AI's generation settings
+- Requires large amounts of VRAM in your GPU (6-24GB, depending on the LLM model)
+- Models limited to 2k context
+- No streaming
+- Popular KoboldAI versions:
+  - [Henky's United](https://github.com/henk717/KoboldAI)
+  - [0cc4m's 4bit-supporting United](https://github.com/0cc4m/KoboldAI)
+
 ## Cloud LLM APIs
 
 - These LLM APIs are run as cloud services and require no resources on your PC
 - They are stronger/smarter than most local LLMs
 - However they all have content filtering of varying degrees, and most require payment
+
+### AI Horde
+
+- SillyTavern can access this API out of the box with no additional settings required
+- Uses the GPU of individual volunteers (Horde Workers) to process responses for your chat inputs
+- At the mercy of the Worker in terms of generation wait times, AI settings, and available models
+- [Website](https://aihorde.net/), [Setup Instructions](./horde.md)
 
 ### OpenAI (ChatGPT)
 
@@ -127,26 +139,12 @@ Most Text Completion models have a recommended "Instruct Template" (usually ment
 - Free Tier with rate limits.
 - Reasonable moderation, with Mistrals main principles being to be neutral and empower users, more information [here](https://mistral.ai/terms/). 
 
-### OpenRouter
+### OpenRouter and WindowAI
 
-- WindowAI browser extension allows you to connect to the abovementioned cloud LLMs with your own API key
+- WindowAI browser extension allows you to connect to the aforementioned cloud LLMs with your own API key
 - Use OpenRouter to pay to use their API keys instead
 - Useful if you don't want to create individual accounts on each service
 - [WindowAI website](https://windowai.io) and [OpenRouter website](https://openrouter.ai)
-
-### DreamGen
-
-- Uncensored models tuned for steerable creative writing
-- Free monthly credits, as well as paid subscription
-- Models ranging from 7B to 70B
-- [Setup Instructions](DreamGen.md)
-
-### AI Horde
-
-- SillyTavern can access this API out of the box with no additional settings required
-- Uses the GPU of individual volunteers (Horde Workers) to process responses for your chat inputs
-- At the mercy of the Worker in terms of generation wait times, AI settings, and available models
-- [Website](https://aihorde.net/)
 
 ### Mancer AI
 
@@ -156,8 +154,27 @@ Most Text Completion models have a recommended "Instruct Template" (usually ment
 - Uses an API similar to `Oobabooga TextGeneration WebUI`, see [Mancer docs](https://mancer.tech/docs/clients/#sampling-parameters) for details.
 - [Website](https://mancer.tech/), [Setup Instructions](/Usage/API_Connections/mancer.md)
 
+### DreamGen
+
+- Uncensored models tuned for steerable creative writing
+- Free monthly credits, as well as paid subscription
+- Models ranging from 7B to 70B
+- [Setup Instructions](DreamGen.md)
+
+### Pollinations
+
+- Requires no setup, can be used out of the box
+- Provides access to a wide range of models free of charge
+- Outputs may occasional include ads with links to third-party
+
 ### NovelAI
 
-- No content filter
+- No content filter, the latest model is based on Llama 3
 - Paid subscription required
 - [Website](https://novelai.net/), [Setup Instructions](/Usage/API_Connections/novelai.md)
+
+### AI/ML API
+
+- Unified API for 300+ models including Claude, GPT-4o, Gemini, LLaMA 3, Mistral and others
+- Has a free tier with rate limits, subscription plans, and pay-as-you-go options
+- [Website](https://aimlapi.com), [Docs](https://docs.aimlapi.com), [Models](https://aimlapi.com/models)
