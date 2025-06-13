@@ -49,6 +49,16 @@ Most Text Completion models have a recommended "Instruct Template" (usually ment
   - [Henky's United](https://github.com/henk717/KoboldAI)
   - [0cc4m's 4bit-supporting United](https://github.com/0cc4m/KoboldAI)
 
+### AI/ML API
+
+* Unified API for 300+ models including Claude, GPT-4o, Gemini, LLaMA 3, Mistral and others
+* High uptime, fast response times, generous rate limits even on flagship models
+* No need to create accounts for each provider — one token unlocks them all
+* Supports chat completion, text completion, image generation, and captioning
+* Compatible with tools/function calling and JSON mode
+* Official SillyTavern support: chat, image, and completion modes
+* [Website](https://aimlapi.com/app/?utm_source=sillytavern&utm_medium=github&utm_campaign=integration) · [Docs](https://docs.aimlapi.com/?utm_source=sillytavern&utm_medium=github&utm_campaign=integration) · [Models](https://aimlapi.com/models?utm_source=sillytavern&utm_medium=github&utm_campaign=integration)
+
 ### KoboldCpp
 
 - Easy-to-use API with CPU offloading (helpful for low VRAM users) and streaming
