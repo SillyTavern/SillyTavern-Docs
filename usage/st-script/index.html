@@ -6,10 +6,10 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.9.0.802380931256">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.0.803377875642">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.9.0">
+    <meta name="generator" content="Retype 3.10.0">
 
     <!-- Primary Meta Tags -->
     <title>STscript Language Reference | docs.ST.app</title>
@@ -35,11 +35,11 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.9.0.802380931256" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.10.0.803377875642" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.9.0.802380931256" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.9.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.9.0.802380931256" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.10.0.803377875642" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.10.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.10.0.803377875642" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -87,19 +87,19 @@
 
 </head>
 <body>
-    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+    <div id="retype-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
         <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
     
-        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+        <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
             <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
                 <!-- Mobile menu button skeleton -->
-                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
-                <div v-cloak id="docs-sidebar-toggle"></div>
+                <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="retype-sidebar-left-toggle-button"></div>
         
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
+                        <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-xl">
                             <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
                                 <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo.png">
                                 <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png">
@@ -113,7 +113,7 @@
         
                 <div class="flex justify-between md:grow">
                     <!-- Top Nav -->
-                    <nav class="hidden md:flex">
+                    <nav id="retype-header-nav" class="hidden md:flex">
                         <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                             <li class="mr-6">
                                 <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/SillyTavern/SillyTavern">GitHub</a>
@@ -154,7 +154,7 @@
                     </div>
         
                     <div v-cloak class="flex justify-end grow">
-                        <div id="docs-mobile-search-button"></div>
+                        <div id="retype-mobile-search-button"></div>
                         <doc-search-desktop></doc-search-desktop>
         
                         <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
@@ -164,7 +164,7 @@
             </div>
         </header>
     
-        <div class="container relative flex bg-white">
+        <div id="retype-container" class="container relative flex bg-white">
             <!-- Sidebar Skeleton -->
             <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-white border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
             
@@ -222,11 +222,11 @@
             <div class="grow min-w-0 dark:bg-dark-850">
                 <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
                 <div class="flex">
-                    <div class="min-w-0 p-4 grow md:px-16">
+                    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
                         <main class="relative pb-12 lg:pt-2">
-                            <div class="docs-markdown" id="docs-content">
+                            <div class="retype-markdown" id="retype-content">
                                 <!-- Rendered if sidebar right is enabled -->
-                                <div id="docs-sidebar-right-toggle"></div>
+                                <div id="retype-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
 <doc-anchor-target id="stscript-language-reference" class="break-words">
     <h1>
@@ -264,7 +264,7 @@ These concepts are going to be described in the following document.</p>
 <p>To run your first script, open any SillyTavern chat and type the following into the chat input bar:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/pass Hello, World! | /echo</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/pass Hello, World! | /echo</code></pre>
 </doc-codeblock></div>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
@@ -288,7 +288,7 @@ These concepts are going to be described in the following document.</p>
 <p>As constant unnamed arguments and pipes are interchangeable, we could rewrite this script simply as:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/echo Hello, World!</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/echo Hello, World!</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="user-input">
     <h2>
@@ -299,7 +299,7 @@ These concepts are going to be described in the following document.</p>
 <p>Now let&#x27;s add a little bit of interactivity to the script. We will accept the input value from the user and display it in the notification.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/input Enter your name |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/input Enter your name |
 /echo Hello, my name is {{pipe}}</code></pre>
 </doc-codeblock></div>
 <ol>
@@ -344,7 +344,7 @@ These concepts are going to be described in the following document.</p>
 <p>Example:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/popup large=on wide=on okButton=&quot;Accept&quot; Please accept our terms and conditions....</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/popup large=on wide=on okButton=&quot;Accept&quot; Please accept our terms and conditions....</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="arguments-for-echo">
     <h4>
@@ -362,7 +362,7 @@ These concepts are going to be described in the following document.</p>
 <p>Example:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/echo severity=error Something really bad happened.</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/echo severity=error Something really bad happened.</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="variables">
     <h2>
@@ -399,7 +399,7 @@ These concepts are going to be described in the following document.</p>
 <p>Now, let&#x27;s consider the following example:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/input What do you want to generate? |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/input What do you want to generate? |
 /setvar key=SDinput |
 /echo Requesting an image of {{getvar::SDinput}} |
 /getvar SDinput |
@@ -444,18 +444,18 @@ These concepts are going to be described in the following document.</p>
 <p>You can use the <code v-pre>/if</code> command to create conditional expressions that branch the execution based on the defined rules.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/if left=valueA right=valueB rule=comparison else={: /echo (command on false) :} {: /echo (command on true) :}</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/if left=valueA right=valueB rule=comparison else={: /echo (command on false) :} {: /echo (command on true) :}</code></pre>
 </doc-codeblock></div>
 <p>Note that</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/if left=valueA right=valueB rule=comparison else=&quot;(command on false)&quot; &quot;(command on true)&quot;</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/if left=valueA right=valueB rule=comparison else=&quot;(command on false)&quot; &quot;(command on true)&quot;</code></pre>
 </doc-codeblock></div>
 <p>syntax is also supported, however <code v-pre>{: closures :}</code> will help you write cleaner scripts.</p>
 <p>Let&#x27;s review the following example:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/input What's your favorite drink? |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/input What's your favorite drink? |
 /if left={{pipe}} right=&quot;black tea&quot; rule=eq else={: /echo You shall not pass | /abort :} {: /echo Welcome to the club, {{user}} :}</code></pre>
 </doc-codeblock></div>
 <p>This script evaluates the user input against a required value and displays different messages, depending on the input value.</p>
@@ -515,7 +515,7 @@ These concepts are going to be described in the following document.</p>
 The following example will pass a &quot;true&quot; string to the next command the variable <code v-pre>a</code> equals 5, and a &quot;false&quot; string otherwise.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/if left=a right=5 rule=eq else={: /pass false:} {: /pass true :} |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/if left=a right=5 rule=eq else={: /pass false:} {: /pass true :} |
 /echo</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="escape-sequences">
@@ -533,7 +533,7 @@ The following example will pass a &quot;true&quot; string to the next command th
 <p>Escaping of macros works just like before. However, with closures, you will need to escape macros a lot less often than before. Either escape the two opening curly braces, or both the opening and closing pair.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/echo \{\{char}} |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/echo \{\{char}} |
 /echo \{\{char\}\}</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="pipes">
@@ -545,13 +545,13 @@ The following example will pass a &quot;true&quot; string to the next command th
 <p>Pipes don&#x27;t need to be escaped in closures (when used as command separators). Everywhere where you want to use a literal pipe character instead of a command separator, you need to escape it.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/echo title=&quot;a\|b&quot; c\|d |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/echo title=&quot;a\|b&quot; c\|d |
 /echo title=a\|b c\|d |</code></pre>
 </doc-codeblock></div>
 <p>With the parser flag <code v-pre>STRICT_ESCAPING</code> you don&#x27;t need to escape pipes in quoted values.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/parser-flag STRICT_ESCAPING |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/parser-flag STRICT_ESCAPING |
 /echo title=&quot;a|b&quot; c\|d |
 /echo title=a\|b c\|d |</code></pre>
 </doc-codeblock></div>
@@ -564,7 +564,7 @@ The following example will pass a &quot;true&quot; string to the next command th
 <p>To use a literal quote-character inside a quoted value, the character must be escaped.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/echo title=&quot;a \&quot;b\&quot; c&quot; d &quot;e&quot; f</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/echo title=&quot;a \&quot;b\&quot; c&quot; d &quot;e&quot; f</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="spaces">
     <h3>
@@ -575,7 +575,7 @@ The following example will pass a &quot;true&quot; string to the next command th
 <p>To use space in the value of a named argument, you either have to surround the value in quote, or escape the space character.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/echo title=&quot;a b&quot; c d |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/echo title=&quot;a b&quot; c d |
 /echo title=a\ b c d</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="closure-delimiters">
@@ -587,7 +587,7 @@ The following example will pass a &quot;true&quot; string to the next command th
 <p>If you want to use the character combinations used to mark the beginning or end of a closure, you have to escape the sequence with a single backslash.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/echo \{: |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/echo \{: |
 /echo \:}</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="pipe-breakers">
@@ -598,12 +598,12 @@ The following example will pass a &quot;true&quot; string to the next command th
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">||</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">||</code></pre>
 </doc-codeblock></div>
 <p>To prevent the previous command&#x27;s output from being automatically injected as the unnamed argument into the next command, put double pipes between the two commands.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/echo we don't want to pass this on ||
+<pre translate="no" class="language-none"><code v-pre class="language-none">/echo we don't want to pass this on ||
 /world</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="closures">
@@ -614,7 +614,7 @@ The following example will pass a &quot;true&quot; string to the next command th
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">{: ... :}</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{: ... :}</code></pre>
 </doc-codeblock></div>
 <p>Closures (block statements, lambdas, anonymous functions, whatever you want to call them) are a series of commands wrapped between <code v-pre>{:</code> and <code v-pre>:}</code>, that are only evaluated once that part of the code is executed.</p>
 <doc-anchor-target id="sub-commands">
@@ -626,7 +626,7 @@ The following example will pass a &quot;true&quot; string to the next command th
 <p>Closures make using sub-commands a lot easier and get rid of the need to escape pipes and macros.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">// if without closures |
+<pre translate="no" class="language-none"><code v-pre class="language-none">// if without closures |
 /if left=1 rule=eq right=1
     else=&quot;
         /echo not equal \|
@@ -637,7 +637,7 @@ The following example will pass a &quot;true&quot; string to the next command th
 </doc-codeblock></div>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">// if with closures |
+<pre translate="no" class="language-none"><code v-pre class="language-none">// if with closures |
 /if left=1 rule=eq right=1
     else={:
         /echo not equal |
@@ -657,7 +657,7 @@ The following example will pass a &quot;true&quot; string to the next command th
 <p>Closures have their own scope and support scoped variables. Scoped variables are declared with <code v-pre>/let</code>, their values set and retrieved with <code v-pre>/var</code>. Another way to get a scoped variable is the <code v-pre>{{var::}}</code> macro.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/let x |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/let x |
 /let y 2 |
 /var x 1 |
 /var y |
@@ -667,7 +667,7 @@ The following example will pass a &quot;true&quot; string to the next command th
 If a variable is declared with the same name as a variable that was declared in one of the closure&#x27;s ancestors, you don&#x27;t have access to the ancestor variable in this closure and its descendants.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/let x this is root x |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/let x this is root x |
 /let y this is root y |
 /return {:
     /echo called from level-1: x is &quot;{{var::x}}&quot; and y is &quot;{{var::y}}&quot; |
@@ -692,19 +692,19 @@ If a variable is declared with the same name as a variable that was declared in 
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/let x {: ... :} | /:x</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/let x {: ... :} | /:x</code></pre>
 </doc-codeblock></div>
 <p>Closures can be assigned to variables (only scoped variables) to be called at a later point or to be used as sub-commands.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/let myClosure {:
+<pre translate="no" class="language-none"><code v-pre class="language-none">/let myClosure {:
     /echo this is my closure
 :} |
 /:myClosure</code></pre>
 </doc-codeblock></div>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/let myClosure {:
+<pre translate="no" class="language-none"><code v-pre class="language-none">/let myClosure {:
     /echo this is my closure |
     /delay 500
 :} |
@@ -713,7 +713,7 @@ If a variable is declared with the same name as a variable that was declared in 
 <p><code v-pre>/:</code> can also be used to execute Quick Replies, as it is just a shorthand for <code v-pre>/run</code>.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/:QrSetName.QrButtonLabel |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/:QrSetName.QrButtonLabel |
 /run QrSetName.QrButtonLabel</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="closure-arguments">
@@ -725,7 +725,7 @@ If a variable is declared with the same name as a variable that was declared in 
 <p>Named closures can take named arguments, just like slash commands. The arguments can have default values.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/let myClosure {: a=1 b=
+<pre translate="no" class="language-none"><code v-pre class="language-none">/let myClosure {: a=1 b=
     /echo a is {{var::a}} and b is {{var::b}}
 :} |
 /:myClosure b=10</code></pre>
@@ -740,7 +740,7 @@ If a variable is declared with the same name as a variable that was declared in 
 You can still explicitly reference the parent&#x27;s piped value with <code v-pre>{{pipe}}</code>, but if you leave the unnamed argument of the first command inside a closure blank, the value will <em>not</em> be automatically injected.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/* This used to attempt to change the model to &quot;foo&quot;
+<pre translate="no" class="language-none"><code v-pre class="language-none">/* This used to attempt to change the model to &quot;foo&quot;
    because the value &quot;foo&quot; from the /echo outside of
    the loop was injected into the /model command
    inside of the loop.
@@ -755,7 +755,7 @@ You can still explicitly reference the parent&#x27;s piped value with <code v-pr
 </doc-codeblock></div>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/* You can still recreate the old behavior by
+<pre translate="no" class="language-none"><code v-pre class="language-none">/* You can still recreate the old behavior by
    explicitly using the {{pipe}} macro.
 *|
 /echo foo |
@@ -772,12 +772,12 @@ You can still explicitly reference the parent&#x27;s piped value with <code v-pr
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">{: ... :}()</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{: ... :}()</code></pre>
 </doc-codeblock></div>
 <p>Closures can be immediately executed, meaning they will be replaced with their return value. This is helpful in places where no explicit support for closures exists, and to shorten some commands that would otherwise require a lot of intermediate variables.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">// a simple length comparison of two strings without closures |
+<pre translate="no" class="language-none"><code v-pre class="language-none">// a simple length comparison of two strings without closures |
 /len foo |
 /var lenOfFoo {{pipe}} |
 /len bar |
@@ -786,13 +786,13 @@ You can still explicitly reference the parent&#x27;s piped value with <code v-pr
 </doc-codeblock></div>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">// the same comparison with immediately executed closures |
+<pre translate="no" class="language-none"><code v-pre class="language-none">// the same comparison with immediately executed closures |
 /if left={:/len foo:}() rule=eq right={:/len bar:}() /echo yay!</code></pre>
 </doc-codeblock></div>
 <p>In addition to running named closures saved inside scoped variables, the <code v-pre>/run</code> command can also be used to execute closures immediately.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/run {:
+<pre translate="no" class="language-none"><code v-pre class="language-none">/run {:
 	/add 1 2 3 4 |
 :} |
 /echo |</code></pre>
@@ -805,12 +805,12 @@ You can still explicitly reference the parent&#x27;s piped value with <code v-pr
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">// ... | /# ...</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">// ... | /# ...</code></pre>
 </doc-codeblock></div>
 <p>A comment is a human-readable explanation or annotation in the script code. Comments don&#x27;t break pipes.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">// this is a comment |
+<pre translate="no" class="language-none"><code v-pre class="language-none">// this is a comment |
 /echo foo |
 /# this is also a comment</code></pre>
 </doc-codeblock></div>
@@ -823,7 +823,7 @@ You can still explicitly reference the parent&#x27;s piped value with <code v-pr
 <p>Block comments can be used to quickly comment out multiple commands at once. They will not terminate on a pipe.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/echo foo |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/echo foo |
 /*
 /echo bar |
 /echo foobar |
@@ -845,7 +845,7 @@ You can still explicitly reference the parent&#x27;s piped value with <code v-pr
 <p>If you need to run some command in a loop until a certain condition is met, use the <code v-pre>/while</code> command.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/while left=valueA right=valueB rule=operation guard=on &quot;commands&quot;</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/while left=valueA right=valueB rule=operation guard=on &quot;commands&quot;</code></pre>
 </doc-codeblock></div>
 <p>On each step of the loop it compares the value of variable A with the value of variable B, and if the condition yields true, then executes any valid slash command enclosed in quotes, otherwise exists the loop. This command doesn&#x27;t write anything to the output pipe.</p>
 <doc-anchor-target id="arguments-for-while">
@@ -860,7 +860,7 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 <p>This example adds 1 to the value of <code v-pre>i</code> until it reaches 10, then outputs the resulting value (10 in this case).</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/setvar key=i 0 |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/setvar key=i 0 |
 /while left=i right=10 rule=lt &quot;/addvar key=i 1&quot; |
 /echo {{getvar::i}} |
 /flushvar i</code></pre>
@@ -885,7 +885,7 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/break |</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/break |</code></pre>
 </doc-codeblock></div>
 <p>The <code v-pre>/break</code> command can be used to break out of a loop (<code v-pre>/while</code> or <code v-pre>/times</code>) or a closure early. The unnamed argument of <code v-pre>/break</code> can be used to pass a value different from the current pipe along.<br />
 <code v-pre>/break</code> is currently implemented in the following commands:</p>
@@ -897,7 +897,7 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/times 10 {:
+<pre translate="no" class="language-none"><code v-pre class="language-none">/times 10 {:
 	/echo {{timesIndex}}
 	/delay 500 |
 	/if left={{timesIndex}} rule=gt right=3 {:
@@ -907,7 +907,7 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 </doc-codeblock></div>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/let x {: iterations=2
+<pre translate="no" class="language-none"><code v-pre class="language-none">/let x {: iterations=2
 	/if left={{var::iterations}} rule=gt right=10 {:
 		/break too many iterations! |
 	:} |
@@ -921,7 +921,7 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 </doc-codeblock></div>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/run {:
+<pre translate="no" class="language-none"><code v-pre class="language-none">/run {:
 	/break 1 |
 	/pass 2 |
 :} |
@@ -929,7 +929,7 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 </doc-codeblock></div>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/let x {:
+<pre translate="no" class="language-none"><code v-pre class="language-none">/let x {:
 	/break 1 |
 	/pass 2 |
 :} |
@@ -975,7 +975,7 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/setglobalvar key=PI 3.1415 |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/setglobalvar key=PI 3.1415 |
 /setvar key=r 50 |
 /mul r r PI |
 /round |
@@ -989,7 +989,7 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/setvar key=input 5 |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/setvar key=input 5 |
 /setvar key=i 1 |
 /setvar key=product 1 |
 /while left=i right=input rule=lte &quot;/mul product i \| /setvar key=product \| /addvar key=i 1&quot; |
@@ -1019,7 +1019,7 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/genraw lock=on/off stop=[] instruct=on/off (prompt)</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/genraw lock=on/off stop=[] instruct=on/off (prompt)</code></pre>
 </doc-codeblock></div>
 <ul>
 <li><code v-pre>lock</code> — can be <code v-pre>on</code> or <code v-pre>off</code>. Specifies whether a user input should be blocked while the generation is in progress. Default: <code v-pre>off</code>.</li>
@@ -1030,7 +1030,7 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 <p>The generated text is then passed through the pipe to the next command and can be saved to a variable or displaced using the I/O capabilities:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/genraw Write a funny message from Cthulhu about taking over the world. Use emojis. |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/genraw Write a funny message from Cthulhu about taking over the world. Use emojis. |
 /popup &lt;h3&gt;Cthulhu says:&lt;/h3&gt;&lt;div&gt;{{pipe}}&lt;/div&gt;</code></pre>
 </doc-codeblock></div>
 <div class="table-wrapper scrollbar overflow-hidden">
@@ -1045,7 +1045,7 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 <p>or to insert the generated message as a response from your character:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/genraw You have been memory wiped, your name is now Lisa and you're tearing me apart. You're tearing me apart Lisa! |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/genraw You have been memory wiped, your name is now Lisa and you're tearing me apart. You're tearing me apart Lisa! |
 /sendas name={{char}} {{pipe}}</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="temporal-character">
@@ -1060,7 +1060,7 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/ask name=... (prompt)</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/ask name=... (prompt)</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="arguments-for-ask">
     <h3>
@@ -1074,7 +1074,7 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/ask name=Alice What is your favorite color?</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/ask name=Alice What is your favorite color?</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="prompt-injections">
     <h2>
@@ -1100,7 +1100,7 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/inject id=IdGoesHere position=chat depth=4 My prompt injection</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/inject id=IdGoesHere position=chat depth=4 My prompt injection</code></pre>
 </doc-codeblock></div>
 <ul>
 <li><code v-pre>id</code> — an identifier string or a reference to a variable. Consequent calls of <code v-pre>/inject</code> with the same ID will overwrite the previous text injection. <strong>Required argument.</strong></li>
@@ -1129,7 +1129,7 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 <p>You can access messages in the currently selected chat using the <code v-pre>/messages</code> command.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/messages names=on/off start-finish</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/messages names=on/off start-finish</code></pre>
 </doc-codeblock></div>
 <ul>
 <li>The <code v-pre>names</code> argument is used to specify whether you want to include character names or not, default: <code v-pre>on</code>.</li>
@@ -1142,7 +1142,7 @@ To disable and allow endless loops, set <code v-pre>guard=off</code>.</p>
 This example will get you 3 last messages in the chat:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/setvar key=start {{lastMessageId}} |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/setvar key=start {{lastMessageId}} |
 /addvar key=start -2 |
 /messages names=off {{getvar::start}}-{{lastMessageId}} |
 /setinput</code></pre>
@@ -1167,7 +1167,7 @@ This example will get you 3 last messages in the chat:</p>
 <p>This will insert a user message at the beginning of the conversation history:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/send at=0 Hi, I use Linux.</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/send at=0 Hi, I use Linux.</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="delete-messages">
     <h3>
@@ -1327,7 +1327,7 @@ This example will get you 3 last messages in the chat:</p>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/getchatbook | /setvar key=chatLore |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/getchatbook | /setvar key=chatLore |
 /findentry file={{getvar::chatLore}} field=key Shadowfang |
 /getentryfield file={{getvar::chatLore}} field=key |
 /echo</code></pre>
@@ -1340,7 +1340,7 @@ This example will get you 3 last messages in the chat:</p>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/getchatbook | /setvar key=chatLore |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/getchatbook | /setvar key=chatLore |
 /createentry file={{getvar::chatLore}} key=&quot;Milla&quot; Milla Basset is a friend of Lilac and Carol. She is a hush basset puppy who possesses the power of alchemy. |
 /echo</code></pre>
 </doc-codeblock></div>
@@ -1352,7 +1352,7 @@ This example will get you 3 last messages in the chat:</p>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/getchatbook | /setvar key=chatLore |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/getchatbook | /setvar key=chatLore |
 /findentry file={{getvar::chatLore}} field=key Milla |
 /setvar key=millaUid |
 /getentryfield file={{getvar::chatLore}} field=content |
@@ -1384,7 +1384,7 @@ This example will get you 3 last messages in the chat:</p>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/trimtokens limit=number direction=start/end (input)</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/trimtokens limit=number direction=start/end (input)</code></pre>
 </doc-codeblock></div>
 <ol>
 <li><code v-pre>direction</code> sets the direction for trimming, which can be either <code v-pre>start</code> or <code v-pre>end</code>. Default: <code v-pre>end</code>.</li>
@@ -1399,7 +1399,7 @@ This example will get you 3 last messages in the chat:</p>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/fuzzy list=[&quot;candidate1&quot;,&quot;candidate2&quot;] (input)</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/fuzzy list=[&quot;candidate1&quot;,&quot;candidate2&quot;] (input)</code></pre>
 </doc-codeblock></div>
 <ol>
 <li><code v-pre>list</code> is a JSON-serialized array of strings containing the candidates. Can also specify a variable name containing the list. <strong>Required argument.</strong></li>
@@ -1438,7 +1438,7 @@ This example will get you 3 last messages in the chat:</p>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/parser-flag</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/parser-flag</code></pre>
 </doc-codeblock></div>
 <p>The parser accepts flags to modify its behavior. These flags can be toggled on and off at any point in a script and all following input will be evaluated accordingly.<br />
 You can set your default flags in user settings.</p>
@@ -1450,7 +1450,7 @@ You can set your default flags in user settings.</p>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/parser-flag STRICT_ESCAPING on |</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/parser-flag STRICT_ESCAPING on |</code></pre>
 </doc-codeblock></div>
 <p>Changes with <code v-pre>STRICT_ESCAPING</code> enabled are as follows.</p>
 <doc-anchor-target id="pipes-1">
@@ -1462,7 +1462,7 @@ You can set your default flags in user settings.</p>
 <p>Pipes don&#x27;t need to be escaped in quoted values.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/echo title=&quot;a|b&quot; c\|d</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/echo title=&quot;a|b&quot; c\|d</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="backslashes">
     <h4>
@@ -1473,13 +1473,13 @@ You can set your default flags in user settings.</p>
 <p>A backslash in front of a symbol can be escaped to provide the literal backslash followed by the functional symbol.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">// this will echo &quot;foo \&quot;, then echo &quot;bar&quot; |
+<pre translate="no" class="language-none"><code v-pre class="language-none">// this will echo &quot;foo \&quot;, then echo &quot;bar&quot; |
 /echo foo \\|
 /echo bar</code></pre>
 </doc-codeblock></div>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/echo \\|
+<pre translate="no" class="language-none"><code v-pre class="language-none">/echo \\|
 /echo \\\|</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="replace-variable-macros">
@@ -1490,7 +1490,7 @@ You can set your default flags in user settings.</p>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/parser-flag REPLACE_GETVAR on |</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/parser-flag REPLACE_GETVAR on |</code></pre>
 </doc-codeblock></div>
 <p>This flag helps to avoid double-substitutions when the variable values contain text that could be interpreted as macros. The <code v-pre>{{var::}}</code> macros get substituted last and no further substitutions happen on the resulting text / variable value.</p>
 <p>Replaces all <code v-pre>{{getvar::}}</code> and <code v-pre>{{getglobalvar::}}</code> macros with <code v-pre>{{var::}}</code>.
@@ -1503,13 +1503,13 @@ Behind the scenes, the parser will insert a series of command executors before t
 </ul>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">// the following will echo the last message's id / number |
+<pre translate="no" class="language-none"><code v-pre class="language-none">// the following will echo the last message's id / number |
 /setvar key=x \{\{lastMessageId}} |
 /echo {{getvar::x}}</code></pre>
 </doc-codeblock></div>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">// this will echo the literal text {{lastMessageId}} |
+<pre translate="no" class="language-none"><code v-pre class="language-none">// this will echo the literal text {{lastMessageId}} |
 /parser-flag REPLACE_GETVAR |
 /setvar key=x \{\{lastMessageId}} |
 /echo {{getvar::x}}</code></pre>
@@ -1550,7 +1550,7 @@ Don&#x27;t forget to click &quot;Update&quot; before switching to a different se
 <p>Now you can add your first script to the library. Pick any free slot (or create one), type &quot;Click me&quot; into the left box to set the label, then paste this into the right box:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/addvar key=clicks 1 |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/addvar key=clicks 1 |
 /if left=clicks right=5 rule=eq else=&quot;/echo Keep going...&quot; &quot;/echo You did it!  \| /flushvar clicks&quot;</code></pre>
 </doc-codeblock></div>
 <p>Then click 5 times on the button that appeared above the chat bar.
@@ -1592,7 +1592,7 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
 <p>For example, you can display a message after sending five user messages by adding the following script and setting it to auto-execute on the user message.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/addvar key=usercounter 1 |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/addvar key=usercounter 1 |
 /echo You've sent {{pipe}} messages. |
 /if left=usercounter right=5 rule=gte &quot;/echo Game over! \| /flushvar usercounter&quot;</code></pre>
 </doc-codeblock></div>
@@ -1605,7 +1605,7 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
 <p>A basic debugger exists inside the expanded Quick Reply editor. Set breakpoints with <code v-pre>/breakpoint |</code> anywhere in your script. When executing the script from the QR editor, the execution will be interrupted at that point, allowing you to examine the currently available variables, pipe, command arguments, and more, and to step through the rest of the code one by one.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/let x {: n=1
+<pre translate="no" class="language-none"><code v-pre class="language-none">/let x {: n=1
 	/echo n is {{var::n}} |
 	/mul n n |
 :} |
@@ -1631,7 +1631,7 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
 <p>A <code v-pre>/run</code> command can call scripts defined in the Quick Replies by their label, basically providing the ability to define procedures and return results from them. This allows to have reusable script blocks that other scripts could reference. The last result from the procedure&#x27;s pipe is passed to the next command after it.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/run ScriptLabel</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/run ScriptLabel</code></pre>
 </doc-codeblock></div>
 <p>Let&#x27;s create two Quick Replies:</p>
 <hr>
@@ -1640,7 +1640,7 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
 <p><strong>Command:</strong></p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/pass {{roll:d100}}</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/pass {{roll:d100}}</code></pre>
 </doc-codeblock></div>
 <hr>
 <p><strong>Label:</strong></p>
@@ -1648,7 +1648,7 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
 <p><strong>Command:</strong></p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/run GetRandom | /echo Your lucky number is: {{pipe}}</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/run GetRandom | /echo Your lucky number is: {{pipe}}</code></pre>
 </doc-codeblock></div>
 <hr>
 <p>Clicking on the <code v-pre>GetMessage</code> button will call the <code v-pre>GetRandom</code> procedure which will resolve the <code v-pre>{{roll}}</code> macro and pass the number to the caller, displaying it to the user.</p>
@@ -1665,7 +1665,7 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
 <p>You can call a procedure from a different quick reply preset using the <code v-pre>a.b</code> syntax, where a = QR preset name and b = QR label name</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/run QRpreset1.QRlabel1</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">/run QRpreset1.QRlabel1</code></pre>
 </doc-codeblock></div>
 <p>By default, the system will first look for a quick reply label <code v-pre>a.b</code>, so if one of your labels is literally &quot;QRpreset1.QRlabel1&quot; it will try to run that. If no such label is found, it will search for a QR preset name &quot;QRpreset1&quot; with a QR labeled &quot;QRlabel1&quot;.</p>
 <doc-anchor-target id="quick-replies-management-commands">
@@ -1850,7 +1850,7 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/setglobalvar key=summaryPrompt Summarize the most important facts and events that have happened in the chat given to you in the Input header. Limit the summary to 100 words or less. Your response should include nothing but the summary. |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/setglobalvar key=summaryPrompt Summarize the most important facts and events that have happened in the chat given to you in the Input header. Limit the summary to 100 words or less. Your response should include nothing but the summary. |
 /setvar key=tmp |
 /messages 0-{{lastMessageId}} |
 /trimtokens limit=3000 direction=end |
@@ -1871,7 +1871,7 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/setglobalvar key=genders [&quot;boy&quot;, &quot;girl&quot;, &quot;other&quot;] |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/setglobalvar key=genders [&quot;boy&quot;, &quot;girl&quot;, &quot;other&quot;] |
 /buttons labels=genders Who are you? |
 /echo You picked: {{pipe}}</code></pre>
 </doc-codeblock></div>
@@ -1886,7 +1886,7 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
 </blockquote>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/setvar key=fib_no 5 |
+<pre translate="no" class="language-none"><code v-pre class="language-none">/setvar key=fib_no 5 |
 /pow 5 0.5 | /setglobalvar key=SQRT5 |
 /setglobalvar key=PHI 1.618033 |
 /pow PHI fib_no | /div {{pipe}} SQRT5 |
@@ -1901,7 +1901,7 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/let fact {: n=
+<pre translate="no" class="language-none"><code v-pre class="language-none">/let fact {: n=
     /if left={{var::n}} rule=gt right=1
         else={:
             /return 1
@@ -1923,15 +1923,15 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
                                 <!-- Required only on API pages -->
                                 <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
                             </div>
-                            <footer class="clear-both">
+                            <footer id="retype-content-footer" class="clear-both">
                                 <div class="flex flex-wrap items-center justify-between mt-14">
-                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/SillyTavern/SillyTavern-Docs/edit/main/For_Contributors/st-script.md" target="_blank" rel="noopener">
+                                    <a id="retype-edit-this-page" class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/SillyTavern/SillyTavern-Docs/edit/main/For_Contributors/st-script.md" target="_blank" rel="noopener">
                                         <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         <span>Edit this page</span>
                                     </a>
                                 </div>
                             
-                                <nav class="print:hidden flex mt-14">
+                                <nav id="retype-nextprev" class="print:hidden flex mt-14">
                                     <div class="w-1/2">
                                         <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../for-contributors/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
@@ -1955,13 +1955,13 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
                             </footer>
                         </main>
                 
-                        <div class="print:border-none border-t dark:border-dark-650 pt-6 mb-8">
+                        <div id="retype-page-footer" class="print:border-none border-t dark:border-dark-650 pt-6 mb-8">
                             <footer class="flex flex-wrap items-center justify-between print:justify-center">
-                                <div class="print:hidden">
+                                <div id="retype-footer-links" class="print:hidden">
                                     <ul class="flex flex-wrap items-center text-sm">
                                     </ul>
                                 </div>
-                                <div class="print:justify-center docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2025. All rights reserved.</p></div>
+                                <div id="retype-copyright" class="print:justify-center docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2025. All rights reserved.</p></div>
                             </footer>
                         </div>
                     </div>
@@ -1988,7 +1988,7 @@ Every click increments the variable <code v-pre>clicks</code> by one and display
     </div>
 
 
-    <div id="docs-overlay-target"></div>
+    <div id="retype-overlay-target"></div>
 
     <script data-cfasync="false">window.__DOCS__ = { "title": "STscript Language Reference", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
