@@ -10,11 +10,11 @@ Most often this is for people who want to use SillyTavern on their mobile phones
 
 It is also the first step for allowing remote connections from outside the local network.
 
-!!! warning
+!!!warning
 You should not use port forwarding to expose your ST server to the internet. Instead, use a VPN or a tunneling service like Cloudflare Zero Trust, ngrok, or Tailscale. See the [VPN and Tunneling](tunneling.md) guide for more information.
 !!!
 
-!!! danger Disclaimer
+!!!danger Disclaimer
 **NEVER HOST ANY INSTANCES TO THE OPEN INTERNET WITHOUT ENSURING PROPER SECURITY MEASURES FIRST.**
 
 **WE ARE NOT RESPONSIBLE FOR ANY DAMAGE OR LOSSES IN CASES OF UNAUTHORIZED ACCESS DUE TO IMPROPER OR INADEQUATE SECURITY IMPLEMENTATION.**
@@ -115,7 +115,8 @@ To disable access control via a whitelist:
 
 ### Not recommended: using `whitelist.txt`
 
-!!! If `whitelist.txt` exists, it takes precedence over the whitelist settings in `config.yaml`.
+!!!info
+If `whitelist.txt` exists, it takes precedence over the whitelist settings in `config.yaml`.
 
 However, since all other configurations are managed within `config.yaml`, and `whitelist.txt` may encounter permission issues or become locked, the system could silently revert to using the `config.yaml` whitelist.
 
@@ -142,7 +143,7 @@ This allows any device on the local network to connect.
 
 ### Access control by HTTP Basic Authentication
 
-!!! warning
+!!!warning
 HTTP Basic Authentication does not provide strong security. 
 
 There is no rate-limiting to prevent brute-force attacks. If this is a concern, it is recommended to use a reverse proxy with TLS and rate-limiting, and a dedicated [authentication service](sso.md).
@@ -151,6 +152,7 @@ There is no rate-limiting to prevent brute-force attacks. If this is a concern, 
 The server will ask for username and password whenever a client connects via HTTP. **This only works if the Remote connections (listen: true) are enabled.**
 
 To enable HTTP BA, Open `config.yaml` in the SillyTavern base directory and search for `basicAuthMode` Set basicAuthMode to true and set username and password. Note: `config.yaml` will only exist if ST has been executed before at least once.
+
 ```yaml
 basicAuthMode: true
 basicAuthUser:

@@ -263,7 +263,7 @@ See [Replace Variable Macros](/For_Contributors/st-script.md#replace-variable-ma
 
 ## Debug menu
 
-!!! warning These functions are intended for advanced users only.
+!!!warning These functions are intended for advanced users only.
 
 Do not use them unless you fully understand their consequences.
 !!!

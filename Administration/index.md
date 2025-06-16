@@ -6,8 +6,7 @@ expanded: true
 
 # Administration
 
-!!! warning
-
+!!!warning
 Despite following many security best practices, the SillyTavern server is not secure enough for public internet exposure.
 
 **NEVER HOST ANY INSTANCES TO THE OPEN INTERNET WITHOUT ENSURING PROPER SECURITY MEASURES FIRST.**

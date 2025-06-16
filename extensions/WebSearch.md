@@ -101,7 +101,7 @@ Get the key here: <https://serper.dev/>
 Search results from the latest query will stay included in the prompt until the next valid query is found.
 If you want to ask additional questions without accidentally triggering the search, start your message with a period.
 
-!!! info
+!!!info
 Web Search function tool always overrides other triggers if enabled and available.
 !!!
 

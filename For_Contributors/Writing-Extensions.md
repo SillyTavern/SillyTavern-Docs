@@ -107,7 +107,7 @@ If you're missing any of the functions/properties in `getContext`, please get in
 
 ### Importing from other files
 
-!!! warning
+!!!warning
 Using imports from SillyTavern code is unreliable and can break at any time if the internal structure of ST's modules changes. `getContext` provides a more stable API.
 !!!
 
@@ -328,7 +328,7 @@ globalThis.myCustomInterceptorFunction = async function(chat, contextSize, abort
 
 ## Do Extras request
 
-!!! warning
+!!!warning
 Extras API is deprecated. It's not recommended to use it in new extensions.
 !!!
 

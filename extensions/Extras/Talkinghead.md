@@ -5,7 +5,7 @@ tags: ['obsolete']
 
 # talkinghead
 
-!!! warning
+!!!warning
 **THE SUPPORT FOR TALKGINHEAD WAS DROPPED IN SILLYTAVERN 1.12.13. THIS PAGE IS KEPT FOR HISTORICAL PURPOSES.**
 !!!
 

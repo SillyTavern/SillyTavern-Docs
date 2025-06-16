@@ -20,7 +20,7 @@ To open or close the Extensions panel, choose **<i class="fa-solid fa-cubes fa-f
 - **Notify on extension updates**: Check to be notified when there are updates available for installed extensions
 - **<i class="fa-solid fa-cloud-arrow-down"></i> Install extension**: Import an extension from a Git repository URL
 
-!!! warning
+!!!warning
 Using third-party extensions can have unintended side effects and may pose security risks. 
 Always make sure you trust the source before importing an extension via **<i class="fa-solid fa-cloud-arrow-down"></i> Install extension**. 
 We are not responsible for any damage caused by third-party extensions.
@@ -90,7 +90,7 @@ Converts text into tokens and counts the number of tokens
 
 Install any of these extensions from the "Download Extensions & Assets" menu in **Extensions**.
 
-!!! info Extensions are not Extras
+!!!info Extensions are not Extras
 The Extras project was discontinued in April 2024. You do not need to install Extras to use extensions.
 !!!
 
