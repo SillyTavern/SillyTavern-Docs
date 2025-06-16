@@ -23,7 +23,7 @@ Visual Novel Mode comes built in with SillyTavern and can be toggle by going to 
 
 Disabling Visual Novel Mode is the same steps as enabling it. Untoggle Visual Novel Mode and you should be back to the normal chat screen itself.
 
-!!! warning Regarding VN Mode with VN Extensions
+!!!warning Regarding VN Mode with VN Extensions
 Some extensions (like the Prome VN Extension) will toggle 'Visual Novel Mode' on if you use their own respective VN modes. Enabling/Disabling VN Mode from the *User Settings* menu will also affect these extensions as well.
 !!!
 
@@ -37,13 +37,13 @@ In Visual Novel Mode, the UI is altered slightly in order to accommodate charact
 
 ### VN Mode with MovingUI
 
-!!! info
+!!!info
 To toggle MovingUI, go to *User Settings* and check on **MovingUI**. Do note that this feature **only** works on Desktops.
 !!!
 
 If **MovingUI** is enabled in *User Settings*, the sprites (or character card image) can be moved around if you wish to move them around or place them in a more specific area on the screen.
 
-!!! warning Regarding Sprite Sizes
+!!!warning Regarding Sprite Sizes
 If the size of your character sprites are relatively big it will be a challenge to try and move certain sprites around with MovingUI as the button to drag sprites around might be covered underneath a existing sprite. You will probably have to move them around a bit more than normal, especially if there is more characters on the screen for better placement.
 !!!
 
@@ -54,17 +54,17 @@ If the size of your character sprites are relatively big it will be a challenge 
 Obtaining character sprites can be done by browsing the internet for existing sprites, for say, a existing character from a Visual Novel or a game that uses a Visual Novel feature such as DDLC or CounterSide. If the character you desire sprites form does not come with sprites already, you have several options remaining.
 
 1. Search the character post for any sprite ZIP package or link to a sprite pack.
-    !!! info
+    !!!info
     Some bot creators may release their bots with a sprite pack (either within the same post or in a sprites channel). Search those posts if someone hasn't made sprites of the character you want already.
     !!!
 2. Create your own using LoRAs and Stable Diffusion.
-    !!! warning
+    !!!warning
     Generating sprites from scratch is time-consuming (especially if no LoRAs exist for your character and/or for the Stable Diffusion model you want to use) and will require decent hardware in order to generate them, more so if you plan on making 28 sprite expression than 6 and if you are using SDXL and/or upscaling sprites to a more higher resolution.
     !!!
 3. Use the character card image. It might not be like a sprite, but at least you have something to look at on-screen. However, multiple character cards cannot be used in VN mode.
     !!! Character Card Images with the Prome Visual Novel Extension
     With the Prome Visual Novel Extension 1.0.6+, there is a feature called `Emulate Character Card as Sprite` that allows you to have a group chat with both sprite and non-sprite characters by using their character card as a sprite in chat.
-    
+
     ![Character Card Group Chat](/static/vn/extensions/prome/card-emulation.png)
     !!!
 

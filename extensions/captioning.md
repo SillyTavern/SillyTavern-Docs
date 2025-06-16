@@ -149,7 +149,7 @@ You can use any model that supports image captioning (`VisionEncoderDecoderModel
 
 API keys and endpoint URLs for captioning sources are managed in the [API Connections](/Usage/API_Connections/index.md) panel. Set the connection up in API Connections first, then select it as your captions source in Captioning.
 
-!!! warning Set it up in the API Connections panel first
+!!!warning Set it up in the API Connections panel first
 One last time: configure the API key/address/port in **<i class="fa-solid fa-plug"></i> API Connections** and use the connection in Captioning.
 
 You can still use Claude for chats and Google AI Studio for image captioning, or whatever. Just set them *both* up in the 'API Connections' tab first. Then flip your Chat Completion source to Claude and your Captioning source to Google AI Studio.

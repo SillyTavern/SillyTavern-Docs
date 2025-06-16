@@ -126,7 +126,7 @@ Uses [function calling](/extensions/Stable-Diffusion.md) to automatically detect
 3. The "Use function tool" option must be enabled in the Image Generation settings.
 4. The user should express an intent to generate an image in the chat message, e.g. "Send me a picture of a cat".
 
-!!! warning
+!!!warning
 The interactive mode will not trigger when the function tool is enabled.
 !!!
 
@@ -189,7 +189,7 @@ Limitations:
 1. Works only in 1-to-1 chats. Will not be used in groups.
 2. Won't be used for backgrounds and free mode generations.
 
-!!! note
+!!! Note
 To force include a character prefix into a free mode prompt, use the `{{charPrefix}}` macro anywhere in the prompt.
 !!!
 
@@ -258,7 +258,7 @@ To add a ComfyUI workflow to the editor, follow these steps:
 4. Paste the downloaded JSON data into the text area.
 5. Replace specific values with placeholders as needed for your use case.
 
-!!! info Tips
+!!!tip Tips
 You can add the API-format JSON file directly to the `data/default-user/user/workflows` directory in your SillyTavern installation. This will save you from steps 3 and 4.
 
 Retain the original JSON file. If you need to open the workflow again in ComfyUI to make changes, it is much more convenient to edit the original file than the one with all the placeholders.
@@ -391,7 +391,7 @@ choose a `GGUF` model in the SillyTavern model dropdown, and use the `%model%` p
 ```
 +++
 
-!!! info If you have model types other than the usual SD checkpoints in ComfyUI
+!!!info If you have model types other than the usual SD checkpoints in ComfyUI
 Stable Diffusion checkpoints, SD UNets, and GGUF-quantized UNets all appear in the Model dropdown.
 Models of one type will not work with workflows/loader nodes expecting another type.
 If you choose an incompatible model type in ST, ComfyUI will report a problem with the loader node.

@@ -5,7 +5,7 @@ label: Docker
 
 # Docker Installation
 
-!!! info
+!!!info
 This guide assumes you installed SillyTavern in a non-root (non-admin) folder. If you installed SillyTavern in a root folder, you may have to run some of these commands with administrator rights [`sudo`, `doas`, Command Prompt (Administrator)].
 !!!
 
@@ -14,7 +14,7 @@ This guide assumes you installed SillyTavern in a non-root (non-admin) folder. I
 ### Linux
 
 1. Install Docker by following the Docker installation guide [here](https://docs.docker.com/engine/install/).
-   !!! danger
+   !!!danger
    **Do not** install Docker Desktop.
    !!!
 2. Follow the steps in **Manage Docker as a non-root user** in the Docker [Post-Installation Guide](https://docs.docker.com/engine/install/linux-postinstall/).
@@ -105,7 +105,7 @@ This guide assumes you installed SillyTavern in a non-root (non-admin) folder. I
 
     Save the file by pressing _Ctrl+S_ then exit `nano` by pressing _Ctrl+X_.
 
-    !!! info
+    !!!info
     Note that if you configured Docker network as a bridge, you could also add external IP addresses to the whitelist as usual.
     !!!
 
@@ -121,7 +121,7 @@ This guide assumes you installed SillyTavern in a non-root (non-admin) folder. I
 
 ### Windows
 
-!!! warning Regarding Docker on Windows
+!!!warning Regarding Docker on Windows
 Using Docker on Windows is **_really_** complicated. Not only do you need to activate _Windows Subsystem for Linux_ within _Turn Windows features on or off_, but also configure your system for Virtualization (Intel VT-d/AMD SVM) which differs from PC manufacturer to PC manufacturer (or motherboard manufacturer). Sometimes, this option is not present on some systems.
 
 It is highly suggested you install SillyTavern by following our [Windows](/Installation/Windows.md) guide. This section is a _rough_ idea of how it can be done on Windows.
@@ -193,7 +193,7 @@ It is highly suggested you install SillyTavern by following our [Windows](/Insta
 
     Save the file by pressing _Ctrl+S_ then exit your editor.
 
-    !!! info
+    !!!info
     Note that if you configured Docker network as a bridge, you could also add external IP addresses to the whitelist as usual.
     !!!
 
@@ -293,7 +293,7 @@ You will also need to install [Homebrew](https://brew.sh/) in order to install G
 
     Save the file by pressing _Ctrl+S_ then exit `nano` by pressing _Ctrl+X_.
 
-    !!! info
+    !!!info
     Note that if you configured Docker network as a bridge, you could also add external IP addresses to the whitelist as usual.
     !!!
 
@@ -311,7 +311,7 @@ You will also need to install [Homebrew](https://brew.sh/) in order to install G
 
 SillyTavern's configuration file (config.yaml) will be located within the `config` folder. Configuring the config file should be no different than configuring it without Docker, however you will need to run `nano` or a code editor with administrator rights in order to save your changes.
 
-!!! warning
+!!!warning
 Don't forget to restart the Docker container for SillyTavern in order to apply your changes! Make sure you execute this command within the `docker` folder.
 
 ```sh

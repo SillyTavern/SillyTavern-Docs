@@ -6,7 +6,7 @@ order: -10
 
 Multi-user mode allows several people to use one SillyTavern server. Each user has their own settings, extensions, and data. User accounts can also be password-protected.
 
-!!! warning
+!!!warning
 User passwords provide basic privacy between users of a multi-user setup. They are not a security feature and should not be considered as such. All user data (including chat history, API keys, and other sensitive information) is stored in plain text on the server. It can be viewed and modified by anyone with access to the server's filesystem. **Do not use SillyTavern on a public server or with untrusted users.**
 !!!
 
@@ -83,7 +83,7 @@ You must create an `index.json` file in the `/default/scaffold` directory for th
 
 Scaffolded files are copied before default files, which means they will override any default files (presets/settings/etc.) that have the same file name.
 
-!!!note
+!!!tip
 Every user data directory has a `content.log` file that lists all files copied from the scaffold and default directories. Remove this file to force the server to sync the content again on the next restart.
 !!!
 

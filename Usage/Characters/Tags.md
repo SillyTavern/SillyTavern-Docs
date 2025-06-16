@@ -17,7 +17,7 @@ There are several ways to add or remove tags to a character card:
 
 To do mass tagging, click the "Bulk edit characters" button (pencil icon), select the cards you want to tag, right click on any of them, then click "Tag" in the contextual menu.
 
-!!! info Note
+!!!info Note
 Please note that groups cannot be mass tagged.
 !!!
 
@@ -37,7 +37,7 @@ You can backup and restore all the information here (tag list, tag assignments t
 
 You can use grip buttons on the left to reorder tags as they will appear in the tag filter in Character Management.
 
-!!! warning Warning
+!!!warning Warning
 The tags backup JSON file is not intended for sharing with others as it contains information specific to your instance only, such as internal entity names!
 !!!
 
@@ -47,7 +47,7 @@ When importing external character cards from downloaded images (or from the "Imp
 
 Embedded card tags are stored in the "Creator's Metadata" section of "Advanced Definitions" menu of the character editor. If you wish to propose some tags to other users who would import that character, populate the "Tags to Embed" field with a comma-separated list of tags.
 
-!!! info Note
+!!!info Note
 This popup will appear only if a User Settings option "Import Card Tags" is set to "Ask". 
 !!!
 
@@ -72,7 +72,7 @@ You can filter by any number of tags at the same time.
 
 ## Tags as Folders
 
-!!! info Note
+!!!info Note
 To use this functionality, it has to be enabled first in the User Settings, under the UI Theme column. The state of this toggle also saves with the UI theme.
 !!!
 

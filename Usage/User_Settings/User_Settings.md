@@ -344,7 +344,7 @@ The Clean-Up tool scans for loose files into the following categories:
 
 ## Debug menu
 
-!!! warning These functions are intended for advanced users only.
+!!!warning These functions are intended for advanced users only.
 
 Do not use them unless you fully understand their consequences.
 !!!

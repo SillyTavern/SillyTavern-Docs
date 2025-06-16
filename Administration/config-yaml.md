@@ -4,7 +4,7 @@ icon: cpu
 
 # Configuration File
 
-!!! warning Disclaimer
+!!!warning Disclaimer
 
 This documentation may be obsolete, incomplete, or incorrect. Please refer to the [default config.yaml](https://github.com/SillyTavern/SillyTavern/blob/release/default/config.yaml) in your installation for the most up-to-date list of settings.
 
@@ -30,7 +30,7 @@ The environment variables should be prefixed with `SILLYTAVERN_` and use upperca
 
 The nested settings should be separated by underscores. For example, `protocol.ipv6` can be overridden with the `SILLYTAVERN_PROTOCOL_IPV6` environment variable.
 
-!!! warning
+!!!warning
 Configurations that expect arrays or objects should be JSON-stringified. For example, to override the `whitelist` setting with the `SILLYTAVERN_WHITELIST` environment variable, you should set it as a JSON string: `SILLYTAVERN_WHITELIST='["127.0.0.1", "::1"]'`.
 !!!
 
@@ -208,8 +208,7 @@ See more on using environment variables in the [Node.js documentation](https://n
 
 ### Claude Configuration
 
-!!! warning
-**IMPORTANT!**
+!!!warning **IMPORTANT!**
 
 Use with caution and only when the prompt prefix is static and doesn't change between requests. \{\{random\}\} macro, lorebooks, vectors, summaries, etc. will likely invalidate the cache and you'll just waste money on cache misses. Behavior may be unpredictable and no guarantees can or will be made.
 

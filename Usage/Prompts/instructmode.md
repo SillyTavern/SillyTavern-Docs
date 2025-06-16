@@ -47,7 +47,7 @@ User: { Write a happy song about Nintendo Switch. }
 
 ### System Prompt
 
-!!! warning Recent change
+!!!warning Recent change
 The System Prompt is now a separate entity. See the [Advanced Formatting](advancedformatting.md#system-prompt) page for more details.
 !!!
 
