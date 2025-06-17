@@ -42,7 +42,7 @@ nvm use lts
 
 ## Windows - SillyTavern Launcher
 
-If you're have installed using the SillyTavern Launcher:
+If you have installed using the SillyTavern Launcher:
 
 1. Open the SillyTavern Launcher.
 2. Navigate to `Toolbox / App Installer / Core Utilities / Install Node.js`.
