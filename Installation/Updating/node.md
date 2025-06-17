@@ -73,7 +73,7 @@ Don't forget to accept any prompts that may appear during the update process by 
 2. Download the macOS Installer for the LTS version.
 3. Run the `.pkg` file and follow the prompts to complete the installation.
 
-### macOS - Homebrew
+## macOS - Homebrew
 
 If you have Homebrew installed, you can update Node.js with the following commands:
 
