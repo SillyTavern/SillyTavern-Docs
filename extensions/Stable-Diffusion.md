@@ -35,6 +35,7 @@ Most common Stable Diffusion generation settings are customizable within the Sil
 | [ComfyUI](https://github.com/comfyanonymous/ComfyUI)                                              | Local, open source (GPL3), free of charge, see [ComfyUI Configuration](#comfyui-configuration). |
 | [Draw Things](https://drawthings.ai/)                                                             | Local, Mac/iOS, free of charge                                                                  |
 | [FAL.AI](https://fal.ai/)                                                                         | Cloud, paid                                                                                     |
+| [Google AI Studio](https://aistudio.google.com/) / [Google Vertex AI](https://cloud.google.com/vertex-ai) | Cloud, paid. Imagen model series. AI Studio only supports Imagen 3.0 002 model.         |
 | [HuggingFace Serverless](https://huggingface.co/docs/api-inference/index)                         | Cloud, free of charge                                                                           |
 | [NanoGPT](https://nano-gpt.com/)                                                                  | Cloud, paid                                                                                     |
 | [NovelAI Diffusion](https://novelai.net/)                                                         | Cloud, requires an active subscription                                                          |
