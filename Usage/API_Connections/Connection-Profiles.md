@@ -19,6 +19,7 @@ Connection Profiles store the following selections.
 ### Common
 
 * [API type, model and the server URL](/Usage/API_Connections/index.md)
+* [Secret Key](/Usage/faq.md#where-are-my-api-keys-stored-why-cant-i-see-them)
 * [Settings preset](/Usage/Common-Settings.md)
 * [Start Reply With](/Usage/Prompts/advancedformatting.md#start-reply-with) (can be explicitly empty)
 * [Custom Stopping Strings](/Usage/Prompts/advancedformatting.md#custom-stopping-strings) (can be explicitly empty)
@@ -33,6 +34,7 @@ Connection Profiles store the following selections.
 
 ### Chat Completion APIs
 
+* [Prompt Post-Processing](/Usage/API_Connections/openai.md#prompt-post-processing)
 * Proxy preset
 
 ## Managing Connection Profiles
