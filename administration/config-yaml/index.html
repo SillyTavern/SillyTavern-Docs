@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.1.803506667827">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.1.803920947177">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.10.1">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.10.1.803506667827" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.10.1.803920947177" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.10.1.803506667827" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.10.1.803920947177" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.10.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.10.1.803506667827" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.10.1.803506667827" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.10.1.803920947177" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.10.1.803920947177" defer></script>
 
     <style>
         a {
@@ -662,12 +662,15 @@
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="autorun-configuration">
+<doc-anchor-target id="browser-launch-configuration">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#autorun-configuration">#</doc-anchor-trigger>
-        <span>AutoRun Configuration</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#browser-launch-configuration">#</doc-anchor-trigger>
+        <span>Browser Launch Configuration</span>
     </h2>
 </doc-anchor-target>
+<blockquote>
+<p>Previously known as &quot;Autorun&quot; settings.</p>
+</blockquote>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -680,26 +683,32 @@
 </thead>
 <tbody>
 <tr>
-<td><code v-pre>autorun</code></td>
-<td>Open browser automatically on startup</td>
+<td><code v-pre>browserLaunch.enabled</code></td>
+<td>Open the browser automatically on server startup</td>
 <td><code v-pre>true</code></td>
 <td><code v-pre>true</code>, <code v-pre>false</code></td>
 </tr>
 <tr>
-<td><code v-pre>autorunHostname</code></td>
-<td>Hostname used when autorun opens the browser</td>
+<td><code v-pre>browserLaunch.browser</code></td>
+<td>Browser to use for opening the URL</td>
+<td><code v-pre>&quot;default&quot;</code></td>
+<td><code v-pre>&quot;default&quot;</code>, <code v-pre>&quot;chrome&quot;</code>, <code v-pre>&quot;firefox&quot;</code>, <code v-pre>&quot;edge&quot;</code></td>
+</tr>
+<tr>
+<td><code v-pre>browserLaunch.hostname</code></td>
+<td>Override the hostname for browser launch</td>
 <td><code v-pre>&quot;auto&quot;</code></td>
 <td><code v-pre>&quot;auto&quot;</code>, any valid hostname (e.g., <code v-pre>&quot;localhost&quot;</code>, <code v-pre>&quot;st.example.com&quot;</code>)</td>
 </tr>
 <tr>
-<td><code v-pre>autorunPortOverride</code></td>
-<td>Override port for browser autorun</td>
+<td><code v-pre>browserLaunch.port</code></td>
+<td>Override the port for browser launch</td>
 <td><code v-pre>-1</code></td>
 <td><code v-pre>-1</code> (use server port), any valid port number</td>
 </tr>
 <tr>
-<td><code v-pre>avoidLocalhost</code></td>
-<td>Avoid using &#x27;localhost&#x27; for autorun</td>
+<td><code v-pre>browserLaunch.avoidLocalhost</code></td>
+<td>Avoid using &#x27;localhost&#x27; in a launch URL</td>
 <td><code v-pre>false</code></td>
 <td><code v-pre>true</code>, <code v-pre>false</code></td>
 </tr>

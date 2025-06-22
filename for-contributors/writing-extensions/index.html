@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.1.803506667827">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.1.803920947177">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.10.1">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.10.1.803506667827" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.10.1.803920947177" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.10.1.803506667827" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.10.1.803920947177" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.10.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.10.1.803506667827" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.10.1.803506667827" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.10.1.803920947177" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.10.1.803920947177" defer></script>
 
     <style>
         a {
@@ -287,12 +287,14 @@ const generateRaw = await importFromScript('generateRaw');</code></pre>
     </h2>
 </doc-anchor-target>
 <p>Every extension must have a folder in <code v-pre>data/&lt;user-handle&gt;/extensions</code> and have a manifest.json file which contains metadata about the extension and a path to a JS script file, which is the entry point of the extension.</p>
+<p>Downloadable extensions are mounted into the <code v-pre>/scripts/extensions/third-party</code> folder when serving over HTTP, so relative imports should be used based on that. To ease local development, consider placing your extension repository in the <code v-pre>/scripts/extensions/third-party</code> folder (&quot;Install for all users&quot; option).</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-json"><code v-pre class="language-json">{
     &quot;display_name&quot;: &quot;The name of the extension&quot;,
     &quot;loading_order&quot;: 1,
     &quot;requires&quot;: [],
     &quot;optional&quot;: [],
+    &quot;dependencies&quot;: [],
     &quot;js&quot;: &quot;index.js&quot;,
     &quot;css&quot;: &quot;style.css&quot;,
     &quot;author&quot;: &quot;Your name&quot;,
@@ -304,28 +306,45 @@ const generateRaw = await importFromScript('generateRaw');</code></pre>
     }
 }</code></pre>
 </doc-codeblock></div>
+<doc-anchor-target id="manifest-fields">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#manifest-fields">#</doc-anchor-trigger>
+        <span>Manifest fields</span>
+    </h3>
+</doc-anchor-target>
 <ul>
 <li><code v-pre>display_name</code> is required. Displays in the &quot;Manage Extensions&quot; menu.</li>
 <li><code v-pre>loading_order</code> is optional. Higher number loads later.</li>
-<li><code v-pre>requires</code> specifies the required Extras modules dependencies. An extension won&#x27;t be loaded unless the connected Extras API provides all of them.</li>
-<li><code v-pre>optional</code> specifies the optional Extras dependencies.</li>
 <li><code v-pre>js</code> is the main JS file reference, and is required.</li>
 <li><code v-pre>css</code> is an optional style file reference.</li>
 <li><code v-pre>author</code> is required. It should contain the name or contact info of the author(s).</li>
 <li><code v-pre>auto_update</code> is set to true if the extension should auto-update when the version of the ST package changes.</li>
 <li><code v-pre>i18n</code> is an optional object that specifies the supported locales and their corresponding JSON files (see below).</li>
+<li><code v-pre>dependencies</code>: is an optional array of strings specifying other <strong>extensions</strong> that this extension depends on.</li>
 <li><code v-pre>generate_interceptor</code> is an optional string that specifies the name of a global function called on text generation requests.</li>
 </ul>
-<p>Downloadable extensions are mounted into the <code v-pre>/scripts/extensions/third-party</code> folder, so relative imports should be used based on that. Be careful about where you create your extension during development if you plan on installing it from your GitHub which overwrites the content in the <code v-pre>third-party</code> folder.</p>
-<doc-anchor-target id="requires-vs-optional">
+<doc-anchor-target id="dependencies">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#requires-vs-optional">#</doc-anchor-trigger>
-        <span><code v-pre>requires</code> vs <code v-pre>optional</code></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#dependencies">#</doc-anchor-trigger>
+        <span>Dependencies</span>
+    </h3>
+</doc-anchor-target>
+<p>Extensions can also depend on other SillyTavern extensions. The extension will not load if any of these dependencies are missing or disabled.</p>
+<p>Dependencies are specified by their <strong>folder name</strong> as it appears in the <code v-pre>public/extensions</code> directory.</p>
+<p>Examples:</p>
+<ul>
+<li>Built-in extensions: <code v-pre>&quot;vectors&quot;</code>, <code v-pre>&quot;caption&quot;</code></li>
+<li>Third-party extensions: <code v-pre>&quot;third-party/Extension-WebLLM&quot;</code>, <code v-pre>&quot;third-party/Extension-Mermaid&quot;</code></li>
+</ul>
+<doc-anchor-target id="deprecated-fields">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#deprecated-fields">#</doc-anchor-trigger>
+        <span>Deprecated fields</span>
     </h3>
 </doc-anchor-target>
 <ul>
-<li><code v-pre>requires</code> - extension could be installed, but will not be loaded until the user connects to the Extras API that provides all of the specified modules.</li>
-<li><code v-pre>optional</code> - extension could be installed and will always be loaded, but any of the missing Extras API modules will be highlighted in the &quot;Manage extensions&quot; menu.</li>
+<li><code v-pre>requires</code> is an optional array of strings specifying required <strong>Extras modules</strong>. The extension won&#x27;t be loaded if the connected Extras API doesn&#x27;t provide all listed modules.</li>
+<li><code v-pre>optional</code> is an optional array of strings specifying optional <strong>Extras modules</strong>. The extension will still load if these are missing, and the extension should handle their absence gracefully.</li>
 </ul>
 <p>To check which modules are currently provided by the connected Extras API, import the <code v-pre>modules</code> array from <code v-pre>scripts/extensions.js</code>.</p>
 <doc-anchor-target id="scripting">

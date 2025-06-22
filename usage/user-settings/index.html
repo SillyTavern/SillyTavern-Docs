@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.1.803506667827">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.1.803920947177">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.10.1">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.10.1.803506667827" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.10.1.803920947177" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.10.1.803506667827" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.10.1.803920947177" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.10.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.10.1.803506667827" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.10.1.803920947177" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -627,6 +627,150 @@
 </doc-anchor-target>
 <p>Helps to avoid double-substitutions when the variable values contain text that could be interpreted as macros.</p>
 <p>See <a href="../st-script/#replace-variable-macros">Replace Variable Macros</a> for more information.</p>
+<doc-anchor-target id="clean-up-menu">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#clean-up-menu">#</doc-anchor-trigger>
+        <span>Clean-Up Menu</span>
+    </h2>
+</doc-anchor-target>
+<p>The Clean-Up menu provides a data maintenance tool that helps you identify and remove unnecessary files from your SillyTavern installation. This feature helps keep your data directory organized and can free up significant disk space.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr-lg rounded-br-lg doc-callout bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>warning &quot;Important Warning&quot;</h5>
+<p>The Clean-up tool will permanently delete files. <strong>This action cannot be undone!</strong></p>
+<p>Manual uploads to the <code v-pre>/data/user/files/</code> and <code v-pre>/data/user/images/</code> directories will be deleted if they are not associated with chat messages or Data Bank entries.</p>
+<p>If unsure, make a backup of your data before using the Clean-up menu.</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="how-to-use-clean-up">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-use-clean-up">#</doc-anchor-trigger>
+        <span>How to Use Clean-Up</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li>Click the <strong>Clean-Up</strong> button under the <strong>Miscellaneous</strong> section</li>
+<li>Click <strong>Scan</strong> to analyze your installation. This may take some time depending on the size of your data directory</li>
+<li>Review the categories of files found</li>
+<li>Use <strong>View</strong> to preview file contents before deletion</li>
+<li>Use <strong>Download</strong> to save files before deletion</li>
+<li>Delete individual files or entire categories as needed</li>
+</ol>
+<doc-anchor-target id="clean-up-categories">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#clean-up-categories">#</doc-anchor-trigger>
+        <span>Clean-Up Categories</span>
+    </h3>
+</doc-anchor-target>
+<p>The Clean-Up tool scans for loose files into the following categories:</p>
+<doc-anchor-target id="files">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#files">#</doc-anchor-trigger>
+        <span>Files</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><strong>What it finds</strong>: Files that are not associated with chat messages or Data Bank entries</li>
+<li><strong>Location</strong>: <code v-pre>/data/&lt;user-handle&gt;/user/files/</code></li>
+<li><strong>Risk</strong>: <span class="docs-emoji">&#x26A0;&#xFE0F;</span> <strong>WILL DELETE MANUAL UPLOADS</strong> that aren&#x27;t referenced in chats</li>
+<li><strong>When to clean</strong>: Safe to delete if you don&#x27;t need unreferenced files</li>
+</ul>
+<doc-anchor-target id="images">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#images">#</doc-anchor-trigger>
+        <span>Images</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><strong>What it finds</strong>: Images that are not associated with chat messages</li>
+<li><strong>Location</strong>: <code v-pre>/data/&lt;user-handle&gt;/user/images/</code></li>
+<li><strong>Risk</strong>: <span class="docs-emoji">&#x26A0;&#xFE0F;</span> <strong>WILL DELETE MANUAL UPLOADS</strong> that aren&#x27;t referenced in chats</li>
+<li><strong>When to clean</strong>: Safe to delete if you don&#x27;t need unreferenced images</li>
+</ul>
+<doc-anchor-target id="chats">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#chats">#</doc-anchor-trigger>
+        <span>Chats</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><strong>What it finds</strong>: Chat files associated with deleted characters</li>
+<li><strong>Location</strong>: <code v-pre>data/&lt;user-handle&gt;/chats/</code></li>
+<li><strong>Risk</strong>: <span class="docs-emoji">&#x26A0;&#xFE0F;</span> <strong>Orphaned chats will be permanently lost</strong></li>
+<li><strong>When to clean</strong>: Safe to delete if you&#x27;ve intentionally deleted characters and no longer need their chat histories</li>
+</ul>
+<doc-anchor-target id="group-chats">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#group-chats">#</doc-anchor-trigger>
+        <span>Group Chats</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><strong>What it finds</strong>: Chat files associated with deleted groups</li>
+<li><strong>Location</strong>: <code v-pre>data/&lt;user-handle&gt;/group chats/</code></li>
+<li><strong>Risk</strong>: <span class="docs-emoji">&#x26A0;&#xFE0F;</span> <strong>Orphaned group chats will be permanently lost</strong></li>
+<li><strong>When to clean</strong>: Safe to delete if you&#x27;ve intentionally deleted groups and no longer need their chat histories</li>
+</ul>
+<doc-anchor-target id="avatar-thumbnails">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#avatar-thumbnails">#</doc-anchor-trigger>
+        <span>Avatar Thumbnails</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><strong>What it finds</strong>: Thumbnails for avatars of missing or deleted characters</li>
+<li><strong>Location</strong>: <code v-pre>data/&lt;user-handle&gt;/thumbnails/avatar</code></li>
+<li><strong>Risk</strong>: <span class="docs-emoji">&#x2705;</span> <strong>Safe to delete</strong> - thumbnails are automatically regenerated when needed</li>
+<li><strong>When to clean</strong>: Always safe to clean, helps free up space</li>
+</ul>
+<doc-anchor-target id="background-thumbnails">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#background-thumbnails">#</doc-anchor-trigger>
+        <span>Background Thumbnails</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><strong>What it finds</strong>: Thumbnails for missing or deleted backgrounds</li>
+<li><strong>Location</strong>: <code v-pre>data/&lt;user-handle&gt;/thumbnails/bg</code></li>
+<li><strong>Risk</strong>: <span class="docs-emoji">&#x2705;</span> <strong>Safe to delete</strong> - thumbnails are automatically regenerated when needed</li>
+<li><strong>When to clean</strong>: Always safe to clean, helps free up space</li>
+</ul>
+<doc-anchor-target id="chat-backups">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#chat-backups">#</doc-anchor-trigger>
+        <span>Chat Backups</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><strong>What it finds</strong>: Automatically generated chat backups</li>
+<li><strong>Location</strong>: <code v-pre>data/&lt;user-handle&gt;/backups/chat_*</code></li>
+<li><strong>Risk</strong>: <span class="docs-emoji">&#x26A0;&#xFE0F;</span> <strong>Backup files will be permanently lost</strong></li>
+<li><strong>When to clean</strong>: Consider keeping recent backups, but older ones can be safely deleted</li>
+</ul>
+<doc-anchor-target id="settings-backups">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#settings-backups">#</doc-anchor-trigger>
+        <span>Settings Backups</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><strong>What it finds</strong>: Automatically generated settings backups</li>
+<li><strong>Location</strong>: <code v-pre>data/&lt;user-handle&gt;/backups/settings_*</code></li>
+<li><strong>Risk</strong>: <span class="docs-emoji">&#x26A0;&#xFE0F;</span> <strong>Settings backup files will be permanently lost</strong></li>
+<li><strong>When to clean</strong>: Consider keeping recent backups, but older ones can be safely deleted</li>
+</ul>
 <doc-anchor-target id="debug-menu">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#debug-menu">#</doc-anchor-trigger>

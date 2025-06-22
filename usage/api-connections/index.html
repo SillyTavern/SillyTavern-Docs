@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.1.803506667827">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.1.803920947177">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.10.1">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.10.1.803506667827" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.10.1.803920947177" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.10.1.803506667827" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.10.1.803920947177" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.10.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.10.1.803506667827" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.10.1.803920947177" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -272,25 +272,6 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 <li>Requires separate download of LLM models from <a href="https://huggingface.co/models?other=LLM">HuggingFace</a> which can be 5-50GB each.</li>
 <li>Most models are not as powerful as cloud LLM APIs.</li>
 </ul>
-<doc-anchor-target id="koboldai">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#koboldai">#</doc-anchor-trigger>
-        <span>KoboldAI</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li>Runs on your PC, 100% private, wide range of models available</li>
-<li>Gives the most direct control of the AI&#x27;s generation settings</li>
-<li>Requires large amounts of VRAM in your GPU (6-24GB, depending on the LLM model)</li>
-<li>Models limited to 2k context</li>
-<li>No streaming</li>
-<li>Popular KoboldAI versions:
-<ul>
-<li><a href="https://github.com/henk717/KoboldAI">Henky&#x27;s United</a></li>
-<li><a href="https://github.com/0cc4m/KoboldAI">0cc4m&#x27;s 4bit-supporting United</a></li>
-</ul>
-</li>
-</ul>
 <doc-anchor-target id="koboldcpp">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#koboldcpp">#</doc-anchor-trigger>
@@ -299,10 +280,35 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 </doc-anchor-target>
 <ul>
 <li>Easy-to-use API with CPU offloading (helpful for low VRAM users) and streaming</li>
-<li>Runs from a single .exe file on Windows (must be compiled from source on MacOS and Linux)</li>
-<li>Supports GGUF/GGML models</li>
+<li>Runs from a single binary file on Windows, Mac, and Linux</li>
+<li>Supports GGUF models</li>
 <li>Slower than GPU-only loaders such as AutoGPTQ and Exllama/v2</li>
 <li><a href="https://github.com/LostRuins/koboldcpp">GitHub</a></li>
+</ul>
+<doc-anchor-target id="llamacpp">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#llamacpp">#</doc-anchor-trigger>
+        <span>llama.cpp</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>The original source from which KoboldCpp and Ollama were forked</li>
+<li>Provides pre-compiled binaries and an option to compile from source</li>
+<li>Supports GGUF models</li>
+<li>Lightweight CLI interface for llama-server</li>
+<li><a href="https://github.com/ggml-org/llama.cpp">GitHub</a></li>
+</ul>
+<doc-anchor-target id="ollama">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ollama">#</doc-anchor-trigger>
+        <span>Ollama</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Easiest to set up and use from all llama.cpp-based APIs</li>
+<li>A nifty <a href="https://ollama.com/library">catalog</a> of models available for one-click download</li>
+<li>Supports GGUF models wrapped in Ollama&#x27;s own format</li>
+<li><a href="https://github.com/ollama/ollama">GitHub</a>, <a href="https://ollama.com/">Website</a></li>
 </ul>
 <doc-anchor-target id="oobabooga-textgeneration-webui">
     <h3>
@@ -337,6 +343,25 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 <li>Not recommended for users with low VRAM (no CPU offloading)</li>
 <li><a href="https://github.com/theroyallab/tabbyAPI">GitHub</a></li>
 </ul>
+<doc-anchor-target id="koboldai-classic-deprecated-abandoned">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#koboldai-classic-deprecated-abandoned">#</doc-anchor-trigger>
+        <span>KoboldAI Classic (deprecated, abandoned)</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Runs on your PC, 100% private, wide range of models available</li>
+<li>Gives the most direct control of the AI&#x27;s generation settings</li>
+<li>Requires large amounts of VRAM in your GPU (6-24GB, depending on the LLM model)</li>
+<li>Models limited to 2k context</li>
+<li>No streaming</li>
+<li>Popular KoboldAI versions:
+<ul>
+<li><a href="https://github.com/henk717/KoboldAI">Henky&#x27;s United</a></li>
+<li><a href="https://github.com/0cc4m/KoboldAI">0cc4m&#x27;s 4bit-supporting United</a></li>
+</ul>
+</li>
+</ul>
 <doc-anchor-target id="cloud-llm-apis">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#cloud-llm-apis">#</doc-anchor-trigger>
@@ -347,6 +372,18 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 <li>These LLM APIs are run as cloud services and require no resources on your PC</li>
 <li>They are stronger/smarter than most local LLMs</li>
 <li>However they all have content filtering of varying degrees, and most require payment</li>
+</ul>
+<doc-anchor-target id="ai-horde">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ai-horde">#</doc-anchor-trigger>
+        <span>AI Horde</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>SillyTavern can access this API out of the box with no additional settings required</li>
+<li>Uses the GPU of individual volunteers (Horde Workers) to process responses for your chat inputs</li>
+<li>At the mercy of the Worker in terms of generation wait times, AI settings, and available models</li>
+<li><a href="https://aihorde.net/">Website</a>, <a href="horde/">Setup Instructions</a></li>
 </ul>
 <doc-anchor-target id="openai-chatgpt">
     <h3>
@@ -374,6 +411,18 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 <li>Requires a specific prompting style and utilization of <a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/prefill-claudes-response">prefills</a> for reply steering</li>
 <li><a href="https://console.anthropic.com/">Website</a></li>
 </ul>
+<doc-anchor-target id="google-ai-studio-and-vertex-ai">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#google-ai-studio-and-vertex-ai">#</doc-anchor-trigger>
+        <span>Google AI Studio and Vertex AI</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Has free tier with rate limits (Gemini Flash), may require billing information</li>
+<li><a href="https://aistudio.google.com/">AI Studio</a> usually has the latest models and features</li>
+<li><a href="https://console.cloud.google.com/vertex-ai/studio">Vertex AI</a> is trickier to set up, but more stable</li>
+<li><a href="google/">Setup Instructions</a></li>
+</ul>
 <doc-anchor-target id="mistral-by-mistral-ai">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#mistral-by-mistral-ai">#</doc-anchor-trigger>
@@ -386,41 +435,17 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 <li>Free Tier with rate limits.</li>
 <li>Reasonable moderation, with Mistrals main principles being to be neutral and empower users, more information <a href="https://mistral.ai/terms/">here</a>.</li>
 </ul>
-<doc-anchor-target id="openrouter">
+<doc-anchor-target id="openrouter-and-windowai">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#openrouter">#</doc-anchor-trigger>
-        <span>OpenRouter</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#openrouter-and-windowai">#</doc-anchor-trigger>
+        <span>OpenRouter and WindowAI</span>
     </h3>
 </doc-anchor-target>
 <ul>
-<li>WindowAI browser extension allows you to connect to the abovementioned cloud LLMs with your own API key</li>
+<li>WindowAI browser extension allows you to connect to the aforementioned cloud LLMs with your own API key</li>
 <li>Use OpenRouter to pay to use their API keys instead</li>
 <li>Useful if you don&#x27;t want to create individual accounts on each service</li>
 <li><a href="https://windowai.io">WindowAI website</a> and <a href="https://openrouter.ai">OpenRouter website</a></li>
-</ul>
-<doc-anchor-target id="dreamgen">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#dreamgen">#</doc-anchor-trigger>
-        <span>DreamGen</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li>Uncensored models tuned for steerable creative writing</li>
-<li>Free monthly credits, as well as paid subscription</li>
-<li>Models ranging from 7B to 70B</li>
-<li><a href="dreamgen/">Setup Instructions</a></li>
-</ul>
-<doc-anchor-target id="ai-horde">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ai-horde">#</doc-anchor-trigger>
-        <span>AI Horde</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li>SillyTavern can access this API out of the box with no additional settings required</li>
-<li>Uses the GPU of individual volunteers (Horde Workers) to process responses for your chat inputs</li>
-<li>At the mercy of the Worker in terms of generation wait times, AI settings, and available models</li>
-<li><a href="https://aihorde.net/">Website</a></li>
 </ul>
 <doc-anchor-target id="mancer-ai">
     <h3>
@@ -435,6 +460,29 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 <li>Uses an API similar to <code v-pre>Oobabooga TextGeneration WebUI</code>, see <a href="https://mancer.tech/docs/clients/#sampling-parameters">Mancer docs</a> for details.</li>
 <li><a href="https://mancer.tech/">Website</a>, <a href="mancer/">Setup Instructions</a></li>
 </ul>
+<doc-anchor-target id="dreamgen">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#dreamgen">#</doc-anchor-trigger>
+        <span>DreamGen</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Uncensored models tuned for steerable creative writing</li>
+<li>Free monthly credits, as well as paid subscription</li>
+<li>Models ranging from 7B to 70B</li>
+<li><a href="dreamgen/">Setup Instructions</a></li>
+</ul>
+<doc-anchor-target id="pollinations">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pollinations">#</doc-anchor-trigger>
+        <span>Pollinations</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Requires no setup, can be used out of the box</li>
+<li>Provides access to a wide range of models free of charge</li>
+<li>Outputs may occasional include ads with links to third-party</li>
+</ul>
 <doc-anchor-target id="novelai">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#novelai">#</doc-anchor-trigger>
@@ -442,9 +490,20 @@ Below is a description of their respective strengths, weaknesses, and use cases.
     </h3>
 </doc-anchor-target>
 <ul>
-<li>No content filter</li>
+<li>No content filter, the latest model is based on Llama 3</li>
 <li>Paid subscription required</li>
 <li><a href="https://novelai.net/">Website</a>, <a href="novelai/">Setup Instructions</a></li>
+</ul>
+<doc-anchor-target id="aiml-api">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#aiml-api">#</doc-anchor-trigger>
+        <span>AI/ML API</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Unified API for 300+ models including Claude, GPT-4o, Gemini, LLaMA 3, Mistral and others</li>
+<li>Has a free tier with rate limits, subscription plans, and pay-as-you-go options</li>
+<li><a href="https://aimlapi.com">Website</a>, <a href="https://docs.aimlapi.com">Docs</a>, <a href="https://aimlapi.com/models">Models</a></li>
 </ul>
 
                                 
