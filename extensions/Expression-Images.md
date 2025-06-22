@@ -1,33 +1,37 @@
 # Character Expressions
 
-### What is it?
+## What is it?
 
 Expression images are images (aka 'sprites') of your AI character which are shown next to (or behind) the chat window.
 
 Expression images can automatically change based on a classification, adjusting to the sentiment expressed in the AI's most recent chat response.
 
-### Adding Character Expression Images
+## Adding Character Expression Images
 
 1. Open the Extensions Panel and expand the 'Character Expressions' section. If you have the character chat open, you will see a grid of image placeholders.
 ![Expression Drawer](/static/extensions/expression-drawer.png)
 2. Click the 'Upload image' button at the top left of each image in the grid, and select the image you want to apply to that emotion. This will save the image with the correct filename inside the `/data/<user-handle>/characters/(character_name_here)/` folder.
 3. Repeat this for all expressions you want to assign an image to.
 
-#### Importing an Expression images ZIP file
+### Importing an Expression images ZIP file
 
 Using the '<i class="fa-solid fa-file-zipper"></i> Upload sprite pack (ZIP)' button, you can import a zip file that contains a collection of expression images, and those images will automatically be added to the correct folder for your **currently selected character**. The ZIP file must contain all images in a flat structure (no subfolders) and correctly named files. Importing a zip will not automatically rename any images to make them match the emotions.
 
-### Change Expressions Manually
+## Change Expressions Manually
 
 1. Click on any of the uploaded expression images (sprites) to display them near the chat interface (with default UI mode) or at the center of the screen (in Visual Novel mode).
 2. Use the `/expression-set (name)` slash command or matching Quick Reply to set the sprite without opening the extensions menu.
 
-### Change Expressions Automatically
+## Change Expressions Automatically
 
 To automatically set expressions when the character replies, you have multiple options.
 Expressions change per message or at regular intervals when message streaming is enabled.
 
-#### Setup Instructions (Local)
+### How does the classify module work?
+
+The `classify` module uses a small 'sentiment parsing' model that runs alongside the SillyTavern server. This model takes the new output from the AI and detects what kind of sentiment, or emotion, the text is expressing. While multiple sentiments may be expressed in a single message, the model only picks the most likely one and returns that to the SillyTavern. The frontend extension then displays the image that is associated with that sentiment.
+
+### Setup Instructions (Local)
 
 1. Open the extensions panel and expand the "Character Expressions" extension menu.
 2. Select "Local" in the classification source dropdown.
@@ -38,11 +42,30 @@ Local classification defaults to 28 possible image labels: [Cohee/distilbert-bas
 
 To use the 6-option classification model, change the value of `extensions.models.classification` variable in the `config.yaml` file to: [Cohee/bert-base-uncased-emotion-onnx](https://huggingface.co/Cohee/bert-base-uncased-emotion-onnx)
 
-##### How does the classify module work?
+### Setup Instructions (with LLM)
 
-The `classify` module uses a small 'sentiment parsing' model that runs alongside the SillyTavern server. This model takes the new output from the AI and detects what kind of sentiment, or emotion, the text is expressing. While multiple sentiments may be expressed in a single message, the model only picks the most likely one and returns that to the SillyTavern. The frontend extension then displays the image that is associated with that sentiment.
+1. Connect to any of the supported and properly configured APIs via **<i class="fa-solid fa-plug"></i> API Connections**.
+2. Import the expression images the same way as mentioned above.
+3. Select "Main API" in the classification source dropdown.
+4. Optionally, configure the classification instruction prompt.
+5. Generate any message to verify that the classification works and the sprite appears. You may also check the server console for debug logs.
 
-#### Setup Instructions (with Extras)
+#### Prompt Building Strategies
+
+Main LLM source allows to choose how the classification prompt will be built:
+
+* **Limited Context**: Only the last message and a system instruction prompt are sent.
+* **Full Context**: The entire chat history, including the character card are sent.
+
+### Setup Instructions (WebLLM)
+
+1. Install the official [WebLLM extension](https://github.com/SillyTavern/Extension-WebLLM).
+2. Import the expression images the same way as mentioned above.
+3. Select "WebLLM" in the classification source dropdown.
+4. Optionally, configure the classification instruction prompt.
+5. Generate any message to verify that the classification works and the sprite appears. You may also check the server console for debug logs.
+
+### Setup Instructions (with Extras)
 
 > [!WARNING]  
 > Extras is deprecated and may be removed in future updates.
@@ -58,23 +81,7 @@ There is also a model with 28 options: [joeddav/distilbert-base-uncased-go-emoti
 
 To use this model you need to change your Extras command line to include the following argument (with a space before and after): `--classification-model=joeddav/distilbert-base-uncased-go-emotions-student`
 
-#### Setup Instructions (with LLM)
-
-1. Connect to any of the supported and properly configured APIs via <i class="fa-solid fa-plug"></i> API Connections.
-2. Import the expression images the same way as mentioned above.
-3. Select "LLM" in the classification source dropdown.
-4. Optionally, configure the classification instruction prompt.
-5. Generate any message to verify that the classification works and the sprite appears. You may also check the server console for debug logs.
-
-#### Setup Instructions (WebLLM)
-
-1. Install the official [WebLLM extension](https://github.com/SillyTavern/Extension-WebLLM).
-2. Import the expression images the same way as mentioned above.
-3. Select "WebLLM" in the classification source dropdown.
-4. Optionally, configure the classification instruction prompt.
-5. Generate any message to verify that the classification works and the sprite appears. You may also check the server console for debug logs.
-
-### Custom Expressions
+## Custom Expressions
 
 How to get more expression options than provided by default? You can set up **Custom Expressions** in the extension settings. You can assign any name to Custom Expressions. They will appear in the expression image list and can be assigned images like other expressions. They will have an indicator showing that those are custom.
 
@@ -83,13 +90,13 @@ How to get more expression options than provided by default? You can set up **Cu
 >
 > If you want Custom Expressions to be displayed, you either need to train a classification model with supported labels (outside the scope of this guide), or you can use LLM or WebLLM as classification source, which both will automatically use all existing expressions - both the default and any custom ones.
 
-### What image formats are supported for Expressions?
+## What image formats are supported for Expressions?
 
 Any image format is allowed, including webp and animated gifs.
 
 The most common format is a PNG file with a transparent background.
 
-### Using Default Expressions
+## Using Default Expressions
 
 If you don't have expression images for all expressions of a character, or no images at all, there are multiple options on what to display by default.  
 All of those can be selected via the dropdown under 'Default / Fallback Expression'.
@@ -98,7 +105,7 @@ All of those can be selected via the dropdown under 'Default / Fallback Expressi
 2. **[No Fallback]**: When no image exists, show nothing.
 3. **[Default emojis]**: You can use the built-in default expressions which are included with in SillyTavern. These are simple emoji-style images.
 
-### Using Multiple Images per Expression
+## Using Multiple Images per Expression
 
 It is possible to add multiple images per expression to allow for more variety in displayed expressions.  
 To enable this, simply toggle **Allow multiple sprites per expression**.  
@@ -109,13 +116,13 @@ Individual images can be manually chosen by selecting them with a click, or via 
 Whenever an expression with multiple images gets automatically chosen, one of the existing images will be selected at random.  
 If you want to force a new image of that expression to be chosen when the same expression gets used multiple times, you can enable **Re-roll if same sprite is used again**.
 
-#### Naming Convention for Multiple Images per Expression
+### Naming Convention for Multiple Images per Expression
 
 In case of multiple images per expressions, files need to be named a specic way.
 The files need to start with the name of the expressions, and then followed by a suffix, either separated by a dot or a dash. Examples: `joy.png`, `joy-1.png`, `joy.expressive.png`  
 File names must follow this format for both direct uploads and ZIP imports.
 
-### Sprite Folder Override
+## Sprite Folder Override
 
 > [!NOTE]
 > Display names (not character card filenames) dictate which image set is used
@@ -125,7 +132,7 @@ If you have more than one character with the same display name, they will both u
 If you want a different image set to be used for each version of the same-named character, you can use the sprites folder override.  
 Folder overrides can also be used to define different sprite sets (outfits, etc.) of the same character.
 
-#### How to set an override
+### How to set an override
 
 1. Create a folder in the `/data/<user-handle>/characters` with any name and put images there, e.g. `/data/<user-handle>/characters/Boris`.
 2. Open the chat with the character whose sprites you'd like to override.
