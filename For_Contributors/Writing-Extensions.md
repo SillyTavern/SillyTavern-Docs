@@ -48,12 +48,15 @@ const generateRaw = await importFromScript('generateRaw');
 
 Every extension must have a folder in `data/<user-handle>/extensions` and have a manifest.json file which contains metadata about the extension and a path to a JS script file, which is the entry point of the extension.
 
+Downloadable extensions are mounted into the `/scripts/extensions/third-party` folder when serving over HTTP, so relative imports should be used based on that. To ease local development, consider placing your extension repository in the `/scripts/extensions/third-party` folder ("Install for all users" option).
+
 ```json
 {
     "display_name": "The name of the extension",
     "loading_order": 1,
     "requires": [],
     "optional": [],
+    "dependencies": [],
     "js": "index.js",
     "css": "style.css",
     "author": "Your name",
@@ -66,23 +69,33 @@ Every extension must have a folder in `data/<user-handle>/extensions` and have a
 }
 ```
 
+### Manifest fields
+
 * `display_name` is required. Displays in the "Manage Extensions" menu.
 * `loading_order` is optional. Higher number loads later.
-* `requires` specifies the required Extras modules dependencies. An extension won't be loaded unless the connected Extras API provides all of them.
-* `optional` specifies the optional Extras dependencies.
 * `js` is the main JS file reference, and is required.
 * `css` is an optional style file reference.
 * `author` is required. It should contain the name or contact info of the author(s).
 * `auto_update` is set to true if the extension should auto-update when the version of the ST package changes.
 * `i18n` is an optional object that specifies the supported locales and their corresponding JSON files (see below).
+* `dependencies`: is an optional array of strings specifying other **extensions** that this extension depends on.
 * `generate_interceptor` is an optional string that specifies the name of a global function called on text generation requests.
 
-Downloadable extensions are mounted into the `/scripts/extensions/third-party` folder, so relative imports should be used based on that. Be careful about where you create your extension during development if you plan on installing it from your GitHub which overwrites the content in the `third-party` folder.
+### Dependencies
 
-### `requires` vs `optional`
+Extensions can also depend on other SillyTavern extensions. The extension will not load if any of these dependencies are missing or disabled.
 
-* `requires` - extension could be installed, but will not be loaded until the user connects to the Extras API that provides all of the specified modules.
-* `optional` - extension could be installed and will always be loaded, but any of the missing Extras API modules will be highlighted in the "Manage extensions" menu.
+Dependencies are specified by their **folder name** as it appears in the `public/extensions` directory.
+
+Examples:
+
+* Built-in extensions: `"vectors"`, `"caption"`
+* Third-party extensions: `"third-party/Extension-WebLLM"`, `"third-party/Extension-Mermaid"`
+
+### Deprecated fields
+
+* `requires` is an optional array of strings specifying required **Extras modules**. The extension won't be loaded if the connected Extras API doesn't provide all listed modules.
+* `optional` is an optional array of strings specifying optional **Extras modules**. The extension will still load if these are missing, and the extension should handle their absence gracefully.
 
 To check which modules are currently provided by the connected Extras API, import the `modules` array from `scripts/extensions.js`.
 

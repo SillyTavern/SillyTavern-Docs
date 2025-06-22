@@ -50,8 +50,9 @@ Supported sources:
 - Google Vertex AI
 - OpenRouter
 - xAI (Grok)
+- AI/ML API
 
-"Request model reasoning" does not determine whether a model does reasoning. Claude and Google allow thinking mode to be toggled; see [Reasoning Effort](#reasoning-effort).
+"Request model reasoning" does not determine whether a model does reasoning. Claude and Google (2.5 Flash) allow thinking mode to be toggled; see [Reasoning Effort](#reasoning-effort).
 
 ### By Parsing
 
@@ -99,18 +100,27 @@ Different ephemerality options affect reasoning blocks in the following ways:
 
 ## Reasoning Effort
 
-Reasoning Effort is a Chat Completion setting in the **<i class="fa-solid fa-sliders"></i> AI Response Configuration** panel that influences how many tokens may potentially be used on reasoning. The effect of each option depends on the source connected to. Currently, Auto simply means the relevant parameter is not included in the request.
+Reasoning Effort is a Chat Completion setting in the **<i class="fa-solid fa-sliders"></i> AI Response Configuration** panel that influences how many tokens may potentially be used on reasoning. The effect of each option depends on the source connected to. For the sources below, Auto simply means the relevant parameter is not included in the request.
 
-| Option  | Claude (≤ 21333 if no streaming) | Google AI Studio / Vertex AI (≤ 24576) | OpenAI (keyword)     | OpenRouter (keyword)                   | xAI (Grok) (keyword) |
-| ------- | -------------------------------- | -------------------------------------- | -------------------- | -------------------------------------- | -------------------- |
-| Auto    | not specified, **no thinking**   | not specified                          | not specified        | not specified, effect depends on model | not specified        |
-| Minimum | budgets 1024 tokens              | budgets 0 tokens, **no thinking**      | "low"                | "low", or 20% of max response          | "low"                |
-| Low     | 15% of max response, min 1024    | 15% of max response                    | "low"                | "low", or 20% of max response          | "low"                |
-| Medium  | 25% of max response, min 1024    | 25% of max response                    | "medium"             | "medium", or 50% of max response       | "low"                |
-| High    | 50% of max response, min 1024    | 50% of max response                    | "high"               | "high", or 80% of max response         | "high"               |
-| Maximum | 95% of max response, min 1024    | lower of max response or 24576         | "high"               | "high", or 80% of max response         | "high"               |
-| Models  | Sonnet 3.7/4, Opus 4             | 2.5 Flash                              | o4-mini, o3\*, o1\*  | applicable models                      | grok-3-mini          |
+| Option  | Claude (≤ 21333 if no streaming) | OpenAI (keyword)     | OpenRouter (keyword)             | xAI (Grok) (keyword) |
+| ------- | -------------------------------- | -------------------- | -------------------------------- | -------------------- |
+| Models  | Opus 4, Sonnet 4/3.7             | o4-mini, o3\*, o1\*  | applicable models                | grok-3-mini          |
+| Auto    | not specified, **no thinking**   | not specified        | not specified, effect depends    | not specified        |
+| Minimum | budgets 1024 tokens              | "low"                | "low", or 20% of max response    | "low"                |
+| Low     | 15% of max response, min 1024    | "low"                | "low", or 20% of max response    | "low"                |
+| Medium  | 25% of max response, min 1024    | "medium"             | "medium", or 50% of max response | "low"                |
+| High    | 50% of max response, min 1024    | "high"               | "high", or 80% of max response   | "high"               |
+| Maximum | 95% of max response, min 1024    | "high"               | "high", or 80% of max response   | "high"               |
 
 - For Claude, budget is capped to 21333 if streaming is disabled. If the calculated budget would be less than 1024, then max response is changed to 2048.
-- For Google AI Studio and Vertex AI, budget is capped to 24576 tokens, regardless of the streaming setting.
-- For OpenRouter, only an OpenAI-style keyword is sent.
+- For OpenRouter and AI/ML API, only an OpenAI-style keyword is sent.
+
+Google AI Studio and Vertex AI are as follows:
+
+| Model          | Auto (dynamic thinking) | Minimum            | Low                          | Medium     | High       | Maximum               |
+| -------------- | ----------------------- | ------------------ | ---------------------------- | ---------- | ---------- | --------------------- | 
+| 2.5 Pro        | thinkingBudget = -1     | 128                | 15% of max response, min 128 | 25% of max | 50% of max | lower of max or 32768 |
+| 2.5 Flash      | thinkingBudget = -1     | 0, **no thinking** | 15% of max response          | 25% of max | 50% of max | lower of max or 24576 |
+| 2.5 Flash Lite | thinkingBudget = -1     | 0, **no thinking** | 15% of max response, min 512 | 25% of max | 50% of max | lower of max or 24576 |
+
+- For Gemini 2.5 Pro and 2.5 Flash/Lite, budget is capped to 32768 or 24576 tokens respectively, regardless of the streaming setting.
