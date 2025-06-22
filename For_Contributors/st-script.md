@@ -805,6 +805,21 @@ World Info (also known as Lorebook) is a highly utilitarian tool for dynamically
 | `scanDepth`        | Scan Depth        | Number (0-100)  |
 | `caseSensitive`    | Case-Sensitive    | Boolean (1/0)   |
 | `matchWholeWords`  | Match Whole Words | Boolean (1/0)   |
+| `vectorized`       | Vectorized Status | Boolean (1/0)   |
+| `automationId`     | Automation ID     | String          |
+| `group`            | Inclusion Group   | String          |
+| `groupOverride`    | Inclusion Group Prioritize | Boolean (1/0) |
+| `groupWeight`      | Inclusion Group Weight | Number (0-100) |
+| `useGroupScoring`  | Group Scoring     | Boolean (1/0)   |
+| `characterFilterExclude` | Character Filter Exclude Mode | List of strings |
+| `characterFilterNames` | Character Filter Names | List of strings |
+| `characterFilterTags` | Character Filter Tags | List of strings |
+| `matchCharacterDepthPrompt` | Match Character Depth Prompt | Boolean (1/0) |
+| `matchCharacterDescription` | Match Character Description | Boolean (1/0) |
+| `matchCharacterPersonality` | Match Character Personality | Boolean (1/0) |
+| `matchCreatorNotes` | Match Creator Notes | Boolean (1/0) |
+| `matchPersonaDescription` | Match Persona Description | Boolean (1/0) |
+| `matchScenario` | Match Scenario | Boolean (1/0) |
 
 **Logic values**
 
