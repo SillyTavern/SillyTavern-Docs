@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.1.803920947177">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.1.803923633792">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.10.1">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.10.1.803920947177" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.10.1.803923633792" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.10.1.803920947177" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.10.1.803923633792" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.10.1" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.10.1.803920947177" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.10.1.803920947177" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.10.1.803923633792" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.10.1.803923633792" defer></script>
 
     <style>
         a {
@@ -234,6 +234,39 @@
     </h1>
 </doc-anchor-target>
 <p>Gemini is Google&#x27;s cutting-edge multimodal LLM, which is available though several APIs, including Google Vertex AI and Google AI Studio (formerly MakerSuite). This guide will help you set up the Gemini API connections in SillyTavern.</p>
+<doc-anchor-target id="google-ai-studio">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#google-ai-studio">#</doc-anchor-trigger>
+        <span>Google AI Studio</span>
+    </h2>
+</doc-anchor-target>
+<p>AI Studio is the fastest and the most user-friendly way to try out the latest Google AI models without needing to set up a Google Cloud Platform (GCP) project. It provides a simple API key that you can use to access the Gemini models.</p>
+<doc-anchor-target id="step-1-create-a-google-ai-studio-key">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-1-create-a-google-ai-studio-key">#</doc-anchor-trigger>
+        <span>Step 1: Create a Google AI Studio Key</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li>Go to the <a href="https://aistudio.google.com/apikey">Google AI Studio</a> page and sign in with your Google account.</li>
+<li>Click on &quot;Get API Key&quot;, accept the terms and conditions.</li>
+<li>Click &quot;Create API Key&quot; to generate your API key.</li>
+<li>Copy the API key to your clipboard.</li>
+</ol>
+<doc-anchor-target id="step-2-put-the-api-key-into-sillytavern">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-2-put-the-api-key-into-sillytavern">#</doc-anchor-trigger>
+        <span>Step 2: Put the API Key into SillyTavern</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li>In SillyTavern, go to the &quot;API Connections&quot; page.</li>
+<li>Select &quot;Chat Completion&quot; as the API type.</li>
+<li>Select &quot;Google AI Studio&quot; from the dropdown menu.</li>
+<li>Enter the API key you copied earlier into the &quot;API Key&quot; text box.</li>
+<li>Click the &quot;Connect&quot; button to save the key.</li>
+</ol>
+<p>You should now be able to use the Google AI Studio API with SillyTavern.</p>
 <doc-anchor-target id="google-vertex-ai">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#google-vertex-ai">#</doc-anchor-trigger>
@@ -250,7 +283,7 @@
 </doc-anchor-target>
 <p>Google Cloud Platform (GCP) requires a service account to access Vertex AI, simple API keys will not work. A token will be generated from the service account JSON file, which will then be used to authenticate requests to the Vertex AI API.</p>
 <p>You can create a service account by following these steps:</p>
-<p>Prerequisites:</p>
+<p><strong>Prerequisites:</strong></p>
 <ol>
 <li>You must have a Google Cloud Platform (GCP) account.</li>
 <li>You must have a project created within your GCP account.</li>
@@ -330,6 +363,61 @@
 <li>Finally, scroll down and click &quot;Connect&quot; at the bottom of the API settings page.</li>
 </ol>
 <p>You should now be able to use the Google Vertex AI API with SillyTavern.</p>
+<doc-anchor-target id="express-mode">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#express-mode">#</doc-anchor-trigger>
+        <span>Express Mode</span>
+    </h3>
+</doc-anchor-target>
+<p>Express mode is the quickest way to get started with using Generative AI on Google Cloud. It allows you to use the Gemini API without needing to set up a service account. Instead, you can use an API key directly.</p>
+<p>See the official documentation for more details: <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/start/express-mode/overview">Vertex AI in express mode overview</a>.</p>
+<doc-anchor-target id="step-1-ensure-your-account-is-eligible-for-express-mode">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-1-ensure-your-account-is-eligible-for-express-mode">#</doc-anchor-trigger>
+        <span>Step 1: Ensure your account is eligible for Express Mode</span>
+    </h4>
+</doc-anchor-target>
+<p>You must have a Google account that was not previously used to create a Google Cloud project.
+If you have an existing Google Cloud project (including free trials), you can create a new one for this purpose.</p>
+<doc-anchor-target id="step-2-active-the-vertex-ai-express-mode">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-2-active-the-vertex-ai-express-mode">#</doc-anchor-trigger>
+        <span>Step 2: Active the Vertex AI Express Mode</span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li>Go to the following web page: <a href="https://cloud.google.com/generative-ai-studio">Vertex AI Studio</a>.</li>
+<li>Click on &quot;Try it free&quot;.</li>
+<li>Accept the terms and conditions and sign in with your Google account.</li>
+<li>Choose your country and click &quot;Agree &amp; start free&quot;. Wait for the setup to complete.</li>
+</ol>
+<doc-anchor-target id="step-3-create-an-api-key">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-3-create-an-api-key">#</doc-anchor-trigger>
+        <span>Step 3: Create an API Key</span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li>Verify that your Google Cloud console is running in Express Mode. You should see a banner at the top left corner of the page.</li>
+<li>Click on the &quot;API Keys&quot; link in the left sidebar.</li>
+<li>Click on the &quot;Create API Key&quot; button.</li>
+<li>A new API key will be generated. Copy this key to your clipboard.</li>
+</ol>
+<doc-anchor-target id="step-4-put-the-api-key-into-sillytavern">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#step-4-put-the-api-key-into-sillytavern">#</doc-anchor-trigger>
+        <span>Step 4: Put the API Key into SillyTavern</span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li>In SillyTavern, go to the &quot;API Connections&quot; page.</li>
+<li>Select &quot;Chat Completion&quot; as the API type.</li>
+<li>Select &quot;Google Vertex AI&quot; from the dropdown menu.</li>
+<li>Switch the authentication method to &quot;Express Mode (API Key)&quot;.</li>
+<li>Paste the API key you copied earlier into the &quot;API Key&quot; text box.</li>
+<li>Click the &quot;Connect&quot; button to save the key.</li>
+</ol>
+<p>You should now be able to use the Google Vertex AI API in Express Mode with SillyTavern.</p>
 
                                 
                                 <!-- Required only on API pages -->
