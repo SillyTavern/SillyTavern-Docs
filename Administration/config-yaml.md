@@ -150,7 +150,7 @@ See more on using environment variables in the [Node.js documentation](https://n
 | `thumbnails.enabled` | Enable thumbnail generation | `true` | `true`, `false` |
 | `thumbnails.quality` | JPEG thumbnail quality | `95` | 0-100 |
 | `thumbnails.format` | Image format for thumbnails | `jpg` | `jpg`, `png` |
-| `thumbnails.dimensions.bg` | Background thumbnails size | `[160, 90]` | Array of two numbers (width, height) |
+| `thumbnails.resolution` | Target pixel area for background thumbnails | `15000` | Any positive integer |
 | `thumbnails.dimensions.avatar` | Avatar thumbnails size | `[96, 144]` |  Array of two numbers (width, height) |
 
 ## Backup Configuration
