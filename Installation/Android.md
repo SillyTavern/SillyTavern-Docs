@@ -10,7 +10,7 @@ SillyTavern can be run natively on Android devices using Termux.
 ## Installing Termux
 
 !!!tip
-Avoid installing Termux from the Google Play Store, its support has been discontinued.
+Avoid installing Termux from the Google Play Store, that version is no longer maintained. Instead, use the official releases page or F-Droid to get the latest version.
 !!!
 
 1. Download Termux from the [official releases page](https://github.com/termux/termux-app/releases) or from [F-Droid](https://f-droid.org/en/packages/com.termux/).
