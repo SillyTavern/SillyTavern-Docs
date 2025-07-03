@@ -61,14 +61,14 @@ Clone the SillyTavern repository ([How to Choose a Branch](/Installation/index.m
 To run SillyTavern, navigate to the cloned directory and run the start script:
 
 ```bash
-cd SillyTavern
+cd ~/SillyTavern
 bash start.sh
 ```
 
 To update SillyTavern, navigate to the SillyTavern directory and run:
 
 ```bash
-cd SillyTavern
+cd ~/SillyTavern
 git pull --rebase --autostash
 ```
 
