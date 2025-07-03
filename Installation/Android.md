@@ -5,79 +5,128 @@ route: /installation/android-(termux)/
 
 # Android (Termux) Installation
 
-SillyTavern can be run natively on Android phones using Termux.
+SillyTavern can be run natively on Android devices using Termux.
 
-Consider installing this keyboard
-https://github.com/Julow/Unexpected-Keyboard
-It makes several commands easy
+## Installing Termux
 
-## Get termux:
-https://github.com/termux/termux-app/releases
+!!!tip
+Avoid installing Termux from the Google Play Store, its support has been discontinued.
+!!!
 
-Install the termux apk you just downloaded.
+1. Download Termux from the [official releases page](https://github.com/termux/termux-app/releases) or from [F-Droid](https://f-droid.org/en/packages/com.termux/).
+2. Install the downloaded APK file.
+3. Open Termux and run your first command:
 
-Open Termux. run your first command"
+   ```bash
+   termux-change-repo
+   ```
 
-`termux-change-repo`
+4. Select "Mirror group" and choose your closest servers. You can touch the screen or use swipe gestures with [Unexpected Keyboard](https://play.google.com/store/apps/details?id=juloo.keyboard2&hl=en).
+5. Update Termux:
 
-Select "Mirror group" then your closest servers. You can touch the screen or use swipe with Unexpected-Keyboard.
+   ```bash
+   pkg update && pkg upgrade
+   ```
 
-update Termux:
+## Installing Dependencies
 
-`pkg update && pkg upgrade`
+Install the required packages:
 
-## install things:
+```bash
+pkg install git nodejs-lts nano
+```
 
-`pkg install git nodejs nano`
+!!!warning
+If you're running 32-bit Android, see the [Common Errors](#common-errors) section below for additional steps.
+!!!
 
-Note: Are you running 32bit android? See ## Common errors below
+## Installing SillyTavern
 
-## Install SillyTavern.
+Clone the SillyTavern repository ([How to Choose a Branch](/Installation/index.md#branches)):
 
-Clone the SillyTavern repo
-for Release Branch: `git clone https://github.com/SillyTavern/SillyTavern -b release`
-for Staging Branch: `git clone https://github.com/SillyTavern/SillyTavern -b staging`
+- **Release Branch:**
 
-Just clone the Staging and thank me later.
+    ```bash
+    git clone https://github.com/SillyTavern/SillyTavern -b release
+    ```
 
-Create some aliases.
+- **Staging Branch:**
 
-`nano ~/.bashrc`
+    ```bash
+    git clone https://github.com/SillyTavern/SillyTavern -b staging
+    ```
 
-Copy and paste this
-`# Aliases
-# alias alias_name="command_to_run"
+## Running SillyTavern
 
-#Update Termux
-alias pkgup="pkg update && pkg upgrade"
-#Update SillyTavern
-alias stup="git -C "SillyTavern" pull"
-#Update termux. Update and run SillyTavern
-alias st="pkgup && stup && bash ~/SillyTavern/start.sh"`
+To run SillyTavern, navigate to the cloned directory and run the start script:
 
-Hit these keys to save and leave nano:
-To Exit: ctrl+X
-Do you want to save?: Y
-Save as .bashrc?: Hit enter
-Apply the .bashrc
-`source ~/.bashrc`
+```bash
+cd SillyTavern
+bash start.sh
+```
 
-Update termux. You will need to hit 'y' when it asks. Then Update and run SillyTavern: 
-`st`
+To update SillyTavern, navigate to the SillyTavern directory and run:
 
-Just Update termux. 
-`pkgup`
+```bash
+cd SillyTavern
+git pull --rebase --autostash
+```
 
-To start Sillytavern
-`stup`
+See the [Aliases](#optional-create-aliases) section below for creating shortcuts to simplify this process.
 
-## Common errors
+## Common Errors
 
 ### Unsupported platform: android arm LEtime-web
+
 32-bit Android requires an external dependency that can't be installed with npm.
 
 Use the following command to install it:
 
-`pkg install esbuild`
+```bash
+pkg install esbuild
+```
 
-Then run the steps above.
+Then proceed with the installation steps above.
+
+## Optional: Create Aliases
+
+You can create shortcuts for common commands to make your workflow easier.
+
+1. Open an editor to modify your `.bashrc` file:
+
+   ```bash
+   nano ~/.bashrc
+   ```
+
+2. Add the following lines to create aliases:
+
+   ```bash
+   # Update Termux packages
+   alias pkgup="pkg update && pkg upgrade"
+   #Start SillyTavern
+   alias st='cd ~/SillyTavern && bash start.sh'
+   # Update SillyTavern
+   alias stup='cd ~/SillyTavern && git pull --rebase --autostash'
+   ```
+
+3. Save the file and exit the editor (in nano, press `CTRL + X`, then `Y`, then `Enter`).
+
+4. To apply the changes, run:
+
+   ```bash
+   source ~/.bashrc
+   ```
+
+Now you can use the following commands:
+
+- `st` to start SillyTavern
+- `stup` to update SillyTavern
+- `pkgup` to update Termux packages
+
+## Further Reading
+
+!!!note
+The guide below is not maintained by the SillyTavern team and may be slightly obsolete.
+!!!
+
+SillyTavern in Termux guide by ArroganceComplex#2659: <https://rentry.org/STAI-Termux>
