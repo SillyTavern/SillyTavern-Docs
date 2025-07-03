@@ -125,8 +125,8 @@ Now you can use the following commands:
 
 ## Further Reading
 
-!!!note
-The guide below is not maintained by the SillyTavern team and may be slightly obsolete.
+!!!info
+The guide linked below is not maintained by the SillyTavern team and may be slightly obsolete.
 !!!
 
 SillyTavern in Termux guide by ArroganceComplex#2659: <https://rentry.org/STAI-Termux>
