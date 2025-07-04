@@ -30,7 +30,11 @@ We provide the following parameters to the Handlebars evaluator (wrap them into 
 7. `user` - selected persona name
 8. `wiBefore` or `loreBefore` - combined activated World Info entries with Position set to "Before Char Defs"
 9. `wiAfter` or `loreAfter` - combined activated World Info entries with Position set to "After Char Defs"
-10. `mesExamples` - (optional) character's Example Dialogues, instruct-formatted with separator. **Important:** Set "Example Messages Behavior" in the User Settings panel to "Never include examples" to avoid duplication.
+10. `mesExamples` - (optional) character's Example Dialogues, instruct-formatted with separator.
+
+!!!tip **Important**  
+When using `mesExamples` in the Story String, set **"Example Messages Behavior"** in the **<i class="fa-solid fa-user-cog"></i> User Settings** panel to **"Never include examples"** to avoid duplication of example messages in the prompt.
+!!!
 
 A special \{\{trim\}\} macro is supported to remove any newlines that surround it. Use it in case you want some part of text NOT be separated with a newline from the previous line (_spaces **are not** trimmed_).
 
