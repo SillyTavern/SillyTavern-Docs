@@ -62,6 +62,10 @@ Recommended to keep it on to prevent model impersonation.
 
 ## Always add character's name to prompt
 
+!!!info  
+This setting has no effect when Instruct Mode is ON. The name behavior is instead defined by the selected [Include Names](/Usage/Prompts/instructmode.md#include-names) option.
+!!!
+
 Appends the character's name to the prompt to force the model to complete the message as the character:
 
 ```txt
