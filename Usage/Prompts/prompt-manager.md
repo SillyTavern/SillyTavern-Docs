@@ -131,13 +131,13 @@ Allows the model to return image attachments.
 
 ### Use system prompt
 
-!!!warning
+!!!
 Only supported by Google Gemini and Anthropic Claude backends.
 
 Despite having very similar settings for these two, they are technically separate options, so they can be configured separately.
 !!!
 
-Merges all system messages up until the first message with a non-system role (User/Assistant) and sends them as a system_instruction field. Whether a Chat Completion model requires this varies by model.
+Merges all system messages up until the first message with a non-system role (User/Assistant) and sends them as a separate system instruction field.
 
 ## Reasoning Settings
 
