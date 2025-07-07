@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.805118913247">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.805233620557">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -14,7 +14,7 @@
     <!-- Primary Meta Tags -->
     <title>Prompt Manager | docs.ST.app</title>
     <meta name="title" content="Prompt Manager | docs.ST.app">
-    <meta name="description" content="The Prompt Manager is a system that allows for more control over the prompt-building strategy for Chat Completion APIs.">
+    <meta name="description" content="The Prompt Manager is a system that provides more control over the prompt-building strategy for Chat Completion APIs.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/usage/prompts/prompt-manager/">
@@ -23,21 +23,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/usage/prompts/prompt-manager/">
     <meta property="og:title" content="Prompt Manager | docs.ST.app">
-    <meta property="og:description" content="The Prompt Manager is a system that allows for more control over the prompt-building strategy for Chat Completion APIs.">
+    <meta property="og:description" content="The Prompt Manager is a system that provides more control over the prompt-building strategy for Chat Completion APIs.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/usage/prompts/prompt-manager/">
     <meta property="twitter:title" content="Prompt Manager | docs.ST.app">
-    <meta property="twitter:description" content="The Prompt Manager is a system that allows for more control over the prompt-building strategy for Chat Completion APIs.">
+    <meta property="twitter:description" content="The Prompt Manager is a system that provides more control over the prompt-building strategy for Chat Completion APIs.">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.11.0.805118913247" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.11.0.805233620557" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.805118913247" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.805233620557" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.805118913247" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.805233620557" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -233,7 +233,7 @@
         <span>Prompt Manager</span>
     </h1>
 </doc-anchor-target>
-<p>The Prompt Manager is a system that allows for more control over the <a href="../">prompt-building</a> strategy for Chat Completion APIs.</p>
+<p>The Prompt Manager is a system that provides more control over the <a href="../">prompt-building</a> strategy for Chat Completion APIs.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -253,6 +253,93 @@
     </div>
 </div>
 <div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-tip"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-tip" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M7.90625 2.15625C4.50944 2.15625 2.15625 4.58563 2.15625 7.54688C2.15625 8.96138 2.76575 9.88281 3.57075 10.8589L3.87837 11.2226C4.19894 11.6021 4.554 12.0218 4.84581 12.4416C5.25406 13.0324 5.61775 13.7296 5.7385 14.5834C5.76728 14.8608 5.68746 15.1386 5.51579 15.3583C5.34413 15.5781 5.09399 15.7228 4.8179 15.7621C4.5418 15.8013 4.26124 15.7321 4.03512 15.5689C3.809 15.4056 3.65493 15.1612 3.60525 14.8867C3.54775 14.4814 3.37094 14.1004 3.07338 13.6692C2.8306 13.3302 2.57055 13.0039 2.29425 12.6917C2.1735 12.5479 2.04556 12.397 1.909 12.2317C1.00769 11.1406 0 9.72613 0 7.54688C0 3.32062 3.39681 0 7.90625 0C12.4157 0 15.8125 3.32062 15.8125 7.54688C15.8125 9.72613 14.8048 11.1406 13.9035 12.2317C13.7669 12.397 13.639 12.5479 13.5183 12.6903C13.2207 13.0424 12.9677 13.3414 12.7406 13.6692C12.4416 14.1004 12.2662 14.4814 12.2087 14.8867C12.1557 15.1584 12.0003 15.3994 11.7747 15.5598C11.5492 15.7202 11.2706 15.7879 10.9965 15.7488C10.7225 15.7096 10.474 15.5667 10.3023 15.3496C10.1306 15.1325 10.0489 14.8577 10.074 14.582C10.1948 13.7296 10.5584 13.0324 10.9667 12.4416C11.2585 12.0218 11.6136 11.6021 11.9341 11.2226C12.0419 11.0961 12.1454 10.9739 12.2403 10.8589C13.0468 9.88281 13.6562 8.96138 13.6562 7.54688C13.6562 4.58563 11.3031 2.15625 7.90625 2.15625ZM4.67188 17.25H11.1406C11.4266 17.25 11.7008 17.3636 11.903 17.5658C12.1052 17.768 12.2188 18.0422 12.2188 18.3281C12.2188 18.6141 12.1052 18.8883 11.903 19.0905C11.7008 19.2927 11.4266 19.4062 11.1406 19.4062H4.67188C4.38594 19.4062 4.11171 19.2927 3.90953 19.0905C3.70734 18.8883 3.59375 18.6141 3.59375 18.3281C3.59375 18.0422 3.70734 17.768 3.90953 17.5658C4.11171 17.3636 4.38594 17.25 4.67188 17.25ZM5.03125 21.9219C5.03125 21.6359 5.14484 21.3617 5.34703 21.1595C5.54921 20.9573 5.82344 20.8438 6.10938 20.8438H9.70312C9.98906 20.8438 10.2633 20.9573 10.4655 21.1595C10.6677 21.3617 10.7812 21.6359 10.7812 21.9219C10.7812 22.2078 10.6677 22.482 10.4655 22.6842C10.2633 22.8864 9.98906 23 9.70312 23H6.10938C5.82344 23 5.54921 22.8864 5.34703 22.6842C5.14484 22.482 5.03125 22.2078 5.03125 21.9219Z" />
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Naming Presets</h5>
+<p>If a preset shares a name with one of your character cards, it will be automatically selected when starting a chat with that character. Name presets something unique to avoid this behavior.</p>
+        </div>
+    </div>
+</div>
+<p>Access the Prompt Manager by clicking on the &quot;AI Response Configuration&quot; button in the navigation bar. The Prompt Manager is located below the <a href="../../common-settings/">common settings</a> panel.</p>
+<doc-anchor-target id="quick-prompts-edit">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#quick-prompts-edit">#</doc-anchor-trigger>
+        <span>Quick Prompts Edit</span>
+    </h2>
+</doc-anchor-target>
+<p>Provides space to quickly edit common prompt sections, such as <strong>Main Prompt</strong>, <strong>Auxiliary Prompt</strong>, and <strong>Post-History Instructions</strong>. More information on these prompts can be found on the <a href="../">prompt-building</a> page.</p>
+<doc-anchor-target id="utility-prompts">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#utility-prompts">#</doc-anchor-trigger>
+        <span>Utility Prompts</span>
+    </h2>
+</doc-anchor-target>
+<p>These prompts are sent to the Chat Completion model to help it understand the information being sent to it, or to instruct it to act in specific ways during certain types of interactions.</p>
+<doc-anchor-target id="format-templates">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#format-templates">#</doc-anchor-trigger>
+        <span>Format Templates</span>
+    </h3>
+</doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-tip"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-tip" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M7.90625 2.15625C4.50944 2.15625 2.15625 4.58563 2.15625 7.54688C2.15625 8.96138 2.76575 9.88281 3.57075 10.8589L3.87837 11.2226C4.19894 11.6021 4.554 12.0218 4.84581 12.4416C5.25406 13.0324 5.61775 13.7296 5.7385 14.5834C5.76728 14.8608 5.68746 15.1386 5.51579 15.3583C5.34413 15.5781 5.09399 15.7228 4.8179 15.7621C4.5418 15.8013 4.26124 15.7321 4.03512 15.5689C3.809 15.4056 3.65493 15.1612 3.60525 14.8867C3.54775 14.4814 3.37094 14.1004 3.07338 13.6692C2.8306 13.3302 2.57055 13.0039 2.29425 12.6917C2.1735 12.5479 2.04556 12.397 1.909 12.2317C1.00769 11.1406 0 9.72613 0 7.54688C0 3.32062 3.39681 0 7.90625 0C12.4157 0 15.8125 3.32062 15.8125 7.54688C15.8125 9.72613 14.8048 11.1406 13.9035 12.2317C13.7669 12.397 13.639 12.5479 13.5183 12.6903C13.2207 13.0424 12.9677 13.3414 12.7406 13.6692C12.4416 14.1004 12.2662 14.4814 12.2087 14.8867C12.1557 15.1584 12.0003 15.3994 11.7747 15.5598C11.5492 15.7202 11.2706 15.7879 10.9965 15.7488C10.7225 15.7096 10.474 15.5667 10.3023 15.3496C10.1306 15.1325 10.0489 14.8577 10.074 14.582C10.1948 13.7296 10.5584 13.0324 10.9667 12.4416C11.2585 12.0218 11.6136 11.6021 11.9341 11.2226C12.0419 11.0961 12.1454 10.9739 12.2403 10.8589C13.0468 9.88281 13.6562 8.96138 13.6562 7.54688C13.6562 4.58563 11.3031 2.15625 7.90625 2.15625ZM4.67188 17.25H11.1406C11.4266 17.25 11.7008 17.3636 11.903 17.5658C12.1052 17.768 12.2188 18.0422 12.2188 18.3281C12.2188 18.6141 12.1052 18.8883 11.903 19.0905C11.7008 19.2927 11.4266 19.4062 11.1406 19.4062H4.67188C4.38594 19.4062 4.11171 19.2927 3.90953 19.0905C3.70734 18.8883 3.59375 18.6141 3.59375 18.3281C3.59375 18.0422 3.70734 17.768 3.90953 17.5658C4.11171 17.3636 4.38594 17.25 4.67188 17.25ZM5.03125 21.9219C5.03125 21.6359 5.14484 21.3617 5.34703 21.1595C5.54921 20.9573 5.82344 20.8438 6.10938 20.8438H9.70312C9.98906 20.8438 10.2633 20.9573 10.4655 21.1595C10.6677 21.3617 10.7812 21.6359 10.7812 21.9219C10.7812 22.2078 10.6677 22.482 10.4655 22.6842C10.2633 22.8864 9.98906 23 9.70312 23H6.10938C5.82344 23 5.54921 22.8864 5.34703 22.6842C5.14484 22.482 5.03125 22.2078 5.03125 21.9219Z" />
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>If the format template is not set, the information will be sent as-is, without any wrapping.</p>
+        </div>
+    </div>
+</div>
+<p>These are string templates used to wrap the information pulled from <a href="../../core-concepts/worldinfo/">World Info</a> and <a href="../../core-concepts/characterdesign/">Character Cards</a>.</p>
+<p>A special marker is used to indicate where the information should be inserted:</p>
+<ul>
+<li><code v-pre>{0}</code> for the World Info format template.</li>
+<li><code v-pre>{{scenario}}</code> for the Scenario format template.</li>
+<li><code v-pre>{{personality}}</code> for the Personality format template.</li>
+</ul>
+<doc-anchor-target id="group-nudge-prompt-template">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#group-nudge-prompt-template">#</doc-anchor-trigger>
+        <span>Group Nudge Prompt Template</span>
+    </h3>
+</doc-anchor-target>
+<p>Used only in group chats. Placed at the end of the prompt to force a reply from a specific character.</p>
+<p>Leave this empty to disable Group Nudge functionality.</p>
+<doc-anchor-target id="new-chat-new-group-chat-new-example-chat">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#new-chat-new-group-chat-new-example-chat">#</doc-anchor-trigger>
+        <span>New Chat, New Group Chat, New Example Chat</span>
+    </h3>
+</doc-anchor-target>
+<p>These are sent before the chat history and before each <a href="../../core-concepts/characterdesign/#examples-of-dialogue">Example Dialogue</a> block to inform the model where background information ends and chat history begins.</p>
+<ul>
+<li><strong>New Chat:</strong> Used for individual chats.</li>
+<li><strong>New Group Chat:</strong> Used for group chats.</li>
+<li><strong>New Example Chat:</strong> Used for example dialogue blocks.</li>
+</ul>
+<p>Leave these empty to disable this functionality.</p>
+<doc-anchor-target id="continue-nudge">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#continue-nudge">#</doc-anchor-trigger>
+        <span>Continue Nudge</span>
+    </h3>
+</doc-anchor-target>
+<p>Sent at the end of the prompt to instruct the model on what to do when Continue is triggered, such as when the Continue button is pressed or when triggered by STScript.</p>
+<div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
@@ -265,12 +352,355 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>Naming Prompt Manager Presets</h5>
-<p>Please bear in mind that if a preset shares a name with one of your character cards, it will get automatically selected when starting a chat with that particular character. Name presets something unique to avoid this behaviour.</p>
+            <h5>Chat Completion &#x27;Continues&#x27;</h5>
+<p>Keep in mind that Chat Completion models handle Continues differently than <strong>Text Completion</strong> models, and may not always deliver seamless results regardless of your Continue Nudge.</p>
         </div>
     </div>
 </div>
-<p>Access Prompt Manager by clicking on the &quot;AI Response Configuration&quot; button in the navigation bar. Prompt manager is below the <a href="../../common-settings/">common settings</a> panel.</p>
+<doc-anchor-target id="replace-empty-message">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#replace-empty-message">#</doc-anchor-trigger>
+        <span>Replace Empty Message</span>
+    </h3>
+</doc-anchor-target>
+<p>Sends the contents of this field instead of a blank message when the text box is empty and <strong>Send a message</strong> is pressed.</p>
+<doc-anchor-target id="character-names-behavior">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#character-names-behavior">#</doc-anchor-trigger>
+        <span>Character Names Behavior</span>
+    </h2>
+</doc-anchor-target>
+<p>Provides different strategies for instructing the model on how to associate messages with characters. If a Chat Completion model is having trouble determining which messages belong to which character, it may need a different strategy selected.</p>
+<doc-anchor-target id="continue-postfix">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#continue-postfix">#</doc-anchor-trigger>
+        <span>Continue Postfix</span>
+    </h2>
+</doc-anchor-target>
+<p>When Continue is triggered, the &#x27;continued&#x27; message returned by the model will have the selected Continue Postfix prepended to the beginning. For example, it can add a space before the continued text.</p>
+<doc-anchor-target id="additional-settings">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#additional-settings">#</doc-anchor-trigger>
+        <span>Additional Settings</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="wrap-in-quotes">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#wrap-in-quotes">#</doc-anchor-trigger>
+        <span>Wrap in Quotes</span>
+    </h3>
+</doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Deprecated option. Prefer <a href="../../../extensions/regex/">Regex scripts</a> instead.</p>
+        </div>
+    </div>
+</div>
+<p>Wraps the entire user message in hidden quotation marks before sending. This is useful for sessions where characters do not use quotes to indicate speech. If your session uses quotation marks to indicate speech, leave this unchecked.</p>
+<doc-anchor-target id="continue-prefill">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#continue-prefill">#</doc-anchor-trigger>
+        <span>Continue Prefill</span>
+    </h3>
+</doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>May not work with all Chat Completion sources.</p>
+        </div>
+    </div>
+</div>
+<p>Sends the Continue Nudge as an Assistant role message instead of a System message. If this is enabled, the Continue Nudge prompt will not be used.</p>
+<doc-anchor-target id="squash-system-messages">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#squash-system-messages">#</doc-anchor-trigger>
+        <span>Squash system messages</span>
+    </h3>
+</doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Deprecated option. Prefer <a href="../../api-connections/openai/#prompt-post-processing">Prompt Post-Processing</a> instead.</p>
+        </div>
+    </div>
+</div>
+<p>Combines consecutive System messages into a single combined message (excluding Example Dialogue).</p>
+<doc-anchor-target id="enable-web-search">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#enable-web-search">#</doc-anchor-trigger>
+        <span>Enable web search</span>
+    </h3>
+</doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Not to be confused with the <a href="../../../extensions/websearch/">Web Search extension</a>.</p>
+        </div>
+    </div>
+</div>
+<p>Enables web search capabilities provided by the Chat Completion backend. The prompt is usually enriched with search results by the model provider and may incur additional costs.</p>
+<doc-anchor-target id="enable-function-calling">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#enable-function-calling">#</doc-anchor-trigger>
+        <span>Enable function calling</span>
+    </h3>
+</doc-anchor-target>
+<p>See <a href="../../../for-contributors/function-calling/">Function Calling</a></p>
+<doc-anchor-target id="send-inline-images-send-inline-videos">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#send-inline-images-send-inline-videos">#</doc-anchor-trigger>
+        <span>Send inline images, Send inline videos</span>
+    </h3>
+</doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Not to be confused with the <a href="../../../extensions/captioning/">Image Captioning extension</a>.</p>
+        </div>
+    </div>
+</div>
+<p>If the Chat Completion model has multimodal capabilities to process submitted images and videos, this toggles its ability to do so. To append media to the prompt, use the <strong>Attach A File</strong> option in the &quot;Magic Wand&quot; menu.</p>
+<doc-anchor-target id="request-inline-images">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#request-inline-images">#</doc-anchor-trigger>
+        <span>Request inline images</span>
+    </h3>
+</doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Not to be confused with the <a href="../../../extensions/stable-diffusion/">Image Generation extension</a>.</p>
+        </div>
+    </div>
+</div>
+<p>Allows the model to return image attachments.</p>
+<doc-anchor-target id="use-system-prompt">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#use-system-prompt">#</doc-anchor-trigger>
+        <span>Use system prompt</span>
+    </h3>
+</doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Only supported by Google Gemini and Anthropic Claude backends.</p>
+<p>Despite having very similar settings for these two, they are technically separate options, so they can be configured separately.</p>
+        </div>
+    </div>
+</div>
+<p>Merges all system messages up until the first message with a non-system role (User/Assistant) and sends them as a system_instruction field. Whether a Chat Completion model requires this varies by model.</p>
+<doc-anchor-target id="reasoning-settings">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#reasoning-settings">#</doc-anchor-trigger>
+        <span>Reasoning Settings</span>
+    </h2>
+</doc-anchor-target>
+<p>If the Chat Completion model uses reasoning, these settings affect its visibility and functionality.</p>
+<doc-anchor-target id="request-model-reasoning">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#request-model-reasoning">#</doc-anchor-trigger>
+        <span>Request model reasoning</span>
+    </h3>
+</doc-anchor-target>
+<p>See <a href="../reasoning/#by-backend">Adding Reasoning: By Backend</a>.</p>
+<doc-anchor-target id="reasoning-effort">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#reasoning-effort">#</doc-anchor-trigger>
+        <span>Reasoning Effort</span>
+    </h3>
+</doc-anchor-target>
+<p>See <a href="../reasoning/#reasoning-effort">Reasoning Effort</a>.</p>
+<doc-anchor-target id="prompts">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#prompts">#</doc-anchor-trigger>
+        <span>&quot;Prompts&quot;</span>
+    </h2>
+</doc-anchor-target>
+<p>The Prompt Manager forms the backbone of the prompt sent to the Chat Completion model. It controls what is sent as well as the <em>order</em> in which it is sent.</p>
+<doc-anchor-target id="the-prompts-dropdown">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-prompts-dropdown">#</doc-anchor-trigger>
+        <span>The &#x27;Prompts&#x27; Dropdown</span>
+    </h3>
+</doc-anchor-target>
+<p>Contains a dropdown list of all (non-default) prompts that the current Chat Completion preset includes. For one of these prompts to be added to the outgoing message, it needs to be selected from the dropdown list and then added to the Prompt Manager by pressing the <strong>Insert prompt</strong> button. To create a new prompt to add to this dropdown list, press the <strong>New prompt</strong> button. Once the new prompt is written and saved, it is added to the dropdown and can then be inserted.</p>
+<doc-anchor-target id="prompts-list">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#prompts-list">#</doc-anchor-trigger>
+        <span>Prompts List</span>
+    </h3>
+</doc-anchor-target>
+<p>This is a drag-and-drop interface that lists the prompts selected to potentially be sent to the Chat Completion model. Prompts placed closer to the <strong>top</strong> of the interface are sent earlier. The <strong>bottom</strong> of the list is the <strong>last thing</strong> sent to the model (typically, this would be your <strong>Post-History Instructions</strong>).</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>&#x27;Pinned&#x27; prompts = Default prompts</h5>
+<p>The default prompts cannot be removed from the list of selected prompts. This includes Main Prompt, World Info (before/after), Persona Description, Character Description, Character Personality, Scenario, Enhance Definitions, Auxiliary Prompt, Chat Examples, Chat History, and Post-History Instructions. If these are not desired, they can be <strong>toggled &#x27;OFF&#x27;</strong>, but not removed or deleted outright.</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="editing-a-prompt">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#editing-a-prompt">#</doc-anchor-trigger>
+        <span>Editing a Prompt</span>
+    </h2>
+</doc-anchor-target>
+<p>Clicking the <strong>pencil button</strong> on a prompt will bring you to the <strong>Edit interface</strong>. Here, you can edit the prompt directly.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Make sure to save your changes!</h5>
+<p>To permanently save changes to these prompts in your Chat Completion preset, you must click the <strong>Save</strong> button in the bottom right of the <strong>Edit interface</strong>, as well as save the preset itself by using the <strong>Save</strong> button located at the top of the <strong>AI Response Configuration</strong> section! Otherwise, changes made will be lost when the Chat Completion preset is switched to a different one.</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="name">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#name">#</doc-anchor-trigger>
+        <span>Name</span>
+    </h3>
+</doc-anchor-target>
+<p>The name of the prompt. This is not sent to the Chat Completion model; it is for your reference within the Prompt Manager only.</p>
+<doc-anchor-target id="role">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#role">#</doc-anchor-trigger>
+        <span>Role</span>
+    </h3>
+</doc-anchor-target>
+<p>Which role sends the prompt. You can choose between System, AI Assistant, or User.</p>
+<doc-anchor-target id="position">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#position">#</doc-anchor-trigger>
+        <span>Position</span>
+    </h3>
+</doc-anchor-target>
+<p>When Position is set to <strong>Relative</strong>, this prompt is sent where it&#x27;s located in the drag-and-drop interface with all other prompts. When it is set to <strong>In-Chat</strong> and given a <strong>Depth</strong>, it is instead sent <strong>within the Chat History</strong> as the selected Role, and <strong>ignores</strong> the order of the drag-and-drop interface.</p>
+<doc-anchor-target id="depth">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#depth">#</doc-anchor-trigger>
+        <span>Depth</span>
+    </h3>
+</doc-anchor-target>
+<p>When Position is set to <strong>In-Chat</strong>, this defines how deep the prompt is sent within the chat history. The higher the number, the deeper it is sent. For example, a Depth of 0 will be sent after the last chat message, a Depth of 1 will be sent before the last chat message, and a Depth of 2 will be sent before the second-to-last chat message, and so on.</p>
+<doc-anchor-target id="order">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#order">#</doc-anchor-trigger>
+        <span>Order</span>
+    </h3>
+</doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Prompts that have the same Role and Depth will be grouped together and ordered by their Order value.
+The order is as follows (from top to bottom): User, AI Assistant, System.</p>
+        </div>
+    </div>
+</div>
+<p>When Position is set to <strong>In-Chat</strong>, this defines the order in which the prompt is sent within the chat history. The lower the number, the earlier it is sent.</p>
+<doc-anchor-target id="building-your-prompt-tips-and-tricks">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#building-your-prompt-tips-and-tricks">#</doc-anchor-trigger>
+        <span>Building Your Prompt: Tips and Tricks</span>
+    </h2>
+</doc-anchor-target>
+<p>Visit the <a href="../">prompt-building</a> section of the SillyTavern documentation for more information on how to write effective prompts. The information can largely be applied to Chat Completion presets.</p>
 
                                 
                                 <!-- Required only on API pages -->
