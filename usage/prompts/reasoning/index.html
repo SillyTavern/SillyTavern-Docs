@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.805233953508">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.805398842887">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.11.0.805233953508" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.11.0.805398842887" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.805233953508" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.805398842887" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.805233953508" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.805398842887" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -393,6 +393,7 @@ Incomplete reasoning...</code></pre>
 <th>OpenAI (keyword)</th>
 <th>OpenRouter (keyword)</th>
 <th>xAI (Grok) (keyword)</th>
+<th>Perplexity (keyword)</th>
 </tr>
 </thead>
 <tbody>
@@ -402,12 +403,14 @@ Incomplete reasoning...</code></pre>
 <td>o4-mini, o3*, o1*</td>
 <td>applicable models</td>
 <td>grok-3-mini</td>
+<td>sonar-deep-research</td>
 </tr>
 <tr>
 <td>Auto</td>
 <td>not specified, <strong>no thinking</strong></td>
 <td>not specified</td>
 <td>not specified, effect depends</td>
+<td>not specified</td>
 <td>not specified</td>
 </tr>
 <tr>
@@ -416,12 +419,14 @@ Incomplete reasoning...</code></pre>
 <td>&quot;low&quot;</td>
 <td>&quot;low&quot;, or 20% of max response</td>
 <td>&quot;low&quot;</td>
+<td>&quot;low&quot;</td>
 </tr>
 <tr>
 <td>Low</td>
 <td>15% of max response, min 1024</td>
 <td>&quot;low&quot;</td>
 <td>&quot;low&quot;, or 20% of max response</td>
+<td>&quot;low&quot;</td>
 <td>&quot;low&quot;</td>
 </tr>
 <tr>
@@ -430,12 +435,14 @@ Incomplete reasoning...</code></pre>
 <td>&quot;medium&quot;</td>
 <td>&quot;medium&quot;, or 50% of max response</td>
 <td>&quot;low&quot;</td>
+<td>&quot;medium&quot;</td>
 </tr>
 <tr>
 <td>High</td>
 <td>50% of max response, min 1024</td>
 <td>&quot;high&quot;</td>
 <td>&quot;high&quot;, or 80% of max response</td>
+<td>&quot;high&quot;</td>
 <td>&quot;high&quot;</td>
 </tr>
 <tr>
@@ -444,13 +451,14 @@ Incomplete reasoning...</code></pre>
 <td>&quot;high&quot;</td>
 <td>&quot;high&quot;, or 80% of max response</td>
 <td>&quot;high&quot;</td>
+<td>&quot;high&quot;</td>
 </tr>
 </tbody>
 </table>
 </div>
 <ul>
 <li>For Claude, budget is capped to 21333 if streaming is disabled. If the calculated budget would be less than 1024, then max response is changed to 2048.</li>
-<li>For OpenRouter and AI/ML API, only an OpenAI-style keyword is sent.</li>
+<li>For OpenRouter, Perplexity and AI/ML API, only an OpenAI-style keyword is sent.</li>
 </ul>
 <p>Google AI Studio and Vertex AI are as follows:</p>
 <div class="table-wrapper scrollbar overflow-hidden">
