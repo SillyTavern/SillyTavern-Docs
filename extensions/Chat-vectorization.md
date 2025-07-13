@@ -48,6 +48,10 @@ in our collection that are most similar to the text in the search query. In the 
 
 ## Setting up
 
+!!!warning Prompt Caching Compatibility
+Like any dynamic prompt source (World Info, Summarization, etc.), Chat Vectorization restructures the prompt prefix between the LLM calls, which can lead to frequent cache misses. When used with caching, vectorization is often counter-productive, as the modified prompts rarely hit the cache – effectively making caching useless. You have to choose one or the other, but not both.
+!!!
+
 To enable Chat vectorization, select "Extensions" > "Vector Storage" > "Enabled for chat messages".
 
 Configure a vectorization source and vectorization model. Chat vectorization uses the same vector source as Data Bank, 
