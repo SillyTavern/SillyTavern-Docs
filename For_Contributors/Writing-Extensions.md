@@ -291,7 +291,7 @@ The main event types are:
 * `MESSAGE_SENT`
 * `CHAT_CHANGED`
 
-The rest can be found [here](https://github.com/SillyTavern/SillyTavern/blob/44343e8ec954c766d868826a7bed01a1f1e1ffbe/public/script.js#L436).
+The rest can be found [here](https://github.com/SillyTavern/SillyTavern/blob/staging/public/scripts/events.js).
 
 ## Prompt Interceptors
 
