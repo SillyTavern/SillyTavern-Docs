@@ -183,6 +183,21 @@ The name of the prompt. This is not sent to the Chat Completion model; it is for
 
 Which role sends the prompt. You can choose between System, AI Assistant, or User.
 
+### Triggers
+
+The generation types for which this prompt is sent. If nothing is selected, the prompt will be sent for all generation types. If one or more are selected, the prompt will only be sent for those specific generation types:
+
+- **Normal:** Regular message generation request.
+- **Continue:** When the Continue button is pressed.
+- **Impersonate:** When the Impersonate button is pressed.
+- **Swipe:** When the generation is triggered by swiping.
+- **Regenerate:** When the Regenerate button is pressed in solo chats.
+- **Quiet:** Background generation requests, usually triggered by [extensions](/extensions/index.md) or [STscript](/For_Contributors/st-script.md) commands.
+
+!!!
+The "Regenerate" trigger is not available in group chats as it uses different regeneration logic: all messages from the last reply are deleted, and messages are queued using the "Normal" generation type according to the chosen [Group reply strategy](/Usage/Characters/groupchats.md#reply-order-strategies).
+!!!
+
 ### Position
 
 When Position is set to **Relative**, this prompt is sent where it's located in the drag-and-drop interface with all other prompts. When it is set to **In-Chat** and given a **Depth**, it is instead sent **within the Chat History** as the selected Role, and **ignores** the order of the drag-and-drop interface.
