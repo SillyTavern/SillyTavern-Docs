@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.805920984313">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.806104774038">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.11.0.805920984313" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.11.0.806104774038" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.805920984313" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.806104774038" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.805920984313" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.806104774038" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -234,10 +234,10 @@
     </h1>
 </doc-anchor-target>
 <doc-anchor-target id="reply-order-strategies">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#reply-order-strategies">#</doc-anchor-trigger>
         <span>Reply order strategies</span>
-    </h3>
+    </h2>
 </doc-anchor-target>
 <p>Decides how characters in group chats are drafted for their replies.</p>
 <doc-anchor-target id="manual">
@@ -248,10 +248,10 @@
 </doc-anchor-target>
 <p>You can select the character to reply manually from the menu or with the <code v-pre>/trigger</code> command. The selected group member will be the only one to reply. User messages won&#x27;t trigger any replies automatically. Triggering a generation with an empty user input will trigger a random unmuted group member to reply.</p>
 <doc-anchor-target id="natural-order">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#natural-order">#</doc-anchor-trigger>
         <span>Natural Order</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <p>Tries to simulate the flow of a real human conversation. The algorithm is as follows:</p>
 <ol>
@@ -267,38 +267,38 @@
 </li>
 </ol>
 <doc-anchor-target id="list-order">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#list-order">#</doc-anchor-trigger>
         <span>List Order</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <p>Characters are drafted based on the order they are presented in the group members list. No other rules apply.</p>
 <doc-anchor-target id="pooled-order">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#pooled-order">#</doc-anchor-trigger>
         <span>Pooled Order</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <p>Activates one random character who have&#x27;t spoken yet since the last user message. If all characters have spoken, selects one randomly until the next user message.</p>
 <doc-anchor-target id="group-generation-handling-mode">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#group-generation-handling-mode">#</doc-anchor-trigger>
         <span>Group generation handling mode</span>
-    </h3>
+    </h2>
 </doc-anchor-target>
 <p>This setting decides how to handle the character information of the group chat members. No matter the choice, the group chat history is always shared between all the members.</p>
 <doc-anchor-target id="swap-character-cards">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#swap-character-cards">#</doc-anchor-trigger>
         <span>Swap character cards</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <p>Default mode. Every time the message is generated, only the character card information of the active speaker is included in the context.</p>
 <doc-anchor-target id="join-character-cards">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#join-character-cards">#</doc-anchor-trigger>
         <span>Join character cards</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <p>The information of all of the group members is combined into one joint prompt in their list order. This can help in cases when altering large chunks of the context is undesirable, e.g. with llama.cpp prompt caching.</p>
 <p>This mode has two sub-modes (you must choose one):</p>
@@ -316,74 +316,74 @@
 </ol>
 <p><strong>Important!</strong> Please be aware that due to how the typical character card is structured, the use of this mode can lead to unexpected behavior, including but not limited to: characters being confused about themselves, having merged personalities, uncertain traits, etc.</p>
 <doc-anchor-target id="join-prefix-and-suffix">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#join-prefix-and-suffix">#</doc-anchor-trigger>
         <span>Join Prefix and Suffix</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <p>When &#x27;Join character cards&#x27; is selected, all respective fields of the characters are being joined together. This means that in the resulting prompt all character descriptions will be joined to one big blob of text. If you want those fields to be separated, you can define a prefix and/or suffix.</p>
 <p>These options support normal macros and will also replace {{char}} with the relevant characters&#x27;s name and &lt;FIELDNAME&gt; with the name of the part (e.g.: description, personality, scenario, etc.)</p>
 <doc-anchor-target id="other-group-chat-menu-options">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#other-group-chat-menu-options">#</doc-anchor-trigger>
         <span>Other Group Chat menu options</span>
-    </h3>
+    </h2>
 </doc-anchor-target>
 <doc-anchor-target id="mute-character">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#mute-character">#</doc-anchor-trigger>
         <span>Mute Character</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <p>The struck-out speech bubble icon next to the character avatar in the group chat menu can disable or enable replies from a particular character in the chat.</p>
 <doc-anchor-target id="force-talk">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#force-talk">#</doc-anchor-trigger>
         <span>Force Talk</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <p>The speech bubble icon next to the character avatar in the group chat menu will trigger a reply only from a particular character, bypassing the reply order strategy. It will work even if the group member is muted.</p>
 <doc-anchor-target id="auto-mode">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#auto-mode">#</doc-anchor-trigger>
         <span>Auto-mode</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <p>While auto-mode is enabled, the group chat will follow the reply order and trigger the message generation without user interaction. The next auto-mode turn is triggered after a 5-second delay when the last drafted character sends its message. When the user starts typing into the send message text area, the auto-mode will be disabled, but already queued generations are not stopped automatically.</p>
 <doc-anchor-target id="allow-self-responses">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#allow-self-responses">#</doc-anchor-trigger>
         <span>Allow Self Responses</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <p>Will allow consecutive replies from the character who sent the latest message of each turn if they happen to be triggered due to being self-mentioned when the Natural Order is selected. Has no effect on List order.</p>
 <doc-anchor-target id="group-chat-scenario-override">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#group-chat-scenario-override">#</doc-anchor-trigger>
         <span>Group Chat Scenario Override</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <p>All group members will use the entered scenario text instead of what is specified in their character cards. Branched chats inherit the scenario override from their parent and can be changed individually after that.</p>
 <doc-anchor-target id="peek-character-definitions">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#peek-character-definitions">#</doc-anchor-trigger>
         <span>Peek Character Definitions</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <p>Clicking on the character card icon next to the avatar in the group chat menu will quickly navigate to the usual character definitions screen. Any changes made here will be saved to the card itself.</p>
 <p>To return back to the group chat, click the Group Name title link.</p>
 <doc-anchor-target id="member-management">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#member-management">#</doc-anchor-trigger>
         <span>Member Management</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <p>Any of your existing characters can be added, removed, muted, or re-ordered within the group chat. By default, a new member is added to the top of the group members list and then can be re-ordered using the arrow icons.</p>
 <doc-anchor-target id="group-chat-pop-out">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#group-chat-pop-out">#</doc-anchor-trigger>
         <span>Group Chat pop-out</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <p>The group chat menu pop-out can be activated by clicking on the icon next to the &quot;Current Members&quot; field. This creates a pop-out of the group chat menu. By enabling MovingUI from user settings, this menu can resized and dragged to any position within the interface and functions just like the regular group chat menu.</p>
 
