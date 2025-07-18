@@ -4,7 +4,8 @@ url: docs.sillytavern.app
 meta:
   title: " | docs.ST.app"
 branding:
-  logo: static/logo.png
+  logo: static/logo-2.png
+  logoDark: static/logo.png
   title: SillyTavern Documentation
   label:
 edit:
