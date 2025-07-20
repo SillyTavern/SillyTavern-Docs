@@ -618,7 +618,7 @@ The `doExtrasFetch()` function:
 * Handles fetching the result
 * Returns the result (the response object)
 
-This makes it easy to call your Extra's API from your plugin.
+This makes it easy to call your Extras API from your extension.
 
 You can specify:
 
