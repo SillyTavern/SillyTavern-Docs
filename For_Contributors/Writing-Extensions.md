@@ -467,6 +467,121 @@ globalThis.myCustomInterceptorFunction = async function(chat, contextSize, abort
 }
 ```
 
+## Generating text
+
+SillyTavern provides several functions to generate text in different contexts using the currently chosen LLM API. These functions allow you to generate text in the context of a chat, raw generation without any context, or with structured outputs.
+
+### Within a chat context
+
+The `generateQuietPrompt()` function is used to generate text in the context of a chat with an added "quiet" prompt (post-history instruction) in the background (the output is not rendered in the UI). This is useful for generating text without interrupting the user experience while also keeping the relevant chat and character data intact, such as generating a summary or an image prompt.
+
+```js
+const { generateQuietPrompt } = SillyTavern.getContext();
+
+const prompt = 'Generate a summary of the chat history.';
+
+const result = await generateQuietPrompt({
+    prompt,
+});
+```
+
+### Raw generation
+
+The `generateRaw()` function is used to generate text without any chat context. It is useful when you want to fully control the prompt-building process.
+
+It accepts a `prompt` as a Text Completion string or an array of Chat Completion objects, constructing the request with an appropriate format depending on the selected API type, e.g., converting between chat/text modes, applying instruct formatting, etc. You can also pass an additional `systemPrompt` and a `prefill` to the function for even more control over the generation process.
+
+```js
+const { generateRaw } = SillyTavern.getContext();
+
+const systemPrompt = 'You are a helpful assistant.';
+const prompt = 'Generate a story about a brave knight.';
+const prefill = 'Once upon a time,';
+
+/*
+In Chat Completion mode, will produce a prompt like this:
+[
+  {role: 'system', content: 'You are a helpful assistant.'},
+  {role: 'user', content: 'Generate a story about a brave knight.'},
+  {role: 'assistant', content: 'Once upon a time,'}
+]
+*/
+
+/*
+In Text Completion mode (no instruct), will produce a prompt like this:
+"You are a helpful assistant.\nGenerate a story about a brave knight.\nOnce upon a time,"
+*/
+
+const result = await generateRaw({
+    systemPrompt,
+    prompt,
+    prefill,
+});
+```
+
+### Structured Outputs
+
+!!!info
+Currently only supported by the Chat Completion API. The availability varies based on the selected source and model. If the selected model does not support structured outputs, the generation will either fail or will return an empty object (`'{}'`). Check the documentation for the specific API you are using to see if structured outputs are supported.
+!!!
+
+You can use the structured outputs feature to ensure the model produces a valid JSON object that adheres to a provided [JSON Schema](https://json-schema.org/learn). This is useful for extensions that require structured data, such as state tracking, data classification, etc.
+
+To use structured outputs, you must pass a JSON schema object to `generateRaw()` or `generateQuietPrompt()`. The model will then generate a response that matches the schema, and it will be returned as a stringified JSON object.
+
+!!!warning
+The outputs are not validated against the schema, you must handle the parsing and validation of the generated output yourself. If the model fails to generate a valid JSON object, the function will return an empty object (`'{}'`).
+
+[Zod](https://zod.dev/json-schema) is a popular library to generate and validate JSON schemas. Its use will not be covered here.
+!!!
+
+```js
+const { generateRaw, generateQuietPrompt } = SillyTavern.getContext();
+
+// Define a JSON schema for the expected output
+const jsonSchema = {
+    // Required: a name for the schema
+    name: 'StoryStateModel',
+    // Optional: a description of the schema
+    description: 'A schema for a story state with location, plans, and memories.',
+    // Optional:  the schema will be used in strict mode, meaning that only the fields defined in the schema will be allowed
+    strict: true,
+    // Required: a definition of the schema
+    value: {
+        '$schema': 'http://json-schema.org/draft-04/schema#',
+        'type': 'object',
+        'properties': {
+            'location': {
+                'type': 'string'
+            },
+            'plans': {
+                'type': 'string'
+            },
+            'memories': {
+                'type': 'string'
+            }
+        },
+        'required': [
+            'location',
+            'plans',
+            'memories'
+        ],
+    },
+};
+
+const prompt = 'Generate a story state with location, plans, and memories. Output as a JSON object.';
+
+const rawResult = await generateRaw({
+    prompt,
+    jsonSchema,
+});
+
+const quietResult = await generateQuietPrompt({
+    prompt,
+    jsonSchema,
+});
+```
+
 ## Do Extras request
 
 !!!warning
