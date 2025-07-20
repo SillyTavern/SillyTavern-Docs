@@ -22,6 +22,54 @@ protocol:
   ipv6: false
 ```
 
+## Command-Line Arguments
+
+You can pass command-line arguments to SillyTavern server startup to override some settings in [config.yaml](../Administration/config-yaml.md).
+
+### Examples
+
+```shell
+node server.js --port 8000 --listen false
+# or
+npm run start -- --port 8000 --listen false
+# or (Windows only)
+Start.bat --port 8000 --listen false
+```
+
+### Supported arguments
+
+!!!tip
+None of the arguments are required. If you don't provide them, SillyTavern will use the settings in `config.yaml`.
+!!!
+
+| Option                          | Description                                                          | Type     |
+|---------------------------------|----------------------------------------------------------------------|----------|
+| `--version`                     | Shows the version number                                             | boolean  |
+| `--global`                      | Forces the use of system-wide paths for application data (see above) | boolean  |
+| `--configPath`                  | Overrides the path to the config.yaml file (standalone mode only)    | string   |
+| `--dataRoot`                    | Sets the root directory for data storage (standalone mode only)      | string   |
+| `--port`                        | Sets the port under which SillyTavern will run                       | number   |
+| `--listen`                      | Makes SillyTavern listen on all network interfaces                   | boolean  |
+| `--whitelist`                   | Enables whitelist mode                                               | boolean  |
+| `--basicAuthMode`               | Enables basic authentication                                         | boolean  |
+| `--enableIPv4`                  | Enables the IPv4 protocol                                            | boolean  |
+| `--enableIPv6`                  | Enables the IPv6 protocol                                            | boolean  |
+| `--listenAddressIPv4`           | Specifies the IPv4 address to listen on                              | string   |
+| `--listenAddressIPv6`           | Specifies the IPv6 address to listen on                              | string   |
+| `--dnsPreferIPv6`               | Prefers IPv6 for DNS                                                 | boolean  |
+| `--ssl`                         | Enables SSL                                                          | boolean  |
+| `--certPath`                    | Sets the path to your certificate file                               | string   |
+| `--keyPath`                     | Sets the path to your private key file                               | string   |
+| `--browserLaunchEnabled`        | Automatically launches SillyTavern in the browser                    | boolean  |
+| `--browserLaunchHostname`       | Sets the browser launch hostname                                     | string   |
+| `--browserLaunchPort`           | Overrides the port for browser launch                                | string   |
+| `--browserLaunchAvoidLocalhost` | Avoids using 'localhost' for browser launch in auto mode             | boolean  |
+| `--corsProxy`                   | Enables the CORS proxy                                               | boolean  |
+| `--requestProxyEnabled`         | Enables the use of a proxy for outgoing requests                     | boolean  |
+| `--requestProxyUrl`             | Sets the request proxy URL (HTTP or SOCKS protocols)                 | string   |
+| `--requestProxyBypass`          | Sets the request proxy bypass list (space-separated list of hosts)   | array    |
+| `--disableCsrf`                 | Disables CSRF protection (NOT RECOMMENDED)                           | boolean  |
+
 ## Environment Variables
 
 Configuration may also be set via environment variables which will override the values in the `config.yaml` file.
