@@ -7,9 +7,27 @@ icon: file-added
 
 UI extensions expand the functionality of SillyTavern by hooking into its events and API. You can easily create your own extensions.
 
+## I'm not a dev, I just want to install an extension
+
+!!!tip
+You **must** have git installed to download extensions. Follow the instructions on the [Git installation page](https://git-scm.com/downloads) if you don't have it installed.
+!!!
+
+### Official extensions
+
+You can browse a list of all available extensions directly from the app by going to the "<i class="fa-solid fa-cubes"></i> Extensions" => "Download Extensions & Assets" menu and clicking the "<i class="fa-solid fa-plug-circle-exclamation"></i> Load Asset List" button. To install an extension, click the "<i class="fa-solid fa-download"></i> Download" button. To read more about an extension, click the "<i class="fa-solid fa-arrow-up-right-from-square"></i> Link" button next to its name to open its GitHub page.
+
+### Third-party extensions
+
+!!!danger
+Please be aware that using external extensions can have unintended side effects and may pose security risks. Always make sure you trust the source before importing an extension. **We are not responsible for any damage caused by third-party extensions.**
+!!!
+
+To install a third-party extension, go to the "<i class="fa-solid fa-cubes"></i> Extensions" => "<i class="fa-solid fa-cloud-arrow-down"></i> Install Extension" menu and paste the URL of the extension repository. Optionally, specify the branch and (in [multi-user](../Administration/multi-user.md) scenarios) the installation target: all users or just the current user. The extension will be downloaded and loaded automatically.
+
 ## Extension submissions
 
-Want to contribute your extensions to the [official repository](https://github.com/SillyTavern/SillyTavern-Content)? Contact us!
+Want to contribute your extensions to the [official content repository](https://github.com/SillyTavern/SillyTavern-Content)? Contact us!
 
 To ensure that all extensions are safe and easy to use, we have a few requirements:
 
@@ -23,6 +41,7 @@ To ensure that all extensions are safe and easy to use, we have a few requiremen
 See live examples of simple SillyTavern extensions:
 
 * <https://github.com/city-unit/st-extension-example> - basic extension template. Showcases manifest creation, local script imports, adding a settings UI panel, and persistent extension settings usage.
+* <https://github.com/search?q=topic%3Aextension+org%3ASillyTavern&type=Repositories> - a list of all official SillyTavern extensions on GitHub.
 
 ## Bundling
 
