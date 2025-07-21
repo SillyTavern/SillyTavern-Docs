@@ -147,9 +147,31 @@ You can find the full list of available properties and functions in the [SillyTa
 If you're missing any of the functions/properties in `getContext`, please get in touch with the developers or send us a pull request!
 !!!
 
-#### TypeScript notice
+### Shared libraries
 
-If you want access to autocomplete for all methods in the `SillyTavern` global object (and you probably do), including `getContext()`, you should add a TypeScript `.d.ts` module declaration. This declaration should import global types from SillyTavern's source, depending on your extension's location. Below is an example that works for both installation types: "all users" and "current user."
+Most of the npm libraries used internally by the SillyTavern frontend are shared in the `libs` property of the `SillyTavern` global object.
+
+* `lodash` - Utility library. [Docs](https://lodash.com/).
+* `localforage` - Browser storage library. [Docs](https://localforage.github.io/localForage/).
+* `Fuse` - Fuzzy search library. [Docs](https://www.fusejs.io/).
+* `DOMPurify` - HTML sanitization library. [Docs](https://github.com/cure53/DOMPurify).
+* `Handlebars` - Templating library. [Docs](https://handlebarsjs.com/).
+* `moment` - Date/time manipulation library. [Docs](http://momentjs.com/).
+* `showdown` - Markdown converter library. [Docs](https://showdownjs.com/).
+
+You can find the full list of exported libraries in the [SillyTavern source code](https://github.com/SillyTavern/SillyTavern/blob/staging/public/lib.js).
+
+**Example:** Using the DOMPurify library.
+
+```js
+const { DOMPurify } = SillyTavern.libs;
+
+const sanitizedHtml = DOMPurify.sanitize('<script>"dirty HTML"</script>');
+```
+
+### TypeScript notice
+
+If you want access to autocomplete for all methods in the `SillyTavern` global object (and you probably do), including `getContext()` and `libs`, you should add a TypeScript `.d.ts` module declaration. This declaration should import global types from SillyTavern's source, depending on your extension's location. Below is an example that works for both installation types: "all users" and "current user."
 
 **global.d.ts** - place this file in the root of your extension directory (next to `manifest.json`):
 
