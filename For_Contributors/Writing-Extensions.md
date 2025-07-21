@@ -437,9 +437,11 @@ SlashCommandParser.addCommandObject(SlashCommand.fromProps({ name: 'repeat',
 
 All registered commands can be used in [STscript](/For_Contributors/st-script.md) in any possible way.
 
-## Listening to event types
+## Events
 
-Use `eventSource.on()` to listen for events:
+### Listening to events
+
+Use `eventSource.on(eventType, eventHandler)` to listen for events:
 
 ```js
 const { eventSource, event_types } = SillyTavern.getContext();
@@ -469,6 +471,20 @@ The rest can be found [in the source](https://github.com/SillyTavern/SillyTavern
 !!!info Event data
 The way each event passes its data to the listener is not uniform. Some events don't emit any data; some pass an object or a primitive value. Please refer to the source code where the event is emitted to see what data it passes, or check with the debugger.
 !!!
+
+### Emitting events
+
+You can produce any application events from extensions, including custom events, by calling `eventSource.emit(eventType, ...eventData)`:
+
+```js
+const { eventSource } = SillyTavern.getContext();
+
+// Can be a built-in event_types field or any string.
+const eventType = 'myCustomEvent';
+
+// Use `await` to ensure all event handlers complete before continuing execution.
+await eventSource.emit(eventType, { data: 'custom event data' });
+```
 
 ## Prompt Interceptors
 
