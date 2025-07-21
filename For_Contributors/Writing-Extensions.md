@@ -216,7 +216,7 @@ function getSettings() {
     }
 
     // Ensure all default keys exist (helpful after updates)
-    for (const key in defaultSettings) {
+    for (const key of Object.keys(defaultSettings)) {
         if (!Object.hasOwn(extensionSettings[MODULE_NAME], key)) {
             extensionSettings[MODULE_NAME][key] = defaultSettings[key];
         }
