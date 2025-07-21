@@ -148,6 +148,26 @@ You can find the full list of available properties and functions in the [SillyTa
 If you're missing any of the functions/properties in `getContext`, please get in touch with the developers or send us a pull request!
 !!!
 
+#### TypeScript notice
+
+If you want access to autocomplete for all methods in the `SillyTavern` global object (and you probably do), including `getContext()`, you should add a TypeScript `.d.ts` module declaration. This declaration should import global types from SillyTavern's source, depending on your extension's location. Below is an example that works for both installation types: "all users" and "current user."
+
+**global.d.ts** - place this file in the root of your extension directory (next to `manifest.json`):
+
+```ts
+export {};
+
+// 1. Import for user-scoped extensions
+import '../../../../public/global';
+// 2. Import for server-scoped extensions
+import '../../../../global';
+
+// Define additional types if needed...
+declare global {
+    // Add global type declarations here
+}
+```
+
 ### Importing from other files
 
 !!!warning
