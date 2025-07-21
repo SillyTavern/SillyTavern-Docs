@@ -36,12 +36,11 @@ Chat Completion APIs **(non-overridable)**:
 2. Claude: model-dependant tokenizer via [WebTokenizers](https://github.com/mlc-ai/tokenizers-cpp).
 3. OpenRouter: Llama, Mistral, Gemma, Yi tokenizers for their respective models.
 4. Google AI Studio: Gemma tokenizer.
-5. Scale API: GPT-4 tokenizer.
-6. AI21 API: Jamba tokenizer (requires a one-time download).
-7. Cohere API: Command-R or Command-A tokenizer (requires a one-time download).
-8. MistralAI API: Mistral V1 or V3 tokenizer (requires a one-time download).
-9. DeepSeek API: DeepSeek tokenizer (requires a one-time download).
-10. Fallback tokenizer: GPT-3.5 turbo tokenizer.
+5. AI21 API: Jamba tokenizer (requires a one-time download).
+6. Cohere API: Command-R or Command-A tokenizer (requires a one-time download).
+7. MistralAI API: Mistral V1 or V3 tokenizer (requires a one-time download).
+8. DeepSeek API: DeepSeek tokenizer (requires a one-time download).
+9. Fallback tokenizer: GPT-3.5 turbo tokenizer.
 
 #### Additional Tokenizers
 

@@ -3,39 +3,48 @@ order: 20
 ---
 # Chat Completions
 
-## OpenAI
+## Source-specific instructions
 
-### API key
+**Important!**
 
-**How to get:**
+Most API platforms allow to view the generated API key only once, at the time of its creation. If you lose it, you will need to generate a new one. Make sure to keep it safe!
+
+### OpenAI
+
+Use OpenAI's developer platform to access various OpenAI models, including gpt-4o, gpt-4.1, o3, etc.
+
+**How to get an API key:**
 
 1. Go to [OpenAI](https://platform.openai.com/) and sign in.
 2. Use "[View API keys](https://platform.openai.com/account/api-keys)" option to create a new API key.
 
-**Important!**
+### Claude
 
-*Lost API keys can't be restored! Make sure to keep it safe!*
+Claude is a family of AI models developed by Anthropic. You can access Claude models through the Anthropic console.
 
-## Claude
+**How to get an API key:**
 
-If you have access to Anthropic's Claude API:
+1. Go to [Anthropic Console](https://console.anthropic.com/) and sign in.
+2. Use the "[Get API Key](https://console.anthropic.com/settings/keys)" section to create a new API key.
 
-- Select 'Claude' for 'Chat Completion Source'.
-- Input your API key.
-- Click connect.
-
-## Mistral AI
+### Mistral AI
 
 Mistral AI is a team developing both open and proprietary models with high scientific standards and a focus on openness. You can run their models locally or through their API service, La Plateforme.
 
-### API
+**How to get an API key:**
 
-- The first step is to create an account on [La Plateforme](https://console.mistral.ai/).
-- Once that's done, you can choose a [plan](https://console.mistral.ai/billing/plans) and set up your payment information or opt for the Free Tier.
-- Next, you can create your [API key](https://console.mistral.ai/api-keys/). You may need to wait a couple of minutes before the key becomes valid!
+1. The first step is to create an account on [La Plateforme](https://console.mistral.ai/).
+2. Once that's done, you can choose a [plan](https://console.mistral.ai/billing/plans) and set up your payment information or opt for the Free Tier.
+3. Next, you can create your [API key](https://console.mistral.ai/api-keys/). You may need to wait a couple of minutes before the key becomes valid!
 
-**Important!**  
-*Lost API keys can't be restored! You would have to create a new one. Make sure to keep it safe!*
+### DeepSeek
+
+DeepSeek Platform provides access to the latest DeepSeek models through an API. They offer a range of models, including DeepSeek V3 and DeepSeek R1.
+
+**How to get an API key:**
+
+1. Sign up on the [DeepSeek Platform](https://platform.deepseek.com/).
+2. After signing up and topping up your account, you can create an API key in the "[API keys](https://platform.deepseek.com/api_keys)" section.
 
 ## Custom OpenAI-compatible endpoint
 
@@ -58,7 +67,7 @@ Examples of compatible backends include:
 * [LiteLLM](https://www.litellm.ai/)
 * [LocalAI](https://localai.io/)
 
-## Connecting
+### Connecting
 
 To access this feature:
 
@@ -69,7 +78,7 @@ Enter the custom endpoint URL and an API key if required. For example, TabbyAPI 
 
 > **Hint:** If you experience connection issues, try adding `/v1` to the end of the endpoint URL. Do NOT add the `/chat/completions` suffix.
 
-## Selecting a Model
+### Selecting a Model
 
 If the custom API implements the `/v1/models` endpoint to provide a list of available models, you can choose from a dropdown list. Otherwise, use the text field to manually input a model ID.
 
