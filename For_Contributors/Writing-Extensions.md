@@ -9,21 +9,7 @@ UI extensions expand the functionality of SillyTavern by hooking into its events
 
 ## I'm not a dev, I just want to install an extension
 
-!!!tip
-You **must** have git installed to download extensions. Follow the instructions on the [Git installation page](https://git-scm.com/downloads) if you don't have it installed.
-!!!
-
-### Official extensions
-
-You can browse a list of all available extensions directly from the app by going to the "<i class="fa-solid fa-cubes"></i> Extensions" => "Download Extensions & Assets" menu and clicking the "<i class="fa-solid fa-plug-circle-exclamation"></i> Load Asset List" button. To install an extension, click the "<i class="fa-solid fa-download"></i> Download" button. To read more about an extension, click the "<i class="fa-solid fa-arrow-up-right-from-square"></i> Link" button next to its name to open its GitHub page.
-
-### Third-party extensions
-
-!!!danger
-Please be aware that using external extensions can have unintended side effects and may pose security risks. Always make sure you trust the source before importing an extension. **We are not responsible for any damage caused by third-party extensions.**
-!!!
-
-To install a third-party extension, go to the "<i class="fa-solid fa-cubes"></i> Extensions" => "<i class="fa-solid fa-cloud-arrow-down"></i> Install Extension" menu and paste the URL of the extension repository. Optionally, specify the branch and (in [multi-user](../Administration/multi-user.md) scenarios) the installation target: all users or just the current user. The extension will be downloaded and loaded automatically.
+Go here: [Extensions](../extensions/index.md).
 
 ## Extension submissions
 
