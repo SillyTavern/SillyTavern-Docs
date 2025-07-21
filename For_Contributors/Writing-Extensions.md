@@ -15,8 +15,8 @@ To extend the functionality of the Node.js server, see the [Server Plugins](./Se
 
 **Can't write JavaScript?**
 
-- Consider [STscript](./st-script.md) as a simpler alternative to writing a full-fledged extension.
-- Go through the [MDN Course](https://developer.mozilla.org/en-US/docs/Learn/JavaScript) and come back when you're done.
+* Consider [STscript](./st-script.md) as a simpler alternative to writing a full-fledged extension.
+* Go through the [MDN Course](https://developer.mozilla.org/en-US/docs/Learn/JavaScript) and come back when you're done.
 
 ## Extension submissions
 
