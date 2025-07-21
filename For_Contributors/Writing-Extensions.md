@@ -202,11 +202,11 @@ const { extensionSettings, saveSettingsDebounced } = SillyTavern.getContext();
 const MODULE_NAME = 'my_extension';
 
 // Define default settings
-const defaultSettings = {
+const defaultSettings = Object.freeze({
     enabled: false,
     option1: 'default',
     option2: 5
-};
+});
 
 // Define a function to get or initialize settings
 function getSettings() {
@@ -217,7 +217,7 @@ function getSettings() {
 
     // Ensure all default keys exist (helpful after updates)
     for (const key in defaultSettings) {
-        if (extensionSettings[MODULE_NAME][key] === undefined) {
+        if (!Object.hasOwn(extensionSettings[MODULE_NAME], key)) {
             extensionSettings[MODULE_NAME][key] = defaultSettings[key];
         }
     }
