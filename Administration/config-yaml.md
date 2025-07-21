@@ -45,7 +45,7 @@ None of the arguments are required. If you don't provide them, SillyTavern will 
 | Option                          | Description                                                          | Type     |
 |---------------------------------|----------------------------------------------------------------------|----------|
 | `--version`                     | Shows the version number                                             | boolean  |
-| `--global`                      | Forces the use of system-wide paths for application data (see above) | boolean  |
+| `--global`                      | Forces the use of system-wide paths for application data             | boolean  |
 | `--configPath`                  | Overrides the path to the config.yaml file (standalone mode only)    | string   |
 | `--dataRoot`                    | Sets the root directory for data storage (standalone mode only)      | string   |
 | `--port`                        | Sets the port under which SillyTavern will run                       | number   |
@@ -100,7 +100,7 @@ See more on using environment variables in the [Node.js documentation](https://n
 
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|-----------------|
-| `dataRoot` | Root directory for user data storage | `./data` | Any valid directory path |
+| `dataRoot` | Root directory for user data storage (standalone mode only) | `./data` | Any valid directory path |
 | `skipContentCheck` | Skip new default content checks | `false` | `true`, `false` |
 | `enableDownloadableTokenizers` | Enable on-demand tokenizer downloads | `true` | `true`, `false` |
 
@@ -200,6 +200,7 @@ See more on using environment variables in the [Node.js documentation](https://n
 | `thumbnails.format` | Image format for thumbnails | `jpg` | `jpg`, `png` |
 | `thumbnails.dimensions.bg` | Background thumbnails size | `[160, 90]` | Array of two numbers (width, height) |
 | `thumbnails.dimensions.avatar` | Avatar thumbnails size | `[96, 144]` |  Array of two numbers (width, height) |
+| `thumbnails.dimensions.persona` | Persona thumbnails size | `[96, 144]` |  Array of two numbers (width, height) |
 
 ## Backup Configuration
 
