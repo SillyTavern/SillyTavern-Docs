@@ -47,11 +47,11 @@ To use relative imports from the bundle, you may need to create an import wrappe
 
 ```js
 /**
- * Import a member from a URL, bypassing webpack.
+ * Import a member from a module by URL, bypassing webpack.
  * @param {string} url URL to import from
  * @param {string} what Name of the member to import
  * @param {any} defaultValue Fallback value
- * @returns {any} Imported member
+ * @returns {Promise<any>} Imported member
  */
 export async function importFromUrl(url, what, defaultValue = null) {
     try {
@@ -60,8 +60,7 @@ export async function importFromUrl(url, what, defaultValue = null) {
             throw new Error(`No ${what} in module`);
         }
         return module[what];
-    }
-     catch (error) {
+    } catch (error) {
         console.error(`Failed to import ${what} from ${url}: ${error}`);
         return defaultValue;
      }
