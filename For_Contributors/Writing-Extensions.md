@@ -261,7 +261,7 @@ await saveMetadata();
 The `CHAT_CHANGED` event is emitted when the chat is switched, so you can listen to this event to update your extension's state accordingly. See more in the [Listening to event types](#listening-to-event-types) section.
 !!!
 
-## Character cards
+### Character cards
 
 SillyTavern fully supports [Character Cards V2 Specification](https://github.com/malfoyslastname/character-card-spec-v2/blob/main/spec_v2.md), which allows to store arbitrary data in the character card JSON data.
 
@@ -292,7 +292,7 @@ const character = SillyTavern.getContext().characters[characterId];
 const myData = character.data?.extensions?.my_extension_key;
 ```
 
-## Settings presets
+### Settings presets
 
 Arbitrary JSON data can be stored in the settings presets of the main API types. It will be exported and imported along with the preset JSON, so you can use it to store extension-specific settings for the preset. The following API types support data extensions in settings presets:
 
