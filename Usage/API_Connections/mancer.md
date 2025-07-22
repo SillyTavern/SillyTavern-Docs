@@ -1,10 +1,12 @@
 # Mancer
+
 Mancer is a large language model inferencing service that lets you run whatever prompts you want and doesn't censor responses. Most of the models require a preloaded balance to start chatting, but there is a free model as of writing (2024-11-28).
 
 - [Models](https://mancer.tech/models)
 - [Pricing](https://mancer.tech/pricing)
 
-### How to Get Started
+## How to Get Started
+
 1. Sign up for an account at [mancer.tech](https://mancer.tech/).
 2. Click on Dashboard and copy your API Key.
 
@@ -17,8 +19,10 @@ Mancer is a large language model inferencing service that lets you run whatever 
 
 You should now be able to chat with any Mancer model of your choice.
 
-### Anonymous Logging
+## Anonymous Logging
+
 If you don't mind your chats potentially being used to train models, improve Mancer's service, publish datasets, or *whatever else* they may decide to do with it, you can opt-in to anonymous logging for a 25% token discount on select models. Simply go to your [Mancer dashboard](https://mancer.tech/dashboard.html) and tick `Enable Anon. Logging`.
 
-### Support
+## Support
+
 Still need help? Head over to the [#mancer](https://discord.gg/Ze9UyNu3) support channel on the SillyTavern Discord.
