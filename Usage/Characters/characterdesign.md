@@ -48,21 +48,15 @@ This is because every AI model has a limit to the amount of context it can proce
 
 ## 'Context'?
 
-This is the information that gets sent to the AI each time you ask it to generate a response:
+This is the information that gets sent to the AI each time you ask it to generate a response. SillyTavern automatically calculates the best way to allocate the available context tokens before sending the information to the AI model.
 
-* Character definitions
-* Chat history
-* Author's Notes
-* Special Format strings
-* [bracket commands]
-
-SillyTavern automatically calculates the best way to allocate the available context tokens before sending the information to the AI model.
+Read more about how the context is built in the [Prompts](/Usage/Prompts/prompts.md) section.
 
 ### What are a Character's 'Permanent Tokens'?
 
 These will always be sent to the AI with every generation request:
 
-* Character Name (keep the name short! Sent at the start of EVERY Character message)
+* Character Name
 * Character Description Box
 * Character Personality Box
 * Scenario Box
