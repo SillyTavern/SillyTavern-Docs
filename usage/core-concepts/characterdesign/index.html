@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.806525541252">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.806525915765">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.11.0.806525541252" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.11.0.806525915765" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.806525541252" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.806525915765" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.806525541252" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.806525915765" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -297,15 +297,8 @@
         <span>&#x27;Context&#x27;?</span>
     </h2>
 </doc-anchor-target>
-<p>This is the information that gets sent to the AI each time you ask it to generate a response:</p>
-<ul>
-<li>Character definitions</li>
-<li>Chat history</li>
-<li>Author&#x27;s Notes</li>
-<li>Special Format strings</li>
-<li>[bracket commands]</li>
-</ul>
-<p>SillyTavern automatically calculates the best way to allocate the available context tokens before sending the information to the AI model.</p>
+<p>This is the information that gets sent to the AI each time you ask it to generate a response. SillyTavern automatically calculates the best way to allocate the available context tokens before sending the information to the AI model.</p>
+<p>Read more about how the context is built in the <a href="../../prompts/">Prompts</a> section.</p>
 <doc-anchor-target id="what-are-a-characters-permanent-tokens">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#what-are-a-characters-permanent-tokens">#</doc-anchor-trigger>
@@ -314,7 +307,7 @@
 </doc-anchor-target>
 <p>These will always be sent to the AI with every generation request:</p>
 <ul>
-<li>Character Name (keep the name short! Sent at the start of EVERY Character message)</li>
+<li>Character Name</li>
 <li>Character Description Box</li>
 <li>Character Personality Box</li>
 <li>Scenario Box</li>
