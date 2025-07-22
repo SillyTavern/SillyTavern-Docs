@@ -88,6 +88,10 @@ For example:
 *I noticed you came inside, I walked up and stood right in front of you* Welcome. I'm glad to see you here. *I said with a toothy smug sunny smile looking you straight in the eye* What brings you...
 ```
 
+## Alternate Greetings
+
+Messages added here are displayed as additional 'swipes' for the character's first message when starting a new chat. If the character is part of a group chat, the system randomly selects one of these greetings to initiate the conversation.
+
 ## Favorite Character
 
 Click the **<i class="fa-solid fa-star"></i> Add to Favorites** button to mark the character as a favorite to quickly filter them on the side menu bar by selecting the "Favorites" sort option. Favorite characters have a golden highlight in the list. This will also make the character portrait appear in the hotswaps area (if enabled in User Settings).
