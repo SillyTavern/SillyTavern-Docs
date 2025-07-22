@@ -76,11 +76,9 @@ These will always be sent to the AI with every generation request:
 
 ## First message
 
-The First Message is an important element that defines how and in what style the character will communicate.
+The First Message is an important element that defines how and in what style the character will communicate. The model is most likely to pick up the style and length constrains from the first message than anything else, so it's important to write it in a way that you want the responses to be (short and concise, long and detailed, etc.).
 
-The character's first message should be long to reduce the likelihood of the character responding with very short messages later on.
-
-You can also use asterisks ** to describe the character's actions.
+Supports Markdown and HTML formatting.
 
 For example:
 
