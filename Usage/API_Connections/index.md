@@ -44,7 +44,7 @@ Most Text Completion models have a recommended "Instruct Template" (usually ment
 - Runs from a single binary file on Windows, Mac, and Linux
 - Supports GGUF models
 - Slower than GPU-only loaders such as AutoGPTQ and Exllama/v2
-- [GitHub](https://github.com/LostRuins/koboldcpp)
+- [GitHub](https://github.com/LostRuins/koboldcpp), [Setup Instructions](/Usage/API_Connections/koboldcpp.md)
 
 ### llama.cpp
 
@@ -83,7 +83,7 @@ Most Text Completion models have a recommended "Instruct Template" (usually ment
 - Supports Exl2, GPTQ, and FP16 models
 - [Official extension](https://github.com/theroyallab/ST-tabbyAPI-loader) allows loading/unloading models directly from SillyTavern
 - Not recommended for users with low VRAM (no CPU offloading)
-- [GitHub](https://github.com/theroyallab/tabbyAPI)
+- [GitHub](https://github.com/theroyallab/tabbyAPI), [Setup Instructions](/Usage/API_Connections/tabbyapi.md)
 
 ### KoboldAI Classic (deprecated, abandoned)
 
