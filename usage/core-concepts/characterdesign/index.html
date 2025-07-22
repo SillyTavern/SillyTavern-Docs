@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.806179626741">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.806525541252">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Character Design | docs.ST.app</title>
     <meta name="title" content="Character Design | docs.ST.app">
-    <meta name="description" content="Used to add the character description and the rest that the AI should know.">
+    <meta name="description" content="Character Name is the only required field. You can leave the rest empty and still use the character in chats.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/usage/core-concepts/characterdesign/">
@@ -20,21 +20,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/usage/core-concepts/characterdesign/">
     <meta property="og:title" content="Character Design | docs.ST.app">
-    <meta property="og:description" content="Used to add the character description and the rest that the AI should know.">
+    <meta property="og:description" content="Character Name is the only required field. You can leave the rest empty and still use the character in chats.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/usage/core-concepts/characterdesign/">
     <meta property="twitter:title" content="Character Design | docs.ST.app">
-    <meta property="twitter:description" content="Used to add the character description and the rest that the AI should know.">
+    <meta property="twitter:description" content="Character Name is the only required field. You can leave the rest empty and still use the character in chats.">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.11.0.806179626741" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.11.0.806525541252" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.806179626741" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.806525541252" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.806179626741" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.806525541252" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -230,22 +230,37 @@
         <span>Character Design</span>
     </h1>
 </doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-tip"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-tip" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M7.90625 2.15625C4.50944 2.15625 2.15625 4.58563 2.15625 7.54688C2.15625 8.96138 2.76575 9.88281 3.57075 10.8589L3.87837 11.2226C4.19894 11.6021 4.554 12.0218 4.84581 12.4416C5.25406 13.0324 5.61775 13.7296 5.7385 14.5834C5.76728 14.8608 5.68746 15.1386 5.51579 15.3583C5.34413 15.5781 5.09399 15.7228 4.8179 15.7621C4.5418 15.8013 4.26124 15.7321 4.03512 15.5689C3.809 15.4056 3.65493 15.1612 3.60525 14.8867C3.54775 14.4814 3.37094 14.1004 3.07338 13.6692C2.8306 13.3302 2.57055 13.0039 2.29425 12.6917C2.1735 12.5479 2.04556 12.397 1.909 12.2317C1.00769 11.1406 0 9.72613 0 7.54688C0 3.32062 3.39681 0 7.90625 0C12.4157 0 15.8125 3.32062 15.8125 7.54688C15.8125 9.72613 14.8048 11.1406 13.9035 12.2317C13.7669 12.397 13.639 12.5479 13.5183 12.6903C13.2207 13.0424 12.9677 13.3414 12.7406 13.6692C12.4416 14.1004 12.2662 14.4814 12.2087 14.8867C12.1557 15.1584 12.0003 15.3994 11.7747 15.5598C11.5492 15.7202 11.2706 15.7879 10.9965 15.7488C10.7225 15.7096 10.474 15.5667 10.3023 15.3496C10.1306 15.1325 10.0489 14.8577 10.074 14.582C10.1948 13.7296 10.5584 13.0324 10.9667 12.4416C11.2585 12.0218 11.6136 11.6021 11.9341 11.2226C12.0419 11.0961 12.1454 10.9739 12.2403 10.8589C13.0468 9.88281 13.6562 8.96138 13.6562 7.54688C13.6562 4.58563 11.3031 2.15625 7.90625 2.15625ZM4.67188 17.25H11.1406C11.4266 17.25 11.7008 17.3636 11.903 17.5658C12.1052 17.768 12.2188 18.0422 12.2188 18.3281C12.2188 18.6141 12.1052 18.8883 11.903 19.0905C11.7008 19.2927 11.4266 19.4062 11.1406 19.4062H4.67188C4.38594 19.4062 4.11171 19.2927 3.90953 19.0905C3.70734 18.8883 3.59375 18.6141 3.59375 18.3281C3.59375 18.0422 3.70734 17.768 3.90953 17.5658C4.11171 17.3636 4.38594 17.25 4.67188 17.25ZM5.03125 21.9219C5.03125 21.6359 5.14484 21.3617 5.34703 21.1595C5.54921 20.9573 5.82344 20.8438 6.10938 20.8438H9.70312C9.98906 20.8438 10.2633 20.9573 10.4655 21.1595C10.6677 21.3617 10.7812 21.6359 10.7812 21.9219C10.7812 22.2078 10.6677 22.482 10.4655 22.6842C10.2633 22.8864 9.98906 23 9.70312 23H6.10938C5.82344 23 5.54921 22.8864 5.34703 22.6842C5.14484 22.482 5.03125 22.2078 5.03125 21.9219Z" />
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Character Name is the only required field. You can leave the rest empty and still use the character in chats.</p>
+        </div>
+    </div>
+</div>
 <doc-anchor-target id="character-description">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#character-description">#</doc-anchor-trigger>
         <span>Character Description</span>
     </h2>
 </doc-anchor-target>
-<p>Used to add the character description and the rest that the AI should know. This will always be present in the prompt, so all the important facts should be included here.</p>
-<p>For example, you can add information about the world in which the action takes place and describe the characteristics of the character you are playing for.</p>
-<p>It could be of any length (be it 200 or 2000 tokens) and formatted in any style (free text, W++, conversation style, etc).</p>
+<p>Used to add the character description and other relevant information for the AI. This information is always included in the prompt, so all important facts should be included here.</p>
+<p>For example, you can add information about the world in which the action takes place, describe the character&#x27;s appearance, personality, and background.</p>
+<p>It could be of any length (be it 200 or 2000 tokens) and formatted in any style (free text, pseudo-code conversation style, etc.).</p>
 <doc-anchor-target id="methods-and-format">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#methods-and-format">#</doc-anchor-trigger>
         <span>Methods and format</span>
     </h3>
 </doc-anchor-target>
-<p>Methods of character formatting is a complicated topic beyond the scope of this documentation page.</p>
+<p>Methods of character formatting are a complicated topic beyond the scope of this documentation page.</p>
 <p>Recommended guides that were tested with or rely on SillyTavern&#x27;s features:</p>
 <ul>
 <li>Trappu&#x27;s PLists + Ali:Chat guide: <a href="https://wikia.schneedc.com/bot-creation/trappu/creation">https://wikia.schneedc.com/bot-creation/trappu/creation</a></li>
@@ -258,7 +273,7 @@
         <span>Character tokens</span>
     </h2>
 </doc-anchor-target>
-<p><strong>TL;DR: If you&#x27;re working with an AI model with a 2048 context token limit, your 1000 token character definition is cutting the AI&#x27;s &#x27;memory&#x27; in half.</strong></p>
+<p><strong>TL;DR: If you&#x27;re working with an AI model with a 2048 context token limit, a 1000-token character definition cuts the AI&#x27;s &#x27;memory&#x27; in half.</strong></p>
 <p>To put this in perspective, a decent response from a good AI can easily be around 200-300 tokens. In this case, the AI would only be able to &#x27;remember&#x27; about 3 exchanges worth of chat history.</p>
 <doc-anchor-target id="why-did-my-characters-token-counter-turn-red">
     <h3>
@@ -274,7 +289,7 @@
     </h3>
 </doc-anchor-target>
 <p>Don&#x27;t worry - it won&#x27;t break anything. At worst, if the Character&#x27;s permanent tokens are too large, it simply means there will be less room left in the context for other things (see below).</p>
-<p>The only negative side effect this can have is the AI will have less &#x27;memory&#x27;, as it will have less chat history available to process.</p>
+<p>The only negative side effect this can have is that the AI will have less &#x27;memory&#x27;, as it will have less chat history available to process.</p>
 <p>This is because every AI model has a limit to the amount of context it can process at one time.</p>
 <doc-anchor-target id="context">
     <h2>
@@ -323,20 +338,9 @@
 <ul>
 <li>LLaMA 3 and its finetunes - 8192</li>
 <li>OpenAI GPT-4 - up to 128k</li>
-<li>Anthropic&#x27;s Claude - 200k (Claude 3) or 100k (Claude 2)</li>
+<li>Google Gemini - up to 2M</li>
+<li>Anthropic&#x27;s Claude - 200k (Claude 3)</li>
 <li>NovelAI - 8192 (Erato and Kayra, Opus tier; Clio, all tiers), 6144 (Kayra, Scroll tier), or 3072 (Kayra, Tablet tier)</li>
-</ul>
-<doc-anchor-target id="personality-summary">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#personality-summary">#</doc-anchor-trigger>
-        <span>Personality summary</span>
-    </h2>
-</doc-anchor-target>
-<p>A brief description of the personality.</p>
-<p>Examples:</p>
-<ul>
-<li><code v-pre>Cheerful, cunning, provocative</code></li>
-<li><code v-pre>Aqua likes to do nothing and also likes to get drunk</code></li>
 </ul>
 <doc-anchor-target id="first-message">
     <h2>
@@ -344,23 +348,139 @@
         <span>First message</span>
     </h2>
 </doc-anchor-target>
-<p>The First Message is an important thing that sets exactly how and in what style the character will communicate.</p>
-<p>The character&#x27;s first message should be long so that later it would be less likely that the character would respond with very short messages.</p>
+<p>The First Message is an important element that defines how and in what style the character will communicate.</p>
+<p>The character&#x27;s first message should be long to reduce the likelihood of the character responding with very short messages later on.</p>
 <p>You can also use asterisks ** to describe the character&#x27;s actions.</p>
 <p>For example:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">*I noticed you came inside, I walked up and stood right in front of you* Welcome. I'm glad to see you here. *I said with a toothy smug sunny smile looking you straight in the eye* What brings you...</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="examples-of-dialogue">
+<doc-anchor-target id="favorite-character">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#examples-of-dialogue">#</doc-anchor-trigger>
-        <span>Examples of dialogue</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#favorite-character">#</doc-anchor-trigger>
+        <span>Favorite Character</span>
     </h2>
 </doc-anchor-target>
-<p>Describes how the character speaks. Before each example, you need to add the &lt;START&gt; tag. The blocks of examples dialogue are only inserted if there&#x27;s a free space in the context for them and pushed out of context block by block. &lt;START&gt; will not be present in the prompt as it is just a marker - it will be instead replaced with &quot;Example Separator&quot; from Advanced Formatting for Text Completion APIs and contents of the &quot;New Example Chat&quot; utility prompt for Chat Completion APIs.</p>
+<p>Click the <strong><i class="fa-solid fa-star"></i> Add to Favorites</strong> button to mark the character as a favorite to quickly filter them on the side menu bar by selecting the &quot;Favorites&quot; sort option. Favorite characters have a golden highlight in the list. This will also make the character portrait appear in the hotswaps area (if enabled in User Settings).</p>
+<doc-anchor-target id="advanced-definitions">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#advanced-definitions">#</doc-anchor-trigger>
+        <span>Advanced Definitions</span>
+    </h2>
+</doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>The following fields are hidden by default. To access and edit them, you need to click on the <strong><i class="fa-solid fa-book"></i> Advanced Definitions</strong> button on the menu bar of the character definition page.</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="prompt-overrides">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#prompt-overrides">#</doc-anchor-trigger>
+        <span>Prompt Overrides</span>
+    </h3>
+</doc-anchor-target>
 <ul>
-<li>Use {{char}} instead of the character name.</li>
-<li>Use {{user}} instead of the user name.</li>
+<li><strong>Main Prompt</strong>: If the &quot;Prefer Char. Prompt&quot; user setting is enabled, any text you put here will override the <a href="../../prompts/#main-prompt-system-prompt">main/system prompt</a> for the character.</li>
+<li><strong>Post-History Instructions</strong>: If the &quot;Prefer Char. Instructions&quot; user setting is enabled, any text you put here will be used as the <a href="../../prompts/#post-history-instructions">post-history instructions</a> for the character.</li>
+</ul>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-tip"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-tip" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M7.90625 2.15625C4.50944 2.15625 2.15625 4.58563 2.15625 7.54688C2.15625 8.96138 2.76575 9.88281 3.57075 10.8589L3.87837 11.2226C4.19894 11.6021 4.554 12.0218 4.84581 12.4416C5.25406 13.0324 5.61775 13.7296 5.7385 14.5834C5.76728 14.8608 5.68746 15.1386 5.51579 15.3583C5.34413 15.5781 5.09399 15.7228 4.8179 15.7621C4.5418 15.8013 4.26124 15.7321 4.03512 15.5689C3.809 15.4056 3.65493 15.1612 3.60525 14.8867C3.54775 14.4814 3.37094 14.1004 3.07338 13.6692C2.8306 13.3302 2.57055 13.0039 2.29425 12.6917C2.1735 12.5479 2.04556 12.397 1.909 12.2317C1.00769 11.1406 0 9.72613 0 7.54688C0 3.32062 3.39681 0 7.90625 0C12.4157 0 15.8125 3.32062 15.8125 7.54688C15.8125 9.72613 14.8048 11.1406 13.9035 12.2317C13.7669 12.397 13.639 12.5479 13.5183 12.6903C13.2207 13.0424 12.9677 13.3414 12.7406 13.6692C12.4416 14.1004 12.2662 14.4814 12.2087 14.8867C12.1557 15.1584 12.0003 15.3994 11.7747 15.5598C11.5492 15.7202 11.2706 15.7879 10.9965 15.7488C10.7225 15.7096 10.474 15.5667 10.3023 15.3496C10.1306 15.1325 10.0489 14.8577 10.074 14.582C10.1948 13.7296 10.5584 13.0324 10.9667 12.4416C11.2585 12.0218 11.6136 11.6021 11.9341 11.2226C12.0419 11.0961 12.1454 10.9739 12.2403 10.8589C13.0468 9.88281 13.6562 8.96138 13.6562 7.54688C13.6562 4.58563 11.3031 2.15625 7.90625 2.15625ZM4.67188 17.25H11.1406C11.4266 17.25 11.7008 17.3636 11.903 17.5658C12.1052 17.768 12.2188 18.0422 12.2188 18.3281C12.2188 18.6141 12.1052 18.8883 11.903 19.0905C11.7008 19.2927 11.4266 19.4062 11.1406 19.4062H4.67188C4.38594 19.4062 4.11171 19.2927 3.90953 19.0905C3.70734 18.8883 3.59375 18.6141 3.59375 18.3281C3.59375 18.0422 3.70734 17.768 3.90953 17.5658C4.11171 17.3636 4.38594 17.25 4.67188 17.25ZM5.03125 21.9219C5.03125 21.6359 5.14484 21.3617 5.34703 21.1595C5.54921 20.9573 5.82344 20.8438 6.10938 20.8438H9.70312C9.98906 20.8438 10.2633 20.9573 10.4655 21.1595C10.6677 21.3617 10.7812 21.6359 10.7812 21.9219C10.7812 22.2078 10.6677 22.482 10.4655 22.6842C10.2633 22.8864 9.98906 23 9.70312 23H6.10938C5.82344 23 5.54921 22.8864 5.34703 22.6842C5.14484 22.482 5.03125 22.2078 5.03125 21.9219Z" />
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Insert <code v-pre>{{original}}</code> into either box to include the respective default prompt from system settings in a designated place.</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="creators-metadata">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#creators-metadata">#</doc-anchor-trigger>
+        <span>Creator&#x27;s Metadata</span>
+    </h3>
+</doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Not used for prompt building, but provides additional metadata about the character.</p>
+        </div>
+    </div>
+</div>
+<ul>
+<li><strong>Created by</strong>: The name of the character&#x27;s creator. Can be displayed in the character list if the &quot;Char List Subheader&quot; user setting is set accordingly.</li>
+<li><strong>Character Version</strong>: The version of the character. Can be displayed in the character list if the &quot;Char List Subheader&quot; user setting is set accordingly.</li>
+<li><strong>Creator&#x27;s Notes</strong>: Any additional notes about the character that the creator wants to share. The first few lines are displayed in the character list, and the full text is displayed in the &quot;Creator&#x27;s Notes&quot; section on the character&#x27;s page. Supports Markdown/HTML formatting.</li>
+<li><strong>Tags to Embed</strong>: A comma-separated list of tags that will be embedded in the character&#x27;s description. These tags are not imported by default when importing the character, but you can merge them with your existing tags by selecting &quot;Import Tags&quot; from the &quot;More...&quot; menu on the character&#x27;s page.</li>
+</ul>
+<doc-anchor-target id="personality-summary">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#personality-summary">#</doc-anchor-trigger>
+        <span>Personality summary</span>
+    </h3>
+</doc-anchor-target>
+<p>A brief summary of the character&#x27;s personality.</p>
+<doc-anchor-target id="scenario">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#scenario">#</doc-anchor-trigger>
+        <span>Scenario</span>
+    </h3>
+</doc-anchor-target>
+<p>The circumstances and context of the dialogue.</p>
+<doc-anchor-target id="characters-note">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#characters-note">#</doc-anchor-trigger>
+        <span>Character&#x27;s Note</span>
+    </h3>
+</doc-anchor-target>
+<p>A text to be used as an in-chat prompt injection for the character at a specific message depth. It is usually used to reinforce certain character traits, as it always stays at a static depth in the chat history, regardless of its progression.</p>
+<ul>
+<li><strong>@ Depth</strong>: The number of messages in the chat history after which this note will be injected (in order from newest to oldest). If set to 0, it will be injected after the last message.</li>
+<li><strong>Role</strong>: The role of the message. Can be &quot;User&quot;, &quot;System&quot;, or &quot;Assistant&quot;.</li>
+</ul>
+<doc-anchor-target id="talkativeness">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#talkativeness">#</doc-anchor-trigger>
+        <span>Talkativeness</span>
+    </h3>
+</doc-anchor-target>
+<p>Determines the probability of the character&#x27;s response being triggered in group chats when using a <a href="../groupchats/#natural-order">Natural</a> activation order. Ranges from 0% to 100%, with 50% being the default value.</p>
+<doc-anchor-target id="examples-of-dialogue">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#examples-of-dialogue">#</doc-anchor-trigger>
+        <span>Examples of dialogue</span>
+    </h3>
+</doc-anchor-target>
+<p>Describes how the character speaks. Before each example, you need to add the <code v-pre>&lt;START&gt;</code> tag. The blocks of example dialogue are only inserted if there is free space in the context for them and are pushed out of context block by block. <code v-pre>&lt;START&gt;</code> will not be present in the prompt as it is just a marker; it will be replaced with the &quot;Example Separator&quot; from Advanced Formatting for Text Completion APIs and the contents of the &quot;New Example Chat&quot; utility prompt for Chat Completion APIs.</p>
+<ul>
+<li>Use the <code v-pre>{{char}}:</code> prefix to denote a character message.</li>
+<li>Use the <code v-pre>{{user}}:</code> prefix to denote a user message.</li>
 </ul>
 <p>Example:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -373,20 +493,6 @@
 {{user}}: Hello
 {{char}}: *excitedly* Hello there, dear! Are you new to Axel? Don't worry, I, Aqua the goddess of water, am here to help you! Do you need any assistance? And may I say, I look simply radiant today! *strikes a pose and looks at you with puppy eyes*</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="scenario">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#scenario">#</doc-anchor-trigger>
-        <span>Scenario</span>
-    </h2>
-</doc-anchor-target>
-<p>Circumstances and context of the dialogue.</p>
-<doc-anchor-target id="favorite-character">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#favorite-character">#</doc-anchor-trigger>
-        <span>Favorite Character</span>
-    </h2>
-</doc-anchor-target>
-<p>Mark the character as a favorite to quickly filter on the side menu bar by selecting the &quot;Favorites&quot; sort option. Favorite characters have a golden highlight in the list. This will also make the character portrait appear in the hotswaps area (if enabled in User Settings).</p>
 
                                 
                                 <!-- Required only on API pages -->
