@@ -24,7 +24,9 @@ enableDiscreetLogin: true
 1. When the user account setting is disabled, a `default-user` fallback admin account is utilized for storing the user data.
 2. When the discreet login setting is disabled, a list of active users is displayed on the login screen. If enabled, a user must enter their handle manually.
 
-> You can't _delete_ the `default-user` account from the users list because it is used for serving the user data in case if `enableUserAccounts` is set to `false`. But you can _disable_ it to hide it from the list and disallow logins.
+!!!info
+You can't _delete_ the `default-user` account from the users list because it is used for serving the user data in case if `enableUserAccounts` is set to `false`. But you can _disable_ it to hide it from the list and disallow logins.
+!!!
 
 ## User handles
 

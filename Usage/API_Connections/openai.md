@@ -76,7 +76,9 @@ To access this feature:
 
 Enter the custom endpoint URL and an API key if required. For example, TabbyAPI requires an API key for authentication.
 
-> **Hint:** If you experience connection issues, try adding `/v1` to the end of the endpoint URL. Do NOT add the `/chat/completions` suffix.
+!!!tip
+**Hint:** If you experience connection issues, try adding `/v1` to the end of the endpoint URL. Do NOT add the `/chat/completions` suffix.
+!!!
 
 ### Selecting a Model
 
