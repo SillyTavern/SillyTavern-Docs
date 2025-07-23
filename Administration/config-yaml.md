@@ -191,6 +191,17 @@ See more on using environment variables in the [Node.js documentation](https://n
 | `performance.useDiskCache` | Enables disk caching for character cards | `true` | `true`, `false` |
 | `performance.memoryCacheCapacity` | Maximum memory cache capacity | `100mb` | Human-readable size (e.g., `100mb`, `1gb`) |
 
+## Cache Buster Configuration
+
+!!!warning
+Requires localhost or a domain with HTTPS, otherwise will not work!
+!!!
+
+| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|------------------|
+| `cacheBuster.enabled` | Clear browser cache on first load or after uploading image files | `false` | `true`, `false` |
+| `cacheBuster.userAgentPattern` | Only clear cache for the specified user agent regex pattern. Example: `'firefox\|edge'` (case-insensitive) | `''` | Any valid regex string |
+
 ## Thumbnailing Configuration
 
 | Setting | Description | Default | Permitted Values |
