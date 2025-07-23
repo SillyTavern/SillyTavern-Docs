@@ -143,13 +143,17 @@ Various advanced configurations for finer tuning of the prompt building
 
 Inserted before the first Assistant's message.
 
-> Only the first message of the **chat history** counts, not the message that actually goes into the prompt first!
+!!!info
+Only the first message of the **chat history** counts, not the message that actually goes into the prompt first!
+!!!
 
 #### Last Assistant Prefix
 
 Inserted before the last Assistant's message or as a last prompt line when generating an AI reply.
 
-> Not used when generating text in a background (e.g. Stable Diffusion prompts or Summaries). System Instruction Prefix or Regular Assistant Prefix will be used instead.
+!!!info
+Not used when generating text in a background (e.g. Stable Diffusion prompts or Summaries). System Instruction Prefix or Regular Assistant Prefix will be used instead.
+!!!
 
 #### System Instruction Prefix
 

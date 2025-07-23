@@ -201,7 +201,9 @@ You can also set up a secondary endpoint specifically for multimodal captioning.
 - Enter a valid URL for the secondary endpoint in the "Secondary captioning endpoint URL" field.
 - Check the "Use secondary URL" box to enable the secondary endpoint.
 
-> Do not append `/v1` or `/chat/completions` to the end of the URL. The extension will handle that automatically.
+!!!tip
+Do not append `/v1` or `/chat/completions` to the end of the URL. The extension will handle that automatically.
+!!!
 
 This is only supported by the following APIs:
 

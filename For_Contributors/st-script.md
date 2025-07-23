@@ -42,7 +42,9 @@ Commands are executed sequentially, one after another, and transfer data between
 1. The `/pass` command accepts a constant value of "Hello, World!" as an unnamed argument and writes it to the pipe.
 2. The `/echo` command receives the value through the pipe from the previous command and displays it as a toast notification.
 
-> **Hint:** To see a list of all available commands, type `/help slash` into the chat.
+!!!tip
+**Hint:** To see a list of all available commands, type `/help slash` into the chat.
+!!!
 
 As constant unnamed arguments and pipes are interchangeable, we could rewrite this script simply as:
 
@@ -1253,7 +1255,9 @@ Scripts can also interact with SillyTavern's UI: navigate through the chats or c
 
 ### Get Nth Fibonacci's number (using Binet's formula)
 
-> **Hint**: Set value of `fib_no` to the desired number
+!!!tip
+**Hint**: Set value of `fib_no` to the desired number
+!!!
 
 ```stscript
 /setvar key=fib_no 5 |
