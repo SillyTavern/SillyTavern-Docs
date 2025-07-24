@@ -4,7 +4,7 @@ order: 10
 # OpenRouter
 
 !!!info
-OpenRouter is available as both a Text Completion and Chat Completion source. All models are available through either API, but their features may differ depending on the API type you choose. For example, image input and tool calling are only available with the Chat Completion API.
+OpenRouter is available as both a Text Completion and Chat Completion source. All models are available through either API, but their features may differ depending on the API type you choose. For example, image inlining and tool calling are only available with the Chat Completion API.
 !!!
 
 Don't want to sign up for a dozen API services, but still want access to all the latest models? Use OpenRouter.
