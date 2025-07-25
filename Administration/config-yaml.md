@@ -109,7 +109,7 @@ See more on using environment variables in the [Node.js documentation](https://n
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|------------------|
 | `logging.minLogLevel` | Minimum log level to display in the terminal | `0` (DEBUG) | (DEBUG = 0, INFO = 1, WARN = 2, ERROR = 3) |
-| `logging.enableAccessLog` | Write server access log | `true` | `true`, `false` |
+| `logging.enableAccessLog` | Write server access log to file and console | `true` | `true`, `false` |
 
 ## [Network Configuration](/Administration/remote-connections.md)
 
