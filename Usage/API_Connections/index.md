@@ -154,6 +154,24 @@ Most Text Completion models have a recommended "Instruct Template" (usually ment
 - No moderation on the API, but the models may refuse certain prompts
 - [Website](https://platform.deepseek.com/), [Setup Instructions](/Usage/API_Connections/openai.md#deepseek)
 
+### AI21
+
+- Provides access to Jamba Family open models
+- Has a free trial ($10 for three months), then requires to pay monthly per token
+- [Website](https://ai21.com/), [Setup Instructions](/Usage/API_Connections/openai.md#ai21)
+
+### Cohere
+
+- Provides access to the latest models from Cohere (command-r, command-a, c4ai-aya, etc.)
+- Has a free tier (Trial Keys) with enough rate limits for casual use
+- [Website](https://cohere.com/), [Setup Instructions](/Usage/API_Connections/openai.md#cohere)
+
+### Perplexity
+
+- Provides access to unique Perplexity Sonar online-enabled models via their API
+- Requires to have billing configured and credits purchased
+- [Website](https://perplexity.ai/), [Setup Instructions](/Usage/API_Connections/openai.md#perplexity)
+
 ### Mancer AI
 
 - Service that hosts unconstrained models of various families

@@ -5,9 +5,9 @@ order: 20
 
 ## Source-specific instructions
 
-**Important!**
-
+!!!warning **Important!**
 Most API platforms allow to view the generated API key only once, at the time of its creation. If you lose it, you will need to generate a new one. Make sure to keep it safe!
+!!!
 
 ### OpenAI
 
@@ -45,6 +45,36 @@ DeepSeek Platform provides access to the latest DeepSeek models through an API. 
 
 1. Sign up on the [DeepSeek Platform](https://platform.deepseek.com/).
 2. After signing up and topping up your account, you can create an API key in the "[API keys](https://platform.deepseek.com/api_keys)" section.
+
+### AI21
+
+AI21 Labs offers a range of AI models, including their flagship Jamba series. You can access their models through the AI21 Studio API.
+
+**How to get an API key:**
+
+1. Go to [AI21 Studio](https://studio.ai21.com/) and sign in.
+2. Navigate to the "Settings => API Keys" section to create a new API key.
+
+### Cohere
+
+Cohere provides a suite of AI models for various tasks, including text generation and embeddings. You can access their models through the Cohere API.
+
+**How to get an API key:**
+
+1. Go to [Cohere](https://cohere.com/) and sign in.
+2. Navigate to the "[API Keys](https://dashboard.cohere.com/api-keys)" section in your account settings to create a new API key.
+
+### Perplexity
+
+Perplexity AI offers access to online-enabled Sonar models through their API for real-time research and information retrieval.
+
+Official Getting Started guide: [Perplexity Quickstart](https://docs.perplexity.ai/getting-started/quickstart)
+
+**How to get an API key:**
+
+1. Go to [Perplexity](https://perplexity.ai/) and sign in.
+2. Go to the "[API billing](https://www.perplexity.ai/account/api/billing)" section to purchase credits for API usage.
+3. Navigate to the "[API keys](https://www.perplexity.ai/account/api/keys)" section in the settings to create a new API key.
 
 ## Custom OpenAI-compatible endpoint
 
