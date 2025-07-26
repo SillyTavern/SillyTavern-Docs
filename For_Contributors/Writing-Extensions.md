@@ -279,7 +279,7 @@ await saveMetadata();
 ```
 
 !!!tip
-The `CHAT_CHANGED` event is emitted when the chat is switched, so you can listen to this event to update your extension's state accordingly. See more in the [Listening to event types](#listening-to-event-types) section.
+The `CHAT_CHANGED` event is emitted when the chat is switched, so you can listen to this event to update your extension's state accordingly. See more in the [Listening to events](#listening-to-events) section.
 !!!
 
 ### Character cards
@@ -343,7 +343,7 @@ const value = pm.readPresetExtensionField({ path: 'hello' });
 ```
 
 !!!tip
-The `PRESET_CHANGED` and `MAIN_API_CHANGED` events are emitted when the preset is changed or the main API is switched, so you can listen to these events to update your extension's state accordingly. See more in the [Listening to event types](#listening-to-event-types) section.
+The `PRESET_CHANGED` and `MAIN_API_CHANGED` events are emitted when the preset is changed or the main API is switched, so you can listen to these events to update your extension's state accordingly. See more in the [Listening to events](#listening-to-events) section.
 !!!
 
 ## Internationalization
