@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.806872807760">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.806874374542">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>UI Extensions | docs.ST.app</title>
     <meta name="title" content="UI Extensions | docs.ST.app">
-    <meta name="description" content="Go here: Extensions.">
+    <meta name="description" content="UI extensions expand SillyTavern's functionality by hooking into its events and API.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/for-contributors/writing-extensions/">
@@ -20,22 +20,22 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/for-contributors/writing-extensions/">
     <meta property="og:title" content="UI Extensions | docs.ST.app">
-    <meta property="og:description" content="Go here: Extensions.">
+    <meta property="og:description" content="UI extensions expand SillyTavern's functionality by hooking into its events and API.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/for-contributors/writing-extensions/">
     <meta property="twitter:title" content="UI Extensions | docs.ST.app">
-    <meta property="twitter:description" content="Go here: Extensions.">
+    <meta property="twitter:description" content="UI extensions expand SillyTavern's functionality by hooking into its events and API.">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.11.0.806872807760" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.806874374542" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.806872807760" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.806874374542" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.806872807760" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.806872807760" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.806874374542" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.806874374542" defer></script>
 
     <style>
         a {
@@ -231,6 +231,7 @@
         <span>UI Extensions</span>
     </h1>
 </doc-anchor-target>
+<p>UI extensions expand SillyTavern&#x27;s functionality by hooking into its events and API. They run in a browser context and have practically unrestricted access to the DOM, JavaScript APIs, and the SillyTavern context. Extensions can modify the UI, call internal APIs, and interact with chat data. This guide explains how to create your own extensions (JavaScript knowledge is required).</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-tip"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -247,7 +248,6 @@
         </div>
     </div>
 </div>
-<p>UI extensions expand SillyTavern&#x27;s functionality by hooking into its events and API. They run in a browser context and have practically unrestricted access to the DOM, JavaScript APIs, and the SillyTavern context. Extensions can modify the UI, call internal APIs, and interact with chat data. This guide explains how to create your own extensions (JavaScript knowledge is required).</p>
 <p>To extend the functionality of the Node.js server, see the <a href="../server-plugins/">Server Plugins</a> page.</p>
 <p><strong>Can&#x27;t write JavaScript?</strong></p>
 <ul>
@@ -1096,7 +1096,7 @@ unregisterMacro('fizz');</code></pre>
 <ol>
 <li>Currently only simple string replacement macros are supported. We&#x27;re working on adding support for more complex macros in the future.</li>
 <li>Macros that use functions to provide a value <em>must</em> be synchronous. Returning a <code v-pre>Promise</code> will not work.</li>
-<li>You do not need to wrap the macro name in double curly braces (&#x60;&#x60;) when registering it. SillyTavern will do that for you.</li>
+<li>You do not need to wrap the macro name in double curly braces (<code v-pre>{{ }}</code>) when registering it. SillyTavern will do that for you.</li>
 <li>Since macros are plain regular expression substitutions, registering a lot of macros will cause performance issues, so use them sparingly.</li>
 </ol>
 <doc-anchor-target id="do-extras-request">
