@@ -204,6 +204,9 @@ The following rules apply:
 
 - Query messages - how many of the latest chat messages will be used for querying document chunks.
 - Score threshold - adjust to allow culling the retrieval of chunks based on their relevance score (0 - no match at all, 1 - perfect match). Higher values allow for more accurate retrieval and prevent completely random information from entering the context. Sane values are in a range between 0.2 (more loose) and 0.5 (more focused).
+- Chunk boundary - a custom string that will be prioritized when splitting the files into chunks. If not specified, the default is to split by (in order) double line breaks, single line breaks, and spaces between words.
+- Only chunk on custom boundary - if enabled, the chunking will only occur on the specified chunk boundary. Otherwise, the chunking will also occur on the default boundaries.
+- Translate files into English before processing - if enabled, will use the translation API configured in the [Chat Translation](/extensions/Translation.md) extension to translate the files into English before processing them. This is useful when using embedding models that only support English text.
 - Include in World Info Scanning - check if you want the injected content to activate lore book entries.
 - Vectorize All - forcibly ingests the embeddings for all unprocessed files.
 - Purge Vectors - clears the file embeddings, allowing to recalculate their vectors.
