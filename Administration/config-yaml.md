@@ -178,7 +178,7 @@ See more on using environment variables in the [Node.js documentation](https://n
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|-----------------|
 | `browserLaunch.enabled` | Open the browser automatically on server startup | `true` | `true`, `false` |
-| `browserLaunch.browser` | Browser to use for opening the URL | `"default"` | `"default"`, `"chrome"`, `"firefox"`, `"edge"` |
+| `browserLaunch.browser` | Browser to use for opening the URL | `"default"` | `"default"`, `"chrome"`, `"firefox"`, `"edge"`, `"brave"` |
 | `browserLaunch.hostname` | Override the hostname for browser launch | `"auto"` | `"auto"`, any valid hostname (e.g., `"localhost"`, `"st.example.com"`) |
 | `browserLaunch.port` | Override the port for browser launch | `-1` | `-1` (use server port), any valid port number |
 | `browserLaunch.avoidLocalhost` | Avoid using 'localhost' in a launch URL | `false` | `true`, `false` |
