@@ -5,11 +5,83 @@ label: Docker
 
 # Docker Installation
 
-!!!info
-This guide assumes you installed SillyTavern in a non-root (non-admin) folder. If you installed SillyTavern in a root folder, you may have to run some of these commands with administrator rights [`sudo`, `doas`, Command Prompt (Administrator)].
+!!!
+These instructions assume you have installed Docker, are able to access your command line for the installation of containers, and familiar with their general operation.
 !!!
 
-## Installation
+## Using the GitHub Container Registry
+
+Using a prebuilt image is the quickest and easiest way to get started with SillyTavern in Docker. You can pull the latest image from the GitHub Container Registry.
+
+### Docker Compose (recommended)
+
+Download the `docker-compose.yml` file from the [GitHub Repository](https://github.com/SillyTavern/SillyTavern/blob/release/docker/docker-compose.yml) and run the following command in the directory where the file is located. This will pull the latest release image from the GitHub Container Registry and start the container, automatically creating the necessary volumes.
+
+```sh
+docker compose up
+```
+
+You can edit the file and apply additional customization to suit your needs:
+
+- The default port is 8000. You can change it by modifying the `ports` section.
+- Change the `image` tag to `staging` if you want to use the development branch instead of the stable release.
+- If you want to adjust the server configuration using environment variables, check the [Environment Variables](/Administration/config-yaml.md#environment-variables) page.
+
+#### Docker CLI (advanced)
+
+You will need two mandatory directory mappings and a port mapping to allow SillyTavern to function. In the command, replace your selections in the following places:
+
+#### Container Variables
+
+##### Volume Mappings
+
+- `CONFIG_PATH` - The directory where SillyTavern configuration files will be stored on your host machine
+- `DATA_PATH` - The directory where SillyTavern user data (including characters) will be stored on your host machine
+- `PLUGINS_PATH` - (optional) The directory where SillyTavern server plugins will be stored on your host machine
+- `EXTENSIONS_PATH` - (optional) The directory where global UI extensions will be stored on your host machine
+
+##### Port Mappings
+
+- `PUBLIC_PORT` - The port to expose the traffic on. This is mandatory, as you will be accessing the instance from outside of its virtual machine container. DO NOT expose this to the internet without implementing a separate service for security.
+
+##### Additional Settings
+
+- `SILLYTAVERN_VERSION` - On the right-hand side of this GitHub page, you'll see "Packages". Select the "sillytavern" package and you'll see the image versions. The image tag "latest" will keep you up-to-date with the current release. You can also utilize "staging" that points to the nightly image of the respective branch.
+
+#### Running the container
+
+1. Open your Command Line
+2. Run the following command in a folder where you want to store the configuration and data files:
+
+```bash
+SILLYTAVERN_VERSION="latest"
+PUBLIC_PORT="8000"
+CONFIG_PATH="./config"
+DATA_PATH="./data"
+PLUGINS_PATH="./plugins"
+EXTENSIONS_PATH="./extensions"
+
+docker run \
+  --name="sillytavern" \
+  -p "$PUBLIC_PORT:8000/tcp" \
+  -v "$CONFIG_PATH:/home/node/app/config:rw" \
+  -v "$DATA_PATH:/home/node/app/data:rw" \
+  -v "$EXTENSIONS_PATH:/home/node/app/public/scripts/extensions/third-party:rw" \
+  -v "$PLUGINS_PATH:/home/node/app/plugins:rw" \
+  ghcr.io/sillytavern/sillytavern:"$SILLYTAVERN_VERSION"
+```
+
+!!!tip
+By default the container will run in the foreground. If you want to run it in the background, add the `-d` flag to the `docker run` command.
+!!!
+
+## Building the Docker Image
+
+!!!info
+The following section assumes you installed SillyTavern in a non-root (non-admin) folder. If you installed SillyTavern in a root folder, you may have to run some of these commands with administrator rights [`sudo`, `doas`, Command Prompt (Administrator)].
+!!!
+
+If you want to build the Docker image yourself, you can do so by following these steps. This is useful if you want to customize the image or use it for development purposes.
 
 ### Linux
 
@@ -356,3 +428,25 @@ If you already see a _plugins_ folder within the `docker` folder, you can skip S
     ```
 
 6. Profit.
+
+### Common issues with Docker
+
+#### SELinux Permission Issues with Mounted Volumes
+
+Linux distributions with SELinux enabled (such as RHEL, CentOS, Fedora, etc.) may prevent Docker containers from accessing mounted volumes due to security policies. This can result in permission denied errors when the container tries to read or write to the mounted directories.
+
+Two suffixes `:z` or `:Z` can be added to the volume mount. These suffixes tell Docker to relabel file objects on the shared volumes.
+
+- The `z` option is used when the volume content will be shared between containers.
+- The `Z` option is used when the volume content should only be used by the current container.
+
+Example:
+
+```yaml
+# docker-compose.yml
+volumes:
+  ## Shared volume
+  - ./config:/home/node/app/config:z
+  ## Private volume
+  - ./data:/home/node/app/data:Z
+```
