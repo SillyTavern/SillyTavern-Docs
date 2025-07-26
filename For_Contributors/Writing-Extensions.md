@@ -647,6 +647,39 @@ const quietResult = await generateQuietPrompt({
 });
 ```
 
+## Registering custom macros
+
+You can register custom macros that can be used anywhere where macro substitutions are supported, e.g. in the character card fields, STscript commands, prompt templates, etc.
+
+To register a macro, use the `registerMacro()` function from the `SillyTavern.getContext()` object. The function accepts a macro name that should be a unique string, and a string or a function that returns a string. The function will be called with a unique `nonce` string that will be different between each `substituteParams` call.
+
+```js
+const { registerMacro } = SillyTavern.getContext();
+
+// Simple string macro
+registerMacro('fizz', 'buzz');
+// Function macro
+registerMacro('tomorrow', () => {
+    return new Date(Date.now() + 24 * 60 * 60 * 1000).toLocaleDateString();
+});
+```
+
+When a custom macro is no longer needed, remove it using the `unregisterMacro()` function:
+
+```js
+const { unregisterMacro } = SillyTavern.getContext();
+
+// Unregister the 'fizz' macro
+unregisterMacro('fizz');
+```
+
+**Important details and known limitations regarding custom macros:**
+
+1. Currently only simple string replacement macros are supported. We're working on adding support for more complex macros in the future.
+2. Macros that use functions to provide a value *must* be synchronous. Returning a `Promise` will not work.
+3. You do not need to wrap the macro name in double curly braces (`{{ }}`) when registering it. SillyTavern will do that for you.
+4. Since macros are plain regular expression substitutions, registering a lot of macros will cause performance issues, so use them sparingly.
+
 ## Do Extras request
 
 !!!warning
