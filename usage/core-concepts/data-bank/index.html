@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.806876457339">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.806876812300">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.11.0.806876457339" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.11.0.806876812300" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.806876457339" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.806876812300" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.806876457339" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.806876812300" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -580,6 +580,9 @@
 <ul>
 <li>Query messages - how many of the latest chat messages will be used for querying document chunks.</li>
 <li>Score threshold - adjust to allow culling the retrieval of chunks based on their relevance score (0 - no match at all, 1 - perfect match). Higher values allow for more accurate retrieval and prevent completely random information from entering the context. Sane values are in a range between 0.2 (more loose) and 0.5 (more focused).</li>
+<li>Chunk boundary - a custom string that will be prioritized when splitting the files into chunks. If not specified, the default is to split by (in order) double line breaks, single line breaks, and spaces between words.</li>
+<li>Only chunk on custom boundary - if enabled, the chunking will only occur on the specified chunk boundary. Otherwise, the chunking will also occur on the default boundaries.</li>
+<li>Translate files into English before processing - if enabled, will use the translation API configured in the <a href="../../../extensions/translation/">Chat Translation</a> extension to translate the files into English before processing them. This is useful when using embedding models that only support English text.</li>
 <li>Include in World Info Scanning - check if you want the injected content to activate lore book entries.</li>
 <li>Vectorize All - forcibly ingests the embeddings for all unprocessed files.</li>
 <li>Purge Vectors - clears the file embeddings, allowing to recalculate their vectors.</li>
