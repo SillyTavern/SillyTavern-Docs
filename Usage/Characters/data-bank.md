@@ -154,10 +154,11 @@ All these sources require an API key of the respective service and usually have 
 
 1. OpenAI
 2. Cohere
-3. Google MakerSuite
-4. TogetherAI
-5. MistralAI
-6. NomicAI
+3. Google AI Studio
+4. Google Vertex AI
+5. TogetherAI
+6. MistralAI
+7. NomicAI
 
 ## Vectorization Settings
 
