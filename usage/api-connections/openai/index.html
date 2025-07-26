@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.806666688941">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.806872807760">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Chat Completions | docs.ST.app</title>
     <meta name="title" content="Chat Completions | docs.ST.app">
-    <meta name="description" content="How to get:">
+    <meta name="description" content="Important!">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/usage/api-connections/openai/">
@@ -20,21 +20,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/usage/api-connections/openai/">
     <meta property="og:title" content="Chat Completions | docs.ST.app">
-    <meta property="og:description" content="How to get:">
+    <meta property="og:description" content="Important!">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/usage/api-connections/openai/">
     <meta property="twitter:title" content="Chat Completions | docs.ST.app">
-    <meta property="twitter:description" content="How to get:">
+    <meta property="twitter:description" content="Important!">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.11.0.806666688941" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.11.0.806872807760" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.806666688941" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.806872807760" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.806666688941" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.806872807760" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -230,57 +230,63 @@
         <span>Chat Completions</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="openai">
+<doc-anchor-target id="source-specific-instructions">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#openai">#</doc-anchor-trigger>
-        <span>OpenAI</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#source-specific-instructions">#</doc-anchor-trigger>
+        <span>Source-specific instructions</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="api-key">
+<p><strong>Important!</strong></p>
+<p>Most API platforms allow to view the generated API key only once, at the time of its creation. If you lose it, you will need to generate a new one. Make sure to keep it safe!</p>
+<doc-anchor-target id="openai">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#api-key">#</doc-anchor-trigger>
-        <span>API key</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#openai">#</doc-anchor-trigger>
+        <span>OpenAI</span>
     </h3>
 </doc-anchor-target>
-<p><strong>How to get:</strong></p>
+<p>Use OpenAI&#x27;s developer platform to access various OpenAI models, including gpt-4o, gpt-4.1, o3, etc.</p>
+<p><strong>How to get an API key:</strong></p>
 <ol>
 <li>Go to <a href="https://platform.openai.com/">OpenAI</a> and sign in.</li>
 <li>Use &quot;<a href="https://platform.openai.com/account/api-keys">View API keys</a>&quot; option to create a new API key.</li>
 </ol>
-<p><strong>Important!</strong></p>
-<p><em>Lost API keys can&#x27;t be restored! Make sure to keep it safe!</em></p>
 <doc-anchor-target id="claude">
-    <h2>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#claude">#</doc-anchor-trigger>
         <span>Claude</span>
-    </h2>
-</doc-anchor-target>
-<p>If you have access to Anthropic&#x27;s Claude API:</p>
-<ul>
-<li>Select &#x27;Claude&#x27; for &#x27;Chat Completion Source&#x27;.</li>
-<li>Input your API key.</li>
-<li>Click connect.</li>
-</ul>
-<doc-anchor-target id="mistral-ai">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#mistral-ai">#</doc-anchor-trigger>
-        <span>Mistral AI</span>
-    </h2>
-</doc-anchor-target>
-<p>Mistral AI is a team developing both open and proprietary models with high scientific standards and a focus on openness. You can run their models locally or through their API service, La Plateforme.</p>
-<doc-anchor-target id="api">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#api">#</doc-anchor-trigger>
-        <span>API</span>
     </h3>
 </doc-anchor-target>
-<ul>
+<p>Claude is a family of AI models developed by Anthropic. You can access Claude models through the Anthropic console.</p>
+<p><strong>How to get an API key:</strong></p>
+<ol>
+<li>Go to <a href="https://console.anthropic.com/">Anthropic Console</a> and sign in.</li>
+<li>Use the &quot;<a href="https://console.anthropic.com/settings/keys">Get API Key</a>&quot; section to create a new API key.</li>
+</ol>
+<doc-anchor-target id="mistral-ai">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mistral-ai">#</doc-anchor-trigger>
+        <span>Mistral AI</span>
+    </h3>
+</doc-anchor-target>
+<p>Mistral AI is a team developing both open and proprietary models with high scientific standards and a focus on openness. You can run their models locally or through their API service, La Plateforme.</p>
+<p><strong>How to get an API key:</strong></p>
+<ol>
 <li>The first step is to create an account on <a href="https://console.mistral.ai/">La Plateforme</a>.</li>
 <li>Once that&#x27;s done, you can choose a <a href="https://console.mistral.ai/billing/plans">plan</a> and set up your payment information or opt for the Free Tier.</li>
 <li>Next, you can create your <a href="https://console.mistral.ai/api-keys/">API key</a>. You may need to wait a couple of minutes before the key becomes valid!</li>
-</ul>
-<p><strong>Important!</strong><br />
-<em>Lost API keys can&#x27;t be restored! You would have to create a new one. Make sure to keep it safe!</em></p>
+</ol>
+<doc-anchor-target id="deepseek">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#deepseek">#</doc-anchor-trigger>
+        <span>DeepSeek</span>
+    </h3>
+</doc-anchor-target>
+<p>DeepSeek Platform provides access to the latest DeepSeek models through an API. They offer a range of models, including DeepSeek V3 and DeepSeek R1.</p>
+<p><strong>How to get an API key:</strong></p>
+<ol>
+<li>Sign up on the <a href="https://platform.deepseek.com/">DeepSeek Platform</a>.</li>
+<li>After signing up and topping up your account, you can create an API key in the &quot;<a href="https://platform.deepseek.com/api_keys">API keys</a>&quot; section.</li>
+</ol>
 <doc-anchor-target id="custom-openai-compatible-endpoint">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#custom-openai-compatible-endpoint">#</doc-anchor-trigger>
@@ -330,10 +336,10 @@ We do not guarantee compatibility with every possible API endpoint!</p>
 <li><a href="https://localai.io/">LocalAI</a></li>
 </ul>
 <doc-anchor-target id="connecting">
-    <h2>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#connecting">#</doc-anchor-trigger>
         <span>Connecting</span>
-    </h2>
+    </h3>
 </doc-anchor-target>
 <p>To access this feature:</p>
 <ol>
@@ -357,10 +363,10 @@ We do not guarantee compatibility with every possible API endpoint!</p>
     </div>
 </div>
 <doc-anchor-target id="selecting-a-model">
-    <h2>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#selecting-a-model">#</doc-anchor-trigger>
         <span>Selecting a Model</span>
-    </h2>
+    </h3>
 </doc-anchor-target>
 <p>If the custom API implements the <code v-pre>/v1/models</code> endpoint to provide a list of available models, you can choose from a dropdown list. Otherwise, use the text field to manually input a model ID.</p>
 <p>Check &#x27;Bypass API status check&#x27; to prevent SillyTavern from alerting you about a non-functioning API endpoint. Enable this option if your API endpoint works properly but SillyTavern continues to display warnings.</p>

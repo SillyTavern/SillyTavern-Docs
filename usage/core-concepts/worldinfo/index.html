@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.806666688941">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.806872807760">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.11.0.806666688941" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.11.0.806872807760" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.806666688941" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.806872807760" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.806666688941" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.11.0.806666688941" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.806872807760" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.11.0.806872807760" defer></script>
 
     <style>
         a {
@@ -473,6 +473,46 @@ Supports logic for AND ANY, NOT ANY, or NOT ALL</p>
 <p>Allows to integrate World Info entries with <a href="../../st-script/">STscripts</a> from Quick Replies extension. If both the quick reply command and the WI entry have the same Automation ID, the command will be executed automatically when the entry with a matching ID is activated.</p>
 <p>Automations are executed in the order they are triggered, adhering to your designated sorting strategy, combining the <doc-anchor-trigger to="#character-lore-insertion-strategy">Character Lore Insertion Strategy</doc-anchor-trigger> with the &#x27;Priority&#x27; sorting. Which leads to <doc-anchor-trigger to="#strategy">Blue Circle</doc-anchor-trigger> entries processed first, followed by others in their specified &#x27;Order&#x27;. Recursively triggered entries will be processed after in the same order.</p>
 <p>The script command will run only once if multiple entries with the same Automation ID are activated.</p>
+<doc-anchor-target id="character-filter">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#character-filter">#</doc-anchor-trigger>
+        <span>Character Filter</span>
+    </h4>
+</doc-anchor-target>
+<p>A list of character names for which this entry can be activated. If this list is not empty, the entry will only be activated for characters whose names are on the list. When a tag is selected, the entry will only be activated for characters that have that specific tag.</p>
+<p>&quot;Exclude&quot; mode inverts the filter, meaning that the entry will be activated for all characters except those that are added to the list or that have the selected tag(s).</p>
+<doc-anchor-target id="triggers">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#triggers">#</doc-anchor-trigger>
+        <span>Triggers</span>
+    </h4>
+</doc-anchor-target>
+<p>The generation types for which this World Info entry can be activated. If nothing is selected, the entry can be activated for all generation types. If one or more are selected, the entry will only be activated for those specific generation types:</p>
+<ul>
+<li><strong>Normal:</strong> Regular message generation request.</li>
+<li><strong>Continue:</strong> When the Continue button is pressed.</li>
+<li><strong>Impersonate:</strong> When the Impersonate button is pressed.</li>
+<li><strong>Swipe:</strong> When the generation is triggered by swiping.</li>
+<li><strong>Regenerate:</strong> When the Regenerate button is pressed in solo chats.</li>
+<li><strong>Quiet:</strong> Background generation requests, usually triggered by <a href="../../../extensions/">extensions</a> or <a href="../../st-script/">STscript</a> commands.</li>
+</ul>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>The &quot;Regenerate&quot; trigger is not available in group chats as it uses different regeneration logic: all messages from the last reply are deleted, and messages are queued using the &quot;Normal&quot; generation type according to the chosen <a href="../groupchats/#reply-order-strategies">Group reply strategy</a>.</p>
+        </div>
+    </div>
+</div>
 <doc-anchor-target id="additional-matching-sources">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#additional-matching-sources">#</doc-anchor-trigger>

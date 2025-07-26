@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.806666688941">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.806872807760">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../resources/css/retype.css?v=3.11.0.806666688941" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.11.0.806872807760" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.11.0.806666688941" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.11.0.806872807760" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.11.0.806666688941" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.11.0.806872807760" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -244,26 +244,8 @@ can be installed from the &quot;Download Extensions &amp; Assets&quot; menu in t
 <li><strong><i class="fa-solid fa-cubes"></i> Manage extensions</strong>: Activate, deactivate, and update extensions</li>
 <li><strong>Download Extensions &amp; Assets</strong>: Install <doc-anchor-trigger to="#installable-extensions">more extensions</doc-anchor-trigger>, characters, sounds, and backgrounds from the SillyTavern repository</li>
 <li><strong>Notify on extension updates</strong>: Check to be notified when there are updates available for installed extensions</li>
-<li><strong><i class="fa-solid fa-cloud-arrow-down"></i> Install extension</strong>: Import an extension from a Git repository URL</li>
+<li><strong><i class="fa-solid fa-cloud-arrow-down"></i> Install extension</strong>: Import a <doc-anchor-trigger to="#third-party-extensions">third-party extension</doc-anchor-trigger> from a Git repository URL</li>
 </ul>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
-    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
-                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-<p>Using third-party extensions can have unintended side effects and may pose security risks.
-Always make sure you trust the source before importing an extension via <strong><i class="fa-solid fa-cloud-arrow-down"></i> Install extension</strong>.
-We are not responsible for any damage caused by third-party extensions.</p>
-        </div>
-    </div>
-</div>
 <doc-anchor-target id="built-in-extensions">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#built-in-extensions">#</doc-anchor-trigger>
@@ -305,7 +287,22 @@ We are not responsible for any damage caused by third-party extensions.</p>
         <span>Installable extensions</span>
     </h2>
 </doc-anchor-target>
-<p>Install any of these extensions from the &quot;Download Extensions &amp; Assets&quot; menu in <strong>Extensions</strong>.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-tip"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-tip" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M7.90625 2.15625C4.50944 2.15625 2.15625 4.58563 2.15625 7.54688C2.15625 8.96138 2.76575 9.88281 3.57075 10.8589L3.87837 11.2226C4.19894 11.6021 4.554 12.0218 4.84581 12.4416C5.25406 13.0324 5.61775 13.7296 5.7385 14.5834C5.76728 14.8608 5.68746 15.1386 5.51579 15.3583C5.34413 15.5781 5.09399 15.7228 4.8179 15.7621C4.5418 15.8013 4.26124 15.7321 4.03512 15.5689C3.809 15.4056 3.65493 15.1612 3.60525 14.8867C3.54775 14.4814 3.37094 14.1004 3.07338 13.6692C2.8306 13.3302 2.57055 13.0039 2.29425 12.6917C2.1735 12.5479 2.04556 12.397 1.909 12.2317C1.00769 11.1406 0 9.72613 0 7.54688C0 3.32062 3.39681 0 7.90625 0C12.4157 0 15.8125 3.32062 15.8125 7.54688C15.8125 9.72613 14.8048 11.1406 13.9035 12.2317C13.7669 12.397 13.639 12.5479 13.5183 12.6903C13.2207 13.0424 12.9677 13.3414 12.7406 13.6692C12.4416 14.1004 12.2662 14.4814 12.2087 14.8867C12.1557 15.1584 12.0003 15.3994 11.7747 15.5598C11.5492 15.7202 11.2706 15.7879 10.9965 15.7488C10.7225 15.7096 10.474 15.5667 10.3023 15.3496C10.1306 15.1325 10.0489 14.8577 10.074 14.582C10.1948 13.7296 10.5584 13.0324 10.9667 12.4416C11.2585 12.0218 11.6136 11.6021 11.9341 11.2226C12.0419 11.0961 12.1454 10.9739 12.2403 10.8589C13.0468 9.88281 13.6562 8.96138 13.6562 7.54688C13.6562 4.58563 11.3031 2.15625 7.90625 2.15625ZM4.67188 17.25H11.1406C11.4266 17.25 11.7008 17.3636 11.903 17.5658C12.1052 17.768 12.2188 18.0422 12.2188 18.3281C12.2188 18.6141 12.1052 18.8883 11.903 19.0905C11.7008 19.2927 11.4266 19.4062 11.1406 19.4062H4.67188C4.38594 19.4062 4.11171 19.2927 3.90953 19.0905C3.70734 18.8883 3.59375 18.6141 3.59375 18.3281C3.59375 18.0422 3.70734 17.768 3.90953 17.5658C4.11171 17.3636 4.38594 17.25 4.67188 17.25ZM5.03125 21.9219C5.03125 21.6359 5.14484 21.3617 5.34703 21.1595C5.54921 20.9573 5.82344 20.8438 6.10938 20.8438H9.70312C9.98906 20.8438 10.2633 20.9573 10.4655 21.1595C10.6677 21.3617 10.7812 21.6359 10.7812 21.9219C10.7812 22.2078 10.6677 22.482 10.4655 22.6842C10.2633 22.8864 9.98906 23 9.70312 23H6.10938C5.82344 23 5.54921 22.8864 5.34703 22.6842C5.14484 22.482 5.03125 22.2078 5.03125 21.9219Z" />
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>You <strong>must</strong> have git installed to download extensions. Follow the instructions on the <a href="https://git-scm.com/downloads">Git installation page</a> if you don&#x27;t have it installed.</p>
+        </div>
+    </div>
+</div>
+<p>You can browse a list of all available extensions directly from the app by going to the <strong><i class="fa-solid fa-cubes"></i> Extensions</strong> =&gt; <strong>Download Extensions &amp; Assets</strong> menu and clicking the <strong><i class="fa-solid fa-plug-circle-exclamation"></i> Load Asset List</strong> button. To install an extension, click the <strong><i class="fa-solid fa-download"></i> Download</strong> button. To read more about an extension, click the <strong><i class="fa-solid fa-arrow-up-right-from-square"></i> Link</strong> button next to its name to open its GitHub page.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -429,6 +426,31 @@ We are not responsible for any damage caused by third-party extensions.</p>
 <div class="callout"><p><strong><a href="https://github.com/SillyTavern/Extension-WebLLM">WebLLM</a></strong></p>
 <p>Provides an interface for extensions to use language models directly in the browser.</p>
 </div>
+<doc-anchor-target id="third-party-extensions">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#third-party-extensions">#</doc-anchor-trigger>
+        <span>Third-party extensions</span>
+    </h2>
+</doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-danger"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-danger" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M21.71 6.15L15.85.29c-.19-.18-.44-.29-.71-.29H6.86c-.27 0-.52.11-.71.29L.29 6.15c-.18.19-.29.44-.29.71v8.28c0 .27.11.52.29.71l5.86 5.86c.19.18.44.29.71.29h8.28c.27 0 .52-.11.71-.29l5.86-5.86a.99.99 0 00.29-.71V6.86c0-.27-.11-.52-.29-.71zM20 14.73L14.73 20H7.27L2 14.73V7.27L7.27 2h7.45L20 7.27v7.46z"></path>
+                    <path d="M11 12c.55 0 1-.45 1-1V7c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .55.45 1 1 1zM11.01 14c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Using third-party extensions can have unintended side effects and may pose security risks.
+Always make sure you trust the source before importing an extension via <strong><i class="fa-solid fa-cloud-arrow-down"></i> Install extension</strong>.
+We are not responsible for any damage caused by third-party extensions.</p>
+        </div>
+    </div>
+</div>
+<p>To install a third-party extension, go to the <strong><i class="fa-solid fa-cubes"></i> Extensions</strong> =&gt; <strong><i class="fa-solid fa-cloud-arrow-down"></i> Install Extension</strong> menu and paste the URL of the extension repository. Optionally, specify the branch and (in <a href="../administration/multi-user/">multi-user</a> scenarios) the installation target: all users or just the current user. The extension will be downloaded and loaded automatically.</p>
 
                                 
                                 <!-- Required only on API pages -->
