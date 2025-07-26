@@ -1,15 +1,16 @@
 ---
 order: -20
 icon: file-added
+templating: false
 ---
 
 # UI Extensions
 
+UI extensions expand SillyTavern's functionality by hooking into its events and API. They run in a browser context and have practically unrestricted access to the DOM, JavaScript APIs, and the SillyTavern context. Extensions can modify the UI, call internal APIs, and interact with chat data. This guide explains how to create your own extensions (JavaScript knowledge is required).
+
 !!!tip Just want to install extensions?
 Go here: [Extensions](../extensions/index.md).
 !!!
-
-UI extensions expand SillyTavern's functionality by hooking into its events and API. They run in a browser context and have practically unrestricted access to the DOM, JavaScript APIs, and the SillyTavern context. Extensions can modify the UI, call internal APIs, and interact with chat data. This guide explains how to create your own extensions (JavaScript knowledge is required).
 
 To extend the functionality of the Node.js server, see the [Server Plugins](./Server-Plugins.md) page.
 
