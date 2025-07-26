@@ -24,7 +24,7 @@ See more details on the [OpenRouter FAQ page](https://openrouter.ai/docs/faq).
 
 ![OpenRouter-ConnectionPanel](/static/openrouter-connection.png)
 
-From top to bottom (see image above):
+From top to down (see image above):
 
 1. Select the 'Chat Completion' API.
 2. Select OpenRouter as the source.
