@@ -100,12 +100,12 @@ Note: some extensions may also add special context-specific macros that only wor
 | Macro | Description |
 |-------|-------------|
 | `{{getvar::name}}` | Replaced with the value of the local variable "name". |
-| `{{setvar::name::value}}` | Replaced with empty string, sets the local variable "name" to "value". |
+| `{{setvar::name::value}}` | Replaced with empty string, sets the local variable "name" to "value". Allows empty values. |
 | `{{addvar::name::increment}}` | Replaced with empty string, adds a numeric value of "increment" to the local variable "name". |
 | `{{incvar::name}}` | Replaced with the result of incrementing the value of variable "name" by 1. |
 | `{{decvar::name}}` | Replaced with the result of decrementing the value of variable "name" by 1. |
 | `{{getglobalvar::name}}` | Replaced with the value of the global variable "name". |
-| `{{setglobalvar::name::value}}` | Replaced with empty string, sets the global variable "name" to "value". |
+| `{{setglobalvar::name::value}}` | Replaced with empty string, sets the global variable "name" to "value". Allows empty values. |
 | `{{addglobalvar::name::value}}` | Replaced with empty string, adds a numeric value of "increment" to the global variable "name". |
 | `{{incglobalvar::name}}` | Replaced with the result of incrementing the value of global variable "name" by 1. |
 | `{{decglobalvar::name}}` | Replaced with the result of decrementing the value of global variable "name" by 1. |

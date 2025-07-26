@@ -22,6 +22,54 @@ protocol:
   ipv6: false
 ```
 
+## Command-Line Arguments
+
+You can pass command-line arguments to SillyTavern server startup to override some settings in [config.yaml](../Administration/config-yaml.md).
+
+### Examples
+
+```shell
+node server.js --port 8000 --listen false
+# or
+npm run start -- --port 8000 --listen false
+# or (Windows only)
+Start.bat --port 8000 --listen false
+```
+
+### Supported arguments
+
+!!!tip
+None of the arguments are required. If you don't provide them, SillyTavern will use the settings in `config.yaml`.
+!!!
+
+| Option                          | Description                                                          | Type     |
+|---------------------------------|----------------------------------------------------------------------|----------|
+| `--version`                     | Shows the version number                                             | boolean  |
+| `--global`                      | Forces the use of system-wide paths for application data             | boolean  |
+| `--configPath`                  | Overrides the path to the config.yaml file (standalone mode only)    | string   |
+| `--dataRoot`                    | Sets the root directory for data storage (standalone mode only)      | string   |
+| `--port`                        | Sets the port under which SillyTavern will run                       | number   |
+| `--listen`                      | Makes SillyTavern listen on all network interfaces                   | boolean  |
+| `--whitelist`                   | Enables whitelist mode                                               | boolean  |
+| `--basicAuthMode`               | Enables basic authentication                                         | boolean  |
+| `--enableIPv4`                  | Enables the IPv4 protocol                                            | boolean  |
+| `--enableIPv6`                  | Enables the IPv6 protocol                                            | boolean  |
+| `--listenAddressIPv4`           | Specifies the IPv4 address to listen on                              | string   |
+| `--listenAddressIPv6`           | Specifies the IPv6 address to listen on                              | string   |
+| `--dnsPreferIPv6`               | Prefers IPv6 for DNS                                                 | boolean  |
+| `--ssl`                         | Enables SSL                                                          | boolean  |
+| `--certPath`                    | Sets the path to your certificate file                               | string   |
+| `--keyPath`                     | Sets the path to your private key file                               | string   |
+| `--browserLaunchEnabled`        | Automatically launches SillyTavern in the browser                    | boolean  |
+| `--browserLaunchHostname`       | Sets the browser launch hostname                                     | string   |
+| `--browserLaunchPort`           | Overrides the port for browser launch                                | string   |
+| `--browserLaunchAvoidLocalhost` | Avoids using 'localhost' for browser launch in auto mode             | boolean  |
+| `--corsProxy`                   | Enables the CORS proxy                                               | boolean  |
+| `--requestProxyEnabled`         | Enables the use of a proxy for outgoing requests                     | boolean  |
+| `--requestProxyUrl`             | Sets the request proxy URL (HTTP or SOCKS protocols)                 | string   |
+| `--requestProxyBypass`          | Sets the request proxy bypass list (space-separated list of hosts)   | array    |
+| `--disableCsrf`                 | Disables CSRF protection (NOT RECOMMENDED)                           | boolean  |
+
 ## Environment Variables
 
 Configuration may also be set via environment variables which will override the values in the `config.yaml` file.
@@ -52,7 +100,7 @@ See more on using environment variables in the [Node.js documentation](https://n
 
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|-----------------|
-| `dataRoot` | Root directory for user data storage | `./data` | Any valid directory path |
+| `dataRoot` | Root directory for user data storage (standalone mode only) | `./data` | Any valid directory path |
 | `skipContentCheck` | Skip new default content checks | `false` | `true`, `false` |
 | `enableDownloadableTokenizers` | Enable on-demand tokenizer downloads | `true` | `true`, `false` |
 
@@ -61,7 +109,7 @@ See more on using environment variables in the [Node.js documentation](https://n
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|------------------|
 | `logging.minLogLevel` | Minimum log level to display in the terminal | `0` (DEBUG) | (DEBUG = 0, INFO = 1, WARN = 2, ERROR = 3) |
-| `logging.enableAccessLog` | Write server access log | `true` | `true`, `false` |
+| `logging.enableAccessLog` | Write server access log to file and console | `true` | `true`, `false` |
 
 ## [Network Configuration](/Administration/remote-connections.md)
 
@@ -130,7 +178,7 @@ See more on using environment variables in the [Node.js documentation](https://n
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|-----------------|
 | `browserLaunch.enabled` | Open the browser automatically on server startup | `true` | `true`, `false` |
-| `browserLaunch.browser` | Browser to use for opening the URL | `"default"` | `"default"`, `"chrome"`, `"firefox"`, `"edge"` |
+| `browserLaunch.browser` | Browser to use for opening the URL | `"default"` | `"default"`, `"chrome"`, `"firefox"`, `"edge"`, `"brave"` |
 | `browserLaunch.hostname` | Override the hostname for browser launch | `"auto"` | `"auto"`, any valid hostname (e.g., `"localhost"`, `"st.example.com"`) |
 | `browserLaunch.port` | Override the port for browser launch | `-1` | `-1` (use server port), any valid port number |
 | `browserLaunch.avoidLocalhost` | Avoid using 'localhost' in a launch URL | `false` | `true`, `false` |
@@ -143,6 +191,17 @@ See more on using environment variables in the [Node.js documentation](https://n
 | `performance.useDiskCache` | Enables disk caching for character cards | `true` | `true`, `false` |
 | `performance.memoryCacheCapacity` | Maximum memory cache capacity | `100mb` | Human-readable size (e.g., `100mb`, `1gb`) |
 
+## Cache Buster Configuration
+
+!!!warning
+Requires localhost or a domain with HTTPS, otherwise will not work!
+!!!
+
+| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|------------------|
+| `cacheBuster.enabled` | Clear browser cache on first load or after uploading image files | `false` | `true`, `false` |
+| `cacheBuster.userAgentPattern` | Only clear cache for the specified user agent regex pattern. Example: `'firefox'` (case-insensitive) | `''` | Any valid regex string |
+
 ## Thumbnailing Configuration
 
 | Setting | Description | Default | Permitted Values |
@@ -152,6 +211,7 @@ See more on using environment variables in the [Node.js documentation](https://n
 | `thumbnails.format` | Image format for thumbnails | `jpg` | `jpg`, `png` |
 | `thumbnails.dimensions.bg` | Background thumbnails size | `[160, 90]` | Array of two numbers (width, height) |
 | `thumbnails.dimensions.avatar` | Avatar thumbnails size | `[96, 144]` |  Array of two numbers (width, height) |
+| `thumbnails.dimensions.persona` | Persona thumbnails size | `[96, 144]` |  Array of two numbers (width, height) |
 
 ## Backup Configuration
 

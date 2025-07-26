@@ -18,13 +18,7 @@ To open or close the Extensions panel, choose **<i class="fa-solid fa-cubes fa-f
 - **<i class="fa-solid fa-cubes"></i> Manage extensions**: Activate, deactivate, and update extensions
 - **Download Extensions & Assets**: Install [more extensions](#installable-extensions), characters, sounds, and backgrounds from the SillyTavern repository
 - **Notify on extension updates**: Check to be notified when there are updates available for installed extensions
-- **<i class="fa-solid fa-cloud-arrow-down"></i> Install extension**: Import an extension from a Git repository URL
-
-!!!warning
-Using third-party extensions can have unintended side effects and may pose security risks. 
-Always make sure you trust the source before importing an extension via **<i class="fa-solid fa-cloud-arrow-down"></i> Install extension**. 
-We are not responsible for any damage caused by third-party extensions.
-!!!
+- **<i class="fa-solid fa-cloud-arrow-down"></i> Install extension**: Import a [third-party extension](#third-party-extensions) from a Git repository URL
 
 ## Built-in extensions
 
@@ -88,7 +82,11 @@ Converts text into tokens and counts the number of tokens
 
 ## Installable extensions
 
-Install any of these extensions from the "Download Extensions & Assets" menu in **Extensions**.
+!!!tip
+You **must** have git installed to download extensions. Follow the instructions on the [Git installation page](https://git-scm.com/downloads) if you don't have it installed.
+!!!
+
+You can browse a list of all available extensions directly from the app by going to the **<i class="fa-solid fa-cubes"></i> Extensions** => **Download Extensions & Assets** menu and clicking the **<i class="fa-solid fa-plug-circle-exclamation"></i> Load Asset List** button. To install an extension, click the **<i class="fa-solid fa-download"></i> Download** button. To read more about an extension, click the **<i class="fa-solid fa-arrow-up-right-from-square"></i> Link** button next to its name to open its GitHub page.
 
 !!!info Extensions are not Extras
 The Extras project was discontinued in April 2024. You do not need to install Extras to use extensions.
@@ -304,4 +302,12 @@ Easy way to view and modify variables.
 Provides an interface for extensions to use language models directly in the browser.
 :::
 
+## Third-party extensions
 
+!!!danger
+Using third-party extensions can have unintended side effects and may pose security risks. 
+Always make sure you trust the source before importing an extension via **<i class="fa-solid fa-cloud-arrow-down"></i> Install extension**. 
+We are not responsible for any damage caused by third-party extensions.
+!!!
+
+To install a third-party extension, go to the **<i class="fa-solid fa-cubes"></i> Extensions** => **<i class="fa-solid fa-cloud-arrow-down"></i> Install Extension** menu and paste the URL of the extension repository. Optionally, specify the branch and (in [multi-user](../Administration/multi-user.md) scenarios) the installation target: all users or just the current user. The extension will be downloaded and loaded automatically.

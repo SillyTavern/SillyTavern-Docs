@@ -15,6 +15,12 @@ Despite following many security best practices, the SillyTavern server is not se
 !!!
 
 :::callout
+**[config.yaml](./config-yaml.md)**
+
+The main configuration file for SillyTavern that contains various settings, such as the network settings, security settings, and backend-specific options.
+:::
+
+:::callout
 **[Multi-user](multi-user)**
 
 To share your SillyTavern instance with others, you can create multiple user accounts. Each user has their own settings, extensions, and data. User accounts can also be password-protected.
@@ -25,7 +31,6 @@ To share your SillyTavern instance with others, you can create multiple user acc
 
 You can access your SillyTavern instance from your phone, tablet, or another computer.
 :::
-
 
 :::callout
 **[VPNs and Tunneling](tunneling.md)**
@@ -38,8 +43,6 @@ To access your SillyTavern instance from the internet, you can use a VPN or a tu
 
 For enthusiasts, you can set up a reverse proxy to access your SillyTavern instance from the internet.
 :::
-
-
 
 ## Security checklist
 

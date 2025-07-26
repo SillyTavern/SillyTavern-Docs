@@ -192,6 +192,27 @@ Automations are executed in the order they are triggered, adhering to your desig
 
 The script command will run only once if multiple entries with the same Automation ID are activated.
 
+#### Character Filter
+
+A list of character names for which this entry can be activated. If this list is not empty, the entry will only be activated for characters whose names are on the list. When a tag is selected, the entry will only be activated for characters that have that specific tag.
+
+"Exclude" mode inverts the filter, meaning that the entry will be activated for all characters except those that are added to the list or that have the selected tag(s).
+
+#### Triggers
+
+The generation types for which this World Info entry can be activated. If nothing is selected, the entry can be activated for all generation types. If one or more are selected, the entry will only be activated for those specific generation types:
+
+* **Normal:** Regular message generation request.
+* **Continue:** When the Continue button is pressed.
+* **Impersonate:** When the Impersonate button is pressed.
+* **Swipe:** When the generation is triggered by swiping.
+* **Regenerate:** When the Regenerate button is pressed in solo chats.
+* **Quiet:** Background generation requests, usually triggered by [extensions](/extensions/index.md) or [STscript](/For_Contributors/st-script.md) commands.
+
+!!!
+The "Regenerate" trigger is not available in group chats as it uses different regeneration logic: all messages from the last reply are deleted, and messages are queued using the "Normal" generation type according to the chosen [Group reply strategy](/Usage/Characters/groupchats.md#reply-order-strategies).
+!!!
+
 #### Additional matching sources
 
 By default World Info Entries are matched only against content from the current conversation. These options allow you to match the entry against different character information that does not show up in the chat, or even persona information. This is useful when you want to have a wide range of entries that are to be used between several characters but don't want to have to manage large lists of tags, or don't want to have to update character filter lists every time you create a new one. This also allows you to match entries based on the persona you have active.
