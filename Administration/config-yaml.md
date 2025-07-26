@@ -200,7 +200,7 @@ Requires localhost or a domain with HTTPS, otherwise will not work!
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|------------------|
 | `cacheBuster.enabled` | Clear browser cache on first load or after uploading image files | `false` | `true`, `false` |
-| `cacheBuster.userAgentPattern` | Only clear cache for the specified user agent regex pattern. Example: `'firefox\|edge'` (case-insensitive) | `''` | Any valid regex string |
+| `cacheBuster.userAgentPattern` | Only clear cache for the specified user agent regex pattern. Example: `'firefox'` (case-insensitive) | `''` | Any valid regex string |
 
 ## Thumbnailing Configuration
 
