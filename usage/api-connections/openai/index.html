@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.806874374542">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.806875716237">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Chat Completions | docs.ST.app</title>
     <meta name="title" content="Chat Completions | docs.ST.app">
-    <meta name="description" content="Important!">
+    <meta name="description" content="Most API platforms allow to view the generated API key only once, at the time of its creation. If you lose it, you will need to generate a new one.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/usage/api-connections/openai/">
@@ -20,21 +20,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/usage/api-connections/openai/">
     <meta property="og:title" content="Chat Completions | docs.ST.app">
-    <meta property="og:description" content="Important!">
+    <meta property="og:description" content="Most API platforms allow to view the generated API key only once, at the time of its creation. If you lose it, you will need to generate a new one.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/usage/api-connections/openai/">
     <meta property="twitter:title" content="Chat Completions | docs.ST.app">
-    <meta property="twitter:description" content="Important!">
+    <meta property="twitter:description" content="Most API platforms allow to view the generated API key only once, at the time of its creation. If you lose it, you will need to generate a new one.">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.11.0.806874374542" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.11.0.806875716237" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.806874374542" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.806875716237" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.806874374542" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.806875716237" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -236,8 +236,23 @@
         <span>Source-specific instructions</span>
     </h2>
 </doc-anchor-target>
-<p><strong>Important!</strong></p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5><strong>Important!</strong></h5>
 <p>Most API platforms allow to view the generated API key only once, at the time of its creation. If you lose it, you will need to generate a new one. Make sure to keep it safe!</p>
+        </div>
+    </div>
+</div>
 <doc-anchor-target id="openai">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#openai">#</doc-anchor-trigger>
@@ -286,6 +301,44 @@
 <ol>
 <li>Sign up on the <a href="https://platform.deepseek.com/">DeepSeek Platform</a>.</li>
 <li>After signing up and topping up your account, you can create an API key in the &quot;<a href="https://platform.deepseek.com/api_keys">API keys</a>&quot; section.</li>
+</ol>
+<doc-anchor-target id="ai21">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ai21">#</doc-anchor-trigger>
+        <span>AI21</span>
+    </h3>
+</doc-anchor-target>
+<p>AI21 Labs offers a range of AI models, including their flagship Jamba series. You can access their models through the AI21 Studio API.</p>
+<p><strong>How to get an API key:</strong></p>
+<ol>
+<li>Go to <a href="https://studio.ai21.com/">AI21 Studio</a> and sign in.</li>
+<li>Navigate to the &quot;Settings =&gt; API Keys&quot; section to create a new API key.</li>
+</ol>
+<doc-anchor-target id="cohere">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cohere">#</doc-anchor-trigger>
+        <span>Cohere</span>
+    </h3>
+</doc-anchor-target>
+<p>Cohere provides a suite of AI models for various tasks, including text generation and embeddings. You can access their models through the Cohere API.</p>
+<p><strong>How to get an API key:</strong></p>
+<ol>
+<li>Go to <a href="https://cohere.com/">Cohere</a> and sign in.</li>
+<li>Navigate to the &quot;<a href="https://dashboard.cohere.com/api-keys">API Keys</a>&quot; section in your account settings to create a new API key.</li>
+</ol>
+<doc-anchor-target id="perplexity">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#perplexity">#</doc-anchor-trigger>
+        <span>Perplexity</span>
+    </h3>
+</doc-anchor-target>
+<p>Perplexity AI offers access to online-enabled Sonar models through their API for real-time research and information retrieval.</p>
+<p>Official Getting Started guide: <a href="https://docs.perplexity.ai/getting-started/quickstart">Perplexity Quickstart</a></p>
+<p><strong>How to get an API key:</strong></p>
+<ol>
+<li>Go to <a href="https://perplexity.ai/">Perplexity</a> and sign in.</li>
+<li>Go to the &quot;<a href="https://www.perplexity.ai/account/api/billing">API billing</a>&quot; section to purchase credits for API usage.</li>
+<li>Navigate to the &quot;<a href="https://www.perplexity.ai/account/api/keys">API keys</a>&quot; section in the settings to create a new API key.</li>
 </ol>
 <doc-anchor-target id="custom-openai-compatible-endpoint">
     <h2>
