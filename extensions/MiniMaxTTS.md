@@ -15,7 +15,7 @@ This page will teach you how to properly use the MiniMax TTS provider.
 
 ### 1. Create a MiniMax Account
 
-1. Visit the [MiniMax website](https://www.minimax.io/)
+1. Visit the [MiniMax website (International)](https://www.minimax.io/)
 2. Click "Sign Up" or "Login"
 3. Complete the account registration process
 
@@ -25,9 +25,9 @@ MiniMax has separate Chinese and International versions. Please note:
 - The Chinese version only supports the `api.minimax.chat` API host
 !!!
 
-### 2. Obtain API Key
+### 2. Obtain API Key and Group ID
 
-1. Log into the [MiniMax console](https://www.minimax.io/platform/user-center/basic-information)
+1. Log into the [MiniMax console (International)](https://www.minimax.io/platform/user-center/basic-information)
 2. You can find your GroupId on the Basic Information page
 3. Go to Settings → API Keys on the left sidebar to create and obtain your API Key
 
@@ -42,8 +42,8 @@ MiniMax has separate Chinese and International versions. Please note:
     - **API Key**: Your MiniMax API key
     - **Group ID**: Your MiniMax Group ID
     - **API Host**: Choose the appropriate server based on your region:
-        - `api.minimax.io` (Official server)
-        - `api.minimaxi.chat` (Global server)
+        - `api.minimax.io` (Official international server)
+        - `api.minimaxi.chat` (Another international server host)
         - `api.minimax.chat` (China mainland server)
 
 ### 2. Model Selection
@@ -64,7 +64,14 @@ Adjust the following parameters to customize voice output:
 
 ## Custom Voices
 
-### 1. Adding Custom Voices
+### 1. Obtaining Voice IDs
+
+1. Access the [MiniMax TTS page (International)](https://www.minimax.io/audio/text-to-speech)
+2. Click "Voice" on the right side to enter the Voice Selection interface
+3. Find the voice you want to use
+4. Click the copy button next to the voice name to copy the Voice ID
+
+### 2. Adding Custom Voices
 
 1. In the MiniMax TTS settings, locate the "Custom Voice Management" section
 2. Fill in the following information:
@@ -72,13 +79,6 @@ Adjust the following parameters to customize voice output:
     - **Voice ID**: The voice ID obtained from the MiniMax platform
     - **Language**: Select the corresponding language for the voice
 3. Click "Add Custom Voice"
-
-### 2. Obtaining Voice IDs
-
-1. Access the MiniMax TTS interface
-2. Click "Voice" on the right side to enter the Voice Selection interface
-3. Find the voice you want to use
-4. Click the copy button next to the voice name to copy the Voice ID
 
 ## Custom Models
 
@@ -92,7 +92,7 @@ Adjust the following parameters to customize voice output:
 
 ### 2. Obtaining Model IDs
 
-1. Check the model list in the official MiniMax documentation
+1. Check the model list in the official [MiniMax documentation](https://www.minimax.io/platform/document/Model?key=684261f14c5738213294faa7)
 2. Or view available custom models in the console
 3. Copy the corresponding Model ID
 
