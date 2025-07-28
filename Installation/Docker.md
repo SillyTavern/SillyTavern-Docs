@@ -27,7 +27,7 @@ You can edit the file and apply additional customization to suit your needs:
 - Change the `image` tag to `staging` if you want to use the development branch instead of the stable release.
 - If you want to adjust the server configuration using environment variables, check the [Environment Variables](/Administration/config-yaml.md#environment-variables) page.
 
-#### Docker CLI (advanced)
+### Docker CLI (advanced)
 
 You will need two mandatory directory mappings and a port mapping to allow SillyTavern to function. In the command, replace your selections in the following places:
 
