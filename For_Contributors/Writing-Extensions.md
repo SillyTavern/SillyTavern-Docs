@@ -205,7 +205,7 @@ import { generateQuietPrompt } from "../../../../script.js";
 
 async function handleMessage(data) {
     const text = data.message;
-    const translated = await generateQuietPrompt(text);
+    const translated = await generateQuietPrompt({ quietPrompt: text });
     // ...
 }
 ```
@@ -544,10 +544,10 @@ The `generateQuietPrompt()` function is used to generate text in the context of 
 ```js
 const { generateQuietPrompt } = SillyTavern.getContext();
 
-const prompt = 'Generate a summary of the chat history.';
+const quietPrompt = 'Generate a summary of the chat history.';
 
 const result = await generateQuietPrompt({
-    prompt,
+    quietPrompt,
 });
 ```
 
@@ -643,7 +643,7 @@ const rawResult = await generateRaw({
 });
 
 const quietResult = await generateQuietPrompt({
-    prompt,
+    quietPrompt: prompt,
     jsonSchema,
 });
 ```
