@@ -166,11 +166,13 @@ Snap image generation requests with a forced aspect ratio (portraits, background
 
 ## Common prompt prefix
 
+!!!tip Pro Tip
+Use `{prompt}` macro to specify where exactly the generated prompt will be inserted.
+!!!
+
 Added before every generated or free-mode prompt. Commonly used for setting the overall style of the picture.
 
 Example: `best quality, anime lineart`.
-
-**Pro tip:** Use `{prompt}` macro to specify where exactly the generated prompt will be inserted.
 
 ## Negative prompt
 
@@ -179,6 +181,10 @@ Characteristics of the image you don't want to be present in the output.
 Example: `bad quality, watermark`.
 
 ## Character-specific prompt prefix
+
+!!!tip Pro Tip
+If supported by the generation source, you can also use LoRAs/embeddings here, for example: `<lora:DonaldDuck:1>`.
+!!!
 
 Any characteristics that describe the currently selected character. Will be added after a common prefix.
 
@@ -195,8 +201,6 @@ To force include a character prefix into a free mode prompt, use the `{{charPref
 !!!
 
 If you want to share the prefixes with others, tick the "Shareable" checkbox. This will save them with the character data, rather than your local settings. 
-
-**Pro tip:** If supported by the generation source, you can also use LoRAs/embeddings here, for example: `<lora:DonaldDuck:1>`.
 
 ## Styles
 
