@@ -68,7 +68,7 @@ The default Main Prompt is:
 
 The \{\{char\}\} and \{\{user\}\} placeholders are replaced with the names of the character and persona that you've defined in the conversation. 
 
-You can use any of the supported [\{\{macro\}\}](/Usage/Characters/characterdesign.md#macros-replacement-tags) tags in the Main Prompt to include information that might vary between conversations or changes as the conversation progresses.
+You can use any of the supported [\{\{macro\}\}](/Usage/Characters/macros.md) tags in the Main Prompt to include information that might vary between conversations or changes as the conversation progresses.
 
 ### Adjusting the Main Prompt
 
