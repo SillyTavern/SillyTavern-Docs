@@ -21,6 +21,28 @@ Most of the settings in this panel do not apply to Chat Completions APIs as they
 * [Custom Stopping Strings](#custom-stopping-strings)
 +++
 
+## Resetting Templates
+
+You can restore the default templates to their original state. This can be done either through the UI or by manually deleting the relevant data files.
+
+### UI Reset
+
+1. Open the **<i class="fa-solid fa-font"></i> Advanced Formatting** menu.
+2. Pick the template you want to reset.
+3. Click the **<i class="fa-solid fa-recycle"></i> Restore current template** button.
+4. Confirm the action when prompted.
+
+### Manual Reset
+
+!!!
+Make sure the `skipContentCheck` setting is set to `false` in [config.yaml](/Administration/config-yaml.md#data-configuration), otherwise the content check will not be triggered.
+!!!
+
+1. Navigate to your user data directory (see [Data paths](/Installation/index.md#data-paths) for details).
+2. Delete the `content.log` file from the root of your user data directory. This file tracks the default files copied for your user.
+3. Delete the template JSON files from the relevant subdirectories (`context`, `instruct`, `sysprompt`, etc.).
+4. Restart the SillyTavern server. The application will repopulate the default content, also restoring any deleted default templates.
+
 ## Backend-defined templates
 
 !!! Applies to: Text Completion APIs
