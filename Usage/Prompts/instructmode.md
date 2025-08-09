@@ -85,19 +85,21 @@ The following options are available:
 * **Groups and Past Personas**: Only add name prefixes to messages from group characters and past personas.
 * **Always**: Always add name prefixes before the message contents.
 
-### Sequences: System Prompt Wrapping
+### Sequences: Story String Wrapping
 
-Define how the System Prompt will be wrapped.
+!!!warning Recent change
+System Prompt wrapping has been removed and replaced with Story String wrapping.
+!!!
 
-#### System Prompt Prefix
+Define how the Story String will be wrapped when the Position is set to "Default (top of context)"
 
-Inserted before a System prompt.
+#### Story String Prefix
 
-#### System Prompt Suffix
+Inserted before a Story String.
 
-Inserted after a System prompt.
+#### Story String Suffix
 
-**Important:** this applies *only* to the System Prompt itself, *not* the entire Story String! If you want to wrap the Story String, add these sequences to the Story String template in the Context Template section.
+Inserted after a Story String.
 
 ### Sequences: Chat Messages Wrapping
 
