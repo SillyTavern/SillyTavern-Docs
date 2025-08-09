@@ -1,5 +1,6 @@
 ---
 order: prompts-20
+templating: false
 ---
 
 # Context Template
@@ -14,37 +15,37 @@ Edit these settings in the "[Advanced Formatting](advancedformatting.md)" panel.
 
 ## Story String
 
-This field is a template for pre-chat character data (known internally as a story string).
-This is the main way to format your character card for text completion and instruct models.
+This field is a template for the prompt preamble (known internally as a story string). This is the main way to add the information defined in [Character Cards](/Usage/Characters/index.md) for text completion and instruct models.
 
-The template supports Handlebars syntax and any custom text injections or formatting. See the language reference here: <https://handlebarsjs.com/guide/>
+The template supports Handlebars syntax, custom text injections or formatting, and any other [macros](/Usage/Characters/macros.md). See the language reference here: <https://handlebarsjs.com/guide/>
 
-We provide the following parameters to the Handlebars evaluator (wrap them into double-curly braces):
+We provide the following parameters to the Handlebars evaluator (wrap them in double curly braces):
 
-1. `anchorBefore` - prompts set to use the "Before Story String" position
-2. `anchorAfter` - prompts set to use the "After Story String" position
-3. `description` - character's Description
-4. `scenario` - character's Scenario
-5. `personality` - character's Personality
-6. `system` - [system prompt](advancedformatting.md#system-prompt) OR character's main prompt override (if exists and "Prefer Char. Prompt" is enabled in User Settings)
-7. `persona` - selected persona description
-8. `char` - character's name
-9. `user` - selected persona name
-10. `wiBefore` or `loreBefore` - combined activated World Info entries with Position set to "Before Char Defs"
-11. `wiAfter` or `loreAfter` - combined activated World Info entries with Position set to "After Char Defs"
-12. `mesExamples` - (optional) character's Example Dialogues, instruct-formatted with separator.
+1. `{{anchorBefore}}`: Prompts set to use the "Before Story String" position.
+2. `{{anchorAfter}}`: Prompts set to use the "After Story String" position.
+3. `{{description}}`: The character's [Description](/Usage/Characters/characterdesign.md#character-description).
+4. `{{scenario}}`: The character's [Scenario](/Usage/Characters/characterdesign.md#scenario).
+5. `{{personality}}`: The character's [Personality](/Usage/Characters/characterdesign.md#personality-summary).
+6. `{{system}}`: The [system prompt](advancedformatting.md#system-prompt) OR the character's [main prompt](/Usage/Characters/characterdesign.md#prompt-overrides) override (if it exists and "Prefer Char. Prompt" is enabled in User Settings).
+7. `{{persona}}`: The selected [persona's description](/Usage/personas.md#persona-description).
+8. `{{char}}`: The character's name.
+9. `{{user}}`: The selected persona's name.
+10. `{{wiBefore}}` or `{{loreBefore}}`: Combined activated [World Info](/Usage/worldinfo.md) entries with Position set to "Before Char Defs".
+11. `{{wiAfter}}` or `{{loreAfter}}`: Combined activated [World Info](/Usage/worldinfo.md) entries with Position set to "After Char Defs".
+12. `{{mesExamples}}`: (Optional) The character's [Example Dialogues](/Usage/Characters/characterdesign.md#examples-of-dialogue), instruct-formatted with a separator.
+13. `{{mesExamplesRaw}}`: The character's [Example Dialogues](/Usage/Characters/characterdesign.md#examples-of-dialogue) in raw format, without any formatting.
 
 !!!tip **Important**  
-When using `mesExamples` in the Story String, set **"Example Messages Behavior"** in the **<i class="fa-solid fa-user-cog"></i> User Settings** panel to **"Never include examples"** to avoid duplication of example messages in the prompt.
+When using `{{mesExamples}}` in the Story String, set **"Example Messages Behavior"** in the **<i class="fa-solid fa-user-cog"></i> User Settings** panel to **"Never include examples"** to avoid duplicating example messages in the prompt.
 !!!
 
-A special \{\{trim\}\} macro is supported to remove any newlines that surround it. Use it in case you want some part of text NOT be separated with a newline from the previous line (_spaces **are not** trimmed_).
+A special `{{trim}}` macro is supported to remove any newlines that surround it. Use it if you want a part of the text to not be separated from the previous line by a newline (_spaces **are not** trimmed_).
 
-**WARNING**: If some of the above parameters are missing from the story string template, they are not going to be sent in the prompt at all.
+**WARNING**: If any of the above parameters are missing from the story string template, they will not be sent in the prompt at all.
 
 ### Prompt Anchors
 
-The `anchorBefore` and `anchorAfter` are generic placeholders for prompts added by various extensions and miscellaneous features in a chosen static position, for example:
+The `{{anchorBefore}}` and `{{anchorAfter}}` are generic placeholders for prompts added by various extensions and miscellaneous features in a chosen static position, for example:
 
 * [Author's Note](/Usage/Characters/Author's-Note.md)
 * [Summaries](/extensions/Summarize.md)
