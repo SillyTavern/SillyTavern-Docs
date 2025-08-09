@@ -19,7 +19,7 @@ This field is a template for the prompt preamble (known internally as a story st
 
 The template supports Handlebars syntax, custom text injections or formatting, and any other [macros](/Usage/Characters/macros.md). See the language reference here: <https://handlebarsjs.com/guide/>
 
-We provide the following parameters to the Handlebars evaluator (wrap them in double curly braces):
+We provide the following parameters to the Handlebars evaluator (wrapped in double curly braces):
 
 1. `{{anchorBefore}}`: Prompts set to use the "Before Story String" position.
 2. `{{anchorAfter}}`: Prompts set to use the "After Story String" position.
