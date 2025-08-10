@@ -87,7 +87,7 @@ These switches control various UI features and behaviors. Some options can impro
 * **Hide Chat Avatars**: Remove avatars from chat
 * **Message Token Count**: Show token counts per message
 * **Compact Input Area**: Single-row input (Mobile only)
-* **Swipe # for All Messages**: Show swipe numbers on all messages (Mobile)
+* **Swipe # for All Messages**: Show swipe numbers on all messages
 * **Characters Hotswap**: Quick-select buttons for favorite characters
 * **Avatar Hover Magnification**: Zoom effect on avatar hover
 * **Tags as Folders**: Organize characters using tags as folders
