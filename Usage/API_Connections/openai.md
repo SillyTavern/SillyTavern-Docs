@@ -76,6 +76,32 @@ Official Getting Started guide: [Perplexity Quickstart](https://docs.perplexity.
 2. Go to the "[API billing](https://www.perplexity.ai/account/api/billing)" section to purchase credits for API usage.
 3. Navigate to the "[API keys](https://www.perplexity.ai/account/api/keys)" section in the settings to create a new API key.
 
+### Fireworks AI
+
+Fireworks AI is a high-performance platform that provides fast, cost-effective access to state-of-the-art open-source language models. The platform offers serverless deployment with OpenAI-compatible APIs and supports context windows up to 256,000 tokens.
+
+**How to get an API key:**
+
+1. Go to [Fireworks AI](https://fireworks.ai/) and create an account or sign in.
+2. Navigate to the [API Keys page](https://app.fireworks.ai/settings/users/api-keys) in your account settings.
+3. Click "Create API key" and provide a descriptive name (e.g., "SillyTavern").
+4. Copy the API key immediately and store it securely—it cannot be viewed again.
+
+**Featured Models:**
+
+* **Kimi K2** (`accounts/fireworks/models/kimi-k2-instruct`) - 1T total parameters (32B activated), 128K context, optimized for agentic tasks
+* **Qwen3 235B** (`accounts/fireworks/models/qwen3-235b-a22b-instruct-2507`) - 256K context, competitive performance with budget-friendly pricing
+* **Qwen3 Coder** (`accounts/fireworks/models/qwen3-coder-480b-a35b-instruct`) - 256K context, specialized for code generation
+* **DeepSeek R1** (`accounts/fireworks/models/deepseek-r1-0528`) - 160K context, advanced reasoning with function calling support
+* **DeepSeek V3** (`accounts/fireworks/models/deepseek-v3`) - 128K context, 671B total parameters (37B activated)
+
+**Key Features:**
+* Extended context windows (128K-256K tokens)
+* OpenAI-compatible API with streaming support
+* Competitive pricing compared to proprietary alternatives
+* Text-only capabilities
+* Usage-based rate limiting
+
 ## Custom OpenAI-compatible endpoint
 
 !!!warning
