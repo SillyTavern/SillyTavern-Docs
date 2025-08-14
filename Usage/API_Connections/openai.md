@@ -86,10 +86,6 @@ Fireworks AI is a high-performance platform that provides fast, cost-effective a
 2. Navigate to the [API Keys page](https://app.fireworks.ai/settings/users/api-keys) in your account settings.
 3. Click "Create API key" and provide a descriptive name (e.g., "SillyTavern").
 
-**Key Features:**
-* Extended context windows (128K-256K tokens)
-* Competitive pricing compared to proprietary alternatives
-
 ## Custom OpenAI-compatible endpoint
 
 !!!warning
