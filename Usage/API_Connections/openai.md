@@ -76,6 +76,16 @@ Official Getting Started guide: [Perplexity Quickstart](https://docs.perplexity.
 2. Go to the "[API billing](https://www.perplexity.ai/account/api/billing)" section to purchase credits for API usage.
 3. Navigate to the "[API keys](https://www.perplexity.ai/account/api/keys)" section in the settings to create a new API key.
 
+### Fireworks AI
+
+Fireworks AI is a high-performance platform that provides fast, cost-effective access to state-of-the-art open-source language models. The platform offers serverless deployment with OpenAI-compatible APIs and supports context windows up to 256,000 tokens.
+
+**How to get an API key:**
+
+1. Go to [Fireworks AI](https://fireworks.ai/) and create an account or sign in.
+2. Navigate to the [API Keys page](https://app.fireworks.ai/settings/users/api-keys) in your account settings.
+3. Click "Create API key" and provide a descriptive name (e.g., "SillyTavern").
+
 ## Custom OpenAI-compatible endpoint
 
 !!!warning
