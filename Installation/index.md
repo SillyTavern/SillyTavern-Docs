@@ -40,7 +40,7 @@ Installations made by using the [official npm package](https://www.npmjs.com/pac
 
 **Global mode** paths are OS-dependent:
 
-* **Linux**: `~/.local/share/SillyTavern/config.yaml` and `~/.local/share/SillyTavern/data/`
+* **Linux**: `~/.local/share/SillyTavern/config.yaml` (or `$XDG_DATA_HOME/SillyTavern/config.yaml`) and `~/.local/share/SillyTavern/data/` (or `$XDG_DATA_HOME/SillyTavern/data/`)
 * **Windows**: `%APPDATA%\SillyTavern\config.yaml` and `%APPDATA%\SillyTavern\data\`
 * **MacOS**: `~/Library/Application Support/SillyTavern/config.yaml` and `~/Library/Application Support/SillyTavern/data/`
 
