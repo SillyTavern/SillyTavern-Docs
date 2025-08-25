@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.808584446644">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.809450044994">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.11.0.808584446644" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.11.0.809450044994" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.808584446644" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.809450044994" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.808584446644" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.809450044994" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -253,24 +253,26 @@
 <doc-anchor-target id="story-string">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#story-string">#</doc-anchor-trigger>
-        <span>Story string</span>
+        <span>Story String</span>
     </h2>
 </doc-anchor-target>
-<p>This field is a template for pre-chat character data (known internally as a story string).
-This is the main way to format your character card for text completion and instruct models.</p>
-<p>The template supports Handlebars syntax and any custom text injections or formatting. See the language reference here: <a href="https://handlebarsjs.com/guide/">https://handlebarsjs.com/guide/</a></p>
-<p>We provide the following parameters to the Handlebars evaluator (wrap them into double-curly braces):</p>
+<p>This field is a template for the prompt preamble (known internally as a story string). This is the main way to add the information defined in <a href="../../characters/">Character Cards</a> for text completion and instruct models.</p>
+<p>The template supports Handlebars syntax, custom text injections or formatting, and any other <a href="../../core-concepts/macros/">macros</a>. See the language reference here: <a href="https://handlebarsjs.com/guide/">https://handlebarsjs.com/guide/</a></p>
+<p>We provide the following parameters to the Handlebars evaluator (wrapped in double curly braces):</p>
 <ol>
-<li><code v-pre>description</code> - character&#x27;s Description</li>
-<li><code v-pre>scenario</code> - character&#x27;s Scenario</li>
-<li><code v-pre>personality</code> - character&#x27;s Personality</li>
-<li><code v-pre>system</code> - <a href="../../core-concepts/advancedformatting/#system-prompt">system prompt</a> OR character&#x27;s main prompt override (if exists and &quot;Prefer Char. Prompt&quot; is enabled in User Settings)</li>
-<li><code v-pre>persona</code> - selected persona description</li>
-<li><code v-pre>char</code> - character&#x27;s name</li>
-<li><code v-pre>user</code> - selected persona name</li>
-<li><code v-pre>wiBefore</code> or <code v-pre>loreBefore</code> - combined activated World Info entries with Position set to &quot;Before Char Defs&quot;</li>
-<li><code v-pre>wiAfter</code> or <code v-pre>loreAfter</code> - combined activated World Info entries with Position set to &quot;After Char Defs&quot;</li>
-<li><code v-pre>mesExamples</code> - (optional) character&#x27;s Example Dialogues, instruct-formatted with separator.</li>
+<li><code v-pre>{{anchorBefore}}</code>: Prompts set to use the &quot;Before Story String&quot; position.</li>
+<li><code v-pre>{{anchorAfter}}</code>: Prompts set to use the &quot;After Story String&quot; position.</li>
+<li><code v-pre>{{description}}</code>: The character&#x27;s <a href="../../core-concepts/characterdesign/#character-description">Description</a>.</li>
+<li><code v-pre>{{scenario}}</code>: The character&#x27;s <a href="../../core-concepts/characterdesign/#scenario">Scenario</a>.</li>
+<li><code v-pre>{{personality}}</code>: The character&#x27;s <a href="../../core-concepts/characterdesign/#personality-summary">Personality</a>.</li>
+<li><code v-pre>{{system}}</code>: The <a href="../../core-concepts/advancedformatting/#system-prompt">system prompt</a> OR the character&#x27;s <a href="../../core-concepts/characterdesign/#prompt-overrides">main prompt</a> override (if it exists and &quot;Prefer Char. Prompt&quot; is enabled in User Settings).</li>
+<li><code v-pre>{{persona}}</code>: The selected <a href="../../core-concepts/personas/#persona-description">persona&#x27;s description</a>.</li>
+<li><code v-pre>{{char}}</code>: The character&#x27;s name.</li>
+<li><code v-pre>{{user}}</code>: The selected persona&#x27;s name.</li>
+<li><code v-pre>{{wiBefore}}</code> or <code v-pre>{{loreBefore}}</code>: Combined activated <a href="../../core-concepts/worldinfo/">World Info</a> entries with Position set to &quot;Before Char Defs&quot;.</li>
+<li><code v-pre>{{wiAfter}}</code> or <code v-pre>{{loreAfter}}</code>: Combined activated <a href="../../core-concepts/worldinfo/">World Info</a> entries with Position set to &quot;After Char Defs&quot;.</li>
+<li><code v-pre>{{mesExamples}}</code>: (Optional) The character&#x27;s <a href="../../core-concepts/characterdesign/#examples-of-dialogue">Example Dialogues</a>, instruct-formatted with a separator.</li>
+<li><code v-pre>{{mesExamplesRaw}}</code>: The character&#x27;s <a href="../../core-concepts/characterdesign/#examples-of-dialogue">Example Dialogues</a> in raw format, without any formatting.</li>
 </ol>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-tip"></div>
@@ -284,12 +286,83 @@ This is the main way to format your character card for text completion and instr
         </div>
         <div class="pr-5 ml-3 w-full">
             <h5><strong>Important</strong></h5>
-<p>When using <code v-pre>mesExamples</code> in the Story String, set <strong>&quot;Example Messages Behavior&quot;</strong> in the <strong><i class="fa-solid fa-user-cog"></i> User Settings</strong> panel to <strong>&quot;Never include examples&quot;</strong> to avoid duplication of example messages in the prompt.</p>
+<p>When using <code v-pre>{{mesExamples}}</code> in the Story String, set <strong>&quot;Example Messages Behavior&quot;</strong> in the <strong><i class="fa-solid fa-user-cog"></i> User Settings</strong> panel to <strong>&quot;Never include examples&quot;</strong> to avoid duplicating example messages in the prompt.</p>
         </div>
     </div>
 </div>
-<p>A special {{trim}} macro is supported to remove any newlines that surround it. Use it in case you want some part of text NOT be separated with a newline from the previous line (<em>spaces <strong>are not</strong> trimmed</em>).</p>
-<p><strong>WARNING</strong>: If some of the above parameters are missing from the story string template, they are not going to be sent in the prompt at all.</p>
+<p>A special <code v-pre>{{trim}}</code> macro is supported to remove any newlines that surround it. Use it if you want a part of the text to not be separated from the previous line by a newline (<em>spaces <strong>are not</strong> trimmed</em>).</p>
+<p><strong>WARNING</strong>: If any of the above parameters are missing from the story string template, they will not be sent in the prompt at all.</p>
+<doc-anchor-target id="prompt-anchors">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#prompt-anchors">#</doc-anchor-trigger>
+        <span>Prompt Anchors</span>
+    </h3>
+</doc-anchor-target>
+<p>The <code v-pre>{{anchorBefore}}</code> and <code v-pre>{{anchorAfter}}</code> are generic placeholders for prompts added by various extensions and miscellaneous features in a chosen static position, for example:</p>
+<ul>
+<li><a href="../../core-concepts/authors-note/">Author&#x27;s Note</a></li>
+<li><a href="../../../extensions/summarize/">Summaries</a></li>
+<li><a href="../../../extensions/chat-vectorization/">Chat Vectorization</a> / <a href="../../core-concepts/data-bank/">Data Bank</a></li>
+<li><a href="../../st-script/#prompt-injections">STscript injections</a></li>
+<li><a href="../../../extensions/websearch/">Web Search</a></li>
+</ul>
+<doc-anchor-target id="story-string-position">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#story-string-position">#</doc-anchor-trigger>
+        <span>Story String position</span>
+    </h3>
+</doc-anchor-target>
+<p>By default, the rendered story string (with all placeholders replaced) is placed at the very beginning of the prompt, followed by example messages and the visible chat history.</p>
+<p>Alternatively, you can move it to a dynamic position by choosing the &quot;In-chat @ Depth&quot; option, which places the story string at a specific depth in the chat context.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5><strong>Attention</strong></h5>
+<p>If the template contains static prompt elements (model-specific prefixes or suffixes) for wrapping the story string, using the &quot;In-Chat @ Depth&quot; position will cause it to be incorrectly double-wrapped with duplicate sequences, which may lead to unexpected results.</p>
+<p>In this case, you can fix the issue in one of the following ways:</p>
+<ol>
+<li><strong>Built-in templates</strong>: Reset the templates to their defaults using the steps described in <a href="../../core-concepts/advancedformatting/#resetting-templates">Advanced Formatting</a>.</li>
+<li><strong>Custom templates</strong>: Move the static elements from the story string template to <a href="../../core-concepts/instructmode/#sequences-story-string-wrapping">Story String Sequences</a>.</li>
+</ol>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="story-string-wrapping">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#story-string-wrapping">#</doc-anchor-trigger>
+        <span>Story String wrapping</span>
+    </h3>
+</doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>The following section only applies when <strong>Instruct Mode</strong> is ON.</p>
+        </div>
+    </div>
+</div>
+<ul>
+<li><strong>Default</strong> position: The rendered Story String will be wrapped using the sequences defined in <a href="../../core-concepts/instructmode/#sequences-story-string-wrapping">Story String Sequences</a>.</li>
+<li><strong>In-chat @ Depth</strong> position: The rendered Story String will be wrapped using the sequences defined in <a href="../../core-concepts/instructmode/#sequences-chat-messages-wrapping">Chat Messages Sequences</a> for a chosen role (default: System).</li>
+</ul>
 <doc-anchor-target id="example-separator">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#example-separator">#</doc-anchor-trigger>
