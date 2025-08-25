@@ -90,6 +90,7 @@ Downloadable extensions are mounted into the `/scripts/extensions/third-party` f
     "version": "1.0.0",
     "homePage": "https://github.com/your/extension",
     "auto_update": true,
+    "minimum_client_version": "1.0.0",
     "i18n": {
         "de-de": "i18n/de-de.json"
     }
@@ -107,6 +108,7 @@ Downloadable extensions are mounted into the `/scripts/extensions/third-party` f
 * `i18n` is an optional object that specifies the supported locales and their corresponding JSON files (see below).
 * `dependencies` is an optional array of strings specifying other **extensions** that this extension depends on.
 * `generate_interceptor` is an optional string that specifies the name of a global function called on text generation requests.
+* `minimum_client_version` is an optional string that specifies the minimum SillyTavern version required for this extension to work.
 
 ### Dependencies
 
