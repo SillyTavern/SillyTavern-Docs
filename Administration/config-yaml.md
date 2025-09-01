@@ -11,9 +11,9 @@ This documentation may be obsolete, incomplete, or incorrect. Please refer to th
 **WARNING: DO NOT EDIT THE DEFAULT CONFIG DIRECTLY. THIS WON'T HAVE ANY POSITIVE EFFECT. EDIT ITS COPY IN THE REPOSITORY ROOT INSTEAD.**
 !!!
 
-`config.yaml` is the main configuration file for the SillyTavern server that you can find in the repository root directory after [completing the installation](/Installation/index.md). It is a YAML file that contains various settings, such as the network settings, security settings, and backend-specific options. **The changes made to this file will take effect after restarting the server.**
+`config.yaml` is the main configuration file for the SillyTavern server which you can find in the repository root directory after [completing the installation](/Installation/index.md). It is a YAML file that contains various settings, such as network, security, and backend-specific options. **The changes made to this file will take effect after restarting the server.**
 
-New settings that added to the upstream version will be automatically populated with the default values when you run `npm install` (or specifically, the `post-install.js` script) after [updating the repository](/Installation/Updating/index.md). You can then modify these settings as needed.
+New settings that are added upstream are automatically populated with default values when you run `npm install` (specifically, the `post-install.js` script) after [updating the repository](/Installation/Updating/index.md). You can then modify these settings as needed.
 
 For nested settings, dot notation is used to indicate the hierarchy. For example, `protocol.ipv6: false` refers to the `ipv6` setting under the `protocol` section with a value of `false`.
 
@@ -24,7 +24,7 @@ protocol:
 
 ## Command-Line Arguments
 
-You can pass command-line arguments to SillyTavern server startup to override some settings in [config.yaml](../Administration/config-yaml.md).
+You can pass command-line arguments when starting the SillyTavern server to override some settings in [config.yaml](../Administration/config-yaml.md).
 
 ### Examples
 
@@ -72,7 +72,7 @@ None of the arguments are required. If you don't provide them, SillyTavern will 
 
 ## Environment Variables
 
-Configuration may also be set via environment variables which will override the values in the `config.yaml` file.
+Configuration may also be set via environment variables, which will override the values in the `config.yaml` file.
 
 The environment variables should be prefixed with `SILLYTAVERN_` and use uppercase letters for the setting names. For example, the `dataRoot` setting can be overridden with the `SILLYTAVERN_DATAROOT` environment variable.
 
@@ -82,7 +82,7 @@ The nested settings should be separated by underscores. For example, `protocol.i
 Configurations that expect arrays or objects should be JSON-stringified. For example, to override the `whitelist` setting with the `SILLYTAVERN_WHITELIST` environment variable, you should set it as a JSON string: `SILLYTAVERN_WHITELIST='["127.0.0.1", "::1"]'`.
 !!!
 
-If using Node.js >= 20, you can also store the environment variables in a `.env` file and pass it to the server using the `--env-file` flag. For example, to use the `.env` file located in the repository root, you can start the server with the following command:
+If you are using Node.js v20 or later, you can also store environment variables in a `.env` file and pass it to the server with the `--env-file` flag. For example, to use the `.env` file located in the repository root, you can start the server with the following command:
 
 ```bash
 node --env-file=.env server.js
@@ -94,14 +94,14 @@ Alternatively, pass the environment variables directly via the command line:
 SILLYTAVERN_LISTEN=true SILLYTAVERN_PORT=8000 node server.js
 ```
 
-See more on using environment variables in the [Node.js documentation](https://nodejs.org/en/learn/command-line/how-to-read-environment-variables-from-nodejs).
+See more about using environment variables in the [Node.js documentation](https://nodejs.org/en/learn/command-line/how-to-read-environment-variables-from-nodejs).
 
 ## Data Configuration
 
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|-----------------|
 | `dataRoot` | Root directory for user data storage (standalone mode only) | `./data` | Any valid directory path |
-| `skipContentCheck` | Skip new default content checks | `false` | `true`, `false` |
+| `skipContentCheck` | Skip checks for new default content | `false` | `true`, `false` |
 | `enableDownloadableTokenizers` | Enable on-demand tokenizer downloads | `true` | `true`, `false` |
 
 ## Logging Configuration
@@ -109,7 +109,7 @@ See more on using environment variables in the [Node.js documentation](https://n
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|------------------|
 | `logging.minLogLevel` | Minimum log level to display in the terminal | `0` (DEBUG) | (DEBUG = 0, INFO = 1, WARN = 2, ERROR = 3) |
-| `logging.enableAccessLog` | Write server access log to file and console | `true` | `true`, `false` |
+| `logging.enableAccessLog` | Write server access logs to a file and the console | `true` | `true`, `false` |
 
 ## [Network Configuration](/Administration/remote-connections.md)
 
@@ -117,10 +117,10 @@ See more on using environment variables in the [Node.js documentation](https://n
 |---------|-------------|---------|-----------------|
 | `listen` | Enable listening for incoming connections | `false` | `true`, `false` |
 | `port` | Server listening port | `8000` | Any valid port number (1-65535) |
-| `protocol.ipv4` | Enable listening on IPv4 protocol | `true` | `true`, `false`, `auto` |
-| `protocol.ipv6` | Enable listening on IPv6 protocol | `false` | `true`, `false`, `auto` |
-| `listenAddress.ipv4` | Listen on specific IPv4 address | `0.0.0.0` | Valid IPv4 address |
-| `listenAddress.ipv6` | Listen on specific IPv6 address | `'[::]'` | Valid IPv6 address |
+| `protocol.ipv4` | Enable listening on the IPv4 protocol | `true` | `true`, `false`, `auto` |
+| `protocol.ipv6` | Enable listening on the IPv6 protocol | `false` | `true`, `false`, `auto` |
+| `listenAddress.ipv4` | Listen on a specific IPv4 address | `0.0.0.0` | Valid IPv4 address |
+| `listenAddress.ipv6` | Listen on a specific IPv6 address | `'[::]'` | Valid IPv6 address |
 | `dnsPreferIPv6` | Prefer IPv6 for DNS resolution | `false` | `true`, `false` |
 
 ## SSL Configuration
@@ -133,14 +133,30 @@ See more on using environment variables in the [Node.js documentation](https://n
 
 ## Security Configuration
 
+### IP Whitelisting
+
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|-----------------|
 | `whitelistMode` | Enable IP whitelist filtering | `true` | `true`, `false` |
 | `enableForwardedWhitelist` | Check forwarded headers for whitelisted IPs | `true` | `true`, `false` |
 | `whitelist` | List of allowed IP addresses | `["::1", "127.0.0.1"]` | Array of valid IP addresses |
 | `whitelistDockerHosts` | Automatically whitelist Docker host IPs | `true` | `true`, `false` |
-| `enableCorsProxy` | Enable CORS proxy middleware | `false` | `true`, `false` |
-| `allowKeysExposure` | Allow API keys exposure in the UI | `false` | `true`, `false` |
+
+### Host Whitelisting
+
+| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|-----------------|
+| `hostWhitelist.enabled` | Enable host whitelisting | `false` | `true`, `false` |
+| `hostWhitelist.scan` | Log incoming requests from untrusted hosts | `true` | `true`, `false` |
+| `hostWhitelist.hosts` | List of trusted hostnames | `[]` | Array of valid hostnames |
+
+### Security Overrides
+
+!!!danger
+**DISABLING SECURITY MEASURES IS HIGHLY DISCOURAGED. PLEASE MAKE SURE YOU UNDERSTAND WHAT YOU ARE DOING BEFORE MAKING CHANGES.**
+!!!
+
+| `allowKeysExposure` | Allow unmasked API key exposure in the UI | `false` | `true`, `false` |
 | `disableCsrfProtection` | Disable CSRF protection (not recommended) | `false` | `true`, `false` |
 | `securityOverride` | Disable startup security checks (not recommended) | `false` | `true`, `false` |
 
@@ -152,16 +168,16 @@ See more on using environment variables in the [Node.js documentation](https://n
 | `basicAuthUser.username` | Basic auth username | `"user"` | Any string |
 | `basicAuthUser.password` | Basic auth password | `"password"` | Any string |
 | `enableUserAccounts` | Enable multi-user mode | `false` | `true`, `false` |
-| `enableDiscreetLogin` | Hide user list on login screen | `false` | `true`, `false` |
+| `enableDiscreetLogin` | Hide the user list on the login screen | `false` | `true`, `false` |
 | `sessionTimeout` | User session timeout in seconds | `-1` (disabled) | Any number (-1 to disable, 0 for browser close, >0 for timeout) |
-| `autheliaAuth` | Enable Authelia-based auto login. See: [SSO](/Administration/sso.md) | `false` | `true`, `false` |
+| `autheliaAuth` | Enable Authelia-based auto-login. See: [SSO](/Administration/sso.md) | `false` | `true`, `false` |
 | `perUserBasicAuth` | Use account credentials for basic auth | `false` | `true`, `false` |
 
 ## Rate Limiting Configuration
 
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|------------------|
-| `rateLimiting.preferRealIpHeader` | Use X-Real-IP header instead of socket IP for rate limiting | `false` | `true`, `false` |
+| `rateLimiting.preferRealIpHeader` | Use the X-Real-IP header instead of the socket IP for rate limiting | `false` | `true`, `false` |
 
 ## Request Proxy Configuration
 
@@ -169,7 +185,17 @@ See more on using environment variables in the [Node.js documentation](https://n
 |---------|-------------|---------|-----------------|
 | `requestProxy.enabled` | Enable proxy for outgoing requests | `false` | `true`, `false` |
 | `requestProxy.url` | Proxy server URL | `null` | Valid proxy URL (e.g., `"socks5://username:password@example.com:1080"`) |
-| `requestProxy.bypass` | Hosts to bypass proxy | `["localhost", "127.0.0.1"]` | Array of hostnames/IPs |
+| `requestProxy.bypass` | Hosts to bypass the proxy | `["localhost", "127.0.0.1"]` | Array of hostnames/IPs |
+
+## CORS Proxy Configuration
+
+!!!
+An enabled CORS proxy may be required by some extensions. It is not required by any built-in features.
+!!!
+
+| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|-----------------|
+| `enableCorsProxy` | Enable CORS proxy middleware | `false` | `true`, `false` |
 
 ## Browser Launch Configuration
 
@@ -181,14 +207,14 @@ See more on using environment variables in the [Node.js documentation](https://n
 | `browserLaunch.browser` | Browser to use for opening the URL | `"default"` | `"default"`, `"chrome"`, `"firefox"`, `"edge"`, `"brave"` |
 | `browserLaunch.hostname` | Override the hostname for browser launch | `"auto"` | `"auto"`, any valid hostname (e.g., `"localhost"`, `"st.example.com"`) |
 | `browserLaunch.port` | Override the port for browser launch | `-1` | `-1` (use server port), any valid port number |
-| `browserLaunch.avoidLocalhost` | Avoid using 'localhost' in a launch URL | `false` | `true`, `false` |
+| `browserLaunch.avoidLocalhost` | Avoid using 'localhost' in the launch URL | `false` | `true`, `false` |
 
 ## Performance Configuration
 
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|------------------|
 | `performance.lazyLoadCharacters` | Lazy-load character data | `true` | `true`, `false` |
-| `performance.useDiskCache` | Enables disk caching for character cards | `true` | `true`, `false` |
+| `performance.useDiskCache` | Enable disk caching for character cards | `true` | `true`, `false` |
 | `performance.memoryCacheCapacity` | Maximum memory cache capacity | `100mb` | Human-readable size (e.g., `100mb`, `1gb`) |
 
 ## Cache Buster Configuration
@@ -200,7 +226,7 @@ Requires localhost or a domain with HTTPS, otherwise will not work!
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|------------------|
 | `cacheBuster.enabled` | Clear browser cache on first load or after uploading image files | `false` | `true`, `false` |
-| `cacheBuster.userAgentPattern` | Only clear cache for the specified user agent regex pattern. Example: `'firefox'` (case-insensitive) | `''` | Any valid regex string |
+| `cacheBuster.userAgentPattern` | Only clear the cache for user agents matching the specified regex pattern. Example: `'firefox'` (case-insensitive). | `''` | Any valid regex string |
 
 ## Thumbnailing Configuration
 
@@ -250,7 +276,7 @@ Requires localhost or a domain with HTTPS, otherwise will not work!
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|-----------------|
 | `promptPlaceholder` | Default message for empty prompts | `"[Start a new chat]"` | Any string |
-| `openai.randomizeUserId` | Randomize user ID for API calls | `false` | `true`, `false` |
+| `openai.randomizeUserId` | Randomize the user ID for API calls | `false` | `true`, `false` |
 | `openai.captionSystemPrompt` | System message for caption completion | `""` | Any string |
 
 ### MistralAI Configuration
