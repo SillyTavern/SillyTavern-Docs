@@ -60,7 +60,7 @@ Note: some extensions may also add special context-specific macros that only wor
 | `{{pick::(args)}}` | Alternative to random, but the selected argument is stable on subsequent evaluations in the current chat if the source string remains unchanged. |
 | `{{roll:(formula)}}` | Generates a random value using D&D dice syntax: XdY+Z (e.g. `{{roll:d6}}` generates a value 1-6). |
 | `{{bias "text here"}}` | Sets a behavioral bias for the AI until the next user input. Quotes around text are required. |
-| `{{image:filename}}` | Dynamically changes the background when generated. Instruct your LLM to output this. |
+| `{{image:filename}}` | Changes the chat background when included in an AI response. `filename` must be an image file located in the backgrounds folder. |
 | `{{// (note)}}` | Allows leaving a note that will be replaced with blank content. Not visible for the AI. |
 | `{{banned "text here"}}` | Dynamically adds quoted text to banned word sequences for Text Generation WebUI backend. Does nothing for other backends. Quotes required. |
 | `{{reverse:(content)}}` | Reverses the content of the macro. |
