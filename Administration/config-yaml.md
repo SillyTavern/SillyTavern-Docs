@@ -127,9 +127,10 @@ See more about using environment variables in the [Node.js documentation](https:
 
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|------------------|
-| `ssl.enabled` | Enable SSL/TLS | `false` | `true`, `false` |
-| `ssl.keyPath` | Path to SSL private key | `"./certs/privkey.pem"` | Valid file path |
-| `ssl.certPath` | Path to SSL certificate | `"./certs/cert.pem"` | Valid file path |
+| `ssl.enabled` | Enable SSL/TLS encryption and HTTPS protocol | `false` | `true`, `false` |
+| `ssl.keyPath` | Path to SSL private key (relative to the server directory) | `"./certs/privkey.pem"` | Valid file path |
+| `ssl.certPath` | Path to SSL certificate (relative to the server directory) | `"./certs/cert.pem"` | Valid file path |
+| `ssl.keyPassphrase` | Passphrase for the SSL private key. Leave empty if not required | `""` | Any string |
 
 ## Security Configuration
 
@@ -143,6 +144,10 @@ See more about using environment variables in the [Node.js documentation](https:
 | `whitelistDockerHosts` | Automatically whitelist Docker host IPs | `true` | `true`, `false` |
 
 ### Host Whitelisting
+
+!!!
+Not used when [SSL](#ssl-configuration) is enabled. In this case, the host identity will be validated using the SSL certificate.
+!!!
 
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|-----------------|
