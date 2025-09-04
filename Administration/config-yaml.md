@@ -145,10 +145,6 @@ See more about using environment variables in the [Node.js documentation](https:
 
 ### Host Whitelisting
 
-!!!
-Not used when [SSL](#ssl-configuration) is enabled. In this case, the host identity will be validated using the SSL certificate.
-!!!
-
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|-----------------|
 | `hostWhitelist.enabled` | Enable host whitelisting | `false` | `true`, `false` |
