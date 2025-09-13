@@ -157,6 +157,8 @@ See more about using environment variables in the [Node.js documentation](https:
 **DISABLING SECURITY MEASURES IS HIGHLY DISCOURAGED. PLEASE MAKE SURE YOU UNDERSTAND WHAT YOU ARE DOING BEFORE MAKING CHANGES.**
 !!!
 
+| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|------------------|
 | `allowKeysExposure` | Allow unmasked API key exposure in the UI | `false` | `true`, `false` |
 | `disableCsrfProtection` | Disable CSRF protection (not recommended) | `false` | `true`, `false` |
 | `securityOverride` | Disable startup security checks (not recommended) | `false` | `true`, `false` |
