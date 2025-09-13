@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.809450044994">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.811101169518">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Administration | docs.ST.app</title>
     <meta name="title" content="Administration | docs.ST.app">
-    <meta name="description" content="Despite following many security best practices, the SillyTavern server is not secure enough for public internet exposure.">
+    <meta name="description" content="Despite following many security best practices, the SillyTavern server is not secure enough for exposure to the public internet.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/administration/">
@@ -20,21 +20,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/administration/">
     <meta property="og:title" content="Administration | docs.ST.app">
-    <meta property="og:description" content="Despite following many security best practices, the SillyTavern server is not secure enough for public internet exposure.">
+    <meta property="og:description" content="Despite following many security best practices, the SillyTavern server is not secure enough for exposure to the public internet.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/administration/">
     <meta property="twitter:title" content="Administration | docs.ST.app">
-    <meta property="twitter:description" content="Despite following many security best practices, the SillyTavern server is not secure enough for public internet exposure.">
+    <meta property="twitter:description" content="Despite following many security best practices, the SillyTavern server is not secure enough for exposure to the public internet.">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../resources/css/retype.css?v=3.11.0.809450044994" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.11.0.811101169518" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.11.0.809450044994" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.11.0.811101169518" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.11.0.809450044994" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.11.0.811101169518" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -242,14 +242,14 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>Despite following many security best practices, the SillyTavern server is not secure enough for public internet exposure.</p>
-<p><strong>NEVER HOST ANY INSTANCES TO THE OPEN INTERNET WITHOUT ENSURING PROPER SECURITY MEASURES FIRST.</strong></p>
-<p><strong>WE ARE NOT RESPONSIBLE FOR ANY DAMAGE OR LOSSES IN CASES OF UNAUTHORIZED ACCESS DUE TO IMPROPER OR INADEQUATE SECURITY IMPLEMENTATION.</strong></p>
+<p>Despite following many security best practices, the SillyTavern server is not secure enough for exposure to the public internet.</p>
+<p><strong>NEVER HOST ANY INSTANCES ON THE OPEN INTERNET WITHOUT ENSURING PROPER SECURITY MEASURES FIRST.</strong></p>
+<p><strong>WE ARE NOT RESPONSIBLE FOR ANY DAMAGE OR LOSSES RESULTING FROM UNAUTHORIZED ACCESS DUE TO IMPROPER OR INADEQUATE SECURITY IMPLEMENTATION.</strong></p>
         </div>
     </div>
 </div>
 <div class="callout"><p><strong><a href="config-yaml/">config.yaml</a></strong></p>
-<p>The main configuration file for SillyTavern that contains various settings, such as the network settings, security settings, and backend-specific options.</p>
+<p>The main configuration file for SillyTavern. It contains various settings, such as network, security, and backend-specific options.</p>
 </div>
 <div class="callout"><p><strong><a href="multi-user/">Multi-user</a></strong></p>
 <p>To share your SillyTavern instance with others, you can create multiple user accounts. Each user has their own settings, extensions, and data. User accounts can also be password-protected.</p>
@@ -261,7 +261,7 @@
 <p>To access your SillyTavern instance from the internet, you can use a VPN or a tunneling service like Cloudflare Zero Trust, ngrok, or Tailscale.</p>
 </div>
 <div class="callout"><p><strong><a href="../usage/st-reverse-proxy-guide/">Reverse proxying</a></strong></p>
-<p>For enthusiasts, you can set up a reverse proxy to access your SillyTavern instance from the internet.</p>
+<p>Enthusiasts can set up a reverse proxy to access their SillyTavern instance from the internet.</p>
 </div>
 <doc-anchor-target id="security-checklist">
     <h2>
@@ -269,18 +269,19 @@
         <span>Security checklist</span>
     </h2>
 </doc-anchor-target>
-<p><strong>This is just a recommendation. Please consult a web application security specialist before making your ST instance live.</strong></p>
+<p><strong>These are just recommendations. Please consult a web application security specialist before making your ST instance live.</strong></p>
 <ol>
-<li>Keep your operating system and runtime software like Node.js updated. This will ensure that your system is up-to-date with the latest security patches and fixes which can help prevent potential vulnerabilities.</li>
-<li>Use a whitelist and a network firewall. Only allow trusted IP ranges to access the server.</li>
-<li>Enable basic authentication. It acts as a &quot;master password&quot; before you can proceed to the front-end app.</li>
-<li>Alternatively, configure external authentication. Some known services for that are <a href="https://www.authelia.com/">Authelia</a> and <a href="https://goauthentik.io/">authentik</a>. See more in the <a href="sso/">SSO guide</a>.</li>
-<li>Never leave admin accounts passwordless. A server will warn you upon the startup if you have any unprotected admin accounts.</li>
-<li>Use the discreet login setting outside of the local network. This will hide the user list from any potential outsiders.</li>
-<li>Check the access logs often. They are written to the server console and the <code v-pre>access.log</code> file and provide information on incoming connections, such as IP address and user agent.</li>
-<li>Configure HTTPS. For a localhost server, you can generate and use a self-signed certificate. Otherwise, you may need to deploy a proxying web server like <a href="https://traefik.io/">Traefik</a> or <a href="https://caddyserver.com/docs/getting-started">Caddy</a>.</li>
+<li>Keep your operating system and runtime software, such as Node.js, up to date. This ensures your system has the latest security patches and fixes, which helps prevent potential vulnerabilities.</li>
+<li>Use a <a href="config-yaml/#ip-whitelisting">whitelist</a> and a network firewall. Only allow trusted IP ranges to access the server.</li>
+<li>Enable <a href="config-yaml/#user-authentication">basic authentication</a>. It acts as a &quot;master password&quot; before you can access the front-end app.</li>
+<li>Alternatively, configure external authentication. Some known services for this are <a href="https://www.authelia.com/">Authelia</a> and <a href="https://goauthentik.io/">authentik</a>. See the <a href="sso/">SSO guide</a> for details.</li>
+<li>Never leave admin accounts without passwords. The server will warn you on startup if you have any unprotected admin accounts.</li>
+<li>Use the discreet login setting outside the local network. This hides the user list from potential outsiders.</li>
+<li>Check the access logs often. They are written to the server console and to the <code v-pre>access.log</code> file and provide information about incoming connections, such as IP address and user agent.</li>
+<li>Configure HTTPS. For a localhost server, you can generate and use a self-signed certificate. Otherwise, you may need to deploy a reverse-proxy web server such as <a href="https://traefik.io/">Traefik</a> or <a href="https://caddyserver.com/docs/getting-started">Caddy</a>.</li>
+<li>Configure and enable <a href="config-yaml/#host-whitelisting">host whitelisting</a>, especially if you&#x27;re not using HTTPS encryption on a local network.</li>
 </ol>
-<p>Find more on secure proxying in the following guide: <a href="../usage/st-reverse-proxy-guide/">Reverse Proxying SillyTavern</a>.</p>
+<p>Find more information about secure proxying in the following guide: <a href="../usage/st-reverse-proxy-guide/">Reverse Proxying SillyTavern</a>.</p>
 
                                 
                                 <!-- Required only on API pages -->
