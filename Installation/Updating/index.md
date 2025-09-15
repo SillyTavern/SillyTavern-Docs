@@ -65,7 +65,7 @@ If you insist on installing via a zip, here is the tedious process for doing the
     
     #### Updating >=1.12.0
     
-    Copy the `/data` directory and `config.yaml` file from one installation to another.
+    Copy the `/data` directory and `config.yaml` file from one installation to another. In addition, you might want to copy the `/public/scripts/extensions/third-party` if you have some server wide extension installs you want to preserve, that is, extensions you installed for "All users".
     
     #### Updating from <1.12.0 to >1.12.0
     
