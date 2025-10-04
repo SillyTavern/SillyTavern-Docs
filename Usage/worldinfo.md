@@ -130,7 +130,7 @@ If your Author's Note is disabled (Insertion Frequency = 0), World Info entries 
 
 When the **Outlet** insertion position is selected, an additional **Outlet Name** field becomes available for the entry. The name that you provide here groups entries together and defines the token that you will use to pull them into the prompt manually.
 
-Use the `{{outlet::YourName}}` macro in the [Prompt Manager](./Prompts/prompt-manager.md) or [Advanced Formatting](./Prompts/advancedformatting.md) prompt fields. When the prompt is built, the macro is replaced with the combined content of every World Info entry that shares the same outlet name, separated by newlines.
+Use the `{{outlet::YourName}}` macro in the [Prompt Manager](./Prompts/prompt-manager.md) or [Advanced Formatting](./Prompts/advancedformatting.md) prompt fields. When the prompt is built, the macro is replaced with the combined content of every World Info entry that shares the same outlet name, separated by newlines, sorted by their [Insertion Order](#insertion-order) value.
 
 If an outlet entry is missing a name it will be skipped during generation, so make sure to fill in the field. Outlet names support autocomplete based on the names you have already used to make it easy to reuse consistent labels.
 
