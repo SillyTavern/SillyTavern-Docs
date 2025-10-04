@@ -120,10 +120,27 @@ Numeric value. Defines a priority of the entry if multiple were activated at onc
   * ⚙️ - as a system role message
   * 👤 - as a user role message
   * 🤖 - as an assistant role message
+* **Outlet:** World Info entry is not injected automatically. Instead, its content is stored under a named outlet so you can decide exactly where it appears in the prompt by calling it with the [`{{outlet::Name}}` macro](#outlet-name).
 
 Example Message entries will be formatted according to the prompt-building settings: Instruct Mode or Chat Completion prompt manager. They also follow the Example Messages Behavior rules: being gradually pushed out on full context, always kept, or disabled altogether.
 
 If your Author's Note is disabled (Insertion Frequency = 0), World Info entries in A/N positions will be ignored!
+
+#### Outlet Name
+
+When the **Outlet** insertion position is selected, an additional **Outlet Name** field becomes available for the entry. The name that you provide here groups entries together and defines the token that you will use to pull them into the prompt manually.
+
+Use the `{{outlet::YourName}}` macro in the [Prompt Manager](./Prompts/prompt-manager.md) or [Advanced Formatting](./Prompts/advancedformatting.md) prompt fields. When the prompt is built, the macro is replaced with the combined content of every World Info entry that shares the same outlet name, separated by newlines, sorted by their [Insertion Order](#insertion-order) value.
+
+If an outlet entry is missing a name it will be skipped during generation, so make sure to fill in the field. Outlet names support autocomplete based on the names you have already used to make it easy to reuse consistent labels.
+
+##### Limitations and caveats
+
+* Character card fields (Description, Personality, Scenario, etc.) cannot expand outlets. Those fields are parsed early so they can act as [additional matching sources](#additional-matching-sources) for World Info triggers, which means outlets are not available when their text is processed. Use another macro-aware field if you need to place outlet content in the prompt body instead.
+* The Author's Note editor also cannot resolve outlets. To place outlet content around the Author's Note, assign the entries to **Top of AN** or **Bottom of AN** insertion positions instead of relying on the macro.
+* Outlet names are case-sensitive. The `{{outlet::}}` macro must use exactly the same capitalization as the entry's **Outlet Name**, otherwise no content is returned.
+* Leading or trailing spaces in an outlet name are ignored when you call the macro, so names saved with extra whitespace will not match. Avoid padding names so they can be resolved correctly.
+* Outlet macros that have no content assigned to them will be replaced with an empty string.
 
 #### Entry Title / Memo
 
