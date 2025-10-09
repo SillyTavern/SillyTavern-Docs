@@ -371,7 +371,7 @@ If you are still unable to access SillyTavern, follow the instructions below to 
     sudo nano config/config.yaml
     ```
 
-    Within `nano`, go down to `whitelist`. You should see something similar to the following below.
+    Within your editor, go down to `whitelist`. You should see something similar to the following below.
 
     ```yaml
     whitelist:
