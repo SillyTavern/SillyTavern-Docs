@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.813326420718">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.813327806479">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.11.0.813326420718" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.813327806479" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.813326420718" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.813327806479" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.813326420718" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.813326420718" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.813327806479" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.813327806479" defer></script>
 
     <style>
         a {
@@ -444,69 +444,7 @@ docker run \
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">docker compose up -d</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Execute the following Docker command to obtain the IP of your SillyTavern Docker container.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-bash"><code v-pre class="language-bash">docker network inspect docker_default</code></pre>
-</doc-codeblock></div>
-<p>You should receive some sort of output similar to the following below.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-json"><code v-pre class="language-json">[
-    {
-        &quot;Name&quot;: &quot;docker_default&quot;,
-        &quot;IPAM&quot;: {
-            &quot;Config&quot;: [
-                {
-                    &quot;Subnet&quot;: &quot;172.18.0.0/16&quot;,
-                    &quot;Gateway&quot;: &quot;172.18.0.1&quot;
-                }
-            ]
-        }
-    }
-]</code></pre>
-</doc-codeblock></div>
-<p>Copy down the IP you see in <em>Gateway</em> as this will be important.</p>
-</li>
-<li><p>Using <code v-pre>sudo</code>, open <code v-pre>nano</code> and run the following command.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-bash"><code v-pre class="language-bash">sudo nano config/config.yaml</code></pre>
-</doc-codeblock></div>
-<p>Within <code v-pre>nano</code>, go down to <code v-pre>whitelist</code>. You should see something similar to the following below.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-yaml"><code v-pre class="language-yaml">whitelist:
-    - 127.0.0.1</code></pre>
-</doc-codeblock></div>
-<p>Add a new line below <em>127.0.0.1</em> and put in the IP you copied from Docker. It should look something similar to the following afterwards.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-yaml"><code v-pre class="language-yaml">whitelist:
-    - 127.0.0.1
-    - 172.18.0.1</code></pre>
-</doc-codeblock></div>
-<p>Save the file by pressing <em>Ctrl+S</em> then exit <code v-pre>nano</code> by pressing <em>Ctrl+X</em>.</p>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
-    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-<p>Note that if you configured Docker network as a bridge, you could also add external IP addresses to the whitelist as usual.</p>
-        </div>
-    </div>
-</div>
-</li>
-<li><p>Restart the Docker Container to apply the new configuration.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-bash"><code v-pre class="language-bash">docker compose restart sillytavern</code></pre>
-</doc-codeblock></div>
-</li>
-<li>Open an new browser and go to <a href="http://localhost:8000">http://localhost:8000</a>. You should see SillyTavern load in a few moments.</li>
-<li>Enjoy! :D</li>
+<li>Open a new browser and go to <a href="http://localhost:8000">http://localhost:8000</a>. You should see SillyTavern load in a few moments.</li>
 </ol>
 <doc-anchor-target id="windows">
     <h3>
@@ -554,66 +492,7 @@ docker run \
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">docker compose up -d</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Execute the following Docker command to obtain the IP of your SillyTavern Docker container.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-bash"><code v-pre class="language-bash">docker network inspect docker_default</code></pre>
-</doc-codeblock></div>
-<p>You should receive some sort of output similar to the following below.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-json"><code v-pre class="language-json">[
-    {
-        &quot;Name&quot;: &quot;docker_default&quot;,
-        &quot;IPAM&quot;: {
-            &quot;Config&quot;: [
-                {
-                    &quot;Subnet&quot;: &quot;172.18.0.0/16&quot;,
-                    &quot;Gateway&quot;: &quot;172.18.0.1&quot;
-                }
-            ]
-        }
-    }
-]</code></pre>
-</doc-codeblock></div>
-<p>Copy down the IP you see in <em>Gateway</em> as this will be important.</p>
-</li>
-<li><p>Running <em>Notepad</em> or a code editor of your choice with administrator rights, go to <code v-pre>config</code> and open <em>config.yaml</em>.</p>
-<p>Within the editor of your choice, you should see something similar to the following below.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-yaml"><code v-pre class="language-yaml">whitelist:
-    - 127.0.0.1</code></pre>
-</doc-codeblock></div>
-<p>Add a new line below <em>127.0.0.1</em> and put in the IP you copied from Docker. It should look something similar to the following afterwards.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-yaml"><code v-pre class="language-yaml">whitelist:
-    - 127.0.0.1
-    - 172.18.0.1</code></pre>
-</doc-codeblock></div>
-<p>Save the file by pressing <em>Ctrl+S</em> then exit your editor.</p>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
-    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-<p>Note that if you configured Docker network as a bridge, you could also add external IP addresses to the whitelist as usual.</p>
-        </div>
-    </div>
-</div>
-</li>
-<li><p>Restart the Docker Container to apply the new configuration.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-bash"><code v-pre class="language-bash">docker compose restart sillytavern</code></pre>
-</doc-codeblock></div>
-</li>
-<li>Open an new browser and go to <a href="http://localhost:8000">http://localhost:8000</a>. You should see SillyTavern load in a few moments.</li>
-<li>Enjoy! :D</li>
+<li>Open a new browser and go to <a href="http://localhost:8000">http://localhost:8000</a>. You should see SillyTavern load in a few moments.</li>
 </ol>
 <doc-anchor-target id="macos">
     <h3>
@@ -665,86 +544,7 @@ You will also need to install <a href="https://brew.sh/">Homebrew</a> in order t
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">docker compose up -d</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Execute the following Docker command to obtain the IP of your SillyTavern Docker container.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-bash"><code v-pre class="language-bash">docker network inspect docker_default</code></pre>
-</doc-codeblock></div>
-<p>You should recieve some sort of output similar to the following below.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-json"><code v-pre class="language-json">[
-    {
-        &quot;Name&quot;: &quot;docker_default&quot;,
-        &quot;IPAM&quot;: {
-            &quot;Config&quot;: [
-                {
-                    &quot;Subnet&quot;: &quot;172.18.0.0/16&quot;,
-                    &quot;Gateway&quot;: &quot;172.18.0.1&quot;
-                }
-            ]
-        }
-    }
-]</code></pre>
-</doc-codeblock></div>
-<p>Copy down the IP you see in <em>Gateway</em> as this will be important.</p>
-</li>
-<li><p>Using <code v-pre>sudo</code>, open <code v-pre>nano</code> and run the following command.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-bash"><code v-pre class="language-bash">sudo nano config/config.yaml</code></pre>
-</doc-codeblock></div>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
-    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-<p>If you can&#x27;t run <code v-pre>nano</code>, either install it via Homebrew or use TextEdit.</p>
-        </div>
-    </div>
-</div>
-<p>Within <code v-pre>nano</code>, go down to <code v-pre>whitelist</code>. You should see something similar to the following below.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-yaml"><code v-pre class="language-yaml">whitelist:
-    - 127.0.0.1</code></pre>
-</doc-codeblock></div>
-<p>Add a new line below <em>127.0.0.1</em> and put in the IP you copied from Docker. It should look something similar to the following afterwards.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-yaml"><code v-pre class="language-yaml">whitelist:
-    - 127.0.0.1
-    - 172.18.0.1</code></pre>
-</doc-codeblock></div>
-<p>Save the file by pressing <em>Ctrl+S</em> then exit <code v-pre>nano</code> by pressing <em>Ctrl+X</em>.</p>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
-    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-<p>Note that if you configured Docker network as a bridge, you could also add external IP addresses to the whitelist as usual.</p>
-        </div>
-    </div>
-</div>
-</li>
-<li><p>Restart the Docker Container to apply the new configuration.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-bash"><code v-pre class="language-bash">docker compose restart sillytavern</code></pre>
-</doc-codeblock></div>
-</li>
-<li>Open an new browser and go to <a href="http://localhost:8000">http://localhost:8000</a>. You should see SillyTavern load in a few moments.</li>
-<li>Enjoy! :D</li>
+<li>Open a new browser and go to <a href="http://localhost:8000">http://localhost:8000</a>. You should see SillyTavern load in a few moments.</li>
 </ol>
 <doc-anchor-target id="configuring-sillytavern">
     <h2>
@@ -825,7 +625,6 @@ You will also need to install <a href="https://brew.sh/">Homebrew</a> in order t
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">docker compose restart sillytavern</code></pre>
 </doc-codeblock></div>
 </li>
-<li>Profit.</li>
 </ol>
 <doc-anchor-target id="common-issues-with-docker">
     <h2>
@@ -854,6 +653,90 @@ volumes:
   ## Private volume
   - ./data:/home/node/app/data:Z</code></pre>
 </doc-codeblock></div>
+<doc-anchor-target id="forbidden-by-whitelist">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#forbidden-by-whitelist">#</doc-anchor-trigger>
+        <span>Forbidden by Whitelist</span>
+    </h2>
+</doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Docker gateway IPs should be whitelisted automatically if <a href="../../administration/config-yaml/#ip-whitelisting">whitelistDockerHosts</a> config value is set to <code v-pre>true</code>.</p>
+<p>If you are still unable to access SillyTavern, follow the instructions below to update the whitelist manually.</p>
+        </div>
+    </div>
+</div>
+<ol>
+<li><p>Execute the following Docker command to obtain the IP of your SillyTavern Docker container.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">docker network inspect docker_default</code></pre>
+</doc-codeblock></div>
+<p>You should receive some sort of output similar to the following below.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-json"><code v-pre class="language-json">[
+    {
+        &quot;Name&quot;: &quot;docker_default&quot;,
+        &quot;IPAM&quot;: {
+            &quot;Config&quot;: [
+                {
+                    &quot;Subnet&quot;: &quot;172.18.0.0/16&quot;,
+                    &quot;Gateway&quot;: &quot;172.18.0.1&quot;
+                }
+            ]
+        }
+    }
+]</code></pre>
+</doc-codeblock></div>
+<p>Copy down the IP you see in <em>Gateway</em> as this will be important.</p>
+</li>
+<li><p>Running a text editor of your choice with administrator rights, go to <code v-pre>config</code> and open <code v-pre>config.yaml</code>.</p>
+<p>Within your editor, go down to the <code v-pre>whitelist</code> section. You should see something similar to the following below.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-yaml"><code v-pre class="language-yaml">whitelist:
+    - 127.0.0.1</code></pre>
+</doc-codeblock></div>
+<p>Add a new line below <em>127.0.0.1</em> and put in the IP you copied from Docker. It should look something similar to the following afterwards.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-yaml"><code v-pre class="language-yaml">whitelist:
+    - 127.0.0.1
+    - 172.18.0.1</code></pre>
+</doc-codeblock></div>
+<p>Save the file and exit the text editor.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Note that if you configured Docker network as a bridge, you could also add external IP addresses to the whitelist as usual.</p>
+        </div>
+    </div>
+</div>
+</li>
+<li><p>Restart the Docker Container to apply the new configuration.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">docker compose restart sillytavern</code></pre>
+</doc-codeblock></div>
+</li>
+</ol>
 
                                 
                                 <!-- Required only on API pages -->
