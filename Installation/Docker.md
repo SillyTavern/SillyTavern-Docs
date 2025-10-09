@@ -336,7 +336,7 @@ volumes:
 !!!
 Docker gateway IPs should be whitelisted automatically if [whitelistDockerHosts](/Administration/config-yaml.md#ip-whitelisting) config value is set to `true`.
 
-If you are still unable to access SillyTavern, follow the instructions below to update the whitelist manually. 
+If you are still unable to access SillyTavern, follow the instructions below to update the whitelist manually.
 !!!
 
 1. Execute the following Docker command to obtain the IP of your SillyTavern Docker container.
