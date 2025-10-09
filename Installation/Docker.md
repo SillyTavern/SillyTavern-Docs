@@ -429,9 +429,9 @@ If you already see a _plugins_ folder within the `docker` folder, you can skip S
 
 6. Profit.
 
-### Common issues with Docker
+## Common issues with Docker
 
-#### SELinux Permission Issues with Mounted Volumes
+### SELinux Permission Issues with Mounted Volumes
 
 Linux distributions with SELinux enabled (such as RHEL, CentOS, Fedora, etc.) may prevent Docker containers from accessing mounted volumes due to security policies. This can result in permission denied errors when the container tries to read or write to the mounted directories.
 
