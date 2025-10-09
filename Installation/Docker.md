@@ -194,7 +194,7 @@ You will also need to install [Homebrew](https://brew.sh/) in order to install G
     docker compose up -d
     ```
 
-5.  Open an new browser and go to [http://localhost:8000](http://localhost:8000). You should see SillyTavern load in a few moments.
+5.  Open a new browser and go to [http://localhost:8000](http://localhost:8000). You should see SillyTavern load in a few moments.
 
 ## Configuring SillyTavern
 
