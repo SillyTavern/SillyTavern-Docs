@@ -130,8 +130,6 @@ If you want to build the Docker image yourself, you can do so by following these
 
 6. Open an new browser and go to [http://localhost:8000](http://localhost:8000). You should see SillyTavern load in a few moments.
 
-7. Enjoy! :D
-
 ### Windows
 
 !!!warning Regarding Docker on Windows
@@ -260,8 +258,6 @@ You will also need to install [Homebrew](https://brew.sh/) in order to install G
     ```
 
 8.  Open an new browser and go to [http://localhost:8000](http://localhost:8000). You should see SillyTavern load in a few moments.
-
-9.  Enjoy! :D
 
 ## Configuring SillyTavern
 
