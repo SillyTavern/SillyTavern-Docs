@@ -128,7 +128,7 @@ If you want to build the Docker image yourself, you can do so by following these
     docker compose up -d
     ```
 
-6. Open an new browser and go to [http://localhost:8000](http://localhost:8000). You should see SillyTavern load in a few moments.
+6. Open a new browser and go to [http://localhost:8000](http://localhost:8000). You should see SillyTavern load in a few moments.
 
 ### Windows
 
