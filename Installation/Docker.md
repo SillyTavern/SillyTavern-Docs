@@ -266,7 +266,7 @@ volumes:
   - ./data:/home/node/app/data:Z
 ```
 
-## Forbidden by Whitelist
+### Forbidden by Whitelist
 
 !!!
 Docker gateway IPs should be whitelisted automatically if [whitelistDockerHosts](/Administration/config-yaml.md#ip-whitelisting) config value is set to `true`.
