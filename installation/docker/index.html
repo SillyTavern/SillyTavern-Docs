@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.811463048537">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.813326420718">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.11.0.811463048537" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.813326420718" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.811463048537" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.813326420718" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.811463048537" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.811463048537" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.813326420718" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.813326420718" defer></script>
 
     <style>
         a {
@@ -828,16 +828,16 @@ You will also need to install <a href="https://brew.sh/">Homebrew</a> in order t
 <li>Profit.</li>
 </ol>
 <doc-anchor-target id="common-issues-with-docker">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#common-issues-with-docker">#</doc-anchor-trigger>
         <span>Common issues with Docker</span>
-    </h3>
+    </h2>
 </doc-anchor-target>
 <doc-anchor-target id="selinux-permission-issues-with-mounted-volumes">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#selinux-permission-issues-with-mounted-volumes">#</doc-anchor-trigger>
         <span>SELinux Permission Issues with Mounted Volumes</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <p>Linux distributions with SELinux enabled (such as RHEL, CentOS, Fedora, etc.) may prevent Docker containers from accessing mounted volumes due to security policies. This can result in permission denied errors when the container tries to read or write to the mounted directories.</p>
 <p>Two suffixes <code v-pre>:z</code> or <code v-pre>:Z</code> can be added to the volume mount. These suffixes tell Docker to relabel file objects on the shared volumes.</p>
