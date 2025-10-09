@@ -194,70 +194,7 @@ You will also need to install [Homebrew](https://brew.sh/) in order to install G
     docker compose up -d
     ```
 
-5.  Execute the following Docker command to obtain the IP of your SillyTavern Docker container.
-
-    ```sh
-    docker network inspect docker_default
-    ```
-
-    You should recieve some sort of output similar to the following below.
-
-    ```json
-    [
-        {
-            "Name": "docker_default",
-            "IPAM": {
-                "Config": [
-                    {
-                        "Subnet": "172.18.0.0/16",
-                        "Gateway": "172.18.0.1"
-                    }
-                ]
-            }
-        }
-    ]
-    ```
-
-    Copy down the IP you see in _Gateway_ as this will be important.
-
-6.  Using `sudo`, open `nano` and run the following command.
-
-    ```sh
-    sudo nano config/config.yaml
-    ```
-
-    !!!
-    If you can't run `nano`, either install it via Homebrew or use TextEdit.
-    !!!
-
-    Within `nano`, go down to `whitelist`. You should see something similar to the following below.
-
-    ```yaml
-    whitelist:
-        - 127.0.0.1
-    ```
-
-    Add a new line below _127.0.0.1_ and put in the IP you copied from Docker. It should look something similar to the following afterwards.
-
-    ```yaml
-    whitelist:
-        - 127.0.0.1
-        - 172.18.0.1
-    ```
-
-    Save the file by pressing _Ctrl+S_ then exit `nano` by pressing _Ctrl+X_.
-
-    !!!info
-    Note that if you configured Docker network as a bridge, you could also add external IP addresses to the whitelist as usual.
-    !!!
-
-7.  Restart the Docker Container to apply the new configuration.
-
-    ```sh
-    docker compose restart sillytavern
-    ```
-
-8.  Open an new browser and go to [http://localhost:8000](http://localhost:8000). You should see SillyTavern load in a few moments.
+5.  Open an new browser and go to [http://localhost:8000](http://localhost:8000). You should see SillyTavern load in a few moments.
 
 ## Configuring SillyTavern
 
@@ -306,8 +243,6 @@ If you already see a _plugins_ folder within the `docker` folder, you can skip S
     ```sh
     docker compose restart sillytavern
     ```
-
-6. Profit.
 
 ## Common issues with Docker
 
@@ -365,13 +300,9 @@ If you are still unable to access SillyTavern, follow the instructions below to 
 
     Copy down the IP you see in _Gateway_ as this will be important.
 
-2. For Windows, running Notepad or a code editor of your choice with administrator rights, go to config and open config.yaml. For Linux/macOS, using `sudo`, open `nano` and run the following command.
+2. Running a text editor of your choice with administrator rights, go to `config` and open `config.yaml`.
 
-    ```sh
-    sudo nano config/config.yaml
-    ```
-
-    Within your editor, go down to `whitelist`. You should see something similar to the following below.
+    Within your editor, go down to the `whitelist` section. You should see something similar to the following below.
 
     ```yaml
     whitelist:
@@ -386,7 +317,7 @@ If you are still unable to access SillyTavern, follow the instructions below to 
         - 172.18.0.1
     ```
 
-    Save the file by pressing _Ctrl+S_ then exit `nano` by pressing _Ctrl+X_.
+    Save the file and exit the text editor.
 
     !!!info
     Note that if you configured Docker network as a bridge, you could also add external IP addresses to the whitelist as usual.
