@@ -1,3 +1,8 @@
+---
+order: -50
+route: /installation/updating/node/
+---
+
 # How to update Node.js
 
 It's important to keep your Node.js runtime up to date for security and performance reasons. Below are the steps to update Node.js depending on your operating system.

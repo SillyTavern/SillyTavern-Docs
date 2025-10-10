@@ -2,6 +2,7 @@
 order: 50
 icon: package
 expanded: true
+route: /installation/
 ---
 
 # Installation

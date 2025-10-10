@@ -1,6 +1,7 @@
 ---
 # icon: container
 label: Docker
+route: /installation/docker/
 ---
 
 # Docker Installation

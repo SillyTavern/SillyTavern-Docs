@@ -1,5 +1,6 @@
 ---
 order: 109
+route: /installation/st-1.9.0-migration-guide/
 ---
 
 # 1.9.0 Migration Guide
