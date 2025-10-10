@@ -2,6 +2,7 @@
 label: Single Sign-On (SSO)
 icon: key
 order: -20
+route: /administration/sso/
 ---
 
 # Single Sign-On (SSO)

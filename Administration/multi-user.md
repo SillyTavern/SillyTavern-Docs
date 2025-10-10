@@ -2,6 +2,7 @@
 title: Multi-user mode
 icon: people
 order: -10
+route: /administration/multi-user/
 ---
 
 Multi-user mode allows several people to use one SillyTavern server. Each user has their own settings, extensions, and data. User accounts can also be password-protected.
