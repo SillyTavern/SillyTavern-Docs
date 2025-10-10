@@ -2,6 +2,7 @@
 order: 140
 icon: typography
 templating: false
+route: /usage/prompts/
 ---
 
 # Prompts
