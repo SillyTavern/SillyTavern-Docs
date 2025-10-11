@@ -18,7 +18,7 @@ Local installation of Extras can be difficult or impossible on your OS (especial
 * Simple to setup
 * Free to use
 * No Colab GPU credits required (use the `use_cpu` options)
-* See the [Colab Guide Page](/extensions/Extras/running-extras-in-colab.md) for details.
+* See the [Colab Guide Page](/extensions/Extras/Installation.md#running-extras-in-colab) for details.
 
 ### Running Extras in Colab
 
@@ -86,7 +86,7 @@ This method is recommended because Conda makes a 'virtual environment' for the E
    * `pip install -r requirements-rvc.txt` - for real-time voice cloning
    * `pip install -r requirements-coqui.txt` - for Coqui TTS (not recommended)
 
-    See the [Common Problems](/extensions/Extras/Installation/common-problems.md) page if you get errors at this step!
+    See the [Common Problems](/extensions/Extras/Installation.md#extras-install-common-problems) page if you get errors at this step!
 
 9. See below 'Running Extras After Install'
 
