@@ -3,7 +3,7 @@ order: 20
 route: /usage/api-connections/openai/
 ---
 
-# High-profile Chat APIs
+# Chat Completions
 
 ## Source-specific instructions
 
