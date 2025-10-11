@@ -1,11 +1,12 @@
 ---
-order: prompts-100
+order: 50
 templating: false
+route: /usage/prompts/prompt-manager/
 ---
 
 # Prompt Manager
 
-The Prompt Manager is a system that provides more control over the [prompt-building](prompts.md) strategy for Chat Completion APIs.
+The Prompt Manager is a system that provides more control over the [prompt-building](index.md) strategy for Chat Completion APIs.
 
 !!! Applies to: Chat Completion APIs
 For equivalent settings in Text Completion APIs, use [Advanced Formatting](advancedformatting.md).
@@ -19,7 +20,7 @@ Access the Prompt Manager by clicking on the "AI Response Configuration" button 
 
 ## Quick Prompts Edit
 
-Provides space to quickly edit common prompt sections, such as **Main Prompt**, **Auxiliary Prompt**, and **Post-History Instructions**. More information on these prompts can be found on the [prompt-building](prompts.md) page.
+Provides space to quickly edit common prompt sections, such as **Main Prompt**, **Auxiliary Prompt**, and **Post-History Instructions**. More information on these prompts can be found on the [prompt-building](index.md) page.
 
 ## Utility Prompts
 
@@ -217,4 +218,4 @@ When Position is set to **In-Chat**, this defines the order in which the prompt 
 
 ## Building Your Prompt: Tips and Tricks
 
-Visit the [prompt-building](prompts.md) section of the SillyTavern documentation for more information on how to write effective prompts. The information can largely be applied to Chat Completion presets.
+Visit the [prompt-building](index.md) section of the SillyTavern documentation for more information on how to write effective prompts. The information can largely be applied to Chat Completion presets.

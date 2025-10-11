@@ -1,6 +1,6 @@
 ---
-order: character-30
-route: /usage/core-concepts/tags
+order: 60
+route: /usage/core-concepts/tags/
 ---
 
 # Tags

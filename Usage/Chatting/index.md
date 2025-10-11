@@ -2,6 +2,7 @@
 icon: report
 order: 170
 expanded: false
+route: /usage/chatting/
 ---
 
 # Chatting
@@ -165,7 +166,7 @@ Holding Ctrl while clicking a token in the gray portion will retain the gray por
 
 ### Availability
 
-You must select **Request token probabilities** in [User Settings](/Usage/User_Settings/User_Settings.md#chatmessage-handling) to enable this feature.
+You must select **Request token probabilities** in [User Settings](/Usage/User_Settings/index.md#chatmessage-handling) to enable this feature.
 
 Token probabilities are only available for the most recent message, and are not saved to the chat. If token probability information is no longer available for a message, the panel will display a message indicating this.
 

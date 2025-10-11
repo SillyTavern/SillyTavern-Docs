@@ -1,12 +1,14 @@
 ---
 order: 20
+route: /usage/api-connections/openai/
 ---
-# Chat Completions
+
+# High-profile Chat APIs
 
 ## Source-specific instructions
 
 !!!warning **Important!**
-Most API platforms allow to view the generated API key only once, at the time of its creation. If you lose it, you will need to generate a new one. Make sure to keep it safe!
+Most API platforms allow you to view the generated API key only once, at the time of its creation. If you lose it, you will need to generate a new key. Make sure to keep it safe!
 !!!
 
 ### OpenAI

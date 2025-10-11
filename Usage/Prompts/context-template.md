@@ -1,6 +1,7 @@
 ---
-order: prompts-20
+order: 90
 templating: false
+route: /usage/prompts/context-template/
 ---
 
 # Context Template

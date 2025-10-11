@@ -1,6 +1,7 @@
 ---
 order: 190
 icon: rocket
+route: /usage/quick-start/
 ---
 
 # Quick Start

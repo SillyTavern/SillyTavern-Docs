@@ -1,5 +1,7 @@
 ---
+order: 40
 tags: ['>=1.12.12']
+route: /usage/prompts/reasoning/
 ---
 
 # Reasoning

@@ -1,3 +1,7 @@
+---
+route: /usage/api-connections/mancer/
+---
+
 # Mancer
 
 Mancer is a large language model inferencing service that lets you run whatever prompts you want and doesn't censor responses. Most of the models require a preloaded balance to start chatting, but there is a free model as of writing (2024-11-28).
