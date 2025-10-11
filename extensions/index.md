@@ -3,6 +3,7 @@ label: Extensions
 icon: plug
 expanded: true
 order: 35
+route: /extensions/
 ---
 
 # Extensions

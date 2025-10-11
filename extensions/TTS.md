@@ -1,3 +1,8 @@
+---
+order: tts
+route: /extensions/tts/
+---
+
 # TTS
 
 SillyTavern has a wide range of TTS options. This page explains the setup and use.

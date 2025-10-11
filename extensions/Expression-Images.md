@@ -1,3 +1,7 @@
+---
+route: /extensions/expression-images/
+---
+
 # Character Expressions
 
 ## What is it?

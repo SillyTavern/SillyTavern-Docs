@@ -1,3 +1,7 @@
+---
+route: /extensions/websearch/
+---
+
 # Web Search
 
 Adds web search results to LLM prompts.

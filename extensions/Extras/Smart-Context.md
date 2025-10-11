@@ -1,5 +1,5 @@
 ---
-route: /extensions/smart-context
+route: /extensions/smart-context/
 ---
 
 # Smart Context

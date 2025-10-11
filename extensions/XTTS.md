@@ -1,5 +1,6 @@
 ---
-order: TTS-XTTS
+order: tts-xtts
+route: /extensions/xtts/
 ---
 
 # XTTS with voice cloning

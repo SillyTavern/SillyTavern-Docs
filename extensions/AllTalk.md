@@ -1,5 +1,6 @@
 ---
-order: TTS-AllTalk
+order: tts-alltalk
+route: /extensions/alltalk/
 ---
 # AllTalk TTS V2
 
