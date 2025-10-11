@@ -1,6 +1,7 @@
 ---
 order: 180
 icon: question
+route: /usage/faq/
 ---
 
 # FAQ

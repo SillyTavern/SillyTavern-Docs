@@ -1,6 +1,6 @@
 ---
-order: character-10
-route: /usage/core-concepts/characterdesign
+order: 100
+route: /usage/core-concepts/characterdesign/
 templating: false
 ---
 
@@ -50,7 +50,7 @@ This is because every AI model has a limit to the amount of context it can proce
 
 This is the information that gets sent to the AI each time you ask it to generate a response. SillyTavern automatically calculates the best way to allocate the available context tokens before sending the information to the AI model.
 
-Read more about how the context is built in the [Prompts](/Usage/Prompts/prompts.md) section.
+Read more about how the context is built in the [Prompts](/Usage/Prompts/index.md) section.
 
 ### What are a Character's 'Permanent Tokens'?
 
@@ -102,8 +102,8 @@ The following fields are hidden by default. To access and edit them, you need to
 
 ### Prompt Overrides
 
-* **Main Prompt**: If the "Prefer Char. Prompt" user setting is enabled, any text you put here will override the [main/system prompt](/Usage/Prompts/prompts.md#main-prompt-system-prompt) for the character.
-* **Post-History Instructions**: If the "Prefer Char. Instructions" user setting is enabled, any text you put here will be used as the [post-history instructions](/Usage/Prompts/prompts.md#post-history-instructions) for the character.
+* **Main Prompt**: If the "Prefer Char. Prompt" user setting is enabled, any text you put here will override the [main/system prompt](/Usage/Prompts/index.md#main-prompt-system-prompt) for the character.
+* **Post-History Instructions**: If the "Prefer Char. Instructions" user setting is enabled, any text you put here will be used as the [post-history instructions](/Usage/Prompts/index.md#post-history-instructions) for the character.
 
 !!!tip
 Insert `{{original}}` into either box to include the respective default prompt from system settings in a designated place.

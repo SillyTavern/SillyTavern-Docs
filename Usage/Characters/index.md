@@ -1,6 +1,7 @@
 ---
 order: 100
 icon: person-fill
+route: /usage/characters/
 ---
 
 # Characters
@@ -91,10 +92,10 @@ Click on the <i class="fa-solid fa-book"></i> **Advanced Definitions** button to
 
 #### Prompt Overrides (Chat Completion/Instruct Mode)
 
-* **Main Prompt**: Replaces default [main/system prompt](/Usage/Prompts/prompts.md#main-prompt-system-prompt), can use
+* **Main Prompt**: Replaces default [main/system prompt](/Usage/Prompts/index.md#main-prompt-system-prompt), can use
   \{\{original\}\} placeholder to include the original prompt
 * **Post-History Instructions**: Overrides
-  default [post-history instructions](/Usage/Prompts/prompts.md#post-history-instructions)
+  default [post-history instructions](/Usage/Prompts/index.md#post-history-instructions)
 
 #### Creator's Metadata
 

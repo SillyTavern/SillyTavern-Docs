@@ -1,7 +1,7 @@
 ---
 order: 120
 icon: gear
-route: /usage/user-settings
+route: /usage/user-settings/
 ---
 
 # User Settings

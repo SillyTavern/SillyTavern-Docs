@@ -1,7 +1,7 @@
 ---
 icon: rss
 order: -30
-route: /usage/remoteconnections
+route: /usage/remoteconnections/
 ---
 
 # Remote connections

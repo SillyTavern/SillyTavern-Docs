@@ -1,6 +1,7 @@
 ---
 order: 160
 icon: sliders
+route: /usage/common-settings/
 ---
 
 # Common Settings

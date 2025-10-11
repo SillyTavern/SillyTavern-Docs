@@ -1,3 +1,7 @@
+---
+route: /extensions/objective/
+---
+
 # Objective
 
 ### What is it?

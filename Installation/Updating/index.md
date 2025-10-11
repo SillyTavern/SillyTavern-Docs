@@ -3,6 +3,7 @@ label: Updating
 icon: repo-pull
 order: -1
 expanded: false
+route: /installation/updating/
 ---
 
 # How to Update SillyTavern

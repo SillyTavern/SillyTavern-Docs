@@ -2,6 +2,7 @@
 order: -20
 icon: file-added
 templating: false
+route: /for-contributors/writing-extensions/
 ---
 
 # UI Extensions

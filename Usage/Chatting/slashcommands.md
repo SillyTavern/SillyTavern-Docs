@@ -1,6 +1,6 @@
 ---
 icon: rel-file-path
-route: /usage/core-concepts/slashcommands
+route: /usage/core-concepts/slashcommands/
 ---
 
 # Slash commands

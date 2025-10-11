@@ -2,6 +2,7 @@
 order: 25
 icon: gear
 expanded: true
+route: /administration/
 ---
 
 # Administration

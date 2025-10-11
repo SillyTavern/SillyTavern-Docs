@@ -1,3 +1,7 @@
+---
+route: /extensions/regex/
+---
+
 # Regex
 
 ## What is it?

@@ -2,6 +2,7 @@
 label: VPNs and Tunneling
 order: -40
 icon: lock
+route: /administration/tunneling/
 ---
 
 VPNs and tunnels are a secure way to access your home network from anywhere in the world. This guide will show you how to use a VPN or a tunnel to access your SillyTavern instance from anywhere.

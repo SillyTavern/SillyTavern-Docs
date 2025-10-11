@@ -1,6 +1,7 @@
 ---
 icon: gear
 label: Local Installation
+route: /extensions/extras/installation/
 ---
 
 # Extras Installation

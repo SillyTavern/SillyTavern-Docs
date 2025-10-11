@@ -1,6 +1,8 @@
 ---
 order: 10
+route: /usage/api-connections/openrouter/
 ---
+
 # OpenRouter
 
 !!!info

@@ -1,10 +1,11 @@
 ---
-order: user-settings-10
+order: 10
 tags:
     [
         visual novel,
         vn,
     ]
+route: /usage/user-settings/visual-novel/
 ---
 
 # Visual Novel (VN) Mode

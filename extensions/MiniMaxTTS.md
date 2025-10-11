@@ -1,5 +1,6 @@
 ---
-order: XTTS-MiniMax
+order: tts-minimax
+route: /extensions/minimaxtts/
 ---
 
 # MiniMax TTS

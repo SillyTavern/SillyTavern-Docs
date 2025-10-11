@@ -1,11 +1,11 @@
 ---
-order: prompts-10
+order: 100
 route: /usage/core-concepts/advancedformatting/
 ---
 
 # Advanced Formatting
 
-The settings provided in this section allow for more control over the [prompt-building](prompts.md) strategy, primarily for Text Completion APIs.
+The settings provided in this section allow for more control over the [prompt-building](index.md) strategy, primarily for Text Completion APIs.
 
 Most of the settings in this panel do not apply to Chat Completions APIs as they are governed by the prompt manager system instead.
 
@@ -67,7 +67,7 @@ The System Prompt defines the general instructions for the model to follow. It s
 
 The System Prompt is a part of the [Story String](context-template.md#story-string) and usually the first part of the prompt that the model receives.
 
-See the [prompting guide](prompts.md#main-prompt-system-prompt) to learn more about the System Prompt.
+See the [prompting guide](index.md#main-prompt-system-prompt) to learn more about the System Prompt.
 
 ## Context Template
 
