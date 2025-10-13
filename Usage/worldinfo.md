@@ -106,7 +106,7 @@ The text that is inserted into the prompt upon entry activation.
 
 #### Insertion Order
 
-Numeric value. Defines a priority of the entry if multiple were activated at once. Entries with higher order numbers will be inserted closer to the end of the context as they will have more impact on the output.
+Numeric value. Defines a priority of the entry if multiple were activated at once. Entries with larger order numbers will be inserted closer to the end of the context as they will have more impact on the output. For example, an entry with Order number 100 will appear in the context before an entry with Order number 250.
 
 #### Insertion Position
 
@@ -324,7 +324,7 @@ You can define a threshold relative to your API's max-context settings (Context 
 
 If the budget is exhausted, then no more entries are activated even if the keys are present in the prompt.
 
-Constant entries will be inserted first. Then entries with higher order numbers.
+Constant entries will be inserted first. Then entries with larger order numbers.
 
 Entries inserted by directly mentioning their keys have higher priority than those that were mentioned in other entries' contents.
 
