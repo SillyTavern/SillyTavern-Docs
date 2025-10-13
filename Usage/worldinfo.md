@@ -106,7 +106,7 @@ The text that is inserted into the prompt upon entry activation.
 
 #### Insertion Order
 
-Numeric value. Defines a priority of the entry if multiple were activated at once. Entries with higher order numbers will be inserted closer to the end of the context as they will have more impact on the output.
+Numeric value. Defines a priority of the entry if multiple were activated at once. Entries with larger order numbers will be inserted closer to the end of the context as they will have more impact on the output. An entry with Order number 100 will appear in the context before an entry with Order number 250.
 
 #### Insertion Position
 
