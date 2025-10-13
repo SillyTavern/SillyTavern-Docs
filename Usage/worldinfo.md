@@ -324,7 +324,7 @@ You can define a threshold relative to your API's max-context settings (Context 
 
 If the budget is exhausted, then no more entries are activated even if the keys are present in the prompt.
 
-Constant entries will be inserted first. Then entries with higher order numbers.
+Constant entries will be inserted first. Then entries with larger order numbers.
 
 Entries inserted by directly mentioning their keys have higher priority than those that were mentioned in other entries' contents.
 
