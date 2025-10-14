@@ -199,6 +199,12 @@ Most Text Completion models have a recommended "Instruct Template" (usually ment
 - Paid subscription required, the tier determines the max context length
 - [Website](https://novelai.net/), [Setup Instructions](/Usage/API_Connections/novelai.md)
 
+### Electron Hub
+
+- One API key unlocks models from multiple vendors (OpenAI, Anthropic, DeepSeek, etc.) for text and image generation
+- $0.25 of free credits every day, paid plans available
+- [Website](https://www.electronhub.ai/), [Setup Instructions](/Usage/API_Connections/openai.md#electron-hub)
+
 ### AI/ML API
 
 - Unified API for 300+ models including Claude, GPT-4o, Gemini, LLaMA 3, Mistral and others

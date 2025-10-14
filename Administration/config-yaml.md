@@ -173,8 +173,14 @@ See more about using environment variables in the [Node.js documentation](https:
 | `enableUserAccounts` | Enable multi-user mode | `false` | `true`, `false` |
 | `enableDiscreetLogin` | Hide the user list on the login screen | `false` | `true`, `false` |
 | `sessionTimeout` | User session timeout in seconds | `-1` (disabled) | Any number (-1 to disable, 0 for browser close, >0 for timeout) |
-| `autheliaAuth` | Enable Authelia-based auto-login. See: [SSO](/Administration/sso.md) | `false` | `true`, `false` |
 | `perUserBasicAuth` | Use account credentials for basic auth | `false` | `true`, `false` |
+
+### SSO Auto-Login
+
+| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|------------------|
+| `sso.autheliaAuth` | Enable Authelia-based auto-login. See: [SSO](/Administration/sso.md) | `false` | `true`, `false` |
+| `sso.authentikAuth` | Enable Authentik-based auto-login. See: [SSO](/Administration/sso.md) | `false` | `true`, `false` |
 
 ## Rate Limiting Configuration
 
