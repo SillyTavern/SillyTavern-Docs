@@ -26,6 +26,7 @@ Note: some extensions may also add special context-specific macros that only wor
 | `{{charJailbreak}}` | Character's Post-History Instructions Prompt override. |
 | `{{group}}` or `{{charIfNotGroup}}` | Comma-separated list of group member names or character name in solo chats. |
 | `{{groupNotMuted}}` | Same as `{{group}}` but excludes muted members. |
+| `{{notChar}}` | Comma-separated list of all chat participants except the current speaker (`{{char}}`). In group chats this still includes muted characters, and when no message is being generated it lists every character in the roster. |
 | `{{char}}` or `<BOT>` | Character's name. |
 | `{{description}}` | Character's description. |
 | `{{scenario}}` | Character's scenario or chat scenario override (if set). |

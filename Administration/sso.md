@@ -13,13 +13,23 @@ SSO allows you to create users and secure many different pages using a login por
 
 If your SSO-provided username exactly matches the username of a SillyTavern user account, you can sign in to SillyTavern as that user by SSO.
 
-To do this, enable `autheliaAuth` in *config.yaml*.
-    
+SillyTavern now groups the SSO auto-login toggles under the `sso` section in *config.yaml*.
+
+### Authelia
+
 ```yaml
-autheliaAuth: true
+sso:
+  autheliaAuth: true
 ```
 
-This augments or replaces the built-in [password management](/Usage/User_Settings/User_Settings.md#account-management) component of a [multi-user mode](/Administration/multi-user.md) setup.
+### Authentik
+
+```yaml
+sso:
+  authentikAuth: true
+```
+
+Both options augment or replace the built-in [password management](/Usage/User_Settings/User_Settings.md#account-management) component of a [multi-user mode](/Administration/multi-user.md) setup.
 
 ## Replacing HTTP BA
 
@@ -30,7 +40,9 @@ This is recommended because SSO provides better security and functionality than 
 To use an SSO provider in place of HTTP BA, enable `securityOverride` in *config.yaml*. Otherwise, SillyTavern will [refuse to start](remote-connections.md#access-control).
 
 ```yaml
-autheliaAuth: true
+sso:
+  autheliaAuth: true
+  authentikAuth: false
 basicAuthMode: false
 securityOverride: true
 ```

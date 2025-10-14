@@ -147,6 +147,14 @@ Most Text Completion models have a recommended "Instruct Template" (usually ment
 - No enforced moderation, unless required by the LLM vendor
 - [Website](https://openrouter.ai), [Setup Instructions](/Usage/API_Connections/OpenRouter.md)
 
+### Electron Hub
+
+- One API key unlocks models from multiple vendors (OpenAI, Anthropic, DeepSeek, etc.)
+- Model picker now shows context size, estimated pricing, and icons for vision/reasoning/tool support
+- Built-in sorting and vendor grouping make it easier to find the cheapest or largest-context option
+- A **Max prompt cost** indicator projects the most expensive possible request with your current token limits
+- [Setup Instructions](electronhub.md)
+
 ### DeepSeek
 
 - Provides access to the latest versions of very popular DeepSeek V3 (`deepseek-chat`) and DeepSeek R1 (`deepseek-reasoner`) models
