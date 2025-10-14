@@ -64,6 +64,7 @@ Note: some extensions may also add special context-specific macros that only wor
 | `{{// (note)}}` | Allows leaving a note that will be replaced with blank content. Not visible for the AI. |
 | `{{banned "text here"}}` | Dynamically adds quoted text to banned word sequences for Text Generation WebUI backend. Does nothing for other backends. Quotes required. |
 | `{{reverse:(content)}}` | Reverses the content of the macro. |
+| `{{outlet::(name)}}` | Replaced with the content of the named [World Info outlet](/Usage/worldinfo.md#outlet-name), will contain activated entries separated by newlines. |
 
 ## Instruct Mode and Context Template Macros
 
