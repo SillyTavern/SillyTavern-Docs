@@ -141,7 +141,6 @@ If an outlet entry is missing a name it will be skipped during generation, so ma
 * Outlet names are case-sensitive. The `{{outlet::}}` macro must use exactly the same capitalization as the entry's **Outlet Name**, otherwise no content is returned.
 * Leading or trailing spaces in an outlet name are ignored when you call the macro, so names saved with extra whitespace will not match. Avoid padding names so they can be resolved correctly.
 * Outlet macros that have no content assigned to them will be replaced with an empty string.
-* Third-party connectors that bypass SillyTavern's prompt builder (such as Risu, NovelAI's native integration, or Agnai) cannot deliver outlet content. Use a backend that lets SillyTavern assemble the prompt if you rely on outlets.
 
 #### Entry Title / Memo
 
