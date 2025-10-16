@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.813708761552">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.813951437514">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>TTS | docs.ST.app</title>
     <meta name="title" content="TTS | docs.ST.app">
-    <meta name="description" content="SillyTavern has a wide range of TTS options. This page explains the setup and use.">
+    <meta name="description" content="SillyTavern has a wide range of TTS (text-to-speech) options that are used to have a voice narrate parts of your chat.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/extensions/tts/">
@@ -20,21 +20,21 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/extensions/tts/">
     <meta property="og:title" content="TTS | docs.ST.app">
-    <meta property="og:description" content="SillyTavern has a wide range of TTS options. This page explains the setup and use.">
+    <meta property="og:description" content="SillyTavern has a wide range of TTS (text-to-speech) options that are used to have a voice narrate parts of your chat.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/extensions/tts/">
     <meta property="twitter:title" content="TTS | docs.ST.app">
-    <meta property="twitter:description" content="SillyTavern has a wide range of TTS options. This page explains the setup and use.">
+    <meta property="twitter:description" content="SillyTavern has a wide range of TTS (text-to-speech) options that are used to have a voice narrate parts of your chat.">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.11.0.813708761552" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.813951437514" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.813708761552" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.813951437514" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.813708761552" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.813951437514" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -230,42 +230,44 @@
         <span>TTS</span>
     </h1>
 </doc-anchor-target>
-<p>SillyTavern has a wide range of TTS options. This page explains the setup and use.</p>
-<doc-anchor-target id="what-is-it">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#what-is-it">#</doc-anchor-trigger>
-        <span>What is it?</span>
-    </h3>
-</doc-anchor-target>
-<p>TTS is used to have a voice narrate parts of your chat.</p>
+<p>SillyTavern has a wide range of TTS (text-to-speech) options that are used to have a voice narrate parts of your chat. This page explains the setup and use.</p>
 <doc-anchor-target id="configuring-tts">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#configuring-tts">#</doc-anchor-trigger>
         <span>Configuring TTS</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="tts-provider-selection">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tts-provider-selection">#</doc-anchor-trigger>
+        <span>TTS Provider Selection</span>
     </h3>
 </doc-anchor-target>
-<doc-anchor-target id="tts-provider-selectbox">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tts-provider-selectbox">#</doc-anchor-trigger>
-        <span>TTS Provider Selectbox</span>
-    </h4>
-</doc-anchor-target>
-<p>Used to select which TTS service you want to use.</p>
+<p>Used to select which TTS service you want to use. Some of the options are free, some require a paid subscription, and some run locally on your PC.</p>
+<p>Available options (list may change over time):</p>
 <ul>
-<li><strong>ElevenLabs</strong> - paid subscription required, highest quality voices available at present.</li>
-<li><strong>Silero</strong> - free, runs on your PC, quality can vary widely</li>
-<li><strong>System</strong> - uses your OS TTS engine, if one exists. Quality can vary widely depending on the OS.</li>
-<li><strong>Edge</strong> - free, runs via Azure, generally quite fast, and voices feel natural but dry and emotionless. Like listening to the evening news or a radio announcer. When running with &quot;Plugin&quot; selected as the provider, you also need to install <a href="https://github.com/SillyTavern/SillyTavern-EdgeTTS-Plugin">this server plugin</a>, otherwise the TTS won&#x27;t work.</li>
-<li><strong>Coqui-TTS</strong> - free, No API Implementation at this time. High-performance Text2Speech models (Tacotron, Tacotron2, Glow-TTS, SpeedySpeech) as well as Bark.</li>
-<li><strong>Novel</strong> - requires a paid NovelAI subscription, generated by NovelAI&#x27;s TTS engine</li>
-<li><strong>RVC</strong> - free, voice cloning</li>
+<li><strong>AllTalk</strong> - free, open source local installation, offers a variety of TTS engines. See the <a href="../alltalk/">AllTalk</a> page for setup instructions.</li>
+<li><strong>Azure TTS</strong> - same voices as Microsoft Edge. Requires an Azure account and a paid subscription.</li>
+<li><strong>Coqui-TTS</strong> (deprecated) - free, requires Extras API to run. High-performance Text2Speech models (Tacotron, Tacotron2, Glow-TTS, SpeedySpeech) as well as Bark.</li>
+<li><strong>Edge</strong> - free, runs via Azure. When running with &quot;Plugin&quot; selected as the provider, you also need to install <a href="https://github.com/SillyTavern/SillyTavern-EdgeTTS-Plugin">this server plugin</a>. Other option requires Extras API (deprecated) to run.</li>
+<li><strong>Electron Hub</strong> - reuses your <a href="https://electronhub.ai/">Electron Hub</a> API key to access cloud voices (GPT-4o Mini TTS, Microsoft neural voices, etc.) with per-model controls.</li>
+<li><strong>ElevenLabs</strong> - paid subscription required. Get an API key from <a href="https://elevenlabs.io/">ElevenLabs</a>.</li>
+<li><strong>Google Translate</strong> - a free voice provided by Google, one per language, quality can vary widely.</li>
+<li><strong>Google Gemini TTS</strong> - requires an API key from either <a href="../../usage/api-connections/google/#google-vertex-ai">Vertex AI</a> or <a href="../../usage/api-connections/google/#google-ai-studio">AI Studio</a>, uses <a href="https://cloud.google.com/text-to-speech/docs/gemini-tts">Gemini TTS</a> models.</li>
 <li><strong>Kokoro</strong> - free, uses <a href="https://www.npmjs.com/package/kokoro-js">kokoro.js</a> to run the model locally in your browser. However, <a href="https://caniuse.com/webgpu">some browsers</a> may not support WebGPU for the device option.</li>
+<li><strong>MiniMax</strong> - requires an API key from <a href="https://www.minimax.io/">MiniMax</a>. See the <a href="../minimaxtts/">MiniMax TTS</a> page for setup instructions.</li>
+<li><strong>Novel</strong> - requires a paid NovelAI subscription, generated by NovelAI&#x27;s TTS engine</li>
+<li><strong>OpenAI</strong> - paid API key required, uses OpenAI&#x27;s TTS models.</li>
+<li><strong>Pollinations</strong> - free of charge access to OpenAI TTS models, but with a rate limit. <a href="https://pollinations.ai/">Website</a>.</li>
+<li><strong>Silero</strong> - free, runs on your PC, quality can vary widely. Requires a <a href="https://github.com/ouoertheo/silero-api-server">dedicated API server</a> installation or Extras API (deprecated).</li>
+<li><strong>System</strong> - uses your OS TTS engine, if one exists. Quality can vary widely depending on the OS.</li>
+<li><strong>XTTS</strong> - free, requires a dedicated API server installation. See the <a href="../xtts/">XTTS</a> page for setup instructions.</li>
 </ul>
 <doc-anchor-target id="checkboxes">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#checkboxes">#</doc-anchor-trigger>
         <span>Checkboxes</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <ul>
 <li><strong>Enabled</strong> - turns TTS playback on/off</li>
@@ -311,28 +313,28 @@ Here&#x27;s a table showing how the text will be modified based on the boolean s
 </table>
 </div>
 <doc-anchor-target id="sliders">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#sliders">#</doc-anchor-trigger>
         <span>Sliders</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <p>These will change depending on the API you select.</p>
-<p>(explanation coming soon)</p>
 <doc-anchor-target id="buttons">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#buttons">#</doc-anchor-trigger>
         <span>Buttons</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
 <ul>
 <li><strong>Apply</strong> - this must be clicked after setting a TTS API and after editing the voice map.</li>
+<li><strong>Refresh</strong> - reloads the list of voices from the selected TTS API.</li>
 <li><strong>Available voices</strong> - loads a popup with all voices available for your selected API, and lets you preview them with sample dialogues.</li>
 </ul>
 <doc-anchor-target id="using-tts">
-    <h3>
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#using-tts">#</doc-anchor-trigger>
         <span>Using TTS</span>
-    </h3>
+    </h2>
 </doc-anchor-target>
 <ol>
 <li>Click the &quot;Enable&quot; checkbox, or nothing will ever happen.</li>
@@ -341,61 +343,12 @@ Here&#x27;s a table showing how the text will be modified based on the boolean s
 <li>Click the lower right &quot;Stop&quot; button (found inside the wand menu) to stop any playback.</li>
 </ol>
 <doc-anchor-target id="voice-map">
-    <h4>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#voice-map">#</doc-anchor-trigger>
         <span>Voice Map</span>
-    </h4>
+    </h3>
 </doc-anchor-target>
-<p>You must provide a voice map for the TTS to use, otherwise, it won&#x27;t know what voices should be used for each character.</p>
-<p>These must be in the exact format stated below:</p>
-<p><code v-pre>CharacterName:TTSVoice,CharacterName2:TTSVoice2</code></p>
-<p>For Coqui-TTS the format needs to include the speaker and language from the WebGUI:</p>
-<p><code v-pre>CharacterName:TTSVoice[speakerid][langid]</code>
-or
-<code v-pre>Aqua:tts_models--multilingual--multi-dataset--your_tts\model_file.pth[2][1]</code></p>
-<doc-anchor-target id="bark-zeroshot-voice-cloning-speakers">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#bark-zeroshot-voice-cloning-speakers">#</doc-anchor-trigger>
-        <span>Bark ZeroShot Voice Cloning Speakers</span>
-    </h4>
-</doc-anchor-target>
-<p>If using Bark you must create a voice folder with a voice file to clone. Ensure you add voices to homedir\tts\bark_v0\speakers. On Windows it is probably C:\Users\USERACCOUNT\AppData\Local\tts\bark_v0\speakers\ type %appdata% in windows explorer then go UP a directory to local and you should see tts.</p>
-<p>The directory should look like this:</p>
-<ul>
-<li>homedir
-<ul>
-<li>tts
-<ul>
-<li>bark_v0
-<ul>
-<li>speakers
-<ul>
-<li>customvoice1
-<ul>
-<li>speaker.wav</li>
-<li>speaker.npz</li>
-</ul>
-</li>
-<li>robinwilliams
-<ul>
-<li>speaker.mp3</li>
-</ul>
-</li>
-<li>me
-<ul>
-<li>speaker.mp3</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>One first load of this model and voice bark will clone the voice and create a .npz file, this is needed for faster TTS.</p>
+<p>You must provide a voice map for the TTS to use, otherwise, it won&#x27;t know what voices should be used for each character. To setup the voice map, first open a chat with a character that you&#x27;d like to assign a voice to and/or select a user persona to assign a voice to, then select a voice listed by a TTS provider from the dropdown. If you don&#x27;t see a list of voices and/or characters, make sure that your TTS provider is configured correctly and click &quot;Refresh&quot;. Some providers (like OpenAI-compatible or NovelAI) require you to populate the voice list manually.</p>
 
                                 
                                 <!-- Required only on API pages -->

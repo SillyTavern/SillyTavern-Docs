@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.813708761552">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.813951437514">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.11.0.813708761552" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.11.0.813951437514" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.813708761552" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.813951437514" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.813708761552" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.11.0.813708761552" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.813951437514" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.11.0.813951437514" defer></script>
 
     <style>
         a {
@@ -390,9 +390,32 @@ Supports logic for AND ANY, NOT ANY, or NOT ALL</p>
 <li><span class="docs-emoji">&#x1F916;</span> - as an assistant role message</li>
 </ul>
 </li>
+<li><strong>Outlet:</strong> World Info entry is not injected automatically. Instead, its content is stored under a named outlet so you can decide exactly where it appears in the prompt by calling it with the <doc-anchor-trigger to="#outlet-name"><code v-pre>{{outlet::Name}}</code> macro</doc-anchor-trigger>.</li>
 </ul>
 <p>Example Message entries will be formatted according to the prompt-building settings: Instruct Mode or Chat Completion prompt manager. They also follow the Example Messages Behavior rules: being gradually pushed out on full context, always kept, or disabled altogether.</p>
 <p>If your Author&#x27;s Note is disabled (Insertion Frequency = 0), World Info entries in A/N positions will be ignored!</p>
+<doc-anchor-target id="outlet-name">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#outlet-name">#</doc-anchor-trigger>
+        <span>Outlet Name</span>
+    </h4>
+</doc-anchor-target>
+<p>When the <strong>Outlet</strong> insertion position is selected, an additional <strong>Outlet Name</strong> field becomes available for the entry. The name that you provide here groups entries together and defines the token that you will use to pull them into the prompt manually.</p>
+<p>Use the <code v-pre>{{outlet::YourName}}</code> macro in the <a href="../../prompts/prompt-manager/">Prompt Manager</a> or <a href="../advancedformatting/">Advanced Formatting</a> prompt fields. When the prompt is built, the macro is replaced with the combined content of every World Info entry that shares the same outlet name, separated by newlines, sorted by their <doc-anchor-trigger to="#insertion-order">Insertion Order</doc-anchor-trigger> value.</p>
+<p>If an outlet entry is missing a name it will be skipped during generation, so make sure to fill in the field. Outlet names support autocomplete based on the names you have already used to make it easy to reuse consistent labels.</p>
+<doc-anchor-target id="limitations-and-caveats">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#limitations-and-caveats">#</doc-anchor-trigger>
+        <span>Limitations and caveats</span>
+    </h5>
+</doc-anchor-target>
+<ul>
+<li>Character card fields (Description, Personality, Scenario, etc.) cannot expand outlets. Those fields are parsed early so they can act as <doc-anchor-trigger to="#additional-matching-sources">additional matching sources</doc-anchor-trigger> for World Info triggers, which means outlets are not available when their text is processed. Use another macro-aware field if you need to place outlet content in the prompt body instead.</li>
+<li>The Author&#x27;s Note editor also cannot resolve outlets. To place outlet content around the Author&#x27;s Note, assign the entries to <strong>Top of AN</strong> or <strong>Bottom of AN</strong> insertion positions instead of relying on the macro.</li>
+<li>Outlet names are case-sensitive. The <code v-pre>{{outlet::}}</code> macro must use exactly the same capitalization as the entry&#x27;s <strong>Outlet Name</strong>, otherwise no content is returned.</li>
+<li>Leading or trailing spaces in an outlet name are ignored when you call the macro, so names saved with extra whitespace will not match. Avoid padding names so they can be resolved correctly.</li>
+<li>Outlet macros that have no content assigned to them will be replaced with an empty string.</li>
+</ul>
 <doc-anchor-target id="entry-title--memo">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#entry-title--memo">#</doc-anchor-trigger>
