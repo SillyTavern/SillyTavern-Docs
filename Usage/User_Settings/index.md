@@ -156,7 +156,8 @@ For more information on the settings in this section of <i class="fa-fw fa-solid
 
 * **Reload Chat**: Reloads and redraws the current chat.
 * **[Debug Menu](#debug-menu)**: Access debugging options.
-* **Smooth Streaming**: Experimental feature for smoother text generation. Includes speed control slider.
+* **Smooth Streaming**: Smoothens streamed generation by showing the text letter by letter. Includes speed control slider.
+* **Stream Fade-In**: Applies a fade-in effect to streamed text. Can be used with or without Smooth Streaming.
 * **[Message Sound](uicustomization.md#message-sound)**: Plays a sound when message generation completes.
     - **Background Sound Only**: Only plays sounds when browser tab is unfocused.
 * **Relaxed API URLs**: Reduces formatting requirements for API URLs.
