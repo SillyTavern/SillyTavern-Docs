@@ -9,7 +9,7 @@ route: /administration/sso/
 
 SSO allows you to create users and secure many different pages using a login portal presented on sites you want to secure. While it is complex to setup, it is a good way to both learn SSO and secure your ST instance out on the internet more.
 
-SSO can also replace [HTTP Basic Authentication](/Administration/remote-connections.md#access-control-by-http-basic-authentication) as an access control mechanism for [remote connections](/Administration/remote-connections.md#access-control).
+SSO can also replace [HTTP Basic Authentication](/Administration/config-yaml.md#user-authentication) as an access control mechanism for [remote connections](/Administration/remote-connections.md).
 
 This is recommended because SSO provides better security and functionality than HTTP Basic Authentication.
 
@@ -33,4 +33,4 @@ sso:
   authentikAuth: true
 ```
 
-Both options augment or replace the built-in [password management](/Usage/User_Settings/User_Settings.md#account-management) component of a [multi-user mode](/Administration/multi-user.md) setup.
+Both options augment or replace the built-in [password management](/Usage/User_Settings/index.md#account-management) component of a [multi-user mode](/Administration/multi-user.md) setup.
