@@ -1,6 +1,6 @@
 ---
 icon: paperclip
-route: /usage/core-concepts/connection-profiles
+route: /usage/core-concepts/connection-profiles/
 order: 100
 ---
 

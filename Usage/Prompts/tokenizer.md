@@ -1,5 +1,6 @@
 ---
-order: prompts-40
+order: 70
+route: /usage/prompts/tokenizer/
 ---
 
 # Tokenizer

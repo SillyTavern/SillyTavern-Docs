@@ -1,3 +1,7 @@
+---
+route: /usage/api-connections/koboldcpp/
+---
+
 # KoboldCpp
 
 KoboldCpp is a self-contained API for GGML and GGUF models.

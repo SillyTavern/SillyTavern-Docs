@@ -1,6 +1,6 @@
 ---
-order: character-14
-route: /usage/core-concepts/macros
+order: 90
+route: /usage/core-concepts/macros/
 ---
 
 # Macros (replacement tags)

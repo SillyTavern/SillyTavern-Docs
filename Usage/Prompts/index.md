@@ -2,6 +2,7 @@
 order: 140
 icon: typography
 templating: false
+route: /usage/prompts/
 ---
 
 # Prompts
@@ -159,7 +160,7 @@ Post-History Instructions (PHI) are additional instructions sent to the AI after
 
 Since the Post-History Instructions are sent after the user message, they are the final instructions that the AI receives before generating a response. The AI usually gives them a higher priority than the main prompt, and they can override the main prompt's instructions.
 
-To use per-character Post-History Instructions, add them to the character's [Post-History Instructions](/Usage/Characters/characterdesign.md) and enable [Prefer Char. Instructions](/Usage/User_Settings/User_Settings.md). To preserve the globally defined PHI while using character-specific instructions, you can use the `{{original}}` macro in the character's Post-History Instructions field.
+To use per-character Post-History Instructions, add them to the character's [Post-History Instructions](/Usage/Characters/characterdesign.md) and enable [Prefer Char. Instructions](/Usage/User_Settings/index.md). To preserve the globally defined PHI while using character-specific instructions, you can use the `{{original}}` macro in the character's Post-History Instructions field.
 
 +++ Text Completion APIs
 

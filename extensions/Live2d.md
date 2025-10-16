@@ -1,3 +1,7 @@
+---
+route: /extensions/live2d/
+---
+
 # Live2D
 
 This guide will walk you through the process of setting up and customizing the Live2D extension for your SillyTavern experience. This extension allows you to use Live2D animated models for your character, providing a dynamic and interactive element to your virtual character.

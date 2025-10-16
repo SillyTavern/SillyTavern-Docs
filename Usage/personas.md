@@ -1,7 +1,7 @@
 ---
 order: 110
 icon: smiley
-route: /usage/core-concepts/personas
+route: /usage/core-concepts/personas/
 templating: false
 ---
 

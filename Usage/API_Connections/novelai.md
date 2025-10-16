@@ -1,3 +1,7 @@
+---
+route: /usage/api-connections/novelai/
+---
+
 # NovelAI
 
 NovelAI is a paid subscription service that allows unlimited monthly access to their high-quality in-house text generation, image generation, and text-to-speech models. Register an account here to get started: <https://novelai.net/>

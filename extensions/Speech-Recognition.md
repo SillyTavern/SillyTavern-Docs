@@ -1,3 +1,7 @@
+---
+route: /extensions/speech-recognition/
+---
+
 # Speech Recognition
 
 This guide will walk you through setting up speech recognition to transcribe your voice into text within SillyTavern.

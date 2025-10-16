@@ -1,4 +1,5 @@
 ---
+route: /extensions/stable-diffusion/
 templating: false
 ---
 

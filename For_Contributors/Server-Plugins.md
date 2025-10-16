@@ -1,6 +1,7 @@
 ---
 order: -30
 icon: server
+route: /for-contributors/server-plugins/
 ---
 
 # Server Plugins

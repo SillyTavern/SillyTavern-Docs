@@ -1,4 +1,5 @@
 ---
+route: /extensions/captioning/
 templating: false
 ---
 

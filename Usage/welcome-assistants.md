@@ -1,6 +1,7 @@
 ---
 tags: ['>=1.13.0']
 icon: people
+route: /usage/welcome-assistants/
 ---
 
 # Welcome Page Assistants

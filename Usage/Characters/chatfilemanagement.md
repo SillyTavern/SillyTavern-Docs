@@ -1,6 +1,6 @@
 ---
-order: character-15
-route: /usage/core-concepts/chatfilemanagement
+order: 80
+route: /usage/core-concepts/chatfilemanagement/
 ---
 
 # Chat File Management

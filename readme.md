@@ -1,3 +1,7 @@
+---
+route: /
+---
+
 # What is SillyTavern?
 
 ![SillyTavern - LLM Frontend for Power Users](/static/banner.png)

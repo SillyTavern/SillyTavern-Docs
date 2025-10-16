@@ -1,3 +1,8 @@
+---
+order: tts
+route: /extensions/tts/
+---
+
 # TTS
 
 SillyTavern has a wide range of TTS (text-to-speech) options that are used to have a voice narrate parts of your chat. This page explains the setup and use.

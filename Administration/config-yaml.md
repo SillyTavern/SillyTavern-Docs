@@ -1,5 +1,6 @@
 ---
 icon: cpu
+route: /administration/config-yaml/
 ---
 
 # Configuration File

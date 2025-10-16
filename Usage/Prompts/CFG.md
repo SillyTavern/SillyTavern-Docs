@@ -1,5 +1,6 @@
 ---
-order: prompts-50
+order: 60
+route: /usage/prompts/cfg/
 ---
 
 # CFG

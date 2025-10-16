@@ -1,5 +1,5 @@
 ---
-route: /extensions/talkinghead
+route: /extensions/talkinghead/
 tags: ['obsolete']
 ---
 
