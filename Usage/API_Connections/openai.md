@@ -88,6 +88,15 @@ Fireworks AI is a high-performance platform that provides fast, cost-effective a
 2. Navigate to the [API Keys page](https://app.fireworks.ai/settings/users/api-keys) in your account settings.
 3. Click "Create API key" and provide a descriptive name (e.g., "SillyTavern").
 
+## Electron Hub
+
+Electron Hub is a unified OpenAI-compatible platform that provides access to models from multiple vendors through a single API key.
+
+**How to get an API key:**
+
+1. Create an account at [Electron Hub](https://playground.electronhub.ai/console).
+2. Generate an API key from the **Console → API Keys** page.
+
 ## Custom OpenAI-compatible endpoint
 
 !!!warning
