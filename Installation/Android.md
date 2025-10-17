@@ -93,7 +93,7 @@ Then proceed with the installation steps above.
 
 Beware of `UseDiskCache` because it may create too much cache data and will slow down your sessions, even abruptly crash. Try those settings:
 
-Perfomance:
+Performance:
 ```bash
 lazyLoadCharacters: true
 useDiskCache: false
