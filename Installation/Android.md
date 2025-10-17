@@ -89,6 +89,22 @@ pkg install esbuild
 
 Then proceed with the installation steps above.
 
+### If you are running on a low memory device: Tweak your settings
+
+Beware of `UseDiskCache` because it may create too much cache data and will slow down your sessions, even abruptly crash. Try those settings:
+
+Perfomance:
+```bash
+lazyLoadCharacters: true
+useDiskCache: false
+```
+No backups:
+```bash
+backups:
+  chat:
+    enabled: false
+```
+
 ## Optional: Create Aliases
 
 You can create shortcuts for common commands to make your workflow easier.
