@@ -89,6 +89,30 @@ pkg install esbuild
 
 Then proceed with the installation steps above.
 
+### Performance tweaks
+
+!!!info
+For general tips on improving performance, see the respective [FAQ section](/Usage/faq.md#performance-tips).
+!!!
+
+Due to hardware limitations on Android devices, you may want to adjust the following SillyTavern [config.yaml](/Administration/config-yaml.md) settings for better memory, storage, and CPU usage:
+
+```yaml
+performance:
+  # Avoid loading all character data until needed
+  lazyLoadCharacters: true
+  # Disable disk caching to reduce storage usage
+  useDiskCache: false
+backups:
+  chat:
+    # Optional: Disable automatic chat backups to save storage
+    enabled: false
+```
+
+!!!tip
+Use the `nano` text editor included with Termux to edit the `config.yaml` file: `nano ~/SillyTavern/config.yaml`
+!!!
+
 ## Optional: Create Aliases
 
 You can create shortcuts for common commands to make your workflow easier.
