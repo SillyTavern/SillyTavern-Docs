@@ -28,37 +28,29 @@ Go to the [DreamGen API keys](https://dreamgen.com/account/api-keys) page and cl
 DreamGen API offers several models of different sizes.
 
 - Lucid Max (in API called `lucid-v1-max` or `lucid-v1-extra-large`)
-- Lucid Base (in API called `lucid-v1-base` or `lucid-v1-medium`) -- corresponds to the weight-available [Lucid V1 Nemo](https://dreamgen.com/docs/models/lucid-v1-hf).
+- Lucid Base (in API called `lucid-v1-base` or `lucid-v1-medium`) -- corresponds to the weight-available [Lucid V1 Nemo](https://dreamgen.com/docs/models/lucid-v1/huggingface).
 
 Lucid Base uses much less credits and is faster, while Lucid Max is more creative and is able to handle more complex instructions and narratives.
 
 ## Settings
 
-The DreamGen models expect a specific input format, which is [documented in detail here](https://dreamgen.com/docs/models/lucid-v1).
+The Lucid V1 DreamGen models use an extension of the Llama 3 chat template optimized for role-play and writing. They work best with a specific system prompt.
 
-SillyTavern comes with built-in presets made for DreamGen called `DreamGen Lucid V1 Role-Play` and `DreamGen Lucid V1 Story` that mimic the format. Make sure to use these settings as your baseline.
+We strongly recommend to start with one of these master presets:
 
-If you can't find these presets in your SillyTavern installation, either update to the latest `staging` version, or import the presets from these files:
+- Make sure that you have instruct mode enabled and select all checkboxes when importing.
+- [DreamGen Lucid V1 Role-Play preset](https://dreamgen.com/docs/models/lucid-v1/sillytavern/master-preset/role-play)
+- [DreamGen Lucid V1 Story preset](https://dreamgen.com/docs/models/lucid-v1/sillytavern/master-preset/story)
 
-- [DreamGen Lucid V1 Role-Play preset](https://huggingface.co/dreamgen/lucid-v1-nemo/raw/main/resources/sillytavern/presets/role_play_basic.json)
-- [DreamGen Lucid V1 Story preset](https://huggingface.co/dreamgen/lucid-v1-nemo/raw/main/resources/sillytavern/presets/writing_basic.json)
+These presets come with built-in support for `/sys` to send instructions to the model. You can use those to steer the plot or control character's actions.
 
 ![DreamGen preset selected](/static/dreamgen/dreamgen_st_preset.png)
 
-As far as sampler settings, start with:
-
--   Min P: 0.05
--   Temperature: 0.6
--   DRY:
-    - Multiplier: 0.6
-    - Base: 1.5
-    - Allowed Length: 3
-
-The preset comes with built-in support for `/sys` to send instructions to the model. You can use those to steer the plot or control character's actions.
 
 Other resources:
 
-- [**Detailed DreamGen + SillyTavern guide**](https://dreamgen.com/docs/sillytavern)
+- [**Detailed DreamGen + SillyTavern guide**](https://dreamgen.com/docs/models/lucid-v1/sillytavern)
+- [Detailed Lucid V1 prompt format documentation](https://dreamgen.com/docs/models/lucid-v1).
 - [DreamGen + SillyTavern role-play demo](https://imgur.com/a/dreamgen-lucid-sillytavern-roleplay-demo-bhzQpto)
 - [DreamGen + SillyTavern story-writing demo](https://imgur.com/a/dreamgen-lucid-sillytavern-writing-demo-JLv5iO3)
 - [Tips for making your own scenarios](https://v2.dreamgen.com/docs/scenario-editor)
