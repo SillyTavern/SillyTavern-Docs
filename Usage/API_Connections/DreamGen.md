@@ -1,3 +1,7 @@
+---
+route: /usage/api-connections/dreamgen/
+---
+
 # DreamGen
 
 DreamGen is an app and an API for AI-powered role-playing and story-writing. They have a free tier, as well as a paid subscription that allows unlimited monthly access to their high-quality in-house text generation models made specifically for the purpose of steerable AI role-playing and story-writing. Create an account to get started: <https://dreamgen.com/>.
@@ -46,7 +50,6 @@ These presets come with built-in support for `/sys` to send instructions to the 
 
 ![DreamGen preset selected](/static/dreamgen/dreamgen_st_preset.png)
 
-
 Other resources:
 
 - [**Detailed DreamGen + SillyTavern guide**](https://dreamgen.com/docs/models/lucid-v1/sillytavern)
@@ -57,13 +60,13 @@ Other resources:
 
 ## FAQ
 
-### How can I make the responses longer or shorter? 
+### How can I make the responses longer or shorter?
 
 You can set the `Last Assistant Prefix` in your formatting presets.
 
 For long messages:
 
-```
+```txt
 <|start_header_id|>user<|end_header_id|>
 
 The next message is from {{char}} and is at least 100 words long<|eot_id|><|start_header_id|>writer character {{char}}<|end_header_id|>
@@ -72,7 +75,7 @@ The next message is from {{char}} and is at least 100 words long<|eot_id|><|star
 
 For short messages:
 
-```
+```txt
 <|start_header_id|>user<|end_header_id|>
 
 The next message is from {{char}} and is at most 50 words long<|eot_id|><|start_header_id|>writer character {{char}}<|end_header_id|>
@@ -85,19 +88,19 @@ Make sure to preserve all newlines, including the two at the end.
 
 You can also include writing style description in your card or system prompt, e.g.:
 
-```
+```txt
 ## Style
 
 <your description>
 ```
 
-See the ["Style" documentation](https://v2.dreamgen.com/docs/scenario-editor#style) to learn more and see some examples. 
+See the ["Style" documentation](https://v2.dreamgen.com/docs/scenario-editor#style) to learn more and see some examples.
 
 ### How can I steer the role-play / story?
 
 Use the `/sys` option to send instructions to the model. Some examples:
 
-> The inkeeper offers Daria and the others a pint of ale. 
+> The inkeeper offers Daria and the others a pint of ale.
 
 > The next message is from Draco and should be at least 200 words, focusing on his inner conflict about the decision.
 
