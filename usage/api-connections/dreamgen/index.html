@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.814136806274">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.814559745765">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>DreamGen | docs.ST.app</title>
     <meta name="title" content="DreamGen | docs.ST.app">
-    <meta name="description" content="DreamGen is an app and an API for AI-powered creative writing.">
+    <meta name="description" content="DreamGen is an app and an API for AI-powered role-playing and story-writing.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/usage/api-connections/dreamgen/">
@@ -20,23 +20,23 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/usage/api-connections/dreamgen/">
     <meta property="og:title" content="DreamGen | docs.ST.app">
-    <meta property="og:description" content="DreamGen is an app and an API for AI-powered creative writing.">
+    <meta property="og:description" content="DreamGen is an app and an API for AI-powered role-playing and story-writing.">
     <meta property="og:image" content="https://docs.sillytavern.app/static/dreamgen/dreamgen_api_keys_new.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/usage/api-connections/dreamgen/">
     <meta property="twitter:title" content="DreamGen | docs.ST.app">
-    <meta property="twitter:description" content="DreamGen is an app and an API for AI-powered creative writing.">
+    <meta property="twitter:description" content="DreamGen is an app and an API for AI-powered role-playing and story-writing.">
     <meta property="twitter:image" content="https://docs.sillytavern.app/static/dreamgen/dreamgen_api_keys_new.jpg">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.11.0.814136806274" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.11.0.814559745765" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.814136806274" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.814559745765" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.814136806274" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.814559745765" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -232,7 +232,7 @@
         <span>DreamGen</span>
     </h1>
 </doc-anchor-target>
-<p>DreamGen is an app and an API for AI-powered creative writing. They have a free tier, as well as a paid subscription that allows unlimited monthly access to their high-quality in-house text generation models made specifically for the purpose of steerable AI-assisted writing. Create an account to get started: <a href="https://dreamgen.com/">https://dreamgen.com/</a>.</p>
+<p>DreamGen is an app and an API for AI-powered role-playing and story-writing. They have a free tier, as well as a paid subscription that allows unlimited monthly access to their high-quality in-house text generation models made specifically for the purpose of steerable AI role-playing and story-writing. Create an account to get started: <a href="https://dreamgen.com/">https://dreamgen.com/</a>.</p>
 <p>The (free) credits reset at the start of each calendar month. See <a href="https://dreamgen.com/pricing">pricing</a> to see the credit cost for each model and <a href="https://dreamgen.com/account/usage">usage</a> to see your remaining credits.</p>
 <doc-anchor-target id="connecting-to-dreamgen">
     <h2>
@@ -270,7 +270,7 @@
 <li>(optional) Pick a model</li>
 </ol>
 <p><figure class="content-center">
-    <img src="../../../static/dreamgen/dreamgen_st_connection.jpg" alt="Connecting to DreamGen" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <img src="../../../static/dreamgen/dreamgen_st_connection.png" alt="Connecting to DreamGen" class="rounded-image-rounded border-image-border border-image-border-width" />
     <figcaption class="caption">Connecting to DreamGen</figcaption>
 </figure>
 </p>
@@ -280,228 +280,93 @@
         <span>Models</span>
     </h2>
 </doc-anchor-target>
-<p>DreamGen offers <code v-pre>opus-v1-sm</code>, <code v-pre>opus-v1-lg</code>, and <code v-pre>opus-v1-xl</code>. The larger the model, the better it will be at following instructions and writing good stories.</p>
-<doc-anchor-target id="formatting-settings">
+<p>DreamGen API offers several models of different sizes.</p>
+<ul>
+<li>Lucid Max (in API called <code v-pre>lucid-v1-max</code> or <code v-pre>lucid-v1-extra-large</code>)</li>
+<li>Lucid Base (in API called <code v-pre>lucid-v1-base</code> or <code v-pre>lucid-v1-medium</code>) -- corresponds to the weight-available <a href="https://dreamgen.com/docs/models/lucid-v1/huggingface">Lucid V1 Nemo</a>.</li>
+</ul>
+<p>Lucid Base uses much less credits and is faster, while Lucid Max is more creative and is able to handle more complex instructions and narratives.</p>
+<doc-anchor-target id="settings">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#formatting-settings">#</doc-anchor-trigger>
-        <span>Formatting Settings</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#settings">#</doc-anchor-trigger>
+        <span>Settings</span>
     </h2>
 </doc-anchor-target>
-<p>The DreamGen models expect a specific input format, which is <a href="https://dreamgen.com/docs/models/opus/v1">documented here</a>.</p>
-<p>SillyTavern comes with built-in presets made for DreamGen. Make sure to use these settings as your baseline.
-These settings try to stick to the DreamGen format as closely as possible but due to the irregular formatting of character cards, it is not always perfect.</p>
-<ol>
-<li>Go to the &quot;Advanced Formatting&quot; page.</li>
-<li>Under &quot;Context Template&quot; pick <code v-pre>DreamGen Role-Play V1 Llama3 / ChatML</code> depending on the model (*).</li>
-<li><strong>Enable &quot;Instruct Mode&quot;.</strong></li>
-<li>Under &quot;Instruct Mode Presets&quot; pick <code v-pre>DreamGen Role-Play V1 Llama3 / ChatML</code>.</li>
-</ol>
+<p>The Lucid V1 DreamGen models use an extension of the Llama 3 chat template optimized for role-play and writing. They work best with a specific system prompt.</p>
+<p>We strongly recommend to start with one of these master presets:</p>
+<ul>
+<li>Make sure that you have instruct mode enabled and select all checkboxes when importing.</li>
+<li><a href="https://dreamgen.com/docs/models/lucid-v1/sillytavern/master-preset/role-play">DreamGen Lucid V1 Role-Play preset</a></li>
+<li><a href="https://dreamgen.com/docs/models/lucid-v1/sillytavern/master-preset/story">DreamGen Lucid V1 Story preset</a></li>
+</ul>
+<p>These presets come with built-in support for <code v-pre>/sys</code> to send instructions to the model. You can use those to steer the plot or control character&#x27;s actions.</p>
 <p><figure class="content-center">
-    <img src="../../../static/dreamgen/dreamgen_st_context_settings.jpg" alt="DreamGen context settings" class="rounded-image-rounded border-image-border border-image-border-width" />
-    <figcaption class="caption">DreamGen context settings</figcaption>
-</figure>
-<figure class="content-center">
-    <img src="../../../static/dreamgen/dreamgen_st_instruct_settings.jpg" alt="DreamGen instruct settings" class="rounded-image-rounded border-image-border border-image-border-width" />
-    <figcaption class="caption">DreamGen instruct settings</figcaption>
+    <img src="../../../static/dreamgen/dreamgen_st_preset.png" alt="DreamGen preset selected" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption">DreamGen preset selected</figcaption>
 </figure>
 </p>
-<p>(*) When to use Llama 3 and when to use ChatML? As of 2024/06/17, <code v-pre>opus-v1-sm</code> is <code v-pre>ChatML</code> and all other models are <code v-pre>Llama3</code> based.
-When running local models, the template will be indicated in the model&#x27;s HuggingFace card.</p>
-<doc-anchor-target id="completion-settings">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#completion-settings">#</doc-anchor-trigger>
-        <span>Completion Settings</span>
-    </h2>
-</doc-anchor-target>
-<p>DreamGen supports:</p>
+<p>Other resources:</p>
 <ul>
-<li>&quot;Temperature&quot;, &quot;Top P&quot;, &quot;Top K&quot; and &quot;Min P&quot;</li>
-<li>&quot;Presence Penalty&quot;, &quot;Frequency Penalty&quot; and &quot;Repetition Penalty&quot; (without range)</li>
-<li>&quot;Min Length&quot; -- lets you force the model to generate at least <code v-pre>min(min_length, max_tokens)</code> tokens</li>
+<li><a href="https://dreamgen.com/docs/models/lucid-v1/sillytavern"><strong>Detailed DreamGen + SillyTavern guide</strong></a></li>
+<li><a href="https://dreamgen.com/docs/models/lucid-v1">Detailed Lucid V1 prompt format documentation</a>.</li>
+<li><a href="https://imgur.com/a/dreamgen-lucid-sillytavern-roleplay-demo-bhzQpto">DreamGen + SillyTavern role-play demo</a></li>
+<li><a href="https://imgur.com/a/dreamgen-lucid-sillytavern-writing-demo-JLv5iO3">DreamGen + SillyTavern story-writing demo</a></li>
+<li><a href="https://v2.dreamgen.com/docs/scenario-editor">Tips for making your own scenarios</a></li>
 </ul>
-<p>Good starting values might be:</p>
-<ul>
-<li>Min P: 0.05</li>
-<li>Temperature: 0.8</li>
-<li>Repetition Penalty: 1.1</li>
-</ul>
-<doc-anchor-target id="tips-for-formatting">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tips-for-formatting">#</doc-anchor-trigger>
-        <span>Tips for Formatting</span>
-    </h2>
-</doc-anchor-target>
-<p>The DreamGen models differ from the regular instruction-following models like OpenAI&#x27;s ChatGPT.</p>
-<p>The models were fine-tuned for the task of writing a story based on the provided description which typically consists of plot description, style description, characters, locations, lore, etc. The models can also be <em>steered</em> in the middle of the story, making you the director, telling the characters what they should do or how the plot should unfold.</p>
-<p>A well-formatted <strong>system prompt</strong> message would look like this:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-none"><code v-pre class="language-none">You are an intelligent, skilled, versatile writer.
-
-Your task is to write a story based on the information below.
-
-
-## Plot description:
-
-The librarian sets up a blind date between Lucifer and Mia. Lucifer immediately falls in love with Mia, but Mia needs more space and time to make up her mind.
-
-
-## Style description:
-
-The narrative is vivid and intensely sensual, with a strong emphasis on raw emotion conveyed from a first-person point of view. The language is explicit, evoking intense imagery and indulging in the erotic exploration of the characters' passionate encounters.
-
-
-## Characters
-
-### Lucifer
-
-Lucifer, the red-skinned, horned demon, is the embodiment of fallen grace. Wrestling with his notorious heritage and a newfound desire for love, his complex nature ferments with vulnerability. His character oscillates between hedonism and self-reflection, hungering for acceptance by Mia and the librarian. Embracing his mortal love, he yearns for transformation, embodying the notion that even the damned may seek solace in love's redemption.
-
-### Mia
-
-Mia is a kind woman...</code></pre>
-</doc-codeblock></div>
-<p>Note that the <strong>prompt should be a description of the story</strong>, rather than instructions or directives on how the story should be written. <strong>Avoid using phrases like:</strong></p>
-<ul>
-<li>&quot;Write the story as if...&quot;</li>
-<li>&quot;Make sure to...&quot;</li>
-<li>etc.</li>
-</ul>
-<p>See more <a href="https://dreamgen.com/docs/models/opus/v1#task-story-writing">examples</a> of what the plot, style and character descriptions should look like.</p>
-<p>The default &quot;DreamGen Role-Play V1&quot; template substitutes the different sections as follows:</p>
-<ul>
-<li><code v-pre>## Plot description:</code> will consist of <code v-pre>{{scenario}}</code> and <code v-pre>{{wiBefore}}</code>.</li>
-<li><code v-pre>## Style description:</code> is not provided, you should either add it to the system prompt under Advanced Settings, or to the character cards, at the end of <code v-pre>{{scenario}}</code>. This section is useful to influence the narrative style (first, second, third person), the tense (past, present), the level of detail and verbosity, etc.</li>
-<li><code v-pre>## Characters:</code> will have a <code v-pre>{{char}}</code> character with description consisting of <code v-pre>{{description}}</code> and <code v-pre>{{personality}}</code> and a <code v-pre>{{user}}</code> character with description consisting of <code v-pre>{{persona}}</code>.</li>
-</ul>
-<doc-anchor-target id="message-examples-and-initial-message">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#message-examples-and-initial-message">#</doc-anchor-trigger>
-        <span>Message Examples and Initial Message</span>
-    </h3>
-</doc-anchor-target>
-<p>The DreamGen models are very responsive to the context -- they will largely stick to the writing style (and facts) presented in the previous conversation turns.
-This makes the message examples and the initial message very important.</p>
-<doc-anchor-target id="formatting-message-examples">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#formatting-message-examples">#</doc-anchor-trigger>
-        <span>Formatting Message Examples</span>
-    </h4>
-</doc-anchor-target>
-<p>The <code v-pre>{{mesExamples}}</code> are appended at the end of the system prompt. To take full advantage of the instruct formatting, make sure that your examples are separated with the <code v-pre>&lt;START&gt;</code> separator. For example:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-none"><code v-pre class="language-none">&lt;START&gt;
-{{user}}: (user's turn)
-{{char}}: (char's turn)
-&lt;START&gt;
-{{user}}: (user's turn)
-{{char}}: (char's turn)</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="examples">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#examples">#</doc-anchor-trigger>
-        <span>Examples</span>
-    </h3>
-</doc-anchor-target>
-<p>Here are a couple of example cards, adapted for DreamGen, that take into account the unique prompting. These cards also leverage the <code v-pre>{{mesExamples}}</code> as described above.</p>
-<doc-anchor-target id="seraphina">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#seraphina">#</doc-anchor-trigger>
-        <span>Seraphina</span>
-    </h4>
-</doc-anchor-target>
-<p>This is an edit of the popular Seraphina card that&#x27;s built into SillyTavern by default.</p>
-<div style="width:200px;">
-<p><figure class="content-center">
-    <a href="../../../static/dreamgen/cards/seraphina.png">
-        <img src="../../../static/dreamgen/cards/seraphina.png" alt="Seraphina" class="rounded-image-rounded border-image-border border-image-border-width" />
-    </a>
-    <figcaption class="caption">Seraphina</figcaption>
-</figure>
-</p>
-</div>
-<doc-anchor-target id="lara-lightland">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lara-lightland">#</doc-anchor-trigger>
-        <span>Lara Lightland</span>
-    </h4>
-</doc-anchor-target>
-<p>This is an edit of the Lara Lightland card by Deffcolony.</p>
-<div style="width:200px;">
-<p><figure class="content-center">
-    <a href="../../../static/dreamgen/cards/laralightland.png">
-        <img src="../../../static/dreamgen/cards/laralightland.png" alt="Lara Lightland" class="rounded-image-rounded border-image-border border-image-border-width" />
-    </a>
-    <figcaption class="caption">Lara Lightland</figcaption>
-</figure>
-</p>
-</div>
 <doc-anchor-target id="faq">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#faq">#</doc-anchor-trigger>
         <span>FAQ</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="what-sampler-settings-should-i-use">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#what-sampler-settings-should-i-use">#</doc-anchor-trigger>
-        <span>What sampler settings should I use?</span>
-    </h3>
-</doc-anchor-target>
-<p>You can start with these:</p>
-<ul>
-<li>Temperature: 1.0</li>
-<li>MinP: 0.05</li>
-<li>Presence Penalty: 0.1</li>
-<li>Frequency Penalty: 0.1</li>
-</ul>
 <doc-anchor-target id="how-can-i-make-the-responses-longer-or-shorter">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#how-can-i-make-the-responses-longer-or-shorter">#</doc-anchor-trigger>
         <span>How can I make the responses longer or shorter?</span>
     </h3>
 </doc-anchor-target>
-<p>You have several options:</p>
-<ul>
-<li>Change or add the <code v-pre>## Style description:</code> in the system prompt or model card. You can try adding something like &quot;Sentences are generally long, and the narrative describes the setting in painstaking detail.&quot;</li>
-<li>Change the <code v-pre>Min Length</code> in the Completion Settings.</li>
-<li>Add <code v-pre>Last Output Sequence</code> similar to the following in the Advanced Formatting settings under Instruct Mode:</li>
-</ul>
-<p>Here&#x27;s an example of the <code v-pre>Last Output Sequence</code> that might help make the model respond in a more verbose way, using the Llama 3 template:</p>
+<p>You can set the <code v-pre>Last Assistant Prefix</code> in your formatting presets.</p>
+<p>For long messages:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-none"><code v-pre class="language-none">&lt;|eot_id|&gt;
-&lt;|start_header_id|&gt;user&lt;|end_header_id|&gt;
+<pre translate="no" class="language-none"><code v-pre class="language-none">&lt;|start_header_id|&gt;user&lt;|end_header_id|&gt;
 
-Length: 400 words
-Plot: {{char}} replies to {{user}} in detailed and elaborate way.&lt;|eot_id|&gt;
-&lt;|start_header_id|&gt;writer character: {{char}}&lt;|end_header_id|&gt;
-
+The next message is from  and is at least 100 words long&lt;|eot_id|&gt;&lt;|start_header_id|&gt;writer character &lt;|end_header_id|&gt;
 </code></pre>
 </doc-codeblock></div>
-<p>The same expressed using the ChatML template:</p>
+<p>For short messages:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-none"><code v-pre class="language-none">&lt;|im_end|&gt;
-&lt;|im_start|&gt;user
-Length: 400 words
-Plot: {{char}} replies to {{user}} in detailed and elaborate way.&lt;|im_end|&gt;
-&lt;|im_start|&gt;text names= {{char}}</code></pre>
+<pre translate="no" class="language-none"><code v-pre class="language-none">&lt;|start_header_id|&gt;user&lt;|end_header_id|&gt;
+
+The next message is from  and is at most 50 words long&lt;|eot_id|&gt;&lt;|start_header_id|&gt;writer character &lt;|end_header_id|&gt;
+</code></pre>
 </doc-codeblock></div>
-<p>You can change the text within to something more suitable for your scenario or context.</p>
-<doc-anchor-target id="how-can-i-stop-the-model-from-repeating-itself">
+<p>Make sure to preserve all newlines, including the two at the end.</p>
+<p><figure class="content-center">
+    <img src="../../../static/dreamgen/dreamgen_st_long_response_prefix.png" alt="Long Message Prefix" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption">Long Message Prefix</figcaption>
+</figure>
+</p>
+<p>You can also include writing style description in your card or system prompt, e.g.:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">## Style
+
+&lt;your description&gt;</code></pre>
+</doc-codeblock></div>
+<p>See the <a href="https://v2.dreamgen.com/docs/scenario-editor#style">&quot;Style&quot; documentation</a> to learn more and see some examples.</p>
+<doc-anchor-target id="how-can-i-steer-the-role-play--story">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-can-i-stop-the-model-from-repeating-itself">#</doc-anchor-trigger>
-        <span>How can I stop the model from repeating itself?</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#how-can-i-steer-the-role-play--story">#</doc-anchor-trigger>
+        <span>How can I steer the role-play / story?</span>
     </h3>
 </doc-anchor-target>
-<p>If the model repeats what&#x27;s in the context, you can try increasing &quot;Repetition Penalty&quot; in the Completion Settings or you can try rephrasing the part of the context that&#x27;s getting repeated.
-If the model repeats itself within one message, you can try increasing &quot;Presence Penalty&quot; or &quot;Frequency Penalty&quot;.</p>
-<doc-anchor-target id="how-can-i-steer-the-story">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-can-i-steer-the-story">#</doc-anchor-trigger>
-        <span>How can I steer the story?</span>
-    </h3>
-</doc-anchor-target>
-<p>If you want to direct the characters to do something, or to steer the plot in certain direction, you can use the <code v-pre>user</code> role (that is the <code v-pre>&lt;|im_start|&gt;user</code> preamble).</p>
-<p>At this point, this functionality is not neatly integrated into SillyTavern natively, but you can use the <code v-pre>Last Output Sequence</code> as described above to insert the <code v-pre>user</code> (instruction) turn. See <a href="https://dreamgen.com/docs/models/opus/v1#prompt-instructions">examples</a> of what the instructions should look here.</p>
+<p>Use the <code v-pre>/sys</code> option to send instructions to the model. Some examples:</p>
+<blockquote>
+<p>The inkeeper offers Daria and the others a pint of ale.</p>
+</blockquote>
+<blockquote>
+<p>The next message is from Draco and should be at least 200 words, focusing on his inner conflict about the decision.</p>
+</blockquote>
+<p><a href="https://imgur.com/a/dreamgen-lucid-sillytavern-roleplay-demo-bhzQpto">See it in action.</a></p>
 
                                 
                                 <!-- Required only on API pages -->
