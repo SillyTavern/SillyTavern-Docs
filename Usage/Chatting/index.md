@@ -17,7 +17,7 @@ The AI will respond with a message that continues the conversation.
 You can now:
 
 * **Send another message**
-* **Swipe the response**: Click the <i class="fa-solid fa-chevron-right"></i> **Swipe** button on the message to generate a different response.
+* **Swipe the response**: Click the <i class="fa-solid fa-chevron-right"></i> [**Swipe**](/Usage/Chatting/swipes.md) button on the message to generate a different response.
 * **Edit the message**: Click the <i class="fa-solid fa-pencil"></i> **Edit** button on any message to [edit the message content](#edit-message-content).
 * **Message actions**: Click the <i class="fa-solid fa-ellipsis"></i> **Message actions** button on a message for more [message options](#message-actions-panel) like [translation](../../extensions/Translation.md), image generation, and story branching.
 * **Chat options**: Click the <i class="fa-solid fa-bars"></i> **Options** button next to the chat bar for more [chat options](#chat-options-panel) like author's notes and chat file management.
