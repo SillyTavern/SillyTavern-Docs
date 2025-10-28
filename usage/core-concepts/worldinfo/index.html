@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.814559745765">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.814996239029">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.11.0.814559745765" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.11.0.814996239029" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.814559745765" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.814996239029" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.814559745765" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.11.0.814559745765" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.814996239029" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.11.0.814996239029" defer></script>
 
     <style>
         a {
@@ -410,6 +410,8 @@ Supports logic for AND ANY, NOT ANY, or NOT ALL</p>
     </h5>
 </doc-anchor-target>
 <ul>
+<li>Placing outlet macros inside World Info entries is not supported and will not work. This conflicts with the evaluation order of World Info and may lead to infinite loops.</li>
+<li>Nesting outlets is not supported. You cannot place an outlet macro inside another outlet&#x27;s content. Same as above, this may lead to infinite loops.</li>
 <li>Character card fields (Description, Personality, Scenario, etc.) cannot expand outlets. Those fields are parsed early so they can act as <doc-anchor-trigger to="#additional-matching-sources">additional matching sources</doc-anchor-trigger> for World Info triggers, which means outlets are not available when their text is processed. Use another macro-aware field if you need to place outlet content in the prompt body instead.</li>
 <li>The Author&#x27;s Note editor also cannot resolve outlets. To place outlet content around the Author&#x27;s Note, assign the entries to <strong>Top of AN</strong> or <strong>Bottom of AN</strong> insertion positions instead of relying on the macro.</li>
 <li>Outlet names are case-sensitive. The <code v-pre>{{outlet::}}</code> macro must use exactly the same capitalization as the entry&#x27;s <strong>Outlet Name</strong>, otherwise no content is returned.</li>
