@@ -136,6 +136,8 @@ If an outlet entry is missing a name it will be skipped during generation, so ma
 
 ##### Limitations and caveats
 
+* Placing outlet macros inside World Info entries is not supported and will not work. This conflicts with the evaluation order of World Info and may lead to infinite loops.
+* Nesting outlets is not supported. You cannot place an outlet macro inside another outlet's content. Same as above, this may lead to infinite loops.
 * Character card fields (Description, Personality, Scenario, etc.) cannot expand outlets. Those fields are parsed early so they can act as [additional matching sources](#additional-matching-sources) for World Info triggers, which means outlets are not available when their text is processed. Use another macro-aware field if you need to place outlet content in the prompt body instead.
 * The Author's Note editor also cannot resolve outlets. To place outlet content around the Author's Note, assign the entries to **Top of AN** or **Bottom of AN** insertion positions instead of relying on the macro.
 * Outlet names are case-sensitive. The `{{outlet::}}` macro must use exactly the same capitalization as the entry's **Outlet Name**, otherwise no content is returned.
