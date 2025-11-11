@@ -32,7 +32,7 @@ The SillyTavern engine activates and seamlessly integrates the appropriate lore 
 
 Optionally, World Info files can be assigned to a character to serve as dedicated lore sources across all chats with that character (including groups).
 
-One primary World Info can be bound to the character. To do that, navigate to the Character Management panel and click the globe button, then pick World Info from a dropdown list and click "Ok". When exporting the character, this file will also get embedded in the data.
+One primary World Info can be bound to the character. To do that, navigate to the Character Management panel and click the globe button, then pick World Info from a dropdown list and click "Ok". When exporting the character, this file will also get embedded in the character card data.
 
 To unbind, change, or assign additional World Info files as character lore, shift-click the globe button or click "More..." then "Link World Info". Note that only the primary World Info file gets exported with the character.
 
