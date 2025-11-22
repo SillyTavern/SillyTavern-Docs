@@ -159,6 +159,8 @@ All these sources require an API key of the respective service and usually have 
 5. TogetherAI
 6. MistralAI
 7. NomicAI
+8. OpenRouter
+9. Electron Hub
 
 ## Vectorization Settings
 
