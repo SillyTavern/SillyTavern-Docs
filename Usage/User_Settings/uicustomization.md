@@ -45,6 +45,17 @@ Set a position where the notification popups (toast messages) will appear on the
 * Bottom Center
 * Bottom Right
 
+### Media Style
+
+Default display style for media attachments (images, audio, video) in chat messages. Extensions that append media to chat messages may override this setting. It can also be changed manually per message using "Toggle media display style" action in the message context menu.
+
+* **List**: Display all media attachments at once in a grid-like layout.
+* **Gallery**: Display media attachments in a carousel-style gallery.
+
+!!!
+This setting also affects how the inline media attachments are sent to supported Chat Completion sources: list sends all attachments at once, while gallery sends the selected attachment.
+!!!
+
 ### Theme Colors
 
 Customize the color scheme of every UI element to create your perfect theme. Colors can be selected using a color picker, and include transparency options where applicable.
