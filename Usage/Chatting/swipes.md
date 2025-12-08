@@ -23,7 +23,7 @@ When `Show Swipes for all Messages` is enabled, all messages can be swiped.
 
 * Swiping any message will hide all messages after it.
 * Swiping <i class="fa-solid fa-chevron-right"></i> on a user message will allow you to edit it before a generation is started.
-* Alternate swipes are saved in the `chatTrees` user data folder.
+* Alternate swipes are saved in first line of your chat file.
 * Chat Tree exports must be created manually.
 
 ###### Swiping will switch all following messages, and restore the branch to the state you last left it in.
