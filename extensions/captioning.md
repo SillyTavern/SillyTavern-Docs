@@ -193,6 +193,7 @@ To use one of these caption sources, select Multimodal in the Source dropdown.
 | Text Generation WebUI (oobabooga) | Local, must configure model in ooba                                                                                                                                           |
 | vLLM                              | Local                                                                                                                                                                         |
 | xAI (Grok)                        | Cloud, paid, grok-vision                                                                                                                                                      |
+| Z.AI (GLM).                       | Cloud, paid, glm-4.5v. Only supported under the Common API endpoint. Coding API is not supported.                                                                             |
 
 ### Secondary endpoints
 

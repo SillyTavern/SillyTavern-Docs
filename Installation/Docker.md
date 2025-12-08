@@ -47,7 +47,7 @@ You will need two mandatory directory mappings and a port mapping to allow Silly
 
 ##### Additional Settings
 
-- `SILLYTAVERN_VERSION` - On the right-hand side of this GitHub page, you'll see "Packages". Select the "sillytavern" package and you'll see the image versions. The image tag "latest" will keep you up-to-date with the current release. You can also utilize "staging" that points to the nightly image of the respective branch.
+- `SILLYTAVERN_VERSION` - On the [GitHub Packages page](https://github.com/SillyTavern/SillyTavern/pkgs/container/sillytavern) you'll see the list of tagged image versions. The image tag "latest" will keep you up-to-date with the current release. You can also utilize "staging" that points to the nightly image of the respective branch.
 
 #### Running the container
 

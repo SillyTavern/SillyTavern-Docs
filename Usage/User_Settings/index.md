@@ -180,6 +180,9 @@ Controls how messages are loaded and displayed in the chat interface. These sett
     - Gradual push-out
     - Always include examples
     - Never include examples
+* **Image Swipe Behavior** (controls swipe actions for images in gallery style):
+    - Generate new: Allows generating new images with the [Image Generation](/extensions/Stable-Diffusion.md) extension
+    - Roll over: Cycles through existing images, wrapping around at the ends
 
 ### Input & Response Controls
 
