@@ -66,7 +66,7 @@ SillyTavern has extensibility support.
 * [Auto-Summary of the chat history](/extensions/Summarize.md)
 * Automatic UI and [chat translation](extensions/Translation.md)
 * [Stable Diffusion/FLUX/DALL-E image generation](/extensions/Stable-Diffusion.md)
-* [Text-to-speech for AI response messages (via ElevenLabs, Silero, or the OS's System TTS)](/extensions/TTS.md)
+* [Text-to-speech for AI response messages](/extensions/TTS.md)
 * [Web Search capabilities for adding additional real world context to your prompts](/extensions/WebSearch.md)
 * Many more are available to download from the "Download Extensions & Assets" menu.
 
