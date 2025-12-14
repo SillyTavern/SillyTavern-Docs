@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.818600732659">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.819049746246">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.11.0.818600732659" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.819049746246" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.818600732659" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.819049746246" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.818600732659" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.819049746246" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -393,14 +393,32 @@ At the time of writing the newest CUDA version they list is cu12 which will work
         <span>Installing Oobabooga</span>
     </h3>
 </doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>note</h5>
+<p>Depending on how you have installed Oobabooga, the file paths can be slightly different; i.e. <code v-pre>/text-generation-webui/user_data</code> if you installed via git clone, and <code v-pre>/text-generation-webui-main/user_data</code> if you used the .zip method.</p>
+        </div>
+    </div>
+</div>
 <p>Here&#x27;s a more correct/dummy proof installation procedure:</p>
 <ol>
 <li>git clone <a href="https://github.com/oobabooga/text-generation-webui">https://github.com/oobabooga/text-generation-webui</a> (or download their repo as a .zip in your browser, then extract it)</li>
-<li>Run start_windows.bat or whatever your OS is</li>
+<li>Run <code v-pre>start_windows.bat</code> or whatever your OS is</li>
 <li>When asked, select your GPU type. Even if you intend to use GGUF/CPU, if your GPU is in the list, select it now, because it will give you the option to use a speed optimization later called GPU sharding (without having to reinstall from scratch). If you have no gaming-grade dGPU (NVIDIA, AMD), select None.</li>
 <li>Wait for the installation to finish</li>
-<li>Place kunoichi-dpo-v2-7b.Q6_K.gguf in text-generation-webui/models</li>
-<li>Open text-generation-webui/CMD_FLAGS.txt, delete everything inside and write: --api</li>
+<li>Place kunoichi-dpo-v2-7b.Q6_K.gguf in <code v-pre>text-generation-webui/user_data/models</code></li>
+<li>Open <code v-pre>text-generation-webui/user_data/CMD_FLAGS.txt</code>, delete everything inside and write: <code v-pre>--api</code></li>
 <li>Restart Oobabooga</li>
 <li>Visit <a href="http://127.0.0.1:5000/docs">http://127.0.0.1:5000/docs</a>. Does it load a FastAPI page? If not, you messed up somewhere.</li>
 </ol>
