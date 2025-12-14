@@ -103,7 +103,7 @@ At the time of writing the newest CUDA version they list is cu12 which will work
 ### Installing Oobabooga
 
 !!!note
-Depending on how you have installed Oobabooga, the file paths can be slightly different; i.e. if you installed via git clone, `/text-generation-webui/user_data` and `/text-generation-webui-main/user_data` if you used the .zip method.  
+Depending on how you have installed Oobabooga, the file paths can be slightly different; i.e. `/text-generation-webui/user_data` if you installed via git clone, and `/text-generation-webui-main/user_data` if you used the .zip method.  
 !!!
 
 Here's a more correct/dummy proof installation procedure:
@@ -112,8 +112,8 @@ Here's a more correct/dummy proof installation procedure:
 2. Run `start_windows.bat` or whatever your OS is
 3. When asked, select your GPU type. Even if you intend to use GGUF/CPU, if your GPU is in the list, select it now, because it will give you the option to use a speed optimization later called GPU sharding (without having to reinstall from scratch). If you have no gaming-grade dGPU (NVIDIA, AMD), select None.
 4. Wait for the installation to finish
-5. Place kunoichi-dpo-v2-7b.Q6_K.gguf in `text-generation-webui-main/user_data/models`
-6. Open `text-generation-webui-main/user_data/CMD_FLAGS.txt`, delete everything inside and write: `--api`
+5. Place kunoichi-dpo-v2-7b.Q6_K.gguf in `text-generation-webui/user_data/models`
+6. Open `text-generation-webui/user_data/CMD_FLAGS.txt`, delete everything inside and write: `--api`
 7. Restart Oobabooga
 8. Visit <http://127.0.0.1:5000/docs>. Does it load a FastAPI page? If not, you messed up somewhere.
 
