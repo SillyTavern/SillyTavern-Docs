@@ -110,8 +110,9 @@ Here's a more correct/dummy proof installation procedure:
 4. Wait for the installation to finish
 5. Place kunoichi-dpo-v2-7b.Q6_K.gguf in text-generation-webui-main/user_data/models
 6. Open text-generation-webui-main/user_data/CMD_FLAGS.txt, delete everything inside and write: --api
-7. Restart Oobabooga
-8. Visit <http://127.0.0.1:5000/docs>. Does it load a FastAPI page? If not, you messed up somewhere.
+   Note depending on how you have installed Oobabooga filepaths can be slightly different; I.e. if you installed via git clone, /text-generation-webui/user_data and /text-generation-webui-main/user_data if you used the .zip method.  
+8. Restart Oobabooga
+9. Visit <http://127.0.0.1:5000/docs>. Does it load a FastAPI page? If not, you messed up somewhere.
 
 ### Loading our model in Oobabooga
 
