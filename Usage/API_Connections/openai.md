@@ -1,41 +1,101 @@
 ---
 order: 20
+route: /usage/api-connections/openai/
 ---
+
 # Chat Completions
 
-## OpenAI
+## Source-specific instructions
 
-### API key
+!!!warning **Important!**
+Most API platforms allow you to view the generated API key only once, at the time of its creation. If you lose it, you will need to generate a new key. Make sure to keep it safe!
+!!!
 
-**How to get:**
+### OpenAI
+
+Use OpenAI's developer platform to access various OpenAI models, including gpt-4o, gpt-4.1, o3, etc.
+
+**How to get an API key:**
 
 1. Go to [OpenAI](https://platform.openai.com/) and sign in.
 2. Use "[View API keys](https://platform.openai.com/account/api-keys)" option to create a new API key.
 
-**Important!**
+### Claude
 
-*Lost API keys can't be restored! Make sure to keep it safe!*
+Claude is a family of AI models developed by Anthropic. You can access Claude models through the Anthropic console.
 
-## Claude
+**How to get an API key:**
 
-If you have access to Anthropic's Claude API:
+1. Go to [Anthropic Console](https://console.anthropic.com/) and sign in.
+2. Use the "[Get API Key](https://console.anthropic.com/settings/keys)" section to create a new API key.
 
-- Select 'Claude' for 'Chat Completion Source'.
-- Input your API key.
-- Click connect.
-
-## Mistral AI
+### Mistral AI
 
 Mistral AI is a team developing both open and proprietary models with high scientific standards and a focus on openness. You can run their models locally or through their API service, La Plateforme.
 
-### API
+**How to get an API key:**
 
-- The first step is to create an account on [La Plateforme](https://console.mistral.ai/).
-- Once that's done, you can choose a [plan](https://console.mistral.ai/billing/plans) and set up your payment information or opt for the Free Tier.
-- Next, you can create your [API key](https://console.mistral.ai/api-keys/). You may need to wait a couple of minutes before the key becomes valid!
+1. The first step is to create an account on [La Plateforme](https://console.mistral.ai/).
+2. Once that's done, you can choose a [plan](https://console.mistral.ai/billing/plans) and set up your payment information or opt for the Free Tier.
+3. Next, you can create your [API key](https://console.mistral.ai/api-keys/). You may need to wait a couple of minutes before the key becomes valid!
 
-**Important!**  
-*Lost API keys can't be restored! You would have to create a new one. Make sure to keep it safe!*
+### DeepSeek
+
+DeepSeek Platform provides access to the latest DeepSeek models through an API. They offer a range of models, including DeepSeek V3 and DeepSeek R1.
+
+**How to get an API key:**
+
+1. Sign up on the [DeepSeek Platform](https://platform.deepseek.com/).
+2. After signing up and topping up your account, you can create an API key in the "[API keys](https://platform.deepseek.com/api_keys)" section.
+
+### AI21
+
+AI21 Labs offers a range of AI models, including their flagship Jamba series. You can access their models through the AI21 Studio API.
+
+**How to get an API key:**
+
+1. Go to [AI21 Studio](https://studio.ai21.com/) and sign in.
+2. Navigate to the "Settings => API Keys" section to create a new API key.
+
+### Cohere
+
+Cohere provides a suite of AI models for various tasks, including text generation and embeddings. You can access their models through the Cohere API.
+
+**How to get an API key:**
+
+1. Go to [Cohere](https://cohere.com/) and sign in.
+2. Navigate to the "[API Keys](https://dashboard.cohere.com/api-keys)" section in your account settings to create a new API key.
+
+### Perplexity
+
+Perplexity AI offers access to online-enabled Sonar models through their API for real-time research and information retrieval.
+
+Official Getting Started guide: [Perplexity Quickstart](https://docs.perplexity.ai/getting-started/quickstart)
+
+**How to get an API key:**
+
+1. Go to [Perplexity](https://perplexity.ai/) and sign in.
+2. Go to the "[API billing](https://www.perplexity.ai/account/api/billing)" section to purchase credits for API usage.
+3. Navigate to the "[API keys](https://www.perplexity.ai/account/api/keys)" section in the settings to create a new API key.
+
+### Fireworks AI
+
+Fireworks AI is a high-performance platform that provides fast, cost-effective access to state-of-the-art open-source language models. The platform offers serverless deployment with OpenAI-compatible APIs and supports context windows up to 256,000 tokens.
+
+**How to get an API key:**
+
+1. Go to [Fireworks AI](https://fireworks.ai/) and create an account or sign in.
+2. Navigate to the [API Keys page](https://app.fireworks.ai/settings/users/api-keys) in your account settings.
+3. Click "Create API key" and provide a descriptive name (e.g., "SillyTavern").
+
+## Electron Hub
+
+Electron Hub is a unified OpenAI-compatible platform that provides access to models from multiple vendors through a single API key.
+
+**How to get an API key:**
+
+1. Create an account at [Electron Hub](https://playground.electronhub.ai/console).
+2. Generate an API key from the **Console → API Keys** page.
 
 ## Custom OpenAI-compatible endpoint
 
@@ -58,7 +118,7 @@ Examples of compatible backends include:
 * [LiteLLM](https://www.litellm.ai/)
 * [LocalAI](https://localai.io/)
 
-## Connecting
+### Connecting
 
 To access this feature:
 
@@ -67,9 +127,11 @@ To access this feature:
 
 Enter the custom endpoint URL and an API key if required. For example, TabbyAPI requires an API key for authentication.
 
-> **Hint:** If you experience connection issues, try adding `/v1` to the end of the endpoint URL. Do NOT add the `/chat/completions` suffix.
+!!!tip
+**Hint:** If you experience connection issues, try adding `/v1` to the end of the endpoint URL. Do NOT add the `/chat/completions` suffix.
+!!!
 
-## Selecting a Model
+### Selecting a Model
 
 If the custom API implements the `/v1/models` endpoint to provide a list of available models, you can choose from a dropdown list. Otherwise, use the text field to manually input a model ID.
 
@@ -79,10 +141,22 @@ Click "Test Message" to verify connectivity by sending a simple prompt to the mo
 
 ## Prompt Post-Processing
 
+!!!warning
+**Note:** Tool Calling is not supported when Post-Processing option with "no tools" is used!
+!!!
+
 Some endpoints may impose specific restrictions on the format of incoming prompts, such as requiring only one system message or strictly alternating roles.
 
 SillyTavern provides built-in prompt converters to help meet these requirements (from least to most restrictive):
 
-1. Merge consecutive messages from the same role
-2. Merge roles and allow only one system message (semi-strict)
-3. Merge roles, allow only one optional system message, and require a user role to be first (strict)
+1. None - no explicit processing applied unless strictly required by the API
+2. Merge consecutive messages from the same role
+3. Semi-strict - merge roles and allow only one optional system message
+4. Strict - merge roles, allow only one optional system message, and require a user message to be first
+5. Single user message - merge all messages from all roles into a single user message
+
+Merge, semi-strict, and strict additionally remove any tool calls from the prompt, unless the "with tools" variant is selected. This is useful for APIs that do not support tool calling and your existing prompts contain tool calls.
+
+Less restrictive options have no effect on more restrictive endpoints implemented in SillyTavern other than "Custom OpenAI-compatible"; Custom may error upon invalid request.
+
+In strict mode, if no user message exists before the first assistant message, then `promptPlaceholder` from `config.yaml` will be inserted, which by default is "\[Start a new chat]".

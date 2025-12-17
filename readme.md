@@ -1,10 +1,14 @@
+---
+route: /
+---
+
 # What is SillyTavern?
 
 ![SillyTavern - LLM Frontend for Power Users](/static/banner.png)
 
 SillyTavern (or ST for short) is a locally installed user interface that allows you to interact with text generation LLMs, image generation engines, and TTS voice models. Our goal is to empower users with as much utility and control over their LLM prompts as possible, embracing the steep learning curve as part of the fun.
 
-SillyTavern is a passion project brought to you by a dedicated community of LLM enthusiasts and will always be free and open-sourced. Beginning in February 2023 as a fork of TavernAI 1.2.8, SillyTavern now has over 100 contributors and 2 years of independent development under its belt, and continues to serve as a leading software for savvy AI hobbyists.
+SillyTavern is a passion project brought to you by a dedicated community of LLM enthusiasts and will always be free and open-sourced. Beginning in February 2023 as a fork of TavernAI 1.2.8, SillyTavern now has over 200 contributors and 2 years of independent development under its belt, and continues to serve as a leading software for savvy AI hobbyists.
 
 ## Screenshots
 
@@ -38,9 +42,7 @@ Since SillyTavern is only an interface, you will need access to an LLM backend t
 
 SillyTavern is built around the concept of "character cards". A character card is a collection of prompts that set the behavior of the LLM and is required to have persistent conversations in SillyTavern. They function similarly to ChatGPT's GPTs or Poe's bots. The content of a character card can be anything: an abstract scenario, an assistant tailored for a specific task, a famous personality or a fictional character.
 
-The name field is the only required character card input. To start a neutral conversation with the language model, create a new card simply called "Assistant" and leave the rest of the boxes blank. For a more themed chat, you can provide the language model with various background details, behavior and writing patterns, and a scenario to jump start the chat.
-
-To have a quick conversation without selecting a character card or to just test the LLM connection, simply type your prompt input into the input bar on the Welcome Screen after opening SillyTavern. Please note that such chats are temporary and will not be saved.
+To have a quick conversation without selecting a character card or to just test the LLM connection, simply type your prompt input into the input bar on the [Welcome Screen](/Usage/welcome-assistants.md) after opening SillyTavern. This will create an empty "Assistant" character card that you can customize later.
 
 To get a general idea on how to define character cards, see the default character (Seraphina) or download selected community-made cards from the "Download Extensions & Assets" menu.
 
@@ -64,7 +66,7 @@ SillyTavern has extensibility support.
 * [Auto-Summary of the chat history](/extensions/Summarize.md)
 * Automatic UI and [chat translation](extensions/Translation.md)
 * [Stable Diffusion/FLUX/DALL-E image generation](/extensions/Stable-Diffusion.md)
-* [Text-to-speech for AI response messages (via ElevenLabs, Silero, or the OS's System TTS)](/extensions/TTS.md)
+* [Text-to-speech for AI response messages](/extensions/TTS.md)
 * [Web Search capabilities for adding additional real world context to your prompts](/extensions/WebSearch.md)
 * Many more are available to download from the "Download Extensions & Assets" menu.
 

@@ -30,11 +30,11 @@ The SillyTavern engine activates and seamlessly integrates the appropriate lore 
 
 ## Character Lore
 
-Optionally, one World Info file could be assigned to a character to serve as a dedicated lore source across all chats with that character (including groups).
+Optionally, World Info files can be assigned to a character to serve as dedicated lore sources across all chats with that character (including groups).
 
-To do that, navigate to a Character Management panel and click a globe button, then pick World Info from a dropdown list and click "Ok".
+One primary World Info can be bound to the character. To do that, navigate to the Character Management panel and click the globe button, then pick World Info from a dropdown list and click "Ok". When exporting the character, this file will also get embedded in the character card data.
 
-To unbind or change character lore, Shift-click the globe button. If on mobile, click "More..." and then "Link World Info".
+To unbind, change, or assign additional World Info files as character lore, shift-click the globe button or click "More..." then "Link World Info". Note that only the primary World Info file gets exported with the character.
 
 ### Character Lore Insertion Strategy
 
@@ -89,7 +89,16 @@ There are two modes to enter keywords, each with a slightly different UI. In ⌨
 
 #### Optional Filter
 
-A list of supplementary keywords that are used in conjunction with the main keywords. See [Optional Filter](#optional-filter-1). These keys also support [regex](#regular-expression-regex-as-keys).
+Comma-separated list of additional keywords in conjunction with the primary key.
+If no arguments are provided, this flag is ignored.
+Supports logic for AND ANY, NOT ANY, or NOT ALL
+
+1. AND ANY = Activates the entry only if the primary key and Any one of the optional filter keys are in scanned context.
+2. AND ALL = Activates the entry only if the primary key and ALL of the optional filter keys are present.
+3. NOT ANY = Activates the entry only if the primary key and None of the optional filter keys are in scanned context.
+4. NOT ALL = Prevents activation of the entry despite primary key trigger, if all of the optional filters are in scanned context.
+
+These keys also support [regex](#regular-expression-regex-as-keys).
 
 #### Entry Content
 
@@ -97,7 +106,7 @@ The text that is inserted into the prompt upon entry activation.
 
 #### Insertion Order
 
-Numeric value. Defines a priority of the entry if multiple were activated at once. Entries with higher order numbers will be inserted closer to the end of the context as they will have more impact on the output.
+Numeric value. Defines a priority of the entry if multiple were activated at once. Entries with larger order numbers will be inserted closer to the end of the context as they will have more impact on the output. For example, an entry with Order number 100 will appear in the context before an entry with Order number 250.
 
 #### Insertion Position
 
@@ -108,13 +117,32 @@ Numeric value. Defines a priority of the entry if multiple were activated at onc
 * **Top of AN:** World Info entry is inserted at the top of Author's Note content. Has a variable impact depending on the Author's Note position.
 * **Bottom of AN:** World Info entry is inserted at the bottom of Author's Note content. Has a variable impact depending on the Author's Note position.
 * **@ D:** World Info entry is inserted at a specific depth in the chat (Depth 0 being the bottom of the prompt).
-    - ⚙️ - as a system role message
-    - 👤 - as a user role message
-    - 🤖 - as an assistant role message
+  * ⚙️ - as a system role message
+  * 👤 - as a user role message
+  * 🤖 - as an assistant role message
+* **Outlet:** World Info entry is not injected automatically. Instead, its content is stored under a named outlet so you can decide exactly where it appears in the prompt by calling it with the [`{{outlet::Name}}` macro](#outlet-name).
 
 Example Message entries will be formatted according to the prompt-building settings: Instruct Mode or Chat Completion prompt manager. They also follow the Example Messages Behavior rules: being gradually pushed out on full context, always kept, or disabled altogether.
 
 If your Author's Note is disabled (Insertion Frequency = 0), World Info entries in A/N positions will be ignored!
+
+#### Outlet Name
+
+When the **Outlet** insertion position is selected, an additional **Outlet Name** field becomes available for the entry. The name that you provide here groups entries together and defines the token that you will use to pull them into the prompt manually.
+
+Use the `{{outlet::YourName}}` macro in the [Prompt Manager](./Prompts/prompt-manager.md) or [Advanced Formatting](./Prompts/advancedformatting.md) prompt fields. When the prompt is built, the macro is replaced with the combined content of every World Info entry that shares the same outlet name, separated by newlines, sorted by their [Insertion Order](#insertion-order) value.
+
+If an outlet entry is missing a name it will be skipped during generation, so make sure to fill in the field. Outlet names support autocomplete based on the names you have already used to make it easy to reuse consistent labels.
+
+##### Limitations and caveats
+
+* Placing outlet macros inside World Info entries is not supported and will not work. This conflicts with the evaluation order of World Info and may lead to infinite loops.
+* Nesting outlets is not supported. You cannot place an outlet macro inside another outlet's content. Same as above, this may lead to infinite loops.
+* Character card fields (Description, Personality, Scenario, etc.) cannot expand outlets. Those fields are parsed early so they can act as [additional matching sources](#additional-matching-sources) for World Info triggers, which means outlets are not available when their text is processed. Use another macro-aware field if you need to place outlet content in the prompt body instead.
+* The Author's Note editor also cannot resolve outlets. To place outlet content around the Author's Note, assign the entries to **Top of AN** or **Bottom of AN** insertion positions instead of relying on the macro.
+* Outlet names are case-sensitive. The `{{outlet::}}` macro must use exactly the same capitalization as the entry's **Outlet Name**, otherwise no content is returned.
+* Leading or trailing spaces in an outlet name are ignored when you call the macro, so names saved with extra whitespace will not match. Avoid padding names so they can be resolved correctly.
+* Outlet macros that have no content assigned to them will be replaced with an empty string.
 
 #### Entry Title / Memo
 
@@ -129,17 +157,6 @@ If empty, can be backfilled using the entries' first key by clicking on the "Fil
 3. 🔗 (Chain Link) = The entry is allowed to be inserted by embedding similarity.
 
 Each Entry also has a toggle that allows you to enable or disable the entry.
-
-#### Optional Filter
-
-Comma-separated list of additional keywords in conjunction with the primary key.
-If no arguments are provided, this flag is ignored.
-Supports logic for AND ANY, NOT ANY, or NOT ALL
-
-1. AND ANY = Activates the entry only if the primary key and Any one of the optional filter keys are in scanned context.
-2. AND ALL = Activates the entry only if the primary key and ALL of the optional filter keys are present.
-3. NOT ANY = Activates the entry only if the primary key and None of the optional filter keys are in scanned context.
-4. NOT ALL = Prevents activation of the entry despite primary key trigger, if all of the optional filters are in scanned context.
 
 #### Probability (Trigger %)
 
@@ -181,8 +198,8 @@ For secondary keys, the interaction depends on the chosen Selective Logic:
 
 Example:
 
-- Entry 1. Keys: song, sing, Black Cat. Group: songs
-- Entry 2. Keys: song, sing, Ghosts. Group: songs
+* Entry 1. Keys: song, sing, Black Cat. Group: songs
+* Entry 2. Keys: song, sing, Ghosts. Group: songs
 
 The input `sing me a song` can activate either entry (both activated 2 keys), but `sing me a song about Ghosts` will activate only Entry 2 (activated 3 keys).
 
@@ -193,6 +210,38 @@ Allows to integrate World Info entries with [STscripts](/For_Contributors/st-scr
 Automations are executed in the order they are triggered, adhering to your designated sorting strategy, combining the [Character Lore Insertion Strategy](#character-lore-insertion-strategy) with the 'Priority' sorting. Which leads to [Blue Circle](#strategy) entries processed first, followed by others in their specified 'Order'. Recursively triggered entries will be processed after in the same order.
 
 The script command will run only once if multiple entries with the same Automation ID are activated.
+
+#### Character Filter
+
+A list of character names for which this entry can be activated. If this list is not empty, the entry will only be activated for characters whose names are on the list. When a tag is selected, the entry will only be activated for characters that have that specific tag.
+
+"Exclude" mode inverts the filter, meaning that the entry will be activated for all characters except those that are added to the list or that have the selected tag(s).
+
+#### Triggers
+
+The generation types for which this World Info entry can be activated. If nothing is selected, the entry can be activated for all generation types. If one or more are selected, the entry will only be activated for those specific generation types:
+
+* **Normal:** Regular message generation request.
+* **Continue:** When the Continue button is pressed.
+* **Impersonate:** When the Impersonate button is pressed.
+* **Swipe:** When the generation is triggered by swiping.
+* **Regenerate:** When the Regenerate button is pressed in solo chats.
+* **Quiet:** Background generation requests, usually triggered by [extensions](/extensions/index.md) or [STscript](/For_Contributors/st-script.md) commands.
+
+!!!
+The "Regenerate" trigger is not available in group chats as it uses different regeneration logic: all messages from the last reply are deleted, and messages are queued using the "Normal" generation type according to the chosen [Group reply strategy](/Usage/Characters/groupchats.md#reply-order-strategies).
+!!!
+
+#### Additional matching sources
+
+By default World Info Entries are matched only against content from the current conversation. These options allow you to match the entry against different character information that does not show up in the chat, or even persona information. This is useful when you want to have a wide range of entries that are to be used between several characters but don't want to have to manage large lists of tags, or don't want to have to update character filter lists every time you create a new one. This also allows you to match entries based on the persona you have active.
+
+* **Character Description**: Matches against the character description.
+* **Character Personality**: Matches against the character personality summary, found under Advanced Definitions.
+* **Scenario**: Matches against the character specified scenario, found under Advanced Definitions.
+* **Persona Description**: Matches against the current selected persona's description.
+* **Character's Note**: Matches against the character's note, which can be found under Advanced Definitions.
+* **Creator's Notes**: Matches against the character creator's notes, which can be found under Advanced Definitions. The creator's notes are usually not included in the prompt.
 
 ## Vector Storage Matching
 
@@ -208,12 +257,12 @@ The choice of the vectorization model in the extension and the theoretical meani
 
 Vector Storage matching adheres to this set of rules:
 
-- The maximum number of entries that are allowed to be matched with the Vector Storage can be adjusted with the "Max Entries" setting. This number only sets the limit and does not influence the token budget set in the activation settings for World Info. All of the budgeting rules still apply.
-- This feature only replaces the check for keywords. All additional checks must be met for the entry to be inserted: trigger%, character filters, inclusion groups, etc.
-- The "Scan Depth" setting from Activation Settings or entry overrides is not used. The Vector Storage "Query messages" value is utilized instead to get the text to match against. This allows for a configuration like "Scan Depth" set to 0, so no regular keyword matches will be made, but entries still can be activated by vectors.
-- A "Vectorized" status is only an additional marker. The entry would still behave like a normal, enabled, non-constant record that will be activated by keywords if they are set. Remove the keywords if you want them to be activated only by vectors.
+* The maximum number of entries that are allowed to be matched with the Vector Storage can be adjusted with the "Max Entries" setting. This number only sets the limit and does not influence the token budget set in the activation settings for World Info. All of the budgeting rules still apply.
+* This feature only replaces the check for keywords. All additional checks must be met for the entry to be inserted: trigger%, character filters, inclusion groups, etc.
+* The "Scan Depth" setting from Activation Settings or entry overrides is not used. The Vector Storage "Query messages" value is utilized instead to get the text to match against. This allows for a configuration like "Scan Depth" set to 0, so no regular keyword matches will be made, but entries still can be activated by vectors.
+* A "Vectorized" status is only an additional marker. The entry would still behave like a normal, enabled, non-constant record that will be activated by keywords if they are set. Remove the keywords if you want them to be activated only by vectors.
 
-!!! info Note
+!!!info Note
 Since the retrieval quality depends entirely on the outputs of the embedding model, it's impossible to predict exactly what entries will be inserted. If you want deterministic and predictable results, stick to keyword matching.
 !!!
 
@@ -294,7 +343,7 @@ You can define a threshold relative to your API's max-context settings (Context 
 
 If the budget is exhausted, then no more entries are activated even if the keys are present in the prompt.
 
-Constant entries will be inserted first. Then entries with higher order numbers.
+Constant entries will be inserted first. Then entries with larger order numbers.
 
 Entries inserted by directly mentioning their keys have higher priority than those that were mentioned in other entries' contents.
 
@@ -316,11 +365,11 @@ Recursive scanning allows for entries to activate other entries or be activated 
 Whether recursive scanning is enabled can be controlled with the global setting **Recursive Scan**.  
 There are three options available to control recursion for each entry:
 
-- **Non-recursable**: When this checkbox is selected, the entry will not be activated by other entries. This is useful for static information that should not change or be influenced by other world info entries.
+8 **Non-recursable**: When this checkbox is selected, the entry will not be activated by other entries. This is useful for static information that should not change or be influenced by other world info entries.
   
-- **Prevent further recursion**: Selecting this option ensures that once this entry is activated, it will not trigger any other entries. This is helpful to avoid unintended chains of activations.
+* **Prevent further recursion**: Selecting this option ensures that once this entry is activated, it will not trigger any other entries. This is helpful to avoid unintended chains of activations.
 
-- **Delay until recursion**: This entry will only be activated during recursive checks, meaning it won't be triggered in the initial pass but can be activated by other entries that have recursion enabled. Now, with the added **Recursion Level** for those delays, entries are grouped by levels. Initially, only the first level (smallest number) will match. Once no matches are found, the next level becomes eligible for matching, repeating the process until all levels are checked. This allows for more control over how and when deeper layers of information are revealed during recursion, especially in combination with criteria as NOT ANY or NOT ALL combination of key matches.
+* **Delay until recursion**: This entry will only be activated during recursive checks, meaning it won't be triggered in the initial pass but can be activated by other entries that have recursion enabled. Now, with the added **Recursion Level** for those delays, entries are grouped by levels. Initially, only the first level (smallest number) will match. Once no matches are found, the next level becomes eligible for matching, repeating the process until all levels are checked. This allows for more control over how and when deeper layers of information are revealed during recursion, especially in combination with criteria as NOT ANY or NOT ALL combination of key matches.
 
 **Entries can activate other entries by mentioning their keywords in the content text.**
 
@@ -348,9 +397,9 @@ When set to zero, recursion nesting is only limited by your prompt budget. When 
 
 Example values:
 
-- 1 effectively disables recursion as the check stops after the first step.
-- 2 can only activate recursive entries once.
-- 3 can trigger recursion twice...
+* 1 effectively disables recursion as the check stops after the first step.
+* 2 can only activate recursive entries once.
+* 3 can trigger recursion twice...
 
 ### Case-sensitive keys
 

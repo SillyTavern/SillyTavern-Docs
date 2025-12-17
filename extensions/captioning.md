@@ -1,4 +1,5 @@
 ---
+route: /extensions/captioning/
 templating: false
 ---
 
@@ -136,7 +137,7 @@ Caption an image from message #10 with a custom prompt then [generate a new imag
 
 ## Local source
 
-You can change the model in [config.yaml](/Administration/config-yaml.md#extensions-configuration). The key is called `extras.captioningModel` because reasons. Enter the Hugging Face model ID you want to use. The default is `Xenova/vit-gpt2-image-captioning`. 
+You can change the model in [config.yaml](/Administration/config-yaml.md#extensions-configuration). The key is called `extensions.models.captioning`. Enter the Hugging Face model ID you want to use. The default is `Xenova/vit-gpt2-image-captioning`. 
 
 You can use any model that supports image captioning (`VisionEncoderDecoderModel` or "image-to-text" pipeline). The model needs be to compatible with the transformers.js library. That is, it needs ONNX weights. Look for models with the `ONNX` and `image-to-text` tags, or that have a folder called `onnx` full of `.onnx` files. 
 
@@ -145,19 +146,20 @@ You can use any model that supports image captioning (`VisionEncoderDecoderModel
 ### General configuration
 
 - **Model**: Choose the model for image captioning. Options vary based on the selected API.
-- **Allow reverse proxy**: Toggle to allow using a reverse proxy if defined and valid (OpenAI, Anthropic, Google, Mistral)
+- **Allow reverse proxy**: Toggle to allow using a reverse proxy if defined and valid (OpenAI, Anthropic, Google, Mistral, xAI)
 
 API keys and endpoint URLs for captioning sources are managed in the [API Connections](/Usage/API_Connections/index.md) panel. Set the connection up in API Connections first, then select it as your captions source in Captioning.
 
-!!! warning Set it up in the API Connections panel first
+!!!warning Set it up in the API Connections panel first
 One last time: configure the API key/address/port in **<i class="fa-solid fa-plug"></i> API Connections** and use the connection in Captioning.
 
 You can still use Claude for chats and Google AI Studio for image captioning, or whatever. Just set them *both* up in the 'API Connections' tab first. Then flip your Chat Completion source to Claude and your Captioning source to Google AI Studio.
 !!!
 
-For most local backends, you will need to set some options in the model backend rather than in SillyTavern. If your backend can only run one model at a time and doesn't support automatic switching, you are unfortunately going to have a hard time using the same backend for chat and captioning with different models. 
+For most local backends, you will need to set some options in the model backend rather than in SillyTavern. If your backend can only run one model at a time and doesn't support automatic switching, you have several options to use different models for chat and captioning:
 
-Even if you run two instances of the backend on different ports, API Connections only allows one active configuration per backend type. But what if I told you... that you can probably connect to your backend in both Text Completion and Chat Completion modes? Now you can have two connections to the same backend type.
+1. **Secondary endpoints:** Use the secondary endpoint feature (see [Secondary endpoints](#secondary-endpoints) section below) to connect to a different API server for captioning
+2. **Multiple connection types:** Connect to your backend using both Text Completion and Chat Completion modes in API Connections - this gives you two separate connections to the same backend type
 
 ### Sources
 
@@ -171,22 +173,53 @@ To use one of these caption sources, select Multimodal in the Source dropdown.
 
 | API Provider                      | Description                                                                                                                                                                   |
 |-----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 01.AI (Yi)                        | Cloud, paid, yi-vision                                                                                                                                                        |
-| Anthropic                         | Cloud, paid, Claude models with vision capabilities: claude-3-5-sonnet/haiku, claude-3-opus/sonnet                                                                            |
+| AI/ML API                         | Cloud, paid, various GPT, Claude, and Gemini models with vision capabilities                                                                                                  |
+| Claude                            | Cloud, paid, all Claude models with vision capabilities                                                                                                                       |
 | Cohere                            | Cloud, paid, Aya Vision 8B / 32B                                                                                                                                              |
 | Custom (OpenAI-compatible)        | For custom OpenAI-compatible APIs, uses currently configured model in API Connections tab                                                                                     |
+| Electron Hub                      | Cloud, paid, various models with vision capabilities.                                                                                                                         |
 | Google AI Studio                  | Cloud, free tier then paid, Gemini Flash/Pro                                                                                                                                  |
-| Groq                              | Cloud, llama-3.2-vision in 11B/90B, LLaVA                                                                                                                                     |
+| Google Vertex AI                  | Cloud, free tier, Gemini Flash/Pro                                                                                                                                            |
+| Groq                              | Cloud, llama-4 scout/maverick                                                                                                                                                 |
 | KoboldCpp                         | Local, must configure model in KoboldCpp                                                                                                                                      |
 | llama.cpp                         | Local, must configure model in llama.cpp                                                                                                                                      |
-| MistralAI                         | Cloud, paid, pixtral-large, pixtral-12B                                                                                                                                       |
+| MistralAI                         | Cloud, paid, pixtral-large, pixtral-12B, magistral, mistral-large, etc.                                                                                                       |
+| Moonshot AI                       | Cloud, paid, moonshot-vision                                                                                                                                                  |
+| NanoGPT                           | Cloud, paid, various GPT/Claude/Google models with vision capabilities                                                                                                        |
 | Ollama                            | Local, can switch between available models and download [additional vision models](https://ollama.com/search?c=vision) within Captioning after configuring in API Connections |
 | OpenAI                            | Cloud, paid, GPT-4 Vision, 4-turbo, 4o, 4o-mini                                                                                                                               |
 | OpenRouter                        | Cloud, paid (maybe free options), many models, pick from what's available within Captioning after configuring in API connections                                              |
+| Pollinations                      | Cloud, free                                                                                                                                                                   |
 | Text Generation WebUI (oobabooga) | Local, must configure model in ooba                                                                                                                                           |
 | vLLM                              | Local                                                                                                                                                                         |
+| xAI (Grok)                        | Cloud, paid, grok-vision                                                                                                                                                      |
+| Z.AI (GLM).                       | Cloud, paid, glm-4.5v. Only supported under the Common API endpoint. Coding API is not supported.                                                                             |
 
-### KoboldCpp
+### Secondary endpoints
+
+By default, the Multimodal source uses the primary endpoint configured in the API Connections tab.
+You can also set up a secondary endpoint specifically for multimodal captioning.
+
+- Open the **Image Captioning** panel in the **<i class="fa-solid fa-cubes"></i> Extensions** panel.
+- Select "Multimodal" as the captioning source and a preferred API provider.
+- Enter a valid URL for the secondary endpoint in the "Secondary captioning endpoint URL" field.
+- Check the "Use secondary URL" box to enable the secondary endpoint.
+
+!!!tip
+Do not append `/v1` or `/chat/completions` to the end of the URL. The extension will handle that automatically.
+!!!
+
+This is only supported by the following APIs:
+
+- KoboldCpp
+- llama.cpp
+- Ollama
+- Text Generation WebUI (oobabooga)
+- vLLM
+
+### Source-specific guides
+
+#### KoboldCpp
 
 For general information on installing and using [KoboldCpp](https://github.com/LostRuins/koboldcpp), see the [KoboldCpp documentation](https://github.com/LostRuins/koboldcpp/wiki).
 
@@ -208,4 +241,3 @@ The original and classic local multimodal model is LLaVA. GGUF-format files for 
 Some LLaVA finetunes you can try: [xtuner/llava-llama-3-8b-v1_1-gguf](https://huggingface.co/xtuner/llava-llama-3-8b-v1_1-gguf), [xtuner/llava-phi-3-mini-gguf](https://huggingface.co/xtuner/llava-phi-3-mini-gguf).
 
 You can use multimodal projections for the base model that your particular finetune was built from. Projections for some common base models are available from [koboldcpp/mmproj](https://huggingface.co/koboldcpp/mmproj/tree/main).
-

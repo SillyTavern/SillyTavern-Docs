@@ -2,32 +2,32 @@
 label: Reverse proxying
 order: -50
 icon: server
-route: /usage/st-reverse-proxy-guide
+route: /usage/st-reverse-proxy-guide/
 ---
 
-!!! danger Note
+!!!danger Note
 This section does **not** refer to OpenAI/Claude reverse proxies. This refers exclusively to **HTTP/HTTPS Reverse Proxies**.
 !!!
 
 Is Termux confusing to setup? Are you tired of updating and installing ST on every device you have? Want organization of your chats and characters? Well you are in luck. This guide will _hopefully_ cover how to host SillyTavern on your PC where you can connect from anywhere and chat to your bots on the same PC you use to run AI models!
 
-!!! warning Warning
+!!!warning Warning
 This guide is **not meant** for beginners. This will be very technical.
 !!!
 
 ## Fair Warning
 
-!!! info For Windows Users
+!!!info For Windows Users
 This guide is not for Windows users. We recommend using a Linux VM or WSL2 to follow this guide.
 !!!
 
-!!! info For Linux Users
+!!!info For Linux Users
 You must have prior knowledge of
 
--   Linux console commands
--   DNS Records
--   Public IP addresses
--   [Docker](https://www.docker.com)
+- Linux console commands
+- DNS Records
+- Public IP addresses
+- [Docker](https://www.docker.com)
 
 !!!
 
@@ -40,15 +40,15 @@ You must have prior knowledge of
 For Linux, we will reverse proxying SillyTavern through [Traefik](https://traefik.io/traefik/). There are other options such as _NGINX_ or _Caddy_, but for this guide, we will use Traefik as it is what we use ourselves.
 
 1. Get the private IP of your computer using `ifconfig` or from your router.
-   !!! info Tip
+   !!!info Tip
    It is recommended to set your private IP to a Static IP. Refer to your router's manual or Google to configure static IPs.
    !!!
 2. Get your public IP of your modem by Googling `what's my ip`.
-   !!! info About Public IPs
+   !!!info About Public IPs
    Most residential/home networks use **Dynamic IPs** which are renewed after months of use. If you have a dynamic IP, use either DDClient or remember to check and change your public IP ever so often on the Cloudflare Dashboard.
    !!!
 3. Install Docker by following the Docker installation guide [here](https://docs.docker.com/engine/install/).
-   !!! danger Note
+   !!!danger Note
    **Do not** install Docker Desktop.
    !!!
 4. Follow the steps in **Manage Docker as a non-root user** in the Docker post-installation guide [here](https://docs.docker.com/engine/install/linux-postinstall/).
@@ -151,7 +151,7 @@ For Linux, we will reverse proxying SillyTavern through [Traefik](https://traefi
 
 13. Login to Cloudflare and click on your Domain, followed by **Get your API token**.
 14. Click on _Create Token_ then _Create Custom Token_ and make sure you give your token the following permissions.
-    !!! info Token Permissions
+    !!!info Token Permissions
     **Zone -> DNS -> Edit**
 
     **Zone -> Zone -> Read**
@@ -215,7 +215,7 @@ For Linux, we will reverse proxying SillyTavern through [Traefik](https://traefi
     basicAuthMode: true
     ```
 
-    !!! warning Tip
+    !!!warning Tip
     Make sure to change the default username and password to something strong that you can remember.
     !!!
 
@@ -227,26 +227,26 @@ For Linux, we will reverse proxying SillyTavern through [Traefik](https://traefi
     perUserBasicAuth: true
     ```
 
-    !!! warning Tip
+    !!!warning Tip
     Before enabling perUserBasicAuth ensure you have a valid multi-user setup with working passwords.
     !!!
 
 22. Wait a few minutes, then open your domain page you made for ST. At the end of it, you should be able to open SillyTavern from anywhere you go just with one URL and one account.
-    !!! info Tip
+    !!!info Tip
     If nothing happens after several minutes, check the container logs for Traefik for any possible errors.
     !!!
 23. Enjoy! :D
 
 ### Linux (Docker SillyTavern)
 
-!!! warning Note
+!!!warning Note
 Do note that we run SillyTavern on bare-metal over Docker. This is a rough idea of what we would do on Docker with other Docker containers we tend to use with ST.
 !!!
 
 1. Follow Steps 1-11 of **Linux (Bare-Metal SillyTavern)**.
 2. Login to Cloudflare and click on your Domain, followed by **Get your API token**.
 3. Click on _Create Token_ then _Create Custom Token_ and make sure you give your token the following permissions.
-   !!! info Token Permissions
+   !!!info Token Permissions
    **Zone -> DNS -> Edit**
 
     **Zone -> Zone -> Read**
@@ -342,7 +342,7 @@ Do note that we run SillyTavern on bare-metal over Docker. This is a rough idea 
     basicAuthMode: true
     ```
 
-    !!! warning Tip
+    !!!warning Tip
     Make sure to change the default username and password to something strong that you can remember.
     !!!
 
@@ -351,7 +351,7 @@ Do note that we run SillyTavern on bare-metal over Docker. This is a rough idea 
     docker compose up -d sillytavern
     ```
 14. Wait a few minutes, then open your domain page you made for ST. At the end of it, you should be able to open SillyTavern from anywhere you go just with one URL and one account.
-    !!! info Tip
+    !!!info Tip
     If nothing happens after several minutes, check the container logs for Traefik for any possible errors.
     !!!
 15. Enjoy! :D

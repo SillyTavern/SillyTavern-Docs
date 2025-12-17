@@ -1,3 +1,7 @@
+---
+route: /extensions/regex/
+---
+
 # Regex
 
 ## What is it?
@@ -54,7 +58,7 @@ Below this is a list of your scripts with some action buttons.
 
 - **Find Regex** : This is the Regular Expression that is used to detect your targeted text pattern. This is usually the most complex part of any RegEx script, and is the easiest place to make mistakes. Refer to the links at the top of the page for information how to write a RegEx sequence. This box can resolve the values of [common SillyTavern macros](/Usage/Characters/macros.md) (such as \{\{user\}\}, \{\{char\}\}, etc) if the 'Macros in Find Regex' is set to do so (see below).
 
-- **Replace With**: This is what will replace the matched sequence. In a very simple example, if your 'Find Regex' is `apple`, and your 'Replace With' is `orange`, all instances of 'apple' would be automatically changed to 'orange' in any text where the script is applied.
+- **Replace With**: This is what will replace the matched sequence. In a very simple example, if your 'Find Regex' is `apple`, and your 'Replace With' is `orange`, the first occurence of 'apple' would be automatically changed to 'orange' in any text where the script is applied.
 
   - Adding the extension-specific macro \{\{match\}\} in this box will insert the full matched sequence of text. This is commonly used to apply styles to specific words. Going back to the above example, if \*\*\{\{match\}\}\*\* were put into the 'Replace With' box instead, all occurences of the word 'apple' would be replaced with `**apple**`, which would apply the bold markdown style to it.
 
@@ -70,8 +74,6 @@ Below this is a list of your scripts with some action buttons.
   - 'Reasoning': script will be run against the contents of the 'reasoning' object returned by Chat Completion API's like Gemini or Deepseek. If 'Alter Outgoing Prompt' is checked under Ephemerality, the script will also be applied to any reasoning blocks that are added into prompt in subsequent chat turns.
   - **If everthing here is unchecked the script will never activate during normal chatting, but it can still be activated via slash command or STscript.**
 
-- **Min/Max Depth** : How far back in the chat history to look for strings to match with. Leave both blank to apply the script to the whole chat.
-
 - **Other Options** :
   - 'Disabled' prevents the script from running. This is used as an override to prevent the script from running when you simply don't want to change any of the script's settings and/or don't want to disable it entirely via the switch on the script list (as doing so would prevent slash commands from triggering it).
   - 'Run on Edit' makes the script also run after a chat message has been edited. If this is unchecked, the contents of edited chat messages will not trigger the script.
@@ -80,6 +82,42 @@ Below this is a list of your scripts with some action buttons.
   - 'Don't Substitute' will cause any SillyTavern macros to be ignored so the RegEx script will treat them literally when searching.
   - 'Raw' will send in the value of the macro verbatim. This might alter the way your RegEx script searches the text if the value of the macro contains certain special characters.
   - 'Escaped' will add a RegEx escape slash `\` before each character to ensure they do not accidentally alter the overall RegEx sequence. This can be useful if you have certain special characters in the values of the macro.
+
+### Depth Settings
+
+The Min/Max Depth settings provide precise control over which messages in the chat history your regex pattern will affect:
+
+- **Min Depth**: Only affects messages that are at least N levels deep in the chat history
+  - 0 = last message
+  - 1 = second-to-last message
+  - etc.
+  - When blank (set to 'Unlimited'), or -1, will also affect the message to continue on the Continue action
+
+- **Max Depth**: Only affects messages no deeper than N levels in the chat history
+  - Must be greater than Min Depth for the regex to apply
+  - System prompts and utility prompts are not affected by these settings
+
+For example, setting Min Depth to 0 and Max Depth to 2 would only apply your regex to the three most recent messages in the chat.
+
+### Flags
+
+By default the Find Regex pattern is case-sensitive and applies only to the first match. To adjust this behavior, as well as other RegEx flags, you can add them like so:
+
+```txt
+/yourpattern/flags
+```
+
+Example: `/yourpattern/gi` will match all instances of 'yourpattern' in the text, regardless of case.
+
+Some of the most common flags are:
+
+- `i` : case-insensitive
+- `g` : global (applies to all matches, not just the first)
+- `s` : dotAll (treats the input as a single line, so `.` will match newlines)
+- `m` : multi-line (treats the input as multiple lines, so `^` and `$` match the start/end of each line, not just the whole string)
+- `u` : unicode (treats the input as unicode, so `\d`, `\w`, etc. will match unicode characters)
+
+For more information on RegEx flags, see the following MDN page: [Advanced searching with flags](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions#advanced_searching_with_flags)
 
 ### Ephemerality
 

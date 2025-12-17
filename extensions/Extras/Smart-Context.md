@@ -1,12 +1,12 @@
 ---
-route: /extensions/smart-context
+route: /extensions/smart-context/
 ---
 
 # Smart Context
 
 ## **THIS EXTENSION IS NO LONGER MAINTAINED AND NOT RECOMMENDED TO USE. CONSIDER [CHAT VECTORIZATION](/extensions/Chat-vectorization.md) AS A POSSIBLE ALTERNATIVE.**
 
-!!! warning Disclaimer
+!!!warning Disclaimer
 The use of this extension does not guarantee a better chatting experience or improved memory of any sort. Only use if you understand all the implications of vector database utilization.
 !!!
 

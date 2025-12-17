@@ -1,6 +1,6 @@
 ---
-order: character-14
-route: /usage/core-concepts/macros
+order: 90
+route: /usage/core-concepts/macros/
 ---
 
 # Macros (replacement tags)
@@ -26,13 +26,16 @@ Note: some extensions may also add special context-specific macros that only wor
 | `{{charJailbreak}}` | Character's Post-History Instructions Prompt override. |
 | `{{group}}` or `{{charIfNotGroup}}` | Comma-separated list of group member names or character name in solo chats. |
 | `{{groupNotMuted}}` | Same as `{{group}}` but excludes muted members. |
+| `{{notChar}}` | Comma-separated list of all chat participants except the current speaker (`{{char}}`). In group chats this still includes muted characters, and when no message is being generated it lists every character in the roster. |
 | `{{char}}` or `<BOT>` | Character's name. |
 | `{{description}}` | Character's description. |
 | `{{scenario}}` | Character's scenario or chat scenario override (if set). |
 | `{{personality}}` | Character's personality. |
 | `{{persona}}` | User's persona description. |
-| `{{mesExamples}}` | Character's examples of dialogue (unaltered and unsplit). |
-| `{{char_version}}` | The character's version number. |
+| `{{mesExamples}}` | Character's examples of dialogue (instruct-formatted). |
+| `{{mesExamplesRaw}}`  | Character's examples of dialogue (unaltered and unsplit). |
+| `{{charVersion}}` | The character's version number. |
+| `{{charDepthPrompt}}` | The character's at-depth prompt. |
 | `{{model}}` | Text generation model name for the currently selected API. **Can be inaccurate!** |
 | `{{lastMessageId}}` | Last chat message ID. |
 | `{{lastMessage}}` | Last chat message text. |
@@ -61,6 +64,7 @@ Note: some extensions may also add special context-specific macros that only wor
 | `{{// (note)}}` | Allows leaving a note that will be replaced with blank content. Not visible for the AI. |
 | `{{banned "text here"}}` | Dynamically adds quoted text to banned word sequences for Text Generation WebUI backend. Does nothing for other backends. Quotes required. |
 | `{{reverse:(content)}}` | Reverses the content of the macro. |
+| `{{outlet::(name)}}` | Replaced with the content of the named [World Info outlet](/Usage/worldinfo.md#outlet-name), will contain activated entries separated by newlines. |
 
 ## Instruct Mode and Context Template Macros
 
@@ -98,12 +102,12 @@ Note: some extensions may also add special context-specific macros that only wor
 | Macro | Description |
 |-------|-------------|
 | `{{getvar::name}}` | Replaced with the value of the local variable "name". |
-| `{{setvar::name::value}}` | Replaced with empty string, sets the local variable "name" to "value". |
+| `{{setvar::name::value}}` | Replaced with empty string, sets the local variable "name" to "value". Allows empty values. |
 | `{{addvar::name::increment}}` | Replaced with empty string, adds a numeric value of "increment" to the local variable "name". |
 | `{{incvar::name}}` | Replaced with the result of incrementing the value of variable "name" by 1. |
 | `{{decvar::name}}` | Replaced with the result of decrementing the value of variable "name" by 1. |
 | `{{getglobalvar::name}}` | Replaced with the value of the global variable "name". |
-| `{{setglobalvar::name::value}}` | Replaced with empty string, sets the global variable "name" to "value". |
+| `{{setglobalvar::name::value}}` | Replaced with empty string, sets the global variable "name" to "value". Allows empty values. |
 | `{{addglobalvar::name::value}}` | Replaced with empty string, adds a numeric value of "increment" to the global variable "name". |
 | `{{incglobalvar::name}}` | Replaced with the result of incrementing the value of global variable "name" by 1. |
 | `{{decglobalvar::name}}` | Replaced with the result of decrementing the value of global variable "name" by 1. |
@@ -117,3 +121,8 @@ Added by extensions and only work under certain conditions.
 | Macro | Description |
 |-------|-------------|
 | `{{summary}}` | Replaced with the summary of the current chat session (if available). |
+| `{{authorsNote}}` | Replaced with the contents of the Author's Note. |
+| `{{charAuthorsNote}}` | Replaced with the contents of the Character's Author's Note. |
+| `{{defaultAuthorsNote}}` | Replaced with the contents of the default Author's Note. |
+| `{{charPrefix}}` | Replaced with a character-specific Image Generation positive prompt prefix (if available). |
+| `{{charNegativePrefix}}` | Replaced with a character-specific Image Generation negative prompt prefix (if available). |

@@ -2,6 +2,7 @@
 order: 40
 icon: plus
 expanded: true
+route: /usage/
 ---
 
 # Usage
@@ -36,9 +37,13 @@ Connect to AI models for generating text, images, and more
 
 Create and use characters to shape the AI's role, and personas to define your identities
 
-**[Response Configuration](/Usage/Common-Settings.md)** and **[Prompts](/Usage/Prompts/prompts.md)**
+**[Response Configuration](/Usage/Common-Settings.md)** and **[Prompts](/Usage/Prompts/index.md)**
 
 Control the requests that you send to the AI and how it responds
+
+**[Welcome Page Assistants](/Usage/welcome-assistants.md)**
+
+Learn how to set up and use Welcome Page Assistants to greet you with a designated character on the Welcome Screen.
 :::
 
 :::callout
@@ -93,7 +98,7 @@ Manage information and when to insert it into the prompt
 :::
 
 :::callout
-<i class="fa-solid fa-user-gear fa-2xl fa-fw"></i> **[User Settings](/Usage/User_Settings/User_Settings.md)**
+<i class="fa-solid fa-user-gear fa-2xl fa-fw"></i> **[User Settings](/Usage/User_Settings/index.md)**
 
 Change the theme, and the look and feel of messages and chats
 :::

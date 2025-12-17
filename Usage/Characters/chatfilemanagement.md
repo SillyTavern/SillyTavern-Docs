@@ -1,13 +1,13 @@
 ---
-order: character-15
-route: /usage/core-concepts/chatfilemanagement
+order: 80
+route: /usage/core-concepts/chatfilemanagement/
 ---
 
 # Chat File Management
 
 This page describes the ways you can manage your AI chat files.
 
-!!! info Note
+!!!info Note
 Some of these options are available in the "Manage chat files" dialog that opens from the bottom left options menu.
 !!!
 

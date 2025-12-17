@@ -1,11 +1,11 @@
 ---
-order: prompts-10
+order: 100
 route: /usage/core-concepts/advancedformatting/
 ---
 
 # Advanced Formatting
 
-The settings provided in this section allow for more control over the [prompt-building](prompts.md) strategy, primarily for Text Completion APIs.
+The settings provided in this section allow for more control over the [prompt-building](index.md) strategy, primarily for Text Completion APIs.
 
 Most of the settings in this panel do not apply to Chat Completions APIs as they are governed by the prompt manager system instead.
 
@@ -20,6 +20,28 @@ Most of the settings in this panel do not apply to Chat Completions APIs as they
 * [Tokenizer](#tokenizer)
 * [Custom Stopping Strings](#custom-stopping-strings)
 +++
+
+## Resetting Templates
+
+You can restore the default templates to their original state. This can be done either through the UI or by manually deleting the relevant data files.
+
+### UI Reset
+
+1. Open the **<i class="fa-solid fa-font"></i> Advanced Formatting** menu.
+2. Pick the template you want to reset.
+3. Click the **<i class="fa-solid fa-recycle"></i> Restore current template** button.
+4. Confirm the action when prompted.
+
+### Manual Reset
+
+!!!
+Make sure the `skipContentCheck` setting is set to `false` in [config.yaml](/Administration/config-yaml.md#data-configuration), otherwise the content check will not be triggered.
+!!!
+
+1. Navigate to your user data directory (see [Data paths](/Installation/index.md#data-paths) for details).
+2. Delete the `content.log` file from the root of your user data directory. This file tracks the default files copied for your user.
+3. Delete the template JSON files from the relevant subdirectories (`context`, `instruct`, `sysprompt`, etc.).
+4. Restart the SillyTavern server. The application will repopulate the default content, restoring any deleted default templates.
 
 ## Backend-defined templates
 
@@ -45,7 +67,7 @@ The System Prompt defines the general instructions for the model to follow. It s
 
 The System Prompt is a part of the [Story String](context-template.md#story-string) and usually the first part of the prompt that the model receives.
 
-See the [prompting guide](prompts.md#main-prompt-system-prompt) to learn more about the System Prompt.
+See the [prompting guide](index.md#main-prompt-system-prompt) to learn more about the System Prompt.
 
 ## Context Template
 
@@ -77,3 +99,23 @@ Supported APIs:
 6. OpenRouter (both Text and Chat Completion)
 7. Claude
 8. Google AI Studio
+9. MistralAI
+
+## Start Reply With
+
+!!! Note
+By default, the Start Reply With prefix won't be shown in the resulting message. Enable "Show reply prefix in chat" to display it.
+!!!
+
+### Text Completion APIs
+
+Prefills the last line of the prompt, forcing the model to continue from that point. This is useful for enforcing content, such as nudging toward the [Model Reasoning](/Usage/Prompts/reasoning.md) with the defined prefix:
+
+```txt
+<think>
+Sure!
+```
+
+### Chat Completion APIs
+
+Adds an assistant role message to the end of the prompt. For some backend models, this is equivalent to prefilling the model response, but some may not support that at all and will fail with a validation error. If you're unsure, leave this field empty.

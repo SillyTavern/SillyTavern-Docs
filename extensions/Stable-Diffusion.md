@@ -1,4 +1,5 @@
 ---
+route: /extensions/stable-diffusion/
 templating: false
 ---
 
@@ -30,12 +31,17 @@ Most common Stable Diffusion generation settings are customizable within the Sil
 
 | Source                                                                                            | Remarks                                                                                         |
 |:--------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------|
-| [Block Entropy](https://blockentropy.ai/)                                                         | All services will be discontinued on December 31, 2024                                          |
+| [AI.ML API](https://aimlapi.com/)                                                                 | Cloud, paid                                                                                     |
+| [Black Forest Labs](https://bfl.ai/)                                                              | Cloud, paid                                                                                     |
 | [ComfyUI](https://github.com/comfyanonymous/ComfyUI)                                              | Local, open source (GPL3), free of charge, see [ComfyUI Configuration](#comfyui-configuration). |
 | [Draw Things](https://drawthings.ai/)                                                             | Local, Mac/iOS, free of charge                                                                  |
+| [Electron Hub](https://electronhub.ai/)                                                           | Cloud, paid                                                                                     |
+| [FAL.AI](https://fal.ai/)                                                                         | Cloud, paid                                                                                     |
+| [Google AI Studio](https://aistudio.google.com/) / [Google Vertex AI](https://cloud.google.com/vertex-ai) | Cloud, paid. Imagen model series. AI Studio only supports Imagen 3.0 002 model.         |
 | [HuggingFace Serverless](https://huggingface.co/docs/api-inference/index)                         | Cloud, free of charge                                                                           |
+| [NanoGPT](https://nano-gpt.com/)                                                                  | Cloud, paid                                                                                     |
 | [NovelAI Diffusion](https://novelai.net/)                                                         | Cloud, requires an active subscription                                                          |
-| [OpenAI DALL-E 2/3](https://platform.openai.com/)                                                 | Cloud, requires an active subscription                                                          |
+| [OpenAI](https://platform.openai.com/)                                                            | Cloud, paid                                                                                     |
 | [Pollinations](https://pollinations.ai/)                                                          | Cloud, open source (MIT), free of charge                                                        |
 | [SD.Next / vladmandic](https://github.com/vladmandic/automatic)                                   | Local, open source (AGPL3), free of charge                                                      |
 | [SillyTavern Extras](https://github.com/SillyTavern/SillyTavern-Extras)                           | Deprecated, not recommended                                                                     |
@@ -43,6 +49,7 @@ Most common Stable Diffusion generation settings are customizable within the Sil
 | [Stable Diffusion WebUI / AUTOMATIC1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui) | Local, open source (AGPL3), free of charge                                                      |
 | [Stable Horde](https://stablehorde.net/)                                                          | Cloud, open source (AGPL3), free of charge                                                      |
 | [TogetherAI](https://docs.together.ai/docs/serverless-models#image-models)                        | Cloud                                                                                           |
+| [x.AI](https://x.ai/)                                                                             | Cloud, paid                                                                                     |
 
 ## Generation modes
 
@@ -122,7 +129,7 @@ Uses [function calling](/extensions/Stable-Diffusion.md) to automatically detect
 3. The "Use function tool" option must be enabled in the Image Generation settings.
 4. The user should express an intent to generate an image in the chat message, e.g. "Send me a picture of a cat".
 
-!!! warning
+!!!warning
 The interactive mode will not trigger when the function tool is enabled.
 !!!
 
@@ -161,11 +168,13 @@ Snap image generation requests with a forced aspect ratio (portraits, background
 
 ## Common prompt prefix
 
+!!!tip Pro Tip
+Use `{prompt}` macro to specify where exactly the generated prompt will be inserted.
+!!!
+
 Added before every generated or free-mode prompt. Commonly used for setting the overall style of the picture.
 
 Example: `best quality, anime lineart`.
-
-**Pro tip:** Use `{prompt}` macro to specify where exactly the generated prompt will be inserted.
 
 ## Negative prompt
 
@@ -174,6 +183,10 @@ Characteristics of the image you don't want to be present in the output.
 Example: `bad quality, watermark`.
 
 ## Character-specific prompt prefix
+
+!!!tip Pro Tip
+If supported by the generation source, you can also use LoRAs/embeddings here, for example: `<lora:DonaldDuck:1>`.
+!!!
 
 Any characteristics that describe the currently selected character. Will be added after a common prefix.
 
@@ -185,9 +198,11 @@ Limitations:
 1. Works only in 1-to-1 chats. Will not be used in groups.
 2. Won't be used for backgrounds and free mode generations.
 
-If you want to share the prefixes with others, tick the "Shareable" checkbox. This will save them with the character data, rather than your local settings. 
+!!! Note
+To force include a character prefix into a free mode prompt, use the `{{charPrefix}}` macro anywhere in the prompt.
+!!!
 
-**Pro tip:** If supported by the generation source, you can also use LoRAs/embeddings here, for example: `<lora:DonaldDuck:1>`.
+If you want to share the prefixes with others, tick the "Shareable" checkbox. This will save them with the character data, rather than your local settings. 
 
 ## Styles
 
@@ -250,7 +265,7 @@ To add a ComfyUI workflow to the editor, follow these steps:
 4. Paste the downloaded JSON data into the text area.
 5. Replace specific values with placeholders as needed for your use case.
 
-!!! info Tips
+!!!tip Tips
 You can add the API-format JSON file directly to the `data/default-user/user/workflows` directory in your SillyTavern installation. This will save you from steps 3 and 4.
 
 Retain the original JSON file. If you need to open the workflow again in ComfyUI to make changes, it is much more convenient to edit the original file than the one with all the placeholders.
@@ -383,7 +398,7 @@ choose a `GGUF` model in the SillyTavern model dropdown, and use the `%model%` p
 ```
 +++
 
-!!! info If you have model types other than the usual SD checkpoints in ComfyUI
+!!!info If you have model types other than the usual SD checkpoints in ComfyUI
 Stable Diffusion checkpoints, SD UNets, and GGUF-quantized UNets all appear in the Model dropdown.
 Models of one type will not work with workflows/loader nodes expecting another type.
 If you choose an incompatible model type in ST, ComfyUI will report a problem with the loader node.

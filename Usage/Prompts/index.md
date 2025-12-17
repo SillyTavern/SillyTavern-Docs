@@ -1,6 +1,8 @@
 ---
 order: 140
 icon: typography
+templating: false
+route: /usage/prompts/
 ---
 
 # Prompts
@@ -47,7 +49,6 @@ Use the [Prompt Manager](prompt-manager.md) to customize prompt construction for
 
 +++
 
-
 ## Main Prompt (System Prompt)
 
 The Main Prompt (or System Prompt) defines the general instructions for the model to follow. It sets the tone and context for the conversation. For example, it tells the model to act as an AI assistant, a writing partner, or a fictional character. 
@@ -62,14 +63,13 @@ The Main Prompt is one of the default prompts in [Prompt Manager](prompt-manager
 
 +++
 
-
 The default Main Prompt is:
 
 > Write \{\{char\}\}'s next reply in a fictional chat between \{\{char\}\} and \{\{user\}\}.
 
 The \{\{char\}\} and \{\{user\}\} placeholders are replaced with the names of the character and persona that you've defined in the conversation. 
 
-You can use any of the supported [\{\{macro\}\}](/Usage/Characters/characterdesign.md#macros-replacement-tags) tags in the Main Prompt to include information that might vary between conversations or changes as the conversation progresses.
+You can use any of the supported [\{\{macro\}\}](/Usage/Characters/macros.md) tags in the Main Prompt to include information that might vary between conversations or changes as the conversation progresses.
 
 ### Adjusting the Main Prompt
 
@@ -156,17 +156,15 @@ Defining the role of the user not only helps the AI understand how to respond to
 
 ## Post-History Instructions
 
-Post-History Instructions are additional instructions sent to the AI after the main prompt and the user message. They can be used to provide additional context or instructions to the AI based on the message history.
+Post-History Instructions (PHI) are additional instructions sent to the AI after the main prompt and the user message. They can be used to provide additional context or instructions to the AI based on the message history.
 
 Since the Post-History Instructions are sent after the user message, they are the final instructions that the AI receives before generating a response. The AI usually gives them a higher priority than the main prompt, and they can override the main prompt's instructions.
 
+To use per-character Post-History Instructions, add them to the character's [Post-History Instructions](/Usage/Characters/characterdesign.md) and enable [Prefer Char. Instructions](/Usage/User_Settings/index.md). To preserve the globally defined PHI while using character-specific instructions, you can use the `{{original}}` macro in the character's Post-History Instructions field.
+
 +++ Text Completion APIs
 
-Post-History Instructions cannot be defined globally. You could achieve the same effect with an [Author's Note](/Usage/Characters/Author's-Note.md).
-
-To use per-character Post-History Instructions, add them to the character's [Post-History Instructions](/Usage/Characters/characterdesign.md) and enable **both** [Prefer Char. Instructions](/Usage/User_Settings/User_Settings.md) and [Allow Post-History Instructions](context-template.md#allow-post-history-instructions).
-
-The Post-History Instructions is added as an invisible user role injection that precedes the last line of the prompt (usually containing a response message "header").
+Post-History Instructions are defined in the [Advanced Formatting](/Usage/Prompts/advancedformatting.md) panel under the System Prompt category. The Post-History Instructions is added as an invisible user role injection that precedes the last line of the prompt (usually containing a response message "header"). Note that the "Enable System Prompt" toggle must be enabled for the Post-History Instructions to be applied (even if the System Prompt itself is empty).
 
 +++ Chat Completion APIs
 

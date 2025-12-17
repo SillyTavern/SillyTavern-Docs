@@ -1,7 +1,7 @@
 ---
 icon: rss
 order: -30
-route: /usage/remoteconnections
+route: /usage/remoteconnections/
 ---
 
 # Remote connections
@@ -10,11 +10,11 @@ Most often this is for people who want to use SillyTavern on their mobile phones
 
 It is also the first step for allowing remote connections from outside the local network.
 
-!!! warning
+!!!warning
 You should not use port forwarding to expose your ST server to the internet. Instead, use a VPN or a tunneling service like Cloudflare Zero Trust, ngrok, or Tailscale. See the [VPN and Tunneling](tunneling.md) guide for more information.
 !!!
 
-!!! danger Disclaimer
+!!!danger Disclaimer
 **NEVER HOST ANY INSTANCES TO THE OPEN INTERNET WITHOUT ENSURING PROPER SECURITY MEASURES FIRST.**
 
 **WE ARE NOT RESPONSIBLE FOR ANY DAMAGE OR LOSSES IN CASES OF UNAUTHORIZED ACCESS DUE TO IMPROPER OR INADEQUATE SECURITY IMPLEMENTATION.**
@@ -35,7 +35,7 @@ listen: true
 
 When ST is listening for remote connections, you should see this message in the console:
 
-```
+```txt
 SillyTavern is listening on IPv4: 0.0.0.0:8000
 ```
 
@@ -43,7 +43,7 @@ and some explanation about what that means.
 
 When ST is **not** listening for remote connections, you should see this message in the console:
 
-```
+```txt
 SillyTavern is listening on IPv4: 127.0.0.1:8000
 ```
 
@@ -76,7 +76,7 @@ To enable access control via a whitelist, edit the `config.yaml` file in the Sil
       - 172.16.0.0/12
       - 192.168.0.0/16
     ```
-   
+
     If unsure about your local network's address range, use the whitelist above.
 
 2. Allows two specific devices to connect:
@@ -98,6 +98,13 @@ To enable access control via a whitelist, edit the `config.yaml` file in the Sil
       - 192.168.0.*
     ```
 
+4. Allow network connections for all IPv4 devices:
+
+    ```yaml
+    whitelist:
+      - 0.0.0.0/0
+    ```
+
 ### Disabling whitelist-based access control
 
 To disable access control via a whitelist:
@@ -108,7 +115,8 @@ To disable access control via a whitelist:
 
 ### Not recommended: using `whitelist.txt`
 
-!!! If `whitelist.txt` exists, it takes precedence over the whitelist settings in `config.yaml`.
+!!!info
+If `whitelist.txt` exists, it takes precedence over the whitelist settings in `config.yaml`.
 
 However, since all other configurations are managed within `config.yaml`, and `whitelist.txt` may encounter permission issues or become locked, the system could silently revert to using the `config.yaml` whitelist.
 
@@ -135,8 +143,8 @@ This allows any device on the local network to connect.
 
 ### Access control by HTTP Basic Authentication
 
-!!! warning
-HTTP Basic Authentication does not provide strong security. 
+!!!warning
+HTTP Basic Authentication does not provide strong security.
 
 There is no rate-limiting to prevent brute-force attacks. If this is a concern, it is recommended to use a reverse proxy with TLS and rate-limiting, and a dedicated [authentication service](sso.md).
 !!!
@@ -144,6 +152,7 @@ There is no rate-limiting to prevent brute-force attacks. If this is a concern, 
 The server will ask for username and password whenever a client connects via HTTP. **This only works if the Remote connections (listen: true) are enabled.**
 
 To enable HTTP BA, Open `config.yaml` in the SillyTavern base directory and search for `basicAuthMode` Set basicAuthMode to true and set username and password. Note: `config.yaml` will only exist if ST has been executed before at least once.
+
 ```yaml
 basicAuthMode: true
 basicAuthUser:
@@ -162,6 +171,45 @@ perUserBasicAuth: true
 In this `perUserBasicAuth` mode the basic auth's username and password will be the same as any valid multi user account that has a password. Additionally SillyTavern will login directly to that account. **Ensure you have an account with a password prior to enabling `perUserBasicAuth`.**
 
 Save the file and restart SillyTavern if it was already running. You should be prompted for username and password when connecting to your ST. Both username and password are transmitted in plain text. If you are concerned about this, you can serve ST via HTTPS.
+
+### Host whitelisting
+
+When hosting a server over the network without HTTPS, it is highly recommended to enable request host verification. This helps prevent various attacks, such as DNS rebinding. By default, the SillyTavern server will log a console message on a first connection from an unrecognized host.
+
+### Toggle host whitelisting
+
+To enable host whitelisting, edit the `config.yaml` file in the SillyTavern root directory:
+
+```yaml
+hostWhitelist:
+    enabled: true
+```
+
+### Add trusted hosts
+
+To add a host name to a list of trusted hosts, include it in the `hostWhitelist.hosts` section:
+
+!!!tip Tips
+Do not add `localhost` or IPs (such as `127.0.0.1` or `::1`). These are always considered trusted.
+
+To add a range of hosts, use a leading dot. For example, adding `.trycloudflare.com` will trust `trycloudflare.com` as well as any subdomain like `example.trycloudflare.com`.
+!!!
+
+```yaml
+hostWhitelist:
+  hosts:
+    - "example.com"
+    - ".trycloudflare.com"
+```
+
+### Toggle console messages
+
+To disable console messages for unrecognized hosts, set the `hostWhitelist.scan` option to `false`:
+
+```yaml
+hostWhitelist:
+    scan: false
+```
 
 ## Connecting to your SillyTavern instance
 
@@ -189,23 +237,23 @@ Use http:// NOT https://
 
 ### Connection logging
 
-New connections to the server are displayed in the console window and logged in the `access.log` file in the SillyTavern base directory.
+New connections to the server are displayed in the console window and logged in the `access.log` file in the SillyTavern data directory.
 
 A console message for a browser on the same machine as the server looks like:
 
-```
+```txt
 New connection from 127.0.0.1; User Agent: ...
 ```
 
 A console message for a browser on a different machine on the same network as the server might look like:
 
-```
+```txt
 New connection from 192.168.116.187; User Agent: ...
 ```
 
 If a connection is refused, the console message will look like:
 
-```
+```txt
 New connection from 192.168.116.211; User Agent: ...
 
 Forbidden: Connection attempt from 192.168.116.211. If you are attempting to connect, 
@@ -219,7 +267,7 @@ root of SillyTavern folder.
 
 Still unable to connect?
 
-* If the connection attempt [appears in the console](#connection-logging), but is forbidden, it is a [whitelist issue](#access-control-by-whitelist).
+* If the connection attempt [appears in the console](#connection-logging), but is forbidden, it is a [whitelist issue](#whitelist-based-access-control).
 * If ST is listening for remote connections but the connection attempt does not appear in the console, it is a [network issue](#network-issues).
 * If ST is not listening for remote connections, it is a [reading issue](#allowing-remote-connections).
 
@@ -237,16 +285,23 @@ If you are trying to access your ST server from [outside your local network](rem
 
 ### Start SillyTavern with TLS/SSL
 
+!!!tip
+SSL can also be configured using the `config.yaml` file: [SSL Configuration](/Administration/config-yaml.md#ssl-configuration).
+!!!
+
 To encrypt traffic from and to your ST instance, start the server with the `--ssl` flag.
 
 Example:
-```
+
+```bash
 node server.js --ssl
 ```
+
 As per default, ST will search for your certificates inside the `certs` folder. If your files are located elsewhere, you can use the `--keyPath` and `--certPath` arguments.
 
 Example:
-```
+
+```bash
 node server.js --ssl --keyPath /home/user/certificates/privkey.pem --certPath /home/user/certificates/cert.pem
 ```
 

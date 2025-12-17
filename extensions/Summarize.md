@@ -1,3 +1,7 @@
+---
+route: /extensions/summarize/
+---
+
 # Summarize
 
 ## What is it?

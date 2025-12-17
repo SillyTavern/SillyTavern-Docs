@@ -1,4 +1,5 @@
 ---
+route: /extensions/translation/
 templating: false
 ---
 

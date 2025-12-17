@@ -1,5 +1,5 @@
 ---
-order: prompts-30
+order: 80
 route: /usage/core-concepts/instructmode/
 ---
 
@@ -47,7 +47,7 @@ User: { Write a happy song about Nintendo Switch. }
 
 ### System Prompt
 
-!!! warning Recent change
+!!!warning Recent change
 The System Prompt is now a separate entity. See the [Advanced Formatting](advancedformatting.md#system-prompt) page for more details.
 !!!
 
@@ -85,19 +85,21 @@ The following options are available:
 * **Groups and Past Personas**: Only add name prefixes to messages from group characters and past personas.
 * **Always**: Always add name prefixes before the message contents.
 
-### Sequences: System Prompt Wrapping
+### Sequences: Story String Wrapping
 
-Define how the System Prompt will be wrapped.
+!!!warning Recent change
+System Prompt wrapping has been removed and replaced with Story String wrapping.
+!!!
 
-#### System Prompt Prefix
+Define how the Story String will be wrapped when the Position is set to "Default (top of context)"
 
-Inserted before a System prompt.
+#### Story String Prefix
 
-#### System Prompt Suffix
+Inserted before a Story String.
 
-Inserted after a System prompt.
+#### Story String Suffix
 
-**Important:** this applies *only* to the System Prompt itself, *not* the entire Story String! If you want to wrap the Story String, add these sequences to the Story String template in the Context Template section.
+Inserted after a Story String.
 
 ### Sequences: Chat Messages Wrapping
 
@@ -143,13 +145,17 @@ Various advanced configurations for finer tuning of the prompt building
 
 Inserted before the first Assistant's message.
 
-> Only the first message of the **chat history** counts, not the message that actually goes into the prompt first!
+!!!info
+Only the first message of the **chat history** counts, not the message that actually goes into the prompt first!
+!!!
 
 #### Last Assistant Prefix
 
 Inserted before the last Assistant's message or as a last prompt line when generating an AI reply.
 
-> Not used when generating text in a background (e.g. Stable Diffusion prompts or Summaries). System Instruction Prefix or Regular Assistant Prefix will be used instead.
+!!!info
+Not used when generating text in a background (e.g. Stable Diffusion prompts or Summaries). System Instruction Prefix or Regular Assistant Prefix will be used instead.
+!!!
 
 #### System Instruction Prefix
 

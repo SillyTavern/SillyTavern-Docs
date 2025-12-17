@@ -2,6 +2,7 @@
 label: VPNs and Tunneling
 order: -40
 icon: lock
+route: /administration/tunneling/
 ---
 
 VPNs and tunnels are a secure way to access your home network from anywhere in the world. This guide will show you how to use a VPN or a tunnel to access your SillyTavern instance from anywhere.
@@ -45,7 +46,7 @@ Tailscale is a VPN provider enabling a secure remote connection to your PC. An o
 
 ### 3. Adding your devices to the whitelist
 
-* Add your connecting device's machine name (the one you want to use SillyTavern with) to SillyTavern's whitelist by following [Managing whitelisted IPs](remote-connections#access-control-by-whitelist).
+* Add your connecting device's machine name (the one you want to use SillyTavern with) to SillyTavern's whitelist by following [Managing whitelisted IPs](./remote-connections.md#whitelist-based-access-control).
 
 ### 4. Connecting
 

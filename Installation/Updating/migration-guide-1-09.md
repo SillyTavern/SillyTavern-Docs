@@ -1,5 +1,6 @@
 ---
 order: 109
+route: /installation/updating/migration-guide-1-09/
 ---
 
 # 1.9.0 Migration Guide

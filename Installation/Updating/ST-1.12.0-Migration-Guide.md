@@ -41,7 +41,7 @@ npm run start -- --dataRoot="/Users/harry/ST-Data"
 
 The default data root path is `./data`, which means the `data` directory in SillyTavern's repository.
 
-!!! info Note
+!!!info Note
 The data root path should be either a **full absolute** or a **full relative** path. You _can't_ use path shortcuts like `~` or `%APP_DATA%`, as these are resolved by a shell, not the operating system.
 !!!
 
@@ -74,7 +74,7 @@ volumes:
 
 **Step 3.** Rebuild the container and start it up.
 
-!!! info Note
+!!!info Note
 Soft links between the `/public` directory and the `config` volume are no longer needed and are not built into the Docker container!
 !!!
 

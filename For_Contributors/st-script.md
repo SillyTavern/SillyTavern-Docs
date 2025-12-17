@@ -1,7 +1,8 @@
 ---
 order: 0
 icon: file-symlink-file
-route: /usage/st-script
+route: /usage/st-script/
+templating: false
 ---
 
 # STscript Language Reference
@@ -41,7 +42,9 @@ Commands are executed sequentially, one after another, and transfer data between
 1. The `/pass` command accepts a constant value of "Hello, World!" as an unnamed argument and writes it to the pipe.
 2. The `/echo` command receives the value through the pipe from the previous command and displays it as a toast notification.
 
-> **Hint:** To see a list of all available commands, type `/help slash` into the chat.
+!!!tip
+**Hint:** To see a list of all available commands, type `/help slash` into the chat.
+!!!
 
 As constant unnamed arguments and pipes are interchangeable, we could rewrite this script simply as:
 
@@ -161,13 +164,23 @@ The following modifications can be applied to commands to work with these variab
 
 You can use the `/if` command to create conditional expressions that branch the execution based on the defined rules.
 
-`/if left=valueA right=valueB rule=comparison else="(command on false)" "(command on true)"`
+```stscript
+/if left=valueA right=valueB rule=comparison else={: /echo (command on false) :} {: /echo (command on true) :}
+```
+
+Note that
+
+```stscript
+/if left=valueA right=valueB rule=comparison else="(command on false)" "(command on true)"
+```
+
+syntax is also supported, however `{: closures :}` will help you write cleaner scripts.
 
 Let's review the following example:
 
 ```stscript
 /input What's your favorite drink? |
-/if left={{pipe}} right="black tea" rule=eq else="/echo You shall not pass \| /abort" "/echo Welcome to the club, \{\{user\}\}"
+/if left={{pipe}} right="black tea" rule=eq else={: /echo You shall not pass | /abort :} {: /echo Welcome to the club, {{user}} :}
 ```
 
 This script evaluates the user input against a required value and displays different messages, depending on the input value.
@@ -216,7 +229,7 @@ A subcommand is a string containing a list of slash commands to execute.
 The following example will pass a "true" string to the next command the variable `a` equals 5, and a "false" string otherwise.
 
 ```stscript
-/if left=a right=5 rule=eq else="/pass false" "/pass true" |
+/if left=a right=5 rule=eq else={: /pass false:} {: /pass true :} |
 /echo
 ```
 
@@ -520,7 +533,7 @@ This example adds 1 to the value of `i` until it reaches 10, then outputs the re
 Runs a subcommand a specified number of times.
 
 `/times (repeats) "(command)"` – any valid slash command enclosed in quotes repeats a number of times, e.g. `/setvar key=i 1 | /times 5 "/addvar key=i 1"` adds 1 to the value of "i" 5 times.
-- {{timesIndex}} is replaced with the iteration number (zero-based), e.g. `/times 4 "/echo {{timesIndex}}"` echoes the numbers 0 through 4.
+- {{timesIndex}} is replaced with the iteration number (zero-based), e.g. `/times 4 {:/echo {{timesIndex}}:}` echoes the numbers 0 through 4.
 - Loops are limited to 100 iterations by default, pass `guard=off` to disable.
 
 ### Breaking out of Loops and Closures
@@ -663,6 +676,25 @@ or to insert the generated message as a response from your character:
 /sendas name={{char}} {{pipe}}
 ```
 
+## Temporal character
+
+If you are not in a group chat, scripts may temporarily make a request to the currently connected LLM as a different character.
+
+- `/ask (prompt)` — generates text using the provided prompt for a specified character and including chat messages. Please note that swipes of the response from this character will revert back to the current character.
+
+```stscript
+/ask name=... (prompt)
+```
+### Arguments for `/ask`
+
+- `name` — **Required**. The name of the character to ask (or a unique character identifier, such as an avatar key). This must be provided as a named argument.
+- `return` — Specifies how the return value should be provided. Defaults to `pipe` (output via the command pipe). Other options can be specified if supported by the API.
+
+
+```stscript
+/ask name=Alice What is your favorite color?
+```
+
 ## Prompt injections
 
 Scripts can add custom LLM prompt injections, making it essentially an equivalent of unlimited Author's Notes.
@@ -775,6 +807,21 @@ World Info (also known as Lorebook) is a highly utilitarian tool for dynamically
 | `scanDepth`        | Scan Depth        | Number (0-100)  |
 | `caseSensitive`    | Case-Sensitive    | Boolean (1/0)   |
 | `matchWholeWords`  | Match Whole Words | Boolean (1/0)   |
+| `vectorized`       | Vectorized Status | Boolean (1/0)   |
+| `automationId`     | Automation ID     | String          |
+| `group`            | Inclusion Group   | String          |
+| `groupOverride`    | Inclusion Group Prioritize | Boolean (1/0) |
+| `groupWeight`      | Inclusion Group Weight | Number (0-100) |
+| `useGroupScoring`  | Group Scoring     | Boolean (1/0)   |
+| `characterFilterExclude` | Character Filter Exclude Mode | List of strings |
+| `characterFilterNames` | Character Filter Names | List of strings |
+| `characterFilterTags` | Character Filter Tags | List of strings |
+| `matchCharacterDepthPrompt` | Match Character Depth Prompt | Boolean (1/0) |
+| `matchCharacterDescription` | Match Character Description | Boolean (1/0) |
+| `matchCharacterPersonality` | Match Character Personality | Boolean (1/0) |
+| `matchCreatorNotes` | Match Creator Notes | Boolean (1/0) |
+| `matchPersonaDescription` | Match Persona Description | Boolean (1/0) |
+| `matchScenario` | Match Scenario | Boolean (1/0) |
 
 **Logic values**
 
@@ -1208,7 +1255,9 @@ Scripts can also interact with SillyTavern's UI: navigate through the chats or c
 
 ### Get Nth Fibonacci's number (using Binet's formula)
 
-> **Hint**: Set value of `fib_no` to the desired number
+!!!tip
+**Hint**: Set value of `fib_no` to the desired number
+!!!
 
 ```stscript
 /setvar key=fib_no 5 |

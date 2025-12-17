@@ -1,5 +1,5 @@
 ---
-order: user-settings-10
+order: 20
 route: /usage/core-concepts/uicustomization/
 ---
 
@@ -8,6 +8,7 @@ route: /usage/core-concepts/uicustomization/
 ## UI Theme
 
 ### Theme Management
+
 Theme files allow you to save, share, and reuse your UI customizations. You can maintain multiple themes for different moods or purposes, and switch between them instantly.
 
 * Import/Export theme files
@@ -18,19 +19,45 @@ Theme files allow you to save, share, and reuse your UI customizations. You can 
 All the settings in this section are saved to the current theme. If you switch themes, the settings will be replaced by the settings of the new theme.
 
 ### Display Settings
+
 These display options affect how characters and messages are presented in the chat interface.
 
 #### Avatar Style
-Choose between Circle, Square, or Rectangle.
+
+Choose between Circle, Square, Rectangle, or Rounded Square. This setting applies to both user and AI avatars.
 
 #### Chat Style
+
 | Style        | Description                                                                                                                                                    | [Slash command](/For_Contributors/st-script.md#ui-styling) |
 |--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------|
 | **Flat**     | Clean and continuous "chat log" style, a flat canvas for your AI interactions to come to life.                                                                 | `/flat`<br>`/default`                                      |
 | **Bubbles**  | "Instant messenger" style with distinct bubbles for each message, delightful rounded corners, and a subtle 3D effect.                                          | `/bubble`<br>`/bubbles`                                    |
-| **Document** | Compact, document-like appearance with click-to-edit mode and a text-focused layout. Hides avatars, timestamps, and message control buttons for past messages. | `/single`<br>`/story`                                      |
+| **Document** | Compact, document-like appearance with a text-focused layout. Hides avatars, timestamps, and message control buttons for past messages. | `/single`<br>`/story`                                      |
+
+### Notifications
+
+Set a position where the notification popups (toast messages) will appear on the screen.
+
+* Top Left
+* Top Center (default)
+* Top Right
+* Bottom Left
+* Bottom Center
+* Bottom Right
+
+### Media Style
+
+Default display style for media attachments (images, audio, video) in chat messages. Extensions that append media to chat messages may override this setting. It can also be changed manually per message using "Toggle media display style" action in the message context menu.
+
+* **List**: Display all media attachments at once in a grid-like layout.
+* **Gallery**: Display media attachments in a carousel-style gallery.
+
+!!!
+This setting also affects how the inline media attachments are sent to supported Chat Completion sources: list sends all attachments at once, while gallery sends the selected attachment.
+!!!
 
 ### Theme Colors
+
 Customize the color scheme of every UI element to create your perfect theme. Colors can be selected using a color picker, and include transparency options where applicable.
 
 * Main Text
@@ -45,6 +72,7 @@ Customize the color scheme of every UI element to create your perfect theme. Col
 * AI Message
 
 ### Layout & Visual Settings
+
 Fine-tune the visual presentation of the interface with these sliders.
 
 * **Chat Width**: Adjust chat window width (25-100% of screen)
@@ -53,7 +81,9 @@ Fine-tune the visual presentation of the interface with these sliders.
 * **Shadow Width**: Adjust text shadow intensity (0-5)
 
 ### Theme Toggles
+
 These switches control various UI features and behaviors. Some options can improve performance on lower-end devices, while others add useful information or functionality to the chat interface.
+
 * **Reduced Motion**: Disable animations and transitions
 * **No Blur Effect**: Remove background blur for better performance
 * **No Text Shadows**: Disable text shadow effects
@@ -68,11 +98,11 @@ These switches control various UI features and behaviors. Some options can impro
 * **Hide Chat Avatars**: Remove avatars from chat
 * **Message Token Count**: Show token counts per message
 * **Compact Input Area**: Single-row input (Mobile only)
-* **Swipe # for All Messages**: Show swipe numbers on all messages (Mobile)
+* **Swipe # for All Messages**: Show swipe numbers on all messages
 * **Characters Hotswap**: Quick-select buttons for favorite characters
 * **Avatar Hover Magnification**: Zoom effect on avatar hover
 * **Tags as Folders**: Organize characters using tags as folders
-
+* **Click to Edit**: Click on messages to quickly open a message editor
 
 ### Custom CSS
 
@@ -94,8 +124,7 @@ To play your own custom sound on receiving a new message from bot, replace the f
 
 Plays at 80% volume.
 
-If the "[Background Sound Only](User_Settings.md#miscellaneous)" option is enabled, the sound plays only if SillyTavern window is **unfocused**.
-
+If the "[Background Sound Only](index.md#miscellaneous)" option is enabled, the sound plays only if SillyTavern window is **unfocused**.
 
 ## Formulas Rendering
 
@@ -111,7 +140,7 @@ Type your formulas in code blocks with `latex` or `asciimath` language identifie
 int_{-oo}^{oo} e^{-x^2} dx = sqrt{pi}
 ```</code></pre>
 
-!!! info Deprecation notice
+!!!info Deprecation notice
 The legacy `$` and `$$` wrapper syntax is no longer supported. Please use the following regex scripts to polyfill the old syntax:
 
 * [$$ - LaTeX](https://github.com/SillyTavern/Extension-LaTeX/raw/refs/heads/main/assets/$$_-_latex.json)

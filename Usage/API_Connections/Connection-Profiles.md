@@ -1,6 +1,6 @@
 ---
 icon: paperclip
-route: /usage/core-concepts/connection-profiles
+route: /usage/core-concepts/connection-profiles/
 order: 100
 ---
 
@@ -19,7 +19,11 @@ Connection Profiles store the following selections.
 ### Common
 
 * [API type, model and the server URL](/Usage/API_Connections/index.md)
+* [Secret Key](/Usage/faq.md#where-are-my-api-keys-stored-why-cant-i-see-them)
 * [Settings preset](/Usage/Common-Settings.md)
+* [Start Reply With](/Usage/Prompts/advancedformatting.md#start-reply-with) (can be explicitly empty)
+* [Custom Stopping Strings](/Usage/Prompts/advancedformatting.md#custom-stopping-strings) (can be explicitly empty)
+* [Reasoning Formatting](/Usage/Prompts/reasoning.md#configuration)
 
 ### Text Completion APIs
 
@@ -30,11 +34,12 @@ Connection Profiles store the following selections.
 
 ### Chat Completion APIs
 
+* [Prompt Post-Processing](/Usage/API_Connections/openai.md#prompt-post-processing)
 * Proxy preset
 
 ## Managing Connection Profiles
 
-!!! info Note
+!!!info Note
 Profiles only save the selection in dropdown fields, without knowing anything about the underlying settings. This means that you will lose unsaved changes by switching to a different profile. To prevent this, make sure to update all presets and templates if you don't want to lose ephemeral changes.
 !!!
 

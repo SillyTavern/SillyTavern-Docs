@@ -1,5 +1,6 @@
 ---
 icon: law
+route: /licensecredits/
 ---
 
 # License and credits

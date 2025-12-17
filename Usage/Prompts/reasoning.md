@@ -1,5 +1,7 @@
 ---
+order: 40
 tags: ['>=1.12.12']
+route: /usage/prompts/reasoning/
 ---
 
 # Reasoning
@@ -40,12 +42,19 @@ Use the `/reasoning-set` STscript command to add reasoning to a message. The com
 
 ### By Backend
 
-If your chosen LLM backend and model support reasoning output, enable "Request Model Reasoning" in the **<i class="fa-solid fa-sliders"></i> AI Response Configuration** panel.
+If your chosen LLM backend and model support reasoning output, enabling "Request model reasoning" in the **<i class="fa-solid fa-sliders"></i> AI Response Configuration** panel will add a reasoning block containing the model's thinking process.
 
 Supported sources:
 
+- Claude
 - DeepSeek
+- Google AI Studio
+- Google Vertex AI
 - OpenRouter
+- xAI (Grok)
+- AI/ML API
+
+"Request model reasoning" does not determine whether a model does reasoning. Claude and Google (2.5 Flash) allow thinking mode to be toggled; see [Reasoning Effort](#reasoning-effort).
 
 ### By Parsing
 
@@ -63,10 +72,6 @@ This is the reasoning.
 This is the main content.
 ```
 
-!!!
-For streamed responses, reasoning will only be parsed after the stream completes.
-!!!
-
 ## Prompting with Reasoning
 
 By default, recognized reasoning block contents are not sent back to the model. To include reasoning in prompts, enable "Add to Prompts" in the **<i class="fa-solid fa-font"></i> Advanced Formatting** panel. Reasoning content will be wrapped in configured Prefix and Suffix sequences and separated by a Separator from the main context. The Max Additions numeric setting controls how many reasoning blocks can be included, counting from the end of the prompt.
@@ -74,6 +79,15 @@ By default, recognized reasoning block contents are not sent back to the model. 
 !!!
 Most model providers do not recommend sending CoT back to the model in multi-turn conversations.
 !!!
+
+### Continuing from Reasoning
+
+A special case when the reasoning can be sent back to the model without having the "Add to Prompts" toggle enabled is when the generation is continued (e.g. by pressing "Continue" from the **<i class="fa-solid fa-bars"></i> Options** menu), but the message being continued contains only the reasoning without an actual content. This gives the model an opportunity to finish an incomplete reasoning and start generating the main content. The prompt will be sent as follows:
+
+```txt
+<think>
+Incomplete reasoning...
+```
 
 ## Regex Scripts
 
@@ -85,3 +99,30 @@ Different ephemerality options affect reasoning blocks in the following ways:
 2. Run on edit: regex script will be re-evaluated when the reasoning block is edited.
 3. Alter chat display: regex is applied to the reasoning block's display text, not the underlying content.
 4. Alter outgoing prompts: regex is only applied to reasoning blocks before they are sent to the model.
+
+## Reasoning Effort
+
+Reasoning Effort is a Chat Completion setting in the **<i class="fa-solid fa-sliders"></i> AI Response Configuration** panel that influences how many tokens may potentially be used on reasoning. The effect of each option depends on the source connected to. For the sources below, Auto simply means the relevant parameter is not included in the request.
+
+| Option  | Claude (≤ 21333 if no streaming) | OpenAI (keyword)     | OpenRouter (keyword)             | xAI (Grok) (keyword) | Perplexity (keyword) |
+| ------- | -------------------------------- | -------------------- | -------------------------------- | -------------------- | -------------------- |
+| Models  | Opus 4, Sonnet 4/3.7             | o4-mini, o3\*, o1\*  | applicable models                | grok-3-mini          | sonar-deep-research  |
+| Auto    | not specified, **no thinking**   | not specified        | not specified, effect depends    | not specified        | not specified        |
+| Minimum | budgets 1024 tokens              | "low"                | "low", or 20% of max response    | "low"                | "low"                |
+| Low     | 15% of max response, min 1024    | "low"                | "low", or 20% of max response    | "low"                | "low"                |
+| Medium  | 25% of max response, min 1024    | "medium"             | "medium", or 50% of max response | "low"                | "medium"             |
+| High    | 50% of max response, min 1024    | "high"               | "high", or 80% of max response   | "high"               | "high"               |
+| Maximum | 95% of max response, min 1024    | "high"               | "high", or 80% of max response   | "high"               | "high"               | 
+
+- For Claude, budget is capped to 21333 if streaming is disabled. If the calculated budget would be less than 1024, then max response is changed to 2048.
+- For OpenRouter, Perplexity and AI/ML API, only an OpenAI-style keyword is sent.
+
+Google AI Studio and Vertex AI are as follows:
+
+| Model          | Auto (dynamic thinking) | Minimum            | Low                          | Medium     | High       | Maximum               |
+| -------------- | ----------------------- | ------------------ | ---------------------------- | ---------- | ---------- | --------------------- | 
+| 2.5 Pro        | thinkingBudget = -1     | 128                | 15% of max response, min 128 | 25% of max | 50% of max | lower of max or 32768 |
+| 2.5 Flash      | thinkingBudget = -1     | 0, **no thinking** | 15% of max response          | 25% of max | 50% of max | lower of max or 24576 |
+| 2.5 Flash Lite | thinkingBudget = -1     | 0, **no thinking** | 15% of max response, min 512 | 25% of max | 50% of max | lower of max or 24576 |
+
+- For Gemini 2.5 Pro and 2.5 Flash/Lite, budget is capped to 32768 or 24576 tokens respectively, regardless of the streaming setting.

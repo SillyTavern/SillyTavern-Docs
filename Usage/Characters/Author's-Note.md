@@ -1,6 +1,6 @@
 ---
-order: character-40
-route: /usage/core-concepts/authors-note
+order: 50
+route: /usage/core-concepts/authors-note/
 ---
 
 # Author's Note
