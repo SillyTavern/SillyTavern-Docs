@@ -849,7 +849,7 @@ const MODULE_NAME = 'settings';
 Use toastr notifications to inform users of actions and errors:
 
 ```js
-const { callGenericPopup, Popup, POPUP_TYPE } = SillyTavern.getContext();
+const { Popup } = SillyTavern.getContext();
 
 // Success message
 toastr.success('Data imported successfully');
@@ -913,11 +913,7 @@ Always provide defaults and handle missing keys:
 
 ```js
 function loadSettings() {
-    if (!extensionSettings[MODULE_NAME]) {
-        extensionSettings[MODULE_NAME] = structuredClone(defaultSettings);
-    }
-
-    // Merge with defaults to handle new keys after updates
+    // Merge with defaults to handle new keys after updates and initialize if it doesn't exist.
     extensionSettings[MODULE_NAME] = SillyTavern.libs.lodash.merge(
         structuredClone(defaultSettings),
         extensionSettings[MODULE_NAME]
