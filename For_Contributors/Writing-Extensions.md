@@ -728,3 +728,195 @@ You can specify:
 * Additional headers
 * The body for POST requests
 * Any other fetch options
+
+## Best Practices
+
+### Security
+
+**Never store API keys or secrets in `extensionSettings`**
+
+Extension settings are accessible to all other extensions and are stored in plain text. Do not store sensitive data client-side:
+
+```js
+// BAD - Don't do this!
+extensionSettings[MODULE_NAME].apiKey = 'secret_key_123';
+
+// NOTE: There is no secure way to store secrets in client-side extensions.
+// If you need to handle sensitive data, use server plugins instead.
+// See: https://docs.sillytavern.app/for-contributors/server-plugins/
+```
+
+**Sanitize user inputs**
+
+Always validate and sanitize data from user inputs before using it in commands, API calls, or DOM manipulation:
+
+```js
+// Validate input type first
+if (typeof userInput !== 'string') {
+    toastr.error('Invalid input type');
+    return;
+}
+// Use DOMPurify to sanitize HTML input
+const { DOMPurify } = SillyTavern.libs;
+const cleanInput = DOMPurify.sanitize(userInput);
+```
+
+**Avoid using `eval()` or `Function()` constructors**
+
+These can execute arbitrary code and pose security risks. If you need dynamic evaluation, use safer alternatives or restrict the input carefully.
+
+### Performance
+
+**Don't store large data in `extensionSettings`**
+
+Extension settings are loaded into memory and saved frequently. Large data can cause performance issues:
+
+```js
+// BAD - Don't store large data
+extensionSettings[MODULE_NAME].largeDataset = { /* megabytes of data */ };
+
+// GOOD - Use localforage (abstraction over IndexedDB/localStorage)
+const { localforage } = SillyTavern.libs;
+await localforage.setItem(`${MODULE_NAME}_data`, largeData);
+
+// Or use localStorage for smaller data
+localStorage.setItem(`${MODULE_NAME}_data`, JSON.stringify(smallData));
+```
+
+**Clean up event listeners**
+
+Remove event listeners when they're no longer needed to prevent memory leaks:
+
+```js
+function cleanup() {
+    eventSource.removeListener(event_types.MESSAGE_RECEIVED, handleMessage);
+    document.getElementById('myElement').removeEventListener('click', handleClick);
+}
+```
+
+**Don't block the UI thread**
+
+For heavy operations, use async/await or web workers:
+
+```js
+// Use async for I/O operations
+async function processData() {
+    const result = await fetch('/api/process');
+    return result.json();
+}
+
+// Break up heavy computations
+async function heavyComputation(data) {
+    for (let i = 0; i < data.length; i++) {
+        // Process chunk
+        if (i % 1000 === 0) {
+            await new Promise(resolve => setTimeout(resolve, 0)); // Yield to UI
+        }
+    }
+}
+```
+
+### Compatibility
+
+**Prefer `getContext()` over direct imports**
+
+The context API is more stable and less likely to break with SillyTavern updates:
+
+```js
+// GOOD - Stable API
+const { chat, characters, saveSettingsDebounced } = SillyTavern.getContext();
+
+// AVOID - May break with internal changes
+import { chat, characters } from '../../../../script.js';
+```
+
+**Use unique module names**
+
+Prevent conflicts with other extensions by using a descriptive, unique module name:
+
+```js
+// GOOD - Specific and unique
+const MODULE_NAME = 'my_extension_name';
+
+// BAD - Too generic, likely to conflict
+const MODULE_NAME = 'settings';
+```
+
+### User Experience
+
+**Provide clear feedback**
+
+Use toastr notifications to inform users of actions and errors:
+
+```js
+const { Popup } = SillyTavern.getContext();
+
+// Success message
+toastr.success('Data imported successfully');
+
+// Error message
+toastr.error('Failed to connect to API');
+
+// Warning message
+toastr.warning('This feature is experimental');
+
+// For important messages, use popups
+const result = await Popup.show.confirm('Confirm', 'Are you sure?');
+const userInput = await Popup.show.input('Input', 'Please enter a value:', 'default value');
+await Popup.show.text('Info', 'Operation completed successfully.');
+```
+
+**Provide helpful console messages**
+
+Use a consistent prefix for your console logs. But do not spam the console with excessive logs in production:
+
+```js
+const MODULE_NAME = 'MyExtension';
+
+console.log(`[${MODULE_NAME}] Extension loaded`);
+console.debug(`[${MODULE_NAME}] Processing data:`, data);
+console.error(`[${MODULE_NAME}] Error occurred:`, error);
+```
+
+### Code Quality
+
+**Use bundled libraries from `lib.js`**
+
+SillyTavern bundles several useful libraries that extensions can be used directly:
+
+```js
+// Utility functions
+const { lodash } = SillyTavern.libs;
+const uniqueItems = lodash.uniq([1, 2, 2, 3]);
+const grouped = lodash.groupBy([{ category: 'A', name: 'foo' }, { category: 'B', name: 'bar' }], 'category');
+
+// Fuzzy search
+const { Fuse } = SillyTavern.libs;
+const fuse = new Fuse(items, { keys: ['name', 'description'] });
+const results = fuse.search('query');
+
+// Template rendering
+const { Handlebars } = SillyTavern.libs;
+const template = Handlebars.compile('<div>{{name}}</div>');
+const html = template({ name: 'Example' });
+
+// Date/time manipulation
+const { moment } = SillyTavern.libs;
+const formatted = moment().format('YYYY-MM-DD HH:mm:ss');
+```
+
+Other available libraries include: `DOMPurify`, `localforage`, `hljs`, `showdown`, `yaml`, and more. Check [lib.js](https://github.com/SillyTavern/SillyTavern/blob/release/public/lib.js) for the full list.
+
+**Initialize settings properly**
+
+Always provide defaults and handle missing keys:
+
+```js
+function loadSettings() {
+    // Merge with defaults to handle new keys after updates and initialize if it doesn't exist.
+    extensionSettings[MODULE_NAME] = SillyTavern.libs.lodash.merge(
+        structuredClone(defaultSettings),
+        extensionSettings[MODULE_NAME]
+    );
+}
+```
