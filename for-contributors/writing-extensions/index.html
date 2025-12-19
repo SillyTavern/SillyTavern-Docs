@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.819049746246">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.819463879566">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.11.0.819049746246" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.819463879566" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.819049746246" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.819463879566" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.819049746246" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.819049746246" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.819463879566" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.819463879566" defer></script>
 
     <style>
         a {
@@ -1157,6 +1157,186 @@ const apiResult = await doExtrasFetch(url, {
 <li>The body for POST requests</li>
 <li>Any other fetch options</li>
 </ul>
+<doc-anchor-target id="best-practices">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#best-practices">#</doc-anchor-trigger>
+        <span>Best Practices</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="security">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#security">#</doc-anchor-trigger>
+        <span>Security</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Never store API keys or secrets in <code v-pre>extensionSettings</code></strong></p>
+<p>Extension settings are accessible to all other extensions and are stored in plain text. Do not store sensitive data client-side:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">// BAD - Don't do this!
+extensionSettings[MODULE_NAME].apiKey = 'secret_key_123';
+
+// NOTE: There is no secure way to store secrets in client-side extensions.
+// If you need to handle sensitive data, use server plugins instead.
+// See: https://docs.sillytavern.app/for-contributors/server-plugins/</code></pre>
+</doc-codeblock></div>
+<p><strong>Sanitize user inputs</strong></p>
+<p>Always validate and sanitize data from user inputs before using it in commands, API calls, or DOM manipulation:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">// Validate input type first
+if (typeof userInput !== 'string') {
+    toastr.error('Invalid input type');
+    return;
+}
+// Use DOMPurify to sanitize HTML input
+const { DOMPurify } = SillyTavern.libs;
+const cleanInput = DOMPurify.sanitize(userInput);</code></pre>
+</doc-codeblock></div>
+<p><strong>Avoid using <code v-pre>eval()</code> or <code v-pre>Function()</code> constructors</strong></p>
+<p>These can execute arbitrary code and pose security risks. If you need dynamic evaluation, use safer alternatives or restrict the input carefully.</p>
+<doc-anchor-target id="performance">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#performance">#</doc-anchor-trigger>
+        <span>Performance</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Don&#x27;t store large data in <code v-pre>extensionSettings</code></strong></p>
+<p>Extension settings are loaded into memory and saved frequently. Large data can cause performance issues:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">// BAD - Don't store large data
+extensionSettings[MODULE_NAME].largeDataset = { /* megabytes of data */ };
+
+// GOOD - Use localforage (abstraction over IndexedDB/localStorage)
+const { localforage } = SillyTavern.libs;
+await localforage.setItem(`${MODULE_NAME}_data`, largeData);
+
+// Or use localStorage for smaller data
+localStorage.setItem(`${MODULE_NAME}_data`, JSON.stringify(smallData));</code></pre>
+</doc-codeblock></div>
+<p><strong>Clean up event listeners</strong></p>
+<p>Remove event listeners when they&#x27;re no longer needed to prevent memory leaks:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">function cleanup() {
+    eventSource.removeListener(event_types.MESSAGE_RECEIVED, handleMessage);
+    document.getElementById('myElement').removeEventListener('click', handleClick);
+}</code></pre>
+</doc-codeblock></div>
+<p><strong>Don&#x27;t block the UI thread</strong></p>
+<p>For heavy operations, use async/await or web workers:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">// Use async for I/O operations
+async function processData() {
+    const result = await fetch('/api/process');
+    return result.json();
+}
+
+// Break up heavy computations
+async function heavyComputation(data) {
+    for (let i = 0; i &lt; data.length; i++) {
+        // Process chunk
+        if (i % 1000 === 0) {
+            await new Promise(resolve =&gt; setTimeout(resolve, 0)); // Yield to UI
+        }
+    }
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="compatibility">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#compatibility">#</doc-anchor-trigger>
+        <span>Compatibility</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Prefer <code v-pre>getContext()</code> over direct imports</strong></p>
+<p>The context API is more stable and less likely to break with SillyTavern updates:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">// GOOD - Stable API
+const { chat, characters, saveSettingsDebounced } = SillyTavern.getContext();
+
+// AVOID - May break with internal changes
+import { chat, characters } from '../../../../script.js';</code></pre>
+</doc-codeblock></div>
+<p><strong>Use unique module names</strong></p>
+<p>Prevent conflicts with other extensions by using a descriptive, unique module name:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">// GOOD - Specific and unique
+const MODULE_NAME = 'my_extension_name';
+
+// BAD - Too generic, likely to conflict
+const MODULE_NAME = 'settings';</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="user-experience">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#user-experience">#</doc-anchor-trigger>
+        <span>User Experience</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Provide clear feedback</strong></p>
+<p>Use toastr notifications to inform users of actions and errors:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { Popup } = SillyTavern.getContext();
+
+// Success message
+toastr.success('Data imported successfully');
+
+// Error message
+toastr.error('Failed to connect to API');
+
+// Warning message
+toastr.warning('This feature is experimental');
+
+// For important messages, use popups
+const result = await Popup.show.confirm('Confirm', 'Are you sure?');
+const userInput = await Popup.show.input('Input', 'Please enter a value:', 'default value');
+await Popup.show.text('Info', 'Operation completed successfully.');</code></pre>
+</doc-codeblock></div>
+<p><strong>Provide helpful console messages</strong></p>
+<p>Use a consistent prefix for your console logs. But do not spam the console with excessive logs in production:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const MODULE_NAME = 'MyExtension';
+
+console.log(`[${MODULE_NAME}] Extension loaded`);
+console.debug(`[${MODULE_NAME}] Processing data:`, data);
+console.error(`[${MODULE_NAME}] Error occurred:`, error);</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="code-quality">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#code-quality">#</doc-anchor-trigger>
+        <span>Code Quality</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Use bundled libraries from <code v-pre>lib.js</code></strong></p>
+<p>SillyTavern bundles several useful libraries that extensions can be used directly:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">// Utility functions
+const { lodash } = SillyTavern.libs;
+const uniqueItems = lodash.uniq([1, 2, 2, 3]);
+const grouped = lodash.groupBy([{ category: 'A', name: 'foo' }, { category: 'B', name: 'bar' }], 'category');
+
+// Fuzzy search
+const { Fuse } = SillyTavern.libs;
+const fuse = new Fuse(items, { keys: ['name', 'description'] });
+const results = fuse.search('query');
+
+// Template rendering
+const { Handlebars } = SillyTavern.libs;
+const template = Handlebars.compile('&lt;div&gt;{{name}}&lt;/div&gt;');
+const html = template({ name: 'Example' });
+
+// Date/time manipulation
+const { moment } = SillyTavern.libs;
+const formatted = moment().format('YYYY-MM-DD HH:mm:ss');</code></pre>
+</doc-codeblock></div>
+<p>Other available libraries include: <code v-pre>DOMPurify</code>, <code v-pre>localforage</code>, <code v-pre>hljs</code>, <code v-pre>showdown</code>, <code v-pre>yaml</code>, and more. Check <a href="https://github.com/SillyTavern/SillyTavern/blob/release/public/lib.js">lib.js</a> for the full list.</p>
+<p><strong>Initialize settings properly</strong></p>
+<p>Always provide defaults and handle missing keys:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">function loadSettings() {
+    // Merge with defaults to handle new keys after updates and initialize if it doesn't exist.
+    extensionSettings[MODULE_NAME] = SillyTavern.libs.lodash.merge(
+        structuredClone(defaultSettings),
+        extensionSettings[MODULE_NAME]
+    );
+}</code></pre>
+</doc-codeblock></div>
 
                                 
                                 <!-- Required only on API pages -->
