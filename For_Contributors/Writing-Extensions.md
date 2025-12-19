@@ -880,32 +880,9 @@ console.error(`[${MODULE_NAME}] Error occurred:`, error);
 
 ### Code Quality
 
-**Prefer vanilla JavaScript over jQuery**
-
-While SillyTavern still uses jQuery internally, new extensions should use modern vanilla JavaScript and DOM APIs:
-
-```js
-// GOOD - Modern vanilla JavaScript
-const element = document.getElementById('myElement');
-element.classList.add('active');
-element.addEventListener('click', handleClick);
-
-// AVOID - jQuery (unless necessary for compatibility)
-$('#myElement').addClass('active').on('click', handleClick);
-
-// GOOD - Query selectors
-const elements = document.querySelectorAll('.my-class');
-elements.forEach(el => el.style.display = 'none');
-
-// AVOID - jQuery
-$('.my-class').hide();
-```
-
-Vanilla JavaScript is more future-proof, has better performance, and reduces dependencies.
-
 **Use bundled libraries from `lib.js`**
 
-SillyTavern bundles several useful libraries that extensions can import directly:
+SillyTavern bundles several useful libraries that extensions can be used directly:
 
 ```js
 // Utility functions
