@@ -751,15 +751,14 @@ extensionSettings[MODULE_NAME].apiKey = 'secret_key_123';
 Always validate and sanitize data from user inputs before using it in commands, API calls, or DOM manipulation:
 
 ```js
-// Use DOMPurify to sanitize HTML input
-import { DOMPurify } from '../../../../lib.js';
-const cleanInput = DOMPurify.sanitize(userInput);
-
-// Validate input types
+// Validate input type first
 if (typeof userInput !== 'string') {
     toastr.error('Invalid input type');
     return;
 }
+// Use DOMPurify to sanitize HTML input
+const { DOMPurify } = SillyTavern.libs;
+const cleanInput = DOMPurify.sanitize(userInput);
 ```
 
 **Avoid using `eval()` or `Function()` constructors**
@@ -777,7 +776,7 @@ Extension settings are loaded into memory and saved frequently. Large data can c
 extensionSettings[MODULE_NAME].largeDataset = { /* megabytes of data */ };
 
 // GOOD - Use localforage (abstraction over IndexedDB/localStorage)
-import { localforage } from '../../../../lib.js';
+const { localforage } = SillyTavern.libs;
 await localforage.setItem(`${MODULE_NAME}_data`, largeData);
 
 // Or use localStorage for smaller data
@@ -910,22 +909,22 @@ SillyTavern bundles several useful libraries that extensions can import directly
 
 ```js
 // Utility functions
-import { lodash } from '../../../../lib.js';
-const uniqueItems = lodash.uniq(array);
-const grouped = lodash.groupBy(items, 'category');
+const { lodash } = SillyTavern.libs;
+const uniqueItems = lodash.uniq([1, 2, 2, 3]);
+const grouped = lodash.groupBy([{ category: 'A', name: 'foo' }, { category: 'B', name: 'bar' }], 'category');
 
 // Fuzzy search
-import { Fuse } from '../../../../lib.js';
+const { Fuse } = SillyTavern.libs;
 const fuse = new Fuse(items, { keys: ['name', 'description'] });
 const results = fuse.search('query');
 
 // Template rendering
-import { Handlebars } from '../../../../lib.js';
+const { Handlebars } = SillyTavern.libs;
 const template = Handlebars.compile('<div>{{name}}</div>');
 const html = template({ name: 'Example' });
 
 // Date/time manipulation
-import { moment } from '../../../../lib.js';
+const { moment } = SillyTavern.libs;
 const formatted = moment().format('YYYY-MM-DD HH:mm:ss');
 ```
 
@@ -942,7 +941,7 @@ function loadSettings() {
     }
 
     // Merge with defaults to handle new keys after updates
-    extensionSettings[MODULE_NAME] = Object.assign(
+    extensionSettings[MODULE_NAME] = SillyTavern.libs.lodash.merge(
         structuredClone(defaultSettings),
         extensionSettings[MODULE_NAME]
     );
