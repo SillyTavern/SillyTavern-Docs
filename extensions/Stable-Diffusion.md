@@ -537,4 +537,4 @@ slash-command or image style. Here's how you could do it:
   * Other substitutions should work the same as local.
 
 #### Extra RunPod notes
-* The serverless configuration does not currently embed the workflow into the output image. Ie, you won't be able to drag/drop the image into local comfyui to see the seed or prompt. This is just a limitation of the runpod handler and is a capability that could be added on that side.
+* The serverless configuration does not currently embed the workflow into the output image. i.e., you won't be able to drag/drop the image into local ComfyUI to see the seed or prompt. This is just a limitation of the RunPod handler and is a capability that could be added on that side.
