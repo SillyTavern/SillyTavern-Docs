@@ -521,7 +521,7 @@ slash-command or image style. Here's how you could do it:
 
 #### ComfyUI RunPod Setup
 
-* You'll need a runpod account and to add some money to it. You can probably expect around 2 cents per image for Qwen image generation on an RTX 4090 though YMMV. $5 in credits should last a while.
+* You'll need a RunPod account and to add some money to it. You can probably expect around 2 cents per image for Qwen image generation on an RTX 4090 though YMMV. $5 in credits should last a while.
 * https://console.runpod.io/hub/runpod-workers/worker-comfyui is a flux1 dev configuration that you can use to create your own serverless endpoint.
   * There is information there on creating your own configuration if you want to use a different model or add loras.
 * Create an API key for access to the serverless endpoint. https://console.runpod.io/user/settings
