@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.819463879566">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.819932863585">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.11.0.819463879566" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.819932863585" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.819463879566" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.819932863585" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.819463879566" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.819463879566" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.819932863585" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.819932863585" defer></script>
 
     <style>
         a {
@@ -680,11 +680,72 @@ You can configure the instruction template for generating prompts for every gene
     </h3>
 </doc-anchor-target>
 <p>This panel allows you to configure and manage your ComfyUI integration with SillyTavern.</p>
+<doc-anchor-target id="server-type">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#server-type">#</doc-anchor-trigger>
+        <span>Server Type</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>Standard Server is when you call ComfyUI directly whether on your local machine or hosted elsewhere.</li>
+<li>RunPod Serverless Endpoint is for running ComfyUI through <a href="https://www.runpod.io/product/serverless">RunPod&#x27;s serverless API</a>. Serverless can be a good option for remote generation as you can get the same control over workflows as a standard server but can take advantage of more powerful hosted GPUs and only be charged when you&#x27;re actively generating images. The majority of the usage is the same. Differences from standard server setup and behavior is described <doc-anchor-trigger to="#comfyui-runpod-setup">below</doc-anchor-trigger>.</li>
+</ul>
+<doc-anchor-target id="standard-server-setup">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#standard-server-setup">#</doc-anchor-trigger>
+        <span>Standard Server setup</span>
+    </h4>
+</doc-anchor-target>
 <p>Enter the URL of your ComfyUI server in the <strong>ComfyUI URL</strong> input field. The default value is <code v-pre>http://127.0.0.1:8188</code>.
 If you are using <a href="https://github.com/mcmonkeyprojects/SwarmUI">SwarmUI</a>, the default port for the
 <a href="https://github.com/mcmonkeyprojects/SwarmUI/blob/master/src/BuiltinExtensions/ComfyUIBackend/README.md">managed ComfyUI server</a> is <code v-pre>7821</code>,
 20 ports higher than the default port for SwarmUI.</p>
 <p>After entering the URL, choose <i class="fa-solid fa-check"></i> <strong>Connect</strong> to validate and establish a connection. The ComfyUI server must be accessible from the SillyTavern host machine.</p>
+<doc-anchor-target id="comfyui-runpod-setup">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#comfyui-runpod-setup">#</doc-anchor-trigger>
+        <span>ComfyUI RunPod Setup</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>You&#x27;ll need a RunPod account and to add some money to it. You can probably expect around 2 cents per image for Qwen image generation on an RTX 4090 though YMMV. $5 in credits should last a while.</li>
+<li><a href="https://console.runpod.io/hub/runpod-workers/worker-comfyui">https://console.runpod.io/hub/runpod-workers/worker-comfyui</a> is a flux1 dev configuration that you can use to create your own serverless endpoint.
+<ul>
+<li>There is information there on creating your own configuration if you want to use a different model or add LoRAs.</li>
+</ul>
+</li>
+<li>Create an API key for access to the serverless endpoint: <a href="https://console.runpod.io/user/settings">https://console.runpod.io/user/settings</a></li>
+<li>In ST, select <strong>ComfyUI</strong> as the <strong>Source</strong> and <strong>RunPod Serverless Endpoint</strong> as the <strong>Server Type</strong>.</li>
+<li>Set the <strong>ComfyUI RunPod URL</strong> to the URL of your endpoint.</li>
+<li>Set the API key.</li>
+<li>Click <strong>Connect</strong>. If the API key and URL are correct, you should get toasts indicating success.</li>
+<li>The ComfyUI workflow configuration flow is the same as local.
+<ul>
+<li>Use the &quot;Export (API)&quot; option.</li>
+<li>Depending on your local setup, you may need to/want to pick a variation of the model for use on RunPod. For example, if you use a quantized GGUF locally, but want to use an fp16 version on RunPod. The JSON workflow you use in ST needs to have this change.</li>
+<li>Model, samplers, VAE, etc cannot be determined dynamically so your workflow needs to have these hard coded (no <code v-pre>%model%</code> substitution).</li>
+<li>Other substitutions should work the same as local.</li>
+</ul>
+</li>
+</ul>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Note</h5>
+<p>The serverless configuration does not currently embed the workflow into the output image. i.e., you won&#x27;t be able to drag/drop the image into local ComfyUI to see the seed or prompt. This is just a limitation of the RunPod handler and is a capability that could be added on that side.</p>
+        </div>
+    </div>
+</div>
 <doc-anchor-target id="workflow-management">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#workflow-management">#</doc-anchor-trigger>
