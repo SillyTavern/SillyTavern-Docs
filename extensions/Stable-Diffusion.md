@@ -233,7 +233,9 @@ This panel allows you to configure and manage your ComfyUI integration with Sill
 
 #### Server Type
 * Standard Server is when you call ComfyUI directly whether on your local machine or hosted elsewhere.
-* RunPod Serverless Endpoint is for running ComfyUI through [RunPod's serverless API](https://www.runpod.io/product/serverless). The majority of the usage is the same. Differences from standard server setup and behavior is described [below](#comfyui-runpod-setup).
+* RunPod Serverless Endpoint is for running ComfyUI through [RunPod's serverless API](https://www.runpod.io/product/serverless). Serverless can be a good option for remote generation as you can get the same control over workflows as a standard server but can take advantage of more powerful hosted GPUs and only be charged when you're actively generating images. The majority of the usage is the same. Differences from standard server setup and behavior is described [below](#comfyui-runpod-setup).
+
+### Standard Server setup
 
 Enter the URL of your ComfyUI server in the **ComfyUI URL** input field. The default value is `http://127.0.0.1:8188`. 
 If you are using [SwarmUI](https://github.com/mcmonkeyprojects/SwarmUI), the default port for the 
