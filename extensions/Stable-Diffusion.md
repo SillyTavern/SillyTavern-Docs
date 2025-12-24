@@ -532,7 +532,7 @@ slash-command or image style. Here's how you could do it:
 * Click Connect. If the API key and url are correct, you should get toasts indicating success.
 * The ComfyUI workflow configuration flow is the same as local.
   * Use the "Export (API)" option.
-  * Depending on your local setup, you may need to/want to pick a variation of the model for use on RunPod. For example, if you use a quantized GGUF locally, but want to use an fp16 version on RunPod. The json workflow you use in ST needs to have this change.
+  * Depending on your local setup, you may need to/want to pick a variation of the model for use on RunPod. For example, if you use a quantized GGUF locally, but want to use an fp16 version on RunPod. The JSON workflow you use in ST needs to have this change.
   * Model, samplers, vae, etc cannot be determined dynamically so your workflow needs to have these hard coded (no %model% substitution).
   * Other substitutions should work the same as local.
 
