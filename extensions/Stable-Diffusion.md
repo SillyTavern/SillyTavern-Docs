@@ -231,6 +231,13 @@ If you're not familiar with ComfyUI, you can still use it to generate images in 
 
 This panel allows you to configure and manage your ComfyUI integration with SillyTavern.
 
+#### Server Type
+
+* Standard Server is when you call ComfyUI directly whether on your local machine or hosted elsewhere.
+* RunPod Serverless Endpoint is for running ComfyUI through [RunPod's serverless API](https://www.runpod.io/product/serverless). Serverless can be a good option for remote generation as you can get the same control over workflows as a standard server but can take advantage of more powerful hosted GPUs and only be charged when you're actively generating images. The majority of the usage is the same. Differences from standard server setup and behavior is described [below](#comfyui-runpod-setup).
+
+#### Standard Server setup
+
 Enter the URL of your ComfyUI server in the **ComfyUI URL** input field. The default value is `http://127.0.0.1:8188`. 
 If you are using [SwarmUI](https://github.com/mcmonkeyprojects/SwarmUI), the default port for the 
 [managed ComfyUI server](https://github.com/mcmonkeyprojects/SwarmUI/blob/master/src/BuiltinExtensions/ComfyUIBackend/README.md) is `7821`, 
@@ -238,6 +245,27 @@ If you are using [SwarmUI](https://github.com/mcmonkeyprojects/SwarmUI), the def
 
 After entering the URL, choose <i class="fa-solid fa-check"></i> **Connect** to validate and establish a connection. The ComfyUI server must be accessible from the SillyTavern host machine.
  
+#### ComfyUI RunPod Setup
+
+* You'll need a RunPod account and to add some money to it. You can probably expect around 2 cents per image for Qwen image generation on an RTX 4090 though YMMV. $5 in credits should last a while.
+* <https://console.runpod.io/hub/runpod-workers/worker-comfyui> is a flux1 dev configuration that you can use to create your own serverless endpoint.
+  * There is information there on creating your own configuration if you want to use a different model or add LoRAs.
+* Create an API key for access to the serverless endpoint: <https://console.runpod.io/user/settings>
+
+* In ST, select **ComfyUI** as the **Source** and **RunPod Serverless Endpoint** as the **Server Type**.
+* Set the **ComfyUI RunPod URL** to the URL of your endpoint.
+* Set the API key.
+* Click **Connect**. If the API key and URL are correct, you should get toasts indicating success.
+* The ComfyUI workflow configuration flow is the same as local.
+  * Use the "Export (API)" option.
+  * Depending on your local setup, you may need to/want to pick a variation of the model for use on RunPod. For example, if you use a quantized GGUF locally, but want to use an fp16 version on RunPod. The JSON workflow you use in ST needs to have this change.
+  * Model, samplers, VAE, etc cannot be determined dynamically so your workflow needs to have these hard coded (no `%model%` substitution).
+  * Other substitutions should work the same as local.
+
+!!!info Note
+The serverless configuration does not currently embed the workflow into the output image. i.e., you won't be able to drag/drop the image into local ComfyUI to see the seed or prompt. This is just a limitation of the RunPod handler and is a capability that could be added on that side.
+!!!
+
 ### Workflow Management
 
 Select a ComfyUI workflow from the dropdown menu. Two default workflows are provided:
