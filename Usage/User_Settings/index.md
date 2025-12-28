@@ -156,7 +156,7 @@ For more information on the settings in this section of <i class="fa-fw fa-solid
 
 * **Reload Chat**: Reloads and redraws the current chat.
 * **[Debug Menu](#debug-menu)**: Access debugging options.
-* **Smooth Streaming**: Smoothens streamed generation by showing the text letter by letter. Includes speed control slider.
+* **Smooth Streaming**: Smoothens streamed generation by showing the text letter by letter. Includes speed control slider. To exclude reasoning blocks from smooth streaming, enable "Exclude 'Thinking...'" option.
 * **Stream Fade-In**: Applies a fade-in effect to streamed text. Can be used with or without Smooth Streaming.
 * **[Message Sound](uicustomization.md#message-sound)**: Plays a sound when message generation completes.
     - **Background Sound Only**: Only plays sounds when browser tab is unfocused.
@@ -229,6 +229,7 @@ Controls how messages are formatted and what content is displayed.
 * **Forbid External Media**: Block embedded media from external domains
 * **Show {\{char}}: in responses**: Retain character name prefix in responses if generated
 * **Show {\{user}}: in responses**: Retain user name prefix in responses if generated
+* **Experimental Macro Engine**: Enables advanced macro processing that supports nesting
 * **Show tags in responses**: Allow (some) HTML tags in responses to be displayed as HTML 
 * **Relax message trim in Groups**: Allow AI to speak for other characters in group chats, rather than stopping the response generation
 * **Show group chat queue**: Display response order in the character list for group chats

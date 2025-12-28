@@ -53,8 +53,21 @@ Supported sources:
 - OpenRouter
 - xAI (Grok)
 - AI/ML API
+- Z.AI
+- Pollinations
+- MistralAI
+- Electron Hub
+- Chutes
+- NanoGPT
 
-"Request model reasoning" does not determine whether a model does reasoning. Claude and Google (2.5 Flash) allow thinking mode to be toggled; see [Reasoning Effort](#reasoning-effort).
+!!!
+For **most** sources, "Request model reasoning" does not determine whether a model does reasoning as it can't be disabled. If the backend and model support explicitly requesting disabled reasoning, the setting will do so. Otherwise, the model will always reason.
+!!!
+
+Provider-specific notes:
+
+- Claude and Google (2.5 Flash) allow thinking mode to be toggled; see [Reasoning Effort](#reasoning-effort).
+- Reasoning can be disabled for Z.AI (GLM). The setting maps the to `thinking.type` parameter, see the [documentation](https://docs.z.ai/api-reference/llm/chat-completion#body-one-of-0-thinking). It does not support "Reasoning Effort".
 
 ### By Parsing
 
@@ -112,7 +125,7 @@ Reasoning Effort is a Chat Completion setting in the **<i class="fa-solid fa-sli
 | Low     | 15% of max response, min 1024    | "low"                | "low", or 20% of max response    | "low"                | "low"                |
 | Medium  | 25% of max response, min 1024    | "medium"             | "medium", or 50% of max response | "low"                | "medium"             |
 | High    | 50% of max response, min 1024    | "high"               | "high", or 80% of max response   | "high"               | "high"               |
-| Maximum | 95% of max response, min 1024    | "high"               | "high", or 80% of max response   | "high"               | "high"               | 
+| Maximum | 95% of max response, min 1024    | "high"               | "high", or 80% of max response   | "high"               | "high"               |
 
 - For Claude, budget is capped to 21333 if streaming is disabled. If the calculated budget would be less than 1024, then max response is changed to 2048.
 - For OpenRouter, Perplexity and AI/ML API, only an OpenAI-style keyword is sent.
@@ -120,9 +133,11 @@ Reasoning Effort is a Chat Completion setting in the **<i class="fa-solid fa-sli
 Google AI Studio and Vertex AI are as follows:
 
 | Model          | Auto (dynamic thinking) | Minimum            | Low                          | Medium     | High       | Maximum               |
-| -------------- | ----------------------- | ------------------ | ---------------------------- | ---------- | ---------- | --------------------- | 
+| -------------- | ----------------------- | ------------------ | ---------------------------- | ---------- | ---------- | --------------------- |
 | 2.5 Pro        | thinkingBudget = -1     | 128                | 15% of max response, min 128 | 25% of max | 50% of max | lower of max or 32768 |
 | 2.5 Flash      | thinkingBudget = -1     | 0, **no thinking** | 15% of max response          | 25% of max | 50% of max | lower of max or 24576 |
 | 2.5 Flash Lite | thinkingBudget = -1     | 0, **no thinking** | 15% of max response, min 512 | 25% of max | 50% of max | lower of max or 24576 |
+| 3.0 Pro        | thinkingLevel = null    | "low"              | "low"                        | "low"      | "high"     | "high"                |
+| 3.0 Flash      | thinkingLevel = null    | "minimal"          | "low"                        | "medium"   | "high"     | "high"                |
 
 - For Gemini 2.5 Pro and 2.5 Flash/Lite, budget is capped to 32768 or 24576 tokens respectively, regardless of the streaming setting.

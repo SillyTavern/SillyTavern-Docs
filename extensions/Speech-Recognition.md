@@ -12,7 +12,6 @@ Before you begin, ensure you've met the following prerequisites:
 
 - Make sure you're on the latest version of SillyTavern.
 - Install the "Speech Recognition" extension from the "Download Extensions & Assets" menu in the Extensions panel (stacked blocks icon).
-- Have ffmpeg binary installed. See [RVC setup](RVC.md#rvc-setup) for more details.
 
 ## Speech Recognition Setup (Browser)
 
@@ -38,7 +37,22 @@ Before you begin, ensure you've met the following prerequisites:
 5. **Recording**:
    - To start recording, click the microphone button to the right of the message area next to the send button. Click again to stop recording. Recording may stop automatically if no voice is detected.
 
-## Speech Recognition Setup (Whisper/Vosk)
+## Speech Recognition Setup (API Sources)
+
+Supports sources like OpenAI, MistralAI, Groq, Chutes, Z.AI, and others that provide speech-to-text APIs.
+
+To set up:
+
+1. Provide an API key for the chosen provider in the Chat Completion API settings.
+2. Launch SillyTavern and go to **Extensions** > **Speech Recognition**.
+3. Select the desired API source from the dropdown options.
+4. Configure additional settings as needed, similar to the "Browser" provider setup.
+
+## Speech Recognition Setup (Extras) - Deprecated
+
+!!!
+Requires ffmpeg binary installed. See [RVC setup](RVC.md#rvc-setup) for more details.
+!!!
 
 1. **Enable Provider**:
    - Enable the desired speech recognition provider on the extras server using the following command:
@@ -56,7 +70,11 @@ Before you begin, ensure you've met the following prerequisites:
    - Select "Vosk" or "Whisper" from the dropdown options (whisper is more accurate).
    - The settings are similar to the "Browser" provider setup (except for language) see above.
 
-## Speech Recognition Setup (Streaming)
+## Speech Recognition Setup (Streaming) - Deprecated
+
+!!!
+Requires ffmpeg binary installed. See [RVC setup](RVC.md#rvc-setup) for more details.
+!!!
 
 1. **Enable Provider**:
    - Enable the streaming speech recognition module on Sillytavern-extras with the following command:

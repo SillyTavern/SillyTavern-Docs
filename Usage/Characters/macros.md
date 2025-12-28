@@ -9,9 +9,13 @@ route: /usage/core-concepts/macros/
 This list may be incomplete or outdated. Use the `/help macros` slash command in any SillyTavern chat to get the list of macros that work in your instance.
 !!!
 
-Macros can be used in character description, author's notes, world info and many other places and replaced with the corresponding values when generating a response. They can be used to insert dynamic content into the prompt, such as the user's name, character's description, or the current time. Macros are enclosed in double curly braces, e.g. `{{user}}` and are usually case-insensitive. **Please keep in mind that macro nesting is currently not supported.**
+Macros can be used in character description, author's notes, world info and many other places and replaced with the corresponding values when generating a response. They can be used to insert dynamic content into the prompt, such as the user's name, character's description, or the current time. Macros are enclosed in double curly braces, e.g. `{{user}}` and are usually case-insensitive.
 
 Note: some extensions may also add special context-specific macros that only work in certain areas (i.e. special placeholders for extension prompts). These will not be documented here unless the macro is not bound to a specific functionality.
+
+!!!tip Experimental Macro Engine
+To enable advanced macro processing that supports nesting, stable substitution order, and other improvements, go to **Settings** > **User Settings** and enable the **Experimental Macro Engine** option.
+!!!
 
 ## General Macros
 

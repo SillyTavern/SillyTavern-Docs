@@ -58,6 +58,14 @@ Requires an API key.
 
 Get the key here: <https://serper.dev/>
 
+### Z.AI
+
+Requires an API key, set it in the Chat Completion API settings first. Not compatible with the Coding API subscription!
+
+Get the key here: <https://z.ai/manage-apikey/apikey-list/>
+
+Docs: <https://docs.z.ai/api-reference/tools/web-search>
+
 ## How to use
 
 1. Make sure you use the latest version of SillyTavern.
@@ -174,3 +182,8 @@ Example: /websearch links=off snippets=on how to make a sandwich
 3. Page snippets.
 4. Relevant questions.
 5. Images.
+
+#### Z.AI
+
+1. Page titles.
+2. Page snippets.
