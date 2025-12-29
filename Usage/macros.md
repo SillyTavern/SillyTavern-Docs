@@ -8,7 +8,7 @@ templating: false
 # Macros
 
 !!!tip Experimental Macro Engine
-To enable advanced macro processing that supports nesting, stable substitution order, and other improvements, go to **Settings** > **User Settings** and enable the **Experimental Macro Engine** option.
+To enable advanced macro processing that supports nesting, stable substitution order, and other improvements, go to **User Settings** > **Chat/Message Handling** and enable the **Experimental Macro Engine** option.
 !!!
 
 Macros are dynamic placeholders that get replaced with actual values when text is processed. They are used throughout SillyTavern in prompts, character cards, lorebooks, Quick Replies, and more.
