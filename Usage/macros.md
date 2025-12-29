@@ -474,7 +474,6 @@ Use `/? macros` for the complete list of available macros and their detailed des
 | `{{instructStop}}` | Instruct stop sequence |
 | `{{instructUserFiller}}` | Instruct user alignment filler |
 | `{{instructSystemInstructionPrefix}}` | Instruct system instruction prefix sequence |
-| `{{exampleSeparator}}` | Separator between example chat blocks in text completion prompts |
 | `{{chatSeparator}}` | Separator between example chat blocks in text completion prompts |
 | `{{chatStart}}` | Chat start marker in text completion prompts |
 | `{{reasoningPrefix}}` | Prefix string used before reasoning blocks |
