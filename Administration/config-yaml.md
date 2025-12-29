@@ -306,9 +306,9 @@ Requires localhost or a domain with HTTPS, otherwise will not work!
 
 !!!warning **IMPORTANT!**
 
-Use with caution and only when the prompt prefix is static and doesn't change between requests. \{\{random\}\} macro, lorebooks, vectors, summaries, etc. will likely invalidate the cache and you'll just waste money on cache misses. Behavior may be unpredictable and no guarantees can or will be made.
+Use with caution and only when the prompt prefix is static and doesn't change between requests. \{\{random\}\} macro, lorebooks, vectors, summaries, etc. will likely invalidate the cache and you'll just waste money on cache misses. The provider may have a minimum prompt size requirement for caching. Behavior may be unpredictable and no guarantees can or will be made, please review the API documentation.
 
-See: [Prompt Caching](https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching)
+See: [Prompt Caching](https://platform.claude.com/docs/en/build-with-claude/prompt-caching)
 !!!
 
 | Setting | Description | Default | Permitted Values |
