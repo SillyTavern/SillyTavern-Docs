@@ -269,7 +269,7 @@ Flags are special symbol characters placed between the opening braces and the ma
 
 Flags can be combined:
 
-```handlebars
+```txt
 {{!?macroName}}
 ```
 
@@ -316,13 +316,13 @@ Without `#`, the content would be trimmed and dedented. With `#`, all whitespace
 
 Use the comment macro to add notes that won't appear in the output:
 
-```handlebars
+```txt
 {{// This is a comment and will be removed}}
 ```
 
 For multi-line comments, use scoped syntax:
 
-```handlebars
+```txt
 {{ // }}
   This entire block is a comment.
   It can span multiple lines.
