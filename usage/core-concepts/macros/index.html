@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.820351183348">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.820352118597">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.11.0.820351183348" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.11.0.820352118597" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.820351183348" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.820352118597" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.820351183348" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.820352118597" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -756,172 +756,530 @@
         <span>Names &amp; Participants</span>
     </h3>
 </doc-anchor-target>
-<ul>
-<li><code v-pre>{{user}}</code> - Current user/persona name</li>
-<li><code v-pre>{{char}}</code> - Current character name</li>
-<li><code v-pre>{{group}}</code> - Comma-separated list of group member names (including muted) or character name in solo chats</li>
-<li><code v-pre>{{groupNotMuted}}</code> - Comma-separated list of group member names excluding muted members</li>
-<li><code v-pre>{{charIfNotGroup}}</code> - Character name (empty in groups)</li>
-<li><code v-pre>{{notChar}}</code> - Comma-separated list of all participants except the current speaker</li>
-</ul>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Macro</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>{{user}}</code></td>
+<td>Current user/persona name</td>
+</tr>
+<tr>
+<td><code v-pre>{{char}}</code></td>
+<td>Current character name</td>
+</tr>
+<tr>
+<td><code v-pre>{{group}}</code></td>
+<td>Comma-separated list of group member names (including muted) or character name in solo chats</td>
+</tr>
+<tr>
+<td><code v-pre>{{groupNotMuted}}</code></td>
+<td>Comma-separated list of group member names excluding muted members</td>
+</tr>
+<tr>
+<td><code v-pre>{{charIfNotGroup}}</code></td>
+<td>Character name (empty in groups)</td>
+</tr>
+<tr>
+<td><code v-pre>{{notChar}}</code></td>
+<td>Comma-separated list of all participants except the current speaker</td>
+</tr>
+</tbody>
+</table>
+</div>
 <doc-anchor-target id="character-card--persona-fields">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#character-card--persona-fields">#</doc-anchor-trigger>
         <span>Character Card &amp; Persona Fields</span>
     </h3>
 </doc-anchor-target>
-<ul>
-<li><code v-pre>{{description}}</code> - Character description</li>
-<li><code v-pre>{{personality}}</code> - Character personality</li>
-<li><code v-pre>{{scenario}}</code> - Character scenario</li>
-<li><code v-pre>{{persona}}</code> - User persona description</li>
-<li><code v-pre>{{charPrompt}}</code> - Character&#x27;s Main Prompt override</li>
-<li><code v-pre>{{charInstruction}}</code> - Character&#x27;s Post-History Instructions override</li>
-<li><code v-pre>{{charDepthPrompt}}</code> - Character&#x27;s @ Depth Note</li>
-<li><code v-pre>{{charCreatorNotes}}</code> - Creator notes from the character card</li>
-<li><code v-pre>{{charVersion}}</code> - Character&#x27;s version number</li>
-<li><code v-pre>{{mesExamples}}</code> - Character&#x27;s dialogue examples, formatted for instruct mode</li>
-<li><code v-pre>{{mesExamplesRaw}}</code> - Unformatted dialogue examples from the character card</li>
-<li><code v-pre>{{original}}</code> - Original message content for substitution in character prompt overrides</li>
-</ul>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Macro</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>{{description}}</code></td>
+<td>Character description</td>
+</tr>
+<tr>
+<td><code v-pre>{{personality}}</code></td>
+<td>Character personality</td>
+</tr>
+<tr>
+<td><code v-pre>{{scenario}}</code></td>
+<td>Character scenario</td>
+</tr>
+<tr>
+<td><code v-pre>{{persona}}</code></td>
+<td>User persona description</td>
+</tr>
+<tr>
+<td><code v-pre>{{charPrompt}}</code></td>
+<td>Character&#x27;s Main Prompt override</td>
+</tr>
+<tr>
+<td><code v-pre>{{charInstruction}}</code></td>
+<td>Character&#x27;s Post-History Instructions override</td>
+</tr>
+<tr>
+<td><code v-pre>{{charDepthPrompt}}</code></td>
+<td>Character&#x27;s @ Depth Note</td>
+</tr>
+<tr>
+<td><code v-pre>{{charCreatorNotes}}</code></td>
+<td>Creator notes from the character card</td>
+</tr>
+<tr>
+<td><code v-pre>{{charVersion}}</code></td>
+<td>Character&#x27;s version number</td>
+</tr>
+<tr>
+<td><code v-pre>{{mesExamples}}</code></td>
+<td>Character&#x27;s dialogue examples, formatted for instruct mode</td>
+</tr>
+<tr>
+<td><code v-pre>{{mesExamplesRaw}}</code></td>
+<td>Unformatted dialogue examples from the character card</td>
+</tr>
+<tr>
+<td><code v-pre>{{original}}</code></td>
+<td>Original message content for substitution in character prompt overrides</td>
+</tr>
+</tbody>
+</table>
+</div>
 <doc-anchor-target id="chat-history--messages">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#chat-history--messages">#</doc-anchor-trigger>
         <span>Chat History &amp; Messages</span>
     </h3>
 </doc-anchor-target>
-<ul>
-<li><code v-pre>{{lastMessage}}</code> - Last message in the chat</li>
-<li><code v-pre>{{lastMessageId}}</code> - Index of the last message in the chat</li>
-<li><code v-pre>{{lastUserMessage}}</code> - Last user message in the chat</li>
-<li><code v-pre>{{lastCharMessage}}</code> - Last character/bot message in the chat</li>
-<li><code v-pre>{{firstIncludedMessageId}}</code> - Index of first message included in current context</li>
-<li><code v-pre>{{firstDisplayedMessageId}}</code> - Index of the first displayed message in the chat</li>
-<li><code v-pre>{{lastSwipeId}}</code> - 1-based index of the last swipe for the last message</li>
-<li><code v-pre>{{currentSwipeId}}</code> - 1-based index of the current swipe</li>
-<li><code v-pre>{{summary}}</code> - Latest chat summary from the &quot;Summarize&quot; extension (when available)</li>
-</ul>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Macro</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>{{lastMessage}}</code></td>
+<td>Last message in the chat</td>
+</tr>
+<tr>
+<td><code v-pre>{{lastMessageId}}</code></td>
+<td>Index of the last message in the chat</td>
+</tr>
+<tr>
+<td><code v-pre>{{lastUserMessage}}</code></td>
+<td>Last user message in the chat</td>
+</tr>
+<tr>
+<td><code v-pre>{{lastCharMessage}}</code></td>
+<td>Last character/bot message in the chat</td>
+</tr>
+<tr>
+<td><code v-pre>{{firstIncludedMessageId}}</code></td>
+<td>Index of first message included in current context</td>
+</tr>
+<tr>
+<td><code v-pre>{{firstDisplayedMessageId}}</code></td>
+<td>Index of the first displayed message in the chat</td>
+</tr>
+<tr>
+<td><code v-pre>{{lastSwipeId}}</code></td>
+<td>1-based index of the last swipe for the last message</td>
+</tr>
+<tr>
+<td><code v-pre>{{currentSwipeId}}</code></td>
+<td>1-based index of the current swipe</td>
+</tr>
+<tr>
+<td><code v-pre>{{summary}}</code></td>
+<td>Latest chat summary from the &quot;Summarize&quot; extension (when available)</td>
+</tr>
+</tbody>
+</table>
+</div>
 <doc-anchor-target id="time--date">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#time--date">#</doc-anchor-trigger>
         <span>Time &amp; Date</span>
     </h3>
 </doc-anchor-target>
-<ul>
-<li><code v-pre>{{time}}</code> - Current local time</li>
-<li><code v-pre>{{time::UTC±(offset)}}</code> - Time with UTC offset</li>
-<li><code v-pre>{{date}}</code> - Current local date in short format</li>
-<li><code v-pre>{{weekday}}</code> - Current day of the week</li>
-<li><code v-pre>{{isotime}}</code> - Current time in HH:mm format</li>
-<li><code v-pre>{{isodate}}</code> - Current date in YYYY-MM-DD format</li>
-<li><code v-pre>{{datetimeformat::format}}</code> - Custom formatted date/time (e.g., <code v-pre>YYYY-MM-DD HH:mm:ss</code>)</li>
-<li><code v-pre>{{idleDuration}}</code> - Human-readable duration since the last user message</li>
-<li><code v-pre>{{timeDiff::left::right}}</code> - Human-readable difference between two times</li>
-</ul>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Macro</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>{{time}}</code></td>
+<td>Current local time</td>
+</tr>
+<tr>
+<td><code v-pre>{{time::UTC±(offset)}}</code></td>
+<td>Time with UTC offset</td>
+</tr>
+<tr>
+<td><code v-pre>{{date}}</code></td>
+<td>Current local date in short format</td>
+</tr>
+<tr>
+<td><code v-pre>{{weekday}}</code></td>
+<td>Current day of the week</td>
+</tr>
+<tr>
+<td><code v-pre>{{isotime}}</code></td>
+<td>Current time in HH:mm format</td>
+</tr>
+<tr>
+<td><code v-pre>{{isodate}}</code></td>
+<td>Current date in YYYY-MM-DD format</td>
+</tr>
+<tr>
+<td><code v-pre>{{datetimeformat::format}}</code></td>
+<td>Custom formatted date/time (e.g., <code v-pre>YYYY-MM-DD HH:mm:ss</code>)</td>
+</tr>
+<tr>
+<td><code v-pre>{{idleDuration}}</code></td>
+<td>Human-readable duration since the last user message</td>
+</tr>
+<tr>
+<td><code v-pre>{{timeDiff::left::right}}</code></td>
+<td>Human-readable difference between two times</td>
+</tr>
+</tbody>
+</table>
+</div>
 <doc-anchor-target id="variables">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#variables">#</doc-anchor-trigger>
         <span>Variables</span>
     </h3>
 </doc-anchor-target>
-<ul>
-<li><code v-pre>{{getvar::name}}</code> - Get local variable value</li>
-<li><code v-pre>{{setvar::name::value}}</code> - Set local variable</li>
-<li><code v-pre>{{addvar::name::value}}</code> - Add value to local variable (numeric or string append)</li>
-<li><code v-pre>{{incvar::name}}</code> - Increment local variable by 1 and return new value</li>
-<li><code v-pre>{{decvar::name}}</code> - Decrement local variable by 1 and return new value</li>
-<li><code v-pre>{{getglobalvar::name}}</code> - Get global variable value</li>
-<li><code v-pre>{{setglobalvar::name::value}}</code> - Set global variable</li>
-<li><code v-pre>{{addglobalvar::name::value}}</code> - Add value to global variable (numeric or string append)</li>
-<li><code v-pre>{{incglobalvar::name}}</code> - Increment global variable by 1 and return new value</li>
-<li><code v-pre>{{decglobalvar::name}}</code> - Decrement global variable by 1 and return new value</li>
-</ul>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Macro</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>{{getvar::name}}</code></td>
+<td>Get local variable value</td>
+</tr>
+<tr>
+<td><code v-pre>{{setvar::name::value}}</code></td>
+<td>Set local variable</td>
+</tr>
+<tr>
+<td><code v-pre>{{addvar::name::value}}</code></td>
+<td>Add value to local variable (numeric or string append)</td>
+</tr>
+<tr>
+<td><code v-pre>{{incvar::name}}</code></td>
+<td>Increment local variable by 1 and return new value</td>
+</tr>
+<tr>
+<td><code v-pre>{{decvar::name}}</code></td>
+<td>Decrement local variable by 1 and return new value</td>
+</tr>
+<tr>
+<td><code v-pre>{{getglobalvar::name}}</code></td>
+<td>Get global variable value</td>
+</tr>
+<tr>
+<td><code v-pre>{{setglobalvar::name::value}}</code></td>
+<td>Set global variable</td>
+</tr>
+<tr>
+<td><code v-pre>{{addglobalvar::name::value}}</code></td>
+<td>Add value to global variable (numeric or string append)</td>
+</tr>
+<tr>
+<td><code v-pre>{{incglobalvar::name}}</code></td>
+<td>Increment global variable by 1 and return new value</td>
+</tr>
+<tr>
+<td><code v-pre>{{decglobalvar::name}}</code></td>
+<td>Decrement global variable by 1 and return new value</td>
+</tr>
+</tbody>
+</table>
+</div>
 <doc-anchor-target id="randomization">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#randomization">#</doc-anchor-trigger>
         <span>Randomization</span>
     </h3>
 </doc-anchor-target>
-<ul>
-<li><code v-pre>{{random::a::b::c}}</code> - Random selection (re-rolls each time)</li>
-<li><code v-pre>{{pick::a::b::c}}</code> - Stable random selection (consistent per chat and position)</li>
-<li><code v-pre>{{roll::1d20}}</code> - Dice roll using droll syntax</li>
-</ul>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Macro</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>{{random::a::b::c}}</code></td>
+<td>Random selection (re-rolls each time)</td>
+</tr>
+<tr>
+<td><code v-pre>{{pick::a::b::c}}</code></td>
+<td>Stable random selection (consistent per chat and position)</td>
+</tr>
+<tr>
+<td><code v-pre>{{roll::1d20}}</code></td>
+<td>Dice roll using droll syntax</td>
+</tr>
+</tbody>
+</table>
+</div>
 <doc-anchor-target id="runtime-state">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#runtime-state">#</doc-anchor-trigger>
         <span>Runtime State</span>
     </h3>
 </doc-anchor-target>
-<ul>
-<li><code v-pre>{{maxPrompt}}</code> - Maximum prompt context size</li>
-<li><code v-pre>{{model}}</code> - Model name for the currently selected API</li>
-<li><code v-pre>{{isMobile}}</code> - &quot;true&quot; if running in mobile environment, &quot;false&quot; otherwise</li>
-<li><code v-pre>{{lastGenerationType}}</code> - Type of last queued generation request (e.g., &quot;normal&quot;, &quot;impersonate&quot;, &quot;regenerate&quot;, &quot;quiet&quot;, &quot;swipe&quot;, &quot;continue&quot;)</li>
-</ul>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Macro</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>{{maxPrompt}}</code></td>
+<td>Maximum prompt context size</td>
+</tr>
+<tr>
+<td><code v-pre>{{model}}</code></td>
+<td>Model name for the currently selected API</td>
+</tr>
+<tr>
+<td><code v-pre>{{isMobile}}</code></td>
+<td>&quot;true&quot; if running in mobile environment, &quot;false&quot; otherwise</td>
+</tr>
+<tr>
+<td><code v-pre>{{lastGenerationType}}</code></td>
+<td>Type of last queued generation request (e.g., &quot;normal&quot;, &quot;impersonate&quot;, &quot;regenerate&quot;, &quot;quiet&quot;, &quot;swipe&quot;, &quot;continue&quot;)</td>
+</tr>
+</tbody>
+</table>
+</div>
 <doc-anchor-target id="prompt-templates">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#prompt-templates">#</doc-anchor-trigger>
         <span>Prompt Templates</span>
     </h3>
 </doc-anchor-target>
-<ul>
-<li><code v-pre>{{systemPrompt}}</code> - Active system prompt text (optionally overridden by character)</li>
-<li><code v-pre>{{defaultSystemPrompt}}</code> - Default system prompt</li>
-<li><code v-pre>{{instructSystem}}</code> - Default system prompt</li>
-<li><code v-pre>{{instructSystemPrompt}}</code> - Default system prompt</li>
-<li><code v-pre>{{authorsNote}}</code> - Contents of the Author&#x27;s Note</li>
-<li><code v-pre>{{charAuthorsNote}}</code> - Contents of the Character Author&#x27;s Note</li>
-<li><code v-pre>{{defaultAuthorsNote}}</code> - Contents of the Default Author&#x27;s Note</li>
-<li><code v-pre>{{instructStoryStringPrefix}}</code> - Instruct story string prefix</li>
-<li><code v-pre>{{instructStoryStringSuffix}}</code> - Instruct story string suffix</li>
-<li><code v-pre>{{instructUserPrefix}}</code> - Instruct input/user prefix sequence</li>
-<li><code v-pre>{{instructInput}}</code> - Instruct input/user prefix sequence</li>
-<li><code v-pre>{{instructUserSuffix}}</code> - Instruct input/user suffix sequence</li>
-<li><code v-pre>{{instructAssistantPrefix}}</code> - Instruct output/assistant prefix sequence</li>
-<li><code v-pre>{{instructOutput}}</code> - Instruct output/assistant prefix sequence</li>
-<li><code v-pre>{{instructAssistantSuffix}}</code> - Instruct output/assistant suffix sequence</li>
-<li><code v-pre>{{instructSeparator}}</code> - Instruct separator sequence</li>
-<li><code v-pre>{{instructSystemPrefix}}</code> - Instruct system prefix sequence</li>
-<li><code v-pre>{{instructSystemSuffix}}</code> - Instruct system suffix sequence</li>
-<li><code v-pre>{{instructFirstAssistantPrefix}}</code> - Instruct first assistant/output prefix sequence</li>
-<li><code v-pre>{{instructFirstOutputPrefix}}</code> - Instruct first assistant/output prefix sequence</li>
-<li><code v-pre>{{instructLastAssistantPrefix}}</code> - Instruct last assistant/output prefix sequence</li>
-<li><code v-pre>{{instructLastOutputPrefix}}</code> - Instruct last assistant/output prefix sequence</li>
-<li><code v-pre>{{instructFirstUserPrefix}}</code> - Instruct first user/input prefix sequence</li>
-<li><code v-pre>{{instructFirstInput}}</code> - Instruct first user/input prefix sequence</li>
-<li><code v-pre>{{instructLastUserPrefix}}</code> - Instruct last user/input prefix sequence</li>
-<li><code v-pre>{{instructLastInput}}</code> - Instruct last user/input prefix sequence</li>
-<li><code v-pre>{{instructStop}}</code> - Instruct stop sequence</li>
-<li><code v-pre>{{instructUserFiller}}</code> - Instruct user alignment filler</li>
-<li><code v-pre>{{instructSystemInstructionPrefix}}</code> - Instruct system instruction prefix sequence</li>
-<li><code v-pre>{{exampleSeparator}}</code> - Separator between example chat blocks in text completion prompts</li>
-<li><code v-pre>{{chatSeparator}}</code> - Separator between example chat blocks in text completion prompts</li>
-<li><code v-pre>{{chatStart}}</code> - Chat start marker in text completion prompts</li>
-<li><code v-pre>{{reasoningPrefix}}</code> - Prefix string used before reasoning blocks</li>
-<li><code v-pre>{{reasoningSuffix}}</code> - Suffix string used after reasoning blocks</li>
-<li><code v-pre>{{reasoningSeparator}}</code> - Separator between content and response</li>
-<li><code v-pre>{{charPrefix}}</code> - Character&#x27;s positive Image Generation prompt prefix</li>
-<li><code v-pre>{{charNegativePrefix}}</code> - Character&#x27;s negative Image Generation prompt prefix</li>
-</ul>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Macro</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>{{systemPrompt}}</code></td>
+<td>Active system prompt text (optionally overridden by character)</td>
+</tr>
+<tr>
+<td><code v-pre>{{defaultSystemPrompt}}</code></td>
+<td>Default system prompt</td>
+</tr>
+<tr>
+<td><code v-pre>{{authorsNote}}</code></td>
+<td>Contents of the Author&#x27;s Note</td>
+</tr>
+<tr>
+<td><code v-pre>{{charAuthorsNote}}</code></td>
+<td>Contents of the Character Author&#x27;s Note</td>
+</tr>
+<tr>
+<td><code v-pre>{{defaultAuthorsNote}}</code></td>
+<td>Contents of the Default Author&#x27;s Note</td>
+</tr>
+<tr>
+<td><code v-pre>{{instructStoryStringPrefix}}</code></td>
+<td>Instruct story string prefix</td>
+</tr>
+<tr>
+<td><code v-pre>{{instructStoryStringSuffix}}</code></td>
+<td>Instruct story string suffix</td>
+</tr>
+<tr>
+<td><code v-pre>{{instructUserPrefix}}</code></td>
+<td>Instruct input/user prefix sequence</td>
+</tr>
+<tr>
+<td><code v-pre>{{instructUserSuffix}}</code></td>
+<td>Instruct input/user suffix sequence</td>
+</tr>
+<tr>
+<td><code v-pre>{{instructAssistantPrefix}}</code></td>
+<td>Instruct output/assistant prefix sequence</td>
+</tr>
+<tr>
+<td><code v-pre>{{instructAssistantSuffix}}</code></td>
+<td>Instruct output/assistant suffix sequence</td>
+</tr>
+<tr>
+<td><code v-pre>{{instructSeparator}}</code></td>
+<td>Instruct separator sequence</td>
+</tr>
+<tr>
+<td><code v-pre>{{instructSystemPrefix}}</code></td>
+<td>Instruct system prefix sequence</td>
+</tr>
+<tr>
+<td><code v-pre>{{instructSystemSuffix}}</code></td>
+<td>Instruct system suffix sequence</td>
+</tr>
+<tr>
+<td><code v-pre>{{instructFirstAssistantPrefix}}</code></td>
+<td>Instruct first assistant/output prefix sequence</td>
+</tr>
+<tr>
+<td><code v-pre>{{instructLastAssistantPrefix}}</code></td>
+<td>Instruct last assistant/output prefix sequence</td>
+</tr>
+<tr>
+<td><code v-pre>{{instructFirstUserPrefix}}</code></td>
+<td>Instruct first user/input prefix sequence</td>
+</tr>
+<tr>
+<td><code v-pre>{{instructLastUserPrefix}}</code></td>
+<td>Instruct last user/input prefix sequence</td>
+</tr>
+<tr>
+<td><code v-pre>{{instructStop}}</code></td>
+<td>Instruct stop sequence</td>
+</tr>
+<tr>
+<td><code v-pre>{{instructUserFiller}}</code></td>
+<td>Instruct user alignment filler</td>
+</tr>
+<tr>
+<td><code v-pre>{{instructSystemInstructionPrefix}}</code></td>
+<td>Instruct system instruction prefix sequence</td>
+</tr>
+<tr>
+<td><code v-pre>{{exampleSeparator}}</code></td>
+<td>Separator between example chat blocks in text completion prompts</td>
+</tr>
+<tr>
+<td><code v-pre>{{chatSeparator}}</code></td>
+<td>Separator between example chat blocks in text completion prompts</td>
+</tr>
+<tr>
+<td><code v-pre>{{chatStart}}</code></td>
+<td>Chat start marker in text completion prompts</td>
+</tr>
+<tr>
+<td><code v-pre>{{reasoningPrefix}}</code></td>
+<td>Prefix string used before reasoning blocks</td>
+</tr>
+<tr>
+<td><code v-pre>{{reasoningSuffix}}</code></td>
+<td>Suffix string used after reasoning blocks</td>
+</tr>
+<tr>
+<td><code v-pre>{{reasoningSeparator}}</code></td>
+<td>Separator between content and response</td>
+</tr>
+<tr>
+<td><code v-pre>{{charPrefix}}</code></td>
+<td>Character&#x27;s positive Image Generation prompt prefix</td>
+</tr>
+<tr>
+<td><code v-pre>{{charNegativePrefix}}</code></td>
+<td>Character&#x27;s negative Image Generation prompt prefix</td>
+</tr>
+</tbody>
+</table>
+</div>
 <doc-anchor-target id="utility">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#utility">#</doc-anchor-trigger>
         <span>Utility</span>
     </h3>
 </doc-anchor-target>
-<ul>
-<li><code v-pre>{{newline}}</code> - Insert newline character</li>
-<li><code v-pre>{{newline::count}}</code> - Insert multiple newlines</li>
-<li><code v-pre>{{space}}</code> - Insert space character</li>
-<li><code v-pre>{{space::count}}</code> - Insert multiple spaces</li>
-<li><code v-pre>{{noop}}</code> - Does nothing, produces empty string</li>
-<li><code v-pre>{{trim}}</code> - Remove surrounding newlines</li>
-<li><code v-pre>{{reverse::text}}</code> - Reverse a string</li>
-<li><code v-pre>{{input}}</code> - Current chat input field content</li>
-<li><code v-pre>{{banned::word}}</code> - Ban a word for Text Completion backend</li>
-<li><code v-pre>{{outlet::key}}</code> - Return world info outlet prompt for a given outlet key</li>
-</ul>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Macro</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>{{newline}}</code></td>
+<td>Insert newline character</td>
+</tr>
+<tr>
+<td><code v-pre>{{newline::count}}</code></td>
+<td>Insert multiple newlines</td>
+</tr>
+<tr>
+<td><code v-pre>{{space}}</code></td>
+<td>Insert space character</td>
+</tr>
+<tr>
+<td><code v-pre>{{space::count}}</code></td>
+<td>Insert multiple spaces</td>
+</tr>
+<tr>
+<td><code v-pre>{{noop}}</code></td>
+<td>Does nothing, produces empty string</td>
+</tr>
+<tr>
+<td><code v-pre>{{trim}}</code></td>
+<td>Remove surrounding newlines</td>
+</tr>
+<tr>
+<td><code v-pre>{{reverse::text}}</code></td>
+<td>Reverse a string</td>
+</tr>
+<tr>
+<td><code v-pre>{{input}}</code></td>
+<td>Current chat input field content</td>
+</tr>
+<tr>
+<td><code v-pre>{{banned::word}}</code></td>
+<td>Ban a word for Text Completion backend</td>
+</tr>
+<tr>
+<td><code v-pre>{{outlet::key}}</code></td>
+<td>Return world info outlet prompt for a given outlet key</td>
+</tr>
+</tbody>
+</table>
+</div>
 
                                 
                                 <!-- Required only on API pages -->
