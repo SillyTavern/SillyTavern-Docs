@@ -363,127 +363,137 @@ Use `/? macros` for the complete list of available macros and their detailed des
 
 ### Names & Participants
 
-- `{{user}}` - Current user/persona name
-- `{{char}}` - Current character name
-- `{{group}}` - Comma-separated list of group member names (including muted) or character name in solo chats
-- `{{groupNotMuted}}` - Comma-separated list of group member names excluding muted members
-- `{{charIfNotGroup}}` - Character name (empty in groups)
-- `{{notChar}}` - Comma-separated list of all participants except the current speaker
+| Macro | Description |
+|-------|-------------|
+| `{{user}}` | Current user/persona name |
+| `{{char}}` | Current character name |
+| `{{group}}` | Comma-separated list of group member names (including muted) or character name in solo chats |
+| `{{groupNotMuted}}` | Comma-separated list of group member names excluding muted members |
+| `{{charIfNotGroup}}` | Character name (empty in groups) |
+| `{{notChar}}` | Comma-separated list of all participants except the current speaker |
 
 ### Character Card & Persona Fields
 
-- `{{description}}` - Character description
-- `{{personality}}` - Character personality
-- `{{scenario}}` - Character scenario
-- `{{persona}}` - User persona description
-- `{{charPrompt}}` - Character's Main Prompt override
-- `{{charInstruction}}` - Character's Post-History Instructions override
-- `{{charDepthPrompt}}` - Character's @ Depth Note
-- `{{charCreatorNotes}}` - Creator notes from the character card
-- `{{charVersion}}` - Character's version number
-- `{{mesExamples}}` - Character's dialogue examples, formatted for instruct mode
-- `{{mesExamplesRaw}}` - Unformatted dialogue examples from the character card
-- `{{original}}` - Original message content for substitution in character prompt overrides
+| Macro | Description |
+|-------|-------------|
+| `{{description}}` | Character description |
+| `{{personality}}` | Character personality |
+| `{{scenario}}` | Character scenario |
+| `{{persona}}` | User persona description |
+| `{{charPrompt}}` | Character's Main Prompt override |
+| `{{charInstruction}}` | Character's Post-History Instructions override |
+| `{{charDepthPrompt}}` | Character's @ Depth Note |
+| `{{charCreatorNotes}}` | Creator notes from the character card |
+| `{{charVersion}}` | Character's version number |
+| `{{mesExamples}}` | Character's dialogue examples, formatted for instruct mode |
+| `{{mesExamplesRaw}}` | Unformatted dialogue examples from the character card |
+| `{{original}}` | Original message content for substitution in character prompt overrides |
 
 ### Chat History & Messages
 
-- `{{lastMessage}}` - Last message in the chat
-- `{{lastMessageId}}` - Index of the last message in the chat
-- `{{lastUserMessage}}` - Last user message in the chat
-- `{{lastCharMessage}}` - Last character/bot message in the chat
-- `{{firstIncludedMessageId}}` - Index of first message included in current context
-- `{{firstDisplayedMessageId}}` - Index of the first displayed message in the chat
-- `{{lastSwipeId}}` - 1-based index of the last swipe for the last message
-- `{{currentSwipeId}}` - 1-based index of the current swipe
-- `{{summary}}` - Latest chat summary from the "Summarize" extension (when available)
+| Macro | Description |
+|-------|-------------|
+| `{{lastMessage}}` | Last message in the chat |
+| `{{lastMessageId}}` | Index of the last message in the chat |
+| `{{lastUserMessage}}` | Last user message in the chat |
+| `{{lastCharMessage}}` | Last character/bot message in the chat |
+| `{{firstIncludedMessageId}}` | Index of first message included in current context |
+| `{{firstDisplayedMessageId}}` | Index of the first displayed message in the chat |
+| `{{lastSwipeId}}` | 1-based index of the last swipe for the last message |
+| `{{currentSwipeId}}` | 1-based index of the current swipe |
+| `{{summary}}` | Latest chat summary from the "Summarize" extension (when available) |
 
 ### Time & Date
 
-- `{{time}}` - Current local time
-- `{{time::UTC±(offset)}}` - Time with UTC offset
-- `{{date}}` - Current local date in short format
-- `{{weekday}}` - Current day of the week
-- `{{isotime}}` - Current time in HH:mm format
-- `{{isodate}}` - Current date in YYYY-MM-DD format
-- `{{datetimeformat::format}}` - Custom formatted date/time (e.g., `YYYY-MM-DD HH:mm:ss`)
-- `{{idleDuration}}` - Human-readable duration since the last user message
-- `{{timeDiff::left::right}}` - Human-readable difference between two times
+| Macro | Description |
+|-------|-------------|
+| `{{time}}` | Current local time |
+| `{{time::UTC±(offset)}}` | Time with UTC offset |
+| `{{date}}` | Current local date in short format |
+| `{{weekday}}` | Current day of the week |
+| `{{isotime}}` | Current time in HH:mm format |
+| `{{isodate}}` | Current date in YYYY-MM-DD format |
+| `{{datetimeformat::format}}` | Custom formatted date/time (e.g., `YYYY-MM-DD HH:mm:ss`) |
+| `{{idleDuration}}` | Human-readable duration since the last user message |
+| `{{timeDiff::left::right}}` | Human-readable difference between two times |
 
 ### Variables
 
-- `{{getvar::name}}` - Get local variable value
-- `{{setvar::name::value}}` - Set local variable
-- `{{addvar::name::value}}` - Add value to local variable (numeric or string append)
-- `{{incvar::name}}` - Increment local variable by 1 and return new value
-- `{{decvar::name}}` - Decrement local variable by 1 and return new value
-- `{{getglobalvar::name}}` - Get global variable value
-- `{{setglobalvar::name::value}}` - Set global variable
-- `{{addglobalvar::name::value}}` - Add value to global variable (numeric or string append)
-- `{{incglobalvar::name}}` - Increment global variable by 1 and return new value
-- `{{decglobalvar::name}}` - Decrement global variable by 1 and return new value
+| Macro | Description |
+|-------|-------------|
+| `{{getvar::name}}` | Get local variable value |
+| `{{setvar::name::value}}` | Set local variable |
+| `{{addvar::name::value}}` | Add value to local variable (numeric or string append) |
+| `{{incvar::name}}` | Increment local variable by 1 and return new value |
+| `{{decvar::name}}` | Decrement local variable by 1 and return new value |
+| `{{getglobalvar::name}}` | Get global variable value |
+| `{{setglobalvar::name::value}}` | Set global variable |
+| `{{addglobalvar::name::value}}` | Add value to global variable (numeric or string append) |
+| `{{incglobalvar::name}}` | Increment global variable by 1 and return new value |
+| `{{decglobalvar::name}}` | Decrement global variable by 1 and return new value |
 
 ### Randomization
 
-- `{{random::a::b::c}}` - Random selection (re-rolls each time)
-- `{{pick::a::b::c}}` - Stable random selection (consistent per chat and position)
-- `{{roll::1d20}}` - Dice roll using droll syntax
+| Macro | Description |
+|-------|-------------|
+| `{{random::a::b::c}}` | Random selection (re-rolls each time) |
+| `{{pick::a::b::c}}` | Stable random selection (consistent per chat and position) |
+| `{{roll::1d20}}` | Dice roll using droll syntax |
 
 ### Runtime State
 
-- `{{maxPrompt}}` - Maximum prompt context size
-- `{{model}}` - Model name for the currently selected API
-- `{{isMobile}}` - "true" if running in mobile environment, "false" otherwise
-- `{{lastGenerationType}}` - Type of last queued generation request (e.g., "normal", "impersonate", "regenerate", "quiet", "swipe", "continue")
+| Macro | Description |
+|-------|-------------|
+| `{{maxPrompt}}` | Maximum prompt context size |
+| `{{model}}` | Model name for the currently selected API |
+| `{{isMobile}}` | "true" if running in mobile environment, "false" otherwise |
+| `{{lastGenerationType}}` | Type of last queued generation request (e.g., "normal", "impersonate", "regenerate", "quiet", "swipe", "continue") |
 
 ### Prompt Templates
 
-- `{{systemPrompt}}` - Active system prompt text (optionally overridden by character)
-- `{{defaultSystemPrompt}}` - Default system prompt
-- `{{instructSystem}}` - Default system prompt
-- `{{instructSystemPrompt}}` - Default system prompt
-- `{{authorsNote}}` - Contents of the Author's Note
-- `{{charAuthorsNote}}` - Contents of the Character Author's Note
-- `{{defaultAuthorsNote}}` - Contents of the Default Author's Note
-- `{{instructStoryStringPrefix}}` - Instruct story string prefix
-- `{{instructStoryStringSuffix}}` - Instruct story string suffix
-- `{{instructUserPrefix}}` - Instruct input/user prefix sequence
-- `{{instructInput}}` - Instruct input/user prefix sequence
-- `{{instructUserSuffix}}` - Instruct input/user suffix sequence
-- `{{instructAssistantPrefix}}` - Instruct output/assistant prefix sequence
-- `{{instructOutput}}` - Instruct output/assistant prefix sequence
-- `{{instructAssistantSuffix}}` - Instruct output/assistant suffix sequence
-- `{{instructSeparator}}` - Instruct separator sequence
-- `{{instructSystemPrefix}}` - Instruct system prefix sequence
-- `{{instructSystemSuffix}}` - Instruct system suffix sequence
-- `{{instructFirstAssistantPrefix}}` - Instruct first assistant/output prefix sequence
-- `{{instructFirstOutputPrefix}}` - Instruct first assistant/output prefix sequence
-- `{{instructLastAssistantPrefix}}` - Instruct last assistant/output prefix sequence
-- `{{instructLastOutputPrefix}}` - Instruct last assistant/output prefix sequence
-- `{{instructFirstUserPrefix}}` - Instruct first user/input prefix sequence
-- `{{instructFirstInput}}` - Instruct first user/input prefix sequence
-- `{{instructLastUserPrefix}}` - Instruct last user/input prefix sequence
-- `{{instructLastInput}}` - Instruct last user/input prefix sequence
-- `{{instructStop}}` - Instruct stop sequence
-- `{{instructUserFiller}}` - Instruct user alignment filler
-- `{{instructSystemInstructionPrefix}}` - Instruct system instruction prefix sequence
-- `{{exampleSeparator}}` - Separator between example chat blocks in text completion prompts
-- `{{chatSeparator}}` - Separator between example chat blocks in text completion prompts
-- `{{chatStart}}` - Chat start marker in text completion prompts
-- `{{reasoningPrefix}}` - Prefix string used before reasoning blocks
-- `{{reasoningSuffix}}` - Suffix string used after reasoning blocks
-- `{{reasoningSeparator}}` - Separator between content and response
-- `{{charPrefix}}` - Character's positive Image Generation prompt prefix
-- `{{charNegativePrefix}}` - Character's negative Image Generation prompt prefix
+| Macro | Description |
+|-------|-------------|
+| `{{systemPrompt}}` | Active system prompt text (optionally overridden by character) |
+| `{{defaultSystemPrompt}}` | Default system prompt |
+| `{{authorsNote}}` | Contents of the Author's Note |
+| `{{charAuthorsNote}}` | Contents of the Character Author's Note |
+| `{{defaultAuthorsNote}}` | Contents of the Default Author's Note |
+| `{{instructStoryStringPrefix}}` | Instruct story string prefix |
+| `{{instructStoryStringSuffix}}` | Instruct story string suffix |
+| `{{instructUserPrefix}}` | Instruct input/user prefix sequence |
+| `{{instructUserSuffix}}` | Instruct input/user suffix sequence |
+| `{{instructAssistantPrefix}}` | Instruct output/assistant prefix sequence |
+| `{{instructAssistantSuffix}}` | Instruct output/assistant suffix sequence |
+| `{{instructSeparator}}` | Instruct separator sequence |
+| `{{instructSystemPrefix}}` | Instruct system prefix sequence |
+| `{{instructSystemSuffix}}` | Instruct system suffix sequence |
+| `{{instructFirstAssistantPrefix}}` | Instruct first assistant/output prefix sequence |
+| `{{instructLastAssistantPrefix}}` | Instruct last assistant/output prefix sequence |
+| `{{instructFirstUserPrefix}}` | Instruct first user/input prefix sequence |
+| `{{instructLastUserPrefix}}` | Instruct last user/input prefix sequence |
+| `{{instructStop}}` | Instruct stop sequence |
+| `{{instructUserFiller}}` | Instruct user alignment filler |
+| `{{instructSystemInstructionPrefix}}` | Instruct system instruction prefix sequence |
+| `{{exampleSeparator}}` | Separator between example chat blocks in text completion prompts |
+| `{{chatSeparator}}` | Separator between example chat blocks in text completion prompts |
+| `{{chatStart}}` | Chat start marker in text completion prompts |
+| `{{reasoningPrefix}}` | Prefix string used before reasoning blocks |
+| `{{reasoningSuffix}}` | Suffix string used after reasoning blocks |
+| `{{reasoningSeparator}}` | Separator between content and response |
+| `{{charPrefix}}` | Character's positive Image Generation prompt prefix |
+| `{{charNegativePrefix}}` | Character's negative Image Generation prompt prefix |
 
 ### Utility
 
-- `{{newline}}` - Insert newline character
-- `{{newline::count}}` - Insert multiple newlines
-- `{{space}}` - Insert space character
-- `{{space::count}}` - Insert multiple spaces
-- `{{noop}}` - Does nothing, produces empty string
-- `{{trim}}` - Remove surrounding newlines
-- `{{reverse::text}}` - Reverse a string
-- `{{input}}` - Current chat input field content
-- `{{banned::word}}` - Ban a word for Text Completion backend
-- `{{outlet::key}}` - Return world info outlet prompt for a given outlet key
+| Macro | Description |
+|-------|-------------|
+| `{{newline}}` | Insert newline character |
+| `{{newline::count}}` | Insert multiple newlines |
+| `{{space}}` | Insert space character |
+| `{{space::count}}` | Insert multiple spaces |
+| `{{noop}}` | Does nothing, produces empty string |
+| `{{trim}}` | Remove surrounding newlines |
+| `{{reverse::text}}` | Reverse a string |
+| `{{input}}` | Current chat input field content |
+| `{{banned::word}}` | Ban a word for Text Completion backend |
+| `{{outlet::key}}` | Return world info outlet prompt for a given outlet key |
