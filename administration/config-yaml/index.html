@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.820271322943">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.820322665791">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -30,12 +30,12 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.11.0.820271322943" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.820322665791" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.820271322943" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.820322665791" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.820271322943" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.820271322943" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.820322665791" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.820322665791" defer></script>
 
     <style>
         a {
@@ -1454,8 +1454,8 @@ Start.bat --port 8000 --listen false</code></pre>
         </div>
         <div class="pr-5 ml-3 w-full">
             <h5><strong>IMPORTANT!</strong></h5>
-<p>Use with caution and only when the prompt prefix is static and doesn&#x27;t change between requests. {{random}} macro, lorebooks, vectors, summaries, etc. will likely invalidate the cache and you&#x27;ll just waste money on cache misses. Behavior may be unpredictable and no guarantees can or will be made.</p>
-<p>See: <a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching">Prompt Caching</a></p>
+<p>Use with caution and only when the prompt prefix is static and doesn&#x27;t change between requests. {{random}} macro, lorebooks, vectors, summaries, etc. will likely invalidate the cache and you&#x27;ll just waste money on cache misses. The provider may have a minimum prompt size requirement for caching. Behavior may be unpredictable and no guarantees can or will be made, please review the API documentation.</p>
+<p>See: <a href="https://platform.claude.com/docs/en/build-with-claude/prompt-caching">Prompt Caching</a></p>
         </div>
     </div>
 </div>
