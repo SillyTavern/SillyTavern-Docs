@@ -28,6 +28,8 @@ Macros are enclosed in double curly braces:
 {{macroName}}
 ```
 
+Macro names are **case-insensitive**. `{{User}}`, `{{USER}}`, and `{{user}}` all resolve to the same macro.
+
 Examples:
 
 ```txt
@@ -215,9 +217,26 @@ The condition can be:
 
 - A macro name (resolved automatically if no arguments are required)
 - Any value from a nested macro like `{{getvar::flag}}`
+- A variable shorthand like `.myFlag` or `$globalFlag` (see [Variable Shorthand Syntax](#variable-shorthand-syntax))
 - Any text you want (that will implicitly resolve to truthy or falsy based on its content)
 
 Falsy values: empty string, `false`, `0`, `off`, `no`.
+
+### Using Variable Shorthands in Conditions
+
+Variable shorthands provide a concise way to check variable values in conditions:
+
+```txt
+{{ if .isEnabled }}
+  Feature is enabled.
+{{ /if }}
+
+{{ if !$globalDisabled }}
+  Not globally disabled.
+{{ /if }}
+```
+
+See [Variable Shorthand Syntax](#variable-shorthand-syntax) for more details on shorthand notation.
 
 ### Inverted Condition
 
@@ -295,8 +314,11 @@ Whitespace is allowed between flags and the macro name:
 | `?` | Delayed | Resolve this macro after other macros in the same text. |
 | `~` | Re-evaluate | Mark this macro for re-evaluation. |
 | `>` | Filter | Enable pipe-based output filters for this macro. |
-| `.` | Variable (dot) | Shorthand for variable access using dot notation. |
-| `$` | Variable (dollar) | Shorthand for variable access using dollar notation. |
+
+### Flags-like prefix operators
+
+Variable shorthand syntax uses prefix operators (`.` and `$`) which behave similarly to flags but are not flags themselves.  
+See the [Variable Shorthand Syntax](#variable-shorthand-syntax) section for details.
 
 ### Preserve Whitespace Flag
 
@@ -338,6 +360,105 @@ To display literal curly braces without macro resolution, escape them with backs
 ```
 
 This outputs `{{notAMacro}}` as plain text.
+
+## Variable Shorthand Syntax
+
+!!!warning Staging Feature
+This is currently only available on the `staging` branch of SillyTavern, and not part of the latest release.
+!!!
+
+Variable shorthands provide a concise syntax for common variable operations. Use `.` for local variables and `$` for global variables.
+
+### Variable Shorthands Prefix Operators
+
+| Prefix | Name            | Description                                                     |
+| ------ | --------------- | --------------------------------------------------------------- |
+| `.`    | Local Variable  | Shorthand for local variable operations. Example: `{{.myvar}}`  |
+| `$`    | Global Variable | Shorthand for global variable operations. Example: `{{$myvar}}` |
+
+These prefix operators have to be placed **immediately before** the variable name, after any optionally appearing [Macro Flags](#macro-flags). They aren't considered macro flags, but more indicators that a variable shorthand is being inserted, instead of a macro by name. The prefix operators are not part of the variable name itself, but rather modifiers that change how the variable is accessed.
+
+### Getting Variables
+
+Retrieve variable values with a simple prefix:
+
+```txt
+{{.myvar}}       // Get local variable "myvar"
+{{$myvar}}       // Get global variable "myvar"
+```
+
+Equivalent to `{{getvar::myvar}}` and `{{getglobalvar::myvar}}`.
+
+### Setting Variables
+
+Use the `=` operator to set a variable value:
+
+```txt
+{{ .myvar = Hello World }}     // Set local variable
+{{ $myvar = Some value }}      // Set global variable
+```
+
+Equivalent to `{{setvar::myvar::Hello World}}` and `{{setglobalvar::myvar::Hello World}}`. Returns an empty string.
+
+### Increment and Decrement
+
+Use `++` and `--` to increment or decrement numeric variables:
+
+```txt
+{{.counter++}}    // Increment local variable, returns new value
+{{$counter--}}    // Decrement global variable, returns new value
+```
+
+Equivalent to `{{incvar counter}}` and `{{decglobalvar counter}}`.
+
+### Add to Variable
+
+Use `+=` to add a numeric value to a variable:
+
+```txt
+{{.score += 10}}     // Add 10 to local variable
+{{$total += 5}}      // Add 5 to global variable
+```
+
+Equivalent to `{{addvar::score::10}}` and `{{addglobalvar::total::5}}`. Returns an empty string.
+
+The add operator also supports appending string to an existing string macro, if neither of them are numbers.
+
+```txt
+{{.myvar += {{noop}} | Second block}}   // Resolves to "Content | Second block" when the variable before was "Content".
+                                        // Use `{{noop}}` to be able to add whitespaces, that otherwise would be trimmed automatically.
+```
+
+### Nested Macros in Values
+
+Variable values can contain nested macros:
+
+```txt
+{{.greeting = Hello, {{user}}!}}
+```
+
+Resolves to a variable that that saves `Hello, User!` inside. (If `{{user}}` is named "User")
+
+### Whitespace Handling
+
+Whitespace around operators is allowed:
+
+```txt
+{{ .myvar = spaced value }}
+{{ .counter ++ }}
+```
+
+### Variable Names
+
+Variable names follow the same rules as macro identifiers: start with a letter, followed by letters, digits, underscores, or hyphens. The last character is not allowed to be an underscore or hyphen.
+
+```txt
+{{.my-var}}       // Valid
+{{.my_var}}       // Valid
+{{.myVar123}}     // Valid
+```
+
+If your variable has an identifier that does not match the standard rules, you have to use the full variable macro syntax with angle brackets (e.g. `{{getvar::my§var----}}`), or rename/move your variable value.
 
 ## Legacy Syntax
 
