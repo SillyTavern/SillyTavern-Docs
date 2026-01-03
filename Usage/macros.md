@@ -306,16 +306,6 @@ Whitespace is allowed between flags and the macro name:
 | `/` | Closing Block | Marks a closing tag for scoped macros. Example: `{{/if}}` |
 | `#` | Preserve Whitespace | Prevents automatic trimming of scoped content. |
 
-### Implemented Flags (Variable Shorthands)
-
-| Flag | Name | Description |
-|------|------|-------------|
-| `.` | Local Variable | Shorthand for local variable operations. Example: `{{.myvar}}` |
-| `$` | Global Variable | Shorthand for global variable operations. Example: `{{$myvar}}` |
-
-These flags have to be placed **after** any other flags before them. They aren't considered *true* flags, but more indicators that a variable shorthand is being inserted, instead of a macro by name.
-See [Variable Shorthand Syntax](#variable-shorthand-syntax) for complete usage details.
-
 ### Planned Flags (Not Yet Implemented)
 
 | Flag | Name | Description |
@@ -374,6 +364,15 @@ This is currently only available on the `staging` branch of SillyTavern, and not
 
 Variable shorthands provide a concise syntax for common variable operations. Use `.` for local variables and `$` for global variables.
 
+### Variable Shorthands Prefix Operators
+
+| Prefix | Name            | Description                                                     |
+| ------ | --------------- | --------------------------------------------------------------- |
+| `.`    | Local Variable  | Shorthand for local variable operations. Example: `{{.myvar}}`  |
+| `$`    | Global Variable | Shorthand for global variable operations. Example: `{{$myvar}}` |
+
+These prefix operators have to be placed **immediately before** the variable name, after any optionally appearing [Macro Flags](#macro-flags). They aren't considered macro flags, but more indicators that a variable shorthand is being inserted, instead of a macro by name. The prefix operators are not part of the variable name itself, but rather modifiers that change how the variable is accessed.
+
 ### Getting Variables
 
 Retrieve variable values with a simple prefix:
@@ -418,6 +417,13 @@ Use `+=` to add a numeric value to a variable:
 
 Equivalent to `{{addvar::score::10}}` and `{{addglobalvar::total::5}}`. Returns an empty string.
 
+The add operator also supports appending string to an existing string macro, if neither of them are numbers.
+
+```txt
+{{.myvar += {{noop}} | Second block}}   // Resolves to "Content | Second block" when the variable before was "Content".
+                                        // Use `{{noop}}` to be able to add whitespaces, that otherwise would be trimmed automatically.
+```
+
 ### Nested Macros in Values
 
 Variable values can contain nested macros:
@@ -425,6 +431,8 @@ Variable values can contain nested macros:
 ```txt
 {{.greeting = Hello, {{user}}!}}
 ```
+
+Resolves to a variable that that saves `Hello, User!` inside. (If `{{user}}` is named "User")
 
 ### Whitespace Handling
 
