@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.820352341465">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.820791270434">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.11.0.820352341465" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.11.0.820791270434" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.820352341465" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.820791270434" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.820352341465" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.820791270434" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -268,6 +268,7 @@
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{macroName}}</code></pre>
 </doc-codeblock></div>
+<p>Macro names are <strong>case-insensitive</strong>. <code v-pre>{{User}}</code>, <code v-pre>{{USER}}</code>, and <code v-pre>{{user}}</code> all resolve to the same macro.</p>
 <p>Examples:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{user}}        // Returns the current user/persona name
@@ -484,9 +485,27 @@
 <ul>
 <li>A macro name (resolved automatically if no arguments are required)</li>
 <li>Any value from a nested macro like <code v-pre>{{getvar::flag}}</code></li>
+<li>A variable shorthand like <code v-pre>.myFlag</code> or <code v-pre>$globalFlag</code> (see <doc-anchor-trigger to="#variable-shorthand-syntax">Variable Shorthand Syntax</doc-anchor-trigger>)</li>
 <li>Any text you want (that will implicitly resolve to truthy or falsy based on its content)</li>
 </ul>
 <p>Falsy values: empty string, <code v-pre>false</code>, <code v-pre>0</code>, <code v-pre>off</code>, <code v-pre>no</code>.</p>
+<doc-anchor-target id="using-variable-shorthands-in-conditions">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#using-variable-shorthands-in-conditions">#</doc-anchor-trigger>
+        <span>Using Variable Shorthands in Conditions</span>
+    </h3>
+</doc-anchor-target>
+<p>Variable shorthands provide a concise way to check variable values in conditions:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{{ if .isEnabled }}
+  Feature is enabled.
+{{ /if }}
+
+{{ if !$globalDisabled }}
+  Not globally disabled.
+{{ /if }}</code></pre>
+</doc-codeblock></div>
+<p>See <doc-anchor-trigger to="#variable-shorthand-syntax">Variable Shorthand Syntax</doc-anchor-trigger> for more details on shorthand notation.</p>
 <doc-anchor-target id="inverted-condition">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#inverted-condition">#</doc-anchor-trigger>
@@ -630,19 +649,17 @@
 <td>Filter</td>
 <td>Enable pipe-based output filters for this macro.</td>
 </tr>
-<tr>
-<td><code v-pre>.</code></td>
-<td>Variable (dot)</td>
-<td>Shorthand for variable access using dot notation.</td>
-</tr>
-<tr>
-<td><code v-pre>$</code></td>
-<td>Variable (dollar)</td>
-<td>Shorthand for variable access using dollar notation.</td>
-</tr>
 </tbody>
 </table>
 </div>
+<doc-anchor-target id="flags-like-prefix-operators">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#flags-like-prefix-operators">#</doc-anchor-trigger>
+        <span>Flags-like prefix operators</span>
+    </h3>
+</doc-anchor-target>
+<p>Variable shorthand syntax uses prefix operators (<code v-pre>.</code> and <code v-pre>$</code>) which behave similarly to flags but are not flags themselves.<br />
+See the <doc-anchor-trigger to="#variable-shorthand-syntax">Variable Shorthand Syntax</doc-anchor-trigger> section for details.</p>
 <doc-anchor-target id="preserve-whitespace-flag">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#preserve-whitespace-flag">#</doc-anchor-trigger>
@@ -686,6 +703,148 @@
 <pre translate="no" class="language-none"><code v-pre class="language-none">\{\{notAMacro\}\}</code></pre>
 </doc-codeblock></div>
 <p>This outputs <code v-pre>{{notAMacro}}</code> as plain text.</p>
+<doc-anchor-target id="variable-shorthand-syntax">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#variable-shorthand-syntax">#</doc-anchor-trigger>
+        <span>Variable Shorthand Syntax</span>
+    </h2>
+</doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Staging Feature</h5>
+<p>This is currently only available on the <code v-pre>staging</code> branch of SillyTavern, and not part of the latest release.</p>
+        </div>
+    </div>
+</div>
+<p>Variable shorthands provide a concise syntax for common variable operations. Use <code v-pre>.</code> for local variables and <code v-pre>$</code> for global variables.</p>
+<doc-anchor-target id="variable-shorthands-prefix-operators">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#variable-shorthands-prefix-operators">#</doc-anchor-trigger>
+        <span>Variable Shorthands Prefix Operators</span>
+    </h3>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Prefix</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>.</code></td>
+<td>Local Variable</td>
+<td>Shorthand for local variable operations. Example: <code v-pre>{{.myvar}}</code></td>
+</tr>
+<tr>
+<td><code v-pre>$</code></td>
+<td>Global Variable</td>
+<td>Shorthand for global variable operations. Example: <code v-pre>{{$myvar}}</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>These prefix operators have to be placed <strong>immediately before</strong> the variable name, after any optionally appearing <doc-anchor-trigger to="#macro-flags">Macro Flags</doc-anchor-trigger>. They aren&#x27;t considered macro flags, but more indicators that a variable shorthand is being inserted, instead of a macro by name. The prefix operators are not part of the variable name itself, but rather modifiers that change how the variable is accessed.</p>
+<doc-anchor-target id="getting-variables">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#getting-variables">#</doc-anchor-trigger>
+        <span>Getting Variables</span>
+    </h3>
+</doc-anchor-target>
+<p>Retrieve variable values with a simple prefix:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{{.myvar}}       // Get local variable &quot;myvar&quot;
+{{$myvar}}       // Get global variable &quot;myvar&quot;</code></pre>
+</doc-codeblock></div>
+<p>Equivalent to <code v-pre>{{getvar::myvar}}</code> and <code v-pre>{{getglobalvar::myvar}}</code>.</p>
+<doc-anchor-target id="setting-variables">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#setting-variables">#</doc-anchor-trigger>
+        <span>Setting Variables</span>
+    </h3>
+</doc-anchor-target>
+<p>Use the <code v-pre>=</code> operator to set a variable value:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{{ .myvar = Hello World }}     // Set local variable
+{{ $myvar = Some value }}      // Set global variable</code></pre>
+</doc-codeblock></div>
+<p>Equivalent to <code v-pre>{{setvar::myvar::Hello World}}</code> and <code v-pre>{{setglobalvar::myvar::Hello World}}</code>. Returns an empty string.</p>
+<doc-anchor-target id="increment-and-decrement">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#increment-and-decrement">#</doc-anchor-trigger>
+        <span>Increment and Decrement</span>
+    </h3>
+</doc-anchor-target>
+<p>Use <code v-pre>++</code> and <code v-pre>--</code> to increment or decrement numeric variables:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{{.counter++}}    // Increment local variable, returns new value
+{{$counter--}}    // Decrement global variable, returns new value</code></pre>
+</doc-codeblock></div>
+<p>Equivalent to <code v-pre>{{incvar counter}}</code> and <code v-pre>{{decglobalvar counter}}</code>.</p>
+<doc-anchor-target id="add-to-variable">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#add-to-variable">#</doc-anchor-trigger>
+        <span>Add to Variable</span>
+    </h3>
+</doc-anchor-target>
+<p>Use <code v-pre>+=</code> to add a numeric value to a variable:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{{.score += 10}}     // Add 10 to local variable
+{{$total += 5}}      // Add 5 to global variable</code></pre>
+</doc-codeblock></div>
+<p>Equivalent to <code v-pre>{{addvar::score::10}}</code> and <code v-pre>{{addglobalvar::total::5}}</code>. Returns an empty string.</p>
+<p>The add operator also supports appending string to an existing string macro, if neither of them are numbers.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{{.myvar += {{noop}} | Second block}}   // Resolves to &quot;Content | Second block&quot; when the variable before was &quot;Content&quot;.
+                                        // Use `{{noop}}` to be able to add whitespaces, that otherwise would be trimmed automatically.</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="nested-macros-in-values">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#nested-macros-in-values">#</doc-anchor-trigger>
+        <span>Nested Macros in Values</span>
+    </h3>
+</doc-anchor-target>
+<p>Variable values can contain nested macros:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{{.greeting = Hello, {{user}}!}}</code></pre>
+</doc-codeblock></div>
+<p>Resolves to a variable that that saves <code v-pre>Hello, User!</code> inside. (If <code v-pre>{{user}}</code> is named &quot;User&quot;)</p>
+<doc-anchor-target id="whitespace-handling">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#whitespace-handling">#</doc-anchor-trigger>
+        <span>Whitespace Handling</span>
+    </h3>
+</doc-anchor-target>
+<p>Whitespace around operators is allowed:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{{ .myvar = spaced value }}
+{{ .counter ++ }}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="variable-names">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#variable-names">#</doc-anchor-trigger>
+        <span>Variable Names</span>
+    </h3>
+</doc-anchor-target>
+<p>Variable names follow the same rules as macro identifiers: start with a letter, followed by letters, digits, underscores, or hyphens. The last character is not allowed to be an underscore or hyphen.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{{.my-var}}       // Valid
+{{.my_var}}       // Valid
+{{.myVar123}}     // Valid</code></pre>
+</doc-codeblock></div>
+<p>If your variable has an identifier that does not match the standard rules, you have to use the full variable macro syntax with angle brackets (e.g. <code v-pre>{{getvar::my§var----}}</code>), or rename/move your variable value.</p>
 <doc-anchor-target id="legacy-syntax">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#legacy-syntax">#</doc-anchor-trigger>
@@ -1319,7 +1478,7 @@
                                     <ul class="flex flex-wrap items-center text-sm">
                                     </ul>
                                 </div>
-                                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link-weight text-sm leading-relaxed"><p>© Copyright 2025. All rights reserved.</p></div>
+                                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link-weight text-sm leading-relaxed"><p>© Copyright 2026. All rights reserved.</p></div>
                             </footer>
                         </div>
                     </div>
