@@ -394,7 +394,7 @@ Use the `=` operator to set a variable value:
 {{ $myvar = Some value }}      // Set global variable
 ```
 
-Equivalent to `{{setvar::myvar::Hello World}}` and `{{getvar::myvar::Hello World}}`. Returns an empty string.
+Equivalent to `{{setvar::myvar::Hello World}}` and `{{setglobalvar::myvar::Hello World}}`. Returns an empty string.
 
 ### Increment and Decrement
 
@@ -416,7 +416,7 @@ Use `+=` to add a numeric value to a variable:
 {{$total += 5}}      // Add 5 to global variable
 ```
 
-Equivalent to `{{addvar::score::10}}`. Returns an empty string.
+Equivalent to `{{addvar::score::10}}` and `{{addglobalvar::total::5}}`. Returns an empty string.
 
 ### Nested Macros in Values
 
