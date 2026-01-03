@@ -315,6 +315,11 @@ Whitespace is allowed between flags and the macro name:
 | `~` | Re-evaluate | Mark this macro for re-evaluation. |
 | `>` | Filter | Enable pipe-based output filters for this macro. |
 
+### Flags-like prefix operators
+
+Variable shorthand syntax uses prefix operators (`.` and `$`) which behave similarly to flags but are not flags themselves.  
+See the [Variable Shorthand Syntax](#variable-shorthand-syntax) section for details.
+
 ### Preserve Whitespace Flag
 
 Use the `#` flag when you need to preserve all whitespace in scoped content, including leading/trailing newlines and indentation:
