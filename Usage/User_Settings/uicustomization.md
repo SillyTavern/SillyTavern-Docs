@@ -105,6 +105,88 @@ These switches control various UI features and behaviors. Some options can impro
 * **Click to Edit**: Click on messages to quickly open a message editor
 
 ### Custom CSS
+/* ১. ক্যারেক্টার ব্যাকগ্রাউন্ড এবং গ্লাস ইফেক্ট */
+body {
+    background-size: cover !important;
+    background-attachment: fixed !important;
+}
+
+#chat {
+    background: rgba(0, 0, 0, 0.4) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+/* ২. মেসেজ বাবল ডিজাইন (২ নম্বর ছবির মতো) */
+.mes_text {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(0, 212, 255, 0.3) !important;
+    border-radius: 20px !important;
+    padding: 15px !important;
+    margin-bottom: 20px !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* ইউজারের মেসেজ ডানে এবং AI-এর মেসেজ বামে রাখা */
+.mes[is_user="true"] .mes_text {
+    margin-left: 20% !important; /* ডানে সরানোর জন্য */
+    border-color: rgba(255, 0, 127, 0.5) !important; /* পিঙ্ক নিওন */
+}
+
+.mes[is_user="false"] .mes_text {
+    margin-right: 20% !important; /* বামে রাখার জন্য */
+    border-color: rgba(0, 212, 255, 0.5) !important; /* ব্লু নিওন */
+}
+
+/* ৩. ইনপুট বার এবং মাইক্রোফোন (Gemini স্টাইল) */
+#send_form {
+    background: rgba(15, 15, 15, 0.8) !important;
+    border: 1.5px solid #00d4ff !important;
+    border-radius: 35px !important;
+    padding: 5px 15px !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* মাইক্রোফোন বাটন ডান পাশে (Send বাটনের পাশে) */
+#mic_button {
+    order: 3 !important;
+    background: none !important;
+    color: #ff007f !important;
+    font-size: 22px !important;
+    margin-left: 10px !important;
+    filter: drop-shadow(0 0 5px #ff007f) !important;
+}
+
+#send_button {
+    order: 2 !important;
+}
+
+/* ৪. ওপরের স্ক্রলযোগ্য ক্যারেক্টার বার */
+#character_list_top {
+    display: flex !important;
+    overflow-x: auto !important;
+    padding: 15px !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.character_thumb {
+    width: 65px !important;
+    height: 65px !important;
+    border-radius: 50% !important;
+    border: 2px solid #ff007f !important;
+    box-shadow: 0 0 10px #ff007f !important;
+    margin-right: 12px !important;
+    flex-shrink: 0 !important;
+}
+
+/* ৫. থ্রি-ডট মেনু এবং অপশন সরণি */
+.fa-ellipsis-v, .fa-bars {
+    color: #00d4ff !important;
+    font-size: 20px !important;
+}
+
 
 Allows you to apply custom CSS styles to further customize the appearance of the chat interface.
 
