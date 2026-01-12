@@ -669,11 +669,15 @@ Use `/? macros` for the complete list of available macros and their detailed des
 | `{{addvar::name::value}}` | Add value to local variable (numeric or string append) |
 | `{{incvar::name}}` | Increment local variable by 1 and return new value |
 | `{{decvar::name}}` | Decrement local variable by 1 and return new value |
+| `{{hasvar::name}}` | Check if a local variable exists (returns "true" or "false") |
+| `{{deletevar::name}}` | Delete a local variable |
 | `{{getglobalvar::name}}` | Get global variable value |
 | `{{setglobalvar::name::value}}` | Set global variable |
 | `{{addglobalvar::name::value}}` | Add value to global variable (numeric or string append) |
 | `{{incglobalvar::name}}` | Increment global variable by 1 and return new value |
 | `{{decglobalvar::name}}` | Decrement global variable by 1 and return new value |
+| `{{hasglobalvar::name}}` | Check if a global variable exists (returns "true" or "false") |
+| `{{deleteglobalvar::name}}` | Delete a global variable |
 
 ### Randomization
 
