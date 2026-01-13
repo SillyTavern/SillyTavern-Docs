@@ -369,7 +369,7 @@ This is currently only available on the `staging` branch of SillyTavern, and not
 
 Variable shorthands provide a concise syntax for common variable operations. Use `.` for local variables and `$` for global variables.
 
-### Variable Shorthands Prefix Operators
+### Variable Shorthands Prefixes
 
 | Prefix | Name            | Description                                                     |
 | ------ | --------------- | --------------------------------------------------------------- |
@@ -377,76 +377,6 @@ Variable shorthands provide a concise syntax for common variable operations. Use
 | `$`    | Global Variable | Shorthand for global variable operations. Example: `{{$myvar}}` |
 
 These prefix operators have to be placed **immediately before** the variable name, after any optionally appearing [Macro Flags](#macro-flags). They aren't considered macro flags, but more indicators that a variable shorthand is being inserted, instead of a macro by name. The prefix operators are not part of the variable name itself, but rather modifiers that change how the variable is accessed.
-
-### Getting Variables
-
-Retrieve variable values with a simple prefix:
-
-```txt
-{{.myvar}}       // Get local variable "myvar"
-{{$myvar}}       // Get global variable "myvar"
-```
-
-Equivalent to `{{getvar::myvar}}` and `{{getglobalvar::myvar}}`.
-
-### Setting Variables
-
-Use the `=` operator to set a variable value:
-
-```txt
-{{ .myvar = Hello World }}     // Set local variable
-{{ $myvar = Some value }}      // Set global variable
-```
-
-Equivalent to `{{setvar::myvar::Hello World}}` and `{{setglobalvar::myvar::Hello World}}`. Returns an empty string.
-
-### Increment and Decrement
-
-Use `++` and `--` to increment or decrement numeric variables:
-
-```txt
-{{.counter++}}    // Increment local variable, returns new value
-{{$counter--}}    // Decrement global variable, returns new value
-```
-
-Equivalent to `{{incvar counter}}` and `{{decglobalvar counter}}`.
-
-### Add to Variable
-
-Use `+=` to add a numeric value to a variable:
-
-```txt
-{{.score += 10}}     // Add 10 to local variable
-{{$total += 5}}      // Add 5 to global variable
-```
-
-Equivalent to `{{addvar::score::10}}` and `{{addglobalvar::total::5}}`. Returns an empty string.
-
-The add operator also supports appending string to an existing string macro, if neither of them are numbers.
-
-```txt
-{{.myvar += {{noop}} | Second block}}   // Resolves to "Content | Second block" when the variable before was "Content".
-                                        // Use `{{noop}}` to be able to add whitespaces, that otherwise would be trimmed automatically.
-```
-
-### Nested Macros in Values
-
-Variable values can contain nested macros:
-
-```txt
-{{.greeting = Hello, {{user}}!}}
-```
-
-Resolves to a variable that that saves `Hello, User!` inside. (If `{{user}}` is named "User")
-
-### Whitespace Handling
-
-Whitespace around operators is allowed:
-
-```txt
-{{ .myvar = spaced value }}
-{{ .counter ++ }}
-```
 
 ### Variable Names
 
@@ -458,7 +388,199 @@ Variable names follow the same rules as macro identifiers: start with a letter, 
 {{.myVar123}}     // Valid
 ```
 
-If your variable has an identifier that does not match the standard rules, you have to use the full variable macro syntax with angle brackets (e.g. `{{getvar::my§var----}}`), or rename/move your variable value.
+If your variable has an identifier that does not match the standard rules, you have to use the full variable macro syntax (e.g. `{{getvar::my§var----}}`), or rename/move your variable value.
+
+### Nested Macros in Values
+
+Variable values can contain nested macros:
+
+```txt
+{{.greeting = Hello, {{user}}!}}
+```
+
+Resolves to a variable that saves `Hello, User!` inside. (If `{{user}}` is named "User")
+
+### Whitespace Handling
+
+Whitespace around operators is allowed:
+
+```txt
+{{ .myvar = spaced value }}
+{{ .counter ++ }}
+```
+
+### Variable Shorthand Operators
+
+The following operators can be used with variable shorthands. Each operator follows the pattern `{{.varName operator value}}` or `{{$varName operator value}}`.
+
+| Operator | Name                      | Example                | Description                                            |
+| -------- | ------------------------- | ---------------------- | ------------------------------------------------------ |
+| *(none)* | [Get](#get-variable)      | `{{.myvar}}`           | Returns the variable value                             |
+| `=`      | [Set](#set-variable)      | `{{.myvar = value}}`   | Sets the variable to a value, returns nothing         |
+| `++`     | [Increment](#increment)   | `{{.counter++}}`       | Increments by 1, returns new value                     |
+| `--`     | [Decrement](#decrement)   | `{{.counter--}}`       | Decrements by 1, returns new value                     |
+| `+=`     | [Add](#add)               | `{{.score += 10}}`     | Adds to variable (numeric or string concatenation), returns nothing |
+| `-=`     | [Subtract](#subtract)     | `{{.health -= 5}}`     | Subtracts from variable (numeric only), returns nothing |
+| `\|\|`   | [Logical Or](#logical-or) | `{{.name \|\| Guest}}` | Returns fallback if variable is falsy                  |
+| `??`     | [Nullish Coalescing](#nullish-coalescing) | `{{.name ?? Guest}}` | Returns fallback only if variable is undefined |
+| `\|\|=`  | [Logical Or Assign](#logical-or-assign) | `{{.name \|\|= Guest}}` | Sets value if variable is falsy, returns the new value |
+| `??=`    | [Nullish Coalescing Assign](#nullish-coalescing-assign) | `{{.name ??= Guest}}` | Sets value only if variable is undefined, returns the new value |
+| `==`     | [Equals](#equals)         | `{{.status == active}}`| Compares values, returns `"true"` or `"false"`         |
+| `!=`     | [Not Equals](#not-equals) | `{{.status != active}}`| Compares values, returns `"true"` if not equal         |
+
+#### Get Variable
+
+Retrieve variable values with a simple prefix:
+
+```txt
+{{.myvar}}       // Get local variable "myvar"
+{{$myvar}}       // Get global variable "myvar"
+```
+
+Equivalent to `{{getvar::myvar}}` and `{{getglobalvar::myvar}}`.
+
+#### Set Variable
+
+Use the `=` operator to set a variable value:
+
+```txt
+{{ .myvar = Hello World }}     // Set local variable
+{{ $myvar = Some value }}      // Set global variable
+```
+
+Equivalent to `{{setvar::myvar::Hello World}}` and `{{setglobalvar::myvar::Hello World}}`. Returns an empty string.
+
+#### Increment
+
+Use `++` to increment a numeric variable by 1:
+
+```txt
+{{.counter++}}    // Increment local variable, returns new value
+{{$counter++}}    // Increment global variable, returns new value
+```
+
+Equivalent to `{{incvar counter}}` and `{{incglobalvar counter}}`. Returns the new value after incrementing.
+
+#### Decrement
+
+Use `--` to decrement a numeric variable by 1:
+
+```txt
+{{.counter--}}    // Decrement local variable, returns new value
+{{$counter--}}    // Decrement global variable, returns new value
+```
+
+Equivalent to `{{decvar counter}}` and `{{decglobalvar counter}}`. Returns the new value after decrementing.
+
+#### Add
+
+Use `+=` to add a numeric value to a variable:
+
+```txt
+{{.score += 10}}     // Add 10 to local variable
+{{$total += 5}}      // Add 5 to global variable
+```
+
+Equivalent to `{{addvar::score::10}}` and `{{addglobalvar::total::5}}`. Returns an empty string.
+
+The add operator also supports appending strings to an existing string variable, if neither of them are numbers:
+
+```txt
+{{.myvar += {{noop}} | Second block}}   // Resolves to "Content | Second block" when the variable before was "Content".
+                                        // Use `{{noop}}` to be able to add whitespaces, that otherwise would be trimmed automatically.
+```
+
+#### Subtract
+
+Use `-=` to subtract a numeric value from a variable:
+
+```txt
+{{.health -= 10}}    // Subtract 10 from local variable
+{{$points -= 5}}     // Subtract 5 from global variable
+```
+
+Equivalent to `{{addvar::score::10}}` and `{{addglobalvar::total::5}}`, but with a negative/inverted number. Returns an empty string.
+If the value is not a valid number, a warning is logged and the variable is unchanged.
+
+#### Logical Or
+
+Use `||` to provide a fallback value when the variable is falsy (empty string, `0`, `false`):
+
+```txt
+{{.name || Anonymous}}     // Returns "Anonymous" if .name is empty or falsy
+{{$setting || default}}    // Returns "default" if $setting is falsy
+```
+
+Returns the variable value if truthy, otherwise returns the fallback value. The fallback is **only evaluated if needed** (lazy evaluation).
+
+#### Nullish Coalescing
+
+Use `??` to provide a fallback value only when the variable does not exist:
+
+```txt
+{{.name ?? Guest}}         // Returns "Guest" only if .name is not defined
+{{$config ?? default}}     // Returns "default" only if $config doesn't exist
+```
+
+Unlike `||`, this returns the variable value even if it's falsy (empty string, `0`, `false`) — as long as the variable exists. The fallback is **only evaluated if needed** (lazy evaluation).
+
+#### Logical Or Assign
+
+Use `||=` to set a variable to a value only if it's currently falsy:
+
+```txt
+{{.name ||= Anonymous}}    // Sets and returns "Anonymous" if .name is falsy
+{{$count ||= 0}}           // Sets and returns "0" if $count is falsy
+```
+
+If the variable is already truthy, returns the current value without modification. Returns the final value (either existing or newly set).
+
+#### Nullish Coalescing Assign
+
+Use `??=` to set a variable to a value only if it doesn't exist:
+
+```txt
+{{.name ??= Guest}}        // Sets and returns "Guest" only if .name is undefined
+{{$config ??= default}}    // Sets and returns "default" only if $config doesn't exist
+```
+
+Unlike `||=`, this preserves falsy values (empty string, `0`, `false`) if the variable already exists. Returns the final value (either existing or newly set).
+
+#### Equals
+
+Use `==` to compare a variable value to another value:
+
+```txt
+{{.status == active}}      // Returns "true" if .status equals "active", otherwise "false"
+{{$mode == dark}}          // Returns "true" if $mode equals "dark", otherwise "false"
+```
+
+Performs a string comparison and returns the literal string `"true"` or `"false"`.  
+Treats not existing variables, null variables and empty variables as the same.
+
+Useful in `{{if}}` conditions:
+
+```txt
+{{if {{.status == active}} }}Active mode{{/if}}
+```
+
+#### Not Equals
+
+Use `!=` to compare a variable value to another value for inequality:
+
+```txt
+{{.status != inactive}}    // Returns "true" if .status is NOT "inactive", otherwise "false"
+{{$mode != light}}         // Returns "true" if $mode is NOT "light", otherwise "false"
+```
+
+Performs a string comparison and returns `"true"` if the values are different, `"false"` if they are equal.  
+Treats not existing variables, null variables and empty variables as the same.
+
+Useful in `{{if}}` conditions:
+
+```txt
+{{if {{.status != disabled}} }}Feature enabled{{/if}}
+```
 
 ## Legacy Syntax
 
@@ -547,11 +669,15 @@ Use `/? macros` for the complete list of available macros and their detailed des
 | `{{addvar::name::value}}` | Add value to local variable (numeric or string append) |
 | `{{incvar::name}}` | Increment local variable by 1 and return new value |
 | `{{decvar::name}}` | Decrement local variable by 1 and return new value |
+| `{{hasvar::name}}` | Check if a local variable exists (returns "true" or "false") |
+| `{{deletevar::name}}` | Delete a local variable |
 | `{{getglobalvar::name}}` | Get global variable value |
 | `{{setglobalvar::name::value}}` | Set global variable |
 | `{{addglobalvar::name::value}}` | Add value to global variable (numeric or string append) |
 | `{{incglobalvar::name}}` | Increment global variable by 1 and return new value |
 | `{{decglobalvar::name}}` | Decrement global variable by 1 and return new value |
+| `{{hasglobalvar::name}}` | Check if a global variable exists (returns "true" or "false") |
+| `{{deleteglobalvar::name}}` | Delete a global variable |
 
 ### Randomization
 
