@@ -76,6 +76,59 @@ docker run \
 By default the container will run in the foreground. If you want to run it in the background, add the `-d` flag to the `docker run` command.
 !!!
 
+## Non-root user mode
+
+!!!warning Staging Feature
+This is currently only available on the `staging` branch of SillyTavern, and not part of the latest release.
+!!!
+
+By default, the container runs as root. If you want files created in mounted volumes to be owned by a specific host user (for example, to avoid root-owned files), you can enable non-root mode.
+
+### Option 1: PUID/PGID (recommended)
+
+Set `PUID` and `PGID` environment variables to the UID/GID you want the container to use. The entrypoint will update ownership of required directories and then run the server as the mapped user.
+
+Docker Compose example:
+
+```yaml
+services:
+  sillytavern:
+    environment:
+      - PUID=1000
+      - PGID=1000
+```
+
+Docker CLI example:
+
+```bash
+docker run \
+  --name="sillytavern" \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -p "$PUBLIC_PORT:8000/tcp" \
+  -v "$CONFIG_PATH:/home/node/app/config:rw" \
+  -v "$DATA_PATH:/home/node/app/data:rw" \
+  -v "$EXTENSIONS_PATH:/home/node/app/public/scripts/extensions/third-party:rw" \
+  -v "$PLUGINS_PATH:/home/node/app/plugins:rw" \
+  ghcr.io/sillytavern/sillytavern:"$SILLYTAVERN_VERSION"
+```
+
+### Option 2: Docker `--user` flag
+
+You can also run the container as a specific user with Docker's `--user` flag. In this mode, the container cannot automatically fix permissions, so ensure your mounted volumes are already writable by the UID/GID you provide.
+
+```bash
+docker run \
+  --name="sillytavern" \
+  --user 1000:1000 \
+  -p "$PUBLIC_PORT:8000/tcp" \
+  -v "$CONFIG_PATH:/home/node/app/config:rw" \
+  -v "$DATA_PATH:/home/node/app/data:rw" \
+  -v "$EXTENSIONS_PATH:/home/node/app/public/scripts/extensions/third-party:rw" \
+  -v "$PLUGINS_PATH:/home/node/app/plugins:rw" \
+  ghcr.io/sillytavern/sillytavern:"$SILLYTAVERN_VERSION"
+```
+
 ## Building the Docker Image
 
 !!!info
