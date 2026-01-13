@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.820791270434">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.821619524157">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.11.0.820791270434" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.11.0.821619524157" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.820791270434" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.821619524157" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.820791270434" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.821619524157" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -727,10 +727,10 @@ See the <doc-anchor-trigger to="#variable-shorthand-syntax">Variable Shorthand S
     </div>
 </div>
 <p>Variable shorthands provide a concise syntax for common variable operations. Use <code v-pre>.</code> for local variables and <code v-pre>$</code> for global variables.</p>
-<doc-anchor-target id="variable-shorthands-prefix-operators">
+<doc-anchor-target id="variable-shorthands-prefixes">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#variable-shorthands-prefix-operators">#</doc-anchor-trigger>
-        <span>Variable Shorthands Prefix Operators</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#variable-shorthands-prefixes">#</doc-anchor-trigger>
+        <span>Variable Shorthands Prefixes</span>
     </h3>
 </doc-anchor-target>
 <div class="table-wrapper scrollbar overflow-hidden">
@@ -757,81 +757,6 @@ See the <doc-anchor-trigger to="#variable-shorthand-syntax">Variable Shorthand S
 </table>
 </div>
 <p>These prefix operators have to be placed <strong>immediately before</strong> the variable name, after any optionally appearing <doc-anchor-trigger to="#macro-flags">Macro Flags</doc-anchor-trigger>. They aren&#x27;t considered macro flags, but more indicators that a variable shorthand is being inserted, instead of a macro by name. The prefix operators are not part of the variable name itself, but rather modifiers that change how the variable is accessed.</p>
-<doc-anchor-target id="getting-variables">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#getting-variables">#</doc-anchor-trigger>
-        <span>Getting Variables</span>
-    </h3>
-</doc-anchor-target>
-<p>Retrieve variable values with a simple prefix:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-none"><code v-pre class="language-none">{{.myvar}}       // Get local variable &quot;myvar&quot;
-{{$myvar}}       // Get global variable &quot;myvar&quot;</code></pre>
-</doc-codeblock></div>
-<p>Equivalent to <code v-pre>{{getvar::myvar}}</code> and <code v-pre>{{getglobalvar::myvar}}</code>.</p>
-<doc-anchor-target id="setting-variables">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#setting-variables">#</doc-anchor-trigger>
-        <span>Setting Variables</span>
-    </h3>
-</doc-anchor-target>
-<p>Use the <code v-pre>=</code> operator to set a variable value:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-none"><code v-pre class="language-none">{{ .myvar = Hello World }}     // Set local variable
-{{ $myvar = Some value }}      // Set global variable</code></pre>
-</doc-codeblock></div>
-<p>Equivalent to <code v-pre>{{setvar::myvar::Hello World}}</code> and <code v-pre>{{setglobalvar::myvar::Hello World}}</code>. Returns an empty string.</p>
-<doc-anchor-target id="increment-and-decrement">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#increment-and-decrement">#</doc-anchor-trigger>
-        <span>Increment and Decrement</span>
-    </h3>
-</doc-anchor-target>
-<p>Use <code v-pre>++</code> and <code v-pre>--</code> to increment or decrement numeric variables:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-none"><code v-pre class="language-none">{{.counter++}}    // Increment local variable, returns new value
-{{$counter--}}    // Decrement global variable, returns new value</code></pre>
-</doc-codeblock></div>
-<p>Equivalent to <code v-pre>{{incvar counter}}</code> and <code v-pre>{{decglobalvar counter}}</code>.</p>
-<doc-anchor-target id="add-to-variable">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#add-to-variable">#</doc-anchor-trigger>
-        <span>Add to Variable</span>
-    </h3>
-</doc-anchor-target>
-<p>Use <code v-pre>+=</code> to add a numeric value to a variable:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-none"><code v-pre class="language-none">{{.score += 10}}     // Add 10 to local variable
-{{$total += 5}}      // Add 5 to global variable</code></pre>
-</doc-codeblock></div>
-<p>Equivalent to <code v-pre>{{addvar::score::10}}</code> and <code v-pre>{{addglobalvar::total::5}}</code>. Returns an empty string.</p>
-<p>The add operator also supports appending string to an existing string macro, if neither of them are numbers.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-none"><code v-pre class="language-none">{{.myvar += {{noop}} | Second block}}   // Resolves to &quot;Content | Second block&quot; when the variable before was &quot;Content&quot;.
-                                        // Use `{{noop}}` to be able to add whitespaces, that otherwise would be trimmed automatically.</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="nested-macros-in-values">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#nested-macros-in-values">#</doc-anchor-trigger>
-        <span>Nested Macros in Values</span>
-    </h3>
-</doc-anchor-target>
-<p>Variable values can contain nested macros:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-none"><code v-pre class="language-none">{{.greeting = Hello, {{user}}!}}</code></pre>
-</doc-codeblock></div>
-<p>Resolves to a variable that that saves <code v-pre>Hello, User!</code> inside. (If <code v-pre>{{user}}</code> is named &quot;User&quot;)</p>
-<doc-anchor-target id="whitespace-handling">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#whitespace-handling">#</doc-anchor-trigger>
-        <span>Whitespace Handling</span>
-    </h3>
-</doc-anchor-target>
-<p>Whitespace around operators is allowed:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-none"><code v-pre class="language-none">{{ .myvar = spaced value }}
-{{ .counter ++ }}</code></pre>
-</doc-codeblock></div>
 <doc-anchor-target id="variable-names">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#variable-names">#</doc-anchor-trigger>
@@ -844,7 +769,282 @@ See the <doc-anchor-trigger to="#variable-shorthand-syntax">Variable Shorthand S
 {{.my_var}}       // Valid
 {{.myVar123}}     // Valid</code></pre>
 </doc-codeblock></div>
-<p>If your variable has an identifier that does not match the standard rules, you have to use the full variable macro syntax with angle brackets (e.g. <code v-pre>{{getvar::my§var----}}</code>), or rename/move your variable value.</p>
+<p>If your variable has an identifier that does not match the standard rules, you have to use the full variable macro syntax (e.g. <code v-pre>{{getvar::my§var----}}</code>), or rename/move your variable value.</p>
+<doc-anchor-target id="nested-macros-in-values">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#nested-macros-in-values">#</doc-anchor-trigger>
+        <span>Nested Macros in Values</span>
+    </h3>
+</doc-anchor-target>
+<p>Variable values can contain nested macros:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{{.greeting = Hello, {{user}}!}}</code></pre>
+</doc-codeblock></div>
+<p>Resolves to a variable that saves <code v-pre>Hello, User!</code> inside. (If <code v-pre>{{user}}</code> is named &quot;User&quot;)</p>
+<doc-anchor-target id="whitespace-handling">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#whitespace-handling">#</doc-anchor-trigger>
+        <span>Whitespace Handling</span>
+    </h3>
+</doc-anchor-target>
+<p>Whitespace around operators is allowed:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{{ .myvar = spaced value }}
+{{ .counter ++ }}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="variable-shorthand-operators">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#variable-shorthand-operators">#</doc-anchor-trigger>
+        <span>Variable Shorthand Operators</span>
+    </h3>
+</doc-anchor-target>
+<p>The following operators can be used with variable shorthands. Each operator follows the pattern <code v-pre>{{.varName operator value}}</code> or <code v-pre>{{$varName operator value}}</code>.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Operator</th>
+<th>Name</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>(none)</em></td>
+<td><doc-anchor-trigger to="#get-variable">Get</doc-anchor-trigger></td>
+<td><code v-pre>{{.myvar}}</code></td>
+<td>Returns the variable value</td>
+</tr>
+<tr>
+<td><code v-pre>=</code></td>
+<td><doc-anchor-trigger to="#set-variable">Set</doc-anchor-trigger></td>
+<td><code v-pre>{{.myvar = value}}</code></td>
+<td>Sets the variable to a value, returns nothing</td>
+</tr>
+<tr>
+<td><code v-pre>++</code></td>
+<td><doc-anchor-trigger to="#increment">Increment</doc-anchor-trigger></td>
+<td><code v-pre>{{.counter++}}</code></td>
+<td>Increments by 1, returns new value</td>
+</tr>
+<tr>
+<td><code v-pre>--</code></td>
+<td><doc-anchor-trigger to="#decrement">Decrement</doc-anchor-trigger></td>
+<td><code v-pre>{{.counter--}}</code></td>
+<td>Decrements by 1, returns new value</td>
+</tr>
+<tr>
+<td><code v-pre>+=</code></td>
+<td><doc-anchor-trigger to="#add">Add</doc-anchor-trigger></td>
+<td><code v-pre>{{.score += 10}}</code></td>
+<td>Adds to variable (numeric or string concatenation), returns nothing</td>
+</tr>
+<tr>
+<td><code v-pre>-=</code></td>
+<td><doc-anchor-trigger to="#subtract">Subtract</doc-anchor-trigger></td>
+<td><code v-pre>{{.health -= 5}}</code></td>
+<td>Subtracts from variable (numeric only), returns nothing</td>
+</tr>
+<tr>
+<td><code v-pre>\|\|</code></td>
+<td><doc-anchor-trigger to="#logical-or">Logical Or</doc-anchor-trigger></td>
+<td><code v-pre>{{.name \|\| Guest}}</code></td>
+<td>Returns fallback if variable is falsy</td>
+</tr>
+<tr>
+<td><code v-pre>??</code></td>
+<td><doc-anchor-trigger to="#nullish-coalescing">Nullish Coalescing</doc-anchor-trigger></td>
+<td><code v-pre>{{.name ?? Guest}}</code></td>
+<td>Returns fallback only if variable is undefined</td>
+</tr>
+<tr>
+<td><code v-pre>\|\|=</code></td>
+<td><doc-anchor-trigger to="#logical-or-assign">Logical Or Assign</doc-anchor-trigger></td>
+<td><code v-pre>{{.name \|\|= Guest}}</code></td>
+<td>Sets value if variable is falsy, returns the new value</td>
+</tr>
+<tr>
+<td><code v-pre>??=</code></td>
+<td><doc-anchor-trigger to="#nullish-coalescing-assign">Nullish Coalescing Assign</doc-anchor-trigger></td>
+<td><code v-pre>{{.name ??= Guest}}</code></td>
+<td>Sets value only if variable is undefined, returns the new value</td>
+</tr>
+<tr>
+<td><code v-pre>==</code></td>
+<td><doc-anchor-trigger to="#equals">Equals</doc-anchor-trigger></td>
+<td><code v-pre>{{.status == active}}</code></td>
+<td>Compares values, returns <code v-pre>&quot;true&quot;</code> or <code v-pre>&quot;false&quot;</code></td>
+</tr>
+<tr>
+<td><code v-pre>!=</code></td>
+<td><doc-anchor-trigger to="#not-equals">Not Equals</doc-anchor-trigger></td>
+<td><code v-pre>{{.status != active}}</code></td>
+<td>Compares values, returns <code v-pre>&quot;true&quot;</code> if not equal</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="get-variable">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#get-variable">#</doc-anchor-trigger>
+        <span>Get Variable</span>
+    </h4>
+</doc-anchor-target>
+<p>Retrieve variable values with a simple prefix:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{{.myvar}}       // Get local variable &quot;myvar&quot;
+{{$myvar}}       // Get global variable &quot;myvar&quot;</code></pre>
+</doc-codeblock></div>
+<p>Equivalent to <code v-pre>{{getvar::myvar}}</code> and <code v-pre>{{getglobalvar::myvar}}</code>.</p>
+<doc-anchor-target id="set-variable">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#set-variable">#</doc-anchor-trigger>
+        <span>Set Variable</span>
+    </h4>
+</doc-anchor-target>
+<p>Use the <code v-pre>=</code> operator to set a variable value:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{{ .myvar = Hello World }}     // Set local variable
+{{ $myvar = Some value }}      // Set global variable</code></pre>
+</doc-codeblock></div>
+<p>Equivalent to <code v-pre>{{setvar::myvar::Hello World}}</code> and <code v-pre>{{setglobalvar::myvar::Hello World}}</code>. Returns an empty string.</p>
+<doc-anchor-target id="increment">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#increment">#</doc-anchor-trigger>
+        <span>Increment</span>
+    </h4>
+</doc-anchor-target>
+<p>Use <code v-pre>++</code> to increment a numeric variable by 1:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{{.counter++}}    // Increment local variable, returns new value
+{{$counter++}}    // Increment global variable, returns new value</code></pre>
+</doc-codeblock></div>
+<p>Equivalent to <code v-pre>{{incvar counter}}</code> and <code v-pre>{{incglobalvar counter}}</code>. Returns the new value after incrementing.</p>
+<doc-anchor-target id="decrement">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#decrement">#</doc-anchor-trigger>
+        <span>Decrement</span>
+    </h4>
+</doc-anchor-target>
+<p>Use <code v-pre>--</code> to decrement a numeric variable by 1:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{{.counter--}}    // Decrement local variable, returns new value
+{{$counter--}}    // Decrement global variable, returns new value</code></pre>
+</doc-codeblock></div>
+<p>Equivalent to <code v-pre>{{decvar counter}}</code> and <code v-pre>{{decglobalvar counter}}</code>. Returns the new value after decrementing.</p>
+<doc-anchor-target id="add">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#add">#</doc-anchor-trigger>
+        <span>Add</span>
+    </h4>
+</doc-anchor-target>
+<p>Use <code v-pre>+=</code> to add a numeric value to a variable:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{{.score += 10}}     // Add 10 to local variable
+{{$total += 5}}      // Add 5 to global variable</code></pre>
+</doc-codeblock></div>
+<p>Equivalent to <code v-pre>{{addvar::score::10}}</code> and <code v-pre>{{addglobalvar::total::5}}</code>. Returns an empty string.</p>
+<p>The add operator also supports appending strings to an existing string variable, if neither of them are numbers:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{{.myvar += {{noop}} | Second block}}   // Resolves to &quot;Content | Second block&quot; when the variable before was &quot;Content&quot;.
+                                        // Use `{{noop}}` to be able to add whitespaces, that otherwise would be trimmed automatically.</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="subtract">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#subtract">#</doc-anchor-trigger>
+        <span>Subtract</span>
+    </h4>
+</doc-anchor-target>
+<p>Use <code v-pre>-=</code> to subtract a numeric value from a variable:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{{.health -= 10}}    // Subtract 10 from local variable
+{{$points -= 5}}     // Subtract 5 from global variable</code></pre>
+</doc-codeblock></div>
+<p>Equivalent to <code v-pre>{{addvar::score::10}}</code> and <code v-pre>{{addglobalvar::total::5}}</code>, but with a negative/inverted number. Returns an empty string.
+If the value is not a valid number, a warning is logged and the variable is unchanged.</p>
+<doc-anchor-target id="logical-or">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#logical-or">#</doc-anchor-trigger>
+        <span>Logical Or</span>
+    </h4>
+</doc-anchor-target>
+<p>Use <code v-pre>||</code> to provide a fallback value when the variable is falsy (empty string, <code v-pre>0</code>, <code v-pre>false</code>):</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{{.name || Anonymous}}     // Returns &quot;Anonymous&quot; if .name is empty or falsy
+{{$setting || default}}    // Returns &quot;default&quot; if $setting is falsy</code></pre>
+</doc-codeblock></div>
+<p>Returns the variable value if truthy, otherwise returns the fallback value. The fallback is <strong>only evaluated if needed</strong> (lazy evaluation).</p>
+<doc-anchor-target id="nullish-coalescing">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#nullish-coalescing">#</doc-anchor-trigger>
+        <span>Nullish Coalescing</span>
+    </h4>
+</doc-anchor-target>
+<p>Use <code v-pre>??</code> to provide a fallback value only when the variable does not exist:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{{.name ?? Guest}}         // Returns &quot;Guest&quot; only if .name is not defined
+{{$config ?? default}}     // Returns &quot;default&quot; only if $config doesn't exist</code></pre>
+</doc-codeblock></div>
+<p>Unlike <code v-pre>||</code>, this returns the variable value even if it&#x27;s falsy (empty string, <code v-pre>0</code>, <code v-pre>false</code>) — as long as the variable exists. The fallback is <strong>only evaluated if needed</strong> (lazy evaluation).</p>
+<doc-anchor-target id="logical-or-assign">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#logical-or-assign">#</doc-anchor-trigger>
+        <span>Logical Or Assign</span>
+    </h4>
+</doc-anchor-target>
+<p>Use <code v-pre>||=</code> to set a variable to a value only if it&#x27;s currently falsy:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{{.name ||= Anonymous}}    // Sets and returns &quot;Anonymous&quot; if .name is falsy
+{{$count ||= 0}}           // Sets and returns &quot;0&quot; if $count is falsy</code></pre>
+</doc-codeblock></div>
+<p>If the variable is already truthy, returns the current value without modification. Returns the final value (either existing or newly set).</p>
+<doc-anchor-target id="nullish-coalescing-assign">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#nullish-coalescing-assign">#</doc-anchor-trigger>
+        <span>Nullish Coalescing Assign</span>
+    </h4>
+</doc-anchor-target>
+<p>Use <code v-pre>??=</code> to set a variable to a value only if it doesn&#x27;t exist:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{{.name ??= Guest}}        // Sets and returns &quot;Guest&quot; only if .name is undefined
+{{$config ??= default}}    // Sets and returns &quot;default&quot; only if $config doesn't exist</code></pre>
+</doc-codeblock></div>
+<p>Unlike <code v-pre>||=</code>, this preserves falsy values (empty string, <code v-pre>0</code>, <code v-pre>false</code>) if the variable already exists. Returns the final value (either existing or newly set).</p>
+<doc-anchor-target id="equals">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#equals">#</doc-anchor-trigger>
+        <span>Equals</span>
+    </h4>
+</doc-anchor-target>
+<p>Use <code v-pre>==</code> to compare a variable value to another value:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{{.status == active}}      // Returns &quot;true&quot; if .status equals &quot;active&quot;, otherwise &quot;false&quot;
+{{$mode == dark}}          // Returns &quot;true&quot; if $mode equals &quot;dark&quot;, otherwise &quot;false&quot;</code></pre>
+</doc-codeblock></div>
+<p>Performs a string comparison and returns the literal string <code v-pre>&quot;true&quot;</code> or <code v-pre>&quot;false&quot;</code>.<br />
+Treats not existing variables, null variables and empty variables as the same.</p>
+<p>Useful in <code v-pre>{{if}}</code> conditions:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{{if {{.status == active}} }}Active mode{{/if}}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="not-equals">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#not-equals">#</doc-anchor-trigger>
+        <span>Not Equals</span>
+    </h4>
+</doc-anchor-target>
+<p>Use <code v-pre>!=</code> to compare a variable value to another value for inequality:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{{.status != inactive}}    // Returns &quot;true&quot; if .status is NOT &quot;inactive&quot;, otherwise &quot;false&quot;
+{{$mode != light}}         // Returns &quot;true&quot; if $mode is NOT &quot;light&quot;, otherwise &quot;false&quot;</code></pre>
+</doc-codeblock></div>
+<p>Performs a string comparison and returns <code v-pre>&quot;true&quot;</code> if the values are different, <code v-pre>&quot;false&quot;</code> if they are equal.<br />
+Treats not existing variables, null variables and empty variables as the same.</p>
+<p>Useful in <code v-pre>{{if}}</code> conditions:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{{if {{.status != disabled}} }}Feature enabled{{/if}}</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="legacy-syntax">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#legacy-syntax">#</doc-anchor-trigger>
@@ -1161,6 +1361,14 @@ See the <doc-anchor-trigger to="#variable-shorthand-syntax">Variable Shorthand S
 <td>Decrement local variable by 1 and return new value</td>
 </tr>
 <tr>
+<td><code v-pre>{{hasvar::name}}</code></td>
+<td>Check if a local variable exists (returns &quot;true&quot; or &quot;false&quot;)</td>
+</tr>
+<tr>
+<td><code v-pre>{{deletevar::name}}</code></td>
+<td>Delete a local variable</td>
+</tr>
+<tr>
 <td><code v-pre>{{getglobalvar::name}}</code></td>
 <td>Get global variable value</td>
 </tr>
@@ -1179,6 +1387,14 @@ See the <doc-anchor-trigger to="#variable-shorthand-syntax">Variable Shorthand S
 <tr>
 <td><code v-pre>{{decglobalvar::name}}</code></td>
 <td>Decrement global variable by 1 and return new value</td>
+</tr>
+<tr>
+<td><code v-pre>{{hasglobalvar::name}}</code></td>
+<td>Check if a global variable exists (returns &quot;true&quot; or &quot;false&quot;)</td>
+</tr>
+<tr>
+<td><code v-pre>{{deleteglobalvar::name}}</code></td>
+<td>Delete a global variable</td>
 </tr>
 </tbody>
 </table>
