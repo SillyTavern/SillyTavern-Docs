@@ -416,15 +416,15 @@ The following operators can be used with variable shorthands. Each operator foll
 | Operator | Name                      | Example                | Description                                            |
 | -------- | ------------------------- | ---------------------- | ------------------------------------------------------ |
 | *(none)* | [Get](#get-variable)      | `{{.myvar}}`           | Returns the variable value                             |
-| `=`      | [Set](#set-variable)      | `{{.myvar = value}}`   | Sets the variable to a value                           |
+| `=`      | [Set](#set-variable)      | `{{.myvar = value}}`   | Sets the variable to a value, returns nothing         |
 | `++`     | [Increment](#increment)   | `{{.counter++}}`       | Increments by 1, returns new value                     |
 | `--`     | [Decrement](#decrement)   | `{{.counter--}}`       | Decrements by 1, returns new value                     |
-| `+=`     | [Add](#add)               | `{{.score += 10}}`     | Adds to variable (numeric or string concatenation)     |
-| `-=`     | [Subtract](#subtract)     | `{{.health -= 5}}`     | Subtracts from variable (numeric only)                 |
+| `+=`     | [Add](#add)               | `{{.score += 10}}`     | Adds to variable (numeric or string concatenation), returns nothing |
+| `-=`     | [Subtract](#subtract)     | `{{.health -= 5}}`     | Subtracts from variable (numeric only), returns nothing |
 | `\|\|`   | [Logical Or](#logical-or) | `{{.name \|\| Guest}}` | Returns fallback if variable is falsy                  |
 | `??`     | [Nullish Coalescing](#nullish-coalescing) | `{{.name ?? Guest}}` | Returns fallback only if variable is undefined |
-| `\|\|=`  | [Logical Or Assign](#logical-or-assign) | `{{.name \|\|= Guest}}` | Sets value if variable is falsy              |
-| `??=`    | [Nullish Coalescing Assign](#nullish-coalescing-assign) | `{{.name ??= Guest}}` | Sets value only if variable is undefined |
+| `\|\|=`  | [Logical Or Assign](#logical-or-assign) | `{{.name \|\|= Guest}}` | Sets value if variable is falsy, returns the new value |
+| `??=`    | [Nullish Coalescing Assign](#nullish-coalescing-assign) | `{{.name ??= Guest}}` | Sets value only if variable is undefined, returns the new value |
 | `==`     | [Equals](#equals)         | `{{.status == active}}`| Compares values, returns `"true"` or `"false"`         |
 | `!=`     | [Not Equals](#not-equals) | `{{.status != active}}`| Compares values, returns `"true"` if not equal         |
 
