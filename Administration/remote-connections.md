@@ -310,3 +310,24 @@ The user you're running SillyTavern with requires read permissions on the certif
 ### How to get a certificate
 
 The simplest, quickest way to get a certificate is by using [certbot](https://letsencrypt.org/getting-started/).
+
+### Certificates in Docker
+
+!!!warning
+For security and privacy reasons, do not include your SSL certificates inside the Docker image if you are building one. Instead, use volume mounts to provide the certificates at runtime.
+!!!
+
+When running SillyTavern in Docker, the recommended way to provide SSL certificates is by placing them in the `/config` volume mount. This allows you to manage certificates without rebuilding the container image.
+
+1. Place your certificate files (e.g., `privkey.pem` and `cert.pem`) in your local config directory that is mounted to `/config` in the container.
+
+2. Update your `config.yaml` to reference the certificates:
+
+    ```yaml
+    ssl:
+      enabled: true
+      certPath: ./config/cert.pem
+      keyPath: ./config/privkey.pem
+    ```
+
+3. Restart your Docker container to apply the changes.
