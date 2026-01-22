@@ -459,6 +459,7 @@ function handleIncomingMessage(data) {
 
 The main event types are:
 
+* `APP_INIT`: the app is initialized and close to being ready, but the loader is still visible. UI modifications can be done here.
 * `APP_READY`: the app is fully loaded and ready to use. It will auto-fire every time a new listener is attached after the app is ready.
 * `MESSAGE_RECEIVED`: the LLM message is generated and recorded into the `chat` object but not yet rendered in the UI.
 * `MESSAGE_SENT`: the message is sent by the user and recorded into the `chat` object but not yet rendered in the UI.
