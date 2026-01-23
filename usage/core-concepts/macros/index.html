@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.822436460652">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.822520091996">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.11.0.822436460652" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.11.0.822520091996" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.822436460652" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.822520091996" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.822436460652" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.822520091996" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -256,7 +256,25 @@
 <p>SillyTavern provides built-in documentation for all available macros:</p>
 <ul>
 <li><strong>Slash command</strong>: Type <code v-pre>/? macros</code> in the chat input to display a list of all registered macros with their descriptions.</li>
-<li><strong>Autocomplete</strong>: Type <code v-pre>{{</code> during slash commands autocomplete in the input field to get suggestions for available macros.</li>
+<li><strong>Autocomplete</strong>: See <doc-anchor-trigger to="#macro-autocomplete">Macro Autocomplete</doc-anchor-trigger> below for details on getting suggestions while typing.</li>
+</ul>
+<doc-anchor-target id="macro-autocomplete">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#macro-autocomplete">#</doc-anchor-trigger>
+        <span>Macro Autocomplete</span>
+    </h3>
+</doc-anchor-target>
+<p>Macro autocomplete provides suggestions for available macros as you type. It works in all text fields that support macros throughout SillyTavern.</p>
+<p>Type <code v-pre>{{</code> to start autocomplete for macros, showing available macros and their arguments, potential <doc-anchor-trigger to="#macro-flags">Macro Flags</doc-anchor-trigger>, <doc-anchor-trigger to="#variable-shorthands">Variable Shorthands</doc-anchor-trigger>, and more.</p>
+<p><strong>Where autocomplete appears by default:</strong></p>
+<ul>
+<li>Expanded editor (full-screen text editing, opened via the &#x27;Expand&#x27; button next to text fields)</li>
+<li>Prompt manager editor</li>
+</ul>
+<p><strong>Triggering autocomplete in other fields:</strong></p>
+<ul>
+<li>Press <strong>Ctrl+Space</strong> in any macro-supporting text field to open the autocomplete popup</li>
+<li>Enable <strong>Settings → AutoComplete Settings → Show in all macro fields</strong> to have autocomplete appear automatically in all macro fields</li>
 </ul>
 <doc-anchor-target id="basic-syntax">
     <h2>
@@ -485,7 +503,7 @@
 <ul>
 <li>A macro name (resolved automatically if no arguments are required)</li>
 <li>Any value from a nested macro like <code v-pre>{{getvar::flag}}</code></li>
-<li>A variable shorthand like <code v-pre>.myFlag</code> or <code v-pre>$globalFlag</code> (see <doc-anchor-trigger to="#variable-shorthand-syntax">Variable Shorthand Syntax</doc-anchor-trigger>)</li>
+<li>A variable shorthand like <code v-pre>.myFlag</code> or <code v-pre>$globalFlag</code> (see <doc-anchor-trigger to="#variable-shorthands">Variable Shorthands</doc-anchor-trigger>)</li>
 <li>Any text you want (that will implicitly resolve to truthy or falsy based on its content)</li>
 </ul>
 <p>Falsy values: empty string, <code v-pre>false</code>, <code v-pre>0</code>, <code v-pre>off</code>, <code v-pre>no</code>.</p>
@@ -505,7 +523,7 @@
   Not globally disabled.
 {{ /if }}</code></pre>
 </doc-codeblock></div>
-<p>See <doc-anchor-trigger to="#variable-shorthand-syntax">Variable Shorthand Syntax</doc-anchor-trigger> for more details on shorthand notation.</p>
+<p>See <doc-anchor-trigger to="#variable-shorthands">Variable Shorthands</doc-anchor-trigger> for more details on shorthand notation.</p>
 <doc-anchor-target id="inverted-condition">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#inverted-condition">#</doc-anchor-trigger>
@@ -659,7 +677,7 @@
     </h3>
 </doc-anchor-target>
 <p>Variable shorthand syntax uses prefix operators (<code v-pre>.</code> and <code v-pre>$</code>) which behave similarly to flags but are not flags themselves.<br />
-See the <doc-anchor-trigger to="#variable-shorthand-syntax">Variable Shorthand Syntax</doc-anchor-trigger> section for details.</p>
+See the <doc-anchor-trigger to="#variable-shorthands">Variable Shorthands</doc-anchor-trigger> section for details.</p>
 <doc-anchor-target id="preserve-whitespace-flag">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#preserve-whitespace-flag">#</doc-anchor-trigger>
@@ -703,10 +721,10 @@ See the <doc-anchor-trigger to="#variable-shorthand-syntax">Variable Shorthand S
 <pre translate="no" class="language-none"><code v-pre class="language-none">\{\{notAMacro\}\}</code></pre>
 </doc-codeblock></div>
 <p>This outputs <code v-pre>{{notAMacro}}</code> as plain text.</p>
-<doc-anchor-target id="variable-shorthand-syntax">
+<doc-anchor-target id="variable-shorthands">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#variable-shorthand-syntax">#</doc-anchor-trigger>
-        <span>Variable Shorthand Syntax</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#variable-shorthands">#</doc-anchor-trigger>
+        <span>Variable Shorthands</span>
     </h2>
 </doc-anchor-target>
 <div class="flex mb-6">
@@ -882,6 +900,30 @@ See the <doc-anchor-trigger to="#variable-shorthand-syntax">Variable Shorthand S
 <td><code v-pre>{{.status != active}}</code></td>
 <td>Compares values, returns <code v-pre>&quot;true&quot;</code> if not equal</td>
 </tr>
+<tr>
+<td><code v-pre>&gt;</code></td>
+<td><doc-anchor-trigger to="#greater-than">Greater Than</doc-anchor-trigger></td>
+<td><code v-pre>{{.score &gt; 50}}</code></td>
+<td>Returns <code v-pre>&quot;true&quot;</code> if variable is greater than value</td>
+</tr>
+<tr>
+<td><code v-pre>&gt;=</code></td>
+<td><doc-anchor-trigger to="#greater-than-or-equal">Greater Than or Equal</doc-anchor-trigger></td>
+<td><code v-pre>{{.level &gt;= 10}}</code></td>
+<td>Returns <code v-pre>&quot;true&quot;</code> if variable is greater than or equal to value</td>
+</tr>
+<tr>
+<td><code v-pre>&lt;</code></td>
+<td><doc-anchor-trigger to="#less-than">Less Than</doc-anchor-trigger></td>
+<td><code v-pre>{{.health &lt; 20}}</code></td>
+<td>Returns <code v-pre>&quot;true&quot;</code> if variable is less than value</td>
+</tr>
+<tr>
+<td><code v-pre>&lt;=</code></td>
+<td><doc-anchor-trigger to="#less-than-or-equal">Less Than or Equal</doc-anchor-trigger></td>
+<td><code v-pre>{{.health &lt;= 0}}</code></td>
+<td>Returns <code v-pre>&quot;true&quot;</code> if variable is less than or equal to value</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -1044,6 +1086,70 @@ Treats not existing variables, null variables and empty variables as the same.</
 <p>Useful in <code v-pre>{{if}}</code> conditions:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{if {{.status != disabled}} }}Feature enabled{{/if}}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="greater-than">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#greater-than">#</doc-anchor-trigger>
+        <span>Greater Than</span>
+    </h4>
+</doc-anchor-target>
+<p>Use <code v-pre>&gt;</code> to check if a variable&#x27;s numeric value is greater than another value:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{{.score &gt; 50}}        // Returns &quot;true&quot; if .score is greater than 50
+{{$level &gt; 5}}         // Returns &quot;true&quot; if $level is greater than 5</code></pre>
+</doc-codeblock></div>
+<p>Performs a numeric comparison and returns the literal string <code v-pre>&quot;true&quot;</code> or <code v-pre>&quot;false&quot;</code>.</p>
+<p>Useful in <code v-pre>{{if}}</code> conditions:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{{if {{.score &gt; 100}} }}High score!{{/if}}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="greater-than-or-equal">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#greater-than-or-equal">#</doc-anchor-trigger>
+        <span>Greater Than or Equal</span>
+    </h4>
+</doc-anchor-target>
+<p>Use <code v-pre>&gt;=</code> to check if a variable&#x27;s numeric value is greater than or equal to another value:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{{.level &gt;= 10}}       // Returns &quot;true&quot; if .level is at least 10
+{{$points &gt;= 100}}     // Returns &quot;true&quot; if $points is 100 or more</code></pre>
+</doc-codeblock></div>
+<p>Performs a numeric comparison and returns the literal string <code v-pre>&quot;true&quot;</code> or <code v-pre>&quot;false&quot;</code>.</p>
+<p>Useful in <code v-pre>{{if}}</code> conditions:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{{if {{$level &gt;= 10}} }}Unlocked advanced features{{/if}}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="less-than">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#less-than">#</doc-anchor-trigger>
+        <span>Less Than</span>
+    </h4>
+</doc-anchor-target>
+<p>Use <code v-pre>&lt;</code> to check if a variable&#x27;s numeric value is less than another value:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{{.health &lt; 20}}       // Returns &quot;true&quot; if .health is below 20
+{{$timer &lt; 0}}         // Returns &quot;true&quot; if $timer is negative</code></pre>
+</doc-codeblock></div>
+<p>Performs a numeric comparison and returns the literal string <code v-pre>&quot;true&quot;</code> or <code v-pre>&quot;false&quot;</code>.</p>
+<p>Useful in <code v-pre>{{if}}</code> conditions:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{{if {{.health &lt; 20}} }}Low health warning!{{/if}}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="less-than-or-equal">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#less-than-or-equal">#</doc-anchor-trigger>
+        <span>Less Than or Equal</span>
+    </h4>
+</doc-anchor-target>
+<p>Use <code v-pre>&lt;=</code> to check if a variable&#x27;s numeric value is less than or equal to another value:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{{.health &lt;= 0}}       // Returns &quot;true&quot; if .health is 0 or below
+{{$attempts &lt;= 3}}     // Returns &quot;true&quot; if $attempts is 3 or fewer</code></pre>
+</doc-codeblock></div>
+<p>Performs a numeric comparison and returns the literal string <code v-pre>&quot;true&quot;</code> or <code v-pre>&quot;false&quot;</code>.</p>
+<p>Useful in <code v-pre>{{if}}</code> conditions:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-none"><code v-pre class="language-none">{{if {{.health &lt;= 0}} }}Game over{{/if}}</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="legacy-syntax">
     <h2>
