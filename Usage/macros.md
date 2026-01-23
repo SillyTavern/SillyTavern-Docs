@@ -28,6 +28,7 @@ Type `{{` to start autocomplete for macros, showing available macros and their a
 
 **Where autocomplete appears by default:**
 
+- Chat user input box
 - Expanded editor (full-screen text editing, opened via the 'Expand' button next to text fields)
 - Prompt manager editor
 
