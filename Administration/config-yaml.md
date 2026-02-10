@@ -207,6 +207,23 @@ An enabled CORS proxy may be required by some extensions. It is not required by 
 |---------|-------------|---------|-----------------|
 | `enableCorsProxy` | Enable CORS proxy middleware | `false` | `true`, `false` |
 
+## CORS Configuration
+
+!!!warning
+Advanced setting. Modifying these values can expose your SillyTavern instance to security risks. Only change these if you understand Cross-Origin Resource Sharing (CORS) and are developing  or using external tools that need to access the API. 
+!!!
+
+| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|-----------------|
+| `cors.enabled` | Enable or disable standard CORS middleware | `true` | `true`, `false` |
+| `cors.origin` | List of allowed origins. Use `"null"` for local files, or `"*"` for all (Not recommended). | `["null"]` | Array of strings |
+| `cors.methods` | List of allowed HTTP methods | `["OPTIONS"]` | Array of strings (e.g., `["GET", "POST"]`) |
+| `cors.allowedHeaders` | List of allowed request headers | `[]` | Array of strings |
+| `cors.exposedHeaders` | List of exposed response headers | `[]` | Array of strings |
+| `cors.credentials` | Allow credentials (cookies, authorization headers) | `false` | `true`, `false` |
+| `cors.maxAge` | Preflight request cache max age in seconds | `null` | Integer or `null` |
+
+
 ## Browser Launch Configuration
 
 > Previously known as "Autorun" settings.
