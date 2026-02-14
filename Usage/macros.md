@@ -146,10 +146,6 @@ The condition itself is a macro that retrieves a variable value.
 
 ## Scoped Macros
 
-!!!warning Staging Feature
-This is currently only available on the `staging` branch of SillyTavern, and not part of the latest release.
-!!!
-
 Any macro that accepts at least one argument supports scoped syntax. The content between opening and closing tags becomes the **last argument** of the macro.
 
 ### Scoped Syntax
@@ -212,10 +208,6 @@ Produces `# Heading\nSome content here` (without the leading spaces).
 To preserve all whitespace including leading/trailing newlines, use the `#` flag. See [Macro Flags](#macro-flags) for details.
 
 ## Conditional Macros
-
-!!!warning Staging Feature
-This is currently only available on the `staging` branch of SillyTavern, and not part of the latest release.
-!!!
 
 The `{{if}}` macro renders content conditionally based on whether a value is truthy or falsy.
 
@@ -289,10 +281,6 @@ Another example:
 ```
 
 ## Macro Flags
-
-!!!warning Staging Feature
-This is currently only available on the `staging` branch of SillyTavern, and not part of the latest release.
-!!!
 
 Flags are special symbol characters placed between the opening braces and the macro name that modify macro behavior.
 
@@ -379,10 +367,6 @@ To display literal curly braces without macro resolution, escape them with backs
 This outputs `{{notAMacro}}` as plain text.
 
 ## Variable Shorthands
-
-!!!warning Staging Feature
-This is currently only available on the `staging` branch of SillyTavern, and not part of the latest release.
-!!!
 
 Variable shorthands provide a concise syntax for common variable operations. Use `.` for local variables and `$` for global variables.
 
