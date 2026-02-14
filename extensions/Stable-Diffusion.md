@@ -47,6 +47,7 @@ Most common Stable Diffusion generation settings are customizable within the Sil
 | [Pollinations](https://pollinations.ai/)                                                          | Cloud, open source (MIT), free of charge                                                        |
 | [SD.Next / vladmandic](https://github.com/vladmandic/automatic)                                   | Local, open source (AGPL3), free of charge                                                      |
 | [SillyTavern Extras](https://github.com/SillyTavern/SillyTavern-Extras)                           | Deprecated, not recommended                                                                     |
+| [stable-diffusion.cpp](https://github.com/leejet/stable-diffusion.cpp)                             | Local, open source (MIT), free of charge                                                        |
 | [Stability AI](https://platform.stability.ai/)                                                    | Cloud, paid                                                                                     |
 | [Stable Diffusion WebUI / AUTOMATIC1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui) | Local, open source (AGPL3), free of charge                                                      |
 | [Stable Horde](https://stablehorde.net/)                                                          | Cloud, open source (AGPL3), free of charge                                                      |
@@ -162,6 +163,10 @@ Some special subjects trigger a predefined generation mode:
 ### Extend free-mode prompts
 
 When using the interactive mode of the slash command, automatically extend free-mode generation subject descriptions by prompting your main API.
+
+### Minimal prompt processing
+
+When enabled, reduces the processing applied to prompts returned by the LLM for image generation. Only normalization and whitespace reduction are performed, skipping the aggressive sanitization that is done by default. This is useful when working with advanced workflows (e.g., ComfyUI) that accept structured prompt formats like JSON.
 
 ### Snap auto-adjusted resolutions
 

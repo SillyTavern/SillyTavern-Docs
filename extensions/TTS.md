@@ -40,6 +40,7 @@ Available options (list may change over time):
 - **Ignore \*text, even "quotes", inside asterisks\*** - TTS will not play any text within `*asterisks*`, even "quotes" (internal variable name = `narrate_dialogues_only`)
 - *having both "only narrate quotes" and "ignore asterisks" checkboxes both checked will result in the TTS only reading "quotes" which are not in asterisks, and ignoring everything else.*
 - **Narrate only the translated text** - this will make the TTS only narrate the translated text.
+- **Apply regex** - applies a provided regex pattern to the text before sending it to the TTS provider. Useful for removing unwanted parts from the input text, such as emojis or non-native language characters that the TTS engine doesn't handle well.
 
 Given the example text: `*Cohee approaches you with a faint "nya"* "Good evening, senpai", she says.`
 Here's a table showing how the text will be modified based on the boolean states of **Ignore \*text, even "quotes", inside asterisks\*** and **Only narrate "quotes"**:
