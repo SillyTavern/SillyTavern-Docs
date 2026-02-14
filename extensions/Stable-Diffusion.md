@@ -164,6 +164,10 @@ Some special subjects trigger a predefined generation mode:
 
 When using the interactive mode of the slash command, automatically extend free-mode generation subject descriptions by prompting your main API.
 
+### Minimal prompt processing
+
+When enabled, reduces the processing applied to prompts returned by the LLM for image generation. Only normalization and whitespace reduction are performed, skipping the aggressive sanitization that is done by default. This is useful when working with advanced workflows (e.g., ComfyUI) that accept structured prompt formats like JSON.
+
 ### Snap auto-adjusted resolutions
 
 Snap image generation requests with a forced aspect ratio (portraits, backgrounds) to the nearest known resolution, while trying to preserve the absolute pixel counts. Refer to the "Resolution" dropdown for the list of possible options.

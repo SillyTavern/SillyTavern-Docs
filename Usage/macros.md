@@ -757,7 +757,7 @@ Use `/? macros` for the complete list of available macros and their detailed des
 | Macro | Description |
 |-------|-------------|
 | `{{random::a::b::c}}` | Random selection (re-rolls each time) |
-| `{{pick::a::b::c}}` | Stable random selection (consistent per chat and position) |
+| `{{pick::a::b::c}}` | Stable random selection (consistent per chat and position). Can be rerolled with the `/reroll-pick` command |
 | `{{roll::1d20}}` | Dice roll using droll syntax |
 
 ### Runtime State
@@ -768,6 +768,7 @@ Use `/? macros` for the complete list of available macros and their detailed des
 | `{{model}}` | Model name for the currently selected API |
 | `{{isMobile}}` | "true" if running in mobile environment, "false" otherwise |
 | `{{lastGenerationType}}` | Type of last queued generation request (e.g., "normal", "impersonate", "regenerate", "quiet", "swipe", "continue") |
+| `{{hasExtension::name}}` | Check if an extension is active (returns "true" or "false"). Matches by extension name, case-insensitive |
 
 ### Prompt Templates
 
