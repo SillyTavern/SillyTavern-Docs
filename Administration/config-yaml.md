@@ -104,6 +104,7 @@ See more about using environment variables in the [Node.js documentation](https:
 | `dataRoot` | Root directory for user data storage (standalone mode only) | `./data` | Any valid directory path |
 | `skipContentCheck` | Skip checks for new default content | `false` | `true`, `false` |
 | `enableDownloadableTokenizers` | Enable on-demand tokenizer downloads | `true` | `true`, `false` |
+| `whitelistImportDomains` | List of trusted domains for importing web-hosted character cards and assets | [See here](https://github.com/SillyTavern/SillyTavern/blob/d118eee014330c37978cc0226f4ca74a1f321eea/default/config.yaml#L220) | Array of strings |
 
 ## Logging Configuration
 
