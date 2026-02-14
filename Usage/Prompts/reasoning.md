@@ -59,6 +59,7 @@ Supported sources:
 - Electron Hub
 - Chutes
 - NanoGPT
+- Moonshot
 
 !!!
 For **most** sources, "Request model reasoning" does not determine whether a model does reasoning as it can't be disabled. If the backend and model support explicitly requesting disabled reasoning, the setting will do so. Otherwise, the model will always reason.
@@ -68,6 +69,7 @@ Provider-specific notes:
 
 - Claude and Google (2.5 Flash) allow thinking mode to be toggled; see [Reasoning Effort](#reasoning-effort).
 - Reasoning can be disabled for Z.AI (GLM). The setting maps the to `thinking.type` parameter, see the [documentation](https://docs.z.ai/api-reference/llm/chat-completion#body-one-of-0-thinking). It does not support "Reasoning Effort".
+- Moonshot: The "Request reasoning" setting maps to the `thinking.type` parameter.
 
 ### By Parsing
 
@@ -117,15 +119,15 @@ Different ephemerality options affect reasoning blocks in the following ways:
 
 Reasoning Effort is a Chat Completion setting in the **<i class="fa-solid fa-sliders"></i> AI Response Configuration** panel that influences how many tokens may potentially be used on reasoning. The effect of each option depends on the source connected to. For the sources below, Auto simply means the relevant parameter is not included in the request.
 
-| Option  | Claude (≤ 21333 if no streaming) | OpenAI (keyword)     | OpenRouter (keyword)             | xAI (Grok) (keyword) | Perplexity (keyword) |
-| ------- | -------------------------------- | -------------------- | -------------------------------- | -------------------- | -------------------- |
-| Models  | Opus 4, Sonnet 4/3.7             | o4-mini, o3\*, o1\*  | applicable models                | grok-3-mini          | sonar-deep-research  |
-| Auto    | not specified, **no thinking**   | not specified        | not specified, effect depends    | not specified        | not specified        |
-| Minimum | budgets 1024 tokens              | "low"                | "low", or 20% of max response    | "low"                | "low"                |
-| Low     | 15% of max response, min 1024    | "low"                | "low", or 20% of max response    | "low"                | "low"                |
-| Medium  | 25% of max response, min 1024    | "medium"             | "medium", or 50% of max response | "low"                | "medium"             |
-| High    | 50% of max response, min 1024    | "high"               | "high", or 80% of max response   | "high"               | "high"               |
-| Maximum | 95% of max response, min 1024    | "high"               | "high", or 80% of max response   | "high"               | "high"               |
+| Option  | Claude (≤ 21333 if no streaming) | OpenAI (keyword)     | OpenRouter (keyword)             | xAI (Grok) (keyword) | Perplexity (keyword) | NanoGPT (keyword) |
+| ------- | -------------------------------- | -------------------- | -------------------------------- | -------------------- | -------------------- | ----------------- |
+| Models  | Opus 4, Sonnet 4/3.7             | o4-mini, o3\*, o1\*  | applicable models                | grok-3-mini          | sonar-deep-research  | applicable models |
+| Auto    | not specified, **no thinking**   | not specified        | not specified, effect depends    | not specified        | not specified        | not specified     |
+| Minimum | budgets 1024 tokens              | "low"                | "low", or 20% of max response    | "low"                | "low"                | "none"            |
+| Low     | 15% of max response, min 1024    | "low"                | "low", or 20% of max response    | "low"                | "low"                | "minimal"         |
+| Medium  | 25% of max response, min 1024    | "medium"             | "medium", or 50% of max response | "low"                | "medium"             | "low"             |
+| High    | 50% of max response, min 1024    | "high"               | "high", or 80% of max response   | "high"               | "high"               | "medium"          |
+| Maximum | 95% of max response, min 1024    | "high"               | "high", or 80% of max response   | "high"               | "high"               | "high"            |
 
 - For Claude, budget is capped to 21333 if streaming is disabled. If the calculated budget would be less than 1024, then max response is changed to 2048.
 - For OpenRouter, Perplexity and AI/ML API, only an OpenAI-style keyword is sent.
