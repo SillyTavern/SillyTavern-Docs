@@ -82,7 +82,7 @@ These settings allow you to manage characters and assign Live2D models to them.
    - The model can be located in the asset folder or the current character's folder.
    - The list displays the model folder name, its origin (asset or character), and the name of the detected model setting file.
    - Note that some model folders may contain different versions of the same model. You can try different model files to see which one works best.
-   - Selecting none will use normal sprites if there is any
+   - Selecting none will use normal sprites if there are any
    - Settings are saved per character and model
 
 ## Model Settings

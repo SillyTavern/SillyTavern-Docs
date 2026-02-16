@@ -24,7 +24,7 @@ By default, reasoning blocks are collapsed to save space. Click a block to expan
 
 When a reasoning block is expanded, you can copy or edit its contents using the **<i class="fa-solid fa-copy"></i> Copy** and **<i class="fa-solid fa-pencil"></i> Edit** buttons.
 
-Some models models support reasoning, but will not send their thoughts back. It is possible to still show the reasoning block with reasoning time for those by toggling the **Show Hidden** setting.
+Some models support reasoning, but will not send their thoughts back. It is possible to still show the reasoning block with reasoning time for those by toggling the **Show Hidden** setting.
 
 ## Adding Reasoning
 
@@ -68,7 +68,7 @@ For **most** sources, "Request model reasoning" does not determine whether a mod
 Provider-specific notes:
 
 - Claude and Google (2.5 Flash) allow thinking mode to be toggled; see [Reasoning Effort](#reasoning-effort).
-- Reasoning can be disabled for [Z.AI (GLM)](https://docs.z.ai/api-reference/llm/chat-completion#body-one-of-0-thinking) and [Moonshot (Kimi)](https://platform.moonshot.ai/docs/guide/use-kimi-k2-thinking-model). The setting maps the to `thinking.type` parameter. It does not support "Reasoning Effort".
+- Reasoning can be disabled for [Z.AI (GLM)](https://docs.z.ai/api-reference/llm/chat-completion#body-one-of-0-thinking) and [Moonshot (Kimi)](https://platform.moonshot.ai/docs/guide/use-kimi-k2-thinking-model). The setting maps to the `thinking.type` parameter. They do not support "Reasoning Effort".
 
 ### By Parsing
 
@@ -96,7 +96,7 @@ Most model providers do not recommend sending CoT back to the model in multi-tur
 
 ### Continuing from Reasoning
 
-A special case when the reasoning can be sent back to the model without having the "Add to Prompts" toggle enabled is when the generation is continued (e.g. by pressing "Continue" from the **<i class="fa-solid fa-bars"></i> Options** menu), but the message being continued contains only the reasoning without an actual content. This gives the model an opportunity to finish an incomplete reasoning and start generating the main content. The prompt will be sent as follows:
+A special case when the reasoning can be sent back to the model without having the "Add to Prompts" toggle enabled is when the generation is continued (e.g. by pressing "Continue" from the **<i class="fa-solid fa-bars"></i> Options** menu), but the message being continued contains only the reasoning without actual content. This gives the model an opportunity to finish an incomplete reasoning and start generating the main content. The prompt will be sent as follows:
 
 ```txt
 <think>

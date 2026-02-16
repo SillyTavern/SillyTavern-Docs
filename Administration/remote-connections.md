@@ -15,7 +15,7 @@ You should not use port forwarding to expose your ST server to the internet. Ins
 !!!
 
 !!!danger Disclaimer
-**NEVER HOST ANY INSTANCES TO THE OPEN INTERNET WITHOUT ENSURING PROPER SECURITY MEASURES FIRST.**
+**NEVER HOST ANY INSTANCES ON THE OPEN INTERNET WITHOUT ENSURING PROPER SECURITY MEASURES FIRST.**
 
 **WE ARE NOT RESPONSIBLE FOR ANY DAMAGE OR LOSSES IN CASES OF UNAUTHORIZED ACCESS DUE TO IMPROPER OR INADEQUATE SECURITY IMPLEMENTATION.**
 !!!
@@ -151,7 +151,7 @@ There is no rate-limiting to prevent brute-force attacks. If this is a concern, 
 
 The server will ask for username and password whenever a client connects via HTTP. **This only works if the Remote connections (listen: true) are enabled.**
 
-To enable HTTP BA, Open `config.yaml` in the SillyTavern base directory and search for `basicAuthMode` Set basicAuthMode to true and set username and password. Note: `config.yaml` will only exist if ST has been executed before at least once.
+To enable HTTP BA, Open `config.yaml` in the SillyTavern base directory and search for `basicAuthMode`. Set basicAuthMode to true and set username and password. Note: `config.yaml` will only exist if ST has been executed before at least once.
 
 ```yaml
 basicAuthMode: true

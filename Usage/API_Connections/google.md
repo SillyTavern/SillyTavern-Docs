@@ -4,7 +4,7 @@ route: /usage/api-connections/google/
 
 # Google Gemini
 
-Gemini is Google's cutting-edge multimodal LLM, which is available though several APIs, including Google Vertex AI and Google AI Studio (formerly MakerSuite). This guide will help you set up the Gemini API connections in SillyTavern.
+Gemini is Google's cutting-edge multimodal LLM, which is available through several APIs, including Google Vertex AI and Google AI Studio (formerly MakerSuite). This guide will help you set up the Gemini API connections in SillyTavern.
 
 ## Google AI Studio
 
@@ -117,7 +117,7 @@ See the official documentation for more details: [Vertex AI in express mode over
 You must have a Google account that was not previously used to create a Google Cloud project.
 If you have an existing Google Cloud project (including free trials), you can create a new one for this purpose.
 
-#### Step 2: Active the Vertex AI Express Mode
+#### Step 2: Activate the Vertex AI Express Mode
 
 1. Go to the following web page: [Vertex AI Studio](https://cloud.google.com/generative-ai-studio).
 2. Click on "Try it free".

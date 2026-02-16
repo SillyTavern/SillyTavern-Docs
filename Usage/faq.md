@@ -78,7 +78,7 @@ Two possibilities:
 4. Optionally, click the Select Avatar button to pick an image portrait for this character
 5. Under Description, describe the character, and include any information you want that you feel is relevant to the chat. For example: ```Amanda is a student traveling during her gap year. She's 6 feet tall, and a volleyball player. She has an athletic figure. She has long brown hair. She loves the Victorian England period, and watching TV and reading novels relating to that period.```
 For example, if you want Amanda to be friendly, then you would add: ```Amanda is extremely cheerful and outgoing.```
-6. Under First Message, write the greeting the character when you begin a new chat. For example: ```*Amanda waves at you* Hey! Are you a backpacker too?```
+6. Under First Message, write the greeting for the character when you begin a new chat. For example: ```*Amanda waves at you* Hey! Are you a backpacker too?```
 7. Click the Create Character button
 
 You now have a basic character you can chat with. Select Amanda from the character list, and a new chat will begin.
@@ -186,4 +186,4 @@ This should be handled in the `Author's Note` with a combination of phrases like
 
 * \{\{char\}\}'s responses shall only be passive and reactive to \{\{user\}\}'s actions.
 * Your next response shall be solely from the POV of \{\{char\}\}.
-* You are never allowed to dictate actions or speech for \{\{user\}\}
+* You are never allowed to dictate actions or speech for \{\{user\}\}.

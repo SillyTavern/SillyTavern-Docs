@@ -19,7 +19,7 @@ Tries to simulate the flow of a real human conversation. The algorithm is as fol
 
 1. Mentions of the group member names are extracted from the last message in chat.
 
-    Only whole words are recognized as mentions! If your character's name is "Misaka Mikoto", they will reply only activate on "Misaka" or "Mikoto", but never to "Misa", "Railgun", etc.
+    Only whole words are recognized as mentions! If your character's name is "Misaka Mikoto", they will only activate on "Misaka" or "Mikoto", but never to "Misa", "Railgun", etc.
     
     Unless the "Allow Self Responses" setting is enabled, characters won't reply to mentions of their name in their own message!
 
@@ -37,7 +37,7 @@ Characters are drafted based on the order they are presented in the group member
 
 ### Pooled Order
 
-Activates one random character who have't spoken yet since the last user message. If all characters have spoken, selects one randomly until the next user message.
+Activates one random character who hasn't spoken yet since the last user message. If all characters have spoken, selects one randomly until the next user message.
 
 ## Group generation handling mode
 
@@ -70,7 +70,7 @@ The following fields are being combined:
 
 When 'Join character cards' is selected, all respective fields of the characters are being joined together. This means that in the resulting prompt all character descriptions will be joined to one big blob of text. If you want those fields to be separated, you can define a prefix and/or suffix.
 
-These options support normal macros and will also replace \{\{char\}\} with the relevant characters's name and \<FIELDNAME\> with the name of the part (e.g.: description, personality, scenario, etc.)
+These options support normal macros and will also replace \{\{char\}\} with the relevant character's name and \<FIELDNAME\> with the name of the part (e.g.: description, personality, scenario, etc.)
 
 ## Other Group Chat menu options
 
@@ -106,4 +106,4 @@ Any of your existing characters can be added, removed, muted, or re-ordered with
 
 ### Group Chat pop-out
 
-The group chat menu pop-out can be activated by clicking on the icon next to the "Current Members" field. This creates a pop-out of the group chat menu. By enabling MovingUI from user settings, this menu can resized and dragged to any position within the interface and functions just like the regular group chat menu.
+The group chat menu pop-out can be activated by clicking on the icon next to the "Current Members" field. This creates a pop-out of the group chat menu. By enabling MovingUI from user settings, this menu can be resized and dragged to any position within the interface and functions just like the regular group chat menu.

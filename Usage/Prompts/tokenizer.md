@@ -33,8 +33,8 @@ If you get inaccurate results or wish to experiment, you can set an _override to
 
 Chat Completion APIs **(non-overridable)**:
 
-1. OpenAI: model-dependant tokenizer via [tiktoken](https://github.com/openai/tiktoken).
-2. Claude: model-dependant tokenizer via [WebTokenizers](https://github.com/mlc-ai/tokenizers-cpp).
+1. OpenAI: model-dependent tokenizer via [tiktoken](https://github.com/openai/tiktoken).
+2. Claude: model-dependent tokenizer via [WebTokenizers](https://github.com/mlc-ai/tokenizers-cpp).
 3. OpenRouter: Llama, Mistral, Gemma, Yi tokenizers for their respective models.
 4. Google AI Studio: Gemma tokenizer.
 5. AI21 API: Jamba tokenizer (requires a one-time download).
@@ -45,7 +45,7 @@ Chat Completion APIs **(non-overridable)**:
 
 #### Additional Tokenizers
 
-These tokenizers are not included in the default installation due to their size A one-time download is required when they're used for the first time.
+These tokenizers are not included in the default installation due to their size. A one-time download is required when they're used for the first time.
 
 1. Qwen2 tokenizer.
 2. Command-R / Command-A tokenizers. Used by Cohere source in Chat Completion.

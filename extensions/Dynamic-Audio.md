@@ -23,11 +23,11 @@ Before you begin, ensure you've met the following prerequisites:
 2. **Enable Dynamic Audio Extension**:
    - In SillyTavern, go to **Extensions** > **Dynamic Audio**.
    - Enable the extension, unmute and adjust the volume of BGM and ambient sounds to your preference.
-   - When bgm end another one will play randomly, click on loop button to keep current bgm playing
+   - When bgm ends another one will play randomly, click on loop button to keep current bgm playing
    - Click on roll button to pick another bgm randomly
 
 3. **Expression based BGM**:
-   - Enable expression BGM switch if you want bgm to follow character expression (require bgm in character folder see below).
+   - Enable expression BGM switch if you want BGM to follow character expression (requires BGM in character folder see below).
    - Adjust the cooldown timer (in seconds) between BGM updates. Increase it if you find the BGM changes too frequently in group chats or when using character-specific BGM with emotion detection.
 
 ## Importing Music for Characters
@@ -72,7 +72,7 @@ Ambient sounds add depth to your scenes. Here's how you can customize them:
 2. **File Naming Convention**:
    - Ambient audio filenames correspond to background image filenames, replacing spaces with dashes.
    - Example: `"bedroom-clean.mp3"` corresponds to the "bedroom clean.jpg" background.
-   - If the lock button is unlock the audio file corresponding to the background will play. Activating lock will keep current ambient playing.
+   - If the lock button is unlocked the audio file corresponding to the background will play. Activating lock will keep current ambient playing.
 
 3. **Custom Ambients**:
    - You can add your own ambient sounds for custom or existing backgrounds by following the same naming pattern.

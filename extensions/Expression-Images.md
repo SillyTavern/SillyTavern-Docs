@@ -107,7 +107,7 @@ All of those can be selected via the dropdown under 'Default / Fallback Expressi
 
 1. **Choose a Fallback Expression**: If an expression gets chosen where you don't have an image for, the fallback expression gets shown instead. Simply select one of the available expressions from the dropdown.
 2. **[No Fallback]**: When no image exists, show nothing.
-3. **[Default emojis]**: You can use the built-in default expressions which are included with in SillyTavern. These are simple emoji-style images.
+3. **[Default emojis]**: You can use the built-in default expressions which are included within SillyTavern. These are simple emoji-style images.
 
 ## Using Multiple Images per Expression
 
@@ -122,8 +122,8 @@ If you want to force a new image of that expression to be chosen when the same e
 
 ### Naming Convention for Multiple Images per Expression
 
-In case of multiple images per expressions, files need to be named a specic way.
-The files need to start with the name of the expressions, and then followed by a suffix, either separated by a dot or a dash. Examples: `joy.png`, `joy-1.png`, `joy.expressive.png`  
+In case of multiple images per expression, files need to be named a specific way.
+The files need to start with the name of the expression, and then followed by a suffix, either separated by a dot or a dash. Examples: `joy.png`, `joy-1.png`, `joy.expressive.png`  
 File names must follow this format for both direct uploads and ZIP imports.
 
 ## Sprite Folder Override

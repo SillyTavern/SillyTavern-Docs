@@ -16,7 +16,7 @@ Local installation of Extras can be difficult or impossible on your OS (especial
 
 ## Use the [Official Extras Colab](https://colab.research.google.com/github/SillyTavern/SillyTavern/blob/release/colab/GPU.ipynb)
 
-* Simple to setup
+* Simple to set up
 * Free to use
 * No Colab GPU credits required (use the `use_cpu` options)
 * See the [Colab Guide Page](/extensions/Extras/Installation.md#running-extras-in-colab) for details.
@@ -115,7 +115,7 @@ If this is your first time touching anything Python-related, that should not be 
 
 ### Confirm extensions are enabled
 
-1. Open the file called `config.yaml`in a text editor. The file is located in ST's base install folder.
+1. Open the file called `config.yaml` in a text editor. The file is located in ST's base install folder.
 2. Look for the line that reads `enableExtensions`.
 3. Make sure that line has `true`, and not `false`.
 
@@ -173,7 +173,7 @@ To run Extras again, simply activate the environment and run these commands in a
 `conda activate extras`, Hit Enter.
 `python server.py`, Hit Enter.
 
-Be sure to the additional options for server.py (see below) that your setup requires.
+Be sure to use the additional options for server.py (see below) that your setup requires.
 
 ## Make a .bat File for Easy Startup
 

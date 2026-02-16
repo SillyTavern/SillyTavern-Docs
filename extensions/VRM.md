@@ -14,7 +14,7 @@ Before you begin, ensure you've met the following prerequisites:
 
 2. **Extension Installation**: Install the "VRM" extension from the "Download Extensions & Assets" menu in the Extensions panel (represented by the stacked blocks icon).
 
-3. **Model Folder Placement**: Place your VRM model files (.vrm) into the `/data/<user-handle>/assets/vrm/model` directory and your animation files into the `/data/<user-handle>/assets/vrm/animation` directory. The currently supported animation file format are .fbx and .bvh that are compatible with VRM models. This include any animation you can get from Mixamo (https://www.mixamo.com/) and any animation you can export from tools like XR Animator (https://github.com/ButzYung/SystemAnimatorOnline).
+3. **Model Folder Placement**: Place your VRM model files (.vrm) into the `/data/<user-handle>/assets/vrm/model` directory and your animation files into the `/data/<user-handle>/assets/vrm/animation` directory. The currently supported animation file formats are .fbx and .bvh that are compatible with VRM models. This includes any animation you can get from Mixamo (https://www.mixamo.com/) and any animation you can export from tools like XR Animator (https://github.com/ButzYung/SystemAnimatorOnline).
 
 ## Extension Settings
 
@@ -32,27 +32,27 @@ The VRM extension offers various settings to customize the behavior of your anim
    - Enable this checkbox to make the VRM model eyes look at the camera.
 
 3. **Blink**:
-   - Enable this checkbox to make the VRM model eyes blink at random intervals. Model expressions should define properly blinking weight property otherwize model can blink with closed eyes for example, if that happens either:
+   - Enable this checkbox to make the VRM model eyes blink at random intervals. Model expressions should define properly blinking weight property otherwise model can blink with closed eyes for example, if that happens either:
     - correct the model if you have the .vroid file
-    - don't use that incorrect face experession
-    - disable blinking completly with this checkbox
+    - don't use that incorrect face expression
+    - disable blinking completely with this checkbox
 
 4. **TTS Lip sync**
-    - Enable this checkbox to have the VRM mouth movement follow the sound of your TTS when it's played. Only work with TTS whose sound is played by Sillytavern itself like XTTS (not in streaming mode). If disabled, mouth will be animated according to the message text length when a new character message is received.
+    - Enable this checkbox to have the VRM mouth movement follow the sound of your TTS when it's played. Only works with TTS whose sound is played by Sillytavern itself like XTTS (not in streaming mode). If disabled, mouth will be animated according to the message text length when a new character message is received.
 
 5. **Auto-send Interaction**:
    - Enable this checkbox to automatically trigger character interactions when you click on areas with mapped messages (refer to the hit areas section for details).
 
-### Performances Settings
+### Performance Settings
 
 1. **Body hitboxes**
-    - Enable this checkbox to activate detection of click on several part of the VRM model depending on the model the following area can be detected: head/chest/hands/groin/butt/legs/feets. Hitboxes location are computed at each frames and follow the body animation, disabling this option can improve performance.
+    - Enable this checkbox to activate detection of click on several part of the VRM model depending on the model the following area can be detected: head/chest/hands/groin/butt/legs/feet. Hitbox locations are computed at each frame and follow the body animation, disabling this option can improve performance.
 
 2. **Use model cache**
-    - Enable this checkbox to keep in memory VRM model when switching models, allows to switch back to previous model faster. Usefull if you use different model for the same character to change outfit or form for example. Can affect performance.
+    - Enable this checkbox to keep the VRM model in memory when switching models, allows to switch back to previous model faster. Useful if you use different model for the same character to change outfit or form for example. Can affect performance.
 
 3. **Use animation cache**
-    - Enable this checkboxx to keep in memory all animations played during the session. All animation assigned to a model will also be loaded the first time the model appear. Will increase the time you load the model the first time but make all animation switch instant. Can affect performance.
+    - Enable this checkbox to keep in memory all animations played during the session. All animation assigned to a model will also be loaded the first time the model appears. Will increase the time you load the model the first time but make all animation switch instant. Can affect performance.
 
 ### Debug Settings
 
@@ -120,14 +120,14 @@ These settings allow you to manage characters and assign VRM models to them.
 
 ## Hitboxes mapping
 
-    - Depending on the model bones definition some hitboxes area can be generated, they will be listed in this part of the ui, and you can assign an expression/animation/message to each of them that will trigger when you click the area.
+    - Depending on the model bones definition some hitbox areas can be generated, they will be listed in this part of the ui, and you can assign an expression/animation/message to each of them that will trigger when you click the area.
 
 ![UI classify settings](/static/extensions/vrm-classify.png)
 
 ## Classified Expressions Mapping
 
 1. **Requirements**
-    - Requires the use of the classify expression extension; otherwise, it will fallback to the default animation.
+    - Requires the use of the classify expression extension; otherwise, it will fall back to the default animation.
 
 2. **Mapping**
     - For each detected emotion by the classify extension, you can assign an expression/motion/message. The message can contain commands.
@@ -157,7 +157,7 @@ These settings allow you to manage characters and assign VRM models to them.
     - "/vrmmotion idle" or "/vrmmotion character=Seraphina motion=idle loop=true random=false"
 
 ## Animations default mapping
-If your animation file are named in the following way they will be mapped automatically when reseting a model settings. For example the files named "assets/vrm/animation/neutral.bvh" and "assets/vrm/animation/neutral1.fbx" will be automatically mapped as a group for default and neutral classified animation. Same goes for the hitboxes. 
+If your animation files are named in the following way they will be mapped automatically when resetting a model settings. For example the files named "assets/vrm/animation/neutral.bvh" and "assets/vrm/animation/neutral1.fbx" will be automatically mapped as a group for default and neutral classified animation. Same goes for the hitboxes. 
 
     // Fallback
     "default": "assets/vrm/animation/neutral",
@@ -209,6 +209,6 @@ Thank you for following this guide! Your SillyTavern experience is now enriched 
 ## Remarks
     - The VRM model loaded by this extension are the .vrm files not the .vroid files.
     - Animation files should be VRM compatible, you can use a tool like XR animation (https://github.com/ButzYung/SystemAnimatorOnline) to convert fbx/bvh animation file.
-    - You can create animation groups by having file with same name ending with different numbers for example: "idle1.bvh", "idle2.bhv", "idle3.bvh" will be considered as one group "idle" and when selected in a mapping a random one will played when triggered, can be use to add variety to animations.
+    - You can create animation groups by having file with same name ending with different numbers for example: "idle1.bvh", "idle2.bvh", "idle3.bvh" will be considered as one group "idle" and when selected in a mapping a random one will played when triggered, can be used to add variety to animations.
     - You can get curated animations from this repository: https://github.com/test157t/VRM-Animations-Pack-For-Silly-Tavern
     - Nitral has some tutorial video about how to use the extension and the animation repo: https://www.youtube.com/@nitralai

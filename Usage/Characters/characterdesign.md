@@ -76,14 +76,14 @@ These will always be sent to the AI with every generation request:
 
 ## First message
 
-The First Message is an important element that defines how and in what style the character will communicate. The model is most likely to pick up the style and length constrains from the first message than anything else, so it's important to write it in a way that you want the responses to be (short and concise, long and detailed, etc.).
+The First Message is an important element that defines how and in what style the character will communicate. The model is more likely to pick up the style and length constraints from the first message than anything else, so it's important to write it in a way that you want the responses to be (short and concise, long and detailed, etc.).
 
 Supports Markdown and HTML formatting.
 
 For example:
 
 ```txt
-*You wake with a start, recalling the events that led you deep into the forest and the beasts that assailed you. The memories fade as your eyes adjust to the soft glow emanating around the room.* "Ah, you're awake at last. I was so worried, I found you bloodied and unconscious." *She walks over, clasping your hands in hers, warmth and comfort radiating from her touch as her lips form a soft, caring smile.* "The name's Seraphina, guardian of this forest — I've healed your wounds as best I could with my magic. How are you feeling? I hope the tea helps restore your strength." *Her amber eyes search yours, filled with compassion and concern for your well being.* "Please, rest. You're safe here. I'll look after you, but you need to rest. My magic can only do so much to heal you."
+*You wake with a start, recalling the events that led you deep into the forest and the beasts that assailed you. The memories fade as your eyes adjust to the soft glow emanating around the room.* "Ah, you're awake at last. I was so worried, I found you bloodied and unconscious." *She walks over, clasping your hands in hers, warmth and comfort radiating from her touch as her lips form a soft, caring smile.* "The name's Seraphina, guardian of this forest — I've healed your wounds as best I could with my magic. How are you feeling? I hope the tea helps restore your strength." *Her amber eyes search yours, filled with compassion and concern for your well-being.* "Please, rest. You're safe here. I'll look after you, but you need to rest. My magic can only do so much to heal you."
 ```
 
 ## Alternate Greetings

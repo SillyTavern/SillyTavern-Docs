@@ -54,13 +54,13 @@ Once AllTalk is loaded, select it within SillyTavern on the TTS page, ensuring t
 
 Full details of the SillyTavern AllTalk Extension will be updated on the [AllTalk Wiki page for SillyTavern](https://github.com/erew123/alltalk_tts/wiki/SillyTavern-Extension)
 
-TGWUI Users who user the AllTalk extension for TGWUI need to disable `Enable TGWUI TTS` in the TGWUI chat interface, otherwise you will have duplicate TTS audio generated.
+TGWUI Users who use the AllTalk extension for TGWUI need to disable `Enable TGWUI TTS` in the TGWUI chat interface, otherwise you will have duplicate TTS audio generated.
 
 ---
 
 ## 🟨 Troubleshooting
 
-If you experience issues that you believe are specific to AllTalk within SillyTavern, please refer to the [AllTalk Wiki page for SillyTavern](https://github.com/erew123/alltalk_tts/wiki/SillyTavern-Extension) for the lastest information.
+If you experience issues that you believe are specific to AllTalk within SillyTavern, please refer to the [AllTalk Wiki page for SillyTavern](https://github.com/erew123/alltalk_tts/wiki/SillyTavern-Extension) for the latest information.
 
 ---
 

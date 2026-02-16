@@ -75,7 +75,7 @@ Large messages are split into "chunks" so that the model can be given the most r
 You can change this with "Chunk size (chars)". 
 
 Messages are divided into chunks by finding a chunk boundary such as a paragraph break, line break, or space between words. This is so that 
-the all the chunks make sense, as far as possible. If your chat messages have some other way to mark natural splitting points, such as `----`, 
+all the chunks make sense, as far as possible. If your chat messages have some other way to mark natural splitting points, such as `----`, 
 you can add this to "Chunk boundary". The setting for "Chunk boundary" is shared with Data Bank.
 
 ### Vector storage controls
@@ -138,6 +138,6 @@ The summarized message does not replace the original message in chat. If a vecto
 
 To summarize the content of the messages used to search the chat history (the last 2 messages by default), choose "Summarize chat messages when sending".
 
-Each time a message is summarized for vectorising, a separate request is made to the summarizing model. You can choose which summarizing source is used with "Summarize with". Choosing "Main API" will generate the summaries using the same model and connection settings that you use for generating chat or text completions.
+Each time a message is summarized for vectorizing, a separate request is made to the summarizing model. You can choose which summarizing source is used with "Summarize with". Choosing "Main API" will generate the summaries using the same model and connection settings that you use for generating chat or text completions.
 
 The request consists of the raw message content and an instruction about how the model should produce the summary. You can change the instruction with "Summary Prompt".

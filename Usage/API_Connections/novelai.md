@@ -52,7 +52,7 @@ How many tokens of the chat are kept in the context at any given time. How large
 Text that is inserted right above the chat to modify the writing style. The recommended format is a list of short tags, like "[ Style: chat, detailed, sensory ]". 
 
 ## Preset Descriptions
-This is, according to Novel AI, what the default presets are good for.
+This is, according to NovelAI, what the default presets are good for.
 
 ### Erato
 
