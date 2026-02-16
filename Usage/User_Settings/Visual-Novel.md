@@ -79,8 +79,8 @@ The Prome Visual Novel Extension is an endorsed third-party extension from Brony
 |:------------------------------------------------------------------------:|:----------------------------------------------------------------------:|
 | ![Horizontal Letterbox Mode](/static/vn/extensions/prome/horizontal.png) | ![Traditional VN Mode](/static/vn/extensions/prome/single-message.png) |
 
-|                 Hide Shield (Message Box)                  |                      Focus Mode (w/ Darken Sprites)                      |
+|                 Hide Sheld (Message Box)                  |                      Focus Mode (w/ Darken Sprites)                      |
 |:---------------------------------------------------------:|:------------------------------------------------------------------------:|
-| ![Shield Hide](/static/vn/extensions/prome/sheld_hide.png) | ![Focus Mode w/ Darken Sprites](/static/vn/extensions/prome/defocus.png) |
+| ![Sheld Hide](/static/vn/extensions/prome/sheld_hide.png) | ![Focus Mode w/ Darken Sprites](/static/vn/extensions/prome/defocus.png) |
 
 To install the Prome Visual Novel Extension, you can either install by going to `Download Extensions & Assets` and finding *Prome Visual Novel Extension*, or follow the installation instructions on the [Prome Visual Novel Extension](https://github.com/Bronya-Rand/Prome-VN-Extension?tab=readme-ov-file#installation-and-usage) Github page. Adjusting Prome's settings can be found either in *Extensions* -> **Prome (Visual Novel Extension)** or via the 🪄 (Wand) menu.
