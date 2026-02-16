@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.824404693988">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.824590564086">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.12.0">
@@ -33,11 +33,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=3.12.0.824404693988" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.12.0.824590564086" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.12.0.824404693988" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.12.0.824590564086" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.12.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.12.0.824404693988" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.12.0.824590564086" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -296,20 +296,20 @@ Smart Context configuration can be done from within the Extensions menu <img src
 <li>Injection Strategy</li>
 </ul>
 <hr>
-<doc-anchor-target id="smartcontext-only-starts-after-10-mesages-are-in-the-chat-history">
+<doc-anchor-target id="smartcontext-only-starts-after-10-messages-are-in-the-chat-history">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#smartcontext-only-starts-after-10-mesages-are-in-the-chat-history">#</doc-anchor-trigger>
-        <span>SmartContext only starts after 10 mesages are in the chat history</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#smartcontext-only-starts-after-10-messages-are-in-the-chat-history">#</doc-anchor-trigger>
+        <span>SmartContext only starts after 10 messages are in the chat history</span>
     </h4>
 </doc-anchor-target>
 <ul>
 <li>At the start of a new chat, ChromaDB is inactive.</li>
 <li>Once the chat has accumulated 10 messages, it will begin recording all messages into the database, and recalling messages as needed.</li>
 </ul>
-<doc-anchor-target id="chat-history-preservation-kept-mesages">
+<doc-anchor-target id="chat-history-preservation-kept-messages">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#chat-history-preservation-kept-mesages">#</doc-anchor-trigger>
-        <span>Chat History Preservation (&#x27;kept mesages&#x27;)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#chat-history-preservation-kept-messages">#</doc-anchor-trigger>
+        <span>Chat History Preservation (&#x27;kept messages&#x27;)</span>
     </h4>
 </doc-anchor-target>
 <p>By default, ChromaDB will keep as many recent natural chat history messages as specified in the slider.
@@ -368,7 +368,7 @@ If set too small, the memory could be cut off midway.</p>
     </h4>
 </doc-anchor-target>
 <p>This strategy leaves the chat history in its natural state and adds &#x27;memories&#x27; <strong>after</strong> it inside a formatted [bracket header].
-This means the &#x27;kept messages&#x27; sliders is effectively disabled.</p>
+This means the &#x27;kept messages&#x27; slider is effectively disabled.</p>
 <p>Advantage</p>
 <ul>
 <li>does not shorten or alter the current natural chat history</li>
@@ -413,7 +413,7 @@ The custom injection message should include the &#x60;&#x60; template word which
 </ul>
 <p>Disadvantage</p>
 <ul>
-<li>calculations for how much history to remove can be slightly innacurate as they are based on estimated tokens per message</li>
+<li>calculations for how much history to remove can be slightly inaccurate as they are based on estimated tokens per message</li>
 <li>it rounds the number of messages to remove to the nearest number divisible by 5 (0, 5, 10, 15, 20, etc), so it is not as fine grained as manual numeric selection.</li>
 </ul>
 <hr>
@@ -438,7 +438,7 @@ The custom injection message should include the &#x60;&#x60; template word which
 </doc-anchor-target>
 <p>This is an experimental behavior of smart-context which pulls &#x27;memories&#x27; from all ChromaDB collections for the selected character.
 Hypothetically this should allow for the development of a more robust memory set spanning many interactions.
-Reccomended that this be used with &#x27;Add to Bottom&#x27; or &#x27;Custom Depth&#x27; strategies and &#x27;kept messages&#x27; set to a low number so that ChromaDB will pull from memory sooner.</p>
+Recommended that this be used with &#x27;Add to Bottom&#x27; or &#x27;Custom Depth&#x27; strategies and &#x27;kept messages&#x27; set to a low number so that ChromaDB will pull from memory sooner.</p>
 <doc-anchor-target id="using-smart-context">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#using-smart-context">#</doc-anchor-trigger>

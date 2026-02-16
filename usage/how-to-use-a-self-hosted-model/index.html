@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.824404693988">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.824590564086">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.12.0">
@@ -31,11 +31,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=3.12.0.824404693988" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.12.0.824590564086" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.12.0.824404693988" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.12.0.824590564086" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.12.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.12.0.824404693988" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.12.0.824590564086" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -341,9 +341,9 @@
 </doc-anchor-target>
 <ol>
 <li>Visit <a href="https://koboldai.org/cpp">https://koboldai.org/cpp</a> where you will see the latest version with various files you can download.
-At the time of writing the newest CUDA version they list is cu12 which will work best on modern Nvidia GPU&#x27;s, if you have an older GPU or a different brand you can use the regular koboldcpp.exe. If you have an old CPU its possible that KoboldCpp will crash when you try to load models, in that case try the _oldcpu version to see if it resolves your issue.</li>
+At the time of writing the newest CUDA version they list is cu12 which will work best on modern Nvidia GPUs, if you have an older GPU or a different brand you can use the regular koboldcpp.exe. If you have an old CPU its possible that KoboldCpp will crash when you try to load models, in that case try the _oldcpu version to see if it resolves your issue.</li>
 <li>KoboldCpp does not need to be installed, once you start KoboldCpp you will immediately be able to select your GGUF model such as the one linked above using the Browse button next to the Model field.</li>
-<li>By default KoboldCpp runs at a maximum of 4K context even if you set this higher in SillyTavern, if you wish to run a model at higher context make sure to adjust the context slider on this screen before launching the model. Keep in mind that more context size means higher (video) memory requirements, if you set this to high or load a model that is to big for your system KoboldCpp will automatically begin using your CPU for the layers it can not fit on your GPU, this will be much slower.</li>
+<li>By default KoboldCpp runs at a maximum of 4K context even if you set this higher in SillyTavern, if you wish to run a model at higher context make sure to adjust the context slider on this screen before launching the model. Keep in mind that more context size means higher (video) memory requirements, if you set this too high or load a model that is too big for your system KoboldCpp will automatically begin using your CPU for the layers it can not fit on your GPU, this will be much slower.</li>
 <li>Click Launch, if everything goes well a new webpage will open with KoboldAI Lite where you can test if everything works correctly.</li>
 <li>Open SillyTavern and click API Connections (2nd button in the top bar)</li>
 <li>Set API to Text Completion and the API Type to KoboldCpp.</li>
@@ -358,9 +358,9 @@ At the time of writing the newest CUDA version they list is cu12 which will work
     </h3>
 </doc-anchor-target>
 <ol>
-<li>Flash Attention will help reduce the memory requirements, it can be faster or slowing depending on your system and will allow you to fit more layers on your GPU than the default.</li>
+<li>Flash Attention will help reduce the memory requirements, it can be faster or slower depending on your system and will allow you to fit more layers on your GPU than the default.</li>
 <li>KoboldCpp will leave some space for other software when it guesses layers to prevent issues, if you have few programs open and are unable to fit the model entirely in the GPU you may be able to add a few extra layers.</li>
-<li>If the model uses up to much memory for the context size you can decrease this by Quantizing the KV. This will reduce the quality of the output but can help you put more layers on the GPU. To do this you go to the Tokens tab in KoboldCpp and then disable Context Shifting and enable Flash Attention. This will unlock the Quantized KV Cache slider, a lower number means less memory / intelligence of the model.</li>
+<li>If the model uses up too much memory for the context size you can decrease this by Quantizing the KV. This will reduce the quality of the output but can help you put more layers on the GPU. To do this you go to the Tokens tab in KoboldCpp and then disable Context Shifting and enable Flash Attention. This will unlock the Quantized KV Cache slider, a lower number means less memory / intelligence of the model.</li>
 <li>Running KoboldCpp on a slower system where it takes long to process the prompt? Context Shifting works best when you avoid using Lorebooks, randomization or other features that dynamically change the input. Leaving context shifting enabled KoboldCpp will help you avoid long reprocessing times.</li>
 </ol>
 <doc-anchor-target id="installing-oobabooga">
@@ -387,7 +387,7 @@ At the time of writing the newest CUDA version they list is cu12 which will work
         </div>
     </div>
 </div>
-<p>Here&#x27;s a more correct/dummy proof installation procedure:</p>
+<p>Here&#x27;s a more correct/dummy-proof installation procedure:</p>
 <ol>
 <li>git clone <a href="https://github.com/oobabooga/text-generation-webui">https://github.com/oobabooga/text-generation-webui</a> (or download their repo as a .zip in your browser, then extract it)</li>
 <li>Run <code translate="no" v-pre>start_windows.bat</code> or whatever your OS is</li>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.824404693988">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.824590564086">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.12.0">
@@ -31,11 +31,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=3.12.0.824404693988" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.12.0.824590564086" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.12.0.824404693988" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.12.0.824590564086" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.12.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.12.0.824404693988" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.12.0.824590564086" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -223,7 +223,7 @@
 </doc-anchor-target>
 <p>Currently, the supported backends are oobabooga&#x27;s textgen WebUI, NovelAI, and TabbyAPI.
 NovelAI had its own <a href="https://web.archive.org/web/20240917150051/https://docs.novelai.net/text/cfg.html">documentation for CFG</a>.</p>
-<p>WARNING: CFG increases vram usage due to ingesting more than 1 prompt! If your GPU memory runs out while generating a prompt with CFG on, consider reducing your context size, using a lesser parameter model, or turning off CFG entirely.</p>
+<p>WARNING: CFG increases VRAM usage due to ingesting more than 1 prompt! If your GPU memory runs out while generating a prompt with CFG on, consider reducing your context size, using a lesser parameter model, or turning off CFG entirely.</p>
 <hr>
 <doc-anchor-target id="configuration">
     <h2>
@@ -350,7 +350,7 @@ NovelAI had its own <a href="https://web.archive.org/web/20240917150051/https://
 <p>However, a guidance scale of <code translate="no" v-pre>&lt;1</code> will give the <em>opposite</em> effect since the negative prompt is used as the primary prompt here.</p>
 <p>Let&#x27;s use the example with John again. The negative prompt is <code translate="no" v-pre>[John's feelings: sad, depressed]</code> and the positive prompt is <code translate="no" v-pre>[John's feelings: happy, joyful]</code> with a guidance scale of <code translate="no" v-pre>0.8</code>.</p>
 <p>This will in turn accentuate the <em>negative</em> prompt more and you&#x27;ll see John start to act sadder than normal rather than happier.</p>
-<p>tldr; Use a guidance scale of <code translate="no" v-pre>1.5</code> and work up and down from there based on your outputs.</p>
+<p>TL;DR: Use a guidance scale of <code translate="no" v-pre>1.5</code> and work up and down from there based on your outputs.</p>
 <doc-anchor-target id="prompt-cascading">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#prompt-cascading">#</doc-anchor-trigger>

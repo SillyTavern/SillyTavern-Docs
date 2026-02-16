@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.824404693988">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.824590564086">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.12.0">
@@ -31,11 +31,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=3.12.0.824404693988" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.12.0.824590564086" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.12.0.824404693988" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.12.0.824590564086" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.12.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.12.0.824404693988" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.12.0.824590564086" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -460,7 +460,7 @@
 <p>These sources are free and unlimited and use your CPU/GPU to calculate embeddings.</p>
 <ol>
 <li>Local (Transformers) - runs on a Node server. SillyTavern will automatically download a compatible model in ONNX format from HuggingFace. Default model: <a href="https://huggingface.co/Cohee/jina-embeddings-v2-base-en">jina-embeddings-v2-base-en</a>.</li>
-<li>WebLLM - requires an extension to be installed and a web browser that <a href="https://caniuse.com/webgpu">supports WebGPU</a>. Runs directly in your browser, can use hardware accelleration. Automatically downloads supported models from HuggingFace. Install the extension from here: <a href="https://github.com/SillyTavern/Extension-WebLLM">https://github.com/SillyTavern/Extension-WebLLM</a>.</li>
+<li>WebLLM - requires an extension to be installed and a web browser that <a href="https://caniuse.com/webgpu">supports WebGPU</a>. Runs directly in your browser, can use hardware acceleration. Automatically downloads supported models from HuggingFace. Install the extension from here: <a href="https://github.com/SillyTavern/Extension-WebLLM">https://github.com/SillyTavern/Extension-WebLLM</a>.</li>
 <li>Ollama - get it from <a href="https://ollama.com/">https://ollama.com/</a>. Set the API URL in the API connection menu (under Text Completion, default: <code translate="no" v-pre>http://localhost:11434</code>). Must download a compatible model first, then set its name in the extension settings. Example model: <a href="https://ollama.com/library/mxbai-embed-large">mxbai-embed-large</a>. Optionally, check an option to keep the model loaded in memory.</li>
 <li>llama.cpp server - get it from <a href="https://github.com/ggerganov/llama.cpp">ggerganov/llama.cpp</a> and run the server executable with <code translate="no" v-pre>--embedding</code> flag. Load compatible GGUF embedding models from HuggingFace, for example, <a href="https://huggingface.co/nomic-ai/nomic-embed-text-v1.5-GGUF">nomic-ai/nomic-embed-text-v1.5-GGUF</a>.</li>
 <li>vLLM - get it from <a href="https://github.com/vllm-project/vllm">vllm-project/vllm</a>. Set the API URL and API key in the API connection menu first.</li>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.824404693988">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.824590564086">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.12.0">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=3.12.0.824404693988" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.12.0.824590564086" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.12.0.824404693988" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.12.0.824590564086" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.12.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.12.0.824404693988" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.12.0.824404693988" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.12.0.824590564086" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.12.0.824590564086" defer></script>
 
     <style>
         a {
@@ -255,7 +255,7 @@
         <span>Sorted Evenly (default)</span>
     </h4>
 </doc-anchor-target>
-<p>All entries will be sorted according to their Insertion Order as if they a part of one big file, ignoring the source.</p>
+<p>All entries will be sorted according to their Insertion Order as if they were a part of one big file, ignoring the source.</p>
 <doc-anchor-target id="character-lore-first">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#character-lore-first">#</doc-anchor-trigger>
@@ -269,7 +269,7 @@
         <span>Global Lore First</span>
     </h4>
 </doc-anchor-target>
-<p>Entries from the Global World Info Info would be included first by their Insertion Order, then entries from the Character World Info.</p>
+<p>Entries from the Global World Info would be included first by their Insertion Order, then entries from the Character World Info.</p>
 <doc-anchor-target id="world-info-entry">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#world-info-entry">#</doc-anchor-trigger>
@@ -303,7 +303,7 @@ An entry/instruction that should be inserted, when char is doing a weather-relat
         <span>Advanced Regex Per-Message Matching</span>
     </h6>
 </doc-anchor-target>
-<p>ST prefixes every chat message in the WI scan buffer with <code translate="no" v-pre>character name:</code> and after v1.12.6, concatenates prepends them using the character value 1 (<code translate="no" v-pre>\x01</code>).<br />
+<p>ST prefixes every chat message in the WI scan buffer with <code translate="no" v-pre>character name:</code> and after v1.12.6, prepends them using the character value 1 (<code translate="no" v-pre>\x01</code>).<br />
 This means you can match specific input or output from a certain character using a regex tied to that separation character.</p>
 <p>For example, to match only the user saying &quot;hello&quot;, you could use the following regex:</p>
 <div class="codeblock-wrapper"><doc-codeblock>

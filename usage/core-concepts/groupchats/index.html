@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.824404693988">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.824590564086">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.12.0">
@@ -31,11 +31,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=3.12.0.824404693988" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.12.0.824590564086" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.12.0.824404693988" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.12.0.824590564086" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.12.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.12.0.824404693988" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.12.0.824590564086" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -229,7 +229,7 @@
 <p>Tries to simulate the flow of a real human conversation. The algorithm is as follows:</p>
 <ol>
 <li><p>Mentions of the group member names are extracted from the last message in chat.</p>
-<p>Only whole words are recognized as mentions! If your character&#x27;s name is &quot;Misaka Mikoto&quot;, they will reply only activate on &quot;Misaka&quot; or &quot;Mikoto&quot;, but never to &quot;Misa&quot;, &quot;Railgun&quot;, etc.</p>
+<p>Only whole words are recognized as mentions! If your character&#x27;s name is &quot;Misaka Mikoto&quot;, they will only activate on &quot;Misaka&quot; or &quot;Mikoto&quot;, but never to &quot;Misa&quot;, &quot;Railgun&quot;, etc.</p>
 <p>Unless the &quot;Allow Self Responses&quot; setting is enabled, characters won&#x27;t reply to mentions of their name in their own message!</p>
 </li>
 <li><p>Characters are activated by the &quot;Talkativeness&quot; factor.</p>
@@ -252,7 +252,7 @@
         <span>Pooled Order</span>
     </h3>
 </doc-anchor-target>
-<p>Activates one random character who have&#x27;t spoken yet since the last user message. If all characters have spoken, selects one randomly until the next user message.</p>
+<p>Activates one random character who hasn&#x27;t spoken yet since the last user message. If all characters have spoken, selects one randomly until the next user message.</p>
 <doc-anchor-target id="group-generation-handling-mode">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#group-generation-handling-mode">#</doc-anchor-trigger>
@@ -295,7 +295,7 @@
     </h3>
 </doc-anchor-target>
 <p>When &#x27;Join character cards&#x27; is selected, all respective fields of the characters are being joined together. This means that in the resulting prompt all character descriptions will be joined to one big blob of text. If you want those fields to be separated, you can define a prefix and/or suffix.</p>
-<p>These options support normal macros and will also replace {{char}} with the relevant characters&#x27;s name and &lt;FIELDNAME&gt; with the name of the part (e.g.: description, personality, scenario, etc.)</p>
+<p>These options support normal macros and will also replace {{char}} with the relevant character&#x27;s name and &lt;FIELDNAME&gt; with the name of the part (e.g.: description, personality, scenario, etc.)</p>
 <doc-anchor-target id="other-group-chat-menu-options">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#other-group-chat-menu-options">#</doc-anchor-trigger>
@@ -358,7 +358,7 @@
         <span>Group Chat pop-out</span>
     </h3>
 </doc-anchor-target>
-<p>The group chat menu pop-out can be activated by clicking on the icon next to the &quot;Current Members&quot; field. This creates a pop-out of the group chat menu. By enabling MovingUI from user settings, this menu can resized and dragged to any position within the interface and functions just like the regular group chat menu.</p>
+<p>The group chat menu pop-out can be activated by clicking on the icon next to the &quot;Current Members&quot; field. This creates a pop-out of the group chat menu. By enabling MovingUI from user settings, this menu can be resized and dragged to any position within the interface and functions just like the regular group chat menu.</p>
 
                                 
                                 <!-- Required only on API pages -->

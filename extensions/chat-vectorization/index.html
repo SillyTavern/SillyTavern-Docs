@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.824404693988">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.824590564086">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.12.0">
@@ -31,11 +31,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=3.12.0.824404693988" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.12.0.824590564086" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.12.0.824404693988" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.12.0.824590564086" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.12.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.12.0.824404693988" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.12.0.824590564086" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -302,7 +302,7 @@ There is also information about Vector Storage in <a href="../../usage/core-conc
 <p>Large messages are split into &quot;chunks&quot; so that the model can be given the most relevant part of a long message. The chunk size is 400 characters.
 You can change this with &quot;Chunk size (chars)&quot;.</p>
 <p>Messages are divided into chunks by finding a chunk boundary such as a paragraph break, line break, or space between words. This is so that
-the all the chunks make sense, as far as possible. If your chat messages have some other way to mark natural splitting points, such as <code translate="no" v-pre>----</code>,
+all the chunks make sense, as far as possible. If your chat messages have some other way to mark natural splitting points, such as <code translate="no" v-pre>----</code>,
 you can add this to &quot;Chunk boundary&quot;. The setting for &quot;Chunk boundary&quot; is shared with Data Bank.</p>
 <doc-anchor-target id="vector-storage-controls">
     <h3>
@@ -388,7 +388,7 @@ However, there are identical buttons in File vectorization that affect the vecto
 <p>To summarize the messages in the chat history, and generate a vector for each summarized message, choose &quot;Summarize chat messages for vector generation&quot;.</p>
 <p>The summarized message does not replace the original message in chat. If a vector search matches the vector of a summarized message, the original message is retrieved from chat history and shuffled into context. The summarized versions of the messages are retained in Vector Storage, which may be of interest for debugging.</p>
 <p>To summarize the content of the messages used to search the chat history (the last 2 messages by default), choose &quot;Summarize chat messages when sending&quot;.</p>
-<p>Each time a message is summarized for vectorising, a separate request is made to the summarizing model. You can choose which summarizing source is used with &quot;Summarize with&quot;. Choosing &quot;Main API&quot; will generate the summaries using the same model and connection settings that you use for generating chat or text completions.</p>
+<p>Each time a message is summarized for vectorizing, a separate request is made to the summarizing model. You can choose which summarizing source is used with &quot;Summarize with&quot;. Choosing &quot;Main API&quot; will generate the summaries using the same model and connection settings that you use for generating chat or text completions.</p>
 <p>The request consists of the raw message content and an instruction about how the model should produce the summary. You can change the instruction with &quot;Summary Prompt&quot;.</p>
 
                                 <div id="retype-tags" class="flex items-center mt-6 mb-6 clear-both">

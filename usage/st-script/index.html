@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.824404693988">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.824590564086">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.12.0">
@@ -31,11 +31,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=3.12.0.824404693988" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.12.0.824590564086" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.12.0.824404693988" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.12.0.824590564086" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.12.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.12.0.824404693988" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.12.0.824590564086" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -411,7 +411,7 @@ These concepts are going to be described in the following document.</p>
 </ul>
 <p>The following modifications can be applied to commands to work with these variables:</p>
 <ul>
-<li><code translate="no" v-pre>/len</code> commands gets a number of items in the array.</li>
+<li><code translate="no" v-pre>/len</code> command gets a number of items in the array.</li>
 <li><code translate="no" v-pre>index=number/string</code> named argument can be added <code translate="no" v-pre>/getvar</code> or <code translate="no" v-pre>/setvar</code> and their global counterparts to get or set sub-values by either a zero-based index for arrays or a string key for objects.
 <ul>
 <li>If a numeric index is used on a nonexistent variable, the variable will be created as an empty array <code translate="no" v-pre>[]</code>.</li>
@@ -948,7 +948,7 @@ To disable and allow endless loops, set <code translate="no" v-pre>guard=off</co
 <li><code translate="no" v-pre>/cos (a)</code> – performs a cosine operation of a value, e.g. <code translate="no" v-pre>/cos i</code></li>
 <li><code translate="no" v-pre>/log (a)</code> – performs a natural logarithm operation of a value, e.g. <code translate="no" v-pre>/log i</code></li>
 <li><code translate="no" v-pre>/abs (a)</code> – performs an absolute value operation of a value, e.g. <code translate="no" v-pre>/abs -10</code></li>
-<li><code translate="no" v-pre>/sqrt (a)</code>– performs a square root operation of a value, e.g. <code translate="no" v-pre>/sqrt 9</code></li>
+<li><code translate="no" v-pre>/sqrt (a)</code> – performs a square root operation of a value, e.g. <code translate="no" v-pre>/sqrt 9</code></li>
 <li><code translate="no" v-pre>/round (a)</code> – performs a rounding to the nearest integer operation of a value, e.g. <code translate="no" v-pre>/round 3.14</code></li>
 <li><code translate="no" v-pre>/rand (round=round|ceil|floor from=number=0 to=number=1)</code> – returns a random number between from and to, e.g. <code translate="no" v-pre>/rand</code> or <code translate="no" v-pre>/rand 10</code> or <code translate="no" v-pre>/rand from=5 to=10</code>. Ranges are inclusive. The returned value will contain a fractional part. Use <code translate="no" v-pre>round</code> named argument to get an integral value, e.g. <code translate="no" v-pre>/rand round=ceil</code> to round up, <code translate="no" v-pre>round=floor</code> to round down, and <code translate="no" v-pre>round=round</code> to round to nearest.</li>
 </ol>
@@ -1012,7 +1012,7 @@ To disable and allow endless loops, set <code translate="no" v-pre>guard=off</co
 <li><code translate="no" v-pre>instruct</code> (only <code translate="no" v-pre>/genraw</code>) — can be <code translate="no" v-pre>on</code> or <code translate="no" v-pre>off</code>. Allows to use instruct formatting on the input prompt (if instruct mode is enabled and the API supports it). Set to <code translate="no" v-pre>off</code> to force pure prompts. Default: <code translate="no" v-pre>on</code>.</li>
 <li><code translate="no" v-pre>as</code> (for Text Completion APIs) — can be <code translate="no" v-pre>system</code> (default) or <code translate="no" v-pre>char</code>. Defines how the last prompt line will be formatted. <code translate="no" v-pre>char</code> will use a character name, <code translate="no" v-pre>system</code> will use no or neutral name.</li>
 </ul>
-<p>The generated text is then passed through the pipe to the next command and can be saved to a variable or displaced using the I/O capabilities:</p>
+<p>The generated text is then passed through the pipe to the next command and can be saved to a variable or displayed using the I/O capabilities:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/genraw Write a funny message from Cthulhu about taking over the world. Use emojis. |
@@ -1176,7 +1176,7 @@ This example will get you 3 last messages in the chat:</p>
 </doc-anchor-target>
 <p>World Info (also known as Lorebook) is a highly utilitarian tool for dynamically inserting data into the prompt. See the dedicated page for more detailed explanation: <a href="../core-concepts/worldinfo/">World Info</a>.</p>
 <ol>
-<li><code translate="no" v-pre>/getchatbook</code> – gets a name of the chat-bound World Info file or create a new one if was unbound, and pass it down the pipe.</li>
+<li><code translate="no" v-pre>/getchatbook</code> – gets a name of the chat-bound World Info file or create a new one if it was unbound, and pass it down the pipe.</li>
 <li><code translate="no" v-pre>/findentry file=bookName field=fieldName [text]</code> – finds a UID of the record from the specified file (or a variable pointing to a file name) using fuzzy matching of a field value with the provided text (default field: <code translate="no" v-pre>key</code>) and passes the UID down the pipe, e.g. <code translate="no" v-pre>/findentry file=chatLore field=key Shadowfang</code>.</li>
 <li><code translate="no" v-pre>/getentryfield file=bookName field=field [UID]</code> – gets a field value (default field: <code translate="no" v-pre>content</code>) of the record with the UID from the specified World Info file (or a variable pointing to a file name) and passes the value down the pipe, e.g. <code translate="no" v-pre>/getentryfield file=chatLore field=content 123</code>.</li>
 <li><code translate="no" v-pre>/setentryfield file=bookName uid=UID field=field [text]</code> – sets a field value (default field: <code translate="no" v-pre>content</code>) of the record with the UID (or a variable pointing to UID) from the specified World Info file (or a variable pointing to a file name). To set multiple values for key fields, use a comma-delimited list as a text value, e.g. <code translate="no" v-pre>/setentryfield file=chatLore uid=123 field=key Shadowfang,sword,weapon</code>.</li>
@@ -1448,7 +1448,7 @@ This example will get you 3 last messages in the chat:</p>
 </doc-codeblock></div>
 <ol>
 <li><code translate="no" v-pre>direction</code> sets the direction for trimming, which can be either <code translate="no" v-pre>start</code> or <code translate="no" v-pre>end</code>. Default: <code translate="no" v-pre>end</code>.</li>
-<li><code translate="no" v-pre>limit</code> sets the amount of tokens to left in the output. Can also specify a variable name containing the number. <strong>Required argument.</strong></li>
+<li><code translate="no" v-pre>limit</code> sets the amount of tokens to leave in the output. Can also specify a variable name containing the number. <strong>Required argument.</strong></li>
 <li>Unnamed argument is the input text to be trimmed.</li>
 </ol>
 <doc-anchor-target id="arguments-for-fuzzy">
@@ -1774,7 +1774,7 @@ Every click increments the variable <code translate="no" v-pre>clicks</code> by 
 </ul>
 <p>Arguments:</p>
 <ul>
-<li><code translate="no" v-pre>newlabel</code> - string - new text fort the button, e.g. <code translate="no" v-pre>newlabel=MyRenamedButton</code></li>
+<li><code translate="no" v-pre>newlabel</code> - string - new text for the button, e.g. <code translate="no" v-pre>newlabel=MyRenamedButton</code></li>
 <li><code translate="no" v-pre>label</code>    - string - text on the button, e.g., <code translate="no" v-pre>label=MyButton</code></li>
 <li><code translate="no" v-pre>set</code>      - string - name of the QR set, e.g., <code translate="no" v-pre>set=PresetName1</code></li>
 <li><code translate="no" v-pre>hidden</code>   - bool   - whether the button should be hidden, e.g., <code translate="no" v-pre>hidden=true</code></li>
@@ -1791,7 +1791,7 @@ Every click increments the variable <code translate="no" v-pre>clicks</code> by 
     </h4>
 </doc-anchor-target>
 <ul>
-<li><code translate="no" v-pre>qr-get</code> - retrieves all of a Quick Reply&#x27;s properties, eample: <code translate="no" v-pre>/qr-get set=myQrSet id=42</code></li>
+<li><code translate="no" v-pre>qr-get</code> - retrieves all of a Quick Reply&#x27;s properties, example: <code translate="no" v-pre>/qr-get set=myQrSet id=42</code></li>
 </ul>
 <doc-anchor-target id="create-or-update-qr-preset">
     <h4>

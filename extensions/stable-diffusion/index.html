@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.824404693988">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.824590564086">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.12.0">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=3.12.0.824404693988" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.12.0.824590564086" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.12.0.824404693988" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.12.0.824590564086" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.12.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.12.0.824404693988" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.12.0.824404693988" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.12.0.824590564086" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.12.0.824590564086" defer></script>
 
     <style>
         a {
@@ -243,7 +243,7 @@ or use the <code translate="no" v-pre>/sd (anything_here)</code> command in the 
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><a href="https://aimlapi.com/">AI.ML API</a></td>
+<td style="text-align: left;"><a href="https://aimlapi.com/">AI/ML API</a></td>
 <td style="text-align: left;">Cloud, paid</td>
 </tr>
 <tr>
@@ -465,8 +465,8 @@ You can configure the instruction template for generating prompts for every gene
         <span>Image swipes</span>
     </h3>
 </doc-anchor-target>
-<p>Images swipes allow to reroll the image generation while keeping the same prompt. If a fixed seed is set, it will be randomized for the next generation.</p>
-<p>To cycle through images, hover a mouse cursor (tap on mobile) over a generated image to reveal arrow buttons and swipes counter. Tapping right arrow on the latest image will generate a new one.</p>
+<p>Image swipes allow rerolling the image generation while keeping the same prompt. If a fixed seed is set, it will be randomized for the next generation.</p>
+<p>To cycle through images, hover a mouse cursor (tap on mobile) over a generated image to reveal arrow buttons and swipes counter. Tapping the right arrow on the latest image will generate a new one.</p>
 <p><em>&#x27;Swipes&#x27; here is just a name, don&#x27;t try the actual swiping gesture, as this will regenerate the message itself, not the attached image.</em></p>
 <doc-anchor-target id="options">
     <h2>
@@ -517,7 +517,7 @@ You can configure the instruction template for generating prompts for every gene
         <span>Use interactive mode</span>
     </h3>
 </doc-anchor-target>
-<p>Allows to trigger an image generation instead of text as a reply to a user message that follows the special pattern:</p>
+<p>Allows you to trigger an image generation instead of text as a reply to a user message that follows the special pattern:</p>
 <ol>
 <li>Contains one of the following verbs: send, mail, imagine, generate, make, create, draw, paint, render</li>
 <li>Followed by one of the following nouns (not further than 10 characters away): pic, picture, image, drawing, painting, photo, photograph</li>
@@ -1029,7 +1029,7 @@ Here&#x27;s an example string you can use for initial testing: <a href="../../st
 <li>Enter the value that you want to replace the placeholder with in the <code translate="no" v-pre>replace</code> field.</li>
 </ol>
 <p>Custom placeholders will appear in a separate list below the predefined ones.</p>
-<p>For example, you could replace the &quot;SillyTavern&quot; prefix for saved image filenames in the default workflow with a custom placeholder. Add a new custom placeholder with <code translate="no" v-pre>find</code> set to <code translate="no" v-pre>filename_prefix</code> and <code translate="no" v-pre>replace</code> set to <code translate="no" v-pre>ServiceTesnor</code>. Insert the new <code translate="no" v-pre>%filename_prefix%</code> placeholder into your workflow JSON. Now you can change the filename prefix from SillyTavern to ServiceTesnor by changing the value of the custom placeholder.</p>
+<p>For example, you could replace the &quot;SillyTavern&quot; prefix for saved image filenames in the default workflow with a custom placeholder. Add a new custom placeholder with <code translate="no" v-pre>find</code> set to <code translate="no" v-pre>filename_prefix</code> and <code translate="no" v-pre>replace</code> set to <code translate="no" v-pre>ServiceTensor</code>. Insert the new <code translate="no" v-pre>%filename_prefix%</code> placeholder into your workflow JSON. Now you can change the filename prefix from SillyTavern to ServiceTensor by changing the value of the custom placeholder.</p>
 <doc-tabs>
 <doc-tab v-cloak id="json-with-placeholder">
 <template #title>JSON with placeholder</template>
@@ -1062,7 +1062,7 @@ Here&#x27;s an example string you can use for initial testing: <a href="../../st
         <span>Comfy tricks</span>
     </h3>
 </doc-anchor-target>
-<p>Read all the general information on this page so you&#x27;re familiar with the image generation options. Options such as switchable styles and common prompt prefixes, when combined wih the total flexibility of ComfyUI workflows, allow you to create a wide variety of image generation setups.</p>
+<p>Read all the general information on this page so you&#x27;re familiar with the image generation options. Options such as switchable styles and common prompt prefixes, when combined with the total flexibility of ComfyUI workflows, allow you to create a wide variety of image generation setups.</p>
 <doc-anchor-target id="loading-loras">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#loading-loras">#</doc-anchor-trigger>

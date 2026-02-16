@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.824404693988">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.824590564086">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.12.0">
@@ -31,11 +31,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=3.12.0.824404693988" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.12.0.824590564086" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.12.0.824404693988" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.12.0.824590564086" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.12.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.12.0.824404693988" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.12.0.824590564086" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -242,7 +242,7 @@
 <p>Reasoning blocks appear in the chat as collapsible message sections. They can be added manually, automatically by the backend, or through response parsing (see below).</p>
 <p>By default, reasoning blocks are collapsed to save space. Click a block to expand and view its contents. You can set blocks to expand automatically by enabling <strong>Auto-Expand</strong> in the reasoning settings.</p>
 <p>When a reasoning block is expanded, you can copy or edit its contents using the <strong><i class="fa-solid fa-copy"></i> Copy</strong> and <strong><i class="fa-solid fa-pencil"></i> Edit</strong> buttons.</p>
-<p>Some models models support reasoning, but will not send their thoughts back. It is possible to still show the reasoning block with reasoning time for those by toggling the <strong>Show Hidden</strong> setting.</p>
+<p>Some models support reasoning, but will not send their thoughts back. It is possible to still show the reasoning block with reasoning time for those by toggling the <strong>Show Hidden</strong> setting.</p>
 <doc-anchor-target id="adding-reasoning">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#adding-reasoning">#</doc-anchor-trigger>
@@ -311,7 +311,7 @@
 <p>Provider-specific notes:</p>
 <ul>
 <li>Claude and Google (2.5 Flash) allow thinking mode to be toggled; see <doc-anchor-trigger to="#reasoning-effort">Reasoning Effort</doc-anchor-trigger>.</li>
-<li>Reasoning can be disabled for <a href="https://docs.z.ai/api-reference/llm/chat-completion#body-one-of-0-thinking">Z.AI (GLM)</a> and <a href="https://platform.moonshot.ai/docs/guide/use-kimi-k2-thinking-model">Moonshot (Kimi)</a>. The setting maps the to <code translate="no" v-pre>thinking.type</code> parameter. It does not support &quot;Reasoning Effort&quot;.</li>
+<li>Reasoning can be disabled for <a href="https://docs.z.ai/api-reference/llm/chat-completion#body-one-of-0-thinking">Z.AI (GLM)</a> and <a href="https://platform.moonshot.ai/docs/guide/use-kimi-k2-thinking-model">Moonshot (Kimi)</a>. The setting maps to the <code translate="no" v-pre>thinking.type</code> parameter. They do not support &quot;Reasoning Effort&quot;.</li>
 </ul>
 <doc-anchor-target id="by-parsing">
     <h3>
@@ -359,7 +359,7 @@ This is the main content.</code></pre>
         <span>Continuing from Reasoning</span>
     </h3>
 </doc-anchor-target>
-<p>A special case when the reasoning can be sent back to the model without having the &quot;Add to Prompts&quot; toggle enabled is when the generation is continued (e.g. by pressing &quot;Continue&quot; from the <strong><i class="fa-solid fa-bars"></i> Options</strong> menu), but the message being continued contains only the reasoning without an actual content. This gives the model an opportunity to finish an incomplete reasoning and start generating the main content. The prompt will be sent as follows:</p>
+<p>A special case when the reasoning can be sent back to the model without having the &quot;Add to Prompts&quot; toggle enabled is when the generation is continued (e.g. by pressing &quot;Continue&quot; from the <strong><i class="fa-solid fa-bars"></i> Options</strong> menu), but the message being continued contains only the reasoning without actual content. This gives the model an opportunity to finish an incomplete reasoning and start generating the main content. The prompt will be sent as follows:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">&lt;think&gt;
 Incomplete reasoning...</code></pre>

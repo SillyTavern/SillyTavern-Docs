@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.824404693988">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.824590564086">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.12.0">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=3.12.0.824404693988" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.12.0.824590564086" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.12.0.824404693988" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.12.0.824590564086" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.12.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.12.0.824404693988" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.12.0.824404693988" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.12.0.824590564086" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.12.0.824590564086" defer></script>
 
     <style>
         a {
@@ -224,7 +224,7 @@
         </div>
     </div>
 </div>
-<p>Is Termux confusing to setup? Are you tired of updating and installing ST on every device you have? Want organization of your chats and characters? Well you are in luck. This guide will <em>hopefully</em> cover how to host SillyTavern on your PC where you can connect from anywhere and chat to your bots on the same PC you use to run AI models!</p>
+<p>Is Termux confusing to set up? Are you tired of updating and installing ST on every device you have? Want organization of your chats and characters? Well you are in luck. This guide will <em>hopefully</em> cover how to host SillyTavern on your PC where you can connect from anywhere and chat to your bots on the same PC you use to run AI models!</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -303,7 +303,7 @@
         <span>Linux (Bare-Metal SillyTavern)</span>
     </h3>
 </doc-anchor-target>
-<p>For Linux, we will reverse proxying SillyTavern through <a href="https://traefik.io/traefik/">Traefik</a>. There are other options such as <em>NGINX</em> or <em>Caddy</em>, but for this guide, we will use Traefik as it is what we use ourselves.</p>
+<p>For Linux, we will be reverse proxying SillyTavern through <a href="https://traefik.io/traefik/">Traefik</a>. There are other options such as <em>NGINX</em> or <em>Caddy</em>, but for this guide, we will use Traefik as it is what we use ourselves.</p>
 <ol>
 <li><p>Get the private IP of your computer using <code translate="no" v-pre>ifconfig</code> or from your router.</p>
 <div class="flex mb-6">
@@ -387,13 +387,13 @@ sudo mkdir docker &amp;&amp; cd docker</code></pre>
 cd appdata/traefik</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Create a <em>acme.json</em> file using <code translate="no" v-pre>touch</code> and set the permissions of it to 600.</p>
+<li><p>Create an <em>acme.json</em> file using <code translate="no" v-pre>touch</code> and set the permissions of it to 600.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">touch acme.json
 chmod 600 acme.json</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Using <code translate="no" v-pre>nano</code> or a similar editor, create a file name <em>traefik.yml</em> and paste the following. Replace the template email with your own, then save the file.</p>
+<li><p>Using <code translate="no" v-pre>nano</code> or a similar editor, create a file named <em>traefik.yml</em> and paste the following. Replace the template email with your own, then save the file.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-yaml"><code v-pre class="language-yaml">api:
     dashboard: true
@@ -421,7 +421,7 @@ providers:
 certificatesResolvers:
     cloudflare:
         acme:
-            email: YOUR_CLOUDFLARE_EMAL@DOMAIN.com
+            email: YOUR_CLOUDFLARE_EMAIL@DOMAIN.com
             storage: acme.json
             dnsChallenge:
                 provider: cloudflare
@@ -436,7 +436,7 @@ certificatesResolvers:
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">cd /docker</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Using <code translate="no" v-pre>nano</code> or a similar editor, create a file name <em>docker-compose.yaml</em> and paste the following. Save the file afterwards.</p>
+<li><p>Using <code translate="no" v-pre>nano</code> or a similar editor, create a file named <em>docker-compose.yaml</em> and paste the following. Save the file afterwards.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-yaml"><code v-pre class="language-yaml">secrets:
     CF_DNS_API_KEY:
@@ -548,7 +548,7 @@ networks:
 </table>
 </div>
 </li>
-<li><p><code translate="no" v-pre>cd</code> into <em>appdata/traefik</em> and using <code translate="no" v-pre>nano</code> or a similar editor, create a file name <em>config.yml</em> and paste the following. Replace <code translate="no" v-pre>PRIVATE_IP</code> with the private IP you obtained, and <code translate="no" v-pre>silly.DOMAIN.com</code> with the name of your subdomain and domain page, then save the file.</p>
+<li><p><code translate="no" v-pre>cd</code> into <em>appdata/traefik</em> and using <code translate="no" v-pre>nano</code> or a similar editor, create a file named <em>config.yml</em> and paste the following. Replace <code translate="no" v-pre>PRIVATE_IP</code> with the private IP you obtained, and <code translate="no" v-pre>silly.DOMAIN.com</code> with the name of your subdomain and domain page, then save the file.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-yaml"><code v-pre class="language-yaml">http:
     routers:
@@ -628,7 +628,7 @@ perUserBasicAuth: true</code></pre>
     </div>
 </div>
 </li>
-<li><p>Wait a few minutes, then open your domain page you made for ST. At the end of it, you should be able to open SillyTavern from anywhere you go just with one URL and one account.</p>
+<li><p>Wait a few minutes, then open the domain page you made for ST. At the end of it, you should be able to open SillyTavern from anywhere you go just with one URL and one account.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -760,7 +760,7 @@ perUserBasicAuth: true</code></pre>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">cd /docker &amp;&amp; git clone https://github.com/SillyTavern/SillyTavern</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Using <code translate="no" v-pre>nano</code> or a similar editor, create a file name <em>docker-compose.yaml</em> and paste the following. Replace <code translate="no" v-pre>silly.DOMAIN.com</code> with the subdomain you added above, the save the file afterwards.</p>
+<li><p>Using <code translate="no" v-pre>nano</code> or a similar editor, create a file named <em>docker-compose.yaml</em> and paste the following. Replace <code translate="no" v-pre>silly.DOMAIN.com</code> with the subdomain you added above, then save the file afterwards.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-yaml"><code v-pre class="language-yaml">secrets:
     CF_DNS_API_KEY:
@@ -851,7 +851,7 @@ basicAuthMode: true</code></pre>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">docker compose up -d sillytavern</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Wait a few minutes, then open your domain page you made for ST. At the end of it, you should be able to open SillyTavern from anywhere you go just with one URL and one account.</p>
+<li><p>Wait a few minutes, then open the domain page you made for ST. At the end of it, you should be able to open SillyTavern from anywhere you go just with one URL and one account.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
