@@ -100,7 +100,7 @@ See the ["Style" documentation](https://v2.dreamgen.com/docs/scenario-editor#sty
 
 Use the `/sys` option to send instructions to the model. Some examples:
 
-> The inkeeper offers Daria and the others a pint of ale.
+> The innkeeper offers Daria and the others a pint of ale.
 
 > The next message is from Draco and should be at least 200 words, focusing on his inner conflict about the decision.
 

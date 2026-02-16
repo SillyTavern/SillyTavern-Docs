@@ -115,7 +115,7 @@ If this is your first time touching anything Python-related, that should not be 
 
 ### Confirm extensions are enabled
 
-1. Open the file called `config.yaml`in a text editor. The file is located in ST's base install folder.
+1. Open the file called `config.yaml` in a text editor. The file is located in ST's base install folder.
 2. Look for the line that reads `enableExtensions`.
 3. Make sure that line has `true`, and not `false`.
 
@@ -173,7 +173,7 @@ To run Extras again, simply activate the environment and run these commands in a
 `conda activate extras`, Hit Enter.
 `python server.py`, Hit Enter.
 
-Be sure to the additional options for server.py (see below) that your setup requires.
+Be sure to use the additional options for server.py (see below) that your setup requires.
 
 ## Make a .bat File for Easy Startup
 

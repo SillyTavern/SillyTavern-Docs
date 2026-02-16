@@ -156,7 +156,7 @@ Example: /websearch links=off snippets=on how to make a sandwich
 1. Google - answer box, knowledge graph, page snippets.
 2. DuckDuckGo - page snippets.
 
-**Selenium Plugin** can additionaly provide images.
+**Selenium Plugin** can additionally provide images.
 
 #### SearXNG
 

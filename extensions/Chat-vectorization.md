@@ -75,7 +75,7 @@ Large messages are split into "chunks" so that the model can be given the most r
 You can change this with "Chunk size (chars)". 
 
 Messages are divided into chunks by finding a chunk boundary such as a paragraph break, line break, or space between words. This is so that 
-the all the chunks make sense, as far as possible. If your chat messages have some other way to mark natural splitting points, such as `----`, 
+all the chunks make sense, as far as possible. If your chat messages have some other way to mark natural splitting points, such as `----`, 
 you can add this to "Chunk boundary". The setting for "Chunk boundary" is shared with Data Bank.
 
 ### Vector storage controls

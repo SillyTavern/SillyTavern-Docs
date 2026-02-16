@@ -36,7 +36,7 @@ With the power of multimodal models, your AI bots can see your gameplay and prov
 
 ### Requirements
 
-1. A browser that supports [ImageCapture](https://developer.mozilla.org/en-US/docs/Web/API/ImageCapture#browser_compatibility). Tested on desktop Chrome. Firefox requires to enable it with config. Safari won't work.
+1. A browser that supports [ImageCapture](https://developer.mozilla.org/en-US/docs/Web/API/ImageCapture#browser_compatibility). Tested on desktop Chrome. Firefox requires enabling it via config. Safari won't work.
 2. Chat Completion API with image inlining mode is recommended. Check the API documentation to see if the chosen model supports multimodal prompts.
 3. If image inlining is disabled, make sure that the [Image Captioning](./captioning.md#multimodal-source) extension is enabled, then select the "Multimodal" captioning source.
 
@@ -52,7 +52,7 @@ With the power of multimodal models, your AI bots can see your gameplay and prov
 2. Comment template - a prompt used to write a comment based on the generated caption. `{{game}}`, `{{core}}`, `{{caption}}` additional macros are supported. For image inlining mode, `{{caption}}` is replaced with `see included image`.
 3. Force captions - will force the use of multimodal captioning even if image inlining is supported and enabled.
 
-### Why I'm not seeing any comments?
+### Why am I not seeing any comments?
 
 Comments are temporarily paused (interval step skipped) if:
 

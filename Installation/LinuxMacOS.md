@@ -28,7 +28,7 @@ For MacOS / Linux all of these will be done in a Terminal.
 1. Open your favorite terminal and install git
 2. Download Sillytavern Launcher with: `git clone https://github.com/SillyTavern/SillyTavern-Launcher.git`
 3. Navigate to the SillyTavern-Launcher with: `cd SillyTavern-Launcher`
-4. Start the install launcher with: `chmod +x install.sh && ./install.sh` and choose what you wanna install
+4. Start the install launcher with: `chmod +x install.sh && ./install.sh` and choose what you want to install
 5. After installation start the launcher with: `chmod +x launcher.sh && ./launcher.sh`
 
 ### For Mac users
@@ -36,5 +36,5 @@ For MacOS / Linux all of these will be done in a Terminal.
 2. Then install git with: `brew install git`
 3. Download Sillytavern Launcher with: `git clone https://github.com/SillyTavern/SillyTavern-Launcher.git`
 4. Navigate to the SillyTavern-Launcher with: `cd SillyTavern-Launcher`
-5. Start the install launcher with: `chmod +x install.sh && ./install.sh` and choose what you wanna install
+5. Start the install launcher with: `chmod +x install.sh && ./install.sh` and choose what you want to install
 6. After installation start the launcher with: `chmod +x launcher.sh && ./launcher.sh`

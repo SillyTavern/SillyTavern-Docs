@@ -64,7 +64,7 @@ When using parent/child tasks in a task tree, tasks are selected depth-first, me
 
 #### Branch Tasks
 
-Click the Branch Task button to set the current task as an Objective where you can auto generate or manually create tasks as child tasks. You can continue to turn any child task into an Objective and keep generating to your hearts content.
+Click the Branch Task button to set the current task as an Objective where you can auto generate or manually create tasks as child tasks. You can continue to turn any child task into an Objective and keep generating to your heart's content.
 
 Marking a parent task as complete will cause the extension to skip all subtasks. When all child tasks are complete, the parent task will be marked as complete
 

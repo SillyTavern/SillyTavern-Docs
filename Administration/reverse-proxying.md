@@ -9,7 +9,7 @@ route: /usage/st-reverse-proxy-guide/
 This section does **not** refer to OpenAI/Claude reverse proxies. This refers exclusively to **HTTP/HTTPS Reverse Proxies**.
 !!!
 
-Is Termux confusing to setup? Are you tired of updating and installing ST on every device you have? Want organization of your chats and characters? Well you are in luck. This guide will _hopefully_ cover how to host SillyTavern on your PC where you can connect from anywhere and chat to your bots on the same PC you use to run AI models!
+Is Termux confusing to set up? Are you tired of updating and installing ST on every device you have? Want organization of your chats and characters? Well you are in luck. This guide will _hopefully_ cover how to host SillyTavern on your PC where you can connect from anywhere and chat to your bots on the same PC you use to run AI models!
 
 !!!warning Warning
 This guide is **not meant** for beginners. This will be very technical.
@@ -37,7 +37,7 @@ You must have prior knowledge of
 
 ### Linux (Bare-Metal SillyTavern)
 
-For Linux, we will reverse proxying SillyTavern through [Traefik](https://traefik.io/traefik/). There are other options such as _NGINX_ or _Caddy_, but for this guide, we will use Traefik as it is what we use ourselves.
+For Linux, we will be reverse proxying SillyTavern through [Traefik](https://traefik.io/traefik/). There are other options such as _NGINX_ or _Caddy_, but for this guide, we will use Traefik as it is what we use ourselves.
 
 1. Get the private IP of your computer using `ifconfig` or from your router.
    !!!info Tip
@@ -70,12 +70,12 @@ For Linux, we will reverse proxying SillyTavern through [Traefik](https://traefi
     mkdir appdata && mkdir appdata/traefik
     cd appdata/traefik
     ```
-9. Create a _acme.json_ file using `touch` and set the permissions of it to 600.
+9. Create an _acme.json_ file using `touch` and set the permissions of it to 600.
     ```sh
     touch acme.json
     chmod 600 acme.json
     ```
-10. Using `nano` or a similar editor, create a file name _traefik.yml_ and paste the following. Replace the template email with your own, then save the file.
+10. Using `nano` or a similar editor, create a file named _traefik.yml_ and paste the following. Replace the template email with your own, then save the file.
     ```yml
     api:
         dashboard: true
@@ -103,7 +103,7 @@ For Linux, we will reverse proxying SillyTavern through [Traefik](https://traefi
     certificatesResolvers:
         cloudflare:
             acme:
-                email: YOUR_CLOUDFLARE_EMAL@DOMAIN.com
+                email: YOUR_CLOUDFLARE_EMAIL@DOMAIN.com
                 storage: acme.json
                 dnsChallenge:
                     provider: cloudflare
@@ -116,7 +116,7 @@ For Linux, we will reverse proxying SillyTavern through [Traefik](https://traefi
     ```sh
     cd /docker
     ```
-12. Using `nano` or a similar editor, create a file name _docker-compose.yaml_ and paste the following. Save the file afterwards.
+12. Using `nano` or a similar editor, create a file named _docker-compose.yaml_ and paste the following. Save the file afterwards.
 
     ```yaml
     secrets:
@@ -174,7 +174,7 @@ For Linux, we will reverse proxying SillyTavern through [Traefik](https://traefi
     |-------|-----------------|-------------------|--------------|-----|
     | CNAME | silly           | DOMAIN.com        | Proxied      | N/A |
 
-19. `cd` into _appdata/traefik_ and using `nano` or a similar editor, create a file name _config.yml_ and paste the following. Replace `PRIVATE_IP` with the private IP you obtained, and `silly.DOMAIN.com` with the name of your subdomain and domain page, then save the file.
+19. `cd` into _appdata/traefik_ and using `nano` or a similar editor, create a file named _config.yml_ and paste the following. Replace `PRIVATE_IP` with the private IP you obtained, and `silly.DOMAIN.com` with the name of your subdomain and domain page, then save the file.
 
     ```yml
     http:
@@ -231,7 +231,7 @@ For Linux, we will reverse proxying SillyTavern through [Traefik](https://traefi
     Before enabling perUserBasicAuth ensure you have a valid multi-user setup with working passwords.
     !!!
 
-22. Wait a few minutes, then open your domain page you made for ST. At the end of it, you should be able to open SillyTavern from anywhere you go just with one URL and one account.
+22. Wait a few minutes, then open the domain page you made for ST. At the end of it, you should be able to open SillyTavern from anywhere you go just with one URL and one account.
     !!!info Tip
     If nothing happens after several minutes, check the container logs for Traefik for any possible errors.
     !!!
@@ -273,7 +273,7 @@ Do note that we run SillyTavern on bare-metal over Docker. This is a rough idea 
     ```sh
     cd /docker && git clone https://github.com/SillyTavern/SillyTavern
     ```
-9. Using `nano` or a similar editor, create a file name _docker-compose.yaml_ and paste the following. Replace `silly.DOMAIN.com` with the subdomain you added above, the save the file afterwards.
+9. Using `nano` or a similar editor, create a file named _docker-compose.yaml_ and paste the following. Replace `silly.DOMAIN.com` with the subdomain you added above, then save the file afterwards.
 
     ```yaml
     secrets:
@@ -350,7 +350,7 @@ Do note that we run SillyTavern on bare-metal over Docker. This is a rough idea 
     ```sh
     docker compose up -d sillytavern
     ```
-14. Wait a few minutes, then open your domain page you made for ST. At the end of it, you should be able to open SillyTavern from anywhere you go just with one URL and one account.
+14. Wait a few minutes, then open the domain page you made for ST. At the end of it, you should be able to open SillyTavern from anywhere you go just with one URL and one account.
     !!!info Tip
     If nothing happens after several minutes, check the container logs for Traefik for any possible errors.
     !!!

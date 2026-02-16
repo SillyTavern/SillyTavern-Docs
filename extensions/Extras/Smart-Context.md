@@ -59,12 +59,12 @@ There are 4 main concepts to be aware of:
 
 ***
 
-#### SmartContext only starts after 10 mesages are in the chat history
+#### SmartContext only starts after 10 messages are in the chat history
 
 - At the start of a new chat, ChromaDB is inactive.
 - Once the chat has accumulated 10 messages, it will begin recording all messages into the database, and recalling messages as needed.
 
-#### Chat History Preservation ('kept mesages')
+#### Chat History Preservation ('kept messages')
 
 By default, ChromaDB will keep as many recent natural chat history messages as specified in the slider.
 Any messages beyond this amount will be removed from your sent prompt, and if 'memories' exist in the database they will be added in place of the older chat history messages (see Strategy below).
@@ -113,7 +113,7 @@ Disadvantage
 #### Add to Bottom
 
 This strategy leaves the chat history in its natural state and adds 'memories' **after** it inside a formatted [bracket header].
-This means the 'kept messages' sliders is effectively disabled.
+This means the 'kept messages' slider is effectively disabled.
 
 Advantage
 
@@ -156,7 +156,7 @@ Advantage
 
 Disadvantage
 
-- calculations for how much history to remove can be slightly innacurate as they are based on estimated tokens per message
+- calculations for how much history to remove can be slightly inaccurate as they are based on estimated tokens per message
 - it rounds the number of messages to remove to the nearest number divisible by 5 (0, 5, 10, 15, 20, etc), so it is not as fine grained as manual numeric selection.
 
 ***
@@ -171,7 +171,7 @@ This is the default behavior of smart-context and pulls 'memories' only from the
 
 This is an experimental behavior of smart-context which pulls 'memories' from all ChromaDB collections for the selected character.
 Hypothetically this should allow for the development of a more robust memory set spanning many interactions. 
-Reccomended that this be used with 'Add to Bottom' or 'Custom Depth' strategies and 'kept messages' set to a low number so that ChromaDB will pull from memory sooner.
+Recommended that this be used with 'Add to Bottom' or 'Custom Depth' strategies and 'kept messages' set to a low number so that ChromaDB will pull from memory sooner.
 
 ### Using Smart Context
 

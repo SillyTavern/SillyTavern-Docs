@@ -110,9 +110,9 @@ The example below will send the generated image using Markdown as a user persona
 
 ### Image swipes
 
-Images swipes allow to reroll the image generation while keeping the same prompt. If a fixed seed is set, it will be randomized for the next generation. 
+Image swipes allow to rerolling the image generation while keeping the same prompt. If a fixed seed is set, it will be randomized for the next generation. 
 
-To cycle through images, hover a mouse cursor (tap on mobile) over a generated image to reveal arrow buttons and swipes counter. Tapping right arrow on the latest image will generate a new one.
+To cycle through images, hover a mouse cursor (tap on mobile) over a generated image to reveal arrow buttons and swipes counter. Tapping the right arrow on the latest image will generate a new one.
 
 *'Swipes' here is just a name, don't try the actual swiping gesture, as this will regenerate the message itself, not the attached image.*
 
@@ -139,7 +139,7 @@ The interactive mode will not trigger when the function tool is enabled.
 
 ### Use interactive mode
 
-Allows to trigger an image generation instead of text as a reply to a user message that follows the special pattern:
+Allows you to trigger an image generation instead of text as a reply to a user message that follows the special pattern:
 
 1. Contains one of the following verbs: send, mail, imagine, generate, make, create, draw, paint, render
 2. Followed by one of the following nouns (not further than 10 characters away): pic, picture, image, drawing, painting, photo, photograph
@@ -502,7 +502,7 @@ You can add custom placeholders to your workflow:
 
 Custom placeholders will appear in a separate list below the predefined ones.
 
-For example, you could replace the "SillyTavern" prefix for saved image filenames in the default workflow with a custom placeholder. Add a new custom placeholder with `find` set to `filename_prefix` and `replace` set to `ServiceTesnor`. Insert the new `%filename_prefix%` placeholder into your workflow JSON. Now you can change the filename prefix from SillyTavern to ServiceTesnor by changing the value of the custom placeholder.
+For example, you could replace the "SillyTavern" prefix for saved image filenames in the default workflow with a custom placeholder. Add a new custom placeholder with `find` set to `filename_prefix` and `replace` set to `ServiceTensor`. Insert the new `%filename_prefix%` placeholder into your workflow JSON. Now you can change the filename prefix from SillyTavern to ServiceTensor by changing the value of the custom placeholder.
 
 +++ JSON with placeholder
 ```json
@@ -528,7 +528,7 @@ For example, you could replace the "SillyTavern" prefix for saved image filename
 
 ### Comfy tricks
 
-Read all the general information on this page so you're familiar with the image generation options. Options such as switchable styles and common prompt prefixes, when combined wih the total flexibility of ComfyUI workflows, allow you to create a wide variety of image generation setups.
+Read all the general information on this page so you're familiar with the image generation options. Options such as switchable styles and common prompt prefixes, when combined with the total flexibility of ComfyUI workflows, allow you to create a wide variety of image generation setups.
 
 #### Loading LoRAs
 

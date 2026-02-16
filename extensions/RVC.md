@@ -55,9 +55,9 @@ brew install ffmpeg
 
 #### Make sure TTS is enabled and works
 
-RVC depends on TTS, you need to enable a TTS extension. Your TTS has to be already working properly and narrating your chats before you try to add RVC to the mix!
+RVC depends on TTS; you need to enable a TTS extension. Your TTS has to be already working properly and narrating your chats before you try to add RVC to the mix!
 
-Please note, that:
+Please note that:
 
 * System TTS engine does not support voice conversion at all.
 * Streaming TTS will wait for the audio stream to end before conversion.

@@ -33,7 +33,7 @@ Other programs and tools that you can import chats from include:
 
 ## Export as .jsonl
 
-When clicking on "Manage chat files", each entry on the the chat file list will have a button to export it in a format that can then be re-imported as is. Use this to share or migrate chats including all their metadata (but excluding images and file attachments).
+When clicking on "Manage chat files", each entry on the chat file list will have a button to export it in a format that can then be re-imported as is. Use this to share or migrate chats including all their metadata (but excluding images and file attachments).
 
 If you're mindful of privacy, be sure to inspect the exported JSONL file and scrub anything you don't want to share.
 
@@ -56,7 +56,7 @@ You can go back to the parent from a checkpoint by entering the burger menu butt
 
 ## Rename Chat
 
-By default chat files are given a named with the date and time they were started.
+By default chat files are given a name with the date and time they were started.
 
 You can change this by clicking the pencil icon and typing in a new name.
 

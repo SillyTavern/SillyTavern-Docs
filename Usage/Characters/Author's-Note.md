@@ -59,7 +59,7 @@ The box at the bottom of the panel contains the Default Author's Note which will
 
 ### Remind AI of response formatting
 
-The Author's Note can be used to specify how the AI should write it's responses.
+The Author's Note can be used to specify how the AI should write its responses.
 
 - [Your next response must be 300 tokens in length.]
 - [Write your next reply in the style of Edgar Allan Poe]

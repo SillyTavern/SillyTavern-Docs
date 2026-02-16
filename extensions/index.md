@@ -9,7 +9,7 @@ route: /extensions/
 # Extensions
 
 SillyTavern comes with many extensions that can be enabled or disabled in the Extensions panel. Extensions can add new
-features, change the behaviour of existing features, or provide additional content for your AI to use. More extensions
+features, change the behavior of existing features, or provide additional content for your AI to use. More extensions
 can be installed from the "Download Extensions & Assets" menu in the Extensions panel.
 
 ## Extensions panel

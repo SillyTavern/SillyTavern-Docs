@@ -10,7 +10,7 @@ Save Connection Profiles to quickly switch between different APIs, models and fo
 
 ## Accessing Connection Profiles
 
-This feature is enabled by default starting from SillyTavern 1.12.6 or later as a built-in extension, and available in the API Connections menu. If you wish to *disable* it, open the Extensions panel, click on "Manager extensions", locate Connection Profiles in the list, uncheck the "Enabled" checkbox, and then click "Close".
+This feature is enabled by default starting from SillyTavern 1.12.6 or later as a built-in extension, and available in the API Connections menu. If you wish to *disable* it, open the Extensions panel, click on "Manage extensions", locate Connection Profiles in the list, uncheck the "Enabled" checkbox, and then click "Close".
 
 ## What is Saved
 

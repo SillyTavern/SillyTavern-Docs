@@ -6,7 +6,7 @@ tags: ['obsolete']
 # talkinghead
 
 !!!warning
-**THE SUPPORT FOR TALKGINHEAD WAS DROPPED IN SILLYTAVERN 1.12.13. THIS PAGE IS KEPT FOR HISTORICAL PURPOSES.**
+**THE SUPPORT FOR TALKINGHEAD WAS DROPPED IN SILLYTAVERN 1.12.13. THIS PAGE IS KEPT FOR HISTORICAL PURPOSES.**
 !!!
 
 ### What is it?
@@ -18,7 +18,7 @@ An implementation of Talking Head Anime 3 Demo for AITuber. It possesses the fol
 
 This extension contains the original demo programs for the Talking Head(?) Anime from a Single Image 3: Now the Body Too project. As the name implies, the project allows you to animate anime characters, and you only need a single image of that character to do so. There are two demo programs:
 
-The manual_poser lets you manipulate a character's facial expression, head rotation, body rotation, and chest expansion due to breathing through a graphical user interface, so you can save them as default expressions IE Happy, sad, joy, etc.
+The manual_poser lets you manipulate a character's facial expression, head rotation, body rotation, and chest expansion due to breathing through a graphical user interface, so you can save them as default expressions e.g., Happy, sad, joy, etc.
 ifacialmocap_puppeteer lets you transfer your facial motion to an anime character.
 
 ### Hardware Requirements

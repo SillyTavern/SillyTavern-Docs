@@ -42,7 +42,7 @@ When generating an AI reply, entries from the character World Info will be combi
 
 #### Sorted Evenly (default)
 
-All entries will be sorted according to their Insertion Order as if they a part of one big file, ignoring the source.
+All entries will be sorted according to their Insertion Order as if they were a part of one big file, ignoring the source.
 
 #### Character Lore First
 
@@ -50,7 +50,7 @@ Entries from the Character World Info would be included first by their Insertion
 
 #### Global Lore First
 
-Entries from the Global World Info Info would be included first by their Insertion Order, then entries from the Character World Info.
+Entries from the Global World Info would be included first by their Insertion Order, then entries from the Character World Info.
 
 ### World Info Entry
 
@@ -74,7 +74,7 @@ For more information on Regex syntax and possibilities: [Regular expressions - J
 
 ###### Advanced Regex Per-Message Matching
 
-ST prefixes every chat message in the WI scan buffer with `character name:` and after v1.12.6, concatenates prepends them using the character value 1 (`\x01`).  
+ST prefixes every chat message in the WI scan buffer with `character name:` and after v1.12.6, prepends them using the character value 1 (`\x01`).  
 This means you can match specific input or output from a certain character using a regex tied to that separation character.
 
 For example, to match only the user saying "hello", you could use the following regex:

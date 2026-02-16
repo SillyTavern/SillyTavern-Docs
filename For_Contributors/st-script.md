@@ -155,7 +155,7 @@ Examples:
 
 The following modifications can be applied to commands to work with these variables:
 
-- `/len` commands gets a number of items in the array.
+- `/len` command gets a number of items in the array.
 - `index=number/string` named argument can be added `/getvar` or `/setvar` and their global counterparts to get or set sub-values by either a zero-based index for arrays or a string key for objects.
   - If a numeric index is used on a nonexistent variable, the variable will be created as an empty array `[]`.
   - If a string index is used on a nonexistent variable, the variable will be created as an empty object `{}`.
@@ -660,7 +660,7 @@ Scripts can make requests to your currently connected LLM API using the followin
 - `instruct` (only `/genraw`) — can be `on` or `off`. Allows to use instruct formatting on the input prompt (if instruct mode is enabled and the API supports it). Set to `off` to force pure prompts. Default: `on`.
 - `as` (for Text Completion APIs) — can be `system` (default) or `char`. Defines how the last prompt line will be formatted. `char` will use a character name, `system` will use no or neutral name.
 
-The generated text is then passed through the pipe to the next command and can be saved to a variable or displaced using the I/O capabilities:
+The generated text is then passed through the pipe to the next command and can be saved to a variable or displayed using the I/O capabilities:
 
 ```stscript
 /genraw Write a funny message from Cthulhu about taking over the world. Use emojis. |
@@ -782,7 +782,7 @@ This will insert a user message at the beginning of the conversation history:
 
 World Info (also known as Lorebook) is a highly utilitarian tool for dynamically inserting data into the prompt. See the dedicated page for more detailed explanation: [World Info](/Usage/worldinfo.md).
 
-1. `/getchatbook` – gets a name of the chat-bound World Info file or create a new one if was unbound, and pass it down the pipe.
+1. `/getchatbook` – gets a name of the chat-bound World Info file or create a new one if it was unbound, and pass it down the pipe.
 2. `/findentry file=bookName field=fieldName [text]` – finds a UID of the record from the specified file (or a variable pointing to a file name) using fuzzy matching of a field value with the provided text (default field: `key`) and passes the UID down the pipe, e.g. `/findentry file=chatLore field=key Shadowfang`.
 3. `/getentryfield file=bookName field=field [UID]` – gets a field value (default field: `content`) of the record with the UID from the specified World Info file (or a variable pointing to a file name) and passes the value down the pipe, e.g. `/getentryfield file=chatLore field=content 123`.
 4. `/setentryfield file=bookName uid=UID field=field [text]` – sets a field value (default field: `content`) of the record with the UID (or a variable pointing to UID) from the specified World Info file (or a variable pointing to a file name). To set multiple values for key fields, use a comma-delimited list as a text value, e.g. `/setentryfield file=chatLore uid=123 field=key Shadowfang,sword,weapon`.
@@ -1149,7 +1149,7 @@ Arguments:
 * `/qr-update (arguments, [message])` – updates Quick Reply, example: `/qr-update set=MyPreset label=MyButton newlabel=MyRenamedButton /echo 123`
 
 Arguments:
-- `newlabel` - string - new text fort the button, e.g. `newlabel=MyRenamedButton`
+- `newlabel` - string - new text for the button, e.g. `newlabel=MyRenamedButton`
 - `label`    - string - text on the button, e.g., `label=MyButton`
 - `set`      - string - name of the QR set, e.g., `set=PresetName1`
 - `hidden`   - bool   - whether the button should be hidden, e.g., `hidden=true`
@@ -1161,7 +1161,7 @@ Arguments:
 
 ####
 
-* `qr-get` - retrieves all of a Quick Reply's properties, eample: `/qr-get set=myQrSet id=42`
+* `qr-get` - retrieves all of a Quick Reply's properties, example: `/qr-get set=myQrSet id=42`
 
 #### Create or update QR preset
 

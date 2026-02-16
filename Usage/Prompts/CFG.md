@@ -18,7 +18,7 @@ CFG, or classifier-free guidance is a method that's used to help make parts of a
 Currently, the supported backends are oobabooga's textgen WebUI, NovelAI, and TabbyAPI. 
 NovelAI had its own [documentation for CFG](https://web.archive.org/web/20240917150051/https://docs.novelai.net/text/cfg.html).
 
-WARNING: CFG increases vram usage due to ingesting more than 1 prompt! If your GPU memory runs out while generating a prompt with CFG on, consider reducing your context size, using a lesser parameter model, or turning off CFG entirely.
+WARNING: CFG increases VRAM usage due to ingesting more than 1 prompt! If your GPU memory runs out while generating a prompt with CFG on, consider reducing your context size, using a lesser parameter model, or turning off CFG entirely.
 
 ---
 
@@ -112,7 +112,7 @@ Let's use the example with John again. The negative prompt is `[John's feelings:
 
 This will in turn accentuate the *negative* prompt more and you'll see John start to act sadder than normal rather than happier.
 
-tldr; Use a guidance scale of `1.5` and work up and down from there based on your outputs.
+TL;DR: Use a guidance scale of `1.5` and work up and down from there based on your outputs.
 
 ### Prompt Cascading
 
