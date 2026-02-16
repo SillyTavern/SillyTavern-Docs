@@ -613,7 +613,7 @@ The `/break` command can be used to break out of a loop (`/while` or `/times`) o
 10. `/cos (a)` – performs a cosine operation of a value, e.g. `/cos i`
 11. `/log (a)` – performs a natural logarithm operation of a value, e.g. `/log i`
 12. `/abs (a)` – performs an absolute value operation of a value, e.g. `/abs -10`
-13. `/sqrt (a)`– performs a square root operation of a value, e.g. `/sqrt 9`
+13. `/sqrt (a)` – performs a square root operation of a value, e.g. `/sqrt 9`
 14. `/round (a)` – performs a rounding to the nearest integer operation of a value, e.g. `/round 3.14`
 15. `/rand (round=round|ceil|floor from=number=0 to=number=1)` – returns a random number between from and to, e.g. `/rand` or `/rand 10` or `/rand from=5 to=10`. Ranges are inclusive. The returned value will contain a fractional part. Use `round` named argument to get an integral value, e.g. `/rand round=ceil` to round up, `round=floor` to round down, and `round=round` to round to nearest.
 
@@ -894,7 +894,7 @@ There's a variety of useful text manipulation utility commands to be used in var
 ```
 
 1. `direction` sets the direction for trimming, which can be either `start` or `end`. Default: `end`.
-2. `limit` sets the amount of tokens to left in the output. Can also specify a variable name containing the number. **Required argument.**
+2. `limit` sets the amount of tokens to leave in the output. Can also specify a variable name containing the number. **Required argument.**
 3. Unnamed argument is the input text to be trimmed.
 
 ### Arguments for `/fuzzy`

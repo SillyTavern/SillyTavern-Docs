@@ -106,7 +106,7 @@ At the time of writing the newest CUDA version they list is cu12 which will work
 Depending on how you have installed Oobabooga, the file paths can be slightly different; i.e. `/text-generation-webui/user_data` if you installed via git clone, and `/text-generation-webui-main/user_data` if you used the .zip method.  
 !!!
 
-Here's a more correct/dummy proof installation procedure:
+Here's a more correct/dummy-proof installation procedure:
 
 1. git clone <https://github.com/oobabooga/text-generation-webui> (or download their repo as a .zip in your browser, then extract it)
 2. Run `start_windows.bat` or whatever your OS is

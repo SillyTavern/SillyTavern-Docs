@@ -130,7 +130,7 @@ Set multiplier to 0 to disable.
 
 ### Exclude Top Choices (XTC)
 
-XTC sampling algorithm removes the most likely tokens from consideration instead of pruning the least likely tokens It removes all except the least likely token meeting a given threshold, with a given probability. This ensures that at least one "viable" choice remains, retaining coherence. See the Pull Request [here](https://github.com/oobabooga/text-generation-webui/pull/6335).
+XTC sampling algorithm removes the most likely tokens from consideration instead of pruning the least likely tokens. It removes all except the least likely token meeting a given threshold, with a given probability. This ensures that at least one "viable" choice remains, retaining coherence. See the Pull Request [here](https://github.com/oobabooga/text-generation-webui/pull/6335).
 
 Set probability to 0 to disable.
 

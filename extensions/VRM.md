@@ -43,7 +43,7 @@ The VRM extension offers various settings to customize the behavior of your anim
 5. **Auto-send Interaction**:
    - Enable this checkbox to automatically trigger character interactions when you click on areas with mapped messages (refer to the hit areas section for details).
 
-### Performances Settings
+### Performance Settings
 
 1. **Body hitboxes**
     - Enable this checkbox to activate detection of click on several part of the VRM model depending on the model the following area can be detected: head/chest/hands/groin/butt/legs/feet. Hitbox locations are computed at each frame and follow the body animation, disabling this option can improve performance.

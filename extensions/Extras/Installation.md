@@ -16,7 +16,7 @@ Local installation of Extras can be difficult or impossible on your OS (especial
 
 ## Use the [Official Extras Colab](https://colab.research.google.com/github/SillyTavern/SillyTavern/blob/release/colab/GPU.ipynb)
 
-* Simple to setup
+* Simple to set up
 * Free to use
 * No Colab GPU credits required (use the `use_cpu` options)
 * See the [Colab Guide Page](/extensions/Extras/Installation.md#running-extras-in-colab) for details.

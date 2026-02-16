@@ -34,7 +34,7 @@ DreamGen API offers several models of different sizes.
 - Lucid Max (in API called `lucid-v1-max` or `lucid-v1-extra-large`)
 - Lucid Base (in API called `lucid-v1-base` or `lucid-v1-medium`) -- corresponds to the weight-available [Lucid V1 Nemo](https://dreamgen.com/docs/models/lucid-v1/huggingface).
 
-Lucid Base uses much less credits and is faster, while Lucid Max is more creative and is able to handle more complex instructions and narratives.
+Lucid Base uses much fewer credits and is faster, while Lucid Max is more creative and is able to handle more complex instructions and narratives.
 
 ## Settings
 

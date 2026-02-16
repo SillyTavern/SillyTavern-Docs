@@ -117,14 +117,14 @@ python -m rvc_python api -p 5050 -l -md models_path
 
 * To set up a voice map, choose your character or persona name from the "Character" dropdown, then choose an RVC "Voice", then click Apply.
 * Optionally, you can also configure other related settings such as pitch correction or filtering.
-* If you did everything correctly, the Voice Map debug area will show something like 'Betty:MyVoice(rvpme)'.
+* If you did everything correctly, the Voice Map debug area will show something like 'Betty:MyVoice(rmvpe)'.
 
 ### SillyTavern Extras Setup
 
 #### 1. Prepare RVC Model Files
 
 * In a file browser, navigate to: `\SillyTavern-extras\data\models\rvc`.
-* Create a subfolder like 'Betty' and place the `.pth` and `.index` files into it. (Hint: you can download voice files from https://voice-models.com, make sure the voice name says it's RVPME.)
+* Create a subfolder like 'Betty' and place the `.pth` and `.index` files into it. (Hint: you can download voice files from https://voice-models.com, make sure the voice name says it's RMVPE.)
 
 #### 2. Install Requirements
 
@@ -146,7 +146,7 @@ Optionally, you may wish to run RVC on your GPU if you have a capable one, by ad
 
 #### 4. Set Up Voice Mapping
 
-Create a Voice map for RVC. Set your Character to your desired SillyTavern character name, and set Voice to the RVC folder you created at step 1, then click Apply. If you did things correctly, the Voice Map will show something like 'Betty:MyVoice(rvpme)'.
+Create a Voice map for RVC. Set your Character to your desired SillyTavern character name, and set Voice to the RVC folder you created at step 1, then click Apply. If you did things correctly, the Voice Map will show something like 'Betty:MyVoice(rmvpe)'.
 
 #### 5. Select Pitch Extraction
 

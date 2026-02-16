@@ -19,7 +19,7 @@ Tries to simulate the flow of a real human conversation. The algorithm is as fol
 
 1. Mentions of the group member names are extracted from the last message in chat.
 
-    Only whole words are recognized as mentions! If your character's name is "Misaka Mikoto", they will reply only activate on "Misaka" or "Mikoto", but never to "Misa", "Railgun", etc.
+    Only whole words are recognized as mentions! If your character's name is "Misaka Mikoto", they will only activate on "Misaka" or "Mikoto", but never to "Misa", "Railgun", etc.
     
     Unless the "Allow Self Responses" setting is enabled, characters won't reply to mentions of their name in their own message!
 
