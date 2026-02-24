@@ -385,10 +385,15 @@ volumes:
 
 ### Forbidden by Whitelist
 
-!!!
-Docker gateway IPs should be whitelisted automatically if [whitelistDockerHosts](/Administration/config-yaml.md#ip-whitelisting) config value is set to `true`.
+!!!warning Docker Desktop vs Docker CE
+The [whitelistDockerHosts](/Administration/config-yaml.md#ip-whitelisting) config option (enabled by default) works by resolving `host.docker.internal` and `gateway.docker.internal` hostnames. These hostnames are **only available in Docker Desktop** (Windows/Mac). If you are using **Docker CE on Linux**, these hostnames will not resolve and the auto-whitelisting will fail with errors like this in the container logs:
 
-If you are still unable to access SillyTavern, follow the instructions below to update the whitelist manually.
+```
+Failed to resolve whitelist hostname host.docker.internal: getaddrinfo ENOTFOUND host.docker.internal
+Failed to resolve whitelist hostname gateway.docker.internal: getaddrinfo ENOTFOUND gateway.docker.internal
+```
+
+In this case, you need to manually add the Docker gateway IP to the whitelist as described below.
 !!!
 
 1. Execute the following Docker command to obtain the IP of your SillyTavern Docker container.
