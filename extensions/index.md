@@ -148,9 +148,9 @@ Adds web search results to LLM prompts.
 :::
 
 :::callout
-**[AccuWeather](https://github.com/SillyTavern/Extension-AccuWeather)**
+**[Weather](https://github.com/SillyTavern/Extension-Weather)**
 
-Provides weather information using the AccuWeather API as a slash command or a function tool.
+Provides weather information using one of the available weather APIs as a slash command or a function tool.
 :::
 
 :::callout

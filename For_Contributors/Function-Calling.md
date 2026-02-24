@@ -20,7 +20,7 @@ Function Calling allows adding dynamic functionality to your extensions by letti
 1. [Image Generation](/extensions/Stable-Diffusion.md) (built-in) - generate images based on user prompts.
 2. [Web Search](/extensions/WebSearch.md) - trigger a web search for a query.
 3. [RSS](https://github.com/SillyTavern/Extension-RSS/) - fetch the latest news from RSS feeds.
-4. [AccuWeather](https://github.com/SillyTavern/Extension-AccuWeather) - fetch the weather information from AccuWeather.
+4. [Weather](https://github.com/SillyTavern/Extension-Weather) - fetch the weather information from weather APIs.
 5. [D&D Dice](https://github.com/SillyTavern/Extension-Dice) - roll dice for D&D games.
 
 ## Prerequisites and limitations
