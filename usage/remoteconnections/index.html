@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.0.0.825289672086">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.0.0">
+    <meta name="generator" content="Retype 4.2.0">
 
     <!-- Primary Meta Tags -->
     <title>Remote connections | docs.ST.app</title>
@@ -28,12 +28,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.0.0.825289672086" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.0.0.825289672086" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.0.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.0.0.825289672086" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.0.0.825289672086" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.2.0.826914722230" defer></script>
 
     <style>
         a {
@@ -265,17 +265,17 @@
         </div>
     </div>
 </div>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="allowing-remote-connections-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-yaml"><code v-pre class="language-yaml"># Listen for incoming connections
 listen: true</code></pre>
 </doc-codeblock></div>
 <p>When ST is listening for remote connections, you should see this message in the console:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="allowing-remote-connections-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">SillyTavern is listening on IPv4: 0.0.0.0:8000</code></pre>
 </doc-codeblock></div>
 <p>and some explanation about what that means.</p>
 <p>When ST is <strong>not</strong> listening for remote connections, you should see this message in the console:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="allowing-remote-connections-code-3" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">SillyTavern is listening on IPv4: 127.0.0.1:8000</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="access-control-configuration">
@@ -396,7 +396,7 @@ listen: true</code></pre>
         <span>Example <code translate="no" v-pre>whitelist.txt</code> configuration</span>
     </h4>
 </doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="example-whitelisttxt-configuration-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">10.0.0.0/8
 172.16.0.0/12
 192.168.0.0/16
@@ -429,14 +429,14 @@ listen: true</code></pre>
 </div>
 <p>The server will ask for username and password whenever a client connects via HTTP. <strong>This only works if the Remote connections (listen: true) are enabled.</strong></p>
 <p>To enable HTTP BA, Open <code translate="no" v-pre>config.yaml</code> in the SillyTavern base directory and search for <code translate="no" v-pre>basicAuthMode</code>. Set basicAuthMode to true and set username and password. Note: <code translate="no" v-pre>config.yaml</code> will only exist if ST has been executed before at least once.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="access-control-by-http-basic-authentication-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-yaml"><code v-pre class="language-yaml">basicAuthMode: true
 basicAuthUser:
   username: &quot;MyUsername&quot;
   password: &quot;MyPassword&quot;</code></pre>
 </doc-codeblock></div>
 <p>Alternatively you can enable basic auth as follows:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="access-control-by-http-basic-authentication-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-yaml"><code v-pre class="language-yaml">basicAuthMode: true
 enableUserAccounts: true
 perUserBasicAuth: true</code></pre>
@@ -457,7 +457,7 @@ perUserBasicAuth: true</code></pre>
     </h3>
 </doc-anchor-target>
 <p>To enable host whitelisting, edit the <code translate="no" v-pre>config.yaml</code> file in the SillyTavern root directory:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="toggle-host-whitelisting-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-yaml"><code v-pre class="language-yaml">hostWhitelist:
     enabled: true</code></pre>
 </doc-codeblock></div>
@@ -485,7 +485,7 @@ perUserBasicAuth: true</code></pre>
         </div>
     </div>
 </div>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="add-trusted-hosts-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-yaml"><code v-pre class="language-yaml">hostWhitelist:
   hosts:
     - &quot;example.com&quot;
@@ -498,7 +498,7 @@ perUserBasicAuth: true</code></pre>
     </h3>
 </doc-anchor-target>
 <p>To disable console messages for unrecognized hosts, set the <code translate="no" v-pre>hostWhitelist.scan</code> option to <code translate="no" v-pre>false</code>:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="toggle-console-messages-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-yaml"><code v-pre class="language-yaml">hostWhitelist:
     scan: false</code></pre>
 </doc-codeblock></div>
@@ -541,15 +541,15 @@ perUserBasicAuth: true</code></pre>
 </doc-anchor-target>
 <p>New connections to the server are displayed in the console window and logged in the <code translate="no" v-pre>access.log</code> file in the SillyTavern data directory.</p>
 <p>A console message for a browser on the same machine as the server looks like:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="connection-logging-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">New connection from 127.0.0.1; User Agent: ...</code></pre>
 </doc-codeblock></div>
 <p>A console message for a browser on a different machine on the same network as the server might look like:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="connection-logging-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">New connection from 192.168.116.187; User Agent: ...</code></pre>
 </doc-codeblock></div>
 <p>If a connection is refused, the console message will look like:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="connection-logging-code-3" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">New connection from 192.168.116.211; User Agent: ...
 
 Forbidden: Connection attempt from 192.168.116.211. If you are attempting to connect, 
@@ -611,12 +611,12 @@ root of SillyTavern folder.</code></pre>
 </div>
 <p>To encrypt traffic from and to your ST instance, start the server with the <code translate="no" v-pre>--ssl</code> flag.</p>
 <p>Example:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="start-sillytavern-with-tlsssl-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">node server.js --ssl</code></pre>
 </doc-codeblock></div>
 <p>As per default, ST will search for your certificates inside the <code translate="no" v-pre>certs</code> folder. If your files are located elsewhere, you can use the <code translate="no" v-pre>--keyPath</code> and <code translate="no" v-pre>--certPath</code> arguments.</p>
 <p>Example:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
+<div id="start-sillytavern-with-tlsssl-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">node server.js --ssl --keyPath /home/user/certificates/privkey.pem --certPath /home/user/certificates/cert.pem</code></pre>
 </doc-codeblock></div>
 <p>The user you&#x27;re running SillyTavern with requires read permissions on the certificate files.</p>
@@ -670,7 +670,7 @@ root of SillyTavern folder.</code></pre>
                 <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
             </div>
             <footer id="retype-content-footer" class="clear-both">
-                <div class="flex flex-wrap items-center justify-between mt-14">
+                <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mt-14">
                     <a id="retype-edit-this-page" class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-body-link font-body-link hover:text-body-link-hover hover:underline" href="https://github.com/SillyTavern/SillyTavern-Docs/edit/main/Administration/remote-connections.md" target="_blank" rel="noopener">
                         <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                         <span>Edit this page</span>
