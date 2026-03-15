@@ -28,7 +28,11 @@ The SillyTavern engine activates and seamlessly integrates the appropriate lore 
 
 * [World Info Encyclopedia](https://rentry.co/world-info-encyclopedia): Exhaustive in-depth guide to World Info and Lorebooks. By kingbri, Alicat, Trappu.
 
-## Character Lore
+## Context-Specific Sources
+
+In addition to the global World Info selector, lorebooks can be assigned to specific contexts — a character, a persona, or an individual chat. These context-specific sources are activated automatically when the relevant character, persona, or chat is active.
+
+### Character Lore
 
 Optionally, World Info files can be assigned to a character to serve as dedicated lore sources across all chats with that character (including groups).
 
@@ -36,29 +40,49 @@ One primary World Info can be bound to the character. To do that, navigate to th
 
 To unbind, change, or assign additional World Info files as character lore, shift-click the globe button or click "More..." then "Link World Info". Note that only the primary World Info file gets exported with the character.
 
-### Character Lore Insertion Strategy
+#### Character Lore Insertion Strategy
 
 When generating an AI reply, entries from the character World Info will be combined with the entries from a global World Info selector using one of the following strategies:
 
-#### Sorted Evenly (default)
+##### Sorted Evenly (default)
 
 All entries will be sorted according to their Insertion Order as if they were a part of one big file, ignoring the source.
 
-#### Character Lore First
+##### Character Lore First
 
 Entries from the Character World Info would be included first by their Insertion Order, then entries from the Global World Info.
 
-#### Global Lore First
+##### Global Lore First
 
 Entries from the Global World Info would be included first by their Insertion Order, then entries from the Character World Info.
 
-### World Info Entry
+### Persona Lorebook
 
-#### Key
+A World Info file can be assigned to the currently active [persona](/Usage/personas.md). The entries from this lorebook will be activated whenever that persona is selected, regardless of which character or chat is open.
+
+To assign a lorebook to a persona, open the **Persona Management** panel and click the <i class="fa-solid fa-globe"></i> **Persona Lore** button. Pick a World Info file from the dropdown list. If a lorebook is already bound, clicking the button opens the lorebook editor directly.
+
+!!!note Staging-only feature
+To reopen the assignment popup when a lorebook is already bound, use a **long press** (on mobile) or **Shift+Click / Alt+Click** (on desktop) on the Persona Lore button.
+!!!
+
+### Chat Lorebook
+
+A World Info file can also be assigned to an individual chat. Entries from a chat-bound lorebook are only active in that specific conversation and will not carry over to other chats with the same character.
+
+To assign a lorebook to a chat, click the <i class="fa-solid fa-passport"></i> **Chat Lore** button in the Character Management panel. Pick a World Info file from the dropdown list. If a lorebook is already bound, clicking the button opens the lorebook editor directly.
+
+!!!note Staging-only feature
+To reopen the assignment popup when a lorebook is already bound, use a **long press** (on mobile) or **Shift+Click / Alt+Click** (on desktop) on the Chat Lore button.
+!!!
+
+## World Info Entry
+
+### Key
 
 A list of keywords that trigger the activation of a World Info entry. Keys are not case-sensitive by default (this is [configurable](#case-sensitive-keys)).
 
-##### Regular Expression (Regex) as Keys
+#### Regular Expression (Regex) as Keys
 
 Keys allow a more flexible approach to matching by supporting regex. This makes it possible to match more dynamic content with optional words or characters, spacing, and all the other utilities that regex provides.  
 If a defined key is a valid regex (Javascript regex style, with `/` as delimiters. All flags are allowed), it will be treated as such when checking whether an entry should be triggered. Multiple regexes can be entered as separate keys and will work alongside each other. Inside a regex, commas are possible. Plaintext keys do not support commas, as they are treated as key separators.  
@@ -72,7 +96,7 @@ An entry/instruction that should be inserted, when char is doing a weather-relat
 
 For more information on Regex syntax and possibilities: [Regular expressions - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions)
 
-###### Advanced Regex Per-Message Matching
+##### Advanced Regex Per-Message Matching
 
 ST prefixes every chat message in the WI scan buffer with `character name:` and after v1.12.6, prepends them using the character value 1 (`\x01`).  
 This means you can match specific input or output from a certain character using a regex tied to that separation character.
@@ -83,11 +107,11 @@ For example, to match only the user saying "hello", you could use the following 
 /\x01{{user}}:[^\x01]*?hello/
 ```
 
-##### Key Input
+#### Key Input
 
 There are two modes to enter keywords, each with a slightly different UI. In ⌨️ *plaintext mode* (default), keys can be entered as a comma-separated list in a single text field. Regexes can be included too, but they don't have any special highlighting. In ✨ *fancy mode*, the keys appear as separate elements and regexes will be highlighted as such. The control supports editing and deleting keys. The mode can be switched via the inline button inside the input control.
 
-#### Optional Filter
+### Optional Filter
 
 Comma-separated list of additional keywords in conjunction with the primary key.
 If no arguments are provided, this flag is ignored.
@@ -100,15 +124,15 @@ Supports logic for AND ANY, NOT ANY, or NOT ALL
 
 These keys also support [regex](#regular-expression-regex-as-keys).
 
-#### Entry Content
+### Entry Content
 
 The text that is inserted into the prompt upon entry activation.
 
-#### Insertion Order
+### Insertion Order
 
 Numeric value. Defines a priority of the entry if multiple were activated at once. Entries with larger order numbers will be inserted closer to the end of the context as they will have more impact on the output. For example, an entry with Order number 100 will appear in the context before an entry with Order number 250.
 
-#### Insertion Position
+### Insertion Position
 
 * **Before Char Defs:** World Info entry is inserted before the character's description and scenario. Has a moderate impact on the conversation.
 * **After Char Defs:** World Info entry is inserted after the character's description and scenario. Has a greater impact on the conversation.
@@ -126,7 +150,7 @@ Example Message entries will be formatted according to the prompt-building setti
 
 If your Author's Note is disabled (Insertion Frequency = 0), World Info entries in A/N positions will be ignored!
 
-#### Outlet Name
+### Outlet Name
 
 When the **Outlet** insertion position is selected, an additional **Outlet Name** field becomes available for the entry. The name that you provide here groups entries together and defines the token that you will use to pull them into the prompt manually.
 
@@ -134,7 +158,7 @@ Use the `{{outlet::YourName}}` macro in the [Prompt Manager](./Prompts/prompt-ma
 
 If an outlet entry is missing a name it will be skipped during generation, so make sure to fill in the field. Outlet names support autocomplete based on the names you have already used to make it easy to reuse consistent labels.
 
-##### Limitations and caveats
+#### Limitations and caveats
 
 * Placing outlet macros inside World Info entries is not supported and will not work. This conflicts with the evaluation order of World Info and may lead to infinite loops.
 * Nesting outlets is not supported. You cannot place an outlet macro inside another outlet's content. Same as above, this may lead to infinite loops.
@@ -144,13 +168,13 @@ If an outlet entry is missing a name it will be skipped during generation, so ma
 * Leading or trailing spaces in an outlet name are ignored when you call the macro, so names saved with extra whitespace will not match. Avoid padding names so they can be resolved correctly.
 * Outlet macros that have no content assigned to them will be replaced with an empty string.
 
-#### Entry Title / Memo
+### Entry Title / Memo
 
 A text field for your convenience to label your entries, which is not utilized by the AI or any of the trigger logics.
 
 If empty, can be backfilled using the entries' first key by clicking on the "Fill empty memos" button.
 
-#### Strategy
+### Strategy
 
 1. 🔵 (Blue Circle) = The entry would always be present in the prompt.
 2. 🟢 (Green Circle) = The entry will be triggered only in the presence of the keyword.
@@ -158,7 +182,7 @@ If empty, can be backfilled using the entries' first key by clicking on the "Fil
 
 Each Entry also has a toggle that allows you to enable or disable the entry.
 
-#### Probability (Trigger %)
+### Probability (Trigger %)
 
 This value acts like an additional filter that adds a chance for the entry NOT to be inserted when it is activated by any means (constant, primary key, recursion).
 
@@ -168,7 +192,7 @@ This value acts like an additional filter that adds a chance for the entry NOT t
 
 Use this to create random events in your chats. For example, every message could have a 1% chance of waking up an Elder God if its name is mentioned in the message.
 
-#### Inclusion Group
+### Inclusion Group
 
 Inclusion groups control how entries are selected when multiple entries with the same group label are triggered simultaneously. If multiple entries having the same group label were activated, only one will be inserted into the prompt.
 
@@ -176,13 +200,13 @@ By default, the chosen entry is selected randomly based on their Group Weight (d
 
 A single entry can be part of multiple inclusion groups if they are defined as a comma-separated list. The same logic as explained above will apply. If that entry is triggered, it will *disable* all other entries that are part of any of its groups. Therefore, if any of the groups are activated, this entry will not be activated.
 
-#### Prioritize Inclusion
+### Prioritize Inclusion
 
 To provide more control over which entries are activated via [Inclusion Group](/Usage/worldinfo.md#inclusion-group), you can use the 'Prioritize Inclusion' setting. This option allows you to specify deterministically which entry to choose instead of randomly rolling Group Weight chances.
 
 If multiple entries having the same group label and this setting turned on were activated, the one with the highest 'Order' value will be selected. This is useful for creating fallback sequences via inclusion groups. For example to prioritize low-depth entries with more emphasis, or to choose a specific instruction on setting the scene over another if both are valid.
 
-#### Use Group Scoring
+### Use Group Scoring
 
 When this setting is enabled globally or per entry, the number of activated entry keys determines the group winner selection. Only the subset of a group with the highest number of key matches will be left to be activated by Group Weight or Inclusion Priority - the rest will be deactivated and removed from the group.
 
@@ -203,7 +227,7 @@ Example:
 
 The input `sing me a song` can activate either entry (both activated 2 keys), but `sing me a song about Ghosts` will activate only Entry 2 (activated 3 keys).
 
-#### Automation ID
+### Automation ID
 
 Allows to integrate World Info entries with [STscripts](/For_Contributors/st-script.md) from Quick Replies extension. If both the quick reply command and the WI entry have the same Automation ID, the command will be executed automatically when the entry with a matching ID is activated.
 
@@ -211,13 +235,13 @@ Automations are executed in the order they are triggered, adhering to your desig
 
 The script command will run only once if multiple entries with the same Automation ID are activated.
 
-#### Character Filter
+### Character Filter
 
 A list of character names for which this entry can be activated. If this list is not empty, the entry will only be activated for characters whose names are on the list. When a tag is selected, the entry will only be activated for characters that have that specific tag.
 
 "Exclude" mode inverts the filter, meaning that the entry will be activated for all characters except those that are added to the list or that have the selected tag(s).
 
-#### Triggers
+### Triggers
 
 The generation types for which this World Info entry can be activated. If nothing is selected, the entry can be activated for all generation types. If one or more are selected, the entry will only be activated for those specific generation types:
 
@@ -232,7 +256,7 @@ The generation types for which this World Info entry can be activated. If nothin
 The "Regenerate" trigger is not available in group chats as it uses different regeneration logic: all messages from the last reply are deleted, and messages are queued using the "Normal" generation type according to the chosen [Group reply strategy](/Usage/Characters/groupchats.md#reply-order-strategies).
 !!!
 
-#### Additional matching sources
+### Additional matching sources
 
 By default World Info Entries are matched only against content from the current conversation. These options allow you to match the entry against different character information that does not show up in the chat, or even persona information. This is useful when you want to have a wide range of entries that are to be used between several characters but don't want to have to manage large lists of tags, or don't want to have to update character filter lists every time you create a new one. This also allows you to match entries based on the persona you have active.
 
