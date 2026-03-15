@@ -147,6 +147,14 @@ Most Text Completion models have a recommended "Instruct Template" (usually ment
 - No enforced moderation, unless required by the LLM vendor
 - [Website](https://openrouter.ai), [Setup Instructions](/Usage/API_Connections/OpenRouter.md)
 
+### Helicone
+
+- AI Gateway providing unified access to 100+ models across multiple providers (OpenAI, Anthropic, Google, Meta, etc.) with observability built-in by defaylt.
+- Supports both BYOK (Bring Your Own Keys) and PTB (Pass-Through Billing) models
+- Entirely open-source, 0% markup fees
+- No enforced moderation, follows individual provider policies
+- [Website](https://helicone.ai), [Setup Instructions](/Usage/API_Connections/Helicone.md)
+
 ### DeepSeek
 
 - Provides access to the latest versions of very popular DeepSeek V3 (`deepseek-chat`) and DeepSeek R1 (`deepseek-reasoner`) models
