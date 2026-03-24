@@ -934,11 +934,11 @@ unregisterMacro('fizz');
 
 ## Function tool calling
 
-Extensions can register custom function tools that the LLM can invoke during chat completion. This requires the user to have a Chat Completion API with tool/function calling support enabled.
+Extensions can register custom function tools that the LLM can invoke during chat completion. This lets your extension react to structured data from the model — for example, querying APIs, performing calculations, or triggering extension features.
 
-### Registering a tool
+For a full guide including prerequisites, supported APIs, registration fields, and tips, see the dedicated [Function Calling](./Function-Calling.md) page.
 
-Use `registerFunctionTool()` from `getContext()` to register a tool. The tool definition follows the OpenAI function calling schema:
+**Quick example:**
 
 ```js
 const { registerFunctionTool } = SillyTavern.getContext();
@@ -951,66 +951,15 @@ registerFunctionTool({
         $schema: 'http://json-schema.org/draft-04/schema#',
         type: 'object',
         properties: {
-            location: {
-                type: 'string',
-                description: 'The city name, e.g. "London"',
-            },
-            unit: {
-                type: 'string',
-                enum: ['celsius', 'fahrenheit'],
-                description: 'Temperature unit',
-            },
+            location: { type: 'string', description: 'City name' },
         },
         required: ['location'],
     },
-    action: async ({ location, unit }) => {
-        // Perform your logic here (API calls, computations, etc.)
-        return JSON.stringify({ temperature: 22, unit: unit || 'celsius', location });
+    action: async ({ location }) => {
+        const data = await fetchWeatherData(location);
+        return JSON.stringify(data);
     },
-    formatMessage: ({ location }) => `Checking weather for ${location}...`,
-    // Optional: only register this tool when certain conditions are met
-    shouldRegister: () => someConditionIsMet(),
-    // Optional: if true, the tool result is not shown in chat and no follow-up generation occurs
-    stealth: false,
 });
-```
-
-### Tool registration fields
-
-| Field | Required | Description |
-|-------|----------|-------------|
-| `name` | Yes | Unique identifier for the tool |
-| `displayName` | No | User-friendly display name |
-| `description` | Yes | Description sent to the LLM to explain what the tool does |
-| `parameters` | Yes | JSON Schema defining the tool's parameters |
-| `action` | Yes | Async function called when the LLM invokes the tool. Receives parsed parameters, must return a string result. |
-| `formatMessage` | No | Function returning a string shown as a toast while the tool executes |
-| `shouldRegister` | No | Function returning a boolean; if `false`, the tool is excluded from the current request |
-| `stealth` | No | If `true`, the result is hidden from the chat and no follow-up generation is triggered |
-
-### Unregistering a tool
-
-```js
-const { unregisterFunctionTool } = SillyTavern.getContext();
-
-unregisterFunctionTool('get_weather');
-```
-
-### Checking tool calling support
-
-```js
-const { isToolCallingSupported, canPerformToolCalls } = SillyTavern.getContext();
-
-// Check if the current API and model support tool calling at all
-if (isToolCallingSupported()) {
-    console.log('Tool calling is available');
-}
-
-// Check if tool calls can be performed for a specific generation type
-// (tool calls are disabled for 'impersonate', 'quiet', and 'continue' types)
-if (canPerformToolCalls('normal')) {
-    console.log('Can perform tool calls for this generation');
-}
 ```
 
 ## Action loader
