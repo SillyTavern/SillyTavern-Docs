@@ -35,77 +35,91 @@ Function Calling allows adding dynamic functionality to your extensions by letti
 
 ### Check if the feature is supported
 
-To determine if the function tool calling feature is supported, you can call `isToolCallingSupported` from the `SillyTavern.getContext()` object. This will check if the current API supports function tool calling and if it's enabled in the settings. Here is an example of how to check if the feature is supported:
+Use `isToolCallingSupported()` from `SillyTavern.getContext()` to check if the current API supports function tool calling and if it's enabled in the settings:
 
-```ts
-if (SillyTavern.getContext().isToolCallingSupported()) {
-    console.log("Function tool calling is supported");
-} else {
-    console.log("Function tool calling is not supported");
+```js
+const { isToolCallingSupported } = SillyTavern.getContext();
+
+if (isToolCallingSupported()) {
+    console.log('Function tool calling is supported');
 }
 ```
 
-### Register a function
+You can also check whether tool calls can be performed for a specific generation type. Continuations, impersonation, and background ('quiet') prompts are not allowed to trigger tool calls:
 
-To register a function tool, you need to call the `registerFunctionTool` function from the `SillyTavern.getContext()` object and pass the required parameters. Here is an example of how to register a function tool:
+```js
+const { canPerformToolCalls } = SillyTavern.getContext();
 
-```ts
-SillyTavern.getContext().registerFunctionTool({
-    // Internal name of the function tool. Must be unique.
-    name: "myFunction",
-    // Display name of the function tool. Will be shown in the UI. (Optional)
-    displayName: "My Function",
-    // Description of the function tool. Must describe what the function does and when to use it.
-    description: "My function description. Use when you need to do something.",
-    // JSON schema for the parameters of the function tool. See: https://json-schema.org/
+if (canPerformToolCalls('normal')) {
+    console.log('Can perform tool calls for this generation');
+}
+```
+
+### Register a function tool
+
+Use `registerFunctionTool()` from `SillyTavern.getContext()` to register a tool. The tool definition follows the [JSON Schema](https://json-schema.org/) format for its parameters:
+
+```js
+const { registerFunctionTool } = SillyTavern.getContext();
+
+registerFunctionTool({
+    name: 'get_weather',
+    displayName: 'Get Weather',
+    description: 'Get the current weather for a given location',
     parameters: {
         $schema: 'http://json-schema.org/draft-04/schema#',
         type: 'object',
         properties: {
-            param1: {
+            location: {
                 type: 'string',
-                description: 'Parameter 1 description',
+                description: 'The city name, e.g. "London"',
             },
-            param2: {
+            unit: {
                 type: 'string',
-                description: 'Parameter 2 description',
+                enum: ['celsius', 'fahrenheit'],
+                description: 'Temperature unit',
             },
         },
-        required: [
-            'param1', 'param2',
-        ],
+        required: ['location'],
     },
-    // Function to call when the tool is triggered. Can be async.
-    // If the result is not a string, it will be JSON-stringified.
-    action: async ({ param1, param2 }) => {
-        // Your function code here
-        console.log(`Function called with parameters: ${param1}, ${param2}`);
-        return "Function result";
+    action: async ({ location, unit }) => {
+        // Perform your logic here (API calls, computations, etc.)
+        const data = await fetchWeatherData(location, unit);
+        return JSON.stringify(data);
     },
-    // Optional function to format the toast message displayed when the function is invoked.
-    // If an empty string is returned, no toast message will be displayed.
-    formatMessage: ({ param1, param2 }) => {
-        return `Function is called with: ${param1} and ${param2}`;
-    },
-    // Optional function that returns a boolean value indicating whether the tool should be registered for the current prompt.
-    // If no shouldRegister function is provided, the tool will be registered for every prompt.
-    shouldRegister: () => {
-        return true;
-    },
-    // Optional flag. If set to true, the function call will be performed, but the result won't be recorded to the visible chat history.
+    formatMessage: ({ location }) => `Checking weather for ${location}...`,
+    shouldRegister: () => isWeatherFeatureEnabled(),
     stealth: false,
 });
 ```
 
-### Unregister a function
+### Registration fields
 
-To deactivate a function tool, you need to call the `unregisterFunctionTool` function from the `SillyTavern.getContext()` object and pass the name of the function tool to disable. Here is an example of how to unregister a function tool:
+| Field | Required | Description |
+|-------|----------|-------------|
+| `name` | Yes | Unique identifier for the tool |
+| `displayName` | No | User-friendly display name shown in the UI |
+| `description` | Yes | Description sent to the LLM to explain what the tool does and when to use it |
+| `parameters` | Yes | JSON Schema defining the tool's input parameters |
+| `action` | Yes | Function called when the LLM invokes the tool. Receives parsed parameters as an object. Can be async. Must return a string result (non-string values will be JSON-stringified). |
+| `formatMessage` | No | Function returning a string shown as a toast while the tool executes. Return an empty string to suppress the toast. |
+| `shouldRegister` | No | Function returning a boolean; if `false`, the tool is excluded from the current request. If not provided, the tool is registered for every prompt. |
+| `stealth` | No | If `true`, the tool call result is not recorded to visible chat history and no follow-up generation is triggered |
 
-```ts
-SillyTavern.getContext().unregisterFunctionTool("myFunction");
+### Unregister a function tool
+
+To deactivate a function tool, call `unregisterFunctionTool()` with the tool's name:
+
+```js
+const { unregisterFunctionTool } = SillyTavern.getContext();
+
+unregisterFunctionTool('get_weather');
 ```
 
 ## Tips and tricks
 
-1. Successful tool calls are saved as a part of the visible history and will be displayed in the chat UI, so you can inspect the actual parameters and results. If that is not desirable, set the `stealth: true` flag when registering a function tool.
-2. If you don't want to see the tool call in the chat history. If you want to stylize or hide them with custom CSS, target a `toolCall` class on `.mes` elements, i.e. `.mes.toolCall { display: none; }` or `.mes.toolCall { color: #999; }`.
+1. Successful tool calls are saved as part of the visible chat history and displayed in the chat UI, so you can inspect the actual parameters and results. If that is not desirable, set `stealth: true` when registering the tool.
+2. To stylize or hide tool call messages with custom CSS, target the `toolCall` class on `.mes` elements, e.g. `.mes.toolCall { display: none; }` or `.mes.toolCall { opacity: 0.5; }`.
+3. Write clear, specific descriptions for your tools — the LLM uses these to decide when and how to call them. Include guidance on when the tool should be used.
+4. Keep the parameter schema simple and well-documented. Each property's `description` helps the LLM fill in the correct values.
+5. Tool calls have a recursion limit (default: 5 rounds). If the LLM keeps calling tools repeatedly, execution will stop after the limit is reached.
