@@ -94,6 +94,14 @@ Downloadable extensions are mounted into the `/scripts/extensions/third-party` f
     "minimum_client_version": "1.0.0",
     "i18n": {
         "de-de": "i18n/de-de.json"
+    },
+    "hooks": {
+        "install": "onInstall",
+        "update": "onUpdate",
+        "delete": "onDelete",
+        "enable": "onEnable",
+        "disable": "onDisable",
+        "activate": "onActivate"
     }
 }
 ```
@@ -110,6 +118,7 @@ Downloadable extensions are mounted into the `/scripts/extensions/third-party` f
 * `dependencies` is an optional array of strings specifying other **extensions** that this extension depends on.
 * `generate_interceptor` is an optional string that specifies the name of a global function called on text generation requests.
 * `minimum_client_version` is an optional string that specifies the minimum SillyTavern version required for this extension to work.
+* `hooks` is an optional object that specifies [lifecycle hook](#lifecycle-hooks) function names exported from the JS entry point module.
 
 ### Dependencies
 
@@ -129,7 +138,14 @@ Examples:
 
 To check which modules are currently provided by the connected Extras API, import the `modules` array from `scripts/extensions.js`.
 
+
 ## Scripting
+
+### Best practices for extension initialization
+
+* Use the `activate` hook for synchronous setup that needs to run during SillyTavern's loading phase while the blocking loader is active.
+* Use the `APP_INITIALIZED` event for setup that should run after all extensions and UI elements are loaded and set up, but while the loader is still blocking.
+* Use the `APP_READY` event for asynchronous setup that doesn't need to block SillyTavern from being ready to use. It should use a timer or similar mechanism to defer handling, as the event handler will be awaited.
 
 ### Using getContext
 
@@ -156,12 +172,27 @@ If you're missing any of the functions/properties in `getContext`, please get in
 Most of the npm libraries used internally by the SillyTavern frontend are shared in the `libs` property of the `SillyTavern` global object.
 
 * `lodash` - Utility library. [Docs](https://lodash.com/).
-* `localforage` - Browser storage library. [Docs](https://localforage.github.io/localForage/).
 * `Fuse` - Fuzzy search library. [Docs](https://www.fusejs.io/).
 * `DOMPurify` - HTML sanitization library. [Docs](https://github.com/cure53/DOMPurify).
+* `hljs` - Syntax highlighting library. [Docs](https://highlightjs.org/).
+* `localforage` - Browser storage library (IndexedDB/localStorage abstraction). [Docs](https://localforage.github.io/localForage/).
 * `Handlebars` - Templating library. [Docs](https://handlebarsjs.com/).
-* `moment` - Date/time manipulation library. [Docs](http://momentjs.com/).
+* `css` - CSS parsing/stringification tools. [Docs](https://github.com/nicolo-ribaudo/css-tools).
+* `Bowser` - Browser/platform detection library. [Docs](https://github.com/bowser-js/bowser).
+* `DiffMatchPatch` - Text diff, match, and patch library. [Docs](https://github.com/google/diff-match-patch).
+* `Readability` / `isProbablyReaderable` - Mozilla's article extraction library. [Docs](https://github.com/mozilla/readability).
+* `SVGInject` - Inline SVG injection library. [Docs](https://github.com/nicolo-ribaudo/svg-inject).
 * `showdown` - Markdown converter library. [Docs](https://showdownjs.com/).
+* `moment` - Date/time manipulation library. [Docs](http://momentjs.com/).
+* `seedrandom` - Seeded random number generator. [Docs](https://github.com/davidbau/seedrandom).
+* `Popper` - Tooltip/popover positioning engine. [Docs](https://popper.js.org/).
+* `droll` - Dice rolling library. [Docs](https://github.com/thebinarypenguin/droll).
+* `morphdom` - Fast DOM diffing/patching library. [Docs](https://github.com/patrick-steele-iber/morphdom).
+* `slideToggle` - Vanilla JS slide toggle animation. [Docs](https://github.com/nicolo-ribaudo/slidetoggle).
+* `chalk` - Terminal string styling (limited use in browser). [Docs](https://github.com/chalk/chalk).
+* `yaml` - YAML parser and stringifier. [Docs](https://eemeli.org/yaml/).
+* `chevrotain` - Parser building toolkit. [Docs](https://chevrotain.io/).
+* `gzipSync` / `gzip` - Fast compression utilities from fflate. [Docs](https://github.com/101arrowz/fflate).
 
 You can find the full list of exported libraries in the [SillyTavern source code](https://github.com/SillyTavern/SillyTavern/blob/staging/public/lib.js).
 
@@ -192,6 +223,49 @@ declare global {
     // Add global type declarations here
 }
 ```
+
+### HTML templates
+
+Extensions can use Handlebars HTML templates to build their UI. Place `.html` template files in your extension's directory and render them using the `renderExtensionTemplateAsync()` function from `getContext()`.
+
+The function takes your extension's folder name, the template file name (without `.html`), and an optional data object for Handlebars template variables. The returned HTML is automatically sanitized with DOMPurify and localized with `data-i18n` attributes.
+
+```js
+const { renderExtensionTemplateAsync } = SillyTavern.getContext();
+
+// Renders 'third-party/my-extension/settings.html' with the given data
+const settingsHtml = await renderExtensionTemplateAsync(
+    'third-party/my-extension',
+    'settings',
+    { title: 'My Extension', version: '1.0', defaultValue: 'test' }
+);
+
+// Append to the extensions settings panel
+$('#extensions_settings2').append(settingsHtml);
+```
+
+**Template file example** (`settings.html`):
+
+```html
+<div class="my-extension-settings">
+    <div class="inline-drawer">
+        <div class="inline-drawer-toggle inline-drawer-header">
+            <b data-i18n="{{title}}">{{title}}</b>
+            <div class="inline-drawer-icon fa-solid fa-circle-chevron-down down"></div>
+        </div>
+        <div class="inline-drawer-content">
+            <label for="my_ext_option">
+                <span data-i18n="Option">Option</span>
+            </label>
+            <input id="my_ext_option" type="text" value="{{defaultValue}}" />
+        </div>
+    </div>
+</div>
+```
+
+!!!warning
+`renderExtensionTemplate()` (synchronous) is deprecated. Always use `renderExtensionTemplateAsync()` instead.
+!!!
 
 ### Importing from other files
 
@@ -459,19 +533,61 @@ function handleIncomingMessage(data) {
 
 The main event types are:
 
+**App lifecycle:**
+
 * `APP_INITIALIZED`: the app is initialized and close to being ready, but the loader is still visible. UI modifications can be done here. It will auto-fire every time a new listener is attached after the app is initialized.
 * `APP_READY`: the app is fully loaded and ready to use. It will auto-fire every time a new listener is attached after the app is ready.
-* `MESSAGE_RECEIVED`: the LLM message is generated and recorded into the `chat` object but not yet rendered in the UI.
+
+**Messages:**
+
 * `MESSAGE_SENT`: the message is sent by the user and recorded into the `chat` object but not yet rendered in the UI.
+* `MESSAGE_RECEIVED`: the LLM message is generated and recorded into the `chat` object but not yet rendered in the UI.
 * `USER_MESSAGE_RENDERED`: the message sent by a user is rendered in the UI.
 * `CHARACTER_MESSAGE_RENDERED`: the generated LLM message is rendered in the UI.
-* `CHAT_CHANGED`: the chat has been switched (e.g., switched to another character, or another chat was loaded).
+* `MESSAGE_EDITED`: a message has been edited by the user.
+* `MESSAGE_DELETED`: a message has been deleted.
+* `MESSAGE_SWIPED`: a message swipe has been triggered.
+* `STREAM_TOKEN_RECEIVED`: a new token was received during streaming generation.
+
+**Generation:**
+
 * `GENERATION_AFTER_COMMANDS`: the generation is about to start after processing slash commands.
+* `GENERATION_STARTED`: the generation has started.
 * `GENERATION_STOPPED`: the generation was stopped by the user.
 * `GENERATION_ENDED`: the generation has been completed or has errored out.
-* `SETTINGS_UPDATED`: the application settings have been updated.
 
-The rest can be found [in the source](https://github.com/SillyTavern/SillyTavern/blob/staging/public/scripts/events.js).
+**Chat:**
+
+* `CHAT_CHANGED`: the chat has been switched (e.g., switched to another character, or another chat was loaded).
+* `CHAT_CREATED`: a new chat has been created.
+* `CHAT_DELETED`: a chat has been deleted.
+
+**Characters:**
+
+* `CHARACTER_EDITED`: a character's data has been changed.
+* `CHARACTER_DELETED`: a character has been deleted.
+* `CHARACTER_DUPLICATED`: a character has been duplicated.
+
+**Settings and presets:**
+
+* `SETTINGS_UPDATED`: the application settings have been updated.
+* `PRESET_CHANGED`: the active preset has been changed.
+* `MAIN_API_CHANGED`: the main API type has been switched.
+* `CHATCOMPLETION_SOURCE_CHANGED`: the chat completion source has changed.
+* `CHATCOMPLETION_MODEL_CHANGED`: the chat completion model has changed.
+* `CONNECTION_PROFILE_LOADED`: a connection profile has been loaded.
+
+**World Info:**
+
+* `WORLDINFO_UPDATED`: world info data has been updated.
+* `WORLDINFO_SETTINGS_UPDATED`: world info settings have been changed.
+
+**Tool calling:**
+
+* `TOOL_CALLS_PERFORMED`: tool calls have been executed.
+* `TOOL_CALLS_RENDERED`: tool call results have been rendered in the chat.
+
+The full list of event types can be found [in the source](https://github.com/SillyTavern/SillyTavern/blob/staging/public/scripts/events.js).
 
 !!!info Event data
 The way each event passes its data to the listener is not uniform. Some events don't emit any data; some pass an object or a primitive value. Please refer to the source code where the event is emitted to see what data it passes, or check with the debugger.
@@ -536,6 +652,87 @@ globalThis.myCustomInterceptorFunction = async function(chat, contextSize, abort
     chat.splice(chat.length - 1, 0, systemNote);
 }
 ```
+
+## Lifecycle Hooks
+
+Extensions can define lifecycle hooks in `manifest.json` that are called at specific points in the extension's lifecycle. Each hook maps to an **exported function** from the extension's JS entry point module (the file specified in the `js` field).
+
+All hooks are optional. Hook functions can return a `Promise` that will be awaited (with a 5-second timeout). If a hook exceeds the timeout, a warning is logged and execution continues. Errors in hooks are caught and logged without blocking the operation.
+
+### Available hooks
+
+| Hook | When it's called |
+|------|-----------------|
+| `activate` | When the extension is successfully activated during page load |
+| `install` | After the extension is installed and its settings are loaded |
+| `update` | After a successful extension update (before the reload toast) |
+| `delete` | Before the extension is deleted from the server |
+| `enable` | Before the extension is enabled and settings are saved |
+| `disable` | Before the extension is disabled and settings are saved |
+
+### Manifest configuration
+
+Add a `hooks` object to your `manifest.json` mapping hook names to exported function names:
+
+```json
+{
+    "display_name": "My Extension",
+    "js": "index.js",
+    // Other fields here...
+    "hooks": {
+        "install": "onInstall",
+        "update": "onUpdate",
+        "delete": "onDelete",
+        "enable": "onEnable",
+        "disable": "onDisable",
+        "activate": "onActivate"
+    }
+}
+```
+
+The names can be freely chosen, as long as the are valid JS function names.  
+Any numer of hooks can be configured, you do not have to fill out and implement all of them.
+
+### Implementation
+
+Export the hook functions from your main JS entry point. Each function receives no arguments and can optionally return a `Promise`:
+
+```js
+// index.js - your extension's entry point
+
+export async function onInstall() {
+    console.log('Extension installed! Performing first-time setup...');
+    // e.g., initialize default data, create storage entries
+}
+
+export async function onActivate() {
+    console.log('Extension activated during page load');
+}
+
+export async function onUpdate() {
+    console.log('Extension updated! Running migrations...');
+    // e.g., migrate data from old format to new format
+}
+
+export async function onDelete() {
+    console.log('Extension about to be deleted. Cleaning up...');
+    // e.g., remove stored data, clean up localStorage
+    const { localforage } = SillyTavern.libs;
+    await localforage.removeItem('my_extension_data');
+}
+
+export function onEnable() {
+    console.log('Extension enabled');
+}
+
+export function onDisable() {
+    console.log('Extension disabled');
+}
+```
+
+!!!warning
+Hook functions have a **5-second timeout**. If your hook takes longer, execution will continue and a warning will be logged. Keep hook logic fast and lightweight.
+!!!
 
 ## Generating text
 
@@ -656,34 +853,350 @@ const quietResult = await generateQuietPrompt({
 
 You can register custom macros that can be used anywhere where macro substitutions are supported, e.g. in the character card fields, STscript commands, prompt templates, etc.
 
-To register a macro, use the `registerMacro()` function from the `SillyTavern.getContext()` object. The function accepts a macro name that should be a unique string, and a string or a function that returns a string. The function will be called with a unique `nonce` string that will be different between each `substituteParams` call.
+### New macro system
+
+The recommended way to register macros is through the `macros.register()` function available via `SillyTavern.getContext()`. This system supports arguments, categories, descriptions, and rich documentation metadata.
 
 ```js
-const { registerMacro } = SillyTavern.getContext();
+const { macros } = SillyTavern.getContext();
 
-// Simple string macro
-registerMacro('fizz', 'buzz');
-// Function macro
-registerMacro('tomorrow', () => {
-    return new Date(Date.now() + 24 * 60 * 60 * 1000).toLocaleDateString();
+// Simple macro with a handler function
+macros.register('tomorrow', {
+    description: 'Returns tomorrow\'s date',
+    handler: () => {
+        return new Date(Date.now() + 24 * 60 * 60 * 1000).toLocaleDateString();
+    },
+});
+
+// Macro with unnamed arguments and a category
+macros.register('greet', {
+    description: 'Generates a greeting for the given name',
+    category: macros.category.UTILITY,
+    unnamedArgs: [
+        { name: 'name', description: 'The name to greet' },
+    ],
+    handler: ({ unnamedArgs }) => {
+        const [name] = unnamedArgs;
+        return `Hello, ${name}!`;
+    },
 });
 ```
 
-When a custom macro is no longer needed, remove it using the `unregisterMacro()` function:
+The `handler` function receives a [MacroExecutionContext](https://github.com/SillyTavern/SillyTavern/blob/staging/public/scripts/macros/engine/MacroRegistry.js) object containing
+
+* `args` - All unnamed arguments passed to the macro.
+* `unnamedArgs` - Positional arguments matching the defined argument list.
+* `list` - List arguments (after unnamed args), or `null` if list is not enabled.
+* `env` - The macro environment with access to character data, chat state, etc.
+* `resolve(text)` - Function to resolve nested macros in text (when `delayArgResolution` is `true`).
+
+And more.
+
+Handlers will run synchronously, so they can never return a `Promise` or call async actions synchronously.
+
+To unregister a macro:
 
 ```js
-const { unregisterMacro } = SillyTavern.getContext();
+const { macros } = SillyTavern.getContext();
 
-// Unregister the 'fizz' macro
+macros.registry.unregisterMacro('greet');
+```
+
+You can also register aliases for existing macros:
+
+```js
+const { macros } = SillyTavern.getContext();
+
+macros.registerAlias('greet', 'hello', { visible: true });
+```
+
+### Legacy macro system (deprecated)
+
+!!!warning
+`registerMacro()` and `unregisterMacro()` from `getContext()` are **deprecated**. Use `macros.register()` and `macros.registry.unregisterMacro()` instead.
+!!!
+
+The legacy API is still available for backward compatibility, but will be removed in a future release:
+
+```js
+const { registerMacro, unregisterMacro } = SillyTavern.getContext();
+
+// Simple string macro
+registerMacro('fizz', 'buzz');
+// Function macro (must be synchronous)
+registerMacro('tomorrow', () => {
+    return new Date(Date.now() + 24 * 60 * 60 * 1000).toLocaleDateString();
+});
+
+// Unregister
 unregisterMacro('fizz');
 ```
 
-**Important details and known limitations regarding custom macros:**
+## Function tool calling
 
-1. Currently only simple string replacement macros are supported. We're working on adding support for more complex macros in the future.
-2. Macros that use functions to provide a value *must* be synchronous. Returning a `Promise` will not work.
-3. You do not need to wrap the macro name in double curly braces (`{{ }}`) when registering it. SillyTavern will do that for you.
-4. Since macros are plain regular expression substitutions, registering a lot of macros will cause performance issues, so use them sparingly.
+Extensions can register custom function tools that the LLM can invoke during chat completion. This requires the user to have a Chat Completion API with tool/function calling support enabled.
+
+### Registering a tool
+
+Use `registerFunctionTool()` from `getContext()` to register a tool. The tool definition follows the OpenAI function calling schema:
+
+```js
+const { registerFunctionTool } = SillyTavern.getContext();
+
+registerFunctionTool({
+    name: 'get_weather',
+    displayName: 'Get Weather',
+    description: 'Get the current weather for a given location',
+    parameters: {
+        $schema: 'http://json-schema.org/draft-04/schema#',
+        type: 'object',
+        properties: {
+            location: {
+                type: 'string',
+                description: 'The city name, e.g. "London"',
+            },
+            unit: {
+                type: 'string',
+                enum: ['celsius', 'fahrenheit'],
+                description: 'Temperature unit',
+            },
+        },
+        required: ['location'],
+    },
+    action: async ({ location, unit }) => {
+        // Perform your logic here (API calls, computations, etc.)
+        return JSON.stringify({ temperature: 22, unit: unit || 'celsius', location });
+    },
+    formatMessage: ({ location }) => `Checking weather for ${location}...`,
+    // Optional: only register this tool when certain conditions are met
+    shouldRegister: () => someConditionIsMet(),
+    // Optional: if true, the tool result is not shown in chat and no follow-up generation occurs
+    stealth: false,
+});
+```
+
+### Tool registration fields
+
+| Field | Required | Description |
+|-------|----------|-------------|
+| `name` | Yes | Unique identifier for the tool |
+| `displayName` | No | User-friendly display name |
+| `description` | Yes | Description sent to the LLM to explain what the tool does |
+| `parameters` | Yes | JSON Schema defining the tool's parameters |
+| `action` | Yes | Async function called when the LLM invokes the tool. Receives parsed parameters, must return a string result. |
+| `formatMessage` | No | Function returning a string shown as a toast while the tool executes |
+| `shouldRegister` | No | Function returning a boolean; if `false`, the tool is excluded from the current request |
+| `stealth` | No | If `true`, the result is hidden from the chat and no follow-up generation is triggered |
+
+### Unregistering a tool
+
+```js
+const { unregisterFunctionTool } = SillyTavern.getContext();
+
+unregisterFunctionTool('get_weather');
+```
+
+### Checking tool calling support
+
+```js
+const { isToolCallingSupported, canPerformToolCalls } = SillyTavern.getContext();
+
+// Check if the current API and model support tool calling at all
+if (isToolCallingSupported()) {
+    console.log('Tool calling is available');
+}
+
+// Check if tool calls can be performed for a specific generation type
+// (tool calls are disabled for 'impersonate', 'quiet', and 'continue' types)
+if (canPerformToolCalls('normal')) {
+    console.log('Can perform tool calls for this generation');
+}
+```
+
+## Action loader
+
+The action loader provides a loading overlay and toast notification system for long-running operations. It replaces the deprecated `showLoader()` / `hideLoader()` functions.
+
+Access it via `loader` from `getContext()`:
+
+```js
+const { loader } = SillyTavern.getContext();
+
+// Basic blocking loader with a stoppable toast
+const handle = loader.show({ message: 'Processing data...' });
+try {
+    const result = await someExpensiveOperation();
+} finally {
+    await handle.hide();
+}
+```
+
+### Options
+
+| Option | Default | Description |
+|--------|---------|-------------|
+| `blocking` | `true` | Show a full-screen overlay that blocks interaction |
+| `message` | `'Generating...'` | Message shown in the toast notification |
+| `title` | `''` | Optional title for the toast |
+| `toastMode` | `'stoppable'` | `'stoppable'` (with stop button), `'static'` (no button), or `'none'` (no toast) |
+| `stopTooltip` | `'Stop'` | Tooltip text for the stop button |
+| `onStop` | `null` | Custom stop handler. Defaults to `stopGeneration()` |
+| `onHide` | `null` | Called when the loader is hidden (not stopped) |
+| `overlayContent` | `null` | Custom HTML element or string replacing the default spinner |
+
+### Stacking loaders
+
+Multiple loaders can be active simultaneously. The overlay stays visible as long as at least one blocking loader is active:
+
+```js
+const { loader } = SillyTavern.getContext();
+
+const loader1 = loader.show({ message: 'Task 1...' });
+const loader2 = loader.show({ message: 'Task 2...' });
+await loader1.hide(); // Overlay stays — loader2 is still active
+await loader2.hide(); // Now overlay hides
+```
+
+### Non-blocking loader
+
+For background tasks that shouldn't block the UI:
+
+```js
+const { loader } = SillyTavern.getContext();
+
+const handle = loader.show({
+    blocking: false,
+    message: 'Downloading in background...',
+    onStop: () => abortDownload(),
+});
+```
+
+## Popups and user feedback
+
+### Popup helpers
+
+SillyTavern provides convenient popup helpers via `Popup.show` from `getContext()`:
+
+```js
+const { Popup } = SillyTavern.getContext();
+
+// Confirmation dialog — returns POPUP_RESULT.AFFIRMATIVE or POPUP_RESULT.NEGATIVE
+const confirmed = await Popup.show.confirm('Confirm Action', 'Are you sure you want to proceed?');
+
+// Text input dialog — returns the entered string, or null if cancelled
+const userInput = await Popup.show.input('Enter Name', 'Please provide a name:', 'default value');
+
+// Information display — returns the clicked button result
+await Popup.show.text('Info', 'Operation completed successfully.');
+```
+
+### Custom popups
+
+For more complex popups, instantiate `Popup` directly with full options:
+
+```js
+const { Popup, POPUP_TYPE, POPUP_RESULT } = SillyTavern.getContext();
+
+const popup = new Popup(
+    '<div>Custom HTML content here</div>',
+    POPUP_TYPE.TEXT,
+    '',
+    {
+        wide: true,              // Wide display mode
+        okButton: 'Save',       // Custom OK button text
+        cancelButton: 'Discard', // Custom Cancel button text
+        customButtons: [
+            {
+                text: 'Export',
+                icon: 'fa-download',
+                result: POPUP_RESULT.CUSTOM1,
+            },
+        ],
+        customInputs: [
+            {
+                id: 'my_checkbox',
+                label: 'Enable feature',
+                type: 'checkbox',
+                defaultState: false,
+            },
+        ],
+        allowVerticalScrolling: true,
+    }
+);
+
+const result = await popup.show();
+
+if (result === POPUP_RESULT.AFFIRMATIVE) {
+    // OK was clicked
+} else if (result === POPUP_RESULT.CUSTOM1) {
+    // Export button was clicked
+}
+
+// Read custom input values
+const checkboxValue = popup.inputResults?.get('my_checkbox');
+```
+
+### Popup types
+
+| Type | Description |
+|------|-------------|
+| `POPUP_TYPE.TEXT` | General content popup with buttons |
+| `POPUP_TYPE.CONFIRM` | Yes/No confirmation dialog |
+| `POPUP_TYPE.INPUT` | Popup with a text input field |
+| `POPUP_TYPE.DISPLAY` | Content-only popup with a close button |
+| `POPUP_TYPE.CROP` | Image cropping popup |
+
+### Toast notifications
+
+For lightweight feedback, use `toastr` (globally available):
+
+```js
+toastr.success('Data saved successfully');
+toastr.error('Failed to connect to API');
+toastr.warning('This feature is experimental');
+toastr.info('Processing...');
+```
+
+## Data bank scrapers
+
+Extensions can register custom data scrapers for the Data Bank feature. Scrapers provide a way to import data from custom sources (e.g., web pages, APIs, file formats):
+
+```js
+const { registerDataBankScraper } = SillyTavern.getContext();
+
+await registerDataBankScraper({
+    id: 'my_scraper',
+    name: 'My Data Source',
+    description: 'Import data from My Data Source',
+    iconClass: 'fa-solid fa-database',
+    iconAvailable: true,
+    isAvailable: async () => true,
+    scrape: async () => {
+        // Return an array of File objects
+        const content = await fetchDataFromSource();
+        return [new File([content], 'data.txt', { type: 'text/plain' })];
+    },
+});
+```
+
+## Debug functions
+
+Extensions can register custom debug functions that appear in the Debug Menu (accessible via the power user settings). This is useful for exposing diagnostic tools, cache/cleanup functionality or manual triggers during development:
+
+```js
+const { registerDebugFunction } = SillyTavern.getContext();
+
+registerDebugFunction(
+    'my_ext_clear_cache',        // Unique function ID
+    'Clear My Extension Cache',   // Display name
+    'Clears all cached data for My Extension', // Description
+    async () => {
+        const { localforage } = SillyTavern.libs;
+        await localforage.removeItem('my_extension_cache');
+        toastr.success('Cache cleared');
+    }
+);
+```
 
 ## Do Extras request
 
@@ -847,25 +1360,9 @@ const MODULE_NAME = 'settings';
 
 **Provide clear feedback**
 
-Use toastr notifications to inform users of actions and errors:
+Use `toastr` for lightweight notifications and `Popup` for important user interactions. See the [Popups and user feedback](#popups-and-user-feedback) section for full details.
 
-```js
-const { Popup } = SillyTavern.getContext();
-
-// Success message
-toastr.success('Data imported successfully');
-
-// Error message
-toastr.error('Failed to connect to API');
-
-// Warning message
-toastr.warning('This feature is experimental');
-
-// For important messages, use popups
-const result = await Popup.show.confirm('Confirm', 'Are you sure?');
-const userInput = await Popup.show.input('Input', 'Please enter a value:', 'default value');
-await Popup.show.text('Info', 'Operation completed successfully.');
-```
+For long-running operations, use the [Action loader](#action-loader) instead of blocking the UI silently.
 
 **Provide helpful console messages**
 
@@ -883,30 +1380,7 @@ console.error(`[${MODULE_NAME}] Error occurred:`, error);
 
 **Use bundled libraries from `lib.js`**
 
-SillyTavern bundles several useful libraries that extensions can be used directly:
-
-```js
-// Utility functions
-const { lodash } = SillyTavern.libs;
-const uniqueItems = lodash.uniq([1, 2, 2, 3]);
-const grouped = lodash.groupBy([{ category: 'A', name: 'foo' }, { category: 'B', name: 'bar' }], 'category');
-
-// Fuzzy search
-const { Fuse } = SillyTavern.libs;
-const fuse = new Fuse(items, { keys: ['name', 'description'] });
-const results = fuse.search('query');
-
-// Template rendering
-const { Handlebars } = SillyTavern.libs;
-const template = Handlebars.compile('<div>{{name}}</div>');
-const html = template({ name: 'Example' });
-
-// Date/time manipulation
-const { moment } = SillyTavern.libs;
-const formatted = moment().format('YYYY-MM-DD HH:mm:ss');
-```
-
-Other available libraries include: `DOMPurify`, `localforage`, `hljs`, `showdown`, `yaml`, and more. Check [lib.js](https://github.com/SillyTavern/SillyTavern/blob/release/public/lib.js) for the full list.
+Before adding new dependencies, check the [Shared libraries](#shared-libraries) section — SillyTavern bundles many common libraries (lodash, Fuse, DOMPurify, moment, yaml, etc.) that are available via `SillyTavern.libs`.
 
 **Initialize settings properly**
 
