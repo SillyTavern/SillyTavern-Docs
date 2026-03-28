@@ -300,6 +300,13 @@ Requires localhost or a domain with HTTPS, otherwise will not work!
 
 ## Git Configuration
 
+!!! Git backends explained
+
+1. `auto` - prefer system binary, falling back to integrated
+2. `system` - system git binary using [simple-git](https://www.npmjs.com/package/simple-git)
+3. `builtin` - integrated engine using [isomorphic-git](https://www.npmjs.com/package/isomorphic-git)
+!!!
+
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|-----------------|
 | `git.backend` | Git backend for plugin/extension repository operations | `auto` | `auto`, `system`, `builtin` |
