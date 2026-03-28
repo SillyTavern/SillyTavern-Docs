@@ -239,11 +239,11 @@ An enabled CORS proxy may be required by some extensions. It is not required by 
 |---------|-------------|---------|------------------|
 | `performance.lazyLoadCharacters` | Lazy-load character data | `true` | `true`, `false` |
 | `performance.useDiskCache` | Enable disk caching for character cards | `true` | `true`, `false` |
+| `performance.memoryCacheCapacity` | Maximum memory cache capacity | `100mb` | Human-readable size (e.g., `100mb`, `1gb`) |
 | `performance.requestCompression.enabled` | Enable gzip compression for client requests with large payloads (e.g. settings or chat saves) | `false` | `true`, `false` |
 | `performance.requestCompression.minPayloadSize` | Minimum payload size to trigger compression. Set to 0 to compress all requests regardless of size | `256kb` | Human-readable size (e.g., `256kb`, `1mb`) |
 | `performance.requestCompression.maxPayloadSize` | Hard upper payload size limit for compression. Set to 0 to allow compression of any size | `8mb` | Human-readable size (e.g., `8mb`, `16mb`) |
 | `performance.requestCompression.timeout` | Timeout for request compression in milliseconds | `4000` | Positive integer |
-| `performance.memoryCacheCapacity` | Maximum memory cache capacity | `100mb` | Human-readable size (e.g., `100mb`, `1gb`) |
 
 ## Cache Buster Configuration
 
