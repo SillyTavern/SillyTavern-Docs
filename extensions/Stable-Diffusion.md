@@ -120,7 +120,7 @@ To cycle through images, hover a mouse cursor (tap on mobile) over a generated i
 
 ### Edit prompts before generation
 
-Allow to edit the automatically generated prompts manually before sending them to the Image Generation API. You can also edit or discard saved negative prompt and override resolution when regenerating an image originally created with the `/sd` command.
+This option lets you edit automatically generated prompts before they are sent to the Image Generation API. You can also edit or discard the saved negative prompt and override the resolution when regenerating an image that was originally created with the `/sd` command.
 
 ### Use function tool
 
