@@ -239,6 +239,10 @@ An enabled CORS proxy may be required by some extensions. It is not required by 
 |---------|-------------|---------|------------------|
 | `performance.lazyLoadCharacters` | Lazy-load character data | `true` | `true`, `false` |
 | `performance.useDiskCache` | Enable disk caching for character cards | `true` | `true`, `false` |
+| `performance.requestCompression.enabled` | Enable gzip compression for client requests with large payloads (e.g. settings or chat saves) | `false` | `true`, `false` |
+| `performance.requestCompression.minPayloadSize` | Minimum payload size to trigger compression. Set to 0 to compress all requests regardless of size | `256kb` | Human-readable size (e.g., `256kb`, `1mb`) |
+| `performance.requestCompression.maxPayloadSize` | Hard upper payload size limit for compression. Set to 0 to allow compression of any size | `8mb` | Human-readable size (e.g., `8mb`, `16mb`) |
+| `performance.requestCompression.timeout` | Timeout for request compression in milliseconds | `4000` | Positive integer |
 | `performance.memoryCacheCapacity` | Maximum memory cache capacity | `100mb` | Human-readable size (e.g., `100mb`, `1gb`) |
 
 ## Cache Buster Configuration
@@ -330,6 +334,7 @@ See: [Prompt Caching](https://platform.claude.com/docs/en/build-with-claude/prom
 | `claude.enableSystemPromptCache` | Enable system prompt caching | `false` | `true`, `false` |
 | `claude.cachingAtDepth` | Enable message history caching | `-1` | `-1` (disabled), `0` or positive integer |
 | `claude.extendedTTL` | Use 1h TTL instead of the default 5m. Note that this also increases the cost of the request. | `false` | `true`, `false` |
+| `claude.enableAdaptiveThinking` | Enables adaptive thinking for supported models (Opus 4.6+). Disable to enforce legacy thinking mode (with thinking budget). See: [Adaptive Thinking](https://platform.claude.com/docs/en/build-with-claude/adaptive-thinking) | `false` | `true`, `false` |
 
 ### Google Gemini Configuration
 

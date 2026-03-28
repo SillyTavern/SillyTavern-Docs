@@ -110,7 +110,7 @@ The example below will send the generated image using Markdown as a user persona
 
 ### Image swipes
 
-Image swipes allow rerolling the image generation while keeping the same prompt. If a fixed seed is set, it will be randomized for the next generation. 
+Image swipes allow rerolling the image generation while keeping the same prompt. If a fixed seed is set, it will be randomized for the next generation. Image dimensions that were overridden via the `/sd` slash command are preserved for swiped images.
 
 To cycle through images, hover a mouse cursor (tap on mobile) over a generated image to reveal arrow buttons and swipes counter. Tapping the right arrow on the latest image will generate a new one.
 
@@ -189,6 +189,10 @@ Example: `best quality, anime lineart`.
 Characteristics of the image you don't want to be present in the output.
 
 Example: `bad quality, watermark`.
+
+### Manual prompt refinement
+
+When editing a saved image's prompts, you can manually edit or discard the saved negative prompt and resolution. This is useful for refining the generation parameters after an initial generation.
 
 ## Character-specific prompt prefix
 

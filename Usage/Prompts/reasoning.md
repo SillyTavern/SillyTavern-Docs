@@ -129,6 +129,7 @@ Reasoning Effort is a Chat Completion setting in the **<i class="fa-solid fa-sli
 | Maximum | 95% of max response, min 1024    | "high"               | "high", or 80% of max response   | "high"               | "high"               | "high"            |
 
 - For Claude, budget is capped to 21333 if streaming is disabled. If the calculated budget would be less than 1024, then max response is changed to 2048.
+- Claude also supports adaptive thinking for Opus 4.6+ models, which can be enabled via `claude.enableAdaptiveThinking` in [config.yaml](/Administration/config-yaml.md). When enabled, the Reasoning Effort setting maps to adaptive thinking levels instead of token budgets.
 - For OpenRouter, Perplexity and AI/ML API, only an OpenAI-style keyword is sent.
 
 Google AI Studio and Vertex AI are as follows:

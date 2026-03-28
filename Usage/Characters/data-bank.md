@@ -143,7 +143,7 @@ These sources are free and unlimited and use your CPU/GPU to calculate embedding
 
 1. Local (Transformers) - runs on a Node server. SillyTavern will automatically download a compatible model in ONNX format from HuggingFace. Default model: [jina-embeddings-v2-base-en](https://huggingface.co/Cohee/jina-embeddings-v2-base-en).
 2. WebLLM - requires an extension to be installed and a web browser that [supports WebGPU](https://caniuse.com/webgpu). Runs directly in your browser, can use hardware acceleration. Automatically downloads supported models from HuggingFace. Install the extension from here: <https://github.com/SillyTavern/Extension-WebLLM>.
-3. Ollama - get it from <https://ollama.com/>. Set the API URL in the API connection menu (under Text Completion, default: `http://localhost:11434`). Must download a compatible model first, then set its name in the extension settings. Example model: [mxbai-embed-large](https://ollama.com/library/mxbai-embed-large). Optionally, check an option to keep the model loaded in memory.
+3. Ollama - get it from <https://ollama.com/>. Set the API URL in the API connection menu (under Text Completion, default: `http://localhost:11434`). Uses the `/api/embed` endpoint with batch support. Must download a compatible model first, then set its name in the extension settings. Example model: [mxbai-embed-large](https://ollama.com/library/mxbai-embed-large). Optionally, check an option to keep the model loaded in memory.
 4. llama.cpp server - get it from [ggerganov/llama.cpp](https://github.com/ggerganov/llama.cpp) and run the server executable with `--embedding` flag. Load compatible GGUF embedding models from HuggingFace, for example, [nomic-ai/nomic-embed-text-v1.5-GGUF](https://huggingface.co/nomic-ai/nomic-embed-text-v1.5-GGUF).
 5. vLLM - get it from [vllm-project/vllm](https://github.com/vllm-project/vllm). Set the API URL and API key in the API connection menu first.
 6. Extras (deprecated) - runs under the [Extras API](https://github.com/SillyTavern/SillyTavern-extras) using the SentenceTransformers loader. Default model: [all-mpnet-base-v2](https://huggingface.co/sentence-transformers/all-mpnet-base-v2). This source is not maintained and will be eventually removed in the future.
@@ -163,6 +163,7 @@ All these sources require an API key of the respective service and usually have 
 9. Electron Hub
 10. Chutes
 11. NanoGPT
+12. SiliconFlow
 
 ## Vectorization Settings
 
