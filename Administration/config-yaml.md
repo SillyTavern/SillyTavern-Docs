@@ -271,11 +271,12 @@ Requires localhost or a domain with HTTPS, otherwise will not work!
 
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|-----------------|
+| `backups.common.numberOfBackups` | Number of backups to keep | `50` | Any positive integer |
 | `backups.chat.enabled` | Enable automatic chat backups | `true` | `true`, `false` |
 | `backups.chat.checkIntegrity` | Verify integrity of chat files before saving | `true` | `true`, `false` |
-| `backups.common.numberOfBackups` | Number of backups to keep | `50` | Any positive integer |
 | `backups.chat.throttleInterval` | Backup throttle interval (ms) | `10000` | Any positive integer |
 | `backups.chat.maxTotalBackups` | Maximum total chat backups to keep | `-1` | Any positive integer or -1 |
+| `backups.allowFullDataBackup` | Allow users to create a full backup archive of their data | `true` | `true`, `false` |
 
 ## [Extensions Configuration](/extensions/index.md)
 
@@ -296,6 +297,12 @@ Requires localhost or a domain with HTTPS, otherwise will not work!
 |---------|-------------|---------|-----------------|
 | `enableServerPlugins` | Enable server-side plugins | `false` | `true`, `false` |
 | `enableServerPluginsAutoUpdate` | Attempt to automatically update server plugins on startup | `true` | `true`, `false` |
+
+## Git Configuration
+
+| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|-----------------|
+| `git.backend` | Git backend for plugin/extension repository operations | `auto` | `auto`, `system`, `builtin` |
 
 ## [API Integration Settings](/Usage/API_Connections/index.md)
 

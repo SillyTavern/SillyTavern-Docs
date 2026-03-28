@@ -704,7 +704,6 @@ Use `/? macros` for the complete list of available macros and their detailed des
 | `{{mesExamples}}` | Character's dialogue examples, formatted for instruct mode |
 | `{{mesExamplesRaw}}` | Unformatted dialogue examples from the character card |
 | `{{charFirstMessage}}` | Character's first message (greeting). Accepts an optional index for alternate greetings, e.g. `{{charFirstMessage::1}}` |
-| `{{greeting}}` | Alias for `{{charFirstMessage}}` |
 | `{{original}}` | Original message content for substitution in character prompt overrides |
 
 ### Chat History & Messages
@@ -720,7 +719,7 @@ Use `/? macros` for the complete list of available macros and their detailed des
 | `{{lastSwipeId}}` | 1-based index of the last swipe for the last message |
 | `{{currentSwipeId}}` | 1-based index of the current swipe |
 | `{{allChatRange}}` | Provides the range of the entire chat (e.g. `0-{{lastMessageId}}`), useful for commands that accept message ranges |
-| `{{summary}}` | Latest chat summary from the "Summarize" extension. If available, prioritizes the UI memory content |
+| `{{summary}}` | Latest chat summary from the "Summarize" extension (when available) |
 
 ### Time & Date
 
@@ -767,8 +766,8 @@ Use `/? macros` for the complete list of available macros and their detailed des
 
 | Macro | Description |
 |-------|-------------|
-| `{{maxPrompt}}` | Maximum prompt context size |
-| `{{maxContextTokens}}` | Maximum number of context tokens for the current API/model |
+| `{{maxPrompt}}` | Maximum prompt context size (prompt tokens = context tokens - response tokens) |
+| `{{maxContextTokens}}` | Maximum number of context tokens for the current generation settings |
 | `{{maxResponseTokens}}` | Maximum number of response tokens for the current generation settings |
 | `{{model}}` | Model name for the currently selected API |
 | `{{isMobile}}` | "true" if running in mobile environment, "false" otherwise |

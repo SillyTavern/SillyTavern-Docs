@@ -33,11 +33,3 @@ From top to bottom (see image above):
 3. Click "Authorize" to get a key using the OAuth flow. Alternatively, generate an API key [here](https://openrouter.ai/keys) and paste it into the box.
 4. Click "Connect" and select a model.
 5. (Optional) Use the "Test Message" button to verify your connection.
-
-## Provider Filtering
-
-When a model is selected, OpenRouter can filter the list of available providers based on the selected model. This allows you to see only the providers that support your chosen model, making it easier to manage routing and pricing.
-
-## Reasoning
-
-When the reasoning toggle is deactivated with the minimal reasoning effort, OpenRouter will attempt to disable thinking for models that support it. The behavior is model-dependent.

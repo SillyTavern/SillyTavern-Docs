@@ -72,7 +72,7 @@ Now let's add a little bit of interactivity to the script. We will accept the in
 - `/popup (text)` — shows a blocking popup, supports lite HTML formatting, e.g: `/popup <font color=red>I'm red!</font>`.
 - `/setinput (text)` — replaces the contents of the user input bar with the provided text.
 - `/speak voice="name" (text)` — narrates the text using the selected TTS engine and the character name from the voice map, e.g. `/speak name="Donald Duck" Quack!`.
-- `/buttons labels=["a","b"] (text)` — shows a blocking popup with the specified text and button labels. `labels` must be a JSON-serialized array of strings or a variable name containing such an array. Returns the clicked button label into the pipe or empty string if canceled. The text supports lite HTML formatting. Also supports `placeholder`, `tooltip`, and `icon` named arguments.
+- `/buttons labels=["a","b"] (text)` — shows a blocking popup with the specified text and button labels. `labels` must be a JSON-serialized array of strings or a variable name containing such an array. Returns the clicked button label into the pipe or empty string if canceled. The text supports lite HTML formatting.
 - `/beep` — plays the message notification sound.
 
 #### Arguments for `/popup` and `/input`
@@ -651,6 +651,9 @@ Scripts can make requests to your currently connected LLM API using the followin
 - `/gen (prompt)` — generates text using the provided prompt for the selected character and including chat messages.
 - `/genraw (prompt)` — generates text using just the provided prompt, ignoring the current character and chat.
 - `/trigger` — triggers a normal generation (equivalent to clicking a "Send" button). If in group chat, you can optionally provide a 1-based group member index or a character name to have them reply, otherwise triggers a group round according to the group settings.
+- `/swipe` — triggers a swipe on the last character message.
+- `/regenerate` — regenerates the last character message.
+- `/continue` — attempts to continue the last message.
 
 ### Arguments for `/gen` and `/genraw`
 
@@ -763,11 +766,6 @@ A script can send messages as either a user, character, persona, neutral narrato
 6. `/hide (message id or range)` — hides one or several messages from the prompt based on the provided message index or inclusive range in the `start-finish` format.
 7. `/unhide (message id or range)` — returns one or several messages to the prompt based on the provided message index or inclusive range in the `start-finish` format.
 
-### Generation control
-
-1. `/swipe` — triggers a swipe on the last character message.
-2. `/regenerate` — regenerates the last character message.
-
 `/send`, `/sendas`, `/sys`, and `/comment` commands optionally accept a named argument `at` with a zero-based numeric value (or a variable name that contains such a value) that specifies an exact position of message insertion. By default new messages are inserted at the end of the chat log.
 
 This will insert a user message at the beginning of the conversation history:
@@ -788,27 +786,16 @@ This will insert a user message at the beginning of the conversation history:
 
 ## Character management commands
 
-1. `/char-create (json)` — creates a new character from a JSON object containing character data.
-2. `/char-update (json)` — updates the current character with data from a JSON object.
+1. `/char-create` — creates a new character using the data provided with named arguments.
+2. `/char-update` — updates the current character using the data provided with named arguments.
 3. `/char-get` — retrieves the current character's data as a JSON object and passes it to the pipe.
 4. `/char-delete (name)` — deletes the character with the specified name.
 5. `/char-duplicate (name)` — duplicates the character with the specified name.
 6. `/tag-import (name)` — imports tags from a character card file.
 
-## Reasoning block commands
-
-1. `/reasoning-collapse` — collapses all reasoning blocks in the chat.
-2. `/reasoning-expand` — expands all reasoning blocks in the chat.
-3. `/reasoning-toggle` — toggles the visibility of all reasoning blocks in the chat.
-
-## Array utilities
-
-1. `/array-wrap` — wraps the piped value in a JSON array. If the value is already an array, it is returned as-is.
-2. `/array-unwrap` — unwraps a single-element JSON array and passes the inner value to the pipe. If the array has more than one element, it is returned as-is.
-
 ## Loader commands
 
-The loader system provides a reusable loading overlay that supports stacking, toasts, and STscript integration.
+The loader system provides a reusable overlay for time consuming tasks that should provide visual feedback and/or temporarily block the UI.
 
 1. `/loader-show (text)` — shows a loading overlay with the specified text.
 2. `/loader-hide` — hides the loading overlay.
@@ -1236,7 +1223,7 @@ For example, use `/qr-create label=MyButton /getvar myvar \| /echo \{\{pipe\}\}`
 SillyTavern extensions (both built-in, downloadable and third-party) can add their own slash command. Below is just an example of the capabilities in the official extensions. The list may be incomplete, make sure to check `/help slash` for the most complete list of available commands.
 
 1. `/websearch (query)` — searches snippets of the web pages online for the specified query and returns the result into the pipe. Provided by the Web Search extension.
-2. `/imagine (prompt)` — generates an image using the provided prompt. Supports a `gallery` named argument to save the image to the gallery. Provided by the Image Generation extension.
+2. `/imagine (prompt)` — generates an image using the provided prompt. Provided by the Image Generation extension.
 3. `/emote (sprite)` — sets a sprite for the active character by fuzzy matching its name. Provided by the Character Expressions extension.
 4. `/costume (subfolder)` — sets a sprite set override for the active character. Provided by the Character Expressions extension.
 5. `/music (name)` — force changes a played background music file by its name. Provided by the Dynamic Audio extension.

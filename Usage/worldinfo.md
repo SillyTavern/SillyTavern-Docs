@@ -65,7 +65,7 @@ A World Info file can be assigned to the currently active [persona](/Usage/perso
 To assign a lorebook to a persona, open the **Persona Management** panel and click the <i class="fa-solid fa-globe"></i> **Persona Lore** button. Pick a World Info file from the dropdown list. If a lorebook is already bound, clicking the button opens the lorebook editor directly.
 
 !!!
-To reopen the assignment popup when a lorebook is already bound, use a **long press** (on mobile) or **Shift+Click** (on desktop) on the Persona Lore button.
+To reopen the assignment popup when a lorebook is already bound, use a **long press** (on mobile) or **Shift+Click / Alt+Click** (on desktop) on the Persona Lore button.
 !!!
 
 ### Chat Lorebook
@@ -75,7 +75,7 @@ A World Info file can also be assigned to an individual chat. Entries from a cha
 To assign a lorebook to a chat, click the <i class="fa-solid fa-passport"></i> **Chat Lore** button in the Character Management panel. Pick a World Info file from the dropdown list. If a lorebook is already bound, clicking the button opens the lorebook editor directly.
 
 !!!
-To reopen the assignment popup when a lorebook is already bound, use a **long press** (on mobile) or **Shift+Click** (on desktop) on the Chat Lore button.
+To reopen the assignment popup when a lorebook is already bound, use a **long press** (on mobile) or **Shift+Click / Alt+Click** (on desktop) on the Chat Lore button.
 !!!
 
 ## World Info Entry

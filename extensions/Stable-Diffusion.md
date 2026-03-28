@@ -120,7 +120,7 @@ To cycle through images, hover a mouse cursor (tap on mobile) over a generated i
 
 ### Edit prompts before generation
 
-Allow to edit the automatically generated prompts manually before sending them to the Stable Diffusion API.
+Allow to edit the automatically generated prompts manually before sending them to the Image Generation API. You can also edit or discard saved negative prompt and override resolution when regenerating an image originally created with the `/sd` command.
 
 ### Use function tool
 
@@ -189,10 +189,6 @@ Example: `best quality, anime lineart`.
 Characteristics of the image you don't want to be present in the output.
 
 Example: `bad quality, watermark`.
-
-### Manual prompt refinement
-
-When editing a saved image's prompts, you can manually edit or discard the saved negative prompt and resolution. This is useful for refining the generation parameters after an initial generation.
 
 ## Character-specific prompt prefix
 
