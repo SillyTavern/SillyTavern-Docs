@@ -40,6 +40,8 @@ One primary World Info can be bound to the character. To do that, navigate to th
 
 To unbind, change, or assign additional World Info files as character lore, shift-click the globe button or click "More..." then "Link World Info". Note that only the primary World Info file gets exported with the character.
 
+When renaming a World Info file, you will be prompted to optionally relink the lorebook across all characters that reference it. This ensures that existing character lore bindings remain intact after the rename.
+
 #### Character Lore Insertion Strategy
 
 When generating an AI reply, entries from the character World Info will be combined with the entries from a global World Info selector using one of the following strategies:
@@ -62,7 +64,7 @@ A World Info file can be assigned to the currently active [persona](/Usage/perso
 
 To assign a lorebook to a persona, open the **Persona Management** panel and click the <i class="fa-solid fa-globe"></i> **Persona Lore** button. Pick a World Info file from the dropdown list. If a lorebook is already bound, clicking the button opens the lorebook editor directly.
 
-!!!note Staging-only feature
+!!!
 To reopen the assignment popup when a lorebook is already bound, use a **long press** (on mobile) or **Shift+Click / Alt+Click** (on desktop) on the Persona Lore button.
 !!!
 
@@ -72,7 +74,7 @@ A World Info file can also be assigned to an individual chat. Entries from a cha
 
 To assign a lorebook to a chat, click the <i class="fa-solid fa-passport"></i> **Chat Lore** button in the Character Management panel. Pick a World Info file from the dropdown list. If a lorebook is already bound, clicking the button opens the lorebook editor directly.
 
-!!!note Staging-only feature
+!!!
 To reopen the assignment popup when a lorebook is already bound, use a **long press** (on mobile) or **Shift+Click / Alt+Click** (on desktop) on the Chat Lore button.
 !!!
 

@@ -69,6 +69,7 @@ Provider-specific notes:
 
 - Claude and Google (2.5 Flash) allow thinking mode to be toggled; see [Reasoning Effort](#reasoning-effort).
 - Reasoning can be disabled for [Z.AI (GLM)](https://docs.z.ai/api-reference/llm/chat-completion#body-one-of-0-thinking) and [Moonshot (Kimi)](https://platform.moonshot.ai/docs/guide/use-kimi-k2-thinking-model). The setting maps to the `thinking.type` parameter. They do not support "Reasoning Effort".
+- For OpenRouter, when the "Request model reasoning" toggle is deactivated with the minimal reasoning effort set, thinking will be set to disabled for models that support it. The behavior is model-dependent; certain providers may reject such requests.
 
 ### By Parsing
 
@@ -129,6 +130,7 @@ Reasoning Effort is a Chat Completion setting in the **<i class="fa-solid fa-sli
 | Maximum | 95% of max response, min 1024    | "high"               | "high", or 80% of max response   | "high"               | "high"               | "high"            |
 
 - For Claude, budget is capped to 21333 if streaming is disabled. If the calculated budget would be less than 1024, then max response is changed to 2048.
+- Claude also supports adaptive thinking for Opus 4.6+ models, which can be enabled via `claude.enableAdaptiveThinking` in [config.yaml](/Administration/config-yaml.md). When enabled, the Reasoning Effort setting maps to adaptive thinking levels instead of token budgets.
 - For OpenRouter, Perplexity and AI/ML API, only an OpenAI-style keyword is sent.
 
 Google AI Studio and Vertex AI are as follows:
