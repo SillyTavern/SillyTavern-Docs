@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>KoboldCpp | docs.ST.app</title>
@@ -29,14 +29,22 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/usage/api-connections/koboldcpp/">
+    <meta name="twitter:title" content="KoboldCpp | docs.ST.app">
+    <meta name="twitter:description" content="KoboldCpp is a self-contained API for GGML and GGUF models.">
+    <meta name="twitter:image" content="https://docs.sillytavern.app/static/koboldcpp.png">
+    <meta name="twitter:image:alt" content="KoboldCpp | docs.ST.app">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -96,10 +104,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -201,31 +209,20 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="koboldcpp" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#koboldcpp">#</doc-anchor-trigger>
-        <span>KoboldCpp</span>
-    </h1>
-</doc-anchor-target>
+<h1 id="koboldcpp">KoboldCpp</h1>
 <p>KoboldCpp is a self-contained API for GGML and GGUF models.</p>
 <p>This <a href="https://huggingface.co/spaces/NyxKrage/LLM-Model-VRAM-Calculator">VRAM Calculator</a> by Nyx will tell you approximately how much RAM/VRAM your model requires.</p>
-<doc-anchor-target id="nvidia-gpu-quickstart">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#nvidia-gpu-quickstart">#</doc-anchor-trigger>
-        <span>Nvidia GPU Quickstart</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="nvidia-gpu-quickstart">Nvidia GPU Quickstart</h2>
 <p>This guide assumes you&#x27;re using Windows.</p>
 <ul>
 <li>Download the latest release: <a href="https://github.com/LostRuins/koboldcpp/releases">https://github.com/LostRuins/koboldcpp/releases</a></li>
 <li>Launch KoboldCpp. You may see a pop-up from Microsoft Defender, click <code translate="no" v-pre>Run Anyway</code>.</li>
 <li>As of version 1.58, KoboldCpp should look like this:</li>
 </ul>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../../static/koboldcpp.png" alt="KoboldCpp 1.58" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="542" height="527" />
     <figcaption class="caption">KoboldCpp 1.58</figcaption>
 </figure>
-</p>
 <ul>
 <li>Under the <code translate="no" v-pre>Quick Launch</code> tab, select the model and your preferred <code translate="no" v-pre>Context Size</code>.</li>
 <li>Select <code translate="no" v-pre>Use CuBLAS</code> and make sure the yellow text next to <code translate="no" v-pre>GPU ID</code> matches your GPU.</li>
@@ -248,12 +245,7 @@ Please connect to custom endpoint at http://localhost:5001</code></pre>
 <p>You can now connect to KoboldCpp within SillyTavern with <code translate="no" v-pre>http://localhost:5001</code> as the API URL and start chatting.</p>
 <p><strong>Congratulations! You&#x27;re done!</strong></p>
 <p>Kind of.</p>
-<doc-anchor-target id="gpu-layers">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#gpu-layers">#</doc-anchor-trigger>
-        <span>GPU Layers</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="gpu-layers">GPU Layers</h3>
 <p>KoboldCpp is working, but you can improve performance by ensuring that as many layers as possible are offloaded to the GPU. You should see something like this in the terminal:</p>
 <div id="gpu-layers-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">llm_load_tensors: offloading 9 repeating layers to GPU

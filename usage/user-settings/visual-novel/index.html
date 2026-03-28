@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>Visual Novel (VN) Mode | docs.ST.app</title>
@@ -29,14 +29,22 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/usage/user-settings/visual-novel/">
+    <meta name="twitter:title" content="Visual Novel (VN) Mode | docs.ST.app">
+    <meta name="twitter:description" content="Visual Novel Mode is a special screen layout in SillyTavern that allows you to chat to characters with sprites (or their character card image) that">
+    <meta name="twitter:image" content="https://docs.sillytavern.app/static/vn/vn-mode-toggle.png">
+    <meta name="twitter:image:alt" content="Visual Novel (VN) Mode | docs.ST.app">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -96,10 +104,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -201,43 +209,22 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="visual-novel-vn-mode" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#visual-novel-vn-mode">#</doc-anchor-trigger>
-        <span>Visual Novel (VN) Mode</span>
-    </h1>
-</doc-anchor-target>
+<h1 id="visual-novel-vn-mode">Visual Novel (VN) Mode</h1>
 <p>Visual Novel Mode is a special screen layout in SillyTavern that allows you to chat to characters with sprites (or their character card image) that resembles that of a visual novel like Doki Doki Literature Club, The Fruits of Grisaia, Fate: Stay/night and other famous VN games.</p>
-<doc-anchor-target id="toggling-visual-novel-mode">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#toggling-visual-novel-mode">#</doc-anchor-trigger>
-        <span>Toggling Visual Novel Mode</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="enabling-visual-novel-mode">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#enabling-visual-novel-mode">#</doc-anchor-trigger>
-        <span>Enabling Visual Novel Mode</span>
-    </h3>
-</doc-anchor-target>
+<h2 id="toggling-visual-novel-mode">Toggling Visual Novel Mode</h2>
+<h3 id="enabling-visual-novel-mode">Enabling Visual Novel Mode</h3>
 <p>Visual Novel Mode comes built in with SillyTavern and can be toggled by going to <em>User Settings</em> (User Settings Icon) and checking <strong>Visual Novel Mode</strong> below <em>No Text Shadows</em>.</p>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../../static/vn/vn-mode-toggle.png" alt="User Settings" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="959" height="544" />
     <figcaption class="caption">User Settings</figcaption>
 </figure>
-</p>
-<doc-anchor-target id="disabling-visual-novel-mode">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#disabling-visual-novel-mode">#</doc-anchor-trigger>
-        <span>Disabling Visual Novel Mode</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="disabling-visual-novel-mode">Disabling Visual Novel Mode</h3>
 <p>Disabling Visual Novel Mode is the same steps as enabling it. Untoggle Visual Novel Mode and you should be back to the normal chat screen itself.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
                     <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -250,34 +237,22 @@
         </div>
     </div>
 </div>
-<doc-anchor-target id="the-visual-novel-ui">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#the-visual-novel-ui">#</doc-anchor-trigger>
-        <span>The Visual Novel UI</span>
-    </h2>
-</doc-anchor-target>
-<p><figure class="content-center">
+<h2 id="the-visual-novel-ui">The Visual Novel UI</h2>
+<figure class="content-center">
     <img src="../../../static/vn/vn-display.png" alt="VN Display" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1920" height="995" />
     <figcaption class="caption">VN Display</figcaption>
 </figure>
-</p>
 <p>In Visual Novel Mode, the UI is altered slightly in order to accommodate character sprites (or the character card image) which is shown in the center. In a group chat with multiple characters however, the character sprites will spread themselves out, accommodating for each other as shown below.</p>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../../static/vn/group-vn-display.png" alt="Group VN Display" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1919" height="995" />
     <figcaption class="caption">Group VN Display</figcaption>
 </figure>
-</p>
-<doc-anchor-target id="vn-mode-with-movingui">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#vn-mode-with-movingui">#</doc-anchor-trigger>
-        <span>VN Mode with MovingUI</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="vn-mode-with-movingui">VN Mode with MovingUI</h3>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -295,7 +270,7 @@
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
                     <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -308,17 +283,11 @@
         </div>
     </div>
 </div>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../../static/vn/vn-group-display-movingui.png" alt="Group VN Display (MovingUI)" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1920" height="996" />
     <figcaption class="caption">Group VN Display (MovingUI)</figcaption>
 </figure>
-</p>
-<doc-anchor-target id="obtaining-character-sprites">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#obtaining-character-sprites">#</doc-anchor-trigger>
-        <span>Obtaining Character Sprites</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="obtaining-character-sprites">Obtaining Character Sprites</h2>
 <p>Obtaining character sprites can be done by browsing the internet for existing sprites, for say, an existing character from a Visual Novel or a game that uses a Visual Novel feature such as DDLC or CounterSide. If the character you desire sprites from does not come with sprites already, you have several options remaining.</p>
 <ol>
 <li><p>Search the character post for any sprite ZIP package or link to a sprite pack.</p>
@@ -326,7 +295,7 @@
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -345,7 +314,7 @@
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
                     <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -363,7 +332,7 @@
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -380,18 +349,8 @@
 </div>
 </li>
 </ol>
-<doc-anchor-target id="vn-extensions">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#vn-extensions">#</doc-anchor-trigger>
-        <span>VN Extensions</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="prome-visual-novel-extension">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#prome-visual-novel-extension">#</doc-anchor-trigger>
-        <span>Prome Visual Novel Extension</span>
-    </h3>
-</doc-anchor-target>
+<h2 id="vn-extensions">VN Extensions</h2>
+<h3 id="prome-visual-novel-extension">Prome Visual Novel Extension</h3>
 <p>The Prome Visual Novel Extension is an endorsed third-party extension from Bronya Rand and Prometheus that enhances the visual novel experience in SillyTavern even further with features such as Letterbox Mode which makes the visual novel UI more &quot;cinematic&quot;, Focus Mode with Darken Character Sprites, Traditional VN Mode where only the last message in chat appears in chat and more planned to come!</p>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">

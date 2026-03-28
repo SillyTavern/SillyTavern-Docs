@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>Chat Translation | docs.ST.app</title>
@@ -29,15 +29,23 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/extensions/translation/">
+    <meta name="twitter:title" content="Chat Translation | docs.ST.app">
+    <meta name="twitter:description" content="The Chat Translation Extension enables real-time translation of chat messages between different languages using various translation providers. It supports">
+    <meta name="twitter:image" content="https://docs.sillytavern.app/static/extensions/translation/sensei.png">
+    <meta name="twitter:image:alt" content="Chat Translation | docs.ST.app">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.2.0.826914722230" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.4.0.828033847105" defer></script>
 
     <style>
         a {
@@ -97,10 +105,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -202,74 +210,53 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="chat-translation" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#chat-translation">#</doc-anchor-trigger>
-        <span>Chat Translation</span>
-    </h1>
-</doc-anchor-target>
-<doc-anchor-target id="overview">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#overview">#</doc-anchor-trigger>
-        <span>Overview</span>
-    </h2>
-</doc-anchor-target>
+<h1 id="chat-translation">Chat Translation</h1>
+<h2 id="overview">Overview</h2>
 <p>The Chat Translation Extension enables real-time translation of chat messages between
 different languages using various translation providers. It supports both manual and
 automatic translation modes.</p>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/extensions/translation/sensei.png" alt="Character message translated from English to Chinese using 'Translate Message/翻譯訊息' message action button" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="960" height="424" />
     <figcaption class="caption">Character message translated from English to Chinese using 'Translate Message/翻譯訊息' message action button</figcaption>
 </figure>
-</p>
 <doc-tabs>
 <doc-tab v-cloak id="english">
 <template #title>English</template>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/extensions/translation/wand-menu-en.png" alt="&quot;Translate Chat&quot;, &quot;Translate Input&quot;" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1190" height="224" />
     <figcaption class="caption">&quot;Translate Chat&quot;, &quot;Translate Input&quot;</figcaption>
 </figure>
-</p>
 </doc-tab>
 <doc-tab v-cloak id="简体中文">
 <template #title>简体中文</template>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/extensions/translation/wand-menu-zh-cn.png" alt="&quot;翻译聊天&quot;, &quot;翻译输入&quot;" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1194" height="232" />
     <figcaption class="caption">&quot;翻译聊天&quot;, &quot;翻译输入&quot;</figcaption>
 </figure>
-</p>
 </doc-tab>
 <doc-tab v-cloak id="繁體中文">
 <template #title>繁體中文</template>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/extensions/translation/wand-menu-zh-tw.png" alt="&quot;翻譯聊天內容&quot;, &quot;翻譯輸入內容&quot;" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1196" height="230" />
     <figcaption class="caption">&quot;翻譯聊天內容&quot;, &quot;翻譯輸入內容&quot;</figcaption>
 </figure>
-</p>
 </doc-tab>
 <doc-tab v-cloak id="한국어">
 <template #title>한국어</template>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/extensions/translation/wand-menu-ko.png" alt="&quot;채팅 번역하기&quot;, &quot;입력 번역하기&quot;" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1196" height="226" />
     <figcaption class="caption">&quot;채팅 번역하기&quot;, &quot;입력 번역하기&quot;</figcaption>
 </figure>
-</p>
 </doc-tab>
 <doc-tab v-cloak id="русский">
 <template #title>Русский</template>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/extensions/translation/wand-menu-ru.png" alt="&quot;Перевести чат&quot;, &quot;Перевести моё сообщение&quot;" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1194" height="222" />
     <figcaption class="caption">&quot;Перевести чат&quot;, &quot;Перевести моё сообщение&quot;</figcaption>
 </figure>
-</p>
 </doc-tab>
 </doc-tabs>
-<doc-anchor-target id="usage">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#usage">#</doc-anchor-trigger>
-        <span>Usage</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="usage">Usage</h2>
 <p>All the ways to translate chat messages:</p>
 <p><strong><i class="fa-solid fa-language"></i> Translate Chat</strong> button in the <strong><i class="fa-solid fa-magic-wand-sparkles"></i>
 Extensions</strong> menu</p>
@@ -298,38 +285,18 @@ Extensions</strong> panel</p>
 <ul>
 <li>Use <code translate="no" v-pre>/translate [target=language_code] text</code> to translate text</li>
 </ul>
-<doc-anchor-target id="configuration">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#configuration">#</doc-anchor-trigger>
-        <span>Configuration</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="configuration">Configuration</h2>
 <p>Configuration options are available in the <strong>Chat Translation</strong> drawer of the <strong><i class="fa-solid fa-cubes"></i>
 Extensions</strong> panel.</p>
-<doc-anchor-target id="provider">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#provider">#</doc-anchor-trigger>
-        <span>Provider</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="provider">Provider</h4>
 <ul>
 <li>Choose your preferred <doc-anchor-trigger to="#translation-providers">translation service</doc-anchor-trigger></li>
 <li>Click the <strong><i class="fa-solid fa-key"></i> API Key</strong> icon, if it appears, to enter an API key</li>
 <li>Click the <strong><i class="fa-solid fa-link"></i> Custom URL</strong> icon, if it appears, to enter a custom API URL</li>
 </ul>
-<doc-anchor-target id="target-language">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#target-language">#</doc-anchor-trigger>
-        <span>Target Language</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="target-language">Target Language</h4>
 <p>Select the language you want to write your messages in, or read AI responses in.</p>
-<doc-anchor-target id="auto-mode">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#auto-mode">#</doc-anchor-trigger>
-        <span>Auto-mode</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="auto-mode">Auto-mode</h4>
 <p>Configure automatic translation behavior.</p>
 <ul>
 <li><strong>None</strong>: No automatic translation</li>
@@ -337,20 +304,10 @@ Extensions</strong> panel.</p>
 <li><strong>Translate inputs</strong>: Automatically translates user inputs into English</li>
 <li><strong>Translate both</strong>: Translates both user inputs and AI responses</li>
 </ul>
-<doc-anchor-target id="clear-translations">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#clear-translations">#</doc-anchor-trigger>
-        <span>Clear Translations</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="clear-translations">Clear Translations</h4>
 <p>The <strong><i class="fa-solid fa-trash-can"></i> Clear Translations</strong> button removes all translations from messages in the
 current chat. The original messages are preserved.</p>
-<doc-anchor-target id="configuration-example-chinese-to-english-chatting">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#configuration-example-chinese-to-english-chatting">#</doc-anchor-trigger>
-        <span>Configuration Example: Chinese to English Chatting</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="configuration-example-chinese-to-english-chatting">Configuration Example: Chinese to English Chatting</h3>
 <p>To set up a workflow where a Chinese-speaking user can chat in Chinese with an AI that operates in English:</p>
 <ol>
 <li>Set Auto-mode to &quot;Translate both&quot;</li>
@@ -364,12 +321,7 @@ current chat. The original messages are preserved.</p>
 </ul>
 <p>This setup relies on automatic language detection for input. For more precise control, future updates may include
 explicit source language selection.</p>
-<doc-anchor-target id="translation-providers">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#translation-providers">#</doc-anchor-trigger>
-        <span>Translation providers</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="translation-providers">Translation providers</h2>
 <p><strong><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><path d="M3.103 10.107c0-4.244 3.445-7.607 7.733-7.607 3.19 0 5.912 1.858 7.099 4.563l.01.022.001.006C21.348 7.345 24 10.095 24 13.536 24 17.148 21.076 20 17.431 20H5.017C2.23 20 0 17.83 0 15.06a4.899 4.899 0 0 1 3.112-4.581 7.696 7.696 0 0 1-.009-.372ZM10.836 4c-3.485 0-6.233 2.717-6.233 6.107 0 .284.022.602.052.756a.75.75 0 0 1-.552.869c-1.52.385-2.603 1.712-2.603 3.328 0 1.917 1.532 3.44 3.517 3.44h12.414c2.843 0 5.069-2.206 5.069-4.964 0-2.759-2.226-4.965-5.069-4.965a.75.75 0 0 1-.696-.47l-.179-.446C15.606 5.5 13.424 4 10.836 4Z"/></g></g></svg></strong> Cloud-based
 <strong><i class="fa-solid fa-link"></i></strong> Local, custom URL
 <strong><i class="fa-solid fa-key"></i></strong> Requires API key</p>
@@ -426,54 +378,32 @@ explicit source language selection.</p>
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="deepl-specific-configuration">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#deepl-specific-configuration">#</doc-anchor-trigger>
-        <span>DeepL-specific configuration</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="deepl-specific-configuration">DeepL-specific configuration</h3>
 <ul>
 <li>Formality levels available for German, French, Italian, Spanish, Dutch, Japanese, and Russian</li>
 <li>Configure via <code translate="no" v-pre>deepl.formality</code> in <a href="../../administration/config-yaml/#deepl-configuration">config.yaml</a></li>
 </ul>
-<doc-anchor-target id="slash-commands">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#slash-commands">#</doc-anchor-trigger>
-        <span>Slash Commands</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="slash-commands">Slash Commands</h2>
 <p>Use <code translate="no" v-pre>/translate</code> command for quick translations. Syntax: <code translate="no" v-pre>/translate [target=language_code] text</code>. If target language is
 not provided, the value from the extension settings will be used.</p>
-<doc-anchor-target id="basic-usage">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#basic-usage">#</doc-anchor-trigger>
-        <span>Basic usage</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="basic-usage">Basic usage</h3>
 <p>Translate text to the current target language and show it in a popup:</p>
 <div id="basic-usage-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/translate Welcome to the Tavern | /echo </code></pre>
 </doc-codeblock></div>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/extensions/translation/welcome-tavern.png" alt="Popup in Chinese (Simplified), '欢迎来到酒馆/Welcome to the Tavern'" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="488" height="98" />
     <figcaption class="caption">Popup in Chinese (Simplified), '欢迎来到酒馆/Welcome to the Tavern'</figcaption>
 </figure>
-</p>
 <p>Translate text to Spanish and add it to the chat:</p>
 <div id="basic-usage-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/translate target=es Hello world | /send</code></pre>
 </doc-codeblock></div>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/extensions/translation/hola-mundo.png" alt="User message in Spanish, 'Hola Mundo/Hello world'" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1064" height="184" />
     <figcaption class="caption">User message in Spanish, 'Hola Mundo/Hello world'</figcaption>
 </figure>
-</p>
-<doc-anchor-target id="testing-pipeline-translation-localization">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#testing-pipeline-translation-localization">#</doc-anchor-trigger>
-        <span>Testing, pipeline translation, localization</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="testing-pipeline-translation-localization">Testing, pipeline translation, localization</h3>
 <p>Prompt the user for a message and a language, translate the message into that language, then re-translate it into the
 configured target language and show both translations in a popup. This example uses the <code translate="no" v-pre>/input</code> and <code translate="no" v-pre>/buttons</code> commands
 to gather user input:</p>
@@ -517,11 +447,10 @@ somewhere important.</p>
 </tbody>
 </table>
 </div>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/extensions/translation/eels-out-tw-en.png" alt="Popup, '我的氣墊船裡裝滿了鰻魚/My hovercraft is full of eels', zh-TW -&gt; en -&gt; zh-TW" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1206" height="192" />
     <figcaption class="caption">Popup, '我的氣墊船裡裝滿了鰻魚/My hovercraft is full of eels', zh-TW -&gt; en -&gt; zh-TW</figcaption>
 </figure>
-</p>
 <p>Input language detection is relatively effective in the following examples:</p>
 <p><figure class="content-center">
     <img src="../../static/extensions/translation/eels-out-tw-hu.png" alt="Popup, '(My hovercraft is full of eels)/A légpárnás hajóm tele van angolnával/我的氣墊船裡裝滿了鰻魚', zh-TW -&gt; hu -&gt; zh-TW" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1204" height="190" />
@@ -536,35 +465,20 @@ somewhere important.</p>
     <figcaption class="caption">Popup, 'Il mio hovercraft è pieno di anguille/我的气垫船里装满了鳗鱼/My hovercraft is filled with eels', it -&gt; zh-CN -&gt; en</figcaption>
 </figure>
 </p>
-<doc-anchor-target id="technical-notes">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#technical-notes">#</doc-anchor-trigger>
-        <span>Technical Notes</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="technical-notes">Technical Notes</h2>
 <ul>
 <li>UTF-8 encoding, special characters, and emojis are supported</li>
 <li>Handles large messages by splitting into chunks when needed</li>
 <li>Preserves formatting and embedded images in messages</li>
 <li>Caches translations to avoid redundant API calls</li>
 </ul>
-<doc-anchor-target id="ai-input-language">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ai-input-language">#</doc-anchor-trigger>
-        <span>AI input language</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="ai-input-language">AI input language</h3>
 <p><code translate="no" v-pre>internal_language</code> controls the language into which user messages are auto-translated before being sent to the AI. It
 is hardcoded to &#x27;en&#x27; in the default settings and cannot be changed through the UI. Thus, the translation target language
 for messages <em>to the AI</em> is always English. Previous testing showed that AI performance was better when receiving
 English messages, but this may change as more LLMs are being trained on more varied language data. I suppose one could
 change <code translate="no" v-pre>internal_language</code> in <code translate="no" v-pre>settings.json</code> and find out.</p>
-<doc-anchor-target id="chinese-variant-handling">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#chinese-variant-handling">#</doc-anchor-trigger>
-        <span>Chinese variant handling</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="chinese-variant-handling">Chinese variant handling</h3>
 <p>The extension supports both Simplified and Traditional Chinese, but not all translation providers do. The UI presents
 these as &#x27;Chinese (Simplified)&#x27; and &#x27;Chinese (Traditional)&#x27; respectively, with language codes &#x27;zh-CN&#x27; and &#x27;zh-TW&#x27;. They
 are mapped to the following language codes for translation providers:</p>
@@ -574,12 +488,7 @@ are mapped to the following language codes for translation providers:</p>
 <li>Bing: &#x27;zh-CN&#x27; to &#x27;zh-Hans&#x27;, &#x27;zh-TW&#x27; as-is.</li>
 <li>Other providers use &#x27;zh-CN&#x27; and &#x27;zh-TW&#x27; as provided.</li>
 </ul>
-<doc-anchor-target id="text-length-limits">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#text-length-limits">#</doc-anchor-trigger>
-        <span>Text length limits</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="text-length-limits">Text length limits</h3>
 <p>Some providers have character limits per request:</p>
 <ul>
 <li>Yandex: 5000 characters</li>

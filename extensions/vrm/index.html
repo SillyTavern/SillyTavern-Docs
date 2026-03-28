@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>VRM | docs.ST.app</title>
@@ -29,14 +29,22 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/extensions/vrm/">
+    <meta name="twitter:title" content="VRM | docs.ST.app">
+    <meta name="twitter:description" content="This guide will walk you through the process of setting up and customizing the VRM extension for your SillyTavern experience. This extension allows you to">
+    <meta name="twitter:image" content="https://docs.sillytavern.app/static/extensions/vrm-global.png">
+    <meta name="twitter:image:alt" content="VRM | docs.ST.app">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -96,10 +104,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -201,19 +209,9 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="vrm" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#vrm">#</doc-anchor-trigger>
-        <span>VRM</span>
-    </h1>
-</doc-anchor-target>
+<h1 id="vrm">VRM</h1>
 <p>This guide will walk you through the process of setting up and customizing the VRM extension for your SillyTavern experience. This extension allows you to use VRM animated models for your character, providing a dynamic and interactive element to your virtual character.</p>
-<doc-anchor-target id="prerequisites">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#prerequisites">#</doc-anchor-trigger>
-        <span>Prerequisites</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="prerequisites">Prerequisites</h2>
 <p>Before you begin, ensure you&#x27;ve met the following prerequisites:</p>
 <ol>
 <li><p><strong>Branch Selection</strong>: Make sure you&#x27;re using the latest version branch of SillyTavern to access the latest features and updates.</p>
@@ -223,24 +221,13 @@
 <li><p><strong>Model Folder Placement</strong>: Place your VRM model files (.vrm) into the <code translate="no" v-pre>/data/&lt;user-handle&gt;/assets/vrm/model</code> directory and your animation files into the <code translate="no" v-pre>/data/&lt;user-handle&gt;/assets/vrm/animation</code> directory. The currently supported animation file formats are .fbx and .bvh that are compatible with VRM models. This includes any animation you can get from Mixamo (<a href="https://www.mixamo.com/">https://www.mixamo.com/</a>) and any animation you can export from tools like XR Animator (<a href="https://github.com/ButzYung/SystemAnimatorOnline">https://github.com/ButzYung/SystemAnimatorOnline</a>).</p>
 </li>
 </ol>
-<doc-anchor-target id="extension-settings">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#extension-settings">#</doc-anchor-trigger>
-        <span>Extension Settings</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="extension-settings">Extension Settings</h2>
 <p>The VRM extension offers various settings to customize the behavior of your animated model. Here are the key settings:</p>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/extensions/vrm-global.png" alt="UI global settings" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="261" height="303" />
     <figcaption class="caption">UI global settings</figcaption>
 </figure>
-</p>
-<doc-anchor-target id="global-settings">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#global-settings">#</doc-anchor-trigger>
-        <span>Global Settings</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="global-settings">Global Settings</h3>
 <ol>
 <li><p><strong>Enabled</strong>:</p>
 <ul>
@@ -272,12 +259,7 @@
 </ul>
 </li>
 </ol>
-<doc-anchor-target id="performance-settings">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#performance-settings">#</doc-anchor-trigger>
-        <span>Performance Settings</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="performance-settings">Performance Settings</h3>
 <ol>
 <li><p><strong>Body hitboxes</strong></p>
 <ul>
@@ -295,12 +277,7 @@
 </ul>
 </li>
 </ol>
-<doc-anchor-target id="debug-settings">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#debug-settings">#</doc-anchor-trigger>
-        <span>Debug Settings</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="debug-settings">Debug Settings</h3>
 <ol>
 <li><p><strong>Show grid</strong></p>
 <ul>
@@ -313,17 +290,11 @@
 </ul>
 </li>
 </ol>
-<doc-anchor-target id="scene-settings">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#scene-settings">#</doc-anchor-trigger>
-        <span>Scene Settings</span>
-    </h3>
-</doc-anchor-target>
-<p><figure class="content-center">
+<h3 id="scene-settings">Scene Settings</h3>
+<figure class="content-center">
     <img src="../../static/extensions/vrm-scene.png" alt="UI scene settings" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="415" height="222" />
     <figcaption class="caption">UI scene settings</figcaption>
 </figure>
-</p>
 <ol>
 <li><p><strong>Light Color</strong></p>
 <ul>
@@ -336,17 +307,11 @@
 </ul>
 </li>
 </ol>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/extensions/vrm-model.png" alt="UI model settings" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="431" height="820" />
     <figcaption class="caption">UI model settings</figcaption>
 </figure>
-</p>
-<doc-anchor-target id="character-selection">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#character-selection">#</doc-anchor-trigger>
-        <span>Character Selection</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="character-selection">Character Selection</h2>
 <p>These settings allow you to manage characters and assign VRM models to them.</p>
 <ol>
 <li><p><strong>Refresh Button</strong>:</p>
@@ -365,12 +330,7 @@
 </ul>
 </li>
 </ol>
-<doc-anchor-target id="model-selection">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#model-selection">#</doc-anchor-trigger>
-        <span>Model Selection</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="model-selection">Model Selection</h2>
 <ol>
 <li><p><strong>Refresh Button</strong>:</p>
 <ul>
@@ -389,12 +349,7 @@
 </ul>
 </li>
 </ol>
-<doc-anchor-target id="model-settings">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#model-settings">#</doc-anchor-trigger>
-        <span>Model Settings</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="model-settings">Model Settings</h2>
 <ol>
 <li><p><strong>Model Scale</strong>:</p>
 <ul>
@@ -412,43 +367,26 @@
 </ul>
 </li>
 </ol>
-<doc-anchor-target id="remarks">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#remarks">#</doc-anchor-trigger>
-        <span>Remarks</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="remarks">Remarks</h3>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">- The settings are saved per model not per character and carry over different chats.
 - If you want to use the same model for two different characters with different settings make a copy of the .vrm file.
 - You can also drag the model with your mouse, and those settings will be updated and saved. Left click and hold to drag a model around the screen. Middle mouse Click and hold to rotate the model or use shift-left click. Use mouse wheel with cursor on the model to scale it up or down or use ctrl+left click.
 - Use these UI settings to bring your model back on the screen if you somehow made it out of view. Also, check the &quot;Show frame&quot; checkbox to see clearly where you can click to drag the model.</code></pre>
 </doc-codeblock></div>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/extensions/vrm-hitboxes.png" alt="UI hitboxes settings" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="417" height="471" />
     <figcaption class="caption">UI hitboxes settings</figcaption>
 </figure>
-</p>
-<doc-anchor-target id="hitboxes-mapping">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#hitboxes-mapping">#</doc-anchor-trigger>
-        <span>Hitboxes mapping</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="hitboxes-mapping">Hitboxes mapping</h2>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">- Depending on the model bones definition some hitbox areas can be generated, they will be listed in this part of the ui, and you can assign an expression/animation/message to each of them that will trigger when you click the area.</code></pre>
 </doc-codeblock></div>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/extensions/vrm-classify.png" alt="UI classify settings" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="423" height="476" />
     <figcaption class="caption">UI classify settings</figcaption>
 </figure>
-</p>
-<doc-anchor-target id="classified-expressions-mapping">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#classified-expressions-mapping">#</doc-anchor-trigger>
-        <span>Classified Expressions Mapping</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="classified-expressions-mapping">Classified Expressions Mapping</h2>
 <ol>
 <li><p><strong>Requirements</strong></p>
 <ul>
@@ -461,12 +399,7 @@
 </ul>
 </li>
 </ol>
-<doc-anchor-target id="commands">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#commands">#</doc-anchor-trigger>
-        <span>Commands</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="commands">Commands</h2>
 <ol>
 <li><strong>/vrmlightcolor</strong>
 <ul>
@@ -504,12 +437,7 @@
 </ul>
 </li>
 </ol>
-<doc-anchor-target id="animations-default-mapping">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#animations-default-mapping">#</doc-anchor-trigger>
-        <span>Animations default mapping</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="animations-default-mapping">Animations default mapping</h2>
 <p>If your animation files are named in the following way they will be mapped automatically when resetting a model settings. For example the files named &quot;assets/vrm/animation/neutral.bvh&quot; and &quot;assets/vrm/animation/neutral1.fbx&quot; will be automatically mapped as a group for default and neutral classified animation. Same goes for the hitboxes.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">// Fallback
@@ -558,12 +486,7 @@
 &quot;leftFoot&quot;: &quot;assets/vrm/animation/hitarea_foot&quot;</code></pre>
 </doc-codeblock></div>
 <p>Thank you for following this guide! Your SillyTavern experience is now enriched with animated and interactive 3D models.</p>
-<doc-anchor-target id="remarks-1">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#remarks-1">#</doc-anchor-trigger>
-        <span>Remarks</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="remarks-1">Remarks</h2>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">- The VRM model loaded by this extension are the .vrm files not the .vroid files.
 - Animation files should be VRM compatible, you can use a tool like XR animation (https://github.com/ButzYung/SystemAnimatorOnline) to convert fbx/bvh animation file.

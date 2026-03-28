@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>Characters | docs.ST.app</title>
@@ -25,14 +25,20 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/usage/characters/">
+    <meta name="twitter:title" content="Characters | docs.ST.app">
+    <meta name="twitter:description" content="Characters are the AI identities that you can create and manage to shape the AI's role in the conversation. Each character has a name, personality, and">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -92,10 +98,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -197,55 +203,30 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="characters" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#characters">#</doc-anchor-trigger>
-        <span>Characters</span>
-    </h1>
-</doc-anchor-target>
+<h1 id="characters">Characters</h1>
 <p>Characters are the AI identities that you can create and manage to shape the AI&#x27;s role in the conversation. Each
 character has a name, personality, and conversation history. You can create as many characters as you like, and
 switch between them at any time.</p>
 <p>Characters can be used in solo chats, or add multiple characters to a group chat to
 let them interact with each other.</p>
-<doc-anchor-target id="character-management-panel">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#character-management-panel">#</doc-anchor-trigger>
-        <span>Character Management Panel</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="character-management-panel">Character Management Panel</h2>
 <p>Open the <i class="fa-solid fa-address-card"></i> <strong>Characters</strong> panel from the navbar to access the character
 list. Click on a character or group to chat with them or edit them, or
 choose <i class="fa-solid fa-user-plus"></i> <strong>Create New Character</strong> to add a new character.</p>
-<doc-anchor-target id="panel-controls">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#panel-controls">#</doc-anchor-trigger>
-        <span>Panel Controls</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="panel-controls">Panel Controls</h3>
 <ul>
 <li><i class="fa-solid fa-lock"></i> <strong>Pin Panel</strong>: Keep panel open while interacting</li>
 <li><i class="fa-solid fa-list-ul"></i> <strong>Character List</strong>: Return to character list view</li>
 <li><strong>HotSwap Bar</strong>: Quick access to favorite characters</li>
 </ul>
-<doc-anchor-target id="character-list">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#character-list">#</doc-anchor-trigger>
-        <span>Character List</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="character-list">Character List</h3>
 <ul>
 <li><i class="fa-solid fa-user-plus"></i> <strong>Create New Character</strong>: Add a new character</li>
 <li><i class="fa-solid fa-file-import"></i> <strong>Import Character</strong>: Load character from file</li>
 <li><i class="fa-solid fa-cloud-arrow-down"></i> <strong>External Import</strong>: Import from URL</li>
 <li><i class="fa-solid fa-users-gear"></i> <strong>Create Group</strong>: Start a new group chat</li>
 </ul>
-<doc-anchor-target id="search-and-sort">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#search-and-sort">#</doc-anchor-trigger>
-        <span>Search and sort</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="search-and-sort">Search and sort</h4>
 <ul>
 <li><strong>Search Bar</strong>: Filter characters by name or attributes</li>
 <li><strong>Sort Dropdown</strong>: Multiple sorting options:
@@ -258,12 +239,7 @@ choose <i class="fa-solid fa-user-plus"></i> <strong>Create New Character</stron
 </ul>
 </li>
 </ul>
-<doc-anchor-target id="filter-characters-by-type-or-tag">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#filter-characters-by-type-or-tag">#</doc-anchor-trigger>
-        <span>Filter characters by type or tag</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="filter-characters-by-type-or-tag">Filter characters by type or tag</h4>
 <ul>
 <li><i class="fa-solid fa-star"></i> <strong>Favorites Filter</strong>: Show favorite characters</li>
 <li><i class="fa-solid fa-users"></i> <strong>Groups Filter</strong>: Show only group chats</li>
@@ -272,24 +248,14 @@ choose <i class="fa-solid fa-user-plus"></i> <strong>Create New Character</stron
 <li><i class="fa-solid fa-tags"></i> <strong>Tag List</strong>: View all available tags</li>
 <li><i class="fa-solid fa-filter-circle-xmark"></i> <strong>Clear Filters</strong>: Reset all filters</li>
 </ul>
-<doc-anchor-target id="character-creationedit-panel">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#character-creationedit-panel">#</doc-anchor-trigger>
-        <span>Character Creation/Edit Panel</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="character-creationedit-panel">Character Creation/Edit Panel</h3>
 <ul>
 <li><strong>Avatar Image</strong>: Upload and preview character profile picture</li>
 <li><strong>Token Count</strong>: <a href="../core-concepts/characterdesign/#character-tokens">Token usage</a> for the character</li>
 <li><i class="fa-solid fa-ranking-star"></i> <strong>Stats</strong>: Chat history and usage statistics</li>
 <li><a href="../core-concepts/tags/">Tag management</a></li>
 </ul>
-<doc-anchor-target id="quick-actions">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#quick-actions">#</doc-anchor-trigger>
-        <span>Quick Actions</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="quick-actions">Quick Actions</h4>
 <ul>
 <li><i class="fa-solid fa-star"></i> Favorite toggle</li>
 <li><i class="fa-solid fa-book"></i> Advanced definitions</li>
@@ -299,12 +265,7 @@ choose <i class="fa-solid fa-user-plus"></i> <strong>Create New Character</stron
 <li><i class="fa-solid fa-clone"></i> Duplicate</li>
 <li><i class="fa-solid fa-skull"></i> Delete</li>
 </ul>
-<doc-anchor-target id="extended-options">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#extended-options">#</doc-anchor-trigger>
-        <span>Extended Options</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="extended-options">Extended Options</h4>
 <ul>
 <li>World Info linking</li>
 <li>Card lore import</li>
@@ -316,30 +277,15 @@ choose <i class="fa-solid fa-user-plus"></i> <strong>Create New Character</stron
 <li>Tag import</li>
 <li>Gallery view</li>
 </ul>
-<doc-anchor-target id="content-fields">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#content-fields">#</doc-anchor-trigger>
-        <span>Content Fields</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="content-fields">Content Fields</h4>
 <ul>
 <li><strong><a href="../core-concepts/characterdesign/#character-description">Character Description</a></strong>: Brief character summary</li>
 <li><strong><a href="../core-concepts/characterdesign/#first-message">First Message</a></strong>: Initial greeting or prompt when starting a new chat</li>
 <li><strong>Alternative greetings</strong>: Define multiple first messages that you can swipe between when starting a chat</li>
 </ul>
-<doc-anchor-target id="advanced-definitions-panel">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#advanced-definitions-panel">#</doc-anchor-trigger>
-        <span>Advanced Definitions Panel</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="advanced-definitions-panel">Advanced Definitions Panel</h3>
 <p>Click on the <i class="fa-solid fa-book"></i> <strong>Advanced Definitions</strong> button to access the extended character settings.</p>
-<doc-anchor-target id="prompt-overrides-chat-completioninstruct-mode">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#prompt-overrides-chat-completioninstruct-mode">#</doc-anchor-trigger>
-        <span>Prompt Overrides (Chat Completion/Instruct Mode)</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="prompt-overrides-chat-completioninstruct-mode">Prompt Overrides (Chat Completion/Instruct Mode)</h4>
 <ul>
 <li><p><strong>Main Prompt</strong>: Replaces default <a href="../prompts/#main-prompt-system-prompt">main/system prompt</a>, can use
 {{original}} placeholder to include the original prompt</p>
@@ -348,12 +294,7 @@ choose <i class="fa-solid fa-user-plus"></i> <strong>Create New Character</stron
 default <a href="../prompts/#post-history-instructions">post-history instructions</a></p>
 </li>
 </ul>
-<doc-anchor-target id="creators-metadata">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#creators-metadata">#</doc-anchor-trigger>
-        <span>Creator&#x27;s Metadata</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="creators-metadata">Creator&#x27;s Metadata</h4>
 <p>Non-prompt information about the character:</p>
 <ul>
 <li>Creator name/contact</li>
@@ -361,12 +302,7 @@ default <a href="../prompts/#post-history-instructions">post-history instruction
 <li>Creator&#x27;s notes</li>
 <li>Embedded tags list</li>
 </ul>
-<doc-anchor-target id="character-personality">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#character-personality">#</doc-anchor-trigger>
-        <span>Character Personality</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="character-personality">Character Personality</h4>
 <ul>
 <li><strong><a href="../core-concepts/characterdesign/#personality-summary">Personality Summary</a></strong>: Brief overview of character&#x27;s traits</li>
 <li><strong><a href="../core-concepts/characterdesign/#scenario">Scenario</a></strong>: Context and circumstances of the dialog</li>
@@ -375,12 +311,7 @@ see <a href="../core-concepts/authors-note/">Author&#x27;s Note</a>)</li>
 <li><strong>Talkativeness</strong> (Group Chats): Slider for Shy → Normal → Chatty</li>
 <li><strong>Example Messages</strong>: Examples of character&#x27;s writing style</li>
 </ul>
-<doc-anchor-target id="group-chat-management">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#group-chat-management">#</doc-anchor-trigger>
-        <span>Group Chat Management</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="group-chat-management">Group Chat Management</h3>
 <p>If this is a group chat, you can manage the group members and settings from this panel.</p>
 <p>See <a href="../core-concepts/groupchats/">Group Chats</a> for more details.</p>
 

@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>Reasoning | docs.ST.app</title>
@@ -25,14 +25,20 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/usage/prompts/reasoning/">
+    <meta name="twitter:title" content="Reasoning | docs.ST.app">
+    <meta name="twitter:description" content="In language models, reasoning (also known as model thinking) refers to a chain-of-thought (CoT) technique that mirrors human problem-solving through">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -92,10 +98,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -197,33 +203,18 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="reasoning" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#reasoning">#</doc-anchor-trigger>
-        <span>Reasoning</span>
-    </h1>
-</doc-anchor-target>
+<h1 id="reasoning">Reasoning</h1>
 <p>In language models, reasoning (also known as model thinking) refers to a chain-of-thought (CoT) technique that mirrors human problem-solving through step-by-step analysis. SillyTavern provides several features that make the use of reasoning models more efficient and consistent across supported backends.</p>
-<doc-anchor-target id="common-issues">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#common-issues">#</doc-anchor-trigger>
-        <span>Common issues</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="common-issues">Common issues</h2>
 <ol>
 <li>When using reasoning models, the model&#x27;s internal reasoning process consumes part of your response token allowance, even if this reasoning isn&#x27;t shown in the final output (e.g. o3-mini or Gemini Thinking). If you notice your responses are coming back incomplete or empty, you should try adjusting the Max Response Length setting found in the <strong><i class="fa-solid fa-sliders"></i> AI Response Configuration</strong> panel. For reasoning models, it&#x27;s typical to use significantly higher token limits - anywhere from 1024 to 4096 tokens - compared to standard conversational models.</li>
 </ol>
-<doc-anchor-target id="configuration">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#configuration">#</doc-anchor-trigger>
-        <span>Configuration</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="configuration">Configuration</h2>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -240,36 +231,16 @@
 <p>By default, reasoning blocks are collapsed to save space. Click a block to expand and view its contents. You can set blocks to expand automatically by enabling <strong>Auto-Expand</strong> in the reasoning settings.</p>
 <p>When a reasoning block is expanded, you can copy or edit its contents using the <strong><i class="fa-solid fa-copy"></i> Copy</strong> and <strong><i class="fa-solid fa-pencil"></i> Edit</strong> buttons.</p>
 <p>Some models support reasoning, but will not send their thoughts back. It is possible to still show the reasoning block with reasoning time for those by toggling the <strong>Show Hidden</strong> setting.</p>
-<doc-anchor-target id="adding-reasoning">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#adding-reasoning">#</doc-anchor-trigger>
-        <span>Adding Reasoning</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="manually">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#manually">#</doc-anchor-trigger>
-        <span>Manually</span>
-    </h3>
-</doc-anchor-target>
+<h2 id="adding-reasoning">Adding Reasoning</h2>
+<h3 id="manually">Manually</h3>
 <p>Add a reasoning block to any message through the <strong><i class="fa-solid fa-pencil"></i> Message Edit</strong> menu. Click <strong><i class="fa-solid fa-lightbulb"></i></strong> while editing to add a reasoning section. Third-party extensions can also add reasoning by writing to the <code translate="no" v-pre>extra.reasoning</code> field of the message object before adding it to the chat.</p>
-<doc-anchor-target id="with-a-command">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#with-a-command">#</doc-anchor-trigger>
-        <span>With a Command</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="with-a-command">With a Command</h3>
 <p>Use the <code translate="no" v-pre>/reasoning-set</code> STscript command to add reasoning to a message. The command takes <code translate="no" v-pre>at</code> (message ID, defaults to the last message) and reasoning text as arguments.</p>
 <div id="with-a-command-code-1" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/reasoning-set at=0 This is the reasoning for the first message.</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="by-backend">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#by-backend">#</doc-anchor-trigger>
-        <span>By Backend</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="by-backend">By Backend</h3>
 <p>If your chosen LLM backend and model support reasoning output, enabling &quot;Request model reasoning&quot; in the <strong><i class="fa-solid fa-sliders"></i> AI Response Configuration</strong> panel will add a reasoning block containing the model&#x27;s thinking process.</p>
 <p>Supported sources:</p>
 <ul>
@@ -292,7 +263,7 @@
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -309,13 +280,9 @@
 <ul>
 <li>Claude and Google (2.5 Flash) allow thinking mode to be toggled; see <doc-anchor-trigger to="#reasoning-effort">Reasoning Effort</doc-anchor-trigger>.</li>
 <li>Reasoning can be disabled for <a href="https://docs.z.ai/api-reference/llm/chat-completion#body-one-of-0-thinking">Z.AI (GLM)</a> and <a href="https://platform.moonshot.ai/docs/guide/use-kimi-k2-thinking-model">Moonshot (Kimi)</a>. The setting maps to the <code translate="no" v-pre>thinking.type</code> parameter. They do not support &quot;Reasoning Effort&quot;.</li>
+<li>For OpenRouter, when the &quot;Request model reasoning&quot; toggle is deactivated with the minimal reasoning effort set, thinking will be set to disabled for models that support it. The behavior is model-dependent; certain providers may reject such requests.</li>
 </ul>
-<doc-anchor-target id="by-parsing">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#by-parsing">#</doc-anchor-trigger>
-        <span>By Parsing</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="by-parsing">By Parsing</h3>
 <p>Enable &quot;Auto-Parse&quot; in the <strong><i class="fa-solid fa-font"></i> Advanced Formatting</strong> panel to automatically parse reasoning from the model&#x27;s output.</p>
 <p>The response must contain a reasoning section wrapped in configured Prefix and Suffix sequences. The sequences provided by default correspond to the DeepSeek R1 reasoning format.</p>
 <p>Example with prefix <code translate="no" v-pre>&lt;think&gt;</code> and suffix <code translate="no" v-pre>&lt;/think&gt;</code>:</p>
@@ -326,18 +293,13 @@ This is the reasoning.
 
 This is the main content.</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="prompting-with-reasoning">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#prompting-with-reasoning">#</doc-anchor-trigger>
-        <span>Prompting with Reasoning</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="prompting-with-reasoning">Prompting with Reasoning</h2>
 <p>By default, recognized reasoning block contents are not sent back to the model. To include reasoning in prompts, enable &quot;Add to Prompts&quot; in the <strong><i class="fa-solid fa-font"></i> Advanced Formatting</strong> panel. Reasoning content will be wrapped in configured Prefix and Suffix sequences and separated by a Separator from the main context. The Max Additions numeric setting controls how many reasoning blocks can be included, counting from the end of the prompt.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -350,23 +312,13 @@ This is the main content.</code></pre>
         </div>
     </div>
 </div>
-<doc-anchor-target id="continuing-from-reasoning">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#continuing-from-reasoning">#</doc-anchor-trigger>
-        <span>Continuing from Reasoning</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="continuing-from-reasoning">Continuing from Reasoning</h3>
 <p>A special case when the reasoning can be sent back to the model without having the &quot;Add to Prompts&quot; toggle enabled is when the generation is continued (e.g. by pressing &quot;Continue&quot; from the <strong><i class="fa-solid fa-bars"></i> Options</strong> menu), but the message being continued contains only the reasoning without actual content. This gives the model an opportunity to finish an incomplete reasoning and start generating the main content. The prompt will be sent as follows:</p>
 <div id="continuing-from-reasoning-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">&lt;think&gt;
 Incomplete reasoning...</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="regex-scripts">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#regex-scripts">#</doc-anchor-trigger>
-        <span>Regex Scripts</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="regex-scripts">Regex Scripts</h2>
 <p>Regular expression scripts from the <a href="../../../extensions/regex/">Regex extension</a> can be applied to the contents of reasoning blocks. Check &quot;Reasoning&quot; in the &quot;Affects&quot; section of the script editor to target reasoning blocks specifically.</p>
 <p>Different ephemerality options affect reasoning blocks in the following ways:</p>
 <ol>
@@ -375,12 +327,7 @@ Incomplete reasoning...</code></pre>
 <li>Alter chat display: regex is applied to the reasoning block&#x27;s display text, not the underlying content.</li>
 <li>Alter outgoing prompts: regex is only applied to reasoning blocks before they are sent to the model.</li>
 </ol>
-<doc-anchor-target id="reasoning-effort">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#reasoning-effort">#</doc-anchor-trigger>
-        <span>Reasoning Effort</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="reasoning-effort">Reasoning Effort</h2>
 <p>Reasoning Effort is a Chat Completion setting in the <strong><i class="fa-solid fa-sliders"></i> AI Response Configuration</strong> panel that influences how many tokens may potentially be used on reasoning. The effect of each option depends on the source connected to. For the sources below, Auto simply means the relevant parameter is not included in the request.</p>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
@@ -464,6 +411,7 @@ Incomplete reasoning...</code></pre>
 </div>
 <ul>
 <li>For Claude, budget is capped to 21333 if streaming is disabled. If the calculated budget would be less than 1024, then max response is changed to 2048.</li>
+<li>Claude also supports adaptive thinking for Opus 4.6+ models, which can be enabled via <code translate="no" v-pre>claude.enableAdaptiveThinking</code> in <a href="../../../administration/config-yaml/">config.yaml</a>. When enabled, the Reasoning Effort setting maps to adaptive thinking levels instead of token budgets.</li>
 <li>For OpenRouter, Perplexity and AI/ML API, only an OpenAI-style keyword is sent.</li>
 </ul>
 <p>Google AI Studio and Vertex AI are as follows:</p>

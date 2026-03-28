@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>DreamGen | docs.ST.app</title>
@@ -29,14 +29,22 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/usage/api-connections/dreamgen/">
+    <meta name="twitter:title" content="DreamGen | docs.ST.app">
+    <meta name="twitter:description" content="DreamGen is an app and an API for AI-powered role-playing and story-writing. They have a free tier, as well as a paid subscription that allows unlimited">
+    <meta name="twitter:image" content="https://docs.sillytavern.app/static/dreamgen/dreamgen_api_keys_new.jpg">
+    <meta name="twitter:image:alt" content="DreamGen | docs.ST.app">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -96,10 +104,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -201,26 +209,11 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="dreamgen" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#dreamgen">#</doc-anchor-trigger>
-        <span>DreamGen</span>
-    </h1>
-</doc-anchor-target>
+<h1 id="dreamgen">DreamGen</h1>
 <p>DreamGen is an app and an API for AI-powered role-playing and story-writing. They have a free tier, as well as a paid subscription that allows unlimited monthly access to their high-quality in-house text generation models made specifically for the purpose of steerable AI role-playing and story-writing. Create an account to get started: <a href="https://dreamgen.com/">https://dreamgen.com/</a>.</p>
 <p>The (free) credits reset at the start of each calendar month. See <a href="https://dreamgen.com/pricing">pricing</a> to see the credit cost for each model and <a href="https://dreamgen.com/account/usage">usage</a> to see your remaining credits.</p>
-<doc-anchor-target id="connecting-to-dreamgen">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#connecting-to-dreamgen">#</doc-anchor-trigger>
-        <span>Connecting to DreamGen</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="get-api-key">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#get-api-key">#</doc-anchor-trigger>
-        <span>Get API Key</span>
-    </h3>
-</doc-anchor-target>
+<h2 id="connecting-to-dreamgen">Connecting to DreamGen</h2>
+<h3 id="get-api-key">Get API Key</h3>
 <p>Go to the <a href="https://dreamgen.com/account/api-keys">DreamGen API keys</a> page and click the &quot;New API Key&quot; button. Make sure the API Key is copied into your clipboard.</p>
 <p><figure class="content-center">
     <img src="../../../static/dreamgen/dreamgen_api_keys_new.jpg" alt="Create New DreamGen API key" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1112" height="457" />
@@ -231,12 +224,7 @@
     <figcaption class="caption">Copy DreamGen API key</figcaption>
 </figure>
 </p>
-<doc-anchor-target id="connect">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#connect">#</doc-anchor-trigger>
-        <span>Connect</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="connect">Connect</h3>
 <ol>
 <li>Go to the SillyTavern connection settings.</li>
 <li>Select API: Text Completion</li>
@@ -244,29 +232,18 @@
 <li>Enter the API key</li>
 <li>(optional) Pick a model</li>
 </ol>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../../static/dreamgen/dreamgen_st_connection.png" alt="Connecting to DreamGen" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="540" height="967" />
     <figcaption class="caption">Connecting to DreamGen</figcaption>
 </figure>
-</p>
-<doc-anchor-target id="models">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#models">#</doc-anchor-trigger>
-        <span>Models</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="models">Models</h2>
 <p>DreamGen API offers several models of different sizes.</p>
 <ul>
 <li>Lucid Max (in API called <code translate="no" v-pre>lucid-v1-max</code> or <code translate="no" v-pre>lucid-v1-extra-large</code>)</li>
 <li>Lucid Base (in API called <code translate="no" v-pre>lucid-v1-base</code> or <code translate="no" v-pre>lucid-v1-medium</code>) -- corresponds to the weight-available <a href="https://dreamgen.com/docs/models/lucid-v1/huggingface">Lucid V1 Nemo</a>.</li>
 </ul>
 <p>Lucid Base uses much fewer credits and is faster, while Lucid Max is more creative and is able to handle more complex instructions and narratives.</p>
-<doc-anchor-target id="settings">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#settings">#</doc-anchor-trigger>
-        <span>Settings</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="settings">Settings</h2>
 <p>The Lucid V1 DreamGen models use an extension of the Llama 3 chat template optimized for role-play and writing. They work best with a specific system prompt.</p>
 <p>We strongly recommend to start with one of these master presets:</p>
 <ul>
@@ -275,11 +252,10 @@
 <li><a href="https://dreamgen.com/docs/models/lucid-v1/sillytavern/master-preset/story">DreamGen Lucid V1 Story preset</a></li>
 </ul>
 <p>These presets come with built-in support for <code translate="no" v-pre>/sys</code> to send instructions to the model. You can use those to steer the plot or control character&#x27;s actions.</p>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../../static/dreamgen/dreamgen_st_preset.png" alt="DreamGen preset selected" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1906" height="1864" />
     <figcaption class="caption">DreamGen preset selected</figcaption>
 </figure>
-</p>
 <p>Other resources:</p>
 <ul>
 <li><a href="https://dreamgen.com/docs/models/lucid-v1/sillytavern"><strong>Detailed DreamGen + SillyTavern guide</strong></a></li>
@@ -288,18 +264,8 @@
 <li><a href="https://imgur.com/a/dreamgen-lucid-sillytavern-writing-demo-JLv5iO3">DreamGen + SillyTavern story-writing demo</a></li>
 <li><a href="https://v2.dreamgen.com/docs/scenario-editor">Tips for making your own scenarios</a></li>
 </ul>
-<doc-anchor-target id="faq">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#faq">#</doc-anchor-trigger>
-        <span>FAQ</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="how-can-i-make-the-responses-longer-or-shorter">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-can-i-make-the-responses-longer-or-shorter">#</doc-anchor-trigger>
-        <span>How can I make the responses longer or shorter?</span>
-    </h3>
-</doc-anchor-target>
+<h2 id="faq">FAQ</h2>
+<h3 id="how-can-i-make-the-responses-longer-or-shorter">How can I make the responses longer or shorter?</h3>
 <p>You can set the <code translate="no" v-pre>Last Assistant Prefix</code> in your formatting presets.</p>
 <p>For long messages:</p>
 <div id="how-can-i-make-the-responses-longer-or-shorter-code-1" class="codeblock-wrapper"><doc-codeblock>
@@ -316,11 +282,10 @@ The next message is from  and is at most 50 words long&lt;|eot_id|&gt;&lt;|start
 </code></pre>
 </doc-codeblock></div>
 <p>Make sure to preserve all newlines, including the two at the end.</p>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../../static/dreamgen/dreamgen_st_long_response_prefix.png" alt="Long Message Prefix" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="685" height="647" />
     <figcaption class="caption">Long Message Prefix</figcaption>
 </figure>
-</p>
 <p>You can also include writing style description in your card or system prompt, e.g.:</p>
 <div id="how-can-i-make-the-responses-longer-or-shorter-code-3" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">## Style
@@ -328,12 +293,7 @@ The next message is from  and is at most 50 words long&lt;|eot_id|&gt;&lt;|start
 &lt;your description&gt;</code></pre>
 </doc-codeblock></div>
 <p>See the <a href="https://v2.dreamgen.com/docs/scenario-editor#style">&quot;Style&quot; documentation</a> to learn more and see some examples.</p>
-<doc-anchor-target id="how-can-i-steer-the-role-play--story">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-can-i-steer-the-role-play--story">#</doc-anchor-trigger>
-        <span>How can I steer the role-play / story?</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="how-can-i-steer-the-role-play--story">How can I steer the role-play / story?</h3>
 <p>Use the <code translate="no" v-pre>/sys</code> option to send instructions to the model. Some examples:</p>
 <blockquote>
 <p>The innkeeper offers Daria and the others a pint of ale.</p>

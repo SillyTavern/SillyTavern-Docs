@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>NovelAI | docs.ST.app</title>
@@ -29,14 +29,22 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/usage/api-connections/novelai/">
+    <meta name="twitter:title" content="NovelAI | docs.ST.app">
+    <meta name="twitter:description" content="NovelAI is a paid subscription service that allows unlimited monthly access to their high-quality in-house text generation, image generation, and">
+    <meta name="twitter:image" content="https://docs.sillytavern.app/static/novel-side.png">
+    <meta name="twitter:image:alt" content="NovelAI | docs.ST.app">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -96,10 +104,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -201,20 +209,10 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="novelai" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#novelai">#</doc-anchor-trigger>
-        <span>NovelAI</span>
-    </h1>
-</doc-anchor-target>
+<h1 id="novelai">NovelAI</h1>
 <p>NovelAI is a paid subscription service that allows unlimited monthly access to their high-quality in-house text generation, image generation, and text-to-speech models. Register an account here to get started: <a href="https://novelai.net/">https://novelai.net/</a></p>
 <p>You will get only <em>50 generations</em> for free to evaluate the model. When the <strong>&quot;Not eligible for this model&quot;</strong> error appears, this means that you&#x27;ve exhausted your trial period and need to subscribe to a paid plan.</p>
-<doc-anchor-target id="api-key">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#api-key">#</doc-anchor-trigger>
-        <span>API Key</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="api-key">API Key</h2>
 <p>To get your NovelAI API key, follow these steps:</p>
 <ol>
 <li><p>Select the gear icon at the top of the left sidebar.
@@ -246,61 +244,26 @@
 </p>
 </li>
 </ol>
-<doc-anchor-target id="models">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#models">#</doc-anchor-trigger>
-        <span>Models</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="models">Models</h2>
 <p>If you have Opus, then Erato is the model to use. If you don&#x27;t have Opus, then Kayra is the best available model.</p>
 <p>Clio has a larger context size on Tablet/scroll tiers, but the strength of Kayra usually makes up for that difference.</p>
-<doc-anchor-target id="settings">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#settings">#</doc-anchor-trigger>
-        <span>Settings</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="settings">Settings</h2>
 <p>The files with the settings are here (<code translate="no" v-pre>SillyTavern/data/&lt;user-handle&gt;/NovelAI Settings</code>).
 You can also manually add your own settings files.</p>
-<doc-anchor-target id="response-length">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#response-length">#</doc-anchor-trigger>
-        <span>Response Length</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="response-length">Response Length</h3>
 <p>How much text you want to generate per message. Note that NovelAI has a limit of 150 tokens per response.</p>
-<doc-anchor-target id="context-size">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#context-size">#</doc-anchor-trigger>
-        <span>Context Size</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="context-size">Context Size</h3>
 <p>How many tokens of the chat are kept in the context at any given time. How large the maximum context size you can use depends on the model and your subscription tier:</p>
 <ul>
 <li>Kayra (Tablet) - 3072 tokens</li>
 <li>Kayra (Scroll) - 6144 tokens</li>
 <li>Erato (Opus exclusive), Kayra (Opus) and Clio (all tiers) - 8192 tokens</li>
 </ul>
-<doc-anchor-target id="preamble">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#preamble">#</doc-anchor-trigger>
-        <span>Preamble</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="preamble">Preamble</h3>
 <p>Text that is inserted right above the chat to modify the writing style. The recommended format is a list of short tags, like &quot;[ Style: chat, detailed, sensory ]&quot;.</p>
-<doc-anchor-target id="preset-descriptions">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#preset-descriptions">#</doc-anchor-trigger>
-        <span>Preset Descriptions</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="preset-descriptions">Preset Descriptions</h2>
 <p>This is, according to NovelAI, what the default presets are good for.</p>
-<doc-anchor-target id="erato">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#erato">#</doc-anchor-trigger>
-        <span>Erato</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="erato">Erato</h3>
 <ul>
 <li>Golden Arrow - A good all-rounder.</li>
 <li>Wilder - Higher variety of word choice, more differences between rerolls, more prone to mistakes.</li>
@@ -308,12 +271,7 @@ You can also manually add your own settings files.</p>
 <li>Dragonfruit - Varied and complex language with little repetition. More frequent mistakes and contradictions.</li>
 <li>Shosetsu - Designed for writing in Japanese. Works fine for English too.</li>
 </ul>
-<doc-anchor-target id="kayra">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#kayra">#</doc-anchor-trigger>
-        <span>Kayra</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="kayra">Kayra</h3>
 <ul>
 <li>Asper - For creative writing. Expect unexpected twists.</li>
 <li>Carefree - A good All-rounder</li>
@@ -323,12 +281,7 @@ You can also manually add your own settings files.</p>
 <li>Tea_Time - It gets good when it gets going.</li>
 <li>Writers-Daemon - Extremely imaginative, sometimes too much.</li>
 </ul>
-<doc-anchor-target id="clio">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#clio">#</doc-anchor-trigger>
-        <span>Clio</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="clio">Clio</h3>
 <ul>
 <li>Edgewise - Handles a variety of generation styles well</li>
 <li>Fresh Coffee - Keeps things on track.</li>
@@ -336,19 +289,9 @@ You can also manually add your own settings files.</p>
 <li>Talker Chat - Designed for chat style generation.</li>
 <li>Vingt-Un - A good all-around default with a bent towards prose.</li>
 </ul>
-<doc-anchor-target id="tips-and-faqs-for-using-novelai-with-sillytavern">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tips-and-faqs-for-using-novelai-with-sillytavern">#</doc-anchor-trigger>
-        <span>Tips and FAQs for using NovelAI with SillyTavern</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="tips-and-faqs-for-using-novelai-with-sillytavern">Tips and FAQs for using NovelAI with SillyTavern</h2>
 <p>There are a lot of common problems and questions that come up when switching to NovelAI from another ST backend API. The difference comes down to what the models are trained for. Most likely, you&#x27;ve used an OpenAI or Anthropic model (or a local model made to resemble those), which is built around following the user&#x27;s instructions. NovelAI&#x27;s models are built purely around text completion: instead of taking your input as a message and formulating a response, NAI&#x27;s models attempt to continue the incoming prompt. Due to this difference, a lot of tips and common knowledge that work for other APIs won&#x27;t work for NAI.</p>
-<doc-anchor-target id="tweaking-settings-for-novelai">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tweaking-settings-for-novelai">#</doc-anchor-trigger>
-        <span>Tweaking settings for NovelAI</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="tweaking-settings-for-novelai">Tweaking settings for NovelAI</h3>
 <p>Under Advanced Formatting (the A icon):</p>
 <ul>
 <li>Set &quot;Context Template&quot; to &quot;NovelAI&quot;</li>
@@ -361,12 +304,7 @@ You can also manually add your own settings files.</p>
 <ul>
 <li>Turn on &quot;Swipes&quot; (Not NAI specific, but it&#x27;s so useful you should just do it)</li>
 </ul>
-<doc-anchor-target id="buildingadapting-character-cards-for-novelai">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#buildingadapting-character-cards-for-novelai">#</doc-anchor-trigger>
-        <span>Building/Adapting character cards for NovelAI</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="buildingadapting-character-cards-for-novelai">Building/Adapting character cards for NovelAI</h3>
 <p>To optimize your character cards for NovelAI, there are a couple of recommended methods for writing your character&#x27;s description: prose, and attributes.</p>
 <p>Prose is so simple it doesn&#x27;t feel like it should work: &quot;Sylpheed is a young-looking but actually 900 year old nymph. She&#x27;s short and petite, with long white hair that fades into a green gradient in her braided side ponytail, and emerald green eyes shaped like crosses.[...]&quot; No, really, that&#x27;s it. Just write out, in normal sentences, what the character looks like, acts like, etc., and the AI will pick up on it.</p>
 <p>If you don&#x27;t trust your writing abilities or want a more structured way to go about it, you can use the attributes method, which is present in the NovelAI training data. This works as a simple list of character traits of different types. Here&#x27;s a list of possible attributes that have been tested to be effective with NovelAI&#x27;s models:</p>
@@ -411,58 +349,31 @@ Attributes:</code></pre>
 <pre translate="no" class="language-none"><code v-pre class="language-none">Skills: lockpicking, stealth, running away very fast</code></pre>
 </doc-codeblock></div>
 <p>These methods are recommended because they&#x27;re present in NovelAI&#x27;s training data, so they specifically work well with the model.</p>
-<doc-anchor-target id="example-cards">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#example-cards">#</doc-anchor-trigger>
-        <span>Example cards</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="example-cards">Example cards</h4>
 <p>Here are a couple of example cards, made for NovelAI, that show off different ways of creating cards specifically for NovelAI. The first card, Valka, uses the attributes method for the character description, while Eris, the second card, uses prose descriptions, along with a large amount of example dialogue.</p>
 <div style="display:flex;gap:2em;justify-content:center">
-<p><figure class="content-center">
+<figure class="content-center">
     <a href="../../../static/valka.png">
         <img src="../../../static/valka.png" alt="Valka" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="400" height="600" />
     </a>
     <figcaption class="caption">Valka</figcaption>
 </figure>
-</p>
-<p><figure class="content-center">
+<figure class="content-center">
     <a href="../../../static/eris.png">
         <img src="../../../static/eris.png" alt="Eris" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="400" height="600" />
     </a>
     <figcaption class="caption">Eris</figcaption>
 </figure>
-</p>
 </div>
-<doc-anchor-target id="what-not-to-do">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#what-not-to-do">#</doc-anchor-trigger>
-        <span>What not to do</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="what-not-to-do">What not to do</h4>
 <p>Most of the existing character card formats are a poor fit for NovelAI. They&#x27;ll give you some results, even some good ones, but they have a lot of problems. W++ is one of the biggest offenders, where it doesn&#x27;t resemble anything that NovelAI&#x27;s models were trained on, and its constant use of brackets/braces/quotes eats up a ton of tokens, bloating the size of the cards with no real benefit.</p>
 <p>Of the existing formats that aren&#x27;t baked into NovelAI, AliChat is the one most likely to work, as it relies on using example messages to get across both information about the character and their voice at the same time, in the format of the type of message that you want the AI to output.</p>
 <p>For most other formats, since they are usually ways of listing out different characteristics of a particular character, they can be converted to the attributes method rather straightforwardly.</p>
-<doc-anchor-target id="which-module-should-i-use">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#which-module-should-i-use">#</doc-anchor-trigger>
-        <span>Which module should I use?</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="which-module-should-i-use">Which module should I use?</h3>
 <p>Probably No Module. Prose Augmenter is useful if you want a character to speak in a more flowery manner, but be careful not to overdo it. Text Adventure might be useful for a text adventure-style card/story.</p>
-<doc-anchor-target id="not-the-instruct-module">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#not-the-instruct-module">#</doc-anchor-trigger>
-        <span>Not the instruct module?</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="not-the-instruct-module">Not the instruct module?</h3>
 <p>You can invoke the Instruct module when you need it. Create a newline in your message, and put your instructions in curly brackets like this: <code translate="no" v-pre>{ CharName is offended by that seemingly innocuous statement }</code> (the spaces are <em>required</em> between the text and the brackets). Doing that will automatically switch the AI into the Instruct module for a short time. You don&#x27;t want to use the Instruct module all the time because it tends to produce less creative output than the other modules, just when you need to guide the AI strongly in a particular direction.</p>
-<doc-anchor-target id="why-do-my-responses-keep-getting-cut-off">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#why-do-my-responses-keep-getting-cut-off">#</doc-anchor-trigger>
-        <span>Why do my responses keep getting cut off?</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="why-do-my-responses-keep-getting-cut-off">Why do my responses keep getting cut off?</h3>
 <p>NovelAI limits response length to ~150 tokens total, even if you set the slider higher than that. When it reaches the number of tokens in the slider or 150, whichever is lower, it will generate up to 20 more tokens, looking for a stop sequence or the end of a sentence, so there&#x27;s an effective limit of 170 tokens for a response, at which point it will just stop, causing it to cut off.</p>
 <p>If it cuts off, you can select the continue option (in the three-line menu to the left of the text box) to get the character to continue their response.</p>
 <p>If you regularly want responses longer than 170 tokens, you can work around the limit like this:</p>
@@ -472,63 +383,33 @@ Attributes:</code></pre>
 <li>Set the &quot;Target length&quot; to the desired length.</li>
 </ul>
 <p>This will chain together multiple generations to give you longer messages but doesn&#x27;t guarantee that the reply will be 100% of the desired length if the model decides to stop.</p>
-<doc-anchor-target id="how-do-i-get-the-bot-to-write-longer-responses">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-do-i-get-the-bot-to-write-longer-responses">#</doc-anchor-trigger>
-        <span>How do I get the bot to write longer responses?</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="how-do-i-get-the-bot-to-write-longer-responses">How do I get the bot to write longer responses?</h3>
 <p>Read the above about responses getting cut off. That will help to make sure that responses aren&#x27;t cut off prematurely by running into the limit of generation length.</p>
 <p>If your responses aren&#x27;t getting cut off but are still too short, it&#x27;s likely you&#x27;re dealing with &quot;garbage in, garbage out&quot; - if you give the model bad examples, it will produce bad output. If the character card has no example dialogue or short example dialogue and the messages you send to the bot are short, the model will pick up on that, take it as the accepted way to do things and the responses will be short. So, write longer example dialogue and longer messages to the bot. (You can always use NovelAI to write some example dialogue for you rather than doing it yourself.)</p>
-<doc-anchor-target id="how-do-i-get-the-bot-to-stop-talking-for-me">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-do-i-get-the-bot-to-stop-talking-for-me">#</doc-anchor-trigger>
-        <span>How do I get the bot to stop talking for me?</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="how-do-i-get-the-bot-to-stop-talking-for-me">How do I get the bot to stop talking for me?</h3>
 <ul>
 <li>Check that the character card&#x27;s first message and example dialogue don&#x27;t include the character taking actions for you - if they do, then rewrite them to get rid of it acting for you</li>
 <li>Make sure that &quot;Always add character&#x27;s name to prompt&quot; is checked</li>
 <li>Make sure that you&#x27;re currently using the same user persona as the rest of the chat. If you changed user personas and didn&#x27;t change back (or don&#x27;t have a persona locked to that chat), the usual rules to stop generating for you will fail</li>
 <li>Add [&quot;\n{{user}}:&quot;] to Custom Stopping Strings (shouldn&#x27;t be necessary, but sometimes helps)</li>
 </ul>
-<doc-anchor-target id="why-isnt-my-character-responding">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#why-isnt-my-character-responding">#</doc-anchor-trigger>
-        <span>Why isn&#x27;t my character responding?</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="why-isnt-my-character-responding">Why isn&#x27;t my character responding?</h3>
 <p>A lot of things can cause this, so we need to look in a few places:</p>
 <ul>
 <li>Make sure that &quot;Always add character&#x27;s name to prompt&quot; is checked in Advanced Formatting</li>
 <li>Check to make sure there aren&#x27;t any errors coming from the API. While you can use SillyTavern with the NAI free trial, once it runs out, you&#x27;ll just get errors</li>
 <li>Check what you have in &quot;Custom Stopping Strings&quot; - if those are being generated at the start of the response, it might be cut off prematurely</li>
 </ul>
-<doc-anchor-target id="how-should-i-use-the-authors-note">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-should-i-use-the-authors-note">#</doc-anchor-trigger>
-        <span>How should I use the Author&#x27;s Note?</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="how-should-i-use-the-authors-note">How should I use the Author&#x27;s Note?</h3>
 <p>In general, you probably shouldn&#x27;t. It&#x27;s inserted very close to the end of the context, and with NAI&#x27;s models, it frequently overpowers everything else in the context. It&#x27;s mostly an artifact from older, weaker models where it was more necessary.</p>
-<doc-anchor-target id="how-do-i-do-a-scene-breaktime-jump">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-do-i-do-a-scene-breaktime-jump">#</doc-anchor-trigger>
-        <span>How do I do a scene break/time jump?</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="how-do-i-do-a-scene-breaktime-jump">How do I do a scene break/time jump?</h3>
 <p>Put the following as a system message or on newlines at the start of your next message:</p>
 <div id="how-do-i-do-a-scene-breaktime-jump-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">***
 [ 2 days later ]</code></pre>
 </doc-codeblock></div>
 <p>Then put the rest of your message on the next line. The bracketed text can be a time jump, a new location, or anything else. The &quot;***&quot; (hilariously named a &quot;dinkus&quot;) tells the AI that the scene has changed, and the bracketed text gives that more context.</p>
-<doc-anchor-target id="the-ai-keeps-repeating-specific-wordsphrases-what-do-i-do">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#the-ai-keeps-repeating-specific-wordsphrases-what-do-i-do">#</doc-anchor-trigger>
-        <span>The AI keeps repeating specific words/phrases, what do I do?</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="the-ai-keeps-repeating-specific-wordsphrases-what-do-i-do">The AI keeps repeating specific words/phrases, what do I do?</h3>
 <p>As mentioned above, you can push the repetition penalty slider up a bit more, though pushing it too far can make the output incoherent.
 To more thoroughly fix the problem, go back through the context, especially recent messages, and delete the repeated word/phrase. Removing it from the context gives the AI less reason to start saying it in the first place.</p>
 

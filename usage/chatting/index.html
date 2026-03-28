@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>Chatting | docs.ST.app</title>
@@ -29,14 +29,22 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/usage/chatting/">
+    <meta name="twitter:title" content="Chatting | docs.ST.app">
+    <meta name="twitter:description" content="When you are connected to an API, send messages to the AI by typing in the chat bar at the bottom of the screen. Then click Send or press Enter. Chat bar">
+    <meta name="twitter:image" content="https://docs.sillytavern.app/static/chatbox.png">
+    <meta name="twitter:image:alt" content="Chatting | docs.ST.app">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -96,10 +104,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -201,12 +209,7 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="chatting" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#chatting">#</doc-anchor-trigger>
-        <span>Chatting</span>
-    </h1>
-</doc-anchor-target>
+<h1 id="chatting">Chatting</h1>
 <p>When you are <a href="../api-connections/">connected to an API</a>, send messages to the AI by typing in the chat bar at the bottom of the screen. Then click <i class="fa-solid fa-paper-plane"></i> <strong>Send</strong> or press Enter.
 <figure class="content-center">
     <img src="../../static/chatbox.png" alt="Chat bar" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1734" height="94" />
@@ -214,11 +217,10 @@
 </figure>
 </p>
 <p>The AI will respond with a message that continues the conversation.</p>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/chatmessage.png" alt="Chat message" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1762" height="248" />
     <figcaption class="caption">Chat message</figcaption>
 </figure>
-</p>
 <p>You can now:</p>
 <ul>
 <li><strong>Send another message</strong></li>
@@ -231,7 +233,7 @@
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -249,7 +251,7 @@
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -263,42 +265,22 @@
         </div>
     </div>
 </div>
-<doc-anchor-target id="message-actions-panel">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#message-actions-panel">#</doc-anchor-trigger>
-        <span>Message actions panel</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="message-actions-panel">Message actions panel</h2>
 <p>Manage individual chat messages via the ellipsis (•••) button on the message.</p>
 <p>To display these options for all messages in your chats, enable the <a href="../core-concepts/uicustomization/#theme-toggles">Expand Message Actions</a> setting in your user settings.</p>
-<doc-anchor-target id="core-functions">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#core-functions">#</doc-anchor-trigger>
-        <span>Core Functions</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="core-functions">Core Functions</h3>
 <ul>
 <li><i class="fa-solid fa-language"></i> <strong>Translate</strong>: Convert message to different language</li>
 <li><i class="fa-solid fa-paintbrush"></i> <strong>Generate Image</strong>: <a href="../../extensions/stable-diffusion/">Create an image</a> from message content</li>
 <li><i class="fa-solid fa-bullhorn"></i> <strong>Narrate</strong>: <a href="../../extensions/tts/">Text-to-speech</a> conversion</li>
 <li><i class="fa-solid fa-square-poll-horizontal"></i> <strong>Prompt</strong>: View the generation prompt and token usage</li>
 </ul>
-<doc-anchor-target id="message-visibility">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#message-visibility">#</doc-anchor-trigger>
-        <span>Message Visibility</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="message-visibility">Message Visibility</h3>
 <ul>
 <li><i class="fa-solid fa-eye"></i> <strong>Included</strong>: AI sees this message; click to exclude it</li>
 <li><i class="fa-solid fa-eye-slash"></i> <strong>Excluded</strong>: AI does not see this message; click to include it</li>
 </ul>
-<doc-anchor-target id="content-management">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#content-management">#</doc-anchor-trigger>
-        <span>Content Management</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="content-management">Content Management</h3>
 <ul>
 <li><i class="fa-solid fa-paperclip"></i> <strong>Embed</strong>: <a href="../core-concepts/data-bank/#about-documents">Attach files or images</a></li>
 <li><i class="fa-solid fa-flag-checkered"></i> <strong>Checkpoint</strong>: Create story checkpoint</li>
@@ -308,101 +290,51 @@ existing checkpoint</li>
 <li><i class="fa-solid fa-copy"></i> <strong>Copy</strong>: Copy message text</li>
 <li><i class="fa-solid fa-pencil"></i> <strong>Edit</strong>: Edit message content</li>
 </ul>
-<doc-anchor-target id="edit-message-content">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#edit-message-content">#</doc-anchor-trigger>
-        <span>Edit message content</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="edit-message-content">Edit message content</h2>
 <p>A compact panel of message manipulation tools that appears when you <i class="fa-solid fa-pencil"></i> <strong>Edit</strong> a chat
 message.</p>
-<doc-anchor-target id="core-actions">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#core-actions">#</doc-anchor-trigger>
-        <span>Core Actions</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="core-actions">Core Actions</h3>
 <ul>
 <li><i class="fa-solid fa-check"></i> <strong>Confirm</strong>: Save message changes</li>
 <li><i class="fa-solid fa-xmark"></i> <strong>Cancel</strong>: Discard message changes</li>
 </ul>
-<doc-anchor-target id="message-operations">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#message-operations">#</doc-anchor-trigger>
-        <span>Message Operations</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="message-operations">Message Operations</h3>
 <ul>
 <li><i class="fa-solid fa-copy"></i> <strong>Copy</strong>: Duplicate message content</li>
 <li><i class="fa-solid fa-trash-can"></i> <strong>Delete</strong>: Remove message</li>
 </ul>
-<doc-anchor-target id="message-position">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#message-position">#</doc-anchor-trigger>
-        <span>Message Position</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="message-position">Message Position</h3>
 <ul>
 <li><i class="fa-solid fa-chevron-up"></i> <strong>Move Up</strong>: Shift message higher in chat</li>
 <li><i class="fa-solid fa-chevron-down"></i> <strong>Move Down</strong>: Shift message lower in chat</li>
 </ul>
 <p>Note: Movement controls may be disabled based on message position in chat history.</p>
-<doc-anchor-target id="chat-options-panel">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#chat-options-panel">#</doc-anchor-trigger>
-        <span>Chat options panel</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="chat-options-panel">Chat options panel</h2>
 <p>Manage chat settings and operations via the <i class="fa-solid fa-bars"></i> <strong>Options</strong> button at the bottom left of
 the chat interface.</p>
-<doc-anchor-target id="display-controls">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#display-controls">#</doc-anchor-trigger>
-        <span>Display Controls</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="display-controls">Display Controls</h3>
 <ul>
 <li><i class="fa-lg fa-solid fa-times"></i> <strong>Close chat</strong>: Exit current chat session</li>
 <li><i class="fa-lg fa-solid fa-cog"></i> <strong>Toggle Panels</strong>: Show/hide <a href="../#control-panels">interface panels</a></li>
 </ul>
-<doc-anchor-target id="generation-settings">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#generation-settings">#</doc-anchor-trigger>
-        <span>Generation Settings</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="generation-settings">Generation Settings</h3>
 <ul>
 <li><i class="fa-lg fa-solid fa-note-sticky"></i> <strong><a href="../core-concepts/authors-note/">Author&#x27;s Note</a></strong>: Custom context instructions</li>
 <li><i class="fa-lg fa-solid fa-scale-balanced"></i> <strong><a href="../prompts/cfg/">CFG Scale</a></strong>: Adjust response creativity</li>
 <li><i class="fa-lg fa-solid fa-pie-chart"></i> <strong><doc-anchor-trigger to="#token-probabilities-panel">Token Probabilities</doc-anchor-trigger></strong>: View token generation stats</li>
 </ul>
-<doc-anchor-target id="chat-navigation">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#chat-navigation">#</doc-anchor-trigger>
-        <span>Chat Navigation</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="chat-navigation">Chat Navigation</h3>
 <ul>
 <li><i class="fa-lg fa-solid fa-left-long"></i> <strong>Back to parent chat</strong>: Return to main conversation</li>
 <li><i class="fa-lg fa-solid fa-flag"></i> <strong>Save checkpoint</strong>: Create story checkpoint</li>
 <li><i class="fa-lg fa-solid fa-people-arrows"></i> <strong>Convert to group</strong>: Transform into <a href="../core-concepts/groupchats/">group chat</a></li>
 </ul>
-<doc-anchor-target id="chat-management">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#chat-management">#</doc-anchor-trigger>
-        <span>Chat Management</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="chat-management">Chat Management</h3>
 <ul>
 <li><i class="fa-lg fa-solid fa-comments"></i> <strong>Start new chat</strong>: Begin fresh conversation</li>
 <li><i class="fa-lg fa-solid fa-address-book"></i> <strong>Manage chat files</strong>: <a href="../core-concepts/chatfilemanagement/">Chat file operations</a> such as import, export, and renaming</li>
 </ul>
-<doc-anchor-target id="message-controls">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#message-controls">#</doc-anchor-trigger>
-        <span>Message Controls</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="message-controls">Message Controls</h3>
 <ul>
 <li><i class="fa-lg fa-solid fa-trash-can"></i> <strong>Delete messages</strong>: Select and remove multiple messages</li>
 <li><i class="fa-lg fa-solid fa-repeat"></i> <strong>Regenerate</strong>: Create new response</li>
@@ -410,47 +342,29 @@ the chat interface.</p>
 <li><i class="fa-lg fa-solid fa-arrow-right"></i> <strong>Continue</strong>: Extend last message</li>
 </ul>
 <p>Note: Some options may be hidden depending on context and chat state.</p>
-<doc-anchor-target id="token-probabilities-panel">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#token-probabilities-panel">#</doc-anchor-trigger>
-        <span>Token Probabilities Panel</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="token-probabilities-panel">Token Probabilities Panel</h2>
 <p>The Token Probabilities panel lets you look into the AI&#x27;s sampling process for text generation. It shows you not just what the AI wrote, but what other options it considered at each point in the text.</p>
 <p>To open it, click the <i class="fa-solid fa-pie-chart"></i> <strong>Token Probabilities</strong> button in the <i class="fa-solid fa-bars" title="Burger Menu icon"></i> <strong>Chat Options</strong> panel.</p>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/token-probs/fling-msg.png" alt="Example message" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width rounded-image-rounded border-image-border border-image-border-width" width="500" />
     <figcaption class="caption">Example message</figcaption>
 </figure>
-</p>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/token-probs/fling-probs.png" alt="Token probabilities display for example message" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width rounded-image-rounded border-image-border border-image-border-width" width="500" />
     <figcaption class="caption">Token probabilities display for example message</figcaption>
 </figure>
-</p>
 <p>When you click any token (word, punctuation, or formatting character) in the generated text, the panel displays alternative tokens the AI considered at that position, along with their probability scores. This gives you insight into the AI&#x27;s &quot;thought process&quot; and shows other directions the response could have taken. Looking at these alternatives can help you understand whether there were several likely options or a single clear choice.</p>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/token-probs/fling-probs-logprob.png" alt="Alternative tokens and probabilities" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width rounded-image-rounded border-image-border border-image-border-width" width="500" />
     <figcaption class="caption">Alternative tokens and probabilities</figcaption>
 </figure>
-</p>
 <p>If you see a token that you think the AI should have chosen differently, choose an alternative and the message will regenerate from that point forward, potentially giving you a different response.</p>
-<doc-anchor-target id="rerolling">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#rerolling">#</doc-anchor-trigger>
-        <span>Rerolling</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="rerolling">Rerolling</h3>
 <p>If you change a specific token and regenerate the response, the part of the new response before the changed token will be the same as the original response. This part is shown in gray. Since it was not generated, there is no probability information for this part.</p>
 <p>You may like to see other responses that could have been generated based on your alternative token.</p>
 <p>You can click the gray portion to &quot;reroll&quot; the generation, giving you a new variation of the text. Clicking any part of the gray portion will keep the entire gray portion and regenerate the entire white/tinted portion.</p>
 <p>Holding Ctrl while clicking a token in the gray portion will retain the gray portion up to the clicked token and regenerate the rest of the text. Your choice of alternative token can not be kept in this case.</p>
-<doc-anchor-target id="controls">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#controls">#</doc-anchor-trigger>
-        <span>Controls</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="controls">Controls</h3>
 <p><strong>Token Display</strong>:</p>
 <ul>
 <li>Generated text is split into individual tokens</li>
@@ -471,22 +385,12 @@ the chat interface.</p>
 <li><i class="fa-solid fa-circle-chevron-up"></i> Expand/collapse panel content</li>
 <li><i class="fa-solid fa-circle-xmark"></i> Close panel</li>
 </ul>
-<doc-anchor-target id="availability">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#availability">#</doc-anchor-trigger>
-        <span>Availability</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="availability">Availability</h3>
 <p>You must select <strong>Request token probabilities</strong> in <a href="../user-settings/#chatmessage-handling">User Settings</a> to enable this feature.</p>
 <p>Token probabilities are only available for the most recent message, and are not saved to the chat. If token probability information is no longer available for a message, the panel will display a message indicating this.</p>
 <p>Token probabilities are not available when using Smooth Streaming.</p>
 <p>Token probabilities are not available from all APIs. If you are using an API that does not support token probabilities, the panel will open but will not display any information.</p>
-<doc-anchor-target id="text-completion">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#text-completion">#</doc-anchor-trigger>
-        <span>Text Completion</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="text-completion">Text Completion</h4>
 <ul>
 <li><strong>LlamaCPP</strong>: Available</li>
 <li><strong>Text Generation WebUI</strong> (oobabooga): Available</li>
@@ -496,12 +400,7 @@ the chat interface.</p>
 <li><strong>Ollama</strong>: Appears to be unavailable</li>
 <li><strong>OpenRouter Text</strong>: Appears to be unavailable</li>
 </ul>
-<doc-anchor-target id="chat-completion">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#chat-completion">#</doc-anchor-trigger>
-        <span>Chat Completion</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="chat-completion">Chat Completion</h4>
 <ul>
 <li><strong>OpenAI</strong> or <strong>Custom</strong>: Available, but rerolling is not supported</li>
 <li><strong>Anthropic</strong>: Appears to be unavailable</li>

@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>AllTalk TTS V2 | docs.ST.app</title>
@@ -25,14 +25,20 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/extensions/alltalk/">
+    <meta name="twitter:title" content="AllTalk TTS V2 | docs.ST.app">
+    <meta name="twitter:description" content="AllTalk is a voice cloning system based on Coqui XTTS, F5-TTS, VITS, Piper and other TTS model engines, designed to produce high-quality voice reproduction">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -92,10 +98,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -197,20 +203,10 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="alltalk-tts-v2" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#alltalk-tts-v2">#</doc-anchor-trigger>
-        <span>AllTalk TTS V2</span>
-    </h1>
-</doc-anchor-target>
+<h1 id="alltalk-tts-v2">AllTalk TTS V2</h1>
 <p>AllTalk is a voice cloning system based on Coqui XTTS, F5-TTS, VITS, Piper and other TTS model engines, designed to produce high-quality voice reproduction (either zero shot voice cloning or built-in voices). In AllTalk V2, significant updates enhance functionality and ease of use, including multiple TTS engine support, expanded customization, and performance optimizations. For a comprehensive list of features, refer to the <a href="https://github.com/erew123/alltalk_tts/wiki">AllTalk Wiki here</a>.</p>
 <hr>
-<doc-anchor-target id="-key-features-in-alltalk-v2">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#-key-features-in-alltalk-v2">#</doc-anchor-trigger>
-        <span><span class="docs-emoji">&#x1F7E9;</span> Key Features in AllTalk V2</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="-key-features-in-alltalk-v2"><span class="docs-emoji">&#x1F7E9;</span> Key Features in AllTalk V2</h2>
 <ul>
 <li><strong>Multi-engine Support</strong>: Easily switch between Coqui XTTS, VITS, Piper, Parler, F5, and custom engines.</li>
 <li><strong>Voice Conversion (RVC)</strong>: Enhanced retrieval-based voice cloning pipeline.</li>
@@ -221,23 +217,13 @@
 <li><strong>Screenshots</strong>: See AllTalk V2’s interface <a href="https://github.com/erew123/alltalk_tts/discussions/237">here</a>.</li>
 </ul>
 <hr>
-<doc-anchor-target id="-setup-and-installation-options">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#-setup-and-installation-options">#</doc-anchor-trigger>
-        <span><span class="docs-emoji">&#x1F7E8;</span> Setup and Installation Options</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="-setup-and-installation-options"><span class="docs-emoji">&#x1F7E8;</span> Setup and Installation Options</h2>
 <p>AllTalk offers both standalone and integrated installation methods. The fastest setup involves using one of the quick installation options provided, with scripts automating most of the process.</p>
 <ul>
 <li><strong>Standalone Installation</strong>: Recommended for most users (<a href="https://github.com/erew123/alltalk_tts/wiki/Install-%E2%80%90-Standalone-Installation">Standalone Guide</a>)</li>
 <li><strong>Text-generation-webui Integration</strong>: For integration into Text-generation-webui (<a href="https://github.com/erew123/alltalk_tts/wiki/Install-%E2%80%90-Text%E2%80%90generation%E2%80%90webui-Installation">TGWUI Installation Guide</a>)</li>
 </ul>
-<doc-anchor-target id="-automated-installation">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#-automated-installation">#</doc-anchor-trigger>
-        <span><span class="docs-emoji">&#x1F7E9;</span> Automated Installation</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="-automated-installation"><span class="docs-emoji">&#x1F7E9;</span> Automated Installation</h4>
 <p><strong>This method is for Windows users only.</strong>
 For new users who want a quick setup, the automated installation uses the SillyTavern-Launcher.
 Note: This assumes you have already installed the SillyTavern-Launcher. If you haven’t, visit <a href="https://github.com/SillyTavern/SillyTavern-Launcher">https://github.com/SillyTavern/SillyTavern-Launcher</a> and follow the instructions in the readme.md file to install it.
@@ -247,27 +233,12 @@ Once the SillyTavern-Launcher is installed:</p>
 <li>Go to: <code translate="no" v-pre>Home &gt; Toolbox &gt; App Installer &gt; Voice Generation</code></li>
 <li>Select the option labeled: <strong>Install AllTalk V2</strong></li>
 </ol>
-<doc-anchor-target id="-manual-installation">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#-manual-installation">#</doc-anchor-trigger>
-        <span><span class="docs-emoji">&#x1F7E9;</span> Manual Installation</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="-manual-installation"><span class="docs-emoji">&#x1F7E9;</span> Manual Installation</h4>
 <p>For advanced users requiring detailed control, follow the <a href="https://github.com/erew123/alltalk_tts/wiki/Install-%E2%80%90-Manual-Installation-Guide">Manual Installation Guide</a> for a step-by-step setup on Windows, Linux, or Mac (untested).</p>
-<doc-anchor-target id="-google-colab-installation">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#-google-colab-installation">#</doc-anchor-trigger>
-        <span><span class="docs-emoji">&#x1F7E9;</span> Google Colab Installation</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="-google-colab-installation"><span class="docs-emoji">&#x1F7E9;</span> Google Colab Installation</h4>
 <p>Run AllTalk in a cloud environment with the <a href="https://github.com/erew123/alltalk_tts/wiki/Google-COLAB">Google Colab Installation</a> for users who prefer not to install locally.</p>
 <hr>
-<doc-anchor-target id="-using-alltalk-within-sillytavern">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#-using-alltalk-within-sillytavern">#</doc-anchor-trigger>
-        <span><span class="docs-emoji">&#x1F7E8;</span> Using AllTalk within SillyTavern</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="-using-alltalk-within-sillytavern"><span class="docs-emoji">&#x1F7E8;</span> Using AllTalk within SillyTavern</h2>
 <p>Once AllTalk is loaded, select it within SillyTavern on the TTS page, ensuring to select the correct AllTalk server version in the settings.</p>
 <ul>
 <li><strong>Settings Management</strong>: AllTalk may enable or disable specific settings based on your selected configuration.</li>
@@ -278,20 +249,10 @@ Once the SillyTavern-Launcher is installed:</p>
 <p>Full details of the SillyTavern AllTalk Extension will be updated on the <a href="https://github.com/erew123/alltalk_tts/wiki/SillyTavern-Extension">AllTalk Wiki page for SillyTavern</a></p>
 <p>TGWUI Users who use the AllTalk extension for TGWUI need to disable <code translate="no" v-pre>Enable TGWUI TTS</code> in the TGWUI chat interface, otherwise you will have duplicate TTS audio generated.</p>
 <hr>
-<doc-anchor-target id="-troubleshooting">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#-troubleshooting">#</doc-anchor-trigger>
-        <span><span class="docs-emoji">&#x1F7E8;</span> Troubleshooting</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="-troubleshooting"><span class="docs-emoji">&#x1F7E8;</span> Troubleshooting</h2>
 <p>If you experience issues that you believe are specific to AllTalk within SillyTavern, please refer to the <a href="https://github.com/erew123/alltalk_tts/wiki/SillyTavern-Extension">AllTalk Wiki page for SillyTavern</a> for the latest information.</p>
 <hr>
-<doc-anchor-target id="-support-assistance-and-feature-requests">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#-support-assistance-and-feature-requests">#</doc-anchor-trigger>
-        <span><span class="docs-emoji">&#x1F7EA;</span> Support, Assistance, and Feature Requests</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="-support-assistance-and-feature-requests"><span class="docs-emoji">&#x1F7EA;</span> Support, Assistance, and Feature Requests</h3>
 <p>For further assistance:</p>
 <ul>
 <li>Refer to the <a href="https://github.com/erew123/alltalk_tts/wiki">Wiki</a> and built-in documentation.</li>

@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>Linux/MacOS Install | docs.ST.app</title>
@@ -25,14 +25,20 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/installation/linuxmacos/">
+    <meta name="twitter:title" content="Linux/MacOS Install | docs.ST.app">
+    <meta name="twitter:description" content="For MacOS / Linux all of these will be done in a Terminal.">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -92,10 +98,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -197,18 +203,8 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="linuxmacos-install" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#linuxmacos-install">#</doc-anchor-trigger>
-        <span>Linux/MacOS Install</span>
-    </h1>
-</doc-anchor-target>
-<doc-anchor-target id="manual-git-install">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#manual-git-install">#</doc-anchor-trigger>
-        <span>Manual Git install</span>
-    </h2>
-</doc-anchor-target>
+<h1 id="linuxmacos-install">Linux/MacOS Install</h1>
+<h2 id="manual-git-install">Manual Git install</h2>
 <p>For MacOS / Linux all of these will be done in a Terminal.</p>
 <ol>
 <li>Install git and nodeJS (the method for doing this will vary depending on your OS)</li>
@@ -225,18 +221,8 @@
 <li><code translate="no" v-pre>./start.sh</code></li>
 <li><code translate="no" v-pre>bash start.sh</code></li>
 </ul>
-<doc-anchor-target id="sillytavern-launcher">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#sillytavern-launcher">#</doc-anchor-trigger>
-        <span>SillyTavern Launcher</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="for-linux-users">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#for-linux-users">#</doc-anchor-trigger>
-        <span>For Linux users</span>
-    </h3>
-</doc-anchor-target>
+<h2 id="sillytavern-launcher">SillyTavern Launcher</h2>
+<h3 id="for-linux-users">For Linux users</h3>
 <ol>
 <li>Open your favorite terminal and install git</li>
 <li>Download Sillytavern Launcher with: <code translate="no" v-pre>git clone https://github.com/SillyTavern/SillyTavern-Launcher.git</code></li>
@@ -244,12 +230,7 @@
 <li>Start the install launcher with: <code translate="no" v-pre>chmod +x install.sh &amp;&amp; ./install.sh</code> and choose what you want to install</li>
 <li>After installation start the launcher with: <code translate="no" v-pre>chmod +x launcher.sh &amp;&amp; ./launcher.sh</code></li>
 </ol>
-<doc-anchor-target id="for-mac-users">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#for-mac-users">#</doc-anchor-trigger>
-        <span>For Mac users</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="for-mac-users">For Mac users</h3>
 <ol>
 <li>Open a terminal and install brew with: <code translate="no" v-pre>/bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;</code></li>
 <li>Then install git with: <code translate="no" v-pre>brew install git</code></li>

@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>Mancer | docs.ST.app</title>
@@ -29,14 +29,22 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/usage/api-connections/mancer/">
+    <meta name="twitter:title" content="Mancer | docs.ST.app">
+    <meta name="twitter:description" content="Mancer is a large language model inferencing service that lets you run whatever prompts you want and doesn't censor responses. Most of the models require a">
+    <meta name="twitter:image" content="https://docs.sillytavern.app/static/mancer-dashboard.png">
+    <meta name="twitter:image:alt" content="Mancer | docs.ST.app">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -96,10 +104,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -201,23 +209,13 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="mancer" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#mancer">#</doc-anchor-trigger>
-        <span>Mancer</span>
-    </h1>
-</doc-anchor-target>
+<h1 id="mancer">Mancer</h1>
 <p>Mancer is a large language model inferencing service that lets you run whatever prompts you want and doesn&#x27;t censor responses. Most of the models require a preloaded balance to start chatting, but there is a free model as of writing (2024-11-28).</p>
 <ul>
 <li><a href="https://mancer.tech/models">Models</a></li>
 <li><a href="https://mancer.tech/pricing">Pricing</a></li>
 </ul>
-<doc-anchor-target id="how-to-get-started">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-get-started">#</doc-anchor-trigger>
-        <span>How to Get Started</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="how-to-get-started">How to Get Started</h2>
 <ol>
 <li>Sign up for an account at <a href="https://mancer.tech/">mancer.tech</a>.</li>
 <li><p>Click on Dashboard and copy your API Key.</p>
@@ -226,25 +224,14 @@
 <li>In SillyTavern, select the Text Completion API, and then select Mancer under API Type.</li>
 <li>Enter your Mancer API Key and click Connect.</li>
 </ol>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../../static/mancer-key.png" alt="API Key" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="588" height="353" />
     <figcaption class="caption">API Key</figcaption>
 </figure>
-</p>
 <p>You should now be able to chat with any Mancer model of your choice.</p>
-<doc-anchor-target id="anonymous-logging">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#anonymous-logging">#</doc-anchor-trigger>
-        <span>Anonymous Logging</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="anonymous-logging">Anonymous Logging</h2>
 <p>If you don&#x27;t mind your chats potentially being used to train models, improve Mancer&#x27;s service, publish datasets, or <em>whatever else</em> they may decide to do with it, you can opt-in to anonymous logging for a 25% token discount on select models. Simply go to your <a href="https://mancer.tech/dashboard.html">Mancer dashboard</a> and tick <code translate="no" v-pre>Enable Anon. Logging</code>.</p>
-<doc-anchor-target id="support">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#support">#</doc-anchor-trigger>
-        <span>Support</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="support">Support</h2>
 <p>Still need help? Head over to the <a href="https://discord.gg/Ze9UyNu3">#mancer</a> support channel on the SillyTavern Discord.</p>
 
                 

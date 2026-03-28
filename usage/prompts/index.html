@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>Prompts | docs.ST.app</title>
@@ -25,14 +25,20 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/usage/prompts/">
+    <meta name="twitter:title" content="Prompts | docs.ST.app">
+    <meta name="twitter:description" content="When you send a message to your AI, the text you write is combined with other text to form a single request that's sent to the AI. This combined text is">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -92,10 +98,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -197,12 +203,7 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="prompts" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#prompts">#</doc-anchor-trigger>
-        <span>Prompts</span>
-    </h1>
-</doc-anchor-target>
+<h1 id="prompts">Prompts</h1>
 <p>When you send a message to your AI, the text you write is combined with other text to form a single request that&#x27;s sent to the AI. This combined text is called a &quot;prompt&quot; or sometimes the &quot;request&quot; or &quot;context.&quot;</p>
 <p>The prompt can include a variety of different types of text, including:</p>
 <ul>
@@ -219,12 +220,7 @@
 </ul>
 <p>This can be a lot to manage! To help you understand how to structure and modify the request that&#x27;s sent to the AI, SillyTavern identifies different elements that you might want to include in your prompt. You can then structure your prompt to include the things that make sense for the way you want to interact with the AI.</p>
 <p>Many of these elements are explained in the sections where you will change them. For example, to describe the role that you would like the AI to take on, you could use the <a href="../core-concepts/characterdesign/#personality-summary">Description</a> field in <a href="../core-concepts/characterdesign/">Character Design</a>.</p>
-<doc-anchor-target id="viewing-the-prompt">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#viewing-the-prompt">#</doc-anchor-trigger>
-        <span>Viewing the Prompt</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="viewing-the-prompt">Viewing the Prompt</h2>
 <p>Reading the final prompt that&#x27;s sent to the AI is very helpful for understanding what the AI was told, and why it generated the response that it did. You can view the prompt in several ways:</p>
 <ul>
 <li>Using the Prompt Itemization icon on the reply message from the AI</li>
@@ -232,12 +228,7 @@
 <li>Checking the logs in the terminal window that you&#x27;re running SillyTavern in</li>
 <li>Checking the console in your browser&#x27;s developer tools</li>
 </ul>
-<doc-anchor-target id="changing-how-the-prompt-is-built">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#changing-how-the-prompt-is-built">#</doc-anchor-trigger>
-        <span>Changing how the Prompt is Built</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="changing-how-the-prompt-is-built">Changing how the Prompt is Built</h2>
 <p>Presenting all the parts of your prompt to the AI in the right way is crucial for getting the best responses. You can control how the prompt is built.</p>
 <doc-tabs>
 <doc-tab v-cloak id="text-completion-apis">
@@ -249,19 +240,14 @@
 <p>Use the <a href="prompt-manager/">Prompt Manager</a> to customize prompt construction for Chat Completion APIs.</p>
 </doc-tab>
 </doc-tabs>
-<doc-anchor-target id="main-prompt-system-prompt">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#main-prompt-system-prompt">#</doc-anchor-trigger>
-        <span>Main Prompt (System Prompt)</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="main-prompt-system-prompt">Main Prompt (System Prompt)</h2>
 <p>The Main Prompt (or System Prompt) defines the general instructions for the model to follow. It sets the tone and context for the conversation. For example, it tells the model to act as an AI assistant, a writing partner, or a fictional character.</p>
 <doc-tabs>
-<doc-tab v-cloak id="text-completion-apis">
+<doc-tab v-cloak id="text-completion-apis-1">
 <template #title>Text Completion APIs</template>
 <p>The <a href="../core-concepts/advancedformatting/#system-prompt">System Prompt</a> is a part of the <a href="context-template/#story-string">Story String</a> and usually the first part of the prompt that the model receives.</p>
 </doc-tab>
-<doc-tab v-cloak id="chat-completion-apis">
+<doc-tab v-cloak id="chat-completion-apis-1">
 <template #title>Chat Completion APIs</template>
 <p>The Main Prompt is one of the default prompts in <a href="prompt-manager/">Prompt Manager</a>. It is usually the first message in the context that the model receives, attributed to (&quot;sent by&quot;) the system role.</p>
 </doc-tab>
@@ -272,12 +258,7 @@
 </blockquote>
 <p>The {{char}} and {{user}} placeholders are replaced with the names of the character and persona that you&#x27;ve defined in the conversation.</p>
 <p>You can use any of the supported <a href="/usage/characters/macros.md">{{macro}}</a> tags in the Main Prompt to include information that might vary between conversations or changes as the conversation progresses.</p>
-<doc-anchor-target id="adjusting-the-main-prompt">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#adjusting-the-main-prompt">#</doc-anchor-trigger>
-        <span>Adjusting the Main Prompt</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="adjusting-the-main-prompt">Adjusting the Main Prompt</h3>
 <p>The default main prompt helps the model understand what it&#x27;s expected to do with the character and persona information that follows, how to interpret the past conversation, and what kind of response to generate. It&#x27;s a flexible general-purpose prompt that works well for many situations, because it establishes that the AI is writing as a character in a conversation with your persona.</p>
 <p>However, you can adjust the main prompt to better suit your needs. Here are some common reasons to adjust the main prompt:</p>
 <ul>
@@ -289,7 +270,7 @@
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -321,12 +302,7 @@
 </blockquote>
 <p>The AI will more easily follow instructions about what it should do than what it should not do. For example, if you want the AI to avoid writing in a certain way, it&#x27;s better to tell it how you want it to write instead. And while <em>&quot;Do not decide what {{user}} says or does&quot;</em> is commonly included in prompts to prevent the AI from controlling your persona, some users find <em>&quot;Write  {{char}}&#x27;s responses in a way that respects  {{user}}&#x27;s autonomy&quot;</em> is more effective.</p>
 <p>There is often a better place than the Main Prompt to include information about the user or characters, modify a character&#x27;s writing and speaking style, or give other specific instructions. The Main Prompt is best used for general instructions about the conversation as a whole, or about a type of conversation that you want to have.</p>
-<doc-anchor-target id="effect-of-message-history">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#effect-of-message-history">#</doc-anchor-trigger>
-        <span>Effect of Message History</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="effect-of-message-history">Effect of Message History</h3>
 <p>When adjusting the main prompt to improve the AI&#x27;s responses, consider that the AI picks up a lot from the message history. The history is its memory of past events, character interactions and relationships, and its style guide for word choice and writing style.</p>
 <p>Use this to your advantage by also providing <a href="../core-concepts/characterdesign/#examples-of-dialogue">example messages</a> showing how you want the AI to respond. Showing what you want is often easier than trying to explain it!</p>
 <p>When your conversation already has history, changing the main prompt has a limited effect on the AI&#x27;s responses. In terms of events and relationships, the AI assumes that the main prompt occurred in the distant past, and the message history updates it. In terms of writing style and word choice, the AI assumes that all the messages in history were generated according to the rules in the <em>current</em> main prompt, and that it should continue to generate messages in the same way. Some suggestions for dealing with this are:</p>
@@ -340,7 +316,7 @@
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -354,12 +330,7 @@
         </div>
     </div>
 </div>
-<doc-anchor-target id="removing-the-fictional-chat-context">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#removing-the-fictional-chat-context">#</doc-anchor-trigger>
-        <span>Removing the &quot;Fictional Chat&quot; Context</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="removing-the-fictional-chat-context">Removing the &quot;Fictional Chat&quot; Context</h3>
 <p>There are situations where &quot;fictional chat&quot; might not be the right context for your conversation.</p>
 <p>You can remove the &quot;fictional&quot; context from the Main Prompt:</p>
 <blockquote>
@@ -369,12 +340,7 @@
 <blockquote>
 <p>You are {{char}}, a helpful assistant. You provide useful information and help {{user}} with their questions.</p>
 </blockquote>
-<doc-anchor-target id="ai-as-narrator-or-storyteller">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ai-as-narrator-or-storyteller">#</doc-anchor-trigger>
-        <span>AI as Narrator or Storyteller</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="ai-as-narrator-or-storyteller">AI as Narrator or Storyteller</h3>
 <p>What if you want the AI to act as a narrator, describing events from an omniscient perspective, inventing its own characters and settings?</p>
 <p>One approach is to create a named character for the AI to use as a narrator. This character could be called &quot;Narrator&quot; or &quot;AI&quot;, suggesting that the AI is a general-purpose storyteller, or it could be named after a specific scenario or setting, giving the AI the task of narrating a story in that setting. The details of the setting can then be defined in the <a href="../core-concepts/characterdesign/">Character</a> or in <a href="../core-concepts/worldinfo/">World Info</a>.</p>
 <p>You will need to adjust the default main prompt to reflect the AI&#x27;s role. For a general-purpose narrator, you might use:</p>
@@ -394,31 +360,21 @@
 <p>Enter Adventure Mode. Narrate the story based on {{user}}&#x27;s dialogue and actions after &quot;&gt;&quot;. Describe the surroundings in vivid detail. Be detailed, creative, verbose, and proactive. Move the story forward by introducing fantasy elements and interesting characters.</p>
 </blockquote>
 <p>Defining the role of the user not only helps the AI understand how to respond to your messages, but also to what extent it is allowed to control your persona. This avoids situations where the AI makes decisions for your persona that you would rather make yourself.</p>
-<doc-anchor-target id="post-history-instructions">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#post-history-instructions">#</doc-anchor-trigger>
-        <span>Post-History Instructions</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="post-history-instructions">Post-History Instructions</h2>
 <p>Post-History Instructions (PHI) are additional instructions sent to the AI after the main prompt and the user message. They can be used to provide additional context or instructions to the AI based on the message history.</p>
 <p>Since the Post-History Instructions are sent after the user message, they are the final instructions that the AI receives before generating a response. The AI usually gives them a higher priority than the main prompt, and they can override the main prompt&#x27;s instructions.</p>
 <p>To use per-character Post-History Instructions, add them to the character&#x27;s <a href="../core-concepts/characterdesign/">Post-History Instructions</a> and enable <a href="../user-settings/">Prefer Char. Instructions</a>. To preserve the globally defined PHI while using character-specific instructions, you can use the <code translate="no" v-pre>{{original}}</code> macro in the character&#x27;s Post-History Instructions field.</p>
 <doc-tabs>
-<doc-tab v-cloak id="text-completion-apis">
+<doc-tab v-cloak id="text-completion-apis-2">
 <template #title>Text Completion APIs</template>
 <p>Post-History Instructions are defined in the <a href="../core-concepts/advancedformatting/">Advanced Formatting</a> panel under the System Prompt category. The Post-History Instructions is added as an invisible user role injection that precedes the last line of the prompt (usually containing a response message &quot;header&quot;). Note that the &quot;Enable System Prompt&quot; toggle must be enabled for the Post-History Instructions to be applied (even if the System Prompt itself is empty).</p>
 </doc-tab>
-<doc-tab v-cloak id="chat-completion-apis">
+<doc-tab v-cloak id="chat-completion-apis-2">
 <template #title>Chat Completion APIs</template>
 <p>Post-History Instructions is one of the default prompts in <a href="prompt-manager/">Prompt Manager</a>. It is usually the last message in the context that the model receives, attributed to (&quot;sent by&quot;) the system role. If your Chat Completion API does not support the system role, it will usually be attributed to the user role instead.</p>
 </doc-tab>
 </doc-tabs>
-<doc-anchor-target id="adding-to-the-prompt-world-info">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#adding-to-the-prompt-world-info">#</doc-anchor-trigger>
-        <span>Adding to the Prompt (World Info)</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="adding-to-the-prompt-world-info">Adding to the Prompt (World Info)</h2>
 <p>You can insert additional information anywhere in the prompt using the <a href="../core-concepts/worldinfo/">World Info</a> feature. By setting the conditions for when the information should be inserted, you can guide the AI to include specific details, change how it responds, or add new elements to the conversation.</p>
 <p>Some common uses of World Info include:</p>
 <ul>

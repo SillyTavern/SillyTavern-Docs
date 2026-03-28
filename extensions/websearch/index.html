@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>Web Search | docs.ST.app</title>
@@ -25,14 +25,20 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/extensions/websearch/">
+    <meta name="twitter:title" content="Web Search | docs.ST.app">
+    <meta name="twitter:description" content="Adds web search results to LLM prompts.">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -92,10 +98,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -197,18 +203,13 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="web-search" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#web-search">#</doc-anchor-trigger>
-        <span>Web Search</span>
-    </h1>
-</doc-anchor-target>
+<h1 id="web-search">Web Search</h1>
 <p>Adds web search results to LLM prompts.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -218,89 +219,39 @@
         </div>
         <div class="pr-5 ml-3 w-full">
             <h5>Note</h5>
-<p>Some <a href="../../usage/api-connections/openai/">Chat Completion</a> sources provide built-in web search functionality. In this case, this extension will be largely redundant. Check the <strong><i class="fa-solid fa-sliders"></i> AI Response Configuration</strong> panel for the &quot;Enable web search&quot; toggle. For example, this is available for Claude, Google AI Studio / Vertex AI, xAI, and OpenRouter backends.</p>
+<p>Some <a href="../../usage/api-connections/openai/">Chat Completion</a> sources provide built-in web search functionality. In this case, this extension will be largely redundant. Check the <strong><i class="fa-solid fa-sliders"></i> AI Response Configuration</strong> panel for the &quot;Enable web search&quot; toggle. For example, this is available for Claude, Google AI Studio / Vertex AI, OpenRouter, Chutes, and other backends.</p>
         </div>
     </div>
 </div>
-<doc-anchor-target id="available-sources">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#available-sources">#</doc-anchor-trigger>
-        <span>Available sources</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="selenium-plugin">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#selenium-plugin">#</doc-anchor-trigger>
-        <span>Selenium Plugin</span>
-    </h3>
-</doc-anchor-target>
+<h2 id="available-sources">Available sources</h2>
+<h3 id="selenium-plugin">Selenium Plugin</h3>
 <p>Requires an official server plugin to be installed and enabled.</p>
 <p>See <a href="https://github.com/SillyTavern/SillyTavern-WebSearch-Selenium">SillyTavern-WebSearch-Selenium</a> for more details.</p>
 <p>Supports Google and DuckDuckGo engines.</p>
-<doc-anchor-target id="extras-api">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#extras-api">#</doc-anchor-trigger>
-        <span>Extras API</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="extras-api">Extras API</h3>
 <p>Requires a <code translate="no" v-pre>websearch</code> module and Chrome/Firefox web browser installed on the host machine.</p>
 <p>Supports Google and DuckDuckGo engines.</p>
-<doc-anchor-target id="serpapi">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#serpapi">#</doc-anchor-trigger>
-        <span>SerpApi</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="serpapi">SerpApi</h3>
 <p>Requires an API key.</p>
 <p>Get the key here: <a href="https://serpapi.com/dashboard">https://serpapi.com/dashboard</a></p>
-<doc-anchor-target id="searxng">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#searxng">#</doc-anchor-trigger>
-        <span>SearXNG</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="searxng">SearXNG</h3>
 <p>Requires a SearXNG instance URL (either private or public). Uses HTML format for search results.</p>
 <p>SearXNG preferences string: obtained from SearXNG - preferences - COOKIES - Copy preferences hash</p>
 <p>Learn more: <a href="https://docs.searxng.org/">https://docs.searxng.org/</a></p>
-<doc-anchor-target id="tavily-ai">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tavily-ai">#</doc-anchor-trigger>
-        <span>Tavily AI</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="tavily-ai">Tavily AI</h3>
 <p>Requires an API key.</p>
 <p>Get the key here: <a href="https://app.tavily.com/">https://app.tavily.com/</a></p>
-<doc-anchor-target id="koboldcpp">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#koboldcpp">#</doc-anchor-trigger>
-        <span>KoboldCpp</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="koboldcpp">KoboldCpp</h3>
 <p>KoboldCpp URL must be provided in Text Completion API settings. KoboldCpp version must be &gt;= 1.81.1 and WebSearch module must be enabled on startup: enable Network =&gt; Enable WebSearch in the GUI launcher or add <code translate="no" v-pre>--websearch</code> to the command line.</p>
 <p>See: <a href="https://github.com/LostRuins/koboldcpp/releases/tag/v1.81.1">https://github.com/LostRuins/koboldcpp/releases/tag/v1.81.1</a></p>
-<doc-anchor-target id="serper">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#serper">#</doc-anchor-trigger>
-        <span>Serper</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="serper">Serper</h3>
 <p>Requires an API key.</p>
 <p>Get the key here: <a href="https://serper.dev/">https://serper.dev/</a></p>
-<doc-anchor-target id="zai">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#zai">#</doc-anchor-trigger>
-        <span>Z.AI</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="zai">Z.AI</h3>
 <p>Requires an API key, set it in the Chat Completion API settings first. Not compatible with the Coding API subscription!</p>
 <p>Get the key here: <a href="https://z.ai/manage-apikey/apikey-list/">https://z.ai/manage-apikey/apikey-list/</a></p>
 <p>Docs: <a href="https://docs.z.ai/api-reference/tools/web-search">https://docs.z.ai/api-reference/tools/web-search</a></p>
-<doc-anchor-target id="how-to-use">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-use">#</doc-anchor-trigger>
-        <span>How to use</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="how-to-use">How to use</h2>
 <ol>
 <li>Make sure you use the latest version of SillyTavern.</li>
 <li>Install the extension via the &quot;Download Extensions &amp; Assets&quot; menu in SillyTavern.</li>
@@ -309,40 +260,20 @@
 <li>To include search results more organically, wrap search queries with single backticks: <code translate="no" v-pre>Tell me about the `latest Ryan Gosling movie`.</code> will produce a search query <code translate="no" v-pre>latest Ryan Gosling movie</code>.</li>
 <li>Optionally, configure the settings to your liking.</li>
 </ol>
-<doc-anchor-target id="settings">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#settings">#</doc-anchor-trigger>
-        <span>Settings</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="general">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#general">#</doc-anchor-trigger>
-        <span>General</span>
-    </h3>
-</doc-anchor-target>
+<h2 id="settings">Settings</h2>
+<h3 id="general">General</h3>
 <ol>
 <li>Enabled - toggles the extension on and off.</li>
 <li>Sources = sets the search results source.</li>
 <li>Cache Lifetime - how long (in seconds) the search results are cached for your prompt. Default = one week.</li>
 </ol>
-<doc-anchor-target id="prompt-settings">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#prompt-settings">#</doc-anchor-trigger>
-        <span>Prompt Settings</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="prompt-settings">Prompt Settings</h3>
 <ol>
 <li>Prompt Budget - sets the maximum capacity of the inserted text (in characters of text, NOT tokens). Rule of thumb: 1 token ~ 3-4 characters, adjust according to your model&#x27;s context limits. Default = 1500 characters.</li>
 <li>Insertion Template - how the result gets inserted into the prompt. Supports the usual macro + special macro: {{query}} for search query and {{text}} for search results.</li>
 <li>Injection Position - where the result goes in the prompt. The same options as for the Author&#x27;s Note: as in-chat injection or before/after system prompt.</li>
 </ol>
-<doc-anchor-target id="search-activation">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#search-activation">#</doc-anchor-trigger>
-        <span>Search Activation</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="search-activation">Search Activation</h3>
 <ol>
 <li>Use function tool - uses <a href="../../for-contributors/function-calling/">function calling</a> to activate search or scrape web pages. Must use a supported Chat Completion API and be enabled in the AI Response settings. <strong>Disables all other activation methods when engaged.</strong></li>
 <li>Use Backticks - enables search activation using words encased in single backticks.</li>
@@ -351,12 +282,7 @@
 <li>Trigger Phrases - add phrases that will trigger the search, one by one. It can be anywhere in the message, and the query starts from the trigger word and spans to &quot;Max Words&quot; total. To exclude a specific message from processing, it must start with a period, e.g. <code translate="no" v-pre>.What do you think?</code>. Priority of triggers: first by order in the textbox, then the first one in the user message.</li>
 <li>Max Words - how many words are included in the search query (including the trigger phrase). Google has a limit of about 32 words per prompt. Default = 10 words.</li>
 </ol>
-<doc-anchor-target id="page-scraping">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#page-scraping">#</doc-anchor-trigger>
-        <span>Page Scraping</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="page-scraping">Page Scraping</h3>
 <ol>
 <li>Visit Links - text will be extracted from the visited search result pages and saved to a file attachment.</li>
 <li>Visit Count - how many links will be visited and parsed for text.</li>
@@ -366,19 +292,14 @@
 <li>Save Target - where to save the results of scraping. Possible options: trigger message attachments, or chat attachments of Data Bank, or just images (if the source supports them).</li>
 <li>Include Images - attach relevant images to the chat. Requires a source that supports images (see below).</li>
 </ol>
-<doc-anchor-target id="more-info">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#more-info">#</doc-anchor-trigger>
-        <span>More info</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="more-info">More info</h2>
 <p>Search results from the latest query will stay included in the prompt until the next valid query is found.
 If you want to ask additional questions without accidentally triggering the search, start your message with a period.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -405,12 +326,7 @@ If you want to ask additional questions without accidentally triggering the sear
 
 Example: /websearch links=off snippets=on how to make a sandwich</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="what-can-be-included-in-the-search-result">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#what-can-be-included-in-the-search-result">#</doc-anchor-trigger>
-        <span>What can be included in the search result?</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="what-can-be-included-in-the-search-result">What can be included in the search result?</h3>
 <p><strong>Thesaurus:</strong></p>
 <ul>
 <li>Answer box: Direct answer to the question.</li>
@@ -419,12 +335,7 @@ Example: /websearch links=off snippets=on how to make a sandwich</code></pre>
 <li>Relevant questions: Questions and answers to similar topics.</li>
 <li>Images: Relevant images.</li>
 </ul>
-<doc-anchor-target id="serpapi-1">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#serpapi-1">#</doc-anchor-trigger>
-        <span>SerpApi</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="serpapi-1">SerpApi</h4>
 <ol>
 <li>Answer box.</li>
 <li>Knowledge graph.</li>
@@ -432,55 +343,30 @@ Example: /websearch links=off snippets=on how to make a sandwich</code></pre>
 <li>Relevant questions (max 10).</li>
 <li>Images (max 10).</li>
 </ol>
-<doc-anchor-target id="selenium-plugin-and-extras-api">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#selenium-plugin-and-extras-api">#</doc-anchor-trigger>
-        <span>Selenium Plugin and Extras API</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="selenium-plugin-and-extras-api">Selenium Plugin and Extras API</h4>
 <ol>
 <li>Google - answer box, knowledge graph, page snippets.</li>
 <li>DuckDuckGo - page snippets.</li>
 </ol>
 <p><strong>Selenium Plugin</strong> can additionally provide images.</p>
-<doc-anchor-target id="searxng-1">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#searxng-1">#</doc-anchor-trigger>
-        <span>SearXNG</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="searxng-1">SearXNG</h4>
 <ol>
 <li>Infobox.</li>
 <li>Page snippets.</li>
 <li>Images.</li>
 </ol>
-<doc-anchor-target id="tavily-ai-1">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tavily-ai-1">#</doc-anchor-trigger>
-        <span>Tavily AI</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="tavily-ai-1">Tavily AI</h4>
 <ol>
 <li>Answer.</li>
 <li>Page contents.</li>
 <li>Images (up to 5).</li>
 </ol>
-<doc-anchor-target id="koboldcpp-1">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#koboldcpp-1">#</doc-anchor-trigger>
-        <span>KoboldCpp</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="koboldcpp-1">KoboldCpp</h4>
 <ol>
 <li>Page titles.</li>
 <li>Page snippets.</li>
 </ol>
-<doc-anchor-target id="serper-1">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#serper-1">#</doc-anchor-trigger>
-        <span>Serper</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="serper-1">Serper</h4>
 <ol>
 <li>Answer box.</li>
 <li>Knowledge graph.</li>
@@ -488,12 +374,7 @@ Example: /websearch links=off snippets=on how to make a sandwich</code></pre>
 <li>Relevant questions.</li>
 <li>Images.</li>
 </ol>
-<doc-anchor-target id="zai-1">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#zai-1">#</doc-anchor-trigger>
-        <span>Z.AI</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="zai-1">Z.AI</h4>
 <ol>
 <li>Page titles.</li>
 <li>Page snippets.</li>

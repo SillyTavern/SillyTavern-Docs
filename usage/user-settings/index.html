@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>User Settings | docs.ST.app</title>
@@ -25,14 +25,20 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/usage/user-settings/">
+    <meta name="twitter:title" content="User Settings | docs.ST.app">
+    <meta name="twitter:description" content="UI Customization">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -92,10 +98,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -197,31 +203,16 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="user-settings" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#user-settings">#</doc-anchor-trigger>
-        <span>User Settings</span>
-    </h1>
-</doc-anchor-target>
+<h1 id="user-settings">User Settings</h1>
 <div class="callout"><p><strong><a href="../core-concepts/uicustomization/">UI Customization</a></strong></p>
 <p>Change the theme, look and feel of the chat interface to suit your preferences.</p>
 </div>
 <div class="callout"><p><strong><a href="visual-novel/">Visual Novel mode</a></strong></p>
 <p>Chat to characters with sprites, like in visual novels such as Doki Doki Literature Club and other famous VN games.</p>
 </div>
-<doc-anchor-target id="general-settings">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#general-settings">#</doc-anchor-trigger>
-        <span>General Settings</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="general-settings">General Settings</h2>
 <p>These are the core settings that affect your overall SillyTavern experience.</p>
-<doc-anchor-target id="ui-language">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ui-language">#</doc-anchor-trigger>
-        <span>UI Language</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="ui-language">UI Language</h3>
 <p>SillyTavern&#x27;s user interface is available in multiple languages. The language selector provides these options:</p>
 <ul>
 <li><strong>Default</strong>: Uses your system language if available</li>
@@ -229,12 +220,7 @@
 <li>Other languages available through the dropdown</li>
 </ul>
 <p>Note: This setting only affects the user interface text. For AI conversation translation, please use the <a href="../../extensions/translation/">Chat Translation</a> extension.</p>
-<doc-anchor-target id="software-version">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#software-version">#</doc-anchor-trigger>
-        <span>Software Version</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="software-version">Software Version</h3>
 <p>Your current version of SillyTavern is displayed in the top-right corner. This information is essential for:</p>
 <ul>
 <li>Troubleshooting problems</li>
@@ -242,19 +228,9 @@
 <li>Determining if updates are available</li>
 </ul>
 <p>To update SillyTavern to the latest version, please refer to the <a href="../../installation/updating/">Updating</a> documentation.</p>
-<doc-anchor-target id="account-management">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#account-management">#</doc-anchor-trigger>
-        <span>Account Management</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="account-management">Account Management</h3>
 <p>Control your SillyTavern user account, back up your settings and user data, and manage user roles and permissions in <a href="../../administration/multi-user/">multi-user mode</a>.</p>
-<doc-anchor-target id="account">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#account">#</doc-anchor-trigger>
-        <span><i class="fa-fw fa-solid fa-user-shield"></i> Account</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="account"><i class="fa-fw fa-solid fa-user-shield"></i> Account</h4>
 <p>In the Account dialog, you can view and edit your profile information, change your password, and manage account settings.</p>
 <p><strong>Profile Information</strong></p>
 <ul>
@@ -277,17 +253,12 @@
 <li><strong>Reset Settings</strong>: Restore all settings to factory defaults</li>
 <li><strong>Reset Everything</strong>: Complete account wipe and factory reset</li>
 </ul>
-<doc-anchor-target id="admin-panel">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#admin-panel">#</doc-anchor-trigger>
-        <span><i class="fa-fw fa-solid fa-user-tie"></i> Admin Panel</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="admin-panel"><i class="fa-fw fa-solid fa-user-tie"></i> Admin Panel</h4>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -302,12 +273,7 @@
     </div>
 </div>
 <p>Select <strong>Manage Users</strong> to view and manage existing user accounts.</p>
-<doc-anchor-target id="user-profile">
-    <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#user-profile">#</doc-anchor-trigger>
-        <span>User Profile</span>
-    </h5>
-</doc-anchor-target>
+<h5 id="user-profile">User Profile</h5>
 <ul>
 <li>Custom avatar management (upload/remove)</li>
 <li>Display name and handle</li>
@@ -315,12 +281,7 @@
 <li>Account creation date</li>
 <li>Password protection status</li>
 </ul>
-<doc-anchor-target id="account-controls">
-    <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#account-controls">#</doc-anchor-trigger>
-        <span>Account Controls</span>
-    </h5>
-</doc-anchor-target>
+<h5 id="account-controls">Account Controls</h5>
 <ul>
 <li><i class="fa-fw fa-solid fa-pencil"></i> Edit display name</li>
 <li><i class="fa-fw fa-solid fa-check"></i> Enable account</li>
@@ -328,23 +289,13 @@
 <li><i class="fa-fw fa-solid fa-arrow-up"></i> Promote to admin</li>
 <li><i class="fa-fw fa-solid fa-arrow-down"></i> Demote to regular user</li>
 </ul>
-<doc-anchor-target id="management-actions">
-    <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#management-actions">#</doc-anchor-trigger>
-        <span>Management Actions</span>
-    </h5>
-</doc-anchor-target>
+<h5 id="management-actions">Management Actions</h5>
 <ul>
 <li><i class="fa-fw fa-solid fa-download"></i> Download user data backup</li>
 <li><i class="fa-fw fa-solid fa-key"></i> Change user password</li>
 <li><i class="fa-fw fa-solid fa-trash"></i> Delete account</li>
 </ul>
-<doc-anchor-target id="new-user">
-    <h5>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#new-user">#</doc-anchor-trigger>
-        <span>New User</span>
-    </h5>
-</doc-anchor-target>
+<h5 id="new-user">New User</h5>
 <p>Select <strong>New User</strong> to create a new user account.</p>
 <ul>
 <li>Display Name* (e.g., &quot;John Snow&quot;)</li>
@@ -353,17 +304,12 @@
 <li>Password Confirmation</li>
 </ul>
 <p>Creating a new user automatically generates a subfolder in the /data/ directory using the user&#x27;s handle as the folder name.</p>
-<doc-anchor-target id="logout">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#logout">#</doc-anchor-trigger>
-        <span><i class="fa-fw fa-solid fa-right-from-bracket"></i> Logout</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="logout"><i class="fa-fw fa-solid fa-right-from-bracket"></i> Logout</h4>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -377,32 +323,17 @@
     </div>
 </div>
 <p>Sign out of your current session.</p>
-<doc-anchor-target id="settings-search">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#settings-search">#</doc-anchor-trigger>
-        <span>Settings Search</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="settings-search">Settings Search</h3>
 <p>A convenient search bar that helps you quickly find specific settings:</p>
 <ul>
 <li>Type any keyword to filter and highlight settings anywhere in User Settings</li>
 <li>Searches through setting names and descriptions</li>
 <li>Helps navigate complex settings more efficiently</li>
 </ul>
-<doc-anchor-target id="ui-theme">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ui-theme">#</doc-anchor-trigger>
-        <span>UI Theme</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="ui-theme">UI Theme</h2>
 <p>Change the appearance of the chat interface to suit your preferences.</p>
 <p>For more information on the settings in this section of <i class="fa-fw fa-solid fa-user-gear" title="User Settings icon"></i> <strong>User Settings</strong>, see <a href="../core-concepts/uicustomization/#ui-theme">UI Customization</a>.</p>
-<doc-anchor-target id="character-handling">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#character-handling">#</doc-anchor-trigger>
-        <span>Character Handling</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="character-handling">Character Handling</h2>
 <ul>
 <li><strong>Char List Subheader</strong>: Choose what additional information to display under character names in the <a href="../core-concepts/characterdesign/"><i class="fa-fw fa-solid fa-address-card" title="Characters icon"></i> Characters</a> list:
 <ul>
@@ -425,12 +356,7 @@
 <li><strong>Show avatar filenames</strong>: Displays actual filenames of character avatars in the character list.</li>
 <li><strong>Spoiler Free Mode</strong>: Hides character definitions behind a spoiler button in the editor panel.</li>
 </ul>
-<doc-anchor-target id="miscellaneous">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#miscellaneous">#</doc-anchor-trigger>
-        <span>Miscellaneous</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="miscellaneous">Miscellaneous</h2>
 <ul>
 <li><strong>Reload Chat</strong>: Reloads and redraws the current chat.</li>
 <li><strong><doc-anchor-trigger to="#debug-menu">Debug Menu</doc-anchor-trigger></strong>: Access debugging options.</li>
@@ -453,18 +379,8 @@
 </ul>
 </li>
 </ul>
-<doc-anchor-target id="chatmessage-handling">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#chatmessage-handling">#</doc-anchor-trigger>
-        <span>Chat/Message Handling</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="message-display-settings">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#message-display-settings">#</doc-anchor-trigger>
-        <span>Message Display Settings</span>
-    </h3>
-</doc-anchor-target>
+<h2 id="chatmessage-handling">Chat/Message Handling</h2>
+<h3 id="message-display-settings">Message Display Settings</h3>
 <p>Controls how messages are loaded and displayed in the chat interface. These settings affect the overall chat experience and performance.</p>
 <ul>
 <li><strong># Messages to Load</strong>: Number of chat history messages to load before pagination (0 = All)</li>
@@ -483,12 +399,7 @@
 </ul>
 </li>
 </ul>
-<doc-anchor-target id="input--response-controls">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#input--response-controls">#</doc-anchor-trigger>
-        <span>Input &amp; Response Controls</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="input--response-controls">Input &amp; Response Controls</h3>
 <p>Settings that determine how messages are sent and how the AI continues its responses.</p>
 <ul>
 <li><strong>Enter to Send</strong>: Choose between Disabled, Automatic (PC), or Enabled</li>
@@ -498,12 +409,7 @@
 <li><strong>Swipes</strong>: Show arrow buttons for alternative AI responses (PC and mobile)</li>
 <li><strong>Gestures</strong>: Enable swipe gestures for generation (Mobile only)</li>
 </ul>
-<doc-anchor-target id="auto-management">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#auto-management">#</doc-anchor-trigger>
-        <span>Auto-Management</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="auto-management">Auto-Management</h3>
 <p>Automated features that help manage chat flow and content.</p>
 <ul>
 <li><strong>Auto-load Last Chat</strong>: Automatically load the most recent chat on startup</li>
@@ -512,12 +418,7 @@
 <li><strong>Confirm message deletion</strong>: Prompt before deleting messages</li>
 <li><strong>Auto-fix Markdown</strong>: Automatically correct markdown formatting</li>
 </ul>
-<doc-anchor-target id="auto-swipe">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#auto-swipe">#</doc-anchor-trigger>
-        <span>Auto-swipe</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="auto-swipe">Auto-swipe</h4>
 <p>Automatically reject and regenerate AI messages based on configurable criteria.</p>
 <ul>
 <li><strong>Enable Auto-swipe</strong>: Master toggle for the auto-swipe function</li>
@@ -525,12 +426,7 @@
 <li><strong>Blacklisted words</strong>: List of words that can trigger auto-swipe, separated by commas</li>
 <li><strong>Blacklisted word count to swipe</strong>: Minimum number of blacklisted words that must be detected to trigger an auto-swipe</li>
 </ul>
-<doc-anchor-target id="auto-continue">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#auto-continue">#</doc-anchor-trigger>
-        <span>Auto-Continue</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="auto-continue">Auto-Continue</h4>
 <p>Automatically continues a response if the model stopped before reaching a certain length.</p>
 <p>This lets your AI write a long response in multiple parts, so that you can have a short <a href="../common-settings/#response-tokens">response length setting</a> while still getting long replies.</p>
 <p>It will not make the AI write more than it would have otherwise. Asking the AI to continue a message that it considers &quot;finished&quot; does not usually work. See <a href="../faq/#how-to-make-the-ai-write-more">How to make the AI write more?</a> for other ideas.</p>
@@ -539,12 +435,7 @@
 <li><strong>Allow for Chat Completion APIs</strong>: Enables auto-continue functionality for Chat Completion API endpoints</li>
 <li><strong>Target length (tokens)</strong>: The desired message length in tokens - will trigger continue if message is shorter than this value (0-1024)</li>
 </ul>
-<doc-anchor-target id="message-formatting--display">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#message-formatting--display">#</doc-anchor-trigger>
-        <span>Message Formatting &amp; Display</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="message-formatting--display">Message Formatting &amp; Display</h3>
 <p>Controls how messages are formatted and what content is displayed.</p>
 <ul>
 <li><strong>Forbid External Media</strong>: Block embedded media from external domains</li>
@@ -556,22 +447,12 @@
 <li><strong>Show group chat queue</strong>: Display response order in the character list for group chats</li>
 <li><strong>Pin greeting message styles</strong>: Always render style tags from greetings, even if the message is unloaded due to lazy loading.</li>
 </ul>
-<doc-anchor-target id="prompt-inspection-and-debugging">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#prompt-inspection-and-debugging">#</doc-anchor-trigger>
-        <span>Prompt Inspection and Debugging</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="prompt-inspection-and-debugging">Prompt Inspection and Debugging</h3>
 <ul>
 <li><strong>Log prompts to console</strong>: Output prompts to browser console</li>
 <li><strong>Request token probabilities</strong>: Request token probabilities for AI responses from the API. Where available, these can be viewed in <i class="fa-solid fa-bars" title="Burger Menu icon"></i> <a href="../chatting/#token-probabilities-panel">Token Probabilities</a>.</li>
 </ul>
-<doc-anchor-target id="autocomplete">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#autocomplete">#</doc-anchor-trigger>
-        <span>AutoComplete</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="autocomplete">AutoComplete</h3>
 <ul>
 <li>Auto-hide details</li>
 <li>Matching style (Starts with/Includes/Fuzzy)</li>
@@ -580,44 +461,24 @@
 <li>Font scaling</li>
 <li>Width controls</li>
 </ul>
-<doc-anchor-target id="stscript-settings">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#stscript-settings">#</doc-anchor-trigger>
-        <span>STscript Settings</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="stscript-settings">STscript Settings</h2>
 <p>Configuration options for the <a href="../st-script/#parser-flags">STscript parser</a>.</p>
-<doc-anchor-target id="strict_escaping">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#strict_escaping">#</doc-anchor-trigger>
-        <span>STRICT_ESCAPING</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="strict_escaping">STRICT_ESCAPING</h3>
 <ul>
 <li>Pipes don&#x27;t need to be escaped in quoted values.</li>
 <li>A backslash in front of a symbol can be escaped to provide the literal backslash followed by the functional symbol.</li>
 </ul>
 <p>See <a href="../st-script/#strict-escaping">Strict Escaping</a> for more information.</p>
-<doc-anchor-target id="replace_getvar">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#replace_getvar">#</doc-anchor-trigger>
-        <span>REPLACE_GETVAR</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="replace_getvar">REPLACE_GETVAR</h3>
 <p>Helps to avoid double-substitutions when the variable values contain text that could be interpreted as macros.</p>
 <p>See <a href="../st-script/#replace-variable-macros">Replace Variable Macros</a> for more information.</p>
-<doc-anchor-target id="clean-up-menu">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#clean-up-menu">#</doc-anchor-trigger>
-        <span>Clean-Up Menu</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="clean-up-menu">Clean-Up Menu</h2>
 <p>The Clean-Up menu provides a data maintenance tool that helps you identify and remove unnecessary files from your SillyTavern installation. This feature helps keep your data directory organized and can free up significant disk space.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -633,12 +494,7 @@
         </div>
     </div>
 </div>
-<doc-anchor-target id="how-to-use-clean-up">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-use-clean-up">#</doc-anchor-trigger>
-        <span>How to Use Clean-Up</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="how-to-use-clean-up">How to Use Clean-Up</h3>
 <ol>
 <li>Click the <strong>Clean-Up</strong> button under the <strong>Miscellaneous</strong> section</li>
 <li>Click <strong>Scan</strong> to analyze your installation. This may take some time depending on the size of your data directory</li>
@@ -647,120 +503,70 @@
 <li>Use <strong>Download</strong> to save files before deletion</li>
 <li>Delete individual files or entire categories as needed</li>
 </ol>
-<doc-anchor-target id="clean-up-categories">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#clean-up-categories">#</doc-anchor-trigger>
-        <span>Clean-Up Categories</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="clean-up-categories">Clean-Up Categories</h3>
 <p>The Clean-Up tool scans for loose files into the following categories:</p>
-<doc-anchor-target id="files">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#files">#</doc-anchor-trigger>
-        <span>Files</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="files">Files</h4>
 <ul>
 <li><strong>What it finds</strong>: Files that are not associated with chat messages or Data Bank entries</li>
 <li><strong>Location</strong>: <code translate="no" v-pre>/data/&lt;user-handle&gt;/user/files/</code></li>
 <li><strong>Risk</strong>: <span class="docs-emoji">&#x26A0;&#xFE0F;</span> <strong>WILL DELETE MANUAL UPLOADS</strong> that aren&#x27;t referenced in chats</li>
 <li><strong>When to clean</strong>: Safe to delete if you don&#x27;t need unreferenced files</li>
 </ul>
-<doc-anchor-target id="images">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#images">#</doc-anchor-trigger>
-        <span>Images</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="images">Images</h4>
 <ul>
 <li><strong>What it finds</strong>: Images that are not associated with chat messages</li>
 <li><strong>Location</strong>: <code translate="no" v-pre>/data/&lt;user-handle&gt;/user/images/</code></li>
 <li><strong>Risk</strong>: <span class="docs-emoji">&#x26A0;&#xFE0F;</span> <strong>WILL DELETE MANUAL UPLOADS</strong> that aren&#x27;t referenced in chats</li>
 <li><strong>When to clean</strong>: Safe to delete if you don&#x27;t need unreferenced images</li>
 </ul>
-<doc-anchor-target id="chats">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#chats">#</doc-anchor-trigger>
-        <span>Chats</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="chats">Chats</h4>
 <ul>
 <li><strong>What it finds</strong>: Chat files associated with deleted characters</li>
 <li><strong>Location</strong>: <code translate="no" v-pre>data/&lt;user-handle&gt;/chats/</code></li>
 <li><strong>Risk</strong>: <span class="docs-emoji">&#x26A0;&#xFE0F;</span> <strong>Orphaned chats will be permanently lost</strong></li>
 <li><strong>When to clean</strong>: Safe to delete if you&#x27;ve intentionally deleted characters and no longer need their chat histories</li>
 </ul>
-<doc-anchor-target id="group-chats">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#group-chats">#</doc-anchor-trigger>
-        <span>Group Chats</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="group-chats">Group Chats</h4>
 <ul>
 <li><strong>What it finds</strong>: Chat files associated with deleted groups</li>
 <li><strong>Location</strong>: <code translate="no" v-pre>data/&lt;user-handle&gt;/group chats/</code></li>
 <li><strong>Risk</strong>: <span class="docs-emoji">&#x26A0;&#xFE0F;</span> <strong>Orphaned group chats will be permanently lost</strong></li>
 <li><strong>When to clean</strong>: Safe to delete if you&#x27;ve intentionally deleted groups and no longer need their chat histories</li>
 </ul>
-<doc-anchor-target id="avatar-thumbnails">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#avatar-thumbnails">#</doc-anchor-trigger>
-        <span>Avatar Thumbnails</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="avatar-thumbnails">Avatar Thumbnails</h4>
 <ul>
 <li><strong>What it finds</strong>: Thumbnails for avatars of missing or deleted characters</li>
 <li><strong>Location</strong>: <code translate="no" v-pre>data/&lt;user-handle&gt;/thumbnails/avatar</code></li>
 <li><strong>Risk</strong>: <span class="docs-emoji">&#x2705;</span> <strong>Safe to delete</strong> - thumbnails are automatically regenerated when needed</li>
 <li><strong>When to clean</strong>: Always safe to clean, helps free up space</li>
 </ul>
-<doc-anchor-target id="background-thumbnails">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#background-thumbnails">#</doc-anchor-trigger>
-        <span>Background Thumbnails</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="background-thumbnails">Background Thumbnails</h4>
 <ul>
 <li><strong>What it finds</strong>: Thumbnails for missing or deleted backgrounds</li>
 <li><strong>Location</strong>: <code translate="no" v-pre>data/&lt;user-handle&gt;/thumbnails/bg</code></li>
 <li><strong>Risk</strong>: <span class="docs-emoji">&#x2705;</span> <strong>Safe to delete</strong> - thumbnails are automatically regenerated when needed</li>
 <li><strong>When to clean</strong>: Always safe to clean, helps free up space</li>
 </ul>
-<doc-anchor-target id="chat-backups">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#chat-backups">#</doc-anchor-trigger>
-        <span>Chat Backups</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="chat-backups">Chat Backups</h4>
 <ul>
 <li><strong>What it finds</strong>: Automatically generated chat backups</li>
 <li><strong>Location</strong>: <code translate="no" v-pre>data/&lt;user-handle&gt;/backups/chat_*</code></li>
 <li><strong>Risk</strong>: <span class="docs-emoji">&#x26A0;&#xFE0F;</span> <strong>Backup files will be permanently lost</strong></li>
 <li><strong>When to clean</strong>: Consider keeping recent backups, but older ones can be safely deleted</li>
 </ul>
-<doc-anchor-target id="settings-backups">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#settings-backups">#</doc-anchor-trigger>
-        <span>Settings Backups</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="settings-backups">Settings Backups</h4>
 <ul>
 <li><strong>What it finds</strong>: Automatically generated settings backups</li>
 <li><strong>Location</strong>: <code translate="no" v-pre>data/&lt;user-handle&gt;/backups/settings_*</code></li>
 <li><strong>Risk</strong>: <span class="docs-emoji">&#x26A0;&#xFE0F;</span> <strong>Settings backup files will be permanently lost</strong></li>
 <li><strong>When to clean</strong>: Consider keeping recent backups, but older ones can be safely deleted</li>
 </ul>
-<doc-anchor-target id="debug-menu">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#debug-menu">#</doc-anchor-trigger>
-        <span>Debug menu</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="debug-menu">Debug menu</h2>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
                     <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -775,34 +581,19 @@
 </div>
 <p>The Debug Menu provides functionality for troubleshooting, maintenance, and development purposes. These functions should be used with caution as they can significantly impact your SillyTavern installation.</p>
 <p>Because extensions can add debug functions, the available options will vary depending on the extensions you have installed.</p>
-<doc-anchor-target id="translation--locale-functions">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#translation--locale-functions">#</doc-anchor-trigger>
-        <span>Translation &amp; Locale Functions</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="translation--locale-functions">Translation &amp; Locale Functions</h3>
 <ul>
 <li><strong>Get missing translations</strong>: Analyzes the current locale (or all locales if English is selected) for missing translations and outputs results to browser console</li>
 <li><strong>Apply locale</strong>: Forces a refresh of the current language settings by reapplying the selected locale</li>
 </ul>
-<doc-anchor-target id="cache--storage-management">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#cache--storage-management">#</doc-anchor-trigger>
-        <span>Cache &amp; Storage Management</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="cache--storage-management">Cache &amp; Storage Management</h3>
 <ul>
 <li><strong>Clear WebSearch cache</strong>: Removes all stored search results from local cache</li>
 <li><strong>Purge all vector indices</strong>: Completely removes all stored vectors across all sources</li>
 <li><strong>Reset token cache</strong>: Clears stored token counts, forcing complete re-tokenization of all chats</li>
 <li><strong>Delete itemized prompts</strong>: Removes all itemized prompts from local storage</li>
 </ul>
-<doc-anchor-target id="data--statistics">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#data--statistics">#</doc-anchor-trigger>
-        <span>Data &amp; Statistics</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="data--statistics">Data &amp; Statistics</h3>
 <ul>
 <li><strong>Refresh Stat File</strong>: Rebuilds the statistics file using existing chat data</li>
 <li><strong>Backfill token counters</strong>: Recalculates token counts for all messages in current chat
@@ -813,23 +604,13 @@
 </ul>
 </li>
 </ul>
-<doc-anchor-target id="api--extension-testing">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#api--extension-testing">#</doc-anchor-trigger>
-        <span>API &amp; Extension Testing</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="api--extension-testing">API &amp; Extension Testing</h3>
 <ul>
 <li><strong>Change Mancer base URL</strong>: Modify the base URL for Mancer API server</li>
 <li><strong>Test WebSearch extension</strong>: Performs a test search using current settings</li>
 <li><strong>Send a generation request</strong>: Tests text generation using the currently selected API</li>
 </ul>
-<doc-anchor-target id="system--debug-tools">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#system--debug-tools">#</doc-anchor-trigger>
-        <span>System &amp; Debug Tools</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="system--debug-tools">System &amp; Debug Tools</h3>
 <ul>
 <li><strong>Force onboarding</strong>: Restarts the onboarding process</li>
 <li><strong>Toggle event tracing</strong>: Enables/disables event tracking for debugging</li>

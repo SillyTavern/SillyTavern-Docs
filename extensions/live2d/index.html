@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>Live2D | docs.ST.app</title>
@@ -29,14 +29,22 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/extensions/live2d/">
+    <meta name="twitter:title" content="Live2D | docs.ST.app">
+    <meta name="twitter:description" content="This guide will walk you through the process of setting up and customizing the Live2D extension for your SillyTavern experience. This extension allows you">
+    <meta name="twitter:image" content="https://docs.sillytavern.app/static/extensions/live2d-folder.png">
+    <meta name="twitter:image:alt" content="Live2D | docs.ST.app">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -96,10 +104,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -201,19 +209,9 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="live2d" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#live2d">#</doc-anchor-trigger>
-        <span>Live2D</span>
-    </h1>
-</doc-anchor-target>
+<h1 id="live2d">Live2D</h1>
 <p>This guide will walk you through the process of setting up and customizing the Live2D extension for your SillyTavern experience. This extension allows you to use Live2D animated models for your character, providing a dynamic and interactive element to your virtual character.</p>
-<doc-anchor-target id="prerequisites">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#prerequisites">#</doc-anchor-trigger>
-        <span>Prerequisites</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="prerequisites">Prerequisites</h2>
 <p>Before you begin, ensure you&#x27;ve met the following prerequisites:</p>
 <ol>
 <li><p><strong>Branch Selection</strong>: Make sure you&#x27;re using the latest version of SillyTavern to access the latest features and updates.</p>
@@ -231,24 +229,13 @@
 </ul>
 </li>
 </ol>
-<doc-anchor-target id="extension-settings">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#extension-settings">#</doc-anchor-trigger>
-        <span>Extension Settings</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="extension-settings">Extension Settings</h2>
 <p>The Live2D extension offers various settings to customize the behavior of your animated model. Here are the key settings:</p>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/extensions/live2d-global.png" alt="UI global settings" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="419" height="331" />
     <figcaption class="caption">UI global settings</figcaption>
 </figure>
-</p>
-<doc-anchor-target id="global-settings">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#global-settings">#</doc-anchor-trigger>
-        <span>Global Settings</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="global-settings">Global Settings</h3>
 <ol>
 <li><p><strong>Enabled</strong>:</p>
 <ul>
@@ -268,12 +255,7 @@
 </ul>
 </li>
 </ol>
-<doc-anchor-target id="debug-settings">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#debug-settings">#</doc-anchor-trigger>
-        <span>Debug Settings</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="debug-settings">Debug Settings</h2>
 <p>These settings help you control the behavior and visibility of your Live2D model for debugging purposes.</p>
 <ol>
 <li><p><strong>Reset Model Before Animation</strong>:</p>
@@ -292,12 +274,7 @@
 </ul>
 </li>
 </ol>
-<doc-anchor-target id="character-selection">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#character-selection">#</doc-anchor-trigger>
-        <span>Character Selection</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="character-selection">Character Selection</h2>
 <p>These settings allow you to manage characters and assign Live2D models to them.</p>
 <ol>
 <li><p><strong>Refresh Button</strong>:</p>
@@ -316,17 +293,11 @@
 </ul>
 </li>
 </ol>
-<doc-anchor-target id="model-selection">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#model-selection">#</doc-anchor-trigger>
-        <span>Model Selection</span>
-    </h2>
-</doc-anchor-target>
-<p><figure class="content-center">
+<h2 id="model-selection">Model Selection</h2>
+<figure class="content-center">
     <img src="../../static/extensions/live2d-list.png" alt="UI model list" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="450" height="271" />
     <figcaption class="caption">UI model list</figcaption>
 </figure>
-</p>
 <ol>
 <li><p><strong>Refresh Button</strong>:</p>
 <ul>
@@ -344,17 +315,11 @@
 </ul>
 </li>
 </ol>
-<doc-anchor-target id="model-settings">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#model-settings">#</doc-anchor-trigger>
-        <span>Model Settings</span>
-    </h2>
-</doc-anchor-target>
-<p><figure class="content-center">
+<h2 id="model-settings">Model Settings</h2>
+<figure class="content-center">
     <img src="../../static/extensions/live2d-settings.png" alt="UI model settings" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="431" height="493" />
     <figcaption class="caption">UI model settings</figcaption>
 </figure>
-</p>
 <ol>
 <li><p><strong>Model Scale</strong>:</p>
 <ul>
@@ -372,28 +337,17 @@
 </ul>
 </li>
 </ol>
-<doc-anchor-target id="remarks">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#remarks">#</doc-anchor-trigger>
-        <span>Remarks</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="remarks">Remarks</h3>
 <ul>
 <li>The settings are saved and carry over different chats.</li>
 <li>You can also drag the model with your mouse, and those settings will be updated and saved.</li>
 <li>Use these UI settings to bring your model back on the screen if you somehow made it out of view. Also, check the &quot;Show frame&quot; checkbox to see clearly where you can click to drag the model.</li>
 </ul>
-<doc-anchor-target id="model-talk">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#model-talk">#</doc-anchor-trigger>
-        <span>Model Talk</span>
-    </h2>
-</doc-anchor-target>
-<p><figure class="content-center">
+<h2 id="model-talk">Model Talk</h2>
+<figure class="content-center">
     <img src="../../static/extensions/live2d-talk.png" alt="UI model talk" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="418" height="361" />
     <figcaption class="caption">UI model talk</figcaption>
 </figure>
-</p>
 <ol>
 <li><p><strong>Param mouth open Y id</strong></p>
 <ul>
@@ -411,26 +365,15 @@
 </ul>
 </li>
 </ol>
-<doc-anchor-target id="remarks-1">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#remarks-1">#</doc-anchor-trigger>
-        <span>Remarks</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="remarks-1">Remarks</h3>
 <ul>
 <li>This mouth animation does not work on every model and every animation. Even if your model has animations where the mouth moves, it does not mean the mouth animation can be controlled by this extension. If nothing shows in the parameter list, your model is probably made with a too old version of Live2D to access the parameters properly.</li>
 </ul>
-<doc-anchor-target id="model-animations">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#model-animations">#</doc-anchor-trigger>
-        <span>Model Animations</span>
-    </h2>
-</doc-anchor-target>
-<p><figure class="content-center">
+<h2 id="model-animations">Model Animations</h2>
+<figure class="content-center">
     <img src="../../static/extensions/live2d-animations.png" alt="UI model animations" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="429" height="286" />
     <figcaption class="caption">UI model animations</figcaption>
 </figure>
-</p>
 <ol>
 <li><p><strong>Starter animation</strong></p>
 <ul>
@@ -443,29 +386,18 @@
 </ul>
 </li>
 </ol>
-<doc-anchor-target id="remarks-2">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#remarks-2">#</doc-anchor-trigger>
-        <span>Remarks</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="remarks-2">Remarks</h3>
 <ul>
 <li>Animations will play when you select one in the lists.</li>
 <li>Use the replay button to replay the selected animation.</li>
 <li>Some models have expressions defined as motions.</li>
 <li>If nothing shows in the lists, it&#x27;s probable your model&#x27;s setting file has no expressions/motions defined.</li>
 </ul>
-<doc-anchor-target id="hit-areas-mapping">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#hit-areas-mapping">#</doc-anchor-trigger>
-        <span>Hit areas mapping</span>
-    </h2>
-</doc-anchor-target>
-<p><figure class="content-center">
+<h2 id="hit-areas-mapping">Hit areas mapping</h2>
+<figure class="content-center">
     <img src="../../static/extensions/live2d-mapping.png" alt="UI model mapping" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="427" height="648" />
     <figcaption class="caption">UI model mapping</figcaption>
 </figure>
-</p>
 <ol>
 <li><p><strong>Default click animation</strong></p>
 <ul>
@@ -478,29 +410,18 @@
 </ul>
 </li>
 </ol>
-<doc-anchor-target id="remarks-3">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#remarks-3">#</doc-anchor-trigger>
-        <span>Remarks</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="remarks-3">Remarks</h3>
 <ul>
 <li>Some models have no hit areas, but the default click is detected for all.</li>
 <li>The default click will trigger if you click on a hit area with nothing mapped or if you click outside of any hit area.</li>
 <li>Hit areas have priority defined in the model; for example, &quot;mouth&quot; is inside &quot;head.&quot; If it does not behave properly, it may be due to the model file.</li>
 <li>For some models, animations need to be finished before starting another one. Use the debug checkbox if you want to force the refresh and spam animations.</li>
 </ul>
-<doc-anchor-target id="classified-expressions-mapping">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#classified-expressions-mapping">#</doc-anchor-trigger>
-        <span>Classified Expressions Mapping</span>
-    </h2>
-</doc-anchor-target>
-<p><figure class="content-center">
+<h2 id="classified-expressions-mapping">Classified Expressions Mapping</h2>
+<figure class="content-center">
     <img src="../../static/extensions/live2d-classify.png" alt="UI model classify" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="425" height="413" />
     <figcaption class="caption">UI model classify</figcaption>
 </figure>
-</p>
 <ol>
 <li><p><strong>Requirements</strong></p>
 <ul>
@@ -513,12 +434,7 @@
 </ul>
 </li>
 </ol>
-<doc-anchor-target id="remarks-4">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#remarks-4">#</doc-anchor-trigger>
-        <span>Remarks</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="remarks-4">Remarks</h3>
 <ul>
 <li>If the previous animation did not finish when a new message is received, it&#x27;s possible that the new animation will not play. This behavior is dependent on the Live2D model. Use the debug checkbox if you want to force the animation to play.</li>
 </ul>

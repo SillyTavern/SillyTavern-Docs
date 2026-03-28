@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>Personas | docs.ST.app</title>
@@ -25,14 +25,20 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/usage/core-concepts/personas/">
+    <meta name="twitter:title" content="Personas | docs.ST.app">
+    <meta name="twitter:description" content="A persona in SillyTavern is the identity you use to participate in chats — essentially a combination of your display name, avatar, and optional descriptive">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -92,10 +98,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -197,24 +203,14 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="personas" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#personas">#</doc-anchor-trigger>
-        <span>Personas</span>
-    </h1>
-</doc-anchor-target>
-<doc-anchor-target id="what-is-a-persona">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#what-is-a-persona">#</doc-anchor-trigger>
-        <span>What is a Persona?</span>
-    </h2>
-</doc-anchor-target>
+<h1 id="personas">Personas</h1>
+<h2 id="what-is-a-persona">What is a Persona?</h2>
 <p>A persona in SillyTavern is the identity you use to participate in chats — essentially a combination of your display name, avatar, and optional descriptive text. Personas allow you to easily switch roles or &quot;characters&quot; you speak as, without having to manually update your username/avatar each time.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -227,12 +223,7 @@
         </div>
     </div>
 </div>
-<doc-anchor-target id="how-to-create-a-persona">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-create-a-persona">#</doc-anchor-trigger>
-        <span>How to Create a Persona?</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="how-to-create-a-persona">How to Create a Persona?</h2>
 <ol>
 <li>Open the <strong>Persona Management</strong> panel (<i class="fa-solid fa-face-smile"></i> button in the top menu).</li>
 <li>Create a blank persona with the <strong>Create</strong> button and give it a name.</li>
@@ -240,18 +231,13 @@
 <li>On the right side, you can fill in your description and set an avatar via the &quot;Change Persona Image&quot; button. Both are optional.</li>
 <li>Now your persona is ready to use in chats.</li>
 </ol>
-<doc-anchor-target id="convert-character-to-persona">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#convert-character-to-persona">#</doc-anchor-trigger>
-        <span>Convert Character to Persona</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="convert-character-to-persona">Convert Character to Persona</h3>
 <p>Personas can also be created by converting any existing character. Simply open the character, select &quot;More...&quot; and click &quot;Convert to Persona&quot;. A persona with the same name and description will be created. Other character card fields like Scenario or Personality will not be used. The character will not be deleted.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -265,12 +251,7 @@
         </div>
     </div>
 </div>
-<doc-anchor-target id="persona-description">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#persona-description">#</doc-anchor-trigger>
-        <span>Persona Description</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="persona-description">Persona Description</h2>
 <p>Each persona can store a custom text description — mental and physical traits, age, occupation, or any personal details. These can also include template macros such as <code translate="no" v-pre>{{char}}</code> or <code translate="no" v-pre>{{user}}</code> (see <a href="/usage/characters/macros.md">Macros</a>).</p>
 <p>Where your persona description is injected into the AI prompt depends on the <strong>Position</strong> setting in the Persona Management panel:</p>
 <ul>
@@ -280,20 +261,10 @@
 <li><strong>In Chat @ Depth</strong> (this will open up configuration options to set depth and the role)</li>
 </ul>
 <p>The position is saved <strong>per persona</strong>.</p>
-<doc-anchor-target id="persona-title">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#persona-title">#</doc-anchor-trigger>
-        <span>Persona Title</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="persona-title">Persona Title</h2>
 <p>The title is an optional text field that can be used to store additional information about the persona and is not used in the prompt, but displayed in the Persona Management panel.</p>
 <p>To set a title, click the <strong><i class="fa-solid fa-pencil"></i> Rename Persona</strong> button in the Persona Management panel and enter the title in the &quot;Persona Title&quot; field, or specify it during persona creation. Setting an empty value when the title already exists will remove it.</p>
-<doc-anchor-target id="persona-connections--locking">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#persona-connections--locking">#</doc-anchor-trigger>
-        <span>Persona Connections / Locking</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="persona-connections--locking">Persona Connections / Locking</h2>
 <p>Persona connections ensure that a given persona is automatically selected in certain situations. If no persona is connected, the currently chosen persona will stay selected.</p>
 <p>There are three types of locking:</p>
 <ol>
@@ -301,63 +272,33 @@
 <li><strong><i class="fa-solid fa-unlock"></i> Character lock</strong> – The persona is locked to a specific character.</li>
 <li><strong><i class="fa-solid fa-crown"></i> Default persona</strong> – One persona that is used whenever no other locks apply.</li>
 </ol>
-<doc-anchor-target id="1-lock-to-a-chat">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#1-lock-to-a-chat">#</doc-anchor-trigger>
-        <span>1. Lock to a Chat</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="1-lock-to-a-chat">1. Lock to a Chat</h3>
 <p>If a persona is locked to a chat, opening that chat in the future will automatically switch your active persona to the locked one.</p>
 <ul>
 <li><strong>To lock</strong>: Select the desired persona, then click the <strong><i class="fa-solid fa-unlock"></i> Chat</strong> button under the &quot;Connections&quot; section (or use <code translate="no" v-pre>/persona-lock type=chat on</code>).</li>
 <li><strong>To unlock</strong>: Click the button again (or use <code translate="no" v-pre>/persona-lock type=chat off</code>).</li>
 </ul>
-<doc-anchor-target id="2-lock-to-a-character">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#2-lock-to-a-character">#</doc-anchor-trigger>
-        <span>2. Lock to a Character</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="2-lock-to-a-character">2. Lock to a Character</h3>
 <p>You can also link a persona to a specific character. Opening any chat with that character automatically selects your locked persona.</p>
 <ul>
 <li><strong>To lock</strong>: Select the desired persona, then click the <strong><i class="fa-solid fa-unlock"></i> Character</strong> button under the &quot;Connections&quot; section (or use <code translate="no" v-pre>/persona-lock type=character on</code>).</li>
 <li><strong>To unlock</strong>: Click the button again (or use <code translate="no" v-pre>/persona-lock type=character off</code>).</li>
 </ul>
 <p>The Persona Management panel also shows which characters are linked to that persona (displayed as small avatars). Clicking them navigates directly to that character&#x27;s chat.</p>
-<doc-anchor-target id="locking-multiple-personas-to-the-same-character">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#locking-multiple-personas-to-the-same-character">#</doc-anchor-trigger>
-        <span>Locking Multiple Personas to the Same Character</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="locking-multiple-personas-to-the-same-character">Locking Multiple Personas to the Same Character</h4>
 <p>If another persona was already linked with that character, it will be automatically unlinked by default.</p>
 <p>To have multiple personas linked at once, the global setting <strong>Allow multiple persona connections per character</strong> can be used.<br />
 If multiple personas are linked to the same character, you&#x27;ll see a popup asking which persona to use each time you open or start a new chat with that character (unless a persona is bound to the chat).</p>
-<doc-anchor-target id="3-default-persona">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#3-default-persona">#</doc-anchor-trigger>
-        <span>3. Default Persona</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="3-default-persona">3. Default Persona</h3>
 <p>Your <strong>default persona</strong> is used whenever there&#x27;s no other relevant lock. The default persona is recognizable by a yellow border around its avatar.</p>
 <ul>
 <li><strong>To set/unset default</strong>: Select the desired persona, then click the <strong><i class="fa-solid fa-crown"></i> Default</strong> button under the &quot;Connections&quot; section (or use <code translate="no" v-pre>/persona-lock type=default</code>).</li>
 </ul>
 <p>Only one persona can be chosen as the default persona.</p>
-<doc-anchor-target id="temporary-persona">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#temporary-persona">#</doc-anchor-trigger>
-        <span>Temporary Persona</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="temporary-persona">Temporary Persona</h3>
 <p>If any of the three connection options connects a persona to the current character/chat, you can still choose to use a different persona. This persona will be marked in the persona panel as &quot;Temporary Persona&quot;. Any reload of the browser window or switch to a different chat and back will reset it to the linked persona again.</p>
 <p>You can manually <em>convert</em> a Temporary Persona to be persistently connected by linking it to the chat.</p>
-<doc-anchor-target id="global-persona-settings">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#global-persona-settings">#</doc-anchor-trigger>
-        <span>Global Persona Settings</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="global-persona-settings">Global Persona Settings</h2>
 <p>All settings under the <strong>Current Persona</strong> are saved per-persona. A few global settings exist too, those can be found under <strong>Global Persona Settings</strong> in the Persona Management panel.</p>
 <ol>
 <li><p><strong>Show notifications on switching personas</strong></p>
@@ -377,18 +318,8 @@ This combined with &quot;Allow multiple&quot; provides the option to have a pers
 </ul>
 </li>
 </ol>
-<doc-anchor-target id="slash-commands-for-personas">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#slash-commands-for-personas">#</doc-anchor-trigger>
-        <span>Slash Commands for Personas</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="persona-lock-typetype">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#persona-lock-typetype">#</doc-anchor-trigger>
-        <span><code translate="no" v-pre>/persona-lock type=&lt;type?&gt;</code></span>
-    </h3>
-</doc-anchor-target>
+<h2 id="slash-commands-for-personas">Slash Commands for Personas</h2>
+<h3 id="persona-lock-typetype"><code translate="no" v-pre>/persona-lock type=&lt;type?&gt;</code></h3>
 <ul>
 <li><code translate="no" v-pre>chat</code> locks the current persona to your active chat.</li>
 <li><code translate="no" v-pre>character</code> locks the current persona to the character in use.</li>
@@ -396,35 +327,20 @@ This combined with &quot;Allow multiple&quot; provides the option to have a pers
 <li>If used without arguments, it returns the current lock state (or an error if none is set).</li>
 <li>The lock state can be chosen via <code translate="no" v-pre>on</code>, <code translate="no" v-pre>off</code> or <code translate="no" v-pre>toggle</code>. Default is toggle.</li>
 </ul>
-<doc-anchor-target id="persona-name">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#persona-name">#</doc-anchor-trigger>
-        <span><code translate="no" v-pre>/persona &lt;name&gt;</code></span>
-    </h3>
-</doc-anchor-target>
+<h3 id="persona-name"><code translate="no" v-pre>/persona &lt;name&gt;</code></h3>
 <ul>
 <li>Quickly switch your active persona by name without opening the Persona Management panel.</li>
 <li>Example: <code translate="no" v-pre>/persona Blaze</code>.</li>
 <li>Using <code translate="no" v-pre>mode=temp</code> allows to temporarily set your name of the <strong>current</strong> persona, even though a persona with the same name might already exist (preserving your current avatar and description).</li>
 </ul>
-<doc-anchor-target id="persona-sync">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#persona-sync">#</doc-anchor-trigger>
-        <span><code translate="no" v-pre>/persona-sync</code></span>
-    </h3>
-</doc-anchor-target>
+<h3 id="persona-sync"><code translate="no" v-pre>/persona-sync</code></h3>
 <ul>
 <li>Re-attributes all user messages in the active chat to the <strong>current</strong> persona and its name.</li>
 </ul>
 <blockquote>
 <p><strong>Note:</strong> The older <code translate="no" v-pre>/lock</code> and <code translate="no" v-pre>/unlock</code> commands remain for backward compatibility but may be removed in the future. Use <code translate="no" v-pre>/persona-lock</code> instead.</p>
 </blockquote>
-<doc-anchor-target id="pro-tips">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#pro-tips">#</doc-anchor-trigger>
-        <span>Pro Tips</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="pro-tips">Pro Tips</h2>
 <ol>
 <li><strong>Switching personas mid-chat</strong> doesn&#x27;t re-attribute your past user messages to the new persona; those remain attributed to whichever persona you were using at the time.</li>
 <li><strong>Batch re-attribution</strong>: If you ever need all prior messages to match a new persona, hit the <strong>sync</strong> button or use <code translate="no" v-pre>/persona-sync</code>.</li>
@@ -436,7 +352,7 @@ This combined with &quot;Allow multiple&quot; provides the option to have a pers
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-tip"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-tip" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-tip" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M7.90625 2.15625C4.50944 2.15625 2.15625 4.58563 2.15625 7.54688C2.15625 8.96138 2.76575 9.88281 3.57075 10.8589L3.87837 11.2226C4.19894 11.6021 4.554 12.0218 4.84581 12.4416C5.25406 13.0324 5.61775 13.7296 5.7385 14.5834C5.76728 14.8608 5.68746 15.1386 5.51579 15.3583C5.34413 15.5781 5.09399 15.7228 4.8179 15.7621C4.5418 15.8013 4.26124 15.7321 4.03512 15.5689C3.809 15.4056 3.65493 15.1612 3.60525 14.8867C3.54775 14.4814 3.37094 14.1004 3.07338 13.6692C2.8306 13.3302 2.57055 13.0039 2.29425 12.6917C2.1735 12.5479 2.04556 12.397 1.909 12.2317C1.00769 11.1406 0 9.72613 0 7.54688C0 3.32062 3.39681 0 7.90625 0C12.4157 0 15.8125 3.32062 15.8125 7.54688C15.8125 9.72613 14.8048 11.1406 13.9035 12.2317C13.7669 12.397 13.639 12.5479 13.5183 12.6903C13.2207 13.0424 12.9677 13.3414 12.7406 13.6692C12.4416 14.1004 12.2662 14.4814 12.2087 14.8867C12.1557 15.1584 12.0003 15.3994 11.7747 15.5598C11.5492 15.7202 11.2706 15.7879 10.9965 15.7488C10.7225 15.7096 10.474 15.5667 10.3023 15.3496C10.1306 15.1325 10.0489 14.8577 10.074 14.582C10.1948 13.7296 10.5584 13.0324 10.9667 12.4416C11.2585 12.0218 11.6136 11.6021 11.9341 11.2226C12.0419 11.0961 12.1454 10.9739 12.2403 10.8589C13.0468 9.88281 13.6562 8.96138 13.6562 7.54688C13.6562 4.58563 11.3031 2.15625 7.90625 2.15625ZM4.67188 17.25H11.1406C11.4266 17.25 11.7008 17.3636 11.903 17.5658C12.1052 17.768 12.2188 18.0422 12.2188 18.3281C12.2188 18.6141 12.1052 18.8883 11.903 19.0905C11.7008 19.2927 11.4266 19.4062 11.1406 19.4062H4.67188C4.38594 19.4062 4.11171 19.2927 3.90953 19.0905C3.70734 18.8883 3.59375 18.6141 3.59375 18.3281C3.59375 18.0422 3.70734 17.768 3.90953 17.5658C4.11171 17.3636 4.38594 17.25 4.67188 17.25ZM5.03125 21.9219C5.03125 21.6359 5.14484 21.3617 5.34703 21.1595C5.54921 20.9573 5.82344 20.8438 6.10938 20.8438H9.70312C9.98906 20.8438 10.2633 20.9573 10.4655 21.1595C10.6677 21.3617 10.7812 21.6359 10.7812 21.9219C10.7812 22.2078 10.6677 22.482 10.4655 22.6842C10.2633 22.8864 9.98906 23 9.70312 23H6.10938C5.82344 23 5.54921 22.8864 5.34703 22.6842C5.14484 22.482 5.03125 22.2078 5.03125 21.9219Z" />
                 </g></g>

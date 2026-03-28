@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>VPNs and Tunneling | docs.ST.app</title>
@@ -25,14 +25,20 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/administration/tunneling/">
+    <meta name="twitter:title" content="VPNs and Tunneling | docs.ST.app">
+    <meta name="twitter:description" content="VPNs and tunnels are a secure way to access your home network from anywhere in the world. This guide will show you how to use a VPN or a tunnel to access">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -92,10 +98,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -197,19 +203,9 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="vpns-and-tunneling" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#vpns-and-tunneling">#</doc-anchor-trigger>
-        <span>VPNs and Tunneling</span>
-    </h1>
-</doc-anchor-target>
+<h1 id="vpns-and-tunneling">VPNs and Tunneling</h1>
 <p>VPNs and tunnels are a secure way to access your home network from anywhere in the world. This guide will show you how to use a VPN or a tunnel to access your SillyTavern instance from anywhere.</p>
-<doc-anchor-target id="methods">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#methods">#</doc-anchor-trigger>
-        <span>Methods</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="methods">Methods</h2>
 <ol>
 <li><p>Use a <strong>home-made VPN</strong>.</p>
 <p>Several routers come with the ability to host a VPN server (primarily OpenVPN or WireGuard) in the router administration page. Refer to your router&#x27;s manual to setup a VPN and add your devices to the VPN. Once connected, just go to the private IP you have set for SillyTavern and you can connect just fine. Easier for users and for Windows use.</p>
@@ -225,61 +221,31 @@
 <p>Tailscale is a VPN provider enabling a secure remote connection to your PC.</p>
 </li>
 </ol>
-<doc-anchor-target id="tailscale-setup">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tailscale-setup">#</doc-anchor-trigger>
-        <span>Tailscale setup</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="tailscale-setup">Tailscale setup</h2>
 <p>Tailscale is a VPN provider enabling a secure remote connection to your PC. An open-source implementation of the Tailscale server exists and you can also host the server using <a href="https://github.com/juanfont/headscale">Headscale</a>, but that is outside of the scope of this tutorial.</p>
-<doc-anchor-target id="1-creating-an-account">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#1-creating-an-account">#</doc-anchor-trigger>
-        <span>1. Creating an account</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="1-creating-an-account">1. Creating an account</h3>
 <ul>
 <li>Go to <a href="https://tailscale.com/">Tailscale&#x27;s website</a> and create a new account.</li>
 </ul>
 <p><strong>NOTE:</strong> For everyday use by a single person Tailscale will be permanently free. If you fear hidden costs, just don&#x27;t add any payment options.</p>
-<doc-anchor-target id="2-setting-up-clients">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#2-setting-up-clients">#</doc-anchor-trigger>
-        <span>2. Setting up clients</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="2-setting-up-clients">2. Setting up clients</h3>
 <ul>
 <li>Go to <a href="https://tailscale.com/download">Tailscale&#x27;s download page</a> and download the client/app on the device you have SillyTavern running on and on the device you want to use from a remote location.</li>
 <li>Log in on both devices with your previously created account.</li>
 <li>Go to <a href="https://login.tailscale.com/admin/machines">Tailscale&#x27;s admin page</a> and approve both devices.</li>
 <li>Take note of both of the connected devices&#x27; names.</li>
 </ul>
-<doc-anchor-target id="3-adding-your-devices-to-the-whitelist">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#3-adding-your-devices-to-the-whitelist">#</doc-anchor-trigger>
-        <span>3. Adding your devices to the whitelist</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="3-adding-your-devices-to-the-whitelist">3. Adding your devices to the whitelist</h3>
 <ul>
 <li>Add your connecting device&#x27;s machine name (the one you want to use SillyTavern with) to SillyTavern&#x27;s whitelist by following <a href="../../usage/remoteconnections/#whitelist-based-access-control">Managing whitelisted IPs</a>.</li>
 </ul>
-<doc-anchor-target id="4-connecting">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#4-connecting">#</doc-anchor-trigger>
-        <span>4. Connecting</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="4-connecting">4. Connecting</h3>
 <p>Now whenever you want to use SillyTavern from anywhere all you have to do is:</p>
 <ul>
 <li>Have Tailscale turned on on both the PC hosting SillyTavern and your device that wants to use it remotely.</li>
 <li>Open a browser on the device that wants to connect and go to <code translate="no" v-pre>http://&lt;machine name of PC running st&gt;:8000/</code></li>
 </ul>
-<doc-anchor-target id="5-sharing-sillytavern-instance-with-a-friend-optional">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#5-sharing-sillytavern-instance-with-a-friend-optional">#</doc-anchor-trigger>
-        <span>5. Sharing SillyTavern instance with a friend (optional)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="5-sharing-sillytavern-instance-with-a-friend-optional">5. Sharing SillyTavern instance with a friend (optional)</h3>
 <ul>
 <li>Tell your friend to create their own Tailscale account and download the client on their device.</li>
 <li>Go to <a href="https://login.tailscale.com/admin/machines">Tailscale&#x27;s admin page</a>.</li>

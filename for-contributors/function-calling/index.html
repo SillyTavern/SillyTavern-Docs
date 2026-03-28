@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>Function Calling | docs.ST.app</title>
@@ -25,15 +25,21 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/for-contributors/function-calling/">
+    <meta name="twitter:title" content="Function Calling | docs.ST.app">
+    <meta name="twitter:description" content="Function Calling allows adding dynamic functionality to your extensions by letting the LLM use structured data that you then can use to trigger a specific">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.2.0.826914722230" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.4.0.828033847105" defer></script>
 
     <style>
         a {
@@ -93,10 +99,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -198,31 +204,16 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="function-calling" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#function-calling">#</doc-anchor-trigger>
-        <span>Function Calling</span>
-    </h1>
-</doc-anchor-target>
+<h1 id="function-calling">Function Calling</h1>
 <p>Function Calling allows adding dynamic functionality to your extensions by letting the LLM use structured data that you then can use to trigger a specific functionality of the extension.</p>
-<doc-anchor-target id="example-use-cases">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#example-use-cases">#</doc-anchor-trigger>
-        <span>Example use cases</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="example-use-cases">Example use cases</h2>
 <ol>
 <li>Query external APIs for additional information (news, weather, web search, etc.).</li>
 <li>Perform calculations or conversions based on user input.</li>
 <li>Store and recall important memories or facts, including RAG and database queries.</li>
 <li>Introduce true randomness into the conversation (dice rolls, coin flips, etc.).</li>
 </ol>
-<doc-anchor-target id="officially-supported-extensions-using-function-calling">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#officially-supported-extensions-using-function-calling">#</doc-anchor-trigger>
-        <span>Officially supported extensions using function calling</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="officially-supported-extensions-using-function-calling">Officially supported extensions using function calling</h2>
 <ol>
 <li><a href="../../extensions/stable-diffusion/">Image Generation</a> (built-in) - generate images based on user prompts.</li>
 <li><a href="../../extensions/websearch/">Web Search</a> - trigger a web search for a query.</li>
@@ -230,12 +221,7 @@
 <li><a href="https://github.com/SillyTavern/Extension-Weather">Weather</a> - fetch the weather information from weather APIs.</li>
 <li><a href="https://github.com/SillyTavern/Extension-Dice">D&amp;D Dice</a> - roll dice for D&amp;D games.</li>
 </ol>
-<doc-anchor-target id="prerequisites-and-limitations">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#prerequisites-and-limitations">#</doc-anchor-trigger>
-        <span>Prerequisites and limitations</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="prerequisites-and-limitations">Prerequisites and limitations</h2>
 <ol>
 <li>This feature is only available for certain Chat Completion sources: OpenAI, Claude, MistralAI, Groq, Cohere, OpenRouter, AI21, Google AI Studio, Google Vertex AI, DeepSeek, AI/ML API, NanoGPT and Custom API sources.</li>
 <li>Text Completion APIs don&#x27;t support function calls, but some locally-hosted backends like Ollama and TabbyAPI may run in Custom OpenAI-compatible mode under Chat Completion.</li>
@@ -243,99 +229,127 @@
 <li>There is no guarantee that an LLM will perform any function calls at all. Most of them require an explicit &quot;activation&quot; through the prompt (e.g., the user asking to &quot;Roll a dice&quot;, &quot;Get the weather&quot;, etc.).</li>
 <li>Not all prompts can trigger a tool call. Continuations, impersonation, background (&#x27;quiet&#x27;) prompts are not allowed to trigger a tool call. They can still use past successful tool calls in their responses.</li>
 </ol>
-<doc-anchor-target id="how-to-make-a-function-tool">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-make-a-function-tool">#</doc-anchor-trigger>
-        <span>How to make a function tool</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="check-if-the-feature-is-supported">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#check-if-the-feature-is-supported">#</doc-anchor-trigger>
-        <span>Check if the feature is supported</span>
-    </h3>
-</doc-anchor-target>
-<p>To determine if the function tool calling feature is supported, you can call <code translate="no" v-pre>isToolCallingSupported</code> from the <code translate="no" v-pre>SillyTavern.getContext()</code> object. This will check if the current API supports function tool calling and if it&#x27;s enabled in the settings. Here is an example of how to check if the feature is supported:</p>
+<h2 id="how-to-make-a-function-tool">How to make a function tool</h2>
+<h3 id="check-if-the-feature-is-supported">Check if the feature is supported</h3>
+<p>Use <code translate="no" v-pre>isToolCallingSupported()</code> from <code translate="no" v-pre>SillyTavern.getContext()</code> to check if the current API supports function tool calling and if it&#x27;s enabled in the settings:</p>
 <div id="check-if-the-feature-is-supported-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-typescript"><code v-pre class="language-typescript">if (SillyTavern.getContext().isToolCallingSupported()) {
-    console.log(&quot;Function tool calling is supported&quot;);
-} else {
-    console.log(&quot;Function tool calling is not supported&quot;);
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { isToolCallingSupported } = SillyTavern.getContext();
+
+if (isToolCallingSupported()) {
+    console.log('Function tool calling is supported');
 }</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="register-a-function">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#register-a-function">#</doc-anchor-trigger>
-        <span>Register a function</span>
-    </h3>
-</doc-anchor-target>
-<p>To register a function tool, you need to call the <code translate="no" v-pre>registerFunctionTool</code> function from the <code translate="no" v-pre>SillyTavern.getContext()</code> object and pass the required parameters. Here is an example of how to register a function tool:</p>
-<div id="register-a-function-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-typescript"><code v-pre class="language-typescript">SillyTavern.getContext().registerFunctionTool({
-    // Internal name of the function tool. Must be unique.
-    name: &quot;myFunction&quot;,
-    // Display name of the function tool. Will be shown in the UI. (Optional)
-    displayName: &quot;My Function&quot;,
-    // Description of the function tool. Must describe what the function does and when to use it.
-    description: &quot;My function description. Use when you need to do something.&quot;,
-    // JSON schema for the parameters of the function tool. See: https://json-schema.org/
+<p>You can also check whether tool calls can be performed for a specific generation type. Continuations, impersonation, and background (&#x27;quiet&#x27;) prompts are not allowed to trigger tool calls:</p>
+<div id="check-if-the-feature-is-supported-code-2" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { canPerformToolCalls } = SillyTavern.getContext();
+
+if (canPerformToolCalls('normal')) {
+    console.log('Can perform tool calls for this generation');
+}</code></pre>
+</doc-codeblock></div>
+<h3 id="register-a-function-tool">Register a function tool</h3>
+<p>Use <code translate="no" v-pre>registerFunctionTool()</code> from <code translate="no" v-pre>SillyTavern.getContext()</code> to register a tool. The tool definition follows the <a href="https://json-schema.org/">JSON Schema</a> format for its parameters:</p>
+<div id="register-a-function-tool-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { registerFunctionTool } = SillyTavern.getContext();
+
+registerFunctionTool({
+    name: 'get_weather',
+    displayName: 'Get Weather',
+    description: 'Get the current weather for a given location',
     parameters: {
         $schema: 'http://json-schema.org/draft-04/schema#',
         type: 'object',
         properties: {
-            param1: {
+            location: {
                 type: 'string',
-                description: 'Parameter 1 description',
+                description: 'The city name, e.g. &quot;London&quot;',
             },
-            param2: {
+            unit: {
                 type: 'string',
-                description: 'Parameter 2 description',
+                enum: ['celsius', 'fahrenheit'],
+                description: 'Temperature unit',
             },
         },
-        required: [
-            'param1', 'param2',
-        ],
+        required: ['location'],
     },
-    // Function to call when the tool is triggered. Can be async.
-    // If the result is not a string, it will be JSON-stringified.
-    action: async ({ param1, param2 }) =&gt; {
-        // Your function code here
-        console.log(`Function called with parameters: ${param1}, ${param2}`);
-        return &quot;Function result&quot;;
+    action: async ({ location, unit }) =&gt; {
+        // Perform your logic here (API calls, computations, etc.)
+        const data = await fetchWeatherData(location, unit);
+        return JSON.stringify(data);
     },
-    // Optional function to format the toast message displayed when the function is invoked.
-    // If an empty string is returned, no toast message will be displayed.
-    formatMessage: ({ param1, param2 }) =&gt; {
-        return `Function is called with: ${param1} and ${param2}`;
-    },
-    // Optional function that returns a boolean value indicating whether the tool should be registered for the current prompt.
-    // If no shouldRegister function is provided, the tool will be registered for every prompt.
-    shouldRegister: () =&gt; {
-        return true;
-    },
-    // Optional flag. If set to true, the function call will be performed, but the result won't be recorded to the visible chat history.
+    formatMessage: ({ location }) =&gt; `Checking weather for ${location}...`,
+    shouldRegister: () =&gt; isWeatherFeatureEnabled(),
     stealth: false,
 });</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="unregister-a-function">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#unregister-a-function">#</doc-anchor-trigger>
-        <span>Unregister a function</span>
-    </h3>
-</doc-anchor-target>
-<p>To deactivate a function tool, you need to call the <code translate="no" v-pre>unregisterFunctionTool</code> function from the <code translate="no" v-pre>SillyTavern.getContext()</code> object and pass the name of the function tool to disable. Here is an example of how to unregister a function tool:</p>
-<div id="unregister-a-function-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-typescript"><code v-pre class="language-typescript">SillyTavern.getContext().unregisterFunctionTool(&quot;myFunction&quot;);</code></pre>
+<h3 id="registration-fields">Registration fields</h3>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Field</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>name</code></td>
+<td>Yes</td>
+<td>Unique identifier for the tool</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>displayName</code></td>
+<td>No</td>
+<td>User-friendly display name shown in the UI</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>description</code></td>
+<td>Yes</td>
+<td>Description sent to the LLM to explain what the tool does and when to use it</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>parameters</code></td>
+<td>Yes</td>
+<td>JSON Schema defining the tool&#x27;s input parameters</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>action</code></td>
+<td>Yes</td>
+<td>Function called when the LLM invokes the tool. Receives parsed parameters as an object. Can be async. Must return a string result (non-string values will be JSON-stringified).</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>formatMessage</code></td>
+<td>No</td>
+<td>Function returning a string shown as a toast while the tool executes. Return an empty string to suppress the toast.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>shouldRegister</code></td>
+<td>No</td>
+<td>Function returning a boolean; if <code translate="no" v-pre>false</code>, the tool is excluded from the current request. If not provided, the tool is registered for every prompt.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>stealth</code></td>
+<td>No</td>
+<td>If <code translate="no" v-pre>true</code>, the tool call result is not recorded to visible chat history and no follow-up generation is triggered</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="unregister-a-function-tool">Unregister a function tool</h3>
+<p>To deactivate a function tool, call <code translate="no" v-pre>unregisterFunctionTool()</code> with the tool&#x27;s name:</p>
+<div id="unregister-a-function-tool-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { unregisterFunctionTool } = SillyTavern.getContext();
+
+unregisterFunctionTool('get_weather');</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="tips-and-tricks">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tips-and-tricks">#</doc-anchor-trigger>
-        <span>Tips and tricks</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="tips-and-tricks">Tips and tricks</h2>
 <ol>
-<li>Successful tool calls are saved as a part of the visible history and will be displayed in the chat UI, so you can inspect the actual parameters and results. If that is not desirable, set the <code translate="no" v-pre>stealth: true</code> flag when registering a function tool.</li>
-<li>If you don&#x27;t want to see the tool call in the chat history. If you want to stylize or hide them with custom CSS, target a <code translate="no" v-pre>toolCall</code> class on <code translate="no" v-pre>.mes</code> elements, i.e. <code translate="no" v-pre>.mes.toolCall { display: none; }</code> or <code translate="no" v-pre>.mes.toolCall { color: #999; }</code>.</li>
+<li>Successful tool calls are saved as part of the visible chat history and displayed in the chat UI, so you can inspect the actual parameters and results. If that is not desirable, set <code translate="no" v-pre>stealth: true</code> when registering the tool.</li>
+<li>To stylize or hide tool call messages with custom CSS, target the <code translate="no" v-pre>toolCall</code> class on <code translate="no" v-pre>.mes</code> elements, e.g. <code translate="no" v-pre>.mes.toolCall { display: none; }</code> or <code translate="no" v-pre>.mes.toolCall { opacity: 0.5; }</code>.</li>
+<li>Write clear, specific descriptions for your tools — the LLM uses these to decide when and how to call them. Include guidance on when the tool should be used.</li>
+<li>Keep the parameter schema simple and well-documented. Each property&#x27;s <code translate="no" v-pre>description</code> helps the LLM fill in the correct values.</li>
+<li>Tool calls have a recursion limit (default: 5 rounds). If the LLM keeps calling tools repeatedly, execution will stop after the limit is reached.</li>
 </ol>
 
                 

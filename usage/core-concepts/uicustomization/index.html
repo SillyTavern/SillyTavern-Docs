@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>UI Customization | docs.ST.app</title>
@@ -25,14 +25,20 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/usage/core-concepts/uicustomization/">
+    <meta name="twitter:title" content="UI Customization | docs.ST.app">
+    <meta name="twitter:description" content="Theme files allow you to save, share, and reuse your UI customizations. You can maintain multiple themes for different moods or purposes, and switch">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -92,10 +98,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -197,24 +203,9 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="ui-customization" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ui-customization">#</doc-anchor-trigger>
-        <span>UI Customization</span>
-    </h1>
-</doc-anchor-target>
-<doc-anchor-target id="ui-theme">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ui-theme">#</doc-anchor-trigger>
-        <span>UI Theme</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="theme-management">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#theme-management">#</doc-anchor-trigger>
-        <span>Theme Management</span>
-    </h3>
-</doc-anchor-target>
+<h1 id="ui-customization">UI Customization</h1>
+<h2 id="ui-theme">UI Theme</h2>
+<h3 id="theme-management">Theme Management</h3>
 <p>Theme files allow you to save, share, and reuse your UI customizations. You can maintain multiple themes for different moods or purposes, and switch between them instantly.</p>
 <ul>
 <li>Import/Export theme files</li>
@@ -223,26 +214,11 @@
 <li>Save as new theme</li>
 </ul>
 <p>All the settings in this section are saved to the current theme. If you switch themes, the settings will be replaced by the settings of the new theme.</p>
-<doc-anchor-target id="display-settings">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#display-settings">#</doc-anchor-trigger>
-        <span>Display Settings</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="display-settings">Display Settings</h3>
 <p>These display options affect how characters and messages are presented in the chat interface.</p>
-<doc-anchor-target id="avatar-style">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#avatar-style">#</doc-anchor-trigger>
-        <span>Avatar Style</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="avatar-style">Avatar Style</h4>
 <p>Choose between Circle, Square, Rectangle, or Rounded Square. This setting applies to both user and AI avatars.</p>
-<doc-anchor-target id="chat-style">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#chat-style">#</doc-anchor-trigger>
-        <span>Chat Style</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="chat-style">Chat Style</h4>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -271,12 +247,7 @@
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="notifications">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#notifications">#</doc-anchor-trigger>
-        <span>Notifications</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="notifications">Notifications</h3>
 <p>Set a position where the notification popups (toast messages) will appear on the screen.</p>
 <ul>
 <li>Top Left</li>
@@ -286,12 +257,7 @@
 <li>Bottom Center</li>
 <li>Bottom Right</li>
 </ul>
-<doc-anchor-target id="media-style">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#media-style">#</doc-anchor-trigger>
-        <span>Media Style</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="media-style">Media Style</h3>
 <p>Default display style for media attachments (images, audio, video) in chat messages. Extensions that append media to chat messages may override this setting. It can also be changed manually per message using &quot;Toggle media display style&quot; action in the message context menu.</p>
 <ul>
 <li><strong>List</strong>: Display all media attachments at once in a grid-like layout.</li>
@@ -301,7 +267,7 @@
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -314,12 +280,7 @@
         </div>
     </div>
 </div>
-<doc-anchor-target id="theme-colors">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#theme-colors">#</doc-anchor-trigger>
-        <span>Theme Colors</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="theme-colors">Theme Colors</h3>
 <p>Customize the color scheme of every UI element to create your perfect theme. Colors can be selected using a color picker, and include transparency options where applicable.</p>
 <ul>
 <li>Main Text</li>
@@ -333,12 +294,7 @@
 <li>User Message</li>
 <li>AI Message</li>
 </ul>
-<doc-anchor-target id="layout--visual-settings">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#layout--visual-settings">#</doc-anchor-trigger>
-        <span>Layout &amp; Visual Settings</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="layout--visual-settings">Layout &amp; Visual Settings</h3>
 <p>Fine-tune the visual presentation of the interface with these sliders.</p>
 <ul>
 <li><strong>Chat Width</strong>: Adjust chat window width (25-100% of screen)</li>
@@ -346,12 +302,7 @@
 <li><strong>Blur Strength</strong>: Control UI panel blur (0-30)</li>
 <li><strong>Shadow Width</strong>: Adjust text shadow intensity (0-5)</li>
 </ul>
-<doc-anchor-target id="theme-toggles">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#theme-toggles">#</doc-anchor-trigger>
-        <span>Theme Toggles</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="theme-toggles">Theme Toggles</h3>
 <p>These switches control various UI features and behaviors. Some options can improve performance on lower-end devices, while others add useful information or functionality to the chat interface.</p>
 <ul>
 <li><strong>Reduced Motion</strong>: Disable animations and transitions</li>
@@ -374,33 +325,18 @@
 <li><strong>Tags as Folders</strong>: Organize characters using tags as folders</li>
 <li><strong>Click to Edit</strong>: Click on messages to quickly open a message editor</li>
 </ul>
-<doc-anchor-target id="custom-css">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#custom-css">#</doc-anchor-trigger>
-        <span>Custom CSS</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="custom-css">Custom CSS</h3>
 <p>Allows you to apply custom CSS styles to further customize the appearance of the chat interface.</p>
 <p>Use <i class="fa-fw fa-solid fa-maximize" title="Expand icon"></i> <strong>Expand</strong> to expand the editor window for better visibility and editing.</p>
 <p>If you switch themes, your custom CSS will be replaced by the custom CSS of the new theme. Ensure you save your custom CSS to a theme if you want to keep it when switching themes.</p>
 <p>If you use a lot of custom CSS, or want to use the same custom CSS with several themes, the unofficial <a href="https://github.com/LenAnderson/SillyTavern-CssSnippets">CSS Snippets extension</a> can help you manage and organize your custom CSS.</p>
 <hr>
-<doc-anchor-target id="message-sound">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#message-sound">#</doc-anchor-trigger>
-        <span>Message Sound</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="message-sound">Message Sound</h2>
 <p>To play your own custom sound on receiving a new message from bot, replace the following MP3 file in your SillyTavern folder:</p>
 <p><code translate="no" v-pre>public/sounds/message.mp3</code></p>
 <p>Plays at 80% volume.</p>
 <p>If the &quot;<a href="../../user-settings/#miscellaneous">Background Sound Only</a>&quot; option is enabled, the sound plays only if SillyTavern window is <strong>unfocused</strong>.</p>
-<doc-anchor-target id="formulas-rendering">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#formulas-rendering">#</doc-anchor-trigger>
-        <span>Formulas Rendering</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="formulas-rendering">Formulas Rendering</h2>
 <p>To enable math formulas rendering, use the <a href="https://github.com/SillyTavern/Extension-LaTeX">LaTeX extension</a>. To get the extension, you need to install it via the &quot;Download Extensions &amp; Assets&quot; menu in SillyTavern.</p>
 <p>Type your formulas in code blocks with <code translate="no" v-pre>latex</code> or <code translate="no" v-pre>asciimath</code> language identifiers for LaTeX and AsciiMath respectively. The extension uses <a href="https://katex.org/">KaTeX</a> for rendering.</p>
 <pre><code>```latex
@@ -414,7 +350,7 @@ int_{-oo}^{oo} e^{-x^2} dx = sqrt{pi}
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>

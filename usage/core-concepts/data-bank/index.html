@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>Data Bank (RAG) | docs.ST.app</title>
@@ -25,14 +25,20 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/usage/core-concepts/data-bank/">
+    <meta name="twitter:title" content="Data Bank (RAG) | docs.ST.app">
+    <meta name="twitter:description" content="Retrieval-augmented generation (RAG) is a technique for providing external sources of knowledge to the LLM. It helps improve the accuracy of AI answers by">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -92,10 +98,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -197,27 +203,12 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="data-bank-rag" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#data-bank-rag">#</doc-anchor-trigger>
-        <span>Data Bank (RAG)</span>
-    </h1>
-</doc-anchor-target>
+<h1 id="data-bank-rag">Data Bank (RAG)</h1>
 <p>Retrieval-augmented generation (RAG) is a technique for providing external sources of knowledge to the LLM. It helps improve the accuracy of AI answers by accessing information outside of the model&#x27;s training data.</p>
 <p>SillyTavern provides a set of tools for building a multi-purpose knowledge base from a diverse number of sources, as well as using the collected data in LLM prompts.</p>
-<doc-anchor-target id="accessing-the-data-bank">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#accessing-the-data-bank">#</doc-anchor-trigger>
-        <span>Accessing the Data Bank</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="accessing-the-data-bank">Accessing the Data Bank</h2>
 <p>The built-in Chat Attachments extension (included by default in release versions &gt;= 1.12.0) adds a new option in the &quot;Magic Wand&quot; menu - Data Bank. This is your hub for managing the documents available for RAG in SillyTavern.</p>
-<doc-anchor-target id="about-documents">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#about-documents">#</doc-anchor-trigger>
-        <span>About Documents</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="about-documents">About Documents</h2>
 <p>Data Bank stores file attachments, also known as documents. The documents are divided into three scopes of availability.</p>
 <ol>
 <li>Global attachments - available in every chat, either solo or group.</li>
@@ -228,7 +219,7 @@
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -250,26 +241,11 @@
 <li>Video transcripts</li>
 </ul>
 <p>Various extensions and plugins can also provide new ways to gather and process data, more on that below.</p>
-<doc-anchor-target id="data-sources">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#data-sources">#</doc-anchor-trigger>
-        <span>Data Sources</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="data-sources">Data Sources</h2>
 <p>To add a document to any of the scopes, click &quot;Add&quot; and pick one of the available sources.</p>
-<doc-anchor-target id="notepad">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#notepad">#</doc-anchor-trigger>
-        <span>Notepad</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="notepad">Notepad</h3>
 <p>Create a text file from scratch, or edit an existing attachment.</p>
-<doc-anchor-target id="file">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#file">#</doc-anchor-trigger>
-        <span>File</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="file">File</h3>
 <p>Upload a file from the hard drive of your computer. SillyTavern provides built-in converters for popular file formats:</p>
 <ul>
 <li>PDF (text only)</li>
@@ -283,7 +259,7 @@
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -297,33 +273,18 @@
         </div>
     </div>
 </div>
-<doc-anchor-target id="web">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#web">#</doc-anchor-trigger>
-        <span>Web</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="web">Web</h3>
 <p>Scrape text from a web page by its URL. The HTML document is then processed through the <a href="https://github.com/mozilla/readability">Readability</a> library to extract only usable text.</p>
 <p>Some web servers may reject fetch requests, be protected by Cloudflare, or rely heavily on JavaScript to function. If you&#x27;re facing issues with any particular site, download the page manually through the web browser and attach it using the file uploader.</p>
-<doc-anchor-target id="youtube">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#youtube">#</doc-anchor-trigger>
-        <span>YouTube</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="youtube">YouTube</h3>
 <p>Download a transcript of the YouTube video by its ID or URL, either uploaded by the creator or automatically generated by Google. Some videos may have the transcripts disabled, also parsing of age-restricted videos is unavailable as it requires login.</p>
 <p>The script is loaded in the video&#x27;s default language. Optionally, you can specify the two-letter language code to try and fetch the transcript in a specific language. This feature is not always available and may fail, so use it with caution.</p>
-<doc-anchor-target id="web-search">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#web-search">#</doc-anchor-trigger>
-        <span>Web Search</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="web-search">Web Search</h3>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -339,17 +300,12 @@
 </div>
 <p>Perform a web search and download the text from the search result pages. This is similar to the Web source but fully automated. A chosen search engine will be inherited from the extension settings, so set it up in advance.</p>
 <p>To begin, specify the search query, max number of links to be visited, and the output type: one combined file (formatted according to the extension rules) or an individual file for every single page. You can choose to save the page snippets as well.</p>
-<doc-anchor-target id="fandom">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#fandom">#</doc-anchor-trigger>
-        <span>Fandom</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="fandom">Fandom</h3>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -364,17 +320,12 @@
     </div>
 </div>
 <p>Scrape articles from a <a href="https://www.fandom.com/">Fandom</a> wiki by its ID or URL. As some wikis are very large, it may be beneficial to limit the scope using the filter regular expression, it will be tested against the article&#x27;s title. If no filter is provided, then all of the pages are subject to be exported. You may save them either as individual files for every page, or joint into a single document.</p>
-<doc-anchor-target id="bronie-parser-extension-third-party">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#bronie-parser-extension-third-party">#</doc-anchor-trigger>
-        <span>Bronie Parser Extension (Third-Party)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="bronie-parser-extension-third-party">Bronie Parser Extension (Third-Party)</h3>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
                     <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -393,12 +344,7 @@
 <li>miHoYo/HoYoverse&#x27;s HoYoLab (for Genshin Impact/Honkai: Star Rail) via <a href="https://github.com/Bronya-Rand/HoYoWiki-Scraper-TS">HoYoWiki-Scraper-TS</a></li>
 </ul>
 <p>To begin, install Bronya Rand&#x27;s Bronie Parser Extension by following it&#x27;s <a href="https://github.com/Bronya-Rand/Bronie-Parser-Extension?tab=readme-ov-file#installation">installation guide</a> and install a supported Server Plugin into SillyTavern. Restart SillyTavern and go to the <em>Data Bank</em> menu. Click <code translate="no" v-pre>+ Add</code> and you should see that your recently installed scrapers are added into the possible list of sources to obtain information from.</p>
-<doc-anchor-target id="vector-storage">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#vector-storage">#</doc-anchor-trigger>
-        <span>Vector Storage</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="vector-storage">Vector Storage</h2>
 <p>So, you&#x27;ve built yourself a nice and comprehensive library of information on your specific subject matter. What&#x27;s next?</p>
 <p>To use the documents for RAG, you need to use a compatible extension that will insert related data into the LLM prompt.</p>
 <p>Vector Storage, which comes bundled with SillyTavern, is a reference implementation of such an extension. It uses embeddings (also known as vectors) to search for documents that relate to your ongoing chats.</p>
@@ -406,7 +352,7 @@
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -425,17 +371,12 @@
 </div>
 <p>As the Vectors functionality is disabled by default, you need to open the extensions panel (&quot;Stacked Cubes&quot; icon on the top bar), then navigate to the &quot;Vector Storage&quot; section, and tick the &quot;Enabled for files&quot; checkbox under the &quot;File vectorization settings&quot;.</p>
 <p>By itself, Vector Storage does not produce any vectors, you need to use a compatible embedding provider.</p>
-<doc-anchor-target id="vector-providers">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#vector-providers">#</doc-anchor-trigger>
-        <span>Vector Providers</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="vector-providers">Vector Providers</h2>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
                     <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -448,12 +389,7 @@
         </div>
     </div>
 </div>
-<doc-anchor-target id="local">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#local">#</doc-anchor-trigger>
-        <span>Local</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="local">Local</h3>
 <p>These sources are free and unlimited and use your CPU/GPU to calculate embeddings.</p>
 <ol>
 <li>Local (Transformers) - runs on a Node server. SillyTavern will automatically download a compatible model in ONNX format from HuggingFace. Default model: <a href="https://huggingface.co/Cohee/jina-embeddings-v2-base-en">jina-embeddings-v2-base-en</a>.</li>
@@ -463,12 +399,7 @@
 <li>vLLM - get it from <a href="https://github.com/vllm-project/vllm">vllm-project/vllm</a>. Set the API URL and API key in the API connection menu first.</li>
 <li>Extras (deprecated) - runs under the <a href="https://github.com/SillyTavern/SillyTavern-extras">Extras API</a> using the SentenceTransformers loader. Default model: <a href="https://huggingface.co/sentence-transformers/all-mpnet-base-v2">all-mpnet-base-v2</a>. This source is not maintained and will be eventually removed in the future.</li>
 </ol>
-<doc-anchor-target id="api-sources">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#api-sources">#</doc-anchor-trigger>
-        <span>API sources</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="api-sources">API sources</h3>
 <p>All these sources require an API key of the respective service and usually have a usage cost, but generally calculating embeddings is pretty cheap.</p>
 <ol>
 <li>OpenAI</li>
@@ -482,19 +413,15 @@
 <li>Electron Hub</li>
 <li>Chutes</li>
 <li>NanoGPT</li>
+<li>SiliconFlow</li>
 </ol>
-<doc-anchor-target id="vectorization-settings">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#vectorization-settings">#</doc-anchor-trigger>
-        <span>Vectorization Settings</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="vectorization-settings">Vectorization Settings</h2>
 <p>After you&#x27;ve selected your embedding provider, don&#x27;t forget to configure other settings that will define the rules for processing and retrieving documents.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -508,12 +435,7 @@
         </div>
     </div>
 </div>
-<doc-anchor-target id="message-attachments">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#message-attachments">#</doc-anchor-trigger>
-        <span>Message attachments</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="message-attachments">Message attachments</h3>
 <p>These settings control the files that are attached directly to the messages.</p>
 <p>The following rules apply:</p>
 <ol>
@@ -527,12 +449,7 @@
 <li>Chunk overlap (%) - sets the percentage of a chunk size that will be shared between adjacent chunks. This allows for a smoother transition between the chunks, but may also introduce some redundancy.</li>
 <li>Retrieve chunks - sets the maximum amount of the most relevant file chunks to be retrieved. They will be inserted in their original order.</li>
 </ul>
-<doc-anchor-target id="data-bank-files">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#data-bank-files">#</doc-anchor-trigger>
-        <span>Data Bank files</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="data-bank-files">Data Bank files</h3>
 <p>These settings control how the Data Bank documents are handled.</p>
 <p>The following rules apply:</p>
 <ol>
@@ -548,12 +465,7 @@
 <li>Injection Template - defines how the retrieved information will be inserted into the prompt. You can use a special {{text}} macro to specify the position of the retrieved text, as well as any other macros.</li>
 <li>Injection Position - sets where to insert the prompt injection. The same rules as for Author&#x27;s Note and World Info apply.</li>
 </ul>
-<doc-anchor-target id="shared-settings">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#shared-settings">#</doc-anchor-trigger>
-        <span>Shared settings</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="shared-settings">Shared settings</h3>
 <ul>
 <li>Query messages - how many of the latest chat messages will be used for querying document chunks.</li>
 <li>Score threshold - adjust to allow culling the retrieval of chunks based on their relevance score (0 - no match at all, 1 - perfect match). Higher values allow for more accurate retrieval and prevent completely random information from entering the context. Sane values are in a range between 0.2 (more loose) and 0.5 (more focused).</li>
@@ -568,7 +480,7 @@
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -582,12 +494,7 @@
         </div>
     </div>
 </div>
-<doc-anchor-target id="conclusion">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#conclusion">#</doc-anchor-trigger>
-        <span>Conclusion</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="conclusion">Conclusion</h2>
 <p>Congratulations! Your chatting experience is now enhanced with the power of RAG. Its capabilities are only limited by your imagination. As always, don&#x27;t be afraid to experiment!</p>
 
                 <div id="retype-tags" class="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 mt-6 mb-6 clear-both">

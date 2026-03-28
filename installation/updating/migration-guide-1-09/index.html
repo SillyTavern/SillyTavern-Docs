@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>1.9.0 Migration Guide | docs.ST.app</title>
@@ -25,14 +25,20 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/installation/updating/migration-guide-1-09/">
+    <meta name="twitter:title" content="1.9.0 Migration Guide | docs.ST.app">
+    <meta name="twitter:description" content="It is recommended to do a fresh install. However, if you wish to use an existing copy of SillyTavern, please follow the instructions below.">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -92,10 +98,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -197,27 +203,12 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="190-migration-guide" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#190-migration-guide">#</doc-anchor-trigger>
-        <span>1.9.0 Migration Guide</span>
-    </h1>
-</doc-anchor-target>
-<doc-anchor-target id="how-to-migrate-to-a-new-branch-if-i-use-maindev">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-migrate-to-a-new-branch-if-i-use-maindev">#</doc-anchor-trigger>
-        <span>How to migrate to a new branch if I use main/dev?</span>
-    </h2>
-</doc-anchor-target>
+<h1 id="190-migration-guide">1.9.0 Migration Guide</h1>
+<h2 id="how-to-migrate-to-a-new-branch-if-i-use-maindev">How to migrate to a new branch if I use main/dev?</h2>
 <p><em><strong>It is recommended to do a fresh install.</strong></em> However, if you wish to use an existing copy of SillyTavern, please follow the instructions below.</p>
 <p><strong>IMPORTANT!</strong> Before doing anything, make <em>a complete backup</em> of your installation. You may <em>lose your data</em> in the process, so don&#x27;t ignore this warning.</p>
 <p>Not sure of which files to back up? See the list here: <a href="../#updating-from-1120-to-1120">How to Update SillyTavern</a></p>
-<doc-anchor-target id="git-installs">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#git-installs">#</doc-anchor-trigger>
-        <span>git installs</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="git-installs">git installs</h3>
 <ol>
 <li>Open a terminal prompt (cmd, PowerShell, Termux, etc) in your SillyTavern installation folder.</li>
 <li>Type <code translate="no" v-pre>git fetch</code> and then <code translate="no" v-pre>git pull</code> to pull the updates.</li>
@@ -235,12 +226,7 @@ If you do care to save those changes restore from backup.</p>
 <li>Type <code translate="no" v-pre>npm install</code> and then <code translate="no" v-pre>npm run start</code> to test that everything behaves correctly.</li>
 <li>Enjoy! Restore your data from a backup if needed.</li>
 </ol>
-<doc-anchor-target id="fatal-invalid-reference-release">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#fatal-invalid-reference-release">#</doc-anchor-trigger>
-        <span>fatal: invalid reference: release</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="fatal-invalid-reference-release">fatal: invalid reference: release</h3>
 <p>This may happen if you cloned just a single branch from an old remote (before migration to the organization repo). To fix this, you need to add and fetch a branch from a new remote:</p>
 <div id="fatal-invalid-reference-release-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">git remote add st https://github.com/SillyTavern/SillyTavern
@@ -248,12 +234,7 @@ git fetch st
 git checkout -t st/release</code></pre>
 </doc-codeblock></div>
 <p>Then proceed from step 5.</p>
-<doc-anchor-target id="zip-installs">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#zip-installs">#</doc-anchor-trigger>
-        <span>ZIP installs</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="zip-installs">ZIP installs</h3>
 <p>Nothing changes for you. Just download the branch/release ZIP like usual.</p>
 
                 

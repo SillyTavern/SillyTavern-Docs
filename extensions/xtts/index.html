@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>XTTS with voice cloning | docs.ST.app</title>
@@ -25,15 +25,21 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/extensions/xtts/">
+    <meta name="twitter:title" content="XTTS with voice cloning | docs.ST.app">
+    <meta name="twitter:description" content="Greetings! So, you've been blown away by those Reddit posts showcasing how far the technology went for the AI text-to-speech?">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.2.0.826914722230" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.4.0.828033847105" defer></script>
 
     <style>
         a {
@@ -93,10 +99,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -198,21 +204,11 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="xtts-with-voice-cloning" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#xtts-with-voice-cloning">#</doc-anchor-trigger>
-        <span>XTTS with voice cloning</span>
-    </h1>
-</doc-anchor-target>
+<h1 id="xtts-with-voice-cloning">XTTS with voice cloning</h1>
 <p>Greetings! So, you&#x27;ve been blown away by those Reddit posts showcasing how far the technology went for the AI text-to-speech?</p>
 <p>Feeling excited to give your robotic waifu/husbando a new shiny voice modulator?</p>
 <p>Fear not, this stunning groundbreaking technology is already available at your local SillyTavern, you just need a simple...</p>
-<doc-anchor-target id="prerequisites">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#prerequisites">#</doc-anchor-trigger>
-        <span>Prerequisites</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="prerequisites">Prerequisites</h2>
 <ol>
 <li>Latest version of SillyTavern.</li>
 <li><a href="https://docs.conda.io/projects/miniconda/en/latest/miniconda-install.html">Miniconda</a> installed.</li>
@@ -228,24 +224,14 @@
     - bob.wav
   - output</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="installing">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#installing">#</doc-anchor-trigger>
-        <span>Installing</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="installing">Installing</h2>
 <p><a href="https://github.com/daswer123">daswer123</a> made an API server that runs the XTTSv2 model on your computer and connects to SillyTavern&#x27;s TTS extension.</p>
 <p>It&#x27;s completely independent of Extras API and would use a separate environment.</p>
 <p><strong>Very important:</strong> Don&#x27;t install the following requirements to your Extras environment or system Python.
 It will break your other packages, do unnecessary downgrades, etc.</p>
 <p>The following instruction is provided using Miniconda, but you can also do it with venv (not covered here).
 Open the Anaconda command prompt and follow the instructions line by line.</p>
-<doc-anchor-target id="getting-the-server-up-and-running">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#getting-the-server-up-and-running">#</doc-anchor-trigger>
-        <span>Getting the server up and running</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="getting-the-server-up-and-running">Getting the server up and running</h3>
 <ol>
 <li><p>Navigate to the folder you&#x27;ve created at step 4 of prerequisites.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
@@ -287,12 +273,7 @@ If you want to use just the CPU inference, drop the last part that starts with <
 Don&#x27;t forget to read the legal notice from Coqui AI very carefully. Lol, I&#x27;m kidding, just hit &quot;y&quot; again.</p>
 </li>
 </ol>
-<doc-anchor-target id="connecting-to-sillytavern">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#connecting-to-sillytavern">#</doc-anchor-trigger>
-        <span>Connecting to SillyTavern</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="connecting-to-sillytavern">Connecting to SillyTavern</h3>
 <ol>
 <li>Open the extensions panel, expand the TTS menu, and pick &quot;XTTSv2&quot; in the provider list.</li>
 <li>Choose your text-to-speech language in the Language dropdown (I&#x27;ll be sad if it&#x27;s not Polish).</li>
@@ -301,34 +282,14 @@ Don&#x27;t forget to read the legal notice from Coqui AI very carefully. Lol, I&
 If the characters list is empty, hit &quot;Reload&quot; a couple of times.</li>
 <li>Configure the rest of the TTS settings according to your preferences.</li>
 </ol>
-<doc-anchor-target id="youre-all-set-now">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#youre-all-set-now">#</doc-anchor-trigger>
-        <span>You&#x27;re all set now!</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="youre-all-set-now">You&#x27;re all set now!</h3>
 <p>Click on the bullhorn icon in the context actions menu for any message and hear the beautiful cloned voice emanating
 from your speakers. The generation takes some time and it&#x27;s not real-time even on high-end RTX GPUs.</p>
-<doc-anchor-target id="streaming">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#streaming">#</doc-anchor-trigger>
-        <span>Streaming?</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="streaming">Streaming?</h3>
 <p>It&#x27;s possible to use HTTP streaming with the latest version of the XTTS server to get the chunks of generated audio as soon as it is available!</p>
-<doc-anchor-target id="this-doesnt-work-with-rvc">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#this-doesnt-work-with-rvc">#</doc-anchor-trigger>
-        <span>This doesn&#x27;t work with RVC!</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="this-doesnt-work-with-rvc">This doesn&#x27;t work with RVC!</h4>
 <p>The audio will still be generated (assuming you&#x27;re using the latest version of the RVC extension) and converted, <em>but not streamed</em> as RVC requires to have the full audio file before initiating the conversion. Streamed RVC is still being investigated...</p>
-<doc-anchor-target id="how-to-get-streaming-support">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-get-streaming-support">#</doc-anchor-trigger>
-        <span>How to get streaming support?</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="how-to-get-streaming-support">How to get streaming support?</h4>
 <ol>
 <li>Update SillyTavern to the latest version.</li>
 <li><p>Update the XTTS server to the latest version.</p>
@@ -340,27 +301,12 @@ pip install xtts-api-server --upgrade</code></pre>
 <li>Start and connect XTTS to ST as usual.</li>
 <li>Enable the &quot;Streaming&quot; XTTS extension setting in SillyTavern.</li>
 </ol>
-<doc-anchor-target id="choppy-audio">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#choppy-audio">#</doc-anchor-trigger>
-        <span>Choppy audio?</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="choppy-audio">Choppy audio?</h3>
 <p>Try increasing the &quot;chunk size&quot; setting.</p>
 <p>For reference: with a chunk size of 200, RTX 3090 can produce uninterrupted audio at the cost of slightly increased audio latency.</p>
-<doc-anchor-target id="how-to-restart-the-tts-server">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-restart-the-tts-server">#</doc-anchor-trigger>
-        <span>How to restart the TTS server?</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="how-to-restart-the-tts-server">How to restart the TTS server?</h3>
 <p>Just do steps 1, 3 and 7 from the installation instruction.</p>
-<doc-anchor-target id="android">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#android">#</doc-anchor-trigger>
-        <span>Android??</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="android">Android??</h3>
 <p>Unlikely, it can&#x27;t run apps that require PyTorch without some arcane black magic that we don&#x27;t provide support for. You can try it out at your own risk, but no support will be provided if you face any problems.</p>
 <p>Your best solution is to host the TTS API on your PC over the local network, just don&#x27;t forget to specify the host and port to listen on - see <a href="https://github.com/daswer123/xtts-api-server/blob/main/README.md">README</a>.</p>
 

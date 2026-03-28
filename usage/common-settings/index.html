@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>Common Settings | docs.ST.app</title>
@@ -25,14 +25,20 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/usage/common-settings/">
+    <meta name="twitter:title" content="Common Settings | docs.ST.app">
+    <meta name="twitter:description" content="These settings control the sampling process when generating text using a language model. The meaning of these settings is universal for all the supported">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -92,10 +98,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -197,197 +203,87 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="common-settings" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#common-settings">#</doc-anchor-trigger>
-        <span>Common Settings</span>
-    </h1>
-</doc-anchor-target>
+<h1 id="common-settings">Common Settings</h1>
 <p>These settings control the sampling process when generating text using a language model. The meaning of these settings is universal for all the supported backends.</p>
-<doc-anchor-target id="context-settings">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#context-settings">#</doc-anchor-trigger>
-        <span>Context Settings</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="response-tokens">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#response-tokens">#</doc-anchor-trigger>
-        <span>Response (tokens)</span>
-    </h3>
-</doc-anchor-target>
+<h2 id="context-settings">Context Settings</h2>
+<h3 id="response-tokens">Response (tokens)</h3>
 <p>The maximum number of tokens that the API will generate to respond.</p>
 <ul>
 <li>The higher the response length, the longer it will take to generate the response.</li>
 <li>If supported by the API, you can enable <code translate="no" v-pre>Streaming</code> to display the response bit by bit as it is being generated.</li>
 <li>When <code translate="no" v-pre>Streaming</code> is off, responses will be displayed all at once when they are complete.</li>
 </ul>
-<doc-anchor-target id="context-tokens">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#context-tokens">#</doc-anchor-trigger>
-        <span>Context (tokens)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="context-tokens">Context (tokens)</h3>
 <p>The maximum number of tokens that SillyTavern will send to the API as the prompt, minus the response length.</p>
 <ul>
 <li>Context comprises character information, system prompts, chat history, etc.</li>
 <li>A dotted line between messages denotes the context range for the chat. Messages above that line are not sent to the AI.</li>
 <li>To see a composition of the context after generating the message, click on the <code translate="no" v-pre>Prompt Itemization</code> message option (expand the <code translate="no" v-pre>...</code> menu and click on the lined square icon).</li>
 </ul>
-<doc-anchor-target id="sampler-parameters">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#sampler-parameters">#</doc-anchor-trigger>
-        <span>Sampler Parameters</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="temperature">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#temperature">#</doc-anchor-trigger>
-        <span>Temperature</span>
-    </h3>
-</doc-anchor-target>
+<h2 id="sampler-parameters">Sampler Parameters</h2>
+<h3 id="temperature">Temperature</h3>
 <p>Temperature controls the randomness in token selection:</p>
 <ul>
 <li>Low temperature (&lt;1.0) leads to more predictable text, favoring higher probability tokens</li>
 <li>High temperature (&gt;1.0) increases creativity and diversity in the output by giving lower probability tokens a better chance.</li>
 </ul>
 <p>Set to 1 for the original probabilities.</p>
-<doc-anchor-target id="repetition-penalty">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#repetition-penalty">#</doc-anchor-trigger>
-        <span>Repetition Penalty</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="repetition-penalty">Repetition Penalty</h3>
 <p>Attempts to curb repetition by penalizing tokens based on how often they occur in the context.</p>
 <p>Set the value to 1 to disable its effect.</p>
-<doc-anchor-target id="repetition-penalty-range">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#repetition-penalty-range">#</doc-anchor-trigger>
-        <span>Repetition Penalty Range</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="repetition-penalty-range">Repetition Penalty Range</h4>
 <p>How many tokens from the last generated token will be considered for the repetition penalty. This can break responses if set too high, as common words like &quot;the, a, and,&quot; etc. will be penalized the most.</p>
 <p>Set the value to 0 to disable its effect.</p>
-<doc-anchor-target id="repetition-penalty-slope">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#repetition-penalty-slope">#</doc-anchor-trigger>
-        <span>Repetition Penalty Slope</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="repetition-penalty-slope">Repetition Penalty Slope</h4>
 <p>If both this and <code translate="no" v-pre>Repetition Penalty Range</code> are above 0, the repetition penalty will have a greater effect at the end of the prompt. The higher the value, the stronger the effect.</p>
 <p>Set the value to 0 to disable its effect.</p>
-<doc-anchor-target id="top-k">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#top-k">#</doc-anchor-trigger>
-        <span>Top K</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="top-k">Top K</h3>
 <p>Top K sets a maximum amount of top tokens that can be chosen from. For example, if Top K is 20, this means only the 20 highest ranking tokens will be kept (regardless of their probabilities being diverse or limited).</p>
 <p>Set to 0 (or -1, depending on your backend) to disable.</p>
-<doc-anchor-target id="top-p">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#top-p">#</doc-anchor-trigger>
-        <span>Top P</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="top-p">Top P</h3>
 <p>Top P (a.k.a. nucleus sampling) adds up all the top tokens required to add up to the target percentage. If the Top 2 tokens are both 25%, and Top P is 0.50, only the Top 2 tokens are considered.</p>
 <p>Set the value to 1 to disable its effect.</p>
-<doc-anchor-target id="typical-p">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#typical-p">#</doc-anchor-trigger>
-        <span>Typical P</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="typical-p">Typical P</h3>
 <p>Typical P Sampling prioritizes tokens based on their deviation from the average entropy of the set. It maintains tokens whose cumulative probability is close to a predefined threshold (e.g., 0.5), emphasizing those with average information content.</p>
 <p>Set the value to 1 to disable its effect.</p>
-<doc-anchor-target id="min-p">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#min-p">#</doc-anchor-trigger>
-        <span>Min P</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="min-p">Min P</h3>
 <p>Limits the token pool by cutting off low-probability tokens relative to the top token. Produces more coherent responses but can also worsen repetition if set too high.</p>
 <ul>
 <li>Works best at low values such as <code translate="no" v-pre>0.1-0.01</code>, but can be set higher with a high <code translate="no" v-pre>Temperature</code>. For example: <code translate="no" v-pre>Temperature: 5, Min P: 0.5</code></li>
 </ul>
 <p>Set the value to 0 to disable its effect.</p>
-<doc-anchor-target id="top-a">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#top-a">#</doc-anchor-trigger>
-        <span>Top A</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="top-a">Top A</h3>
 <p>Top A sets a threshold for token selection based on the square of the highest token probability. For example, if the Top-A value is 0.2 and the top token&#x27;s probability is 50%, tokens with probabilities below 5% (0.2 * 0.5^2) are excluded.</p>
 <p>Set the value to 0 to disable its effect.</p>
-<doc-anchor-target id="tail-free-sampling">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tail-free-sampling">#</doc-anchor-trigger>
-        <span>Tail Free Sampling</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="tail-free-sampling">Tail Free Sampling</h3>
 <p>Tail-Free Sampling (TFS) searches for a tail of low-probability tokens in the distribution, by analyzing the rate of change in token probabilities using derivatives. It retains tokens up to a threshold (e.g., 0.3) based on the normalized second derivative. The closer to 0, the more discarded tokens.</p>
 <p>Set the value to 1 to disable its effect.</p>
-<doc-anchor-target id="smoothing-factor">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#smoothing-factor">#</doc-anchor-trigger>
-        <span>Smoothing Factor</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="smoothing-factor">Smoothing Factor</h3>
 <p>Increases the likelihood of high-probability tokens while decreasing the likelihood of low-probability tokens using a quadratic transformation. Aims to produce more creative responses regardless of <code translate="no" v-pre>Temperature</code>.</p>
 <ul>
 <li>Works best without truncation samplers such as <code translate="no" v-pre>Top K</code>, <code translate="no" v-pre>Top P</code>, <code translate="no" v-pre>Min P</code>, etc.</li>
 </ul>
 <p>Set the value to 0 to disable its effect.</p>
-<doc-anchor-target id="dynamic-temperature">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#dynamic-temperature">#</doc-anchor-trigger>
-        <span>Dynamic Temperature</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="dynamic-temperature">Dynamic Temperature</h3>
 <p>Scales temperature dynamically based on the likelihood of the top token. Aims to produce more creative outputs without sacrificing coherency.</p>
 <ul>
 <li>Accepts a temperature range from minimum to maximum. For example: <code translate="no" v-pre>Minimum Temp: 0.75</code> and <code translate="no" v-pre>Minimum Temp: 1.25</code></li>
 <li><code translate="no" v-pre>Exponent</code> applies an exponential curve based on the top token.</li>
 </ul>
 <p>Untick to disable its effect.</p>
-<doc-anchor-target id="epsilon-cutoff">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#epsilon-cutoff">#</doc-anchor-trigger>
-        <span>Epsilon Cutoff</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="epsilon-cutoff">Epsilon Cutoff</h3>
 <p>Epsilon cutoff sets a probability floor below which tokens are excluded from being sampled. In units of 1e-4; a reasonable value is 3.</p>
 <p>Set to 0 to disable.</p>
-<doc-anchor-target id="eta-cutoff">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#eta-cutoff">#</doc-anchor-trigger>
-        <span>Eta Cutoff</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="eta-cutoff">Eta Cutoff</h3>
 <p>Eta cutoff is the main parameter of the special Eta Sampling technique. In units of 1e-4; a reasonable value is 3. See the paper <a href="https://arxiv.org/abs/2210.15191">Truncation Sampling as Language Model Desmoothing by Hewitt et al. (2022)</a> for details.</p>
 <p>Set to 0 to disable.</p>
-<doc-anchor-target id="dry-repetition-penalty">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#dry-repetition-penalty">#</doc-anchor-trigger>
-        <span>DRY Repetition Penalty</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="dry-repetition-penalty">DRY Repetition Penalty</h3>
 <p>DRY penalizes tokens that would extend the end of the input into a sequence that has previously occurred in the input. If you want to allow repeating certain sequences verbatim (e.g. names), you can add them to the sequence breakers list. See the Pull Request <a href="https://github.com/oobabooga/text-generation-webui/pull/5677">here</a>.</p>
 <p>Set multiplier to 0 to disable.</p>
-<doc-anchor-target id="exclude-top-choices-xtc">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#exclude-top-choices-xtc">#</doc-anchor-trigger>
-        <span>Exclude Top Choices (XTC)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="exclude-top-choices-xtc">Exclude Top Choices (XTC)</h3>
 <p>XTC sampling algorithm removes the most likely tokens from consideration instead of pruning the least likely tokens. It removes all except the least likely token meeting a given threshold, with a given probability. This ensures that at least one &quot;viable&quot; choice remains, retaining coherence. See the Pull Request <a href="https://github.com/oobabooga/text-generation-webui/pull/6335">here</a>.</p>
 <p>Set probability to 0 to disable.</p>
-<doc-anchor-target id="mirostat">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#mirostat">#</doc-anchor-trigger>
-        <span>Mirostat</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="mirostat">Mirostat</h3>
 <p>Mirostat matches the output perplexity to that of the input, thus avoiding the repetition trap (where, as the autoregressive inference produces text, the perplexity of the output tends toward zero) and the confusion trap (where the perplexity diverges). For details, see the paper <a href="https://arxiv.org/abs/2007.14966">Mirostat: A Neural Text Decoding Algorithm that Directly Controls Perplexity by Basu et al. (2020)</a>.</p>
 <p>Mode chooses the Mirostat version.</p>
 <ul>
@@ -395,19 +291,9 @@
 <li>1 = Mirostat 1.0 (llama.cpp only),</li>
 <li>2 = Mirostat 2.0.</li>
 </ul>
-<doc-anchor-target id="beam-search">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#beam-search">#</doc-anchor-trigger>
-        <span>Beam Search</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="beam-search">Beam Search</h3>
 <p>A greedy, brute-force algorithm used in LLM sampling to find the most likely sequence of words or tokens. It expands multiple candidate sequences at once, maintaining a fixed number (beam width) of top sequences at each step.</p>
-<doc-anchor-target id="top-nsigma">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#top-nsigma">#</doc-anchor-trigger>
-        <span>Top nsigma</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="top-nsigma">Top nsigma</h3>
 <p>A sampling method that filters logits based on their statistical properties. It keeps tokens within n standard deviations of the maximum logit value, providing a simpler alternative to top-p/top-k sampling while maintaining sampling stability across different temperatures.</p>
 
                 

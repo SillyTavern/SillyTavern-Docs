@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>Macros | docs.ST.app</title>
     <meta name="title" content="Macros | docs.ST.app">
-    <meta name="description" content="To enable advanced macro processing that supports nesting, stable substitution order, and other improvements, go to User Settings > Chat/Message Handling">
+    <meta name="description" content="The Experimental Macro Engine supports nesting, stable substitution order, and other improvements. It is enabled by default for new installations. Existing">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/usage/core-concepts/macros/">
@@ -21,18 +21,24 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/usage/core-concepts/macros/">
     <meta property="og:title" content="Macros | docs.ST.app">
-    <meta property="og:description" content="To enable advanced macro processing that supports nesting, stable substitution order, and other improvements, go to User Settings > Chat/Message Handling">
+    <meta property="og:description" content="The Experimental Macro Engine supports nesting, stable substitution order, and other improvements. It is enabled by default for new installations. Existing">
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/usage/core-concepts/macros/">
+    <meta name="twitter:title" content="Macros | docs.ST.app">
+    <meta name="twitter:description" content="The Experimental Macro Engine supports nesting, stable substitution order, and other improvements. It is enabled by default for new installations. Existing">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -92,10 +98,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -197,17 +203,12 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="macros" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#macros">#</doc-anchor-trigger>
-        <span>Macros</span>
-    </h1>
-</doc-anchor-target>
+<h1 id="macros">Macros</h1>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-tip"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-tip" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-tip" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M7.90625 2.15625C4.50944 2.15625 2.15625 4.58563 2.15625 7.54688C2.15625 8.96138 2.76575 9.88281 3.57075 10.8589L3.87837 11.2226C4.19894 11.6021 4.554 12.0218 4.84581 12.4416C5.25406 13.0324 5.61775 13.7296 5.7385 14.5834C5.76728 14.8608 5.68746 15.1386 5.51579 15.3583C5.34413 15.5781 5.09399 15.7228 4.8179 15.7621C4.5418 15.8013 4.26124 15.7321 4.03512 15.5689C3.809 15.4056 3.65493 15.1612 3.60525 14.8867C3.54775 14.4814 3.37094 14.1004 3.07338 13.6692C2.8306 13.3302 2.57055 13.0039 2.29425 12.6917C2.1735 12.5479 2.04556 12.397 1.909 12.2317C1.00769 11.1406 0 9.72613 0 7.54688C0 3.32062 3.39681 0 7.90625 0C12.4157 0 15.8125 3.32062 15.8125 7.54688C15.8125 9.72613 14.8048 11.1406 13.9035 12.2317C13.7669 12.397 13.639 12.5479 13.5183 12.6903C13.2207 13.0424 12.9677 13.3414 12.7406 13.6692C12.4416 14.1004 12.2662 14.4814 12.2087 14.8867C12.1557 15.1584 12.0003 15.3994 11.7747 15.5598C11.5492 15.7202 11.2706 15.7879 10.9965 15.7488C10.7225 15.7096 10.474 15.5667 10.3023 15.3496C10.1306 15.1325 10.0489 14.8577 10.074 14.582C10.1948 13.7296 10.5584 13.0324 10.9667 12.4416C11.2585 12.0218 11.6136 11.6021 11.9341 11.2226C12.0419 11.0961 12.1454 10.9739 12.2403 10.8589C13.0468 9.88281 13.6562 8.96138 13.6562 7.54688C13.6562 4.58563 11.3031 2.15625 7.90625 2.15625ZM4.67188 17.25H11.1406C11.4266 17.25 11.7008 17.3636 11.903 17.5658C12.1052 17.768 12.2188 18.0422 12.2188 18.3281C12.2188 18.6141 12.1052 18.8883 11.903 19.0905C11.7008 19.2927 11.4266 19.4062 11.1406 19.4062H4.67188C4.38594 19.4062 4.11171 19.2927 3.90953 19.0905C3.70734 18.8883 3.59375 18.6141 3.59375 18.3281C3.59375 18.0422 3.70734 17.768 3.90953 17.5658C4.11171 17.3636 4.38594 17.25 4.67188 17.25ZM5.03125 21.9219C5.03125 21.6359 5.14484 21.3617 5.34703 21.1595C5.54921 20.9573 5.82344 20.8438 6.10938 20.8438H9.70312C9.98906 20.8438 10.2633 20.9573 10.4655 21.1595C10.6677 21.3617 10.7812 21.6359 10.7812 21.9219C10.7812 22.2078 10.6677 22.482 10.4655 22.6842C10.2633 22.8864 9.98906 23 9.70312 23H6.10938C5.82344 23 5.54921 22.8864 5.34703 22.6842C5.14484 22.482 5.03125 22.2078 5.03125 21.9219Z" />
                 </g></g>
@@ -215,28 +216,18 @@
         </div>
         <div class="pr-5 ml-3 w-full">
             <h5>Experimental Macro Engine</h5>
-<p>To enable advanced macro processing that supports nesting, stable substitution order, and other improvements, go to <strong>User Settings</strong> &gt; <strong>Chat/Message Handling</strong> and enable the <strong>Experimental Macro Engine</strong> option.</p>
+<p>The Experimental Macro Engine supports nesting, stable substitution order, and other improvements. It is enabled by default for new installations. Existing installations can enable it in <strong>User Settings</strong> &gt; <strong>Chat/Message Handling</strong> &gt; <strong>Experimental Macro Engine</strong>.</p>
         </div>
     </div>
 </div>
 <p>Macros are dynamic placeholders that get replaced with actual values when text is processed. They are used throughout SillyTavern in prompts, character cards, lorebooks, Quick Replies, and more.</p>
-<doc-anchor-target id="finding-available-macros">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#finding-available-macros">#</doc-anchor-trigger>
-        <span>Finding Available Macros</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="finding-available-macros">Finding Available Macros</h2>
 <p>SillyTavern provides built-in documentation for all available macros:</p>
 <ul>
 <li><strong>Slash command</strong>: Type <code translate="no" v-pre>/? macros</code> in the chat input to display a list of all registered macros with their descriptions.</li>
 <li><strong>Autocomplete</strong>: See <doc-anchor-trigger to="#macro-autocomplete">Macro Autocomplete</doc-anchor-trigger> below for details on getting suggestions while typing.</li>
 </ul>
-<doc-anchor-target id="macro-autocomplete">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#macro-autocomplete">#</doc-anchor-trigger>
-        <span>Macro Autocomplete</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="macro-autocomplete">Macro Autocomplete</h3>
 <p>Macro autocomplete provides suggestions for available macros as you type. It works in all text fields that support macros throughout SillyTavern.</p>
 <p>Type <code translate="no" v-pre>{{</code> to start autocomplete for macros, showing available macros and their arguments, potential <doc-anchor-trigger to="#macro-flags">Macro Flags</doc-anchor-trigger>, <doc-anchor-trigger to="#variable-shorthands">Variable Shorthands</doc-anchor-trigger>, and more.</p>
 <p><strong>Where autocomplete appears by default:</strong></p>
@@ -250,12 +241,7 @@
 <li>Press <strong>Ctrl+Space</strong> in any macro-supporting text field to open the autocomplete popup</li>
 <li>Enable <strong>Settings → AutoComplete Settings → Show in all macro fields</strong> to have autocomplete appear automatically in all macro fields</li>
 </ul>
-<doc-anchor-target id="basic-syntax">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#basic-syntax">#</doc-anchor-trigger>
-        <span>Basic Syntax</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="basic-syntax">Basic Syntax</h2>
 <p>Macros are enclosed in double curly braces:</p>
 <div id="basic-syntax-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{macroName}}</code></pre>
@@ -268,19 +254,9 @@
 {{time}}        // Returns the current time
 {{date}}        // Returns the current date</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="arguments">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#arguments">#</doc-anchor-trigger>
-        <span>Arguments</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="arguments">Arguments</h2>
 <p>Many macros accept arguments to customize their behavior.</p>
-<doc-anchor-target id="space-separator">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#space-separator">#</doc-anchor-trigger>
-        <span>Space Separator</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="space-separator">Space Separator</h3>
 <p>For macros with a single argument, a space can separate the macro name from its argument:</p>
 <div id="space-separator-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{macroName argument}}</code></pre>
@@ -291,12 +267,7 @@
 {{roll 1d20}}
 {{reverse Hello World}}</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="double-colon-separator">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#double-colon-separator">#</doc-anchor-trigger>
-        <span>Double Colon Separator</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="double-colon-separator">Double Colon Separator</h3>
 <p>Use <code translate="no" v-pre>::</code> to separate multiple arguments:</p>
 <div id="double-colon-separator-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{macroName::arg1::arg2::arg3}}</code></pre>
@@ -308,12 +279,7 @@
 {{roll::2d6+3}}</code></pre>
 </doc-codeblock></div>
 <p>Both space and <code translate="no" v-pre>::</code> are the recommended syntax for macro arguments.</p>
-<doc-anchor-target id="single-colon-separator-legacy">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#single-colon-separator-legacy">#</doc-anchor-trigger>
-        <span>Single Colon Separator (Legacy)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="single-colon-separator-legacy">Single Colon Separator (Legacy)</h3>
 <p>A single <code translate="no" v-pre>:</code> can also introduce arguments, but this syntax is considered legacy and not recommended for new content:</p>
 <div id="single-colon-separator-legacy-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{macroName:argument}}</code></pre>
@@ -322,12 +288,7 @@
 <div id="single-colon-separator-legacy-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{roll:1d20}}</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="whitespace-in-macro-definitions">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#whitespace-in-macro-definitions">#</doc-anchor-trigger>
-        <span>Whitespace in Macro Definitions</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="whitespace-in-macro-definitions">Whitespace in Macro Definitions</h2>
 <p>Whitespace between the macro name, separators, and arguments is ignored. This allows for more readable formatting:</p>
 <div id="whitespace-in-macro-definitions-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{ macroName :: arg1 :: arg2 }}
@@ -335,12 +296,7 @@
 {{ if :: condition }}</code></pre>
 </doc-codeblock></div>
 <p>All of the above are equivalent to their compact forms without extra spaces.</p>
-<doc-anchor-target id="nested-macros">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#nested-macros">#</doc-anchor-trigger>
-        <span>Nested Macros</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="nested-macros">Nested Macros</h2>
 <p>Macros can be nested inside other macros. Inner macros are resolved first:</p>
 <div id="nested-macros-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{getvar::{{char}}_mood}}</code></pre>
@@ -355,19 +311,9 @@
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{if {{getvar::showDetails}}}}Details here{{/if}}</code></pre>
 </doc-codeblock></div>
 <p>The condition itself is a macro that retrieves a variable value.</p>
-<doc-anchor-target id="scoped-macros">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#scoped-macros">#</doc-anchor-trigger>
-        <span>Scoped Macros</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="scoped-macros">Scoped Macros</h2>
 <p>Any macro that accepts at least one argument supports scoped syntax. The content between opening and closing tags becomes the <strong>last argument</strong> of the macro.</p>
-<doc-anchor-target id="scoped-syntax">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#scoped-syntax">#</doc-anchor-trigger>
-        <span>Scoped Syntax</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="scoped-syntax">Scoped Syntax</h3>
 <p>Instead of writing the last argument inline, it can be placed between opening and closing tags:</p>
 <div id="scoped-syntax-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{macroName argument}}
@@ -379,12 +325,7 @@
 <div id="scoped-syntax-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{macroName::argument::scoped content here}}</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="examples">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#examples">#</doc-anchor-trigger>
-        <span>Examples</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="examples">Examples</h3>
 <p>Setting a variable with multiline content:</p>
 <div id="examples-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{ setvar backstory }}
@@ -399,12 +340,7 @@
 {{ /reverse }}</code></pre>
 </doc-codeblock></div>
 <p>This returns &quot;dlroW olleH&quot;.</p>
-<doc-anchor-target id="content-trimming">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#content-trimming">#</doc-anchor-trigger>
-        <span>Content Trimming</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="content-trimming">Content Trimming</h3>
 <p>By default, scoped content is automatically trimmed:</p>
 <ul>
 <li>Leading and trailing whitespace is removed</li>
@@ -419,19 +355,9 @@
 </doc-codeblock></div>
 <p>Produces <code translate="no" v-pre># Heading\nSome content here</code> (without the leading spaces).</p>
 <p>To preserve all whitespace including leading/trailing newlines, use the <code translate="no" v-pre>#</code> flag. See <doc-anchor-trigger to="#macro-flags">Macro Flags</doc-anchor-trigger> for details.</p>
-<doc-anchor-target id="conditional-macros">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#conditional-macros">#</doc-anchor-trigger>
-        <span>Conditional Macros</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="conditional-macros">Conditional Macros</h2>
 <p>The <code translate="no" v-pre>{{if}}</code> macro renders content conditionally based on whether a value is truthy or falsy.</p>
-<doc-anchor-target id="simple-condition">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#simple-condition">#</doc-anchor-trigger>
-        <span>Simple Condition</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="simple-condition">Simple Condition</h3>
 <div id="simple-condition-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{ if description }}
   # Character Description
@@ -447,12 +373,7 @@
 <li>Any text you want (that will implicitly resolve to truthy or falsy based on its content)</li>
 </ul>
 <p>Falsy values: empty string, <code translate="no" v-pre>false</code>, <code translate="no" v-pre>0</code>, <code translate="no" v-pre>off</code>, <code translate="no" v-pre>no</code>.</p>
-<doc-anchor-target id="using-variable-shorthands-in-conditions">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#using-variable-shorthands-in-conditions">#</doc-anchor-trigger>
-        <span>Using Variable Shorthands in Conditions</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="using-variable-shorthands-in-conditions">Using Variable Shorthands in Conditions</h3>
 <p>Variable shorthands provide a concise way to check variable values in conditions:</p>
 <div id="using-variable-shorthands-in-conditions-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{ if .isEnabled }}
@@ -464,24 +385,14 @@
 {{ /if }}</code></pre>
 </doc-codeblock></div>
 <p>See <doc-anchor-trigger to="#variable-shorthands">Variable Shorthands</doc-anchor-trigger> for more details on shorthand notation.</p>
-<doc-anchor-target id="inverted-condition">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#inverted-condition">#</doc-anchor-trigger>
-        <span>Inverted Condition</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="inverted-condition">Inverted Condition</h3>
 <p>Prefix the condition with <code translate="no" v-pre>!</code> to invert it:</p>
 <div id="inverted-condition-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{ if !personality }}
   No personality defined for this character.
 {{ /if }}</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="ifelse-branches">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ifelse-branches">#</doc-anchor-trigger>
-        <span>If/Else Branches</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="ifelse-branches">If/Else Branches</h3>
 <p>Use <code translate="no" v-pre>{{else}}</code> inside an <code translate="no" v-pre>{{if}}</code> block to define an alternative branch:</p>
 <div id="ifelse-branches-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{ if personality }}
@@ -499,19 +410,9 @@
   No details currently exist.
 {{ /if }}</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="macro-flags">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#macro-flags">#</doc-anchor-trigger>
-        <span>Macro Flags</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="macro-flags">Macro Flags</h2>
 <p>Flags are special symbol characters placed between the opening braces and the macro name that modify macro behavior.</p>
-<doc-anchor-target id="syntax">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#syntax">#</doc-anchor-trigger>
-        <span>Syntax</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="syntax">Syntax</h3>
 <div id="syntax-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{!macroName}}
 {{#macroName}}</code></pre>
@@ -525,12 +426,7 @@
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{ / macroName }}
 {{ # macroName }}</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="implemented-flags">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#implemented-flags">#</doc-anchor-trigger>
-        <span>Implemented Flags</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="implemented-flags">Implemented Flags</h3>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -554,12 +450,7 @@
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="planned-flags-not-yet-implemented">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#planned-flags-not-yet-implemented">#</doc-anchor-trigger>
-        <span>Planned Flags (Not Yet Implemented)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="planned-flags-not-yet-implemented">Planned Flags (Not Yet Implemented)</h3>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -593,20 +484,10 @@
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="flags-like-prefix-operators">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#flags-like-prefix-operators">#</doc-anchor-trigger>
-        <span>Flags-like prefix operators</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="flags-like-prefix-operators">Flags-like prefix operators</h3>
 <p>Variable shorthand syntax uses prefix operators (<code translate="no" v-pre>.</code> and <code translate="no" v-pre>$</code>) which behave similarly to flags but are not flags themselves.<br />
 See the <doc-anchor-trigger to="#variable-shorthands">Variable Shorthands</doc-anchor-trigger> section for details.</p>
-<doc-anchor-target id="preserve-whitespace-flag">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#preserve-whitespace-flag">#</doc-anchor-trigger>
-        <span>Preserve Whitespace Flag</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="preserve-whitespace-flag">Preserve Whitespace Flag</h3>
 <p>Use the <code translate="no" v-pre>#</code> flag when you need to preserve all whitespace in scoped content, including leading/trailing newlines and indentation:</p>
 <div id="preserve-whitespace-flag-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{ # setvar code }}
@@ -616,12 +497,7 @@ See the <doc-anchor-trigger to="#variable-shorthands">Variable Shorthands</doc-a
 {{ /setvar }}</code></pre>
 </doc-codeblock></div>
 <p>Without <code translate="no" v-pre>#</code>, the content would be trimmed and dedented. With <code translate="no" v-pre>#</code>, all whitespace is preserved exactly as written—including the newline after the opening tag and before the closing tag.</p>
-<doc-anchor-target id="comments">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#comments">#</doc-anchor-trigger>
-        <span>Comments</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="comments">Comments</h2>
 <p>Use the comment macro to add notes that won&#x27;t appear in the output:</p>
 <div id="comments-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{// This is a comment and will be removed}}</code></pre>
@@ -633,30 +509,15 @@ See the <doc-anchor-trigger to="#variable-shorthands">Variable Shorthands</doc-a
   It can span multiple lines.
 {{ /// }}</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="escaping-macros">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#escaping-macros">#</doc-anchor-trigger>
-        <span>Escaping Macros</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="escaping-macros">Escaping Macros</h2>
 <p>To display literal curly braces without macro resolution, escape them with backslashes:</p>
 <div id="escaping-macros-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">\{\{notAMacro\}\}</code></pre>
 </doc-codeblock></div>
 <p>This outputs <code translate="no" v-pre>{{notAMacro}}</code> as plain text.</p>
-<doc-anchor-target id="variable-shorthands">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#variable-shorthands">#</doc-anchor-trigger>
-        <span>Variable Shorthands</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="variable-shorthands">Variable Shorthands</h2>
 <p>Variable shorthands provide a concise syntax for common variable operations. Use <code translate="no" v-pre>.</code> for local variables and <code translate="no" v-pre>$</code> for global variables.</p>
-<doc-anchor-target id="variable-shorthands-prefixes">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#variable-shorthands-prefixes">#</doc-anchor-trigger>
-        <span>Variable Shorthands Prefixes</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="variable-shorthands-prefixes">Variable Shorthands Prefixes</h3>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -681,12 +542,7 @@ See the <doc-anchor-trigger to="#variable-shorthands">Variable Shorthands</doc-a
 </table>
 </div>
 <p>These prefix operators have to be placed <strong>immediately before</strong> the variable name, after any optionally appearing <doc-anchor-trigger to="#macro-flags">Macro Flags</doc-anchor-trigger>. They aren&#x27;t considered macro flags, but more indicators that a variable shorthand is being inserted, instead of a macro by name. The prefix operators are not part of the variable name itself, but rather modifiers that change how the variable is accessed.</p>
-<doc-anchor-target id="variable-names">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#variable-names">#</doc-anchor-trigger>
-        <span>Variable Names</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="variable-names">Variable Names</h3>
 <p>Variable names follow the same rules as macro identifiers: start with a letter, followed by letters, digits, underscores, or hyphens. The last character is not allowed to be an underscore or hyphen.</p>
 <div id="variable-names-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{.my-var}}       // Valid
@@ -694,34 +550,19 @@ See the <doc-anchor-trigger to="#variable-shorthands">Variable Shorthands</doc-a
 {{.myVar123}}     // Valid</code></pre>
 </doc-codeblock></div>
 <p>If your variable has an identifier that does not match the standard rules, you have to use the full variable macro syntax (e.g. <code translate="no" v-pre>{{getvar::my§var----}}</code>), or rename/move your variable value.</p>
-<doc-anchor-target id="nested-macros-in-values">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#nested-macros-in-values">#</doc-anchor-trigger>
-        <span>Nested Macros in Values</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="nested-macros-in-values">Nested Macros in Values</h3>
 <p>Variable values can contain nested macros:</p>
 <div id="nested-macros-in-values-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{.greeting = Hello, {{user}}!}}</code></pre>
 </doc-codeblock></div>
 <p>Resolves to a variable that saves <code translate="no" v-pre>Hello, User!</code> inside. (If <code translate="no" v-pre>{{user}}</code> is named &quot;User&quot;)</p>
-<doc-anchor-target id="whitespace-handling">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#whitespace-handling">#</doc-anchor-trigger>
-        <span>Whitespace Handling</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="whitespace-handling">Whitespace Handling</h3>
 <p>Whitespace around operators is allowed:</p>
 <div id="whitespace-handling-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{ .myvar = spaced value }}
 {{ .counter ++ }}</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="variable-shorthand-operators">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#variable-shorthand-operators">#</doc-anchor-trigger>
-        <span>Variable Shorthand Operators</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="variable-shorthand-operators">Variable Shorthand Operators</h3>
 <p>The following operators can be used with variable shorthands. Each operator follows the pattern <code translate="no" v-pre>{{.varName operator value}}</code> or <code translate="no" v-pre>{{$varName operator value}}</code>.</p>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
@@ -833,60 +674,35 @@ See the <doc-anchor-trigger to="#variable-shorthands">Variable Shorthands</doc-a
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="get-variable">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#get-variable">#</doc-anchor-trigger>
-        <span>Get Variable</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="get-variable">Get Variable</h4>
 <p>Retrieve variable values with a simple prefix:</p>
 <div id="get-variable-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{.myvar}}       // Get local variable &quot;myvar&quot;
 {{$myvar}}       // Get global variable &quot;myvar&quot;</code></pre>
 </doc-codeblock></div>
 <p>Equivalent to <code translate="no" v-pre>{{getvar::myvar}}</code> and <code translate="no" v-pre>{{getglobalvar::myvar}}</code>.</p>
-<doc-anchor-target id="set-variable">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#set-variable">#</doc-anchor-trigger>
-        <span>Set Variable</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="set-variable">Set Variable</h4>
 <p>Use the <code translate="no" v-pre>=</code> operator to set a variable value:</p>
 <div id="set-variable-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{ .myvar = Hello World }}     // Set local variable
 {{ $myvar = Some value }}      // Set global variable</code></pre>
 </doc-codeblock></div>
 <p>Equivalent to <code translate="no" v-pre>{{setvar::myvar::Hello World}}</code> and <code translate="no" v-pre>{{setglobalvar::myvar::Hello World}}</code>. Returns an empty string.</p>
-<doc-anchor-target id="increment">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#increment">#</doc-anchor-trigger>
-        <span>Increment</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="increment">Increment</h4>
 <p>Use <code translate="no" v-pre>++</code> to increment a numeric variable by 1:</p>
 <div id="increment-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{.counter++}}    // Increment local variable, returns new value
 {{$counter++}}    // Increment global variable, returns new value</code></pre>
 </doc-codeblock></div>
 <p>Equivalent to <code translate="no" v-pre>{{incvar counter}}</code> and <code translate="no" v-pre>{{incglobalvar counter}}</code>. Returns the new value after incrementing.</p>
-<doc-anchor-target id="decrement">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#decrement">#</doc-anchor-trigger>
-        <span>Decrement</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="decrement">Decrement</h4>
 <p>Use <code translate="no" v-pre>--</code> to decrement a numeric variable by 1:</p>
 <div id="decrement-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{.counter--}}    // Decrement local variable, returns new value
 {{$counter--}}    // Decrement global variable, returns new value</code></pre>
 </doc-codeblock></div>
 <p>Equivalent to <code translate="no" v-pre>{{decvar counter}}</code> and <code translate="no" v-pre>{{decglobalvar counter}}</code>. Returns the new value after decrementing.</p>
-<doc-anchor-target id="add">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#add">#</doc-anchor-trigger>
-        <span>Add</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="add">Add</h4>
 <p>Use <code translate="no" v-pre>+=</code> to add a numeric value to a variable:</p>
 <div id="add-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{.score += 10}}     // Add 10 to local variable
@@ -898,12 +714,7 @@ See the <doc-anchor-trigger to="#variable-shorthands">Variable Shorthands</doc-a
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{.myvar += {{noop}} | Second block}}   // Resolves to &quot;Content | Second block&quot; when the variable before was &quot;Content&quot;.
                                         // Use `{{noop}}` to be able to add whitespaces, that otherwise would be trimmed automatically.</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="subtract">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#subtract">#</doc-anchor-trigger>
-        <span>Subtract</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="subtract">Subtract</h4>
 <p>Use <code translate="no" v-pre>-=</code> to subtract a numeric value from a variable:</p>
 <div id="subtract-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{.health -= 10}}    // Subtract 10 from local variable
@@ -911,60 +722,35 @@ See the <doc-anchor-trigger to="#variable-shorthands">Variable Shorthands</doc-a
 </doc-codeblock></div>
 <p>Equivalent to <code translate="no" v-pre>{{addvar::score::10}}</code> and <code translate="no" v-pre>{{addglobalvar::total::5}}</code>, but with a negative/inverted number. Returns an empty string.
 If the value is not a valid number, a warning is logged and the variable is unchanged.</p>
-<doc-anchor-target id="logical-or">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#logical-or">#</doc-anchor-trigger>
-        <span>Logical Or</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="logical-or">Logical Or</h4>
 <p>Use <code translate="no" v-pre>||</code> to provide a fallback value when the variable is falsy (empty string, <code translate="no" v-pre>0</code>, <code translate="no" v-pre>false</code>):</p>
 <div id="logical-or-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{.name || Anonymous}}     // Returns &quot;Anonymous&quot; if .name is empty or falsy
 {{$setting || default}}    // Returns &quot;default&quot; if $setting is falsy</code></pre>
 </doc-codeblock></div>
 <p>Returns the variable value if truthy, otherwise returns the fallback value. The fallback is <strong>only evaluated if needed</strong> (lazy evaluation).</p>
-<doc-anchor-target id="nullish-coalescing">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#nullish-coalescing">#</doc-anchor-trigger>
-        <span>Nullish Coalescing</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="nullish-coalescing">Nullish Coalescing</h4>
 <p>Use <code translate="no" v-pre>??</code> to provide a fallback value only when the variable does not exist:</p>
 <div id="nullish-coalescing-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{.name ?? Guest}}         // Returns &quot;Guest&quot; only if .name is not defined
 {{$config ?? default}}     // Returns &quot;default&quot; only if $config doesn't exist</code></pre>
 </doc-codeblock></div>
 <p>Unlike <code translate="no" v-pre>||</code>, this returns the variable value even if it&#x27;s falsy (empty string, <code translate="no" v-pre>0</code>, <code translate="no" v-pre>false</code>) — as long as the variable exists. The fallback is <strong>only evaluated if needed</strong> (lazy evaluation).</p>
-<doc-anchor-target id="logical-or-assign">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#logical-or-assign">#</doc-anchor-trigger>
-        <span>Logical Or Assign</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="logical-or-assign">Logical Or Assign</h4>
 <p>Use <code translate="no" v-pre>||=</code> to set a variable to a value only if it&#x27;s currently falsy:</p>
 <div id="logical-or-assign-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{.name ||= Anonymous}}    // Sets and returns &quot;Anonymous&quot; if .name is falsy
 {{$count ||= 0}}           // Sets and returns &quot;0&quot; if $count is falsy</code></pre>
 </doc-codeblock></div>
 <p>If the variable is already truthy, returns the current value without modification. Returns the final value (either existing or newly set).</p>
-<doc-anchor-target id="nullish-coalescing-assign">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#nullish-coalescing-assign">#</doc-anchor-trigger>
-        <span>Nullish Coalescing Assign</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="nullish-coalescing-assign">Nullish Coalescing Assign</h4>
 <p>Use <code translate="no" v-pre>??=</code> to set a variable to a value only if it doesn&#x27;t exist:</p>
 <div id="nullish-coalescing-assign-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{.name ??= Guest}}        // Sets and returns &quot;Guest&quot; only if .name is undefined
 {{$config ??= default}}    // Sets and returns &quot;default&quot; only if $config doesn't exist</code></pre>
 </doc-codeblock></div>
 <p>Unlike <code translate="no" v-pre>||=</code>, this preserves falsy values (empty string, <code translate="no" v-pre>0</code>, <code translate="no" v-pre>false</code>) if the variable already exists. Returns the final value (either existing or newly set).</p>
-<doc-anchor-target id="equals">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#equals">#</doc-anchor-trigger>
-        <span>Equals</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="equals">Equals</h4>
 <p>Use <code translate="no" v-pre>==</code> to compare a variable value to another value:</p>
 <div id="equals-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{.status == active}}      // Returns &quot;true&quot; if .status equals &quot;active&quot;, otherwise &quot;false&quot;
@@ -976,12 +762,7 @@ Treats not existing variables, null variables and empty variables as the same.</
 <div id="equals-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{if {{.status == active}} }}Active mode{{/if}}</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="not-equals">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#not-equals">#</doc-anchor-trigger>
-        <span>Not Equals</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="not-equals">Not Equals</h4>
 <p>Use <code translate="no" v-pre>!=</code> to compare a variable value to another value for inequality:</p>
 <div id="not-equals-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{.status != inactive}}    // Returns &quot;true&quot; if .status is NOT &quot;inactive&quot;, otherwise &quot;false&quot;
@@ -993,12 +774,7 @@ Treats not existing variables, null variables and empty variables as the same.</
 <div id="not-equals-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{if {{.status != disabled}} }}Feature enabled{{/if}}</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="greater-than">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#greater-than">#</doc-anchor-trigger>
-        <span>Greater Than</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="greater-than">Greater Than</h4>
 <p>Use <code translate="no" v-pre>&gt;</code> to check if a variable&#x27;s numeric value is greater than another value:</p>
 <div id="greater-than-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{.score &gt; 50}}        // Returns &quot;true&quot; if .score is greater than 50
@@ -1009,12 +785,7 @@ Treats not existing variables, null variables and empty variables as the same.</
 <div id="greater-than-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{if {{.score &gt; 100}} }}High score!{{/if}}</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="greater-than-or-equal">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#greater-than-or-equal">#</doc-anchor-trigger>
-        <span>Greater Than or Equal</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="greater-than-or-equal">Greater Than or Equal</h4>
 <p>Use <code translate="no" v-pre>&gt;=</code> to check if a variable&#x27;s numeric value is greater than or equal to another value:</p>
 <div id="greater-than-or-equal-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{.level &gt;= 10}}       // Returns &quot;true&quot; if .level is at least 10
@@ -1025,12 +796,7 @@ Treats not existing variables, null variables and empty variables as the same.</
 <div id="greater-than-or-equal-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{if {{$level &gt;= 10}} }}Unlocked advanced features{{/if}}</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="less-than">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#less-than">#</doc-anchor-trigger>
-        <span>Less Than</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="less-than">Less Than</h4>
 <p>Use <code translate="no" v-pre>&lt;</code> to check if a variable&#x27;s numeric value is less than another value:</p>
 <div id="less-than-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{.health &lt; 20}}       // Returns &quot;true&quot; if .health is below 20
@@ -1041,12 +807,7 @@ Treats not existing variables, null variables and empty variables as the same.</
 <div id="less-than-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{if {{.health &lt; 20}} }}Low health warning!{{/if}}</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="less-than-or-equal">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#less-than-or-equal">#</doc-anchor-trigger>
-        <span>Less Than or Equal</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="less-than-or-equal">Less Than or Equal</h4>
 <p>Use <code translate="no" v-pre>&lt;=</code> to check if a variable&#x27;s numeric value is less than or equal to another value:</p>
 <div id="less-than-or-equal-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{.health &lt;= 0}}       // Returns &quot;true&quot; if .health is 0 or below
@@ -1057,12 +818,7 @@ Treats not existing variables, null variables and empty variables as the same.</
 <div id="less-than-or-equal-code-2" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">{{if {{.health &lt;= 0}} }}Game over{{/if}}</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="legacy-syntax">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#legacy-syntax">#</doc-anchor-trigger>
-        <span>Legacy Syntax</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="legacy-syntax">Legacy Syntax</h2>
 <p>For backwards compatibility, angle bracket markers are still supported:</p>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
@@ -1100,17 +856,12 @@ Treats not existing variables, null variables and empty variables as the same.</
 <blockquote>
 <p><strong>Note:</strong> Legacy syntax is not recommended. Use the equivalent <code translate="no" v-pre>{{macro}}</code> syntax instead for new content.</p>
 </blockquote>
-<doc-anchor-target id="common-macros-by-category">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#common-macros-by-category">#</doc-anchor-trigger>
-        <span>Common Macros by Category</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="common-macros-by-category">Common Macros by Category</h2>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-tip"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-tip" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-tip" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M7.90625 2.15625C4.50944 2.15625 2.15625 4.58563 2.15625 7.54688C2.15625 8.96138 2.76575 9.88281 3.57075 10.8589L3.87837 11.2226C4.19894 11.6021 4.554 12.0218 4.84581 12.4416C5.25406 13.0324 5.61775 13.7296 5.7385 14.5834C5.76728 14.8608 5.68746 15.1386 5.51579 15.3583C5.34413 15.5781 5.09399 15.7228 4.8179 15.7621C4.5418 15.8013 4.26124 15.7321 4.03512 15.5689C3.809 15.4056 3.65493 15.1612 3.60525 14.8867C3.54775 14.4814 3.37094 14.1004 3.07338 13.6692C2.8306 13.3302 2.57055 13.0039 2.29425 12.6917C2.1735 12.5479 2.04556 12.397 1.909 12.2317C1.00769 11.1406 0 9.72613 0 7.54688C0 3.32062 3.39681 0 7.90625 0C12.4157 0 15.8125 3.32062 15.8125 7.54688C15.8125 9.72613 14.8048 11.1406 13.9035 12.2317C13.7669 12.397 13.639 12.5479 13.5183 12.6903C13.2207 13.0424 12.9677 13.3414 12.7406 13.6692C12.4416 14.1004 12.2662 14.4814 12.2087 14.8867C12.1557 15.1584 12.0003 15.3994 11.7747 15.5598C11.5492 15.7202 11.2706 15.7879 10.9965 15.7488C10.7225 15.7096 10.474 15.5667 10.3023 15.3496C10.1306 15.1325 10.0489 14.8577 10.074 14.582C10.1948 13.7296 10.5584 13.0324 10.9667 12.4416C11.2585 12.0218 11.6136 11.6021 11.9341 11.2226C12.0419 11.0961 12.1454 10.9739 12.2403 10.8589C13.0468 9.88281 13.6562 8.96138 13.6562 7.54688C13.6562 4.58563 11.3031 2.15625 7.90625 2.15625ZM4.67188 17.25H11.1406C11.4266 17.25 11.7008 17.3636 11.903 17.5658C12.1052 17.768 12.2188 18.0422 12.2188 18.3281C12.2188 18.6141 12.1052 18.8883 11.903 19.0905C11.7008 19.2927 11.4266 19.4062 11.1406 19.4062H4.67188C4.38594 19.4062 4.11171 19.2927 3.90953 19.0905C3.70734 18.8883 3.59375 18.6141 3.59375 18.3281C3.59375 18.0422 3.70734 17.768 3.90953 17.5658C4.11171 17.3636 4.38594 17.25 4.67188 17.25ZM5.03125 21.9219C5.03125 21.6359 5.14484 21.3617 5.34703 21.1595C5.54921 20.9573 5.82344 20.8438 6.10938 20.8438H9.70312C9.98906 20.8438 10.2633 20.9573 10.4655 21.1595C10.6677 21.3617 10.7812 21.6359 10.7812 21.9219C10.7812 22.2078 10.6677 22.482 10.4655 22.6842C10.2633 22.8864 9.98906 23 9.70312 23H6.10938C5.82344 23 5.54921 22.8864 5.34703 22.6842C5.14484 22.482 5.03125 22.2078 5.03125 21.9219Z" />
                 </g></g>
@@ -1121,12 +872,7 @@ Treats not existing variables, null variables and empty variables as the same.</
         </div>
     </div>
 </div>
-<doc-anchor-target id="names--participants">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#names--participants">#</doc-anchor-trigger>
-        <span>Names &amp; Participants</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="names--participants">Names &amp; Participants</h3>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1163,12 +909,7 @@ Treats not existing variables, null variables and empty variables as the same.</
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="character-card--persona-fields">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#character-card--persona-fields">#</doc-anchor-trigger>
-        <span>Character Card &amp; Persona Fields</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="character-card--persona-fields">Character Card &amp; Persona Fields</h3>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1223,18 +964,17 @@ Treats not existing variables, null variables and empty variables as the same.</
 <td>Unformatted dialogue examples from the character card</td>
 </tr>
 <tr>
+<td><code translate="no" v-pre>{{charFirstMessage}}</code></td>
+<td>Character&#x27;s first message (greeting). Accepts an optional index for alternate greetings, e.g. <code translate="no" v-pre>{{charFirstMessage::1}}</code></td>
+</tr>
+<tr>
 <td><code translate="no" v-pre>{{original}}</code></td>
 <td>Original message content for substitution in character prompt overrides</td>
 </tr>
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="chat-history--messages">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#chat-history--messages">#</doc-anchor-trigger>
-        <span>Chat History &amp; Messages</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="chat-history--messages">Chat History &amp; Messages</h3>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1277,18 +1017,17 @@ Treats not existing variables, null variables and empty variables as the same.</
 <td>1-based index of the current swipe</td>
 </tr>
 <tr>
+<td><code translate="no" v-pre>{{allChatRange}}</code></td>
+<td>Provides the range of the entire chat (e.g. <code translate="no" v-pre>0-{{lastMessageId}}</code>), useful for commands that accept message ranges</td>
+</tr>
+<tr>
 <td><code translate="no" v-pre>{{summary}}</code></td>
 <td>Latest chat summary from the &quot;Summarize&quot; extension (when available)</td>
 </tr>
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="time--date">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#time--date">#</doc-anchor-trigger>
-        <span>Time &amp; Date</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="time--date">Time &amp; Date</h3>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1337,12 +1076,7 @@ Treats not existing variables, null variables and empty variables as the same.</
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="variables">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#variables">#</doc-anchor-trigger>
-        <span>Variables</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="variables">Variables</h3>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1411,12 +1145,7 @@ Treats not existing variables, null variables and empty variables as the same.</
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="randomization">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#randomization">#</doc-anchor-trigger>
-        <span>Randomization</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="randomization">Randomization</h3>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1441,12 +1170,7 @@ Treats not existing variables, null variables and empty variables as the same.</
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="runtime-state">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#runtime-state">#</doc-anchor-trigger>
-        <span>Runtime State</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="runtime-state">Runtime State</h3>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1458,7 +1182,15 @@ Treats not existing variables, null variables and empty variables as the same.</
 <tbody>
 <tr>
 <td><code translate="no" v-pre>{{maxPrompt}}</code></td>
-<td>Maximum prompt context size</td>
+<td>Maximum prompt context size (prompt tokens = context tokens - response tokens)</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>{{maxContextTokens}}</code></td>
+<td>Maximum number of context tokens for the current generation settings</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>{{maxResponseTokens}}</code></td>
+<td>Maximum number of response tokens for the current generation settings</td>
 </tr>
 <tr>
 <td><code translate="no" v-pre>{{model}}</code></td>
@@ -1479,12 +1211,7 @@ Treats not existing variables, null variables and empty variables as the same.</
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="prompt-templates">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#prompt-templates">#</doc-anchor-trigger>
-        <span>Prompt Templates</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="prompt-templates">Prompt Templates</h3>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1609,12 +1336,7 @@ Treats not existing variables, null variables and empty variables as the same.</
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="utility">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#utility">#</doc-anchor-trigger>
-        <span>Utility</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="utility">Utility</h3>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>

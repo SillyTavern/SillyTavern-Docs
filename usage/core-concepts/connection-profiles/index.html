@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>Connection Profiles | docs.ST.app</title>
@@ -25,14 +25,20 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/usage/core-concepts/connection-profiles/">
+    <meta name="twitter:title" content="Connection Profiles | docs.ST.app">
+    <meta name="twitter:description" content="Save Connection Profiles to quickly switch between different APIs, models and formatting templates. This is useful when you actively use multiple API">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -92,10 +98,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -197,33 +203,13 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="connection-profiles" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#connection-profiles">#</doc-anchor-trigger>
-        <span>Connection Profiles</span>
-    </h1>
-</doc-anchor-target>
+<h1 id="connection-profiles">Connection Profiles</h1>
 <p>Save Connection Profiles to quickly switch between different APIs, models and formatting templates. This is useful when you actively use multiple API connections or need to switch between different configurations without surfing through the menus.</p>
-<doc-anchor-target id="accessing-connection-profiles">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#accessing-connection-profiles">#</doc-anchor-trigger>
-        <span>Accessing Connection Profiles</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="accessing-connection-profiles">Accessing Connection Profiles</h2>
 <p>This feature is enabled by default starting from SillyTavern 1.12.6 or later as a built-in extension, and available in the API Connections menu. If you wish to <em>disable</em> it, open the Extensions panel, click on &quot;Manage extensions&quot;, locate Connection Profiles in the list, uncheck the &quot;Enabled&quot; checkbox, and then click &quot;Close&quot;.</p>
-<doc-anchor-target id="what-is-saved">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#what-is-saved">#</doc-anchor-trigger>
-        <span>What is Saved</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="what-is-saved">What is Saved</h2>
 <p>Connection Profiles store the following selections.</p>
-<doc-anchor-target id="common">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#common">#</doc-anchor-trigger>
-        <span>Common</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="common">Common</h3>
 <ul>
 <li><a href="../../api-connections/">API type, model and the server URL</a></li>
 <li><a href="../../faq/#where-are-my-api-keys-stored-why-cant-i-see-them">Secret Key</a></li>
@@ -232,39 +218,24 @@
 <li><a href="../advancedformatting/#custom-stopping-strings">Custom Stopping Strings</a> (can be explicitly empty)</li>
 <li><a href="../../prompts/reasoning/#configuration">Reasoning Formatting</a></li>
 </ul>
-<doc-anchor-target id="text-completion-apis">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#text-completion-apis">#</doc-anchor-trigger>
-        <span>Text Completion APIs</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="text-completion-apis">Text Completion APIs</h3>
 <ul>
 <li><a href="../advancedformatting/#system-prompt">System Prompt and its state</a></li>
 <li><a href="../instructmode/">Instruct Mode state and template</a></li>
 <li><a href="../advancedformatting/#context-template">Context Template</a></li>
 <li><a href="../advancedformatting/#tokenizer">Tokenizer</a></li>
 </ul>
-<doc-anchor-target id="chat-completion-apis">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#chat-completion-apis">#</doc-anchor-trigger>
-        <span>Chat Completion APIs</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="chat-completion-apis">Chat Completion APIs</h3>
 <ul>
 <li><a href="../../api-connections/openai/#prompt-post-processing">Prompt Post-Processing</a></li>
 <li>Proxy preset</li>
 </ul>
-<doc-anchor-target id="managing-connection-profiles">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#managing-connection-profiles">#</doc-anchor-trigger>
-        <span>Managing Connection Profiles</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="managing-connection-profiles">Managing Connection Profiles</h2>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -285,12 +256,7 @@
 <li>To restore the changed selections from a saved profile, click the &quot;Reload&quot; button.</li>
 <li>To delete a profile, click the &quot;Delete&quot; button and confirm the deletion. <strong>This action is irreversible.</strong></li>
 </ul>
-<doc-anchor-target id="slash-commands">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#slash-commands">#</doc-anchor-trigger>
-        <span>Slash Commands</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="slash-commands">Slash Commands</h2>
 <p>Connection profiles can be managed using the following slash commands.</p>
 <ol>
 <li><code translate="no" v-pre>/profile [name]</code> - switch to a profile if the argument is provided, or get the name of the current profile if not.</li>

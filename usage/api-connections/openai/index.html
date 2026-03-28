@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>Chat Completions | docs.ST.app</title>
@@ -25,14 +25,20 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/usage/api-connections/openai/">
+    <meta name="twitter:title" content="Chat Completions | docs.ST.app">
+    <meta name="twitter:description" content="Most API platforms allow you to view the generated API key only once, at the time of its creation. If you lose it, you will need to generate a new key.">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -92,10 +98,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -197,23 +203,13 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="chat-completions" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#chat-completions">#</doc-anchor-trigger>
-        <span>Chat Completions</span>
-    </h1>
-</doc-anchor-target>
-<doc-anchor-target id="source-specific-instructions">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#source-specific-instructions">#</doc-anchor-trigger>
-        <span>Source-specific instructions</span>
-    </h2>
-</doc-anchor-target>
+<h1 id="chat-completions">Chat Completions</h1>
+<h2 id="source-specific-instructions">Source-specific instructions</h2>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
                     <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -226,36 +222,21 @@
         </div>
     </div>
 </div>
-<doc-anchor-target id="openai">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#openai">#</doc-anchor-trigger>
-        <span>OpenAI</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="openai">OpenAI</h3>
 <p>Use OpenAI&#x27;s developer platform to access various OpenAI models, including gpt-4o, gpt-4.1, o3, etc.</p>
 <p><strong>How to get an API key:</strong></p>
 <ol>
 <li>Go to <a href="https://platform.openai.com/">OpenAI</a> and sign in.</li>
 <li>Use &quot;<a href="https://platform.openai.com/account/api-keys">View API keys</a>&quot; option to create a new API key.</li>
 </ol>
-<doc-anchor-target id="claude">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#claude">#</doc-anchor-trigger>
-        <span>Claude</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="claude">Claude</h3>
 <p>Claude is a family of AI models developed by Anthropic. You can access Claude models through the Anthropic console.</p>
 <p><strong>How to get an API key:</strong></p>
 <ol>
 <li>Go to <a href="https://console.anthropic.com/">Anthropic Console</a> and sign in.</li>
 <li>Use the &quot;<a href="https://console.anthropic.com/settings/keys">Get API Key</a>&quot; section to create a new API key.</li>
 </ol>
-<doc-anchor-target id="mistral-ai">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#mistral-ai">#</doc-anchor-trigger>
-        <span>Mistral AI</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="mistral-ai">Mistral AI</h3>
 <p>Mistral AI is a team developing both open and proprietary models with high scientific standards and a focus on openness. You can run their models locally or through their API service, La Plateforme.</p>
 <p><strong>How to get an API key:</strong></p>
 <ol>
@@ -263,48 +244,28 @@
 <li>Once that&#x27;s done, you can choose a <a href="https://console.mistral.ai/billing/plans">plan</a> and set up your payment information or opt for the Free Tier.</li>
 <li>Next, you can create your <a href="https://console.mistral.ai/api-keys/">API key</a>. You may need to wait a couple of minutes before the key becomes valid!</li>
 </ol>
-<doc-anchor-target id="deepseek">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#deepseek">#</doc-anchor-trigger>
-        <span>DeepSeek</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="deepseek">DeepSeek</h3>
 <p>DeepSeek Platform provides access to the latest DeepSeek models through an API. They offer a range of models, including DeepSeek V3 and DeepSeek R1.</p>
 <p><strong>How to get an API key:</strong></p>
 <ol>
 <li>Sign up on the <a href="https://platform.deepseek.com/">DeepSeek Platform</a>.</li>
 <li>After signing up and topping up your account, you can create an API key in the &quot;<a href="https://platform.deepseek.com/api_keys">API keys</a>&quot; section.</li>
 </ol>
-<doc-anchor-target id="ai21">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ai21">#</doc-anchor-trigger>
-        <span>AI21</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="ai21">AI21</h3>
 <p>AI21 Labs offers a range of AI models, including their flagship Jamba series. You can access their models through the AI21 Studio API.</p>
 <p><strong>How to get an API key:</strong></p>
 <ol>
 <li>Go to <a href="https://studio.ai21.com/">AI21 Studio</a> and sign in.</li>
 <li>Navigate to the &quot;Settings =&gt; API Keys&quot; section to create a new API key.</li>
 </ol>
-<doc-anchor-target id="cohere">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#cohere">#</doc-anchor-trigger>
-        <span>Cohere</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="cohere">Cohere</h3>
 <p>Cohere provides a suite of AI models for various tasks, including text generation and embeddings. You can access their models through the Cohere API.</p>
 <p><strong>How to get an API key:</strong></p>
 <ol>
 <li>Go to <a href="https://cohere.com/">Cohere</a> and sign in.</li>
 <li>Navigate to the &quot;<a href="https://dashboard.cohere.com/api-keys">API Keys</a>&quot; section in your account settings to create a new API key.</li>
 </ol>
-<doc-anchor-target id="perplexity">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#perplexity">#</doc-anchor-trigger>
-        <span>Perplexity</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="perplexity">Perplexity</h3>
 <p>Perplexity AI offers access to online-enabled Sonar models through their API for real-time research and information retrieval.</p>
 <p>Official Getting Started guide: <a href="https://docs.perplexity.ai/getting-started/quickstart">Perplexity Quickstart</a></p>
 <p><strong>How to get an API key:</strong></p>
@@ -313,12 +274,7 @@
 <li>Go to the &quot;<a href="https://www.perplexity.ai/account/api/billing">API billing</a>&quot; section to purchase credits for API usage.</li>
 <li>Navigate to the &quot;<a href="https://www.perplexity.ai/account/api/keys">API keys</a>&quot; section in the settings to create a new API key.</li>
 </ol>
-<doc-anchor-target id="fireworks-ai">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#fireworks-ai">#</doc-anchor-trigger>
-        <span>Fireworks AI</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="fireworks-ai">Fireworks AI</h3>
 <p>Fireworks AI is a high-performance platform that provides fast, cost-effective access to state-of-the-art open-source language models. The platform offers serverless deployment with OpenAI-compatible APIs and supports context windows up to 256,000 tokens.</p>
 <p><strong>How to get an API key:</strong></p>
 <ol>
@@ -326,29 +282,19 @@
 <li>Navigate to the <a href="https://app.fireworks.ai/settings/users/api-keys">API Keys page</a> in your account settings.</li>
 <li>Click &quot;Create API key&quot; and provide a descriptive name (e.g., &quot;SillyTavern&quot;).</li>
 </ol>
-<doc-anchor-target id="electron-hub">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#electron-hub">#</doc-anchor-trigger>
-        <span>Electron Hub</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="electron-hub">Electron Hub</h2>
 <p>Electron Hub is a unified OpenAI-compatible platform that provides access to models from multiple vendors through a single API key.</p>
 <p><strong>How to get an API key:</strong></p>
 <ol>
 <li>Create an account at <a href="https://playground.electronhub.ai/console">Electron Hub</a>.</li>
 <li>Generate an API key from the <strong>Console → API Keys</strong> page.</li>
 </ol>
-<doc-anchor-target id="custom-openai-compatible-endpoint">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#custom-openai-compatible-endpoint">#</doc-anchor-trigger>
-        <span>Custom OpenAI-compatible endpoint</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="custom-openai-compatible-endpoint">Custom OpenAI-compatible endpoint</h2>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
                     <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -365,7 +311,7 @@ We do not guarantee compatibility with every possible API endpoint!</p>
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -386,12 +332,7 @@ We do not guarantee compatibility with every possible API endpoint!</p>
 <li><a href="https://www.litellm.ai/">LiteLLM</a></li>
 <li><a href="https://localai.io/">LocalAI</a></li>
 </ul>
-<doc-anchor-target id="connecting">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#connecting">#</doc-anchor-trigger>
-        <span>Connecting</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="connecting">Connecting</h3>
 <p>To access this feature:</p>
 <ol>
 <li>Switch to the &#x27;Chat Completion&#x27; API type</li>
@@ -402,7 +343,7 @@ We do not guarantee compatibility with every possible API endpoint!</p>
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-tip"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-tip" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-tip" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M7.90625 2.15625C4.50944 2.15625 2.15625 4.58563 2.15625 7.54688C2.15625 8.96138 2.76575 9.88281 3.57075 10.8589L3.87837 11.2226C4.19894 11.6021 4.554 12.0218 4.84581 12.4416C5.25406 13.0324 5.61775 13.7296 5.7385 14.5834C5.76728 14.8608 5.68746 15.1386 5.51579 15.3583C5.34413 15.5781 5.09399 15.7228 4.8179 15.7621C4.5418 15.8013 4.26124 15.7321 4.03512 15.5689C3.809 15.4056 3.65493 15.1612 3.60525 14.8867C3.54775 14.4814 3.37094 14.1004 3.07338 13.6692C2.8306 13.3302 2.57055 13.0039 2.29425 12.6917C2.1735 12.5479 2.04556 12.397 1.909 12.2317C1.00769 11.1406 0 9.72613 0 7.54688C0 3.32062 3.39681 0 7.90625 0C12.4157 0 15.8125 3.32062 15.8125 7.54688C15.8125 9.72613 14.8048 11.1406 13.9035 12.2317C13.7669 12.397 13.639 12.5479 13.5183 12.6903C13.2207 13.0424 12.9677 13.3414 12.7406 13.6692C12.4416 14.1004 12.2662 14.4814 12.2087 14.8867C12.1557 15.1584 12.0003 15.3994 11.7747 15.5598C11.5492 15.7202 11.2706 15.7879 10.9965 15.7488C10.7225 15.7096 10.474 15.5667 10.3023 15.3496C10.1306 15.1325 10.0489 14.8577 10.074 14.582C10.1948 13.7296 10.5584 13.0324 10.9667 12.4416C11.2585 12.0218 11.6136 11.6021 11.9341 11.2226C12.0419 11.0961 12.1454 10.9739 12.2403 10.8589C13.0468 9.88281 13.6562 8.96138 13.6562 7.54688C13.6562 4.58563 11.3031 2.15625 7.90625 2.15625ZM4.67188 17.25H11.1406C11.4266 17.25 11.7008 17.3636 11.903 17.5658C12.1052 17.768 12.2188 18.0422 12.2188 18.3281C12.2188 18.6141 12.1052 18.8883 11.903 19.0905C11.7008 19.2927 11.4266 19.4062 11.1406 19.4062H4.67188C4.38594 19.4062 4.11171 19.2927 3.90953 19.0905C3.70734 18.8883 3.59375 18.6141 3.59375 18.3281C3.59375 18.0422 3.70734 17.768 3.90953 17.5658C4.11171 17.3636 4.38594 17.25 4.67188 17.25ZM5.03125 21.9219C5.03125 21.6359 5.14484 21.3617 5.34703 21.1595C5.54921 20.9573 5.82344 20.8438 6.10938 20.8438H9.70312C9.98906 20.8438 10.2633 20.9573 10.4655 21.1595C10.6677 21.3617 10.7812 21.6359 10.7812 21.9219C10.7812 22.2078 10.6677 22.482 10.4655 22.6842C10.2633 22.8864 9.98906 23 9.70312 23H6.10938C5.82344 23 5.54921 22.8864 5.34703 22.6842C5.14484 22.482 5.03125 22.2078 5.03125 21.9219Z" />
                 </g></g>
@@ -413,26 +354,16 @@ We do not guarantee compatibility with every possible API endpoint!</p>
         </div>
     </div>
 </div>
-<doc-anchor-target id="selecting-a-model">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#selecting-a-model">#</doc-anchor-trigger>
-        <span>Selecting a Model</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="selecting-a-model">Selecting a Model</h3>
 <p>If the custom API implements the <code translate="no" v-pre>/v1/models</code> endpoint to provide a list of available models, you can choose from a dropdown list. Otherwise, use the text field to manually input a model ID.</p>
 <p>Check &#x27;Bypass API status check&#x27; to prevent SillyTavern from alerting you about a non-functioning API endpoint. Enable this option if your API endpoint works properly but SillyTavern continues to display warnings.</p>
 <p>Click &quot;Test Message&quot; to verify connectivity by sending a simple prompt to the model.</p>
-<doc-anchor-target id="prompt-post-processing">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#prompt-post-processing">#</doc-anchor-trigger>
-        <span>Prompt Post-Processing</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="prompt-post-processing">Prompt Post-Processing</h2>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
                     <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>

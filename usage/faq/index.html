@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>FAQ | docs.ST.app</title>
@@ -25,14 +25,20 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/usage/faq/">
+    <meta name="twitter:title" content="FAQ | docs.ST.app">
+    <meta name="twitter:description" content="Modern AI language models such as ChatGPT have gotten so powerful that some of them are now convincingly able to simulate a character you create, and who">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -92,10 +98,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -197,18 +203,8 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="faq" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#faq">#</doc-anchor-trigger>
-        <span>FAQ</span>
-    </h1>
-</doc-anchor-target>
-<doc-anchor-target id="explain-what-sillytavern-is-about">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#explain-what-sillytavern-is-about">#</doc-anchor-trigger>
-        <span>Explain what SillyTavern is about</span>
-    </h2>
-</doc-anchor-target>
+<h1 id="faq">FAQ</h1>
+<h2 id="explain-what-sillytavern-is-about">Explain what SillyTavern is about</h2>
 <p>Modern AI language models such as ChatGPT have gotten so powerful that some of them are now convincingly able to simulate a character you create, and who you can chat with, write fiction with, etc. For example, you can tell the AI to pretend to be a Go instructor named Jubei from medieval Japan, and it will act and respond accordingly. You can have a long chat with Jubei, go to the pub together, decide to get in a fight with samurais, whatever you can imagine, and the AI will play along and write/react around this content, acting as your foil and dungeon master. Your imagination is the limit. You can tell the AI to pretend it&#x27;s Wonder Woman. You can also specify a scenario (&quot;Wonder Woman and I are robbing a bank&quot;), a writing style (&quot;Wonder Woman speaks in ebonics&quot;), or anything else you can think of.</p>
 <p>SillyTavern is an app to facilitate these uses:</p>
 <ul>
@@ -218,23 +214,13 @@
 <li>It will keep your chat history with a character, allowing you to resume at any time, start a new chat, review old chats, etc.</li>
 <li>In the background, it does the necessary things to prepare the AI prompt for you. Specifically, it will send a system prompt (instructions for the AI) that primes the AI to follow certain rules to improve response accuracy.</li>
 </ul>
-<doc-anchor-target id="give-me-an-overview-of-my-ai-model-options">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#give-me-an-overview-of-my-ai-model-options">#</doc-anchor-trigger>
-        <span>Give me an overview of my AI model options</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="give-me-an-overview-of-my-ai-model-options">Give me an overview of my AI model options</h2>
 <p>SillyTavern can interact with two types of AI:</p>
 <ol>
 <li><a href="../api-connections/openai/">Web services</a> (Cloud-based, usually paid, proprietary, closed)</li>
 <li><a href="../how-to-use-a-self-hosted-model/">Self-hosted</a> (local, free, open-source)</li>
 </ol>
-<doc-anchor-target id="paid-web-service-ais">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#paid-web-service-ais">#</doc-anchor-trigger>
-        <span>Paid web service AIs</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="paid-web-service-ais">Paid web service AIs</h3>
 <p>Paid web models are black boxes. You pay a company to use their AI service. You put your account info in SillyTavern and it will connect to your provider to use the AI on your behalf.</p>
 <p>Pros:</p>
 <ul>
@@ -247,12 +233,7 @@
 <li>Everything is logged on their server. Privacy concerns.</li>
 <li>They are often censored and will refuse to chat with you about certain subjects.</li>
 </ul>
-<doc-anchor-target id="self-hosted-ais">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#self-hosted-ais">#</doc-anchor-trigger>
-        <span>Self-hosted AIs</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="self-hosted-ais">Self-hosted AIs</h3>
 <p>Self-hosted models are free models you can run on your PC but require a powerful PC and more work to set up.</p>
 <p>Pros:</p>
 <ul>
@@ -266,31 +247,16 @@
 <li>Running local models requires a GPU with at least 6GB VRAM.</li>
 </ul>
 <p>If you are interested in using these, refer to the dedicated guide here: <a href="../how-to-use-a-self-hosted-model/">How To Use A Self-Hosted Model</a>.</p>
-<doc-anchor-target id="can-i-use-sillytavern-on-my-phone-or-tablet">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#can-i-use-sillytavern-on-my-phone-or-tablet">#</doc-anchor-trigger>
-        <span>Can I use SillyTavern on my phone or tablet?</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="can-i-use-sillytavern-on-my-phone-or-tablet">Can I use SillyTavern on my phone or tablet?</h2>
 <p>iPhones and iPads are not capable of running the whole SillyTavern app, but since it&#x27;s just a web interface, you can run it on another computer on your home Wi-Fi, and then access it in your mobile browser. Refer to <a href="../remoteconnections/">Remote Connections</a> for more information.</p>
 <p>For Android users, in addition to the above, you can run the whole SillyTavern directly on your phone, without needing a PC, using the Termux app. Refer to <a href="../../installation/android-(termux)/">Installation (Android)</a>. (NOTE: Termux installations are not officially supported, and we can&#x27;t guarantee it will work.)</p>
-<doc-anchor-target id="i-tried-to-import-a-png-character-card-but-got-an-error-that-its-invalid-why">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#i-tried-to-import-a-png-character-card-but-got-an-error-that-its-invalid-why">#</doc-anchor-trigger>
-        <span>I tried to import a PNG character card but got an error that it&#x27;s invalid. Why?</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="i-tried-to-import-a-png-character-card-but-got-an-error-that-its-invalid-why">I tried to import a PNG character card but got an error that it&#x27;s invalid. Why?</h2>
 <p>Two possibilities:</p>
 <ol>
 <li>The card did not have the definitions embedded inside it and was just a normal image file. Some programs or file managers will strip the embedded definitions from the card when you save them. Make sure you&#x27;re using the raw PNG file as it was posted by the person who shared it.</li>
 <li>The PNG file was actually a WEBP file with a <code translate="no" v-pre>.png</code> filename. You can try renaming the card to <code translate="no" v-pre>.webp</code> before importing, or look for a proper PNG version of the image.</li>
 </ol>
-<doc-anchor-target id="how-can-i-make-my-own-ai-character">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-can-i-make-my-own-ai-character">#</doc-anchor-trigger>
-        <span>How can I make my own AI character?</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="how-can-i-make-my-own-ai-character">How can I make my own AI character?</h2>
 <ol>
 <li>Click the Character Management button</li>
 <li>Click Create New Character</li>
@@ -314,12 +280,7 @@ First Message:
 </doc-codeblock></div>
 <p>Any relevant information you include can be used. How well it&#x27;s used depends on the power level of the AI model.</p>
 <p>NOTE: you can go back and edit any of this information once the character is created, except the name.</p>
-<doc-anchor-target id="where-are-my-api-keys-stored-why-cant-i-see-them">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#where-are-my-api-keys-stored-why-cant-i-see-them">#</doc-anchor-trigger>
-        <span>Where are my API keys stored? Why can&#x27;t I see them?</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="where-are-my-api-keys-stored-why-cant-i-see-them">Where are my API keys stored? Why can&#x27;t I see them?</h2>
 <p>SillyTavern saves your API keys to a <code translate="no" v-pre>secrets.json</code> file in the user data directory (<code translate="no" v-pre>/data/default-user/secrets.json</code> is the default path).</p>
 <p>By default, API keys will not be visible from the interface after you have saved them and refreshed the page.</p>
 <p>In order to enable viewing your keys:</p>
@@ -328,30 +289,15 @@ First Message:
 <li>Restart the SillyTavern server.</li>
 <li>Click the &#x27;View hidden API keys&#x27; link at the bottom right of the API Connection Panel.</li>
 </ol>
-<doc-anchor-target id="performance-tips">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#performance-tips">#</doc-anchor-trigger>
-        <span>Performance Tips</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="why-is-the-ui-so-slowjittery">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#why-is-the-ui-so-slowjittery">#</doc-anchor-trigger>
-        <span>Why is the UI so slow/jittery?</span>
-    </h3>
-</doc-anchor-target>
+<h2 id="performance-tips">Performance Tips</h2>
+<h3 id="why-is-the-ui-so-slowjittery">Why is the UI so slow/jittery?</h3>
 <ul>
 <li>Try enabling the No Blur Effect (Fast UI) mode on the User settings panel.</li>
 <li>Enable Reduced motion in the UI theme settings to remove cosmetic animations.</li>
 <li>Make sure your browser is using Hardware Acceleration.</li>
 <li>If using response streaming, set the streaming FPS to a lower value (10-15 FPS is recommended).</li>
 </ul>
-<doc-anchor-target id="im-experiencing-an-input-lag-what-can-i-do">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#im-experiencing-an-input-lag-what-can-i-do">#</doc-anchor-trigger>
-        <span>I&#x27;m experiencing an input lag. What can I do?</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="im-experiencing-an-input-lag-what-can-i-do">I&#x27;m experiencing an input lag. What can I do?</h3>
 <p>Performance degradation, particularly input lag, is most commonly attributed to browser extensions. Known problematic extensions include:</p>
 <ul>
 <li>iCloud Password Manager</li>
@@ -366,12 +312,7 @@ First Message:
 <li>Submit it to the development team for analysis</li>
 </ol>
 <p>We recommend first testing with all browser extensions and third-party SillyTavern extensions disabled to isolate the source of the performance degradation.</p>
-<doc-anchor-target id="when-i-import-a-lot-of-characters-the-app-becomes-slow-why">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#when-i-import-a-lot-of-characters-the-app-becomes-slow-why">#</doc-anchor-trigger>
-        <span>When I import a lot of characters, the app becomes slow. Why?</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="when-i-import-a-lot-of-characters-the-app-becomes-slow-why">When I import a lot of characters, the app becomes slow. Why?</h3>
 <p>Unfortunately, SillyTavern wasn&#x27;t designed to handle huge character libraries. The more you have, the longer it will take to load the character list. Evidential data suggests that the performance degradation starts to become noticeable when you have more than 1000 characters.</p>
 <p>However, there are some things you can do to mitigate the issue:</p>
 <p><strong>1. Use lazy loading.</strong></p>
@@ -383,12 +324,7 @@ First Message:
 <li>Advanced (fuzzy) characters search will not work with lazy loading enabled. Only character names will be searched.</li>
 <li>Memory cache is disabled on Android devices due to the limited amount of available memory.</li>
 </ol>
-<doc-anchor-target id="how-to-make-the-ai-write-more">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-make-the-ai-write-more">#</doc-anchor-trigger>
-        <span>How to make the AI write more?</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="how-to-make-the-ai-write-more">How to make the AI write more?</h2>
 <p>Sometimes the AI will only respond with a single sentence when you&#x27;d like it to be more verbose.
 This is usually a problem with locally run models.</p>
 <p>If you simply want the bot to continue writing from where it left off at the end of its most recent reply, you can send an empty user message by typing nothing into the Input Bar and clicking Send. This will force the bot to continue the story.</p>
@@ -400,12 +336,7 @@ This is usually a problem with locally run models.</p>
 <li>Do the same thing for your <code translate="no" v-pre>Author's Note</code>, or <code translate="no" v-pre>Post-History Instruction Prompt</code></li>
 <li>As a last resort, you can try turning on <code translate="no" v-pre>Auto-Continue</code> (in the User Settings panel), but will make responses come out slower because it&#x27;s making the AI produce small replies back to back, and then combining them all together into one big reply. It may also be incompatible with some API options.</li>
 </ul>
-<doc-anchor-target id="how-to-make-the-ai-write-less">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-make-the-ai-write-less">#</doc-anchor-trigger>
-        <span>How to make the AI write less?</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="how-to-make-the-ai-write-less">How to make the AI write less?</h2>
 <p>This is mostly only a problem for models like ChatGPT or Claude. The same strategies can be applied but in reverse.</p>
 <ul>
 <li>Decrease the value of the <code translate="no" v-pre>Response Length</code> setting</li>
@@ -413,12 +344,7 @@ This is usually a problem with locally run models.</p>
 <li>Give the character a brief First Message to set the tone and expectation for the chat.</li>
 <li>Make sure <code translate="no" v-pre>Auto-Continue</code> is turned off.</li>
 </ul>
-<doc-anchor-target id="how-to-make-the-ai-stop-writing-the-actions-of-my-character-and-driving-the-plot-all-on-its-own">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-make-the-ai-stop-writing-the-actions-of-my-character-and-driving-the-plot-all-on-its-own">#</doc-anchor-trigger>
-        <span>How to make the AI stop writing the actions of my character, and driving the plot all on its own?</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="how-to-make-the-ai-stop-writing-the-actions-of-my-character-and-driving-the-plot-all-on-its-own">How to make the AI stop writing the actions of my character, and driving the plot all on its own?</h2>
 <p>This should be handled in the <code translate="no" v-pre>Author's Note</code> with a combination of phrases like:</p>
 <ul>
 <li>{{char}}&#x27;s responses shall only be passive and reactive to {{user}}&#x27;s actions.</li>

@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>talkinghead | docs.ST.app</title>
@@ -29,14 +29,22 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/extensions/talkinghead/">
+    <meta name="twitter:title" content="talkinghead | docs.ST.app">
+    <meta name="twitter:description" content="THE SUPPORT FOR TALKINGHEAD WAS DROPPED IN SILLYTAVERN 1.12.13. THIS PAGE IS KEPT FOR HISTORICAL PURPOSES.">
+    <meta name="twitter:image" content="https://docs.sillytavern.app/static/input_spec.png">
+    <meta name="twitter:image:alt" content="talkinghead | docs.ST.app">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -96,10 +104,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -201,17 +209,12 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="talkinghead" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#talkinghead">#</doc-anchor-trigger>
-        <span>talkinghead</span>
-    </h1>
-</doc-anchor-target>
+<h1 id="talkinghead">talkinghead</h1>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
                     <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -223,12 +226,7 @@
         </div>
     </div>
 </div>
-<doc-anchor-target id="what-is-it">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#what-is-it">#</doc-anchor-trigger>
-        <span>What is it?</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="what-is-it">What is it?</h3>
 <p>An implementation of Talking Head Anime 3 Demo for AITuber. It possesses the following features:</p>
 <ul>
 <li>Generates random Live 2D-like motion actions from a single static image.</li>
@@ -237,20 +235,10 @@
 <p>This extension contains the original demo programs for the Talking Head(?) Anime from a Single Image 3: Now the Body Too project. As the name implies, the project allows you to animate anime characters, and you only need a single image of that character to do so. There are two demo programs:</p>
 <p>The manual_poser lets you manipulate a character&#x27;s facial expression, head rotation, body rotation, and chest expansion due to breathing through a graphical user interface, so you can save them as default expressions e.g., Happy, sad, joy, etc.
 ifacialmocap_puppeteer lets you transfer your facial motion to an anime character.</p>
-<doc-anchor-target id="hardware-requirements">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#hardware-requirements">#</doc-anchor-trigger>
-        <span>Hardware Requirements</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="hardware-requirements">Hardware Requirements</h3>
 <p>You can use either CPU or GPU Modes (CPU is default). However, in CPU mode expect about 1 FPS, and in GPU mode on an RTX3060 I am getting about 9-10 FPS.</p>
 <p>The ifacialmocap_puppeteer requires an iOS device that is capable of computing blend shape parameters from a video feed. This means that the device must be able to run iOS 11.0 or higher and must have a TrueDepth front-facing camera. (See this page for more info.) In other words, if you have the iPhone X or something better, you should be all set.</p>
-<doc-anchor-target id="how-to-use">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-use">#</doc-anchor-trigger>
-        <span>How to use</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="how-to-use">How to use</h3>
 <p>You must launch extras with the following modules for talkinghead to work: <code translate="no" v-pre>classify</code> and <code translate="no" v-pre>talkinghead</code>!
 classify is required for the handling of the talkinghead.png file. Additionally, you may also use <code translate="no" v-pre>--talkinghead-gpu</code> to load the blend models into GPU memory and make the animations 10x faster. It is highly recommended to use GPU acceleration! By default, once the program starts it will load a default image SillyTavern-extras\talkinghead\tha3\images\lambda_00.png. You can verify it is working by going to http://localhost:5100/api/talkinghead/result_feed or <code translate="no" v-pre>YOUR EXT URL:PORT/api/talkinghead/result_feed</code>.</p>
 <ul>
@@ -265,12 +253,7 @@ classify is required for the handling of the talkinghead.png file. Additionally,
 <li><p>Then check and uncheck the talkinghead box to reload the character. If the image is funny looking it is probably because it is not transparent / has no alpha layer. Otherwise, follow the instructions and template below.</p>
 </li>
 </ul>
-<doc-anchor-target id="constraints-on-input-images">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#constraints-on-input-images">#</doc-anchor-trigger>
-        <span>Constraints on Input Images</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="constraints-on-input-images">Constraints on Input Images</h3>
 <p>In order for the system to work well, the input image must obey the following constraints:</p>
 <p>It should be of resolution 512 x 512. (If the program receives an input image of any other size, it will resize the image to this resolution and also output at this resolution.)
 It must have an alpha channel.
@@ -279,23 +262,12 @@ The character should be standing upright and facing forward.
 The character&#x27;s hands should be below and far from the head.
 The head of the character should roughly be contained in the 128 x 128 box in the middle of the top half of the image.
 The alpha channels of all pixels that do not belong to the character (i.e., background pixels) must be 0.</p>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/input_spec.png" alt="Input Constraints" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="796" height="715" />
     <figcaption class="caption">Input Constraints</figcaption>
 </figure>
-</p>
-<doc-anchor-target id="advanced-section">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#advanced-section">#</doc-anchor-trigger>
-        <span>ADVANCED SECTION</span>
-    </h3>
-</doc-anchor-target>
-<doc-anchor-target id="python-environment">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#python-environment">#</doc-anchor-trigger>
-        <span>Python Environment</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="advanced-section">ADVANCED SECTION</h3>
+<h3 id="python-environment">Python Environment</h3>
 <p>In addition to the base feature (app.py), both manual_poser and ifacialmocap_puppeteer are available as desktop applications. To run them, you need to set up an environment for running programs written in the Python language. The environment needs to have the following software packages:</p>
 <ul>
 <li>Python &gt;= 3.8</li>
@@ -313,12 +285,7 @@ conda install scipy
 pip install wxpython
 conda install matplotlib</p>
 </blockquote>
-<doc-anchor-target id="additional-blend-models">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#additional-blend-models">#</doc-anchor-trigger>
-        <span>Additional Blend Models</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="additional-blend-models">Additional Blend Models</h3>
 <p>There is only one (lightest) model included, if you want the additional blend models you need to download the model files from <a href="https://www.dropbox.com/s/y7b8jl4n2euv8xe/talking-head-anime-3-models.zip?dl=0">https://www.dropbox.com/s/y7b8jl4n2euv8xe/talking-head-anime-3-models.zip?dl=0</a> and unzip it to the SillyTavern-extras\talkinghead\tha3\models folder. In the end, the data folder should look like:</p>
 <ul>
 <li>tha3
@@ -338,7 +305,7 @@ conda install matplotlib</p>
 <ul>
 <li>
 <dl>
-<dt>editor.pt</dt>
+<dt id="editorpt">editor.pt</dt>
 </dl>
 </li>
 <li><p>two_algo_face_body_rotator.pt</p>
@@ -349,7 +316,7 @@ conda install matplotlib</p>
 <ul>
 <li>
 <dl>
-<dt>editor.pt</dt>
+<dt id="editorpt-1">editor.pt</dt>
 </dl>
 </li>
 <li><p>two_algo_face_body_rotator.pt</p>
@@ -360,7 +327,7 @@ conda install matplotlib</p>
 <ul>
 <li>
 <dl>
-<dt>editor.pt</dt>
+<dt id="editorpt-2">editor.pt</dt>
 </dl>
 </li>
 <li><p>two_algo_face_body_rotator.pt</p>
@@ -373,12 +340,7 @@ conda install matplotlib</p>
 </li>
 </ul>
 <p>The model files are distributed with the Creative Commons Attribution 4.0 International License, which means that you can use them for commercial purposes. However, Pramook Khungurn. Talking Head(?) Anime from a Single Image 3: Now the Body Too. <a href="https://github.com/pkhungurn/talking-head-anime-3-demo">https://github.com/pkhungurn/talking-head-anime-3-demo</a>, is the creator.</p>
-<doc-anchor-target id="running-the-manual_poser-desktop-application">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#running-the-manual_poser-desktop-application">#</doc-anchor-trigger>
-        <span>Running the manual_poser Desktop Application</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="running-the-manual_poser-desktop-application">Running the manual_poser Desktop Application</h3>
 <p>Open a shell. Change your working directory to the repository&#x27;s root directory. Then, run:</p>
 <blockquote>
 <p>python tha3/app/manual_poser.py

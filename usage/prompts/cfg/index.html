@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>CFG | docs.ST.app</title>
@@ -29,14 +29,22 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/usage/prompts/cfg/">
+    <meta name="twitter:title" content="CFG | docs.ST.app">
+    <meta name="twitter:description" content="Page written by: kingbri">
+    <meta name="twitter:image" content="https://docs.sillytavern.app/static/cfg-hamburger.png">
+    <meta name="twitter:image:alt" content="CFG | docs.ST.app">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -96,10 +104,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -201,49 +209,27 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="cfg" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#cfg">#</doc-anchor-trigger>
-        <span>CFG</span>
-    </h1>
-</doc-anchor-target>
+<h1 id="cfg">CFG</h1>
 <p>Page written by: kingbri</p>
 <p>Contributors: kingbri, Guillaume &quot;Vermeille&quot; Sanchez, AliCat</p>
-<doc-anchor-target id="what-is-it">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#what-is-it">#</doc-anchor-trigger>
-        <span>What is it?</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="what-is-it">What is it?</h2>
 <p>CFG, or classifier-free guidance is a method that&#x27;s used to help make parts of a prompt less or more prominent.</p>
-<doc-anchor-target id="supported-backend-apis">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#supported-backend-apis">#</doc-anchor-trigger>
-        <span>Supported Backend APIs</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="supported-backend-apis">Supported Backend APIs</h3>
 <p>Currently, the supported backends are oobabooga&#x27;s textgen WebUI, NovelAI, and TabbyAPI.
 NovelAI had its own <a href="https://web.archive.org/web/20240917150051/https://docs.novelai.net/text/cfg.html">documentation for CFG</a>.</p>
 <p>WARNING: CFG increases VRAM usage due to ingesting more than 1 prompt! If your GPU memory runs out while generating a prompt with CFG on, consider reducing your context size, using a lesser parameter model, or turning off CFG entirely.</p>
 <hr>
-<doc-anchor-target id="configuration">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#configuration">#</doc-anchor-trigger>
-        <span>Configuration</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="configuration">Configuration</h2>
 <p>Accessing CFG settings are the same as accessing Author&#x27;s note:</p>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../../static/cfg-hamburger.png" alt="CFGhamburgermenupng" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="197" height="409" />
     <figcaption class="caption">CFGhamburgermenupng</figcaption>
 </figure>
-</p>
 <p>And here&#x27;s what the CFG panel looks like:</p>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../../static/cfg-panel.png" alt="CFGchatpanelpng" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="478" height="653" />
     <figcaption class="caption">CFGchatpanelpng</figcaption>
 </figure>
-</p>
 <p>There are four dropdowns in the CFG panel:</p>
 <ul>
 <li>Chat CFG
@@ -268,41 +254,24 @@ NovelAI had its own <a href="https://web.archive.org/web/20240917150051/https://
 </li>
 </ul>
 <p>NOTE: If the guidance scale is set to 1, nothing will be sent since that&#x27;s when CFG is in an &quot;off&quot; state.</p>
-<doc-anchor-target id="group-chats">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#group-chats">#</doc-anchor-trigger>
-        <span>Group Chats</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="group-chats">Group Chats</h4>
 <p>In group chats, the CFG scale panel looks like this:</p>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../../static/cfg-groups.png" alt="CFGpanelgcpng" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="479" height="634" />
     <figcaption class="caption">CFGpanelgcpng</figcaption>
 </figure>
-</p>
 <p>The main change is that character CFG is removed and a checkbox called <code translate="no" v-pre>Use Character CFG Scales</code> is present in the chat CFG dropdown. This allows for the current character&#x27;s guidance scale to be used instead of whatever the chat CFG scale is set to.</p>
 <p>The main utility of this feature is to alter the scale based on each character&#x27;s individual needs.</p>
 <p>In addition, checking the <code translate="no" v-pre>Character Negatives</code> box in prompt cascading will append the independent character negative prompts along with the chat ones (if enabled).</p>
 <hr>
-<doc-anchor-target id="concepts">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#concepts">#</doc-anchor-trigger>
-        <span>Concepts</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="isnt-this-in-stable-diffusion">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#isnt-this-in-stable-diffusion">#</doc-anchor-trigger>
-        <span>Isn&#x27;t this in Stable Diffusion?</span>
-    </h3>
-</doc-anchor-target>
+<h2 id="concepts">Concepts</h2>
+<h3 id="isnt-this-in-stable-diffusion">Isn&#x27;t this in Stable Diffusion?</h3>
 <p>Yes and no. CFG with LLMs works in a different way than what one might be used to in Stable Diffusion. LLM-based CFG works on the principle of &quot;prompt mixing&quot;. The CFG formula takes a positive and negative prompt, then mixes the <em>differences</em> between them. From there, a combined prompt is sent and a response is generated!</p>
 <p>Here&#x27;s an illustration to help visualize this concept. The red represents the negative prompt, the blue represents the neutral prompt, and the purple represents the mixed result that&#x27;s interpreted. All the white space is the same across all 3 prompts, so those are not used for CFG mixing.</p>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../../static/cfg-diagram.png" alt="stcfgdiagrampng" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="747" height="296" />
     <figcaption class="caption">stcfgdiagrampng</figcaption>
 </figure>
-</p>
 <p>If you want to know more about CFG and LLMs, Vermifuge&#x27;s original paper is located here. I&#x27;d suggest giving it a read/listen:</p>
 <ul>
 <li><p>Paper - <a href="https://arxiv.org/abs//2306.17806">[2306.17806] Stay on topic with Classifier-Free Guidance (arxiv.org)</a></p>
@@ -310,61 +279,26 @@ NovelAI had its own <a href="https://web.archive.org/web/20240917150051/https://
 <li><p>Audio version - <a href="https://www.youtube.com/watch?v=MGY00YFcyco">https://www.youtube.com/watch?v=MGY00YFcyco</a></p>
 </li>
 </ul>
-<doc-anchor-target id="do-i-need-cfg-prompts">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#do-i-need-cfg-prompts">#</doc-anchor-trigger>
-        <span>Do I need CFG prompts?</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="do-i-need-cfg-prompts">Do I need CFG prompts?</h3>
 <p>No! CFG prompts are completely optional. Just adjusting the guidance scale above <code translate="no" v-pre>1</code> will also help produce an effect on responses, which can accentuate chats and character interaction.</p>
-<doc-anchor-target id="what-makes-a-good-cfg-prompt">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#what-makes-a-good-cfg-prompt">#</doc-anchor-trigger>
-        <span>What makes a good CFG prompt?</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="what-makes-a-good-cfg-prompt">What makes a good CFG prompt?</h3>
 <p>So, we established that CFG prompting is not the same as Stable Diffusion&#x27;s negative tags and embeddings. How do we make a prompt?</p>
 <p>Warning: This assumes that you have created a character using PLists and Ali:Chat. If you have not, feel free to experiment with various prompting techniques.</p>
 <p>Let&#x27;s say I have a character named &quot;John&quot;. John is supposed to feel happy and excited all the time from his example dialogues. However, when chatting with John, he&#x27;s sometimes sad and depressed.</p>
 <p>To remove this, CFG comes to the rescue! Just make the negative prompt <code translate="no" v-pre>[John's feelings: sad, depressed]</code> to help remove the sadness portions. You can optionally make the positive prompt <code translate="no" v-pre>[John's feelings: happy, joyful]</code> to further bring out John&#x27;s happy parts.</p>
-<doc-anchor-target id="positive-prompts">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#positive-prompts">#</doc-anchor-trigger>
-        <span>Positive Prompts</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="positive-prompts">Positive Prompts</h3>
 <p>I went over this in the previous section, but I&#x27;d like to touch on this a bit more. Positive prompts are used to further accentuate parts of a character. Let&#x27;s use John again as our example. By making him happier with a positive prompt of <code translate="no" v-pre>[John's feelings: happy, joyful]</code>, John should start outputting dialogue with a more happy feeling than if the positive prompt was not included.</p>
-<doc-anchor-target id="but">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#but">#</doc-anchor-trigger>
-        <span>But...</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="but">But...</h3>
 <p>These are just <strong>loose guidelines</strong> from experience with one specific character format. There are many other ways to create prompts that you should experiment with. Feel free to share your thoughts with other users!</p>
-<doc-anchor-target id="guidance-scale">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#guidance-scale">#</doc-anchor-trigger>
-        <span>Guidance Scale</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="guidance-scale">Guidance Scale</h3>
 <p>Here&#x27;s a rule of thumb. A guidance scale of <code translate="no" v-pre>1</code> means that CFG is disabled. In fact, SillyTavern won&#x27;t send anything to your backend if the guidance scale is 1. A guidance scale <code translate="no" v-pre>&gt;1</code> will give the results shown in the other sections at varying degrees.</p>
 <p>However, a guidance scale of <code translate="no" v-pre>&lt;1</code> will give the <em>opposite</em> effect since the negative prompt is used as the primary prompt here.</p>
 <p>Let&#x27;s use the example with John again. The negative prompt is <code translate="no" v-pre>[John's feelings: sad, depressed]</code> and the positive prompt is <code translate="no" v-pre>[John's feelings: happy, joyful]</code> with a guidance scale of <code translate="no" v-pre>0.8</code>.</p>
 <p>This will in turn accentuate the <em>negative</em> prompt more and you&#x27;ll see John start to act sadder than normal rather than happier.</p>
 <p>TL;DR: Use a guidance scale of <code translate="no" v-pre>1.5</code> and work up and down from there based on your outputs.</p>
-<doc-anchor-target id="prompt-cascading">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#prompt-cascading">#</doc-anchor-trigger>
-        <span>Prompt Cascading</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="prompt-cascading">Prompt Cascading</h3>
 <p>Negatives and positives can be cascaded between CFG types (the types being per-chat, per-character, and global overrides). See the Configuration header for more information.</p>
-<doc-anchor-target id="insertion-depth">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#insertion-depth">#</doc-anchor-trigger>
-        <span>Insertion Depth</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="insertion-depth">Insertion Depth</h3>
 <p>Follow the basic rule: The lower something is located in the prompt, the more influential it is to the response. For chatting, I recommend using the default depth of <code translate="no" v-pre>1</code> since it&#x27;s very flexible with other components of SillyTavern.</p>
 <p>However, if you want to experiment, an insertion depth of <code translate="no" v-pre>0</code> is open. However, these can dramatically alter how your response will look and it&#x27;s NOT recommended to use prompt cascading here!</p>
 

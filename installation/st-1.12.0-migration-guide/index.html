@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>1.12.0 Migration Guide | docs.ST.app</title>
@@ -25,15 +25,21 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/installation/st-1.12.0-migration-guide/">
+    <meta name="twitter:title" content="1.12.0 Migration Guide | docs.ST.app">
+    <meta name="twitter:description" content="SillyTavern 1.12.0 (codename the \"Neo Server\" update) includes several critical changes that may affect the way you use SillyTavern.">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.2.0.826914722230" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.4.0.828033847105" defer></script>
 
     <style>
         a {
@@ -93,10 +99,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -198,35 +204,15 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="1120-migration-guide" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#1120-migration-guide">#</doc-anchor-trigger>
-        <span>1.12.0 Migration Guide</span>
-    </h1>
-</doc-anchor-target>
+<h1 id="1120-migration-guide">1.12.0 Migration Guide</h1>
 <p>SillyTavern 1.12.0 (codename the &quot;Neo Server&quot; update) includes several critical changes that may affect the way you use SillyTavern.</p>
 <p>This guide will prepare you for the update and provide some further guidance.</p>
-<doc-anchor-target id="data-storage-update">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#data-storage-update">#</doc-anchor-trigger>
-        <span>Data storage update</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="data-storage-update">Data storage update</h2>
 <p>1.12.0 changes the way SillyTavern handles the user data.</p>
 <p>Previously, all of the persistent data was stored together with the frontend part in the <code translate="no" v-pre>/public</code> directory, which created confusion and potential points of failure, as well as making containerization and system-wide app installation quite challenging.</p>
-<doc-anchor-target id="whats-changed">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#whats-changed">#</doc-anchor-trigger>
-        <span>What&#x27;s changed?</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="whats-changed">What&#x27;s changed?</h3>
 <p>All persistent information from <code translate="no" v-pre>/public</code> such as settings and chats (full list below) was moved into a separate directory with the configurable path, making it portable and independent from the web server itself. When needed for compatibility purposes, for example, for hosting extensions, full-size character cards, user image uploads, etc. a smart redirect has been set up to automatically host user files from the data directory.</p>
-<doc-anchor-target id="setting-a-data-root">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#setting-a-data-root">#</doc-anchor-trigger>
-        <span>Setting a data root</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="setting-a-data-root">Setting a data root</h3>
 <p>You can provide either an absolute or a relative (to the ST repository directory) path to the data root either by <code translate="no" v-pre>config.yaml</code> or by starting the server with the <code translate="no" v-pre>--dataRoot</code> console argument.</p>
 <blockquote>
 <p>YAML example</p>
@@ -249,7 +235,7 @@ npm run start -- --dataRoot=&quot;/Users/harry/ST-Data&quot;</code></pre>
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -263,36 +249,16 @@ npm run start -- --dataRoot=&quot;/Users/harry/ST-Data&quot;</code></pre>
         </div>
     </div>
 </div>
-<doc-anchor-target id="migration">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#migration">#</doc-anchor-trigger>
-        <span>Migration</span>
-    </h3>
-</doc-anchor-target>
-<doc-anchor-target id="important-before-we-begin">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#important-before-we-begin">#</doc-anchor-trigger>
-        <span><strong>IMPORTANT!</strong> Before we begin</span>
-    </h4>
-</doc-anchor-target>
+<h3 id="migration">Migration</h3>
+<h4 id="important-before-we-begin"><strong>IMPORTANT!</strong> Before we begin</h4>
 <ol>
 <li><strong>Only if you want to move dataRoot from the default location. Otherwise, skip this part.</strong> Set the data root <em>before</em> first running the server after pulling an update. Run <code translate="no" v-pre>npm install</code> for the <code translate="no" v-pre>config.yaml</code> to populate with a new value, or pass a console argument.</li>
 <li>All data will be migrated into a <code translate="no" v-pre>default-user</code> account. See more on <doc-anchor-trigger to="#users">Users</doc-anchor-trigger> below.</li>
 </ol>
-<doc-anchor-target id="containerless-bare-metal-installs">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#containerless-bare-metal-installs">#</doc-anchor-trigger>
-        <span>Containerless (bare metal) installs</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="containerless-bare-metal-installs">Containerless (bare metal) installs</h4>
 <p>You don&#x27;t have to do anything! An automatic migration should handle everything for you when you start the ST server and it detects the old storage format (by checking the existence of the <code translate="no" v-pre>/public/characters</code> directory).</p>
 <p>Upon moving any files, an automatic backup will be created in the <code translate="no" v-pre>/backups/_migration/YYYY-MM-DD</code> (resolved to the current date) directory, but it is always a good practice to make a full manual backup before running the migration.</p>
-<doc-anchor-target id="containerized-docker-installs">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#containerized-docker-installs">#</doc-anchor-trigger>
-        <span>Containerized (Docker) installs</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="containerized-docker-installs">Containerized (Docker) installs</h4>
 <p>Migrating the data in Docker volumes is a bit trickier but pretty straightforward. While <code translate="no" v-pre>docker-compose.yml</code> provided with the repo was updated to reflect the changes, you may need to adjust your custom workflows/deployments.</p>
 <p><strong>Step 1.</strong> Create a new volume, and mount it to the &quot;/home/node/app/data&quot; path within the container. Don&#x27;t remove the <code translate="no" v-pre>config</code> volume.</p>
 <div id="containerized-docker-installs-code-1" class="codeblock-wrapper"><doc-codeblock>
@@ -306,7 +272,7 @@ npm run start -- --dataRoot=&quot;/Users/harry/ST-Data&quot;</code></pre>
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -320,12 +286,7 @@ npm run start -- --dataRoot=&quot;/Users/harry/ST-Data&quot;</code></pre>
         </div>
     </div>
 </div>
-<doc-anchor-target id="what-to-migrate">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#what-to-migrate">#</doc-anchor-trigger>
-        <span>What to migrate?</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="what-to-migrate">What to migrate?</h4>
 <p>The following files and directories are subject to the data migration. Assuming the default configuration, the before and after paths are provided in the table below.</p>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
@@ -431,12 +392,7 @@ npm run start -- --dataRoot=&quot;/Users/harry/ST-Data&quot;</code></pre>
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="users">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#users">#</doc-anchor-trigger>
-        <span>Users</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="users">Users</h2>
 <p>1.12.0 adds a (completely optional) ability to create a multi-user setup on the same server, allowing multiple users to use their own fully isolated SillyTavern instances even at the same time. User accounts can also be password-protected for an additional layer of privacy.</p>
 <p>Please refer to the <a href="../../administration/multi-user/">Users</a> documentation for more information.</p>
 

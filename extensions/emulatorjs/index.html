@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>EmulatorJS | docs.ST.app</title>
@@ -25,14 +25,20 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/extensions/emulatorjs/">
+    <meta name="twitter:title" content="EmulatorJS | docs.ST.app">
+    <meta name="twitter:description" content="This extension allows you to play retro console games right from the SillyTavern chat.">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -92,10 +98,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -197,19 +203,9 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="emulatorjs" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#emulatorjs">#</doc-anchor-trigger>
-        <span>EmulatorJS</span>
-    </h1>
-</doc-anchor-target>
+<h1 id="emulatorjs">EmulatorJS</h1>
 <p>This extension allows you to play retro console games right from the SillyTavern chat.</p>
-<doc-anchor-target id="installation">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#installation">#</doc-anchor-trigger>
-        <span>Installation</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="installation">Installation</h2>
 <p><strong>Prerequisites:</strong></p>
 <ul>
 <li>Latest release version of SillyTavern.</li>
@@ -220,12 +216,7 @@
 <li>Install using SillyTavern&#x27;s extensions downloader.</li>
 <li>Or use this link: <code translate="no" v-pre>https://github.com/SillyTavern/SillyTavern-EmulatorJS</code></li>
 </ol>
-<doc-anchor-target id="usage">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#usage">#</doc-anchor-trigger>
-        <span>Usage</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="usage">Usage</h2>
 <ul>
 <li>Open the &quot;EmulatorJS&quot; extension menu.</li>
 <li>Click &quot;Add ROM file&quot;. ROMs are saved to your browser storage and not stored on a server.</li>
@@ -235,52 +226,27 @@
 <li>Use save/load state functions if you need to take a break.</li>
 </ul>
 <p>Check the EmulatorJS docs to see the list of available cores and their requirements: <a href="https://emulatorjs.org/docs4devs/cores">Cores</a>.</p>
-<doc-anchor-target id="comments-mode">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#comments-mode">#</doc-anchor-trigger>
-        <span>Comments mode</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="comments-mode">Comments mode</h2>
 <p>With the power of multimodal models, your AI bots can see your gameplay and provide witty in-character comments.</p>
-<doc-anchor-target id="requirements">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#requirements">#</doc-anchor-trigger>
-        <span>Requirements</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="requirements">Requirements</h3>
 <ol>
 <li>A browser that supports <a href="https://developer.mozilla.org/en-US/docs/Web/API/ImageCapture#browser_compatibility">ImageCapture</a>. Tested on desktop Chrome. Firefox requires enabling it via config. Safari won&#x27;t work.</li>
 <li>Chat Completion API with image inlining mode is recommended. Check the API documentation to see if the chosen model supports multimodal prompts.</li>
 <li>If image inlining is disabled, make sure that the <a href="../captioning/#multimodal-source">Image Captioning</a> extension is enabled, then select the &quot;Multimodal&quot; captioning source.</li>
 </ol>
-<doc-anchor-target id="how-to-enable-comments">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-enable-comments">#</doc-anchor-trigger>
-        <span>How to enable comments</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="how-to-enable-comments">How to enable comments</h3>
 <ol>
 <li>Make sure you set the interval of providing comments in the EmulatorJS extension settings. This setting defines how often the character is queried for comments using an image of your current gameplay. A value of 0 indicates that no comments are provided.</li>
 <li>Select a character chat and launch the game. For the best performance, make sure that the ROM file is properly named so that AI can have more background context.</li>
 <li>Start playing as you normally would. The vision model will be queried periodically to write a comment based on the latest screenshot it &quot;sees&quot;.</li>
 </ol>
-<doc-anchor-target id="settings">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#settings">#</doc-anchor-trigger>
-        <span>Settings</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="settings">Settings</h3>
 <ol>
 <li>Caption template - a prompt used to describe the in-game screenshot.<code translate="no" v-pre>{{game}}</code> and <code translate="no" v-pre>{{core}}</code> additional macros are supported.</li>
 <li>Comment template - a prompt used to write a comment based on the generated caption. <code translate="no" v-pre>{{game}}</code>, <code translate="no" v-pre>{{core}}</code>, <code translate="no" v-pre>{{caption}}</code> additional macros are supported. For image inlining mode, <code translate="no" v-pre>{{caption}}</code> is replaced with <code translate="no" v-pre>see included image</code>.</li>
 <li>Force captions - will force the use of multimodal captioning even if image inlining is supported and enabled.</li>
 </ol>
-<doc-anchor-target id="why-am-i-not-seeing-any-comments">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#why-am-i-not-seeing-any-comments">#</doc-anchor-trigger>
-        <span>Why am I not seeing any comments?</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="why-am-i-not-seeing-any-comments">Why am I not seeing any comments?</h3>
 <p>Comments are temporarily paused (interval step skipped) if:</p>
 <ol>
 <li>Emulator is paused (with a pause button, not in-game).</li>
@@ -296,12 +262,7 @@
 <li>Make sure you have set a multimodal API key and there are no errors in the ST server console.</li>
 </ol>
 <p>Still doesn&#x27;t work? Send us your browser debug console logs (press F12).</p>
-<doc-anchor-target id="credits">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#credits">#</doc-anchor-trigger>
-        <span>Credits</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="credits">Credits</h2>
 <ul>
 <li>EmulatorJS engine (GPLv3): <a href="https://github.com/EmulatorJS/EmulatorJS">https://github.com/EmulatorJS/EmulatorJS</a></li>
 </ul>

@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>Instruct Mode | docs.ST.app</title>
@@ -25,14 +25,20 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/usage/core-concepts/instructmode/">
+    <meta name="twitter:title" content="Instruct Mode | docs.ST.app">
+    <meta name="twitter:description" content="Instruct Mode allows you to adjust the prompting for instruction-following models trained on various prompt formats, such as Alpaca, ChatML, Llama2, etc.">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -92,10 +98,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -197,18 +203,13 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="instruct-mode" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#instruct-mode">#</doc-anchor-trigger>
-        <span>Instruct Mode</span>
-    </h1>
-</doc-anchor-target>
+<h1 id="instruct-mode">Instruct Mode</h1>
 <p>Instruct Mode allows you to adjust the prompting for instruction-following models trained on various prompt formats, such as Alpaca, ChatML, Llama2, etc.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -222,68 +223,33 @@
         </div>
     </div>
 </div>
-<doc-anchor-target id="api-support">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#api-support">#</doc-anchor-trigger>
-        <span>API support</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="text-completion-api">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#text-completion-api">#</doc-anchor-trigger>
-        <span>Text Completion API</span>
-    </h3>
-</doc-anchor-target>
+<h2 id="api-support">API support</h2>
+<h3 id="text-completion-api">Text Completion API</h3>
 <p>Fully supported. This includes:</p>
 <ul>
 <li>All of the sources under Text Completion</li>
 <li>KoboldAI Classic</li>
 <li>AI Horde</li>
 </ul>
-<doc-anchor-target id="choosing-a-formatting">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#choosing-a-formatting">#</doc-anchor-trigger>
-        <span>Choosing a formatting</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="choosing-a-formatting">Choosing a formatting</h4>
 <p>A chosen instruct template must match the expectations of an actual model that is running on a backend.</p>
 <p>This is usually reflected in a model card on HuggingFace, and some even provide SillyTavern-compatible JSON files.</p>
 <p>Example: <a href="https://huggingface.co/NeverSleep/Noromaid-13b-v0.1.1#prompt-template-custom-format-or-alpaca">NeverSleep/Noromaid-13b-v0.1.1</a></p>
-<doc-anchor-target id="chat-completion-api-openai-claude-etc">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#chat-completion-api-openai-claude-etc">#</doc-anchor-trigger>
-        <span>Chat Completion API (OpenAI, Claude, etc)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="chat-completion-api-openai-claude-etc">Chat Completion API (OpenAI, Claude, etc)</h3>
 <p>This is not supported <strong>(and not needed)</strong> for Chat Completion APIs. They use an entirely different prompt builder.</p>
-<doc-anchor-target id="novelai">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#novelai">#</doc-anchor-trigger>
-        <span>NovelAI</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="novelai">NovelAI</h3>
 <p>While <em>technically</em> supported for NovelAI, none of their models were trained to understand instruct formatting. NovelAI models can use a special instruct module that is activated <em>automatically</em> when an instruction wrapped in curly braces is encountered in chat messages, so using Instruct Mode for the entire prompt will lead to <strong>degraded quality</strong> of the outputs.</p>
 <p>Here&#x27;s an example that auto-activates the instruct module for NovelAI:</p>
 <div id="novelai-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">User: { Write a happy song about Nintendo Switch. }</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="instruct-mode-settings">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#instruct-mode-settings">#</doc-anchor-trigger>
-        <span>Instruct Mode Settings</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="system-prompt">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#system-prompt">#</doc-anchor-trigger>
-        <span>System Prompt</span>
-    </h3>
-</doc-anchor-target>
+<h2 id="instruct-mode-settings">Instruct Mode Settings</h2>
+<h3 id="system-prompt">System Prompt</h3>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
                     <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -296,44 +262,19 @@
         </div>
     </div>
 </div>
-<doc-anchor-target id="templates">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#templates">#</doc-anchor-trigger>
-        <span>Templates</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="templates">Templates</h3>
 <p>Provides ready-made templates with sequences for some well-known instruct models.</p>
 <p><em>Changing a template resets the unsaved settings to the last saved state! Don&#x27;t forget to save your template if you made any changes you don&#x27;t want to lose.</em></p>
-<doc-anchor-target id="activation-regex">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#activation-regex">#</doc-anchor-trigger>
-        <span>Activation Regex</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="activation-regex">Activation Regex</h3>
 <p>If defined as a valid regular expression, when connected to a model and its name matches this regex, will automatically select this template.</p>
 <p>Instruct mode needs to be enabled prior. Only the first regex match across templates will be selected (evaluated in alphabetical order).</p>
-<doc-anchor-target id="wrap-sequences-with-newline">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#wrap-sequences-with-newline">#</doc-anchor-trigger>
-        <span>Wrap Sequences with Newline</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="wrap-sequences-with-newline">Wrap Sequences with Newline</h3>
 <p>Each sequence text will be wrapped with newline characters when inserted into the prompt. Required for Alpaca and its derivatives.</p>
 <p>Disable if you want to have full control over line terminators.</p>
-<doc-anchor-target id="replace-macro-in-sequences">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#replace-macro-in-sequences">#</doc-anchor-trigger>
-        <span>Replace Macro in Sequences</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="replace-macro-in-sequences">Replace Macro in Sequences</h3>
 <p>If enabled, known {{macro}} substitutions will be replaced if defined in message wrapping sequences.</p>
 <p>Also, a special {{name}} macro can be used in message prefixes to reference the actual name attached to a message (rather than a currently active {{char}} or {{user}}), which can be helpful when using group chats or /sendas command. If the name can&#x27;t be determined, &quot;System&quot; is used as a fallback placeholder.</p>
-<doc-anchor-target id="include-names">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#include-names">#</doc-anchor-trigger>
-        <span>Include Names</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="include-names">Include Names</h3>
 <p>If enabled, prepend characters and user names to chat history logs after the prefix sequence.</p>
 <p>The following options are available:</p>
 <ul>
@@ -341,17 +282,12 @@
 <li><strong>Groups and Past Personas</strong>: Only add name prefixes to messages from group characters and past personas.</li>
 <li><strong>Always</strong>: Always add name prefixes before the message contents.</li>
 </ul>
-<doc-anchor-target id="sequences-story-string-wrapping">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#sequences-story-string-wrapping">#</doc-anchor-trigger>
-        <span>Sequences: Story String Wrapping</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="sequences-story-string-wrapping">Sequences: Story String Wrapping</h3>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
                     <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -365,97 +301,37 @@
     </div>
 </div>
 <p>Define how the Story String will be wrapped when the Position is set to &quot;Default (top of context)&quot;</p>
-<doc-anchor-target id="story-string-prefix">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#story-string-prefix">#</doc-anchor-trigger>
-        <span>Story String Prefix</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="story-string-prefix">Story String Prefix</h4>
 <p>Inserted before a Story String.</p>
-<doc-anchor-target id="story-string-suffix">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#story-string-suffix">#</doc-anchor-trigger>
-        <span>Story String Suffix</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="story-string-suffix">Story String Suffix</h4>
 <p>Inserted after a Story String.</p>
-<doc-anchor-target id="sequences-chat-messages-wrapping">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#sequences-chat-messages-wrapping">#</doc-anchor-trigger>
-        <span>Sequences: Chat Messages Wrapping</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="sequences-chat-messages-wrapping">Sequences: Chat Messages Wrapping</h3>
 <p>These settings define how messages belonging to different roles will be wrapped upon building a prompt.</p>
 <p>All prefix sequences will also be automatically used as stopping strings.</p>
-<doc-anchor-target id="user-message-prefix">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#user-message-prefix">#</doc-anchor-trigger>
-        <span>User Message Prefix</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="user-message-prefix">User Message Prefix</h4>
 <p>Inserted before a User message and as a last prompt line when impersonating.</p>
-<doc-anchor-target id="user-message-suffix">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#user-message-suffix">#</doc-anchor-trigger>
-        <span>User Message Suffix</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="user-message-suffix">User Message Suffix</h4>
 <p>Inserted after a User message.</p>
-<doc-anchor-target id="assistant-message-prefix">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#assistant-message-prefix">#</doc-anchor-trigger>
-        <span>Assistant Message Prefix</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="assistant-message-prefix">Assistant Message Prefix</h4>
 <p>Inserted before an Assistant message and as a last prompt line when generating an AI reply.</p>
-<doc-anchor-target id="assistant-message-suffix">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#assistant-message-suffix">#</doc-anchor-trigger>
-        <span>Assistant Message Suffix</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="assistant-message-suffix">Assistant Message Suffix</h4>
 <p>Inserted after an Assistant message</p>
-<doc-anchor-target id="system-message-prefix">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#system-message-prefix">#</doc-anchor-trigger>
-        <span>System Message Prefix</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="system-message-prefix">System Message Prefix</h4>
 <p>Inserted before a System (added by slash commands or extensions) message.</p>
-<doc-anchor-target id="system-message-suffix">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#system-message-suffix">#</doc-anchor-trigger>
-        <span>System Message Suffix</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="system-message-suffix">System Message Suffix</h4>
 <p>Inserted after a System message.</p>
-<doc-anchor-target id="system-same-as-user">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#system-same-as-user">#</doc-anchor-trigger>
-        <span>System same as User</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="system-same-as-user">System same as User</h4>
 <p>If checked true, System messages will be using User role message sequences.</p>
 <p>Otherwise, System messages use their own sequences (if not empty) or will not do any wrapping at all (if empty).</p>
-<doc-anchor-target id="misc-sequences">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#misc-sequences">#</doc-anchor-trigger>
-        <span>Misc. Sequences</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="misc-sequences">Misc. Sequences</h3>
 <p>Various advanced configurations for finer tuning of the prompt building</p>
-<doc-anchor-target id="first-assistant-prefix">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#first-assistant-prefix">#</doc-anchor-trigger>
-        <span>First Assistant Prefix</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="first-assistant-prefix">First Assistant Prefix</h4>
 <p>Inserted before the first Assistant&#x27;s message.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -468,18 +344,13 @@
         </div>
     </div>
 </div>
-<doc-anchor-target id="last-assistant-prefix">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#last-assistant-prefix">#</doc-anchor-trigger>
-        <span>Last Assistant Prefix</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="last-assistant-prefix">Last Assistant Prefix</h4>
 <p>Inserted before the last Assistant&#x27;s message or as a last prompt line when generating an AI reply.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -492,27 +363,12 @@
         </div>
     </div>
 </div>
-<doc-anchor-target id="system-instruction-prefix">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#system-instruction-prefix">#</doc-anchor-trigger>
-        <span>System Instruction Prefix</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="system-instruction-prefix">System Instruction Prefix</h4>
 <p>Inserted as a last prompt line when generating neutral/system text in a background (e.g. Stable Diffusion prompts or Summaries).</p>
-<doc-anchor-target id="user-filler-message">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#user-filler-message">#</doc-anchor-trigger>
-        <span>User Filler Message</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="user-filler-message">User Filler Message</h4>
 <p>Will be inserted at the start of the chat history if it doesn&#x27;t start with a User message.</p>
 <p><strong>Use case:</strong> when an instruct format <em>strictly requires</em> prompts to be user-first and have messages with alternating roles only, examples: Llama 2 Chat, Mistral Instruct.</p>
-<doc-anchor-target id="stop-sequence">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#stop-sequence">#</doc-anchor-trigger>
-        <span>Stop Sequence</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="stop-sequence">Stop Sequence</h4>
 <p>Text that denotes the end of the reply. Also sent as a stopping string to the backend API.</p>
 <p>If a stop sequence is generated, everything past it will be removed from the output (including the sequence itself).</p>
 

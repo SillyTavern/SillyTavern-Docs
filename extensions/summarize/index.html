@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>Summarize | docs.ST.app</title>
@@ -29,14 +29,22 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/extensions/summarize/">
+    <meta name="twitter:title" content="Summarize | docs.ST.app">
+    <meta name="twitter:description" content="This extension allows you to create, store, and utilize automatically generated summaries based on the events happening in your chats. Summarization can">
+    <meta name="twitter:image" content="https://docs.sillytavern.app/static/extensions/summarize.png">
+    <meta name="twitter:image:alt" content="Summarize | docs.ST.app">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -96,10 +104,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -201,31 +209,15 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="summarize" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#summarize">#</doc-anchor-trigger>
-        <span>Summarize</span>
-    </h1>
-</doc-anchor-target>
-<doc-anchor-target id="what-is-it">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#what-is-it">#</doc-anchor-trigger>
-        <span>What is it?</span>
-    </h2>
-</doc-anchor-target>
+<h1 id="summarize">Summarize</h1>
+<h2 id="what-is-it">What is it?</h2>
 <p>This extension allows you to create, store, and utilize automatically generated summaries based on the events happening in your chats. Summarization can help with outlining general details of what is happening in the story, which <em>could</em> be interpreted as a long-term memory, but take that statement with a grain of salt. Since the summaries are generated by language models, the outputs may lose some important details or contain hallucinations, so you&#x27;re always advised to keep track of the summary state and correct it manually if needed.</p>
-<doc-anchor-target id="common-configuration">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#common-configuration">#</doc-anchor-trigger>
-        <span>Common configuration</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="common-configuration">Common configuration</h2>
 <p>The summarization extension is installed in SillyTavern by default, thus it will show up in ST&#x27;s Extensions panel (stacked cubes icon) list like this:</p>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/extensions/summarize.png" alt="Summarize Config Panel" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="502" height="461" />
     <figcaption class="caption">Summarize Config Panel</figcaption>
 </figure>
-</p>
 <ul>
 <li><strong>Current summary</strong> - displays and provides an ability to modify the current summary. The summary is updated and embedded into the chat file&#x27;s metadata for the message that was the last in context when the summary was generated. Deleting or editing a message from the chat that has a summary attached to it, will revert the state to the last valid summary.</li>
 <li><strong>Restore Previous</strong> - removes the current summary, rolling it back to the previous state. This is useful if the summarizer does a poor job at any given point.</li>
@@ -234,18 +226,8 @@
 <li><strong>Injection Template</strong> - defines how the summary will be wrapped when being inserted into regular chat prompts. A special {{summary}} macro should be used to denote the exact location of the current summary state in the prompt injection text.</li>
 <li><strong>Injection Position</strong> - sets the location of the prompt injection. The options are the same as for Author&#x27;s Notes: before or after the main prompt, or in-chat at designated depth.</li>
 </ul>
-<doc-anchor-target id="supported-summary-sources">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#supported-summary-sources">#</doc-anchor-trigger>
-        <span>Supported summary sources</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="main-api">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#main-api">#</doc-anchor-trigger>
-        <span>Main API</span>
-    </h3>
-</doc-anchor-target>
+<h2 id="supported-summary-sources">Supported summary sources</h2>
+<h3 id="main-api">Main API</h3>
 <p>Summarization will be powered by your currently selected AI backend, model and settings. This method requires no additional setup, just a working API connection.</p>
 <p>This option has the following sub-modes that differ depending on how the summary prompt is built:</p>
 <ol>
@@ -253,12 +235,7 @@
 <li>Raw, non-blocking. Same as above, but the chat generation will not be blocked during the summary generation. Not every backend supports simultaneous requests, so switch to blocking mode if summarization fails.</li>
 <li>Classic, blocking. The summarization prompt will be sent at the end of your usual generation prompt, as a neutral system instruction, not omitting the character card, main prompt, example dialogues and other parts of chat prompts. This usually results in prompts that play nicely with reusing processed prompts, so it is recommended to use with llama.cpp and its siblings.</li>
 </ol>
-<doc-anchor-target id="summary-settings-explained">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#summary-settings-explained">#</doc-anchor-trigger>
-        <span>Summary Settings explained</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="summary-settings-explained">Summary Settings explained</h4>
 <ol>
 <li><strong>Summary Prompt</strong> - defines the prompt that will used for creating a summary. May include any of the known macros, as well as a special {{words}} macro (see below).</li>
 <li><strong>Target summary length (words)</strong> - defines the value of the {{words}} macro that can be inserted into the Summary Prompt. This setting is completely optional and has no effect at all if the macro is not used.</li>
@@ -277,12 +254,7 @@
 <li>If &quot;Max messages&quot; is set, adjust the average to account for messages that don&#x27;t fit the summary limit</li>
 <li>Round down the adjusted average messages per prompt to a multiple of 5</li>
 </ol>
-<doc-anchor-target id="example-prompts">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#example-prompts">#</doc-anchor-trigger>
-        <span>Example prompts</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="example-prompts">Example prompts</h4>
 <p><strong>Raw prompt</strong></p>
 <div id="example-prompts-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">System:
@@ -313,12 +285,7 @@ Message bar.
 System:
 [Summarization prompt]</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="extras-api">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#extras-api">#</doc-anchor-trigger>
-        <span>Extras API</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="extras-api">Extras API</h3>
 <p>Extras server with the <code translate="no" v-pre>summarize</code> module could run an auxiliary summarization model (BART).</p>
 <p>It has a very small context size (~1024 tokens), so its ability to handle large summaries is quite limited.</p>
 <p>To configure the Extras summary source, do the following:</p>
@@ -326,12 +293,7 @@ System:
 <li>Install or Update <a href="https://github.com/SillyTavern/SillyTavern-extras">Extras</a> to the latest version.</li>
 <li>Run Extras with the <code translate="no" v-pre>summarize</code> module enabled: <code translate="no" v-pre>python server.py --enable-modules=summarize</code></li>
 </ol>
-<doc-anchor-target id="changing-summary-model">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#changing-summary-model">#</doc-anchor-trigger>
-        <span>Changing Summary Model</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="changing-summary-model">Changing Summary Model</h4>
 <p>By default, Summarize uses the <a href="https://huggingface.co/Qiliang/bart-large-cnn-samsum-ChatGPT_v3">Qiliang/bart-large-cnn-samsum-ChatGPT_v3</a> model for summarization purposes.</p>
 <p>This can be changed by using the command line argument <code translate="no" v-pre>--summarization-model=(###Hugging-Face-Model-URL-Here###)</code></p>
 <p>A known alternate Summarize model is <code translate="no" v-pre>Qiliang/bart-large-cnn-samsum-ElectrifAi_v10</code>.</p>

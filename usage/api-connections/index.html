@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>API Connections | docs.ST.app</title>
@@ -25,14 +25,20 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/usage/api-connections/">
+    <meta name="twitter:title" content="API Connections | docs.ST.app">
+    <meta name="twitter:description" content="SillyTavern can connect to a wide range of LLM APIs. Below is a description of their respective strengths, weaknesses, and use cases.">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -92,10 +98,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -197,45 +203,20 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="api-connections" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#api-connections">#</doc-anchor-trigger>
-        <span>API Connections</span>
-    </h1>
-</doc-anchor-target>
+<h1 id="api-connections">API Connections</h1>
 <p>SillyTavern can connect to a wide range of LLM APIs.
 Below is a description of their respective strengths, weaknesses, and use cases.</p>
-<doc-anchor-target id="eli5-chat-completions-vs-text-completions">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#eli5-chat-completions-vs-text-completions">#</doc-anchor-trigger>
-        <span>ELI5: Chat Completions vs Text Completions</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="eli5-chat-completions-vs-text-completions">ELI5: Chat Completions vs Text Completions</h2>
 <p>When you first navigate to the &quot;API Connections&quot; page in ST, you will notice a drop-down option to select between options using nomenclature such as &quot;Chat Completion&quot; and &quot;Text Completion&quot;. It&#x27;s helpful to understand what this means.</p>
 <p>What it&#x27;s not: It&#x27;s easy to think of &quot;Text Completion&quot; as local models and &quot;Chat Completion&quot; as cloud-based LLMs, but that&#x27;s not the case. Neither is e.g. &quot;NovelAI&quot; or &quot;Kobold&quot; actually a separate type of model altogether, even though they are separate options in the API dropdown in ST. You can force models into different API structures with the appropriate backend, but that&#x27;s not the point of this section.</p>
 <p>When you send a message using ST, your chat, character description, and other prompts such as lorebooks or author&#x27;s notes are constructed into a single &quot;prompt&quot; to be sent to the model. The API &quot;type&quot; for the model you are using decides how exactly this prompt will be constructed (something that ST takes care of for you automatically in the background - you can open your ST terminal and see exactly what the prompt being sent to the AI looks like).</p>
-<doc-anchor-target id="chat-completions">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#chat-completions">#</doc-anchor-trigger>
-        <span>Chat Completions</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="chat-completions">Chat Completions</h3>
 <p>A Chat Completion model, as its name suggests, will structure your prompt into a series of messages between the User (you) and the Assistant (the AI) or System (neutral). Models that are trained for Chat Completion help create the feeling of a &quot;Chat&quot;, with the AI &quot;responding&quot; to the last message. When you&#x27;re using the ChatGPT website, you&#x27;re dealing with a Chat Completions API in the background.</p>
-<doc-anchor-target id="text-completions-aka-just-completions">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#text-completions-aka-just-completions">#</doc-anchor-trigger>
-        <span>Text Completions (a.k.a just &quot;Completions&quot;)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="text-completions-aka-just-completions">Text Completions (a.k.a just &quot;Completions&quot;)</h3>
 <p>A Text Completion on the other hand, and again as its name suggests, will convert your prompt into one long string, and the model will simply try to continue this (like, literally imagine all your text, your hundreds of messages, all your formatting, newlines, etc. squashed into one very long sentence).</p>
 <p>If your messages in ST happen to be formatted as a series of messages between YourPersona: and Character:, the Text Completion model will try to continue this pattern and ST will render it as a new chat message for you, but really the model is just trying to continue the text. If you offered an input of &quot;The Sun rises in the&quot;, a text completion model is likely to finish that message for you with &quot;East&quot;.</p>
 <p>Most Text Completion models have a recommended &quot;Instruct Template&quot; (usually mentioned in the model&#x27;s documentation or download page) that helps them &quot;respond&quot; to messages and instructions, just like a Chat Completion model. ST usually has most (if not all) Instruct Templates available for you to choose from in the &quot;Advanced Formatting&quot; page.</p>
-<doc-anchor-target id="local-apis">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#local-apis">#</doc-anchor-trigger>
-        <span>Local APIs</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="local-apis">Local APIs</h2>
 <ul>
 <li>These LLM APIs can be run on your PC.</li>
 <li>They are free to use and have no content filter.</li>
@@ -243,12 +224,7 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 <li>Requires separate download of LLM models from <a href="https://huggingface.co/models?other=LLM">HuggingFace</a> which can be 5-50GB each.</li>
 <li>Most models are not as powerful as cloud LLM APIs.</li>
 </ul>
-<doc-anchor-target id="koboldcpp">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#koboldcpp">#</doc-anchor-trigger>
-        <span>KoboldCpp</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="koboldcpp">KoboldCpp</h3>
 <ul>
 <li>Easy-to-use API with CPU offloading (helpful for low VRAM users) and streaming</li>
 <li>Runs from a single binary file on Windows, Mac, and Linux</li>
@@ -256,12 +232,7 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 <li>Slower than GPU-only loaders such as AutoGPTQ and Exllama/v2</li>
 <li><a href="https://github.com/LostRuins/koboldcpp">GitHub</a>, <a href="koboldcpp/">Setup Instructions</a></li>
 </ul>
-<doc-anchor-target id="llamacpp">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#llamacpp">#</doc-anchor-trigger>
-        <span>llama.cpp</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="llamacpp">llama.cpp</h3>
 <ul>
 <li>The original source from which KoboldCpp and Ollama were forked</li>
 <li>Provides pre-compiled binaries and an option to compile from source</li>
@@ -269,24 +240,14 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 <li>Lightweight CLI interface for llama-server</li>
 <li><a href="https://github.com/ggml-org/llama.cpp">GitHub</a></li>
 </ul>
-<doc-anchor-target id="ollama">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ollama">#</doc-anchor-trigger>
-        <span>Ollama</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="ollama">Ollama</h3>
 <ul>
 <li>Easiest to set up and use of all llama.cpp-based APIs</li>
 <li>A nifty <a href="https://ollama.com/library">catalog</a> of models available for one-click download</li>
 <li>Supports GGUF models wrapped in Ollama&#x27;s own format</li>
 <li><a href="https://github.com/ollama/ollama">GitHub</a>, <a href="https://ollama.com/">Website</a></li>
 </ul>
-<doc-anchor-target id="oobabooga-textgeneration-webui">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#oobabooga-textgeneration-webui">#</doc-anchor-trigger>
-        <span>Oobabooga TextGeneration WebUI</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="oobabooga-textgeneration-webui">Oobabooga TextGeneration WebUI</h3>
 <ul>
 <li>All-in-one Gradio UI with streaming</li>
 <li>Broadest support for quantized (AWQ, Exl2, GGML, GGUF, GPTQ) and FP16 models</li>
@@ -301,12 +262,7 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 <li>Connect ST to <code translate="no" v-pre>http://localhost:5000/</code> (by default) without checking the &#x27;Legacy API&#x27; box. You may remove the <code translate="no" v-pre>/v1</code> postfix from the URL Ooba&#x27;s console provides you.</li>
 </ol>
 <p><em>You can change the API hosting port with the <code translate="no" v-pre>--api-port 5001</code> flag, where 5001 is your custom port.</em></p>
-<doc-anchor-target id="tabbyapi">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tabbyapi">#</doc-anchor-trigger>
-        <span>TabbyAPI</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="tabbyapi">TabbyAPI</h3>
 <ul>
 <li>Lightweight <a href="https://github.com/turboderp/exllamav2">Exllamav2</a>-based API with streaming</li>
 <li>Supports Exl2, GPTQ, and FP16 models</li>
@@ -314,12 +270,7 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 <li>Not recommended for users with low VRAM (no CPU offloading)</li>
 <li><a href="https://github.com/theroyallab/tabbyAPI">GitHub</a>, <a href="tabbyapi/">Setup Instructions</a></li>
 </ul>
-<doc-anchor-target id="koboldai-classic-deprecated-abandoned">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#koboldai-classic-deprecated-abandoned">#</doc-anchor-trigger>
-        <span>KoboldAI Classic (deprecated, abandoned)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="koboldai-classic-deprecated-abandoned">KoboldAI Classic (deprecated, abandoned)</h3>
 <ul>
 <li>Runs on your PC, 100% private, wide range of models available</li>
 <li>Gives the most direct control of the AI&#x27;s generation settings</li>
@@ -333,35 +284,20 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 </ul>
 </li>
 </ul>
-<doc-anchor-target id="cloud-llm-apis">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#cloud-llm-apis">#</doc-anchor-trigger>
-        <span>Cloud LLM APIs</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="cloud-llm-apis">Cloud LLM APIs</h2>
 <ul>
 <li>These LLM APIs are run as cloud services and require no resources on your PC</li>
 <li>They are stronger/smarter than most local LLMs</li>
 <li>However, they all have content filtering of varying degrees, and most require payment</li>
 </ul>
-<doc-anchor-target id="ai-horde">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ai-horde">#</doc-anchor-trigger>
-        <span>AI Horde</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="ai-horde">AI Horde</h3>
 <ul>
 <li>SillyTavern can access this API out of the box with no additional settings required</li>
 <li>Uses the GPU of individual volunteers (Horde Workers) to process responses for your chat inputs</li>
 <li>At the mercy of the Worker in terms of generation wait times, AI settings, and available models</li>
 <li><a href="https://aihorde.net/">Website</a>, <a href="horde/">Setup Instructions</a></li>
 </ul>
-<doc-anchor-target id="openai-chatgpt">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#openai-chatgpt">#</doc-anchor-trigger>
-        <span>OpenAI (ChatGPT)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="openai-chatgpt">OpenAI (ChatGPT)</h3>
 <ul>
 <li>Easy to set up and acquire an API key</li>
 <li>Requires prepayment for credits and charges per prompt</li>
@@ -369,12 +305,7 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 <li>Most of the newer models (gpt-4-turbo, gpt-4o) support multimodality</li>
 <li><a href="https://platform.openai.com/">Website</a>, <a href="openai/#openai">Setup Instructions</a></li>
 </ul>
-<doc-anchor-target id="claude-by-anthropic">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#claude-by-anthropic">#</doc-anchor-trigger>
-        <span>Claude (by Anthropic)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="claude-by-anthropic">Claude (by Anthropic)</h3>
 <ul>
 <li>Recommended for users who want their AI chats to have a creative, unique writing style</li>
 <li>Requires prepayment for credits and charges per prompt</li>
@@ -382,24 +313,14 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 <li>Requires a specific prompting style and utilization of <a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/prefill-claudes-response">prefills</a> for reply steering</li>
 <li><a href="https://console.anthropic.com/">Website</a>, <a href="openai/#claude">Setup Instructions</a></li>
 </ul>
-<doc-anchor-target id="google-ai-studio-and-vertex-ai">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#google-ai-studio-and-vertex-ai">#</doc-anchor-trigger>
-        <span>Google AI Studio and Vertex AI</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="google-ai-studio-and-vertex-ai">Google AI Studio and Vertex AI</h3>
 <ul>
 <li>Has a free tier with rate limits (Gemini Flash), may require billing information</li>
 <li><a href="https://aistudio.google.com/">AI Studio</a> usually has the latest models and features</li>
 <li><a href="https://console.cloud.google.com/vertex-ai/studio">Vertex AI</a> is trickier to set up, but more stable</li>
 <li><a href="google/">Setup Instructions</a></li>
 </ul>
-<doc-anchor-target id="mistral-by-mistral-ai">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#mistral-by-mistral-ai">#</doc-anchor-trigger>
-        <span>Mistral (by Mistral AI)</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="mistral-by-mistral-ai">Mistral (by Mistral AI)</h3>
 <ul>
 <li>Efficient models of various sizes and use cases. You can create an account and API key on <a href="https://console.mistral.ai/api-keys/">their platform</a>.</li>
 <li>From 32k to 128k context sizes for general use, and 32k to 256k context sizes for coding.</li>
@@ -407,69 +328,39 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 <li>Reasonable moderation, with Mistral&#x27;s main principles being to be neutral and empower users, more information <a href="https://mistral.ai/terms/">here</a>.</li>
 <li><a href="https://console.mistral.ai/">Website</a>, <a href="openai/#mistral-ai">Setup Instructions</a></li>
 </ul>
-<doc-anchor-target id="openrouter">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#openrouter">#</doc-anchor-trigger>
-        <span>OpenRouter</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="openrouter">OpenRouter</h3>
 <ul>
 <li>Provides a unified API to access all the major LLMs on the market</li>
 <li>Pay-per-token credit system, as well as free models with limited daily requests</li>
 <li>No enforced moderation, unless required by the LLM vendor</li>
 <li><a href="https://openrouter.ai">Website</a>, <a href="openrouter/">Setup Instructions</a></li>
 </ul>
-<doc-anchor-target id="deepseek">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#deepseek">#</doc-anchor-trigger>
-        <span>DeepSeek</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="deepseek">DeepSeek</h3>
 <ul>
 <li>Provides access to the latest versions of very popular DeepSeek V3 (<code translate="no" v-pre>deepseek-chat</code>) and DeepSeek R1 (<code translate="no" v-pre>deepseek-reasoner</code>) models</li>
 <li>Requires a payment for credits ($2 minimum), but the models are fairly cheap for their quality</li>
 <li>No moderation on the API, but the models may refuse certain prompts</li>
 <li><a href="https://platform.deepseek.com/">Website</a>, <a href="openai/#deepseek">Setup Instructions</a></li>
 </ul>
-<doc-anchor-target id="ai21">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ai21">#</doc-anchor-trigger>
-        <span>AI21</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="ai21">AI21</h3>
 <ul>
 <li>Provides access to Jamba Family open models</li>
 <li>Has a free trial ($10 for three months), then requires to pay monthly per token</li>
 <li><a href="https://ai21.com/">Website</a>, <a href="openai/#ai21">Setup Instructions</a></li>
 </ul>
-<doc-anchor-target id="cohere">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#cohere">#</doc-anchor-trigger>
-        <span>Cohere</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="cohere">Cohere</h3>
 <ul>
 <li>Provides access to the latest models from Cohere (command-r, command-a, c4ai-aya, etc.)</li>
 <li>Has a free tier (Trial Keys) with enough rate limits for casual use</li>
 <li><a href="https://cohere.com/">Website</a>, <a href="openai/#cohere">Setup Instructions</a></li>
 </ul>
-<doc-anchor-target id="perplexity">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#perplexity">#</doc-anchor-trigger>
-        <span>Perplexity</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="perplexity">Perplexity</h3>
 <ul>
 <li>Provides access to unique Perplexity Sonar online-enabled models via their API</li>
 <li>Requires to have billing configured and credits purchased</li>
 <li><a href="https://perplexity.ai/">Website</a>, <a href="openai/#perplexity">Setup Instructions</a></li>
 </ul>
-<doc-anchor-target id="mancer-ai">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#mancer-ai">#</doc-anchor-trigger>
-        <span>Mancer AI</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="mancer-ai">Mancer AI</h3>
 <ul>
 <li>Service that hosts unconstrained models of various families</li>
 <li>Uses &#x27;credits&#x27; to pay for tokens on various models</li>
@@ -477,57 +368,32 @@ Below is a description of their respective strengths, weaknesses, and use cases.
 <li>Uses an API similar to <code translate="no" v-pre>Oobabooga TextGeneration WebUI</code>, see <a href="https://mancer.tech/docs/clients/#sampling-parameters">Mancer docs</a> for details.</li>
 <li><a href="https://mancer.tech/">Website</a>, <a href="mancer/">Setup Instructions</a></li>
 </ul>
-<doc-anchor-target id="dreamgen">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#dreamgen">#</doc-anchor-trigger>
-        <span>DreamGen</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="dreamgen">DreamGen</h3>
 <ul>
 <li>Uncensored models tuned for steerable creative writing</li>
 <li>Free monthly credits, as well as a paid subscription</li>
 <li>Models ranging from 7B to 70B</li>
 <li><a href="dreamgen/">Setup Instructions</a></li>
 </ul>
-<doc-anchor-target id="pollinations">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#pollinations">#</doc-anchor-trigger>
-        <span>Pollinations</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="pollinations">Pollinations</h3>
 <ul>
 <li>Requires no setup, can be used out of the box</li>
 <li>Provides access to a wide range of models free of charge</li>
 <li>Outputs may occasionally include ads with links to third-party services</li>
 </ul>
-<doc-anchor-target id="novelai">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#novelai">#</doc-anchor-trigger>
-        <span>NovelAI</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="novelai">NovelAI</h3>
 <ul>
 <li>No content filter, the latest model is based on Llama 3</li>
 <li>Paid subscription required, the tier determines the max context length</li>
 <li><a href="https://novelai.net/">Website</a>, <a href="novelai/">Setup Instructions</a></li>
 </ul>
-<doc-anchor-target id="electron-hub">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#electron-hub">#</doc-anchor-trigger>
-        <span>Electron Hub</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="electron-hub">Electron Hub</h3>
 <ul>
 <li>One API key unlocks models from multiple vendors (OpenAI, Anthropic, DeepSeek, etc.) for text and image generation</li>
 <li>$0.25 of free credits every day, paid plans available</li>
 <li><a href="https://www.electronhub.ai/">Website</a>, <a href="openai/#electron-hub">Setup Instructions</a></li>
 </ul>
-<doc-anchor-target id="aiml-api">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#aiml-api">#</doc-anchor-trigger>
-        <span>AI/ML API</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="aiml-api">AI/ML API</h3>
 <ul>
 <li>Unified API for 300+ models including Claude, GPT-4o, Gemini, LLaMA 3, Mistral and others</li>
 <li>Has a free tier with rate limits, subscription plans, and pay-as-you-go options</li>

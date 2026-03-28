@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>TTS | docs.ST.app</title>
@@ -25,14 +25,20 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/extensions/tts/">
+    <meta name="twitter:title" content="TTS | docs.ST.app">
+    <meta name="twitter:description" content="SillyTavern has a wide range of TTS (text-to-speech) options that are used to have a voice narrate parts of your chat. This page explains the setup and use.">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -92,10 +98,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -197,25 +203,10 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="tts" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tts">#</doc-anchor-trigger>
-        <span>TTS</span>
-    </h1>
-</doc-anchor-target>
+<h1 id="tts">TTS</h1>
 <p>SillyTavern has a wide range of TTS (text-to-speech) options that are used to have a voice narrate parts of your chat. This page explains the setup and use.</p>
-<doc-anchor-target id="configuring-tts">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#configuring-tts">#</doc-anchor-trigger>
-        <span>Configuring TTS</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="tts-provider-selection">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tts-provider-selection">#</doc-anchor-trigger>
-        <span>TTS Provider Selection</span>
-    </h3>
-</doc-anchor-target>
+<h2 id="configuring-tts">Configuring TTS</h2>
+<h3 id="tts-provider-selection">TTS Provider Selection</h3>
 <p>Used to select which TTS service you want to use. Some of the options are free, some require a paid subscription, and some run locally on your PC.</p>
 <p>Available options (list may change over time):</p>
 <ul>
@@ -236,12 +227,7 @@
 <li><strong>System</strong> - uses your OS TTS engine, if one exists. Quality can vary widely depending on the OS.</li>
 <li><strong>XTTS</strong> - free, requires a dedicated API server installation. See the <a href="../xtts/">XTTS</a> page for setup instructions.</li>
 </ul>
-<doc-anchor-target id="checkboxes">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#checkboxes">#</doc-anchor-trigger>
-        <span>Checkboxes</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="checkboxes">Checkboxes</h3>
 <ul>
 <li><strong>Enabled</strong> - turns TTS playback on/off</li>
 <li><strong>Auto Generation</strong> - lets TTS start playing automatically when a new message enters the chat</li>
@@ -286,42 +272,22 @@ Here&#x27;s a table showing how the text will be modified based on the boolean s
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="sliders">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#sliders">#</doc-anchor-trigger>
-        <span>Sliders</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="sliders">Sliders</h3>
 <p>These will change depending on the API you select.</p>
-<doc-anchor-target id="buttons">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#buttons">#</doc-anchor-trigger>
-        <span>Buttons</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="buttons">Buttons</h3>
 <ul>
 <li><strong>Apply</strong> - this must be clicked after setting a TTS API and after editing the voice map.</li>
 <li><strong>Refresh</strong> - reloads the list of voices from the selected TTS API.</li>
 <li><strong>Available voices</strong> - loads a popup with all voices available for your selected API, and lets you preview them with sample dialogues.</li>
 </ul>
-<doc-anchor-target id="using-tts">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#using-tts">#</doc-anchor-trigger>
-        <span>Using TTS</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="using-tts">Using TTS</h2>
 <ol>
 <li>Click the &quot;Enable&quot; checkbox, or nothing will ever happen.</li>
 <li>Click the &quot;Auto-generation&quot; checkbox if you want the TTS to start automatically every time a new message arrives in chat.</li>
 <li>Optionally, click the megaphone icon inside the top-right of any message to playback on demand.</li>
 <li>Click the lower right &quot;Stop&quot; button (found inside the wand menu) to stop any playback.</li>
 </ol>
-<doc-anchor-target id="voice-map">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#voice-map">#</doc-anchor-trigger>
-        <span>Voice Map</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="voice-map">Voice Map</h3>
 <p>You must provide a voice map for the TTS to use, otherwise, it won&#x27;t know what voices should be used for each character. To setup the voice map, first open a chat with a character that you&#x27;d like to assign a voice to and/or select a user persona to assign a voice to, then select a voice listed by a TTS provider from the dropdown. If you don&#x27;t see a list of voices and/or characters, make sure that your TTS provider is configured correctly and click &quot;Refresh&quot;. Some providers (like OpenAI-compatible or NovelAI) require you to populate the voice list manually.</p>
 
                 

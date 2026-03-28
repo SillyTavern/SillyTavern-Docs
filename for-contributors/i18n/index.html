@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>Internationalization (i18n) | docs.ST.app</title>
@@ -29,15 +29,23 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/for-contributors/i18n/">
+    <meta name="twitter:title" content="Internationalization (i18n) | docs.ST.app">
+    <meta name="twitter:description" content="SillyTavern supports multiple languages. This guide explains how to add and manage translations.">
+    <meta name="twitter:image" content="https://docs.sillytavern.app/static/i18n/generate-image-pre.png">
+    <meta name="twitter:image:alt" content="Internationalization (i18n) | docs.ST.app">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.2.0.826914722230" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.4.0.828033847105" defer></script>
 
     <style>
         a {
@@ -97,10 +105,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -202,12 +210,7 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="internationalization-i18n" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#internationalization-i18n">#</doc-anchor-trigger>
-        <span>Internationalization (i18n)</span>
-    </h1>
-</doc-anchor-target>
+<h1 id="internationalization-i18n">Internationalization (i18n)</h1>
 <p>SillyTavern supports multiple languages. This guide explains how to add and manage translations.</p>
 <p>You&#x27;re probably here because some piece of text is untranslated in your language, and it&#x27;s driving you nuts. First I&#x27;ll
 show you how I fixed some missing translations in the Chinese (Traditional) locale. Each was missing for a different
@@ -225,17 +228,12 @@ your work is ready for other people to translate it into their language.</p>
 <p>Nobody knows 15 languages by themselves. We work together to make SillyTavern accessible to everyone.</p>
 <p><strong>Everyone in the world should be able to use their own language on phones and computers.</strong></p>
 <hr>
-<doc-anchor-target id="lets-fix-some-missing-translations">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#lets-fix-some-missing-translations">#</doc-anchor-trigger>
-        <span>Let&#x27;s fix some missing translations!</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="lets-fix-some-missing-translations">Let&#x27;s fix some missing translations!</h2>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -251,18 +249,12 @@ there are plenty of missing translations you can fix without touching the code.<
         </div>
     </div>
 </div>
-<doc-anchor-target id="generate-image">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#generate-image">#</doc-anchor-trigger>
-        <span><code translate="no" v-pre>Generate Image</code></span>
-    </h3>
-</doc-anchor-target>
+<h3 id="generate-image"><code translate="no" v-pre>Generate Image</code></h3>
 <p>The text &quot;Generate Image&quot; is untranslated in the Chinese (Traditional) locale. Why?</p>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/i18n/generate-image-pre.png" alt="generate-image-pre.png" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="458" height="710" />
     <figcaption class="caption">generate-image-pre.png</figcaption>
 </figure>
-</p>
 <p>Right-click on the element and inspect it. You&#x27;ll see the HTML:</p>
 <div id="generate-image-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-markup"><code v-pre class="language-markup">&lt;!--rendered HTML--&gt;
@@ -287,11 +279,10 @@ there are plenty of missing translations you can fix without touching the code.<
 &lt;/div&gt;</code></pre>
 </doc-codeblock></div>
 <p>We are in luck, that string <code translate="no" v-pre>Generate Image</code> is in many of the language files, including in Chinese (Traditional).</p>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/i18n/generate-image-lang.png" alt="generate-image-lang.png" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="1258" height="674" />
     <figcaption class="caption">generate-image-lang.png</figcaption>
 </figure>
-</p>
 <div id="generate-image-code-3" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-json"><code v-pre class="language-json">{
     &quot;Generate Image&quot;: &quot;生成图片&quot;
@@ -312,18 +303,16 @@ there are plenty of missing translations you can fix without touching the code.<
 &lt;/div&gt;</code></pre>
 </doc-codeblock></div>
 <p>Now it works! Reload the page and see.</p>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/i18n/generate-image-post.png" alt="generate-image-post.png" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="422" height="704" />
     <figcaption class="caption">generate-image-post.png</figcaption>
 </figure>
-</p>
 <p>But while we have the HTML open, what&#x27;s with <code translate="no" v-pre>Stop Image Generation</code> just under it? The HTML doesn&#x27;t look right.</p>
 <p>If we generate an image and then open the wand menu while it&#x27;s generating, we see untranslated text.</p>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/i18n/stop-generating-image-pre.png" alt="stop-generating-image-pre.png" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="400" height="616" />
     <figcaption class="caption">stop-generating-image-pre.png</figcaption>
 </figure>
-</p>
 <p>First fix the HTML:</p>
 <div id="generate-image-code-5" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-markup"><code v-pre class="language-markup">&lt;!--public/scripts/extensions/stable-diffusion/button.html--&gt;
@@ -358,23 +347,16 @@ file. We can add it! Here&#x27;s one possible translation:</p>
 <li>Simplified Chinese: &quot;Stop Image Generation&quot;: &quot;中止图像生成&quot;</li>
 <li>Japanese: &quot;Stop Image Generation&quot;: &quot;画像生成を停止&quot;</li>
 </ul>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/i18n/stop-generating-post-2.png" alt="stop-generating-post-2.png" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="352" height="612" />
     <figcaption class="caption">stop-generating-post-2.png</figcaption>
 </figure>
-</p>
-<doc-anchor-target id="generate-caption">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#generate-caption">#</doc-anchor-trigger>
-        <span><code translate="no" v-pre>Generate Caption</code></span>
-    </h3>
-</doc-anchor-target>
+<h3 id="generate-caption"><code translate="no" v-pre>Generate Caption</code></h3>
 <p>&quot;Generate Caption&quot; is untranslated in the Chinese (Traditional) locale. Let&#x27;s fix it!</p>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/i18n/generate-image-post.png" alt="generate-image-post.png" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="422" height="704" />
     <figcaption class="caption">generate-image-post.png</figcaption>
 </figure>
-</p>
 <p>Where is it? Inspect the element.</p>
 <div id="generate-caption-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-markup"><code v-pre class="language-markup">&lt;!--rendered HTML--&gt;
@@ -413,17 +395,11 @@ const sendButton = $(`
 <li>Simplified Chinese: &quot;Generate Caption&quot;: &quot;生成图片说明&quot;</li>
 <li>Japanese: &quot;Generate Caption&quot;: &quot;画像説明を生成&quot;</li>
 </ul>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/i18n/generate-caption-post.png" alt="generate-caption-post.png" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="402" height="696" />
     <figcaption class="caption">generate-caption-post.png</figcaption>
 </figure>
-</p>
-<doc-anchor-target id="inspect-prompts">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#inspect-prompts">#</doc-anchor-trigger>
-        <span><code translate="no" v-pre>Inspect Prompts</code></span>
-    </h3>
-</doc-anchor-target>
+<h3 id="inspect-prompts"><code translate="no" v-pre>Inspect Prompts</code></h3>
 <p>The text &quot;Inspect Prompts&quot; is untranslated in the Chinese (Traditional) locale. Why?
 This one is a bit more complicated. The text is generated by JavaScript, and the translation is missing.</p>
 <div id="inspect-prompts-code-1" class="codeblock-wrapper"><doc-codeblock>
@@ -477,11 +453,10 @@ const disabledText = t`プロンプトを検査`;</code></pre>
     &quot;Inspect Prompts&quot;: &quot;プロンプトを検査&quot;
 }</code></pre>
 </doc-codeblock></div>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/i18n/toggle-prompt-inspection-post-tt.png" alt="toggle-prompt-inspection-post-tt.png" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="624" height="730" />
     <figcaption class="caption">toggle-prompt-inspection-post-tt.png</figcaption>
 </figure>
-</p>
 <p>A pity about that tooltip. The problem is that the code doesn&#x27;t use
 the <code translate="no" v-pre>t</code> function.</p>
 <div id="inspect-prompts-code-8" class="codeblock-wrapper"><doc-codeblock>
@@ -510,17 +485,11 @@ the <code translate="no" v-pre>t</code> function.</p>
 <p>Prompt inspector is a separate extension, so we will PR the code fixes to that
 repo: <a href="https://github.com/SillyTavern/Extension-PromptInspector/pull/1">https://github.com/SillyTavern/Extension-PromptInspector/pull/1</a></p>
 <p>The translations will be added to the main SillyTavern repo. <a href="https://github.com/SillyTavern/SillyTavern/pull/3198">https://github.com/SillyTavern/SillyTavern/pull/3198</a></p>
-<p><figure class="content-center">
+<figure class="content-center">
     <img src="../../static/i18n/start-inspecting-post.png" alt="start-inspecting-post.png" class="max-w-full h-auto rounded-image-rounded border-image-border border-image-border-width" width="412" height="718" />
     <figcaption class="caption">start-inspecting-post.png</figcaption>
 </figure>
-</p>
-<doc-anchor-target id="language-files">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#language-files">#</doc-anchor-trigger>
-        <span>Language files</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="language-files">Language files</h2>
 <p>Each language has a JSON file in <code translate="no" v-pre>public/locales/</code> named with its language code (e.g., <code translate="no" v-pre>ru-ru.json</code>).</p>
 <p>The file contains key-value pairs where:</p>
 <ul>
@@ -535,12 +504,7 @@ repo: <a href="https://github.com/SillyTavern/Extension-PromptInspector/pull/1">
     &quot;Could not find proxy with name '${0}'&quot;: &quot;Не удалось найти прокси с названием '${0}'&quot;
 }</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="how-translations-work">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-translations-work">#</doc-anchor-trigger>
-        <span>How translations work</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="how-translations-work">How translations work</h2>
 <p>There are two ways translations are used in the application:</p>
 <ol>
 <li><p><strong>HTML Elements</strong>: Using <code translate="no" v-pre>data-i18n</code> attributes</p>
@@ -558,12 +522,7 @@ repo: <a href="https://github.com/SillyTavern/Extension-PromptInspector/pull/1">
 </ol>
 <p>SillyTavern uses HTML elements with <code translate="no" v-pre>data-i18n</code> attributes to mark translatable content. There are several ways to use
 this:</p>
-<doc-anchor-target id="1-translating-element-text">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#1-translating-element-text">#</doc-anchor-trigger>
-        <span>1. Translating Element Text</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="1-translating-element-text">1. Translating Element Text</h3>
 <p>For simple text content:</p>
 <div id="1-translating-element-text-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-markup"><code v-pre class="language-markup">&lt;span data-i18n=&quot;Role:&quot;&gt;Role:&lt;/span&gt;</code></pre>
@@ -574,12 +533,7 @@ this:</p>
 }</code></pre>
 </doc-codeblock></div>
 <p>This replaces the element&#x27;s text content with the translation of &quot;Role:&quot;.</p>
-<doc-anchor-target id="2-translating-attributes">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#2-translating-attributes">#</doc-anchor-trigger>
-        <span>2. Translating Attributes</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="2-translating-attributes">2. Translating Attributes</h3>
 <p>To translate an attribute like a title or placeholder:</p>
 <div id="2-translating-attributes-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-markup"><code v-pre class="language-markup">&lt;a class=&quot;menu_button fa-chain fa-solid fa-fw&quot;
@@ -607,12 +561,7 @@ a fallback if the translation is missing. Most notably, there is no translation 
     &quot;openai_logit_bias_no_items&quot;: &quot;没有相关产品&quot;
 }   </code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="3-multiple-translations-per-element">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#3-multiple-translations-per-element">#</doc-anchor-trigger>
-        <span>3. Multiple Translations Per Element</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="3-multiple-translations-per-element">3. Multiple Translations Per Element</h3>
 <p>Some elements need both content and attribute translations, separated by semicolons. The most common pattern is
 translating both the element&#x27;s text content and its title attribute:</p>
 <div id="3-multiple-translations-per-element-code-1" class="codeblock-wrapper"><doc-codeblock>
@@ -658,12 +607,7 @@ openrouter.ai&quot;</li>
 <li>Looks up each key in your language&#x27;s JSON file</li>
 <li>Replaces the element&#x27;s content or attributes with the translated text</li>
 </ol>
-<doc-anchor-target id="dynamic-text">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#dynamic-text">#</doc-anchor-trigger>
-        <span>Dynamic Text</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="dynamic-text">Dynamic Text</h3>
 <p>For dynamic text in JavaScript code, translations use either:</p>
 <ol>
 <li><p>Template literals with the <code translate="no" v-pre>t</code> function:</p>
@@ -677,12 +621,7 @@ openrouter.ai&quot;</li>
 </doc-codeblock></div>
 </li>
 </ol>
-<doc-anchor-target id="variable-placeholders">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#variable-placeholders">#</doc-anchor-trigger>
-        <span>Variable Placeholders</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="variable-placeholders">Variable Placeholders</h3>
 <p>Some strings contain placeholders for dynamic values using <code translate="no" v-pre>${0}</code>, <code translate="no" v-pre>${1}</code>, etc:</p>
 <div id="variable-placeholders-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-javascript"><code v-pre class="language-javascript">toastr.error(t`Could not find proxy with name '${presetName}'`);</code></pre>
@@ -693,20 +632,10 @@ openrouter.ai&quot;</li>
 }</code></pre>
 </doc-codeblock></div>
 <p>Keep the placeholders the same for key and translation. The system will replace <code translate="no" v-pre>${0}</code> with the value of <code translate="no" v-pre>presetName</code>, etc.</p>
-<doc-anchor-target id="finding-missing-translations">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#finding-missing-translations">#</doc-anchor-trigger>
-        <span>Finding missing translations</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="finding-missing-translations">Finding missing translations</h2>
 <p>Let&#x27;s say you don&#x27;t just want to fix one annoying missing translation, you want to find them all.</p>
 <p>That&#x27;s a big ambition! Even fixing one translation is worth it. But if you want to catch &#x27;em all, you need a tool.</p>
-<doc-anchor-target id="sillytavern-i18n">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#sillytavern-i18n">#</doc-anchor-trigger>
-        <span>SillyTavern-i18n</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="sillytavern-i18n">SillyTavern-i18n</h3>
 <p><a href="https://github.com/SillyTavern/SillyTavern-i18n">https://github.com/SillyTavern/SillyTavern-i18n</a></p>
 <p>Tools for working with frontend localization files.</p>
 <p>Features:</p>
@@ -716,19 +645,9 @@ openrouter.ai&quot;</li>
 <li>Use automatic Google translation to auto-populate missing values.</li>
 <li>Sort JSON files by keys.</li>
 </ul>
-<doc-anchor-target id="inbuilt-debug-functions">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#inbuilt-debug-functions">#</doc-anchor-trigger>
-        <span>Inbuilt debug functions</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="inbuilt-debug-functions">Inbuilt debug functions</h3>
 <p>These are under <i class="fa-fw fa-solid fa-user-cog"></i> <strong>User Settings</strong> &gt; <strong>Debug Menu</strong>.</p>
-<doc-anchor-target id="get-missing-translations">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#get-missing-translations">#</doc-anchor-trigger>
-        <span>Get missing translations</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="get-missing-translations">Get missing translations</h4>
 <p>Detects missing localization data in the current locale and dumps the data into the browser console. If the current
 locale is English, searches all other locales.</p>
 <p>The console will show a table of missing translations with:</p>
@@ -737,18 +656,13 @@ locale is English, searches all other locales.</p>
 <li>language: Your current language code</li>
 <li>value: The English text to translate</li>
 </ul>
-<doc-anchor-target id="apply-locale">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#apply-locale">#</doc-anchor-trigger>
-        <span>Apply locale</span>
-    </h4>
-</doc-anchor-target>
+<h4 id="apply-locale">Apply locale</h4>
 <p>Reapplies the currently selected locale to the page</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
                     <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -765,12 +679,7 @@ locale is English, searches all other locales.</p>
         </div>
     </div>
 </div>
-<doc-anchor-target id="adding-a-new-language">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#adding-a-new-language">#</doc-anchor-trigger>
-        <span>Adding a new language</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="adding-a-new-language">Adding a new language</h2>
 <p>To add support for a new language:</p>
 <ol>
 <li><p>Add your language to <code translate="no" v-pre>public/locales/lang.json</code>:</p>
@@ -784,12 +693,7 @@ locale is English, searches all other locales.</p>
 <li><p>Create <code translate="no" v-pre>public/locales/xx-xx.json</code> with your translations</p>
 </li>
 </ol>
-<doc-anchor-target id="contributing">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#contributing">#</doc-anchor-trigger>
-        <span>Contributing</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="contributing">Contributing</h2>
 <p>When your translations are ready:</p>
 <ol>
 <li>Verify your JSON file is valid</li>

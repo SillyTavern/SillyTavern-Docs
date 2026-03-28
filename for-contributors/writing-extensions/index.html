@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.2.0.826914722230">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.2.0">
+    <meta name="generator" content="Retype 4.4.0">
 
     <!-- Primary Meta Tags -->
     <title>UI Extensions | docs.ST.app</title>
@@ -25,15 +25,21 @@
     <meta property="og:site_name" content="SillyTavern Documentation">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://docs.sillytavern.app/for-contributors/writing-extensions/">
+    <meta name="twitter:title" content="UI Extensions | docs.ST.app">
+    <meta name="twitter:description" content="UI extensions expand SillyTavern's functionality by hooking into its events and API. They run in a browser context and have practically unrestricted access">
+
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.2.0.826914722230" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.2.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.2.0.826914722230" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.2.0.826914722230" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.4.0.828033847105" defer></script>
 
     <style>
         a {
@@ -93,10 +99,10 @@
             <!-- Logo -->
             <div class="flex items-center justify-between h-full py-2 md:w-75">
                 <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-xl">
+                    <a id="retype-branding-logo" href="https://docs.sillytavern.app/" class="flex items-center leading-snug text-xl">
                         <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png">
-                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png">
+                            <img class="max-h-10 dark:hidden md:inline-block" src="../../static/logo-2.png" alt="" width="43" height="40">
+                            <img class="max-h-10 hidden dark:inline-block" src="../../static/logo.png" alt="" width="43" height="40">
                         </span>
                         <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">SillyTavern Documentation</span>
                     </a>
@@ -198,18 +204,13 @@
                 <!-- Rendered if sidebar right is enabled -->
                 <div id="retype-sidebar-right-toggle"></div>
                 <!-- Page content  -->
-<doc-anchor-target id="ui-extensions" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ui-extensions">#</doc-anchor-trigger>
-        <span>UI Extensions</span>
-    </h1>
-</doc-anchor-target>
+<h1 id="ui-extensions">UI Extensions</h1>
 <p>UI extensions expand SillyTavern&#x27;s functionality by hooking into its events and API. They run in a browser context and have practically unrestricted access to the DOM, JavaScript APIs, and the SillyTavern context. Extensions can modify the UI, call internal APIs, and interact with chat data. This guide explains how to create your own extensions (JavaScript knowledge is required).</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-tip"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-tip" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-tip" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M7.90625 2.15625C4.50944 2.15625 2.15625 4.58563 2.15625 7.54688C2.15625 8.96138 2.76575 9.88281 3.57075 10.8589L3.87837 11.2226C4.19894 11.6021 4.554 12.0218 4.84581 12.4416C5.25406 13.0324 5.61775 13.7296 5.7385 14.5834C5.76728 14.8608 5.68746 15.1386 5.51579 15.3583C5.34413 15.5781 5.09399 15.7228 4.8179 15.7621C4.5418 15.8013 4.26124 15.7321 4.03512 15.5689C3.809 15.4056 3.65493 15.1612 3.60525 14.8867C3.54775 14.4814 3.37094 14.1004 3.07338 13.6692C2.8306 13.3302 2.57055 13.0039 2.29425 12.6917C2.1735 12.5479 2.04556 12.397 1.909 12.2317C1.00769 11.1406 0 9.72613 0 7.54688C0 3.32062 3.39681 0 7.90625 0C12.4157 0 15.8125 3.32062 15.8125 7.54688C15.8125 9.72613 14.8048 11.1406 13.9035 12.2317C13.7669 12.397 13.639 12.5479 13.5183 12.6903C13.2207 13.0424 12.9677 13.3414 12.7406 13.6692C12.4416 14.1004 12.2662 14.4814 12.2087 14.8867C12.1557 15.1584 12.0003 15.3994 11.7747 15.5598C11.5492 15.7202 11.2706 15.7879 10.9965 15.7488C10.7225 15.7096 10.474 15.5667 10.3023 15.3496C10.1306 15.1325 10.0489 14.8577 10.074 14.582C10.1948 13.7296 10.5584 13.0324 10.9667 12.4416C11.2585 12.0218 11.6136 11.6021 11.9341 11.2226C12.0419 11.0961 12.1454 10.9739 12.2403 10.8589C13.0468 9.88281 13.6562 8.96138 13.6562 7.54688C13.6562 4.58563 11.3031 2.15625 7.90625 2.15625ZM4.67188 17.25H11.1406C11.4266 17.25 11.7008 17.3636 11.903 17.5658C12.1052 17.768 12.2188 18.0422 12.2188 18.3281C12.2188 18.6141 12.1052 18.8883 11.903 19.0905C11.7008 19.2927 11.4266 19.4062 11.1406 19.4062H4.67188C4.38594 19.4062 4.11171 19.2927 3.90953 19.0905C3.70734 18.8883 3.59375 18.6141 3.59375 18.3281C3.59375 18.0422 3.70734 17.768 3.90953 17.5658C4.11171 17.3636 4.38594 17.25 4.67188 17.25ZM5.03125 21.9219C5.03125 21.6359 5.14484 21.3617 5.34703 21.1595C5.54921 20.9573 5.82344 20.8438 6.10938 20.8438H9.70312C9.98906 20.8438 10.2633 20.9573 10.4655 21.1595C10.6677 21.3617 10.7812 21.6359 10.7812 21.9219C10.7812 22.2078 10.6677 22.482 10.4655 22.6842C10.2633 22.8864 9.98906 23 9.70312 23H6.10938C5.82344 23 5.54921 22.8864 5.34703 22.6842C5.14484 22.482 5.03125 22.2078 5.03125 21.9219Z" />
                 </g></g>
@@ -227,12 +228,7 @@
 <li>Consider <a href="../../usage/st-script/">STscript</a> as a simpler alternative to writing a full-fledged extension.</li>
 <li>Go through the <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript">MDN Course</a> and come back when you&#x27;re done.</li>
 </ul>
-<doc-anchor-target id="extension-submissions">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#extension-submissions">#</doc-anchor-trigger>
-        <span>Extension submissions</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="extension-submissions">Extension submissions</h2>
 <p>Want to contribute your extensions to the <a href="https://github.com/SillyTavern/SillyTavern-Content">official content repository</a>? Contact us!</p>
 <p>To ensure that all extensions are safe and easy to use, we have a few requirements:</p>
 <ol>
@@ -241,23 +237,13 @@
 <li>Extensions must be well-documented. This includes a README file with installation instructions, usage examples, and a list of features.</li>
 <li>Extensions that have a server plugin requirement to function will not be accepted.</li>
 </ol>
-<doc-anchor-target id="examples">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#examples">#</doc-anchor-trigger>
-        <span>Examples</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="examples">Examples</h2>
 <p>See live examples of simple SillyTavern extensions:</p>
 <ul>
 <li><a href="https://github.com/city-unit/st-extension-example">https://github.com/city-unit/st-extension-example</a> - basic extension template. Showcases manifest creation, local script imports, adding a settings UI panel, and persistent extension settings usage.</li>
 <li><a href="https://github.com/search?q=topic%3Aextension+org%3ASillyTavern&amp;type=Repositories">https://github.com/search?q=topic%3Aextension+org%3ASillyTavern&amp;type=Repositories</a> - a list of all official SillyTavern extensions on GitHub.</li>
 </ul>
-<doc-anchor-target id="bundling">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#bundling">#</doc-anchor-trigger>
-        <span>Bundling</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="bundling">Bundling</h2>
 <p>Extensions can also utilize bundling to isolate themselves from the rest of the modules and use any dependencies from NPM, including UI frameworks like Vue, React, etc.</p>
 <ul>
 <li><a href="https://github.com/SillyTavern/Extension-WebpackTemplate">https://github.com/SillyTavern/Extension-WebpackTemplate</a> - template repository of an extension using TypeScript and Webpack (no React).</li>
@@ -288,12 +274,7 @@ export async function importFromUrl(url, what, defaultValue = null) {
 // Import a function from 'script.js' module
 const generateRaw = await importFromUrl('/script.js', 'generateRaw');</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="manifestjson">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#manifestjson">#</doc-anchor-trigger>
-        <span>manifest.json</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="manifestjson">manifest.json</h2>
 <p>Every extension must have a folder in <code translate="no" v-pre>data/&lt;user-handle&gt;/extensions</code> and a <code translate="no" v-pre>manifest.json</code> file, which contains metadata about the extension and a path to a JS script file that is the entry point of the extension.</p>
 <p>Downloadable extensions are mounted into the <code translate="no" v-pre>/scripts/extensions/third-party</code> folder when serving over HTTP, so relative imports should be used based on that. To ease local development, consider placing your extension repository in the <code translate="no" v-pre>/scripts/extensions/third-party</code> folder (the &quot;Install for all users&quot; option).</p>
 <div id="manifestjson-code-1" class="codeblock-wrapper"><doc-codeblock>
@@ -312,15 +293,18 @@ const generateRaw = await importFromUrl('/script.js', 'generateRaw');</code></pr
     &quot;minimum_client_version&quot;: &quot;1.0.0&quot;,
     &quot;i18n&quot;: {
         &quot;de-de&quot;: &quot;i18n/de-de.json&quot;
+    },
+    &quot;hooks&quot;: {
+        &quot;install&quot;: &quot;onInstall&quot;,
+        &quot;update&quot;: &quot;onUpdate&quot;,
+        &quot;delete&quot;: &quot;onDelete&quot;,
+        &quot;enable&quot;: &quot;onEnable&quot;,
+        &quot;disable&quot;: &quot;onDisable&quot;,
+        &quot;activate&quot;: &quot;onActivate&quot;
     }
 }</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="manifest-fields">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#manifest-fields">#</doc-anchor-trigger>
-        <span>Manifest fields</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="manifest-fields">Manifest fields</h3>
 <ul>
 <li><code translate="no" v-pre>display_name</code> is required. It is displayed in the &quot;Manage Extensions&quot; menu.</li>
 <li><code translate="no" v-pre>loading_order</code> is optional. A higher number loads later.</li>
@@ -332,13 +316,9 @@ const generateRaw = await importFromUrl('/script.js', 'generateRaw');</code></pr
 <li><code translate="no" v-pre>dependencies</code> is an optional array of strings specifying other <strong>extensions</strong> that this extension depends on.</li>
 <li><code translate="no" v-pre>generate_interceptor</code> is an optional string that specifies the name of a global function called on text generation requests.</li>
 <li><code translate="no" v-pre>minimum_client_version</code> is an optional string that specifies the minimum SillyTavern version required for this extension to work.</li>
+<li><code translate="no" v-pre>hooks</code> is an optional object that specifies <doc-anchor-trigger to="#lifecycle-hooks">lifecycle hook</doc-anchor-trigger> function names exported from the JS entry point module.</li>
 </ul>
-<doc-anchor-target id="dependencies">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#dependencies">#</doc-anchor-trigger>
-        <span>Dependencies</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="dependencies">Dependencies</h3>
 <p>Extensions can also depend on other SillyTavern extensions. The extension will not load if any of these dependencies are missing or disabled.</p>
 <p>Dependencies are specified by their <strong>folder name</strong> as it appears in the <code translate="no" v-pre>public/extensions</code> directory.</p>
 <p>Examples:</p>
@@ -346,29 +326,20 @@ const generateRaw = await importFromUrl('/script.js', 'generateRaw');</code></pr
 <li>Built-in extensions: <code translate="no" v-pre>&quot;vectors&quot;</code>, <code translate="no" v-pre>&quot;caption&quot;</code></li>
 <li>Third-party extensions: <code translate="no" v-pre>&quot;third-party/Extension-WebLLM&quot;</code>, <code translate="no" v-pre>&quot;third-party/Extension-Mermaid&quot;</code></li>
 </ul>
-<doc-anchor-target id="deprecated-fields">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#deprecated-fields">#</doc-anchor-trigger>
-        <span>Deprecated fields</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="deprecated-fields">Deprecated fields</h3>
 <ul>
 <li><code translate="no" v-pre>requires</code> is an optional array of strings specifying required <strong>Extras modules</strong>. The extension won&#x27;t be loaded if the connected Extras API doesn&#x27;t provide all listed modules.</li>
 <li><code translate="no" v-pre>optional</code> is an optional array of strings specifying optional <strong>Extras modules</strong>. The extension will still load if these are missing, and the extension should handle their absence gracefully.</li>
 </ul>
 <p>To check which modules are currently provided by the connected Extras API, import the <code translate="no" v-pre>modules</code> array from <code translate="no" v-pre>scripts/extensions.js</code>.</p>
-<doc-anchor-target id="scripting">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#scripting">#</doc-anchor-trigger>
-        <span>Scripting</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="using-getcontext">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#using-getcontext">#</doc-anchor-trigger>
-        <span>Using getContext</span>
-    </h3>
-</doc-anchor-target>
+<h2 id="scripting">Scripting</h2>
+<h3 id="best-practices-for-extension-initialization">Best practices for extension initialization</h3>
+<ul>
+<li>Use the <code translate="no" v-pre>activate</code> hook for synchronous setup that needs to run during SillyTavern&#x27;s loading phase while the blocking loader is active.</li>
+<li>Use the <code translate="no" v-pre>APP_INITIALIZED</code> event for setup that should run after all extensions and UI elements are loaded and set up, but while the loader is still blocking.</li>
+<li>Use the <code translate="no" v-pre>APP_READY</code> event for asynchronous setup that doesn&#x27;t need to block SillyTavern from being ready to use. It should use a timer or similar mechanism to defer handling, as the event handler will be awaited.</li>
+</ul>
+<h3 id="using-getcontext">Using getContext</h3>
 <p>The <code translate="no" v-pre>getContext()</code> function in the <code translate="no" v-pre>SillyTavern</code> global object gives you access to the SillyTavern context, which is a collection of all the main app state objects, useful functions, and utilities.</p>
 <div id="using-getcontext-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const context = SillyTavern.getContext();
@@ -384,7 +355,7 @@ context.groupId; // ID of the current group
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -397,21 +368,31 @@ context.groupId; // ID of the current group
         </div>
     </div>
 </div>
-<doc-anchor-target id="shared-libraries">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#shared-libraries">#</doc-anchor-trigger>
-        <span>Shared libraries</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="shared-libraries">Shared libraries</h3>
 <p>Most of the npm libraries used internally by the SillyTavern frontend are shared in the <code translate="no" v-pre>libs</code> property of the <code translate="no" v-pre>SillyTavern</code> global object.</p>
 <ul>
 <li><code translate="no" v-pre>lodash</code> - Utility library. <a href="https://lodash.com/">Docs</a>.</li>
-<li><code translate="no" v-pre>localforage</code> - Browser storage library. <a href="https://localforage.github.io/localForage/">Docs</a>.</li>
 <li><code translate="no" v-pre>Fuse</code> - Fuzzy search library. <a href="https://www.fusejs.io/">Docs</a>.</li>
 <li><code translate="no" v-pre>DOMPurify</code> - HTML sanitization library. <a href="https://github.com/cure53/DOMPurify">Docs</a>.</li>
+<li><code translate="no" v-pre>hljs</code> - Syntax highlighting library. <a href="https://highlightjs.org/">Docs</a>.</li>
+<li><code translate="no" v-pre>localforage</code> - Browser storage library (IndexedDB/localStorage abstraction). <a href="https://localforage.github.io/localForage/">Docs</a>.</li>
 <li><code translate="no" v-pre>Handlebars</code> - Templating library. <a href="https://handlebarsjs.com/">Docs</a>.</li>
-<li><code translate="no" v-pre>moment</code> - Date/time manipulation library. <a href="http://momentjs.com/">Docs</a>.</li>
+<li><code translate="no" v-pre>css</code> - CSS parsing/stringification tools. <a href="https://github.com/nicolo-ribaudo/css-tools">Docs</a>.</li>
+<li><code translate="no" v-pre>Bowser</code> - Browser/platform detection library. <a href="https://github.com/bowser-js/bowser">Docs</a>.</li>
+<li><code translate="no" v-pre>DiffMatchPatch</code> - Text diff, match, and patch library. <a href="https://github.com/google/diff-match-patch">Docs</a>.</li>
+<li><code translate="no" v-pre>Readability</code> / <code translate="no" v-pre>isProbablyReaderable</code> - Mozilla&#x27;s article extraction library. <a href="https://github.com/mozilla/readability">Docs</a>.</li>
+<li><code translate="no" v-pre>SVGInject</code> - Inline SVG injection library. <a href="https://github.com/nicolo-ribaudo/svg-inject">Docs</a>.</li>
 <li><code translate="no" v-pre>showdown</code> - Markdown converter library. <a href="https://showdownjs.com/">Docs</a>.</li>
+<li><code translate="no" v-pre>moment</code> - Date/time manipulation library. <a href="http://momentjs.com/">Docs</a>.</li>
+<li><code translate="no" v-pre>seedrandom</code> - Seeded random number generator. <a href="https://github.com/davidbau/seedrandom">Docs</a>.</li>
+<li><code translate="no" v-pre>Popper</code> - Tooltip/popover positioning engine. <a href="https://popper.js.org/">Docs</a>.</li>
+<li><code translate="no" v-pre>droll</code> - Dice rolling library. <a href="https://github.com/thebinarypenguin/droll">Docs</a>.</li>
+<li><code translate="no" v-pre>morphdom</code> - Fast DOM diffing/patching library. <a href="https://github.com/patrick-steele-iber/morphdom">Docs</a>.</li>
+<li><code translate="no" v-pre>slideToggle</code> - Vanilla JS slide toggle animation. <a href="https://github.com/nicolo-ribaudo/slidetoggle">Docs</a>.</li>
+<li><code translate="no" v-pre>chalk</code> - Terminal string styling (limited use in browser). <a href="https://github.com/chalk/chalk">Docs</a>.</li>
+<li><code translate="no" v-pre>yaml</code> - YAML parser and stringifier. <a href="https://eemeli.org/yaml/">Docs</a>.</li>
+<li><code translate="no" v-pre>chevrotain</code> - Parser building toolkit. <a href="https://chevrotain.io/">Docs</a>.</li>
+<li><code translate="no" v-pre>gzipSync</code> / <code translate="no" v-pre>gzip</code> - Fast compression utilities from fflate. <a href="https://github.com/101arrowz/fflate">Docs</a>.</li>
 </ul>
 <p>You can find the full list of exported libraries in the <a href="https://github.com/SillyTavern/SillyTavern/blob/staging/public/lib.js">SillyTavern source code</a>.</p>
 <p><strong>Example:</strong> Using the DOMPurify library.</p>
@@ -420,12 +401,7 @@ context.groupId; // ID of the current group
 
 const sanitizedHtml = DOMPurify.sanitize('&lt;script&gt;&quot;dirty HTML&quot;&lt;/script&gt;');</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="typescript-notice">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#typescript-notice">#</doc-anchor-trigger>
-        <span>TypeScript notice</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="typescript-notice">TypeScript notice</h3>
 <p>If you want access to autocomplete for all methods in the <code translate="no" v-pre>SillyTavern</code> global object (and you probably do), including <code translate="no" v-pre>getContext()</code> and <code translate="no" v-pre>libs</code>, you should add a TypeScript <code translate="no" v-pre>.d.ts</code> module declaration. This declaration should import global types from SillyTavern&#x27;s source, depending on your extension&#x27;s location. Below is an example that works for both installation types: &quot;all users&quot; and &quot;current user.&quot;</p>
 <p><strong>global.d.ts</strong> - place this file in the root of your extension directory (next to <code translate="no" v-pre>manifest.json</code>):</p>
 <div id="typescript-notice-code-1" class="codeblock-wrapper"><doc-codeblock>
@@ -441,17 +417,61 @@ declare global {
     // Add global type declarations here
 }</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="importing-from-other-files">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#importing-from-other-files">#</doc-anchor-trigger>
-        <span>Importing from other files</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="html-templates">HTML templates</h3>
+<p>Extensions can use Handlebars HTML templates to build their UI. Place <code translate="no" v-pre>.html</code> template files in your extension&#x27;s directory and render them using the <code translate="no" v-pre>renderExtensionTemplateAsync()</code> function from <code translate="no" v-pre>getContext()</code>.</p>
+<p>The function takes your extension&#x27;s folder name, the template file name (without <code translate="no" v-pre>.html</code>), and an optional data object for Handlebars template variables. The returned HTML is automatically sanitized with DOMPurify and localized with <code translate="no" v-pre>data-i18n</code> attributes.</p>
+<div id="html-templates-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { renderExtensionTemplateAsync } = SillyTavern.getContext();
+
+// Renders 'third-party/my-extension/settings.html' with the given data
+const settingsHtml = await renderExtensionTemplateAsync(
+    'third-party/my-extension',
+    'settings',
+    { title: 'My Extension', version: '1.0', defaultValue: 'test' }
+);
+
+// Append to the extensions settings panel
+$('#extensions_settings2').append(settingsHtml);</code></pre>
+</doc-codeblock></div>
+<p><strong>Template file example</strong> (<code translate="no" v-pre>settings.html</code>):</p>
+<div id="html-templates-code-2" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-markup"><code v-pre class="language-markup">&lt;div class=&quot;my-extension-settings&quot;&gt;
+    &lt;div class=&quot;inline-drawer&quot;&gt;
+        &lt;div class=&quot;inline-drawer-toggle inline-drawer-header&quot;&gt;
+            &lt;b data-i18n=&quot;{{title}}&quot;&gt;{{title}}&lt;/b&gt;
+            &lt;div class=&quot;inline-drawer-icon fa-solid fa-circle-chevron-down down&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;inline-drawer-content&quot;&gt;
+            &lt;label for=&quot;my_ext_option&quot;&gt;
+                &lt;span data-i18n=&quot;Option&quot;&gt;Option&lt;/span&gt;
+            &lt;/label&gt;
+            &lt;input id=&quot;my_ext_option&quot; type=&quot;text&quot; value=&quot;{{defaultValue}}&quot; /&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</doc-codeblock></div>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p><code translate="no" v-pre>renderExtensionTemplate()</code> (synchronous) is deprecated. Always use <code translate="no" v-pre>renderExtensionTemplateAsync()</code> instead.</p>
+        </div>
+    </div>
+</div>
+<h3 id="importing-from-other-files">Importing from other files</h3>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
                     <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -474,18 +494,8 @@ async function handleMessage(data) {
     // ...
 }</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="state-management">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#state-management">#</doc-anchor-trigger>
-        <span>State management</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="persistent-settings">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#persistent-settings">#</doc-anchor-trigger>
-        <span>Persistent settings</span>
-    </h3>
-</doc-anchor-target>
+<h2 id="state-management">State management</h2>
+<h3 id="persistent-settings">Persistent settings</h3>
 <p>When an extension needs to persist its state, it can use the <code translate="no" v-pre>extensionSettings</code> object from the <code translate="no" v-pre>getContext()</code> function to store and retrieve data. An extension can store any JSON-serializable data in the settings object and must use a unique key to avoid conflicts with other extensions.</p>
 <p>To persist the settings, use the <code translate="no" v-pre>saveSettingsDebounced()</code> function, which will save the settings to the server.</p>
 <div id="persistent-settings-code-1" class="codeblock-wrapper"><doc-codeblock>
@@ -525,19 +535,14 @@ settings.option1 = 'new value';
 // Save the settings
 saveSettingsDebounced();</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="chat-metadata">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#chat-metadata">#</doc-anchor-trigger>
-        <span>Chat metadata</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="chat-metadata">Chat metadata</h3>
 <p>To bind some data to a specific chat, you can use the <code translate="no" v-pre>chatMetadata</code> object from the <code translate="no" v-pre>getContext()</code> function. This object allows you to store arbitrary data associated with a chat, which can be useful for storing extension-specific state.</p>
 <p>To persist the metadata, use the <code translate="no" v-pre>saveMetadata()</code> function, which will save the metadata to the server.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
                     <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -565,7 +570,7 @@ await saveMetadata();</code></pre>
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-tip"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-tip" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-tip" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M7.90625 2.15625C4.50944 2.15625 2.15625 4.58563 2.15625 7.54688C2.15625 8.96138 2.76575 9.88281 3.57075 10.8589L3.87837 11.2226C4.19894 11.6021 4.554 12.0218 4.84581 12.4416C5.25406 13.0324 5.61775 13.7296 5.7385 14.5834C5.76728 14.8608 5.68746 15.1386 5.51579 15.3583C5.34413 15.5781 5.09399 15.7228 4.8179 15.7621C4.5418 15.8013 4.26124 15.7321 4.03512 15.5689C3.809 15.4056 3.65493 15.1612 3.60525 14.8867C3.54775 14.4814 3.37094 14.1004 3.07338 13.6692C2.8306 13.3302 2.57055 13.0039 2.29425 12.6917C2.1735 12.5479 2.04556 12.397 1.909 12.2317C1.00769 11.1406 0 9.72613 0 7.54688C0 3.32062 3.39681 0 7.90625 0C12.4157 0 15.8125 3.32062 15.8125 7.54688C15.8125 9.72613 14.8048 11.1406 13.9035 12.2317C13.7669 12.397 13.639 12.5479 13.5183 12.6903C13.2207 13.0424 12.9677 13.3414 12.7406 13.6692C12.4416 14.1004 12.2662 14.4814 12.2087 14.8867C12.1557 15.1584 12.0003 15.3994 11.7747 15.5598C11.5492 15.7202 11.2706 15.7879 10.9965 15.7488C10.7225 15.7096 10.474 15.5667 10.3023 15.3496C10.1306 15.1325 10.0489 14.8577 10.074 14.582C10.1948 13.7296 10.5584 13.0324 10.9667 12.4416C11.2585 12.0218 11.6136 11.6021 11.9341 11.2226C12.0419 11.0961 12.1454 10.9739 12.2403 10.8589C13.0468 9.88281 13.6562 8.96138 13.6562 7.54688C13.6562 4.58563 11.3031 2.15625 7.90625 2.15625ZM4.67188 17.25H11.1406C11.4266 17.25 11.7008 17.3636 11.903 17.5658C12.1052 17.768 12.2188 18.0422 12.2188 18.3281C12.2188 18.6141 12.1052 18.8883 11.903 19.0905C11.7008 19.2927 11.4266 19.4062 11.1406 19.4062H4.67188C4.38594 19.4062 4.11171 19.2927 3.90953 19.0905C3.70734 18.8883 3.59375 18.6141 3.59375 18.3281C3.59375 18.0422 3.70734 17.768 3.90953 17.5658C4.11171 17.3636 4.38594 17.25 4.67188 17.25ZM5.03125 21.9219C5.03125 21.6359 5.14484 21.3617 5.34703 21.1595C5.54921 20.9573 5.82344 20.8438 6.10938 20.8438H9.70312C9.98906 20.8438 10.2633 20.9573 10.4655 21.1595C10.6677 21.3617 10.7812 21.6359 10.7812 21.9219C10.7812 22.2078 10.6677 22.482 10.4655 22.6842C10.2633 22.8864 9.98906 23 9.70312 23H6.10938C5.82344 23 5.54921 22.8864 5.34703 22.6842C5.14484 22.482 5.03125 22.2078 5.03125 21.9219Z" />
                 </g></g>
@@ -576,12 +581,7 @@ await saveMetadata();</code></pre>
         </div>
     </div>
 </div>
-<doc-anchor-target id="character-cards">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#character-cards">#</doc-anchor-trigger>
-        <span>Character cards</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="character-cards">Character cards</h3>
 <p>SillyTavern fully supports <a href="https://github.com/malfoyslastname/character-card-spec-v2/blob/main/spec_v2.md">Character Cards V2 Specification</a>, which allows to store arbitrary data in the character card JSON data.</p>
 <p>This is useful for extensions that need to store additional data associated with the character and make it shareable when exporting the character card.</p>
 <p>To write data to the character card <a href="https://github.com/malfoyslastname/character-card-spec-v2/blob/main/spec_v2.md#extensions">extensions</a> data field, use the <code translate="no" v-pre>writeExtensionField</code> function from the <code translate="no" v-pre>getContext()</code> function. This function takes a character ID, a string key, and a value to write. The value must be JSON-serializable.</p>
@@ -589,7 +589,7 @@ await saveMetadata();</code></pre>
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
                     <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -618,12 +618,7 @@ const character = SillyTavern.getContext().characters[characterId];
 // The data is stored in the `extensions` object of the character's data
 const myData = character.data?.extensions?.my_extension_key;</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="settings-presets">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#settings-presets">#</doc-anchor-trigger>
-        <span>Settings presets</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="settings-presets">Settings presets</h3>
 <p>Arbitrary JSON data can be stored in the settings presets of the main API types. It will be exported and imported along with the preset JSON, so you can use it to store extension-specific settings for the preset. The following API types support data extensions in settings presets:</p>
 <ul>
 <li>Chat Completion</li>
@@ -653,7 +648,7 @@ const value = pm.readPresetExtensionField({ path: 'hello' });</code></pre>
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-tip"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-tip" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-tip" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M7.90625 2.15625C4.50944 2.15625 2.15625 4.58563 2.15625 7.54688C2.15625 8.96138 2.76575 9.88281 3.57075 10.8589L3.87837 11.2226C4.19894 11.6021 4.554 12.0218 4.84581 12.4416C5.25406 13.0324 5.61775 13.7296 5.7385 14.5834C5.76728 14.8608 5.68746 15.1386 5.51579 15.3583C5.34413 15.5781 5.09399 15.7228 4.8179 15.7621C4.5418 15.8013 4.26124 15.7321 4.03512 15.5689C3.809 15.4056 3.65493 15.1612 3.60525 14.8867C3.54775 14.4814 3.37094 14.1004 3.07338 13.6692C2.8306 13.3302 2.57055 13.0039 2.29425 12.6917C2.1735 12.5479 2.04556 12.397 1.909 12.2317C1.00769 11.1406 0 9.72613 0 7.54688C0 3.32062 3.39681 0 7.90625 0C12.4157 0 15.8125 3.32062 15.8125 7.54688C15.8125 9.72613 14.8048 11.1406 13.9035 12.2317C13.7669 12.397 13.639 12.5479 13.5183 12.6903C13.2207 13.0424 12.9677 13.3414 12.7406 13.6692C12.4416 14.1004 12.2662 14.4814 12.2087 14.8867C12.1557 15.1584 12.0003 15.3994 11.7747 15.5598C11.5492 15.7202 11.2706 15.7879 10.9965 15.7488C10.7225 15.7096 10.474 15.5667 10.3023 15.3496C10.1306 15.1325 10.0489 14.8577 10.074 14.582C10.1948 13.7296 10.5584 13.0324 10.9667 12.4416C11.2585 12.0218 11.6136 11.6021 11.9341 11.2226C12.0419 11.0961 12.1454 10.9739 12.2403 10.8589C13.0468 9.88281 13.6562 8.96138 13.6562 7.54688C13.6562 4.58563 11.3031 2.15625 7.90625 2.15625ZM4.67188 17.25H11.1406C11.4266 17.25 11.7008 17.3636 11.903 17.5658C12.1052 17.768 12.2188 18.0422 12.2188 18.3281C12.2188 18.6141 12.1052 18.8883 11.903 19.0905C11.7008 19.2927 11.4266 19.4062 11.1406 19.4062H4.67188C4.38594 19.4062 4.11171 19.2927 3.90953 19.0905C3.70734 18.8883 3.59375 18.6141 3.59375 18.3281C3.59375 18.0422 3.70734 17.768 3.90953 17.5658C4.11171 17.3636 4.38594 17.25 4.67188 17.25ZM5.03125 21.9219C5.03125 21.6359 5.14484 21.3617 5.34703 21.1595C5.54921 20.9573 5.82344 20.8438 6.10938 20.8438H9.70312C9.98906 20.8438 10.2633 20.9573 10.4655 21.1595C10.6677 21.3617 10.7812 21.6359 10.7812 21.9219C10.7812 22.2078 10.6677 22.482 10.4655 22.6842C10.2633 22.8864 9.98906 23 9.70312 23H6.10938C5.82344 23 5.54921 22.8864 5.34703 22.6842C5.14484 22.482 5.03125 22.2078 5.03125 21.9219Z" />
                 </g></g>
@@ -664,17 +659,12 @@ const value = pm.readPresetExtensionField({ path: 'hello' });</code></pre>
         </div>
     </div>
 </div>
-<doc-anchor-target id="internationalization">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#internationalization">#</doc-anchor-trigger>
-        <span>Internationalization</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="internationalization">Internationalization</h2>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -689,23 +679,13 @@ const value = pm.readPresetExtensionField({ path: 'hello' });</code></pre>
 </div>
 <p>Extensions can provide additional localized strings for use with the <code translate="no" v-pre>t</code>, <code translate="no" v-pre>translate</code> functions and the <code translate="no" v-pre>data-i18n</code> attribute in HTML templates.</p>
 <p>See the list of supported locales here (<code translate="no" v-pre>lang</code> key): <a href="https://github.com/SillyTavern/SillyTavern/blob/release/public/locales/lang.json">https://github.com/SillyTavern/SillyTavern/blob/release/public/locales/lang.json</a></p>
-<doc-anchor-target id="direct-addlocaledata-call">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#direct-addlocaledata-call">#</doc-anchor-trigger>
-        <span>Direct <code translate="no" v-pre>addLocaleData</code> call</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="direct-addlocaledata-call">Direct <code translate="no" v-pre>addLocaleData</code> call</h3>
 <p>Pass a locale code and an object with the translations to the <code translate="no" v-pre>addLocaleData</code> function. Overrides of existing keys are <em>NOT</em> allowed. If the passed locale code is not a currently chosen locale, the data will be silently ignored.</p>
 <div id="direct-addlocaledata-call-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-javascript"><code v-pre class="language-javascript">SillyTavern.getContext().addLocaleData('fr-fr', { 'Hello': 'Bonjour' });
 SillyTavern.getContext().addLocaleData('de-de', { 'Hello': 'Hallo' });</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="via-the-extension-manifest">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#via-the-extension-manifest">#</doc-anchor-trigger>
-        <span>Via the extension manifest</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="via-the-extension-manifest">Via the extension manifest</h3>
 <p>Add an i18n object with a list of supported locales and their corresponding JSON file paths (relative to your extension&#x27;s directory) to the manifest.</p>
 <div id="via-the-extension-manifest-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-json"><code v-pre class="language-json">{
@@ -718,12 +698,7 @@ SillyTavern.getContext().addLocaleData('de-de', { 'Hello': 'Hallo' });</code></p
   }
 }</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="registering-slash-commands-new-way">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#registering-slash-commands-new-way">#</doc-anchor-trigger>
-        <span>Registering slash commands (new way)</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="registering-slash-commands-new-way">Registering slash commands (new way)</h2>
 <p>While <code translate="no" v-pre>registerSlashCommand</code> still exists for backward compatibility, new slash commands should now be registered through <code translate="no" v-pre>SlashCommandParser.addCommandObject()</code> to provide extended details about the command and its parameters to the parser (and, in turn, to autocomplete and the command help).</p>
 <div id="registering-slash-commands-new-way-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-javascript"><code v-pre class="language-javascript">SlashCommandParser.addCommandObject(SlashCommand.fromProps({ name: 'repeat',
@@ -775,18 +750,8 @@ SillyTavern.getContext().addLocaleData('de-de', { 'Hello': 'Hallo' });</code></p
 }));</code></pre>
 </doc-codeblock></div>
 <p>All registered commands can be used in <a href="../../usage/st-script/">STscript</a> in any possible way.</p>
-<doc-anchor-target id="events">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#events">#</doc-anchor-trigger>
-        <span>Events</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="listening-to-events">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#listening-to-events">#</doc-anchor-trigger>
-        <span>Listening to events</span>
-    </h3>
-</doc-anchor-target>
+<h2 id="events">Events</h2>
+<h3 id="listening-to-events">Listening to events</h3>
 <p>Use <code translate="no" v-pre>eventSource.on(eventType, eventHandler)</code> to listen for events:</p>
 <div id="listening-to-events-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { eventSource, event_types } = SillyTavern.getContext();
@@ -798,25 +763,76 @@ function handleIncomingMessage(data) {
 }</code></pre>
 </doc-codeblock></div>
 <p>The main event types are:</p>
+<p><strong>App lifecycle:</strong></p>
 <ul>
 <li><code translate="no" v-pre>APP_INITIALIZED</code>: the app is initialized and close to being ready, but the loader is still visible. UI modifications can be done here. It will auto-fire every time a new listener is attached after the app is initialized.</li>
 <li><code translate="no" v-pre>APP_READY</code>: the app is fully loaded and ready to use. It will auto-fire every time a new listener is attached after the app is ready.</li>
-<li><code translate="no" v-pre>MESSAGE_RECEIVED</code>: the LLM message is generated and recorded into the <code translate="no" v-pre>chat</code> object but not yet rendered in the UI.</li>
+</ul>
+<p><strong>Messages:</strong></p>
+<ul>
 <li><code translate="no" v-pre>MESSAGE_SENT</code>: the message is sent by the user and recorded into the <code translate="no" v-pre>chat</code> object but not yet rendered in the UI.</li>
+<li><code translate="no" v-pre>MESSAGE_RECEIVED</code>: the LLM message is generated and recorded into the <code translate="no" v-pre>chat</code> object but not yet rendered in the UI.</li>
 <li><code translate="no" v-pre>USER_MESSAGE_RENDERED</code>: the message sent by a user is rendered in the UI.</li>
 <li><code translate="no" v-pre>CHARACTER_MESSAGE_RENDERED</code>: the generated LLM message is rendered in the UI.</li>
-<li><code translate="no" v-pre>CHAT_CHANGED</code>: the chat has been switched (e.g., switched to another character, or another chat was loaded).</li>
+<li><code translate="no" v-pre>MESSAGE_EDITED</code>: a message has been edited by the user.</li>
+<li><code translate="no" v-pre>MESSAGE_DELETED</code>: a message has been deleted.</li>
+<li><code translate="no" v-pre>MESSAGE_SWIPED</code>: a message swipe has been triggered.</li>
+<li><code translate="no" v-pre>STREAM_TOKEN_RECEIVED</code>: a new token was received during streaming generation.</li>
+</ul>
+<p><strong>Generation:</strong></p>
+<ul>
 <li><code translate="no" v-pre>GENERATION_AFTER_COMMANDS</code>: the generation is about to start after processing slash commands.</li>
+<li><code translate="no" v-pre>GENERATION_STARTED</code>: the generation has started.</li>
 <li><code translate="no" v-pre>GENERATION_STOPPED</code>: the generation was stopped by the user.</li>
 <li><code translate="no" v-pre>GENERATION_ENDED</code>: the generation has been completed or has errored out.</li>
-<li><code translate="no" v-pre>SETTINGS_UPDATED</code>: the application settings have been updated.</li>
 </ul>
-<p>The rest can be found <a href="https://github.com/SillyTavern/SillyTavern/blob/staging/public/scripts/events.js">in the source</a>.</p>
+<p><strong>Chat:</strong></p>
+<ul>
+<li><code translate="no" v-pre>CHAT_CHANGED</code>: the chat has been switched (e.g., switched to another character, or another chat was loaded).</li>
+<li><code translate="no" v-pre>CHAT_CREATED</code>: a new chat has been created.</li>
+<li><code translate="no" v-pre>CHAT_DELETED</code>: a chat has been deleted.</li>
+</ul>
+<p><strong>Characters:</strong></p>
+<ul>
+<li><code translate="no" v-pre>CHARACTER_EDITED</code>: a character&#x27;s data has been changed.</li>
+<li><code translate="no" v-pre>CHARACTER_DELETED</code>: a character has been deleted.</li>
+<li><code translate="no" v-pre>CHARACTER_DUPLICATED</code>: a character has been duplicated.</li>
+</ul>
+<p><strong>Persona:</strong></p>
+<ul>
+<li><code translate="no" v-pre>PERSONA_CHANGED</code>: the active persona has been changed.</li>
+</ul>
+<p><strong>Settings and presets:</strong></p>
+<ul>
+<li><code translate="no" v-pre>SETTINGS_UPDATED</code>: the application settings have been updated.</li>
+<li><code translate="no" v-pre>PRESET_CHANGED</code>: the active preset has been changed.</li>
+<li><code translate="no" v-pre>MAIN_API_CHANGED</code>: the main API type has been switched.</li>
+<li><code translate="no" v-pre>CHATCOMPLETION_SOURCE_CHANGED</code>: the chat completion source has changed.</li>
+<li><code translate="no" v-pre>CHATCOMPLETION_MODEL_CHANGED</code>: the chat completion model has changed.</li>
+<li><code translate="no" v-pre>CONNECTION_PROFILE_LOADED</code>: a connection profile has been loaded.</li>
+</ul>
+<p><strong>World Info:</strong></p>
+<ul>
+<li><code translate="no" v-pre>WORLDINFO_UPDATED</code>: world info data has been updated.</li>
+<li><code translate="no" v-pre>WORLDINFO_SETTINGS_UPDATED</code>: world info settings have been changed.</li>
+</ul>
+<p><strong>Tool calling:</strong></p>
+<ul>
+<li><code translate="no" v-pre>TOOL_CALLS_PERFORMED</code>: tool calls have been executed.</li>
+<li><code translate="no" v-pre>TOOL_CALLS_RENDERED</code>: tool call results have been rendered in the chat.</li>
+</ul>
+<p><strong>Text-to-Speech:</strong></p>
+<ul>
+<li><code translate="no" v-pre>TTS_JOB_STARTED</code>: a TTS job has started.</li>
+<li><code translate="no" v-pre>TTS_AUDIO_READY</code>: TTS audio data is ready to be played.</li>
+<li><code translate="no" v-pre>TTS_JOB_COMPLETE</code>: a TTS job has been completed.</li>
+</ul>
+<p>The full list of event types can be found <a href="https://github.com/SillyTavern/SillyTavern/blob/staging/public/scripts/events.js">in the source</a>.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -830,12 +846,7 @@ function handleIncomingMessage(data) {
         </div>
     </div>
 </div>
-<doc-anchor-target id="emitting-events">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#emitting-events">#</doc-anchor-trigger>
-        <span>Emitting events</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="emitting-events">Emitting events</h3>
 <p>You can produce any application events from extensions, including custom events, by calling <code translate="no" v-pre>eventSource.emit(eventType, ...eventData)</code>:</p>
 <div id="emitting-events-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { eventSource } = SillyTavern.getContext();
@@ -846,20 +857,10 @@ const eventType = 'myCustomEvent';
 // Use `await` to ensure all event handlers complete before continuing execution.
 await eventSource.emit(eventType, { data: 'custom event data' });</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="prompt-interceptors">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#prompt-interceptors">#</doc-anchor-trigger>
-        <span>Prompt Interceptors</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="prompt-interceptors">Prompt Interceptors</h2>
 <p>Prompt Interceptors provide a way for extensions to perform any activity such as modifying the chat data, adding injections, or aborting the generation before a text generation request is made.</p>
 <p>Interceptors from different extensions are run sequentially. The order is determined by the <code translate="no" v-pre>loading_order</code> field in their respective <code translate="no" v-pre>manifest.json</code> files. Extensions with lower <code translate="no" v-pre>loading_order</code> values run earlier. If <code translate="no" v-pre>loading_order</code> is not specified, <code translate="no" v-pre>display_name</code> is used as a fallback. If neither is specified, the order is undefined.</p>
-<doc-anchor-target id="registering-an-interceptor">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#registering-an-interceptor">#</doc-anchor-trigger>
-        <span>Registering an Interceptor</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="registering-an-interceptor">Registering an Interceptor</h3>
 <p>To define a prompt interceptor, add a <code translate="no" v-pre>generate_interceptor</code> field to your extension&#x27;s <code translate="no" v-pre>manifest.json</code> file. The value should be the name of a global function that will be called by SillyTavern.</p>
 <div id="registering-an-interceptor-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-json"><code v-pre class="language-json">{
@@ -869,12 +870,7 @@ await eventSource.emit(eventType, { data: 'custom event data' });</code></pre>
     // ... other manifest properties
 }</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="interceptor-function">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#interceptor-function">#</doc-anchor-trigger>
-        <span>Interceptor Function</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="interceptor-function">Interceptor Function</h3>
 <p>The <code translate="no" v-pre>generate_interceptor</code> function is a global function that will be called upon generation requests that are not dry runs. It must be defined in the global scope (e.g., <code translate="no" v-pre>globalThis.myCustomInterceptorFunction = async function(...) { ... }</code>) and can return a <code translate="no" v-pre>Promise</code> if it needs to perform any asynchronous operations.</p>
 <p>The interceptor function receives the following arguments:</p>
 <ul>
@@ -897,19 +893,118 @@ await eventSource.emit(eventType, { data: 'custom event data' });</code></pre>
     chat.splice(chat.length - 1, 0, systemNote);
 }</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="generating-text">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#generating-text">#</doc-anchor-trigger>
-        <span>Generating text</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="lifecycle-hooks">Lifecycle Hooks</h2>
+<p>Extensions can define lifecycle hooks in <code translate="no" v-pre>manifest.json</code> that are called at specific points in the extension&#x27;s lifecycle. Each hook maps to an <strong>exported function</strong> from the extension&#x27;s JS entry point module (the file specified in the <code translate="no" v-pre>js</code> field).</p>
+<p>All hooks are optional. Hook functions can return a <code translate="no" v-pre>Promise</code> that will be awaited (with a 5-second timeout). If a hook exceeds the timeout, a warning is logged and execution continues. Errors in hooks are caught and logged without blocking the operation.</p>
+<h3 id="available-hooks">Available hooks</h3>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Hook</th>
+<th>When it&#x27;s called</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>activate</code></td>
+<td>When the extension is successfully activated during page load</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>install</code></td>
+<td>After the extension is installed and its settings are loaded</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>update</code></td>
+<td>After a successful extension update (before the reload toast)</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>delete</code></td>
+<td>Before the extension is deleted from the server</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>enable</code></td>
+<td>Before the extension is enabled and settings are saved</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>disable</code></td>
+<td>Before the extension is disabled and settings are saved</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="manifest-configuration">Manifest configuration</h3>
+<p>Add a <code translate="no" v-pre>hooks</code> object to your <code translate="no" v-pre>manifest.json</code> mapping hook names to exported function names:</p>
+<div id="manifest-configuration-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-json"><code v-pre class="language-json">{
+    &quot;display_name&quot;: &quot;My Extension&quot;,
+    &quot;js&quot;: &quot;index.js&quot;,
+    // Other fields here...
+    &quot;hooks&quot;: {
+        &quot;install&quot;: &quot;onInstall&quot;,
+        &quot;update&quot;: &quot;onUpdate&quot;,
+        &quot;delete&quot;: &quot;onDelete&quot;,
+        &quot;enable&quot;: &quot;onEnable&quot;,
+        &quot;disable&quot;: &quot;onDisable&quot;,
+        &quot;activate&quot;: &quot;onActivate&quot;
+    }
+}</code></pre>
+</doc-codeblock></div>
+<p>The names can be freely chosen, as long as the are valid JS function names.<br />
+Any numer of hooks can be configured, you do not have to fill out and implement all of them.</p>
+<h3 id="implementation">Implementation</h3>
+<p>Export the hook functions from your main JS entry point. Each function receives no arguments and can optionally return a <code translate="no" v-pre>Promise</code>:</p>
+<div id="implementation-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">// index.js - your extension's entry point
+
+export async function onInstall() {
+    console.log('Extension installed! Performing first-time setup...');
+    // e.g., initialize default data, create storage entries
+}
+
+export async function onActivate() {
+    console.log('Extension activated during page load');
+}
+
+export async function onUpdate() {
+    console.log('Extension updated! Running migrations...');
+    // e.g., migrate data from old format to new format
+}
+
+export async function onDelete() {
+    console.log('Extension about to be deleted. Cleaning up...');
+    // e.g., remove stored data, clean up localStorage
+    const { localforage } = SillyTavern.libs;
+    await localforage.removeItem('my_extension_data');
+}
+
+export function onEnable() {
+    console.log('Extension enabled');
+}
+
+export function onDisable() {
+    console.log('Extension disabled');
+}</code></pre>
+</doc-codeblock></div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Hook functions have a <strong>5-second timeout</strong>. If your hook takes longer, execution will continue and a warning will be logged. Keep hook logic fast and lightweight.</p>
+        </div>
+    </div>
+</div>
+<h2 id="generating-text">Generating text</h2>
 <p>SillyTavern provides several functions to generate text in different contexts using the currently chosen LLM API. These functions allow you to generate text in the context of a chat, raw generation without any context, or with structured outputs.</p>
-<doc-anchor-target id="within-a-chat-context">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#within-a-chat-context">#</doc-anchor-trigger>
-        <span>Within a chat context</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="within-a-chat-context">Within a chat context</h3>
 <p>The <code translate="no" v-pre>generateQuietPrompt()</code> function is used to generate text in the context of a chat with an added &quot;quiet&quot; prompt (post-history instruction) in the background (the output is not rendered in the UI). This is useful for generating text without interrupting the user experience while also keeping the relevant chat and character data intact, such as generating a summary or an image prompt.</p>
 <div id="within-a-chat-context-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { generateQuietPrompt } = SillyTavern.getContext();
@@ -920,12 +1015,7 @@ const result = await generateQuietPrompt({
     quietPrompt,
 });</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="raw-generation">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#raw-generation">#</doc-anchor-trigger>
-        <span>Raw generation</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="raw-generation">Raw generation</h3>
 <p>The <code translate="no" v-pre>generateRaw()</code> function is used to generate text without any chat context. It is useful when you want to fully control the prompt-building process.</p>
 <p>It accepts a <code translate="no" v-pre>prompt</code> as a Text Completion string or an array of Chat Completion objects, constructing the request with an appropriate format depending on the selected API type, e.g., converting between chat/text modes, applying instruct formatting, etc. You can also pass an additional <code translate="no" v-pre>systemPrompt</code> and a <code translate="no" v-pre>prefill</code> to the function for even more control over the generation process.</p>
 <div id="raw-generation-code-1" class="codeblock-wrapper"><doc-codeblock>
@@ -955,17 +1045,12 @@ const result = await generateRaw({
     prefill,
 });</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="structured-outputs">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#structured-outputs">#</doc-anchor-trigger>
-        <span>Structured Outputs</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="structured-outputs">Structured Outputs</h3>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -984,7 +1069,7 @@ const result = await generateRaw({
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
                     <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -1043,49 +1128,341 @@ const quietResult = await generateQuietPrompt({
     jsonSchema,
 });</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="registering-custom-macros">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#registering-custom-macros">#</doc-anchor-trigger>
-        <span>Registering custom macros</span>
-    </h2>
-</doc-anchor-target>
+<h2 id="registering-custom-macros">Registering custom macros</h2>
 <p>You can register custom macros that can be used anywhere where macro substitutions are supported, e.g. in the character card fields, STscript commands, prompt templates, etc.</p>
-<p>To register a macro, use the <code translate="no" v-pre>registerMacro()</code> function from the <code translate="no" v-pre>SillyTavern.getContext()</code> object. The function accepts a macro name that should be a unique string, and a string or a function that returns a string. The function will be called with a unique <code translate="no" v-pre>nonce</code> string that will be different between each <code translate="no" v-pre>substituteParams</code> call.</p>
-<div id="registering-custom-macros-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { registerMacro } = SillyTavern.getContext();
+<h3 id="new-macro-system">New macro system</h3>
+<p>The recommended way to register macros is through the <code translate="no" v-pre>macros.register()</code> function available via <code translate="no" v-pre>SillyTavern.getContext()</code>. This system supports arguments, categories, descriptions, and rich documentation metadata.</p>
+<div id="new-macro-system-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { macros } = SillyTavern.getContext();
 
-// Simple string macro
-registerMacro('fizz', 'buzz');
-// Function macro
-registerMacro('tomorrow', () =&gt; {
-    return new Date(Date.now() + 24 * 60 * 60 * 1000).toLocaleDateString();
+// Simple macro with a handler function
+macros.register('tomorrow', {
+    description: 'Returns tomorrow\'s date',
+    handler: () =&gt; {
+        return new Date(Date.now() + 24 * 60 * 60 * 1000).toLocaleDateString();
+    },
+});
+
+// Macro with unnamed arguments and a category
+macros.register('greet', {
+    description: 'Generates a greeting for the given name',
+    category: macros.category.UTILITY,
+    unnamedArgs: [
+        { name: 'name', description: 'The name to greet' },
+    ],
+    handler: ({ unnamedArgs }) =&gt; {
+        const [name] = unnamedArgs;
+        return `Hello, ${name}!`;
+    },
 });</code></pre>
 </doc-codeblock></div>
-<p>When a custom macro is no longer needed, remove it using the <code translate="no" v-pre>unregisterMacro()</code> function:</p>
-<div id="registering-custom-macros-code-2" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { unregisterMacro } = SillyTavern.getContext();
+<p>The <code translate="no" v-pre>handler</code> function receives a <a href="https://github.com/SillyTavern/SillyTavern/blob/staging/public/scripts/macros/engine/MacroRegistry.js">MacroExecutionContext</a> object containing</p>
+<ul>
+<li><code translate="no" v-pre>args</code> - All unnamed arguments passed to the macro.</li>
+<li><code translate="no" v-pre>unnamedArgs</code> - Positional arguments matching the defined argument list.</li>
+<li><code translate="no" v-pre>list</code> - List arguments (after unnamed args), or <code translate="no" v-pre>null</code> if list is not enabled.</li>
+<li><code translate="no" v-pre>env</code> - The macro environment with access to character data, chat state, etc.</li>
+<li><code translate="no" v-pre>resolve(text)</code> - Function to resolve nested macros in text (when <code translate="no" v-pre>delayArgResolution</code> is <code translate="no" v-pre>true</code>).</li>
+</ul>
+<p>And more.</p>
+<p>Handlers will run synchronously, so they can never return a <code translate="no" v-pre>Promise</code> or call async actions synchronously.</p>
+<p>To unregister a macro:</p>
+<div id="new-macro-system-code-2" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { macros } = SillyTavern.getContext();
 
-// Unregister the 'fizz' macro
-unregisterMacro('fizz');</code></pre>
+macros.registry.unregisterMacro('greet');</code></pre>
 </doc-codeblock></div>
-<p><strong>Important details and known limitations regarding custom macros:</strong></p>
-<ol>
-<li>Currently only simple string replacement macros are supported. We&#x27;re working on adding support for more complex macros in the future.</li>
-<li>Macros that use functions to provide a value <em>must</em> be synchronous. Returning a <code translate="no" v-pre>Promise</code> will not work.</li>
-<li>You do not need to wrap the macro name in double curly braces (<code translate="no" v-pre>{{ }}</code>) when registering it. SillyTavern will do that for you.</li>
-<li>Since macros are plain regular expression substitutions, registering a lot of macros will cause performance issues, so use them sparingly.</li>
-</ol>
-<doc-anchor-target id="do-extras-request">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#do-extras-request">#</doc-anchor-trigger>
-        <span>Do Extras request</span>
-    </h2>
-</doc-anchor-target>
+<p>You can also register aliases for existing macros:</p>
+<div id="new-macro-system-code-3" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { macros } = SillyTavern.getContext();
+
+macros.registerAlias('greet', 'hello', { visible: true });</code></pre>
+</doc-codeblock></div>
+<h3 id="legacy-macro-system-deprecated">Legacy macro system (deprecated)</h3>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p><code translate="no" v-pre>registerMacro()</code> and <code translate="no" v-pre>unregisterMacro()</code> from <code translate="no" v-pre>getContext()</code> are <strong>deprecated</strong>. Use <code translate="no" v-pre>macros.register()</code> and <code translate="no" v-pre>macros.registry.unregisterMacro()</code> instead.</p>
+        </div>
+    </div>
+</div>
+<p>The legacy API is still available for backward compatibility, but will be removed in a future release:</p>
+<div id="legacy-macro-system-deprecated-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { registerMacro, unregisterMacro } = SillyTavern.getContext();
+
+// Simple string macro
+registerMacro('fizz', 'buzz');
+// Function macro (must be synchronous)
+registerMacro('tomorrow', () =&gt; {
+    return new Date(Date.now() + 24 * 60 * 60 * 1000).toLocaleDateString();
+});
+
+// Unregister
+unregisterMacro('fizz');</code></pre>
+</doc-codeblock></div>
+<h2 id="function-tool-calling">Function tool calling</h2>
+<p>Extensions can register custom function tools that the LLM can invoke during chat completion. This lets your extension react to structured data from the model — for example, querying APIs, performing calculations, or triggering extension features.</p>
+<p>For a full guide including prerequisites, supported APIs, registration fields, and tips, see the dedicated <a href="../function-calling/">Function Calling</a> page.</p>
+<p><strong>Quick example:</strong></p>
+<div id="function-tool-calling-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { registerFunctionTool } = SillyTavern.getContext();
+
+registerFunctionTool({
+    name: 'get_weather',
+    displayName: 'Get Weather',
+    description: 'Get the current weather for a given location',
+    parameters: {
+        $schema: 'http://json-schema.org/draft-04/schema#',
+        type: 'object',
+        properties: {
+            location: { type: 'string', description: 'City name' },
+        },
+        required: ['location'],
+    },
+    action: async ({ location }) =&gt; {
+        const data = await fetchWeatherData(location);
+        return JSON.stringify(data);
+    },
+});</code></pre>
+</doc-codeblock></div>
+<h2 id="action-loader">Action loader</h2>
+<p>The action loader provides a loading overlay and toast notification system for long-running operations. It replaces the deprecated <code translate="no" v-pre>showLoader()</code> / <code translate="no" v-pre>hideLoader()</code> functions.</p>
+<p>Access it via <code translate="no" v-pre>loader</code> from <code translate="no" v-pre>getContext()</code>:</p>
+<div id="action-loader-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { loader } = SillyTavern.getContext();
+
+// Basic blocking loader with a stoppable toast
+const handle = loader.show({ message: 'Processing data...' });
+try {
+    const result = await someExpensiveOperation();
+} finally {
+    await handle.hide();
+}</code></pre>
+</doc-codeblock></div>
+<h3 id="options">Options</h3>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>blocking</code></td>
+<td><code translate="no" v-pre>true</code></td>
+<td>Show a full-screen overlay that blocks interaction</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>message</code></td>
+<td><code translate="no" v-pre>'Generating...'</code></td>
+<td>Message shown in the toast notification</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>title</code></td>
+<td><code translate="no" v-pre>''</code></td>
+<td>Optional title for the toast</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>toastMode</code></td>
+<td><code translate="no" v-pre>'stoppable'</code></td>
+<td><code translate="no" v-pre>'stoppable'</code> (with stop button), <code translate="no" v-pre>'static'</code> (no button), or <code translate="no" v-pre>'none'</code> (no toast)</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>stopTooltip</code></td>
+<td><code translate="no" v-pre>'Stop'</code></td>
+<td>Tooltip text for the stop button</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>onStop</code></td>
+<td><code translate="no" v-pre>null</code></td>
+<td>Custom stop handler. Defaults to <code translate="no" v-pre>stopGeneration()</code></td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>onHide</code></td>
+<td><code translate="no" v-pre>null</code></td>
+<td>Called when the loader is hidden (not stopped)</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>overlayContent</code></td>
+<td><code translate="no" v-pre>null</code></td>
+<td>Custom HTML element or string replacing the default spinner</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="stacking-loaders">Stacking loaders</h3>
+<p>Multiple loaders can be active simultaneously. The overlay stays visible as long as at least one blocking loader is active:</p>
+<div id="stacking-loaders-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { loader } = SillyTavern.getContext();
+
+const loader1 = loader.show({ message: 'Task 1...' });
+const loader2 = loader.show({ message: 'Task 2...' });
+await loader1.hide(); // Overlay stays — loader2 is still active
+await loader2.hide(); // Now overlay hides</code></pre>
+</doc-codeblock></div>
+<h3 id="non-blocking-loader">Non-blocking loader</h3>
+<p>For background tasks that shouldn&#x27;t block the UI:</p>
+<div id="non-blocking-loader-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { loader } = SillyTavern.getContext();
+
+const handle = loader.show({
+    blocking: false,
+    message: 'Downloading in background...',
+    onStop: () =&gt; abortDownload(),
+});</code></pre>
+</doc-codeblock></div>
+<h2 id="popups-and-user-feedback">Popups and user feedback</h2>
+<h3 id="popup-helpers">Popup helpers</h3>
+<p>SillyTavern provides convenient popup helpers via <code translate="no" v-pre>Popup.show</code> from <code translate="no" v-pre>getContext()</code>:</p>
+<div id="popup-helpers-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { Popup } = SillyTavern.getContext();
+
+// Confirmation dialog — returns POPUP_RESULT.AFFIRMATIVE or POPUP_RESULT.NEGATIVE
+const confirmed = await Popup.show.confirm('Confirm Action', 'Are you sure you want to proceed?');
+
+// Text input dialog — returns the entered string, or null if cancelled
+const userInput = await Popup.show.input('Enter Name', 'Please provide a name:', 'default value');
+
+// Information display — returns the clicked button result
+await Popup.show.text('Info', 'Operation completed successfully.');</code></pre>
+</doc-codeblock></div>
+<h3 id="custom-popups">Custom popups</h3>
+<p>For more complex popups, instantiate <code translate="no" v-pre>Popup</code> directly with full options:</p>
+<div id="custom-popups-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { Popup, POPUP_TYPE, POPUP_RESULT } = SillyTavern.getContext();
+
+const popup = new Popup(
+    '&lt;div&gt;Custom HTML content here&lt;/div&gt;',
+    POPUP_TYPE.TEXT,
+    '',
+    {
+        wide: true,              // Wide display mode
+        okButton: 'Save',       // Custom OK button text
+        cancelButton: 'Discard', // Custom Cancel button text
+        customButtons: [
+            {
+                text: 'Export',
+                icon: 'fa-download',
+                result: POPUP_RESULT.CUSTOM1,
+            },
+        ],
+        customInputs: [
+            {
+                id: 'my_checkbox',
+                label: 'Enable feature',
+                type: 'checkbox',
+                defaultState: false,
+            },
+        ],
+        allowVerticalScrolling: true,
+    }
+);
+
+const result = await popup.show();
+
+if (result === POPUP_RESULT.AFFIRMATIVE) {
+    // OK was clicked
+} else if (result === POPUP_RESULT.CUSTOM1) {
+    // Export button was clicked
+}
+
+// Read custom input values
+const checkboxValue = popup.inputResults?.get('my_checkbox');</code></pre>
+</doc-codeblock></div>
+<h3 id="popup-types">Popup types</h3>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>POPUP_TYPE.TEXT</code></td>
+<td>General content popup with buttons</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>POPUP_TYPE.CONFIRM</code></td>
+<td>Yes/No confirmation dialog</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>POPUP_TYPE.INPUT</code></td>
+<td>Popup with a text input field</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>POPUP_TYPE.DISPLAY</code></td>
+<td>Content-only popup with a close button</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>POPUP_TYPE.CROP</code></td>
+<td>Image cropping popup</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="toast-notifications">Toast notifications</h3>
+<p>For lightweight feedback, use <code translate="no" v-pre>toastr</code> (globally available):</p>
+<div id="toast-notifications-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">toastr.success('Data saved successfully');
+toastr.error('Failed to connect to API');
+toastr.warning('This feature is experimental');
+toastr.info('Processing...');</code></pre>
+</doc-codeblock></div>
+<h2 id="data-bank-scrapers">Data bank scrapers</h2>
+<p>Extensions can register custom data scrapers for the Data Bank feature. Scrapers provide a way to import data from custom sources (e.g., web pages, APIs, file formats):</p>
+<div id="data-bank-scrapers-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { registerDataBankScraper } = SillyTavern.getContext();
+
+await registerDataBankScraper({
+    id: 'my_scraper',
+    name: 'My Data Source',
+    description: 'Import data from My Data Source',
+    iconClass: 'fa-solid fa-database',
+    iconAvailable: true,
+    isAvailable: async () =&gt; true,
+    scrape: async () =&gt; {
+        // Return an array of File objects
+        const content = await fetchDataFromSource();
+        return [new File([content], 'data.txt', { type: 'text/plain' })];
+    },
+});</code></pre>
+</doc-codeblock></div>
+<h2 id="debug-functions">Debug functions</h2>
+<p>Extensions can register custom debug functions that appear in the Debug Menu (accessible via the power user settings). This is useful for exposing diagnostic tools, cache/cleanup functionality or manual triggers during development:</p>
+<div id="debug-functions-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { registerDebugFunction } = SillyTavern.getContext();
+
+registerDebugFunction(
+    'my_ext_clear_cache',        // Unique function ID
+    'Clear My Extension Cache',   // Display name
+    'Clears all cached data for My Extension', // Description
+    async () =&gt; {
+        const { localforage } = SillyTavern.libs;
+        await localforage.removeItem('my_extension_cache');
+        toastr.success('Cache cleared');
+    }
+);</code></pre>
+</doc-codeblock></div>
+<h2 id="do-extras-request">Do Extras request</h2>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-warning" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
                     <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -1131,18 +1508,8 @@ const apiResult = await doExtrasFetch(url, {
 <li>The body for POST requests</li>
 <li>Any other fetch options</li>
 </ul>
-<doc-anchor-target id="best-practices">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#best-practices">#</doc-anchor-trigger>
-        <span>Best Practices</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="security">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#security">#</doc-anchor-trigger>
-        <span>Security</span>
-    </h3>
-</doc-anchor-target>
+<h2 id="best-practices">Best Practices</h2>
+<h3 id="security">Security</h3>
 <p><strong>Never store API keys or secrets in <code translate="no" v-pre>extensionSettings</code></strong></p>
 <p>Extension settings are accessible to all other extensions and are stored in plain text. Do not store sensitive data client-side:</p>
 <div id="security-code-1" class="codeblock-wrapper"><doc-codeblock>
@@ -1167,12 +1534,7 @@ const cleanInput = DOMPurify.sanitize(userInput);</code></pre>
 </doc-codeblock></div>
 <p><strong>Avoid using <code translate="no" v-pre>eval()</code> or <code translate="no" v-pre>Function()</code> constructors</strong></p>
 <p>These can execute arbitrary code and pose security risks. If you need dynamic evaluation, use safer alternatives or restrict the input carefully.</p>
-<doc-anchor-target id="performance">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#performance">#</doc-anchor-trigger>
-        <span>Performance</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="performance">Performance</h3>
 <p><strong>Don&#x27;t store large data in <code translate="no" v-pre>extensionSettings</code></strong></p>
 <p>Extension settings are loaded into memory and saved frequently. Large data can cause performance issues:</p>
 <div id="performance-code-1" class="codeblock-wrapper"><doc-codeblock>
@@ -1213,12 +1575,7 @@ async function heavyComputation(data) {
     }
 }</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="compatibility">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#compatibility">#</doc-anchor-trigger>
-        <span>Compatibility</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="compatibility">Compatibility</h3>
 <p><strong>Prefer <code translate="no" v-pre>getContext()</code> over direct imports</strong></p>
 <p>The context API is more stable and less likely to break with SillyTavern updates:</p>
 <div id="compatibility-code-1" class="codeblock-wrapper"><doc-codeblock>
@@ -1237,72 +1594,25 @@ const MODULE_NAME = 'my_extension_name';
 // BAD - Too generic, likely to conflict
 const MODULE_NAME = 'settings';</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="user-experience">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#user-experience">#</doc-anchor-trigger>
-        <span>User Experience</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="user-experience">User Experience</h3>
 <p><strong>Provide clear feedback</strong></p>
-<p>Use toastr notifications to inform users of actions and errors:</p>
-<div id="user-experience-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const { Popup } = SillyTavern.getContext();
-
-// Success message
-toastr.success('Data imported successfully');
-
-// Error message
-toastr.error('Failed to connect to API');
-
-// Warning message
-toastr.warning('This feature is experimental');
-
-// For important messages, use popups
-const result = await Popup.show.confirm('Confirm', 'Are you sure?');
-const userInput = await Popup.show.input('Input', 'Please enter a value:', 'default value');
-await Popup.show.text('Info', 'Operation completed successfully.');</code></pre>
-</doc-codeblock></div>
+<p>Use <code translate="no" v-pre>toastr</code> for lightweight notifications and <code translate="no" v-pre>Popup</code> for important user interactions. See the <doc-anchor-trigger to="#popups-and-user-feedback">Popups and user feedback</doc-anchor-trigger> section for full details.</p>
+<p>For long-running operations, use the <doc-anchor-trigger to="#action-loader">Action loader</doc-anchor-trigger> instead of blocking the UI silently.</p>
 <p><strong>Provide helpful console messages</strong></p>
 <p>Use a consistent prefix for your console logs. But do not spam the console with excessive logs in production:</p>
-<div id="user-experience-code-2" class="codeblock-wrapper"><doc-codeblock>
+<div id="user-experience-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-javascript"><code v-pre class="language-javascript">const MODULE_NAME = 'MyExtension';
 
 console.log(`[${MODULE_NAME}] Extension loaded`);
 console.debug(`[${MODULE_NAME}] Processing data:`, data);
 console.error(`[${MODULE_NAME}] Error occurred:`, error);</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="code-quality">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#code-quality">#</doc-anchor-trigger>
-        <span>Code Quality</span>
-    </h3>
-</doc-anchor-target>
+<h3 id="code-quality">Code Quality</h3>
 <p><strong>Use bundled libraries from <code translate="no" v-pre>lib.js</code></strong></p>
-<p>SillyTavern bundles several useful libraries that extensions can be used directly:</p>
-<div id="code-quality-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">// Utility functions
-const { lodash } = SillyTavern.libs;
-const uniqueItems = lodash.uniq([1, 2, 2, 3]);
-const grouped = lodash.groupBy([{ category: 'A', name: 'foo' }, { category: 'B', name: 'bar' }], 'category');
-
-// Fuzzy search
-const { Fuse } = SillyTavern.libs;
-const fuse = new Fuse(items, { keys: ['name', 'description'] });
-const results = fuse.search('query');
-
-// Template rendering
-const { Handlebars } = SillyTavern.libs;
-const template = Handlebars.compile('&lt;div&gt;{{name}}&lt;/div&gt;');
-const html = template({ name: 'Example' });
-
-// Date/time manipulation
-const { moment } = SillyTavern.libs;
-const formatted = moment().format('YYYY-MM-DD HH:mm:ss');</code></pre>
-</doc-codeblock></div>
-<p>Other available libraries include: <code translate="no" v-pre>DOMPurify</code>, <code translate="no" v-pre>localforage</code>, <code translate="no" v-pre>hljs</code>, <code translate="no" v-pre>showdown</code>, <code translate="no" v-pre>yaml</code>, and more. Check <a href="https://github.com/SillyTavern/SillyTavern/blob/release/public/lib.js">lib.js</a> for the full list.</p>
+<p>Before adding new dependencies, check the <doc-anchor-trigger to="#shared-libraries">Shared libraries</doc-anchor-trigger> section — SillyTavern bundles many common libraries (lodash, Fuse, DOMPurify, moment, yaml, etc.) that are available via <code translate="no" v-pre>SillyTavern.libs</code>.</p>
 <p><strong>Initialize settings properly</strong></p>
 <p>Always provide defaults and handle missing keys:</p>
-<div id="code-quality-code-2" class="codeblock-wrapper"><doc-codeblock>
+<div id="code-quality-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-javascript"><code v-pre class="language-javascript">function loadSettings() {
     // Merge with defaults to handle new keys after updates and initialize if it doesn't exist.
     extensionSettings[MODULE_NAME] = SillyTavern.libs.lodash.merge(
