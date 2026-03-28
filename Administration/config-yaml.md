@@ -240,6 +240,10 @@ An enabled CORS proxy may be required by some extensions. It is not required by 
 | `performance.lazyLoadCharacters` | Lazy-load character data | `true` | `true`, `false` |
 | `performance.useDiskCache` | Enable disk caching for character cards | `true` | `true`, `false` |
 | `performance.memoryCacheCapacity` | Maximum memory cache capacity | `100mb` | Human-readable size (e.g., `100mb`, `1gb`) |
+| `performance.requestCompression.enabled` | Enable gzip compression for client requests with large payloads (e.g. settings or chat saves) | `false` | `true`, `false` |
+| `performance.requestCompression.minPayloadSize` | Minimum payload size to trigger compression. Set to 0 to compress all requests regardless of size | `256kb` | Human-readable size (e.g., `256kb`, `1mb`) |
+| `performance.requestCompression.maxPayloadSize` | Hard upper payload size limit for compression. Set to 0 to allow compression of any size | `8mb` | Human-readable size (e.g., `8mb`, `16mb`) |
+| `performance.requestCompression.timeout` | Timeout for request compression in milliseconds | `4000` | Positive integer |
 
 ## Cache Buster Configuration
 
@@ -267,11 +271,12 @@ Requires localhost or a domain with HTTPS, otherwise will not work!
 
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|-----------------|
+| `backups.common.numberOfBackups` | Number of backups to keep | `50` | Any positive integer |
 | `backups.chat.enabled` | Enable automatic chat backups | `true` | `true`, `false` |
 | `backups.chat.checkIntegrity` | Verify integrity of chat files before saving | `true` | `true`, `false` |
-| `backups.common.numberOfBackups` | Number of backups to keep | `50` | Any positive integer |
 | `backups.chat.throttleInterval` | Backup throttle interval (ms) | `10000` | Any positive integer |
 | `backups.chat.maxTotalBackups` | Maximum total chat backups to keep | `-1` | Any positive integer or -1 |
+| `backups.allowFullDataBackup` | Allow users to create a full backup archive of their data | `true` | `true`, `false` |
 
 ## [Extensions Configuration](/extensions/index.md)
 
@@ -292,6 +297,19 @@ Requires localhost or a domain with HTTPS, otherwise will not work!
 |---------|-------------|---------|-----------------|
 | `enableServerPlugins` | Enable server-side plugins | `false` | `true`, `false` |
 | `enableServerPluginsAutoUpdate` | Attempt to automatically update server plugins on startup | `true` | `true`, `false` |
+
+## Git Configuration
+
+!!! Git backends explained
+
+1. `auto` - prefer system binary, falling back to integrated
+2. `system` - system git binary using [simple-git](https://www.npmjs.com/package/simple-git)
+3. `builtin` - integrated engine using [isomorphic-git](https://www.npmjs.com/package/isomorphic-git)
+!!!
+
+| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|-----------------|
+| `git.backend` | Git backend for plugin/extension repository operations | `auto` | `auto`, `system`, `builtin` |
 
 ## [API Integration Settings](/Usage/API_Connections/index.md)
 
@@ -330,6 +348,7 @@ See: [Prompt Caching](https://platform.claude.com/docs/en/build-with-claude/prom
 | `claude.enableSystemPromptCache` | Enable system prompt caching | `false` | `true`, `false` |
 | `claude.cachingAtDepth` | Enable message history caching | `-1` | `-1` (disabled), `0` or positive integer |
 | `claude.extendedTTL` | Use 1h TTL instead of the default 5m. Note that this also increases the cost of the request. | `false` | `true`, `false` |
+| `claude.enableAdaptiveThinking` | Enables adaptive thinking for supported models (Opus 4.6+). Disable to enforce legacy thinking mode (with thinking budget). See: [Adaptive Thinking](https://platform.claude.com/docs/en/build-with-claude/adaptive-thinking) | `false` | `true`, `false` |
 
 ### Google Gemini Configuration
 

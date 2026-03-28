@@ -110,7 +110,7 @@ The example below will send the generated image using Markdown as a user persona
 
 ### Image swipes
 
-Image swipes allow rerolling the image generation while keeping the same prompt. If a fixed seed is set, it will be randomized for the next generation. 
+Image swipes allow rerolling the image generation while keeping the same prompt. If a fixed seed is set, it will be randomized for the next generation. Image dimensions that were overridden via the `/sd` slash command are preserved for swiped images.
 
 To cycle through images, hover a mouse cursor (tap on mobile) over a generated image to reveal arrow buttons and swipes counter. Tapping the right arrow on the latest image will generate a new one.
 
@@ -120,7 +120,7 @@ To cycle through images, hover a mouse cursor (tap on mobile) over a generated i
 
 ### Edit prompts before generation
 
-Allow to edit the automatically generated prompts manually before sending them to the Stable Diffusion API.
+This option lets you edit automatically generated prompts before they are sent to the Image Generation API. You can also edit or discard the saved negative prompt and override the resolution when regenerating an image that was originally created with the `/sd` command.
 
 ### Use function tool
 

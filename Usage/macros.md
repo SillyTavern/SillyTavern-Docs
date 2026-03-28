@@ -8,7 +8,7 @@ templating: false
 # Macros
 
 !!!tip Experimental Macro Engine
-To enable advanced macro processing that supports nesting, stable substitution order, and other improvements, go to **User Settings** > **Chat/Message Handling** and enable the **Experimental Macro Engine** option.
+The Experimental Macro Engine supports nesting, stable substitution order, and other improvements. It is enabled by default for new installations. Existing installations can enable it in **User Settings** > **Chat/Message Handling** > **Experimental Macro Engine**.
 !!!
 
 Macros are dynamic placeholders that get replaced with actual values when text is processed. They are used throughout SillyTavern in prompts, character cards, lorebooks, Quick Replies, and more.
@@ -703,6 +703,7 @@ Use `/? macros` for the complete list of available macros and their detailed des
 | `{{charVersion}}` | Character's version number |
 | `{{mesExamples}}` | Character's dialogue examples, formatted for instruct mode |
 | `{{mesExamplesRaw}}` | Unformatted dialogue examples from the character card |
+| `{{charFirstMessage}}` | Character's first message (greeting). Accepts an optional index for alternate greetings, e.g. `{{charFirstMessage::1}}` |
 | `{{original}}` | Original message content for substitution in character prompt overrides |
 
 ### Chat History & Messages
@@ -717,6 +718,7 @@ Use `/? macros` for the complete list of available macros and their detailed des
 | `{{firstDisplayedMessageId}}` | Index of the first displayed message in the chat |
 | `{{lastSwipeId}}` | 1-based index of the last swipe for the last message |
 | `{{currentSwipeId}}` | 1-based index of the current swipe |
+| `{{allChatRange}}` | Provides the range of the entire chat (e.g. `0-{{lastMessageId}}`), useful for commands that accept message ranges |
 | `{{summary}}` | Latest chat summary from the "Summarize" extension (when available) |
 
 ### Time & Date
@@ -764,7 +766,9 @@ Use `/? macros` for the complete list of available macros and their detailed des
 
 | Macro | Description |
 |-------|-------------|
-| `{{maxPrompt}}` | Maximum prompt context size |
+| `{{maxPrompt}}` | Maximum prompt context size (prompt tokens = context tokens - response tokens) |
+| `{{maxContextTokens}}` | Maximum number of context tokens for the current generation settings |
+| `{{maxResponseTokens}}` | Maximum number of response tokens for the current generation settings |
 | `{{model}}` | Model name for the currently selected API |
 | `{{isMobile}}` | "true" if running in mobile environment, "false" otherwise |
 | `{{lastGenerationType}}` | Type of last queued generation request (e.g., "normal", "impersonate", "regenerate", "quiet", "swipe", "continue") |

@@ -568,6 +568,10 @@ The main event types are:
 * `CHARACTER_DELETED`: a character has been deleted.
 * `CHARACTER_DUPLICATED`: a character has been duplicated.
 
+**Persona:**
+
+* `PERSONA_CHANGED`: the active persona has been changed.
+
 **Settings and presets:**
 
 * `SETTINGS_UPDATED`: the application settings have been updated.
@@ -586,6 +590,12 @@ The main event types are:
 
 * `TOOL_CALLS_PERFORMED`: tool calls have been executed.
 * `TOOL_CALLS_RENDERED`: tool call results have been rendered in the chat.
+
+**Text-to-Speech:**
+
+* `TTS_JOB_STARTED`: a TTS job has started.
+* `TTS_AUDIO_READY`: TTS audio data is ready to be played.
+* `TTS_JOB_COMPLETE`: a TTS job has been completed.
 
 The full list of event types can be found [in the source](https://github.com/SillyTavern/SillyTavern/blob/staging/public/scripts/events.js).
 
