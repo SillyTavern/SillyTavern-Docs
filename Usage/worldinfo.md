@@ -42,22 +42,6 @@ To unbind, change, or assign additional World Info files as character lore, shif
 
 When renaming a World Info file, you will be prompted to optionally relink the lorebook across all characters that reference it. This ensures that existing character lore bindings remain intact after the rename.
 
-#### Character Lore Insertion Strategy
-
-When generating an AI reply, entries from the character World Info will be combined with the entries from a global World Info selector using one of the following strategies:
-
-##### Sorted Evenly (default)
-
-All entries will be sorted according to their Insertion Order as if they were a part of one big file, ignoring the source.
-
-##### Character Lore First
-
-Entries from the Character World Info would be included first by their Insertion Order, then entries from the Global World Info.
-
-##### Global Lore First
-
-Entries from the Global World Info would be included first by their Insertion Order, then entries from the Character World Info.
-
 ### Persona Lorebook
 
 A World Info file can be assigned to the currently active [persona](/Usage/personas.md). The entries from this lorebook will be activated whenever that persona is selected, regardless of which character or chat is open.
@@ -77,6 +61,26 @@ To assign a lorebook to a chat, click the <i class="fa-solid fa-passport"></i> *
 !!!
 To reopen the assignment popup when a lorebook is already bound, use a **long press** (on mobile) or **Shift+Click / Alt+Click** (on desktop) on the Chat Lore button.
 !!!
+
+### Lore Insertion Strategy
+
+When generating an AI reply, entries from the character World Info will be combined with the entries from a global World Info selector. By default the entries will be inserted in the following order:
+
+* [Chat Lore](#chat-lorebook)
+* [Persona Lore](#persona-lorebook)
+* Character Lore Global Lore using one of the following strategies:
+
+#### Sorted Evenly (default)
+
+All entries will be sorted according to their Insertion Order as if they were a part of one big file, ignoring the source.
+
+#### Character Lore First
+
+Entries from the Character World Info would be included first by their Insertion Order, then entries from the Global World Info.
+
+#### Global Lore First
+
+Entries from the Global World Info would be included first by their Insertion Order, then entries from the Character World Info.
 
 ## World Info Entry
 
