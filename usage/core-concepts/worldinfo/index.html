@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828033847105">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.4.0.828224181240">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.4.0">
@@ -34,12 +34,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.4.0.828033847105" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.4.0.828224181240" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.4.0.828033847105" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=4.4.0.828033847105" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.4.0.828224181240" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=4.4.0.828224181240" defer></script>
 
     <style>
         a {
@@ -228,14 +228,6 @@
 <p>One primary World Info can be bound to the character. To do that, navigate to the Character Management panel and click the globe button, then pick World Info from a dropdown list and click &quot;Ok&quot;. When exporting the character, this file will also get embedded in the character card data.</p>
 <p>To unbind, change, or assign additional World Info files as character lore, shift-click the globe button or click &quot;More...&quot; then &quot;Link World Info&quot;. Note that only the primary World Info file gets exported with the character.</p>
 <p>When renaming a World Info file, you will be prompted to optionally relink the lorebook across all characters that reference it. This ensures that existing character lore bindings remain intact after the rename.</p>
-<h4 id="character-lore-insertion-strategy">Character Lore Insertion Strategy</h4>
-<p>When generating an AI reply, entries from the character World Info will be combined with the entries from a global World Info selector using one of the following strategies:</p>
-<h5 id="sorted-evenly-default">Sorted Evenly (default)</h5>
-<p>All entries will be sorted according to their Insertion Order as if they were a part of one big file, ignoring the source.</p>
-<h5 id="character-lore-first">Character Lore First</h5>
-<p>Entries from the Character World Info would be included first by their Insertion Order, then entries from the Global World Info.</p>
-<h5 id="global-lore-first">Global Lore First</h5>
-<p>Entries from the Global World Info would be included first by their Insertion Order, then entries from the Character World Info.</p>
 <h3 id="persona-lorebook">Persona Lorebook</h3>
 <p>A World Info file can be assigned to the currently active <a href="../personas/">persona</a>. The entries from this lorebook will be activated whenever that persona is selected, regardless of which character or chat is open.</p>
 <p>To assign a lorebook to a persona, open the <strong>Persona Management</strong> panel and click the <i class="fa-solid fa-globe"></i> <strong>Persona Lore</strong> button. Pick a World Info file from the dropdown list. If a lorebook is already bound, clicking the button opens the lorebook editor directly.</p>
@@ -276,6 +268,19 @@
         </div>
     </div>
 </div>
+<h3 id="lore-insertion-strategy">Lore Insertion Strategy</h3>
+<p>When generating an AI reply, entries from the character World Info and other auxiliary sources will be combined with the entries from a global World Info selector. By default the entries will be inserted in the following order:</p>
+<ul>
+<li><doc-anchor-trigger to="#chat-lorebook">Chat Lore</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#persona-lorebook">Persona Lore</doc-anchor-trigger></li>
+<li>Character Lore or Global Lore using one of the following strategies:</li>
+</ul>
+<h4 id="sorted-evenly-default">Sorted Evenly (default)</h4>
+<p>All entries will be sorted according to their Insertion Order as if they were a part of one big file, ignoring the source.</p>
+<h4 id="character-lore-first">Character Lore First</h4>
+<p>Entries from the Character World Info would be included first by their Insertion Order, then entries from the Global World Info.</p>
+<h4 id="global-lore-first">Global Lore First</h4>
+<p>Entries from the Global World Info would be included first by their Insertion Order, then entries from the Character World Info.</p>
 <h2 id="world-info-entry">World Info Entry</h2>
 <h3 id="key">Key</h3>
 <p>A list of keywords that trigger the activation of a World Info entry. Keys are not case-sensitive by default (this is <doc-anchor-trigger to="#case-sensitive-keys">configurable</doc-anchor-trigger>).</p>
