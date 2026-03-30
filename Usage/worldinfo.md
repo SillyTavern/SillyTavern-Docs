@@ -64,7 +64,7 @@ To reopen the assignment popup when a lorebook is already bound, use a **long pr
 
 ### Lore Insertion Strategy
 
-When generating an AI reply, entries from the character World Info will be combined with the entries from a global World Info selector. By default the entries will be inserted in the following order:
+When generating an AI reply, entries from the character World Info and other auxiliary sources will be combined with the entries from a global World Info selector. By default the entries will be inserted in the following order:
 
 * [Chat Lore](#chat-lorebook)
 * [Persona Lore](#persona-lorebook)
