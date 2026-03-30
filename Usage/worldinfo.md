@@ -68,7 +68,7 @@ When generating an AI reply, entries from the character World Info will be combi
 
 * [Chat Lore](#chat-lorebook)
 * [Persona Lore](#persona-lorebook)
-* Character Lore Global Lore using one of the following strategies:
+* Character Lore or Global Lore using one of the following strategies:
 
 #### Sorted Evenly (default)
 
