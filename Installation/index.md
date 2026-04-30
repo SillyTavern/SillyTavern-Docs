@@ -1,4 +1,4 @@
----
+--Usage/API_Connections/Connection-Profiles.md-
 order: 50
 icon: package
 expanded: true
