@@ -18,7 +18,7 @@ Edit these settings in the "[Advanced Formatting](advancedformatting.md)" panel.
 
 This field is a template for the prompt preamble (known internally as a story string). This is the main way to add the information defined in [Character Cards](/Usage/Characters/index.md) for text completion and instruct models.
 
-The template supports Handlebars syntax, custom text injections or formatting, and any other [macros](/Usage/Characters/macros.md). See the language reference here: <https://handlebarsjs.com/guide/>
+The template supports Handlebars syntax, custom text injections or formatting, and any other [macros](/usage/macros.md). See the language reference here: <https://handlebarsjs.com/guide/>
 
 We provide the following parameters to the Handlebars evaluator (wrapped in double curly braces):
 

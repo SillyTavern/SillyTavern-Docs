@@ -33,7 +33,7 @@ Since `{{user}}` and `{{char}}` macros have opposite meanings when used in Perso
 
 ## Persona Description
 
-Each persona can store a custom text description — mental and physical traits, age, occupation, or any personal details. These can also include template macros such as `{{char}}` or `{{user}}` (see [Macros](/Usage/Characters/macros.md)).
+Each persona can store a custom text description — mental and physical traits, age, occupation, or any personal details. These can also include template macros such as `{{char}}` or `{{user}}` (see [Macros](/usage/macros.md)).
 
 Where your persona description is injected into the AI prompt depends on the **Position** setting in the Persona Management panel:
 
