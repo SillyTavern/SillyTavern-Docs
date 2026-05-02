@@ -164,6 +164,7 @@ All these sources require an API key of the respective service and usually have 
 10. Chutes
 11. NanoGPT
 12. SiliconFlow
+13. Cloudflare Workers AI
 
 ## Vectorization Settings
 

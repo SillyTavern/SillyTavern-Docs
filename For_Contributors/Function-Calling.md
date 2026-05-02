@@ -25,11 +25,26 @@ Function Calling allows adding dynamic functionality to your extensions by letti
 
 ## Prerequisites and limitations
 
-1. This feature is only available for certain Chat Completion sources: OpenAI, Claude, MistralAI, Groq, Cohere, OpenRouter, AI21, Google AI Studio, Google Vertex AI, DeepSeek, AI/ML API, NanoGPT and Custom API sources.
+1. This feature is only available for Chat Completion API, supported by the following sources: Custom (OpenAI-compatible), AI/ML API, AI21, Azure OpenAI, Chutes, Claude, Cloudflare Workers AI, Cohere, DeepSeek, Electron Hub, Fireworks, Google AI Studio, Google Vertex AI, Groq, MiniMax, MistralAI, Moonshot (Kimi), NanoGPT, OpenAI, OpenRouter, Pollinations, SiliconFlow, xAI (Grok), and Z.AI (GLM).
 2. Text Completion APIs don't support function calls, but some locally-hosted backends like Ollama and TabbyAPI may run in Custom OpenAI-compatible mode under Chat Completion.
 3. The support for function calling must be explicitly allowed by the user first. This is done by enabling the "Enable function calling" option in the AI Response Configuration panel.
 4. There is no guarantee that an LLM will perform any function calls at all. Most of them require an explicit "activation" through the prompt (e.g., the user asking to "Roll a dice", "Get the weather", etc.).
 5. Not all prompts can trigger a tool call. Continuations, impersonation, background ('quiet') prompts are not allowed to trigger a tool call. They can still use past successful tool calls in their responses.
+6. Certain models may not support function calling, even if the API source does. Please refer to your API provider's documentation for details on which models support function calling.
+
+## Tool calling recursion limit
+
+To prevent infinite loops of tool calls, there is a recursion limit (default: 5 rounds). If the LLM keeps calling tools repeatedly, execution will stop after the limit is reached. You can adjust this limit in the AI response configuration settings, next to the "Enable function calling" option.
+
+## Interleaved Thinking
+
+When using tool calling with a [reasoning model](../Usage/Prompts/reasoning.md), you can leverage reasoning returned together with tool-call requests to maintain interleaved thinking context. For some models, this is necessary to ensure consistency and preserve important details between tool calls.
+
+Choose one of the following settings in the AI response configuration:
+
+- Disabled: No reasoning context is included in tool-call requests. Highest compatibility, default setting.
+- Since Last User Message: Include reasoning for any tool turns that happened after the latest user message.
+- Active Tool Chain: Include reasoning only while still inside the current unresolved tool loop; once a normal assistant reply is produced, old tool-chain reasoning is no longer resent.
 
 ## How to make a function tool
 

@@ -12,9 +12,9 @@ This documentation may be obsolete, incomplete, or incorrect. Please refer to th
 **WARNING: DO NOT EDIT THE DEFAULT CONFIG DIRECTLY. THIS WON'T HAVE ANY POSITIVE EFFECT. EDIT ITS COPY IN THE REPOSITORY ROOT INSTEAD.**
 !!!
 
-`config.yaml` is the main configuration file for the SillyTavern server which you can find in the repository root directory after [completing the installation](/Installation/index.md). It is a YAML file that contains various settings, such as network, security, and backend-specific options. **The changes made to this file will take effect after restarting the server.**
+`config.yaml` is the main configuration file for the SillyTavern server which you can find in the repository root directory after [completing the installation](/Installation/index.md) and running the server for the first time. It is a YAML file that contains various settings, such as network, security, and backend-specific options. **The changes made to this file will take effect after restarting the server.**
 
-New settings that are added upstream are automatically populated with default values when you run `npm install` (specifically, the `post-install.js` script) after [updating the repository](/Installation/Updating/index.md). You can then modify these settings as needed.
+New settings that are added upstream are automatically populated with default values when restarting the server after [updating the repository](/Installation/Updating/index.md). You can then modify these settings as needed. To add missing settings before startup, run the `npm run init` script.
 
 For nested settings, dot notation is used to indicate the hierarchy. For example, `protocol.ipv6: false` refers to the `ipv6` setting under the `protocol` section with a value of `false`.
 
@@ -125,6 +125,7 @@ See more about using environment variables in the [Node.js documentation](https:
 | `listenAddress.ipv4` | Listen on a specific IPv4 address | `0.0.0.0` | Valid IPv4 address |
 | `listenAddress.ipv6` | Listen on a specific IPv6 address | `'[::]'` | Valid IPv6 address |
 | `dnsPreferIPv6` | Prefer IPv6 for DNS resolution | `false` | `true`, `false` |
+| `enableKeepAlive` | Enable HTTP/HTTPS keep-alive globally | `false` | `true`, `false` |
 
 ## SSL Configuration
 
@@ -142,9 +143,39 @@ See more about using environment variables in the [Node.js documentation](https:
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|-----------------|
 | `whitelistMode` | Enable IP whitelist filtering | `true` | `true`, `false` |
-| `enableForwardedWhitelist` | Check forwarded headers for whitelisted IPs | `true` | `true`, `false` |
+| `enableForwardedWhitelist` | Check forwarded headers for whitelisted IPs. Headers are defined in the [Forwarded Headers Configuration](#forwarded-headers-configuration) section | `true` | `true`, `false` |
 | `whitelist` | List of allowed IP addresses | `["::1", "127.0.0.1"]` | Array of valid IP addresses |
 | `whitelistDockerHosts` | Automatically whitelist Docker host IPs | `true` | `true`, `false` |
+
+### Forwarded Headers Configuration
+
+!!!
+Adjust which headers are used to determine the real IPs for features like IP whitelisting, rate limiting and access logging.
+
+Only change if you are sure that you use a correctly configured [reverse proxy](./reverse-proxying.md), otherwise this may lead to IP spoofing.
+!!!
+
+| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|-----------------|
+| `forwardedHeaders.xRealIp` | Use the `X-Real-IP` header for client IP detection | `true` | `true`, `false` |
+| `forwardedHeaders.xForwardedFor` | Use the `X-Forwarded-For` header for client IP detection | `true` | `true`, `false` |
+| `forwardedHeaders.cfConnectingIp` | Use the `CF-Connecting-IP` header for client IP detection | `false` | `true`, `false` |
+
+### Private Address Whitelisting
+
+!!!
+This is an additional layer of security to prevent Server-Side Request Forgery (SSRF) attacks, performing whitelist checks against server-side HTTP requests that resolve to private IP addresses. When enabled, [private network ranges](./remote-connections.md#what-is-considered-a-private-address) will be blocked, unless explicitly allowed in the `privateAddressWhitelist.allowedRanges` setting.
+
+**This is disabled by default, but recommended when listen mode is enabled, or if your server is accessible by untrusted users.**
+!!!
+
+| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|-----------------|
+| `privateAddressWhitelist.enabled` | Enable private address whitelisting | `false` | `true`, `false` |
+| `privateAddressWhitelist.allowUnresolvedHosts` | Allow requests to hosts that cannot be resolved | `false` | `true`, `false` |
+| `privateAddressWhitelist.allowedRanges` | List of allowed private IP addresses and CIDR ranges | `['127.0.0.0/8', '::1/128']` | Array of valid IP addresses and CIDR ranges |
+| `privateAddressWhitelist.log.blockedRequests` | Log blocked requests that resolve to private IP addresses | `true` | `true`, `false` |
+| `privateAddressWhitelist.log.allowedRequests` | Log allowed requests that resolve to private IP addresses | `false` | `true`, `false` |
 
 ### Host Whitelisting
 
@@ -168,6 +199,12 @@ See more about using environment variables in the [Node.js documentation](https:
 
 ## [User Authentication](/Administration/multi-user.md)
 
+!!!tip
+Rate limiting is applied by default to both basic auth and user account login attempts. You can adjust the limits in the [Rate Limiting Configuration](#rate-limiting-configuration) section.
+
+If using basic auth behind a tunneled connection (e.g., Cloudflare Tunnel), make sure to adjust the [rate limiting settings](#rate-limiting-configuration) and [IP address detection](#forwarded-headers-configuration) accordingly to prevent lockouts.
+!!!
+
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|-----------------|
 | `basicAuthMode` | Enable basic authentication | `false` | `true`, `false` |
@@ -187,11 +224,24 @@ See more about using environment variables in the [Node.js documentation](https:
 
 ## Rate Limiting Configuration
 
+!!!tip
+To disable rate limiting for a specific route, set the limit to `0`.
+
+For example, to disable login rate limiting, set `rateLimiting.accountsLoginMaxAttempts` to `0`.
+!!!
+
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|------------------|
-| `rateLimiting.preferRealIpHeader` | Use the X-Real-IP header instead of the socket IP for rate limiting | `false` | `true`, `false` |
+| `rateLimiting.preferRealIpHeader` | Use IP from headers configured in the [Forwarded Headers Configuration](#forwarded-headers-configuration) instead of the socket IP for rate limiting | `false` | `true`, `false` |
+| `rateLimiting.accountsLoginMaxAttempts` | Maximum login attempts for user accounts before temporary lockout | `5` | Any positive integer, or `0` |
+| `rateLimiting.accountsRecoverMaxAttempts` | Maximum password recovery attempts before temporary lockout | `5` | Any positive integer, or `0` |
+| `rateLimiting.basicAuthMaxAttempts` | Maximum basic auth attempts before temporary lockout | `5` | Any positive integer, or `0` |
 
 ## Request Proxy Configuration
+
+!!!warning
+Request proxying conflicts with the private address whitelist feature. If you enable both, only the requests that bypass the proxy will be checked against the private address whitelist, while the proxied requests will not be checked at all. If unsure, disabling the request proxy is recommended.
+!!!
 
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|-----------------|
@@ -201,8 +251,10 @@ See more about using environment variables in the [Node.js documentation](https:
 
 ## CORS Proxy Configuration
 
-!!!
+!!!warning
 An enabled CORS proxy may be required by some extensions. It is not required by any built-in features.
+
+Enabling a CORS proxy without proper security measures (e.g., IP, host, and private address whitelists) can lead to SSRF vulnerabilities. Make sure to configure the whitelists accordingly if you enable this feature, and only enable it if you trust the extensions that require it.
 !!!
 
 | Setting | Description | Default | Permitted Values |

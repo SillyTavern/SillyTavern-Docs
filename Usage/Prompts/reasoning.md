@@ -75,7 +75,7 @@ Provider-specific notes:
 
 Enable "Auto-Parse" in the **<i class="fa-solid fa-font"></i> Advanced Formatting** panel to automatically parse reasoning from the model's output.
 
-The response must contain a reasoning section wrapped in configured Prefix and Suffix sequences. The sequences provided by default correspond to the DeepSeek R1 reasoning format.
+The response must contain a reasoning section wrapped in configured Prefix and Suffix sequences. The sequences provided by default correspond to the DeepSeek R1 reasoning format. This is required to be enabled for some API sources that return unparsed reasoning, such as MiniMax or Perplexity.
 
 Example with prefix `<think>` and suffix `</think>`:
 
@@ -129,9 +129,12 @@ Reasoning Effort is a Chat Completion setting in the **<i class="fa-solid fa-sli
 | High    | 50% of max response, min 1024    | "high"               | "high", or 80% of max response   | "high"               | "high"               | "medium"          |
 | Maximum | 95% of max response, min 1024    | "high"               | "high", or 80% of max response   | "high"               | "high"               | "high"            |
 
-- For Claude, budget is capped to 21333 if streaming is disabled. If the calculated budget would be less than 1024, then max response is changed to 2048.
-- Claude also supports adaptive thinking for Opus 4.6+ models, which can be enabled via `claude.enableAdaptiveThinking` in [config.yaml](/Administration/config-yaml.md). When enabled, the Reasoning Effort setting maps to adaptive thinking levels instead of token budgets.
-- For OpenRouter, Perplexity and AI/ML API, only an OpenAI-style keyword is sent.
+- For older Claude models that don't support adaptive thinking, budget is capped to 21333 if streaming is disabled. If the calculated budget would be less than 1024, then max response is changed to 2048.
+- Claude also supports adaptive thinking for Opus 4.6+ models, which can be enabled via `claude.enableAdaptiveThinking` in [config.yaml](/Administration/config-yaml.md) (always on for Opus 4.7+). When enabled, the Reasoning Effort setting maps to adaptive thinking levels instead of token budgets. This setting takes precedence over the "Verbosity" setting for applicable models.
+- For OpenRouter, Pollinations, Perplexity, xAI, Chutes, DeepSeek, AI/ML API, xAI, Electron Hub, only an OpenAI-style keyword is sent.
+- For GPT-5.4 and GPT-5.5 models on OpenAI, "Minimal" reasoning effort corresponds to "none", which disables reasoning.
+- For KoboldCpp running as a Chat Completion Custom API source, reasoning effort is sent as a `reasoning_effort` parameter with values "minimal", "low", "medium", "high", and "xhigh".
+- For other Custom (OpenAI-compatible) sources, a reasoning effort is sent only if the model supports it on the official OpenAI source.
 
 Google AI Studio and Vertex AI are as follows:
 
@@ -140,7 +143,7 @@ Google AI Studio and Vertex AI are as follows:
 | 2.5 Pro        | thinkingBudget = -1     | 128                | 15% of max response, min 128 | 25% of max | 50% of max | lower of max or 32768 |
 | 2.5 Flash      | thinkingBudget = -1     | 0, **no thinking** | 15% of max response          | 25% of max | 50% of max | lower of max or 24576 |
 | 2.5 Flash Lite | thinkingBudget = -1     | 0, **no thinking** | 15% of max response, min 512 | 25% of max | 50% of max | lower of max or 24576 |
-| 3.0 Pro        | thinkingLevel = null    | "low"              | "low"                        | "low"      | "high"     | "high"                |
-| 3.0 Flash      | thinkingLevel = null    | "minimal"          | "low"                        | "medium"   | "high"     | "high"                |
+| 3.0/3.1 Pro    | thinkingLevel = null    | "low"              | "low"                        | "low"      | "high"     | "high"                |
+| 3.0/3.1 Flash  | thinkingLevel = null    | "minimal"          | "low"                        | "medium"   | "high"     | "high"                |
 
 - For Gemini 2.5 Pro and 2.5 Flash/Lite, budget is capped to 32768 or 24576 tokens respectively, regardless of the streaming setting.
