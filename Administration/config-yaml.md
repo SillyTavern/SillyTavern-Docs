@@ -217,8 +217,13 @@ If using basic auth behind a tunneled connection (e.g., Cloudflare Tunnel), make
 
 ### SSO Auto-Login
 
+!!!warning
+Inadequately securing an SSO flow can lead to unauthorized access. Make sure to properly configure trusted proxies and test your setup before enabling SSO. If you are unsure about the security implications, it is recommended to keep SSO auto-login disabled and resort to other authentication methods instead.
+!!!
+
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|------------------|
+| `sso.trustedProxies` | List of trusted proxy IPs for SSO authentication | `["::1", "127.0.0.1"]` | Array of valid IP addresses, CIDR ranges, or wildcard patterns |
 | `sso.autheliaAuth` | Enable Authelia-based auto-login. See: [SSO](/Administration/sso.md) | `false` | `true`, `false` |
 | `sso.authentikAuth` | Enable Authentik-based auto-login. See: [SSO](/Administration/sso.md) | `false` | `true`, `false` |
 
