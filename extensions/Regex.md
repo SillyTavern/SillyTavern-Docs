@@ -56,7 +56,7 @@ Below this is a list of your scripts with some action buttons.
 
 - **Name** : The label for the script shown on the extension's script list. **This is also used to target the script when triggering it via slash command or STscript.**
 
-- **Find Regex** : This is the Regular Expression that is used to detect your targeted text pattern. This is usually the most complex part of any RegEx script, and is the easiest place to make mistakes. Refer to the links at the top of the page for information how to write a RegEx sequence. This box can resolve the values of [common SillyTavern macros](/Usage/Characters/macros.md) (such as \{\{user\}\}, \{\{char\}\}, etc) if the 'Macros in Find Regex' is set to do so (see below).
+- **Find Regex** : This is the Regular Expression that is used to detect your targeted text pattern. This is usually the most complex part of any RegEx script, and is the easiest place to make mistakes. Refer to the links at the top of the page for information how to write a RegEx sequence. This box can resolve the values of [common SillyTavern macros](/usage/macros.md) (such as \{\{user\}\}, \{\{char\}\}, etc) if the 'Macros in Find Regex' is set to do so (see below).
 
 - **Replace With**: This is what will replace the matched sequence. In a very simple example, if your 'Find Regex' is `apple`, and your 'Replace With' is `orange`, the first occurrence of 'apple' would be automatically changed to 'orange' in any text where the script is applied.
 

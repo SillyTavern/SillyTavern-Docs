@@ -33,6 +33,7 @@ Most common Stable Diffusion generation settings are customizable within the Sil
 |:--------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------|
 | [AI/ML API](https://aimlapi.com/)                                                                 | Cloud, paid                                                                                     |
 | [Black Forest Labs](https://bfl.ai/)                                                              | Cloud, paid                                                                                     |
+| [Cloudflare Workers AI](https://www.cloudflare.com/developer-platform/products/workers-ai/)       | Cloud, paid, various models with vision capabilities                                            |
 | [Chutes](https://chutes.ai/)                                                                      | Cloud                                                                                           |
 | [ComfyUI](https://github.com/comfyanonymous/ComfyUI)                                              | Local, open source (GPL3), free of charge, see [ComfyUI Configuration](#comfyui-configuration). |
 | [Draw Things](https://drawthings.ai/)                                                             | Local, Mac/iOS, free of charge                                                                  |
@@ -47,7 +48,7 @@ Most common Stable Diffusion generation settings are customizable within the Sil
 | [Pollinations](https://pollinations.ai/)                                                          | Cloud, open source (MIT), free of charge                                                        |
 | [SD.Next / vladmandic](https://github.com/vladmandic/automatic)                                   | Local, open source (AGPL3), free of charge                                                      |
 | [SillyTavern Extras](https://github.com/SillyTavern/SillyTavern-Extras)                           | Deprecated, not recommended                                                                     |
-| [stable-diffusion.cpp](https://github.com/leejet/stable-diffusion.cpp)                             | Local, open source (MIT), free of charge                                                        |
+| [stable-diffusion.cpp](https://github.com/leejet/stable-diffusion.cpp)                            | Local, open source (MIT), free of charge                                                        |
 | [Stability AI](https://platform.stability.ai/)                                                    | Cloud, paid                                                                                     |
 | [Stable Diffusion WebUI / AUTOMATIC1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui) | Local, open source (AGPL3), free of charge                                                      |
 | [Stable Horde](https://stablehorde.net/)                                                          | Cloud, open source (AGPL3), free of charge                                                      |
@@ -110,7 +111,7 @@ The example below will send the generated image using Markdown as a user persona
 
 ### Image swipes
 
-Image swipes allow rerolling the image generation while keeping the same prompt. If a fixed seed is set, it will be randomized for the next generation. 
+Image swipes allow rerolling the image generation while keeping the same prompt. If a fixed seed is set, it will be randomized for the next generation. Image dimensions that were overridden via the `/sd` slash command are preserved for swiped images.
 
 To cycle through images, hover a mouse cursor (tap on mobile) over a generated image to reveal arrow buttons and swipes counter. Tapping the right arrow on the latest image will generate a new one.
 
@@ -120,7 +121,7 @@ To cycle through images, hover a mouse cursor (tap on mobile) over a generated i
 
 ### Edit prompts before generation
 
-Allow to edit the automatically generated prompts manually before sending them to the Stable Diffusion API.
+This option lets you edit automatically generated prompts before they are sent to the Image Generation API. You can also edit or discard the saved negative prompt and override the resolution when regenerating an image that was originally created with the `/sd` command.
 
 ### Use function tool
 

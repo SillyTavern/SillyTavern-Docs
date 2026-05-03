@@ -163,6 +163,8 @@ All these sources require an API key of the respective service and usually have 
 9. Electron Hub
 10. Chutes
 11. NanoGPT
+12. SiliconFlow
+13. Cloudflare Workers AI
 
 ## Vectorization Settings
 

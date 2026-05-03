@@ -82,6 +82,9 @@ Now let's add a little bit of interactivity to the script. We will accept the in
 - `wide=on/off` - increases the horizontal size of the popup. Default: `off`.
 - `okButton=string` - adds ability to customize the text on the "Ok" button. Default: `Ok`.
 - `rows=number` - (only for `/input`) increases the size of the input control. Default: 1.
+- `placeholder=string` - sets placeholder text in the input field.
+- `tooltip=string` - sets a tooltip displayed on hover.
+- `icon=string` - sets a Font Awesome icon class for the popup.
 
 Example:
 ```stscript
@@ -648,6 +651,9 @@ Scripts can make requests to your currently connected LLM API using the followin
 - `/gen (prompt)` — generates text using the provided prompt for the selected character and including chat messages.
 - `/genraw (prompt)` — generates text using just the provided prompt, ignoring the current character and chat.
 - `/trigger` — triggers a normal generation (equivalent to clicking a "Send" button). If in group chat, you can optionally provide a 1-based group member index or a character name to have them reply, otherwise triggers a group round according to the group settings.
+- `/swipe` — triggers a swipe on the last character message.
+- `/regenerate` — regenerates the last character message.
+- `/continue` — attempts to continue the last message.
 
 ### Arguments for `/gen` and `/genraw`
 
@@ -777,6 +783,24 @@ This will insert a user message at the beginning of the conversation history:
 3. `/delswipe (1-based swipe id)` — deletes a swipe from the last character message based on the provided 1-based swipe ID.
 4. `/delname (character name)` — deletes all messages in the current chat that belong to a character with the specified name.
 5. `/delchat` — deletes the current chat.
+
+## Character management commands
+
+1. `/char-create` — creates a new character using the data provided with named arguments.
+2. `/char-update` — updates the current character using the data provided with named arguments.
+3. `/char-get` — retrieves the current character's data as a JSON object and passes it to the pipe.
+4. `/char-delete (name)` — deletes the character with the specified name.
+5. `/char-duplicate (name)` — duplicates the character with the specified name.
+6. `/tag-import (name)` — imports tags from a character card file.
+
+## Loader commands
+
+The loader system provides a reusable overlay for time consuming tasks that should provide visual feedback and/or temporarily block the UI.
+
+1. `/loader-show (text)` — shows a loading overlay with the specified text.
+2. `/loader-hide` — hides the loading overlay.
+3. `/loader-wrap (closure)` — shows a loading overlay, executes the provided closure, and hides the overlay when done.
+4. `/loader-stop` — stops and removes the loading overlay.
 
 ## World Info commands
 

@@ -18,7 +18,7 @@ SillyTavern is a passion project brought to you by a dedicated community of LLM 
 
 ## Installation Requirements
 
-The hardware requirements are minimal: it will run on anything that can run NodeJS 18 or higher. If you intend to do LLM inference on your local machine, we recommend a 3000-series NVIDIA graphics card with at least 6GB of VRAM.
+The hardware requirements are minimal: it will run on anything that can run NodeJS 20 or higher. If you intend to do LLM inference on your local machine, we recommend a 3000-series NVIDIA graphics card with at least 6GB of VRAM.
 
 Follow the installation guide for your platform:
 
