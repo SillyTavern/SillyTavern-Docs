@@ -683,6 +683,7 @@ All hooks are optional. Hook functions can return a `Promise` that will be await
 | `delete` | Before the extension is deleted from the server |
 | `enable` | Before the extension is enabled and settings are saved |
 | `disable` | Before the extension is disabled and settings are saved |
+| `clean` | When a user clicks the "Clean extension data" button in the extension manager, or chooses an option to clean when deleting the extension |
 
 ### Manifest configuration
 
@@ -699,7 +700,8 @@ Add a `hooks` object to your `manifest.json` mapping hook names to exported func
         "delete": "onDelete",
         "enable": "onEnable",
         "disable": "onDisable",
-        "activate": "onActivate"
+        "activate": "onActivate",
+        "clean": "onClean"
     }
 }
 ```
@@ -741,6 +743,11 @@ export function onEnable() {
 
 export function onDisable() {
     console.log('Extension disabled');
+}
+
+export async function onClean() {
+    console.log('Extension data cleaned');
+    // e.g., cleanup of the extension's data here
 }
 ```
 
