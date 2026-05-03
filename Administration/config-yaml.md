@@ -238,9 +238,9 @@ For example, to disable login rate limiting, set `rateLimiting.accountsLoginMaxA
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|------------------|
 | `rateLimiting.preferRealIpHeader` | Use IP from headers configured in the [Forwarded Headers Configuration](#forwarded-headers-configuration) instead of the socket IP for rate limiting | `false` | `true`, `false` |
-| `rateLimiting.accountsLoginMaxAttempts` | Maximum login attempts for user accounts before temporary lockout | `5` | Any positive integer, or `0` |
-| `rateLimiting.accountsRecoverMaxAttempts` | Maximum password recovery attempts before temporary lockout | `5` | Any positive integer, or `0` |
-| `rateLimiting.basicAuthMaxAttempts` | Maximum basic auth attempts before temporary lockout | `5` | Any positive integer, or `0` |
+| `rateLimiting.accountsLoginMaxAttempts` | Maximum login attempts for user accounts before temporary lockout (1 minute) | `5` | Any positive integer, or `0` |
+| `rateLimiting.accountsRecoverMaxAttempts` | Maximum password recovery attempts before temporary lockout (5 minutes) | `5` | Any positive integer, or `0` |
+| `rateLimiting.basicAuthMaxAttempts` | Maximum basic auth attempts before temporary lockout (1 minute) | `5` | Any positive integer, or `0` |
 
 ## Request Proxy Configuration
 
