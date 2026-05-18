@@ -953,6 +953,115 @@ registerMacro('tomorrow', () => {
 unregisterMacro('fizz');
 ```
 
+## Message formatting hooks
+
+!!!warning Staging Feature
+This is currently only available on the `staging` branch of SillyTavern, and not part of the latest release.
+!!!
+
+Extensions can hook into the message formatting pipeline to transform message text before it reaches the DOM. This is useful for adding annotations (ruby tags, tooltips), highlighting, or custom text transformations.
+
+!!!warning
+Hooks run synchronously and **must return a string**. Async functions and non-string returns will throw a `TypeError` at registration time or be silently ignored at runtime with a console warning. Do not perform expensive operations in these hooks — they run on every message render.
+!!!
+
+### Pipeline stages
+
+Hooks can be registered for three pipeline stages. All stages run **before** DOMPurify sanitization, so output is always safe:
+
+| Stage | When it runs | Text format |
+|-------|--------------|-------------|
+| `beforeRegex` | After prompt-bias stripping, before custom regex rules | Plain text |
+| `afterRegex` | After custom regex rules, before Markdown conversion | Plain text |
+| `afterMarkdown` | After Markdown-to-HTML conversion (showdown), before DOMPurify | HTML string |
+
+The `afterMarkdown` stage is the default and the most common insertion point for extensions that want to annotate rendered HTML.
+
+### Registering a hook
+
+Access the `messageFormatter` from `getContext()`:
+
+```js
+const { messageFormatter } = SillyTavern.getContext();
+
+// Simple hook - transforms message text
+messageFormatter.addHook((mes, ctx) => {
+    // Skip user messages
+    if (ctx.isUser) return mes;
+
+    // Add furigana to Japanese text
+    return addFurigana(mes);
+});
+
+// Hook with explicit stage and order
+messageFormatter.addHook((mes, ctx) => {
+    // Transform after Markdown conversion but before sanitization
+    return mes.replace(/\*\*(.+?)\*\*/g, '<mark>$1</mark>');
+}, {
+    stage: messageFormatter.stage.AFTER_MARKDOWN,
+    order: messageFormatter.order.EARLY,
+});
+```
+
+### Hook context
+
+The hook receives an immutable context object with message metadata:
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `characterName` | `string` | Character name associated with the message |
+| `isSystem` | `boolean` | Whether the message is a system message |
+| `isUser` | `boolean` | Whether the message was sent by the user |
+| `messageId` | `number` | Index of the message in the chat array, or `-1` for transient messages (streaming previews) |
+| `isReasoning` | `boolean` | Whether the message is reasoning/thinking output |
+| `stage` | `string` | The pipeline stage currently being executed |
+
+The context object is frozen with `Object.freeze()` — attempting to modify it will have no effect.
+
+### Hook ordering
+
+Hooks within a stage run in ascending order. Use the `order` option to control execution order:
+
+```js
+const { hook_order } = messageFormatter;
+
+// Predefined constants
+hook_order.EARLIEST;  // 0
+hook_order.EARLY;     // 10
+hook_order.NORMAL;    // 50 (default)
+hook_order.LATE;      // 90
+hook_order.LATEST;    // 100
+
+// Custom numeric value
+messageFormatter.addHook(myHook, { order: 25 });
+```
+
+Lower numbers run first. This is useful when multiple extensions transform the same text — for example, one extension might extract data early, and another might format it later.
+
+### Error handling
+
+Hook execution is wrapped in try/catch. If a hook throws, it is skipped and a console error is logged — the pipeline continues with the remaining hooks.
+
+If a hook returns a non-string value (including `undefined` or a `Promise`), a console warning is emitted and the return value is ignored. The pipeline continues with the previous text unchanged.
+
+### Full pipeline order
+
+For reference, the complete message formatting pipeline is:
+
+1. Prompt-bias stripping (message 0 only)
+2. Comment / hidden-message normalization
+3. `beforeRegex` extension hooks
+4. Custom regex rules (`getRegexedString`)
+5. `afterRegex` extension hooks
+6. Markdown auto-fix (`fixMarkdown`)
+7. HTML tag encoding (`encode_tags`)
+8. Showdown Markdown → HTML conversion
+9. `afterMarkdown` extension hooks
+10. Name-prefix stripping (`allow_name2_display`)
+11. DOMPurify sanitization
+
+All extension hooks (steps 3, 5, 9) run **before** DOMPurify so their output is always sanitized.
+
 ## Function tool calling
 
 Extensions can register custom function tools that the LLM can invoke during chat completion. This lets your extension react to structured data from the model — for example, querying APIs, performing calculations, or triggering extension features.
