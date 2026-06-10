@@ -1,159 +1,498 @@
+=== LIVING AGE OVERVIEW ===
+
+KEYS:
+Living Age,Biochrome,World,Civilization
+
+CONSTANT:
+TRUE
+
+CONTENT:
+
+The Living Age is a post-scarcity civilization built after the Fracture Century. Humanity values creativity, beauty, individuality, emotional intelligence, and community. Technology and nature exist together through Biochrome Design. Arcologies function as living ecosystems filled with forests, waterways, gardens, wildlife, and advanced technology.
+
+The defining philosophy is:
+
+"The Future Should Feel Alive."
+
+Beauty matters. Nature matters. Community matters. Technology exists to improve life rather than dominate it.
+
+=== HISTORY ===
+
+KEYS:
+History,Fracture Century,Digital Dawn,Renaissance
+
+CONTENT:
+
+Digital Dawn (1995-2010): An era remembered for technological optimism, colorful design, and excitement about the future.
+
+Fracture Century: A long period of climate instability, resource conflicts, social fragmentation, and global restructuring.
+
+Great Human Renaissance: Humanity rebuilt civilization around ecological integration, sustainability, emotional well-being, and creativity.
+
+Biochrome Era: The rise of Biochrome Design and the Living Age.
+
+=== BIOCHROME DESIGN ===
+
+KEYS:
+Biochrome,Technology,Design
+
+CONTENT:
+
+Biochrome Design emphasizes colorful, transparent, rounded, expressive, and customizable technology.
+
+Technology is visible, understandable, and beautiful rather than hidden. Devices are treated as extensions of personal identity.
+
+=== ARCOLOGIES ===
+
+KEYS:
+Arcology,City,Cities
+
+CONTENT:
+
+Arcologies are self-sustaining vertical ecosystems housing millions of citizens.
+
+Features include:
+
+• Living architecture
+• Vertical forests
+• Artificial rivers
+• Hydroponic agriculture
+• Wildlife preserves
+• Community gardens
+• Integrated transportation systems
+
+=== TECHNOLOGY ===
+
+KEYS:
+Technology,Device,AI
+
+CONTENT:
+
+Technology is advanced but approachable.
+
+Examples:
+
+• Transparent communicators
+• Wearable interfaces
+• Personal AI companions
+• Smart fabrics
+• Living machines
+• Holographic systems
+• Biotech prosthetics
+
+=== BLUE DISTRICT ===
+
+KEYS:
+Blue District,Blue Side,Current
+
+CONTENT:
+
+The Blue District, often called The Current, values freedom, creativity, experimentation, and community.
+
+Known for:
+
+• Street art
+• Music culture
+• Skating
+• Rooftop recreation
+• Exploration
+• Innovation
+• Casual lifestyles
+
+=== RED DISTRICT ===
+
+KEYS:
+Red District,Red Side,Canopy
+
+CONTENT:
+
+The Red District, often called The Canopy, values achievement, legacy, structure, and excellence.
+
+Known for:
+
+• Architecture
+• Education
+• Research
+• Ecological design
+• Cultural preservation
+• High standards
+
+=== ROMANCE CULTURE ===
+
+KEYS:
+Romance,Dating,Relationship
+
+CONTENT:
+
+Romance is viewed as cultivation rather than destiny.
+
+Relationships are built through communication, emotional honesty, compatibility, and mutual growth.
+
+Common saying:
+
+"We grew together."
+
+People generally value emotional maturity over grand romantic gestures.
+
+=== RELATIONSHIP ARCHETYPES ===
+
+KEYS:
+Wild Bloomer,Rooted Heart,Thornheart,Twinblooms
+
+CONTENT:
+
+Wild Bloomer:
+Appears carefree but falls deeply in love.
+
+Rooted Heart:
+Values stability and commitment.
+
+Thornheart:
+Wants connection but protects themselves emotionally.
+
+Twinblooms:
+Two people who naturally grow together.
+
+Drifter:
+Values freedom and independence.
+
+Sunchaser:
+Constantly seeks excitement and novelty.
+
+=== RELATIONSHIP DRAMA ===
+
+KEYS:
+Split Rooting,Ghost Blooming,Wilting,Pruning,Heart Static
+
+CONTENT:
+
+Split Rooting:
+Maintaining multiple romantic commitments while claiming exclusivity.
+
+Ghost Blooming:
+Giving affection without genuine commitment.
+
+Wilting:
+A relationship fading through neglect.
+
+Pruning:
+A respectful intentional breakup.
+
+Heart Static:
+Rumors, jealousy, drama, and emotional conflict.
+
+=== SLANG ===
+
+KEYS:
+Slang,Glassed,Blooming,Static
+
+CONTENT:
+
+Glassed = Amazing
+
+Blooming = Thriving
+
+Wilted = Exhausted
+
+Static = Drama
+
+Wildgrow = Unpredictable person
+
+Chrome = Stylish or attractive
+
+Ghostline = Hidden route
+
+Fresh-Grown = Inexperienced
+
+Rooted = Trustworthy
+
+Canopy-Side = Prestigious area
+
+Undergreen = Community district
+
+Glow-Upcycle = Personal reinvention
+
+Signal Lost = Social disappearance
+
+Overgrown = Rejecting expectations
+
+Bloomstorm = Sudden popularity
+
+=== NPC RULES ===
+
+KEYS:
+NPC,Citizen,People,Crowd
+
+CONSTANT:
+TRUE
+
+CONTENT:
+
+Citizens possess independent lives, goals, jobs, routines, hobbies, opinions, relationships, and ambitions.
+
+NPCs should feel alive even when not directly involved in the plot.
+
+NPCs can form friendships, rivalries, loyalties, romances, mentorships, and conflicts with other NPCs.
+
+Not every NPC exists for the protagonist.
+
+=== SPEECH RULES ===
+
+KEYS:
+Speech,Dialogue,Language
+
+CONSTANT:
+TRUE
+
+CONTENT:
+
+Citizens speak naturally and casually.
+
+Speech includes:
+
+• Contractions
+• Humor
+• Teasing
+• Sarcasm
+• Interruptions
+• Regional slang
+• Emotional honesty
+
+Dialogue should feel modern, fluid, and natural rather than formal or robotic.
+
+=== FESTIVALS ===
+
+KEYS:
+Festival,Celebration,Holiday
+
+CONTENT:
+
+Common festivals include:
+
+• Drone races
+• Floating garden exhibitions
+• Music festivals
+• Food markets
+• Technology showcases
+• Ecological celebrations
+• Community gatherings
+• Art exhibitions
+
+=== DAILY LIFE ===
+
+KEYS:
+Life,Daily Life,Lifestyle
+
+CONTENT:
+
+Citizens spend time creating art, designing technology, studying, gardening, skating, exploring arcologies, attending festivals, socializing, building projects, playing sports, making music, and participating in community events.
+Perfect. Here are ready-to-paste **Janitor Lorebook Entries**.
+
 ---
-label: Android (Termux)
-route: /installation/android-(termux)/
+
+# ENTRY: FESTIVALS
+
+### Keys
+
+```txt
+Festival,Festivals,Celebration,Celebrations,Holiday,Holidays,Tradition,Traditions
+```
+
+### Content
+
+```txt
+Ancient holidays such as Christmas, Valentine's Day, Halloween, Thanksgiving, and New Year's have largely faded into history and survive only in educational archives.
+
+Modern citizens celebrate community festivals focused on growth, creativity, connection, and self-expression.
+
+Major festivals include:
+
+Bloomstorm:
+The largest summer celebration. Features music festivals, drone races, rooftop gatherings, food markets, fashion showcases, and city-wide parties.
+
+Canopy Night:
+A nighttime festival where arcologies illuminate the skyline with floating lights, lantern drones, and glowing gardens. Families and friends gather on rooftops and skybridges.
+
+Glowmarket:
+A yearly celebration of art, fashion, technology, craftsmanship, and innovation. Citizens debut creations, performances, and inventions.
+
+Rootday:
+A holiday dedicated to honoring mentors, family, ancestors, and meaningful relationships.
+
+Festivals are highly social events and often become settings for friendships, romances, rivalries, confessions, and public drama.
+```
+
 ---
 
-# Android (Termux) Installation
+# ENTRY: HEARTBLOOM
 
-SillyTavern can be run natively on Android devices using Termux.
+### Keys
 
-## Installing Termux
-
-!!!tip
-Avoid installing Termux from the Google Play Store, that version is no longer maintained. 
-Instead, use F-Droid (recommended) or GitHub releases to get the latest version.
-!!!
-
-1. Download Termux from [F-Droid](https://f-droid.org/en/packages/com.termux/) or [GitHub releases](https://github.com/termux/termux-app/releases).
-2. Install the downloaded APK file.
-3. Open Termux and run your first command:
-
-   ```bash
-   termux-change-repo
-   ```
-
-4. Select "Mirror group" and choose your closest servers. You can touch the screen or use swipe gestures with [Unexpected Keyboard](https://play.google.com/store/apps/details?id=juloo.keyboard2&hl=en).
-5. Update Termux:
-
-   ```bash
-   pkg update && pkg upgrade
-   ```
-
-## Installing Dependencies
-
-Install the required packages:
-
-```bash
-pkg install git nodejs-lts nano
+```txt
+Heartbloom,Love Holiday,Confession,Romance Holiday
 ```
 
-!!!warning
-If you're running 32-bit Android, see the [Common Errors](#common-errors) section below for additional steps.
-!!!
+### Content
 
-## Installing SillyTavern
+```txt
+Heartbloom is the Living Age equivalent of a romantic holiday.
 
-Clone the SillyTavern repository ([How to Choose a Branch](/Installation/index.md#branches)):
+Rather than focusing solely on couples, Heartbloom celebrates meaningful connections of all kinds.
 
-- **Release Branch:**
+Citizens exchange flowers, gifts, handwritten messages, custom playlists, artwork, experiences, and keepsakes.
 
-    ```bash
-    git clone https://github.com/SillyTavern/SillyTavern -b release
-    ```
+Friends, families, mentors, and romantic partners all participate.
 
-- **Staging Branch:**
+Heartbloom is famous for public confessions, first dates, relationship announcements, and emotional revelations.
 
-    ```bash
-    git clone https://github.com/SillyTavern/SillyTavern -b staging
-    ```
-
-## Running SillyTavern
-
-To run SillyTavern, navigate to the cloned directory and run the start script:
-
-```bash
-cd ~/SillyTavern
-bash start.sh
+Many relationships begin during Heartbloom.
 ```
 
-To update SillyTavern, navigate to the SillyTavern directory and run:
+---
 
-```bash
-cd ~/SillyTavern
-git pull --rebase --autostash
+# ENTRY: LUMINA WEEK
+
+### Keys
+
+```txt
+Lumina Week,Winter Festival,Winter Holiday
 ```
 
-See the [Aliases](#optional-create-aliases) section below for creating shortcuts to simplify this process.
+### Content
 
-## Common Errors
+```txt
+Lumina Week takes place during the darkest period of the year.
 
-### Unsupported platform: android arm LEtime-web
+Cities decorate parks, arcologies, homes, greenhouses, and skybridges with bioluminescent lights and glowing installations.
 
-32-bit Android requires an external dependency that can't be installed with npm.
+Families gather for meals, gift exchanges, celebrations, and community events.
 
-Use the following command to install it:
+The holiday symbolizes resilience, hope, and bringing light into difficult times.
 
-```bash
-pkg install esbuild
+Many citizens consider Lumina Week the most important annual celebration.
 ```
 
-Then proceed with the installation steps above.
+---
 
-### Performance tweaks
+# ENTRY: BLUE DISTRICT TRADITIONS
 
-!!!info
-For general tips on improving performance, see the respective [FAQ section](/Usage/faq.md#performance-tips).
-!!!
+### Keys
 
-Due to hardware limitations on Android devices, you may want to adjust the following SillyTavern [config.yaml](/Administration/config-yaml.md) settings for better memory, storage, and CPU usage:
-
-```yaml
-performance:
-  # Avoid loading all character data until needed
-  lazyLoadCharacters: true
-  # Disable disk caching to reduce storage usage
-  useDiskCache: false
-backups:
-  chat:
-    # Optional: Disable automatic chat backups to save storage
-    enabled: false
+```txt
+Blue District,Blue Side,Current,Blue Traditions
 ```
 
-!!!tip
-Use the `nano` text editor included with Termux to edit the `config.yaml` file: `nano ~/SillyTavern/config.yaml`
-!!!
+### Content
 
-## Optional: Create Aliases
+```txt
+The Blue District values freedom, creativity, exploration, and self-expression.
 
-You can create shortcuts for common commands to make your workflow easier.
+Popular traditions include:
 
-1. Open an editor to modify your `.bashrc` file:
+• Rooftop concerts
+• Community murals
+• Night skating events
+• Underground music gatherings
+• Drone racing leagues
+• Open-air movie nights
+• Exploration challenges
+• Street food festivals
 
-   ```bash
-   nano ~/.bashrc
-   ```
+Blue-side celebrations are informal, energetic, and community driven.
+```
 
-2. Add the following lines to create aliases:
+---
 
-   ```bash
-   # Update Termux packages
-   alias pkgup="pkg update && pkg upgrade"
-   #Start SillyTavern
-   alias st='cd ~/SillyTavern && bash start.sh'
-   # Update SillyTavern
-   alias stup='cd ~/SillyTavern && git pull --rebase --autostash'
-   ```
+# ENTRY: RED DISTRICT TRADITIONS
 
-3. Save the file and exit the editor (in nano, press `CTRL + X`, then `Y`, then `Enter`).
+### Keys
 
-4. To apply the changes, run:
+```txt
+Red District,Red Side,Canopy,Red Traditions
+```
 
-   ```bash
-   source ~/.bashrc
-   ```
+### Content
 
-Now you can use the following commands:
+```txt
+The Red District values excellence, legacy, discipline, and cultural preservation.
 
-- `st` to start SillyTavern
-- `stup` to update SillyTavern
-- `pkgup` to update Termux packages
+Popular traditions include:
 
-## Further Reading
+• Garden galas
+• Academic showcases
+• Design exhibitions
+• Architectural competitions
+• Historical commemorations
+• Formal dances
+• Cultural festivals
+• Community ceremonies
 
-!!!info
-The guides linked below are not maintained by the SillyTavern team.
-!!!
+Red-side celebrations are structured, elegant, and carefully organized.
+```
 
-- SillyTavern in Termux guide by ArroganceComplex#2659: <https://rentry.org/STAI-Termux>
-- Accessing Termux files with Material Files: <https://www.learntermux.tech/2020/10/Termux-File-Manager.html>
-- Prevent Termux process deep sleep: <https://wiki.termux.com/wiki/Termux-wake-lock>
+---
+
+# ENTRY: ROMANCE CULTURE
+
+### Keys
+
+```txt
+Romance,Dating,Love,Relationship
+```
+
+### Content
+
+```txt
+Romance in the Living Age is viewed as growth rather than destiny.
+
+Citizens believe relationships should be cultivated through trust, communication, emotional honesty, and mutual support.
+
+Grand gestures exist but are considered less important than consistency and effort.
+
+Common romantic activities include:
+
+• Greenhouse walks
+• Rooftop dates
+• Festival outings
+• Floating garden visits
+• Arcology exploration
+• Music events
+• Late-night city wandering
+
+A common saying is:
+
+"We didn't fall in love. We grew into it."
+```
+
+---
+
+# ENTRY: RELATIONSHIP DRAMA
+
+### Keys
+
+```txt
+Drama,Cheating,Breakup,Heartbreak,Relationship Drama,Jealousy
+```
+
+### Content
+
+Romantic conflict remains common despite society's emphasis on emotional intelligence.
+
+Common relationship terms include:
+
+Split Rooting:
+Maintaining multiple romantic relationships while claiming exclusivity.
+
+Ghost Blooming:
+Giving affection without genuine commitment.
+
+Wilting:
+A relationship fading through neglect or emotional distance.
+
+Pruning:
+A respectful breakup.
+
+Heart Static:
+Rumors, jealousy, misunderstandings, scandals, and emotional conflict.
+
+Relationship drama frequently spreads through friend groups, community circles, and social networks.
