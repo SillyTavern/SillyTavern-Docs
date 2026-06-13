@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832450154317">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.834705883841">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>Extras Installation | docs.ST.app</title>
@@ -44,11 +44,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.5.3.832450154317" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.6.0.834705883841" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.832450154317" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.832450154317" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.6.0.834705883841" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.6.0.834705883841" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -346,6 +346,17 @@
 <p>Example: <code translate="no" v-pre>python server.py --enable-modules=caption,summarize,classify</code></p>
 <p>This would enable Image Captioning, Chat Summary, and live updating Character Expressions.</p>
 <p>Below is a table that describes each module.</p>
+<retype-table copy-text="| Name         | Description                                                         |
+|--------------|---------------------------------------------------------------------|
+| `caption`    | Image captioning                                                    |
+| `summarize`  | Text summarization                                                  |
+| `classify`   | Text sentiment classification                                       |
+| `sd`         | Stable Diffusion image generation                                   |
+| `silero-tts` | [Silero TTS server](https://github.com/ouoertheo/silero-api-server) |
+| `edge-tts`   | [Microsoft Edge TTS client](https://github.com/rany2/edge-tts)      |
+| `chromadb`   | Vector storage server                                               |
+| `coqui-tts`  | Coqui TTS                                                           |
+| `rvc`        | Real-time voice cloning                                             |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -394,6 +405,7 @@
 </tbody>
 </table>
 </div>
+</retype-table>
 <ul>
 <li>Decide which modules you want to add to your Python command line.</li>
 <li>They will be used in the next step.</li>

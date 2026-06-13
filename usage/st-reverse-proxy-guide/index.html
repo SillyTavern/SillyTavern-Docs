@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832450154317">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.834705883841">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>Reverse proxying | docs.ST.app</title>
@@ -38,12 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.5.3.832450154317" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.834705883841" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832450154317" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832450154317" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.5.3.832450154317" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.834705883841" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.834705883841" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.834705883841" defer></script>
 
     <style>
         a {
@@ -486,6 +486,10 @@ networks:
 <li><code translate="no" v-pre>cd</code> into <code translate="no" v-pre>secrets/cloudflare</code> and using <code translate="no" v-pre>nano</code> or a similar editor, create a file named <strong>CF_DNS_API_KEY</strong> and paste your key inside.</li>
 <li>
 <p>Return to your domain page and go to <strong>DNS</strong>. Create a new record using <strong>Add record</strong> and create two <em>A</em> type keys like the ones below. Replace <code translate="no" v-pre>PUBLIC_IP</code> with your own public IP, then click <em>Save</em>.</p>
+<retype-table copy-text="| Type | Name (required) | Target (required) | Proxy Status | TTL  |
+    |------|-----------------|-------------------|--------------|------|
+    | A    | DOMAIN.com      | PUBLIC_IP         | Proxied      | Auto |
+    | A    | www             | PUBLIC_IP         | Proxied      | Auto |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -515,9 +519,13 @@ networks:
 </tbody>
 </table>
 </div>
+</retype-table>
 </li>
 <li>
 <p>Create another record of the <strong><code translate="no" v-pre>CNAME</code></strong> type, then click <em>Save</em>. Here is an example on how it should appear on the Cloudflare dashboard.</p>
+<retype-table copy-text="| Type  | Name (required) | Target (required) | Proxy Status | TTL |
+    |-------|-----------------|-------------------|--------------|-----|
+    | CNAME | silly           | DOMAIN.com        | Proxied      | N/A |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -540,6 +548,7 @@ networks:
 </tbody>
 </table>
 </div>
+</retype-table>
 </li>
 <li>
 <p><code translate="no" v-pre>cd</code> into <em>appdata/traefik</em> and using <code translate="no" v-pre>nano</code> or a similar editor, create a file named <em>config.yml</em> and paste the following. Replace <code translate="no" v-pre>PRIVATE_IP</code> with the private IP you obtained, and <code translate="no" v-pre>silly.DOMAIN.com</code> with the name of your subdomain and domain page, then save the file.</p>
@@ -693,6 +702,10 @@ perUserBasicAuth: true</code></pre>
 <li><code translate="no" v-pre>cd</code> into <code translate="no" v-pre>secrets/cloudflare</code> and using <code translate="no" v-pre>nano</code> or a similar editor, create a file named <strong>CF_DNS_API_KEY</strong> and paste your key inside.</li>
 <li>
 <p>Return to your domain page and go to <strong>DNS</strong>. Create a new record using <strong>Add record</strong> and create two <em>A</em> type keys like the ones below. Replace <code translate="no" v-pre>PUBLIC_IP</code> with your own public IP and the example domain with your domain, then click <em>Save</em>.</p>
+<retype-table copy-text="| Type | Name (required) | Target (required) | Proxy Status | TTL  |
+    |------|-----------------|-------------------|--------------|------|
+    | A    | DOMAIN.com      | PUBLIC_IP         | Proxied      | Auto |
+    | A    | www             | PUBLIC_IP         | Proxied      | Auto |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -722,9 +735,13 @@ perUserBasicAuth: true</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 </li>
 <li>
 <p>Create another record of the <strong><code translate="no" v-pre>CNAME</code></strong> type, then click <em>Save</em>. Here is an example on how it should appear on the Cloudflare dashboard.</p>
+<retype-table copy-text="| Type  | Name (required) | Target (required) | Proxy Status | TTL |
+    |-------|-----------------|-------------------|--------------|-----|
+    | CNAME | silly           | DOMAIN.com        | Proxied      | N/A |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -747,6 +764,7 @@ perUserBasicAuth: true</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 </li>
 <li>Git clone SillyTavern into the <code translate="no" v-pre>docker</code> folder.
 <div class="codeblock-wrapper"><doc-codeblock>

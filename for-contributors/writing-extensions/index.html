@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832450154317">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.834705883841">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>UI Extensions | docs.ST.app</title>
@@ -38,12 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.5.3.832450154317" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.834705883841" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832450154317" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832450154317" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.5.3.832450154317" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.834705883841" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.834705883841" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.834705883841" defer></script>
 
     <style>
         a {
@@ -907,6 +907,15 @@ await eventSource.emit(eventType, { data: 'custom event data' });</code></pre>
 <p>Extensions can define lifecycle hooks in <code translate="no" v-pre>manifest.json</code> that are called at specific points in the extension&#x27;s lifecycle. Each hook maps to an <strong>exported function</strong> from the extension&#x27;s JS entry point module (the file specified in the <code translate="no" v-pre>js</code> field).</p>
 <p>All hooks are optional. Hook functions can return a <code translate="no" v-pre>Promise</code> that will be awaited (with a 5-second timeout). If a hook exceeds the timeout, a warning is logged and execution continues. Errors in hooks are caught and logged without blocking the operation.</p>
 <h3 id="available-hooks">Available hooks</h3>
+<retype-table copy-text="| Hook | When it's called |
+|------|-----------------|
+| `activate` | When the extension is successfully activated during page load |
+| `install` | After the extension is installed and its settings are loaded |
+| `update` | After a successful extension update (before the reload toast) |
+| `delete` | Before the extension is deleted from the server |
+| `enable` | Before the extension is enabled and settings are saved |
+| `disable` | Before the extension is disabled and settings are saved |
+| `clean` | When a user clicks the &quot;Clean extension data&quot; button in the extension manager, or chooses an option to clean when deleting the extension |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -947,6 +956,7 @@ await eventSource.emit(eventType, { data: 'custom event data' });</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h3 id="manifest-configuration">Manifest configuration</h3>
 <p>Add a <code translate="no" v-pre>hooks</code> object to your <code translate="no" v-pre>manifest.json</code> mapping hook names to exported function names:</p>
 <div id="manifest-configuration-code-1" class="codeblock-wrapper"><doc-codeblock>
@@ -1266,6 +1276,11 @@ unregisterMacro('fizz');</code></pre>
 </div>
 <h3 id="pipeline-stages">Pipeline stages</h3>
 <p>Hooks can be registered for three pipeline stages. All stages run <strong>before</strong> DOMPurify sanitization, so output is always safe:</p>
+<retype-table copy-text="| Stage | When it runs | Text format |
+|-------|--------------|-------------|
+| `beforeRegex` | After prompt-bias stripping, before custom regex rules | Plain text |
+| `afterRegex` | After custom regex rules, before Markdown conversion | Plain text |
+| `afterMarkdown` | After Markdown-to-HTML conversion (showdown), before DOMPurify | HTML string |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1294,6 +1309,7 @@ unregisterMacro('fizz');</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <p>The <code translate="no" v-pre>afterMarkdown</code> stage is the default and the most common insertion point for extensions that want to annotate rendered HTML.</p>
 <h3 id="registering-a-hook">Registering a hook</h3>
 <p>Access the <code translate="no" v-pre>messageFormatter</code> from <code translate="no" v-pre>getContext()</code>:</p>
@@ -1320,6 +1336,14 @@ messageFormatter.addHook((mes, ctx) =&gt; {
 </doc-codeblock></div>
 <h3 id="hook-context">Hook context</h3>
 <p>The hook receives an immutable context object with message metadata:</p>
+<retype-table copy-text="| Property | Type | Description |
+|----------|------|-------------|
+| `characterName` | `string` | Character name associated with the message |
+| `isSystem` | `boolean` | Whether the message is a system message |
+| `isUser` | `boolean` | Whether the message was sent by the user |
+| `messageId` | `number` | Index of the message in the chat array, or `-1` for transient messages (streaming previews) |
+| `isReasoning` | `boolean` | Whether the message is reasoning/thinking output |
+| `stage` | `string` | The pipeline stage currently being executed |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1363,6 +1387,7 @@ messageFormatter.addHook((mes, ctx) =&gt; {
 </tbody>
 </table>
 </div>
+</retype-table>
 <p>The context object is frozen with <code translate="no" v-pre>Object.freeze()</code> — attempting to modify it will have no effect.</p>
 <h3 id="hook-ordering">Hook ordering</h3>
 <p>Hooks within a stage run in ascending order. Use the <code translate="no" v-pre>order</code> option to control execution order:</p>
@@ -1439,6 +1464,16 @@ try {
 }</code></pre>
 </doc-codeblock></div>
 <h3 id="options">Options</h3>
+<retype-table copy-text="| Option | Default | Description |
+|--------|---------|-------------|
+| `blocking` | `true` | Show a full-screen overlay that blocks interaction |
+| `message` | `'Generating...'` | Message shown in the toast notification |
+| `title` | `''` | Optional title for the toast |
+| `toastMode` | `'stoppable'` | `'stoppable'` (with stop button), `'static'` (no button), or `'none'` (no toast) |
+| `stopTooltip` | `'Stop'` | Tooltip text for the stop button |
+| `onStop` | `null` | Custom stop handler. Defaults to `stopGeneration()` |
+| `onHide` | `null` | Called when the loader is hidden (not stopped) |
+| `overlayContent` | `null` | Custom HTML element or string replacing the default spinner |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1492,6 +1527,7 @@ try {
 </tbody>
 </table>
 </div>
+</retype-table>
 <h3 id="stacking-loaders">Stacking loaders</h3>
 <p>Multiple loaders can be active simultaneously. The overlay stays visible as long as at least one blocking loader is active:</p>
 <div id="stacking-loaders-code-1" class="codeblock-wrapper"><doc-codeblock>
@@ -1572,6 +1608,13 @@ if (result === POPUP_RESULT.AFFIRMATIVE) {
 const checkboxValue = popup.inputResults?.get('my_checkbox');</code></pre>
 </doc-codeblock></div>
 <h3 id="popup-types">Popup types</h3>
+<retype-table copy-text="| Type | Description |
+|------|-------------|
+| `POPUP_TYPE.TEXT` | General content popup with buttons |
+| `POPUP_TYPE.CONFIRM` | Yes/No confirmation dialog |
+| `POPUP_TYPE.INPUT` | Popup with a text input field |
+| `POPUP_TYPE.DISPLAY` | Content-only popup with a close button |
+| `POPUP_TYPE.CROP` | Image cropping popup |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1604,6 +1647,7 @@ const checkboxValue = popup.inputResults?.get('my_checkbox');</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h3 id="toast-notifications">Toast notifications</h3>
 <p>For lightweight feedback, use <code translate="no" v-pre>toastr</code> (globally available):</p>
 <div id="toast-notifications-code-1" class="codeblock-wrapper"><doc-codeblock>

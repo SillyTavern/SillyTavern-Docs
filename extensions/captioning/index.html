@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832450154317">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.834705883841">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>Image Captioning | docs.ST.app</title>
@@ -38,12 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.5.3.832450154317" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.834705883841" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832450154317" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832450154317" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.5.3.832450154317" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.834705883841" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.834705883841" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.834705883841" defer></script>
 
     <style>
         a {
@@ -247,6 +247,12 @@
 <h2 id="panel-controls">Panel controls</h2>
 <h3 id="source-selection">Source Selection</h3>
 <p>Choose the source for image captioning. Supported options:</p>
+<retype-table copy-text="| Source                           | Description                                                                                                                                                                                                  |
+|----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Multimodal](#multimodal-source) | **Cloud**: OpenAI, Anthropic, Google, MistralAI, and others. &lt;br&gt;**Local**: Ollama, llama.cpp, KoboldCpp, Text Generation WebUI, and vLLM. &lt;br&gt;Supports custom prompts so you can ask your images questions. |
+| [Local](#local-source)           | Uses [transformers.js](https://huggingface.co/docs/transformers.js/en/index) running locally inside your SillyTavern server. Zero setup!                                                                     |
+| Horde                            | Uses the [AI Horde](https://aihorde.net/) network, a crowdsourced distributed network of image generation models. Nothing to download, configure, or pay for. Variable response times.                       |
+| Extras                           | The Extras project was discontinued in April 2024 and is not maintained or supported.                                                                                                                        |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -275,6 +281,7 @@
 </tbody>
 </table>
 </div>
+</retype-table>
 <h3 id="caption-configuration">Caption Configuration</h3>
 <ul>
 <li><strong>Caption Prompt</strong>: Enter a custom prompt for captioning. The default prompt is &quot;What&#x27;s in this image?&quot;</li>
@@ -392,6 +399,31 @@
 <li>&quot;I want to keep the dream of local AI alive&quot;: <doc-anchor-trigger to="#koboldcpp">KoboldCpp</doc-anchor-trigger></li>
 <li>&quot;I want to complain when it doesn&#x27;t work&quot;: <del>Extras</del></li>
 </ul>
+<retype-table copy-text="| API Provider                      | Description                                                                                                                                                                   |
+|-----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| AI/ML API                         | Cloud, paid, various GPT, Claude, and Gemini models with vision capabilities                                                                                                  |
+| Chutes                            | Cloud, various models with vision capabilities                                                                                                                                |
+| Claude                            | Cloud, paid, all Claude models with vision capabilities                                                                                                                       |
+| Cloudflare Workers AI             | Cloud, paid, various models with vision capabilities                                                                                                                          |
+| Cohere                            | Cloud, paid, Aya Vision 8B / 32B                                                                                                                                              |
+| Custom (OpenAI-compatible)        | For custom OpenAI-compatible APIs, uses currently configured model in API Connections tab                                                                                     |
+| Electron Hub                      | Cloud, paid, various models with vision capabilities.                                                                                                                         |
+| Google AI Studio                  | Cloud, free tier then paid, Gemini Flash/Pro                                                                                                                                  |
+| Google Vertex AI                  | Cloud, free tier, Gemini Flash/Pro                                                                                                                                            |
+| Groq                              | Cloud, llama-4 scout/maverick                                                                                                                                                 |
+| KoboldCpp                         | Local, must configure model in KoboldCpp                                                                                                                                      |
+| llama.cpp                         | Local, must configure model in llama.cpp                                                                                                                                      |
+| MistralAI                         | Cloud, paid, pixtral-large, pixtral-12B, magistral, mistral-large, etc.                                                                                                       |
+| Moonshot AI                       | Cloud, paid, moonshot-vision                                                                                                                                                  |
+| NanoGPT                           | Cloud, paid, various GPT/Claude/Google models with vision capabilities                                                                                                        |
+| Ollama                            | Local, can switch between available models and download [additional vision models](https://ollama.com/search?c=vision) within Captioning after configuring in API Connections |
+| OpenAI                            | Cloud, paid, GPT-4 Vision, 4-turbo, 4o, 4o-mini                                                                                                                               |
+| OpenRouter                        | Cloud, paid (maybe free options), many models, pick from what's available within Captioning after configuring in API connections                                              |
+| Pollinations                      | Cloud, free                                                                                                                                                                   |
+| Text Generation WebUI (oobabooga) | Local, must configure model in ooba                                                                                                                                           |
+| vLLM                              | Local                                                                                                                                                                         |
+| xAI (Grok)                        | Cloud, paid, grok-vision                                                                                                                                                      |
+| Z.AI (GLM).                       | Cloud, paid, GLM Vision models                                                                                                                                                |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -496,6 +528,7 @@
 </tbody>
 </table>
 </div>
+</retype-table>
 <h3 id="secondary-endpoints">Secondary endpoints</h3>
 <p>By default, the Multimodal source uses the primary endpoint configured in the API Connections tab.
 You can also set up a secondary endpoint specifically for multimodal captioning.</p>

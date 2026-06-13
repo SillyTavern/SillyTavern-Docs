@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832450154317">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.834705883841">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>Configuration File | docs.ST.app</title>
@@ -38,12 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.5.3.832450154317" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.834705883841" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832450154317" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832450154317" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.5.3.832450154317" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.834705883841" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.834705883841" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.834705883841" defer></script>
 
     <style>
         a {
@@ -262,6 +262,33 @@ Start.bat --port 8000 --listen false</code></pre>
         </div>
     </div>
 </div>
+<retype-table copy-text="| Option                          | Description                                                          | Type     |
+|---------------------------------|----------------------------------------------------------------------|----------|
+| `--version`                     | Shows the version number                                             | boolean  |
+| `--global`                      | Forces the use of system-wide paths for application data             | boolean  |
+| `--configPath`                  | Overrides the path to the config.yaml file (standalone mode only)    | string   |
+| `--dataRoot`                    | Sets the root directory for data storage (standalone mode only)      | string   |
+| `--port`                        | Sets the port under which SillyTavern will run                       | number   |
+| `--listen`                      | Makes SillyTavern listen on all network interfaces                   | boolean  |
+| `--whitelist`                   | Enables whitelist mode                                               | boolean  |
+| `--basicAuthMode`               | Enables basic authentication                                         | boolean  |
+| `--enableIPv4`                  | Enables the IPv4 protocol                                            | boolean  |
+| `--enableIPv6`                  | Enables the IPv6 protocol                                            | boolean  |
+| `--listenAddressIPv4`           | Specifies the IPv4 address to listen on                              | string   |
+| `--listenAddressIPv6`           | Specifies the IPv6 address to listen on                              | string   |
+| `--dnsPreferIPv6`               | Prefers IPv6 for DNS                                                 | boolean  |
+| `--ssl`                         | Enables SSL                                                          | boolean  |
+| `--certPath`                    | Sets the path to your certificate file                               | string   |
+| `--keyPath`                     | Sets the path to your private key file                               | string   |
+| `--browserLaunchEnabled`        | Automatically launches SillyTavern in the browser                    | boolean  |
+| `--browserLaunchHostname`       | Sets the browser launch hostname                                     | string   |
+| `--browserLaunchPort`           | Overrides the port for browser launch                                | string   |
+| `--browserLaunchAvoidLocalhost` | Avoids using 'localhost' for browser launch in auto mode             | boolean  |
+| `--corsProxy`                   | Enables the CORS proxy                                               | boolean  |
+| `--requestProxyEnabled`         | Enables the use of a proxy for outgoing requests                     | boolean  |
+| `--requestProxyUrl`             | Sets the request proxy URL (HTTP or SOCKS protocols)                 | string   |
+| `--requestProxyBypass`          | Sets the request proxy bypass list (space-separated list of hosts)   | array    |
+| `--disableCsrf`                 | Disables CSRF protection (NOT RECOMMENDED)                           | boolean  |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -400,6 +427,7 @@ Start.bat --port 8000 --listen false</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h2 id="environment-variables">Environment Variables</h2>
 <p>Configuration may also be set via environment variables, which will override the values in the <code translate="no" v-pre>config.yaml</code> file.</p>
 <p>The environment variables should be prefixed with <code translate="no" v-pre>SILLYTAVERN_</code> and use uppercase letters for the setting names. For example, the <code translate="no" v-pre>dataRoot</code> setting can be overridden with the <code translate="no" v-pre>SILLYTAVERN_DATAROOT</code> environment variable.</p>
@@ -430,6 +458,12 @@ Start.bat --port 8000 --listen false</code></pre>
 </doc-codeblock></div>
 <p>See more about using environment variables in the <a href="https://nodejs.org/en/learn/command-line/how-to-read-environment-variables-from-nodejs">Node.js documentation</a>.</p>
 <h2 id="data-configuration">Data Configuration</h2>
+<retype-table copy-text="| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|-----------------|
+| `dataRoot` | Root directory for user data storage (standalone mode only) | `./data` | Any valid directory path |
+| `skipContentCheck` | Skip checks for new default content | `false` | `true`, `false` |
+| `enableDownloadableTokenizers` | Enable on-demand tokenizer downloads | `true` | `true`, `false` |
+| `whitelistImportDomains` | List of trusted domains for importing web-hosted character cards and assets | [See here](https://github.com/SillyTavern/SillyTavern/blob/d118eee014330c37978cc0226f4ca74a1f321eea/default/config.yaml#L220) | Array of strings |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -468,7 +502,12 @@ Start.bat --port 8000 --listen false</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h2 id="logging-configuration">Logging Configuration</h2>
+<retype-table copy-text="| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|------------------|
+| `logging.minLogLevel` | Minimum log level to display in the terminal | `0` (DEBUG) | (DEBUG = 0, INFO = 1, WARN = 2, ERROR = 3) |
+| `logging.enableAccessLog` | Write server access logs to a file and the console | `true` | `true`, `false` |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -495,7 +534,19 @@ Start.bat --port 8000 --listen false</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h2 id="network-configuration"><a href="../../usage/remoteconnections/">Network Configuration</a></h2>
+<retype-table copy-text="| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|-----------------|
+| `listen` | Enable listening for incoming connections | `false` | `true`, `false` |
+| `port` | Server listening port | `8000` | Any valid port number (1-65535) |
+| `heartbeatInterval` | Interval in seconds to write a heartbeat file for Docker healthchecks. Set to 0 to disable | `0` | `0` (disabled), positive integer |
+| `protocol.ipv4` | Enable listening on the IPv4 protocol | `true` | `true`, `false`, `auto` |
+| `protocol.ipv6` | Enable listening on the IPv6 protocol | `false` | `true`, `false`, `auto` |
+| `listenAddress.ipv4` | Listen on a specific IPv4 address | `0.0.0.0` | Valid IPv4 address |
+| `listenAddress.ipv6` | Listen on a specific IPv6 address | `'[::]'` | Valid IPv6 address |
+| `dnsPreferIPv6` | Prefer IPv6 for DNS resolution | `false` | `true`, `false` |
+| `enableKeepAlive` | Enable HTTP/HTTPS keep-alive globally | `false` | `true`, `false` |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -564,7 +615,14 @@ Start.bat --port 8000 --listen false</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h2 id="ssl-configuration">SSL Configuration</h2>
+<retype-table copy-text="| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|------------------|
+| `ssl.enabled` | Enable SSL/TLS encryption and HTTPS protocol | `false` | `true`, `false` |
+| `ssl.keyPath` | Path to SSL private key (relative to the server directory) | `&quot;./certs/privkey.pem&quot;` | Valid file path |
+| `ssl.certPath` | Path to SSL certificate (relative to the server directory) | `&quot;./certs/cert.pem&quot;` | Valid file path |
+| `ssl.keyPassphrase` | Passphrase for the SSL private key. Leave empty if not required | `&quot;&quot;` | Any string |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -603,8 +661,15 @@ Start.bat --port 8000 --listen false</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h2 id="security-configuration">Security Configuration</h2>
 <h3 id="ip-whitelisting">IP Whitelisting</h3>
+<retype-table copy-text="| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|-----------------|
+| `whitelistMode` | Enable IP whitelist filtering | `true` | `true`, `false` |
+| `enableForwardedWhitelist` | Check forwarded headers for whitelisted IPs. Headers are defined in the [Forwarded Headers Configuration](#forwarded-headers-configuration) section | `true` | `true`, `false` |
+| `whitelist` | List of allowed IP addresses | `[&quot;::1&quot;, &quot;127.0.0.1&quot;]` | Array of valid IP addresses |
+| `whitelistDockerHosts` | Automatically whitelist Docker host IPs | `true` | `true`, `false` |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -643,6 +708,7 @@ Start.bat --port 8000 --listen false</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h3 id="forwarded-headers-configuration">Forwarded Headers Configuration</h3>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
@@ -662,6 +728,11 @@ Start.bat --port 8000 --listen false</code></pre>
         </div>
     </div>
 </div>
+<retype-table copy-text="| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|-----------------|
+| `forwardedHeaders.xRealIp` | Use the `X-Real-IP` header for client IP detection | `true` | `true`, `false` |
+| `forwardedHeaders.xForwardedFor` | Use the `X-Forwarded-For` header for client IP detection | `true` | `true`, `false` |
+| `forwardedHeaders.cfConnectingIp` | Use the `CF-Connecting-IP` header for client IP detection | `false` | `true`, `false` |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -694,6 +765,7 @@ Start.bat --port 8000 --listen false</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h3 id="private-address-whitelisting">Private Address Whitelisting</h3>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
@@ -713,6 +785,13 @@ Start.bat --port 8000 --listen false</code></pre>
         </div>
     </div>
 </div>
+<retype-table copy-text="| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|-----------------|
+| `privateAddressWhitelist.enabled` | Enable private address whitelisting | `false` | `true`, `false` |
+| `privateAddressWhitelist.allowUnresolvedHosts` | Allow requests to hosts that cannot be resolved | `false` | `true`, `false` |
+| `privateAddressWhitelist.allowedRanges` | List of allowed private IP addresses and CIDR ranges | `['127.0.0.0/8', '::1/128']` | Array of valid IP addresses and CIDR ranges |
+| `privateAddressWhitelist.log.blockedRequests` | Log blocked requests that resolve to private IP addresses | `true` | `true`, `false` |
+| `privateAddressWhitelist.log.allowedRequests` | Log allowed requests that resolve to private IP addresses | `false` | `true`, `false` |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -757,7 +836,13 @@ Start.bat --port 8000 --listen false</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h3 id="host-whitelisting">Host Whitelisting</h3>
+<retype-table copy-text="| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|-----------------|
+| `hostWhitelist.enabled` | Enable host whitelisting | `false` | `true`, `false` |
+| `hostWhitelist.scan` | Log incoming requests from untrusted hosts | `true` | `true`, `false` |
+| `hostWhitelist.hosts` | List of trusted hostnames | `[]` | Array of valid hostnames |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -790,6 +875,7 @@ Start.bat --port 8000 --listen false</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h3 id="security-overrides">Security Overrides</h3>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-danger"></div>
@@ -807,6 +893,11 @@ Start.bat --port 8000 --listen false</code></pre>
         </div>
     </div>
 </div>
+<retype-table copy-text="| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|------------------|
+| `allowKeysExposure` | Allow unmasked API key exposure in the UI | `false` | `true`, `false` |
+| `disableCsrfProtection` | Disable CSRF protection (not recommended) | `false` | `true`, `false` |
+| `securityOverride` | Disable startup security checks (not recommended) | `false` | `true`, `false` |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -839,6 +930,7 @@ Start.bat --port 8000 --listen false</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h2 id="user-authentication"><a href="../multi-user/">User Authentication</a></h2>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-tip"></div>
@@ -856,6 +948,15 @@ Start.bat --port 8000 --listen false</code></pre>
         </div>
     </div>
 </div>
+<retype-table copy-text="| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|-----------------|
+| `basicAuthMode` | Enable basic authentication | `false` | `true`, `false` |
+| `basicAuthUser.username` | Basic auth username | `&quot;user&quot;` | Any string |
+| `basicAuthUser.password` | Basic auth password | `&quot;password&quot;` | Any string |
+| `enableUserAccounts` | Enable multi-user mode | `false` | `true`, `false` |
+| `enableDiscreetLogin` | Hide the user list on the login screen | `false` | `true`, `false` |
+| `sessionTimeout` | User session timeout in seconds | `-1` (disabled) | Any number (-1 to disable, 0 for browser close, &gt;0 for timeout) |
+| `perUserBasicAuth` | Use account credentials for basic auth | `false` | `true`, `false` |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -912,6 +1013,7 @@ Start.bat --port 8000 --listen false</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h3 id="sso-auto-login">SSO Auto-Login</h3>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
@@ -929,6 +1031,11 @@ Start.bat --port 8000 --listen false</code></pre>
         </div>
     </div>
 </div>
+<retype-table copy-text="| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|------------------|
+| `sso.trustedProxies` | List of trusted proxy IPs for SSO authentication | `[&quot;::1&quot;, &quot;127.0.0.1&quot;]` | Array of valid IP addresses, CIDR ranges, or wildcard patterns |
+| `sso.autheliaAuth` | Enable Authelia-based auto-login. See: [SSO](/Administration/sso.md) | `false` | `true`, `false` |
+| `sso.authentikAuth` | Enable Authentik-based auto-login. See: [SSO](/Administration/sso.md) | `false` | `true`, `false` |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -961,6 +1068,7 @@ Start.bat --port 8000 --listen false</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h2 id="rate-limiting-configuration">Rate Limiting Configuration</h2>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-tip"></div>
@@ -978,6 +1086,12 @@ Start.bat --port 8000 --listen false</code></pre>
         </div>
     </div>
 </div>
+<retype-table copy-text="| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|------------------|
+| `rateLimiting.preferRealIpHeader` | Use IP from headers configured in the [Forwarded Headers Configuration](#forwarded-headers-configuration) instead of the socket IP for rate limiting | `false` | `true`, `false` |
+| `rateLimiting.accountsLoginMaxAttempts` | Maximum login attempts for user accounts before temporary lockout (1 minute) | `5` | Any positive integer, or `0` |
+| `rateLimiting.accountsRecoverMaxAttempts` | Maximum password recovery attempts before temporary lockout (5 minutes) | `5` | Any positive integer, or `0` |
+| `rateLimiting.basicAuthMaxAttempts` | Maximum basic auth attempts before temporary lockout (1 minute) | `5` | Any positive integer, or `0` |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1016,6 +1130,7 @@ Start.bat --port 8000 --listen false</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h2 id="request-proxy-configuration">Request Proxy Configuration</h2>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
@@ -1033,6 +1148,11 @@ Start.bat --port 8000 --listen false</code></pre>
         </div>
     </div>
 </div>
+<retype-table copy-text="| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|-----------------|
+| `requestProxy.enabled` | Enable proxy for outgoing requests | `false` | `true`, `false` |
+| `requestProxy.url` | Proxy server URL | `null` | Valid proxy URL (e.g., `&quot;socks5://username:password@example.com:1080&quot;`) |
+| `requestProxy.bypass` | Hosts to bypass the proxy | `[&quot;localhost&quot;, &quot;127.0.0.1&quot;]` | Array of hostnames/IPs |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1065,6 +1185,7 @@ Start.bat --port 8000 --listen false</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h2 id="cors-proxy-configuration">CORS Proxy Configuration</h2>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
@@ -1083,6 +1204,9 @@ Start.bat --port 8000 --listen false</code></pre>
         </div>
     </div>
 </div>
+<retype-table copy-text="| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|-----------------|
+| `enableCorsProxy` | Enable CORS proxy middleware | `false` | `true`, `false` |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1103,7 +1227,17 @@ Start.bat --port 8000 --listen false</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h2 id="cors-configuration">CORS Configuration</h2>
+<retype-table copy-text="| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|-----------------|
+| `cors.enabled` | Enable or disable CORS middleware | `true` | `true`, `false` |
+| `cors.origin` | Allowed origins. `&quot;null&quot;` matches the default browser file origin | `[&quot;null&quot;]` | `&quot;*&quot;` (any origin), array of allowed origins |
+| `cors.methods` | Allowed HTTP methods | `[&quot;OPTIONS&quot;]` | Array of HTTP methods |
+| `cors.allowedHeaders` | Allowed request headers | `[]` | Array of header names |
+| `cors.exposedHeaders` | Exposed response headers | `[]` | Array of header names |
+| `cors.credentials` | Allow credentials (cookies, authorization headers) | `false` | `true`, `false` |
+| `cors.maxAge` | Preflight cache max age in seconds | `null` | `null`, positive integer |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1160,10 +1294,18 @@ Start.bat --port 8000 --listen false</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h2 id="browser-launch-configuration">Browser Launch Configuration</h2>
 <blockquote>
 <p>Previously known as &quot;Autorun&quot; settings.</p>
 </blockquote>
+<retype-table copy-text="| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|-----------------|
+| `browserLaunch.enabled` | Open the browser automatically on server startup | `true` | `true`, `false` |
+| `browserLaunch.browser` | Browser to use for opening the URL | `&quot;default&quot;` | `&quot;default&quot;`, `&quot;chrome&quot;`, `&quot;firefox&quot;`, `&quot;edge&quot;`, `&quot;brave&quot;` |
+| `browserLaunch.hostname` | Override the hostname for browser launch | `&quot;auto&quot;` | `&quot;auto&quot;`, any valid hostname (e.g., `&quot;localhost&quot;`, `&quot;st.example.com&quot;`) |
+| `browserLaunch.port` | Override the port for browser launch | `-1` | `-1` (use server port), any valid port number |
+| `browserLaunch.avoidLocalhost` | Avoid using 'localhost' in the launch URL | `false` | `true`, `false` |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1208,7 +1350,17 @@ Start.bat --port 8000 --listen false</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h2 id="performance-configuration">Performance Configuration</h2>
+<retype-table copy-text="| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|------------------|
+| `performance.lazyLoadCharacters` | Lazy-load character data | `true` | `true`, `false` |
+| `performance.useDiskCache` | Enable disk caching for character cards | `true` | `true`, `false` |
+| `performance.memoryCacheCapacity` | Maximum memory cache capacity | `100mb` | Human-readable size (e.g., `100mb`, `1gb`) |
+| `performance.requestCompression.enabled` | Enable gzip compression for client requests with large payloads (e.g. settings or chat saves) | `false` | `true`, `false` |
+| `performance.requestCompression.minPayloadSize` | Minimum payload size to trigger compression. Set to 0 to compress all requests regardless of size | `256kb` | Human-readable size (e.g., `256kb`, `1mb`) |
+| `performance.requestCompression.maxPayloadSize` | Hard upper payload size limit for compression. Set to 0 to allow compression of any size | `8mb` | Human-readable size (e.g., `8mb`, `16mb`) |
+| `performance.requestCompression.timeout` | Timeout for request compression in milliseconds | `4000` | Positive integer |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1265,6 +1417,7 @@ Start.bat --port 8000 --listen false</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h2 id="cache-buster-configuration">Cache Buster Configuration</h2>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
@@ -1282,6 +1435,10 @@ Start.bat --port 8000 --listen false</code></pre>
         </div>
     </div>
 </div>
+<retype-table copy-text="| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|------------------|
+| `cacheBuster.enabled` | Clear browser cache on first load or after uploading image files | `false` | `true`, `false` |
+| `cacheBuster.userAgentPattern` | Only clear the cache for user agents matching the specified regex pattern. Example: `'firefox'` (case-insensitive). | `''` | Any valid regex string |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1308,7 +1465,16 @@ Start.bat --port 8000 --listen false</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h2 id="thumbnailing-configuration">Thumbnailing Configuration</h2>
+<retype-table copy-text="| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|-----------------|
+| `thumbnails.enabled` | Enable thumbnail generation | `true` | `true`, `false` |
+| `thumbnails.quality` | JPEG thumbnail quality | `95` | 0-100 |
+| `thumbnails.format` | Image format for thumbnails | `jpg` | `jpg`, `png` |
+| `thumbnails.dimensions.bg` | Background thumbnails size | `[160, 90]` | Array of two numbers (width, height) |
+| `thumbnails.dimensions.avatar` | Avatar thumbnails size | `[96, 144]` |  Array of two numbers (width, height) |
+| `thumbnails.dimensions.persona` | Persona thumbnails size | `[96, 144]` |  Array of two numbers (width, height) |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1359,7 +1525,16 @@ Start.bat --port 8000 --listen false</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h2 id="backup-configuration">Backup Configuration</h2>
+<retype-table copy-text="| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|-----------------|
+| `backups.common.numberOfBackups` | Number of backups to keep | `50` | Any positive integer |
+| `backups.chat.enabled` | Enable automatic chat backups | `true` | `true`, `false` |
+| `backups.chat.checkIntegrity` | Verify integrity of chat files before saving | `true` | `true`, `false` |
+| `backups.chat.throttleInterval` | Backup throttle interval (ms) | `10000` | Any positive integer |
+| `backups.chat.maxTotalBackups` | Maximum total chat backups to keep | `-1` | Any positive integer or -1 |
+| `backups.allowFullDataBackup` | Allow users to create a full backup archive of their data | `true` | `true`, `false` |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1410,7 +1585,18 @@ Start.bat --port 8000 --listen false</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h2 id="extensions-configuration"><a href="../../extensions/">Extensions Configuration</a></h2>
+<retype-table copy-text="| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|-----------------|
+| `extensions.enabled` | Enable UI extensions | `true` | `true`, `false` |
+| `extensions.autoUpdate` | Auto-update extensions (if enabled by the extension manifest) | `true` | `true`, `false` |
+| `extensions.models.autoDownload` | Enable automatic model downloads | `true` | `true`, `false` |
+| `extensions.models.classification` | HuggingFace model ID for classification | `&quot;Cohee/distilbert-base-uncased-go-emotions-onnx&quot;` | Valid model ID |
+| `extensions.models.captioning` | HuggingFace model ID for image captioning | `&quot;Xenova/vit-gpt2-image-captioning&quot;` | Valid model ID |
+| `extensions.models.embedding` | HuggingFace model ID for embeddings | `&quot;Cohee/jina-embeddings-v2-base-en&quot;` | Valid model ID |
+| `extensions.models.speechToText` | HuggingFace model ID for speech-to-text | `&quot;Xenova/whisper-small&quot;` | Valid model ID |
+| `extensions.models.textToSpeech` | HuggingFace model ID for text-to-speech | `&quot;Xenova/speecht5_tts&quot;` | Valid model ID |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1473,7 +1659,12 @@ Start.bat --port 8000 --listen false</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h2 id="server-plugins"><a href="../../for-contributors/server-plugins/">Server Plugins</a></h2>
+<retype-table copy-text="| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|-----------------|
+| `enableServerPlugins` | Enable server-side plugins | `false` | `true`, `false` |
+| `enableServerPluginsAutoUpdate` | Attempt to automatically update server plugins on startup | `true` | `true`, `false` |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1500,6 +1691,7 @@ Start.bat --port 8000 --listen false</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h2 id="git-configuration">Git Configuration</h2>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
@@ -1523,6 +1715,9 @@ Start.bat --port 8000 --listen false</code></pre>
         </div>
     </div>
 </div>
+<retype-table copy-text="| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|-----------------|
+| `git.backend` | Git backend for plugin/extension repository operations | `auto` | `auto`, `system`, `builtin` |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1543,8 +1738,14 @@ Start.bat --port 8000 --listen false</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h2 id="api-integration-settings"><a href="../../usage/api-connections/">API Integration Settings</a></h2>
 <h3 id="openai-configuration">OpenAI Configuration</h3>
+<retype-table copy-text="| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|-----------------|
+| `promptPlaceholder` | Default message for empty prompts | `&quot;[Start a new chat]&quot;` | Any string |
+| `openai.randomizeUserId` | Randomize the user ID for API calls | `false` | `true`, `false` |
+| `openai.captionSystemPrompt` | System message for caption completion | `&quot;&quot;` | Any string |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1577,7 +1778,11 @@ Start.bat --port 8000 --listen false</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h3 id="mistralai-configuration">MistralAI Configuration</h3>
+<retype-table copy-text="| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|-----------------|
+| `mistral.enablePrefix` | Enable reply prefilling. **The prefix will be echoed in the response** | `false` | `true`, `false` |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1598,7 +1803,12 @@ Start.bat --port 8000 --listen false</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h3 id="ollama-configuration">Ollama Configuration</h3>
+<retype-table copy-text="| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|-----------------|
+| `ollama.keepAlive` | Model keep-alive duration (seconds) | `-1` | `-1` (indefinite), `0` (immediate unload), positive integer |
+| `ollama.batchSize` | Controls the &quot;num_batch&quot; (batch size) parameter of the generation request | `-1` | `-1` (model default), positive integer |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1625,6 +1835,7 @@ Start.bat --port 8000 --listen false</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h3 id="claude-configuration">Claude Configuration</h3>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-warning"></div>
@@ -1644,6 +1855,12 @@ Start.bat --port 8000 --listen false</code></pre>
         </div>
     </div>
 </div>
+<retype-table copy-text="| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|-----------------|
+| `claude.enableSystemPromptCache` | Enable system prompt caching | `false` | `true`, `false` |
+| `claude.cachingAtDepth` | Enable message history caching | `-1` | `-1` (disabled), `0` or positive integer |
+| `claude.extendedTTL` | Use 1h TTL instead of the default 5m. Note that this also increases the cost of the request. | `false` | `true`, `false` |
+| `claude.enableAdaptiveThinking` | Enables adaptive thinking for supported models (Opus 4.6+). Disable to enforce legacy thinking mode (with thinking budget). See: [Adaptive Thinking](https://platform.claude.com/docs/en/build-with-claude/adaptive-thinking) | `false` | `true`, `false` |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1682,7 +1899,14 @@ Start.bat --port 8000 --listen false</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h3 id="google-gemini-configuration">Google Gemini Configuration</h3>
+<retype-table copy-text="| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|-----------------|
+| `gemini.apiVersion` | API endpoint version (AI Studio only) | `v1beta` | `v1beta`, `v1alpha` |
+| `gemini.thoughtSignatures` | Adds thought signatures to requests (if available). Only for Gemini 3 and above | `true` | `true`, `false` |
+| `gemini.enableSystemPromptCache` | Enables caching of the system prompt (OpenRouter only) | `false` | `true`, `false` |
+| `gemini.image.personGeneration` | See: &lt;https://ai.google.dev/gemini-api/docs/imagen#imagen-configuration&gt; | `allow_adult` | `dont_allow`, `allow_adult`, `allow_all` |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1721,7 +1945,11 @@ Start.bat --port 8000 --listen false</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h3 id="deepl-configuration">DeepL Configuration</h3>
+<retype-table copy-text="| Setting | Description | Default | Permitted Values |
+|---------|-------------|---------|-----------------|
+| `deepl.formality` | Translation formality level | `&quot;default&quot;` | `&quot;default&quot;`, `&quot;more&quot;`, `&quot;less&quot;`, `&quot;prefer_more&quot;`, `&quot;prefer_less&quot;` |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1742,6 +1970,7 @@ Start.bat --port 8000 --listen false</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 
                 
                 <!-- Required only on API pages -->

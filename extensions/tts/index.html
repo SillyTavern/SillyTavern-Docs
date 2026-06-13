@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832450154317">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.834705883841">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>TTS | docs.ST.app</title>
@@ -38,11 +38,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.5.3.832450154317" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.834705883841" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832450154317" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832450154317" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.834705883841" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.834705883841" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -245,6 +245,12 @@
 </ul>
 <p>Given the example text: <code translate="no" v-pre>*Cohee approaches you with a faint &quot;nya&quot;* &quot;Good evening, senpai&quot;, she says.</code>
 Here&#x27;s a table showing how the text will be modified based on the boolean states of <strong>Ignore *text, even &quot;quotes&quot;, inside asterisks*</strong> and <strong>Only narrate &quot;quotes&quot;</strong>:</p>
+<retype-table copy-text="| **Ignore \*text, even &quot;quotes&quot;, inside asterisks\*** 	 | **Only narrate &quot;quotes&quot;**	 | **Output**                                                                |
+|:-------------------------------------------------------|:---------------------------|:--------------------------------------------------------------------------| 
+| Disabled                                               | 	Disabled	                 | Cohee approaches you with a faint &quot;nya&quot; &quot;Good evening, senpai&quot;, she says. |
+| Disabled                                               | Enabled	                   | &quot;nya&quot;... &quot;Good evening, senpai&quot;                                           |
+| Enabled	                                               | Disabled	                  | &quot;Good evening, senpai&quot;, she says.                                         |
+| Enabled	                                               | Enabled	                   | &quot;Good evening, senpai&quot;                                                    |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -278,6 +284,7 @@ Here&#x27;s a table showing how the text will be modified based on the boolean s
 </tbody>
 </table>
 </div>
+</retype-table>
 <h3 id="sliders">Sliders</h3>
 <p>These will change depending on the API you select.</p>
 <h3 id="buttons">Buttons</h3>

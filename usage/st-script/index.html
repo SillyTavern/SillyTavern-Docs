@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832450154317">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.834705883841">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>STscript Language Reference | docs.ST.app</title>
@@ -44,11 +44,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.5.3.832450154317" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.834705883841" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832450154317" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832450154317" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.834705883841" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.834705883841" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -233,6 +233,8 @@ These concepts are going to be described in the following document.</p>
 <div class="codeblock-title">stscript</div>
 <pre translate="no" class="language-none"><code v-pre class="language-none">/pass Hello, World! | /echo</code></pre>
 </doc-codeblock></div>
+<retype-table copy-text="| ![Hello World](/static/scripts/hello-world.png) |
+|-------------------------------------------------|">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -242,6 +244,7 @@ These concepts are going to be described in the following document.</p>
 </thead>
 </table>
 </div>
+</retype-table>
 <p>You should see the message in the toast on top of the screen. Now let&#x27;s break it down bit by bit.</p>
 <p>A script is a batch of commands, each one starting with the slash, with or without named and unnamed arguments, and terminated with the command separator character: <code translate="no" v-pre>|</code>.</p>
 <p>Commands are executed sequentially, one after another, and transfer data between each other.</p>
@@ -280,6 +283,8 @@ These concepts are going to be described in the following document.</p>
 <li>The <code translate="no" v-pre>/input</code> command is used to display an input box with the prompt specified in the unnamed argument and then writes the output to the pipe.</li>
 <li>Because <code translate="no" v-pre>/echo</code> already has an unnamed argument that sets the template for the output, we use the <code translate="no" v-pre>{{pipe}}</code> macro to specify a place where the pipe value will be rendered.</li>
 </ol>
+<retype-table copy-text="| ![Slim Shady Input](/static/scripts/slim-input.png) | ![Slim Shady Output](/static/scripts/slim-output.png) |
+|-----------------------------------------------------|-------------------------------------------------------|">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -290,6 +295,7 @@ These concepts are going to be described in the following document.</p>
 </thead>
 </table>
 </div>
+</retype-table>
 <h3 id="other-inputoutput-commands">Other input/output commands</h3>
 <ul>
 <li><code translate="no" v-pre>/popup (text)</code> — shows a blocking popup, supports lite HTML formatting, e.g: <code translate="no" v-pre>/popup &lt;font color=red&gt;I'm red!&lt;/font&gt;</code>.</li>
@@ -839,6 +845,8 @@ To disable and allow endless loops, set <code translate="no" v-pre>guard=off</co
 <pre translate="no" class="language-none"><code v-pre class="language-none">/genraw Write a funny message from Cthulhu about taking over the world. Use emojis. |
 /popup &lt;h3&gt;Cthulhu says:&lt;/h3&gt;&lt;div&gt;{{pipe}}&lt;/div&gt;</code></pre>
 </doc-codeblock></div>
+<retype-table copy-text="| ![Cthulhu Says](/static/scripts/cthulhu-says.png) |
+|---------------------------------------------------|">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -848,6 +856,7 @@ To disable and allow endless loops, set <code translate="no" v-pre>guard=off</co
 </thead>
 </table>
 </div>
+</retype-table>
 <p>or to insert the generated message as a response from your character:</p>
 <div id="arguments-for-gen-and-genraw-code-3" class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
@@ -976,6 +985,39 @@ This example will get you 3 last messages in the chat:</p>
 <li><code translate="no" v-pre>/createentry file=bookName key=keyValue [content text]</code> – creates a new record in the specified file  (or a variable pointing to a file name) with the key and content (both of these arguments are <em>optional</em>) and passes the UID down the pipe, e.g. <code translate="no" v-pre>/createentry file=chatLore key=Shadowfang The sword of the king</code>.</li>
 </ol>
 <h3 id="valid-entry-fields">Valid entry fields</h3>
+<retype-table copy-text="| Field              | UI element        | Value type      |
+|:-------------------|:------------------|:----------------|
+| `content`          | Content           | String          |
+| `comment`          | Title / Memo      | String          |
+| `key`              | Primary Keywords  | List of strings |
+| `keysecondary`     | Optional Filter   | List of strings |
+| `constant`         | Constant Status   | Boolean (1/0)   |
+| `disable`          | Disabled Status   | Boolean (1/0)   |
+| `order`            | Order             | Number          |
+| `selectiveLogic`   | Logic             | (see below)     |
+| `excludeRecursion` | Non-recursable    | Boolean (1/0)   |
+| `probability`      | Trigger%          | Number (0-100)  |
+| `depth`            | Depth             | Number (0-999)  |
+| `position`         | Position          | (see below)     |
+| `role`             | Depth Role        | (see below)     |
+| `scanDepth`        | Scan Depth        | Number (0-100)  |
+| `caseSensitive`    | Case-Sensitive    | Boolean (1/0)   |
+| `matchWholeWords`  | Match Whole Words | Boolean (1/0)   |
+| `vectorized`       | Vectorized Status | Boolean (1/0)   |
+| `automationId`     | Automation ID     | String          |
+| `group`            | Inclusion Group   | String          |
+| `groupOverride`    | Inclusion Group Prioritize | Boolean (1/0) |
+| `groupWeight`      | Inclusion Group Weight | Number (0-100) |
+| `useGroupScoring`  | Group Scoring     | Boolean (1/0)   |
+| `characterFilterExclude` | Character Filter Exclude Mode | List of strings |
+| `characterFilterNames` | Character Filter Names | List of strings |
+| `characterFilterTags` | Character Filter Tags | List of strings |
+| `matchCharacterDepthPrompt` | Match Character Depth Prompt | Boolean (1/0) |
+| `matchCharacterDescription` | Match Character Description | Boolean (1/0) |
+| `matchCharacterPersonality` | Match Character Personality | Boolean (1/0) |
+| `matchCreatorNotes` | Match Creator Notes | Boolean (1/0) |
+| `matchPersonaDescription` | Match Persona Description | Boolean (1/0) |
+| `matchScenario` | Match Scenario | Boolean (1/0) |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1144,6 +1186,7 @@ This example will get you 3 last messages in the chat:</p>
 </tbody>
 </table>
 </div>
+</retype-table>
 <p><strong>Logic values</strong></p>
 <ul>
 <li>0 = AND ANY</li>
@@ -1329,6 +1372,8 @@ Don&#x27;t forget to click &quot;Update&quot; before switching to a different se
 Every click increments the variable <code translate="no" v-pre>clicks</code> by one and displays a different message when the value equals 5 and resets the variable.</p>
 <h3 id="automatic-execution">Automatic execution</h3>
 <p>Open the modal menu by clicking the <code translate="no" v-pre>⋮</code> button for the created command.</p>
+<retype-table copy-text="| ![Automatic execution](/static/scripts/autoexecute.png) |
+|---------------------------------------------------------|">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1338,6 +1383,7 @@ Every click increments the variable <code translate="no" v-pre>clicks</code> by 
 </thead>
 </table>
 </div>
+</retype-table>
 <p>In this menu you can do the following:</p>
 <ul>
 <li>Edit the script in a convenient full-screen editor</li>
@@ -1375,6 +1421,8 @@ Every click increments the variable <code translate="no" v-pre>clicks</code> by 
 /:x n=3 |
 /echo result is {{pipe}} |</code></pre>
 </doc-codeblock></div>
+<retype-table copy-text="| ![QR Editor Debugger](/static/scripts/st-debugger.png) |
+|--------------------------------------------------------|">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -1384,6 +1432,7 @@ Every click increments the variable <code translate="no" v-pre>clicks</code> by 
 </thead>
 </table>
 </div>
+</retype-table>
 <h3 id="calling-procedures">Calling procedures</h3>
 <p>A <code translate="no" v-pre>/run</code> command can call scripts defined in the Quick Replies by their label, basically providing the ability to define procedures and return results from them. This allows to have reusable script blocks that other scripts could reference. The last result from the procedure&#x27;s pipe is passed to the next command after it.</p>
 <div id="calling-procedures-code-1" class="codeblock-wrapper"><doc-codeblock>

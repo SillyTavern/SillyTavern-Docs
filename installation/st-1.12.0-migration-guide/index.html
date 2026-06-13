@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832450154317">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.834705883841">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>1.12.0 Migration Guide | docs.ST.app</title>
@@ -38,12 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.5.3.832450154317" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.834705883841" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832450154317" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832450154317" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.5.3.832450154317" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.834705883841" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.834705883841" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.834705883841" defer></script>
 
     <style>
         a {
@@ -294,6 +294,31 @@ npm run start -- --dataRoot=&quot;/Users/harry/ST-Data&quot;</code></pre>
 </div>
 <h4 id="what-to-migrate">What to migrate?</h4>
 <p>The following files and directories are subject to the data migration. Assuming the default configuration, the before and after paths are provided in the table below.</p>
+<retype-table copy-text="| Before                                 | After                                |
+|----------------------------------------|--------------------------------------|
+| /secrets.json                          | /data/default-user/secrets.json      |
+| /thumbnails                            | /data/default-user/thumbnails        |
+| /vectors                               | /data/default-user/vectors           |
+| /public/settings.json                  | /data/default-user/settings.json     |
+| /public/stats.json                     | /data/default-user/stats.json        |
+| /public/assets                         | /data/default-user/assets            |
+| /public/backgrounds                    | /data/default-user/backgrounds       |
+| /public/characters                     | /data/default-user/characters        |
+| /public/chats                          | /data/default-user/chats             |
+| /public/context                        | /data/default-user/context           |
+| /public/scripts/extensions/third-party | /data/default-user/extensions        |
+| /public/group chats                    | /data/default-user/group chats       |
+| /public/groups                         | /data/default-user/groups            |
+| /public/instruct                       | /data/default-user/instruct          |
+| /public/KoboldAI Settings              | /data/default-user/KoboldAI Settings |
+| /public/movingUI                       | /data/default-user/movingUI          |
+| /public/NovelAI Settings               | /data/default-user/NovelAI Settings  |
+| /public/OpenAI Settings                | /data/default-user/OpenAI Settings   |
+| /public/QuickReplies                   | /data/default-user/QuickReplies      |
+| /public/TextGen Settings               | /data/default-user/TextGen Settings  |
+| /public/themes                         | /data/default-user/themes            |
+| /public/worlds                         | /data/default-user/worlds            |
+| /default/content/content.log           | /data/default-user/content.log       |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -398,6 +423,7 @@ npm run start -- --dataRoot=&quot;/Users/harry/ST-Data&quot;</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <h2 id="users">Users</h2>
 <p>1.12.0 adds a (completely optional) ability to create a multi-user setup on the same server, allowing multiple users to use their own fully isolated SillyTavern instances even at the same time. User accounts can also be password-protected for an additional layer of privacy.</p>
 <p>Please refer to the <a href="../../administration/multi-user/">Users</a> documentation for more information.</p>

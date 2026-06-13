@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832450154317">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.834705883841">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>Reasoning | docs.ST.app</title>
@@ -38,11 +38,11 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../../favicon.ico" />
-    <link href="../../../resources/css/retype.css?v=4.5.3.832450154317" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=4.6.0.834705883841" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.5.3.832450154317" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.5.3.832450154317" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=4.6.0.834705883841" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=4.6.0.834705883841" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -335,6 +335,15 @@ Incomplete reasoning...</code></pre>
 </ol>
 <h2 id="reasoning-effort">Reasoning Effort</h2>
 <p>Reasoning Effort is a Chat Completion setting in the <strong><i class="fa-solid fa-sliders"></i> AI Response Configuration</strong> panel that influences how many tokens may potentially be used on reasoning. The effect of each option depends on the source connected to. For the sources below, Auto simply means the relevant parameter is not included in the request.</p>
+<retype-table copy-text="| Option  | Claude (≤ 21333 if no streaming) | OpenAI (keyword)     | OpenRouter (keyword)             | xAI (Grok) (keyword) | Perplexity (keyword) | NanoGPT (keyword) |
+| ------- | -------------------------------- | -------------------- | -------------------------------- | -------------------- | -------------------- | ----------------- |
+| Models  | Opus 4, Sonnet 4/3.7             | o4-mini, o3\*, o1\*  | applicable models                | grok-3-mini          | sonar-deep-research  | applicable models |
+| Auto    | not specified, **no thinking**   | not specified        | not specified, effect depends    | not specified        | not specified        | not specified     |
+| Minimum | budgets 1024 tokens              | &quot;low&quot;                | &quot;low&quot;, or 20% of max response    | &quot;low&quot;                | &quot;low&quot;                | &quot;none&quot;            |
+| Low     | 15% of max response, min 1024    | &quot;low&quot;                | &quot;low&quot;, or 20% of max response    | &quot;low&quot;                | &quot;low&quot;                | &quot;minimal&quot;         |
+| Medium  | 25% of max response, min 1024    | &quot;medium&quot;             | &quot;medium&quot;, or 50% of max response | &quot;low&quot;                | &quot;medium&quot;             | &quot;low&quot;             |
+| High    | 50% of max response, min 1024    | &quot;high&quot;               | &quot;high&quot;, or 80% of max response   | &quot;high&quot;               | &quot;high&quot;               | &quot;medium&quot;          |
+| Maximum | 95% of max response, min 1024    | &quot;high&quot;               | &quot;high&quot;, or 80% of max response   | &quot;high&quot;               | &quot;high&quot;               | &quot;high&quot;            |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -415,6 +424,7 @@ Incomplete reasoning...</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <ul>
 <li>For older Claude models that don&#x27;t support adaptive thinking, budget is capped to 21333 if streaming is disabled. If the calculated budget would be less than 1024, then max response is changed to 2048.</li>
 <li>Claude also supports adaptive thinking for Opus 4.6+ models, which can be enabled via <code translate="no" v-pre>claude.enableAdaptiveThinking</code> in <a href="../../../administration/config-yaml/">config.yaml</a> (always on for Opus 4.7+). When enabled, the Reasoning Effort setting maps to adaptive thinking levels instead of token budgets. This setting takes precedence over the &quot;Verbosity&quot; setting for applicable models.</li>
@@ -424,6 +434,13 @@ Incomplete reasoning...</code></pre>
 <li>For other Custom (OpenAI-compatible) sources, a reasoning effort is sent only if the model supports it on the official OpenAI source.</li>
 </ul>
 <p>Google AI Studio and Vertex AI are as follows:</p>
+<retype-table copy-text="| Model          | Auto (dynamic thinking) | Minimum            | Low                          | Medium     | High       | Maximum               |
+| -------------- | ----------------------- | ------------------ | ---------------------------- | ---------- | ---------- | --------------------- |
+| 2.5 Pro        | thinkingBudget = -1     | 128                | 15% of max response, min 128 | 25% of max | 50% of max | lower of max or 32768 |
+| 2.5 Flash      | thinkingBudget = -1     | 0, **no thinking** | 15% of max response          | 25% of max | 50% of max | lower of max or 24576 |
+| 2.5 Flash Lite | thinkingBudget = -1     | 0, **no thinking** | 15% of max response, min 512 | 25% of max | 50% of max | lower of max or 24576 |
+| 3.0/3.1 Pro    | thinkingLevel = null    | &quot;low&quot;              | &quot;low&quot;                        | &quot;low&quot;      | &quot;high&quot;     | &quot;high&quot;                |
+| 3.0/3.1 Flash  | thinkingLevel = null    | &quot;minimal&quot;          | &quot;low&quot;                        | &quot;medium&quot;   | &quot;high&quot;     | &quot;high&quot;                |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -486,6 +503,7 @@ Incomplete reasoning...</code></pre>
 </tbody>
 </table>
 </div>
+</retype-table>
 <ul>
 <li>For Gemini 2.5 Pro and 2.5 Flash/Lite, budget is capped to 32768 or 24576 tokens respectively, regardless of the streaming setting.</li>
 </ul>

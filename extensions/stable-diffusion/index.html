@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.5.3.832450154317">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.834705883841">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.5.3">
+    <meta name="generator" content="Retype 4.6.0">
 
     <!-- Primary Meta Tags -->
     <title>Image Generation | docs.ST.app</title>
@@ -44,12 +44,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.5.3.832450154317" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.834705883841" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.5.3.832450154317" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.5.3" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.5.3.832450154317" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.5.3.832450154317" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.834705883841" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.834705883841" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.834705883841" defer></script>
 
     <style>
         a {
@@ -238,6 +238,32 @@ or use the <code translate="no" v-pre>/sd (anything_here)</code> command in the 
 <li>Integration with AI <doc-anchor-trigger to="#use-function-tool">function calling</doc-anchor-trigger> for automatic image generation detection</li>
 </ul>
 <h2 id="supported-sources">Supported sources</h2>
+<retype-table copy-text="| Source                                                                                            | Remarks                                                                                         |
+|:--------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------|
+| [AI/ML API](https://aimlapi.com/)                                                                 | Cloud, paid                                                                                     |
+| [Black Forest Labs](https://bfl.ai/)                                                              | Cloud, paid                                                                                     |
+| [Cloudflare Workers AI](https://www.cloudflare.com/developer-platform/products/workers-ai/)       | Cloud, paid, various models with vision capabilities                                            |
+| [Chutes](https://chutes.ai/)                                                                      | Cloud                                                                                           |
+| [ComfyUI](https://github.com/comfyanonymous/ComfyUI)                                              | Local, open source (GPL3), free of charge, see [ComfyUI Configuration](#comfyui-configuration). |
+| [Draw Things](https://drawthings.ai/)                                                             | Local, Mac/iOS, free of charge                                                                  |
+| [Electron Hub](https://electronhub.ai/)                                                           | Cloud, paid                                                                                     |
+| [FAL.AI](https://fal.ai/)                                                                         | Cloud, paid                                                                                     |
+| [Google AI Studio](https://aistudio.google.com/) / [Google Vertex AI](https://cloud.google.com/vertex-ai) | Cloud, paid. Imagen model series. AI Studio supports less models.                       |
+| [HuggingFace Serverless](https://huggingface.co/docs/api-inference/index)                         | Cloud, free of charge                                                                           |
+| [NanoGPT](https://nano-gpt.com/)                                                                  | Cloud, paid                                                                                     |
+| [NovelAI Diffusion](https://novelai.net/)                                                         | Cloud, requires an active subscription                                                          |
+| [OpenAI](https://platform.openai.com/)                                                            | Cloud, paid                                                                                     |
+| [OpenRouter](https://openrouter.ai/)                                                              | Cloud                                                                                           |
+| [Pollinations](https://pollinations.ai/)                                                          | Cloud, open source (MIT), free of charge                                                        |
+| [SD.Next / vladmandic](https://github.com/vladmandic/automatic)                                   | Local, open source (AGPL3), free of charge                                                      |
+| [SillyTavern Extras](https://github.com/SillyTavern/SillyTavern-Extras)                           | Deprecated, not recommended                                                                     |
+| [stable-diffusion.cpp](https://github.com/leejet/stable-diffusion.cpp)                            | Local, open source (MIT), free of charge                                                        |
+| [Stability AI](https://platform.stability.ai/)                                                    | Cloud, paid                                                                                     |
+| [Stable Diffusion WebUI / AUTOMATIC1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui) | Local, open source (AGPL3), free of charge                                                      |
+| [Stable Horde](https://stablehorde.net/)                                                          | Cloud, open source (AGPL3), free of charge                                                      |
+| [TogetherAI](https://docs.together.ai/docs/serverless-models#image-models)                        | Cloud                                                                                           |
+| [x.AI](https://x.ai/)                                                                             | Cloud, paid                                                                                     |
+| [Z.AI](https://z.ai/)                                                                             | Cloud, paid                                                                                     |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -346,7 +372,17 @@ or use the <code translate="no" v-pre>/sd (anything_here)</code> command in the 
 </tbody>
 </table>
 </div>
+</retype-table>
 <h2 id="generation-modes">Generation modes</h2>
+<retype-table copy-text="| Wand menu item     | Slash command argument | Description                                    | Remarks                               |
+|:-------------------|:-----------------------|:-----------------------------------------------|:--------------------------------------|
+| &quot;Yourself&quot;         | `you`                  | A full-body portrait of the current character. | -                                     | 
+| &quot;Your Face&quot;        | `face`                 | A close-up portrait of the current character.  | Forces a portrait aspect ratio.       |
+| &quot;Me&quot;               | `me`                   | A portrait of the user persona.                | -                                     |
+| &quot;The Whole Story&quot;  | `scene`                | A visual recap of the chat events.             | -                                     |
+| &quot;The Last Message&quot; | `last`                 | A visual recap of the last chat message.       | -                                     |
+| &quot;Raw Last Message&quot; | `raw_last`             | Last message used as a prompt verbatim.        | -                                     |
+| &quot;Background&quot;       | `background`           | A chat background based on story context.      | Forces a wide landscape aspect ratio. |">
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
@@ -403,6 +439,7 @@ or use the <code translate="no" v-pre>/sd (anything_here)</code> command in the 
 </tbody>
 </table>
 </div>
+</retype-table>
 <h2 id="how-to-generate-an-image">How to generate an image</h2>
 <ol>
 <li>Use the &quot;Image Generation&quot; item in the extensions context menu (wand).</li>
