@@ -182,7 +182,7 @@ If empty, can be backfilled using the entries' first key by clicking on the "Fil
 
 ### Strategy
 
-1. 🔵 (Blue Circle) = The entry would always be present in the prompt.
+1. 🔵 (Blue Circle) = The entry does not need any keywords, and will trigger regardless of content.
 2. 🟢 (Green Circle) = The entry will be triggered only in the presence of the keyword.
 3. 🔗 (Chain Link) = The entry is allowed to be inserted by embedding similarity.
 
