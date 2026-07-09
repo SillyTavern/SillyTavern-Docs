@@ -45,7 +45,7 @@ Most common Stable Diffusion generation settings are customizable within the Sil
 | [NovelAI Diffusion](https://novelai.net/)                                                         | Cloud, requires an active subscription                                                          |
 | [OpenAI](https://platform.openai.com/)                                                            | Cloud, paid                                                                                     |
 | [OpenRouter](https://openrouter.ai/)                                                              | Cloud                                                                                           |
-| [Pollinations](https://pollinations.ai/)                                                          | Cloud, open source (MIT), free of charge                                                        |
+| [Pollinations](https://pollinations.ai/)                                                          | Cloud, open source (MIT), Paid                                                        |
 | [SD.Next / vladmandic](https://github.com/vladmandic/automatic)                                   | Local, open source (AGPL3), free of charge                                                      |
 | [SillyTavern Extras](https://github.com/SillyTavern/SillyTavern-Extras)                           | Deprecated, not recommended                                                                     |
 | [stable-diffusion.cpp](https://github.com/leejet/stable-diffusion.cpp)                            | Local, open source (MIT), free of charge                                                        |
