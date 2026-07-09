@@ -97,6 +97,15 @@ Electron Hub is a unified OpenAI-compatible platform that provides access to mod
 1. Create an account at [Electron Hub](https://playground.electronhub.ai/console).
 2. Generate an API key from the **Console → API Keys** page.
 
+## UnoRouter
+
+UnoRouter is an open-source OpenAI-compatible gateway that provides access to 200+ models from multiple vendors through a single API key. Models with a `:free` suffix cost nothing; the full catalog is at [unorouter.com/models](https://unorouter.com/models).
+
+**How to get an API key:**
+
+1. Create an account at [UnoRouter](https://unorouter.com/) (Discord or GitHub sign-in).
+2. Generate an API key from the [token page](https://unorouter.com/token).
+
 ## Custom OpenAI-compatible endpoint
 
 !!!warning
