@@ -746,6 +746,8 @@ Use `/? macros` for the complete list of available macros and their detailed des
 | `{{decvar::name}}` | Decrement local variable by 1 and return new value |
 | `{{hasvar::name}}` | Check if a local variable exists (returns "true" or "false") |
 | `{{deletevar::name}}` | Delete a local variable |
+| `{{getvarkey::name::key}}` | Gets a value at a specific key or index in a local object or array variable. |
+| `{{setvarkey::name::key::value}}` | Sets a value at a specific key or index in a local object or array. If the variable does not exist, it will be created based on the type of the key. |
 | `{{getglobalvar::name}}` | Get global variable value |
 | `{{setglobalvar::name::value}}` | Set global variable |
 | `{{addglobalvar::name::value}}` | Add value to global variable (numeric or string append) |
@@ -753,6 +755,8 @@ Use `/? macros` for the complete list of available macros and their detailed des
 | `{{decglobalvar::name}}` | Decrement global variable by 1 and return new value |
 | `{{hasglobalvar::name}}` | Check if a global variable exists (returns "true" or "false") |
 | `{{deleteglobalvar::name}}` | Delete a global variable |
+| `{{getglobalvarkey::name::key}}` | Gets a value at a specific key or index in a global object or array variable. |
+| `{{setglobalvarkey::name::key::value}}` | Sets a value at a specific key or index in a global object or array. If the variable does not exist, it will be created based on the type of the key. |
 
 ### Randomization
 
