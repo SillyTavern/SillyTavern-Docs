@@ -147,6 +147,12 @@ Most Text Completion models have a recommended "Instruct Template" (usually ment
 - No enforced moderation, unless required by the LLM vendor
 - [Website](https://openrouter.ai), [Setup Instructions](/Usage/API_Connections/OpenRouter.md)
 
+### OrcaRouter
+
+- OpenAI-compatible routing gateway that provides access to models from multiple vendors through a single API key
+- Connects through the Custom (OpenAI-compatible) endpoint
+- [Website](https://www.orcarouter.ai/), [Setup Instructions](/Usage/API_Connections/openai.md#orcarouter)
+
 ### DeepSeek
 
 - Provides access to the latest versions of very popular DeepSeek V3 (`deepseek-chat`) and DeepSeek R1 (`deepseek-reasoner`) models
