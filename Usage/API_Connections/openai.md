@@ -97,6 +97,17 @@ Electron Hub is a unified OpenAI-compatible platform that provides access to mod
 1. Create an account at [Electron Hub](https://playground.electronhub.ai/console).
 2. Generate an API key from the **Console → API Keys** page.
 
+## OrcaRouter
+
+OrcaRouter is an OpenAI-compatible model routing gateway that provides access to models from multiple vendors (OpenAI, Anthropic, Google, DeepSeek, xAI, and others) through a single API key and endpoint.
+
+**How to get an API key:**
+
+1. Create an account at [OrcaRouter](https://www.orcarouter.ai/).
+2. Generate an API key from the console.
+
+Then connect using the [Custom OpenAI-compatible endpoint](#custom-openai-compatible-endpoint) instructions below, with `https://api.orcarouter.ai/v1` as the endpoint URL.
+
 ## Custom OpenAI-compatible endpoint
 
 !!!warning
