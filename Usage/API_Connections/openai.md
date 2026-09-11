@@ -117,6 +117,7 @@ Examples of compatible backends include:
 * [LM Studio](https://lmstudio.ai/)
 * [LiteLLM](https://www.litellm.ai/)
 * [LocalAI](https://localai.io/)
+* [Requesty](https://requesty.ai/)
 
 ### Connecting
 
@@ -138,6 +139,15 @@ If the custom API implements the `/v1/models` endpoint to provide a list of avai
 Check 'Bypass API status check' to prevent SillyTavern from alerting you about a non-functioning API endpoint. Enable this option if your API endpoint works properly but SillyTavern continues to display warnings.
 
 Click "Test Message" to verify connectivity by sending a simple prompt to the model.
+
+### Example: Requesty
+
+[Requesty](https://requesty.ai/) is a hosted router that exposes models from OpenAI, Anthropic, Google, xAI and others behind one OpenAI-compatible API key.
+
+1. Create an API key on the [Requesty API keys page](https://app.requesty.ai/api-keys).
+2. Select 'Custom (OpenAI-compatible)' as the Chat Completion Source.
+3. Set the endpoint URL to `https://router.requesty.ai/v1` (or `https://router.eu.requesty.ai/v1` to keep requests in the EU) and paste the API key.
+4. Click "Connect". Requesty implements `/v1/models`, so the model dropdown is populated automatically. Model IDs use the `vendor/model` format, for example `anthropic/claude-sonnet-4-6` or `openai/gpt-4o-mini`; the full list is in the [Requesty model library](https://app.requesty.ai/model-library).
 
 ## Prompt Post-Processing
 
