@@ -99,13 +99,13 @@ Electron Hub is a unified OpenAI-compatible platform that provides access to mod
 
 ### DemonRoute
 
-DemonRoute is an OpenAI-compatible API serving uncensored open-weight models the big routers won't host — EVA-Qwen2.5-72B, abliterated Qwen2.5-72B, Hermes-3-70B, abliterated Llama-3.3-70B — at a fraction of frontier cost. It also offers an anonymous door: crypto only, no IP logs, no email.
+DemonRoute is an OpenAI-compatible API for open-weight models, including community fine-tunes such as Hermes, EVA, Euryale, and abliterated Llama/Qwen builds. Accounts can be created with a username and password (no email), and top-ups are paid in crypto.
 
-**How to get an API key:**
+**How to connect:**
 
-1. Go to [DemonRoute](https://demonroute.com) and create a key (standard or anonymous).
+1. Create an account and an API key at [DemonRoute](https://demonroute.com).
 
-2. In SillyTavern, set Chat Completion Source to **Custom (OpenAI-compatible)**, set the endpoint to `https://api.demonroute.com/v1`, paste your key, and enter a `dr/` model ID (e.g. `dr/llama-3-3-70b-instruct-abliterated`).
+2. In SillyTavern, set Chat Completion Source to **Custom (OpenAI-compatible)**, set the endpoint to `https://api.demonroute.com/v1`, and paste your key. Then pick a model from the list or enter a model ID in `org/Name` form (e.g. `Sao10K/L3.3-70B-Euryale-v2.3`).
 
 ## Custom OpenAI-compatible endpoint
 
