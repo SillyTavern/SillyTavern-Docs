@@ -23,6 +23,12 @@ Add more dynamic capabilities by letting the LLM use external sources of data or
 :::
 
 :::callout
+**[External Provider Integrations](Provider-Integrations)**
+
+Choose between Custom OpenAI-compatible setup, a UI extension, a server plugin, or prior discussion for an official integration.
+:::
+
+:::callout
 **[UI Extensions](Writing-Extensions)**
 
 UI extensions run in a browser environment and expand the functionality of SillyTavern by hooking into its events and API.
