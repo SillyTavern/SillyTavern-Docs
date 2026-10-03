@@ -97,6 +97,16 @@ Electron Hub is a unified OpenAI-compatible platform that provides access to mod
 1. Create an account at [Electron Hub](https://playground.electronhub.ai/console).
 2. Generate an API key from the **Console → API Keys** page.
 
+### DemonRoute
+
+DemonRoute is an OpenAI-compatible API for open-weight models, including community fine-tunes such as Hermes, EVA, Euryale, and abliterated Llama/Qwen builds. Accounts can be created with a username and password (no email), and top-ups are paid in crypto.
+
+**How to connect:**
+
+1. Create an account and an API key at [DemonRoute](https://demonroute.com).
+
+2. In SillyTavern, set Chat Completion Source to **Custom (OpenAI-compatible)**, set the endpoint to `https://api.demonroute.com/v1`, and paste your key. Then pick a model from the list or enter a model ID in `org/Name` form (e.g. `Sao10K/L3.3-70B-Euryale-v2.3`).
+
 ## Custom OpenAI-compatible endpoint
 
 !!!warning
