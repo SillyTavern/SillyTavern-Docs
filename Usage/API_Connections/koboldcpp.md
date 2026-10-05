@@ -8,6 +8,8 @@ KoboldCpp is a self-contained API for GGML and GGUF models.
 
 This [VRAM Calculator](https://huggingface.co/spaces/NyxKrage/LLM-Model-VRAM-Calculator) by Nyx will tell you approximately how much RAM/VRAM your model requires.
 
+[llmrun.dev](https://llmrun.dev) shows which open models fit a given GPU or Mac, with VRAM per GGUF quantization and estimated tokens/s.
+
 ## Nvidia GPU Quickstart
 
 This guide assumes you're using Windows.
