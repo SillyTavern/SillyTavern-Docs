@@ -143,6 +143,6 @@ int_{-oo}^{oo} e^{-x^2} dx = sqrt{pi}
 !!!info Deprecation notice
 The legacy `$` and `$$` wrapper syntax is no longer supported. Please use the following regex scripts to polyfill the old syntax:
 
-* [$$ - LaTeX](https://github.com/SillyTavern/Extension-LaTeX/raw/refs/heads/main/assets/$$_-_latex.json)
-* [$ - AsciiMath](https://github.com/SillyTavern/Extension-LaTeX/raw/refs/heads/main/assets/$_-_asciimath.json)
+* [$$ - LaTeX](https://github.com/SillyTavern/Extension-LaTeX/blob/refs/heads/main/assets/$$_-_legacy_latex.json)
+* [$ - AsciiMath](https://github.com/SillyTavern/Extension-LaTeX/blob/refs/heads/main/assets/$_-_legacy_asciimath.json)
 !!!
