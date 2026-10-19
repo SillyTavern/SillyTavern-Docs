@@ -88,6 +88,18 @@ Fireworks AI is a high-performance platform that provides fast, cost-effective a
 2. Navigate to the [API Keys page](https://app.fireworks.ai/settings/users/api-keys) in your account settings.
 3. Click "Create API key" and provide a descriptive name (e.g., "SillyTavern").
 
+### Fikra API
+
+Fikra API is an OpenAI-compatible inference service from Nairobi, Kenya. It serves open models such as DeepSeek, GLM, Kimi and Qwen behind a single endpoint, and bills per token with mobile money (M-Pesa, MTN MoMo, Airtel Money) or card. New accounts start with a $1 signup credit.
+
+**How to get an API key:**
+
+1. Sign up at [fikraapi.co.ke](https://fikraapi.co.ke/) to get the $1 signup credit.
+2. Create an API key in [the dashboard](https://fikraapi.co.ke/dashboard).
+3. Check the [model catalog](https://fikraapi.co.ke/models) for model ids and live pricing.
+
+Connect it through the [custom OpenAI-compatible endpoint](#custom-openai-compatible-endpoint) option with the base URL `https://api.fikraapi.co.ke/v1`.
+
 ## Electron Hub
 
 Electron Hub is a unified OpenAI-compatible platform that provides access to models from multiple vendors through a single API key.
@@ -164,3 +176,4 @@ Merge, semi-strict, and strict additionally remove any tool calls from the promp
 Less restrictive options have no effect on more restrictive endpoints implemented in SillyTavern other than "Custom OpenAI-compatible"; Custom may error upon invalid request.
 
 In strict mode, if no user message exists before the first assistant message, then `promptPlaceholder` from `config.yaml` will be inserted, which by default is "\[Start a new chat]".
+
