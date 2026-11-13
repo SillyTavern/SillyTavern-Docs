@@ -147,6 +147,14 @@ Most Text Completion models have a recommended "Instruct Template" (usually ment
 - No enforced moderation, unless required by the LLM vendor
 - [Website](https://openrouter.ai), [Setup Instructions](/Usage/API_Connections/OpenRouter.md)
 
+### Featherless
+
+- Serverless inference for thousands of open-weight models from Hugging Face, including roleplay and creative-writing finetunes
+- Flat-rate Chat subscription with unlimited requests, or pay-as-you-go credits
+- Does not log prompts or completions
+- Built into SillyTavern as a Text Completion source, with a model browser
+- [Website](https://featherless.ai/), [Models](https://featherless.ai/models), [Setup Instructions](/Usage/API_Connections/featherless.md)
+
 ### DeepSeek
 
 - Provides access to the latest versions of very popular DeepSeek V3 (`deepseek-chat`) and DeepSeek R1 (`deepseek-reasoner`) models
