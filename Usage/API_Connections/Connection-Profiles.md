@@ -35,6 +35,7 @@ Connection Profiles store the following selections.
 ### Chat Completion APIs
 
 * [Prompt Post-Processing](/Usage/API_Connections/openai.md#prompt-post-processing)
+* [Additional Parameters](/Usage/API_Connections/openai.md#additional-parameters) (can be explicitly empty)
 * Proxy preset
 
 ## Managing Connection Profiles

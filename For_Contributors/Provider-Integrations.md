@@ -193,7 +193,7 @@ eventSource.on(eventTypes.CHAT_COMPLETION_SETTINGS_READY, (request, context) => 
 
 Compare `context.customProviderId` with your registration's `id`. Do not check which provider is selected at that moment: the user can switch providers while a request is being prepared.
 
-Fields SillyTavern does not send by itself go through the Additional Parameters body, which is YAML text. To add one for a single request, append a line to `request.custom_include_body`.
+Fields SillyTavern does not send by itself go through the [Additional Parameters](/Usage/API_Connections/openai.md#additional-parameters) body, which is YAML text. To add one for a single request, append a line to `request.custom_include_body`.
 
 ### Show and hide settings
 
