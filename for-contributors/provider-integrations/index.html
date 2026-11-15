@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.844293895981">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.848078442394">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 4.6.0">
@@ -38,12 +38,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../favicon.ico" />
-    <link href="../../resources/css/retype.css?v=4.6.0.844293895981" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=4.6.0.848078442394" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.844293895981" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=4.6.0.848078442394" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.844293895981" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.844293895981" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=4.6.0.848078442394" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=4.6.0.848078442394" defer></script>
 
     <style>
         a {
@@ -233,7 +233,7 @@
 | --- | --- |
 | Fix or update a provider that SillyTavern already supports | Open a normal issue or pull request with reproduction and validation details. |
 | Improve compatibility for a class of OpenAI-compatible services | Propose a provider-neutral issue or pull request against the generic **Custom (OpenAI-compatible)** path. |
-| Add a model router, reseller, rerouter, gateway, or aggregator | Publish a provider-owned setup guide for **Custom (OpenAI-compatible)**. Add a third-party UI extension or server plugin only when provider-specific behavior is needed. |
+| Add a model router, reseller, rerouter, gateway, or aggregator | Use **Custom (OpenAI-compatible)**: [build a provider extension](#option-1-build-a-provider-extension), or [publish a setup guide](#option-2-publish-a-setup-guide). Add a server plugin only when server-side behavior is needed. |
 | Add a first-party model provider | Start with a public issue explaining the provider-owned models, the SillyTavern use case, and why the generic route is insufficient. |
 | Add TTS, speech, web search, image, vectorization, embedding, reranking, or another non-chat service | Start with a public issue showing independent SillyTavern user demand, a clear product advantage, live validation, and a realistic maintenance owner. |">
 <div class="table-wrapper scrollbar overflow-hidden">
@@ -255,7 +255,7 @@
 </tr>
 <tr>
 <td>Add a model router, reseller, rerouter, gateway, or aggregator</td>
-<td>Publish a provider-owned setup guide for <strong>Custom (OpenAI-compatible)</strong>. Add a third-party UI extension or server plugin only when provider-specific behavior is needed.</td>
+<td>Use <strong>Custom (OpenAI-compatible)</strong>: <doc-anchor-trigger to="#option-1-build-a-provider-extension">build a provider extension</doc-anchor-trigger>, or <doc-anchor-trigger to="#option-2-publish-a-setup-guide">publish a setup guide</doc-anchor-trigger>. Add a server plugin only when server-side behavior is needed.</td>
 </tr>
 <tr>
 <td>Add a first-party model provider</td>
@@ -270,8 +270,316 @@
 </div>
 </retype-table>
 <p>Existing integrations are not precedent for adding another one. New official provider integrations are exceptional because every named source becomes permanent UI, authentication, compatibility, testing, documentation, and support surface.</p>
-<h2 id="use-custom-openai-compatible-for-compatible-chat-providers">Use Custom (OpenAI-compatible) for compatible chat providers</h2>
-<p>An external chat provider that implements the OpenAI Chat Completions API should normally use SillyTavern&#x27;s existing generic source:</p>
+<h2 id="compatible-chat-providers">Compatible chat providers</h2>
+<p>An external chat provider that implements the OpenAI Chat Completions API uses SillyTavern&#x27;s existing generic source, <strong>Custom (OpenAI-compatible)</strong>. There are two ways to offer that to your users:</p>
+<ul>
+<li><doc-anchor-trigger to="#option-1-build-a-provider-extension">Option 1: Build a provider extension</doc-anchor-trigger>. Your service appears by name in the source list and is configured for the user.</li>
+<li><doc-anchor-trigger to="#option-2-publish-a-setup-guide">Option 2: Publish a setup guide</doc-anchor-trigger>. Your users configure Custom by hand, following instructions in your own documentation.</li>
+</ul>
+<p>Both keep the provider-specific parts with the service that owns them.</p>
+<h2 id="option-1-build-a-provider-extension">Option 1: Build a provider extension</h2>
+<p>A UI extension can add a named provider to the <strong>Chat Completion Source</strong> list. The provider is a <strong>Custom (OpenAI-compatible)</strong> connection with its endpoint, model list, key handling, and request adjustments already in place, so users pick it by name, enter a key, and connect.</p>
+<p>This is the recommended route for a service with more than a handful of users: nobody has to copy an endpoint or work out which request parameter the service rejects.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="block text-callout-info" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Requirements</h5>
+<p>The Custom provider API is version 1 and needs SillyTavern 1.20.0 or newer. Until that release is out, use the <code translate="no" v-pre>staging</code> branch.</p>
+        </div>
+    </div>
+</div>
+<h3 id="start-from-the-example">Start from the example</h3>
+<p>The quickest way is to fork the example extension:</p>
+<p><a href="https://github.com/SillyTavern/Extension-ProviderExample">https://github.com/SillyTavern/Extension-ProviderExample</a></p>
+<p>It registers one provider and shows every part described on this page. Its settings are grouped in commented blocks, and its README ends with a template for your own extension&#x27;s README.</p>
+<p>Read <a href="../writing-extensions/">Writing UI Extensions</a> for extension structure, the manifest, and lifecycle hooks in general.</p>
+<h3 id="what-users-see">What users see</h3>
+<ul>
+<li>Providers added by extensions are listed in the <strong>Chat Completion Source</strong> dropdown, in a <strong>Custom Providers</strong> group.</li>
+<li>Selecting one shows a provider card with its name, the extension that added it, optional documentation and support links, and a short hint.</li>
+<li>Below the card are an API key section and a model dropdown.</li>
+<li>The endpoint, the model ID text field, prompt post-processing, and the reset, detach, and forget actions are behind an <strong>Advanced</strong> switch.</li>
+<li>Selecting a provider never connects on its own. The user chooses a saved key or enters a new one and clicks <strong>Connect</strong>.</li>
+<li>Connection Profiles save and restore the whole connection.</li>
+</ul>
+<h3 id="register-a-provider">Register a provider</h3>
+<p>Register in the extension&#x27;s <code translate="no" v-pre>activate</code> and <code translate="no" v-pre>enable</code> lifecycle hooks, and unregister in <code translate="no" v-pre>disable</code>, <code translate="no" v-pre>delete</code>, and <code translate="no" v-pre>clean</code>.</p>
+<div id="register-a-provider-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">let registration = null;
+
+export function onActivate() {
+    if (registration) return; // both hooks can fire
+
+    const { customProviders } = SillyTavern.getContext();
+    if (!customProviders || customProviders.apiVersion !== 1) return;
+
+    registration = customProviders.register('my-provider', {
+        label: 'My Provider',
+        defaults: { custom_url: 'https://api.example.com/v1' },
+        models: { mode: 'discover' },
+        auth: { mode: 'bearer', required: true },
+    });
+}
+
+export function onDisable() {
+    registration?.unregister();
+    registration = null;
+}</code></pre>
+</doc-codeblock></div>
+<div id="register-a-provider-code-2" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-json"><code v-pre class="language-json">{
+    &quot;hooks&quot;: {
+        &quot;activate&quot;: &quot;onActivate&quot;,
+        &quot;enable&quot;: &quot;onActivate&quot;,
+        &quot;disable&quot;: &quot;onDisable&quot;,
+        &quot;delete&quot;: &quot;onDisable&quot;,
+        &quot;clean&quot;: &quot;onDisable&quot;
+    }
+}</code></pre>
+</doc-codeblock></div>
+<p><code translate="no" v-pre>register(providerId, definition)</code> detects which extension the call comes from. That extension is shown as the provider&#x27;s origin, and disabling it removes the provider from the list.</p>
+<p><code translate="no" v-pre>providerId</code> is a short stable ID: lowercase letters, digits, and dashes, at most 64 characters. Saved connections refer to it, so do not change it after release.</p>
+<p>The returned handle has <code translate="no" v-pre>id</code> (the full provider ID), <code translate="no" v-pre>update(definition)</code>, and <code translate="no" v-pre>unregister()</code>.</p>
+<p>Registering only describes a connection. It does not select the provider, connect, store a key, or send a request.</p>
+<h3 id="the-definition">The definition</h3>
+<p>Unknown fields are rejected, and the error names the object and the field.</p>
+<retype-table copy-text="| Field | Meaning |
+| --- | --- |
+| `label` | Name shown in the source list. Plain text. Required. |
+| `defaults` | Connection values the provider starts with. Required, see below. |
+| `models` | How the model list is obtained. Required, see below. |
+| `auth` | Whether and how the service takes a key. Required, see below. |
+| `controls` | Chat Completion settings to show or hide while the provider is selected. Optional. |
+| `documentationUrl`, `supportUrl` | HTTP(S) links shown in the provider card. Optional. |
+| `note` | One short hint in the provider card, for example where to get a key. Optional. |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>label</code></td>
+<td>Name shown in the source list. Plain text. Required.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>defaults</code></td>
+<td>Connection values the provider starts with. Required, see below.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>models</code></td>
+<td>How the model list is obtained. Required, see below.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>auth</code></td>
+<td>Whether and how the service takes a key. Required, see below.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>controls</code></td>
+<td>Chat Completion settings to show or hide while the provider is selected. Optional.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>documentationUrl</code>, <code translate="no" v-pre>supportUrl</code></td>
+<td>HTTP(S) links shown in the provider card. Optional.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>note</code></td>
+<td>One short hint in the provider card, for example where to get a key. Optional.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
+<p>All types are documented in <code translate="no" v-pre>public/scripts/custom-providers.js</code> (<code translate="no" v-pre>CustomProviderDefinition</code> and the types it uses). An extension can import them in JSDoc for editor completion:</p>
+<div id="the-definition-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">/** @type {import('../../../custom-providers.js').CustomProviderDefaults} */
+const CONNECTION = { custom_url: 'https://api.example.com/v1' };</code></pre>
+</doc-codeblock></div>
+<h4 id="defaults">defaults</h4>
+<retype-table copy-text="| Field | Meaning |
+| --- | --- |
+| `custom_url` | The API root. HTTP or HTTPS, without `/chat/completions`, credentials, a query string, or a fragment. Required. |
+| `custom_model` | Model ID that is preselected. |
+| `custom_include_headers` | Extra request headers, as YAML. Not for keys. |
+| `custom_include_body` | Body fields the server adds to every request, or overwrites, as YAML. |
+| `custom_exclude_body` | Body fields the server removes from every request, as a YAML list. |
+| `custom_prompt_post_processing` | How the prompt is reshaped before sending. Leave it out unless the service rejects the default layout. |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>custom_url</code></td>
+<td>The API root. HTTP or HTTPS, without <code translate="no" v-pre>/chat/completions</code>, credentials, a query string, or a fragment. Required.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>custom_model</code></td>
+<td>Model ID that is preselected.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>custom_include_headers</code></td>
+<td>Extra request headers, as YAML. Not for keys.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>custom_include_body</code></td>
+<td>Body fields the server adds to every request, or overwrites, as YAML.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>custom_exclude_body</code></td>
+<td>Body fields the server removes from every request, as a YAML list.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>custom_prompt_post_processing</code></td>
+<td>How the prompt is reshaped before sending. Leave it out unless the service rejects the default layout.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
+<p>The user can change these values under <strong>Advanced</strong>. Their changes are kept, and <strong>Reset provider defaults</strong> restores yours.</p>
+<h4 id="models">models</h4>
+<ul>
+<li><code translate="no" v-pre>{ mode: 'discover' }</code>: after connecting, the list is read from <code translate="no" v-pre>&lt;custom_url&gt;/models</code>.</li>
+<li><code translate="no" v-pre>{ mode: 'manual' }</code>: the service has no model list. The user picks a suggestion or types an ID.</li>
+</ul>
+<p>Add <code translate="no" v-pre>suggestions: [{ id, label }]</code> to offer models before the first connection.</p>
+<h4 id="auth">auth</h4>
+<ul>
+<li><code translate="no" v-pre>{ mode: 'bearer', required: true }</code>: a key is needed and is sent as <code translate="no" v-pre>Authorization: Bearer &lt;key&gt;</code>.</li>
+<li><code translate="no" v-pre>{ mode: 'bearer', required: false }</code>: a key is optional.</li>
+<li><code translate="no" v-pre>{ mode: 'header', name: 'x-api-key', required: true }</code>: the key is sent as the bare value of the named header.</li>
+<li><code translate="no" v-pre>{ mode: 'none' }</code>: the service takes no key. The key section is hidden.</li>
+</ul>
+<h3 id="keys">Keys</h3>
+<p>An extension never sees or stores a key.</p>
+<ul>
+<li>The user picks one of their saved Chat Completion keys, or enters a new one. A new key is saved without replacing the active key of its category.</li>
+<li>The chosen key is bound to the exact API root. If the root changes, the user has to choose the key again.</li>
+<li>Requests that carry a key do not follow redirects.</li>
+<li>Credential headers cannot be set through <code translate="no" v-pre>custom_include_headers</code>. That includes <code translate="no" v-pre>Authorization</code>, <code translate="no" v-pre>x-api-key</code>, and the header named in <code translate="no" v-pre>auth</code>.</li>
+</ul>
+<h3 id="fix-requests-the-service-rejects">Fix requests the service rejects</h3>
+<p>Many services reject a parameter SillyTavern sends, or want it under another name. There are two tools.</p>
+<p><strong>Declare it.</strong> <code translate="no" v-pre>custom_exclude_body</code> and <code translate="no" v-pre>custom_include_body</code> are applied on the server to every request, including <strong>Test Message</strong> and requests other extensions send through a Connection Profile:</p>
+<div id="fix-requests-the-service-rejects-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">defaults: {
+    custom_url: 'https://api.example.com/v1',
+    custom_exclude_body: '- max_tokens',
+    custom_include_body: 'max_completion_tokens: 4096',
+},</code></pre>
+</doc-codeblock></div>
+<p><strong>Adjust each request.</strong> Listen to <code translate="no" v-pre>CHAT_COMPLETION_SETTINGS_READY</code>. The second argument says which provider the request was built for:</p>
+<div id="fix-requests-the-service-rejects-code-2" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">eventSource.on(eventTypes.CHAT_COMPLETION_SETTINGS_READY, (request, context) =&gt; {
+    if (context?.customProviderId !== registration?.id) return;
+
+    // Send the user's response length under the name the service expects
+    request.max_completion_tokens = request.max_tokens;
+    delete request.max_tokens;
+});</code></pre>
+</doc-codeblock></div>
+<p>Compare <code translate="no" v-pre>context.customProviderId</code> with your registration&#x27;s <code translate="no" v-pre>id</code>. Do not check which provider is selected at that moment: the user can switch providers while a request is being prepared.</p>
+<p>Fields SillyTavern does not send by itself go through the Additional Parameters body, which is YAML text. To add one for a single request, append a line to <code translate="no" v-pre>request.custom_include_body</code>.</p>
+<h3 id="show-and-hide-settings">Show and hide settings</h3>
+<p><code translate="no" v-pre>controls</code> lists Chat Completion settings to show or hide while the provider is selected:</p>
+<div id="show-and-hide-settings-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">controls: {
+    hide: ['frequency_penalty', 'presence_penalty'],
+    show: [],
+},</code></pre>
+</doc-codeblock></div>
+<p>The accepted names are in <code translate="no" v-pre>SillyTavern.getContext().customProviders.controls</code>: <code translate="no" v-pre>temperature</code>, <code translate="no" v-pre>top_p</code>, <code translate="no" v-pre>top_k</code>, <code translate="no" v-pre>top_a</code>, <code translate="no" v-pre>min_p</code>, <code translate="no" v-pre>repetition_penalty</code>, <code translate="no" v-pre>frequency_penalty</code>, <code translate="no" v-pre>presence_penalty</code>, <code translate="no" v-pre>seed</code>, <code translate="no" v-pre>n</code>, <code translate="no" v-pre>logit_bias</code>, <code translate="no" v-pre>reasoning_effort</code>, <code translate="no" v-pre>verbosity</code>, <code translate="no" v-pre>show_thoughts</code>, <code translate="no" v-pre>function_calling</code>, <code translate="no" v-pre>web_search</code>, <code translate="no" v-pre>inline_media</code>, <code translate="no" v-pre>inline_image_quality</code>, <code translate="no" v-pre>request_images</code>, <code translate="no" v-pre>system_prompt</code>.</p>
+<ul>
+<li>Hiding a setting does not stop its value from being sent. Also list the field in <code translate="no" v-pre>custom_exclude_body</code>.</li>
+<li>Showing a setting that the Custom source does not send by itself does not send it either. Add its value to the request in your <code translate="no" v-pre>CHAT_COMPLETION_SETTINGS_READY</code> listener.</li>
+</ul>
+<p>Settings that are not named keep the visibility of the Custom source.</p>
+<h3 id="add-your-own-inputs">Add your own inputs</h3>
+<p>The provider card has an area for a provider&#x27;s own inputs: the element with the ID <code translate="no" v-pre>custom_provider_extension_settings</code>. Fill it while your provider is selected:</p>
+<div id="add-your-own-inputs-code-1" class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-javascript"><code v-pre class="language-javascript">function renderInputs() {
+    const slot = document.getElementById('custom_provider_extension_settings');
+    const isSelected = SillyTavern.getContext().customProviders.active() === registration?.id;
+    if (!slot || !isSelected || slot.childElementCount) return;
+    // create your inputs and append them to slot
+}
+
+eventSource.on(eventTypes.CUSTOM_CONNECTION_CHANGED, renderInputs);
+eventSource.on(eventTypes.CHATCOMPLETION_SOURCE_CHANGED, renderInputs);
+renderInputs();</code></pre>
+</doc-codeblock></div>
+<p>SillyTavern empties the area when another connection takes over and when your extension is disabled. Save the values with your extension&#x27;s settings and apply them in the request listener.</p>
+<p><code translate="no" v-pre>customProviders.active()</code> returns the ID of the selected provider, or <code translate="no" v-pre>null</code> for the Manual connection and every other source. Use it for the interface, not to decide whether a request is yours.</p>
+<h3 id="the-rest-of-the-api">The rest of the API</h3>
+<retype-table copy-text="| Call | Meaning |
+| --- | --- |
+| `customProviders.apiVersion` | Version of this API. Check it before registering. |
+| `customProviders.get(id)` | A copy of one registered definition, by full ID. |
+| `customProviders.list()` | Copies of all registered providers, sorted by label. |
+| `customProviders.select(id)` | Selects a provider, or the Manual connection with `null`. Only while Chat Completion with the Custom source is selected. Does not connect. |">
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Call</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code translate="no" v-pre>customProviders.apiVersion</code></td>
+<td>Version of this API. Check it before registering.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>customProviders.get(id)</code></td>
+<td>A copy of one registered definition, by full ID.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>customProviders.list()</code></td>
+<td>Copies of all registered providers, sorted by label.</td>
+</tr>
+<tr>
+<td><code translate="no" v-pre>customProviders.select(id)</code></td>
+<td>Selects a provider, or the Manual connection with <code translate="no" v-pre>null</code>. Only while Chat Completion with the Custom source is selected. Does not connect.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</retype-table>
+<p>Events:</p>
+<ul>
+<li><code translate="no" v-pre>CUSTOM_PROVIDER_REGISTRY_CHANGED</code>: <code translate="no" v-pre>{ id, ownerExtension, operation }</code>, where <code translate="no" v-pre>operation</code> is <code translate="no" v-pre>register</code>, <code translate="no" v-pre>update</code>, or <code translate="no" v-pre>unregister</code>.</li>
+<li><code translate="no" v-pre>CUSTOM_CONNECTION_CHANGED</code>: <code translate="no" v-pre>{ oldProviderId, newProviderId, reason }</code>.</li>
+</ul>
+<h3 id="when-the-extension-is-removed">When the extension is removed</h3>
+<p>The connection settings stay usable without the extension: endpoint, model, the chosen key, and the declared request fields. The provider is shown as &quot;extension unavailable&quot;.</p>
+<p>The extension&#x27;s own inputs and its per-request adjustments stop. If your service only works with a per-request adjustment, say so in your README.</p>
+<h3 id="limits-of-version-1">Limits of version 1</h3>
+<ul>
+<li>Authentication is a bearer key, a key in a named header, or none. Signed requests and keys in the URL are not supported.</li>
+<li>Requests that another extension sends through a Connection Profile do not raise <code translate="no" v-pre>CHAT_COMPLETION_SETTINGS_READY</code>. They only get the declared request fields.</li>
+<li>The provider uses the Chat Completion request format. A service with another API needs a <a href="../server-plugins/">server plugin</a>.</li>
+</ul>
+<h2 id="option-2-publish-a-setup-guide">Option 2: Publish a setup guide</h2>
+<p>Without an extension, users connect through the generic source directly:</p>
 <ol>
 <li>Open <strong>API Connections</strong>.</li>
 <li>Select <strong>Chat Completion</strong>.</li>
@@ -282,7 +590,7 @@
 </ol>
 <p>See <a href="/usage/api-connections/openai/#custom-openai-compatible-endpoint">Custom OpenAI-compatible endpoint</a> for the complete user instructions, prompt post-processing options, and troubleshooting notes.</p>
 <p>The provider should publish and maintain its own SillyTavern setup page. Provider-specific endpoint URLs, account steps, model catalogues, regions, and compatibility notes change independently of SillyTavern and should stay with the service that owns them. The official SillyTavern documentation is not a catalogue of every compatible commercial endpoint.</p>
-<h2 id="copyable-provider-setup-guide">Copyable provider setup guide</h2>
+<h3 id="copyable-provider-setup-guide">Copyable provider setup guide</h3>
 <p>Use this as a starting point in the provider&#x27;s own documentation. Replace every placeholder and remove unsupported features rather than presenting guesses as compatibility claims.</p>
 <div id="copyable-provider-setup-guide-code-1" class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-markdown"><code v-pre class="language-markdown"># Use &lt;Provider&gt; with SillyTavern
@@ -324,8 +632,8 @@ For provider API, billing, account, or model availability problems, contact &lt;
 Last verified with SillyTavern &lt;version or commit&gt; on &lt;date&gt;.</code></pre>
 </doc-codeblock></div>
 <p>A setup guide documents a compatible route; it is not an endorsement, a guarantee of complete compatibility, or a transfer of provider support to the SillyTavern maintainers.</p>
-<h2 id="build-a-third-party-ui-extension-for-provider-specific-setup">Build a third-party UI extension for provider-specific setup</h2>
-<p>A UI extension is the appropriate home when a provider needs convenience or provider-owned behavior beyond a written setup guide, for example:</p>
+<h2 id="other-provider-specific-behavior-in-a-ui-extension">Other provider-specific behavior in a UI extension</h2>
+<p>A UI extension is also the appropriate home for provider-owned behavior beyond what a registered provider covers, for example:</p>
 <ul>
 <li>guided configuration and connection testing;</li>
 <li>provider-specific optional settings;</li>
