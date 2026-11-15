@@ -36,7 +36,7 @@ To ensure that all extensions are safe and easy to use, we have a few requiremen
 See live examples of simple SillyTavern extensions:
 
 * <https://github.com/city-unit/st-extension-example> - basic extension template. Showcases manifest creation, local script imports, adding a settings UI panel, and persistent extension settings usage.
-* <https://github.com/SillyTavern/Extension-ProviderExample> - example of an extension that adds a named provider to the Chat Completion source list. See [Custom Providers](Custom-Providers).
+* <https://github.com/SillyTavern/Extension-ProviderExample> - example of an extension that adds a named provider to the Chat Completion source list. See [Build a provider extension](Provider-Integrations#option-1-build-a-provider-extension).
 * <https://github.com/search?q=topic%3Aextension+org%3ASillyTavern&type=Repositories> - a list of all official SillyTavern extensions on GitHub.
 
 ## Bundling
