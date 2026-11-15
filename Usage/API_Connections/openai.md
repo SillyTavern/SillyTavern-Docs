@@ -164,3 +164,89 @@ Merge, semi-strict, and strict additionally remove any tool calls from the promp
 Less restrictive options have no effect on more restrictive endpoints implemented in SillyTavern other than "Custom OpenAI-compatible"; Custom may error upon invalid request.
 
 In strict mode, if no user message exists before the first assistant message, then `promptPlaceholder` from `config.yaml` will be inserted, which by default is "\[Start a new chat]".
+
+## Additional Parameters
+
+!!!warning Power user feature
+Additional Parameters are sent exactly as you write them. SillyTavern does not check them against the provider's API. If the provider rejects a request, remove your Additional Parameters first and try again.
+!!!
+
+Every Chat Completion source has an **Additional Parameters** button next to **Connect** (all sources since SillyTavern 1.20.0, earlier only Custom). It lets you change the request SillyTavern sends to the provider: add or overwrite fields, remove fields, and add request headers.
+
+Use it when a provider offers a request field that SillyTavern has no setting for, or when you need a value that a SillyTavern setting does not offer, such as a newly released reasoning level. You do not have to set the connection up as a Custom endpoint for that.
+
+The dialog has three text fields. Each one takes [YAML](https://yaml.org/).
+
+| Field | Takes | What it does |
+|-------|-------|--------------|
+| Include Body Parameters | A mapping | Adds the fields to the request body. A field that SillyTavern already sends is overwritten. |
+| Exclude Body Parameters | A list of field names | Removes the fields from the request body. |
+| Include Request Headers | A mapping | Adds the headers to the request. |
+
+### How the values are applied
+
+* They are applied **last**, after SillyTavern has built the request from your settings. Your value always wins.
+* First the fields to include are added, then the fields to exclude are removed.
+* Objects are **merged**: you only write the fields you want to change, the rest of the object stays as it is. Lists and plain values are replaced as a whole.
+* To remove a field inside an object, write a **dotted path**.
+* [Macros](/Usage/macros.md) are replaced before the values are sent.
+* Text that is not valid YAML is ignored.
+
+Add a field and change one nested field (Google AI Studio):
+
+```yaml
+generationConfig:
+  thinkingConfig:
+    thinkingLevel: high
+```
+
+Add a top-level field (OpenAI):
+
+```yaml
+service_tier: flex
+```
+
+Remove a top-level field and a nested one:
+
+```yaml
+- temperature
+- generationConfig.thinkingConfig
+```
+
+Add a request header:
+
+```yaml
+anthropic-beta: name-of-the-beta
+```
+
+!!!info Which fields does a source send?
+The field names are the ones of the provider's own API, not the ones of OpenAI. Claude, Google AI Studio and others have their own request format. Look at the provider's API reference, or at the request that SillyTavern prints in the server console.
+!!!
+
+### Headers
+
+A header that carries your API key or belongs to the connection itself, such as `Authorization`, `x-api-key` or `Cookie`, is ignored on the built-in sources. SillyTavern sets these from the stored key. The Custom source accepts any header.
+
+### Where they are saved
+
+Additional Parameters are kept **per source**. What you enter for Claude is not sent to OpenAI.
+
+They are also saved with [Connection Profiles](/Usage/API_Connections/Connection-Profiles.md). Two profiles of the same source can send different parameters, and switching to a profile without Additional Parameters removes the ones of the previous connection.
+
+### Seeing that a connection uses them
+
+When the selected source has Additional Parameters, the button is highlighted and shows a count. A line below it says how many body fields are added and removed, and how many headers are set. If you ask for help with a connection, include this part in your screenshot.
+
+### Slash command
+
+`/additional-parameters` (alias `/api-params`) reads and changes the Additional Parameters of the selected source.
+
+```stscript
+/additional-parameters | /echo
+/additional-parameters include_body="service_tier: flex"
+/additional-parameters exclude_body="- temperature"
+/additional-parameters include_headers="anthropic-beta: name-of-the-beta"
+/additional-parameters force=true
+```
+
+Without arguments, it returns the current values as JSON. A named argument changes only that field. `force=true` without another argument removes all of them.
