@@ -17,7 +17,7 @@ Do not use a completed pull request as the first product discussion for a new na
 | --- | --- |
 | Fix or update a provider that SillyTavern already supports | Open a normal issue or pull request with reproduction and validation details. |
 | Improve compatibility for a class of OpenAI-compatible services | Propose a provider-neutral issue or pull request against the generic **Custom (OpenAI-compatible)** path. |
-| Add a model router, reseller, rerouter, gateway, or aggregator | Publish a provider-owned setup guide for **Custom (OpenAI-compatible)**. Add a third-party UI extension or server plugin only when provider-specific behavior is needed. |
+| Add a model router, reseller, rerouter, gateway, or aggregator | Publish a provider-owned setup guide for **Custom (OpenAI-compatible)**, or a third-party UI extension that registers the service as a [Custom provider](Custom-Providers). Add a server plugin only when server-side behavior is needed. |
 | Add a first-party model provider | Start with a public issue explaining the provider-owned models, the SillyTavern use case, and why the generic route is insufficient. |
 | Add TTS, speech, web search, image, vectorization, embedding, reranking, or another non-chat service | Start with a public issue showing independent SillyTavern user demand, a clear product advantage, live validation, and a realistic maintenance owner. |
 
@@ -97,6 +97,8 @@ A UI extension is the appropriate home when a provider needs convenience or prov
 - provider branding and support links.
 
 The extension may integrate with SillyTavern's existing UI, events, context, and request paths as needed. It remains third-party provider-owned surface, so the extension author is responsible for compatibility updates and user support.
+
+For an OpenAI-compatible chat service, the extension can register a [Custom provider](Custom-Providers). The service then appears by name in the Chat Completion source list, in a **Custom Providers** group, with its endpoint, model list, key handling, and request adjustments in place. The [provider extension example](https://github.com/SillyTavern/Extension-ProviderExample) is a working extension made to be forked.
 
 Read [Writing UI Extensions](Writing-Extensions) for extension structure, lifecycle, settings, templates, and current API guidance.
 
