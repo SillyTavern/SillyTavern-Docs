@@ -294,7 +294,7 @@ Enabling a CORS proxy without proper security measures (e.g., IP, host, and priv
 
 | Setting | Description | Default | Permitted Values |
 |---------|-------------|---------|------------------|
-| `performance.lazyLoadCharacters` | Lazy-load character data | `true` | `true`, `false` |
+| `performance.lazyLoadCharacters` | Lazy-load character data | `false` | `true`, `false` |
 | `performance.useDiskCache` | Enable disk caching for character cards | `true` | `true`, `false` |
 | `performance.memoryCacheCapacity` | Maximum memory cache capacity | `100mb` | Human-readable size (e.g., `100mb`, `1gb`) |
 | `performance.requestCompression.enabled` | Enable gzip compression for client requests with large payloads (e.g. settings or chat saves) | `false` | `true`, `false` |
