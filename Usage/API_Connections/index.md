@@ -147,6 +147,12 @@ Most Text Completion models have a recommended "Instruct Template" (usually ment
 - No enforced moderation, unless required by the LLM vendor
 - [Website](https://openrouter.ai), [Setup Instructions](/Usage/API_Connections/OpenRouter.md)
 
+### CrowLLM
+
+- OpenAI-compatible gateway: one key and one base URL for models from several vendors, including zero-rated ids that end in `:free`
+- Used through the **Custom (OpenAI-compatible)** Chat Completion source
+- [Website](https://crowllm.com), [Setup Instructions](/Usage/API_Connections/CrowLLM.md)
+
 ### DeepSeek
 
 - Provides access to the latest versions of very popular DeepSeek V3 (`deepseek-chat`) and DeepSeek R1 (`deepseek-reasoner`) models
