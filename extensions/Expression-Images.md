@@ -4,6 +4,10 @@ route: /extensions/expression-images/
 
 # Character Expressions
 
+!!!danger Regarding the Prome Visual Novel Extension
+If you are using the Prome Visual Novel Extension (2.0.0+), you must disable this extension (as well as [Visual Novel Mode](../Usage/User_Settings/Visual-Novel.md)) and use it's own Character Expression system (labelled as "Expression Classifier"). Leaving this enabled will cause duplicate sprites and conflicting expression classifications. Either use Prome or disable it if you want to use this extension.
+!!!
+
 ## What is it?
 
 Expression images are images (aka 'sprites') of your AI character which are shown next to (or behind) the chat window.
@@ -13,7 +17,7 @@ Expression images can automatically change based on a classification, adjusting 
 ## Adding Character Expression Images
 
 1. Open the Extensions Panel and expand the 'Character Expressions' section. If you have the character chat open, you will see a grid of image placeholders.
-![Expression Drawer](/static/extensions/expression-drawer.png)
+   ![Expression Drawer](/static/extensions/expression-drawer.png)
 2. Click the 'Upload image' button at the top left of each image in the grid, and select the image you want to apply to that emotion. This will save the image with the correct filename inside the `/data/<user-handle>/characters/(character_name_here)/` folder.
 3. Repeat this for all expressions you want to assign an image to.
 
@@ -58,8 +62,8 @@ To use the 6-option classification model, change the value of `extensions.models
 
 Main LLM source allows to choose how the classification prompt will be built:
 
-* **Limited Context**: Only the last message and a system instruction prompt are sent.
-* **Full Context**: The entire chat history, including the character card are sent.
+- **Limited Context**: Only the last message and a system instruction prompt are sent.
+- **Full Context**: The entire chat history, including the character card are sent.
 
 ### Setup Instructions (WebLLM)
 
