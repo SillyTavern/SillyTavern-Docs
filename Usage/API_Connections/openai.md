@@ -139,6 +139,47 @@ Check 'Bypass API status check' to prevent SillyTavern from alerting you about a
 
 Click "Test Message" to verify connectivity by sending a simple prompt to the model.
 
+### Additional Parameters
+
+Many OpenAI-compatible backends accept request fields that SillyTavern doesn't expose as controls, such as extra samplers or model-specific switches. With 'Custom (OpenAI-compatible)' selected, click **Additional Parameters** (next to **Connect**) to open a dialog with three fields:
+
+| Field | Format | Effect |
+| --- | --- | --- |
+| **Include Body Parameters** | YAML object | Merged into the Chat Completion request body. |
+| **Exclude Body Parameters** | YAML array of key names | Removed from the request body before it is sent. |
+| **Include Request Headers** | YAML object | Added to the HTTP request headers. |
+
+Example: send extra samplers, and drop penalties the backend rejects:
+
+```yaml
+# Include Body Parameters
+top_k: 20
+min_p: 0.05
+repetition_penalty: 1.1
+```
+
+```yaml
+# Exclude Body Parameters
+- frequency_penalty
+- presence_penalty
+```
+
+Nested objects are supported. For example, some servers built on chat templates accept a switch for reasoning models:
+
+```yaml
+# Include Body Parameters
+chat_template_kwargs:
+  enable_thinking: false
+```
+
+Notes:
+
+- Included keys are merged at the top level and take precedence over the values SillyTavern sets. A nested object such as `chat_template_kwargs` replaces any existing value for that key as a whole rather than being deep-merged.
+- Exclusions are applied after inclusions, to the final request body.
+- Macros such as `{{char}}` are substituted in all three fields before they are parsed.
+- Invalid YAML is ignored silently. If a parameter seems to have no effect, check the request logged in the SillyTavern server console.
+- These settings apply only to the 'Custom (OpenAI-compatible)' source, and whether a parameter is honoured is up to the backend.
+
 !!!info Documenting an external provider?
 Provider developers should read [Integrating an External Provider](/for-contributors/provider-integrations/) for the provider-owned setup-guide template and the UI extension, server plugin, and official-integration routes.
 !!!
